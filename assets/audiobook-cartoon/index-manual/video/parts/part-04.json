@@ -1,0 +1,223 @@
+{
+  "id": "part-04",
+  "title": "What to Do When They Try to Institutionalize You",
+  "storyboard": "storyboards/part-04-institutionalize.md",
+  "audio": {
+    "start": 388.384,
+    "end": 546.964
+  },
+  "noCaptions": [
+    "institutionalize-title"
+  ],
+  "scenes": [
+    {
+      "id": "institutionalize-title",
+      "file": "compositions/scenes/part-04/institutionalize-title.html",
+      "cue": "What",
+      "approx": 388.4,
+      "layer": "A"
+    },
+    {
+      "id": "net-falls-short",
+      "file": "compositions/scenes/part-04/net-falls-short.html",
+      "cue": "When",
+      "approx": 392.2,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "When", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "committed.", "expr": "smirk", "rest": "closed", "body": "arms-crossed", "mode": "big" }
+      ]
+    },
+    {
+      "id": "butterfly-net",
+      "file": "compositions/scenes/part-04/butterfly-net.html",
+      "cue": "Most",
+      "approx": 399.6,
+      "layer": "B"
+    },
+    {
+      "id": "less-crazy-goal",
+      "file": "compositions/scenes/part-04/less-crazy-goal.html",
+      "cue": "Here's",
+      "approx": 409.9,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "Here's", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "less", "expr": "eyeroll", "rest": "smile", "body": "shrug", "mode": "big" }
+      ]
+    },
+    {
+      "id": "debug-37-trillion-cells",
+      "file": "compositions/scenes/part-04/debug-37-trillion-cells.html",
+      "cue": "That's",
+      "approx": 417.0,
+      "layer": "B"
+    },
+    {
+      "id": "sane-insane-buzzer",
+      "file": "compositions/scenes/part-04/sane-insane-buzzer.html",
+      "cue": "That:",
+      "approx": 440.0,
+      "layer": "B"
+    },
+    {
+      "id": "diagnostic-criteria",
+      "file": "compositions/scenes/part-04/diagnostic-criteria.html",
+      "cue": "This",
+      "approx": 447.8,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "This", "expr": "neutral", "rest": "closed", "body": "palms-down", "mode": "big" },
+        { "cue": "nailed", "expr": "sad", "rest": "closed", "body": "hand-chest", "mode": "big" },
+        { "cue": "So", "expr": "smirk", "rest": "closed", "body": "idle", "mode": "big" },
+        { "cue": "light-years", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" }
+      ]
+    },
+    {
+      "id": "orderly-door-slot",
+      "file": "compositions/scenes/part-04/orderly-door-slot.html",
+      "cue": "Anyway,",
+      "approx": 463.5,
+      "layer": "B"
+    },
+    {
+      "id": "war-supply-chain",
+      "file": "compositions/scenes/part-04/war-supply-chain.html",
+      "cue": "War",
+      "approx": 475.2,
+      "layer": "B"
+    },
+    {
+      "id": "chain-goes-dark",
+      "file": "compositions/scenes/part-04/chain-goes-dark.html",
+      "cue": "Ending",
+      "approx": 510.1,
+      "layer": "B"
+    },
+    {
+      "id": "centrifuge-vs-rocks",
+      "file": "compositions/scenes/part-04/centrifuge-vs-rocks.html",
+      "cue": "Building",
+      "approx": 514.6,
+      "layer": "B"
+    },
+    {
+      "id": "billionaire-pdf",
+      "file": "compositions/scenes/part-04/billionaire-pdf.html",
+      "cue": "But",
+      "approx": 534.7,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "But", "expr": "skeptical", "rest": "closed", "body": "hands-hips", "mode": "big" },
+        { "cue": "physically", "expr": "neutral", "rest": "smile", "body": "open-palms", "mode": "big" },
+        { "cue": "Getting", "expr": "smirk", "rest": "closed", "body": "presenting", "mode": "big" },
+        { "cue": "is.", "expr": "sideeye", "rest": "closed", "body": "arms-crossed", "mode": "big" }
+      ]
+    }
+  ],
+  "sounds": [
+    { "scene": "institutionalize-title", "cue": "What", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "institutionalize-title", "cue": "Institutionalize", "offset": 0.35, "sfx": "squeak", "volume": 0.35 },
+    { "scene": "institutionalize-title", "cue": "Institutionalize", "offset": 0.6, "sfx": "click", "volume": 0.45 },
+
+    { "scene": "net-falls-short", "cue": "committed.", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "net-falls-short", "cue": "committed.", "offset": 0.55, "sfx": "boing", "volume": 0.35 },
+
+    { "scene": "butterfly-net", "cue": "programmed", "sfx": "click", "volume": 0.45 },
+    { "scene": "butterfly-net", "cue": "programmed", "offset": 0.2, "sfx": "click", "volume": 0.45 },
+    { "scene": "butterfly-net", "cue": "news", "sfx": "switch", "volume": 0.5 },
+    { "scene": "butterfly-net", "cue": "gravity", "offset": 0.3, "sfx": "boing", "volume": 0.4 },
+    { "scene": "butterfly-net", "cue": "weather.", "at": "after", "sfx": "boom", "volume": 0.45 },
+    { "scene": "butterfly-net", "cue": "assume", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "butterfly-net", "cue": "malfunctioning.", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "butterfly-net", "cue": "malfunctioning.", "offset": 0.35, "sfx": "pop", "volume": 0.45 },
+
+    { "scene": "less-crazy-goal", "cue": "curing", "sfx": "ding", "volume": 0.3 },
+    { "scene": "less-crazy-goal", "cue": "disease", "offset": 0.15, "sfx": "thunk", "volume": 0.45 },
+    { "scene": "less-crazy-goal", "cue": "goal.", "at": "after", "offset": -0.2, "sfx": "ding", "volume": 0.25 },
+
+    { "scene": "debug-37-trillion-cells", "cue": "thirty-seven", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "debug-37-trillion-cells", "cue": "thousand", "sfx": "pop", "volume": 0.22 },
+    { "scene": "debug-37-trillion-cells", "cue": "thousand", "offset": 0.2, "sfx": "pop", "volume": 0.22 },
+    { "scene": "debug-37-trillion-cells", "cue": "thousand", "offset": 0.36, "sfx": "pop", "volume": 0.22 },
+    { "scene": "debug-37-trillion-cells", "cue": "chemistry", "sfx": "squeak", "volume": 0.3 },
+    { "scene": "debug-37-trillion-cells", "cue": "simulate,", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "debug-37-trillion-cells", "cue": "simulate,", "at": "after", "sfx": "fire", "volume": 0.4 },
+    { "scene": "debug-37-trillion-cells", "cue": "evolve", "offset": 0.25, "sfx": "boing", "volume": 0.35 },
+    { "scene": "debug-37-trillion-cells", "cue": "treatments.", "sfx": "splat", "volume": 0.4 },
+    { "scene": "debug-37-trillion-cells", "cue": "treatments.", "at": "after", "sfx": "huff", "volume": 0.35 },
+    { "scene": "debug-37-trillion-cells", "cue": "debug", "sfx": "clank", "volume": 0.4 },
+    { "scene": "debug-37-trillion-cells", "cue": "all", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "debug-37-trillion-cells", "cue": "once.", "sfx": "bell", "volume": 0.4 },
+    { "scene": "debug-37-trillion-cells", "cue": "While", "sfx": "slam", "volume": 0.45 },
+    { "scene": "debug-37-trillion-cells", "cue": "itself.", "at": "after", "sfx": "yelp", "volume": 0.25 },
+
+    { "scene": "sane-insane-buzzer", "cue": "That:", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "sane-insane-buzzer", "cue": "sane.", "sfx": "ding", "volume": 0.45 },
+    { "scene": "sane-insane-buzzer", "cue": "sane.", "offset": 0.2, "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "sane-insane-buzzer", "cue": "Give", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "sane-insane-buzzer", "cue": "insane.", "sfx": "zap", "volume": 0.5 },
+    { "scene": "sane-insane-buzzer", "cue": "insane.", "offset": 0.3, "sfx": "clank", "volume": 0.4 },
+    { "scene": "sane-insane-buzzer", "cue": "insane.", "offset": 0.7, "sfx": "slide-down", "volume": 0.4 },
+
+    { "scene": "diagnostic-criteria", "cue": "This", "offset": 0.05, "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "diagnostic-criteria", "cue": "light-years", "sfx": "thunk", "volume": 0.3 },
+    { "scene": "diagnostic-criteria", "cue": "away.", "at": "after", "offset": -0.1, "sfx": "whoosh", "volume": 0.4 },
+
+    { "scene": "orderly-door-slot", "cue": "Anyway,", "offset": 0.75, "sfx": "boing", "volume": 0.45 },
+    { "scene": "orderly-door-slot", "cue": "Anyway,", "offset": 1.05, "sfx": "boing", "volume": 0.3 },
+    { "scene": "orderly-door-slot", "cue": "orderly", "sfx": "squeak", "volume": 0.3 },
+    { "scene": "orderly-door-slot", "cue": "slides", "sfx": "click", "volume": 0.45 },
+    { "scene": "orderly-door-slot", "cue": "medication", "sfx": "tick", "volume": 0.4 },
+    { "scene": "orderly-door-slot", "cue": "medication", "at": "after", "sfx": "whistle", "volume": 0.3 },
+    { "scene": "orderly-door-slot", "cue": "Nobody", "sfx": "boing", "volume": 0.3 },
+    { "scene": "orderly-door-slot", "cue": "accidentally", "sfx": "marker", "volume": 0.4 },
+    { "scene": "orderly-door-slot", "cue": "accidentally", "offset": 0.6, "sfx": "clank", "volume": 0.35 },
+    { "scene": "orderly-door-slot", "cue": "builds", "sfx": "hammer", "volume": 0.3 },
+    { "scene": "orderly-door-slot", "cue": "carrier", "sfx": "marker", "volume": 0.35 },
+    { "scene": "orderly-door-slot", "cue": "bomb.", "sfx": "marker", "volume": 0.35 },
+    { "scene": "orderly-door-slot", "cue": "bomb.", "at": "after", "sfx": "scratch", "volume": 0.45 },
+
+    { "scene": "war-supply-chain", "cue": "millions", "sfx": "marker", "volume": 0.35 },
+    { "scene": "war-supply-chain", "cue": "together", "sfx": "pop", "volume": 0.3 },
+    { "scene": "war-supply-chain", "cue": "mine", "offset": 0.3, "sfx": "clank", "volume": 0.35 },
+    { "scene": "war-supply-chain", "cue": "alloys,", "sfx": "sizzle", "volume": 0.3 },
+    { "scene": "war-supply-chain", "cue": "weapons,", "sfx": "toaster", "volume": 0.4 },
+    { "scene": "war-supply-chain", "cue": "planes", "sfx": "airplane", "volume": 0.3 },
+    { "scene": "war-supply-chain", "cue": "are,", "at": "after", "sfx": "boom", "volume": 0.35 },
+    { "scene": "war-supply-chain", "cue": "pay", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "war-supply-chain", "cue": "annually,", "sfx": "scratch", "volume": 0.3 },
+    { "scene": "war-supply-chain", "cue": "forever.", "sfx": "whirr", "volume": 0.35 },
+    { "scene": "war-supply-chain", "cue": "largest", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "war-supply-chain", "cue": "largest", "at": "after", "sfx": "pop", "volume": 0.4 },
+
+    { "scene": "chain-goes-dark", "cue": "Ending", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "chain-goes-dark", "cue": "Ending", "offset": 0.6, "sfx": "marker", "volume": 0.3 },
+    { "scene": "chain-goes-dark", "cue": "NOT", "sfx": "switch", "volume": 0.7 },
+
+    { "scene": "centrifuge-vs-rocks", "cue": "cascades,", "sfx": "hum", "volume": 0.3 },
+    { "scene": "centrifuge-vs-rocks", "cue": "attempted.", "sfx": "click", "volume": 0.45 },
+    { "scene": "centrifuge-vs-rocks", "cue": "attempted.", "offset": 0.12, "sfx": "whirr", "volume": 0.3 },
+    { "scene": "centrifuge-vs-rocks", "cue": "nothing.", "sfx": "pop", "volume": 0.5 },
+    { "scene": "centrifuge-vs-rocks", "cue": "nothing.", "offset": 0.6, "sfx": "pop", "volume": 0.3 },
+    { "scene": "centrifuge-vs-rocks", "cue": "nothing.", "at": "after", "sfx": "crickets", "volume": 0.22 },
+    { "scene": "centrifuge-vs-rocks", "cue": "Rocks", "offset": 0.4, "sfx": "thunk", "volume": 0.3 },
+    { "scene": "centrifuge-vs-rocks", "cue": "day.", "sfx": "tick", "volume": 0.4 },
+    { "scene": "centrifuge-vs-rocks", "cue": "colored", "sfx": "thunk", "volume": 0.3 },
+    { "scene": "centrifuge-vs-rocks", "cue": "thousands", "sfx": "tick", "volume": 0.3 },
+    { "scene": "centrifuge-vs-rocks", "cue": "thousands", "offset": 0.14, "sfx": "tick", "volume": 0.3 },
+    { "scene": "centrifuge-vs-rocks", "cue": "thousands", "offset": 0.26, "sfx": "tick", "volume": 0.3 },
+    { "scene": "centrifuge-vs-rocks", "cue": "years.", "offset": 0.25, "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "centrifuge-vs-rocks", "cue": "years.", "at": "after", "sfx": "click", "volume": 0.4 },
+
+    { "scene": "billionaire-pdf", "cue": "But", "offset": 0.35, "sfx": "clank", "volume": 0.45 },
+    { "scene": "billionaire-pdf", "cue": "unrealistic", "sfx": "splat", "volume": 0.4 },
+    { "scene": "billionaire-pdf", "cue": "physically", "sfx": "boing", "volume": 0.35 },
+    { "scene": "billionaire-pdf", "cue": "isn't", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "billionaire-pdf", "cue": "Getting", "offset": 0.3, "sfx": "thunk", "volume": 0.3 },
+    { "scene": "billionaire-pdf", "cue": "read", "sfx": "pop", "volume": 0.4 },
+    { "scene": "billionaire-pdf", "cue": "P.D.F.", "sfx": "fire", "volume": 0.35 },
+    { "scene": "billionaire-pdf", "cue": "is.", "n": 3, "sfx": "splat", "volume": 0.4 },
+    { "scene": "billionaire-pdf", "cue": "is.", "n": 3, "at": "after", "sfx": "huff", "volume": 0.35 }
+  ]
+}

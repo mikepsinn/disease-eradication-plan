@@ -1,0 +1,267 @@
+<template id="wallpaper-burning-building-template">
+  <!-- wallpaper-burning-building · Layer B (storyboards/part-06-leaders-arent-the-problem.md): in a living room whose
+       curtains are already on fire and whose ceiling is rolling with smoke, a smiling voter wallpapers blue stripes over
+       the red ones (right over the fire extinguisher). The last strip goes up; he steps back, pleased, hands on hips. The
+       flames jump from the curtains onto the new wallpaper and up his trouser leg; he goes up in flames all over, hair
+       burning straight up, still smiling. Then he unrolls a fresh roll of red stripes and starts pasting it over the blue. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #wallpaper-burning-building-cam, #wallpaper-burning-building-bg, #wallpaper-burning-building-art, #wallpaper-burning-building-pip, #wallpaper-burning-building-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="wallpaper-burning-building" data-width="1920" data-height="1080" data-start="0" data-duration="4.4">
+    <div id="wallpaper-burning-building-cam">
+      <div id="wallpaper-burning-building-bg"></div>
+      <div id="wallpaper-burning-building-art"></div>
+      <div id="wallpaper-burning-building-pip"></div>
+    </div>
+    <div id="wallpaper-burning-building-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script>
+    (function () {
+      var ID = "wallpaper-burning-building";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line;
+      function f1(n) { return (+n).toFixed(1); }
+      function mix(a, b) { var o = {}, x; for (x in a) o[x] = a[x]; for (x in b) o[x] = b[x]; return o; }
+
+      // ── Layout per shape ──
+      // room: the back wall [left, right, ceiling, floor] and the floorboards' depth; N strips of wallpaper across it;
+      // win: the window [x, y, w, h]; ext: the fire extinguisher under strip ext[0] at [x, y]; man: his scale and his
+      // three places (pasting, stepped back, pasting again); last: the strip that goes up on "wallpaper"; redOn: the
+      // strip the red roll goes over; bucket: the paste bucket on the floor.
+      var L = V
+        ? { room: [60, 1020, 452, 1372], boards: 70, N: 6, win: [130, 540, 240, 300], ext: [4, 790, 1120], man: 2.75, at: [670, 785, 470, 655], last: 5, redOn: 4, bucket: 300 }
+        : { room: [90, 1570, 150, 790], boards: 80, N: 8, win: [220, 250, 260, 300], ext: [5, 1105, 600], man: 2.5, at: [1095, 1262, 920, 1085], last: 7, redOn: 6, bucket: 760 };
+      var X0 = L.room[0], X1 = L.room[1], TOP = L.room[2], FLOOR = L.room[3], SW = (X1 - X0) / L.N;
+      var stripX = function (i) { return X0 + i * SW; };
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // a strip of striped wallpaper, x..x+SW, ceiling to floor: cream with three bands of color
+      function strip(x, col, cls) {
+        var h = FLOOR - TOP, bands = "";
+        for (var b = 0; b < 3; b++) {
+          var bx = x + SW * (0.12 + b * 0.33);
+          bands += '<rect x="' + f1(bx) + '" y="' + TOP + '" width="' + f1(SW * 0.11) + '" height="' + h + '" fill="' + col + '"/>' +
+            '<rect x="' + f1(bx + SW * 0.15) + '" y="' + TOP + '" width="' + f1(SW * 0.03) + '" height="' + h + '" fill="' + col + '"/>';
+        }
+        return '<g' + (cls ? ' class="' + cls + '"' : "") + '><rect x="' + f1(x) + '" y="' + TOP + '" width="' + f1(SW) + '" height="' + h + '" fill="#F6EEDA"/>' + bands +
+          '<path d="M' + f1(x) + "," + TOP + " V" + FLOOR + '" stroke="' + INK + '" stroke-width="2" opacity="0.55"/></g>';
+      }
+      // the unrolled end of a roll of wallpaper: a cylinder lying across the strip
+      function roll(x, w, col) {
+        return '<g><rect x="' + f1(x - 6) + '" y="-18" width="' + f1(w + 12) + '" height="36" rx="16" fill="#F6EEDA" stroke="' + INK + '" stroke-width="4"/>' +
+          [0.2, 0.5, 0.8].map(function (u) { return '<rect x="' + f1(x + w * u - 5) + '" y="-16" width="10" height="32" fill="' + col + '"/>'; }).join("") +
+          '<ellipse cx="' + f1(x + w + 4) + '" cy="0" rx="7" ry="16" fill="#E9DFC4" stroke="' + INK + '" stroke-width="3"/><ellipse cx="' + f1(x + w + 4) + '" cy="0" rx="3" ry="7" fill="' + INK + '"/></g>';
+      }
+      // smoke rolling along the ceiling: puffs in KIT.nuke's cloud style
+      function puffs(y, n, seed) {
+        var r = KIT.rng(seed), list = [];
+        for (var i = 0; i < n; i++) list.push([X0 + 10 + ((X1 - X0 - 20) * (i + r() * 0.5)) / n, y + (r() - 0.5) * 30, 38 + r() * 26]);
+        return list.map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + f1(c[2]) + '" fill="' + INK + '" stroke="' + INK + '" stroke-width="9"/>'; }).join("") +
+          list.map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + f1(c[2]) + '" fill="#8E8780"/>'; }).join("") +
+          list.map(function (c, i) { return i % 2 ? "" : '<circle cx="' + f1(c[0] - c[2] * 0.25) + '" cy="' + f1(c[1] - c[2] * 0.3) + '" r="' + f1(c[2] * 0.42) + '" fill="#C9C2B8" opacity="0.85"/>'; }).join("");
+      }
+
+      // ── The room ──
+      var out = KIT.paperDefs(ID);
+      var wallH = FLOOR - TOP;
+      // the old wallpaper (red stripes) and the new (blue stripes): strips before `last - 1` are already blue
+      for (var i = 0; i < L.N; i++) out += strip(stripX(i), C.war);
+      // the fire extinguisher, about to be papered over
+      var E = L.ext, ext = '<g transform="translate(' + E[1] + "," + E[2] + ')"><path d="M-22,-4 V-86 Q-22,-104 0,-104 Q22,-104 22,-86 V-4 Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="4"/>' +
+        '<path d="M-6,-104 V-118 H10 L26,-112 M10,-118 V-104" fill="none" stroke="' + INK + '" stroke-width="5" stroke-linejoin="miter"/><path d="M22,-92 Q46,-80 40,-30" fill="none" stroke="' + INK + '" stroke-width="5"/>' +
+        '<rect x="-16" y="-72" width="32" height="26" fill="#FBF6E6" stroke="' + INK + '" stroke-width="2"/><text x="0" y="-55" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="11" fill="' + INK + '">FIRE</text></g>';
+      out += ext;
+      // the new blue strips: each its own group (the scene shows them in turn); the extinguisher's strip shows its bump
+      for (var j = 0; j < L.N; j++) {
+        var bd = "M" + (E[1] - 25) + "," + (E[2] - 2) + " V" + (E[2] - 88) + " Q" + (E[1] - 25) + "," + (E[2] - 108) + " " + E[1] + "," + (E[2] - 108) + " Q" + (E[1] + 25) + "," + (E[2] - 108) + " " + (E[1] + 25) + "," + (E[2] - 88) + " V" + (E[2] - 2) + " Z";
+        // (the red shows through the new paper, and so does the word FIRE)
+        var bump = j === E[0] ? '<path d="' + bd + '" fill="#EDC6B6"/><path d="' + bd + '" fill="url(#' + ID + '-hatch)" opacity="0.3"/>' +
+          '<text x="' + E[1] + '" y="' + (E[2] - 55) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="13" fill="' + C.war + '" opacity="0.55">FIRE</text>' +
+          '<path d="' + bd + '" fill="none" stroke="' + INK + '" stroke-width="3.4"/>' +
+          '<path d="M' + (E[1] - 14) + "," + (E[2] - 96) + " Q" + (E[1] - 18) + "," + (E[2] - 60) + " " + (E[1] - 16) + "," + (E[2] - 12) + '" stroke="#FFFFFF" stroke-width="6" fill="none"/>' +
+          '<path d="M' + (E[1] + 2) + "," + (E[2] - 112) + " l12,-6 l26,10 l-4,8 Z" + '" fill="' + INK + '"/><path d="M' + (E[1] + 25) + "," + (E[2] - 90) + " Q" + (E[1] + 50) + "," + (E[2] - 78) + " " + (E[1] + 44) + "," + (E[2] - 30) + '" fill="none" stroke="' + INK + '" stroke-width="6"/>' : "";
+        out += '<g id="' + ID + "-blue-" + j + '">' + strip(stripX(j), C.peri) + bump + "</g>";
+      }
+      // the red strip he pastes back over the blue at the end
+      out += '<g id="' + ID + '-red-new">' + strip(stripX(L.redOn), C.war) + "</g>";
+      // the window: the burning night outside, the frame, and two curtains already on fire
+      var Wn = L.win, wx = Wn[0], wy = Wn[1], ww = Wn[2], wh = Wn[3];
+      out += '<rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="' + C.deep + '"/>' +
+        '<circle cx="' + (wx + ww * 0.6) + '" cy="' + (wy + wh) + '" r="' + ww * 0.55 + '" fill="' + C.rust + '"/><circle cx="' + (wx + ww * 0.6) + '" cy="' + (wy + wh) + '" r="' + ww * 0.36 + '" fill="' + C.orange + '"/>' +
+        '<g id="' + ID + '-outside">' + KIT.flames(wx + ww * 0.3, wy + wh, 0.9) + KIT.flames(wx + ww * 0.72, wy + wh, 1.2) + "</g>" +
+        KIT.star(wx + ww * 0.2, wy + wh * 0.18, 8, C.yellow) + KIT.star(wx + ww * 0.8, wy + wh * 0.3, 6, C.cream) +
+        '<rect x="' + (wx - 10) + '" y="' + (wy - 10) + '" width="' + (ww + 20) + '" height="' + (wh + 20) + '" fill="none" stroke="' + INK + '" stroke-width="20"/>' +
+        '<rect x="' + (wx - 10) + '" y="' + (wy - 10) + '" width="' + (ww + 20) + '" height="' + (wh + 20) + '" fill="none" stroke="#FBF6E6" stroke-width="12"/>' +
+        '<path d="M' + (wx + ww / 2) + "," + wy + " V" + (wy + wh) + " M" + wx + "," + (wy + wh / 2) + " H" + (wx + ww) + '" stroke="#FBF6E6" stroke-width="10"/>' +
+        '<path d="M' + (wx + ww / 2) + "," + wy + " V" + (wy + wh) + " M" + wx + "," + (wy + wh / 2) + " H" + (wx + ww) + '" stroke="' + INK + '" stroke-width="2"/>' +
+        '<rect x="' + (wx - 26) + '" y="' + (wy + wh + 10) + '" width="' + (ww + 52) + '" height="16" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="4"/>';
+      function curtain(x, dir) {
+        var w = ww * 0.3, top = wy - 34, bot = wy + wh + 70, d = "M" + x + "," + top + " H" + (x + dir * w) + " L" + (x + dir * w * 0.7) + "," + bot + " L" + (x - dir * w * 0.15) + "," + bot + " Z";
+        var pleats = [0.25, 0.5, 0.75].map(function (u) { return "M" + f1(x + dir * w * u) + "," + top + " L" + f1(x + dir * w * u * 0.85) + "," + bot; }).join(" ");
+        return '<path d="' + d + '" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="4" stroke-linejoin="miter"/><path d="' + pleats + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+          '<path d="' + d + '" fill="url(#' + ID + '-hred)" opacity="0.5"/>';
+      }
+      out += '<rect x="' + (wx - 70) + '" y="' + (wy - 44) + '" width="' + (ww + 140) + '" height="12" rx="6" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="4"/>' +
+        curtain(wx - 12, -1) + curtain(wx + ww + 12, 1);
+      // the flames already on the curtains
+      var cf = [[wx - 40, wy + wh * 0.35, 0.75], [wx - 30, wy + wh + 40, 0.95], [wx + ww + 40, wy + wh * 0.5, 0.85], [wx + ww + 34, wy + wh + 50, 1.0], [wx - 46, wy - 20, 0.6], [wx + ww + 46, wy, 0.65]];
+      out += '<g id="' + ID + '-curtain-fire">' + cf.map(function (f) { return KIT.flames(f[0], f[1], f[2]); }).join("") + "</g>";
+      // the ceiling, the skirting board and the floorboards
+      out += '<path d="M' + X0 + "," + TOP + " H" + X1 + '" stroke="' + INK + '" stroke-width="6"/>' +
+        '<rect x="' + X0 + '" y="' + (FLOOR - 16) + '" width="' + (X1 - X0) + '" height="16" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="4"/>' +
+        '<rect x="' + X0 + '" y="' + FLOOR + '" width="' + (X1 - X0) + '" height="' + L.boards + '" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="5"/>' +
+        '<rect x="' + X0 + '" y="' + FLOOR + '" width="' + (X1 - X0) + '" height="' + L.boards + '" fill="url(#' + ID + '-hatch)" opacity="0.18"/>';
+      for (var fb = 1; fb < 4; fb++) out += '<path d="M' + X0 + "," + (FLOOR + (fb * L.boards) / 4) + " H" + X1 + '" stroke="' + INK + '" stroke-width="2" opacity="0.6"/>';
+      for (var fv = 0; fv < 12; fv++) { var bx = X0 + ((fv + (fv % 2) * 0.5) * (X1 - X0)) / 12, by = FLOOR + ((fv % 4) * L.boards) / 4; out += '<path d="M' + f1(bx) + "," + by + " v" + L.boards / 4 + '" stroke="' + INK + '" stroke-width="2" opacity="0.6"/>'; }
+      out += '<path d="M' + X0 + "," + TOP + " V" + (FLOOR + L.boards) + " M" + X1 + "," + TOP + " V" + (FLOOR + L.boards) + '" stroke="' + INK + '" stroke-width="6"/>';
+      // the paste bucket
+      var bk = L.bucket;
+      out += '<g transform="translate(' + bk + "," + FLOOR + ')"><path d="M-40,-80 H40 L32,0 H-32 Z" fill="' + C.peri + '" stroke="' + INK + '" stroke-width="4" stroke-linejoin="miter"/>' +
+        '<ellipse cx="0" cy="-80" rx="40" ry="9" fill="#FBF6E6" stroke="' + INK + '" stroke-width="4"/><path d="M-40,-80 Q0,-140 40,-80" fill="none" stroke="' + INK + '" stroke-width="3"/>' +
+        '<text x="0" y="-36" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="20" fill="#FBF6E6">PASTE</text></g>';
+      // flames that catch on the new wallpaper, near the window first, then everywhere
+      var R = KIT.rng(77), wallFire = [];
+      for (var wf = 0; wf < (V ? 9 : 12); wf++) {
+        var fx = wx + ww + 70 + (wf / (V ? 9 : 12)) * (X1 - wx - ww - 140) + (R() - 0.5) * 40, fy = TOP + wallH * (0.3 + R() * 0.6);
+        wallFire.push([fx, fy, 0.7 + R() * 0.55]);
+      }
+      out += '<g id="' + ID + '-wall-fire">' + wallFire.map(function (f, n) { return '<g class="wf" data-n="' + n + '">' + KIT.flames(f[0], f[1], f[2]) + "</g>"; }).join("") + "</g>";
+      // the smoke under the ceiling
+      out += '<g transform="translate(0,0)"><g id="' + ID + '-smoke"><rect x="' + (X0 - 4) + '" y="' + (TOP - 30) + '" width="' + (X1 - X0 + 8) + '" height="58" fill="#8E8780" stroke="' + INK + '" stroke-width="5"/>' +
+        puffs(TOP + 30, V ? 16 : 26, 5) + "</g></g>";
+
+      // ── The man ──
+      var MAN = { tone: 2, outfit: "shirt", color: 3, look: "right" };
+      var POSES = {
+        brushUp: mix(MAN, { mood: "smile", arms: [[-14, -5], [146, 162]] }),
+        brushDn: mix(MAN, { mood: "smile", arms: [[-14, -5], [116, 138]] }),
+        proud: mix(MAN, { mood: "smile", arms: [[-62, 38], [62, -38]] }),
+        roll: mix(MAN, { mood: "smile", arms: [[38, 78], [72, 96]] }),
+        paste: mix(MAN, { mood: "smile", arms: [[-14, -5], [128, 150]] }),
+      };
+      // a paste brush in the right hand: a wooden handle and a wide bristle head, along the forearm
+      function brush(o) {
+        var r = KIT.rig(o), h = r.hand[1], a = (o.arms[1][1] * Math.PI) / 180, dx = Math.sin(a), dy = Math.cos(a);
+        var ex = h[0] + dx * 22, ey = h[1] + dy * 22, nx = -dy, ny = dx;
+        return '<path d="M' + f1(h[0] - dx * 4) + "," + f1(h[1] - dy * 4) + " L" + f1(ex) + "," + f1(ey) + '" stroke="' + INK + '" stroke-width="5"/><path d="M' + f1(h[0] - dx * 4) + "," + f1(h[1] - dy * 4) + " L" + f1(ex) + "," + f1(ey) + '" stroke="' + C.tan + '" stroke-width="2.4"/>' +
+          '<path d="M' + f1(ex + nx * 9) + "," + f1(ey + ny * 9) + " L" + f1(ex - nx * 9) + "," + f1(ey - ny * 9) + " L" + f1(ex - nx * 9 + dx * 9) + "," + f1(ey - ny * 9 + dy * 9) + " L" + f1(ex + nx * 9 + dx * 9) + "," + f1(ey + ny * 9 + dy * 9) + ' Z" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4" stroke-linejoin="miter"/>';
+      }
+      // the red roll held in both hands
+      function heldRoll(o) {
+        var r = KIT.rig(o), a = r.hand[0], b = r.hand[1], cx = (a[0] + b[0]) / 2, cy = (a[1] + b[1]) / 2 - 4;
+        return '<g transform="translate(' + f1(cx) + "," + f1(cy) + ') rotate(-8)"><rect x="-30" y="-9" width="60" height="18" rx="8" fill="#F6EEDA" stroke="' + INK + '" stroke-width="2.6"/>' +
+          [-16, 0, 16].map(function (x) { return '<rect x="' + (x - 3) + '" y="-8" width="6" height="16" fill="' + C.war + '"/>'; }).join("") + "</g>";
+      }
+      // hair burning straight up (in the face's units), for the poses on fire
+      // flames all over him (hips, legs, the far shoulder, the back of his head and his hair), leaving his smile in view
+      function fireOn(o) {
+        var r = KIT.rig(o);
+        return '<g class="on-fire">' + KIT.flames(r.hip[0][0] - 2, 82, 0.42) + KIT.flames(r.hip[1][0] + 3, 88, 0.36) + KIT.flames(-4, r.hipY + 10, 0.8) +
+          KIT.flames(r.shoulder[0][0] - 8, r.shoulder[0][1] + 12, 0.5) + KIT.flames(r.top[0] - 14, r.top[1] + 22, 0.42) + KIT.flames(r.top[0] - 1, r.top[1] + 4, 0.72) + "</g>";
+      }
+      var HAIR = '<path d="M-15,-14 L-22,-34 L-10,-24 L-7,-46 L0,-27 L6,-48 L10,-26 L20,-40 L17,-20 L26,-26 L16,-12 Z" fill="#1B1714" stroke="' + INK + '" stroke-width="1.8"/>';
+      function man(name, fire, leg) {
+        var o = POSES[name], m = KIT.person(o);
+        if (fire) m = m.replace("<!--face-end-->", HAIR + "<!--face-end-->");
+        var extra = name === "roll" ? heldRoll(o) : brush(o);
+        if (leg) { var r = KIT.rig(o); extra += '<g class="leg-fire">' + KIT.flames(r.hip[1][0] + 4, 96, 0.34) + "</g>"; }
+        return m + extra + (fire ? fireOn(o) : "");
+      }
+      var MANP = [["brushUp", 0], ["brushDn", 0], ["proud", 0], ["proudLeg", 0, 1], ["proudFire", 1], ["rollFire", 1], ["pasteFire", 1]];
+      var poseName = { brushUp: "brushUp", brushDn: "brushDn", proud: "proud", proudLeg: "proud", proudFire: "proud", rollFire: "roll", pasteFire: "paste" };
+      out += '<g id="' + ID + '-man">' + MANP.map(function (p, n) {
+        return '<g data-pose="' + p[0] + '"' + (n ? ' opacity="0"' : "") + ">" + man(poseName[p[0]], p[1], p[2]) + "</g>";
+      }).join("") + "</g>";
+      // the roll at the foot of the last strip, and the red roll's end as it goes up
+      out += '<g id="' + ID + '-roll-last">' + roll(stripX(L.last), SW, C.peri) + "</g>";
+      out += '<g id="' + ID + '-roll-red">' + roll(stripX(L.redOn), SW, C.war) + "</g>";
+      q("art").innerHTML = KIT.svg(W, H, out);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var tSw = cue("Switching"), tWall = cue("wallpaper"), tBurn = cue("burning"), tBld = cue("building."), tAfter = KIT.after(ID, "building.");
+      var manEl = q("man");
+      function pose(name, t) { Array.prototype.forEach.call(manEl.children, function (c) { tl.set(c, { opacity: c.getAttribute("data-pose") === name ? 1 : 0 }, t); }); }
+      function place(x, t, dur) { tl.to(walk, { x: x - L.at[0], duration: dur || 0.01, ease: "power2.inOut" }, t); }
+      // the man: drawn around (0,0) feet at y 100, placed on the floor at L.at[0]
+      manEl.setAttribute("transform", "translate(" + L.at[0] + "," + (FLOOR - 100 * L.man) + ") scale(" + L.man + ")");
+      var manWrap = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      manEl.parentNode.insertBefore(manWrap, manEl);
+      manWrap.appendChild(manEl);
+      var walk = manWrap;
+      gsap.set(walk, { x: 0, y: 0 });
+
+      // the strips: the blue ones up to the one he is smoothing are on; the last one is still to come; the red one later
+      for (var s = 0; s < L.N; s++) gsap.set(q("blue-" + s), { opacity: s < L.last ? 1 : 0 });
+      gsap.set(q("red-new"), { opacity: 0 });
+      // the fires burn the whole scene; the smoke rolls along the ceiling
+      var FE = D - 0.16;
+      KIT.flicker(tl, q("curtain-fire"), 0, FE);
+      KIT.flicker(tl, q("outside"), 0, FE);
+      var smoke = q("smoke");
+      gsap.set(smoke, { svgOrigin: X0 + " " + TOP });
+      tl.fromTo(smoke, { x: -30, scaleY: 0.85 }, { x: 30, scaleY: 1, duration: D, ease: "none" }, 0);
+      tl.to(smoke, { scaleY: 1.45, duration: 0.6, ease: "power2.out" }, tBld);
+
+      // "Switching": he smooths a blue strip down with the paste brush (pat), stroke after stroke
+      var strokes = [0, 0.32, 0.62, 0.92];
+      strokes.forEach(function (t0, n) { pose("brushUp", Math.max(0, t0 - 0.14)); pose("brushDn", t0 + 0.02); });
+      // "wallpaper": the last strip drops down from the ceiling as its roll unrolls to the floor; he walks over, pats
+      // it flat (pat) and steps back, pleased, hands on hips
+      var last = q("blue-" + L.last), rollL = q("roll-last"), tDrop = tWall - 0.62, tDropEnd = tWall - 0.12;
+      gsap.set(last, { svgOrigin: stripX(L.last) + " " + TOP });
+      tl.fromTo(last, { opacity: 1, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: tDropEnd - tDrop, ease: "power1.in" }, tDrop);
+      tl.fromTo(rollL, { y: TOP, opacity: 1 }, { y: FLOOR - 24, duration: tDropEnd - tDrop, ease: "power1.in" }, tDrop);
+      tl.to(rollL, { opacity: 0, duration: 0.05 }, tDropEnd + 0.02);
+      place(L.at[1], tDrop - 0.1, 0.4);
+      pose("brushUp", tWall - 0.16);
+      pose("brushDn", tWall);
+      place(L.at[2], tWall + 0.16, 0.42);
+      pose("proud", tWall + 0.22);
+      tl.to(walk, { y: -10, duration: 0.12, yoyo: true, repeat: 1, ease: "power1.out" }, tWall + 0.62);
+      // "burning": the flames jump from the curtains along the new wallpaper (fire) and up his trouser leg
+      var wfs = q("wall-fire").querySelectorAll(".wf");
+      Array.prototype.forEach.call(wfs, function (g, n) {
+        var fl = g.querySelector(".flames"), t0 = n < wfs.length / 2 ? tBurn + n * 0.05 : tBld + (n - wfs.length / 2) * 0.04;
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0 }, { scale: 1, duration: 0.18, ease: "back.out(2)" }, t0);
+      });
+      KIT.flicker(tl, q("wall-fire"), tBurn, FE);
+      pose("proudLeg", tBurn + 0.1);
+      var legFire = manEl.querySelector('[data-pose="proudLeg"] .leg-fire .flames');
+      gsap.set(legFire, { svgOrigin: "0 0" });
+      tl.fromTo(legFire, { scale: 0 }, { scale: 1, duration: 0.15, ease: "back.out(2)" }, tBurn + 0.1);
+      KIT.flicker(tl, manEl.querySelector('[data-pose="proudLeg"]'), tBurn + 0.1, tBld);
+      // "building.": he goes up all over (fire), hair straight up, still smiling, and gives the wall a satisfied nod
+      pose("proudFire", tBld);
+      var onFire = manEl.querySelectorAll('[data-pose$="Fire"] .on-fire');
+      gsap.set(onFire, { svgOrigin: "0 20" });
+      tl.fromTo(manEl.querySelector('[data-pose="proudFire"] .on-fire'), { scale: 0.3 }, { scale: 1, duration: 0.14, ease: "power2.out" }, tBld);
+      ["proudFire", "rollFire", "pasteFire"].forEach(function (p) { KIT.flicker(tl, manEl.querySelector('[data-pose="' + p + '"]'), tBld, FE); });
+      // after "building.": he pulls out a roll of red stripes, steps up and slaps it on over the blue (pat)
+      pose("rollFire", tAfter - 0.5);
+      place(L.at[3], tAfter - 0.45, 0.36);
+      pose("pasteFire", tAfter - 0.06);
+      var red = q("red-new"), rollR = q("roll-red");
+      gsap.set(red, { svgOrigin: stripX(L.redOn) + " " + TOP });
+      tl.fromTo(red, { opacity: 0, scaleY: 0 }, { opacity: 1, scaleY: 0.62, duration: D - tAfter + 0.05, ease: "power1.out" }, tAfter - 0.05);
+      tl.fromTo(rollR, { y: TOP, opacity: 0 }, { y: TOP + (FLOOR - TOP) * 0.62, opacity: 1, duration: D - tAfter + 0.05, ease: "power1.out" }, tAfter - 0.05);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

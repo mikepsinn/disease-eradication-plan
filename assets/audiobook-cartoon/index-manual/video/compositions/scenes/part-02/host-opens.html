@@ -1,0 +1,54 @@
+<template id="host-opens-template">
+  <!-- host-opens · style "atomic" (cartoon-style-bible.md): the host's one set. Wishonia stands at a
+       navy lectern in front of a plain studio wall with a spotlight pool behind her, like the host of a 1950s classroom
+       film. The shot irises in on her face; the camera pushes in slowly; on "magnificent" she throws her arms wide and
+       the studio light comes up a notch. The same set, drawn by the same code, closes the film (host-closes). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+    #host-opens-weave, #host-opens-cam, #host-opens-wall, #host-opens-wish, #host-opens-front, #host-opens-iris, #host-opens-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="host-opens" data-width="1920" data-height="1080" data-start="0" data-duration="3.42">
+    <div id="host-opens-weave">
+      <div id="host-opens-cam">
+        <div id="host-opens-wall"></div>
+        <div id="host-opens-wish"></div>
+        <div id="host-opens-front"></div>
+      </div>
+      <div id="host-opens-iris"></div>
+    </div>
+    <div id="host-opens-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "host-opens";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 23);
+
+      // ── The host's set (KIT.studio): the wall, Wishonia at the lectern, and one slow push in on her face.
+      var set = KIT.studio(tl, ID, { cam: q("cam"), wall: q("wall"), wish: q("wish"), front: q("front") }), S = set.S;
+
+      // ── The iris opens on her face at the head of the shot.
+      KIT.iris(tl, ID, q("iris"), S.face, "in", 0.04, 0.74);
+
+      // ── On "magnificent" the studio light comes up a notch.
+      gsap.set(set.pool, { svgOrigin: S.pool[0] + " " + S.pool[1] });
+      tl.fromTo(set.pool, { scale: 1 }, { scale: 1.12, duration: 0.35, ease: "back.out(2)" }, cue("magnificent:"));
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

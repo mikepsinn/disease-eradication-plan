@@ -1,0 +1,125 @@
+<template id="the-toll-template">
+  <!-- the-toll · style "atomic" (cartoon-style-bible.md): one plate, one camera move. Cut to the
+       charred family from the loop, close, on an empty field, munching their bread. "downside": they stop chewing.
+       "killed": they x-ray into skeletons that keep their grins and their loaves, and the picture drains to gray (only
+       the bread keeps its color). "three hundred": the camera pulls back while rows of headstones rise out of the
+       field behind them, row after row to the horizon. "million": 310,000,000 stamps into the sky. Then HOLD: nothing
+       moves until the cut. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #the-toll-weave, #the-toll-plate, #the-toll-num, #the-toll-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="the-toll" data-width="1920" data-height="1080" data-start="0" data-duration="6.56">
+    <div id="the-toll-weave">
+      <div id="the-toll-plate"></div>
+      <div id="the-toll-num"></div>
+    </div>
+    <div id="the-toll-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "the-toll";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 53);
+
+      // ── The plate, in plate units: the family's feet on y 0, the horizon at y -HZ, the sky above it.
+      // Rows of headstones recede toward the vanishing point (0, -HZ): row k stands DK[k] below the horizon, its
+      // stones on columns that converge there. The family is the loop's charred family, at the same scale (1.5).
+      var S = 1.5, HZ = 530, A = V ? [540, 740] : [960, 540];
+      var VIEW = V ? { close: [-20, -150, 2.2], wide: [0, -480, 1.25] } : { close: [0, -150, 2.3], wide: [0, -320, 1.0] };
+      var GROUND = ["#C8B07B", "#A9A69B"], SKY = ["#EFE3C4", "#DCD8CE"], STONE = "#E6E0D2", SHADE = "#A9AEB8";
+      var FAM = [
+        { o: { tone: 1, outfit: "shirt", color: 1, hair: 0, seed: 3 }, x: -150, k: S },
+        { o: { tone: 1, outfit: "dress", color: 3, hair: 1, seed: 2 }, x: 0, k: S },
+        { o: { tone: 1, outfit: "shirt", color: 0, hair: 0, seed: 5, build: { hs: 1.18, legs: 0.8 } }, x: 130, k: S * 0.72 },
+      ];
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      function loaf() {
+        return '<path d="M-30,6 Q-32,-14 -10,-16 Q8,-20 24,-12 Q34,-4 30,8 Q0,14 -30,6 Z" fill="#D49A4E" stroke="' + ink + '" stroke-width="3.2" stroke-linejoin="round"/>' +
+          '<path d="M-16,-8 l8,-6 M-2,-9 l8,-6 M12,-8 l8,-6" stroke="#F3DFB0" stroke-width="3" stroke-linecap="round"/>';
+      }
+      // the rows of headstones, far to near, each one path (its stones as subpaths) and its shaded sides
+      var DK = [], d = 480;
+      while (d >= 16) { DK.push(d); d *= 0.8; }
+      var halfW = (V ? 540 / VIEW.wide[2] : 960 / VIEW.wide[2]) + 80;
+      var rows = DK.map(function (dk, k) {
+        var base = -HZ + dk, sc = dk / HZ, w = 104 * sc, h = 160 * sc, step = 200 * sc, body = "", side = "";
+        for (var j = -Math.ceil(halfW / step); j <= Math.ceil(halfW / step); j++) {
+          var x = j * step, l = x - w / 2, r = x + w / 2, top = base - h + w / 2;
+          body += "M" + f(l) + "," + f(base) + " V" + f(top) + " A" + f(w / 2) + "," + f(w / 2) + " 0 0,1 " + f(r) + "," + f(top) + " V" + f(base) + " Z ";
+          side += "M" + f(r - w * 0.24) + "," + f(base) + " V" + f(top - w * 0.06) + " A" + f(w / 2) + "," + f(w / 2) + " 0 0,1 " + f(r) + "," + f(top) + " V" + f(base) + " Z ";
+        }
+        var stroke = dk > 120 ? ' stroke="' + ink + '" stroke-width="' + f(Math.max(1.2, 4 * sc)) + '" stroke-linejoin="round"' : "";
+        var mound = dk > 120 ? '<path d="M' + f(-halfW) + "," + f(base) + " H" + f(halfW) + '" stroke="#8E7A55" stroke-width="' + f(6 * sc) + '" opacity="0.5"/>' : "";
+        return { k: k, base: base, svg: '<g class="row" data-k="' + k + '">' + mound + '<path d="' + body + '" fill="' + STONE + '"' + stroke + "/>" + '<path d="' + side + '" fill="' + SHADE + '"/></g>' };
+      }).reverse();
+      // the family: charred and munching, then skeletons (each holding its loaf)
+      var LOAF_ARMS = [[-22, -112], [-8, -106]];
+      var fam = FAM.map(function (m, i) {
+        var alive = copy(m.o, { charred: true, look: "left", arms: LOAF_ARMS }), R = KIT.rig(alive);
+        var held = '<g transform="translate(' + f((R.hand[0][0] + R.hand[1][0]) / 2 - 4) + "," + f((R.hand[0][1] + R.hand[1][1]) / 2 - 4) + ') scale(0.62)">' + loaf() + "</g>";
+        return '<g id="' + ID + "-f" + i + '" transform="translate(' + m.x + "," + f(-100 * m.k) + ") scale(" + m.k + ')"><g id="' + ID + "-fb" + i + '">' +
+          '<g id="' + ID + "-alive" + i + '">' + KIT.person(alive) + held + "</g>" +
+          '<g id="' + ID + "-bones" + i + '">' + KIT.person(copy(alive, { charred: false, skeleton: true })) + held + "</g></g></g>";
+      }).join("");
+      q("plate").innerHTML = KIT.svg(W, H,
+        '<rect id="' + ID + '-ground" x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + GROUND[0] + '"/>' +
+        '<g id="' + ID + '-cam"><rect id="' + ID + '-sky" x="-4000" y="' + (-HZ - 4000) + '" width="8000" height="4000" fill="' + SKY[0] + '"/>' +
+        '<path d="M-4000,' + -HZ + ' H4000" stroke="#8E7A55" stroke-width="3" opacity="0.6"/>' +
+        rows.map(function (r) { return r.svg; }).join("") + fam + "</g>");
+      var cam = q("cam"), groundEl = q("ground"), skyEl = q("sky");
+      var rowEls = Array.prototype.slice.call(cam.querySelectorAll(".row"));
+
+      // ── The number, in the sky, on screen (it does not move with the camera)
+      var N = V ? { y: 380, size: 118 } : { y: 200, size: 172 };
+      q("num").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-n"><text x="' + W / 2 + '" y="' + N.y + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + N.size + '" letter-spacing="4" fill="' + C.navy + '">310,000,000</text></g>');
+
+      // ── Cues
+      var tDown = cue("downside"), tKilled = cue("killed"), tThree = cue("three"), tMillion = cue("million");
+      var pull0 = tThree, pull1 = tMillion + 0.2, rise0 = tThree + 0.08, riseStep = (tMillion + 0.1 - rise0) / DK.length;
+      var smooth = KIT.smooth, mix = KIT.mix;
+      // the camera: close on the family, then one pull back to the field of headstones
+      var camera = KIT.camera(VIEW, [[pull0, "close"], [pull1, "wide"]], A);
+      var famBox = FAM.map(function (m, i) { return q("fb" + i); });
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+        // munching until "downside", then still
+        famBox.forEach(function (g, i) {
+          var bob = t < tDown ? -Math.abs(Math.sin(t * 6 + i * 1.3)) * 3 : 0;
+          g.setAttribute("transform", "translate(0," + f(bob) + ")");
+        });
+        // the picture drains to gray after "killed" (the bread keeps its color)
+        var g = smooth((t - tKilled - 0.15) / 0.5);
+        groundEl.setAttribute("fill", mix(GROUND[0], GROUND[1], g));
+        skyEl.setAttribute("fill", mix(SKY[0], SKY[1], g));
+        // the headstones rise, row after row from the front, as the camera pulls back
+        rowEls.forEach(function (re) {
+          var k = +re.getAttribute("data-k"), base = -HZ + DK[k], u = smooth((t - rise0 - k * riseStep) / 0.22);
+          re.setAttribute("transform", u >= 1 ? "" : "translate(0," + f(base) + ") scale(1," + Math.max(0.001, u).toFixed(3) + ") translate(0," + f(-base) + ")");
+          re.setAttribute("opacity", u > 0 ? 1 : 0);
+        });
+      });
+      // "killed": each of them x-rays into a skeleton that keeps its grin and its loaf
+      FAM.forEach(function (m, i) { KIT.xray(tl, q("alive" + i), q("bones" + i), tKilled + i * 0.08); });
+      // "million": the number stamps into the sky
+      var n = q("n");
+      tl.fromTo(n, { opacity: 0, scale: 1.25, svgOrigin: W / 2 + " " + (N.y - N.size * 0.35) }, { opacity: 1, scale: 1, svgOrigin: W / 2 + " " + (N.y - N.size * 0.35), duration: 0.14, ease: "power3.in" }, tMillion);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

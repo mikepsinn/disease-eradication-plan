@@ -1,0 +1,495 @@
+<template id="treaties-you-signed-template">
+  <!-- treaties-you-signed · Layer B (storyboards/part-13-one-percent-treaty.md): slides in on a long signing table under
+       plain bunting, a landmine already sitting on it. "never": the leader (L0, orange sash) folds his arms and shakes his
+       head, grinning. "already": three rolled treaties pop up at his elbow and he looks down at them. A grumpy gas canister
+       tiptoes in; "chemical": he hurls scroll 1, CHEMICAL WEAPONS BAN, which slams flat on it; "weapons": it lets out a
+       mustard puff and he coughs. A scared germ scuttles the other way; "biological": scroll 2 splats it. "landmines":
+       scroll 3 slams on the landmine: a white flash, a boom, a mushroom cloud, and the leader stands there charred, hair
+       up, still grinning, only his eyes blinking, scroll 3 singed. "signed": his teeth twinkle. "like": the weapons maker
+       rises behind the table cradling his baby missile, a price tag on its fin; "using.": he sniffles into a hanky.
+       "fewer": the one-line 1% treaty slides in at the end of the row and a pencil rolls onto its empty signature line
+       ("them."); after "them.": the charred leader looks at the pencil and blinks, and the weapons maker hugs his baby
+       tighter. tsArt() draws that last frame; 847-civilizations shows it on its wall screen. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #treaties-you-signed-cam, #treaties-you-signed-bg, #treaties-you-signed-art, #treaties-you-signed-pip, #treaties-you-signed-grain { position: absolute; inset: 0; }
+    #treaties-you-signed-flash { position: absolute; inset: -40px; background: #FFFFFF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="treaties-you-signed" data-width="1920" data-height="1080" data-start="0" data-duration="27.22">
+    <div id="treaties-you-signed-cam">
+      <div id="treaties-you-signed-bg"></div>
+      <div id="treaties-you-signed-art"></div>
+      <!-- the landmine's white flash: over the Earth art, under Wishonia's corner (her reaction stays visible) -->
+      <div id="treaties-you-signed-flash"></div>
+      <div id="treaties-you-signed-pip"></div>
+    </div>
+    <div id="treaties-you-signed-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "treaties-you-signed";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+
+      // ── Shared with 847-civilizations.html, which draws this scene's last frame on its wall screen with tsArt(): keep
+      // the two copies the same. ──
+      // Per canvas shape. table: the line the scrolls stand on (the cloth hangs to cloth); tx: the table's ends. lx, ls: the
+      // leader's x and scale (he stands behind the table, cut off at the hips). pile: the rolled treaties at his elbow.
+      // ss: the scrolls' size; slots: where scrolls 1 to 4 stand. wx, wy, ws: the weapons maker, risen. nuke, can, germ,
+      // mine: sizes. bunt: the bunting [x0, x1, y, sag, swags]. peak: how high a hurled scroll flies. germFrom: where the
+      // germ starts. In 16:9 the leader stands at the left end; in 9:16 the row of scrolls fills the width and he stands
+      // behind it, so his head ends up over the treaties, and the weapons maker rises behind scroll 1, scroll 3 in 16:9
+      // (a scroll in front hides his legs).
+      var TS = V
+        ? { table: 1400, cloth: 1455, tx: [40, 1040], lx: 520, ls: 4.0, pile: 870, ss: 1.75, slots: [165, 400, 635, 870], wx: 165, wy: 1015, ws: 3.0, germFrom: -70,
+            nuke: 0.55, can: 1.5, germ: 1.8, mine: 1.4, bunt: [60, 1020, 690, 46, 2], peak: 820 }
+        : { table: 730, cloth: 868, tx: [52, 1868], lx: 240, ls: 3.1, pile: 420, ss: 1.75, slots: [665, 935, 1205, 1460], wx: 1205, wy: 315, ws: 3.2, germFrom: 420,
+            nuke: 0.6, can: 1.6, germ: 1.9, mine: 1.5, bunt: [70, 1700, 72, 46, 3], peak: 190 };
+      // (in 9:16 he stands a little taller, so his grin clears the treaties in front of him)
+      TS.ly = TS.table - 28 * TS.ls - (V ? 34 : 0);
+      var TS_WHITE = "#FBF6E6";
+      function tsF(n) { return String(Math.round(n * 10) / 10); }
+      function tsMix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function tsD(pts) { return "M" + pts.map(function (p) { return tsF(p[0]) + "," + tsF(p[1]); }).join(" L") + " Z"; }
+      // a shape drawn twice, a navy pass under the fill (as kit.js draws the humans)
+      function tsSolid(d, fill, w) {
+        return '<path d="' + d + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + d + '" fill="' + fill + '"/>';
+      }
+      function tsLine(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="miter"' + (extra || "") + "/>"; }
+      // the charred gag's colors (kit.js charify): any color turns a dark brown of the same lightness
+      function tsChar(col) {
+        var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
+        return "rgb(" + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ")";
+      }
+      // ── The leader (L0: the politician, tone 0, a plain orange sash) and his poses ──
+      var TS_ARMS = { idle: [[-12, -6], [12, 6]], fold: [[20, 100], [-20, -100]], reach: [[-12, -6], [40, 60]], lift: [[-12, -6], [130, 150]], hurl: [[-12, -6], [110, 100]], cough: [[40, 150], [12, 6]] };
+      function tsLead(pose, extra) { return KIT.castOpts("politician", tsMix({ tone: 0, arms: TS_ARMS[pose], mood: "grin" }, extra)); }
+      // The plain sash, over the jacket and under the arms, clipped to the jacket (the politician's "vee" build).
+      function tsSash(cid, o) {
+        var r = KIT.rig(o), T = r.shoulder[0][1] - 3, hip = r.hipY, w = (-r.shoulder[0][0] / 27) * 33, Wy = hip - 8;
+        var torso = [[-6, T - 3], [6, T - 3], [w - 4, T - 1], [w, T + 4], [13, Wy], [15, hip + 8], [2, hip + 8], [0, hip + 4], [-2, hip + 8], [-15, hip + 8], [-13, Wy], [-w, T + 4], [-w + 4, T - 1]];
+        var A = [-w + 3, T], B = [15, hip + 7], dx = B[0] - A[0], dy = B[1] - A[1], L = Math.sqrt(dx * dx + dy * dy), nx = (-dy / L) * 5.5, ny = (dx / L) * 5.5;
+        var band = [[A[0] + nx, A[1] + ny], [B[0] + nx, B[1] + ny], [B[0] - nx, B[1] - ny], [A[0] - nx, A[1] - ny]];
+        var col = o.charred ? tsChar(C.orange) : C.orange, edge = o.charred ? tsChar(C.rust) : C.rust;
+        return '<defs><clipPath id="' + cid + '"><path d="' + tsD(torso) + '"/></clipPath></defs><g clip-path="url(#' + cid + ')">' +
+          '<path d="' + tsD(band) + '" fill="' + col + '" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+          tsLine("M" + tsF(A[0] - nx * 0.55) + "," + tsF(A[1] - ny * 0.55) + " L" + tsF(B[0] - nx * 0.55) + "," + tsF(B[1] - ny * 0.55), edge, 1.6) + "</g>";
+      }
+      // In the charred drawing he keeps grinning: the white grin and teeth go back on the charred face (the jaw head's
+      // mouth line, in the face's units).
+      var TS_GRIN = '<path class="mouth" d="M-4,12.6 L17,11.6 L12,22.6 L2,22.6 Z" fill="' + TS_WHITE + '" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+        tsLine("M2.5,12.4 V22.6 M7.5,12.2 V22.6 M12.5,12 V22.6 M-1.5,17.4 H15.6", ink, 1.1);
+      function tsLeader(pid, pose, extra) {
+        var o = tsLead(pose, extra), m = KIT.person(o);
+        m = m.replace('<g class="arm-l">', tsSash(pid + "-sash-" + pose + (o.charred ? "c" : "") + (extra && extra.look2 ? "2" : ""), o) + '<g class="arm-l">');
+        if (o.charred) m = m.replace(/<path class="mouth"[^>]*\/>/, TS_GRIN);
+        // look2: the charred eyes turn toward the pencil, down the table
+        if (extra && extra.look2) m = m.replace(/<circle cx="([-\d.]+)" cy="-4" r="1.8"/g, function (x, cx) { return '<circle cx="' + (+cx + 2) + '" cy="-2.9" r="1.8"'; });
+        return m;
+      }
+      // ── The weapons maker (the cast's barrel, his baby missile) and his three drawings ──
+      var TS_WM = {
+        proud: KIT.castOpts("weaponsMaker", { mood: "smile" }),
+        sniff: KIT.castOpts("weaponsMaker", { arms: [[32, 84], [-45, -150]], holdL: "missile", mood: "sad" }),
+        hug: KIT.castOpts("weaponsMaker", { arms: [[44, 102], [-44, -102]], hold: "missile", mood: "worried" }),
+      };
+      // Where the cast's missile sits (kit.js PROPS.missile, held between both hands or in the left), and its upper fin.
+      function tsFin(o) {
+        var r = KIT.rig(o), h = r.handLocal, base = o.hold ? [(h[0][0] + h[1][0]) / 2, (h[0][1] + h[1][1]) / 2 + 2] : [h[0][0] - 2, h[0][1] + 6];
+        var a = (-14 * Math.PI) / 180, fx = -44, fy = -17;
+        return [base[0] + fx * Math.cos(a) - fy * Math.sin(a), base[1] - 6 + fx * Math.sin(a) + fy * Math.cos(a)];
+      }
+      function tsMaker(pid, pose) {
+        var o = TS_WM[pose], fin = tsFin(o), r = KIT.rig(o);
+        var out = '<g id="' + pid + "-wm-" + pose + '"' + (pose === "hug" ? "" : ' opacity="0"') + '><g id="' + pid + "-wm-" + pose + '-in">' + KIT.person(o) +
+          '<g transform="translate(' + tsF(fin[0]) + "," + tsF(fin[1]) + ')">' + KIT.props.priceTag({ text: "$4,000,000", size: 0.36, angle: -12 }) + "</g>";
+        if (pose === "sniff") {
+          var hx = r.hand[1][0], hy = r.hand[1][1];
+          out += '<g id="' + pid + '-hanky"><path d="M' + tsF(hx - 3) + "," + tsF(hy - 8) + " L" + tsF(hx + 8) + "," + tsF(hy - 9) + " L" + tsF(hx + 9) + "," + tsF(hy - 2) + " L" + tsF(hx + 5) + "," + tsF(hy + 5) + " L" + tsF(hx - 4) + "," + tsF(hy + 3) + " L" + tsF(hx - 6) + "," + tsF(hy - 3) + ' Z" fill="' + TS_WHITE + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/>' +
+            tsLine("M" + tsF(hx - 2) + "," + tsF(hy - 6) + " L" + tsF(hx + 6) + "," + tsF(hy - 7) + " M" + tsF(hx - 3) + "," + tsF(hy + 1) + " L" + tsF(hx + 4) + "," + tsF(hy), C.orange, 1.2) + "</g>" +
+            '<g transform="translate(' + tsF(r.eyes[0] + 4) + "," + tsF(r.eyes[1] + 2) + ')"><path id="' + pid + '-tear" d="M0,-3 Q-3,2 0,4 Q3,2 0,-3 Z" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="1.1" opacity="0"/></g>';
+        }
+        return out + "</g></g>";
+      }
+      // ── Props drawn here: a rolled treaty, the gas canister, the landmine, a little front-view face ──
+      function tsRoll() {
+        var r = [[-62, -16], [62, -16], [66, -12], [66, -4], [62, 0], [-62, 0], [-66, -4], [-66, -12]];
+        return tsSolid(tsD(r), TS_WHITE, 4.4) + tsLine("M-60,-3 H60", C.orange, 2) + tsLine("M-62,-15 V-1 M62,-15 V-1", ink, 1.5) +
+          tsSolid(tsD([[-7, -17], [7, -17], [7, 1], [-7, 1]]), C.war, 2.6) + tsSolid(tsD([[-3, 0], [-9, 9], [-4, 8], [-1, 2]]), C.war, 2) + tsSolid(tsD([[3, 0], [9, 9], [4, 8], [1, 2]]), C.war, 2);
+      }
+      function tsFace(x, y, k, mood) {
+        var out = "";
+        [-1, 1].forEach(function (s) {
+          var ex = x + s * 7 * k;
+          if (mood === "x") { out += tsLine("M" + tsF(ex - 3 * k) + "," + tsF(y - 3 * k) + " L" + tsF(ex + 3 * k) + "," + tsF(y + 3 * k) + " M" + tsF(ex + 3 * k) + "," + tsF(y - 3 * k) + " L" + tsF(ex - 3 * k) + "," + tsF(y + 3 * k), ink, 2 * k); return; }
+          out += '<path d="M' + tsF(ex - 4.6 * k) + "," + tsF(y) + " Q" + tsF(ex) + "," + tsF(y - 4 * k) + " " + tsF(ex + 4.6 * k) + "," + tsF(y) + " Q" + tsF(ex) + "," + tsF(y + 3.4 * k) + " " + tsF(ex - 4.6 * k) + "," + tsF(y) + ' Z" fill="' + TS_WHITE + '" stroke="' + ink + '" stroke-width="' + tsF(k) + '"/>' +
+            '<circle cx="' + tsF(ex - s * 0.6 * k) + '" cy="' + tsF(y + 0.2 * k) + '" r="' + tsF(1.5 * k) + '" fill="' + ink + '"/>' +
+            tsLine("M" + tsF(ex - 5.2 * k) + "," + tsF(y + 0.4 * k) + " Q" + tsF(ex) + "," + tsF(y - 2.4 * k) + " " + tsF(ex + 5.2 * k) + "," + tsF(y - 0.2 * k), ink, 2 * k) +
+            tsLine("M" + tsF(ex + s * 6 * k) + "," + tsF(y - 7.5 * k) + " L" + tsF(ex - s * 4 * k) + "," + tsF(y - 4 * k), ink, 2.2 * k);
+        });
+        return out + tsLine("M" + tsF(x - 6 * k) + "," + tsF(y + 11 * k) + " Q" + tsF(x) + "," + tsF(y + 5.5 * k) + " " + tsF(x + 6 * k) + "," + tsF(y + 11 * k), ink, 2.2 * k);
+      }
+      // The gas canister standing on y 0 on its tiptoes: a steel cylinder with a hazard band, a red valve and a scowl.
+      // Parts: .ts-can-leg-l / -r (hips at (-8, -14) and (8, -14)).
+      function tsCanister(pid) {
+        var body = [[-20, -14], [20, -14], [23, -19], [23, -66], [15, -78], [-15, -78], [-23, -66], [-23, -19]];
+        var stripes = "";
+        for (var x = -19; x < 20; x += 9) stripes += '<path d="' + tsD([[x, -38], [x + 4, -38], [x - 1, -29], [x - 5, -29]]) + '" fill="' + ink + '"/>';
+        var leg = function (s, cls) { return '<g class="' + cls + '">' + tsLine("M" + 8 * s + ",-14 L" + 9 * s + ",-4 L" + 7 * s + ",0", ink, 3) + '<path d="M' + (7 * s - 3) + ",1 L" + (7 * s + 6) + ",0 L" + (7 * s - 1) + ',-3 Z" fill="' + ink + '"/></g>'; };
+        return leg(-1, "ts-can-leg-l") + leg(1, "ts-can-leg-r") +
+          '<defs><clipPath id="' + pid + '-canclip"><path d="' + tsD(body) + '"/></clipPath></defs>' + tsSolid(tsD(body), C.peri, 4) +
+          '<g clip-path="url(#' + pid + '-canclip)"><rect x="-24" y="-38" width="48" height="9" fill="' + C.yellow + '"/>' + stripes + "</g>" + tsLine("M-23,-38 H23 M-23,-29 H23", ink, 1.6) +
+          tsLine("M19,-20 V-65 L13,-74", C.orange, 2) + tsSolid(tsD([[-6, -86], [6, -86], [6, -77], [-6, -77]]), C.slate, 3) + tsSolid(tsD([[-15, -92], [15, -92], [15, -86], [-15, -86]]), C.war, 3) +
+          tsFace(0, -58, 0.9, "grumpy");
+      }
+      // ...and squashed flat: a pancake with crossed-out eyes, its valve knocked off, its legs sticking out.
+      function tsCanFlat() {
+        return tsLine("M-40,-5 L-56,-12 L-62,-8 M40,-5 L55,-13 L62,-10", ink, 3) +
+          tsSolid(tsD([[-42, 0], [42, 0], [46, -8], [38, -20], [-38, -20], [-46, -8]]), C.peri, 3.6) + '<rect x="-34" y="-17" width="68" height="5" fill="' + C.yellow + '"/>' + tsLine("M36,-18 L42,-8", C.orange, 1.8) +
+          tsFace(0, -9, 0.6, "x") + '<g transform="translate(58,0) rotate(18)">' + tsSolid(tsD([[-12, -5], [12, -5], [12, 0], [-12, 0]]), C.war, 2.6) + "</g>";
+      }
+      function tsMine(pid) {
+        return tsSolid(tsD([[-50, 0], [50, 0], [55, -8], [46, -18], [-46, -18], [-55, -8]]), C.slate, 4) + tsLine("M46,-15 L52,-8", C.orange, 2) +
+          tsLine("M-40,-9 H40", C.peri, 2) + tsSolid(tsD([[-24, -18], [24, -18], [19, -26], [-19, -26]]), C.peri, 3) +
+          tsLine("M-8,-26 V-33 M0,-26 V-34 M8,-26 V-33", ink, 2.6) + '<circle id="' + pid + '-mine-light" cx="34" cy="-11" r="4.2" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.6"/>';
+      }
+      // Scroll i's markup in the scroll's own units (the shared library scroll, plus more signatures crowded in, or the
+      // 1% treaty's empty signature line).
+      var TS_SCROLLS = [{ text: "CHEMICAL", lines: ["WEAPONS BAN"], signatures: 8 }, { text: "BIOLOGICAL", lines: ["WEAPONS BAN"], signatures: 8 }, { text: "LANDMINE", lines: ["BAN"], signatures: 8 },
+        { text: "THE 1% TREATY", lines: ["Redirect 1% of military spending to clinical trials."], signatures: 0, wax: false }];
+      function tsScroll(i) {
+        var s = KIT.props.scroll(TS_SCROLLS[i]);
+        if (i === 3) return s + tsLine("M-40,-40 H40", ink, 1.4) + '<text x="-47" y="-41" font-family="Oswald" font-weight="600" font-size="9" fill="' + ink + '">X</text>';
+        var rnd = KIT.rng(31 + i * 7), sigs = "";
+        [[-44, -94], [-6, -92], [-26, -84], [14, -82], [-44, -78]].forEach(function (p) {
+          var d = "M" + p[0] + "," + p[1];
+          for (var j = 0; j < 4; j++) d += " C" + tsF(p[0] + j * 6 + 2) + "," + tsF(p[1] - 5 - rnd() * 3) + " " + tsF(p[0] + j * 6 + 4) + "," + tsF(p[1] + 3) + " " + tsF(p[0] + j * 6 + 6) + "," + tsF(p[1] - rnd() * 2);
+          sigs += tsLine(d, ink, 1.2);
+        });
+        return s + sigs;
+      }
+      // Scroll 3's singed edges: a burnt, jagged rim on the paper and the rolls' ends, and a smoke wisp.
+      function tsSinge() {
+        var outer = [[-57, -159], [57, -159], [57, -7], [-57, -7]], inner = [], k, rnd = KIT.rng(97);
+        for (k = 0; k <= 10; k++) inner.push([-50 + k * 10, -150 + (k % 2 ? 6 : 1) + rnd() * 4]);
+        for (k = 1; k <= 13; k++) inner.push([49 - (k % 2 ? 6 : 0) - rnd() * 3, -150 + k * 10.3]);
+        for (k = 10; k >= 0; k--) inner.push([-50 + k * 10, -15 - (k % 2 ? 7 : 2) - rnd() * 3]);
+        for (k = 13; k >= 1; k--) inner.push([-49 + (k % 2 ? 7 : 1) + rnd() * 3, -150 + k * 10.3]);
+        return '<path d="' + tsD(outer) + " " + tsD(inner) + '" fill="#2A221C" fill-rule="evenodd" opacity="0.9"/>' +
+          '<path d="' + tsD([[-66, -166], [-50, -166], [-50, -150], [-66, -150]]) + " " + tsD([[50, -166], [66, -166], [66, -150], [50, -150]]) + " " + tsD([[-66, -16], [-50, -16], [-50, 0], [-66, 0]]) + " " + tsD([[50, -16], [66, -16], [66, 0], [50, 0]]) + '" fill="#2A221C"/>' +
+          '<g class="ts-smoke">' + tsLine("M30,-170 l-6,-9 l6,-9 l-6,-9", "#8C8782", 3.4) + tsLine("M-34,-172 l-6,-9 l6,-9", "#8C8782", 3) + "</g>";
+      }
+      // Soot in KIT.nuke's style, around (0,0) (split-the-atom.html's soot).
+      function tsSoot(circles) {
+        return circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="10"/>'; }).join("") +
+          circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#8E8780"/>'; }).join("") +
+          circles.filter(function (c, i) { return i % 2 === 0; }).map(function (c) { return '<circle cx="' + tsF(c[0] - c[2] * 0.25) + '" cy="' + tsF(c[1] - c[2] * 0.3) + '" r="' + tsF(c[2] * 0.42) + '" fill="#C9C2B8" opacity="0.85"/>'; }).join("");
+      }
+      function tsBunting() {
+        var b = TS.bunt, n = b[4], seg = (b[1] - b[0]) / n, out = "", cols = [C.orange, C.yellow, C.peri, C.tan, C.cream], k = 0;
+        for (var i = 0; i < n; i++) {
+          var x0 = b[0] + i * seg, x1 = x0 + seg;
+          out += tsLine("M" + x0 + "," + b[2] + " Q" + (x0 + seg / 2) + "," + (b[2] + b[3] * 2) + " " + x1 + "," + b[2], ink, 2.4);
+          for (var j = 1; j < 9; j++) {
+            var t = j / 9, x = x0 + seg * t, y = b[2] + b[3] * 4 * t * (1 - t);
+            out += tsSolid(tsD([[x - 16, y], [x + 16, y], [x, y + 40]]), cols[k++ % cols.length], 3);
+          }
+          out += tsSolid(tsD([[x0 - 6, b[2] - 6], [x0 + 6, b[2] - 6], [x0 + 6, b[2] + 6], [x0 - 6, b[2] + 6]]), C.rust, 2.4);
+        }
+        return out + tsSolid(tsD([[b[1] - 6, b[2] - 6], [b[1] + 6, b[2] - 6], [b[1] + 6, b[2] + 6], [b[1] - 6, b[2] + 6]]), C.rust, 2.4);
+      }
+      function tsTableTop() {
+        var x0 = TS.tx[0], x1 = TS.tx[1], y = TS.table;
+        return tsSolid(tsD([[x0 + 14, y - 16], [x1 - 14, y - 16], [x1, y + 6], [x0, y + 6]]), C.tan, 4) + tsLine("M" + (x0 + 30) + "," + (y - 6) + " H" + (x1 - 30), C.rust, 2, ' opacity="0.6"');
+      }
+      function tsTable(pid) {
+        var x0 = TS.tx[0], x1 = TS.tx[1], y = TS.table, yb = TS.cloth, hem = [];
+        for (var x = x1; x >= x0; x -= 30) hem.push([x, yb + ((x1 - x) / 30) % 2 * 10]);
+        var cloth = [[x0, y + 6], [x1, y + 6]].concat(hem.length ? [[x1, yb]] : [], hem, [[x0, yb]]);
+        var pleats = "";
+        for (var px = x0 + 90; px < x1 - 40; px += 120) pleats += tsLine("M" + px + "," + (y + 14) + " L" + px + "," + (yb - 6), ink, 1.6, ' opacity="0.35"');
+        return '<defs><clipPath id="' + pid + '-cloth"><path d="' + tsD(cloth) + '"/></clipPath></defs>' + tsSolid(tsD(cloth), TS_WHITE, 4) +
+          '<g clip-path="url(#' + pid + '-cloth)"><rect x="' + (x0 + (x1 - x0) * 0.62) + '" y="' + y + '" width="' + (x1 - x0) + '" height="' + (yb - y + 20) + '" fill="url(#' + pid + '-fine)" opacity="0.22"/>' +
+          '<rect x="' + x0 + '" y="' + (yb - 34) + '" width="' + (x1 - x0) + '" height="9" fill="' + C.orange + '"/></g>' + pleats;
+      }
+      // The whole last frame (without the paper, which is KIT.paper): every part sits where it ends up; parts that are
+      // gone by the end are drawn with opacity 0.
+      function tsArt(pid) {
+        var P = pid + "-", ss = TS.ss, t = TS.table;
+        var at = function (x, y, k, inner) { return '<g transform="translate(' + tsF(x) + "," + tsF(y) + ")" + (k && k !== 1 ? " scale(" + k + ")" : "") + '">' + inner + "</g>"; };
+        var clip = function (id, inner) { return '<defs><clipPath id="' + P + id + '"><rect x="-200" y="-400" width="' + (W + 400) + '" height="' + (t + 404) + '"/></clipPath></defs><g clip-path="url(#' + P + id + ')">' + inner + "</g>"; };
+        var poses = ["idle", "fold", "reach", "lift", "hurl", "cough"].map(function (p) {
+          var m = tsLeader(pid, p);
+          if (p === "cough") {
+            // eyes squeezed shut while he coughs (papers-with-presidents' squint)
+            m = m.replace(/<g class="eye">[\s\S]*?<\/g>/g, "").replace("<!--face-end-->", tsLine("M-7,-7.5 l4.5,3.5 l-4.5,3.5 M15.3,-7.5 l-4.5,3.5 l4.5,3.5", ink, 2.8) + "<!--face-end-->");
+          }
+          return '<g id="' + P + "ld-" + p + '" opacity="0">' + m + "</g>";
+        }).join("") +
+          '<g id="' + P + 'ld-char" opacity="0">' + tsLeader(pid, "hurl", { charred: true }) + "</g>" +
+          '<g id="' + P + 'ld-char2">' + tsLeader(pid, "hurl", { charred: true, look2: true }) + "</g>";
+        var leader = clip("lclip", at(TS.lx, TS.ly, TS.ls, '<g id="' + P + 'lead">' + poses + "</g>"));
+        var maker = clip("wclip", at(TS.wx, TS.wy, TS.ws, '<g id="' + P + 'wm">' + tsMaker(pid, "proud") + tsMaker(pid, "sniff") + tsMaker(pid, "hug") + "</g>"));
+        var pile = at(TS.pile, t, ss, '<g id="' + P + 'pile">' + [[-6, 0, -2], [8, -16, 2], [0, -32, -1]].map(function (r, k) {
+          return '<g transform="translate(' + r[0] + "," + r[1] + ") rotate(" + r[2] + ')"><g id="' + P + "roll-" + k + '" opacity="0">' + tsRoll() + "</g></g>";
+        }).join("") + "</g>");
+        var scrolls = TS.slots.map(function (x, i) {
+          var body = i === 2 ? '<g id="' + P + 'sc2-clean" opacity="0">' + tsScroll(2) + '</g><g id="' + P + 'sc2-singed">' + tsScroll(2) + tsSinge() + "</g>" : tsScroll(i);
+          return at(x, t, 1, '<g id="' + P + "sc" + i + '"><g id="' + P + "sq" + i + '">' + at(0, 0, ss, body) + "</g></g>");
+        }).join("");
+        var mine = at(TS.slots[2], t, TS.mine, '<g id="' + P + 'mine" opacity="0">' + tsMine(pid) + "</g>");
+        var scorch = '<g id="' + P + 'scorch"><ellipse cx="' + TS.slots[2] + '" cy="' + (t - 2) + '" rx="' + tsF(84 * ss) + '" ry="' + tsF(7 * ss) + '" fill="#2A221C" opacity="0.6"/>' +
+          [-70, -40, 36, 62, 90].map(function (dx, k) { return '<circle cx="' + tsF(TS.slots[2] + dx * ss) + '" cy="' + tsF(t - 3 - (k % 2) * 6) + '" r="' + tsF(2.5 * ss) + '" fill="#2A221C"/>'; }).join("") + "</g>";
+        // the canister and the germ, each walking in a group of its own; their squashed drawings show from the slam on
+        var can = at(TS.slots[0], t, 1, '<g id="' + P + 'can-walk">' + at(0, 0, TS.can, '<g id="' + P + 'can-alive" opacity="0"><g id="' + P + 'can-bob">' + tsCanister(pid) + '</g></g><g id="' + P + 'can-flat">' + tsCanFlat() + "</g>") + "</g>");
+        var germWalk = at(TS.slots[1], t, 1, '<g id="' + P + 'germ-walk">' + at(0, 0, TS.germ, '<g id="' + P + 'germ-alive" opacity="0"><g id="' + P + 'germ-hop">' + KIT.props.germ({ mood: "scared" }) + "</g></g>") + "</g>");
+        var drops = [[-46, -10, 7], [-30, -26, 5], [40, -14, 6], [28, -30, 4.5], [56, -4, 4]].map(function (d) { return '<circle cx="' + d[0] + '" cy="' + d[1] + '" r="' + d[2] + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>'; }).join("");
+        var splat = at(TS.slots[1], t, TS.germ, '<g id="' + P + 'germ-splat"><path d="M-44,0 L-34,-8 L-38,-16 L-20,-12 L-10,-22 L0,-12 L14,-20 L18,-10 L36,-14 L32,-4 L46,0 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<g transform="scale(1.5,0.34)">' + KIT.props.germ({ mood: "dead" }) + '</g><g id="' + P + 'germ-drops">' + drops + "</g></g>");
+        var nuke = at(TS.slots[2], t, TS.nuke, '<g id="' + P + 'nuke" opacity="0">' + KIT.nuke() + "</g>");
+        var SOOT = [[0, -84, 36], [34, -62, 32], [-30, -50, 34], [70, -40, 26], [28, -24, 38], [-28, 2, 38], [30, 22, 40], [-4, -116, 24]];
+        var soot = at(TS.lx, TS.ly, TS.ls, '<g id="' + P + 'soot" opacity="0">' + tsSoot(SOOT) + "</g>");
+        var gas = at(TS.slots[0], t, TS.can, '<g id="' + P + 'gas" opacity="0">' + [[0, -30, 24], [-22, -22, 18], [22, -18, 20], [-8, -52, 18], [14, -50, 15], [-30, -44, 13]].map(function (c) {
+          return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>';
+        }).join("") + '<circle cx="0" cy="-34" r="40" fill="url(#' + P + 'hatch)" opacity="0.3"/></g>');
+        var rc = KIT.rig(tsLead("cough")), mo = [TS.lx + rc.mouth[0] * TS.ls, TS.ly + rc.mouth[1] * TS.ls];
+        var puffs = at(mo[0], mo[1], TS.ls / 2.9, [0, 1].map(function (k) {
+          return '<g id="' + P + "cough-" + k + '" opacity="0"><circle cx="10" cy="0" r="10" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.6"/><circle cx="24" cy="-6" r="8" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.6"/></g>';
+        }).join(""));
+        var rh = KIT.rig(tsLead("hurl", { charred: true })), mh = [TS.lx + (rh.mouth[0] + 6) * TS.ls, TS.ly + (rh.mouth[1] + 4) * TS.ls];
+        var twinkle = at(mh[0], mh[1], TS.ls / 2.9, '<g id="' + P + 'twinkle" opacity="0">' + KIT.star(0, 0, 22, ink) + KIT.star(0, 0, 17, "#FFFFFF") + "</g>");
+        // the pencil on scroll 4's signature line (KIT.pencil's tip at its origin, turned to lie along the line)
+        var pen = at(TS.slots[3] - 36 * ss, t - 41 * ss, 1, '<g id="' + P + 'pen">' + at(0, 0, 1, '<g transform="rotate(20) scale(' + tsF(0.42 * ss) + ')">' + KIT.pencil() + "</g>") + "</g>");
+        return '<g id="' + P + 'bunting">' + tsBunting() + "</g>" + leader + maker + tsTableTop() + mine + scorch + germWalk + pile + scrolls + can + splat + tsTable(pid) + nuke + soot + gas + puffs + twinkle + pen;
+      }
+      // KIT.paper's frame without its own <svg> (for the copy on 847-civilizations' wall screen)
+      function tsPaper(pid) {
+        return KIT.paperDefs(pid) + '<rect width="' + W + '" height="' + H + '" fill="' + C.paper + '"/>' +
+          '<rect x="30" y="30" width="' + (W - 60) + '" height="' + (H - 60) + '" fill="none" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          KIT.star(W - 92, 96, 22, C.orange) + KIT.star(W - 130, 140, 10, C.yellow) + KIT.star(84, H - 84, 18, C.orange);
+      }
+      // ── end of the shared part ──
+
+      q("bg").innerHTML = KIT.svg(W, H, tsPaper(ID));
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("art").innerHTML = KIT.svg(W, H, tsArt(ID));
+
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var g = function (s) { return document.getElementById(ID + "-" + s); };
+      var all = function (sel) { return document.querySelectorAll(sel.split(",").map(function (x) { return "#" + ID + "-art " + x.trim(); }).join(", ")); };
+      var ss = TS.ss, t0 = TS.table;
+
+      // The markup is the last frame. Set the first frame here; the timeline plays from it to the last.
+      var startShown = ["ld-idle", "roll-0", "roll-1", "roll-2", "mine", "nuke", "can-alive", "sc2-clean", "wm-proud"];
+      var startHidden = ["ld-char2", "scorch", "can-flat", "germ-splat", "sc2-singed", "wm-hug", "sc0", "sc1", "sc2", "sc3", "pen"];
+      startShown.forEach(function (s) { gsap.set(g(s), { opacity: 1 }); });
+      startHidden.forEach(function (s) { gsap.set(g(s), { opacity: 0 }); });
+
+      var T = {
+        never: cue("never"), already: cue("already"), times: cue("times."), chem: cue("chemical"), weap: cue("weapons"), bio: cue("biological"), mines: cue("landmines"),
+        signed: cue("signed"), like: cue("like"), using: cue("using."), fewer: cue("fewer"), them: cue("them."), after: KIT.after(ID, "them."),
+      };
+      // Pivots, set once while each element is untransformed.
+      var R = {}, LEAD = ["idle", "fold", "reach", "lift", "hurl", "cough"];
+      LEAD.forEach(function (p) { R[p] = KIT.rig(tsLead(p)); });
+      gsap.set(g("lead"), { svgOrigin: "0 30" });
+      gsap.set(g("pile"), { svgOrigin: "0 0" });
+      gsap.set(document.querySelector("#" + ID + "-ld-fold .head"), { svgOrigin: R.fold.neck.join(" ") });
+      gsap.set(document.querySelector("#" + ID + "-ld-idle .head"), { svgOrigin: R.idle.neck.join(" ") });
+      TS.slots.forEach(function (x, i) { gsap.set(g("sc" + i), { svgOrigin: "0 " + tsF(-83 * ss) }); gsap.set(g("sq" + i), { svgOrigin: "0 0" }); });
+
+      // Leader poses, swapped in time order.
+      var cur = g("ld-idle");
+      function pose(name, t) { var el = g("ld-" + name); tl.set(cur, { opacity: 0 }, t); tl.set(el, { opacity: 1 }, t); cur = el; }
+
+      // "never": he folds his arms and shakes his head, grinning.
+      pose("fold", T.never);
+      tl.to(g("lead"), { y: -3, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, T.never);
+      var foldHead = document.querySelector("#" + ID + "-ld-fold .head");
+      tl.to(foldHead, { rotation: -7, duration: 0.15, ease: "sine.out" }, T.never + 0.15);
+      tl.to(foldHead, { rotation: 7, duration: 0.3, yoyo: true, repeat: 4, ease: "sine.inOut" }, T.never + 0.3);
+      tl.to(foldHead, { rotation: 0, duration: 0.2, ease: "sine.in" }, T.never + 1.8);
+
+      // "already": three rolled treaties pop up at his elbow (pop); he unfolds and looks down at them.
+      tl.fromTo(g("pile"), { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.4)", immediateRender: false }, T.already);
+      gsap.set(g("pile"), { scale: 0 });
+      pose("idle", T.already);
+      var idleHead = document.querySelector("#" + ID + "-ld-idle .head");
+      tl.to(idleHead, { rotation: 16, duration: 0.3, ease: "power2.out" }, T.already + 0.15);
+      tl.to(idleHead, { rotation: 0, duration: 0.25, ease: "power2.inOut" }, T.times - 0.2);
+
+      // The gas canister tiptoes in from the right, high steps, to the first spot.
+      var canWalk0 = T.already + 0.6, canWalk1 = T.chem - 0.18;
+      gsap.set(g("can-walk"), { x: W + 90 - TS.slots[0] });
+      tl.to(g("can-walk"), { x: 0, duration: canWalk1 - canWalk0, ease: "power1.out" }, canWalk0);
+      var nStep = Math.round((canWalk1 - canWalk0) / 0.16);
+      tl.to(g("can-bob"), { y: -9, duration: 0.08, yoyo: true, repeat: 2 * nStep - 1, ease: "sine.out" }, canWalk0);
+      var legL = document.querySelector("#" + ID + "-art .ts-can-leg-l"), legR = document.querySelector("#" + ID + "-art .ts-can-leg-r");
+      gsap.set(legL, { svgOrigin: "-8 -14" }); gsap.set(legR, { svgOrigin: "8 -14" });
+      tl.fromTo(legL, { rotation: 22 }, { rotation: -22, duration: 0.16, yoyo: true, repeat: nStep - 1, ease: "sine.inOut", immediateRender: false }, canWalk0);
+      tl.fromTo(legR, { rotation: -22 }, { rotation: 22, duration: 0.16, yoyo: true, repeat: nStep - 1, ease: "sine.inOut", immediateRender: false }, canWalk0);
+      tl.to([legL, legR], { rotation: 0, duration: 0.05 }, canWalk1);
+
+      // The germ scuttles out from behind the pile the other way, to the second spot.
+      var germ0 = T.bio - 1.35, germ1 = T.bio - 0.1;
+      gsap.set(g("germ-walk"), { x: TS.germFrom - TS.slots[1] });
+      tl.set(g("germ-alive"), { opacity: 1 }, germ0);
+      tl.to(g("germ-walk"), { x: 0, duration: germ1 - germ0, ease: "power1.inOut" }, germ0);
+      tl.to(g("germ-hop"), { y: -10, duration: 0.07, yoyo: true, repeat: Math.round((germ1 - germ0) / 0.07) - 1, ease: "sine.out" }, germ0);
+      var germBody = document.querySelector("#" + ID + "-germ-hop .germ-body");
+      gsap.set(germBody, { svgOrigin: "0 -30" });
+      tl.fromTo(germBody, { rotation: -14 }, { rotation: 14, duration: 0.09, yoyo: true, repeat: Math.round((germ1 - germ0) / 0.09) - 1, ease: "sine.inOut", immediateRender: false }, germ0);
+      tl.to(germBody, { rotation: 0, duration: 0.05 }, germ1);
+
+      // The landmine sits on the table, its light blinking, until it goes off.
+      tl.to(g("mine-light"), { opacity: 0.15, duration: 0.3, yoyo: true, repeat: Math.floor((T.mines - 0.6) / 0.3) - 1, ease: "steps(1)" }, 0.6);
+
+      // Each treaty: he takes the top roll off the pile, lifts it (it unrolls), and hurls it; it flies up and comes down
+      // flat on its weapon on the word (the slam).
+      var HUP = 158 * ss;
+      function handAt(p) { var h = R[p].hand[1]; return [TS.lx + h[0] * TS.ls, TS.ly + h[1] * TS.ls]; }
+      var Hr = handAt("reach"), Hl = handAt("lift");
+      function hurl(i, roll, slam) {
+        var el = g("sc" + i), x = TS.slots[i], dr = [Hr[0] - x, Hr[1] - (t0 - HUP)], dl = [Hl[0] - x, Hl[1] - (t0 - HUP)];
+        var scrollEl = (i === 2 ? g("sc2-clean") : el).querySelector(".scroll"), reveal = scrollEl.querySelector(".scroll-reveal"), bottom = scrollEl.querySelector(".scroll-roll-bottom");
+        var tg = slam - 1.0, tlift = slam - 0.76, tthrow = slam - 0.32;
+        gsap.set(el, { x: dr[0], y: dr[1] });
+        gsap.set(reveal, { attr: { height: 0 } }); gsap.set(bottom, { y: -150 });
+        pose("reach", tg);
+        tl.set(g("roll-" + roll), { opacity: 0 }, tg + 0.12);
+        tl.set(el, { opacity: 1 }, tg + 0.12);
+        pose("lift", tlift);
+        tl.to(el, { x: dl[0], y: dl[1], duration: 0.16, ease: "power2.out" }, tlift);
+        tl.to(reveal, { attr: { height: 150 }, duration: 0.22, ease: "power2.out" }, tlift + 0.06);
+        tl.to(bottom, { y: 0, duration: 0.22, ease: "power2.out" }, tlift + 0.06);
+        tl.to(g("lead"), { rotation: -4, duration: 0.2, ease: "power1.out" }, tlift + 0.1);
+        pose("hurl", tthrow);
+        tl.to(g("lead"), { rotation: 3, duration: 0.1, ease: "power2.out" }, tthrow);
+        tl.to(g("lead"), { rotation: 0, duration: 0.3, ease: "sine.inOut" }, tthrow + 0.12);
+        tl.to(el, { x: 0, duration: 0.32, ease: "power1.inOut" }, tthrow);
+        tl.to(el, { y: TS.peak - (t0 - HUP), duration: 0.17, ease: "power2.out" }, tthrow);
+        tl.to(el, { y: 0, duration: 0.15, ease: "power3.in" }, tthrow + 0.17);
+        tl.fromTo(el, { rotation: 0 }, { rotation: 360, duration: 0.32, ease: "power1.inOut", immediateRender: false }, tthrow);
+        // the slam: the scroll squashes and the table jumps
+        tl.fromTo(g("sq" + i), { scaleX: 1, scaleY: 1 }, { scaleX: 1.08, scaleY: 0.86, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, slam);
+        tl.fromTo(q("cam"), { y: 0 }, { y: 6, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, slam);
+      }
+
+      // "chemical": scroll 1 lands on the canister, which goes flat; "weapons": it lets out a mustard puff and he coughs.
+      hurl(0, 2, T.chem);
+      gsap.set(g("can-alive"), { svgOrigin: "0 0" });
+      tl.to(g("can-alive"), { scaleY: 0.35, scaleX: 1.3, duration: 0.05, ease: "power2.in" }, T.chem - 0.05);
+      tl.set(g("can-alive"), { opacity: 0 }, T.chem);
+      tl.set(g("can-flat"), { opacity: 1 }, T.chem);
+      pose("idle", T.chem + 0.3);
+      var gas = g("gas"), mo = KIT.rig(tsLead("cough")).mouth, toMouth = [(TS.lx + (mo[0] + 24) * TS.ls - TS.slots[0]) / TS.can, (TS.ly + mo[1] * TS.ls - t0) / TS.can + 34];
+      gsap.set(gas, { svgOrigin: "0 -10" });
+      tl.fromTo(gas, { opacity: 0, scale: 0.2, x: 0, y: 0 }, { opacity: 0.9, scale: 1.1, duration: 0.25, ease: "power2.out", immediateRender: false }, T.weap);
+      tl.to(gas, { x: toMouth[0], y: toMouth[1], scale: 1.25, duration: 0.45, ease: "sine.inOut" }, T.weap + 0.25);
+      tl.to(gas, { opacity: 0, scale: 2.1, duration: 0.55, ease: "power1.out" }, T.weap + 0.6);
+      pose("cough", T.weap + 0.55);
+      [0, 1, 2].forEach(function (k) {
+        var tc = T.weap + 0.6 + k * 0.32;
+        tl.to(g("lead"), { y: 4, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out" }, tc);
+        var puff = g("cough-" + (k % 2));
+        tl.fromTo(puff, { opacity: 0, x: 0, scale: 0.4, svgOrigin: "0 0" }, { opacity: 1, x: 10, scale: 1, svgOrigin: "0 0", duration: 0.1, ease: "power2.out", immediateRender: false }, tc);
+        tl.to(puff, { opacity: 0, x: 34, scale: 1.4, duration: 0.2, ease: "power1.in" }, tc + 0.1);
+      });
+      pose("idle", T.weap + 1.6);
+
+      // "biological": scroll 2 splats the germ (splat).
+      hurl(1, 1, T.bio);
+      gsap.set(g("germ-alive"), { svgOrigin: "0 0" });
+      tl.to(g("germ-alive"), { scaleY: 0.4, scaleX: 1.3, duration: 0.05, ease: "power2.in" }, T.bio - 0.05);
+      tl.set(g("germ-alive"), { opacity: 0 }, T.bio);
+      tl.set(g("germ-splat"), { opacity: 1 }, T.bio);
+      var drops = g("germ-drops");
+      gsap.set(drops, { svgOrigin: "0 -8" });
+      tl.fromTo(drops, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.18, ease: "power3.out", immediateRender: false }, T.bio + 0.1);
+      pose("idle", T.bio + 0.3);
+
+      // "landmines": scroll 3 lands on the landmine: a white flash, a boom and a mushroom cloud. Under the flash the
+      // leader is charred, still in his throw, still grinning, the mine is gone, and scroll 3 is singed at the edges.
+      hurl(2, 0, T.mines);
+      var tB = T.mines + 0.06, tF = tB + 0.05;
+      KIT.boom(tl, g("nuke"), tB, { flash: q("flash"), shake: q("cam") });
+      tl.set([cur, g("mine"), g("sc2-clean")], { opacity: 0 }, tF);
+      tl.set([g("ld-char"), g("sc2-singed"), g("scorch")], { opacity: 1 }, tF);
+      cur = g("ld-char");
+      var soot = g("soot");
+      gsap.set(soot, { svgOrigin: "10 -20" });
+      tl.fromTo(soot, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.01, immediateRender: false }, tF);
+      tl.to(soot, { scale: 1.06, duration: 0.8, ease: "sine.out" }, tF + 0.05);
+      tl.to(soot, { opacity: 0, scale: 1.25, duration: 0.35, ease: "power1.in" }, tB + 1.1);
+      tl.to(g("nuke"), { opacity: 0, duration: 0.6, ease: "power1.in" }, tB + 1.6);
+      // the smoke rises off him and off the singed scroll, and only his eyes move
+      var wisps = all(".smoke, .ts-smoke");
+      tl.fromTo(wisps, { y: 0, opacity: 1 }, { y: -6, opacity: 0.45, duration: 0.24, yoyo: true, repeat: Math.floor((D - tB - 1.0) / 0.24) - 1, ease: "sine.inOut", immediateRender: false }, tB + 1.0);
+      var eyes1 = document.querySelector("#" + ID + "-ld-char .char-eyes"), eyes2 = document.querySelector("#" + ID + "-ld-char2 .char-eyes");
+      gsap.set([eyes1, eyes2], { svgOrigin: "4.2 -4" });
+      var blink = function (el, t) { tl.fromTo(el, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, t); };
+      blink(eyes1, tB + 1.35); blink(eyes1, tB + 2.1); blink(eyes1, cue("countries).", 3)); blink(eyes1, T.signed + 0.6);
+      // "signed": his grin twinkles.
+      var tw = g("twinkle");
+      gsap.set(tw, { svgOrigin: "0 0" });
+      tl.fromTo(tw, { opacity: 0, scale: 0, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.18, ease: "back.out(2.5)", immediateRender: false }, T.signed);
+      tl.to(tw, { opacity: 0, scale: 0, rotation: 40, duration: 0.2, ease: "power2.in" }, T.signed + 0.45);
+
+      // "like": the weapons maker rises behind the table (the slide whistle), cradling his baby missile.
+      gsap.set(g("wm"), { y: (t0 - TS.wy) / TS.ws + 60 });
+      tl.to(g("wm"), { y: 0, duration: 0.5, ease: "back.out(1.3)" }, T.like);
+      // "using.": he sniffles into a hanky, shoulders shaking, and a tear runs down.
+      tl.set(g("wm-proud"), { opacity: 0 }, T.using);
+      tl.set(g("wm-sniff"), { opacity: 1 }, T.using);
+      var rs = KIT.rig(TS_WM.sniff), armR = document.querySelector("#" + ID + "-wm-sniff .arm-r"), hanky = g("hanky");
+      gsap.set([armR, hanky], { svgOrigin: rs.shoulder[1].join(" ") });
+      tl.to([armR, hanky], { rotation: 5, duration: 0.09, yoyo: true, repeat: 7, ease: "sine.inOut" }, T.using);
+      tl.to([armR, hanky], { rotation: 5, duration: 0.09, yoyo: true, repeat: 5, ease: "sine.inOut" }, T.using + 1.9);
+      gsap.set(g("wm-sniff-in"), { svgOrigin: "0 100" });
+      tl.to(g("wm-sniff-in"), { scaleY: 0.97, duration: 0.1, yoyo: true, repeat: 5, ease: "sine.inOut" }, T.using + 0.05);
+      [T.using + 0.15, T.using + 1.7].forEach(function (tt) {
+        tl.fromTo(g("tear"), { opacity: 0, y: 0 }, { opacity: 1, y: 4, duration: 0.15, ease: "power1.out", immediateRender: false }, tt);
+        tl.to(g("tear"), { y: 26, opacity: 0, duration: 0.45, ease: "power2.in" }, tt + 0.15);
+      });
+
+      // "fewer": the one-line 1% treaty slides in at the end of the row (whoosh), and a pencil rolls onto its empty
+      // signature line, stopping on "them." (the tick).
+      var s4 = g("sc3");
+      gsap.set(s4, { x: W - TS.slots[3] + 120 });
+      tl.set(s4, { opacity: 1 }, T.fewer - 0.05);
+      tl.to(s4, { x: 0, duration: 0.36, ease: "power3.out" }, T.fewer);
+      tl.fromTo(s4, { rotation: 0 }, { rotation: -3, duration: 0.08, yoyo: true, repeat: 1, ease: "sine.out", immediateRender: false }, T.fewer + 0.34);
+      gsap.set(g("pen"), { x: 230 });
+      tl.set(g("pen"), { opacity: 1 }, T.fewer + 0.2);
+      tl.to(g("pen"), { x: 0, duration: T.them - T.fewer - 0.2, ease: "power2.out" }, T.fewer + 0.2);
+      tl.to(g("pen"), { y: -5, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out" }, T.them);
+
+      // after "them.": the charred leader looks at the pencil and blinks; the weapons maker hugs his baby tighter.
+      tl.set(cur, { opacity: 0 }, T.after);
+      tl.set(g("ld-char2"), { opacity: 1 }, T.after);
+      blink(eyes2, T.after + 0.18);
+      tl.set(g("wm-sniff"), { opacity: 0 }, T.after);
+      tl.set(g("wm-hug"), { opacity: 1 }, T.after);
+      gsap.set(g("wm-hug-in"), { svgOrigin: "0 30" });
+      tl.fromTo(g("wm-hug-in"), { scaleX: 1, scaleY: 1 }, { scaleX: 0.94, scaleY: 1.04, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.after);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

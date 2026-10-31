@@ -1,0 +1,374 @@
+<template id="butterfly-net-template">
+  <!-- butterfly-net · plate "living-room" (storyboards/part-04-institutionalize.md): one 1950s living room, drawn once in
+       plate units, and the camera travels over it. Left, the console TV (KIT.props.tvSet, 3.2x); facing it, four
+       everyday humans on a rust sofa in profile; behind them, a picture window onto the street corner, where the
+       patient holds up his hand-lettered 1% sign under a street lamp and the Orderly crouches in the hedge.
+       "Most": the crowd side on, staring at the dark TV. "programmed": wires spring out of the TV's back into the backs
+       of their heads, one after another, and their eyes go flat. "news": the camera pushes in on the TV as it switches
+       on: the Weapons Maker reads the news in a necktie, cradling his missile. "war": he slaps the missile onto the
+       weather map beside the sun. "gravity": an apple drops and bonks his hard hat. "weather.": the cloud rains. After
+       "weather.": the missile drops onto the map's little town: the bomb goes off inside the TV, a white flash fills
+       the room, the camera pulls back and the crowd sits charred, smoking, blinking, nodding along, wires bobbing.
+       "assume": the charred heads turn slowly to the window and the camera pushes past them onto the patient.
+       "brain": his chest light blinks red. "malfunctioning.": the crowd points, the Orderly's head rises out of the
+       hedge on his long neck like a periscope and he swings the net down over the patient; after it he carries him off
+       in the net like a prize butterfly, the 1% sign sticking out of the mesh. The net is net-falls-short's
+       (netParts, placeNet). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #E2C790; }
+    #butterfly-net-weave, #butterfly-net-shake, #butterfly-net-plate, #butterfly-net-film { position: absolute; inset: 0; }
+    #butterfly-net-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="butterfly-net" data-width="1920" data-height="1080" data-start="0" data-duration="10.34">
+    <div id="butterfly-net-weave">
+      <div id="butterfly-net-shake"><div id="butterfly-net-plate"></div></div>
+      <div id="butterfly-net-flash"></div>
+    </div>
+    <div id="butterfly-net-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "butterfly-net";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth, clamp = function (u) { return Math.min(1, Math.max(0, u)); };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 53);
+
+      // ── The butterfly net (net-falls-short's code). netParts(id, r): the hoop and its bag around the hoop's center,
+      // its rim in local x (radius r), the bag in local +y; placeNet sets the pole and the hoop each frame. sag < 0
+      // turns the bag up (a dome over whatever the hoop is round).
+      var NET_POLE = [11, 6.5];
+      function netParts(id, r) {
+        var sag = 1.5, bag = "M" + f(-r) + ",0 Q" + f(-r * 0.8) + "," + f(r * sag) + " 0," + f(r * sag * 1.25) + " Q" + f(r * 0.8) + "," + f(r * sag) + " " + f(r) + ",0", mesh = "";
+        for (var i = -3; i <= 3; i++) mesh += "M" + f(i * r * 0.26) + "," + f(-r * 0.05) + " Q" + f(i * r * 0.18) + "," + f(r * sag * 0.8) + " 0," + f(r * sag * 1.2) + " ";
+        for (var j = 1; j <= 4; j++) { var yy = r * sag * j * 0.25, ww = r * (1 - j * 0.18); mesh += "M" + f(-ww) + "," + f(yy) + " Q0," + f(yy + r * 0.12) + " " + f(ww) + "," + f(yy) + " "; }
+        var ring = function (half) {
+          var d = half ? "M" + f(-r) + ",0 A" + f(r) + "," + f(r * 0.22) + " 0 0,1 " + f(r) + ",0" : "M" + f(-r) + ",0 A" + f(r) + "," + f(r * 0.22) + " 0 0,0 " + f(r) + ",0";
+          return '<path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="6.5"/><path d="' + d + '" fill="none" stroke="' + C.yellow + '" stroke-width="3"/>';
+        };
+        return '<g id="' + id + '-pole"><path class="net-pole-ink" d="" fill="none" stroke="' + ink + '" stroke-width="' + NET_POLE[0] + '" stroke-linecap="round"/>' +
+          '<path class="net-pole-wood" d="" fill="none" stroke="' + C.tan + '" stroke-width="' + NET_POLE[1] + '" stroke-linecap="round"/></g>' +
+          '<g id="' + id + '-hoop">' + ring(false) + '<g class="net-bag"><path d="' + bag + '" fill="#F7F1E0" fill-opacity="0.5" stroke="' + ink + '" stroke-width="2.6"/>' +
+          '<path d="' + mesh + '" fill="none" stroke="' + ink + '" stroke-width="1.3" opacity="0.7"/></g>' + ring(true) + "</g>";
+      }
+      function placeNet(id, end, th, len, r, hs, bend, sag) {
+        var a = (th * Math.PI) / 180, ax = end[0] + len * Math.cos(a), ay = end[1] + len * Math.sin(a);
+        var mx = (end[0] + ax) / 2, my = (end[1] + ay) / 2 + bend, hr = (hs * Math.PI) / 180;
+        var d = "M" + f(end[0]) + "," + f(end[1]) + " Q" + f(mx) + "," + f(my) + " " + f(ax) + "," + f(ay);
+        var pole = document.getElementById(id + "-pole");
+        pole.querySelector(".net-pole-ink").setAttribute("d", d);
+        pole.querySelector(".net-pole-wood").setAttribute("d", d);
+        var hx = ax - r * Math.cos(hr), hy = ay - r * Math.sin(hr), hoop = document.getElementById(id + "-hoop");
+        hoop.setAttribute("transform", "translate(" + f(hx) + "," + f(hy) + ") rotate(" + f(hs) + ")");
+        hoop.querySelector(".net-bag").setAttribute("transform", "scale(1," + (sag === undefined ? 1 : sag).toFixed(3) + ")");
+        return [hx, hy];
+      }
+      // The Weapons Maker's smiling baby missile (Part 2's money-loop), pointing +x, around (0, 0).
+      function missile() {
+        return '<g transform="translate(-2,0)"><path d="M-34,-7 L14,-7 L30,0 L14,7 L-34,7 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<path d="M-34,-7 L-44,-17 L-40,-7 Z M-34,7 L-44,17 L-40,7 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+          '<path d="M14,-7 L30,0 L14,7 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<path d="M-4,2 Q2,6 8,2" fill="none" stroke="' + ink + '" stroke-width="1.8" stroke-linecap="round"/><circle cx="-2" cy="-2.5" r="1.6" fill="' + ink + '"/><circle cx="6" cy="-2.5" r="1.6" fill="' + ink + '"/></g>';
+      }
+      function star(x, y, r) {
+        var p = "";
+        for (var i = 0; i < 10; i++) { var a = -Math.PI / 2 + (i * Math.PI) / 5, rr = i % 2 ? r * 0.45 : r; p += (i ? " L" : "M") + f(x + rr * Math.cos(a)) + "," + f(y + rr * Math.sin(a)); }
+        return '<path d="' + p + ' Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>';
+      }
+
+      // ── The plate, in plate units (the sketch's 1920 x 1080 frame; the floor at FY). ──
+      var FY = 860, SEAT = FY - 100, WALL = "#E2C790", FLOOR = "#A9764B";
+      var TVX = 370, TVK = 3.2, SCR = [TVX - 23 * TVK, FY - 92.5 * TVK]; // the TV screen's center (plate)
+      var WIN = [1180, 110, 560, 330], GY = 420; // the picture window (x, y, w, h); the street's sidewalk line
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { sofa: [1300, 520, 1.3], tv: [SCR[0], SCR[1], 3.6], room: [760, 520, 1.0], win: [1460, 320, 1.85] }
+        : { sofa: [1150, 560, 1.16], tv: [SCR[0], SCR[1] + 20, 3.25], room: [1060, 520, 1.0], win: [1460, 345, 2.0] };
+
+      // The TV's picture, drawn in screen units (10 per TV unit: the screen runs x -400..400, y -415..415), so a push
+      // in on it stays sharp. The anchor: the Weapons Maker in a necktie; the weather map at the right.
+      var WMK = 3.4, WM_AT = [-200, 470];
+      var POSE = {
+        cradle: KIT.castOpts("weaponsMaker", { look: null }),
+        slap: KIT.castOpts("weaponsMaker", { look: null, arms: [[22, 10], [128, 104]] }),
+        point: KIT.castOpts("weaponsMaker", { look: null, arms: [[22, 10], [98, 80]] }),
+      };
+      var RWM = KIT.rig(POSE.cradle);
+      function anchor(o) {
+        var R = KIT.rig(o), tx = R.shoulder[0][1] - 2;
+        var tie = '<path d="M-5,' + f(tx) + " L5," + f(tx) + " L3," + f(tx + 6) + " L8," + f(tx + 34) + " L0," + f(tx + 42) + " L-8," + f(tx + 34) + " L-3," + f(tx + 6) + ' Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>' +
+          '<path d="M-4,' + f(tx + 14) + " L6," + f(tx + 20) + " M-6," + f(tx + 24) + " L7," + f(tx + 30) + '" stroke="' + C.cream + '" stroke-width="2"/>';
+        return KIT.person(o).replace('<circle class="chest-light"', tie + '<circle class="chest-light"');
+      }
+      var wmSvg = Object.keys(POSE).map(function (n) { return '<g class="wm-pose" data-pose="' + n + '" opacity="' + (n === "cradle" ? 1 : 0) + '">' + anchor(POSE[n]) + "</g>"; }).join("");
+      var hatTop = [WM_AT[0] + RWM.top[0] * WMK, WM_AT[1] - 100 * WMK + (RWM.top[1] - 14) * WMK];
+      var cradleAt = [WM_AT[0] + WMK * (RWM.hand[0][0] + RWM.hand[1][0]) / 2, WM_AT[1] - 100 * WMK + WMK * ((RWM.hand[0][1] + RWM.hand[1][1]) / 2 - 4)];
+      var MAP = { x: 10, y: -395, w: 400, h: 540 }, TOWN = [255, 40], SUN = [110, -275], CLOUD = [300, -190], MPIN = [215, -262];
+      var town = [[-52, 0, C.cream], [0, -8, C.rust], [50, 2, C.tan]].map(function (hh) {
+        var x = TOWN[0] + hh[0], y = TOWN[1] + hh[1];
+        return '<path d="M' + f(x - 20) + "," + f(y) + " V" + f(y - 30) + " L" + f(x) + "," + f(y - 50) + " L" + f(x + 20) + "," + f(y - 30) + " V" + f(y) + ' Z" fill="' + hh[2] + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>' +
+          '<rect x="' + f(x - 6) + '" y="' + f(y - 18) + '" width="12" height="18" fill="' + ink + '"/>';
+      }).join("");
+      var rays = "";
+      for (var ri = 0; ri < 8; ri++) { var ra = (ri * Math.PI) / 4; rays += "M" + f(SUN[0] + 54 * Math.cos(ra)) + "," + f(SUN[1] + 54 * Math.sin(ra)) + " L" + f(SUN[0] + 74 * Math.cos(ra)) + "," + f(SUN[1] + 74 * Math.sin(ra)) + " "; }
+      var cloud = [[-44, 6, 30], [-14, -12, 38], [22, -8, 34], [48, 8, 26], [0, 12, 30]].map(function (cc) { return '<circle cx="' + f(CLOUD[0] + cc[0]) + '" cy="' + f(CLOUD[1] + cc[1]) + '" r="' + cc[2] + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="10"/>'; }).join("") +
+        [[-44, 6, 30], [-14, -12, 38], [22, -8, 34], [48, 8, 26], [0, 12, 30]].map(function (cc) { return '<circle cx="' + f(CLOUD[0] + cc[0]) + '" cy="' + f(CLOUD[1] + cc[1]) + '" r="' + cc[2] + '" fill="#E9E4D6"/>'; }).join("");
+      var drops = "";
+      for (var di = 0; di < 9; di++) drops += '<path class="drop" d="M0,0 l-5,16" stroke="' + C.peri + '" stroke-width="6" stroke-linecap="round"/>';
+      var mapSvg = '<rect x="' + MAP.x + '" y="' + MAP.y + '" width="' + MAP.w + '" height="' + MAP.h + '" fill="#BFD8D6" stroke="' + ink + '" stroke-width="10"/>' +
+        '<path d="M' + MAP.x + ",-40 L70,-90 L150,-60 L220,-110 L320,-80 L" + (MAP.x + MAP.w) + ",-120 V" + (MAP.y + MAP.h) + " H" + MAP.x + ' Z" fill="#A9C08A" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/>' +
+        '<g id="' + ID + '-town">' + town + "</g>" + '<g id="' + ID + '-rubble" opacity="0">' + '<g transform="translate(' + TOWN[0] + "," + TOWN[1] + ') scale(1.15,0.2) translate(' + -TOWN[0] + "," + -TOWN[1] + ')">' + KIT.burn(town) + "</g>" + "</g>" +
+        '<path d="' + rays + '" stroke="' + C.yellow + '" stroke-width="10" stroke-linecap="round"/><path d="' + rays + '" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round" opacity="0"/>' +
+        '<circle cx="' + SUN[0] + '" cy="' + SUN[1] + '" r="44" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="6"/>' +
+        '<g id="' + ID + '-drops" opacity="0">' + drops + "</g>" + cloud;
+      var studio = '<rect x="-420" y="-430" width="840" height="860" fill="#F2E3B3"/><rect x="-420" y="250" width="840" height="200" fill="#D8B978"/>' +
+        '<path d="M-420,250 H420" stroke="' + C.rust + '" stroke-width="10"/>';
+      var screenSvg = '<g id="' + ID + '-on" opacity="0"><g id="' + ID + '-onin">' + studio + mapSvg +
+        '<g transform="translate(' + TOWN[0] + "," + (TOWN[1] + 4) + ') scale(0.42)"><g id="' + ID + '-nuke">' + KIT.nuke() + "</g></g>" +
+        '<g id="' + ID + '-wm" transform="translate(' + WM_AT[0] + "," + f(WM_AT[1] - 100 * WMK) + ") scale(" + WMK + ')">' + wmSvg + "</g>" +
+        '<g id="' + ID + '-msl" opacity="0"><g transform="scale(' + WMK + ')">' + missile() + "</g></g>" +
+        '<g id="' + ID + '-apple" opacity="0"><circle r="30" fill="' + C.war + '" stroke="' + ink + '" stroke-width="6"/><path d="M0,-28 q4,-16 12,-20" fill="none" stroke="' + ink + '" stroke-width="6"/><path d="M6,-40 q20,-12 30,4 q-18,8 -30,-4 Z" fill="#7E8C3A" stroke="' + ink + '" stroke-width="4"/><circle cx="-10" cy="-10" r="8" fill="#FFFFFF" opacity="0.45"/></g>' +
+        '<g id="' + ID + '-stars" opacity="0">' + star(-70, 0, 26) + star(0, -26, 22) + star(70, 0, 26) + "</g>" +
+        '</g><rect id="' + ID + '-crt" x="-420" y="-12" width="840" height="24" fill="#FFFBEF" opacity="0"/></g>';
+      var tv = at(TVX, FY, TVK, KIT.props.tvSet({}).replace("<!--tv-screen-->", '<g transform="translate(-23,-92.5) scale(0.1)">' + screenSvg + "</g>"));
+
+      // The sofa crowd: four everyday humans sitting side on, facing the TV. Their drawings: watching, programmed
+      // (eyes flat), charred, charred and pointing at the window.
+      var VIEWERS = [
+        { o: { tone: 0, outfit: "suit", color: 1, seed: 4 }, x: 1040 },
+        { o: { tone: 2, outfit: "dress", color: 0, hair: 1, seed: 1 }, x: 1235 },
+        { o: { tone: 1, outfit: "shirt", color: 2, seed: 7 }, x: 1425 },
+        { o: { tone: 3, outfit: "dress", color: 3, hair: 1, seed: 6 }, x: 1605 },
+      ];
+      var VK = 2.25, SIT = { look: "left", arms: [[-14, -40], [-8, -30]], build: { legPose: [[86, 4], [94, 8]] } };
+      var VPOSE = { watch: { mood: "eager" }, flat: { mood: "flat" }, char: { charred: true }, point: { charred: true, arms: [[-14, -40], [148, 128]] } };
+      var crowd = "";
+      VIEWERS.forEach(function (v, i) {
+        var base = copy(v.o, SIT);
+        base.build = copy(SIT.build, v.o.build);
+        v.base = base;
+        v.R = KIT.rig(base);
+        v.y = SEAT - v.R.hipY * VK;
+        var g = "";
+        Object.keys(VPOSE).forEach(function (n) { g += '<g class="vpose" data-pose="' + n + '" opacity="' + (n === "watch" ? 1 : 0) + '">' + KIT.person(copy(base, VPOSE[n])) + "</g>"; });
+        crowd += '<g id="' + ID + "-v" + i + '" transform="translate(' + f(v.x) + "," + f(v.y) + ") scale(" + VK + ')">' + g + "</g>";
+      });
+      // the wires: out of the TV's back, down along the floor and up into the back of each head
+      var wires = VIEWERS.map(function (v, i) { return '<path id="' + ID + "-wire" + i + '" d="" fill="none" stroke="' + ink + '" stroke-width="6" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1"/>'; }).join("");
+      var plugs = VIEWERS.map(function (v, i) { return '<circle id="' + ID + "-plug" + i + '" r="8" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3" opacity="0"/>'; }).join("");
+      // the sofa, in profile, facing the TV: a long seat, an armrest at the TV end and the back at the far end
+      var sofa = '<path d="M900,' + FY + " V" + (FY - 20) + " H1740 V" + FY + ' Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<path d="M1700,' + (FY - 30) + " L1722," + (FY - 330) + " L1790," + (FY - 330) + " L1796," + (FY - 30) + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>' +
+        '<path d="M880,' + (FY - 20) + " V" + SEAT + " H1760 V" + (FY - 20) + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<path d="M860,' + SEAT + " L872," + (SEAT - 110) + " H950 L958," + SEAT + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>' +
+        [0, 1, 2, 3].map(function (i) { return '<path d="M' + (1000 + i * 190) + "," + (SEAT + 6) + " V" + (FY - 26) + '" stroke="' + ink + '" stroke-width="3" opacity="0.5"/>'; }).join("") +
+        '<path d="M884,' + (SEAT + 8) + " H1756" + '" stroke="' + C.orange + '" stroke-width="3" opacity="0.6"/>';
+
+      // The street corner through the window: a hedge, a street lamp, the patient with his sign, and the Orderly
+      // crouched behind the hedge (his feet far below the sill, so he is out of sight).
+      var PATIENT = { tone: 1, outfit: "shirt", color: 3, arms: [[-150, -172], [150, 172]], mood: "smile", look: "right" };
+      var RP = KIT.rig(PATIENT), PX = 1320, PK = 1.0;
+      var pHands = [(RP.hand[0][0] + RP.hand[1][0]) / 2, (RP.hand[0][1] + RP.hand[1][1]) / 2];
+      var signFs = KIT.fitText("1%", 38, 70, "Fraunces", 900);
+      var placard = '<g transform="translate(' + f(pHands[0]) + "," + f(pHands[1]) + ')"><rect x="-46" y="-60" width="92" height="56" fill="#FBF6E6" stroke="' + ink + '" stroke-width="3.4"/>' +
+        '<text x="0" y="-18" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + f(signFs) + '" fill="' + C.med + '">1%</text></g>';
+      var ORD = KIT.castOpts("orderly", { look: "left", arms: [[-120, -150], [-108, -140]] });
+      var ORD2 = KIT.castOpts("orderly", { look: "right", mood: "smug", arms: [[-140, -112], [30, 18]] });
+      var RO = KIT.rig(ORD), RO2 = KIT.rig(ORD2), OX = 1550, OHID = GY + 175, OUP = GY + 30;
+      var xneck = '<g class="xneck"><path d="" fill="#A87B57" stroke="' + ink + '" stroke-width="3"/></g>';
+      var ordSvg = '<g class="opose" data-pose="peek">' + KIT.person(ORD).replace('<g class="head">', xneck + '<g class="head">') + "</g>" +
+        '<g class="opose" data-pose="carry" opacity="0">' + KIT.person(ORD2) + "</g>";
+      var hedge = '<path d="M' + WIN[0] + "," + (GY + 4) + " V" + (GY - 70) + " q30,-60 70,-40 q30,-50 70,-6 q40,-56 80,-4 q40,-44 70,6 q40,-54 70,0 q30,-40 70,0 q30,-30 70,6 V" + (GY + 4) + ' Z" fill="' + C.moneyDark + '" stroke="' + ink + '" stroke-width="3"/>' +
+        '<path d="M' + (WIN[0] + 40) + "," + (GY - 50) + " q10,-10 20,0 M" + (WIN[0] + 190) + "," + (GY - 60) + " q10,-10 20,0 M" + (WIN[0] + 360) + "," + (GY - 55) + ' q10,-10 20,0" fill="none" stroke="' + C.money + '" stroke-width="3"/>';
+      var lamp = '<path d="M1700,' + GY + " V" + (WIN[1] + 50) + " q0,-18 -30,-18" + '" fill="none" stroke="' + ink + '" stroke-width="8"/><path d="M1652,' + (WIN[1] + 26) + " h34 l-7,16 h-20 Z" + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.6"/>';
+      var outside = '<rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + WIN[2] + '" height="' + WIN[3] + '" fill="#CFE0D8"/>' +
+        '<path d="M' + WIN[0] + "," + (WIN[1] + 150) + " h120 v-40 h60 v40 h90 v-70 h70 v70 h110 v-30 h110 V" + (WIN[1] + WIN[3]) + " H" + WIN[0] + ' Z" fill="#B9C9C4"/>' +
+        '<g id="' + ID + '-ord" transform="translate(' + OX + "," + (OHID - 100) + ')">' + ordSvg + "</g>" + hedge + lamp +
+        '<rect x="' + WIN[0] + '" y="' + GY + '" width="' + WIN[2] + '" height="' + (WIN[1] + WIN[3] - GY) + '" fill="#B8B0A0" stroke="' + ink + '" stroke-width="3"/>' +
+        '<g id="' + ID + '-pat" transform="translate(' + PX + "," + (GY - 100 * PK) + ')"><g id="' + ID + '-patin">' + KIT.person(PATIENT) + "</g></g>" +
+        '<g id="' + ID + '-net" opacity="0">' + netParts(ID + "-n", 46) + "</g>" +
+        '<g id="' + ID + '-sign" transform="translate(' + PX + "," + (GY - 100 * PK) + ')"><g id="' + ID + '-signin">' + placard + "</g></g>";
+      var win = '<defs><clipPath id="' + ID + '-winclip"><rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + WIN[2] + '" height="' + WIN[3] + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-winclip)">' + outside + "</g>" +
+        '<rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + WIN[2] + '" height="' + WIN[3] + '" fill="none" stroke="' + C.cream + '" stroke-width="16"/>' +
+        '<rect x="' + (WIN[0] - 8) + '" y="' + (WIN[1] - 8) + '" width="' + (WIN[2] + 16) + '" height="' + (WIN[3] + 16) + '" fill="none" stroke="' + ink + '" stroke-width="4"/>' +
+        '<rect x="' + (WIN[0] - 24) + '" y="' + (WIN[1] + WIN[3] + 6) + '" width="' + (WIN[2] + 48) + '" height="16" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="4"/>';
+
+      var room = '<rect x="-600" y="-600" width="3200" height="' + (FY + 600) + '" fill="' + WALL + '"/><rect x="-600" y="-600" width="3200" height="670" fill="#D8B978"/>' +
+        '<rect x="-600" y="' + (FY - 6) + '" width="3200" height="900" fill="' + FLOOR + '"/><rect x="-600" y="' + (FY - 8) + '" width="3200" height="10" fill="' + C.rust + '"/>';
+      q("plate").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-cam">' + room + win + tv + wires + sofa + crowd + plugs + "</g>");
+
+      // ── Elements ──
+      var cam = q("cam"), onEl = q("on"), onIn = q("onin"), crt = q("crt"), wmPoses = Array.prototype.slice.call(q("wm").querySelectorAll(".wm-pose"));
+      var msl = q("msl"), apple = q("apple"), stars = q("stars"), dropsEl = q("drops"), dropEls = Array.prototype.slice.call(dropsEl.querySelectorAll(".drop"));
+      var vEls = VIEWERS.map(function (v, i) { return { g: q("v" + i), poses: Array.prototype.slice.call(q("v" + i).querySelectorAll(".vpose")), wire: q("wire" + i), plug: q("plug" + i) }; });
+      var ordEl = q("ord"), ordPoses = Array.prototype.slice.call(ordEl.querySelectorAll(".opose")), ordHead = ordPoses[0].querySelector(".head"), ordNeck = ordPoses[0].querySelector(".xneck path");
+      var pat = q("pat"), patIn = q("patin"), sign = q("sign"), signIn = q("signin"), netEl = q("net");
+      var patLight = patIn.querySelector(".chest-light");
+      patLight.insertAdjacentHTML("beforebegin", '<circle class="light-glow" cx="' + patLight.getAttribute("cx") + '" cy="' + patLight.getAttribute("cy") + '" r="11" fill="' + C.war + '" opacity="0"/>');
+      var patGlow = patIn.querySelector(".light-glow"), patLegs = Array.prototype.slice.call(patIn.querySelectorAll(".leg-l, .leg-r"));
+
+      // ── Cues ──
+      var tProg = cue("programmed"), tNews = cue("news"), tWar = cue("war"), tGrav = cue("gravity"), tWeather = cue("weather.");
+      var tBoom = KIT.after(ID, "weather."), tAssume = cue("assume"), tBrain = cue("brain"), tMal = cue("malfunctioning."), tCarry = KIT.after(ID, "malfunctioning.");
+      var tWire = [tProg, tProg + 0.2, tProg + 0.36, tProg + 0.5], tDrop0 = tBoom - 0.26, tBonk = tGrav + 0.3;
+      var tNet = tMal + 0.12, tCatch = tMal + 0.35;
+
+      // ── The camera: the crowd; in on the TV as it switches on; back out under the flash to the charred crowd; past
+      // their heads onto the window.
+      var KEYS = [[0, "sofa", 1], [tNews - 0.1, "sofa", 1.04], [tNews + 0.4, "tv", 1], [tBoom, "tv", 1.05], [tBoom + 0.3, "room", 1], [tAssume + 0.35, "room", 1.02], [tBrain + 0.3, "win", 1], [D, "win", 1.05]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+
+      // ── The bomb inside the TV: the cloud grows over the map's town; the room flashes white and shakes.
+      KIT.boom(tl, q("nuke"), tBoom, { shake: q("shake") });
+      tl.fromTo(q("flash"), { opacity: 0 }, { opacity: 1, duration: 0.04 }, tBoom).to(q("flash"), { opacity: 0, duration: 0.32, ease: "power1.out" }, tBoom + 0.08);
+
+      var WMHOME = [WM_AT[0], WM_AT[1] - 100 * WMK];
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+
+        // the TV: dark, then on "news" it switches on (a bright line opens to the picture)
+        var on = t >= tNews, ou = clamp((t - tNews) / 0.16);
+        show(onEl, on);
+        onIn.setAttribute("transform", on ? "scale(1," + Math.max(0.02, ou).toFixed(3) + ")" : "");
+        crt.setAttribute("opacity", on && ou < 1 ? 1 - ou * 0.6 : 0);
+
+        // the anchor: cradling his missile; on "war" he steps to the map and slaps it on; then he gestures at it
+        var pose = t < tWar ? "cradle" : t < tWar + 0.45 ? "slap" : "point";
+        wmPoses.forEach(function (p) { show(p, p.getAttribute("data-pose") === pose); });
+        var step = 90 * smooth((t - tWar + 0.15) / 0.3), bob = t < tWar ? -Math.abs(Math.sin(t * 3)) * 6 : 0;
+        q("wm").setAttribute("transform", "translate(" + f(WMHOME[0] + step) + "," + f(WMHOME[1] + bob) + ") scale(" + WMK + ")");
+        // the missile: in his arms (drawn with him) until "war", then flies onto the map beside the sun and sticks,
+        // nose down; after "weather." it drops onto the town
+        if (t < tWar + 0.05) show(msl, 0);
+        else {
+          var from = [cradleAt[0] + 90, cradleAt[1] - 40], mp, rot, sc2 = 1;
+          var u = clamp((t - tWar - 0.05) / 0.22);
+          if (u < 1) { mp = [from[0] + (MPIN[0] - from[0]) * u, from[1] + (MPIN[1] - from[1]) * u - Math.sin(Math.PI * u) * 120]; rot = -20 + 110 * u; }
+          else if (t < tDrop0) { mp = MPIN.slice(); rot = 90; var sq = clamp((t - tWar - 0.27) / 0.18); sc2 = 1 + 0.25 * Math.sin(Math.PI * sq); }
+          else { var du = clamp((t - tDrop0) / (tBoom - tDrop0)); du = du * du; mp = [MPIN[0] + (TOWN[0] - MPIN[0]) * du, MPIN[1] + (TOWN[1] - 30 - MPIN[1]) * du]; rot = 90 - 20 * Math.sin(Math.PI * du); }
+          show(msl, t < tBoom);
+          msl.setAttribute("transform", "translate(" + f(mp[0]) + "," + f(mp[1]) + ") rotate(" + f(rot) + ") scale(" + (0.6 * sc2).toFixed(3) + ")");
+        }
+        // the town goes flat under the cloud
+        show(q("town"), t < tBoom + 0.1); show(q("rubble"), t >= tBoom + 0.1);
+        // "gravity": an apple drops onto his hard hat and bounces off; stars circle his head
+        var hx = hatTop[0] + 90, hy = hatTop[1];
+        if (t < tGrav || t > tBonk + 0.7) show(apple, 0);
+        else {
+          var ap;
+          if (t < tBonk) { var fu = (t - tGrav) / (tBonk - tGrav); ap = [hx, -470 + (hy - 30 + 470) * fu * fu]; }
+          else { var bu = (t - tBonk) / 0.7; ap = [hx + 260 * bu, hy - 30 - 260 * bu + 700 * bu * bu]; }
+          show(apple, 1);
+          apple.setAttribute("transform", "translate(" + f(ap[0]) + "," + f(ap[1]) + ") rotate(" + f(t > tBonk ? (t - tBonk) * 500 : 0) + ")");
+        }
+        var su = t - tBonk;
+        show(stars, su > 0 && su < 1.1);
+        if (su > 0) stars.setAttribute("transform", "translate(" + f(hx) + "," + f(hy - 40) + ") rotate(" + f(su * 300) + ") scale(1,0.5)");
+        // "weather.": the cloud rains
+        show(dropsEl, t >= tWeather);
+        dropEls.forEach(function (dEl, i) {
+          var ph = ((t - tWeather) * 2.2 + i * 0.37) % 1, x = CLOUD[0] - 50 + (i % 5) * 26 + (i > 4 ? 12 : 0);
+          dEl.setAttribute("transform", "translate(" + f(x - ph * 12) + "," + f(CLOUD[1] + 40 + ph * 150) + ")");
+        });
+
+        // the crowd
+        vEls.forEach(function (ve, i) {
+          var v = VIEWERS[i], R = v.R;
+          var wired = t >= tWire[i] + 0.22, charred = t >= tBoom + 0.12;
+          var pose = charred ? (t >= tMal ? "point" : "char") : wired ? "flat" : "watch";
+          // the heads: nod along once charred; turn slowly to the window on "assume" (a squash through the middle)
+          var turn = 1 - 2 * smooth((t - tAssume - i * 0.08) / 0.5), nod = charred && t < tAssume + 0.3 ? 5 * Math.sin((t - tBoom) * 7 + i * 0.9) : 0;
+          ve.poses.forEach(function (pg) {
+            var onp = pg.getAttribute("data-pose") === pose;
+            show(pg, onp);
+            if (!onp) return;
+            var head = pg.querySelector(".head");
+            head.setAttribute("transform", "rotate(" + f(nod) + " " + f(R.neck[0]) + " " + f(R.neck[1]) + ") translate(" + f(R.neck[0]) + ",0) scale(" + turn.toFixed(3) + ",1) translate(" + f(-R.neck[0]) + ",0)");
+            var eyes = pg.querySelector(".char-eyes");
+            if (eyes) {
+              var bl = [0.55, 1.4, 2.3].some(function (b) { var tb = tBoom + b + i * 0.07; return t > tb && t < tb + 0.1; });
+              eyes.setAttribute("transform", bl ? "translate(0,-4) scale(1,0.12) translate(0,4)" : "");
+            }
+            var smoke = pg.querySelector(".smoke");
+            if (smoke) smoke.setAttribute("transform", "translate(0," + f(-Math.abs(Math.sin(t * 3 + i)) * 5) + ")");
+          });
+          // the wire: springs out of the TV's back into the back of the head, then bobs with it
+          var back = 16 * R.hs * turn, nr = (nod * Math.PI) / 180;
+          var bx = R.neck[0] + (R.head[0] + back - R.neck[0]) * Math.cos(nr) - (R.head[1] - 2 - R.neck[1]) * Math.sin(nr);
+          var by = R.neck[1] + (R.head[0] + back - R.neck[0]) * Math.sin(nr) + (R.head[1] - 2 - R.neck[1]) * Math.cos(nr);
+          var ex = v.x + bx * VK, ey = v.y + by * VK, sx0 = 628, sy0 = FY - 300 + i * 24;
+          var sway = charred ? Math.sin(t * 4 + i) * 18 : 0;
+          ve.wire.setAttribute("d", "M" + sx0 + "," + sy0 + " C" + f(780 + i * 40) + "," + f(FY + 40) + " " + f(ex + 110 + sway) + "," + f(ey + 240) + " " + f(ex) + "," + f(ey));
+          var wu = clamp((t - tWire[i]) / 0.22), wob = wu >= 1 ? 0 : 0;
+          ve.wire.setAttribute("stroke-dashoffset", (1 - (1 - Math.pow(1 - wu, 3)) - wob).toFixed(3));
+          var pu = clamp((t - tWire[i] - 0.2) / 0.12);
+          ve.plug.setAttribute("opacity", pu > 0 ? 1 : 0);
+          ve.plug.setAttribute("transform", "translate(" + f(ex) + "," + f(ey) + ") scale(" + (pu > 0 ? 1 + 0.5 * Math.sin(Math.PI * pu) : 0).toFixed(3) + ")");
+        });
+
+        // the patient: beaming, sign up, bouncing it a little; on "brain" his chest light blinks red
+        var pBob = -Math.abs(Math.sin(t * 5)) * 3;
+        var blink = t >= tBrain && Math.floor((t - tBrain) * 6) % 2 === 0;
+        patLight.setAttribute("fill", blink ? C.war : "#E9E1CC");
+        patGlow.setAttribute("opacity", blink ? 0.35 : 0);
+        // the Orderly: hidden in the hedge; on "malfunctioning." his head rises on his long neck like a periscope;
+        // the net swings down over the patient; after it he stands and carries him off, the sign out of the mesh
+        var rise = 175 * smooth((t - tMal) / 0.2) * (1 - smooth((t - tCarry) / 0.25));
+        var stand = (OHID - OUP) * smooth((t - tCarry) / 0.25), walk = 210 * smooth((t - tCarry - 0.2) / 0.8);
+        var oy = OHID - stand, ox = OX + walk, carry = t >= tCarry + 0.15;
+        ordEl.setAttribute("transform", "translate(" + f(ox) + "," + f(oy - 100) + ")");
+        ordPoses.forEach(function (p) { show(p, p.getAttribute("data-pose") === (carry ? "carry" : "peek")); });
+        ordHead.setAttribute("transform", "translate(0," + f(-rise) + ")");
+        ordNeck.setAttribute("d", rise > 1 ? "M" + f(RO.neck[0] - 4) + "," + f(RO.neck[1] + 6) + " V" + f(RO.neck[1] - rise + 2) + " H" + f(RO.neck[0] + 4) + " V" + f(RO.neck[1] + 6) + " Z" : "");
+        if (carry) Array.prototype.forEach.call(ordPoses[1].querySelectorAll(".leg-l, .leg-r"), function (lg, j) {
+          lg.setAttribute("transform", "rotate(" + f(Math.sin((t - tCarry) * 14) * 20 * (j ? -1 : 1)) + " " + f(RO2.hip[j][0]) + " " + f(RO2.hip[j][1]) + ")");
+        });
+
+        // the net: out of the hedge on "malfunctioning.", over the patient (a dome, the sign out of its top), then
+        // flipped to hang off the pole as he is carried away
+        var R2 = carry ? RO2 : RO, hand = carry ? R2.hand[0] : [(R2.hand[0][0] + R2.hand[1][0]) / 2, (R2.hand[0][1] + R2.hand[1][1]) / 2];
+        var end = [ox + hand[0], oy - 100 + hand[1] - (carry ? 0 : 0)], hc = null;
+        if (t >= tNet) {
+          show(netEl, 1);
+          var su2 = clamp((t - tNet) / (tCatch - tNet)), fl = smooth((t - tCarry) / 0.3);
+          var th0 = Math.atan2(GY - 120 - end[1], PX + 56 - end[0]) * 180 / Math.PI;
+          var th = th0 + 70 * Math.pow(1 - su2, 2) - (su2 >= 1 ? 3 * Math.exp(-(t - tCatch) * 9) * Math.sin((t - tCatch) * 30) : 0);
+          var len = Math.hypot(PX + 56 - end[0], GY - 120 - end[1]);
+          th = th + (196 - 360 - th) * fl;
+          var hs = -8 * (1 - fl) + 0 * fl - 60 * Math.pow(1 - su2, 2), sag = -1.25 + 2.7 * fl;
+          hc = placeNet(ID + "-n", end, th, len * (1 - 0.12 * fl), 46, hs, 0, sag);
+        } else show(netEl, 0);
+        // the patient: stands until caught, then rides in the net, legs kicking
+        var ptx = PX, pty = GY - 100 * PK + pBob, prot = 0;
+        if (hc && t >= tCarry) { var cu = smooth((t - tCarry) / 0.3); ptx = PX + (hc[0] - PX) * cu; pty = GY - 100 * PK + (hc[1] + 72 - (GY - 100 * PK)) * cu; prot = 8 * Math.sin((t - tCarry) * 9) * cu; }
+        pat.setAttribute("transform", "translate(" + f(ptx) + "," + f(pty) + ") rotate(" + f(prot) + ")");
+        sign.setAttribute("transform", "translate(" + f(ptx) + "," + f(pty) + ") rotate(" + f(prot) + ")");
+        patLegs.forEach(function (lg, j) {
+          var kick = t >= tCarry ? Math.sin((t - tCarry) * 18 + j * 2) * 26 : 0;
+          lg.setAttribute("transform", "rotate(" + f(kick) + " " + f(RP.hip[j][0]) + " " + f(RP.hip[j][1]) + ")");
+        });
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

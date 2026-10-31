@@ -1,0 +1,629 @@
+<template id="life-jackets-handed-out-template">
+  <!-- life-jackets-handed-out · Layer B (storyboards/part-14-decentralized-fda.md): Part 12's beach (lifeguard-cabinet).
+       The lifeguard flips his BUOYANCY STUDY on his tall chair, two life jackets hang on the hook with a "$41,000 /
+       PATIENT" tag, and the line of swimmers (heads, waving arms, a few grinning skulls bobbing politely) runs out to the
+       horizon. "protocol,": a giant stamp drops onto the chair and flattens the lifeguard into the seat; it lifts off a
+       red DECENTRALIZED FDA PROTOCOL mark, and he blinks. "forty-four": the tag deflates to a tiny "$929".
+       "twenty-three": a conveyor of life jackets rolls out from the hook along the waterline, its counter rolling up to
+       23.4 MILLION / YEAR; "one" (one point nine): the hook's TODAY: 1.9 MILLION sign shrinks. "Remember": the camera
+       pushes along the line; "drowning": heads go under down the line and come back up. "jackets?": the first swimmer
+       strains for the hook. "hand out": the conveyor runs and the jackets fly down the whole line, the swimmers pop up
+       like corks and the patient catches hers. "million.": the skulls get theirs, late, still grinning. After it, the
+       lifeguard peels himself off the chair like a sticker and blows his whistle at nobody.
+       The beach, lifeguard and swimmers are drawn here from Part 12's storyboard (no part-12 scene file exists yet);
+       swap them for lifeguard-cabinet's drawing code when it lands. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #life-jackets-handed-out-cam, #life-jackets-handed-out-bg, #life-jackets-handed-out-art, #life-jackets-handed-out-pip, #life-jackets-handed-out-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="life-jackets-handed-out" data-width="1920" data-height="1080" data-start="0" data-duration="23.02">
+    <div id="life-jackets-handed-out-cam">
+      <div id="life-jackets-handed-out-bg"></div>
+      <div id="life-jackets-handed-out-art"></div>
+      <div id="life-jackets-handed-out-pip"></div>
+    </div>
+    <div id="life-jackets-handed-out-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "life-jackets-handed-out";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+      var PI = Math.PI, WHITE = "#FBF6E6", SKIN0 = "#F4E3CC";
+      var f = function (n) { return String(Math.round(n * 10) / 10); };
+      function clamp(x, a, b) { return Math.max(a, Math.min(b, x)); }
+      function smooth(x) { x = clamp(x, 0, 1); return x * x * (3 - 2 * x); }
+      function lerp(a, b, k) { return a + (b - a) * k; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function at(x, y, s, inner, id) {
+        return "<g" + (id ? ' id="' + P + id + '"' : "") + ' transform="translate(' + f(x) + "," + f(y) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>";
+      }
+      function poly(pts) { return 'path d="M' + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + ' Z"'; }
+      function flipX(pts) { return pts.map(function (p) { return [-p[0], p[1]]; }); }
+      // A navy pass under each fill, so touching shapes of one color share one outline (as kit.js draws the humans).
+      function solid(tags, col, w) {
+        w = w || 4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function text(x, y, s, size, col, extra) {
+        return '<text x="' + f(x) + '" y="' + f(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + col + '"' + (extra || "") + ">" + s + "</text>";
+      }
+      var uid = 0;
+      // Halftone dots over the right part of a light shape (print shading).
+      function dots(pts, from, op) {
+        var xs = pts.map(function (p) { return p[0]; }), ys = pts.map(function (p) { return p[1]; });
+        var x0 = Math.min.apply(null, xs), x1 = Math.max.apply(null, xs), y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys), a = x0 + (x1 - x0) * from, i = P + "hd" + ++uid;
+        return '<defs><clipPath id="' + i + '"><' + poly(pts) + "/></clipPath></defs>" +
+          '<rect x="' + f(a) + '" y="' + f(y0) + '" width="' + f(x1 - a) + '" height="' + f(y1 - y0) + '" fill="url(#' + P + 'jdot)" opacity="' + op + '" clip-path="url(#' + i + ')"/>';
+      }
+      // Two-segment arm angles (KIT's convention: 0 = down, x by sin, y by cos) that put the hand at M from shoulder S.
+      function ik(S, M, len, bend) {
+        var dx = M[0] - S[0], dy = M[1] - S[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len * 0.995);
+        var base = Math.atan2(dx, dy), off = Math.acos(d / (2 * len));
+        return [((base + bend * off) * 180) / PI, ((base - bend * off) * 180) / PI];
+      }
+
+      // ── Layout, per canvas shape ──
+      // hz: the horizon. sun: [x, y, r]. sand: the beach polygon (its upper edge is the waterline). chair: the
+      // lifeguard's tall chair (x of his hips, the seat's top, the ground, his scale ls). post: the hook post (x, ground,
+      // top); hook: where the jackets hang; jackS: their scale; plaque: the old TODAY sign on top of the post (middle x,
+      // bottom y, width). conv: the conveyor (left end x0, ground, scale, length w and belt height h in its units).
+      // The line of swimmers: F is the front swimmer's waterline point, VP the vanishing point on the horizon, s0 the
+      // front swimmer's scale; swimmer d stands at depth d (d0 sets the perspective) with a sideways offset lat(d).
+      // mark/stampS: the protocol mark and the falling stamp's sizes. cam: the push along the line on "Remember" ([scale,
+      // center x, center y] at rest, in, and at the far end). gulls: [x, y, drift].
+      var tri = function (x) { return (2 / PI) * Math.asin(Math.sin(x)); };
+      var L = V
+        ? { hz: 400, sun: [190, 225, 50],
+            sand: [[32, 800], [140, 840], [250, 1010], [330, 1250], [430, 1404], [620, 1418], [1048, 1426], [1048, 1888], [32, 1888]],
+            chair: { x: 170, seat: 905, ground: 1442, ls: 2.0 },
+            post: { x: 425, ground: 1428, top: 1172 }, hook: [484, 1190], jackS: 1.6, plaque: { x: 425, y: 1162, w: 204 },
+            conv: { x0: 468, ground: 1440, s: 1.3, w: 440, h: 52 },
+            F: [690, 1268], VP: [520, 404], s0: 2.0, d0: 5, lat: function (d) { return 250 * tri((d * PI) / 5); }, dMax: 52,
+            mark: 0.88, stampS: 3.2,
+            cam: [[1, 540, 960], [1.4, 650, 1040], [1.7, 570, 760]],
+            gulls: [[140, 520, 20], [300, 470, -16], [560, 560, 14]], tagS: [1.0, 1.15], tagA: 30 }
+        : { hz: 268, sun: [880, 140, 50],
+            sand: [[32, 452], [170, 500], [330, 640], [470, 800], [600, 838], [900, 846], [1888, 856], [1888, 1048], [32, 1048]],
+            chair: { x: 230, seat: 470, ground: 892, ls: 2.0 },
+            post: { x: 548, ground: 842, top: 588 }, hook: [606, 604], jackS: 1.8, plaque: { x: 548, y: 578, w: 230 },
+            conv: { x0: 594, ground: 858, s: 1.42, w: 660, h: 52 },
+            F: [872, 702], VP: [1525, 266], s0: 2.0, d0: 5, lat: function (d) { return 22 * Math.sin(d * 1.7); }, dMax: 56,
+            mark: 1.05, stampS: 3.4,
+            cam: [[1, 960, 540], [1.45, 1020, 540], [1.75, 1290, 410]],
+            gulls: [[330, 150, 26], [470, 112, -20], [1240, 175, 30]], tagS: [1.2, 1.3], tagA: 14 };
+      var CH = L.chair, LS = CH.ls;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The life jacket (drawn): a 1950s orange vest, two front panels on a collar, two cream straps with buckles.
+      // sw: half the shoulder width; len: how far it reaches down. The collar's top middle is at (0, 0).
+      function jacket(sw, len) {
+        var collar = [[-sw * 0.62, 3], [-sw * 0.44, -6], [sw * 0.44, -6], [sw * 0.62, 3], [sw * 0.3, 6], [-sw * 0.3, 6]];
+        var left = [[-sw - 4, 4], [-sw * 0.55, -2], [-2.5, 6], [-2, len], [-sw * 0.6, len + 2.5], [-sw - 3, len - 3], [-sw - 6.5, len * 0.45]];
+        var right = flipX(left);
+        var strap = function (y) {
+          return solid([poly([[-sw - 5.5, y - 2.4], [sw + 5.5, y - 2.4], [sw + 5, y + 2.4], [-sw - 5, y + 2.4]])], C.cream, 2.2) +
+            solid([poly([[-3.4, y - 3.6], [3.4, y - 3.6], [3.4, y + 3.6], [-3.4, y + 3.6]])], C.yellow, 1.8);
+        };
+        return '<g class="jk">' + solid([poly(collar)], C.rust, 3) + solid([poly(left), poly(right)], C.orange, 3.6) + dots(right, 0.45, 0.28) +
+          '<path d="M' + f(-sw - 4) + ",6 L" + f(-sw - 5.5) + "," + f(len * 0.45) + '" stroke="' + C.cream + '" stroke-width="1.6" opacity="0.7"/>' +
+          strap(len * 0.38) + strap(len * 0.74) + "</g>";
+      }
+      var JSW = 17, JLEN = 34; // the standalone jacket (hook, conveyor, in flight)
+      var jacketC = function () { return '<g transform="translate(0,' + -JLEN / 2 + ')">' + jacket(JSW, JLEN) + "</g>"; };
+      // A person wearing one: on the shoulders, under the head and the arms.
+      function wear(svg, o) {
+        var r = KIT.rig(o), sw = Math.abs(r.shoulder[0][0]) + 2, top = r.shoulder[0][1] - 7, len = Math.max(26, (r.hipY - top) * 0.7);
+        return svg.replace('<g class="head">', '<g transform="translate(' + f(r.neck[0]) + "," + f(top) + ')">' + jacket(sw, len) + '</g><g class="head">');
+      }
+      // The patient's mustard-and-orange striped scarf, at her neck, under her head.
+      function scarf(svg, o) {
+        var r = KIT.rig(o), n = r.neck, T = r.shoulder[0][1] - 3, fx = r.facing, cid = P + "scarf" + ++uid;
+        var band = [[n[0] - 8, T - 8], [n[0] + 8, T - 9], [n[0] + 9, T - 1], [n[0] - 9, T]];
+        var tail = [[n[0] + fx * 4, T - 4], [n[0] + fx * 10, T - 3], [n[0] + fx * 13, T + 13], [n[0] + fx * 7, T + 14]];
+        var stripes = "";
+        for (var i = -4; i < 8; i++) stripes += '<path d="M' + f(n[0] - 14 + i * 5) + "," + f(T - 12) + " l8,30" + '" stroke="' + C.orange + '" stroke-width="2.4"/>';
+        var sc = '<defs><clipPath id="' + cid + '"><' + poly(band) + "/><" + poly(tail) + "/></clipPath></defs>" +
+          solid([poly(tail), poly(band)], C.yellow, 2.6) + '<g clip-path="url(#' + cid + ')">' + stripes + "</g>" +
+          solid([poly([[n[0] + fx * 2, T - 7], [n[0] + fx * 7, T - 6], [n[0] + fx * 7, T - 1], [n[0] + fx * 2, T - 2]])], C.orange, 2);
+        return svg.replace('<g class="head">', sc + '<g class="head">');
+      }
+
+      // ── The lifeguard: an everyday beanpole in a striped tank top and red trunks, zinc on his long nose,
+      // sunglasses and a whistle on a cord, sitting up on his tall chair facing the water. Three drawings: reading his
+      // clipboard (flattened by the stamp), and blowing his whistle, pointing at the water, once he has peeled off.
+      var LG = { tone: 0, outfit: "scrubs", colorHex: SKIN0, hair: 0, hairStyle: "slick", hat: null, head: "long", look: "right", mood: "flat",
+        build: { legPose: [[84, 4], [93, -3]], nose: 1.3, neck: 1.7, hs: 0.82 } };
+      var READ = mix(LG, { arms: [[30, 75], [72, 100]] });
+      var LGr = KIT.rig(READ), SEAT = LGr.hipY + 6, LGT = LGr.shoulder[0][1] - 3;
+      var MOUTH = KIT.rig(LG).mouth;
+      var BLOW = mix(LG, { mood: "cross", brows: true, arms: [[100, 112], ik(LGr.shoulder[1], [MOUTH[0] + 4, MOUTH[1] + 3], LGr.armLength, 1)] });
+      function lifeguardDressing(svg, o, shades) {
+        var r = KIT.rig(o), T = r.shoulder[0][1] - 3, hip = r.hipY, cid = P + "tank" + ++uid;
+        var tank = [[-14, T + 3], [-10, T - 2], [-6, T + 9], [6, T + 9], [10, T - 2], [14, T + 3], [16, hip + 3], [-16, hip + 3]];
+        var stripes = "";
+        for (var y = T - 4; y < hip + 6; y += 9) stripes += '<rect x="-20" y="' + f(y) + '" width="40" height="4.5" fill="' + C.war + '"/>';
+        var dress = '<defs><clipPath id="' + cid + '"><' + poly(tank) + "/></clipPath></defs>" + solid([poly(tank)], WHITE, 3) + '<g clip-path="url(#' + cid + ')">' + stripes + "</g>" +
+          solid([poly([[-17, hip - 2], [17, hip - 2], [17.5, hip + 9], [-17.5, hip + 9]])], C.war, 3) +
+          // the whistle on its cord
+          '<path d="M-5,' + f(T - 1) + " L4," + f(T + 15) + " L7," + f(T - 1) + '" fill="none" stroke="' + ink + '" stroke-width="1.4"/>' +
+          (o === BLOW ? "" : solid([poly([[1, T + 14], [9, T + 14], [9, T + 19], [1, T + 19]])], C.yellow, 2));
+        var face = solid([poly([[15, -6], [29.5, 6.6], [17, 7.5]])], "#FFFFFF", 1.4) + // zinc on the nose
+          (shades ? '<g class="lg-shades">' + solid([poly([[-9.5, -8.5], [4.5, -8.5], [3.5, 0.5], [-8.5, 0.5]]), poly([[6.5, -8.5], [15.5, -8], [15, -0.5], [7, 0]])], C.slate, 2.4) +
+            '<path d="M4.5,-6 H6.5 M-9.5,-6 L-16,-4" stroke="' + ink + '" stroke-width="2.4"/><path d="M-6,-6 L-2,-6" stroke="' + C.peri + '" stroke-width="1.6"/></g>' : "");
+        var whistle = o === BLOW ? '<g transform="translate(' + f(r.mouth[0] + 3) + "," + f(r.mouth[1] + 1) + ')">' + solid([poly([[0, -3.5], [13, -3.5], [13, 3.5], [0, 3.5]]), 'circle cx="12" cy="3" r="5"'], C.yellow, 2) + "</g>" : "";
+        return svg.replace('<circle class="chest-light"', dress + '<circle class="chest-light"').replace("<!--face-end-->", face + "<!--face-end-->").replace(/<\/g><\/g>$/, whistle + "</g></g>");
+      }
+      // His clipboard (KIT.props.clipboard, blank) with the study written large, at his front hand; its pages flip
+      // up over the clip and blow away in the wind (.lg-page, each flipping about the clip at (0, -140)).
+      var studyText = function () {
+        return text(0, -110, "BUOYANCY", 17, ink, ' letter-spacing="1"') + text(0, -91, "STUDY", 17, ink, ' letter-spacing="1"') +
+          '<path d="M-30,-82 H30" stroke="' + C.orange + '" stroke-width="2"/>' +
+          '<text x="0" y="-48" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="34" fill="' + C.war + '">8.2</text>' + text(0, -26, "YEARS", 15, ink, ' letter-spacing="1.5"');
+      };
+      var pages = "";
+      for (var pg = 0; pg < 6; pg++) {
+        pages += '<g class="lg-page" opacity="0"><rect x="-44" y="-140" width="88" height="132" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2.4"/>' + studyText() + "</g>";
+      }
+      var CLIPS = 0.54, hand = LGr.hand[1];
+      var clipboard = '<g transform="translate(' + f(hand[0] + 12) + "," + f(hand[1] + 24) + ") rotate(8) scale(" + CLIPS + ')">' + KIT.props.clipboard({ title: "", items: [] }) + studyText() + pages + "</g>";
+      var lgRead = lifeguardDressing(KIT.person(READ), READ, true).replace(/<\/g><\/g>$/, clipboard + "</g></g>");
+      var lgBlow = lifeguardDressing(KIT.person(BLOW), BLOW, false);
+      // the whistle's blast: three lines and a TWEET from the whistle's end
+      var wx = KIT.rig(BLOW).mouth[0] + 22, wy = KIT.rig(BLOW).mouth[1] + 1;
+      var tweet = '<g id="' + P + "tweet" + '" opacity="0">' + [-28, 0, 28].map(function (a) {
+        var r = (a * PI) / 180;
+        return '<path d="M' + f(wx + 6 * Math.cos(r)) + "," + f(wy + 6 * Math.sin(r)) + " L" + f(wx + 20 * Math.cos(r)) + "," + f(wy + 20 * Math.sin(r)) + '" stroke="' + ink + '" stroke-width="2.8" stroke-linecap="round"/>';
+      }).join("") + '<text x="' + f(wx + 24) + '" y="' + f(wy - 14) + '" font-family="Oswald" font-weight="600" font-size="15" letter-spacing="1" fill="' + ink + '" transform="rotate(-12 ' + f(wx + 24) + " " + f(wy - 14) + ')">TWEET!</text></g>';
+      // round white eyes on the flattened head, which blink
+      var flatEyes = '<g id="' + P + 'flat-eyes" opacity="0">' + [-6, 7].map(function (x) {
+        return '<circle cx="' + x + '" cy="0" r="5.6" fill="#FFF" stroke="' + ink + '" stroke-width="1.8"/><circle cx="' + (x + 1.6) + '" cy="0.4" r="2.2" fill="' + ink + '"/>';
+      }).join("") + "</g>";
+
+      // The tall chair: two splayed wooden legs with a cross brace, a ladder, the seat, a backrest, a footrest and a
+      // LIFEGUARD board, in screen units around the lifeguard's hips (CH.x).
+      function bar(a, b, w) {
+        var dx = b[0] - a[0], dy = b[1] - a[1], l = Math.sqrt(dx * dx + dy * dy), nx = (-dy / l) * w / 2, ny = (dx / l) * w / 2;
+        return poly([[a[0] + nx, a[1] + ny], [b[0] + nx, b[1] + ny], [b[0] - nx, b[1] - ny], [a[0] - nx, a[1] - ny]]);
+      }
+      function chairSvg() {
+        var x = CH.x, s = LS, y0 = CH.seat, g = CH.ground, wd = 11 * s;
+        var back = [x - 34 * s, y0 - 70 * s], backF = [x - 54 * s, g], front = [x + 52 * s, y0], frontF = [x + 74 * s, g];
+        var at_ = function (A, B, k) { return [lerp(A[0], B[0], k), lerp(A[1], B[1], k)]; };
+        var rungs = "";
+        for (var k = 0.3; k < 0.95; k += 0.16) rungs += "<" + bar(at_(front, frontF, k), [at_(front, frontF, k)[0] + 26 * s, at_(front, frontF, k)[1]], 4 * s) + ' fill="' + C.rust + '" stroke="' + ink + '" stroke-width="2.4"/>';
+        var ladder = "<" + bar([front[0] + 26 * s, y0 + 10 * s], [frontF[0] + 26 * s, g], 6 * s) + ' fill="' + C.tan + '" stroke="' + ink + '" stroke-width="3"/>';
+        var signY = y0 + 92 * s, signL = lerp(back[0], backF[0], 0.62) - 6 * s, signR = lerp(front[0], frontF[0], 0.5) + 4 * s;
+        return '<g id="' + P + 'chair">' +
+          '<ellipse cx="' + f(x + 10 * s) + '" cy="' + f(g + 4) + '" rx="' + f(95 * s) + '" ry="' + f(9 * s) + '" fill="url(#' + P + 'fine)" opacity="0.55"/>' +
+          solid([bar(at_(back, backF, 0.42), at_(front, frontF, 0.85), 6 * s), bar(at_(back, backF, 0.85), at_(front, frontF, 0.38), 6 * s)], C.rust, 3) +
+          solid([bar(back, backF, wd), bar(front, frontF, wd)], C.tan, 3.6) + ladder + rungs +
+          // the backrest board and the seat
+          solid([poly([[x - 46 * s, y0 - 74 * s], [x - 26 * s, y0 - 74 * s], [x - 24 * s, y0 - 36 * s], [x - 44 * s, y0 - 36 * s]])], C.orange, 3.2) +
+          solid([poly([[x - 46 * s, y0], [x + 62 * s, y0], [x + 58 * s, y0 + 10 * s], [x - 42 * s, y0 + 10 * s]])], C.tan, 3.6) +
+          '<path d="M' + f(x - 40 * s) + "," + f(y0 + 3 * s) + " H" + f(x + 55 * s) + '" stroke="' + C.cream + '" stroke-width="2" opacity="0.7"/>' +
+          // the footrest, under his heels
+          solid([poly([[x + 34 * s, y0 + 47 * s], [x + 84 * s, y0 + 47 * s], [x + 84 * s, y0 + 52 * s], [x + 34 * s, y0 + 52 * s]])], C.rust, 2.6) +
+          solid([poly([[signL, signY], [signR, signY], [signR, signY + 30 * s], [signL, signY + 30 * s]])], WHITE, 3.4) +
+          '<rect x="' + f(signL + 4 * s) + '" y="' + f(signY + 4 * s) + '" width="' + f(signR - signL - 8 * s) + '" height="' + f(22 * s) + '" fill="none" stroke="' + C.orange + '" stroke-width="1.6"/>' +
+          text((signL + signR) / 2, signY + 21.5 * s, "LIFEGUARD", f(15 * s), C.war, ' letter-spacing="' + f(1.6 * s) + '"') + "</g>";
+      }
+      var lgY = CH.seat - SEAT * LS;
+      var markSvg = KIT.props.stampMark({ text: "DECENTRALIZED FDA\nPROTOCOL", size: L.mark, angle: -7 });
+      var FLAT = 0.2, TOP = LGr.top[1] - 6, markCy = +markSvg.match(/data-cy="([-0-9.]+)"/)[1] * L.mark;
+      var markY = SEAT - ((SEAT - TOP) * (FLAT + 0.05)) / 2 - markCy / LS;
+      var lifeguard = chairSvg() + at(CH.x, lgY, LS,
+        '<g id="' + P + 'lg-peel"><g id="' + P + 'lg-sq">' + '<g id="' + P + 'lg-read">' + lgRead + '</g><g id="' + P + 'lg-blow" opacity="0">' + lgBlow + tweet + "</g></g>" +
+        flatEyes + '<g transform="translate(24,' + f(markY) + ") scale(" + f(1 / LS) + ')"><g id="' + P + 'mark" opacity="0">' + markSvg + "</g></g></g>");
+
+      // ── The hook post at the waterline: TODAY: 1.9 MILLION on top, the hook, the two jackets and the price tag.
+      var PO = L.post, HK = L.hook, JS = L.jackS, PL = L.plaque;
+      var plaqueH = PL.w * 0.42;
+      var plaque = at(PL.x, PL.y, 1, '<g id="' + P + 'plaque">' +
+        '<rect x="' + f(-PL.w / 2 + 8) + '" y="' + f(-plaqueH + 8) + '" width="' + PL.w + '" height="' + f(plaqueH) + '" fill="' + C.ink + '" opacity="0.85"/>' +
+        '<rect x="' + f(-PL.w / 2) + '" y="' + f(-plaqueH) + '" width="' + PL.w + '" height="' + f(plaqueH) + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<rect x="' + f(-PL.w / 2 + 7) + '" y="' + f(-plaqueH + 7) + '" width="' + f(PL.w - 14) + '" height="' + f(plaqueH - 14) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+        text(0, -plaqueH + PL.w * 0.15, "TODAY:", f(PL.w * 0.1), ink, ' letter-spacing="2"') +
+        text(0, -PL.w * 0.09, "1.9 MILLION", f(PL.w * 0.135), C.war, ' letter-spacing="1"') + "</g>");
+      var tagKnot = [HK[0] + 15 * JS, HK[1] + (14 + JLEN + 5) * JS];
+      var hookSvg = '<g id="' + P + 'post">' +
+        '<ellipse cx="' + PO.x + '" cy="' + f(PO.ground + 3) + '" rx="40" ry="7" fill="url(#' + P + 'fine)" opacity="0.6"/>' +
+        solid([poly([[PO.x - 9, PO.top], [PO.x + 9, PO.top], [PO.x + 11, PO.ground], [PO.x - 11, PO.ground]])], C.tan, 3.6) +
+        '<path d="M' + (PO.x + 4) + "," + (PO.top + 10) + " V" + (PO.ground - 6) + '" stroke="' + C.rust + '" stroke-width="2" opacity="0.6"/>' +
+        solid([poly([[PO.x, HK[1] - 18], [HK[0] + 6, HK[1] - 18], [HK[0] + 6, HK[1] - 9], [PO.x, HK[1] - 9]])], C.tan, 3) +
+        '<path d="M' + HK[0] + "," + (HK[1] - 10) + " V" + (HK[1] + 4) + " q0,9 -8,9 q-7,0 -7,-7" + '" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>' +
+        at(HK[0] - 15 * JS, HK[1] + 12 * JS, JS, '<g transform="rotate(4)">' + jacket(JSW, JLEN) + "</g>") +
+        at(HK[0] + 15 * JS, HK[1] + 14 * JS, JS, '<g transform="rotate(-5)">' + jacket(JSW, JLEN) + "</g>") +
+        '<path d="M' + f(HK[0] - 15 * JS) + "," + f(HK[1] + 6 * JS) + " L" + (HK[0] - 4) + "," + (HK[1] + 8) + " L" + f(HK[0] + 15 * JS) + "," + f(HK[1] + 8 * JS) + '" fill="none" stroke="' + ink + '" stroke-width="2.4"/>' +
+        plaque + "</g>";
+      var tags = at(tagKnot[0], tagKnot[1], 1,
+        '<g id="' + P + 'tag-big">' + KIT.props.priceTag({ text: "$41,000 / PATIENT", angle: L.tagA, size: L.tagS[0] }) + "</g>" +
+        '<g id="' + P + 'tag-small" opacity="0">' + KIT.props.priceTag({ text: "$929", angle: L.tagA, size: L.tagS[1] }) + "</g>" +
+        [0, 1, 2].map(function (i) { return '<circle class="lj-puff" cx="0" cy="0" r="9" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2.4" opacity="0"/>'; }).join(""));
+
+      // ── The conveyor (KIT.props.conveyor) along the waterline, its belt stacked with jackets in two rows, and its
+      // counter plaque on the side. It rolls out from behind the post.
+      var CV = L.conv, CW = CV.w, CX = CV.x0 + (CW * CV.s) / 2, BELT = CV.ground - CV.h * CV.s, PITCH = 54;
+      // two rows: the back one higher and half a pitch along, then the front one
+      var piles = "";
+      for (var row = 0; row < 2; row++) {
+        var rowSvg = "";
+        for (var x = -CW / 2 - PITCH; x <= CW / 2 + PITCH; x += PITCH) {
+          var jx = x + (row ? 0 : PITCH / 2), jy = -CV.h - (row ? 0 : 12) - JLEN - 5;
+          rowSvg += '<g transform="translate(' + f(jx) + "," + f(jy) + ")" + (row ? "" : " scale(0.92)") + '">' + jacket(JSW, JLEN) + "</g>";
+        }
+        piles += '<g class="lj-row">' + rowSvg + "</g>";
+      }
+      var pid = P + "pileclip";
+      var panelW = Math.min(310, CW - 40), panelY = -CV.h + 15;
+      var panel = '<g id="' + P + 'panel">' +
+        '<rect x="' + f(-panelW / 2 + 6) + '" y="' + f(panelY + 6) + '" width="' + panelW + '" height="40" fill="' + C.ink + '" opacity="0.85"/>' +
+        '<rect x="' + f(-panelW / 2) + '" y="' + f(panelY) + '" width="' + panelW + '" height="40" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="3"/>' +
+        '<rect x="' + f(-panelW / 2 + 5) + '" y="' + f(panelY + 5) + '" width="' + f(panelW - 10) + '" height="30" fill="none" stroke="' + C.orange + '" stroke-width="1.5"/>' +
+        '<text x="0" y="' + f(panelY + 29) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="23" letter-spacing="1" fill="' + ink + '">' +
+        '<tspan id="' + P + 'count" fill="#1F6E68">0.0</tspan> MILLION / YEAR</text></g>';
+      var conveyor = '<defs><clipPath id="' + P + 'convclip"><rect x="' + (PO.x + 10) + '" y="0" width="' + W + '" height="' + H + '"/></clipPath>' +
+        '<clipPath id="' + pid + '"><rect x="' + f(-CW / 2 + 6) + '" y="-300" width="' + f(CW - 12) + '" height="300"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'convclip)"><g id="' + P + 'conv-roll">' + at(CX, CV.ground, CV.s,
+          '<g id="' + P + 'conv">' + KIT.props.conveyor({ w: CW, h: CV.h }) + "</g>" +
+          '<g clip-path="url(#' + pid + ')"><g id="' + P + 'piles">' + piles + "</g></g>" + panel) + "</g></g>";
+
+      // ── The line of swimmers, out to the horizon. Near ones are drawn humans (heads, waving arms) cut off at the
+      // waterline; at depths SKULLS bob grinning skulls; far ones are dots. The patient is at depth 2.
+      function proj(d) {
+        var k = L.d0 / (L.d0 + d);
+        return { x: L.VP[0] + (L.F[0] - L.VP[0]) * k + L.lat(d) * k, y: L.VP[1] + (L.F[1] - L.VP[1]) * k, s: L.s0 * k, k: k };
+      }
+      var PT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      var LOOKS = [
+        { tone: 1, outfit: "shirt", color: 0, hair: 0, hat: "bowler" }, PT, { tone: 3, outfit: "dress", color: 3, hair: 1, hat: "curlers" },
+        { tone: 2, outfit: "suit", hair: 2, stache: true }, { tone: 0, outfit: "overalls", color: 2, hat: "hard" }, { tone: 1, outfit: "dress", color: 0, hair: 1 },
+        { tone: 3, outfit: "shirt", color: 1, hair: 0, glasses: true }, { tone: 2, outfit: "dress", color: 2, hair: 1, hat: "curlers" },
+        { tone: 0, outfit: "suit", hair: 0, hat: "bowler" }, { tone: 1, outfit: "shirt", color: 3, hair: 2 }, { tone: 3, outfit: "dress", color: 1, hair: 1 },
+      ];
+      var SKULLS = { 4: { tone: 1, outfit: "shirt", hat: "bowler" }, 7: { tone: 2, outfit: "dress", hair: 1 }, 10: { tone: 0, outfit: "suit", hat: "top" }, 17: { tone: 3, outfit: "shirt" } };
+      var NEAR = 14, ARMS_UP = [[-150, -168], [152, 170]], ARMS_JOY = [[-128, -150], [128, 150]], WL = 10; // WL: the waterline, in person units below y 0
+      var swimmers = [], li = 0, rnd = KIT.rng(1414);
+      // swimmer d stands at depth z: the drawn ones a little further apart, so their heads do not stack
+      for (var d = L.dMax; d >= 0; d--) {
+        var z = d < NEAR ? d * 1.3 : NEAR * 1.3 + (d - NEAR);
+        var p = proj(z), s = { d: d, x: p.x, y: p.y, s: p.s, ph: rnd() * 6.28, rate: 1.8 + rnd() * 0.8 };
+        if (SKULLS[d]) { s.kind = "skull"; s.o = mix(SKULLS[d], { skeleton: true, look: "left" }); }
+        else if (d < NEAR) s.kind = "human";
+        else s.kind = "dot";
+        swimmers.unshift(s);
+      }
+      // (front to back, swimmers[i].d === i; the LOOKS go to the humans front to back, past the skulls; the patient is second)
+      var near = swimmers.filter(function (s) { return s.kind === "human"; });
+      near.forEach(function (s, i) { s.o = LOOKS[i]; s.patient = s.o === PT; });
+      var clipSw = '<clipPath id="' + P + 'wl"><rect x="-400" y="-700" width="800" height="700"/></clipPath>';
+      function swimmerSvg(s, i) {
+        var inner, o = s.o;
+        if (s.kind === "dot") {
+          var r = 9;
+          inner = '<g id="' + P + "sw" + i + '-bob"><path d="M-9,-6 L-15,-22 M9,-6 L15,-22" stroke="' + ink + '" stroke-width="4" stroke-linecap="round"/>' +
+            '<circle cx="0" cy="-8" r="' + r + '" fill="' + ["#F4E3CC", "#D9B48F", "#A87B57", "#6F4B33"][i % 4] + '" stroke="' + ink + '" stroke-width="3"/>' +
+            '<path d="M-8,-12 Q0,-22 8,-12 Z" fill="' + ink + '"/>' +
+            '<g id="' + P + "sw" + i + '-ring" opacity="0"><ellipse cx="0" cy="1" rx="17" ry="7" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="3"/><path d="M-5,-5 V6 M5,-5 V6" stroke="' + C.cream + '" stroke-width="2.6"/></g></g>' +
+            '<path d="M-18,1 Q0,7 18,1" fill="none" stroke="' + ink + '" stroke-width="2.4"/>';
+          return at(s.x, s.y, s.s, inner);
+        }
+        var drawings;
+        if (s.kind === "skull") {
+          var sk = mix(o, { arms: [[20, 10], [-20, -10]] });
+          drawings = '<g class="lj-d0">' + KIT.person(sk) + '</g><g class="lj-d2" opacity="0">' + wear(KIT.person(mix(sk, { arms: ARMS_JOY })), mix(sk, { arms: ARMS_JOY })) + "</g>";
+        } else {
+          var dr = mix(o, { look: "left", arms: ARMS_UP, mood: "worried" });
+          var sv = mix(o, { look: "left", arms: ARMS_JOY, mood: "smile" });
+          var dsvg = KIT.person(dr), ssvg = wear(KIT.person(sv), sv);
+          if (s.patient) { dsvg = scarf(dsvg, dr); ssvg = scarf(ssvg, sv); }
+          drawings = '<g class="lj-d0">' + dsvg + "</g>" + '<g class="lj-d2" opacity="0">' + ssvg + "</g>";
+          if (i === 0) {
+            // the first in line strains for the jackets on the hook
+            var rr = KIT.rig(mix(o, { look: "left" })), hk = [(HK[0] - s.x) / s.s, (HK[1] + 40 * JS - s.y) / s.s - WL];
+            var a = (Math.atan2(hk[0] - rr.shoulder[0][0], hk[1] - rr.shoulder[0][1]) * 180) / PI;
+            s.reach = mix(o, { look: "left", mood: "eager", arms: [[a, a], [40, 20]] });
+            drawings += '<g class="lj-d1" opacity="0">' + KIT.person(s.reach) + "</g>";
+          }
+        }
+        var bubbles = [0, 1, 2].map(function (k) { return '<circle class="lj-bub" cx="' + (k * 9 - 9) + '" cy="0" r="' + (4 - k * 0.7) + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2" opacity="0"/>'; }).join("");
+        inner = '<g clip-path="url(#' + P + 'wl)"><g id="' + P + "sw" + i + '-bob"><g transform="translate(0,' + WL + ')">' + drawings + "</g></g></g>" +
+          '<path d="M-30,0 Q-15,7 0,2 Q15,7 30,0" fill="none" stroke="' + ink + '" stroke-width="2.6"/>' + bubbles;
+        return at(s.x, s.y, s.s, inner, "sw" + i);
+      }
+      var lineSvg = "";
+      for (var k2 = swimmers.length - 1; k2 >= 0; k2--) lineSvg += swimmerSvg(swimmers[k2], k2);
+
+      // ── The flying jackets, one per swimmer: launched off the conveyor, they land on the heads down the line (the
+      // patient catches hers in her raised hands), and the skulls' come last.
+      var T = {
+        stamp: cue("protocol,"), forty: cue("forty-four"), conv: cue("twenty-three", 1), mil1: cue("million", 1), old: cue("one", 2),
+        rem: cue("Remember"), drown: cue("drowning"), reach: cue("jackets?"), hand: cue("hand"), out: cue("out"), late: cue("million.", 3),
+        whistle: KIT.after(ID, "million.", 3),
+      };
+      var living = swimmers.filter(function (s) { return s.kind !== "skull"; }), skulls = swimmers.filter(function (s) { return s.kind === "skull"; });
+      var pops = [T.out, T.out + 0.15, T.out + 0.3, T.out + 0.45], NL = living.length;
+      living.forEach(function (s, j) { s.land = j < 4 ? pops[j] : pops[3] + 0.85 * Math.pow((j - 3) / (NL - 4), 0.75); });
+      skulls.forEach(function (s, j) { s.land = T.late + j * 0.05; });
+      var flySvg = "", frnd = KIT.rng(929);
+      swimmers.forEach(function (s, i) {
+        var r = s.kind === "dot" ? null : KIT.rig(mix(s.o, { look: "left", arms: ARMS_UP }));
+        // where it lands, in screen units: the neck (or the patient's raised hands)
+        var tx = s.x, ty;
+        if (!r) ty = s.y - 6 * s.s;
+        else if (s.patient) { tx = s.x + (s.s * (r.hand[0][0] + r.hand[1][0])) / 2; ty = s.y + s.s * ((r.hand[0][1] + r.hand[1][1]) / 2 + WL); }
+        else { tx = s.x + s.s * r.neck[0]; ty = s.y + s.s * (r.shoulder[0][1] + WL + 8); }
+        // each is flung forward along the line from the belt behind its swimmer, in a lob
+        // (the far ones from anywhere along the belt's back half, in lobs of their own, so they spray out to the horizon)
+        var span = CW * CV.s, far = s.kind === "dot" || (s.kind === "skull" && s.d > NEAR);
+        var lx = far ? CV.x0 + span * (0.35 + 0.6 * frnd()) : clamp(tx - (V ? 90 : 300), CV.x0 + 50, CV.x0 + span - 50), ly = BELT - 30 * CV.s;
+        var dist = Math.sqrt((tx - lx) * (tx - lx) + (ty - ly) * (ty - ly)), s1 = s.kind === "dot" ? s.s * 0.9 : s.s * 1.1;
+        s.fly = { lx: lx, ly: ly, tx: tx, ty: ty, s0: Math.min(CV.s * 0.9, s1 * 1.8), s1: s1, h: (far ? 70 + 150 * frnd() : 50) + dist * 0.2, spin: (i % 2 ? 1 : -1) * (300 + (i % 3) * 120) };
+        s.fly.dur = Math.min(0.3 + dist / 2600, 0.62);
+        s.fly.t0 = s.kind === "skull" ? s.land - s.fly.dur : Math.max(T.hand, s.land - s.fly.dur);
+        flySvg += '<g id="' + P + "fj" + i + '" opacity="0">' + jacketC() + "</g>";
+      });
+
+      // ── Sky, sea and sand ──
+      var SUN = L.sun, rays = "";
+      for (var ri = 0; ri < 12; ri++) {
+        var ra = (ri * PI) / 6;
+        rays += '<path d="M' + f(SUN[0] + (SUN[2] + 12) * Math.cos(ra)) + "," + f(SUN[1] + (SUN[2] + 12) * Math.sin(ra)) + " L" + f(SUN[0] + (SUN[2] + 30) * Math.cos(ra)) + "," + f(SUN[1] + (SUN[2] + 30) * Math.sin(ra)) + '"/>';
+      }
+      var sky = '<g stroke="' + C.orange + '" stroke-width="6" stroke-linecap="round">' + rays + "</g>" +
+        '<circle cx="' + SUN[0] + '" cy="' + SUN[1] + '" r="' + SUN[2] + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<circle cx="' + SUN[0] + '" cy="' + SUN[1] + '" r="' + SUN[2] + '" fill="url(#' + P + 'fine)" opacity="0.25"/>' +
+        L.gulls.map(function (g, i) { return '<g id="' + P + "gull" + i + '"><path d="M-16,0 Q-8,-9 0,0 Q8,-9 16,0" fill="none" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="round"/></g>'; }).join("");
+      var sea = '<rect x="0" y="' + L.hz + '" width="' + W + '" height="' + (H - L.hz) + '" fill="' + C.cyan + '" opacity="0.5"/>' +
+        '<rect x="0" y="' + L.hz + '" width="' + W + '" height="' + (V ? 90 : 70) + '" fill="url(#' + P + 'hatch)" opacity="0.16"/>' +
+        '<path d="M0,' + L.hz + " H" + W + '" stroke="' + ink + '" stroke-width="4"/>';
+      var waves = "";
+      for (var wr = 0; wr < 7; wr++) {
+        var wk = (wr + 1) / 7, wyy = L.hz + (V ? 980 : 520) * Math.pow(wk, 1.6), ws = 0.35 + wk * 0.9, wd = "";
+        for (var wx0 = -60 + (wr % 2) * 70; wx0 < W + 80; wx0 += 150 * ws) wd += "M" + f(wx0) + "," + f(wyy) + " q" + f(14 * ws) + "," + f(-9 * ws) + " " + f(28 * ws) + ",0 ";
+        waves += '<g class="lj-wave" data-k="' + wr + '"><path d="' + wd + '" fill="none" stroke="' + ink + '" stroke-width="' + f(1.6 + wk * 1.6) + '" opacity="0.5"/></g>';
+      }
+      var sandPts = L.sand;
+      var sand = solid([poly(sandPts)], "#E9D29E", 4) + dots(sandPts, 0.0, 0.12) +
+        '<path d="M' + sandPts.slice(0, 7).map(function (p) { return f(p[0]) + "," + f(p[1] + 7); }).join(" L") + '" fill="none" stroke="' + WHITE + '" stroke-width="5" stroke-linecap="round" opacity="0.9"/>';
+      // the lifeguard's sunglasses, knocked off by the stamp
+      var shades = '<g id="' + P + 'shades" opacity="0"><g transform="scale(' + LS + ')">' + solid([poly([[-11, -4], [-1, -4], [-2, 3], [-10, 3]]), poly([[1, -4], [11, -4], [10, 3], [2, 3]])], C.slate, 2.4) + "</g></g>";
+      var stamp = '<g id="' + P + 'stamp" opacity="0">' + KIT.props.stamp({ text: "DFDA" }) + "</g>";
+
+      var frameSvg = '<rect x="30" y="30" width="' + (W - 60) + '" height="' + (H - 60) + '" fill="none" stroke="' + C.line + '" stroke-width="5"/>' +
+        '<rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>';
+      var defs = KIT.paperDefs(ID) + "<defs>" + clipSw + '<clipPath id="' + P + 'view"><rect x="32" y="32" width="' + (W - 64) + '" height="' + (H - 64) + '"/></clipPath>' +
+        '<pattern id="' + P + 'jdot" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + ink + '"/></pattern></defs>';
+      q("art").innerHTML = KIT.svg(W, H, defs + '<g clip-path="url(#' + P + 'view)"><g id="' + P + 'world">' + sky + sea + waves + lineSvg + sand + lifeguard + hookSvg + tags + conveyor +
+        flySvg + at(0, 0, 1, shades) + stamp + "</g></g>" + frameSvg);
+
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var g = function (s) { return document.getElementById(P + s); };
+
+      // ── The lifeguard flips his study; the pages blow away (until the stamp lands).
+      var pageEls = g("lg-read").querySelectorAll(".lg-page");
+      Array.prototype.forEach.call(pageEls, function (pe, i) {
+        var t0 = 0.35 + i * 0.44;
+        if (t0 > T.stamp - 0.3) return;
+        gsap.set(pe, { svgOrigin: "0 -140" });
+        tl.set(pe, { opacity: 1 }, t0);
+        tl.fromTo(pe, { scaleY: 1 }, { scaleY: -0.15, duration: 0.16, ease: "power2.in" }, t0);
+        tl.to(pe, { x: -170, y: -150, rotation: -70, opacity: 0, duration: 0.55, ease: "power1.out" }, t0 + 0.16);
+      });
+
+      // ── "protocol,": the stamp falls (thunk on the word), squashes him into the seat by the splat, holds, and lifts
+      // away off a red DECENTRALIZED FDA PROTOCOL mark; he lies flat, blinking, until after the last "million.".
+      var stampEl = g("stamp"), sq = g("lg-sq"), peel = g("lg-peel"), eyes = g("flat-eyes"), markEl = g("mark"), readEl = g("lg-read"), blowEl = g("lg-blow");
+      var shadesIn = readEl.querySelector(".lg-shades"), shadesFly = g("shades");
+      var SX = CH.x + 24 * LS, HEADY = LGr.head[1];
+      var tHit = T.stamp, tSplat = T.stamp + 0.12, tLift = tSplat + 0.45, tGone = tLift + 0.4;
+      var tPeel = T.whistle - 0.55, tPop = T.whistle - 0.12;
+      var blinks = [tGone + 0.5, tGone + 1.6, 9.1, 12.3, 17.6, 20.6];
+      var shadeFrom = [CH.x + (LGr.eyes[0] + 3) * LS, lgY + LGr.eyes[1] * LS], shadeTo = [CH.x + (V ? 130 : 165) * 1, CH.ground - 8];
+      // how squashed he is (1 = standing tall) at time t, and the stamp's rubber face (screen y)
+      function squashAt(t) {
+        if (t < tHit) return 1;
+        if (t < tSplat) return lerp(1, FLAT, (t - tHit) / (tSplat - tHit));
+        if (t < tLift) return FLAT - 0.02 * Math.sin((t - tSplat) * 40) * Math.exp(-8 * (t - tSplat));
+        if (t < tPeel) return FLAT + 0.05 * (1 - Math.exp(-6 * (t - tLift)) * Math.cos(14 * (t - tLift)));
+        return FLAT + 0.05;
+      }
+      KIT.onTime(tl, D, function (t) {
+        // the stamp
+        var ry = null;
+        if (t >= tHit - 0.24 && t < tHit) ry = lerp(-60 - 92 * L.stampS, lgY + TOP * LS, Math.pow((t - (tHit - 0.24)) / 0.24, 3));
+        else if (t >= tHit && t < tLift) ry = lgY + (SEAT - (SEAT - TOP) * squashAt(t)) * LS;
+        else if (t >= tLift && t < tGone) ry = lerp(lgY + (SEAT - (SEAT - TOP) * FLAT) * LS, -60 - 92 * L.stampS, Math.pow((t - tLift) / (tGone - tLift), 2));
+        stampEl.setAttribute("opacity", ry === null ? "0" : "1");
+        if (ry !== null) stampEl.setAttribute("transform", "translate(" + f(SX) + "," + f(ry) + ") scale(" + L.stampS + ")");
+        // the lifeguard: squashed, then peeled up like a sticker, then springing back up to blow his whistle
+        var sy = squashAt(t), sx = 1 + (1 - sy) * 0.42, rot = 0, rx = -22 * sx;
+        if (t >= tPeel && t < tPop) rot = -34 * smooth((t - tPeel) / (tPop - tPeel));
+        if (t >= tPop) {
+          var dd = Math.exp(-5 * (t - tPop)) * Math.cos(16 * (t - tPop));
+          sy = 1 - 0.8 * dd; sx = 1 + 0.3 * dd;
+          if (t < tPop + 0.1) rot = -34 * (1 - (t - tPop) / 0.1);
+        }
+        sq.setAttribute("transform", "translate(0," + f(SEAT) + ") scale(" + sx.toFixed(3) + "," + sy.toFixed(3) + ") translate(0," + f(-SEAT) + ")");
+        peel.setAttribute("transform", "rotate(" + rot.toFixed(2) + " " + f(rx) + " " + f(SEAT) + ")");
+        var flat = t >= tSplat && t < tPop, bl = blinks.some(function (b) { return t > b && t < b + 0.11; }) ? 0.12 : 1;
+        eyes.setAttribute("opacity", flat ? "1" : "0");
+        eyes.setAttribute("transform", "translate(" + f(LGr.head[0] * sx + 3) + "," + f(SEAT - (SEAT - HEADY) * sy - 2) + ") scale(" + f(sx * 0.9) + "," + bl + ")");
+        markEl.setAttribute("opacity", t >= tLift && t < tPop ? "1" : t >= tPop && t < tPop + 0.15 ? f(1 - (t - tPop) / 0.15) : "0");
+        readEl.setAttribute("opacity", t < tPop ? "1" : "0");
+        blowEl.setAttribute("opacity", t < tPop ? "0" : "1");
+        if (shadesIn) shadesIn.setAttribute("opacity", t < tHit + 0.02 ? "1" : "0");
+        // his sunglasses fly off onto the sand
+        var sp = (t - tHit) / 0.55;
+        shadesFly.setAttribute("opacity", t >= tHit ? "1" : "0");
+        if (t >= tHit) {
+          var e = clamp(sp, 0, 1), sxF = lerp(shadeFrom[0], shadeTo[0], e), syF = lerp(shadeFrom[1], shadeTo[1], e) - 260 * e * (1 - e) * 2;
+          shadesFly.setAttribute("transform", "translate(" + f(sxF) + "," + f(syF) + ") rotate(" + f(e * 520) + ")");
+        }
+      });
+      // after he springs up: the whistle's blast
+      tl.fromTo(g("tweet"), { opacity: 0 }, { opacity: 1, duration: 0.05 }, T.whistle);
+      tl.to(g("tweet"), { opacity: 0.25, duration: 0.09, repeat: Math.floor((D - T.whistle - 0.12) / 0.09) - 1, yoyo: true, ease: "none" }, T.whistle + 0.1);
+
+      // ── "forty-four": the $41,000 tag deflates, wobbling and puffing air, to a tiny $929.
+      var tagBig = g("tag-big"), tagSmall = g("tag-small"), td = T.forty, tdEnd = td + 0.8;
+      gsap.set([tagBig, tagSmall], { svgOrigin: "0 0" });
+      tl.fromTo(tagBig, { scale: 1 }, { scale: 0.4, duration: tdEnd - td, ease: "power1.in" }, td);
+      tl.fromTo(tagBig, { rotation: 0 }, { rotation: 9, duration: 0.1, repeat: 7, yoyo: true, ease: "sine.inOut" }, td);
+      tl.set(tagBig, { opacity: 0 }, tdEnd);
+      tl.set(tagSmall, { opacity: 1 }, tdEnd);
+      tl.fromTo(tagSmall, { rotation: -14 }, { rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.35)" }, tdEnd);
+      var tipX = Math.cos((L.tagA * PI) / 180) * 170 * L.tagS[0], tipY = Math.sin((L.tagA * PI) / 180) * 170 * L.tagS[0] + 30;
+      Array.prototype.forEach.call(document.querySelectorAll("#" + P + "world .lj-puff"), function (pf, i) {
+        var t0 = td + 0.08 + i * 0.22, k = 1 - i * 0.28;
+        tl.fromTo(pf, { attr: { cx: tipX * k, cy: tipY * k, r: 4 }, opacity: 1 }, { attr: { cx: tipX * k + 60, cy: tipY * k + 10, r: 14 }, opacity: 0, duration: 0.4, ease: "power2.out" }, t0);
+      });
+
+      // ── "twenty-three": the conveyor rolls out from the hook (whirr) and its counter rolls up to 23.4, landing on
+      // "million"; "one" (one point nine): the TODAY: 1.9 MILLION sign shrinks (tick) and droops.
+      var roll = g("conv-roll"), convEl = g("conv"), count = g("count");
+      tl.fromTo(roll, { x: -(CW * CV.s + 30) }, { x: 0, duration: 0.85, ease: "power2.out" }, T.conv);
+      KIT.props.conveyor.run(tl, convEl, T.conv, 0.85, 110);
+      var c0 = T.conv + 0.45, c1 = T.mil1;
+      KIT.onTime(tl, D, function (t) {
+        var v = t < c0 ? 0 : t >= c1 ? 23.4 : 23.4 * Math.pow((t - c0) / (c1 - c0), 0.6);
+        count.textContent = v.toFixed(1);
+      });
+      var pan = g("panel");
+      gsap.set(pan, { svgOrigin: "0 " + (panelY + 20) });
+      tl.fromTo(pan, { scale: 1 }, { scale: 1.12, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, c1);
+      var plq = g("plaque");
+      gsap.set(plq, { svgOrigin: "0 0" });
+      tl.fromTo(plq, { scale: 1 }, { scale: 1.08, duration: 0.08, ease: "power2.out" }, T.old);
+      tl.to(plq, { scale: 0.38, duration: 0.32, ease: "back.in(1.6)" }, T.old + 0.08);
+      tl.to(plq, { rotation: -10, duration: 0.5, ease: "power2.out" }, T.old + 0.42);
+
+      // ── The swimmers, every frame: idle bobbing and waving; "drowning": three dunks down the line (the pops);
+      // "jackets?": the first in line strains for the hook; then each one's jacket flies in and it pops up like a cork.
+      var dunks = [T.drown, T.drown + 0.2, T.drown + 0.4];
+      var SW = swimmers.map(function (s, i) {
+        var root = document.getElementById(P + "sw" + i), o = { s: s, bob: g("sw" + i + "-bob"), fj: g("fj" + i) };
+        if (s.kind === "dot") { o.ring = g("sw" + i + "-ring"); return o; }
+        o.d0 = root.querySelector(".lj-d0"); o.d1 = root.querySelector(".lj-d1"); o.d2 = root.querySelector(".lj-d2");
+        o.bub = root.querySelectorAll(".lj-bub");
+        if (s.kind === "human") {
+          var r = KIT.rig(mix(s.o, { look: "left", arms: ARMS_UP }));
+          o.armL = o.d0.querySelector(".arm-l"); o.armR = o.d0.querySelector(".arm-r"); o.shL = r.shoulder[0]; o.shR = r.shoulder[1];
+          if (o.d1) { var r1 = KIT.rig(s.reach); o.reachArm = o.d1.querySelector(".arm-l"); o.shReach = r1.shoulder[0]; }
+          var rs = KIT.rig(mix(s.o, { look: "left", arms: ARMS_JOY }));
+          o.joyL = o.d2.querySelector(".arm-l"); o.joyR = o.d2.querySelector(".arm-r"); o.shJL = rs.shoulder[0]; o.shJR = rs.shoulder[1];
+        }
+        return o;
+      });
+      var group = function (d) { return d < 5 ? 0 : d < 10 ? 1 : 2; };
+      // a dunk: under in 0.12 s, a moment down there, and back up with a bounce
+      function dunk(tau) {
+        if (tau < 0 || tau > 0.7) return 0;
+        if (tau < 0.12) return 80 * smooth(tau / 0.12);
+        if (tau < 0.32) return 80;
+        return 80 * Math.exp(-7 * (tau - 0.32)) * Math.cos(9 * (tau - 0.32));
+      }
+      var RISE = 26;
+      function cork(tau) { return -RISE * (1 - Math.exp(-5 * tau) * Math.cos(13 * tau)); }
+      var CATCH = 0.34; // the patient holds her jacket up this long before she puts it on
+      KIT.onTime(tl, D, function (t) {
+        SW.forEach(function (o) {
+          var s = o.s, idle = 2.4 * Math.sin(t * s.rate + s.ph), on = s.land + (s.patient ? CATCH : 0);
+          var y = idle, saved = t >= on, rot = 0;
+          if (s.kind !== "skull" && !saved) y += dunk(t - dunks[group(s.d)]);
+          if (s.kind === "skull" && !saved) y = 1.6 * Math.sin(t * 1.3 + s.ph);
+          if (saved) y = cork(t - on) + 1.8 * Math.sin(t * 2.4 + s.ph);
+          // the first in line leans toward the hook from "jackets?" until his jacket lands
+          var reaching = o.d1 && t >= T.reach && !saved;
+          if (reaching) { rot = -9 * smooth((t - T.reach) / 0.25) - 2 * smooth((t - T.reach - 0.3) / 2.5); y -= 6 * smooth((t - T.reach) / 0.25); }
+          if (s.kind === "dot") {
+            o.bob.setAttribute("transform", "translate(0," + f(saved ? cork(t - on) * 0.25 + 1.2 * Math.sin(t * 2 + s.ph) : 1.2 * Math.sin(t * s.rate + s.ph) + dunk(t - dunks[2]) * 0.4) + ")");
+            o.ring.setAttribute("opacity", saved ? "1" : "0");
+          } else {
+            o.bob.setAttribute("transform", "translate(0," + f(y) + ")" + (rot ? " rotate(" + f(rot) + ")" : ""));
+            o.d0.setAttribute("opacity", !saved && !reaching ? "1" : "0");
+            if (o.d1) o.d1.setAttribute("opacity", reaching ? "1" : "0");
+            o.d2.setAttribute("opacity", saved ? "1" : "0");
+            if (o.armL) {
+              var wv = Math.sin(t * 7.5 + s.ph) * 14;
+              o.armL.setAttribute("transform", "rotate(" + f(wv) + " " + f(o.shL[0]) + " " + f(o.shL[1]) + ")");
+              o.armR.setAttribute("transform", "rotate(" + f(-Math.sin(t * 7.5 + s.ph + 1.3) * 14) + " " + f(o.shR[0]) + " " + f(o.shR[1]) + ")");
+              var jv = saved ? Math.sin((t - on) * 9) * 10 * Math.exp(-0.6 * (t - on)) + 4 * Math.sin(t * 3 + s.ph) : 0;
+              o.joyL.setAttribute("transform", "rotate(" + f(jv) + " " + f(o.shJL[0]) + " " + f(o.shJL[1]) + ")");
+              o.joyR.setAttribute("transform", "rotate(" + f(-jv) + " " + f(o.shJR[0]) + " " + f(o.shJR[1]) + ")");
+            }
+            if (o.reachArm) o.reachArm.setAttribute("transform", "rotate(" + f(reaching ? Math.sin(t * 40) * 2.5 : 0) + " " + f(o.shReach[0]) + " " + f(o.shReach[1]) + ")");
+            // bubbles while under
+            var tau = s.kind === "skull" ? -1 : t - dunks[group(s.d)];
+            Array.prototype.forEach.call(o.bub, function (b, k) {
+              var bt = tau - 0.1 - k * 0.07, vis = bt > 0 && bt < 0.4;
+              b.setAttribute("opacity", vis ? "1" : "0");
+              if (vis) b.setAttribute("cy", f(-6 - bt * 90));
+            });
+          }
+          // its jacket in flight
+          var fl = s.fly, ft = (t - fl.t0) / fl.dur, show = ft >= 0 && t < on;
+          o.fj.setAttribute("opacity", show ? "1" : "0");
+          if (show) {
+            var e = Math.min(ft, 1), jx = lerp(fl.lx, fl.tx, e), jy = lerp(fl.ly, fl.ty, e) - fl.h * 4 * e * (1 - e), js = lerp(fl.s0, fl.s1, e), jr = fl.spin * Math.min(e, 1);
+            if (ft >= 1) { jx = fl.tx + Math.sin(t * 30) * 2; jy = fl.ty + (y - 4) * s.s; jr = Math.sin(t * 22) * 6; } // held up in her hands
+            o.fj.setAttribute("transform", "translate(" + f(jx) + "," + f(jy) + ") rotate(" + f(jr) + ") scale(" + js.toFixed(3) + ")");
+          }
+        });
+      });
+
+      // ── "hand": the conveyor runs (whirr) to the end, its jacket rows sliding along under the launches.
+      KIT.props.conveyor.run(tl, convEl, T.hand, D - T.hand - 0.02, 150);
+      var rowEls = g("piles").querySelectorAll(".lj-row");
+      KIT.onTime(tl, D, function (t) {
+        var run = t >= T.hand, off = run ? ((t - T.hand) * 150) % PITCH : 0, jig = run ? -Math.abs(Math.sin(t * 28)) * 2 : 0;
+        Array.prototype.forEach.call(rowEls, function (r) { r.setAttribute("transform", "translate(" + f(off) + "," + f(jig) + ")"); });
+      });
+
+      // ── Sky and sea: the gulls drift and flap, the waves roll.
+      var gulls = L.gulls.map(function (gl, i) { return g("gull" + i); });
+      var waveEls = document.querySelectorAll("#" + P + "world .lj-wave");
+      KIT.onTime(tl, D, function (t) {
+        gulls.forEach(function (gu, i) {
+          var gl = L.gulls[i];
+          gu.setAttribute("transform", "translate(" + f(gl[0] + gl[2] * t) + "," + f(gl[1] + 6 * Math.sin(t * 1.1 + i)) + ") scale(1," + f(0.7 + 0.45 * Math.abs(Math.sin(t * 4 + i))) + ")");
+        });
+        Array.prototype.forEach.call(waveEls, function (w, i) { w.setAttribute("transform", "translate(" + f(Math.sin(t * 0.8 + i * 1.7) * (10 + i * 3)) + ",0)"); });
+      });
+
+      // ── "Remember": the camera pushes in on the near swimmers (whoosh), holds there for the first dunk, drifts along
+      // the line to the far end for the last one, and pulls back out before "jackets?".
+      var world = g("world"), CAM = L.cam;
+      var k1 = T.rem + 0.8, k1b = dunks[0] + 0.3, k2 = T.reach - 0.75, k3 = T.reach - 0.1;
+      KIT.onTime(tl, D, function (t) {
+        var c = CAM[0];
+        if (t >= T.rem && t < k1) { var e1 = smooth((t - T.rem) / (k1 - T.rem)); c = [lerp(CAM[0][0], CAM[1][0], e1), lerp(CAM[0][1], CAM[1][1], e1), lerp(CAM[0][2], CAM[1][2], e1)]; }
+        else if (t >= k1 && t < k1b) c = CAM[1];
+        else if (t >= k1b && t < k2) { var e2 = smooth((t - k1b) / (k2 - k1b)); c = [lerp(CAM[1][0], CAM[2][0], e2), lerp(CAM[1][1], CAM[2][1], e2), lerp(CAM[1][2], CAM[2][2], e2)]; }
+        else if (t >= k2 && t < k3) { var e3 = smooth((t - k2) / (k3 - k2)); c = [lerp(CAM[2][0], CAM[0][0], e3), lerp(CAM[2][1], CAM[0][1], e3), lerp(CAM[2][2], CAM[0][2], e3)]; }
+        world.setAttribute("transform", "translate(" + f(W / 2 - c[0] * c[1]) + "," + f(H / 2 - c[0] * c[2]) + ") scale(" + c[0].toFixed(4) + ")");
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

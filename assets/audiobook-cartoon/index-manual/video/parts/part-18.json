@@ -1,0 +1,229 @@
+{
+  "id": "part-18",
+  "title": "Step 2: The Great Clicking",
+  "storyboard": "storyboards/part-18-step-2-great-clicking.md",
+  "audio": {
+    "start": 2452.964,
+    "end": 2590.884
+  },
+  "noCaptions": [
+    "step-2-great-clicking-title"
+  ],
+  "scenes": [
+    {
+      "id": "step-2-great-clicking-title",
+      "file": "compositions/scenes/part-18/step-2-great-clicking-title.html",
+      "cue": "Step",
+      "approx": 2453.0,
+      "layer": "A"
+    },
+    {
+      "id": "click-to-not-die",
+      "file": "compositions/scenes/part-18/click-to-not-die.html",
+      "cue": "Make",
+      "approx": 2456.1,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "Make", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "Die", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "big" },
+        { "cue": "five", "expr": "lookright", "rest": "smile", "body": "point-right", "mode": "big" },
+        { "cue": "yes", "expr": "skeptical", "rest": "smile", "body": "hands-hips", "mode": "big" }
+      ]
+    },
+    {
+      "id": "the-question",
+      "file": "compositions/scenes/part-18/the-question.html",
+      "cue": "Should",
+      "approx": 2463.5,
+      "layer": "B"
+    },
+    {
+      "id": "proving-it",
+      "file": "compositions/scenes/part-18/proving-it.html",
+      "cue": "You",
+      "approx": 2468.7,
+      "layer": "B"
+    },
+    {
+      "id": "pluralistic-ignorance",
+      "file": "compositions/scenes/part-18/pluralistic-ignorance.html",
+      "cue": "Everyone",
+      "approx": 2482.4,
+      "layer": "B"
+    },
+    {
+      "id": "you-go-first",
+      "file": "compositions/scenes/part-18/you-go-first.html",
+      "cue": "It",
+      "approx": 2495.8,
+      "layer": "B"
+    },
+    {
+      "id": "everyone-realizes",
+      "file": "compositions/scenes/part-18/everyone-realizes.html",
+      "cue": "If",
+      "approx": 2504.2,
+      "layer": "B"
+    },
+    {
+      "id": "you-are-everyone",
+      "file": "compositions/scenes/part-18/you-are-everyone.html",
+      "cue": "Right",
+      "approx": 2519.9,
+      "layer": "B"
+    },
+    {
+      "id": "why-three-point-five",
+      "file": "compositions/scenes/part-18/why-three-point-five.html",
+      "cue": "Why",
+      "approx": 2530.7,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "Why", "expr": "thinking", "rest": "closed", "body": "thinking", "mode": "big" },
+        { "cue": "five", "expr": "lookright", "rest": "smile", "body": "point-right", "mode": "big" },
+        { "cue": "percent?", "expr": "skeptical", "rest": "smile", "body": "hands-hips", "mode": "big" }
+      ]
+    },
+    {
+      "id": "chenoweth-shelf",
+      "file": "compositions/scenes/part-18/chenoweth-shelf.html",
+      "cue": "A",
+      "approx": 2533.1,
+      "layer": "B"
+    },
+    {
+      "id": "280-million",
+      "file": "compositions/scenes/part-18/280-million.html",
+      "cue": "That's",
+      "approx": 2560.9,
+      "layer": "B"
+    },
+    {
+      "id": "you-can-get",
+      "file": "compositions/scenes/part-18/you-can-get.html",
+      "cue": "You",
+      "approx": 2572.0,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "You", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "vote", "expr": "happy", "rest": "smile", "body": "open-palms", "mode": "big" },
+        { "cue": "treaty.", "expr": "smirk", "rest": "closed", "body": "idle", "mode": "big" }
+      ]
+    },
+    {
+      "id": "referral-pyramid",
+      "file": "compositions/scenes/part-18/referral-pyramid.html",
+      "cue": "Two",
+      "approx": 2576.5,
+      "layer": "B"
+    },
+    {
+      "id": "pyramid-ends",
+      "file": "compositions/scenes/part-18/pyramid-ends.html",
+      "cue": "preventable",
+      "approx": 2588.8,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "preventable", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "diseases.", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "big" }
+      ]
+    }
+  ],
+  "sounds": [
+    { "scene": "step-2-great-clicking-title", "cue": "Step", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "step-2-great-clicking-title", "cue": "Clicking.", "sfx": "click", "volume": 0.7 },
+    { "scene": "step-2-great-clicking-title", "cue": "Clicking.", "offset": 0.3, "sfx": "sparkle", "volume": 0.3 },
+
+    { "scene": "click-to-not-die", "cue": "Click", "sfx": "click", "volume": 0.7 },
+    { "scene": "click-to-not-die", "cue": "Not", "sfx": "whoosh", "volume": 0.45 },
+    { "scene": "click-to-not-die", "cue": "Die", "sfx": "scratch", "volume": 0.5 },
+    { "scene": "click-to-not-die", "cue": "five", "sfx": "tick", "volume": 0.5 },
+    { "scene": "click-to-not-die", "cue": "vote", "sfx": "click", "volume": 0.6 },
+    { "scene": "click-to-not-die", "cue": "yes", "sfx": "tick", "volume": 0.5 },
+
+    { "scene": "the-question", "cue": "one", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "the-question", "cue": "spending", "sfx": "whirr", "volume": 0.3 },
+    { "scene": "the-question", "cue": "fund", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "the-question", "cue": "trials?", "offset": 0.2, "sfx": "toaster", "volume": 0.5 },
+
+    { "scene": "proving-it", "cue": "creating", "sfx": "marker", "volume": 0.4 },
+    { "scene": "proving-it", "cue": "other.", "n": 1, "at": "after", "sfx": "scratch", "volume": 0.4 },
+    { "scene": "proving-it", "cue": "supports", "sfx": "thunk", "volume": 0.55 },
+    { "scene": "proving-it", "cue": "supports", "offset": 0.3, "sfx": "pat", "volume": 0.4 },
+    { "scene": "proving-it", "cue": "murdering", "n": 2, "sfx": "squeak", "volume": 0.4 },
+    { "scene": "proving-it", "cue": "proving", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "proving-it", "cue": "it.", "sfx": "splat", "volume": 0.55 },
+
+    { "scene": "pluralistic-ignorance", "cue": "crazy", "n": 1, "sfx": "squeak", "volume": 0.35 },
+    { "scene": "pluralistic-ignorance", "cue": "else", "at": "after", "sfx": "pop", "volume": 0.4 },
+    { "scene": "pluralistic-ignorance", "cue": "crazy", "n": 2, "sfx": "pop", "volume": 0.45 },
+    { "scene": "pluralistic-ignorance", "cue": "term", "sfx": "pop", "volume": 0.35 },
+    { "scene": "pluralistic-ignorance", "cue": "billion", "sfx": "stamp", "volume": 0.5 },
+    { "scene": "pluralistic-ignorance", "cue": "waiting", "sfx": "crickets", "volume": 0.3 },
+    { "scene": "pluralistic-ignorance", "cue": "permission", "sfx": "zap", "volume": 0.3 },
+    { "scene": "pluralistic-ignorance", "cue": "already", "sfx": "sparkle", "volume": 0.3 },
+
+    { "scene": "you-go-first", "cue": "you-go-first.", "sfx": "pat", "volume": 0.4 },
+    { "scene": "you-go-first", "cue": "you-go-first.", "at": "after", "sfx": "tick", "volume": 0.5 },
+    { "scene": "you-go-first", "cue": "Most", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "you-go-first", "cue": "finish", "sfx": "switch", "volume": 0.5 },
+    { "scene": "you-go-first", "cue": "finish", "offset": 0.3, "sfx": "thunk", "volume": 0.4 },
+    { "scene": "you-go-first", "cue": "it.", "n": 3, "at": "after", "sfx": "tick", "volume": 0.45 },
+
+    { "scene": "everyone-realizes", "cue": "realized", "sfx": "pop", "volume": 0.5 },
+    { "scene": "everyone-realizes", "cue": "human", "n": 2, "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "everyone-realizes", "cue": "thousand,", "sfx": "thunk", "volume": 0.5 },
+    { "scene": "everyone-realizes", "cue": "dollars", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "everyone-realizes", "cue": "tomorrow", "sfx": "stamp", "volume": 0.5 },
+    { "scene": "everyone-realizes", "cue": "world", "n": 2, "sfx": "airplane", "volume": 0.4 },
+    { "scene": "everyone-realizes", "cue": "unrecognizable.", "at": "after", "sfx": "pop", "volume": 0.45 },
+    { "scene": "everyone-realizes", "cue": "unrecognizable.", "at": "after", "offset": 0.25, "sfx": "sparkle", "volume": 0.3 },
+
+    { "scene": "you-are-everyone", "cue": "Right", "sfx": "switch", "volume": 0.5 },
+    { "scene": "you-are-everyone", "cue": "Right", "offset": 0.1, "sfx": "hum", "volume": 0.25 },
+    { "scene": "you-are-everyone", "cue": "assumes", "sfx": "crickets", "volume": 0.3 },
+    { "scene": "you-are-everyone", "cue": "weird", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "you-are-everyone", "cue": "referendum", "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "you-are-everyone", "cue": "find", "sfx": "click", "volume": 0.6 },
+    { "scene": "you-are-everyone", "cue": "everyone.", "sfx": "slam", "volume": 0.5 },
+    { "scene": "you-are-everyone", "cue": "everyone.", "offset": 0.15, "sfx": "boom", "volume": 0.45 },
+    { "scene": "you-are-everyone", "cue": "everyone.", "at": "after", "sfx": "whistle", "volume": 0.35 },
+
+    { "scene": "why-three-point-five", "cue": "percent?", "sfx": "boing", "volume": 0.45 },
+
+    { "scene": "chenoweth-shelf", "cue": "Chenoweth", "sfx": "thunk", "volume": 0.5 },
+    { "scene": "chenoweth-shelf", "cue": "failed", "sfx": "stamp", "volume": 0.45 },
+    { "scene": "chenoweth-shelf", "cue": "failed", "offset": 0.3, "sfx": "stamp", "volume": 0.4 },
+    { "scene": "chenoweth-shelf", "cue": "Not", "sfx": "tick", "volume": 0.5 },
+    { "scene": "chenoweth-shelf", "cue": "revolution,", "sfx": "pop", "volume": 0.45 },
+    { "scene": "chenoweth-shelf", "cue": "change.", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "chenoweth-shelf", "cue": "change.", "at": "after", "sfx": "splat", "volume": 0.45 },
+    { "scene": "chenoweth-shelf", "cue": "win.", "sfx": "bell", "volume": 0.45 },
+    { "scene": "chenoweth-shelf", "cue": "code", "sfx": "ding", "volume": 0.35 },
+    { "scene": "chenoweth-shelf", "cue": "never", "sfx": "slam", "volume": 0.45 },
+    { "scene": "chenoweth-shelf", "cue": "purpose.", "sfx": "crickets", "volume": 0.3 },
+
+    { "scene": "280-million", "cue": "two", "sfx": "pop", "volume": 0.4 },
+    { "scene": "280-million", "cue": "humans.", "sfx": "stamp", "volume": 0.5 },
+    { "scene": "280-million", "cue": "ten", "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "280-million", "cue": "downloaded", "sfx": "switch", "volume": 0.45 },
+    { "scene": "280-million", "cue": "twerk.", "sfx": "boing", "volume": 0.45 },
+    { "scene": "280-million", "cue": "twerk.", "offset": 0.1, "sfx": "boom", "volume": 0.45 },
+
+    { "scene": "you-can-get", "cue": "vote", "sfx": "switch", "volume": 0.45 },
+    { "scene": "you-can-get", "cue": "yes", "sfx": "click", "volume": 0.6 },
+    { "scene": "you-can-get", "cue": "treaty.", "sfx": "boing", "volume": 0.4 },
+
+    { "scene": "referral-pyramid", "cue": "Two", "sfx": "thunk", "volume": 0.55 },
+    { "scene": "referral-pyramid", "cue": "dollars", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "referral-pyramid", "cue": "sharing", "sfx": "pop", "volume": 0.45 },
+    { "scene": "referral-pyramid", "cue": "link", "sfx": "pop", "volume": 0.4 },
+    { "scene": "referral-pyramid", "cue": "attractive.", "sfx": "pat", "volume": 0.4 },
+    { "scene": "referral-pyramid", "cue": "dying", "sfx": "yelp", "volume": 0.45 },
+    { "scene": "referral-pyramid", "cue": "from", "sfx": "slide-down", "volume": 0.4 },
+
+    { "scene": "pyramid-ends", "cue": "preventable", "offset": 0.3, "sfx": "splat", "volume": 0.4 },
+    { "scene": "pyramid-ends", "cue": "diseases.", "sfx": "slide-down", "volume": 0.3 },
+    { "scene": "pyramid-ends", "cue": "diseases.", "at": "after", "sfx": "thunk", "volume": 0.45 }
+  ]
+}

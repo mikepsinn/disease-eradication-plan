@@ -1,0 +1,583 @@
+<template id="step-1-dice-in-a-suit-template">
+  <!-- step-1-dice-in-a-suit · Layer B (storyboards/part-05-sacred-order-of-paper-distribution.md): zoom into the wall
+       screen. The step 1 card unrolls and rolls up into its tab. The swivel chair on the hill of papers spins round: the
+       Rich Human. A billion papers slide off the hill (a latecomer hops on: 1,000,000,001); a dotted LATER stack floats
+       out of reach and his eyes turn to dollars. A pair of dice in a pinstripe suit strolls in, trips, tumbles, lands on
+       snake eyes, gets up and straightens its tie. A two-box form slides up; the Grim Reaper rises behind the hill and
+       helpfully holds out a pencil at box 2; the Rich Human's arm stretches out like rubber, snatches it and ticks box 1;
+       the Reaper sinks back, sulking, and adds a tally mark.
+       This file owns the master drawings of the part's spine (the step card, the hill, the chair, the stacks, the form,
+       the Reaper). sacred-scroll draws this scene's first frame on its wall screen and 2800-top-hats starts on its last
+       frame: the block between the "Shared" markers is copied into both files. Keep the three copies the same. -->
+  <!-- 2800-top-hats copies this code and its id starts with a digit (not a CSS selector): every element is reached
+       with getElementById and styled inline, never through "#id" selectors. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+  </style>
+  <div id="root" data-composition-id="step-1-dice-in-a-suit" data-width="1920" data-height="1080" data-start="0" data-duration="22.6">
+    <div id="step-1-dice-in-a-suit-cam" style="position: absolute; inset: 0;">
+      <div id="step-1-dice-in-a-suit-bg" style="position: absolute; inset: 0;"></div>
+      <div id="step-1-dice-in-a-suit-art" style="position: absolute; inset: 0;"></div>
+      <div id="step-1-dice-in-a-suit-pip" style="position: absolute; inset: 0;"></div>
+    </div>
+    <div id="step-1-dice-in-a-suit-grain" style="position: absolute; inset: 0;"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "step-1-dice-in-a-suit";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ── Shared: copied in sacred-scroll.html and 2800-top-hats.html (keep the three copies the same) ──
+      // The spine of Part 5 (storyboard "Shared drawings"), drawn in canvas px for each shape:
+      // card: the step card [x, y, w, h] (a strip of the sacred scroll, rolls at both ends); tab: where it rolls up to.
+      // hill: the Rich Human's hill [x0, x1, base, peak]; rich: the person origin of the Rich Human in his chair [x, y, scale].
+      // later: the dotted LATER stack [center x, center y, scale]; stack: the billion bundle (base center, where it slides
+      // from [x, y, scale]) and its label [x, baseline, size]; late: where the latecomer runs in from; form: [x, y, w];
+      // reaper: [feet x, feet y, scale]; lean: his lean (deg) once risen.
+      var S1L = V
+        ? { card: [40, 70, 680, 260], tab: [40, 70, 220, 70], stepFs: 60, step: [76, 222], headFs: 42, head: [332, [150, 208, 266]],
+            headLines: ["GET MANY PAPERS", "FROM RICH", "HUMANS"], tabFs: 38,
+            hill: [360, 1010, 1420, 1150], rich: [685, 1150 - 138 * 2.5, 2.5], later: [885, 590, 0.85],
+            stack: { to: [180, 1420], from: [560, 1260, 0.42], lab: [192, 1086, 40] }, late: -80,
+            form: [40, 360, 450], formFs: [28, 28, 18], reaper: [445, 1400, 1.6], lean: 5, hide: 760 }
+        : { card: [120, 40, 1380, 130], tab: [40, 30, 220, 70], stepFs: 84, step: [168, 134], headFs: 50, head: [482, [123]],
+            headLines: ["GET MANY PAPERS FROM RICH HUMANS"], tabFs: 40,
+            hill: [1000, 1520, 860, 640], rich: [1260, 640 - 138 * 2.05, 2.05], later: [1560, 240, 1.0],
+            stack: { to: [255, 872], from: [1070, 760, 0.42], lab: [255, 542, 50] }, late: -90,
+            form: [470, 330, 520], formFs: [32, 30, 20], reaper: [1068, 800, 1.35], lean: -8, hide: 640 };
+      var WHITE = "#FBF6E6", NAVY = "#24304D", CHAIR = "#3A4766", ink = C.line;
+      var s1f = function (n) { return (+n).toFixed(1); };
+      function s1At(x, y, s, inner) { return '<g transform="translate(' + s1f(x) + "," + s1f(y) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function s1Txt(x, y, size, fam, fill, text, extra) {
+        return '<text x="' + s1f(x) + '" y="' + s1f(y) + '" font-family="' + fam + '" font-weight="' + (fam === "Fraunces" ? 900 : fam === "Inter" ? 600 : 600) + '" font-size="' + size + '" fill="' + fill + '" ' + (extra || "") + ">" + text + "</text>";
+      }
+      // Where the form's boxes are, and the Rich Human's left shoulder (canvas px).
+      function s1Geo() {
+        var F = S1L.form, x = F[0], y = F[1], w = F[2], R = S1L.rich;
+        return { h: 400, box: [[x + w - 86, y + 128], [x + w - 86, y + 248]], bs: 50,
+          shoulder: [R[0] - 32.4 * R[2], R[1] + 8.8 * R[2]], arm: 44 * R[2] };
+      }
+      // A walking-paper's static cousin: a plain bill (no legs).
+      function s1Bill() { return KIT.money("plain").replace(/<path class="legs"[^>]*\/>/, ""); }
+
+      // The step card: a cream strip with a roll at each end, "STEP N" in Fraunces and the heading in Oswald capitals.
+      // #-card-reveal (its clip) and #-card-roll-r unroll it; #-tab is the small "STEP N" tab it rolls up into.
+      function s1Roll(x, y, h) {
+        return '<rect x="' + s1f(x - 15) + '" y="' + s1f(y - 9) + '" width="30" height="' + s1f(h + 18) + '" rx="7" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M' + s1f(x + 7) + "," + s1f(y - 2) + " V" + s1f(y + h + 2) + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+          '<path d="M' + s1f(x - 7) + "," + s1f(y - 2) + " V" + s1f(y + h + 2) + '" stroke="' + ink + '" stroke-width="1.4" opacity="0.4"/>' +
+          '<rect x="' + s1f(x - 9) + '" y="' + s1f(y - 17) + '" width="18" height="10" rx="3" fill="' + ink + '"/><rect x="' + s1f(x - 9) + '" y="' + s1f(y + h + 7) + '" width="18" height="10" rx="3" fill="' + ink + '"/>';
+      }
+      function s1Card(pid, n) {
+        var c = S1L.card, x = c[0], y = c[1], w = c[2], h = c[3];
+        var paper = '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="url(#' + pid + '-fine)" opacity="0.13"/>' +
+          '<rect x="' + (x + 12) + '" y="' + (y + 10) + '" width="' + (w - 24) + '" height="' + (h - 20) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.5"/>' +
+          s1Txt(S1L.step[0] + 4, S1L.step[1] + 5, S1L.stepFs, "Fraunces", C.orange, "STEP " + n) + s1Txt(S1L.step[0], S1L.step[1], S1L.stepFs, "Fraunces", ink, "STEP " + n) +
+          S1L.headLines.map(function (l, i) { return s1Txt(S1L.head[0], S1L.head[1][i], S1L.headFs, "Oswald", ink, l, 'letter-spacing="1.5"'); }).join("");
+        var t = S1L.tab;
+        var tabPaper = '<rect x="' + t[0] + '" y="' + t[1] + '" width="' + t[2] + '" height="' + t[3] + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + (t[0] + 8) + '" y="' + (t[1] + 7) + '" width="' + (t[2] - 16) + '" height="' + (t[3] - 14) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          s1Txt(t[0] + t[2] / 2 + 2, t[1] + t[3] / 2 + S1L.tabFs * 0.36 + 2, S1L.tabFs, "Fraunces", C.orange, "STEP " + n, 'text-anchor="middle"') +
+          s1Txt(t[0] + t[2] / 2, t[1] + t[3] / 2 + S1L.tabFs * 0.36, S1L.tabFs, "Fraunces", ink, "STEP " + n, 'text-anchor="middle"');
+        return '<g id="' + pid + '-card"><defs><clipPath id="' + pid + '-card-clip"><rect id="' + pid + '-card-reveal" x="' + x + '" y="' + (y - 20) + '" width="' + (w + 2) + '" height="' + (h + 40) + '"/></clipPath>' +
+          '<clipPath id="' + pid + '-tab-clip"><rect id="' + pid + '-tab-reveal" x="' + t[0] + '" y="' + (t[1] - 20) + '" width="' + (t[2] + 2) + '" height="' + (t[3] + 40) + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + pid + '-card-clip)">' + paper + "</g>" + s1Roll(x, y, h) + '<g id="' + pid + '-card-roll-r">' + s1Roll(x + w, y, h) + "</g></g>" +
+          '<g id="' + pid + '-tab" opacity="0"><g clip-path="url(#' + pid + '-tab-clip)">' + tabPaper + "</g>" + s1Roll(t[0], t[1], t[3]) + '<g id="' + pid + '-tab-roll-r">' + s1Roll(t[0] + t[2], t[1], t[3]) + "</g></g>";
+      }
+
+      // The Rich Human's hill: a dome of plain bills packed in rows (lower rows in front), on a dark green mound.
+      function s1HillTop(x) {
+        var Hl = S1L.hill, cx = (Hl[0] + Hl[1]) / 2, half = (Hl[1] - Hl[0]) / 2, Ht = (Hl[2] - Hl[3]) * 1.15, u = Math.min(1, Math.abs(x - cx) / half);
+        return Hl[2] - Math.min(Hl[2] - Hl[3], Ht * Math.sqrt(1 - u * u));
+      }
+      function s1Hill(pid) {
+        var Hl = S1L.hill, x0 = Hl[0], x1 = Hl[1], base = Hl[2], peak = Hl[3], cx = (x0 + x1) / 2, half = (x1 - x0) / 2, Ht = (base - peak) * 1.15;
+        var prof = function (h) { return half * Math.sqrt(Math.max(0, 1 - (h / Ht) * (h / Ht))); };
+        var rnd = KIT.rng(5150), rh = 23, rows = Math.ceil((base - peak) / rh), pts = [], i, k;
+        for (i = 0; i <= 30; i++) { var a = i / 30, hh = (base - peak) * (1 - Math.abs(2 * a - 1)); pts.push(s1f(cx + (2 * a - 1) * prof(hh) * 1.02) + "," + s1f(base - hh - 6)); }
+        var mound = '<path d="M' + s1f(x0 - 8) + "," + base + " L" + pts.join(" L") + " L" + s1f(x1 + 8) + "," + base + ' Z" fill="' + C.moneyDark + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>';
+        var bills = "", bill = s1Bill();
+        for (i = rows - 1; i >= 0; i--) {
+          var y = base - rh * (i + 0.55), hw = prof(rh * (i + 0.5)), n = Math.max(2, Math.round((2 * hw) / 44)), sp = (2 * hw - 30) / n;
+          var row = "";
+          for (k = 0; k < n; k++) {
+            var bx = cx - hw + 15 + sp * (k + 0.5) + (i % 2 ? sp * 0.22 : -sp * 0.22) + (rnd() - 0.5) * 6;
+            row += '<g transform="translate(' + s1f(bx) + "," + s1f(y + (rnd() - 0.5) * 5) + ") rotate(" + s1f((rnd() - 0.5) * 16) + ') scale(0.5)">' + bill + "</g>";
+          }
+          bills += row;
+        }
+        var lip = '<path d="M' + s1f(x0 - 14) + "," + (base + 2) + " H" + s1f(x1 + 14) + '" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>';
+        return '<g id="' + pid + '-hill">' + mound + bills + lip + "</g>";
+      }
+
+      // The swivel chair (Part 4's navy chair, the cream UNREALISTIC sticker on its back) and the Rich Human in it,
+      // in person units (origin = his person origin, seat top at y 80, the base's casters on y 152).
+      // #-spin turns the seat round: #-chair-back (turned away: only his hat and cigar smoke show) and #-chair-front.
+      // In front: one person drawing per pose, swapped by opacity: #-rh-hug, -greedy, -reach, -eager (the tick, looking
+      // at the form), -done. Their .arm-l (shoulder -32.4, 8.8) is the rubber arm.
+      var S1P = {
+        hug: KIT.castOpts("richHuman"),
+        greedy: KIT.castOpts("richHuman", { mood: "greedy" }),
+        reach: KIT.castOpts("richHuman", { mood: "greedy", arms: [[22, 72], [140, 155]], holdL: "cash" }),
+        eager: KIT.castOpts("richHuman", { mood: "eager", look: "left", arms: [[-90, -90], [-22, -72]], holdR: "cash" }),
+        done: KIT.castOpts("richHuman", { mood: "smug", look: "left", arms: [[-90, -90], [-22, -72]], holdR: "cash" }),
+      };
+      function s1Backrest(back) {
+        var pts = "M-50,88 L-55,-20 L-46,-40 L46,-40 L55,-20 L50,88 Z";
+        var tufts = "";
+        if (!back) [[-36, -24], [36, -24], [-40, 0], [40, 0]].forEach(function (p) { tufts += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.4" fill="' + C.cream + '" opacity="0.8"/>'; });
+        else [[-30, -22], [0, -22], [30, -22], [-15, -6], [15, -6], [-30, 10], [30, 10]].forEach(function (p) { tufts += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.4" fill="' + C.cream + '" opacity="0.7"/>'; });
+        return '<path d="' + pts + '" fill="' + CHAIR + '" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/>' +
+          '<path d="M-44,-34 L44,-34 L49,-20 L45,82 L-45,82 L-49,-20 Z" fill="none" stroke="' + C.cream + '" stroke-width="1.6" opacity="0.55"/>' +
+          '<path d="M46,-36 L52,-20 L47,84" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>' + tufts;
+      }
+      function s1Rich(pid) {
+        var base = '<path d="M0,111 L-56,124 M0,111 L56,124 M0,111 L-22,130 M0,111 L22,130" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path d="M0,111 L-56,124 M0,111 L56,124 M0,111 L-22,130 M0,111 L22,130" stroke="' + C.slate + '" stroke-width="4" stroke-linecap="round"/>' +
+          [[-56, 132], [56, 132], [-22, 133], [22, 133]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="5.5" fill="' + ink + '"/>'; }).join("") +
+          '<rect x="-5.5" y="94" width="11" height="19" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="3"/>';
+        var seat = '<path d="M-60,79 L60,79 L63,96 L-63,96 Z" fill="' + CHAIR + '" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/><path d="M-56,82 H56" stroke="' + C.orange + '" stroke-width="2.2"/>';
+        var sticker = '<g transform="translate(2,40) rotate(-9)"><path d="M-44,-13 L38,-13 L44,-7 L44,13 L-44,13 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M38,-13 L38,-7 L44,-7 Z" fill="#D8CFAF" stroke="' + ink + '" stroke-width="1.6"/>' +
+          s1Txt(-1, 5, 13.5, "Oswald", C.war, "UNREALISTIC", 'text-anchor="middle" letter-spacing="0.8"') + "</g>";
+        var smoke = '<g id="' + pid + '-smoke">' + [0, 1, 2].map(function (i) {
+          return '<g transform="translate(' + (30 + i * 8) + "," + (-58 - i * 16) + ')"><g class="' + pid + '-wisp"><path d="M0,0 q-6,-8 0,-16 q6,-8 0,-16" fill="none" stroke="#8C8782" stroke-width="3.4" stroke-linecap="round" opacity="0.85"/></g></g>';
+        }).join("") + "</g>";
+        var back = '<g id="' + pid + '-chair-back">' + seat + KIT.person(S1P.hug) + s1Backrest(true) + sticker + smoke + "</g>";
+        var arms = '<path d="M-63,47 L-46,47 L-46,57 L-63,57 Z M46,47 L63,47 L63,57 L46,57 Z" fill="' + CHAIR + '" stroke="' + ink + '" stroke-width="3.6"/>' +
+          '<path d="M-56,57 V80 M56,57 V80" stroke="' + ink + '" stroke-width="5"/>';
+        var people = ["hug", "greedy", "reach", "eager", "done"].map(function (k) {
+          return '<g id="' + pid + "-rh-" + k + '"' + (k === "hug" ? "" : ' opacity="0"') + ">" + KIT.person(S1P[k]) + "</g>";
+        }).join("");
+        var front = '<g id="' + pid + '-chair-front" opacity="0">' + s1Backrest(false) + seat + people + arms + "</g>";
+        var R = S1L.rich;
+        return s1At(R[0], R[1], R[2], base + '<g id="' + pid + '-spin">' + back + front + "</g>");
+      }
+
+      // The billion bundle (bills seen edge-on, a bank strap round the middle), base center at (0,0); the latecomer
+      // (one walking bill) on top; and the label, which clicks from ...000 to ...001.
+      var S1N = 22, S1B = 12;
+      function s1Stack(pid) {
+        var rnd = KIT.rng(1000000001), w = 220, out = "";
+        for (var i = 0; i < S1N; i++) {
+          var j = Math.round((rnd() - 0.5) * 8), wj = Math.round((rnd() - 0.5) * 6), y = -(i + 1) * S1B;
+          out += '<rect x="' + (-w / 2 + j) + '" y="' + y + '" width="' + (w + wj) + '" height="' + S1B + '" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+            '<path d="M' + (-w / 2 + j + 8) + "," + (y + 4) + " H" + (w / 2 + j + wj - 8) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>';
+        }
+        var band = '<rect x="' + (-w / 2 - 4) + '" y="-150" width="' + (w + 8) + '" height="34" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3.4"/>' +
+          '<path d="M' + (-w / 2 + 4) + ',-142 H' + (w / 2 - 4) + '" stroke="' + C.orange + '" stroke-width="2"/>' + KIT.star(0, -133, 10, C.moneyDark);
+        var late = s1At(0, -S1N * S1B - 46 * 0.8, 1, '<g id="' + pid + '-late"><g transform="scale(0.8)">' + KIT.money("plain", 0.5) + "</g></g>");
+        var shade = '<rect x="' + (-w / 2 - 6) + '" y="' + -S1N * S1B + '" width="' + (w + 12) + '" height="' + S1N * S1B + '" fill="url(#' + pid + '-hatch)" opacity="0.12"/>';
+        var T = S1L.stack.to, lab = S1L.stack.lab;
+        var big = function (t, dx, dy, extra) { return '<text x="' + (lab[0] + dx) + '" y="' + (lab[1] + dy) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + lab[2] + '" ' + extra + ">" + t + "</text>"; };
+        var label = function (t) {
+          return big(t, lab[2] * 0.05, lab[2] * 0.07, 'fill="' + C.ink + '"') + big(t, 0, 0, 'fill="' + C.ink + '" stroke="' + C.cream + '" stroke-width="' + (lab[2] * 0.09).toFixed(1) + '" stroke-linejoin="round" style="paint-order:stroke"');
+        };
+        return s1At(T[0], T[1], 1, '<g id="' + pid + '-stack"><g id="' + pid + '-stack-squash">' + out + shade + band + late + "</g></g>") +
+          '<g id="' + pid + '-lab"><g id="' + pid + '-lab-a">' + label("1,000,000,000") + '</g><g id="' + pid + '-lab-b" opacity="0">' + label("1,000,000,001") + "</g></g>";
+      }
+
+      // The dotted LATER stack: a bundle bigger than the billion (300 x 260 against its 220 x 264), which does not exist
+      // yet, drawn in dashes, with sparkles; centered on (0, 0).
+      function s1Later(pid) {
+        var w = 300, lh = 13, n = 20, out = "", rnd = KIT.rng(7);
+        for (var i = 0; i < n; i++) {
+          var y = n * lh * 0.5 - (i + 1) * lh, j = Math.round((rnd() - 0.5) * 10);
+          out += '<rect x="' + (-w / 2 + j) + '" y="' + y + '" width="' + w + '" height="' + lh + '" rx="2" fill="' + C.money + '" fill-opacity="0.18" stroke="' + ink + '" stroke-width="2.4" stroke-dasharray="9 7"/>';
+        }
+        out += '<rect x="' + (-w / 2 - 6) + '" y="-24" width="' + (w + 12) + '" height="48" fill="' + C.cream + '" fill-opacity="0.92" stroke="' + ink + '" stroke-width="3" stroke-dasharray="10 6"/>' +
+          s1Txt(0, 15, 42, "Oswald", ink, "LATER", 'text-anchor="middle" letter-spacing="7"');
+        var sparks = [[-176, -116, 18, C.yellow], [176, -100, 13, C.orange], [166, 120, 15, C.yellow], [-170, 108, 11, C.orange]].map(function (s) {
+          return '<g transform="translate(' + s[0] + "," + s[1] + ')"><g class="' + pid + '-spark">' + KIT.star(0, 0, s[2], s[3]) + "</g></g>";
+        }).join("");
+        var L0 = S1L.later;
+        return s1At(L0[0], L0[1], L0[2], '<g id="' + pid + '-later" opacity="0"><g id="' + pid + '-later-bob">' + out + sparks + "</g></g>");
+      }
+
+      // The two-box form, in the look of Part 1's mail-in form. Its lines type on (each has a clip rect, #-type-k);
+      // its ticks are #-tick-0 and #-tick-1 (KIT.tick paths, drawn with KIT.drawTick).
+      function s1Form(pid) {
+        var F = S1L.form, x = F[0], y = F[1], w = F[2], G = s1Geo(), h = G.h, fs = S1L.formFs;
+        var clip = function (k, yy, ww) { return '<clipPath id="' + pid + "-tc-" + k + '"><rect id="' + pid + "-type-" + k + '" x="' + (x + 28 + fs[1]) + '" y="' + (yy - fs[1] - 6) + '" width="' + ww + '" height="' + (fs[1] * 1.5 + 12) + '"/></clipPath>'; };
+        var line = function (k, yy, t) { return '<g clip-path="url(#' + pid + "-tc-" + k + ')">' + s1Txt(x + 30 + fs[1] * 1.1, yy, fs[1], "Inter", ink, t) + "</g>"; };
+        var hy = y + 66, ly = [y + 154, y + 192, y + 274, y + 312];
+        var defs = "<defs>" + '<clipPath id="' + pid + '-tc-h"><rect id="' + pid + '-type-h" x="' + (x + 10) + '" y="' + (hy - fs[0] - 8) + '" width="' + (w - 20) + '" height="' + (fs[0] * 1.6) + '"/></clipPath>' +
+          clip(0, ly[0], w - 140) + clip(1, ly[1], w - 140) + clip(2, ly[2], w - 140) + clip(3, ly[3], w - 140) + "</defs>";
+        var box = function (b, i) { return KIT.checkbox(b[0], b[1], G.bs) + '<g id="' + pid + "-tick-" + i + '">' + KIT.tick(b[0] - 5, b[1] - 10, 64, C.med) + "</g>"; };
+        return '<g id="' + pid + '-form">' + defs +
+          '<rect x="' + (x + 10) + '" y="' + (y + 12) + '" width="' + w + '" height="' + h + '" fill="' + C.ink + '" opacity="0.85"/>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<g clip-path="url(#' + pid + '-tc-h)">' + s1Txt(x + w / 2, hy, fs[0], "Oswald", ink, "RICH HUMAN PREFERENCE CHECK", 'text-anchor="middle" letter-spacing="1"') + "</g>" +
+          '<path d="M' + (x + 30) + "," + (hy + 22) + " H" + (x + w - 30) + '" stroke="' + C.orange + '" stroke-width="4"/>' +
+          line(0, ly[0], "Not dying of") + line(1, ly[1], "horrible diseases") + line(2, ly[2], "Dying of") + line(3, ly[3], "horrible diseases") +
+          s1Txt(x + 26, ly[0], fs[1], "Oswald", C.orange, "1.") + s1Txt(x + 26, ly[2], fs[1], "Oswald", C.orange, "2.") +
+          box(G.box[0], 0) + box(G.box[1], 1) +
+          s1Txt(x + 28, y + h - 24, fs[2], "Inter", ink, "Not reading this form counts as box 2.", 'font-style="italic" font-weight="500" opacity="0.75"') + "</g>";
+      }
+
+      // The Grim Reaper, rising from behind the hill, with his tally clipboard under his arm. His body sits behind the
+      // hill (clipped above its base); his reaching arm, with the pencil, is drawn in front of the form, in the same frame.
+      // Both hang from #-reaper-rise / #-reaper-lean (and #-rarm-rise / #-rarm-lean) so one tween moves both. In his own
+      // units (KIT.reaper, feet at y 100); the arm and pencil are aimed at box 2 from where he ends up.
+      function s1ReaperGeo() {
+        var R0 = S1L.reaper, G = s1Geo(), lam = (S1L.lean * Math.PI) / 180, s = R0[2];
+        var toLocal = function (P) {
+          var dx = P[0] - R0[0], dy = P[1] - R0[1], c = Math.cos(-lam), sn = Math.sin(-lam);
+          return [(dx * c - dy * sn) / s, (dx * sn + dy * c) / s + 100];
+        };
+        var toCanvas = function (p) {
+          var x = p[0] * s, y = (p[1] - 100) * s, c = Math.cos(lam), sn = Math.sin(lam);
+          return [R0[0] + x * c - y * sn, R0[1] + x * sn + y * c];
+        };
+        var sh = [-26, -100], shC = toCanvas(sh), tip = [G.box[1][0] + G.bs / 2, G.box[1][1] + G.bs / 2];
+        var u = [shC[0] - tip[0], shC[1] - tip[1]], L = Math.hypot(u[0], u[1]);
+        u = [u[0] / L, u[1] / L];
+        var PS = 0.75, grip = 96;
+        var hand = [tip[0] + u[0] * grip, tip[1] + u[1] * grip];
+        var hl = toLocal(hand), fold = 95 - (Math.atan2(hl[1] - sh[1], hl[0] - sh[0]) * 180) / Math.PI;
+        return { toLocal: toLocal, toCanvas: toCanvas, sh: sh, tip: tip, hand: hand, u: u, ang: (Math.atan2(u[1], u[0]) * 180) / Math.PI + 28, ps: PS, fold: fold };
+      }
+      function s1Pencil(ang, ps) { return '<g transform="rotate(' + s1f(ang) + ") scale(" + ps + ')">' + KIT.pencil() + "</g>"; }
+      function s1Clipboard(pid) {
+        var marks = "";
+        for (var r = 0; r < 4; r++) for (var gq = 0; gq < 3; gq++) {
+          if (r === 3 && gq === 2) break;
+          var x0 = -34 + gq * 26, y0 = -128 + r * 26;
+          marks += '<path d="M' + x0 + "," + y0 + " v18 M" + (x0 + 5) + "," + y0 + " v18 M" + (x0 + 10) + "," + y0 + " v18 M" + (x0 + 15) + "," + y0 + " v18 M" + (x0 - 3) + "," + (y0 + 15) + " L" + (x0 + 19) + "," + (y0 + 3) + '" stroke="' + ink + '" stroke-width="2.6" stroke-linecap="round"/>';
+        }
+        marks += '<path d="M18,-50 v18 M23,-50 v18" stroke="' + ink + '" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<path id="' + pid + '-newmark" d="M28,-50 v18" stroke="' + C.war + '" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+        return KIT.props.clipboard({ title: "", items: [] }) + marks;
+      }
+      function s1Reaper(pid) {
+        var R0 = S1L.reaper, s = R0[2], g = s1ReaperGeo();
+        var wrap = function (pre, inner) {
+          return '<g transform="translate(' + R0[0] + "," + R0[1] + ')"><g id="' + pid + "-" + pre + '-rise"><g id="' + pid + "-" + pre + '-lean"><g transform="scale(' + s + ') translate(0,-100)">' + inner + "</g></g></g></g>";
+        };
+        var cb = '<g transform="translate(-30,8) rotate(-8) scale(0.52)"><g id="' + pid + '-cboard">' + s1Clipboard(pid) + "</g></g>";
+        var body = '<g id="' + pid + '-rbody">' + KIT.reaper() + "</g>" + cb;
+        // the arm: a robe sleeve from the shoulder to the bony hand, the pencil's tip on box 2
+        var sh = g.sh, hand = g.toLocal(g.hand), tip = g.toLocal(g.tip), d = [hand[0] - sh[0], hand[1] - sh[1]], Ld = Math.hypot(d[0], d[1]), n = [-d[1] / Ld, d[0] / Ld];
+        var wrist = [hand[0] - (d[0] / Ld) * 8, hand[1] - (d[1] / Ld) * 8];
+        var sleeve = '<path d="M' + s1f(sh[0] + n[0] * 13) + "," + s1f(sh[1] + n[1] * 13) + " L" + s1f(wrist[0] + n[0] * 9) + "," + s1f(wrist[1] + n[1] * 9) + " L" + s1f(wrist[0] - n[0] * 9) + "," + s1f(wrist[1] - n[1] * 9) +
+          " L" + s1f(sh[0] - n[0] * 13) + "," + s1f(sh[1] - n[1] * 13) + ' Z" fill="#141B2B" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>';
+        var bony = '<circle cx="' + s1f(hand[0]) + '" cy="' + s1f(hand[1]) + '" r="7" fill="#F1EAD6" stroke="' + ink + '" stroke-width="2.5"/>';
+        var pencilLocal = s1At(tip[0], tip[1], 1, '<g id="' + pid + '-rpencil">' + s1Pencil(g.ang - S1L.lean, g.ps / s) + "</g>");
+        var fingers = '<path d="M' + s1f(hand[0] - 5) + "," + s1f(hand[1] - 6) + " l-6,5 M" + s1f(hand[0] + 2) + "," + s1f(hand[1] - 7) + ' l-3,8" stroke="' + ink + '" stroke-width="2.2" stroke-linecap="round"/>';
+        var arm = '<g id="' + pid + '-rarm-swing">' + sleeve + pencilLocal + bony + fingers + "</g>";
+        var base = S1L.hill[2];
+        return {
+          body: '<defs><clipPath id="' + pid + '-behind"><rect x="0" y="-400" width="' + W + '" height="' + (base - 2 + 400) + '"/></clipPath></defs><g clip-path="url(#' + pid + '-behind)">' + wrap("reaper", body) + "</g>",
+          arm: '<g id="' + pid + '-rarm" opacity="0">' + wrap("rarm", arm) + "</g>",
+        };
+      }
+      // The Rich Human's pencil (after he snatches it), in canvas px: its tip starts on box 2, where the Reaper held it.
+      function s1RichPencil(pid) {
+        var g = s1ReaperGeo();
+        return '<g id="' + pid + '-rhp" opacity="0">' + s1At(g.tip[0], g.tip[1], 1, '<g id="' + pid + '-rhp-move">' + s1Pencil(g.ang, g.ps) + "</g>") + "</g>";
+      }
+      // Everything, back to front.
+      function s1Art(pid) {
+        var rp = s1Reaper(pid);
+        return s1Card(pid, 1) + s1Later(pid) + rp.body + s1Hill(pid) + s1Stack(pid) + s1Form(pid) + s1Rich(pid) + rp.arm + s1RichPencil(pid);
+      }
+      // The idle loops, by part time T (so the next scene picks them up where this one stops).
+      function s1Idle(pid, T) {
+        var bob = document.getElementById(pid + "-later-bob");
+        if (bob) bob.setAttribute("transform", "translate(0," + (Math.sin(T * 2.2) * 7).toFixed(2) + ") rotate(" + (Math.sin(T * 1.3) * 1.5).toFixed(2) + ")");
+        Array.prototype.forEach.call(document.getElementsByClassName(pid + "-spark"), function (e, i) { e.setAttribute("transform", "scale(" + (0.7 + 0.35 * Math.abs(Math.sin(T * 3 + i * 1.7))).toFixed(3) + ")"); });
+        Array.prototype.forEach.call(document.getElementsByClassName(pid + "-wisp"), function (e, i) { e.setAttribute("transform", "rotate(" + (Math.sin(T * 2.6 + i) * 10).toFixed(2) + ") translate(0," + (-((T * 14 + i * 9) % 14)).toFixed(1) + ")"); });
+      }
+      // ── end of the shared part ──
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The dice in a suit (this scene only). Its own units: ground at y 0, two 56 px dice (the head and the body),
+      // stick legs, a pinstripe jacket and tie, a bowler and a briefcase. Plain dice A and B tumble on their own.
+      // It stands on the billion stack's floor and strolls out from behind the stack (x0, the stack's middle), and
+      // strolls back behind it afterwards. ──
+      var DL = V ? { y: 1420, s: 1.6, x0: 150, trip: 400 } : { y: 872, s: 1.75, x0: 220, trip: 470 };
+      var d = 56, XT = DL.trip / DL.s, XL = XT + 262;  // the two dice, a die apart, roll 4 quarter turns each and land side by side round XL
+      var PIPS = { 1: [[0, 0]], 2: [[-1, -1], [1, 1]], 3: [[-1, -1], [0, 0], [1, 1]], 4: [[-1, -1], [1, -1], [-1, 1], [1, 1]], 5: [[-1, -1], [1, -1], [0, 0], [-1, 1], [1, 1]], 6: [[-1, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [1, 1]] };
+      function dieFace(cx, cy, n, cls) {
+        return '<g class="' + cls + '" data-n="' + n + '"' + (cls ? ' opacity="0"' : "") + ">" + PIPS[n].map(function (p) {
+          return '<circle cx="' + (cx + p[0] * 15) + '" cy="' + (cy + p[1] * 15) + '" r="' + (n === 1 ? 8 : 5.6) + '" fill="' + (n === 1 ? C.war : ink) + '"/>';
+        }).join("") + "</g>";
+      }
+      function dieBox(cx, cy) {
+        return '<rect x="' + (cx - d / 2) + '" y="' + (cy - d / 2) + '" width="' + d + '" height="' + d + '" rx="9" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M' + (cx + d / 2 - 7) + "," + (cy - d / 2 + 10) + " V" + (cy + d / 2 - 8) + " H" + (cx - d / 2 + 10) + '" fill="none" stroke="' + C.tan + '" stroke-width="3" opacity="0.7"/>';
+      }
+      // a loose die: its center at (0,0), all six faces (one shown at a time)
+      function looseDie(pid) {
+        return '<g id="' + pid + '">' + dieBox(0, 0) + [1, 2, 3, 4, 5, 6].map(function (n) { return dieFace(0, 0, n, pid + "-f"); }).join("") + "</g>";
+      }
+      var legD = function (k) { return '<g id="' + ID + "-dleg-" + (k < 0 ? "l" : "r") + '"><path d="M' + 10 * k + ",-36 L" + 12 * k + ',-4" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>' +
+        '<path d="M' + (12 * k - 5) + ",-6 L" + (12 * k + 14) + ",-3 L" + (12 * k + 12) + ",1 L" + (12 * k - 6) + ',1 Z" fill="' + ink + '"/></g>'; };
+      var jacket = '<path d="M-31,-92 L31,-92 L31,-34 L-31,-34 Z" fill="' + NAVY + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>' +
+        [-22, -14, -6, 6, 14, 22].map(function (x) { return '<path d="M' + x + ',-90 V-36" stroke="' + C.peri + '" stroke-width="1.3"/>'; }).join("") +
+        '<path d="M-9,-92 L0,-70 L9,-92 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2"/>' +
+        '<path d="M-9,-92 L-17,-84 L-12,-80 L-15,-74 L-2,-60 M9,-92 L17,-84 L12,-80 L15,-74 L2,-60" fill="' + NAVY + '" stroke="' + C.orange + '" stroke-width="2"/>' +
+        '<path d="M-20,-62 l8,0 l-2,-5 l-2,3 l-2,-3 Z" fill="' + C.orange + '"/><rect x="-3" y="-52" width="6" height="6" fill="' + C.cream + '"/><rect x="-3" y="-42" width="6" height="6" fill="' + C.cream + '"/>';
+      var tie = '<g id="' + ID + '-dtie"><path d="M-3.5,-91 L3.5,-91 L6,-66 L0,-60 L-6,-66 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/></g>';
+      var briefcase = '<rect x="-15" y="0" width="30" height="22" rx="3" fill="#6B4A2F" stroke="' + ink + '" stroke-width="2.6"/><path d="M-6,0 V-5 H6 V0" fill="none" stroke="' + ink + '" stroke-width="2.4"/><path d="M-15,9 H15" stroke="' + C.yellow + '" stroke-width="2"/>';
+      var armD = function (k, hold) {
+        return '<g id="' + ID + "-darm-" + (k < 0 ? "l" : "r") + '"><path d="M' + 30 * k + ",-86 L" + 40 * k + ",-62 L" + 38 * k + ',-44" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '<circle cx="' + 38 * k + '" cy="-43" r="5" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2.4"/>' + (hold ? '<g transform="translate(' + 38 * k + ',-40)">' + briefcase + "</g>" : "") + "</g>";
+      };
+      var bowler = function (pidH) {
+        return '<g id="' + pidH + '"><path d="M-20,-147 L-17,-166 L0,-174 L17,-166 L20,-147 Z" fill="' + ink + '"/><path d="M-30,-146 L-24,-152 H24 L30,-146 Z" fill="' + ink + '"/><path d="M-18,-153 H18" stroke="' + C.war + '" stroke-width="3"/></g>';
+      };
+      var walker = '<g id="' + ID + '-dtrip">' + armD(-1, false) + legD(-1) + legD(1) +
+        '<g id="' + ID + '-dbody">' + dieBox(0, -64) + jacket + tie + dieBox(0, -120) + dieFace(0, -120, 2, "") + bowler(ID + "-dbowler") + "</g>" + armD(1, true) +
+        // the far arm again, in front of the jacket, for straightening the tie
+        '<g id="' + ID + '-darm-lf-on" opacity="0">' + armD(-1, false).replace(ID + "-darm-l", ID + "-darm-lf") + "</g></g>";
+      var puff = '<g id="' + ID + '-dpuff" opacity="0">' + [[-44, -30, 26], [0, -50, 34], [44, -30, 26], [-22, -8, 24], [24, -8, 24], [0, -92, 22]].map(function (c) {
+        return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#E9E1CC" stroke="' + ink + '" stroke-width="3.4"/>';
+      }).join("") + "</g>";
+      // the walker goes behind the billion stack (it strolls out from behind it); the tumbling dice, the flying bowler and
+      // the puff go on top of everything
+      var dAt = '<g transform="translate(0,' + DL.y + ") scale(" + DL.s + ')">';
+      var walkerG = dAt + '<g id="' + ID + '-dice" opacity="0"><g id="' + ID + '-dflip">' + walker + "</g></g></g>";
+      var looseG = dAt + '<g id="' + ID + '-dA-pos" opacity="0">' + looseDie(ID + "-dA") + "</g>" + '<g id="' + ID + '-dB-pos" opacity="0">' + looseDie(ID + "-dB") + "</g>" +
+        '<g id="' + ID + '-dhat-pos" opacity="0">' + bowler(ID + "-dhat") + "</g>" + s1At(XL, 0, 1, puff) + "</g>";
+      var art = s1Art(ID), atStack = art.lastIndexOf("<g transform=", art.indexOf('<g id="' + ID + '-stack">'));
+      q("art").innerHTML = KIT.svg(W, H, art.slice(0, atStack) + walkerG + art.slice(atStack) + looseG);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "zoom into the wall screen", KIT.OFFICE.screen);
+      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, t); };
+      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
+      var pivot = function (el, o) { gsap.set(el, { svgOrigin: o }); };
+      KIT.onTime(tl, D, function (t) { s1Idle(ID, sc.start + t); });
+
+      // "Step one": the step card unrolls (whoosh); a beat after "Humans": it rolls up into its STEP 1 tab.
+      var Cd = S1L.card, Tb = S1L.tab;
+      gsap.set(q("card-reveal"), { attr: { width: 0 } });
+      gsap.set(q("card-roll-r"), { x: -Cd[2] });
+      tl.to(q("card-reveal"), { attr: { width: Cd[2] + 2 }, duration: 0.55, ease: "power2.out" }, 0.05);
+      tl.to(q("card-roll-r"), { x: 0, duration: 0.55, ease: "power2.out" }, 0.05);
+      var up = KIT.after(ID, "Humans");
+      tl.to(q("card-reveal"), { attr: { width: 0 }, duration: 0.3, ease: "power2.in" }, up);
+      tl.to(q("card-roll-r"), { x: -Cd[2], duration: 0.3, ease: "power2.in" }, up);
+      hide(q("card"), up + 0.3);
+      show(q("tab"), up + 0.3);
+      tl.fromTo(q("tab-reveal"), { attr: { width: 0 } }, { attr: { width: Tb[2] + 2 }, duration: 0.22, ease: "power2.out" }, up + 0.3);
+      tl.fromTo(q("tab-roll-r"), { x: -Tb[2] }, { x: 0, duration: 0.22, ease: "power2.out" }, up + 0.3);
+
+      // "convince": the chair spins round (squeak): the Rich Human, top hat, monocle, cigar, hugging his cash.
+      var spin = q("spin"), tc = cue("convince");
+      pivot(spin, "0 0");
+      tl.to(spin, { scaleX: 0, duration: 0.11, ease: "power2.in" }, tc);
+      hide(q("chair-back"), tc + 0.11);
+      show(q("chair-front"), tc + 0.11);
+      tl.to(spin, { keyframes: [{ scaleX: -1, duration: 0.12, ease: "none" }, { scaleX: 0, duration: 0.1, ease: "none" }, { scaleX: 1.08, duration: 0.12, ease: "power2.out" }, { scaleX: 1, duration: 0.12 }] }, tc + 0.11);
+
+      // "billion": the bundle slides off the hill toward the viewer (falling whistle), bigger and bigger, and lands.
+      var stk = q("stack"), ST = S1L.stack, tb = cue("billion");
+      pivot(stk, "0 0");
+      gsap.set(stk, { x: ST.from[0] - ST.to[0], y: ST.from[1] - ST.to[1], scale: ST.from[2], rotation: V ? 8 : -8, opacity: 0 });
+      tl.set(stk, { opacity: 1 }, tb - 0.15);
+      tl.to(stk, { x: 0, y: 0, scale: 1, rotation: 0, duration: 0.42, ease: "power2.in" }, tb - 0.15);
+      pivot(q("stack-squash"), "0 0");
+      tl.fromTo(q("stack-squash"), { scaleY: 1, scaleX: 1 }, { scaleY: 0.86, scaleX: 1.08, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tb + 0.27);
+      pivot(q("lab"), ST.lab[0] + " " + (ST.lab[1] - ST.lab[2] * 0.35));
+      tl.fromTo(q("lab"), { opacity: 0, scale: 2 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)" }, tb + 0.28);
+      // "exact)": a latecomer runs in and hops onto the top (pop); the label clicks to ...001.
+      var te = cue("exact)"), late = q("late"), topY = -S1N * S1B - 46 * 0.8;
+      var lx = S1L.late - ST.to[0];
+      gsap.set(late, { x: lx, y: -topY, opacity: 0 });
+      tl.set(late, { opacity: 1 }, te - 0.55);
+      tl.to(late, { x: lx * 0.25, duration: 0.4, ease: "none" }, te - 0.55);
+      tl.to(late, { keyframes: [{ x: lx * 0.12, y: -topY - 70, duration: 0.1, ease: "power2.out" }, { x: 0, y: -90, duration: 0.12, ease: "none" }, { y: 0, duration: 0.1, ease: "power2.in" }] }, te - 0.2);
+      tl.fromTo(late, { rotation: 0 }, { rotation: -12, duration: 0.08, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, te + 0.1);
+      hide(q("lab-a"), te + 0.04);
+      show(q("lab-b"), te + 0.04);
+      tl.fromTo(q("lab-b"), { y: -14 }, { y: 0, duration: 0.18, ease: "bounce.out", immediateRender: false }, te + 0.04);
+
+      // "later.": the dotted LATER stack floats in above the hill (sparkle). A beat after: dollar eyes (cash register),
+      // and he reaches up for it with a stubby arm; it drifts up, just out of reach.
+      var tL = cue("later."), tA = KIT.after(ID, "later.");
+      tl.fromTo(q("later"), { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "back.out(1.6)" }, tL);
+      hide(q("rh-hug"), tA); show(q("rh-reach"), tA);
+      var reachArm = q("rh-reach").querySelector(".arm-r");
+      pivot(reachArm, "32.4 8.8");
+      // he keeps grabbing at it, through the whole dice routine, and lets go a beat after "suit."
+      var tLet = cue("suit.") + 0.65, grabs = 2 * Math.floor((tLet - tA - 0.05) / 0.32) - 1;
+      tl.fromTo(reachArm, { rotation: -14 }, { rotation: 8, duration: 0.16, yoyo: true, repeat: grabs, ease: "sine.inOut", immediateRender: false }, tA + 0.05);
+      tl.to(q("later"), { y: -34, duration: 0.5, ease: "power2.out" }, tA + 0.1);
+      hide(q("rh-reach"), tLet); show(q("rh-greedy"), tLet);
+
+      // The dice in a suit: "investment," strolls in, briefcase swinging; "gambling" trips and tumbles (clatter);
+      // "but" lands on snake eyes (thunk); "suit." a puff, and it stands, dusts itself off, straightens its tie (squeak),
+      // and strolls back off as if nothing happened.
+      var dice = q("dice"), tI = cue("investment,"), tG = cue("gambling"), tB = cue("but"), tS = cue("suit.");
+      var X0 = DL.x0 / DL.s;
+      gsap.set(dice, { x: X0 });
+      show(dice, tI);
+      tl.to(dice, { x: XT, duration: tG - tI, ease: "none" }, tI);
+      var legL = q("dleg-l"), legR = q("dleg-r"), armR = q("darm-r"), armL = q("darm-l"), body = q("dbody"), trip = q("dtrip"), flip = q("dflip");
+      pivot(legL, "-10 -36"); pivot(legR, "10 -36"); pivot(armR, "30 -86"); pivot(armL, "-30 -86"); pivot(body, "0 -36"); pivot(trip, "16 0"); pivot(flip, "0 0");
+      var stepT = 0.26;
+      function walk(t0, dur, st) {
+        st = st || stepT;
+        var n = Math.max(1, Math.round(dur / st)), s = dur / n;
+        tl.fromTo(legL, { rotation: 22 }, { rotation: -22, duration: s, repeat: n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, t0);
+        tl.fromTo(legR, { rotation: -22 }, { rotation: 22, duration: s, repeat: n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, t0);
+        tl.fromTo(armR, { rotation: -16 }, { rotation: 16, duration: s, repeat: n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, t0);
+        tl.fromTo(body, { y: 0 }, { y: -4, duration: s / 2, repeat: 2 * n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, t0);
+      }
+      walk(tI, tG - tI);
+      // the trip: it pitches forward onto its nose, then two plain dice tumble (per frame, below) and the bowler flies
+      tl.to(trip, { rotation: 38, duration: 0.07, ease: "power2.in" }, tG);
+      hide(dice, tG + 0.07);
+      var A = q("dA-pos"), B = q("dB-pos"), hatP = q("dhat-pos");
+      show(A, tG + 0.07); show(B, tG + 0.07);
+      var faceA = [6, 3, 5, 4, 1], faceB = [2, 4, 6, 3, 1];
+      // A die rolling over its bottom right corner, a quarter turn at a time: it first drops to the ground (FD of the
+      // time), then rolls, bouncing a little; it shows a new face each quarter and lands on 1.
+      function tumble(el, faces, x0, y0, t0, t1, quarters, t) {
+        if (t < t0) return;
+        var g = el.firstChild, els = el.getElementsByClassName(g.id + "-f");
+        var p = Math.max(0, Math.min(1, (t - t0) / (t1 - t0))), FD = 0.2, cx, cy, rot = 0, k = 0, u = 0;
+        if (p < FD) { var a = p / FD; cx = x0; cy = y0 + (-d / 2 - y0) * a * a; }
+        else {
+          var pr = (p - FD) / (1 - FD), qf = pr * quarters;
+          k = Math.min(quarters - 1, Math.floor(qf)); u = pr >= 1 ? 1 : qf - k;
+          var th = (u * Math.PI) / 2, corner = x0 + d / 2 + k * d;
+          cx = corner + (d / 2) * (Math.sin(th) - Math.cos(th));
+          cy = -(d / 2) * (Math.sin(th) + Math.cos(th)) - Math.sin(Math.PI * u) * (1 - pr) * 14;
+          rot = (k * 90 + u * 90) % 360;
+        }
+        el.setAttribute("transform", "translate(" + s1f(cx) + "," + s1f(cy) + ") rotate(" + s1f(rot) + ")");
+        var face = p >= 1 ? faces[quarters] : p < FD ? faces[0] : faces[Math.min(quarters, k + (u > 0.5 ? 1 : 0))];
+        Array.prototype.forEach.call(els, function (e) { e.setAttribute("opacity", +e.getAttribute("data-n") === face ? "1" : "0"); });
+      }
+      KIT.onTime(tl, D, function (t) {
+        if (t < tG + 0.07 || t > tS + 0.2) return;
+        tumble(A, faceA, XT + 6, -64, tG + 0.07, tB, 4, t);
+        tumble(B, faceB, XT + 70, -110, tG + 0.07, tB + 0.03, 4, t);
+      });
+      // the bowler flies up, spinning, and lands upside down beside them
+      var hat = q("dhat");
+      pivot(hat, "0 -158");
+      show(hatP, tG + 0.07);
+      tl.fromTo(hatP, { x: XT + 10 }, { x: XL + 96, duration: 0.42, ease: "none", immediateRender: false }, tG + 0.07);
+      tl.to(hatP, { keyframes: [{ y: -150, duration: 0.18, ease: "power2.out" }, { y: 150, duration: 0.24, ease: "power2.in" }] }, tG + 0.07);
+      tl.fromTo(hat, { rotation: 0 }, { rotation: 540, duration: 0.42, ease: "none", immediateRender: false }, tG + 0.07);
+      // snake eyes: two single red pips staring at the camera (thunk); the dice give a little squash
+      var dA = q("dA"), dB = q("dB");
+      pivot([dA, dB], "0 28");
+      tl.fromTo([dA, dB], { scaleY: 1, scaleX: 1 }, { scaleY: 0.86, scaleX: 1.08, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tB + 0.03);
+      // "suit.": a puff of dust, and it is standing again in its suit, tie crooked; it straightens the tie (squeak) and
+      // dusts off its jacket
+      var tP = tS - 0.08, puffEl = q("dpuff");
+      pivot(puffEl, "0 -40");
+      // (a quick puff, gone before the tie gets straightened)
+      tl.fromTo(puffEl, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1.05, duration: 0.08, ease: "power2.out", immediateRender: false }, tP);
+      tl.to(puffEl, { opacity: 0, scale: 1.5, duration: 0.16, ease: "power1.in" }, tP + 0.1);
+      hide(A, tP + 0.08); hide(B, tP + 0.08); hide(hatP, tP + 0.08);
+      tl.set(trip, { rotation: 0 }, tP + 0.08);
+      tl.set(dice, { x: XL }, tP + 0.08);
+      show(dice, tP + 0.08);
+      var dtie = q("dtie");
+      pivot(dtie, "0 -91");
+      tl.set(dtie, { rotation: 30 }, tP + 0.08);
+      tl.to(dtie, { keyframes: [{ rotation: -12, duration: 0.12 }, { rotation: 6, duration: 0.1 }, { rotation: 0, duration: 0.1 }] }, tS + 0.1);
+      // (the free hand comes round in front of the jacket to the knot: -86 deg brings it from the hip to the tie)
+      var armLF = q("darm-lf");
+      pivot(armLF, "-30 -86");
+      show(q("darm-lf-on"), tS + 0.02); hide(armL, tS + 0.02);
+      tl.fromTo(armLF, { rotation: 0 }, { rotation: -86, duration: 0.12, ease: "power2.out", immediateRender: false }, tS + 0.02);
+      tl.to(armLF, { keyframes: [{ rotation: -78, duration: 0.1 }, { rotation: -88, duration: 0.1 }, { rotation: -86, duration: 0.1 }] }, tS + 0.14);
+      tl.to(armLF, { rotation: 0, duration: 0.14, ease: "power2.in" }, tS + 0.46);
+      hide(q("darm-lf-on"), tS + 0.6); show(armL, tS + 0.6);
+      tl.to(armR, { keyframes: [{ rotation: 38, duration: 0.07 }, { rotation: 0, duration: 0.07 }, { rotation: 38, duration: 0.07 }, { rotation: 0, duration: 0.07 }] }, tS + 0.12);
+      // then it turns round and trots back behind the billion stack, as if nothing happened, before the form comes up
+      var tO = tS + 0.68, walkOff = cue("one", 3) - 0.1 - tO;
+      tl.set(flip, { scaleX: -1 }, tO);
+      tl.to(dice, { x: X0, duration: walkOff, ease: "none" }, tO);
+      walk(tO, walkOff, 0.14);
+      hide(dice, tO + walkOff);
+
+      // "one human": the form slides up beside the hill, its header typing on (typewriter); "not": box 1's line types on.
+      var G = s1Geo(), form = q("form"), tF = cue("one", 3);
+      tl.fromTo(form, { y: H - S1L.form[1] + 40 }, { y: 0, duration: 0.38, ease: "back.out(1.3)" }, tF - 0.05);
+      var typeOn = function (k, t, dur) {
+        var r = q("type-" + k), w0 = +r.getAttribute("width");
+        gsap.set(r, { attr: { width: 0 } });
+        tl.to(r, { attr: { width: w0 }, duration: dur, ease: "steps(" + Math.round(dur * 30) + ")" }, t);
+      };
+      typeOn("h", tF + 0.15, 0.6);
+      typeOn(0, cue("not"), 0.3); typeOn(1, cue("not") + 0.3, 0.45);
+      // "to" (the long one): the Grim Reaper rises from behind the hill, his tally clipboard under his arm (whoosh).
+      var rise = [q("reaper-rise"), q("rarm-rise")], lean = [q("reaper-lean"), q("rarm-lean")], tR = cue("to", 3);
+      gsap.set(rise, { y: S1L.hide });
+      pivot(lean, "0 0");
+      tl.to(rise, { y: 0, duration: 0.5, ease: "back.out(1.2)" }, tR);
+      tl.to(lean, { rotation: S1L.lean, duration: 0.5, ease: "sine.inOut" }, tR + 0.3);
+      // "dying" (second): box 2's line types on (typewriter); he leans over and holds the pencil out at box 2.
+      var tD = cue("dying", 2), swing = q("rarm-swing");
+      typeOn(2, tD, 0.25); typeOn(3, tD + 0.25, 0.45);
+      var g = s1ReaperGeo();
+      pivot(swing, "-26 -100");
+      gsap.set(swing, { rotation: g.fold });
+      show(q("rarm"), tD - 0.02);
+      tl.to(swing, { rotation: 0, duration: 0.3, ease: "back.out(1.6)" }, tD);
+      // "diseases." (second): the Rich Human's arm stretches out like rubber, snatches the pencil, ticks box 1 (scratch).
+      var tK = cue("diseases.", 2);
+      var armOf = function (P) {
+        var dx = P[0] - G.shoulder[0], dy = P[1] - G.shoulder[1], a = (Math.atan2(dy, dx) * 180) / Math.PI - 180;
+        while (a < -180) a += 360;
+        return { rotation: a, scaleX: Math.hypot(dx, dy) / G.arm };
+      };
+      var b1 = [G.box[0][0] + G.bs / 2, G.box[0][1] + G.bs / 2], grab = g.hand, tick1 = [b1[0] + g.u[0] * 96, b1[1] + g.u[1] * 96];
+      var rest = [G.shoulder[0] - G.arm, G.shoulder[1]];
+      var rarms = [q("rh-eager").querySelector(".arm-l"), q("rh-done").querySelector(".arm-l")];
+      pivot(rarms, "-32.4 8.8");
+      var t0 = tK - 0.24;
+      hide(q("rh-greedy"), t0); show(q("rh-eager"), t0);
+      gsap.set(rarms, armOf(rest));
+      tl.to(rarms, Object.assign({ duration: 0.12, ease: "power3.out" }, armOf(grab)), t0);
+      hide(q("rpencil"), t0 + 0.12); show(q("rhp"), t0 + 0.12);
+      tl.to(rarms, Object.assign({ duration: 0.12, ease: "power2.inOut" }, armOf(tick1)), t0 + 0.12);
+      var rhp = q("rhp-move"), dv = [b1[0] - g.tip[0], b1[1] - g.tip[1]];
+      tl.to(rhp, { x: dv[0], y: dv[1], duration: 0.12, ease: "power2.inOut" }, t0 + 0.12);
+      KIT.drawTick(tl, q("tick-0").querySelector(".tick"), tK);
+      tl.to(rhp, { keyframes: [{ x: dv[0] - 10, y: dv[1] + 4, duration: 0.08 }, { x: dv[0] + 14, y: dv[1] - 22, duration: 0.16 }] }, tK);
+      tl.to(rarms, { keyframes: [{ rotation: armOf([tick1[0] - 10, tick1[1] + 4]).rotation, duration: 0.08 }, { rotation: armOf([tick1[0] + 14, tick1[1] - 22]).rotation, duration: 0.16 }] }, tK);
+      // the arm snaps back with the pencil; he looks very pleased with himself
+      var tBack = tK + 0.36, restTip = [rest[0] - g.u[0] * 96, rest[1] - g.u[1] * 96];
+      tl.to(rarms, Object.assign({ duration: 0.14, ease: "power3.in" }, armOf(rest)), tBack);
+      tl.to(rhp, { x: restTip[0] - g.tip[0], y: restTip[1] - g.tip[1], duration: 0.14, ease: "power3.in" }, tBack);
+      hide(q("rh-eager"), tBack + 0.14); show(q("rh-done"), tBack + 0.14);
+      // the Reaper, empty-handed, straightens up
+      tl.to(swing, { rotation: g.fold, duration: 0.25, ease: "power2.in" }, tK + 0.1);
+      hide(q("rarm"), tK + 0.35);
+      tl.to(lean, { rotation: 0, duration: 0.3, ease: "power2.out" }, tK + 0.1);
+      // after "diseases.": he sinks back behind the hill, sulking (falling whistle), and adds a tally mark.
+      var tZ = KIT.after(ID, "diseases.", 2);
+      tl.to(rise, { y: 70, duration: D - tZ - 0.01, ease: "power1.in" }, tZ);
+      pivot(q("cboard"), "0 -75");
+      tl.to(q("cboard"), { rotation: 18, y: -26, duration: 0.2, ease: "power2.out" }, tZ - 0.1);
+      tl.fromTo(q("newmark"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.18, ease: "power1.inOut" }, tZ + 0.05);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

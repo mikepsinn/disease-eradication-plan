@@ -1,0 +1,476 @@
+<template id="holocaust-every-40-days-template">
+  <!-- holocaust-every-40-days · Layer B (storyboards/part-08-daily-deletion-event.md). A tear-off desk calendar on a
+       shelf sheds its pages, one a day, faster and faster, onto a pile ("Holocaust"); page 40 lands and the pile gets
+       its tag, 40 DAYS ("days,"). HOLD: only the NOW SERVING sign's digits move, in the corner, outside the camera.
+       "insurance": a CLAIMS booth slams down beside the calendar, a clerk in a green eyeshade inside, and a patient
+       hops in, her chest light blinking red. "paperwork": he tosses a ream of INSURANCE CLAIM forms onto the ledge.
+       "(though": she fills in a form; each one she hands in, he tosses two more reams ("argue", "paperwork"), and the
+       stack passes the top of the calendar. "worse;": she x-rays into a skeleton and keeps writing. "straightforward":
+       he stamps her form DENIED and dollar signs ring up in his eyes. After "part).": the stack topples onto her; a bony
+       hand pokes out of the heap, still signing. No Nazi imagery: the calendar carries the number.
+       fifty-nine-elevens starts on this scene's last frame and copies claimsSet() (change both). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #holocaust-every-40-days-cam, #holocaust-every-40-days-bg, #holocaust-every-40-days-pip, #holocaust-every-40-days-corner, #holocaust-every-40-days-grain { position: absolute; inset: 0; }
+    #holocaust-every-40-days-view { position: absolute; left: 46px; top: 46px; overflow: hidden; }
+    #holocaust-every-40-days-world { position: absolute; left: -46px; top: -46px; }
+  </style>
+  <div id="root" data-composition-id="holocaust-every-40-days" data-width="1920" data-height="1080" data-start="0" data-duration="11.54">
+    <div id="holocaust-every-40-days-cam">
+      <div id="holocaust-every-40-days-bg"></div>
+      <div id="holocaust-every-40-days-view"><div id="holocaust-every-40-days-world"></div></div>
+      <div id="holocaust-every-40-days-pip"></div>
+    </div>
+    <!-- the NOW SERVING sign holds still in its corner (outside the camera) through the slide -->
+    <div id="holocaust-every-40-days-corner"></div>
+    <div id="holocaust-every-40-days-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "holocaust-every-40-days";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function solid(list, col, w) {
+        w = w || 4.4;
+        return list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          list.map(function (p) { return '<path d="' + polyD(p) + '" fill="' + col + '"/>'; }).join("");
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function txt(x, y, s, size, col, extra, font) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="' + (font || "Oswald") + '" font-weight="' + (font === "Fraunces" ? 900 : font === "Inter" ? 700 : 600) + '" font-size="' + size + '" fill="' + col + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function rot(p, a, c) { var r = (a * Math.PI) / 180, x = p[0] - c[0], y = p[1] - c[1]; return [c[0] + x * Math.cos(r) - y * Math.sin(r), c[1] + x * Math.sin(r) + y * Math.cos(r)]; }
+      var dotsN = 0;
+      function dotsOver(pid, pts, x0, op) {
+        var id = pid + "hd" + (++dotsN), ys = pts.map(function (p) { return p[1]; }), xs = pts.map(function (p) { return p[0]; });
+        var y0 = Math.min.apply(null, ys), y1 = Math.max.apply(null, ys), x1 = Math.max.apply(null, xs);
+        return '<defs><pattern id="' + id + 'd" width="7" height="7" patternUnits="userSpaceOnUse"><circle cx="3.5" cy="3.5" r="1.5" fill="' + ink + '"/></pattern><clipPath id="' + id + 'c"><path d="' + polyD(pts) + '"/></clipPath></defs>' +
+          '<rect x="' + n1(x0) + '" y="' + n1(y0) + '" width="' + n1(x1 - x0) + '" height="' + n1(y1 - y0) + '" fill="url(#' + id + 'd)" opacity="' + (op || 0.22) + '" clip-path="url(#' + id + 'c)"/>';
+      }
+      // Time: piecewise keys [[t, value, ease]] (values are numbers or arrays), eased into each key.
+      var EASE = {
+        l: function (x) { return x; }, i: function (x) { return x * x; }, o: function (x) { return 1 - (1 - x) * (1 - x); },
+        io: function (x) { return x < 0.5 ? 2 * x * x : 1 - 2 * (1 - x) * (1 - x); },
+      };
+      function key(t, ks) {
+        if (t <= ks[0][0]) return ks[0][1];
+        for (var i = 1; i < ks.length; i++) {
+          if (t < ks[i][0]) {
+            var a = ks[i - 1], b = ks[i], u = EASE[b[2] || "io"]((t - a[0]) / (b[0] - a[0]));
+            return Array.isArray(a[1]) ? a[1].map(function (v, j) { return v + (b[1][j] - v) * u; }) : a[1] + (b[1] - a[1]) * u;
+          }
+        }
+        return ks[ks.length - 1][1];
+      }
+      // A two-segment arm from shoulder S to hand Hn (segments la each; it stretches straight when out of reach), the
+      // elbow on the side `bend` picks (+1 / -1): returns its polygons and the forearm's angle.
+      function ikArm(S, Hn, la, bend, w) {
+        var dx = Hn[0] - S[0], dy = Hn[1] - S[1], d = Math.sqrt(dx * dx + dy * dy) || 1, L2 = Math.max(la, d / 2 * 1.0001);
+        var a = Math.acos(Math.min(1, d / (2 * L2))), th = Math.atan2(dy, dx), E = [S[0] + L2 * Math.cos(th + bend * a), S[1] + L2 * Math.sin(th + bend * a)];
+        function quad(a0, b0, w0, w1) {
+          var ux = b0[0] - a0[0], uy = b0[1] - a0[1], l = Math.sqrt(ux * ux + uy * uy) || 1, nx = -uy / l, ny = ux / l;
+          return [[a0[0] + nx * w0, a0[1] + ny * w0], [b0[0] + nx * w1, b0[1] + ny * w1], [b0[0] - nx * w1, b0[1] - ny * w1], [a0[0] - nx * w0, a0[1] - ny * w0]];
+        }
+        return { E: E, upper: quad(S, E, w[0], w[1]), fore: quad(E, Hn, w[1], w[2]), fa: Math.atan2(Hn[1] - E[1], Hn[0] - E[0]) };
+      }
+
+      // ── NOW SERVING SIGN: the part's spine (part notes). deletion-board, holocaust-every-40-days and fifty-nine-elevens
+      // draw it with this block (copied: change all three); falling-apart's signFront draws the same picture at rest, so
+      // the cut into it has no seam. Sign units 600 x 280, top-left (0, 0): a cream board, a red band with NOW SERVING,
+      // seven ink flip tiles 70 x 110 at x 31 + 78 i (six digits and the comma), a mustard strip with EVERY 24 HOURS,
+      // and two chains rising from (90, 0) and (510, 0). Its corner box (outside the camera after deletion-board):
+      // 16:9 translate(40,30) scale 0.6, 9:16 translate(40,70) scale 0.62. The count at part time pt: 150,000 until the
+      // bell a beat after "software." (+0.3 s), then one more every 0.576 s (86,400 s a day / 150,000).
+      var SIGN = {
+        corner: V ? [40, 70, 0.62] : [40, 30, 0.6], rate: 0.576,
+        T1: KIT.scene("deletion-board").start + KIT.cue("deletion-board", "software.") + 0.3,
+      };
+      function signCount(pt) { return pt < SIGN.T1 ? 150000 : 150001 + Math.floor((pt - SIGN.T1) / SIGN.rate); }
+      function signDigits(n) { var s = String(n); return [s[0], s[1], s[2], ",", s[3], s[4], s[5]]; }
+      function signChain(x, len) {
+        var out = "";
+        for (var y = -6, i = 0; y > -len; y -= 15, i++) {
+          var lk = polyD([[x, y - 10], [x + 6, y - 6], [x + 6, y + 6], [x, y + 10], [x - 6, y + 6], [x - 6, y - 6]]);
+          out += i % 2 ? '<rect x="' + (x - 2.5) + '" y="' + (y - 8) + '" width="5" height="16" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.4"/>'
+            : '<path d="' + lk + '" fill="none" stroke="' + ink + '" stroke-width="5"/><path d="' + lk + '" fill="none" stroke="' + C.peri + '" stroke-width="2"/>';
+        }
+        return out;
+      }
+      function signBody(fill) { return '<path d="' + polyD(R(0, 0, 600, 280)) + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>'; }
+      // pfx: the id prefix of its parts: <pfx>dg0..6 (the digit texts), <pfx>fl0..6 (each tile's top flap, hidden at
+      // rest), <pfx>strip-text, and with o.blank a blank mustard flap over the strip (<pfx>strip-blank) and the
+      // strip's text hidden. o.chain: chain length (420).
+      function signFront(pfx, o) {
+        o = o || {};
+        var tiles = "", chain = o.chain || 420;
+        for (var i = 0; i < 7; i++) {
+          var x = 31 + i * 78;
+          tiles += '<path d="' + polyD(R(x, 89, 70, 110)) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>' +
+            '<path d="M' + (x + 4) + ",92 H" + (x + 66) + '" stroke="' + C.orange + '" stroke-width="2"/>' +
+            '<text id="' + pfx + "dg" + i + '" x="' + (x + 35) + '" y="177" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="92" fill="' + C.cream + '">' + (i === 3 ? "," : "0") + "</text>" +
+            '<path d="M' + x + ",144 H" + (x + 70) + '" stroke="#000" stroke-width="2.4" opacity="0.7"/>' +
+            '<g id="' + pfx + "fl" + i + '" opacity="0"><path d="' + polyD(R(x, 89, 70, 55)) + '" fill="#22385A" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>' +
+            '<path d="M' + (x + 4) + ",92 H" + (x + 66) + '" stroke="' + C.orange + '" stroke-width="2"/></g>';
+        }
+        return signChain(90, chain) + signChain(510, chain) + signBody(C.cream) +
+          '<path d="' + polyD(R(2.5, 2.5, 595, 67.5)) + '" fill="' + C.war + '"/><path d="M2.5,70 H597.5" stroke="' + ink + '" stroke-width="4"/>' +
+          '<text x="300" y="54" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="52" letter-spacing="5" fill="' + C.cream + '">NOW SERVING</text>' +
+          tiles + '<path d="' + polyD(R(2.5, 216, 595, 56)) + '" fill="' + C.yellow + '"/><path d="M2.5,216 H597.5" stroke="' + ink + '" stroke-width="4"/>' +
+          '<g id="' + pfx + 'strip-text"' + (o.blank ? ' opacity="0"' : "") + '><text x="300" y="259" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="40" letter-spacing="3" fill="' + ink + '">EVERY 24 HOURS</text></g>' +
+          (o.blank ? '<g id="' + pfx + 'strip-blank"><path d="' + polyD(R(8, 221, 584, 46)) + '" fill="#D9A23F" stroke="' + ink + '" stroke-width="2"/>' + line("M18,244 H582", ink, 1.4, 'opacity="0.35"') + "</g>" : "") +
+          line("M591,76 V210 M591,277 V274", C.orange, 3) + line("M10,277.5 H590", C.orange, 2, 'opacity="0.7"') + signBody("none");
+      }
+      // Show n: each tile's digit; a tile that changed from n - 1 shows its top flap folding down (flap 1 -> 0).
+      function signShow(pfx, n, flap) {
+        var d = signDigits(n), prev = signDigits(n - 1);
+        for (var k = 0; k < 7; k++) {
+          if (k === 3) continue;
+          var el = document.getElementById(pfx + "dg" + k), f = document.getElementById(pfx + "fl" + k), on = flap > 0 && n > 150000 && prev[k] !== d[k];
+          if (el.textContent !== d[k]) el.textContent = d[k];
+          f.setAttribute("opacity", on ? 1 : 0);
+          if (on) f.setAttribute("transform", "translate(0,144) scale(1," + flap.toFixed(3) + ") translate(0,-144)");
+        }
+      }
+      // The count at part time pt (each new number's flaps fold for 0.1 s).
+      function signTick(pfx, pt) {
+        var ph = pt < SIGN.T1 ? 9 : (pt - SIGN.T1) % SIGN.rate;
+        signShow(pfx, signCount(pt), ph < 0.1 ? 1 - ph / 0.1 : 0);
+      }
+      // ── end NOW SERVING SIGN ──
+
+      // ── THE CLAIMS SET (this scene). fifty-nine-elevens copies this function and seeks it to this scene's end, so its
+      // first frame is this scene's last (change both). PX: the id prefix; HID: the scene whose words time it; host: the
+      // world <div>; tl: the timeline it adds its moves to. Returns { cal: [x, y, size] } (the calendar's stand). ──
+      function claimsSet(PX, HID, host, tl) {
+        var HD = KIT.scene(HID).duration;
+        var cue = function (w, n) { return KIT.cue(HID, w, n); };
+        var $ = function (s) { return document.getElementById(PX + s); };
+        function gi(name, inner, attrs) { return '<g id="' + PX + name + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+        // Layout per shape. FL: the floor; shelf [x0, x1, top]; cal [x, y, size]; pile [x, y]; booth [x0, x1, roof top,
+        // window top, ledge y, ledge's left end]; clerk [x, scale]; pat [x, scale]; stack [center x, width, ream height];
+        // wform: the form in the window [center x, bottom]; sliver: page-pile step.
+        var L = V
+          ? { FL: 1430, shelf: [50, 600, 860], cal: [210, 860, 3.0], pile: [462, 860], booth: [700, 1040, 830, 905, 1150, 560], clerk: [900, 1.9],
+              pat: [420, 2.0], stack: [640, 140, 132], wform: [808, 1146], sliver: 3.4, claims: [870, 0.95], knot: [-62, -46], tag: 1.5 }
+          : { FL: 868, shelf: [140, 800, 600], cal: [330, 600, 3.0], pile: [650, 600], booth: [1060, 1560, 285, 330, 600, 940], clerk: [1232, 2.2],
+              pat: [850, 2.1], stack: [1022, 150, 72], wform: [1165, 596], sliver: 3.6, claims: [1310, 1.15], knot: [60, -56], tag: 2 };
+        var FL = L.FL, CAL = L.cal, BO = L.booth, LEDGE = BO[4];
+
+        // ── the room: a cream wall with a red chair rail, a floor in perspective ──
+        var WS = FL - (V ? 230 : 200);
+        var room = '<rect width="' + W + '" height="' + H + '" fill="' + C.paper + '"/>' + '<rect x="0" y="' + WS + '" width="' + W + '" height="' + (FL - WS) + '" fill="#E8DCBC"/>' +
+          dotsOver(PX, R(0, WS, W, FL - WS), 0, 0.12) + solid([R(-10, WS - 6, W + 20, 12)], C.war, 3);
+        var fl = "", vx = W * 0.55;
+        for (var k = -16; k <= 16; k++) fl += "M" + n1(vx + k * 40) + "," + FL + " L" + n1(vx + k * 220) + "," + H + " ";
+        for (var j = 1; j <= 4; j++) { var yy = FL + (H - FL) * Math.pow(j / 4, 1.8); fl += "M0," + n1(yy) + " H" + W + " "; }
+        room += '<rect x="0" y="' + FL + '" width="' + W + '" height="' + (H - FL) + '" fill="#E9DFC4"/>' + line(fl, ink, 1.3, 'opacity="0.25"') + line("M0," + FL + " H" + W, ink, 3);
+
+        // ── the shelf, on two brackets ──
+        var SH = L.shelf, shelf = solid([R(SH[0], SH[2], SH[1] - SH[0], 16)], C.tan, 3.6) + line("M" + (SH[0] + 4) + "," + (SH[2] + 12) + " H" + (SH[1] - 4), C.rust, 2) +
+          [SH[0] + 60, SH[1] - 60].map(function (x) { return solid([[[x - 8, SH[2] + 16], [x + 8, SH[2] + 16], [x + 8, SH[2] + 30], [x - 30, SH[2] + 90], [x - 40, SH[2] + 84]]], C.slate, 3); }).join("");
+
+        // ── the calendar: the props tear-off calendar, its pages counting the days (DAY 1, 2, ... 41) ──
+        var calSvg = at(CAL[0], CAL[1], 1, '<g id="' + PX + 'cal">' + KIT.props.calendar({ month: "DAY", day: 1, pages: 1, size: CAL[2] }) + "</g>");
+        // a page in calendar units (the props page: x -40..40, y -98..-16), for the ones that fly off
+        function page(dd) {
+          var pg = R(-40, -98, 80, 82);
+          return solid([pg], "#FBF6E6", 3.6) + solid([R(-40, -98, 80, 19)], C.war, 3.6) + txt(0, -84, "DAY", 13, "#FBF6E6", 'letter-spacing="1.5"') +
+            '<text x="0" y="-31" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="44" fill="' + ink + '">' + dd + "</text>" + line("M-20,-23 H20", C.orange, 1.6);
+        }
+        // the torn pages: 40 tears from "Holocaust", faster and faster, the last landing on "days," (thunk)
+        var NT = 40, tA = cue("Holocaust"), tLand = cue("days,"), FLY = 0.3, tB = tLand - FLY;
+        var tears = [];
+        for (var i = 0; i < NT; i++) tears.push(tA + (tB - tA) * Math.sqrt(i / (NT - 1)));
+        var rnd = KIT.rng(4040), PW = 80 * CAL[2], pileTop = L.pile[1] - NT * L.sliver;
+        var slivers = "", flyers = "";
+        for (i = 0; i < NT; i++) {
+          var sy = L.pile[1] - (i + 1) * L.sliver, jx = (rnd() - 0.5) * 18, ra = (rnd() - 0.5) * 3;
+          var sl = [[-PW / 2, 0], [PW / 2, 0], [PW / 2 - 6, L.sliver + 2], [-PW / 2 + 6, L.sliver + 2]];
+          slivers += '<g id="' + PX + "sl" + i + '" opacity="0">' + at(L.pile[0] + jx, sy, 1, solid([sl], "#FBF6E6", 2.2) + '<path d="M' + n1(-PW / 2 + 2) + ",1 H" + n1(-PW / 2 + 40) + '" stroke="' + C.war + '" stroke-width="2.4"/>', ra) + "</g>";
+          flyers += '<g id="' + PX + "fp" + i + '" opacity="0">' + page(i + 1) + "</g>";
+        }
+        // the tag: a price tag on a pin stuck in the pile ("40 DAYS"), swinging in when page 40 lands
+        var knot = [L.pile[0] + L.knot[0], pileTop + L.knot[1]];
+        var tag = line("M" + pt(knot[0] - 6, pileTop + 6) + " L" + pt(knot[0], knot[1]), ink, 3.4) + '<circle cx="' + n1(knot[0]) + '" cy="' + n1(knot[1]) + '" r="5" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/>' +
+          at(knot[0], knot[1], 1, gi("tag", KIT.props.priceTag({ text: "40 DAYS", size: L.tag, angle: 28 }), 'opacity="0"'));
+
+        // ── the booth: back wall, the clerk (two moods), his arms, the front frame and the ledge ──
+        var CLERK = { tone: 0, outfit: "suit", color: 1, look: "left", mood: "flat" };
+        var cr = KIT.rig(CLERK), CS = L.clerk[1], cFeet = LEDGE + (100 - (cr.hipY - 4)) * CS, CX = L.clerk[0];
+        function cw(p) { return [CX + p[0] * CS, cFeet + (p[1] - 100) * CS]; }
+        var eyeshade = '<path d="M-17,-15 L16,-17 L18,-11 L-16,-9 Z" fill="#1F6E68" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/>' +
+          '<path d="M10,-16 L38,-13 L33,-5 L12,-9 Z" fill="' + C.med + '" fill-opacity="0.85" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/>' + line("M14,-13 L34,-11", "#BFE3DC", 1.2);
+        function clerkSvg(mood) { return KIT.person(mix(CLERK, { mood: mood })).replace("<!--face-end-->", eyeshade + "<!--face-end-->"); }
+        var bx0 = BO[0], bx1 = BO[1], win = [bx0 + (V ? 26 : 40), BO[3], bx1 - bx0 - (V ? 52 : 80), LEDGE - BO[3]];
+        var back = solid([R(bx0, BO[3] - 10, bx1 - bx0, LEDGE - BO[3] + 10)], "#E4D6B4", 3) + dotsOver(PX, R(bx0, BO[3], bx1 - bx0, LEDGE - BO[3]), bx0, 0.16);
+        // a filing cabinet behind him: every drawer says DENIED
+        var fc = [win[0] + win[2] - (V ? 92 : 120), LEDGE - (V ? 200 : 230), V ? 82 : 104, V ? 200 : 230];
+        back += solid([R(fc[0], fc[1], fc[2], fc[3])], C.peri, 3) + [0, 1, 2].map(function (d) {
+          var dy = fc[1] + 8 + d * (fc[3] - 16) / 3, dh = (fc[3] - 16) / 3 - 6;
+          return solid([R(fc[0] + 6, dy, fc[2] - 12, dh)], "#7486A3", 2.4) + solid([R(fc[0] + 12, dy + 6, fc[2] - 24, V ? 16 : 20)], "#FBF6E6", 1.6) +
+            txt(fc[0] + fc[2] / 2, dy + (V ? 19 : 22), "DENIED", V ? 12 : 15, C.war, 'letter-spacing="1"');
+        }).join("");
+        var clerkG = at(CX, cFeet, CS, '<g transform="translate(0,-100)">' + gi("clerk-a", clerkSvg("flat")) + gi("clerk-g", clerkSvg("greedy"), 'opacity="0"') + "</g>");
+        // the window form (lands on the ledge inside the window) and its DENIED mark
+        var WF = L.wform, fw = V ? 104 : 124, fh = V ? 132 : 156;
+        function formFace(w, h) {
+          var f = R(-w / 2, -h, w, h), out = solid([f], "#FBF6E6", 3) + dotsOver(PX, f, w * 0.1, 0.12) + solid([R(-w / 2, -h, w, h * 0.17)], C.med, 3) +
+            txt(0, -h + h * 0.13, "INSURANCE", h * 0.1, "#FBF6E6", 'letter-spacing="1"') + txt(0, -h + h * 0.28, "CLAIM", h * 0.11, ink, 'letter-spacing="2"');
+          for (var r = 0; r < 5; r++) out += line("M" + n1(-w * 0.36) + "," + n1(-h * 0.6 + r * h * 0.11) + " H" + n1(w * 0.38), ink, 1.4, 'opacity="0.5"') + solid([R(-w * 0.42, -h * 0.6 + r * h * 0.11 - 7, 6, 6)], "#FBF6E6", 1.2);
+          return out;
+        }
+        var mark = KIT.props.stampMark({ text: "DENIED", fontSize: V ? 22 : 26, angle: -14 });
+        var wform = gi("wform", at(WF[0], WF[1], 1, formFace(fw, fh) + at(0, -fh * 0.32, 1, gi("mark", mark, 'opacity="0"'))), 'opacity="0"');
+        var front = solid([R(bx0, LEDGE, bx1 - bx0, FL - LEDGE)], C.rust, 4) + dotsOver(PX, R(bx0, LEDGE, bx1 - bx0, FL - LEDGE), bx0 + (bx1 - bx0) * 0.6, 0.2) +
+          solid([R(bx0 + 24, LEDGE + 40, bx1 - bx0 - 48, FL - LEDGE - 64)], "#A85A39", 2.4) +
+          solid([R(bx0 - 14, BO[2], 26, LEDGE - BO[2]), R(bx1 - 12, BO[2], 26, LEDGE - BO[2])], C.tan, 3.4) +
+          solid([R(bx0 - 22, BO[2] - 6, bx1 - bx0 + 44, BO[3] - BO[2] + 6)], C.rust, 4) + line("M" + (bx0 - 16) + "," + (BO[3] - 6) + " H" + (bx1 + 16), C.orange, 2.4) +
+          // the striped awning edge
+          [0, 1, 2, 3, 4, 5, 6, 7].map(function (s) { var sw = (bx1 - bx0 + 44) / 8, x = bx0 - 22 + s * sw; return solid([[[x, BO[3]], [x + sw, BO[3]], [x + sw / 2, BO[3] + 22]]], s % 2 ? "#FBF6E6" : C.war, 2.4); }).join("");
+        var ledge = solid([R(BO[5], LEDGE - 16, bx1 - BO[5] + 18, 18)], C.tan, 3.6) + line("M" + (BO[5] + 4) + "," + (LEDGE - 4) + " H" + (bx1 + 12), C.rust, 2) +
+          solid([[[BO[5] + 14, LEDGE + 2], [BO[5] + 34, LEDGE + 2], [bx0, LEDGE + 60], [bx0, LEDGE + 40]]], C.slate, 3);
+        var claims = at(L.claims[0], BO[2] - 6, L.claims[1], KIT.props.sign({ text: "CLAIMS", height: 0, fontSize: 40, color: C.war }));
+        var arms = gi("carm", "");
+
+        // ── the reams: each a wrapped block of forms, INSURANCE CLAIM on its band ──
+        var ST = L.stack, RH = ST[2], RW = ST[1], NR = 5;
+        function ream(k) {
+          var y0 = LEDGE - 16 - (k + 1) * RH, x0 = ST[0] - RW / 2 + (k % 2 ? 5 : -4), r = R(x0, y0, RW, RH), lines = "";
+          for (var e = 1; e < 8; e++) lines += "M" + n1(x0 + 3) + "," + n1(y0 + (e * RH) / 8) + " H" + n1(x0 + RW - 3) + " ";
+          return solid([r], "#FBF6E6", 3) + line(lines, ink, 1, 'opacity="0.4"') + dotsOver(PX, r, x0 + RW * 0.65, 0.18) +
+            solid([R(x0 - 2, y0 + RH * 0.28, RW + 4, RH * 0.44)], C.med, 2.4) + txt(x0 + RW / 2, y0 + RH * 0.5 - RH * 0.02, "INSURANCE", Math.min(RH * 0.16, RW * 0.12), "#FBF6E6", 'letter-spacing="1"') +
+            txt(x0 + RW / 2, y0 + RH * 0.68, "CLAIM", Math.min(RH * 0.16, RW * 0.12), "#FBF6E6", 'letter-spacing="2"');
+        }
+        var reams = "";
+        for (i = 0; i < NR; i++) reams += gi("ream" + i, ream(i), 'opacity="0"');
+        var stackG = gi("stack", reams);
+
+        // ── the patient: alive and her skeleton, a pen in her forward hand, a form held in the other ──
+        var PAT = { tone: 3, outfit: "dress", hair: 1, color: 0, light: "red", look: "right", mood: "worried", arms: [[40, 110], [15, 120]] };
+        var pr = KIT.rig(PAT), PS = L.pat[1], PXX = L.pat[0];
+        function pw(p) { return [PXX + p[0] * PS, FL + (p[1] - 100) * PS]; }
+        var pen = '<g transform="translate(' + pt(pr.handLocal[1][0] - 2, pr.handLocal[1][1] + 2) + ') rotate(-40)">' + solid([R(-2, -18, 4, 22)], C.navy, 1.6) + '<path d="M-2,4 L0,9 L2,4 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1"/></g>';
+        function patSvg(o) { return KIT.person(o).replace(/(<g class="arm-r">)/, "$1" + pen.replace(/^/, "")); }
+        var patG = at(PXX, FL, PS, gi("pat", '<g transform="translate(0,-100)">' + gi("pa", patSvg(PAT)) + gi("pb", patSvg(mix(PAT, { skeleton: true })), 'opacity="0"') + "</g>"));
+        // the form in her other hand (world units), and the one that flies to the window
+        var HF = pw(pr.hand[0]), hfw = 62 * PS / 2.1, hfh = 78 * PS / 2.1;
+        var held = gi("held", at(HF[0] + hfw * 0.25, HF[1] + hfh * 0.55, 1, formFace(hfw, hfh), -8), 'opacity="0"');
+        var flyForm = gi("ff", at(HF[0] + hfw * 0.25, HF[1] + hfh * 0.55, 1, formFace(hfw, hfh), -8), 'opacity="0"');
+
+        // ── the heap that buries her, and the bony hand that keeps signing ──
+        var heap = "", hr = KIT.rng(911), HX = PXX, hw = 150 * PS / 2.1, hh = 270 * PS / 2.1;
+        for (i = 0; i < 34; i++) {
+          var u = (i % 9) / 8 - 0.5 + (hr() - 0.5) * 0.12, row = Math.floor(i / 9), hy = FL - 8 - row * hh * 0.24 - (1 - 4 * u * u) * hh * 0.14 * (1 + row * 0.4);
+          var wsh = (row > 2 ? 0.55 : 1) * hw * 2 * (1 - row * 0.18), hx = HX + u * wsh;
+          heap += at(hx, hy, 1, solid([R(-34, -22, 68, 44)], "#FBF6E6", 2.6) + line("M-24,-8 H24 M-24,2 H20 M-24,12 H22", ink, 1.2, 'opacity="0.45"') +
+            (i % 4 === 0 ? solid([R(-34, -22, 68, 9)], C.med, 2) : ""), (hr() - 0.5) * 70);
+        }
+        var heapTop = FL - hh * 0.95;
+        // the bony hand: a forearm bone up out of the heap, a skeleton hand, the pen; it scribbles about its wrist
+        var bone = function (d, w) { return '<path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="' + (w + 3.4) + '" stroke-linecap="square"/><path d="' + d + '" fill="none" stroke="#F1EAD6" stroke-width="' + w + '" stroke-linecap="square"/>'; };
+        var bony = gi("bony", at(HX + 10 * PS, heapTop + 30 * PS, PS, '<g id="' + PX + 'bony-in">' + bone("M0,0 L4,-30", 4) +
+          '<g transform="translate(4,-30)"><g id="' + PX + 'bony-h">' + bone("M0,0 L-4,-9 M0,0 L1,-11 M0,0 L5,-10 M0,0 L8,-5", 2.2) +
+          '<g transform="translate(2,-12) rotate(30)">' + solid([R(-2, -18, 4, 22)], C.navy, 1.6) + '<path d="M-2,4 L0,9 L2,4 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1"/></g></g></g></g>'), 'opacity="0"');
+        var heapG = gi("heap", heap, 'opacity="0"');
+
+        host.innerHTML = KIT.svg(W, H, KIT.paperDefs(PX) + room + shelf + calSvg + slivers + tag +
+          gi("booth", back + clerkG + wform + arms + front + claims + ledge) + flyers + stackG + patG + held + flyForm + heapG + bony);
+        // the clerk's own arms come off: his arms are drawn every frame (#carm), reaching where the moves need them
+        ["clerk-a", "clerk-g"].forEach(function (nm) {
+          Array.prototype.forEach.call($(nm).querySelectorAll(".arm-l, .arm-r"), function (a) { a.parentNode.removeChild(a); });
+        });
+
+        // ── Moves ─────────────────────────────────────────────────────
+        var calEl = $("cal"), topTxt = calEl.querySelector(".cal-page").querySelectorAll("text")[1], underTxt = calEl.querySelector(".cal-page-under").querySelectorAll("text")[1];
+        var calPage = [CAL[0], CAL[1] - 57 * CAL[2]]; // the page's center
+        var tIns = cue("insurance"), tPap = cue("paperwork"), tTho = cue("(though"), tArg = cue("argue"), tPap2 = cue("paperwork", 2);
+        var tWorse = cue("worse;"), tStr = cue("straightforward"), tEnd = KIT.cueEnd(HID, "part)."), tSplat = KIT.after(HID, "part).");
+
+        // "days,": the tag swings in on page 40 (thunk)
+        var tag$ = $("tag");
+        gsap.set(tag$, { svgOrigin: "0 0" });
+        tl.set(tag$, { opacity: 1 }, tLand);
+        tl.fromTo(tag$, { rotation: -70 }, { rotation: 0, duration: 0.38, ease: "elastic.out(1.2,0.45)", immediateRender: false }, tLand);
+
+        // "insurance": the booth slams down from above (slam), the patient hops in from the left
+        var booth$ = $("booth");
+        tl.fromTo(booth$, { y: -H }, { y: 0, duration: 0.14, ease: "power3.in" }, tIns - 0.14);
+        tl.to(booth$, { y: -16, duration: 0.07, ease: "power2.out" }, tIns);
+        tl.to(booth$, { y: 0, duration: 0.09, ease: "power2.in" }, tIns + 0.07);
+        var pat$ = $("pat"), walkIn = -(PXX + 160) / PS;
+        tl.fromTo(pat$, { x: walkIn }, { x: 0, duration: 0.34, ease: "power2.out" }, tIns);
+        ["pa", "pb"].forEach(function (nm) {
+          var el = $(nm), lL = el.querySelector(".leg-l"), lR = el.querySelector(".leg-r");
+          gsap.set(lL, { svgOrigin: pr.hip[0][0] + " " + pr.hip[0][1] });
+          gsap.set(lR, { svgOrigin: pr.hip[1][0] + " " + pr.hip[1][1] });
+          if (nm === "pa") {
+            tl.fromTo(lL, { rotation: -24 }, { rotation: 24, duration: 0.085, repeat: 3, yoyo: true, ease: "sine.inOut" }, tIns);
+            tl.fromTo(lR, { rotation: 24 }, { rotation: -24, duration: 0.085, repeat: 3, yoyo: true, ease: "sine.inOut" }, tIns);
+          }
+        });
+        tl.fromTo($("pat"), { y: 0 }, { y: -6, duration: 0.085, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, tIns);
+        // her chest light blinks red until the x-ray
+        var light = $("pa").querySelector(".chest-light");
+        tl.fromTo(light, { opacity: 1 }, { opacity: 0.25, duration: 0.18, repeat: Math.floor((tWorse - tIns) / 0.18) - 1, yoyo: true, ease: "none" }, tIns + 0.2);
+        tl.set($("held"), { opacity: 1 }, tIns + 0.3);
+
+        // The reams: tossed by the clerk in an arc onto the stack, landing on the words (thunks): one on "paperwork",
+        // two on "argue", two on the second "paperwork". The stack then passes the top of the calendar.
+        var landAt = [tPap, tArg, tArg + 0.14, tPap2, tPap2 + 0.14], TOSS = 0.24;
+        var cSh = [cw(cr.shoulder[0]), cw(cr.shoulder[1])], LA = cr.armLength * CS;
+        var rest = [cSh[1][0] - 6 * CS, LEDGE - 10], release = [cSh[1][0] - 26 * CS, cSh[1][1] - 34 * CS], wind = [cSh[1][0] + 14 * CS, cSh[1][1] - 40 * CS];
+        var tossKeys = [[0, rest]];
+        var stack$ = $("stack"), pivot = (ST[0] - RW / 2 - 4) + " " + (LEDGE - 16), prevRel = -9;
+        gsap.set(stack$, { svgOrigin: pivot });
+        landAt.forEach(function (tL, k) {
+          var tR = tL - TOSS, el = $("ream" + k), top = LEDGE - 16 - (k + 1) * RH, sx = release[0] - ST[0], sy = release[1] - (top + RH / 2);
+          tossKeys.push([Math.max(tR - 0.12, (prevRel + tR) / 2), wind], [tR, release, "o"]);
+          prevRel = tR;
+          if (k === 4 || landAt[k + 1] - tL > 0.3) tossKeys.push([tL + 0.2, rest]);
+          gsap.set(el, { svgOrigin: ST[0] + " " + (top + RH / 2) });
+          tl.set(el, { opacity: 1 }, tR);
+          tl.fromTo(el, { x: sx, rotation: -30 }, { x: 0, rotation: 0, duration: TOSS, ease: "none", immediateRender: false }, tR);
+          // the arc: up, then down onto the stack
+          tl.fromTo(el, { y: sy }, { y: Math.min(sy, 0) - (V ? 90 : 70), duration: TOSS * 0.5, ease: "power1.out", immediateRender: false }, tR);
+          tl.to(el, { y: 0, duration: TOSS * 0.5, ease: "power2.in" }, tR + TOSS * 0.5);
+          // the stack squashes a little under each landing
+          tl.fromTo(stack$, { scaleY: 1 }, { scaleY: 0.96, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tL);
+        });
+
+        // The stamp arm: the clerk holds a DENIED stamp up, ready, the whole time; on "straightforward" he slams it on
+        // her form in the window (stamp) and his eyes ring up dollar signs (ding).
+        var writes = [[tTho, tArg - 0.26], [tArg + 0.22, tPap2 - 0.2], [tPap2 + 0.16, tStr - 0.42]];
+        var SK = 74 * CS * 0.5, restS = [WF[0], LEDGE - 16 - SK], high = [WF[0] + 12 * CS, LEDGE - 16 - SK - 64 * CS], higher = [WF[0] + 16 * CS, LEDGE - 16 - SK - 76 * CS];
+        var formHit = [WF[0], WF[1] - fh * 0.36 - SK], tUp = writes[2][1] - 0.12;
+        var stampKeys = [[0, restS], [tUp, restS], [tUp + 0.22, high, "o"], [tStr - 0.14, higher], [tStr, formHit, "i"], [tStr + 0.34, formHit], [tStr + 0.6, high]];
+        var stampSvg = KIT.props.stamp({ text: "DENIED", size: CS * 0.5 });
+        var arm$ = $("carm");
+        function hand(Hn, fa, col) {
+          var c = Math.cos(fa), s = Math.sin(fa), hp = function (u, v) { return [Hn[0] + (u * c - v * s) * CS, Hn[1] + (u * s + v * c) * CS]; };
+          return solid([[hp(-2, -4.5), hp(7, -4), hp(9, 3), hp(-2, 4.5)], [hp(3, -4), hp(7, -9), hp(9, -6)]], col, 3);
+        }
+        function drawArms(t) {
+          var sleeve = "#24304D", skin = "#F4E3CC", w = [5.5 * CS, 4.6 * CS, 3.8 * CS], out = "";
+          // the stamp arm (his near side), stamp hanging from the fist, rubber down
+          var hs = key(t, stampKeys), a1 = ikArm(cSh[0], hs, LA, 1, w);
+          out += at(hs[0], hs[1] + SK, 1, stampSvg) + solid([a1.upper, a1.fore], sleeve, 3.4) + hand(hs, a1.fa, skin);
+          // the tossing arm (his far side)
+          var ht = key(t, tossKeys), a2 = ikArm(cSh[1], ht, LA, -1, w);
+          out = solid([a2.upper, a2.fore], sleeve, 3.4) + hand(ht, a2.fa, skin) + out;
+          arm$.innerHTML = out;
+        }
+        // her form cycle: she writes (the pen arm scribbles), hands the form in (it flies into the window), and the
+        // next one is in her hand; the third lands in the window to be stamped.
+        ["pa", "pb"].forEach(function (nm) {
+          var arm = $(nm).querySelector(".arm-r");
+          gsap.set(arm, { svgOrigin: pr.shoulder[1][0] + " " + pr.shoulder[1][1] });
+          writes.forEach(function (w) {
+            var n = Math.max(1, Math.floor((w[1] - w[0]) / 0.09));
+            tl.fromTo(arm, { rotation: -5 }, { rotation: 7, duration: 0.09, repeat: n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, w[0]);
+            tl.to(arm, { rotation: 0, duration: 0.08 }, w[1]);
+          });
+        });
+        var ff = $("ff"), held$ = $("held"), HFc = [HF[0] + hfw * 0.25, HF[1] + hfh * 0.55];
+        var winIn = [win[0] + 40 - HFc[0], LEDGE - 80 - HFc[1]];
+        [writes[0][1] + 0.02, writes[1][1] + 0.02].forEach(function (t0) {
+          tl.set(held$, { opacity: 0 }, t0);
+          tl.set(ff, { opacity: 1 }, t0);
+          tl.fromTo(ff, { x: 0, y: 0, scale: 1, svgOrigin: pt(HFc[0], HFc[1]).replace(",", " ") }, { x: winIn[0], y: winIn[1], scale: 0.6, svgOrigin: pt(HFc[0], HFc[1]).replace(",", " "), duration: 0.18, ease: "power2.in", immediateRender: false }, t0);
+          tl.set(ff, { opacity: 0 }, t0 + 0.18);
+          tl.set(held$, { opacity: 1 }, t0 + 0.32);
+        });
+        var t3 = writes[2][1] + 0.04, toWin = [WF[0] - HFc[0], WF[1] - fh / 2 - HFc[1]];
+        tl.set(held$, { opacity: 0 }, t3);
+        tl.set(ff, { opacity: 1 }, t3);
+        tl.fromTo(ff, { x: 0, y: 0, scale: 1, rotation: 0, svgOrigin: pt(HFc[0], HFc[1]).replace(",", " ") }, { x: toWin[0], y: toWin[1], scale: fw / hfw, rotation: 8, svgOrigin: pt(HFc[0], HFc[1]).replace(",", " "), duration: 0.2, ease: "power2.inOut", immediateRender: false }, t3);
+        tl.set(ff, { opacity: 0 }, t3 + 0.2);
+        tl.set($("wform"), { opacity: 1 }, t3 + 0.2);
+        // the DENIED mark slams in under the stamp
+        var mk = $("mark").querySelector(".stamp-mark"), mcy = mk.getAttribute("data-cy");
+        tl.set($("mark"), { opacity: 1 }, tStr + 0.02);
+        tl.fromTo(mk, { scale: 1.6, svgOrigin: "0 " + mcy }, { scale: 1, svgOrigin: "0 " + mcy, duration: 0.1, ease: "power3.in", immediateRender: false }, tStr + 0.02);
+        tl.set($("clerk-a"), { opacity: 0 }, cue("straightforward") + 0.25);
+        tl.set($("clerk-g"), { opacity: 1 }, cue("straightforward") + 0.25);
+        // pen scratches: little marks appear on her form as she writes (scribble lines near the pen)
+        // "worse;": she x-rays into a skeleton (zap) and keeps writing
+        KIT.xray(tl, $("pa"), $("pb"), tWorse);
+
+        // The stack sways once it is taller than the calendar, worse and worse, and after "part)." it topples onto her
+        // (splat): the heap buries her, and a bony hand pokes out, still signing (scratch).
+        var sway = [[tPap2 + 0.3, 0], [tWorse, -1.5], [tWorse + 0.5, 1.2], [tStr + 0.1, -2], [tStr + 0.7, 2.5], [tEnd - 0.2, -4], [tEnd, 1.5]];
+        sway.forEach(function (s, k) { if (k) tl.to(stack$, { rotation: s[1], duration: s[0] - sway[k - 1][0], ease: "sine.inOut" }, sway[k - 1][0]); });
+        tl.to(stack$, { rotation: -88, duration: tSplat - tEnd, ease: "power2.in" }, tEnd);
+        tl.set(stack$, { opacity: 0 }, tSplat);
+        tl.set($("pat"), { opacity: 0 }, tSplat);
+        tl.set($("held"), { opacity: 0 }, tSplat);
+        var heap$ = $("heap");
+        tl.set(heap$, { opacity: 1 }, tSplat);
+        tl.fromTo(heap$, { scaleY: 1.25, scaleX: 0.9, svgOrigin: HX + " " + FL }, { scaleY: 1, scaleX: 1, svgOrigin: HX + " " + FL, duration: 0.18, ease: "back.out(2.5)", immediateRender: false }, tSplat);
+        var bony$ = $("bony"), bin = $("bony-in"), bh = $("bony-h");
+        tl.set(bony$, { opacity: 1 }, tSplat + 0.1);
+        tl.fromTo(bin, { y: 24 }, { y: 0, duration: 0.12, ease: "back.out(2)", immediateRender: false }, tSplat + 0.1);
+        gsap.set(bh, { svgOrigin: "0 0" });
+        tl.fromTo(bh, { rotation: -10 }, { rotation: 12, duration: 0.07, repeat: Math.max(1, Math.floor((HD - tSplat - 0.18) / 0.07)) - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, tSplat + 0.16);
+
+        // ── Every frame: the tear-offs, the calendar's number, the pile, the clerk's arms ──
+        var fp = [], sls = [];
+        for (i = 0; i < NT; i++) { fp.push($("fp" + i)); sls.push($("sl" + i)); }
+        var shown = -1;
+        KIT.onTime(tl, HD, function (t) {
+          var n = 0;
+          for (var k = 0; k < NT; k++) {
+            var u = (t - tears[k]) / FLY;
+            if (u >= 0) n = k + 1;
+            if (u < 0 || u >= 1) { fp[k].setAttribute("opacity", 0); sls[k].setAttribute("opacity", u >= 1 ? 1 : 0); continue; }
+            // tear up off the rings, then tumble down onto the pile, flattening as it lands
+            var e = u * u, x = calPage[0] + (L.pile[0] - calPage[0]) * u, y = calPage[1] + (pileTop + (NT - k) * L.sliver - calPage[1]) * e - Math.sin(Math.PI * u) * (V ? 120 : 140);
+            var sY = u < 0.75 ? 1 : 1 - (u - 0.75) / 0.25 * 0.94;
+            fp[k].setAttribute("opacity", 1);
+            fp[k].setAttribute("transform", "translate(" + pt(x, y) + ") rotate(" + n1(-24 * Math.sin(Math.PI * u) + 8 * u) + ") scale(" + CAL[2] + "," + n1(CAL[2] * sY * 100) / 100 + ") translate(0,57)");
+            sls[k].setAttribute("opacity", 0);
+          }
+          if (n !== shown) { shown = n; topTxt.textContent = String(n + 1); underTxt.textContent = String(n + 2); }
+          drawArms(t);
+        });
+        return { cal: CAL };
+      }
+      // ── end THE CLAIMS SET ──
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("view").style.width = W - 92 + "px";
+      q("view").style.height = H - 92 + "px";
+      q("world").style.width = W + "px";
+      q("world").style.height = H + "px";
+      var CN = SIGN.corner;
+      q("corner").innerHTML = KIT.svg(W, H, at(CN[0], CN[1], CN[2], signFront(P + "s-")));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      claimsSet(P, ID, q("world"), tl);
+      KIT.onTime(tl, D, function (t) { signTick(P + "s-", sc.start + t); });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

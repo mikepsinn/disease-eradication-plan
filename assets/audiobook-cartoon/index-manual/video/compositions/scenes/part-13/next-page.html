@@ -1,0 +1,298 @@
+<template id="next-page-template">
+  <!-- next-page · Layer B (storyboards/part-13-one-percent-treaty.md): zoom into the wall screen (847-civilizations' moved
+       screen in 16:9). A row of everyday humans, each reading the manual open on page 1, "THIS IS GOING TO SOUND CRAZY",
+       YOU in his bowler at the far end. "percentage": a gauge drops in over the row, "STOPPED AT PAGE 1", and its needle
+       swings up near the top. "crazy": a carved cuckoo springs out of the first reader's page 1 and cuckoos at him; he
+       frowns, and the others turn to stare. "page.": he snaps the book shut on it; its head sticks out squawking and a
+       "PAGE 2" tab peeks out, unread. after "page.": every book down the row snaps shut (three thunks), all but YOU's:
+       he turns to page 2 (the whoosh), and the needle drops one mark. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #next-page-cam, #next-page-bg, #next-page-art, #next-page-pip, #next-page-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="next-page" data-width="1920" data-height="1080" data-start="0" data-duration="6.72">
+    <div id="next-page-cam">
+      <div id="next-page-bg"></div>
+      <div id="next-page-art"></div>
+      <div id="next-page-pip"></div>
+    </div>
+    <div id="next-page-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "next-page";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line;
+      var P = function (s) { return ID + "-" + s; };
+      var g = function (s) { return "#" + P(s); };
+      var n1 = function (v) { return (Math.round(v * 10) / 10).toString(); };
+      var SKIN = ["#F4E3CC", "#D9B48F", "#A87B57", "#6F4B33"];
+      function copy(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+
+      // The row, in reading order: five everyday humans (their builds come from their outfits), then YOU at the far end
+      // ({ tone: 2, outfit: "suit", hat: "bowler" }, the same in every part). Each reader: [x, feet y, scale].
+      // 16:9 is one row; 9:16 stacks two rows of three (YOU at the bottom right, the end of the reading order).
+      var READERS = [
+        { tone: 1, outfit: "shirt", color: 0, hair: 0 },
+        { tone: 3, outfit: "dress", color: 3, hair: 1 },
+        { tone: 0, outfit: "overalls", color: 1, hair: 0 },
+        { tone: 2, outfit: "suit", color: 2, hair: 2 },
+        { tone: 1, outfit: "labcoat", color: 1, hair: 1 },
+        { tone: 2, outfit: "suit", hat: "bowler" },
+      ];
+      var YOU = 5;
+      var L = V
+        ? { at: [[190, 950, 2.45], [535, 950, 2.45], [875, 950, 2.45], [195, 1445, 2.55], [540, 1445, 2.55], [880, 1445, 2.55]],
+            ground: [[60, 1020, 950], [60, 1020, 1445]], gauge: [330, 100, 1.75] }
+        : { at: [[165, 885, 2.5], [420, 885, 2.5], [675, 885, 2.5], [930, 885, 2.5], [1185, 885, 2.5], [1445, 885, 2.5]],
+            ground: [[60, 1590, 885]], gauge: [1000, 58, 1.9] };
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The cuckoo (partNotes 4; every-leader-at-once has the same bird) ──
+      // A carved wooden cuckoo-clock bird about 46 wide, facing +x: a tan body, a rust wing, an orange open beak, one
+      // almond eye with a heavy lid, thin navy outlines with miter corners, on a navy zigzag spring of 4 turns about 60
+      // long, drawn around the spring's base at (0,0) pointing up. Parts: .ck-pop (pop it out: scaleY 0 -> 1 about
+      // (0,0)), .ck-bird (wobble it about (0,-62)), .ck-top and .ck-low (the beak halves: open them about (21,-95) and
+      // (21,-92)).
+      function solid(d, fill, w) {
+        return '<path d="' + d + '" fill="' + INK + '" stroke="' + INK + '" stroke-width="' + (w || 3.6) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + d + '" fill="' + fill + '"/>';
+      }
+      function pd(pts) { return "M" + pts.map(function (p) { return n1(p[0]) + "," + n1(p[1]); }).join(" L") + " Z"; }
+      function cuckoo(bird) {
+        var z = "M0,0";
+        for (var i = 1; i <= 8; i++) z += " L" + (i % 2 ? -10 : 10) + "," + (-i * 7);
+        z += " L0,-60";
+        var spring = '<path d="' + z + '" fill="none" stroke="' + INK + '" stroke-width="6.5" stroke-linejoin="miter" stroke-miterlimit="8"/>' +
+          '<path d="' + z + '" fill="none" stroke="' + C.peri + '" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="8"/>';
+        var tail = [[-16, -76], [-36, -94], [-38, -86], [-30, -78], [-36, -72], [-20, -68]];
+        var body = [[-22, -80], [-10, -90], [2, -94], [6, -104], [14, -108], [21, -102], [22, -92], [16, -80], [6, -67], [-6, -62], [-18, -66]];
+        var wing = [[-18, -78], [-4, -88], [8, -82], [2, -72], [-12, -70]];
+        var grain = '<path d="M-14,-72 L-2,-77 M-8,-66 L6,-72 M10,-96 L15,-100" fill="none" stroke="' + INK + '" stroke-width="1.3" stroke-linecap="round" opacity="0.7"/>';
+        var eye = '<path d="M9,-99 Q13,-104 18,-100 Q13,-96.5 9,-99 Z" fill="#FBF6E6" stroke="' + INK + '" stroke-width="1"/><circle cx="14.6" cy="-99.6" r="1.6" fill="' + INK + '"/>' +
+          '<path d="M8.4,-98.6 Q13,-105.2 18.6,-100.4" fill="none" stroke="' + INK + '" stroke-width="2" stroke-linecap="round"/>';
+        var mouth = solid(pd([[21, -98], [30, -94], [21, -90]]), "#3A1B12", 1.6);
+        var top = '<g class="ck-top">' + solid(pd([[20.5, -100.5], [35, -96], [21, -94.5]]), C.orange, 2.6) + "</g>";
+        var low = '<g class="ck-low">' + solid(pd([[21, -93.5], [32, -92.5], [20.5, -89.5]]), C.orange, 2.6) + "</g>";
+        var b = '<g class="ck-bird">' + solid(pd(tail), C.rust) + solid(pd(body), C.tan) +
+          '<path d="' + pd(body) + '" fill="url(#' + P("hatch") + ')" opacity="0.18"/>' + solid(pd(wing), C.rust, 2.6) + grain + eye + mouth + low + top + "</g>";
+        return bird ? b : '<g class="ck-pop">' + spring + b + "</g>";
+      }
+
+      // ── The book (KIT.props.manual) held open on page 1 ──
+      // Book units: the prop's own (the spine edge at x -42; opened, the cover lies over x -126..-42). Under the cover:
+      // page 2 (only YOU reaches it), a "PAGE 2" tab that rises out of the top edge when the book shuts, and page 1, which
+      // YOU turns about the spine (.np-page1 with its back, .np-page1-back). Inside the cover, an endpaper (.np-cover-in)
+      // shows while it lies open.
+      var BK = 0.5;
+      function lines(x, y0, step, n, w) {
+        var d = "";
+        for (var i = 0; i < n; i++) d += "M" + x + "," + (y0 + i * step) + " h" + (i === n - 1 ? w * 0.6 : w) + " ";
+        return '<path d="' + d + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.45"/>';
+      }
+      function txt(x, y, s, size, col, extra) {
+        return '<text x="' + x + '" y="' + y + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + col + '"' + (extra || "") + ">" + s + "</text>";
+      }
+      function book(i) {
+        var m = KIT.props.manual({});
+        var white = '<rect x="-42" y="-117" width="82" height="117" fill="#FBF6E6"/>';
+        // page 2: the plan, in one picture (a war paper turns into a medicine paper)
+        var p2 = '<g class="np-page2">' + white + txt(-1, -98, "PAGE 2", 11, C.rust, ' letter-spacing="1"') +
+          '<text x="-1" y="-58" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="36" fill="#1F6E68">1%</text>' +
+          '<g transform="translate(-21,-30) scale(0.32)">' + KIT.money("war") + '</g><path d="M-8,-30 H6 M2,-34 L7,-30 L2,-26" fill="none" stroke="' + INK + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<g transform="translate(21,-30) scale(0.32)">' + KIT.money("med") + "</g>" + lines(-30, -12, 6, 2, 58) + "</g>";
+        var tab = i === YOU ? "" : '<g class="np-tab"><path d="' + pd([[-6, -116], [-6, -138], [-2, -142], [40, -142], [44, -138], [44, -116]]) + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
+          txt(19, -126, "PAGE 2", 12.5, INK, ' letter-spacing="0.6"') + "</g>";
+        var p1front = '<g class="np-page1-front">' + white + txt(-3, -92, "THIS IS", 18, INK, ' letter-spacing="0.4"') + txt(-3, -70, "GOING TO", 18, INK, ' letter-spacing="0.4"') +
+          txt(-3, -48, "SOUND", 18, INK, ' letter-spacing="0.4"') + txt(-3, -19, "CRAZY", 25, C.war, ' letter-spacing="0.6"') + txt(33, -4, "1", 7, INK) + "</g>";
+        // page 1's back, as it lies turned over the endpaper (drawn mirrored, so it reads the right way round)
+        var p1back = '<g class="np-page1-back" opacity="0">' + white + lines(-34, -100, 9, 9, 66) + "</g>";
+        var p1 = '<g class="np-page1">' + p1front + p1back + '<path d="M-42,-117 V0" stroke="' + INK + '" stroke-width="1.4"/></g>';
+        // (the cuckoo caught in the shut book: the cover hides its body, its head sticks out of the top edge)
+        var stuck = i === 0 ? '<g class="np-stuck" opacity="0"><g transform="translate(-8,-18) scale(1.5)"><g transform="scale(-1,1)">' + cuckoo(true) + "</g>" + "</g></g>" : "";
+        var coverIn = '<g class="np-cover-in"><rect x="-42" y="-118" width="84" height="118" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3.4"/>' +
+          '<rect x="-36" y="-112" width="72" height="106" fill="none" stroke="' + C.orange + '" stroke-width="1.6"/>' +
+          KIT.star(-14, -82, 7, C.yellow) + KIT.star(12, -52, 9, C.orange) + KIT.star(-10, -26, 6, C.yellow) + KIT.star(16, -96, 5, C.orange) + "</g>";
+        // (the caught cuckoo goes under the PAGE 2 tab, so the tab still peeks out over its tail)
+        m = m.replace('<g class="manual-cover">', '<g class="np-pages">' + p2 + stuck + tab + (i === YOU ? "" : p1) + "</g>" + '<g class="manual-cover">');
+        if (m.slice(-8) !== "</g></g>") throw new Error("manual markup changed");
+        return m.slice(0, -8) + coverIn + "</g>" + (i === YOU ? p1 : "") + "</g>";
+      }
+
+      // Two segments of length len from shoulder S reaching T; bend -1 puts the elbow out to the left, +1 to the right.
+      function ik(S, T, len, bend) {
+        var vx = T[0] - S[0], vy = T[1] - S[1], d = Math.min(Math.hypot(vx, vy), 2 * len * 0.985);
+        var ang = (Math.atan2(vx, vy) * 180) / Math.PI, al = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+        return [ang + bend * al, ang - bend * al];
+      }
+      // A thumb over the book's edge (person units), in the reader's skin tone.
+      function thumb(tone, side) {
+        return '<path d="' + pd([[-3.6 * side, -5], [3 * side, -6.2], [5.4 * side, -1], [3.4 * side, 5.6], [-3.4 * side, 5]]) + '" fill="' + SKIN[tone] + '" stroke="' + INK + '" stroke-width="1.8" stroke-linejoin="miter"/>';
+      }
+
+      // Per reader: the book's origin [bx, by] (person units: the open book centered just right of the body, its top under
+      // the chin), the hands (open, and the left one on the spine once it is shut) and the arms that reach them.
+      var R = READERS.map(function (o, i) {
+        var base = copy(o, { look: "right" }), r = KIT.rig(base);
+        var by = r.hy + 28 * r.hs + 3 + 118 * BK, bx = 8 + 43 * BK, my = by - 34 * BK;
+        var hands = { open: [[bx - 126 * BK + 2, my], [bx + 40 * BK + 1, my]], shut: [[bx - 50 * BK, my], [bx + 40 * BK + 1, my]] };
+        var arms = function (h) { return [ik(r.shoulder[0], h[0], r.armLength, 1), ik(r.shoulder[1], h[1], r.armLength, -1)]; };
+        return { o: base, r: r, bx: bx, by: by, hands: hands, arms: { open: arms(hands.open), shut: arms(hands.shut) } };
+      });
+      // Poses: [name, look, mood, arms, eyes down at the page]
+      var POSES = {
+        0: [["read", "right", "flat", "open", true], ["cross", "right", "cross", "open", false], ["smug", "right", "smug", "shut", false]],
+        other: [["read", "right", "flat", "open", true], ["stare", "left", "cross", "open", false], ["smug", "right", "smug", "shut", false]],
+        5: [["read", "right", "smile", "open", true], ["eager", "right", "eager", "open", true]],
+      };
+      var posesOf = function (i) { return POSES[i] || POSES.other; };
+      function personSvg(i, ps) {
+        var o = copy(R[i].o, { look: ps[1], mood: ps[2], arms: R[i].arms[ps[3]] });
+        var m = KIT.person(o);
+        if (ps[4]) m = m.replace(/(class="pupil" cx="[-\d.]+" cy=")([-\d.]+)"/g, function (x, a, cy) { return a + n1(+cy + 1.5) + '"'; });
+        return m;
+      }
+      function reader(i) {
+        var at = L.at[i], s = at[2], rr = R[i];
+        var poses = posesOf(i).map(function (ps, k) {
+          return '<g id="' + P("r" + i + "-" + ps[0]) + '"' + (k ? ' opacity="0"' : "") + ">" + personSvg(i, ps) + "</g>";
+        }).join("");
+        var bk = '<g transform="translate(' + n1(rr.bx) + "," + n1(rr.by) + ") scale(" + BK + ')"><g id="' + P("r" + i + "-book") + '">' + book(i) + "</g></g>";
+        var h = rr.hands.open, tone = READERS[i].tone;
+        var thumbs = '<g transform="translate(' + n1(h[0][0]) + "," + n1(h[0][1]) + ')"><g id="' + P("r" + i + "-thumb-l") + '">' + thumb(tone, 1) + "</g></g>" +
+          '<g transform="translate(' + n1(h[1][0]) + "," + n1(h[1][1]) + ')"><g id="' + P("r" + i + "-thumb-r") + '">' + thumb(tone, -1) + "</g></g>";
+        // the cuckoo springs out of page 1's middle, facing the reader (to the left), leaning toward his face
+        var ck = i === 0 ? '<g transform="translate(' + n1(rr.bx + 2 * BK) + "," + n1(rr.by - 46 * BK) + ") rotate(12) scale(" + n1(BK * 1.55) + ',' + n1(BK * 1.55) + ')"><g id="' + P("ck") + '"><g transform="scale(-1,1)">' + cuckoo() + "</g></g></g>" +
+          '<g id="' + P("feathers") + '" opacity="0">' + [[-6, -4, -30], [10, -10, 25], [22, -2, 70]].map(function (f, k) {
+            return '<g transform="translate(' + n1(rr.bx - 26 * BK + f[0]) + "," + n1(rr.by - 128 * BK + f[1]) + ') rotate(' + f[2] + ')"><g id="' + P("fe" + k) + '">' + solid(pd([[-5, 0], [0, -2.4], [6, 0], [0, 2.4]]), k % 2 ? C.tan : C.rust, 1.6) + "</g></g>";
+          }).join("") + "</g>" : "";
+        return '<g transform="translate(' + at[0] + "," + n1(at[1] - 100 * s) + ") scale(" + s + ')"><g id="' + P("r" + i) + '">' + poses + bk + thumbs + ck + "</g></g>";
+      }
+
+      // The gauge hangs over the row on two rods from the top of the frame.
+      var G = L.gauge, GV0 = 0.12, GV1 = 0.93, GV2 = 0.88;
+      var gauge = '<g transform="translate(' + G[0] + "," + n1(G[1] + 166 * G[2]) + ") scale(" + G[2] + ')"><g id="' + P("gauge") + '">' +
+        '<path d="M-46,-166 V-' + n1(166 + (G[1] + 40) / G[2]) + " M46,-166 V-" + n1(166 + (G[1] + 40) / G[2]) + '" stroke="' + INK + '" stroke-width="5"/>' +
+        KIT.props.gauge({ label: "STOPPED AT PAGE 1", value: GV0, marks: [[0, "0%", INK], [1, "100%"]] }) + "</g></g>";
+      var ground = L.ground.map(function (gl) {
+        return '<path d="M' + gl[0] + "," + gl[2] + " H" + gl[1] + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<rect x="' + gl[0] + '" y="' + (gl[2] + 4) + '" width="' + (gl[1] - gl[0]) + '" height="12" fill="url(#' + P("fine") + ')" opacity="0.6"/>';
+      }).join("");
+      // Each row is drawn from YOU's end, so the first reader's cuckoo is on top; 9:16 draws the top row first.
+      var order = V ? [2, 1, 0, 5, 4, 3] : [5, 4, 3, 2, 1, 0];
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + ground + order.map(reader).join("") + gauge);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "zoom into the wall screen", V ? KIT.OFFICE.screen : [420, 190, 820, 520]);
+
+      var all = function (sel) { return document.querySelectorAll(sel); };
+      var bookEl = function (i, cls) { return q("r" + i + "-book").querySelector("." + cls); };
+      // Pivots, set once while untransformed; every book starts open (its cover flipped over to the left).
+      for (var i = 0; i < READERS.length; i++) {
+        gsap.set(bookEl(i, "manual-cover"), { svgOrigin: "-42 -59", scaleX: -1 });
+        gsap.set(bookEl(i, "np-page1"), { svgOrigin: "-42 -59" });
+        gsap.set(q("r" + i + "-book"), { svgOrigin: "0 0" });
+      }
+      var needle = q("gauge").querySelector(".gauge-needle");
+      gsap.set(needle, { svgOrigin: "0 -100" });
+      gsap.set(q("ck").querySelector(".ck-pop"), { svgOrigin: "0 0" });
+      gsap.set(q("ck").querySelector(".ck-bird"), { svgOrigin: "0 -62" });
+      gsap.set(q("ck").querySelector(".ck-top"), { svgOrigin: "21 -95" });
+      gsap.set(q("ck").querySelector(".ck-low"), { svgOrigin: "21 -92" });
+      gsap.set(q("r0"), { svgOrigin: "0 100" });
+
+      var cur = {};
+      for (i = 0; i < READERS.length; i++) cur[i] = posesOf(i)[0][0];
+      function pose(i, name, t) {
+        tl.set(q("r" + i + "-" + cur[i]), { opacity: 0 }, t);
+        tl.set(q("r" + i + "-" + name), { opacity: 1 }, t);
+        cur[i] = name;
+      }
+      // Shut reader i's book so that it lands at t (the slam or a thunk): the cover swings over, the endpaper goes, the
+      // left hand moves to the spine, the book jolts and the PAGE 2 tab pops up out of the top edge.
+      function shut(i, t) {
+        var d = 0.12, rr = R[i];
+        tl.to(bookEl(i, "manual-cover"), { scaleX: 1, duration: d, ease: "power2.in" }, t - d);
+        tl.set(bookEl(i, "np-cover-in"), { opacity: 0 }, t - d / 2);
+        tl.to(q("r" + i + "-thumb-l"), { x: rr.hands.shut[0][0] - rr.hands.open[0][0], duration: d, ease: "power2.in" }, t - d);
+        pose(i, "smug", t);
+        tl.fromTo(q("r" + i + "-book"), { y: 0, scaleY: 1 }, { y: 2, scaleY: 0.96, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t);
+        tl.fromTo(bookEl(i, "np-tab"), { y: 24 }, { y: 0, duration: 0.2, ease: "back.out(2.4)", immediateRender: true }, t + 0.03);
+      }
+
+      // "percentage": the gauge drops in on its rods; its needle swings up near the top with the slide whistle.
+      var tPc = cue("percentage");
+      tl.fromTo(q("gauge"), { y: -(G[1] + 166 * G[2] + 60) / G[2] }, { y: 0, duration: 0.28, ease: "back.out(1.5)" }, tPc - 0.26);
+      var turn = function (v) { return KIT.props.gauge.turn(GV0, v); };
+      tl.fromTo(needle, { rotation: 0 }, { rotation: turn(GV1 + 0.03), duration: 0.75, ease: "power2.inOut", immediateRender: false }, tPc + 0.02);
+      tl.to(needle, { keyframes: [{ rotation: turn(GV1 - 0.02), duration: 0.14 }, { rotation: turn(GV1 + 0.01), duration: 0.12 }, { rotation: turn(GV1), duration: 0.1 }], ease: "sine.inOut" }, tPc + 0.77);
+
+      // "crazy": the cuckoo springs out of page 1 (the boing), wobbles on its spring and cuckoos twice; the reader
+      // jerks back and frowns at it.
+      var tCr = cue("crazy");
+      var ck = q("ck"), ckPop = ck.querySelector(".ck-pop"), ckBird = ck.querySelector(".ck-bird"), ckTop = ck.querySelector(".ck-top"), ckLow = ck.querySelector(".ck-low");
+      tl.fromTo(ckPop, { scaleY: 0, scaleX: 0.7 }, { scaleY: 1, scaleX: 1, duration: 0.32, ease: "back.out(3)" }, tCr);
+      tl.fromTo(ckBird, { rotation: 0 }, { keyframes: [{ rotation: -16, duration: 0.12 }, { rotation: 11, duration: 0.14 }, { rotation: -6, duration: 0.14 }, { rotation: 3, duration: 0.14 }, { rotation: 0, duration: 0.14 }], ease: "sine.inOut", immediateRender: false }, tCr + 0.2);
+      [tCr + 0.38, tCr + 0.78].forEach(function (t) {
+        tl.fromTo(ckTop, { rotation: 0 }, { rotation: 24, duration: 0.09, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t);
+        tl.fromTo(ckLow, { rotation: 0 }, { rotation: -22, duration: 0.09, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t);
+        tl.fromTo(ckPop, { scaleY: 1 }, { scaleY: 1.12, duration: 0.09, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t);
+      });
+      tl.fromTo(q("r0"), { rotation: 0 }, { rotation: -5, duration: 0.12, ease: "power2.out", immediateRender: false }, tCr + 0.06);
+      tl.to(q("r0"), { rotation: 0, duration: 0.5, ease: "power2.inOut" }, tCr + 0.5);
+      pose(0, "cross", tCr + 0.12);
+      // A beat after "crazy", the rest of the row turns to stare at it, frowning (YOU keeps reading).
+      var tSt = KIT.after(ID, "crazy");
+      [1, 2, 3, 4].forEach(function (k) { pose(k, "stare", tSt + (k - 1) * 0.07); });
+
+      // "page.": he snaps the book shut on it (the slam). The cuckoo's head sticks out of the top, squawking, a few
+      // feathers fly, and the PAGE 2 tab peeks out.
+      var tPg = cue("page.");
+      tl.to(ckPop, { scaleY: 0.3, duration: 0.12, ease: "power2.in" }, tPg - 0.12);
+      tl.set(ck, { opacity: 0 }, tPg);
+      shut(0, tPg);
+      var stuck = q("r0-book").querySelector(".np-stuck");
+      tl.set(stuck, { opacity: 1 }, tPg);
+      var stTop = stuck.querySelector(".ck-top"), stLow = stuck.querySelector(".ck-low"), stBird = stuck.querySelector(".ck-bird");
+      gsap.set(stTop, { svgOrigin: "21 -95" }); gsap.set(stLow, { svgOrigin: "21 -92" }); gsap.set(stBird, { svgOrigin: "0 -62" });
+      tl.fromTo(stTop, { rotation: 0 }, { rotation: 30, duration: 0.07, yoyo: true, repeat: 5, ease: "power1.inOut", immediateRender: false }, tPg + 0.1);
+      tl.fromTo(stLow, { rotation: 0 }, { rotation: -26, duration: 0.07, yoyo: true, repeat: 5, ease: "power1.inOut", immediateRender: false }, tPg + 0.1);
+      tl.fromTo(stBird, { rotation: 0 }, { rotation: 8, duration: 0.07, yoyo: true, repeat: 5, ease: "sine.inOut", immediateRender: false }, tPg + 0.1);
+      tl.set(q("feathers"), { opacity: 1 }, tPg);
+      [0, 1, 2].forEach(function (k) {
+        var dx = [-14, 6, 22][k], dy = [-36, -44, -30][k];
+        tl.fromTo(q("fe" + k), { x: 0, y: 0, rotation: 0, opacity: 1 }, { keyframes: [{ x: dx, y: dy, rotation: 160 + k * 50, duration: 0.35, ease: "power2.out" }, { x: dx * 1.4, y: dy + 34, rotation: 300, opacity: 0, duration: 0.6, ease: "sine.in" }], immediateRender: false }, tPg + 0.02);
+      });
+
+      // after "page.": the rest of the row follows down the line, one thunk each (the last two together), all but YOU.
+      var tA = KIT.after(ID, "page.");
+      shut(1, tA);
+      shut(2, tA + 0.12);
+      shut(3, tA + 0.24);
+      shut(4, tA + 0.24);
+      // YOU turns to page 2 (the whoosh), and the needle drops one mark.
+      var tW = tA + 0.45, page1 = bookEl(YOU, "np-page1");
+      tl.fromTo(page1, { scaleX: 1 }, { scaleX: -1, duration: 0.3, ease: "power2.inOut", immediateRender: false }, tW - 0.15);
+      tl.set(bookEl(YOU, "np-page1-front"), { opacity: 0 }, tW);
+      tl.set(bookEl(YOU, "np-page1-back"), { opacity: 1 }, tW);
+      pose(YOU, "eager", tW);
+      tl.to(needle, { rotation: turn(GV2), duration: 0.2, ease: "back.out(2.5)" }, tW + 0.02);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

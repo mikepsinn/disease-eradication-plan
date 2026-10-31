@@ -1,0 +1,26 @@
+<template id="title-card-template">
+  <!-- title-card · the period title card (KIT.titleScene, look "atomic"): the heading on a plain navy card under the
+       film's emblem, an atom whose three electrons are little green papers running round their orbits on stick legs,
+       going nowhere. Up from black like the head of a reel, a slow push, then black. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="title-card" data-width="1920" data-height="1080" data-start="0" data-duration="2.32">
+    <div id="title-card-cam"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "title-card",
+      lines: [{ words: ["THE", "HUMAN"], style: "small" }, ["ECONOMY"]],
+    });
+  </script>
+</template>

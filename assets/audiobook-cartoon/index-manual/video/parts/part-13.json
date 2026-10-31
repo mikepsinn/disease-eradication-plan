@@ -1,0 +1,196 @@
+{
+  "id": "part-13",
+  "title": "The Solution: A 1% Treaty",
+  "storyboard": "storyboards/part-13-one-percent-treaty.md",
+  "audio": {
+    "start": 1541.964,
+    "end": 1674.044
+  },
+  "noCaptions": [
+    "one-percent-treaty-title"
+  ],
+  "scenes": [
+    {
+      "id": "one-percent-treaty-title",
+      "file": "compositions/scenes/part-13/one-percent-treaty-title.html",
+      "cue": "Solution.",
+      "approx": 1542.0,
+      "layer": "A"
+    },
+    {
+      "id": "sounds-crazy",
+      "file": "compositions/scenes/part-13/sounds-crazy.html",
+      "cue": "This",
+      "approx": 1545.4,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "This", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "crazy.", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ]
+    },
+    {
+      "id": "every-leader-at-once",
+      "file": "compositions/scenes/part-13/every-leader-at-once.html",
+      "cue": "But",
+      "approx": 1546.6,
+      "layer": "B"
+    },
+    {
+      "id": "thats-the-treaty",
+      "file": "compositions/scenes/part-13/thats-the-treaty.html",
+      "cue": "That's",
+      "approx": 1556.5,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "That's", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "craziness", "expr": "eyeroll", "rest": "closed", "body": "palms-down", "mode": "big" },
+        { "cue": "second", "expr": "neutral", "rest": "smile", "body": "counting", "mode": "big" }
+      ]
+    },
+    {
+      "id": "enemies-will-invade",
+      "file": "compositions/scenes/part-13/enemies-will-invade.html",
+      "cue": "But",
+      "approx": 1561.9,
+      "layer": "B"
+    },
+    {
+      "id": "one-twenty-one-apocalypses",
+      "file": "compositions/scenes/part-13/one-twenty-one-apocalypses.html",
+      "cue": "And",
+      "approx": 1574.5,
+      "layer": "B"
+    },
+    {
+      "id": "more-than-sufficient",
+      "file": "compositions/scenes/part-13/more-than-sufficient.html",
+      "cue": "This",
+      "approx": 1594.4,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "This", "expr": "smirk", "rest": "closed", "body": "idle", "mode": "big" },
+        { "cue": "sufficient.", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "big" },
+        { "cue": "But", "expr": "skeptical", "rest": "closed", "body": "arms-crossed", "mode": "big" },
+        { "cue": "already", "expr": "smirk", "rest": "smile", "body": "counting", "mode": "big" }
+      ]
+    },
+    {
+      "id": "treaties-you-signed",
+      "file": "compositions/scenes/part-13/treaties-you-signed.html",
+      "cue": "You",
+      "approx": 1603.2,
+      "layer": "B"
+    },
+    {
+      "id": "847-civilizations",
+      "file": "compositions/scenes/part-13/847-civilizations.html",
+      "cue": "I've",
+      "approx": 1623.8,
+      "layer": "B"
+    },
+    {
+      "id": "next-page",
+      "file": "compositions/scenes/part-13/next-page.html",
+      "cue": "The",
+      "approx": 1647.0,
+      "layer": "B"
+    },
+    {
+      "id": "bread-mold",
+      "file": "compositions/scenes/part-13/bread-mold.html",
+      "cue": "That",
+      "approx": 1653.8,
+      "layer": "B"
+    },
+    {
+      "id": "human-greed",
+      "file": "compositions/scenes/part-13/human-greed.html",
+      "cue": "And",
+      "approx": 1663.2,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "And", "expr": "neutral", "rest": "smile", "body": "counting", "mode": "big" },
+        { "cue": "financial", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "harnessing", "expr": "smirk", "rest": "smile", "body": "point-right", "mode": "big" },
+        { "cue": "greed.", "expr": "excited", "rest": "open", "body": "fist", "mode": "big" }
+      ]
+    }
+  ],
+  "sounds": [
+    { "scene": "one-percent-treaty-title", "cue": "Solution.", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "one-percent-treaty-title", "cue": "Treaty.", "sfx": "boing", "volume": 0.35 },
+    { "scene": "one-percent-treaty-title", "cue": "Treaty.", "at": "after", "sfx": "sparkle", "volume": 0.3 },
+
+    { "scene": "sounds-crazy", "cue": "crazy.", "sfx": "boing", "volume": 0.4 },
+    { "scene": "sounds-crazy", "cue": "crazy.", "offset": 0.25, "sfx": "squeak", "volume": 0.3 },
+
+    { "scene": "every-leader-at-once", "cue": "papers", "sfx": "woof", "volume": 0.3 },
+    { "scene": "every-leader-at-once", "cue": "every", "sfx": "pop", "volume": 0.4 },
+    { "scene": "every-leader-at-once", "cue": "Earth", "sfx": "cash-register", "volume": 0.35 },
+    { "scene": "every-leader-at-once", "cue": "simultaneously", "sfx": "whistle", "volume": 0.3 },
+    { "scene": "every-leader-at-once", "cue": "percent", "sfx": "ding", "volume": 0.3 },
+    { "scene": "every-leader-at-once", "cue": "it.", "sfx": "pat", "volume": 0.4 },
+
+    { "scene": "thats-the-treaty", "cue": "treaty.", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "thats-the-treaty", "cue": "treaty.", "at": "after", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "thats-the-treaty", "cue": "craziness", "sfx": "boing", "volume": 0.35 },
+    { "scene": "thats-the-treaty", "cue": "objection,", "sfx": "squeak", "volume": 0.3 },
+
+    { "scene": "enemies-will-invade", "cue": "invade", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "enemies-will-invade", "cue": "us", "sfx": "boom", "volume": 0.35 },
+    { "scene": "enemies-will-invade", "cue": "Everyone", "sfx": "pop", "volume": 0.4 },
+    { "scene": "enemies-will-invade", "cue": "same", "sfx": "clank", "volume": 0.4 },
+    { "scene": "enemies-will-invade", "cue": "increases", "sfx": "tick", "volume": 0.5 },
+    { "scene": "enemies-will-invade", "cue": "increases", "at": "after", "sfx": "whistle", "volume": 0.3 },
+    { "scene": "enemies-will-invade", "cue": "pointed", "sfx": "squeak", "volume": 0.35 },
+
+    { "scene": "one-twenty-one-apocalypses", "cue": "minus", "sfx": "thunk", "volume": 0.5 },
+    { "scene": "one-twenty-one-apocalypses", "cue": "civilization", "sfx": "boom", "volume": 0.4 },
+    { "scene": "one-twenty-one-apocalypses", "cue": "twelve", "sfx": "slide-up", "volume": 0.35 },
+    { "scene": "one-twenty-one-apocalypses", "cue": "forty-one,", "sfx": "stamp", "volume": 0.45 },
+    { "scene": "one-twenty-one-apocalypses", "cue": "twenty-one", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "one-twenty-one-apocalypses", "cue": "civilizational", "sfx": "boom", "volume": 0.6 },
+    { "scene": "one-twenty-one-apocalypses", "cue": "twenty-two.", "n": 2, "sfx": "squeak", "volume": 0.35 },
+
+    { "scene": "more-than-sufficient", "cue": "sufficient.", "at": "after", "sfx": "pop", "volume": 0.4 },
+    { "scene": "more-than-sufficient", "cue": "already", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "more-than-sufficient", "cue": "have.", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "more-than-sufficient", "cue": "Multiple", "sfx": "thunk", "volume": 0.4 },
+
+    { "scene": "treaties-you-signed", "cue": "chemical", "sfx": "slam", "volume": 0.45 },
+    { "scene": "treaties-you-signed", "cue": "weapons", "sfx": "huff", "volume": 0.35 },
+    { "scene": "treaties-you-signed", "cue": "biological", "sfx": "splat", "volume": 0.45 },
+    { "scene": "treaties-you-signed", "cue": "landmines", "sfx": "boom", "volume": 0.55 },
+    { "scene": "treaties-you-signed", "cue": "like", "sfx": "slide-up", "volume": 0.3 },
+    { "scene": "treaties-you-signed", "cue": "using.", "sfx": "squeak", "volume": 0.3 },
+    { "scene": "treaties-you-signed", "cue": "fewer", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "treaties-you-signed", "cue": "them.", "sfx": "tick", "volume": 0.5 },
+
+    { "scene": "847-civilizations", "cue": "manual", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "847-civilizations", "cue": "planets.", "sfx": "stamp", "volume": 0.45 },
+    { "scene": "847-civilizations", "cue": "listened.", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "847-civilizations", "cue": "didn't.", "sfx": "pop", "volume": 0.35 },
+    { "scene": "847-civilizations", "cue": "data.", "sfx": "click", "volume": 0.5 },
+    { "scene": "847-civilizations", "cue": "resources", "sfx": "ding", "volume": 0.3 },
+    { "scene": "847-civilizations", "cue": "didn't", "n": 2, "sfx": "zap", "volume": 0.2 },
+
+    { "scene": "next-page", "cue": "crazy", "sfx": "boing", "volume": 0.4 },
+    { "scene": "next-page", "cue": "page.", "sfx": "slam", "volume": 0.45 },
+    { "scene": "next-page", "cue": "page.", "offset": 0.2, "sfx": "pat", "volume": 0.35 },
+    { "scene": "next-page", "cue": "page.", "at": "after", "sfx": "whoosh", "volume": 0.3 },
+
+    { "scene": "bread-mold", "cue": "reflex", "sfx": "click", "volume": 0.45 },
+    { "scene": "bread-mold", "cue": "antibiotics", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "bread-mold", "cue": "two", "sfx": "whirr", "volume": 0.3 },
+    { "scene": "bread-mold", "cue": "thousand", "sfx": "zap", "volume": 0.25 },
+    { "scene": "bread-mold", "cue": "while", "sfx": "zap", "volume": 0.25 },
+    { "scene": "bread-mold", "cue": "bread.", "n": 2, "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "bread-mold", "cue": "bread.", "n": 2, "at": "after", "sfx": "splat", "volume": 0.4 },
+
+    { "scene": "human-greed", "cue": "internet,", "sfx": "zap", "volume": 0.3 },
+    { "scene": "human-greed", "cue": "instrument", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "human-greed", "cue": "universe:", "sfx": "whirr", "volume": 0.3 },
+    { "scene": "human-greed", "cue": "greed.", "sfx": "switch", "volume": 0.5 },
+    { "scene": "human-greed", "cue": "greed.", "offset": 0.15, "sfx": "fire", "volume": 0.4 }
+  ]
+}

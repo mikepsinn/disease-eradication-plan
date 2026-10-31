@@ -1,0 +1,572 @@
+<template id="2800-top-hats-template">
+  <!-- 2800-top-hats · Layer B (storyboards/part-05-sacred-order-of-paper-distribution.md): same form, no seam. It starts on
+       step-1-dice-in-a-suit's last frame (box 1 ticked, the Reaper's hood sinking behind the hill). "two thousand eight
+       hundred": the camera pulls back fast until his hill is one of a grid of 2,808 tiny hills with tiny top hats, and a
+       counter runs up. "Statistically,": a spotlight clunks on and sweeps the grid; it stops on a headstone in a top hat,
+       the Reaper leaning on it, adding a tally mark (that one ticked box 2); "least": a fat cat asleep face down on his
+       money, snoring; "one": it swings back to the hill we came from and the camera zooms back in; "living.": our Rich
+       Human, waving his ticked form, his top hat lit up; a beat after: the I PREFER LIVING button pops onto his lapel and
+       the counter adds "You need: 1".
+       The scene id starts with a digit, which is not a valid CSS #id selector: every element is reached with
+       getElementById (q()) and styled inline, never through "#2800-top-hats-..." selectors. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+  </style>
+  <div id="root" data-composition-id="2800-top-hats" data-width="1920" data-height="1080" data-start="0" data-duration="7.62">
+    <div id="2800-top-hats-cam" style="position: absolute; inset: 0;">
+      <div id="2800-top-hats-bg" style="position: absolute; inset: 0;"></div>
+      <div id="2800-top-hats-art" style="position: absolute; inset: 0;"></div>
+      <div id="2800-top-hats-pip" style="position: absolute; inset: 0;"></div>
+    </div>
+    <div id="2800-top-hats-grain" style="position: absolute; inset: 0;"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script>
+    (function () {
+      var ID = "2800-top-hats";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ── Shared: copied in sacred-scroll.html and 2800-top-hats.html (keep the three copies the same) ──
+      // The spine of Part 5 (storyboard "Shared drawings"), drawn in canvas px for each shape:
+      // card: the step card [x, y, w, h] (a strip of the sacred scroll, rolls at both ends); tab: where it rolls up to.
+      // hill: the Rich Human's hill [x0, x1, base, peak]; rich: the person origin of the Rich Human in his chair [x, y, scale].
+      // later: the dotted LATER stack [center x, center y, scale]; stack: the billion bundle (base center, where it slides
+      // from [x, y, scale]) and its label [x, baseline, size]; late: where the latecomer runs in from; form: [x, y, w];
+      // reaper: [feet x, feet y, scale]; lean: his lean (deg) once risen.
+      var S1L = V
+        ? { card: [40, 70, 680, 260], tab: [40, 70, 220, 70], stepFs: 60, step: [76, 222], headFs: 42, head: [332, [150, 208, 266]],
+            headLines: ["GET MANY PAPERS", "FROM RICH", "HUMANS"], tabFs: 38,
+            hill: [360, 1010, 1420, 1150], rich: [685, 1150 - 138 * 2.5, 2.5], later: [885, 590, 0.85],
+            stack: { to: [180, 1420], from: [560, 1260, 0.42], lab: [192, 1086, 40] }, late: -80,
+            form: [40, 360, 450], formFs: [28, 28, 18], reaper: [445, 1400, 1.6], lean: 5, hide: 760 }
+        : { card: [120, 40, 1380, 130], tab: [40, 30, 220, 70], stepFs: 84, step: [168, 134], headFs: 50, head: [482, [123]],
+            headLines: ["GET MANY PAPERS FROM RICH HUMANS"], tabFs: 40,
+            hill: [1000, 1520, 860, 640], rich: [1260, 640 - 138 * 2.05, 2.05], later: [1560, 240, 1.0],
+            stack: { to: [255, 872], from: [1070, 760, 0.42], lab: [255, 542, 50] }, late: -90,
+            form: [470, 330, 520], formFs: [32, 30, 20], reaper: [1068, 800, 1.35], lean: -8, hide: 640 };
+      var WHITE = "#FBF6E6", NAVY = "#24304D", CHAIR = "#3A4766", ink = C.line;
+      var s1f = function (n) { return (+n).toFixed(1); };
+      function s1At(x, y, s, inner) { return '<g transform="translate(' + s1f(x) + "," + s1f(y) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function s1Txt(x, y, size, fam, fill, text, extra) {
+        return '<text x="' + s1f(x) + '" y="' + s1f(y) + '" font-family="' + fam + '" font-weight="' + (fam === "Fraunces" ? 900 : fam === "Inter" ? 600 : 600) + '" font-size="' + size + '" fill="' + fill + '" ' + (extra || "") + ">" + text + "</text>";
+      }
+      // Where the form's boxes are, and the Rich Human's left shoulder (canvas px).
+      function s1Geo() {
+        var F = S1L.form, x = F[0], y = F[1], w = F[2], R = S1L.rich;
+        return { h: 400, box: [[x + w - 86, y + 128], [x + w - 86, y + 248]], bs: 50,
+          shoulder: [R[0] - 32.4 * R[2], R[1] + 8.8 * R[2]], arm: 44 * R[2] };
+      }
+      // A walking-paper's static cousin: a plain bill (no legs).
+      function s1Bill() { return KIT.money("plain").replace(/<path class="legs"[^>]*\/>/, ""); }
+
+      // The step card: a cream strip with a roll at each end, "STEP N" in Fraunces and the heading in Oswald capitals.
+      // #-card-reveal (its clip) and #-card-roll-r unroll it; #-tab is the small "STEP N" tab it rolls up into.
+      function s1Roll(x, y, h) {
+        return '<rect x="' + s1f(x - 15) + '" y="' + s1f(y - 9) + '" width="30" height="' + s1f(h + 18) + '" rx="7" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M' + s1f(x + 7) + "," + s1f(y - 2) + " V" + s1f(y + h + 2) + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+          '<path d="M' + s1f(x - 7) + "," + s1f(y - 2) + " V" + s1f(y + h + 2) + '" stroke="' + ink + '" stroke-width="1.4" opacity="0.4"/>' +
+          '<rect x="' + s1f(x - 9) + '" y="' + s1f(y - 17) + '" width="18" height="10" rx="3" fill="' + ink + '"/><rect x="' + s1f(x - 9) + '" y="' + s1f(y + h + 7) + '" width="18" height="10" rx="3" fill="' + ink + '"/>';
+      }
+      function s1Card(pid, n) {
+        var c = S1L.card, x = c[0], y = c[1], w = c[2], h = c[3];
+        var paper = '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="url(#' + pid + '-fine)" opacity="0.13"/>' +
+          '<rect x="' + (x + 12) + '" y="' + (y + 10) + '" width="' + (w - 24) + '" height="' + (h - 20) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.5"/>' +
+          s1Txt(S1L.step[0] + 4, S1L.step[1] + 5, S1L.stepFs, "Fraunces", C.orange, "STEP " + n) + s1Txt(S1L.step[0], S1L.step[1], S1L.stepFs, "Fraunces", ink, "STEP " + n) +
+          S1L.headLines.map(function (l, i) { return s1Txt(S1L.head[0], S1L.head[1][i], S1L.headFs, "Oswald", ink, l, 'letter-spacing="1.5"'); }).join("");
+        var t = S1L.tab;
+        var tabPaper = '<rect x="' + t[0] + '" y="' + t[1] + '" width="' + t[2] + '" height="' + t[3] + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + (t[0] + 8) + '" y="' + (t[1] + 7) + '" width="' + (t[2] - 16) + '" height="' + (t[3] - 14) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          s1Txt(t[0] + t[2] / 2 + 2, t[1] + t[3] / 2 + S1L.tabFs * 0.36 + 2, S1L.tabFs, "Fraunces", C.orange, "STEP " + n, 'text-anchor="middle"') +
+          s1Txt(t[0] + t[2] / 2, t[1] + t[3] / 2 + S1L.tabFs * 0.36, S1L.tabFs, "Fraunces", ink, "STEP " + n, 'text-anchor="middle"');
+        return '<g id="' + pid + '-card"><defs><clipPath id="' + pid + '-card-clip"><rect id="' + pid + '-card-reveal" x="' + x + '" y="' + (y - 20) + '" width="' + (w + 2) + '" height="' + (h + 40) + '"/></clipPath>' +
+          '<clipPath id="' + pid + '-tab-clip"><rect id="' + pid + '-tab-reveal" x="' + t[0] + '" y="' + (t[1] - 20) + '" width="' + (t[2] + 2) + '" height="' + (t[3] + 40) + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + pid + '-card-clip)">' + paper + "</g>" + s1Roll(x, y, h) + '<g id="' + pid + '-card-roll-r">' + s1Roll(x + w, y, h) + "</g></g>" +
+          '<g id="' + pid + '-tab" opacity="0"><g clip-path="url(#' + pid + '-tab-clip)">' + tabPaper + "</g>" + s1Roll(t[0], t[1], t[3]) + '<g id="' + pid + '-tab-roll-r">' + s1Roll(t[0] + t[2], t[1], t[3]) + "</g></g>";
+      }
+
+      // The Rich Human's hill: a dome of plain bills packed in rows (lower rows in front), on a dark green mound.
+      function s1HillTop(x) {
+        var Hl = S1L.hill, cx = (Hl[0] + Hl[1]) / 2, half = (Hl[1] - Hl[0]) / 2, Ht = (Hl[2] - Hl[3]) * 1.15, u = Math.min(1, Math.abs(x - cx) / half);
+        return Hl[2] - Math.min(Hl[2] - Hl[3], Ht * Math.sqrt(1 - u * u));
+      }
+      function s1Hill(pid) {
+        var Hl = S1L.hill, x0 = Hl[0], x1 = Hl[1], base = Hl[2], peak = Hl[3], cx = (x0 + x1) / 2, half = (x1 - x0) / 2, Ht = (base - peak) * 1.15;
+        var prof = function (h) { return half * Math.sqrt(Math.max(0, 1 - (h / Ht) * (h / Ht))); };
+        var rnd = KIT.rng(5150), rh = 23, rows = Math.ceil((base - peak) / rh), pts = [], i, k;
+        for (i = 0; i <= 30; i++) { var a = i / 30, hh = (base - peak) * (1 - Math.abs(2 * a - 1)); pts.push(s1f(cx + (2 * a - 1) * prof(hh) * 1.02) + "," + s1f(base - hh - 6)); }
+        var mound = '<path d="M' + s1f(x0 - 8) + "," + base + " L" + pts.join(" L") + " L" + s1f(x1 + 8) + "," + base + ' Z" fill="' + C.moneyDark + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>';
+        var bills = "", bill = s1Bill();
+        for (i = rows - 1; i >= 0; i--) {
+          var y = base - rh * (i + 0.55), hw = prof(rh * (i + 0.5)), n = Math.max(2, Math.round((2 * hw) / 44)), sp = (2 * hw - 30) / n;
+          var row = "";
+          for (k = 0; k < n; k++) {
+            var bx = cx - hw + 15 + sp * (k + 0.5) + (i % 2 ? sp * 0.22 : -sp * 0.22) + (rnd() - 0.5) * 6;
+            row += '<g transform="translate(' + s1f(bx) + "," + s1f(y + (rnd() - 0.5) * 5) + ") rotate(" + s1f((rnd() - 0.5) * 16) + ') scale(0.5)">' + bill + "</g>";
+          }
+          bills += row;
+        }
+        var lip = '<path d="M' + s1f(x0 - 14) + "," + (base + 2) + " H" + s1f(x1 + 14) + '" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>';
+        return '<g id="' + pid + '-hill">' + mound + bills + lip + "</g>";
+      }
+
+      // The swivel chair (Part 4's navy chair, the cream UNREALISTIC sticker on its back) and the Rich Human in it,
+      // in person units (origin = his person origin, seat top at y 80, the base's casters on y 152).
+      // #-spin turns the seat round: #-chair-back (turned away: only his hat and cigar smoke show) and #-chair-front.
+      // In front: one person drawing per pose, swapped by opacity: #-rh-hug, -greedy, -reach, -eager (the tick, looking
+      // at the form), -done. Their .arm-l (shoulder -32.4, 8.8) is the rubber arm.
+      var S1P = {
+        hug: KIT.castOpts("richHuman"),
+        greedy: KIT.castOpts("richHuman", { mood: "greedy" }),
+        reach: KIT.castOpts("richHuman", { mood: "greedy", arms: [[22, 72], [140, 155]], holdL: "cash" }),
+        eager: KIT.castOpts("richHuman", { mood: "eager", look: "left", arms: [[-90, -90], [-22, -72]], holdR: "cash" }),
+        done: KIT.castOpts("richHuman", { mood: "smug", look: "left", arms: [[-90, -90], [-22, -72]], holdR: "cash" }),
+      };
+      function s1Backrest(back) {
+        var pts = "M-50,88 L-55,-20 L-46,-40 L46,-40 L55,-20 L50,88 Z";
+        var tufts = "";
+        if (!back) [[-36, -24], [36, -24], [-40, 0], [40, 0]].forEach(function (p) { tufts += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.4" fill="' + C.cream + '" opacity="0.8"/>'; });
+        else [[-30, -22], [0, -22], [30, -22], [-15, -6], [15, -6], [-30, 10], [30, 10]].forEach(function (p) { tufts += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.4" fill="' + C.cream + '" opacity="0.7"/>'; });
+        return '<path d="' + pts + '" fill="' + CHAIR + '" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/>' +
+          '<path d="M-44,-34 L44,-34 L49,-20 L45,82 L-45,82 L-49,-20 Z" fill="none" stroke="' + C.cream + '" stroke-width="1.6" opacity="0.55"/>' +
+          '<path d="M46,-36 L52,-20 L47,84" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>' + tufts;
+      }
+      function s1Rich(pid) {
+        var base = '<path d="M0,111 L-56,124 M0,111 L56,124 M0,111 L-22,130 M0,111 L22,130" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path d="M0,111 L-56,124 M0,111 L56,124 M0,111 L-22,130 M0,111 L22,130" stroke="' + C.slate + '" stroke-width="4" stroke-linecap="round"/>' +
+          [[-56, 132], [56, 132], [-22, 133], [22, 133]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="5.5" fill="' + ink + '"/>'; }).join("") +
+          '<rect x="-5.5" y="94" width="11" height="19" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="3"/>';
+        var seat = '<path d="M-60,79 L60,79 L63,96 L-63,96 Z" fill="' + CHAIR + '" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/><path d="M-56,82 H56" stroke="' + C.orange + '" stroke-width="2.2"/>';
+        var sticker = '<g transform="translate(2,40) rotate(-9)"><path d="M-44,-13 L38,-13 L44,-7 L44,13 L-44,13 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M38,-13 L38,-7 L44,-7 Z" fill="#D8CFAF" stroke="' + ink + '" stroke-width="1.6"/>' +
+          s1Txt(-1, 5, 13.5, "Oswald", C.war, "UNREALISTIC", 'text-anchor="middle" letter-spacing="0.8"') + "</g>";
+        var smoke = '<g id="' + pid + '-smoke">' + [0, 1, 2].map(function (i) {
+          return '<g transform="translate(' + (30 + i * 8) + "," + (-58 - i * 16) + ')"><g class="' + pid + '-wisp"><path d="M0,0 q-6,-8 0,-16 q6,-8 0,-16" fill="none" stroke="#8C8782" stroke-width="3.4" stroke-linecap="round" opacity="0.85"/></g></g>';
+        }).join("") + "</g>";
+        var back = '<g id="' + pid + '-chair-back">' + seat + KIT.person(S1P.hug) + s1Backrest(true) + sticker + smoke + "</g>";
+        var arms = '<path d="M-63,47 L-46,47 L-46,57 L-63,57 Z M46,47 L63,47 L63,57 L46,57 Z" fill="' + CHAIR + '" stroke="' + ink + '" stroke-width="3.6"/>' +
+          '<path d="M-56,57 V80 M56,57 V80" stroke="' + ink + '" stroke-width="5"/>';
+        var people = ["hug", "greedy", "reach", "eager", "done"].map(function (k) {
+          return '<g id="' + pid + "-rh-" + k + '"' + (k === "hug" ? "" : ' opacity="0"') + ">" + KIT.person(S1P[k]) + "</g>";
+        }).join("");
+        var front = '<g id="' + pid + '-chair-front" opacity="0">' + s1Backrest(false) + seat + people + arms + "</g>";
+        var R = S1L.rich;
+        return s1At(R[0], R[1], R[2], base + '<g id="' + pid + '-spin">' + back + front + "</g>");
+      }
+
+      // The billion bundle (bills seen edge-on, a bank strap round the middle), base center at (0,0); the latecomer
+      // (one walking bill) on top; and the label, which clicks from ...000 to ...001.
+      var S1N = 22, S1B = 12;
+      function s1Stack(pid) {
+        var rnd = KIT.rng(1000000001), w = 220, out = "";
+        for (var i = 0; i < S1N; i++) {
+          var j = Math.round((rnd() - 0.5) * 8), wj = Math.round((rnd() - 0.5) * 6), y = -(i + 1) * S1B;
+          out += '<rect x="' + (-w / 2 + j) + '" y="' + y + '" width="' + (w + wj) + '" height="' + S1B + '" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+            '<path d="M' + (-w / 2 + j + 8) + "," + (y + 4) + " H" + (w / 2 + j + wj - 8) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>';
+        }
+        var band = '<rect x="' + (-w / 2 - 4) + '" y="-150" width="' + (w + 8) + '" height="34" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3.4"/>' +
+          '<path d="M' + (-w / 2 + 4) + ',-142 H' + (w / 2 - 4) + '" stroke="' + C.orange + '" stroke-width="2"/>' + KIT.star(0, -133, 10, C.moneyDark);
+        var late = s1At(0, -S1N * S1B - 46 * 0.8, 1, '<g id="' + pid + '-late"><g transform="scale(0.8)">' + KIT.money("plain", 0.5) + "</g></g>");
+        var shade = '<rect x="' + (-w / 2 - 6) + '" y="' + -S1N * S1B + '" width="' + (w + 12) + '" height="' + S1N * S1B + '" fill="url(#' + pid + '-hatch)" opacity="0.12"/>';
+        var T = S1L.stack.to, lab = S1L.stack.lab;
+        var big = function (t, dx, dy, extra) { return '<text x="' + (lab[0] + dx) + '" y="' + (lab[1] + dy) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + lab[2] + '" ' + extra + ">" + t + "</text>"; };
+        var label = function (t) {
+          return big(t, lab[2] * 0.05, lab[2] * 0.07, 'fill="' + C.ink + '"') + big(t, 0, 0, 'fill="' + C.ink + '" stroke="' + C.cream + '" stroke-width="' + (lab[2] * 0.09).toFixed(1) + '" stroke-linejoin="round" style="paint-order:stroke"');
+        };
+        return s1At(T[0], T[1], 1, '<g id="' + pid + '-stack"><g id="' + pid + '-stack-squash">' + out + shade + band + late + "</g></g>") +
+          '<g id="' + pid + '-lab"><g id="' + pid + '-lab-a">' + label("1,000,000,000") + '</g><g id="' + pid + '-lab-b" opacity="0">' + label("1,000,000,001") + "</g></g>";
+      }
+
+      // The dotted LATER stack: a bundle bigger than the billion (300 x 260 against its 220 x 264), which does not exist
+      // yet, drawn in dashes, with sparkles; centered on (0, 0).
+      function s1Later(pid) {
+        var w = 300, lh = 13, n = 20, out = "", rnd = KIT.rng(7);
+        for (var i = 0; i < n; i++) {
+          var y = n * lh * 0.5 - (i + 1) * lh, j = Math.round((rnd() - 0.5) * 10);
+          out += '<rect x="' + (-w / 2 + j) + '" y="' + y + '" width="' + w + '" height="' + lh + '" rx="2" fill="' + C.money + '" fill-opacity="0.18" stroke="' + ink + '" stroke-width="2.4" stroke-dasharray="9 7"/>';
+        }
+        out += '<rect x="' + (-w / 2 - 6) + '" y="-24" width="' + (w + 12) + '" height="48" fill="' + C.cream + '" fill-opacity="0.92" stroke="' + ink + '" stroke-width="3" stroke-dasharray="10 6"/>' +
+          s1Txt(0, 15, 42, "Oswald", ink, "LATER", 'text-anchor="middle" letter-spacing="7"');
+        var sparks = [[-176, -116, 18, C.yellow], [176, -100, 13, C.orange], [166, 120, 15, C.yellow], [-170, 108, 11, C.orange]].map(function (s) {
+          return '<g transform="translate(' + s[0] + "," + s[1] + ')"><g class="' + pid + '-spark">' + KIT.star(0, 0, s[2], s[3]) + "</g></g>";
+        }).join("");
+        var L0 = S1L.later;
+        return s1At(L0[0], L0[1], L0[2], '<g id="' + pid + '-later" opacity="0"><g id="' + pid + '-later-bob">' + out + sparks + "</g></g>");
+      }
+
+      // The two-box form, in the look of Part 1's mail-in form. Its lines type on (each has a clip rect, #-type-k);
+      // its ticks are #-tick-0 and #-tick-1 (KIT.tick paths, drawn with KIT.drawTick).
+      function s1Form(pid) {
+        var F = S1L.form, x = F[0], y = F[1], w = F[2], G = s1Geo(), h = G.h, fs = S1L.formFs;
+        var clip = function (k, yy, ww) { return '<clipPath id="' + pid + "-tc-" + k + '"><rect id="' + pid + "-type-" + k + '" x="' + (x + 28 + fs[1]) + '" y="' + (yy - fs[1] - 6) + '" width="' + ww + '" height="' + (fs[1] * 1.5 + 12) + '"/></clipPath>'; };
+        var line = function (k, yy, t) { return '<g clip-path="url(#' + pid + "-tc-" + k + ')">' + s1Txt(x + 30 + fs[1] * 1.1, yy, fs[1], "Inter", ink, t) + "</g>"; };
+        var hy = y + 66, ly = [y + 154, y + 192, y + 274, y + 312];
+        var defs = "<defs>" + '<clipPath id="' + pid + '-tc-h"><rect id="' + pid + '-type-h" x="' + (x + 10) + '" y="' + (hy - fs[0] - 8) + '" width="' + (w - 20) + '" height="' + (fs[0] * 1.6) + '"/></clipPath>' +
+          clip(0, ly[0], w - 140) + clip(1, ly[1], w - 140) + clip(2, ly[2], w - 140) + clip(3, ly[3], w - 140) + "</defs>";
+        var box = function (b, i) { return KIT.checkbox(b[0], b[1], G.bs) + '<g id="' + pid + "-tick-" + i + '">' + KIT.tick(b[0] - 5, b[1] - 10, 64, C.med) + "</g>"; };
+        return '<g id="' + pid + '-form">' + defs +
+          '<rect x="' + (x + 10) + '" y="' + (y + 12) + '" width="' + w + '" height="' + h + '" fill="' + C.ink + '" opacity="0.85"/>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<g clip-path="url(#' + pid + '-tc-h)">' + s1Txt(x + w / 2, hy, fs[0], "Oswald", ink, "RICH HUMAN PREFERENCE CHECK", 'text-anchor="middle" letter-spacing="1"') + "</g>" +
+          '<path d="M' + (x + 30) + "," + (hy + 22) + " H" + (x + w - 30) + '" stroke="' + C.orange + '" stroke-width="4"/>' +
+          line(0, ly[0], "Not dying of") + line(1, ly[1], "horrible diseases") + line(2, ly[2], "Dying of") + line(3, ly[3], "horrible diseases") +
+          s1Txt(x + 26, ly[0], fs[1], "Oswald", C.orange, "1.") + s1Txt(x + 26, ly[2], fs[1], "Oswald", C.orange, "2.") +
+          box(G.box[0], 0) + box(G.box[1], 1) +
+          s1Txt(x + 28, y + h - 24, fs[2], "Inter", ink, "Not reading this form counts as box 2.", 'font-style="italic" font-weight="500" opacity="0.75"') + "</g>";
+      }
+
+      // The Grim Reaper, rising from behind the hill, with his tally clipboard under his arm. His body sits behind the
+      // hill (clipped above its base); his reaching arm, with the pencil, is drawn in front of the form, in the same frame.
+      // Both hang from #-reaper-rise / #-reaper-lean (and #-rarm-rise / #-rarm-lean) so one tween moves both. In his own
+      // units (KIT.reaper, feet at y 100); the arm and pencil are aimed at box 2 from where he ends up.
+      function s1ReaperGeo() {
+        var R0 = S1L.reaper, G = s1Geo(), lam = (S1L.lean * Math.PI) / 180, s = R0[2];
+        var toLocal = function (P) {
+          var dx = P[0] - R0[0], dy = P[1] - R0[1], c = Math.cos(-lam), sn = Math.sin(-lam);
+          return [(dx * c - dy * sn) / s, (dx * sn + dy * c) / s + 100];
+        };
+        var toCanvas = function (p) {
+          var x = p[0] * s, y = (p[1] - 100) * s, c = Math.cos(lam), sn = Math.sin(lam);
+          return [R0[0] + x * c - y * sn, R0[1] + x * sn + y * c];
+        };
+        var sh = [-26, -100], shC = toCanvas(sh), tip = [G.box[1][0] + G.bs / 2, G.box[1][1] + G.bs / 2];
+        var u = [shC[0] - tip[0], shC[1] - tip[1]], L = Math.hypot(u[0], u[1]);
+        u = [u[0] / L, u[1] / L];
+        var PS = 0.75, grip = 96;
+        var hand = [tip[0] + u[0] * grip, tip[1] + u[1] * grip];
+        var hl = toLocal(hand), fold = 95 - (Math.atan2(hl[1] - sh[1], hl[0] - sh[0]) * 180) / Math.PI;
+        return { toLocal: toLocal, toCanvas: toCanvas, sh: sh, tip: tip, hand: hand, u: u, ang: (Math.atan2(u[1], u[0]) * 180) / Math.PI + 28, ps: PS, fold: fold };
+      }
+      function s1Pencil(ang, ps) { return '<g transform="rotate(' + s1f(ang) + ") scale(" + ps + ')">' + KIT.pencil() + "</g>"; }
+      function s1Clipboard(pid) {
+        var marks = "";
+        for (var r = 0; r < 4; r++) for (var gq = 0; gq < 3; gq++) {
+          if (r === 3 && gq === 2) break;
+          var x0 = -34 + gq * 26, y0 = -128 + r * 26;
+          marks += '<path d="M' + x0 + "," + y0 + " v18 M" + (x0 + 5) + "," + y0 + " v18 M" + (x0 + 10) + "," + y0 + " v18 M" + (x0 + 15) + "," + y0 + " v18 M" + (x0 - 3) + "," + (y0 + 15) + " L" + (x0 + 19) + "," + (y0 + 3) + '" stroke="' + ink + '" stroke-width="2.6" stroke-linecap="round"/>';
+        }
+        marks += '<path d="M18,-50 v18 M23,-50 v18" stroke="' + ink + '" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<path id="' + pid + '-newmark" d="M28,-50 v18" stroke="' + C.war + '" stroke-width="3" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+        return KIT.props.clipboard({ title: "", items: [] }) + marks;
+      }
+      function s1Reaper(pid) {
+        var R0 = S1L.reaper, s = R0[2], g = s1ReaperGeo();
+        var wrap = function (pre, inner) {
+          return '<g transform="translate(' + R0[0] + "," + R0[1] + ')"><g id="' + pid + "-" + pre + '-rise"><g id="' + pid + "-" + pre + '-lean"><g transform="scale(' + s + ') translate(0,-100)">' + inner + "</g></g></g></g>";
+        };
+        var cb = '<g transform="translate(-30,8) rotate(-8) scale(0.52)"><g id="' + pid + '-cboard">' + s1Clipboard(pid) + "</g></g>";
+        var body = '<g id="' + pid + '-rbody">' + KIT.reaper() + "</g>" + cb;
+        // the arm: a robe sleeve from the shoulder to the bony hand, the pencil's tip on box 2
+        var sh = g.sh, hand = g.toLocal(g.hand), tip = g.toLocal(g.tip), d = [hand[0] - sh[0], hand[1] - sh[1]], Ld = Math.hypot(d[0], d[1]), n = [-d[1] / Ld, d[0] / Ld];
+        var wrist = [hand[0] - (d[0] / Ld) * 8, hand[1] - (d[1] / Ld) * 8];
+        var sleeve = '<path d="M' + s1f(sh[0] + n[0] * 13) + "," + s1f(sh[1] + n[1] * 13) + " L" + s1f(wrist[0] + n[0] * 9) + "," + s1f(wrist[1] + n[1] * 9) + " L" + s1f(wrist[0] - n[0] * 9) + "," + s1f(wrist[1] - n[1] * 9) +
+          " L" + s1f(sh[0] - n[0] * 13) + "," + s1f(sh[1] - n[1] * 13) + ' Z" fill="#141B2B" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>';
+        var bony = '<circle cx="' + s1f(hand[0]) + '" cy="' + s1f(hand[1]) + '" r="7" fill="#F1EAD6" stroke="' + ink + '" stroke-width="2.5"/>';
+        var pencilLocal = s1At(tip[0], tip[1], 1, '<g id="' + pid + '-rpencil">' + s1Pencil(g.ang - S1L.lean, g.ps / s) + "</g>");
+        var fingers = '<path d="M' + s1f(hand[0] - 5) + "," + s1f(hand[1] - 6) + " l-6,5 M" + s1f(hand[0] + 2) + "," + s1f(hand[1] - 7) + ' l-3,8" stroke="' + ink + '" stroke-width="2.2" stroke-linecap="round"/>';
+        var arm = '<g id="' + pid + '-rarm-swing">' + sleeve + pencilLocal + bony + fingers + "</g>";
+        var base = S1L.hill[2];
+        return {
+          body: '<defs><clipPath id="' + pid + '-behind"><rect x="0" y="-400" width="' + W + '" height="' + (base - 2 + 400) + '"/></clipPath></defs><g clip-path="url(#' + pid + '-behind)">' + wrap("reaper", body) + "</g>",
+          arm: '<g id="' + pid + '-rarm" opacity="0">' + wrap("rarm", arm) + "</g>",
+        };
+      }
+      // The Rich Human's pencil (after he snatches it), in canvas px: its tip starts on box 2, where the Reaper held it.
+      function s1RichPencil(pid) {
+        var g = s1ReaperGeo();
+        return '<g id="' + pid + '-rhp" opacity="0">' + s1At(g.tip[0], g.tip[1], 1, '<g id="' + pid + '-rhp-move">' + s1Pencil(g.ang, g.ps) + "</g>") + "</g>";
+      }
+      // Everything, back to front.
+      function s1Art(pid) {
+        var rp = s1Reaper(pid);
+        return s1Card(pid, 1) + s1Later(pid) + rp.body + s1Hill(pid) + s1Stack(pid) + s1Form(pid) + s1Rich(pid) + rp.arm + s1RichPencil(pid);
+      }
+      // The idle loops, by part time T (so the next scene picks them up where this one stops).
+      function s1Idle(pid, T) {
+        var bob = document.getElementById(pid + "-later-bob");
+        if (bob) bob.setAttribute("transform", "translate(0," + (Math.sin(T * 2.2) * 7).toFixed(2) + ") rotate(" + (Math.sin(T * 1.3) * 1.5).toFixed(2) + ")");
+        Array.prototype.forEach.call(document.getElementsByClassName(pid + "-spark"), function (e, i) { e.setAttribute("transform", "scale(" + (0.7 + 0.35 * Math.abs(Math.sin(T * 3 + i * 1.7))).toFixed(3) + ")"); });
+        Array.prototype.forEach.call(document.getElementsByClassName(pid + "-wisp"), function (e, i) { e.setAttribute("transform", "rotate(" + (Math.sin(T * 2.6 + i) * 10).toFixed(2) + ") translate(0," + (-((T * 14 + i * 9) % 14)).toFixed(1) + ")"); });
+      }
+      // ── end of the shared part ──
+
+      var f = s1f, ink = C.line;
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── Our cell: the hill and the Rich Human, as step-1 leaves them (world units = step-1's canvas px) ──
+      var Hl = S1L.hill, R = S1L.rich, rs = R[2];
+      // HT: the tiny hills' top hats, a size and a half (so 2,800 of them still read as top hats); hatTop: its top.
+      var HT = 1.5, hatTop = R[1] - (40 + 30 * HT) * rs, cx0 = (Hl[0] + Hl[1]) / 2, cy0 = (hatTop + Hl[2]) / 2;
+      var CS = Math.round(Math.max(Hl[1] - Hl[0], Hl[2] - hatTop) * 1.1);
+      // The grid: COLS x ROWS cells of CS world px (2,808 hills), cell px wide on screen at full pull-back, so it runs
+      // on past the paper's frame on every side. our: our cell [col, row]; stone and sleep: the two the spotlight stops
+      // on. hero: where his hat ends up on screen after the zoom back in, and his on-screen scale. panel: the counter
+      // card [x, y, w, h, size] and its lines.
+      var G = V
+        ? { cols: 39, rows: 72, cell: 40, our: [20, 36], stone: [12, 29], sleep: [25, 44], hero: [540, 760, 3.4],
+            panel: [50, 86, 670, 262, 46], lines: [[78, 150], [78, 212], [78, 300]] }
+        : { cols: 72, rows: 39, cell: 46, our: [39, 21], stone: [21, 18], sleep: [50, 17], hero: [1150, 300, 3.3],
+            panel: [70, 64, 900, 148, 40], lines: [[100, 120], [100, 186]] };
+      var VX = 46, VY = 46, VW = W - 92, VH = H - 92;
+      var cellPx = G.cell, s1 = cellPx / CS;
+      var gx0 = VX + (VW - cellPx * G.cols) / 2, gy0 = VY + (VH - cellPx * G.rows) / 2;
+      var cellScreen = function (c, r) { return [gx0 + (c + 0.5) * cellPx, gy0 + (r + 0.5) * cellPx]; };
+      var P1 = cellScreen(G.our[0], G.our[1]);
+      var sH = G.hero[2] / rs, hatC = [R[0], R[1] - 47 * rs];
+      var PH = [G.hero[0] - (hatC[0] - cx0) * sH, G.hero[1] - (hatC[1] - cy0) * sH];
+
+      // A tiny hill (cell units, centered on the cell), the real hill and chair in fewer shapes: the mound with rows of
+      // bills, the star base, the chair, a fat cat (navy egg, white shirt, cash, a jowly head with a monocle and a
+      // mustache) or the back of his chair (the UNREALISTIC sticker), and a big top hat. There are 2,808 of them.
+      var hb = Hl[2] - cy0, hp = Hl[3] - cy0, half = (Hl[1] - Hl[0]) / 2, ry = R[1] - cy0, sw = function (k) { return f(k * rs); };
+      var u = function (x, y) { return f(x * rs) + "," + f(ry + y * rs); };   // person units -> cell units
+      var pth = function (pts) { return "M" + pts.map(function (p) { return u(p[0], p[1]); }).join(" L") + " Z"; };
+      var mound = "M" + f(-half * 1.04) + "," + f(hb) + " C" + f(-half * 0.92) + "," + f(hp - 130) + " " + f(half * 0.92) + "," + f(hp - 130) + " " + f(half * 1.04) + "," + f(hb) + " Z";
+      var hillSym = '<path d="' + mound + '" fill="' + C.money + '" stroke="' + ink + '" stroke-width="' + sw(9) + '" stroke-linejoin="round"/>' +
+        [0.3, 0.55, 0.8].map(function (k, i) {
+          var y = hp + (hb - hp) * k, w = half * (0.4 + 0.52 * k);
+          return '<path d="M' + f(-w) + "," + f(y) + " H" + f(w) + '" stroke="#C9DDB8" stroke-width="' + sw(9) + '" stroke-dasharray="' + sw(26) + " " + sw(9) + '" stroke-dashoffset="' + sw(i * 14) + '"/>';
+        }).join("");
+      var baseSym = '<path d="M' + u(0, 108) + " L" + u(-56, 128) + " M" + u(0, 108) + " L" + u(56, 128) + " M" + u(0, 108) + " L" + u(-20, 132) + " M" + u(0, 108) + " L" + u(20, 132) + '" stroke="' + ink + '" stroke-width="' + sw(8) + '" stroke-linecap="round"/>' +
+        '<path d="' + pth([[-6, 94], [6, 94], [6, 110], [-6, 110]]) + '" fill="' + ink + '"/>';
+      var backSym = '<path d="' + pth([[-50, 88], [-55, -20], [-46, -40], [46, -40], [55, -20], [50, 88]]) + '" fill="' + CHAIR + '" stroke="' + ink + '" stroke-width="' + sw(4.5) + '" stroke-linejoin="round"/>' +
+        '<path d="M' + u(47, -34) + " L" + u(51, -20) + " L" + u(46, 84) + '" fill="none" stroke="' + C.orange + '" stroke-width="' + sw(3) + '"/>';
+      var seatSym = '<path d="' + pth([[-60, 79], [60, 79], [63, 96], [-63, 96]]) + '" fill="' + CHAIR + '" stroke="' + ink + '" stroke-width="' + sw(4) + '"/>';
+      var hatSym = '<path d="' + pth([[-15, -40 - 30 * HT], [15, -40 - 30 * HT], [15, -40], [-15, -40]]) + '" fill="' + ink + '"/>' +
+        '<path d="' + pth([[-15, -52], [15, -52], [15, -45], [-15, -45]]) + '" fill="' + C.orange + '"/>' +
+        '<path d="' + pth([[-27, -36], [-23, -42], [23, -42], [27, -36]]) + '" fill="' + ink + '"/>';
+      var catSym = '<ellipse cx="0" cy="' + f(ry + 42 * rs) + '" rx="' + sw(48) + '" ry="' + sw(46) + '" fill="' + NAVY + '" stroke="' + ink + '" stroke-width="' + sw(4) + '"/>' +
+        '<path d="M' + u(36, 14) + " Q" + u(48, 42) + " " + u(34, 76) + '" fill="none" stroke="' + C.orange + '" stroke-width="' + sw(3) + '"/>' +
+        '<path d="' + pth([[-10, -2], [0, 18], [10, -2]]) + '" fill="' + WHITE + '"/>' +
+        '<path d="' + pth([[-16, 20], [16, 20], [16, 40], [-16, 40]]) + '" fill="' + C.money + '" stroke="' + ink + '" stroke-width="' + sw(2.4) + '"/>' +
+        '<path d="' + pth([[-12, -30], [10, -34], [20, -22], [21, -10], [12, 2], [-6, 2], [-15, -10]]) + '" fill="#F4E3CC" stroke="' + ink + '" stroke-width="' + sw(3) + '" stroke-linejoin="round"/>' +
+        '<path d="' + pth([[0, -10], [12, -12], [24, -16], [16, -6], [2, -6]]) + '" fill="' + ink + '"/>' +
+        '<circle cx="' + f(11 * rs) + '" cy="' + f(ry - 20 * rs) + '" r="' + sw(5) + '" fill="none" stroke="' + C.yellow + '" stroke-width="' + sw(2) + '"/>';
+      var sticker = '<path d="' + pth([[-34, 34], [32, 26], [34, 40], [-32, 48]]) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="' + sw(1.5) + '"/>' +
+        '<path d="M' + u(-24, 38) + " L" + u(24, 33) + '" stroke="' + C.war + '" stroke-width="' + sw(3.4) + '"/>';
+      var symA = '<g id="' + ID + '-sym-a">' + hillSym + baseSym + backSym + seatSym + catSym + hatSym + "</g>";
+      var symB = '<g id="' + ID + '-sym-b">' + hillSym + baseSym + hatSym + backSym + sticker + seatSym + "</g>";
+      // the headstone cell: a rounded slab (in a top hat) on a dirt mound, a little Reaper beside it
+      var wp = function (pts) { return "M" + pts.map(function (p) { return f(p[0]) + "," + f(hb + p[1]); }).join(" L") + " Z"; };   // above the hill's foot
+      var symStone = '<g id="' + ID + '-sym-stone"><path d="M' + f(-half * 0.7) + "," + f(hb) + " Q0," + f(hb - 150) + " " + f(half * 0.7) + "," + f(hb) + ' Z" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="' + sw(9) + '"/>' +
+        '<path d="' + wp([[-80, -40], [-80, -250], [-58, -312], [0, -334], [58, -312], [80, -250], [80, -40]]) + '" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="' + sw(4) + '" stroke-linejoin="round"/>' +
+        '<g transform="translate(0,' + f(hb - 328 - (ry - 36 * rs)) + ')">' + hatSym + "</g>" +
+        '<path d="' + wp([[130, -40], [138, -250], [160, -322], [186, -338], [212, -322], [234, -250], [242, -40]]) + '" fill="#141B2B" stroke="' + ink + '" stroke-width="' + sw(3) + '"/>' +
+        '<circle cx="186" cy="' + f(hb - 272) + '" r="' + sw(9) + '" fill="#F1EAD6" stroke="' + ink + '" stroke-width="' + sw(2) + '"/></g>';
+      // the sleeper's cell: a fat cat lying face down across the top of his money, his hat fallen off beside him
+      var symSleep = '<g id="' + ID + '-sym-sleep">' + hillSym +
+        '<ellipse cx="' + f(-10 * rs) + '" cy="' + f(hp - 30 * rs) + '" rx="' + sw(62) + '" ry="' + sw(32) + '" fill="' + NAVY + '" stroke="' + ink + '" stroke-width="' + sw(4) + '"/>' +
+        '<circle cx="' + f(60 * rs) + '" cy="' + f(hp - 22 * rs) + '" r="' + sw(17) + '" fill="#F4E3CC" stroke="' + ink + '" stroke-width="' + sw(3) + '"/>' +
+        '<g transform="translate(' + f(-80 * rs) + "," + f(hp + 30 * rs - ry) + ")\">" + hatSym + "</g></g>";
+      var rnd = KIT.rng(2808), uses = "";
+      for (var r = 0; r < G.rows; r++) for (var c = 0; c < G.cols; c++) {
+        if (c === G.our[0] && r === G.our[1]) continue;
+        var wx = cx0 + (c - G.our[0]) * CS + (rnd() - 0.5) * CS * 0.1, wy = cy0 + (r - G.our[1]) * CS + (rnd() - 0.5) * CS * 0.08;
+        var sym = c === G.stone[0] && r === G.stone[1] ? "stone" : c === G.sleep[0] && r === G.sleep[1] ? "sleep" : rnd() < 0.72 ? "a" : "b";
+        uses += '<use href="#' + ID + "-sym-" + sym + '" x="' + f(wx) + '" y="' + f(wy) + '"/>';
+      }
+
+      // ── The hero: our Rich Human for the end, waving his ticked form, the button on his lapel, his hat lit. It goes
+      // in the chair, in the same spot as step-1's poses (injected before the armrests). ──
+      var HO = KIT.castOpts("richHuman", { mood: "smile", arms: [[22, 72], [152, 172]], holdL: "cash" }), HR = KIT.rig(HO);
+      var hand = HR.handLocal[1];
+      var mini = '<g transform="translate(' + f(hand[0] - 3) + "," + f(hand[1] + 4) + ') rotate(8)"><rect x="-2" y="-46" width="36" height="46" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2.2"/>' +
+        '<path d="M3,-38 H29" stroke="' + ink + '" stroke-width="2.4"/><path d="M3,-34 H29" stroke="' + C.orange + '" stroke-width="1.2"/>' +
+        '<rect x="22" y="-29" width="8" height="8" fill="#FBF6E6" stroke="' + ink + '" stroke-width="1.4"/><rect x="22" y="-15" width="8" height="8" fill="#FBF6E6" stroke="' + ink + '" stroke-width="1.4"/>' +
+        '<path d="M3,-26 H17 M3,-12 H15" stroke="' + ink + '" stroke-width="1.6" opacity="0.6"/><path d="M22,-26 L25,-22 L32,-31" fill="none" stroke="' + C.med + '" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></g>';
+      var heroPerson = KIT.person(HO).replace('<g class="arm-r">', '<g class="arm-r">' + mini);
+      var rays = "";
+      for (var k = 0; k < 16; k++) {
+        var a0 = (k / 16) * Math.PI * 2, a1 = a0 + Math.PI / 16;
+        rays += '<path d="M0,0 L' + f(70 * Math.cos(a0)) + "," + f(70 * Math.sin(a0)) + " L" + f(70 * Math.cos(a1)) + "," + f(70 * Math.sin(a1)) + ' Z" fill="' + (k % 2 ? C.cream : C.yellow) + '"/>';
+      }
+      var button = '<g transform="translate(26,6)"><g id="' + ID + '-button" opacity="0"><circle r="11.5" fill="' + ink + '"/><circle r="10" fill="#FBF6E6"/><circle r="10" fill="none" stroke="' + C.med + '" stroke-width="0.9"/>' +
+        '<text x="0" y="-0.6" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="3.9" fill="#1F6E68">I PREFER</text>' +
+        '<text x="0" y="4.8" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="5" letter-spacing="0.1" fill="#1F6E68">LIVING</text>' +
+        '<path d="M-6.5,-6.5 Q-4,-9 -1,-9.4" fill="none" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round"/></g></g>';
+      var hero = '<g id="' + ID + '-rh-hero" opacity="0"><g transform="translate(0,-47)"><g id="' + ID + '-rays" opacity="0">' + rays + "</g></g>" + heroPerson + button + "</g>";
+      var art = s1Art(ID).replace('<path d="M-63,47 L-46,47', hero + '<path d="M-63,47 L-46,47');
+
+      // ── The pop-ups: what the spotlight finds, drawn big over its cell (screen px, standing on the cell) ──
+      var stoneC = cellScreen(G.stone[0], G.stone[1]), sleepC = cellScreen(G.sleep[0], G.sleep[1]), PK = V ? 1.25 : 1.2;
+      var stonePop = '<g transform="translate(' + f(stoneC[0]) + "," + f(stoneC[1] + 14) + ') scale(' + PK + ')"><g id="' + ID + '-pop-stone">' +
+        '<ellipse cx="20" cy="0" rx="150" ry="14" fill="' + ink + '" opacity="0.18"/>' +
+        '<g transform="translate(-40,0)">' + KIT.props.headstone({ text: "RIP" }) +
+        '<g transform="translate(-4,-123) rotate(-12)">' + '<g transform="scale(2.1)">' + KIT.tophat() + "</g></g>" +
+        '<path d="M34,-108 Q52,-92 44,-64" fill="none" stroke="' + C.yellow + '" stroke-width="2.4"/><circle cx="44" cy="-56" r="10" fill="#FFFFFF" fill-opacity="0.3" stroke="' + C.yellow + '" stroke-width="3.4"/></g>' +
+        '<g transform="translate(96,0) rotate(-9) scale(0.72) translate(0,-100)">' + KIT.reaper() +
+        '<g transform="translate(-44,-20) rotate(-6) scale(0.62)">' + s1Clipboard(ID + "-pop") + "</g></g>" + "</g></g>";
+      var bill = s1Bill(), pile = "";
+      [[-46, -12, -4], [16, -14, 6], [-16, -36, 3], [44, -36, -7], [-60, -38, 9], [10, -58, -2], [-30, -60, 5]].forEach(function (b) {
+        pile += '<g transform="translate(' + b[0] + "," + b[1] + ") rotate(" + b[2] + ') scale(0.7)">' + bill + "</g>";
+      });
+      var sleeper = KIT.cast("richHuman", { mood: "flat", arms: [[-30, -60], [30, 60]], hold: null });
+      var zz = [[74, -150, 26], [102, -186, 34], [136, -228, 42]].map(function (z, i) {
+        return '<g transform="translate(' + z[0] + "," + z[1] + ')"><g class="' + ID + '-z" data-i="' + i + '"><text x="0" y="0" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + z[2] + '" fill="' + ink + '" stroke="' + C.cream + '" stroke-width="5" style="paint-order:stroke">Z</text></g></g>';
+      }).join("");
+      var sleepPop = '<g transform="translate(' + f(sleepC[0]) + "," + f(sleepC[1] + 14) + ') scale(' + PK + ')"><g id="' + ID + '-pop-sleep">' +
+        '<ellipse cx="0" cy="0" rx="140" ry="12" fill="' + ink + '" opacity="0.18"/>' + pile +
+        '<g transform="translate(-10,-116) rotate(84) scale(0.95)"><g id="' + ID + '-snore">' + sleeper + "</g></g>" + zz + "</g></g>";
+
+      // ── The counter card ──
+      var Pn = G.panel, fsz = Pn[4];
+      var line1 = V ? ["About ", " humans"] : ["About ", " humans with 1,000,000,000 papers"];
+      var panel = '<g id="' + ID + '-panel"><rect x="' + (Pn[0] + 10) + '" y="' + (Pn[1] + 12) + '" width="' + Pn[2] + '" height="' + Pn[3] + '" fill="' + C.ink + '" opacity="0.85"/>' +
+        '<rect x="' + Pn[0] + '" y="' + Pn[1] + '" width="' + Pn[2] + '" height="' + Pn[3] + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="5"/>' +
+        '<rect x="' + (Pn[0] + 10) + '" y="' + (Pn[1] + 10) + '" width="' + (Pn[2] - 20) + '" height="' + (Pn[3] - 20) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.5"/>' +
+        '<text id="' + ID + '-count" x="' + G.lines[0][0] + '" y="' + G.lines[0][1] + '" font-family="Oswald" font-weight="600" font-size="' + fsz + '" letter-spacing="0.5" fill="' + ink + '">' + line1.join("2,800") + "</text>" +
+        (V ? '<text x="' + G.lines[1][0] + '" y="' + G.lines[1][1] + '" font-family="Oswald" font-weight="600" font-size="' + fsz + '" letter-spacing="0.5" fill="' + ink + '">with 1,000,000,000 papers</text>' : "") +
+        '<g id="' + ID + '-need" opacity="0"><text x="' + G.lines[G.lines.length - 1][0] + '" y="' + G.lines[G.lines.length - 1][1] + '" font-family="Oswald" font-weight="600" font-size="' + fsz + '" letter-spacing="0.5" fill="#1F6E68">You need: 1</text>' +
+        '<g transform="translate(' + (G.lines[G.lines.length - 1][0] + fsz * 4.9) + "," + (G.lines[G.lines.length - 1][1] - fsz * 0.95) + ')">' + KIT.tick(0, 0, fsz * 1.2, C.med).replace('stroke-dashoffset="1"', 'stroke-dashoffset="0"') + "</g></g></g>";
+
+      // ── Assemble: the grid (clipped to the paper's frame), our cell, the spotlight's dark, the pop-ups, the card ──
+      q("art").innerHTML = KIT.svg(W, H,
+        "<defs>" + symA + symB + symStone + symSleep +
+        '<clipPath id="' + ID + '-view"><rect x="' + VX + '" y="' + VY + '" width="' + VW + '" height="' + VH + '"/></clipPath>' +
+        '<mask id="' + ID + '-spot" maskUnits="userSpaceOnUse" x="0" y="0" width="' + W + '" height="' + H + '"><rect width="' + W + '" height="' + H + '" fill="#FFFFFF"/>' +
+        '<ellipse id="' + ID + '-hole" cx="0" cy="0" rx="1" ry="1" fill="#000000"/></mask></defs>' +
+        '<g clip-path="url(#' + ID + '-view)"><g id="' + ID + '-grid" opacity="0">' + uses + "</g></g>" +
+        '<g id="' + ID + '-nearclip"><g id="' + ID + '-near">' + art + "</g></g>" +
+        '<g id="' + ID + '-dim" opacity="0"><rect x="' + VX + '" y="' + VY + '" width="' + VW + '" height="' + VH + '" fill="' + C.deep + '" opacity="0.62" mask="url(#' + ID + '-spot)"/>' +
+        '<ellipse id="' + ID + '-rim" cx="0" cy="0" rx="1" ry="1" fill="none" stroke="' + C.yellow + '" stroke-width="5"/></g>' +
+        stonePop + sleepPop + panel);
+
+      // step-1's last frame: the tab out, the chair turned round, box 1 ticked, the pencil back in his hand, the stack
+      // and its label at 1,000,000,001, the Reaper sinking behind the hill with his new tally mark.
+      q("card").setAttribute("opacity", "0");
+      q("tab").setAttribute("opacity", "1");
+      q("chair-back").setAttribute("opacity", "0");
+      q("chair-front").setAttribute("opacity", "1");
+      ["hug", "greedy", "reach", "eager"].forEach(function (k) { q("rh-" + k).setAttribute("opacity", "0"); });
+      q("rh-done").setAttribute("opacity", "1");
+      q("later").setAttribute("opacity", "1");
+      gsap.set(q("later"), { y: -34 });
+      q("lab-a").setAttribute("opacity", "0");
+      q("lab-b").setAttribute("opacity", "1");
+      q("tick-0").querySelector(".tick").setAttribute("stroke-dashoffset", "0");
+      q("newmark").setAttribute("stroke-dashoffset", "0");
+      var g1 = s1Geo(), gR = s1ReaperGeo(), restTip = [g1.shoulder[0] - g1.arm - gR.u[0] * 96, g1.shoulder[1] - gR.u[1] * 96];
+      q("rhp").setAttribute("opacity", "1");
+      gsap.set(q("rhp-move"), { x: restTip[0] - gR.tip[0], y: restTip[1] - gR.tip[1] });
+      gsap.set(q("cboard"), { svgOrigin: "0 -75", rotation: 18, y: -26 });
+      var rise = [q("reaper-rise"), q("rarm-rise")];
+      gsap.set(rise, { y: 70 });
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, t); };
+      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
+      // the Reaper keeps sinking, sulking, out of sight
+      tl.to(rise, { y: 400, duration: 0.9, ease: "none" }, 0);
+
+      // ── The camera, per frame: hold, pull back ("two"), hold for the spotlight, zoom back in ("one" to "living.") ──
+      var tTwo = cue("two"), tPull = 1.25, tIn0 = cue("one") + 0.3, tLive = cue("living.");
+      var near = q("near"), grid = q("grid"), nearclip = q("nearclip");
+      var smooth = function (x) { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
+      function cam(t) {
+        var s, P;
+        if (t < tTwo) { s = 1; P = [cx0, cy0]; }
+        else if (t < tIn0) { var u = smooth((t - tTwo) / tPull); s = Math.exp(Math.log(s1) * u); P = [cx0 + (P1[0] - cx0) * u, cy0 + (P1[1] - cy0) * u]; }
+        else { var v = smooth((t - tIn0) / (tLive - tIn0)); s = Math.exp(Math.log(s1) + (Math.log(sH) - Math.log(s1)) * v); P = [P1[0] + (PH[0] - P1[0]) * v, P1[1] + (PH[1] - P1[1]) * v]; }
+        return { s: s, x: P[0] - cx0 * s, y: P[1] - cy0 * s };
+      }
+      var toScreen = function (k, p) { return [k.x + p[0] * k.s, k.y + p[1] * k.s]; };
+      // The spotlight: keyframes on screen [t, x, y, rx, ry] until it settles on our cell, which it then follows.
+      var tSt = cue("Statistically,"), tLeast = cue("least"), tOne = cue("one");
+      var cs = PK * 1.0;
+      var SPOT = [
+        [tSt, VX + VW * 0.3, VY + VH * 0.72, 80, 70],
+        [tSt + 0.4, stoneC[0], stoneC[1], 80, 70],
+        [tSt + 0.46, stoneC[0] + 20 * cs, stoneC[1] - 100 * cs, 190 * cs, 170 * cs],
+        [tLeast - 0.02, stoneC[0] + 20 * cs, stoneC[1] - 100 * cs, 190 * cs, 170 * cs],
+        [tLeast + 0.1, sleepC[0] + 10 * cs, sleepC[1] - 80 * cs, 200 * cs, 150 * cs],
+        [tOne - 0.02, sleepC[0] + 10 * cs, sleepC[1] - 80 * cs, 200 * cs, 150 * cs],
+        [tOne + 0.15, sleepC[0], sleepC[1], 80, 70],
+      ];
+      function spotAt(t, k) {
+        var follow = toScreen(k, [hatC[0], R[1] + 10 * rs]), fr = [130 * rs * k.s, 150 * rs * k.s];
+        fr = [Math.max(80, fr[0]), Math.max(70, fr[1])];
+        var last = SPOT[SPOT.length - 1];
+        if (t >= last[0]) { var w = smooth((t - last[0]) / (tIn0 + 0.25 - last[0])); return [last[1] + (follow[0] - last[1]) * w, last[2] + (follow[1] - last[2]) * w, last[3] + (fr[0] - last[3]) * w, last[4] + (fr[1] - last[4]) * w]; }
+        for (var i = SPOT.length - 2; i >= 0; i--) if (t >= SPOT[i][0]) {
+          var a = SPOT[i], b = SPOT[i + 1], u = smooth((t - a[0]) / (b[0] - a[0]));
+          return [a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u, a[3] + (b[3] - a[3]) * u, a[4] + (b[4] - a[4]) * u];
+        }
+        return [SPOT[0][1], SPOT[0][2], SPOT[0][3], SPOT[0][4]];
+      }
+      var hole = q("hole"), rim = q("rim"), count = q("count");
+      var tCount0 = tTwo + 0.15, tCount1 = cue("hundred") + 0.12;
+      KIT.onTime(tl, D, function (t) {
+        var k = cam(t), tr = "translate(" + k.x.toFixed(2) + "," + k.y.toFixed(2) + ") scale(" + k.s.toFixed(5) + ")";
+        near.setAttribute("transform", tr);
+        grid.setAttribute("transform", tr);
+        if (t > tTwo + 0.05) nearclip.setAttribute("clip-path", "url(#" + ID + "-view)"); else nearclip.removeAttribute("clip-path");
+        var sp = spotAt(t, k);
+        [hole, rim].forEach(function (e) { e.setAttribute("cx", sp[0].toFixed(1)); e.setAttribute("cy", sp[1].toFixed(1)); e.setAttribute("rx", sp[2].toFixed(1)); e.setAttribute("ry", sp[3].toFixed(1)); });
+        // the counter runs up to 2,800, the last two steps on "hundred" (ticks)
+        var n = t < tCount0 ? 0 : t >= tCount1 ? 2800 : Math.round(2800 * smooth((t - tCount0) / (tCount1 - tCount0)) / 10) * 10;
+        var str = String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        if (count.textContent !== line1.join(str)) count.textContent = line1.join(str);
+        s1Idle(ID, sc.start + t);
+      });
+
+      // "two thousand eight hundred": the extras of step-1 fade as the camera pulls back (rising whistle); the other
+      // hills fade in; the counter card drops in.
+      var extras = ["tab", "later", "form", "stack", "lab", "rhp", "reaper-rise", "rarm"].map(function (k) { return q(k); });
+      tl.to(extras, { opacity: 0, duration: 0.25, ease: "power1.in" }, tTwo + 0.05);
+      tl.fromTo(grid, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out", immediateRender: false }, tTwo + 0.3);
+      tl.fromTo(q("panel"), { y: -380, opacity: 0 }, { y: 0, opacity: 1, duration: 0.35, ease: "back.out(1.4)" }, tCount0 - 0.1);
+      // (out of sight) our man swaps to his waving pose, form in hand
+      hide(q("rh-done"), tTwo + 0.9); show(q("rh-hero"), tTwo + 0.9);
+
+      // "Statistically,": the spotlight clunks on (switch) and sweeps to the headstone; at + 0.45 the headstone in its
+      // top hat rises into the light, the Reaper leaning on it, and he adds a tally mark (scratch).
+      tl.fromTo(q("dim"), { opacity: 0 }, { opacity: 1, duration: 0.05, immediateRender: false }, tSt);
+      var popS = q("pop-stone"), popZ = q("pop-sleep");
+      gsap.set([popS, popZ], { svgOrigin: "0 0", scale: 0, opacity: 0 });
+      tl.to(popS, { scale: 1, opacity: 1, duration: 0.2, ease: "back.out(1.8)" }, tSt + 0.4);
+      tl.fromTo(document.getElementById(ID + "-pop-newmark"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.18, ease: "power1.inOut", immediateRender: false }, tSt + 0.47);
+      tl.to(popS, { scale: 0, opacity: 0, duration: 0.12, ease: "power2.in" }, tLeast - 0.08);
+      // "least": it jumps to a fat cat asleep face down on his money, snoring (huff)
+      tl.to(popZ, { scale: 1, opacity: 1, duration: 0.18, ease: "back.out(1.8)" }, tLeast + 0.04);
+      var snore = q("snore");
+      gsap.set(snore, { svgOrigin: "0 40" });
+      tl.fromTo(snore, { scaleY: 1 }, { scaleY: 1.06, duration: 0.14, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, tLeast + 0.05);
+      Array.prototype.forEach.call(document.getElementsByClassName(ID + "-z"), function (z, i) {
+        gsap.set(z, { svgOrigin: "0 -10" });
+        tl.fromTo(z, { opacity: 0, scale: 0.3, y: 12 }, { opacity: 1, scale: 1, y: 0, duration: 0.12, ease: "back.out(2)", immediateRender: false }, tLeast + 0.12 + i * 0.06);
+      });
+      // "one": the sleeper sinks back down and the spotlight swings back toward the hill we came from
+      tl.to(popZ, { scale: 0, opacity: 0, duration: 0.12, ease: "power2.in" }, tOne - 0.06);
+
+      // "living.": the camera has landed on him; his top hat lights up (ding) and he waves his ticked form.
+      var rays = q("rays"), armR = q("rh-hero").querySelector(".arm-r");
+      gsap.set(rays, { svgOrigin: "0 0" });
+      tl.fromTo(rays, { opacity: 0, scale: 0.2, rotation: 0 }, { opacity: 1, scale: 1, rotation: 20, duration: 0.25, ease: "back.out(2)", immediateRender: false }, tLive);
+      tl.to(rays, { rotation: 40, duration: D - tLive - 0.27, ease: "none" }, tLive + 0.25);
+      gsap.set(armR, { svgOrigin: HR.shoulder[1].join(" ") });
+      var waves = Math.floor((D - tLive - 0.05) / 0.16);
+      tl.fromTo(armR, { rotation: -10 }, { rotation: 12, duration: 0.16, repeat: waves - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, tLive);
+      // a beat after: the button pops onto his lapel (pop) and the card adds "You need: 1"
+      var tB = KIT.after(ID, "living."), btn = q("button");
+      gsap.set(btn, { svgOrigin: "0 0" });
+      tl.fromTo(btn, { opacity: 0, scale: 3 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2.2)", immediateRender: false }, tB);
+      tl.fromTo(q("need"), { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.2, ease: "back.out(2)", immediateRender: false }, tB + 0.08);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

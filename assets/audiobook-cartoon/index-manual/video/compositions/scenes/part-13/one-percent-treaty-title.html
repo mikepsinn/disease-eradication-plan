@@ -1,0 +1,113 @@
+<template id="one-percent-treaty-title-template">
+  <!-- one-percent-treaty-title · Layer A title card (storyboards/part-13-one-percent-treaty.md), built by KIT.titleScene:
+       THE and SOLUTION slam in on "The" and "Solution."; the small line A / 1% (teal) / TREATY slides up word by word
+       on "A", "one" and "Treaty.". The gag, the whole plan in one hop: on "percent" a war paper (green, red missile seal)
+       trots in along the tops of the second line's letters; on "Treaty." it hops into the top ring of the "%" and spins
+       down it like a drain, a green blip runs down the slash, and it pops out of the bottom ring as a medicine paper
+       (teal cross seal) with a sparkle, leaps over TREATY to the end of the line and, a beat after "Treaty.", bows. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="one-percent-treaty-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.44">
+    <div id="one-percent-treaty-title-cam">
+      <div id="one-percent-treaty-title-bg"></div>
+      <div id="one-percent-treaty-title-sun"></div>
+      <div id="one-percent-treaty-title-back"></div>
+      <div id="one-percent-treaty-title-words"></div>
+      <div id="one-percent-treaty-title-art"></div>
+    </div>
+    <div id="one-percent-treaty-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    (function () {
+      var ID = "one-percent-treaty-title";
+      var C = KIT.C;
+      var small = { words: ["A", { text: "1%", color: "teal" }, "TREATY"], style: "small" };
+
+      KIT.titleScene({
+        id: ID,
+        lines: [["THE", "SOLUTION"], small],
+        linesTall: [["THE"], ["SOLUTION"], small],
+        // "A" and "one" are 0.02 s apart in the alignment, so A and 1% arrive as a pair (one thunk).
+        spoken: ["The", "Solution.", "A", { show: "1%", cue: "one" }, "Treaty."],
+        gag: function (c) {
+          var f = function (n) { return n.toFixed(1); };
+          var pct = c.word("1%"), tre = c.word("TREATY"), s = pct.size, b = pct.box, tb = tre.box;
+          // The "%" glyph inside "1%" (Fraunces Black advances from title.js: "1" 0.454 em, "%" 0.831 em), and its two
+          // rings, measured off the rendered glyph as fractions of the glyph's advance and the cap height.
+          var px = b.x + 0.454 * s, pw = 0.831 * s;
+          var ringTop = [px + 0.25 * pw, b.y + 0.24 * b.h], ringBot = [px + 0.75 * pw, b.y + 0.77 * b.h];
+          // The paper: KIT.money at scale k, its feet (y +48 in money units) on the tops of the letters.
+          var k = s / 135, feet = 48 * k, capTop = b.y + 0.05 * s;
+          var startX = c.layout.lines[pct.line].x - (c.V ? 170 : 230);
+          var walkTo = ringTop[0] - 52 * k;
+          var landX = tb.x + tb.w + 0.2 * s + 48 * k, landY = tb.y + tb.h - feet;
+          var paper = function (kind, legs, cls) {
+            return '<g class="' + cls + '"' + (legs ? ' opacity="0"' : "") + ">" + KIT.money(kind, legs ? 0.95 : 0.05) + "</g>";
+          };
+          // The war paper (two leg drawings, swapped as it trots), the green blip in the slash, the medicine paper, and
+          // the sparkle where it pops out. Every moving group is untransformed; its parent places it.
+          var art =
+            '<g transform="translate(' + f(startX) + "," + f(capTop - feet) + ')"><g id="' + ID + '-war"><g id="' + ID + '-war-spin">' +
+              '<g transform="scale(' + k.toFixed(3) + ')"><g id="' + ID + '-war-bob">' + paper("war", 0, ID + "-leg-a") + paper("war", 1, ID + "-leg-b") + "</g></g></g></g></g>" +
+            '<g id="' + ID + '-blip" opacity="0"><rect x="' + f(-9 * k * 1.6) + '" y="' + f(-5 * k * 1.6) + '" width="' + f(18 * k * 1.6) + '" height="' + f(10 * k * 1.6) + '" rx="2" fill="' + C.money + '" stroke="' + C.line + '" stroke-width="2"/></g>' +
+            '<g transform="translate(' + f(ringBot[0]) + "," + f(ringBot[1]) + ')"><g id="' + ID + '-med"><g id="' + ID + '-med-bow">' +
+              '<g transform="scale(' + k.toFixed(3) + ')">' + KIT.money("med", 0.05) + "</g></g></g></g>" +
+            '<g transform="translate(' + f(ringBot[0]) + "," + f(ringBot[1]) + ')"><g id="' + ID + '-spark">' +
+              KIT.star(0, 0, 0.55 * s, C.yellow) + KIT.star(0, 0, 0.3 * s, C.cream) + KIT.star(0.42 * s, -0.36 * s, 0.14 * s, C.cream) + KIT.star(-0.38 * s, 0.3 * s, 0.11 * s, C.yellow) + "</g></g>";
+          c.art.innerHTML = KIT.svg(c.W, c.H, art);
+
+          var tl = c.tl, g = function (n) { return document.getElementById(ID + "-" + n); };
+          var war = g("war"), spin = g("war-spin"), bob = g("war-bob"), blip = g("blip"), med = g("med"), bow = g("med-bow"), spark = g("spark");
+          var legA = bob.querySelector("." + ID + "-leg-a"), legB = bob.querySelector("." + ID + "-leg-b");
+          var tP = c.cue("percent"), tT = c.cue("Treaty."), tBow = c.after("Treaty.");
+          var t0 = tP - 0.28, tArrive = tT - 0.02;
+          // "percent": it trots in from the left along the tops of A and 1, legs swapping, bobbing (the squeak).
+          tl.fromTo(war, { opacity: 0, x: 0, y: 0 }, { opacity: 1, duration: 0.08, ease: "none" }, t0);
+          tl.fromTo(war, { x: 0 }, { x: walkTo - startX, duration: tArrive - t0, ease: "power1.out", immediateRender: false }, t0);
+          KIT.onTime(tl, c.D, function (t) {
+            var walking = t >= t0 && t < tArrive, ph = walking ? Math.floor((t - t0) / 0.07) % 2 : 0;
+            legA.setAttribute("opacity", ph ? 0 : 1);
+            legB.setAttribute("opacity", ph ? 1 : 0);
+            bob.setAttribute("transform", "translate(0," + (walking ? -Math.abs(Math.sin(((t - t0) / 0.14) * Math.PI)) * 7 : 0).toFixed(2) + ")");
+          });
+          // "Treaty.": a hop up (the boing) and down into the top ring, spinning down it like a drain.
+          var hopX = ringTop[0] - startX, hopY = ringTop[1] - (capTop - feet);
+          tl.to(war, { x: (walkTo - startX + hopX) / 2, y: -0.16 * s, duration: 0.13, ease: "power2.out" }, tT + 0.04);
+          tl.to(war, { x: hopX, y: hopY, duration: 0.14, ease: "power2.in" }, tT + 0.17);
+          gsap.set(spin, { svgOrigin: "0 0" });
+          tl.fromTo(spin, { scale: 1, rotation: 0 }, { scale: 0, rotation: 420, duration: 0.2, ease: "power2.in", immediateRender: false }, tT + 0.22);
+          tl.set(war, { opacity: 0 }, tT + 0.43);
+          // a green blip slides down the slash, from the top ring to the bottom ring, wiggling
+          tl.set(blip, { opacity: 1, x: ringTop[0], y: ringTop[1] }, tT + 0.42);
+          tl.to(blip, { x: ringBot[0], y: ringBot[1], duration: 0.14, ease: "none" }, tT + 0.42);
+          tl.to(blip, { rotation: 18, duration: 0.035, repeat: 3, yoyo: true, ease: "none" }, tT + 0.42);
+          tl.set(blip, { opacity: 0 }, tT + 0.56);
+          // ... and pops out of the bottom ring as a medicine paper (the sparkle), and leaps over TREATY to the end of the line.
+          var tOut = tT + 0.45;
+          gsap.set(med, { svgOrigin: "0 0" });
+          tl.fromTo(med, { scale: 0, rotation: -300, x: 0, y: 0 }, { scale: 1, rotation: 0, duration: 0.18, ease: "back.out(2)" }, tOut);
+          gsap.set(spark, { svgOrigin: "0 0" });
+          tl.fromTo(spark, { scale: 0, rotation: 0, opacity: 1 }, { scale: 1, rotation: 45, duration: 0.16, ease: "back.out(2)" }, tOut);
+          tl.to(spark, { scale: 0.2, opacity: 0, duration: 0.2, ease: "power2.in" }, tOut + 0.2);
+          var dx = landX - ringBot[0], dy = landY - ringBot[1];
+          tl.to(med, { x: dx * 0.5, y: Math.min(dy, 0) - 0.5 * s, duration: 0.16, ease: "power2.out" }, tOut + 0.18);
+          tl.to(med, { x: dx, y: dy, duration: 0.15, ease: "power2.in" }, tOut + 0.34);
+          // the landing squash, then, a beat after "Treaty.", the bow (tipping forward over its feet)
+          var feetO = "0 " + f(feet);
+          gsap.set(bow, { svgOrigin: feetO });
+          tl.fromTo(bow, { scaleY: 1, scaleX: 1 }, { scaleY: 0.78, scaleX: 1.14, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tOut + 0.49);
+          tl.to(bow, { rotation: 32, duration: 0.16, ease: "power2.out" }, Math.min(tBow, c.D - 0.22));
+        },
+      });
+    })();
+  </script>
+</template>

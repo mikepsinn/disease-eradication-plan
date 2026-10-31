@@ -1,0 +1,170 @@
+<template id="institutionalize-title-template">
+  <!-- institutionalize-title · the period title card (KIT.titleScene, look "atomic"), storyboards/part-04-institutionalize.md:
+       the heading on plain navy under the film's atom, up from black. INSTITUTIONALIZE sits stretched a little too
+       wide for the card; on "Institutionalize" two cream canvas straitjacket straps (tan stitching, mustard buckles)
+       whip round it at a third and two thirds of its width and cinch it until its letters squash together and fit
+       (squeak), and the buckles click shut. A beat after "You." a pair of eyes opens in the hole of YOU's O and darts
+       left, then right. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="institutionalize-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.8">
+    <div id="institutionalize-title-cam">
+      <div id="institutionalize-title-bg"></div>
+      <div id="institutionalize-title-back"></div>
+      <div id="institutionalize-title-words"></div>
+      <div id="institutionalize-title-art"></div>
+    </div>
+    <div id="institutionalize-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "institutionalize-title",
+      lines: [{ words: ["WHAT", "TO", "DO", "WHEN", "THEY", "TRY", "TO"], style: "small" }, ["INSTITUTIONALIZE", "YOU"]],
+      linesTall: [{ words: ["WHAT", "TO", "DO", "WHEN"], style: "small" }, { words: ["THEY", "TRY", "TO"], style: "small" }, ["INSTITUTIONALIZE"], ["YOU"]],
+      // laid out for the word's squeezed width (0.89 of its own), so it starts a little too wide for the card
+      width: KIT.V ? 1056 : 1760,
+      seed: 41,
+      gag: function (c) {
+        var C = c.C, ink = C.line, tl = c.tl, V = c.V, id = c.id;
+        var CANVAS = "#E9DFC6", STITCH = "#B9935E";
+        var P = function (x, y) { return x.toFixed(1) + "," + y.toFixed(1); };
+        var poly = function (pts, fill, sw) {
+          return '<path d="M' + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (sw || 3) + '" stroke-linejoin="miter"/>';
+        };
+        var $ = function (s) { return document.getElementById(id + "-" + s); };
+        var clamp = function (u) { return Math.min(1, Math.max(0, u)); };
+        var smooth = KIT.smooth;
+
+        // ── The strapped word: wrapped in a div that squeezes it about its own center ──
+        var w = c.word("INSTITUTIONALIZE"), b = w.box, size = w.size, el = w.el;
+        var cx = b.x + b.w / 2, cy = b.y + b.h / 2;
+        var wrap = document.createElement("div");
+        wrap.id = id + "-strapped";
+        wrap.style.cssText = "position:absolute;inset:0;transform-origin:" + cx.toFixed(1) + "px " + cy.toFixed(1) + "px;";
+        el.parentNode.insertBefore(wrap, el);
+        wrap.appendChild(el);
+        // YOU follows the word's right edge when they share a line (16:9)
+        var you = c.word("YOU"), sameLine = you.line === w.line;
+
+        // The squeeze: too wide (L0) until the straps are on, then cinched past the fit (E1) and settling at E;
+        // the letters bulge up a little as they are squeezed.
+        var L0 = 1.14, E1 = 0.85, E = 0.89;
+        var tI = c.cue("Institutionalize");
+        var tWhip = [tI + 0.08, tI + 0.17], tCinch = tI + 0.33, tSettle = tI + 0.52, tClick = tI + 0.6;
+        function sx(t) {
+          if (t < tCinch) return L0;
+          if (t < tSettle) return L0 + (E1 - L0) * smooth((t - tCinch) / (tSettle - tCinch));
+          return E1 + (E - E1) * smooth((t - tSettle) / 0.16);
+        }
+        function sy(t) {
+          if (t < tCinch) return 1;
+          if (t < tSettle) return 1 + 0.07 * smooth((t - tCinch) / (tSettle - tCinch));
+          return 1.07 - 0.03 * smooth((t - tSettle) / 0.16);
+        }
+
+        // ── Two straps, upright round the word at a third and two thirds of its width (on the gaps INSTI | TUTION |
+        // ALIZE, so the letters stay readable): cream canvas with tan stitching, wrapped behind the word top and
+        // bottom, each with a mustard buckle and its holed free end. Drawn around (0, 0) = the strap's point on the
+        // word's middle line; the update moves each one with the squeeze.
+        var EM = 9.881, CUT = [2.856 / EM, 6.88 / EM];
+        var hV = b.h, sw = 0.24 * size, top = -hV / 2 - 0.1 * hV, bot = hV / 2 + 0.16 * hV;
+        function strap(k) {
+          var x0 = -sw / 2, x1 = sw / 2, wrapL = 0.12 * hV;
+          var band = poly([[x0, top], [x1, top - 3], [x1, bot], [x0, bot + 3]], CANVAS, 3.4) +
+            '<path d="M' + P(x0 + sw * 0.2, top + 8) + " V" + (bot - 6).toFixed(1) + " M" + P(x1 - sw * 0.2, top + 6) + " V" + (bot - 8).toFixed(1) +
+            '" fill="none" stroke="' + STITCH + '" stroke-width="3" stroke-dasharray="9 7"/>';
+          // the ends fold round behind the word: the strap's darker underside
+          var ends = poly([[x0, top], [x1, top - 3], [x1 - 4, top - wrapL], [x0 + 4, top - wrapL + 4]], STITCH, 3) +
+            poly([[x0, bot + 3], [x1, bot], [x1 - 4, bot + wrapL - 4], [x0 + 4, bot + wrapL]], STITCH, 3);
+          // the buckle across the middle of the band, and its free end hanging out of it below, three holes
+          var by = 0, bw = sw * 1.5, bh = sw * 1.05;
+          var tail = poly([[x0 + 6, by], [x1 - 6, by], [x1 - 6, by + hV * 0.4], [0, by + hV * 0.47], [x0 + 6, by + hV * 0.4]], CANVAS, 2.8) +
+            [0.18, 0.27, 0.36].map(function (u) { return '<circle cx="0" cy="' + (by + hV * u).toFixed(1) + '" r="' + (sw * 0.08).toFixed(1) + '" fill="' + ink + '"/>'; }).join("");
+          var frame = poly([[-bw / 2, by - bh / 2], [bw / 2, by - bh / 2], [bw / 2, by + bh / 2], [-bw / 2, by + bh / 2]], C.yellow, 3.2) +
+            poly([[-bw * 0.3, by - bh * 0.24], [bw * 0.3, by - bh * 0.24], [bw * 0.3, by + bh * 0.24], [-bw * 0.3, by + bh * 0.24]], CANVAS, 2.4) +
+            '<path d="M0,' + (by - bh * 0.42).toFixed(1) + " V" + (by + bh * 0.24).toFixed(1) + '" stroke="' + ink + '" stroke-width="' + (sw * 0.1).toFixed(1) + '" stroke-linecap="round"/>' +
+            '<path d="M' + P(-bw * 0.42, by - bh * 0.36) + " H" + (-bw * 0.05).toFixed(1) + '" stroke="#FFFFFF" stroke-width="2.4" opacity="0.8"/>';
+          // the whip: a few speed lines on the side it swings in from, shown while it whips
+          var sd = k ? 1 : -1, whip = "";
+          for (var i = 0; i < 3; i++) whip += '<path d="M' + P(sd * (sw * 0.9 + i * 10), top + 20 + i * hV * 0.35) + " q" + (sd * 28).toFixed(1) + "," + (hV * 0.12).toFixed(1) + " " + (sd * 8).toFixed(1) + "," + (hV * 0.3).toFixed(1) + '" fill="none" stroke="' + C.cream + '" stroke-width="4" stroke-linecap="round"/>';
+          return '<g id="' + id + "-strap-" + k + '"><g id="' + id + "-strapin-" + k + '">' + ends + band +
+            '<g id="' + id + "-buckle-" + k + '">' + tail + frame + "</g>" + '<g id="' + id + "-whip-" + k + '" opacity="0">' + whip + "</g></g></g>";
+        }
+        // little strain marks off the word's ends while the straps cinch
+        function strain(k) {
+          var sz = 0.16 * hV, s = k ? 1 : -1, d = "";
+          [-1, 0, 1].forEach(function (j) { d += "M" + P(0, j * sz) + " l" + (s * sz * (j ? 1 : 1.3)).toFixed(1) + "," + (j * sz * 0.6).toFixed(1) + " "; });
+          return '<g id="' + id + "-strain-" + k + '" opacity="0"><path d="' + d + '" fill="none" stroke="' + C.cream + '" stroke-width="5" stroke-linecap="round"/></g>';
+        }
+        var layer = document.createElement("div");
+        layer.style.cssText = "position:absolute;left:0;top:0;width:" + c.W + "px;height:" + c.H + "px;";
+        layer.innerHTML = '<svg width="' + c.W + '" height="' + c.H + '" viewBox="0 0 ' + c.W + " " + c.H + '" style="position:absolute;inset:0;overflow:visible">' +
+          strap(0) + strap(1) + strain(0) + strain(1) + "</svg>";
+        c.art.appendChild(layer);
+        var straps = [0, 1].map(function (k) { return { g: $("strap-" + k), inner: $("strapin-" + k), buckle: $("buckle-" + k), whip: $("whip-" + k) }; });
+        var strains = [$("strain-0"), $("strain-1")];
+
+        KIT.onTime(tl, c.D, function (t) {
+          var s = sx(t), v = sy(t);
+          wrap.style.transform = "scale(" + s.toFixed(4) + "," + v.toFixed(4) + ")";
+          if (sameLine) you.el.style.transform = "translateX(" + ((s - 1) * b.w / 2).toFixed(1) + "px)";
+          straps.forEach(function (st, k) {
+            // its place on the squeezed word
+            var x = cx + (CUT[k] - 0.5) * b.w * s;
+            st.g.setAttribute("transform", "translate(" + P(x, cy) + ") scale(1," + v.toFixed(4) + ")");
+            // the whip: it swings in from above and out to the side, overshoots and lands
+            var u = clamp((t - tWhip[k]) / 0.16), side = k ? 1 : -1;
+            if (u <= 0) { st.g.setAttribute("opacity", 0); return; }
+            st.g.setAttribute("opacity", 1);
+            var e = 1 - Math.pow(1 - u, 3), rot = side * 70 * (1 - e) - side * 8 * Math.sin(Math.PI * u), dy = -hV * 1.4 * (1 - e);
+            st.inner.setAttribute("transform", "translate(0," + dy.toFixed(1) + ") rotate(" + rot.toFixed(1) + ")");
+            st.whip.setAttribute("opacity", u < 1 ? 1 : 0);
+            // the buckle clicks shut: a quick pulse
+            var cu = (t - tClick - k * 0.04) / 0.12, pul = cu > 0 && cu < 1 ? 1 + 0.28 * Math.sin(Math.PI * cu) : 1;
+            st.buckle.setAttribute("transform", "scale(" + pul.toFixed(3) + ")");
+          });
+          // strain marks at the word's ends while it is squeezed, jittering
+          var on = t > tCinch - 0.02 && t < tSettle + 0.1, jit = Math.floor(t * 40) % 2 ? 3 : -3;
+          strains.forEach(function (e2, k) {
+            var x = cx + (k ? 1 : -1) * (b.w * s / 2 + 0.12 * hV) + (k ? jit : -jit);
+            e2.setAttribute("opacity", on ? 1 : 0);
+            e2.setAttribute("transform", "translate(" + P(x, cy) + ")");
+          });
+        });
+
+        // ── The eyes in the hole of YOU's O (Y is 0.673 em wide, O 0.758 em; the counter is about 0.2 em wide) ──
+        var ys = you.size, ox = (0.673 + 0.379) * ys, h = you.box.h;
+        var ew = 0.074 * ys, eh = 0.118 * ys, gap = 0.083 * ys;
+        var eye = function (dx) {
+          return '<ellipse cx="' + dx.toFixed(1) + '" cy="0" rx="' + ew.toFixed(1) + '" ry="' + eh.toFixed(1) + '" fill="#FFFFFF" stroke="' + ink + '" stroke-width="2.6"/>';
+        };
+        var pupils = '<g id="' + id + '-pupils"><circle cx="' + (-gap).toFixed(1) + '" cy="' + (eh * 0.12).toFixed(1) + '" r="' + (ew * 0.6).toFixed(1) + '" fill="' + ink + '"/>' +
+          '<circle cx="' + gap.toFixed(1) + '" cy="' + (eh * 0.12).toFixed(1) + '" r="' + (ew * 0.6).toFixed(1) + '" fill="' + ink + '"/></g>';
+        var lids = '<g id="' + id + '-lids">' + [-gap, gap].map(function (dx) {
+          return '<path d="M' + P(dx - ew - 1, 0) + " Q" + P(dx, -eh * 1.5) + " " + P(dx + ew + 1, 0) + '" fill="' + ink + '"/>';
+        }).join("") + "</g>";
+        var pin = c.pin("YOU", "left", '<g transform="translate(' + ox.toFixed(1) + "," + (h * 0.02).toFixed(1) + ')"><g id="' + id + '-eyes">' + eye(-gap) + eye(gap) + pupils + lids + "</g></g>");
+        pin.style.zIndex = 2;
+        var eyes = $("eyes"), pu = $("pupils"), lid = $("lids");
+        // a beat after "You.", early enough that the darts land before the card goes to black
+        var ta = Math.min(KIT.cueEnd(id, "You.") + 0.15, c.D - 0.85);
+        tl.fromTo(eyes, { scaleY: 0, opacity: 0, svgOrigin: "0 0" }, { scaleY: 1, opacity: 1, svgOrigin: "0 0", duration: 0.1, ease: "power2.out" }, ta);
+        tl.fromTo(lid, { opacity: 0 }, { opacity: 1, duration: 0.01 }, ta + 0.1);
+        tl.to(lid, { opacity: 0, duration: 0.01 }, ta + 0.17);
+        tl.fromTo(pu, { x: 0 }, { x: -ew * 0.55, duration: 0.06, ease: "power3.out" }, ta + 0.2);
+        tl.to(pu, { x: ew * 0.55, duration: 0.06, ease: "power3.out" }, ta + 0.42);
+        tl.to(pu, { x: -ew * 0.55, duration: 0.06, ease: "power3.out" }, ta + 0.62);
+      },
+    });
+  </script>
+</template>

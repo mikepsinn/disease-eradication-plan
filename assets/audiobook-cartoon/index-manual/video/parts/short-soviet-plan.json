@@ -1,0 +1,121 @@
+{
+  "id": "short-soviet-plan",
+  "title": "Short: the Soviet plan",
+  "storyboard": "storyboards/part-11-civilization-countdown.md",
+  "audio": {
+    "start": 1271.44,
+    "end": 1303.28
+  },
+  "scenes": [
+    {
+      "id": "25-percent-by-2033",
+      "file": "compositions/scenes/short-soviet-plan/25-percent-by-2033.html",
+      "cue": "At",
+      "approx": 1271.5,
+      "layer": "B"
+    },
+    {
+      "id": "no-plan",
+      "file": "compositions/scenes/short-soviet-plan/no-plan.html",
+      "cue": "You",
+      "approx": 1290.8,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "twenty-five",
+      "sfx": "switch",
+      "volume": 0.4
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "thirty-three.",
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "thirty-three.",
+      "at": "after",
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "collapsed",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "plan.",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "terrible",
+      "sfx": "splat",
+      "volume": 0.4
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "one.",
+      "at": "after",
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "no-plan",
+      "cue": "approaching",
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "no-plan",
+      "cue": "approaching",
+      "offset": 0.35,
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "no-plan",
+      "cue": "technology,",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "no-plan",
+      "cue": "faster-growing",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "no-plan",
+      "cue": "no",
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "no-plan",
+      "cue": "beat",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "no-plan",
+      "cue": "lost.",
+      "sfx": "slam",
+      "volume": 0.5
+    },
+    {
+      "scene": "no-plan",
+      "cue": "lost.",
+      "at": "after",
+      "sfx": "tick",
+      "volume": 0.5
+    }
+  ]
+}

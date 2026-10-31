@@ -1,0 +1,357 @@
+<template id="plans-for-tuesday-template">
+  <!-- plans-for-tuesday · Layer B (storyboards/part-14-decentralized-fda.md): a wind-up counter board. "prevent": its key
+       turns; "ten": the wheels roll up (ticks) and land on "10.7 BILLION DEATHS PREVENTED" on "billion" (ding).
+       "deaths.": HOLD, nothing moves, silent, until "individual". "individual": the board cracks four times and out of
+       each crack steps a human (four pops): the patient (scarf, her SAFE bottle under one arm), grandma, a barrel man
+       in a fishing hat and a box man in a suit. Then more humans, row after row, until the crowd runs to the horizon
+       (the far ones dots), every one holding up a desk calendar open on "NEXT TUE"; the board falls away. "plans": a
+       sticky note lands on every calendar (pat): "KID'S RECITAL", "BINGO", "FISHING", "DENTIST". "Tuesday.": each note
+       gets a teal tick (sparkle) and everyone beams; the dentist man looks up at his note. After "Tuesday.": he
+       reads it and groans (huff). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #plans-for-tuesday-cam, #plans-for-tuesday-bg, #plans-for-tuesday-art, #plans-for-tuesday-pip, #plans-for-tuesday-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="plans-for-tuesday" data-width="1920" data-height="1080" data-start="0" data-duration="9.54">
+    <div id="plans-for-tuesday-cam">
+      <div id="plans-for-tuesday-bg"></div>
+      <div id="plans-for-tuesday-art"></div>
+      <div id="plans-for-tuesday-pip"></div>
+      <div id="plans-for-tuesday-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "plans-for-tuesday";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var INK = C.line, CARD = "#FBF5E4", TEALTXT = "#1F6E68";
+      var SKIN = ["#F4E3CC", "#D9B48F", "#A87B57", "#6F4B33"], CLOTH = [C.orange, C.peri, C.tan, C.yellow, C.rust, C.slate];
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // Layout for each shape. board: the counter [x, y, w, h]; wheels: the three digit windows (x of each, top, w, h)
+      // and the printed decimal point's x; billion/deaths: [x, baseline, size] of the words (x the left edge for
+      // BILLION, the center for DEATHS PREVENTED); cracks: x of the four cracks; key: where the wind-up key sticks
+      // out (and whether it points up). front: the four who step out of the cracks (feet x, y, scale). The crowd
+      // stands on a plane rising to the horizon: s = s0 * (y - horizon) / (front0 - horizon); rows: the drawn rows'
+      // feet y; dots: the far rows' feet y; span: the crowd's x range.
+      var L = V
+        ? { board: [52, 446, 976, 362], wheels: { x: [90, 222, 382], y: 488, w: 120, h: 270, dot: 358 }, billion: [530, 640, 104], deaths: [736, 742, 46],
+            cracks: [214, 366, 518, 968], key: { x: 230, y: 446, up: true },
+            front: [{ who: "patient", x: 205, y: 1440, s: 1.3 }, { who: "grandma", x: 372, y: 1222, s: 1.08 }, { who: "fishing", x: 545, y: 1440, s: 1.3 }, { who: "dentist", x: 885, y: 1440, s: 1.3 }],
+            horizon: 560, front0: 1440, s0: 1.3, rows: [1122, 1048, 984], dots: [906, 864, 828, 797, 770, 747, 727, 710, 695, 682, 670, 660, 651, 643, 636],
+            span: [40, 1040] }
+        : { board: [300, 62, 1200, 356], wheels: { x: [346, 500, 694], y: 98, w: 140, h: 290, dot: 666 }, billion: [868, 252, 126], deaths: [1118, 344, 56],
+            cracks: [495, 666, 852, 1420], key: { x: 300, y: 240, up: false },
+            front: [{ who: "patient", x: 290, y: 885, s: 1.45 }, { who: "grandma", x: 640, y: 885, s: 1.45 }, { who: "fishing", x: 990, y: 885, s: 1.45 }, { who: "dentist", x: 1340, y: 885, s: 1.45 }],
+            horizon: 360, front0: 885, s0: 1.45, rows: [772, 692, 632, 586], dots: [552, 526, 503, 484, 467, 452, 439, 428, 418, 410, 403, 397],
+            span: [40, 1880] };
+      function sAt(y) { return L.s0 * (y - L.horizon) / (L.front0 - L.horizon); }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+
+      // ── The counter board ──────────────────────────────────────────────────────────────────
+      var BD = L.board, WL = L.wheels;
+      function boardBack() {
+        return '<rect x="' + (BD[0] + 12) + '" y="' + (BD[1] + 14) + '" width="' + BD[2] + '" height="' + BD[3] + '" fill="' + C.ink + '" opacity="0.85"/>' +
+          '<rect x="' + BD[0] + '" y="' + BD[1] + '" width="' + BD[2] + '" height="' + BD[3] + '" rx="8" fill="' + CARD + '" stroke="' + INK + '" stroke-width="7"/>' +
+          '<rect x="' + (BD[0] + 14) + '" y="' + (BD[1] + 14) + '" width="' + (BD[2] - 28) + '" height="' + (BD[3] - 28) + '" fill="none" stroke="' + C.orange + '" stroke-width="3"/>' +
+          KIT.star(BD[0] + 40, BD[1] + 40, 14, C.orange) + KIT.star(BD[0] + BD[2] - 40, BD[1] + 40, 14, C.orange);
+      }
+      function boardWords() {
+        return '<circle cx="' + WL.dot + '" cy="' + (WL.y + WL.h * 0.86) + '" r="' + (WL.w * 0.1) + '" fill="' + INK + '"/>' +
+          '<text x="' + L.billion[0] + '" y="' + L.billion[1] + '" font-family="Oswald" font-weight="600" font-size="' + L.billion[2] + '" letter-spacing="3" fill="' + INK + '">BILLION</text>' +
+          '<text x="' + L.deaths[0] + '" y="' + L.deaths[1] + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + L.deaths[2] + '" letter-spacing="4" fill="' + TEALTXT + '">DEATHS PREVENTED</text>';
+      }
+      function wheelBox(x, inner) {
+        return '<g transform="translate(' + x + "," + WL.y + ')"><rect x="-5" y="-5" width="' + (WL.w + 10) + '" height="' + (WL.h + 10) + '" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="5"/>' + inner +
+          '<rect x="0" y="0" width="' + WL.w + '" height="' + (WL.h * 0.2) + '" fill="' + INK + '" opacity="0.35"/><path d="M0,' + (WL.h / 2) + " H" + WL.w + '" stroke="' + INK + '" stroke-width="1.4" opacity="0.4"/></g>';
+      }
+      function digit(d, y) {
+        return '<text x="' + (WL.w / 2) + '" y="' + (y + WL.h / 2 + Math.min(WL.h * 0.82, WL.w * 1.35) * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + (Math.min(WL.h * 0.82, WL.w * 1.35)).toFixed(0) + '" fill="' + CARD + '">' + d + "</text>";
+      }
+      // the live board: three rolling wheels (0..9, three times round)
+      var wheelsLive = WL.x.map(function (x, i) {
+        var cells = "";
+        for (var c = 0; c < 30; c++) cells += digit(c % 10, c * WL.h);
+        return '<defs><clipPath id="' + ID + "-wc" + i + '"><rect x="0" y="0" width="' + WL.w + '" height="' + WL.h + '"/></clipPath></defs>' +
+          wheelBox(x, '<g clip-path="url(#' + ID + "-wc" + i + ')"><g id="' + ID + "-strip" + i + '">' + cells + "</g></g>");
+      }).join("");
+      var FINAL = ["1", "0", "7"], CELL = [11, 20, 27];
+      var wheelsStill = WL.x.map(function (x, i) { return wheelBox(x, digit(FINAL[i], 0)); }).join("");
+      // The wind-up key: a brass shaft and a two-lobed bow (it turns by flipping).
+      var KY = L.key;
+      var keyArt = '<g transform="translate(' + KY.x + "," + KY.y + ") rotate(" + (KY.up ? 0 : -90) + ')">' +
+        '<rect x="-7" y="-46" width="14" height="46" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="3.4"/>' +
+        '<g id="' + ID + '-keybow"><path d="M0,-44 C-34,-44 -46,-70 -38,-86 C-30,-100 -10,-96 0,-80 C10,-96 30,-100 38,-86 C46,-70 34,-44 0,-44 Z" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="4" stroke-linejoin="round"/>' +
+        '<circle cx="-20" cy="-72" r="7" fill="' + CARD + '" stroke="' + INK + '" stroke-width="2.4"/><circle cx="20" cy="-72" r="7" fill="' + CARD + '" stroke="' + INK + '" stroke-width="2.4"/></g></g>';
+      // Cracks: zigzag lines across the board; the pieces between them are copies of the board clipped to them.
+      var X0 = BD[0] - 20, X1 = BD[0] + BD[2] + 30, Y0 = BD[1] - 20, Y1 = BD[1] + BD[3] + 30;
+      function zig(x, k) {
+        var pts = [], n = 9;
+        for (var i = 0; i <= n; i++) pts.push([x + (i % 2 ? 1 : -1) * (12 + (k % 2) * 4) * (i === 0 || i === n ? 0 : 1), Y0 + (Y1 - Y0) * i / n]);
+        return pts;
+      }
+      var ZIGS = L.cracks.map(zig);
+      function pieceClip(j) {
+        var left = j === 0 ? [[X0, Y0], [X0, Y1]] : ZIGS[j - 1], right = j === ZIGS.length ? [[X1, Y0], [X1, Y1]] : ZIGS[j];
+        var pts = left.concat(right.slice().reverse());
+        return "M" + pts.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" L") + " Z";
+      }
+      var still = boardBack() + wheelsStill + boardWords();
+      var pieces = "";
+      for (var pj = 0; pj <= ZIGS.length; pj++) {
+        pieces += '<defs><clipPath id="' + ID + "-pc" + pj + '"><path d="' + pieceClip(pj) + '"/></clipPath></defs>' +
+          '<g class="piece" opacity="0"><g clip-path="url(#' + ID + "-pc" + pj + ')">' + still + "</g></g>";
+      }
+      var crackLines = ZIGS.map(function (z) {
+        var d = "M" + z.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" L");
+        return '<path class="crack" d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="7" stroke-linejoin="miter" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      }).join("");
+      var board = '<g id="' + ID + '-board">' + boardBack() + wheelsLive + boardWords() + "</g>" + '<g id="' + ID + '-pieces">' + pieces + "</g>" + '<g id="' + ID + '-cracks">' + crackLines + "</g>" + keyArt;
+
+      // ── People with calendars ──────────────────────────────────────────────────────────────
+      var UP = [[-150, -172], [150, 172]];
+      function calendar(cx, cy, size) {
+        return '<g transform="translate(' + cx.toFixed(1) + "," + cy.toFixed(1) + ') scale(' + size + ')">' + KIT.props.calendar({ month: "NEXT", day: "TUE" }) + "</g>";
+      }
+      // A sticky note (its top band darker) with words, on a calendar at (cx, cy), in the calendar's size.
+      function note(cx, cy, size, text, w, h, fs) {
+        var lines = text ? text.split("\n") : [], t = lines.map(function (l, i) {
+          return '<text x="0" y="' + ((i - (lines.length - 1) / 2) * fs * 1.05 + fs * 0.36 + 3).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs + '" fill="' + INK + '">' + l + "</text>";
+        }).join("");
+        return '<g transform="translate(' + cx.toFixed(1) + "," + cy.toFixed(1) + ") scale(" + size + ') rotate(-5)"><g class="note" opacity="0">' +
+          '<rect x="' + (-w / 2 + 3) + '" y="' + (-h / 2 + 3) + '" width="' + w + '" height="' + h + '" fill="' + C.ink + '" opacity="0.5"/>' +
+          '<rect x="' + (-w / 2) + '" y="' + (-h / 2) + '" width="' + w + '" height="' + h + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<rect x="' + (-w / 2) + '" y="' + (-h / 2) + '" width="' + w + '" height="7" fill="' + C.orange + '" opacity="0.7"/>' + t +
+          '<g class="tickg">' + KIT.tick(w / 2 - 22, -h / 2 - 16, 34, C.med) + "</g></g></g>";
+      }
+      // A person holding a calendar overhead in both hands (one = 1: in the right hand only), with a note on it.
+      function holder(o, words, nw, nh, fs, extra, cs) {
+        var r = KIT.rig(o), h0 = r.hand[0], h1 = r.hand[1];
+        cs = cs || 0.9;
+        var cx = o.one ? h1[0] : (h0[0] + h1[0]) / 2, cy = Math.min((o.one ? h1[1] : Math.min(h0[1], h1[1])) + 4, r.top[1] - 3);
+        return KIT.person(o) + (extra || "") + calendar(cx, cy, cs) + note(cx + 14 * cs, cy - 92 * cs, cs, words, nw, nh, fs);
+      }
+      // The four who step out of the cracks.
+      var PATIENT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      function scarf(o) {
+        var n = KIT.rig(o).neck, x = n[0], y = n[1] + 2;
+        var band = [[x - 9, y - 4], [x + 9, y - 5], [x + 10, y + 4], [x - 10, y + 5]], tail = [[x + 2, y + 2], [x + 9, y + 1], [x + 12, y + 24], [x + 5, y + 26]];
+        var pts = function (p) { return p.map(function (a) { return a[0].toFixed(1) + "," + a[1].toFixed(1); }).join(" "); };
+        return '<polygon points="' + pts(tail) + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x + 3.5) + "," + (y + 9) + " L" + (x + 10.5) + "," + (y + 8) + " M" + (x + 4.5) + "," + (y + 17) + " L" + (x + 11.5) + "," + (y + 16) + '" stroke="' + C.orange + '" stroke-width="3"/>' +
+          '<polygon points="' + pts(band) + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x - 4) + "," + (y - 4.5) + " L" + (x - 5) + "," + (y + 4.6) + " M" + (x + 3) + "," + (y - 4.8) + " L" + (x + 3.5) + "," + (y + 4.4) + '" stroke="' + C.orange + '" stroke-width="3"/>';
+      }
+      function safeBottle(size) {
+        return '<g transform="scale(' + size + ')">' + KIT.props.pillBottle({ face: "smile", label: "SAFE" }) +
+          '<circle cx="19" cy="-15" r="8.5" fill="' + C.med + '" stroke="' + INK + '" stroke-width="2"/><path d="M14.5,-15 L18,-11 L24,-19.5" stroke="#FFFFFF" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>';
+      }
+      // her SAFE bottle tucked under her left arm (the arm drawn again over it)
+      function patient(mood) {
+        var o = mix(PATIENT, { mood: mood, arms: [[10, 58], [126, 160]], one: true }), r = KIT.rig(o), p = holder(o, "KID'S RECITAL", 108, 34, 16, "", 1);
+        var arm = KIT.person(o).match(/<g class="arm-l">[\s\S]*?<\/g><\/g>/)[0];
+        var b = '<g transform="translate(' + (r.hand[0][0] - 2).toFixed(1) + "," + (r.hand[0][1] + 18).toFixed(1) + ') rotate(-8)">' + safeBottle(0.6) + "</g>";
+        return p.replace(/(<g transform="translate\([^"]*\) scale\(1\)">)/, scarf(o) + b + arm + "$1");
+      }
+      function bucketHat(o) {
+        var t = KIT.rig(o).top, k = KIT.rig(o).hs;
+        return '<g transform="translate(' + t[0].toFixed(1) + "," + (t[1] + 6).toFixed(1) + ") scale(" + k.toFixed(3) + ')">' +
+          '<path d="M-24,4 L-16,-4 H16 L24,4 Z" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="miter"/>' +
+          '<path d="M-14,-3 L-11,-16 H11 L14,-3 Z" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="miter"/><path d="M-13,-7 H13" stroke="' + C.rust + '" stroke-width="2.6"/>' +
+          '<path d="M8,-11 l6,-7 l3,4 Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="1.4"/><path d="M16,-15 q4,2 2,6" fill="none" stroke="' + INK + '" stroke-width="1.2"/></g>';
+      }
+      var FISHER = { tone: 0, outfit: "shirt", color: 1, kind: "barrel", colorHex: C.rust, hat: null, build: { tw: 1.1 } };
+      var DENTIST = { tone: 1, outfit: "suit", color: 2, kind: "box", head: "long", hairStyle: "slick", hat: null };
+      var GRANDMA = KIT.castOpts("grandma", { arms: UP, mood: "eager" });
+      // each of the four: its drawings (swapped on the words) as { class: markup }
+      var FRONT = {
+        patient: { "v-a": patient("worried"), "v-b": patient("grin") },
+        grandma: { "v-a": holder(GRANDMA, "BINGO", 74, 36, 19, "", 1), "v-b": holder(mix(GRANDMA, { mood: "grin" }), "BINGO", 74, 36, 19, "", 1) },
+        fishing: { "v-a": holder(mix(FISHER, { arms: UP, mood: "eager" }), "FISHING", 84, 36, 19, bucketHat(FISHER), 1), "v-b": holder(mix(FISHER, { arms: UP, mood: "grin" }), "FISHING", 84, 36, 19, bucketHat(FISHER), 1) },
+        dentist: { "v-a": holder(mix(DENTIST, { arms: UP, mood: "eager" }), "DENTIST", 84, 36, 19, "", 1), "v-b": holder(mix(DENTIST, { arms: UP, mood: "flat" }), "DENTIST", 84, 36, 19, "", 1),
+          "v-c": holder(mix(DENTIST, { arms: [[-118, -150], [118, 150]], mood: "sad", brows: true }), "DENTIST", 84, 36, 19, "", 1) },
+      };
+      var front = L.front.map(function (f, i) {
+        var v = FRONT[f.who], g = "";
+        Object.keys(v).forEach(function (c, j) { g += '<g class="' + c + '"' + (j ? ' opacity="0"' : "") + ">" + v[c] + "</g>"; });
+        var puff = f.who === "dentist" ? '<g class="groan" opacity="0">' + [[0, 0, 9], [10, -12, 12], [24, -26, 15]].map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#E4E0D8" stroke="' + INK + '" stroke-width="2.4"/>'; }).join("") + "</g>" : "";
+        var m = f.who === "dentist" ? KIT.rig(mix(DENTIST, { arms: [[-118, -150], [118, 150]] })).mouth : [0, 0];
+        return '<g id="' + ID + "-f" + i + '"><ellipse cx="0" cy="101" rx="30" ry="6" fill="url(#' + ID + '-fine)" opacity="0.7"/><g id="' + ID + "-f" + i + '-j">' + g +
+          (puff ? '<g transform="translate(' + (m[0] + 14).toFixed(1) + "," + (m[1] - 6).toFixed(1) + ')">' + puff + "</g>" : "") + "</g></g>";
+      });
+
+      // The crowd: drawn humans of every build and hat on the near rows (two moods each on the nearest rows), and
+      // dots on the far rows, each with a calendar overhead and a blank note to come.
+      var LOOKS = [
+        { tone: 1, outfit: "shirt", color: 0 }, { tone: 3, outfit: "dress", hair: 1, color: 3 }, { tone: 0, outfit: "suit", color: 2, stache: true },
+        { tone: 2, outfit: "overalls", color: 1 }, { tone: 0, outfit: "dress", hair: 1, color: 0, hat: "curlers" }, { tone: 3, outfit: "shirt", color: 2 },
+        { tone: 1, outfit: "suit", color: 3, hat: "bowler" }, { tone: 2, outfit: "shirt", color: 3 }, { tone: 0, outfit: "dress", hair: 1, color: 2 },
+        { tone: 3, outfit: "suit", color: 0 }, { tone: 1, outfit: "scrubs", color: 2 }, { tone: 2, outfit: "dress", hair: 1, color: 1, seed: 3 },
+        { tone: 0, outfit: "labcoat", color: 1 }, { tone: 1, outfit: "suit", color: 1, hat: "bowler" }, { tone: 3, outfit: "dress", hair: 1, color: 0 },
+      ];
+      var rnd = KIT.rng(1802), rowsSvg = [], crowdIx = 0;
+      L.rows.forEach(function (y, r) {
+        var s = sAt(y), step = 92 * s, n = Math.floor((L.span[1] - L.span[0]) / step), off = (r % 2) * step * 0.5, g = "";
+        for (var i = 0; i < n; i++) {
+          var x = L.span[0] + step * (i + 0.5) + off + (rnd() - 0.5) * step * 0.3, o = mix(LOOKS[crowdIx % LOOKS.length], { seed: crowdIx * 3 + r, arms: UP, mood: "eager" });
+          crowdIx++;
+          var two = r < 2, inner = '<g class="m-a">' + holder(o, "", 52, 28, 12) + "</g>" + (two ? '<g class="m-b" opacity="0">' + holder(mix(o, { mood: "grin" }), "", 52, 28, 12) + "</g>" : "");
+          g += '<g transform="translate(' + x.toFixed(1) + "," + (y - 100 * s).toFixed(1) + ") scale(" + s.toFixed(3) + ')"><g class="pop">' + inner + "</g></g>";
+        }
+        rowsSvg.push({ y: y, s: s, svg: g });
+      });
+      // a far human: a head, a body, two raised arms, a calendar and its note (feet at y 100, in person units)
+      function dot(i, s) {
+        var skin = SKIN[i % 4], cloth = CLOTH[(i * 7) % CLOTH.length], lw = (3 / Math.max(0.35, s)).toFixed(1);
+        return '<path d="M-17,100 L-13,16 L13,16 L17,100 Z" fill="' + cloth + '" stroke="' + INK + '" stroke-width="' + lw + '"/>' +
+          '<path d="M-11,22 L-24,-34 M11,22 L24,-34" stroke="' + INK + '" stroke-width="' + (6 / Math.max(0.4, s)).toFixed(1) + '"/>' +
+          '<circle cx="0" cy="0" r="15" fill="' + skin + '" stroke="' + INK + '" stroke-width="' + lw + '"/>' +
+          '<rect x="-30" y="-78" width="60" height="46" fill="' + CARD + '" stroke="' + INK + '" stroke-width="' + lw + '"/><rect x="-30" y="-78" width="60" height="13" fill="' + C.war + '"/>' +
+          '<rect class="dn" x="-12" y="-90" width="40" height="22" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="' + lw + '" opacity="0"/>';
+      }
+      var dotsSvg = L.dots.map(function (y, r) {
+        var s = sAt(y), step = 70 * s, n = Math.floor((L.span[1] - L.span[0]) / step), off = (r % 2) * step * 0.5, g = "";
+        for (var i = 0; i < n; i++) {
+          var x = L.span[0] + step * (i + 0.5) + off + (rnd() - 0.5) * step * 0.4;
+          g += '<g transform="translate(' + x.toFixed(1) + "," + (y - 100 * s).toFixed(1) + ") scale(" + s.toFixed(3) + ')">' + dot(i + r * 7, s) + "</g>";
+        }
+        return '<g class="dotrow" data-y="' + y + '">' + g + "</g>";
+      });
+
+      // back to front: the board (and its key), the far rows, the near rows, the four in front
+      var crowd = '<g id="' + ID + '-dots">' + dotsSvg.slice().reverse().join("") + "</g>" + board + '<g id="' + ID + '-crowd">' + rowsSvg.slice().reverse().map(function (r, i) { return '<g class="row" data-y="' + r.y + '">' + r.svg + "</g>"; }).join("") + "</g>";
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + crowd + front.join(""));
+
+      // ══ Time ═══════════════════════════════════════════════════════════════════════════
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var T = { prevent: cue("prevent"), ten: cue("ten"), billion: cue("billion"), deaths: cue("deaths."), indiv: cue("individual"), plans: cue("plans"), tue: cue("Tuesday."), after: KIT.after(ID, "Tuesday.") };
+      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
+      function clamp(x) { return Math.max(0, Math.min(1, x)); }
+
+      // "prevent": the key turns; "ten": the wheels roll up (ticks) and land on 10.7 on "billion" (ding).
+      var bow = q("keybow");
+      pivot(bow, "0 -44");
+      var turns = Math.round((T.billion - T.prevent) / 0.2);
+      tl.to(bow, { scaleX: -1, duration: 0.1, ease: "sine.inOut" }, T.prevent);
+      tl.fromTo(bow, { scaleX: -1 }, { scaleX: 1, duration: 0.2, repeat: turns - 2, yoyo: true, ease: "sine.inOut", immediateRender: false }, T.prevent + 0.1);
+      tl.to(bow, { scaleX: 1, duration: 0.1 }, T.prevent + 0.1 + 0.2 * (turns - 1));
+      [0, 1, 2].forEach(function (i) {
+        var st = q("strip" + i);
+        tl.to(st, { y: -CELL[i] * WL.h - WL.h * 0.1, duration: T.billion - T.ten, ease: "power1.inOut" }, T.ten);
+        tl.to(st, { y: -CELL[i] * WL.h, duration: 0.2, ease: "back.out(3)" }, T.billion);
+      });
+      tl.fromTo(q("board"), { y: 0 }, { y: 5, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.billion);
+      // "deaths.": HOLD. Nothing moves until "individual".
+
+      // "individual": the board cracks four times (the live board swaps for its pieces); out of each crack steps one
+      // of the four (pops) and hops down to the front; then the pieces fall away behind the crowd.
+      var CR = [0, 1, 2, 3].map(function (k) { return T.indiv + k * 0.15; });
+      tl.set(q("board"), { opacity: 0 }, CR[0]);
+      var pieceEls = q("pieces").querySelectorAll(".piece");
+      Array.prototype.forEach.call(pieceEls, function (p, j) {
+        tl.set(p, { opacity: 1 }, CR[0]);
+        CR.forEach(function (t, k) {
+          var off = 0;
+          for (var kk = 0; kk <= k; kk++) off += j <= kk ? -10 : 10;
+          tl.to(p, { x: off, duration: 0.06, ease: "power2.out" }, t);
+        });
+        var cx = j === 0 ? (BD[0] + L.cracks[0]) / 2 : j === 4 ? (L.cracks[3] + BD[0] + BD[2]) / 2 : (L.cracks[j - 1] + L.cracks[j]) / 2;
+        pivot(p, cx + " " + (BD[1] + BD[3] / 2));
+        tl.to(p, { y: 6 + (j % 2) * 8, rotation: (j % 2 ? 1 : -1) * (2 + j % 3), duration: 0.35, ease: "back.out(2)" }, T.indiv + 0.62 + j * 0.03);
+      });
+      q("cracks").querySelectorAll(".crack").forEach(function (c, k) {
+        tl.fromTo(c, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.07, ease: "none", immediateRender: false }, CR[k]);
+      });
+      // the crowd fills in, row after row, out to the horizon
+      var rowEls = q("crowd").querySelectorAll(".row"), dotEls = q("dots").querySelectorAll(".dotrow");
+      Array.prototype.forEach.call(rowEls, function (row) {
+        var y = +row.getAttribute("data-y"), ri = L.rows.indexOf(y), t0 = T.indiv + 0.55 + ri * 0.12;
+        row.querySelectorAll(".pop").forEach(function (p, i) {
+          pivot(p, "0 100");
+          tl.fromTo(p, { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.2)" }, t0 + (i % 5) * 0.03);
+        });
+      });
+      Array.prototype.forEach.call(dotEls, function (row) {
+        var y = +row.getAttribute("data-y"), di = L.dots.indexOf(y);
+        pivot(row, (W / 2) + " " + y);
+        tl.fromTo(row, { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.25, ease: "back.out(2)" }, T.indiv + 1.0 + di * 0.06);
+      });
+      // the four: each pops out of its crack, small, and hops down to its place at the front
+      var fg = L.front.map(function (f, i) { return q("f" + i); }), fj = L.front.map(function (f, i) { return q("f" + i + "-j"); });
+      var crackMid = BD[1] + BD[3] * 0.5, HOP = 0.5;
+      // which crack each of the four comes out of: the nearest one, left to right
+      var order = L.front.map(function (f, i) { return i; }).sort(function (a, b) { return L.front[a].x - L.front[b].x; });
+      KIT.onTime(tl, D, function (t) {
+        L.front.forEach(function (f, i) {
+          var k = order.indexOf(i), t0 = CR[k], p = (t - t0) / HOP, x, y, s;
+          if (p < 0) { fg[i].setAttribute("opacity", "0"); return; }
+          fg[i].setAttribute("opacity", "1");
+          var e = clamp(p), ee = 1 - (1 - e) * (1 - e);
+          x = L.cracks[k] + (f.x - L.cracks[k]) * ee;
+          s = f.s * (0.3 + 0.7 * ee);
+          var feet = crackMid + 100 * f.s * 0.3 + (f.y - crackMid - 100 * f.s * 0.3) * e - Math.sin(Math.PI * e) * (V ? 160 : 120);
+          y = feet - 100 * s;
+          fg[i].setAttribute("transform", "translate(" + x.toFixed(1) + "," + y.toFixed(1) + ") scale(" + s.toFixed(4) + ")");
+        });
+      });
+      fj.forEach(function (j) { pivot(j, "0 100"); });
+      L.front.forEach(function (f, i) {
+        tl.fromTo(fj[i], { scaleY: 1 }, { scaleY: 0.86, duration: 0.07, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, CR[order.indexOf(i)] + HOP);
+      });
+
+      // "plans": a note lands on every calendar (pat).
+      var art = q("art");
+      art.querySelectorAll(".note").forEach(function (n) {
+        var g = n.closest(".row"), d = g ? 0.04 + L.rows.indexOf(+g.getAttribute("data-y")) * 0.04 : 0;
+        pivot(n, "0 0");
+        tl.fromTo(n, { opacity: 0, scale: 1.8, rotation: -14 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.12, ease: "power3.in", immediateRender: false }, T.plans + d);
+      });
+      Array.prototype.forEach.call(dotEls, function (row) { tl.set(row.querySelectorAll(".dn"), { opacity: 1 }, T.plans + 0.12 + L.dots.indexOf(+row.getAttribute("data-y")) * 0.015); });
+      // "Tuesday.": a teal tick on every note (sparkle) and everyone beams; the dentist looks up at his note.
+      art.querySelectorAll(".tickg .tick").forEach(function (tk, i) {
+        var g = tk.closest(".row"), d = g ? 0.05 + (i % 7) * 0.02 : 0;
+        KIT.drawTick(tl, tk, T.tue + d);
+      });
+      art.querySelectorAll(".row .m-b").forEach(function (b, i) {
+        var a = b.parentNode.querySelector(".m-a"), t = T.tue + 0.1 + (i % 6) * 0.03;
+        tl.set(a, { opacity: 0 }, t); tl.set(b, { opacity: 1 }, t);
+      });
+      var di = L.front.map(function (f) { return f.who; }).indexOf("dentist");
+      L.front.forEach(function (f, i) {
+        var va = fg[i].querySelector(".v-a"), vb = fg[i].querySelector(".v-b");
+        tl.set(va, { opacity: 0 }, T.tue + 0.12);
+        tl.set(vb, { opacity: 1 }, T.tue + 0.12);
+        if (i !== di) tl.fromTo(fj[i], { y: 0 }, { y: -14, duration: 0.14, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.tue + 0.12 + i * 0.04);
+      });
+      var dHead = fg[di].querySelector(".v-b .head");
+      pivot(dHead, KIT.rig(mix(DENTIST, { arms: UP })).neck.join(" "));
+      tl.to(dHead, { rotation: -14, duration: 0.3, ease: "power2.out" }, T.tue + 0.3);
+      // after "Tuesday.": the dentist reads his note and groans (huff): he sags, the calendar droops, a puff of breath.
+      var dent = fg[di], dvc = dent.querySelector(".v-c"), dvb = dent.querySelector(".v-b"), groan = dent.querySelector(".groan");
+      tl.set(dvb, { opacity: 0 }, T.after);
+      tl.set(dvc, { opacity: 1 }, T.after);
+      tl.to(fj[di], { scaleY: 0.92, duration: 0.18, ease: "power2.out" }, T.after);
+      pivot(groan, "0 0");
+      tl.fromTo(groan, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, x: 10, y: -8, duration: 0.22, ease: "power2.out", immediateRender: false }, T.after);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

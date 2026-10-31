@@ -1,0 +1,551 @@
+{
+  "id": "part-24",
+  "title": "The Earth Optimization Game",
+  "storyboard": "storyboards/part-24-earth-optimization-game.md",
+  "audio": {
+    "start": 3043.46,
+    "end": 3091.044
+  },
+  "noCaptions": [
+    "earth-optimization-game-title"
+  ],
+  "scenes": [
+    {
+      "id": "earth-optimization-game-title",
+      "file": "compositions/scenes/part-24/earth-optimization-game-title.html",
+      "cue": "The",
+      "approx": 3043.46,
+      "layer": "A"
+    },
+    {
+      "id": "game-box",
+      "file": "compositions/scenes/part-24/game-box.html",
+      "cue": "A",
+      "approx": 3046.08,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "A",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "point-right",
+          "mode": "big"
+        },
+        {
+          "cue": "money.",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "point-right",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "game-pool-rules",
+      "file": "compositions/scenes/part-24/game-pool-rules.html",
+      "cue": "Two",
+      "approx": 3047.62,
+      "layer": "B"
+    },
+    {
+      "id": "friends-to-play",
+      "file": "compositions/scenes/part-24/friends-to-play.html",
+      "cue": "You",
+      "approx": 3062.2,
+      "layer": "B"
+    },
+    {
+      "id": "your-job",
+      "file": "compositions/scenes/part-24/your-job.html",
+      "cue": "Your",
+      "approx": 3069.52,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Your",
+          "expr": "neutral",
+          "rest": "smile",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "never",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "steps.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "vote",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "counting",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "greed-handles-it",
+      "file": "compositions/scenes/part-24/greed-handles-it.html",
+      "cue": "Four",
+      "approx": 3076.3,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "earth-optimization-game-title",
+      "cue": "The",
+      "sfx": "switch",
+      "volume": 0.5
+    },
+    {
+      "scene": "earth-optimization-game-title",
+      "cue": "The",
+      "offset": 0.1,
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "earth-optimization-game-title",
+      "cue": "Game.",
+      "at": "after",
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "earth-optimization-game-title",
+      "cue": "Game.",
+      "at": "after",
+      "offset": 0.12,
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "earth-optimization-game-title",
+      "cue": "Game.",
+      "at": "after",
+      "offset": 0.27,
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "game-box",
+      "cue": "pool",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "game-box",
+      "cue": "money.",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "game-box",
+      "cue": "money.",
+      "offset": 0.15,
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "Scoreboard:",
+      "sfx": "switch",
+      "volume": 0.45
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "long",
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "long",
+      "offset": 0.1,
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "much",
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "much",
+      "offset": 0.1,
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "twenty",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "forty,",
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "went",
+      "sfx": "slide-up",
+      "volume": 0.4
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "split",
+      "sfx": "snip",
+      "volume": 0.5
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "pool.",
+      "sfx": "splat",
+      "volume": 0.5
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "didn't,",
+      "sfx": "scratch",
+      "volume": 0.5
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "pro",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "rata",
+      "offset": 0.35,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "retirement",
+      "sfx": "crickets",
+      "volume": 0.25
+    },
+    {
+      "scene": "game-pool-rules",
+      "cue": "account).",
+      "at": "after",
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "getting",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "friends",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "friends",
+      "offset": 0.2,
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "play.",
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "play.",
+      "offset": 0.15,
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "Nobody",
+      "sfx": "pop",
+      "volume": 0.25
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "Nobody",
+      "offset": 0.1,
+      "sfx": "pop",
+      "volume": 0.25
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "Nobody",
+      "offset": 0.2,
+      "sfx": "pop",
+      "volume": 0.25
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "loses.",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "move",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "not",
+      "sfx": "tick",
+      "volume": 0.45
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "not",
+      "offset": 0.12,
+      "sfx": "tick",
+      "volume": 0.45
+    },
+    {
+      "scene": "friends-to-play",
+      "cue": "playing.",
+      "sfx": "zap",
+      "volume": 0.4
+    },
+    {
+      "scene": "your-job",
+      "cue": "never",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "your-job",
+      "cue": "never",
+      "offset": 0.06,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "your-job",
+      "cue": "never",
+      "offset": 0.12,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "your-job",
+      "cue": "never",
+      "offset": 0.18,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "your-job",
+      "cue": "never",
+      "offset": 0.24,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "your-job",
+      "cue": "understand",
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "your-job",
+      "cue": "understand",
+      "offset": 0.36,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "your-job",
+      "cue": "steps.",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "your-job",
+      "cue": "vote",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "your-job",
+      "cue": "vote",
+      "offset": 0.3,
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "your-job",
+      "cue": "play.",
+      "at": "after",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "your-job",
+      "cue": "play.",
+      "at": "after",
+      "offset": 0.1,
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "Four",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "humans",
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "payout",
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "attract",
+      "sfx": "hum",
+      "volume": 0.3
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "lobbyists,",
+      "offset": 0.4,
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "researchers,",
+      "offset": 0.35,
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "institutions",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "institutions",
+      "offset": 0.22,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "institutions",
+      "offset": 0.44,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "rest.",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "greed",
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "handles",
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "handles",
+      "offset": 0.12,
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "handles",
+      "offset": 0.26,
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "has.",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "has.",
+      "at": "after",
+      "sfx": "boom",
+      "volume": 0.55
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "pointed",
+      "sfx": "hammer",
+      "volume": 0.35
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "pointed",
+      "offset": 0.2,
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "anything",
+      "sfx": "ding",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "useful",
+      "sfx": "hammer",
+      "volume": 0.35
+    },
+    {
+      "scene": "greed-handles-it",
+      "cue": "before.",
+      "sfx": "splat",
+      "volume": 0.55
+    }
+  ]
+}

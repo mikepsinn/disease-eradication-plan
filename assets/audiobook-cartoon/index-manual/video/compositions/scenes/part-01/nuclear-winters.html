@@ -1,0 +1,303 @@
+<template id="nuclear-winters-template">
+  <!-- nuclear-winters · style "atomic" (cartoon-style-bible.md): one plate, the theme song's navy night sky with
+       mustard stars, and one small Earth in it, so small that its one human, standing on top by his tiny ranch house
+       and his picket fence, is half its height. "waste": close on him, watering a flower and waving at us. "nuclear":
+       a grumpy missile pops up out of the ground beside him, a price tag swinging from its nose; "bombs": another, and
+       another. "one hundred and twenty-two": the camera pulls back to the whole planet as the missiles pop up row by
+       row, faster and faster, 122 in all, until the little Earth bristles like a pincushion and he stands in the one
+       clear patch on top. "winters": missile by missile, each blinks into a big red snowflake in a puff of smoke and
+       floats up into the sky; "122" stamps in. "despite": red snow starts to fall, he looks up, and the camera pushes
+       in on him. "only": he puts on a scarf. "having": a snowdrift grows over his roof and up to his waist, just under the can.
+       "civilization": his teeth chatter. "apocalypse?": he freezes solid in a block of ice, scarf, watering can and
+       all; the ice glints on the ding. Hold to the cut. The 122 red snowflakes come back in Part 10. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+    #nuclear-winters-weave, #nuclear-winters-plate, #nuclear-winters-snow, #nuclear-winters-num, #nuclear-winters-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="nuclear-winters" data-width="1920" data-height="1080" data-start="0" data-duration="9.96">
+    <div id="nuclear-winters-weave">
+      <div id="nuclear-winters-plate"></div>
+      <div id="nuclear-winters-snow"></div>
+      <div id="nuclear-winters-num"></div>
+    </div>
+    <div id="nuclear-winters-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "nuclear-winters";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var smooth = KIT.smooth, RAD = Math.PI / 180;
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 89);
+
+      // ── Cues
+      var tNuc = cue("nuclear"), tBombs = cue("bombs"), tOne = cue("one"), tNuc2 = cue("nuclear", 2), tWin = cue("winters"), tDespite = cue("despite");
+      var tOnly = cue("only"), tHaving = cue("having"), tCiv = cue("civilization"), tApoc = cue("apocalypse?"), tDing = tApoc + 0.35;
+
+      // ── The plate, in plate units: the little Earth's center at (0, 0), radius R; up is -y. A thing at angle a
+      // (degrees from straight up, clockwise) stands on the surface at R * (sin a, -cos a), turned a degrees.
+      var R = 220, onGlobe = function (a, lift, inner) { return '<g transform="rotate(' + a + ") translate(0," + f(-R - (lift || 0)) + ')">' + inner + "</g>"; };
+      var surf = function (a, h) { return [(R + h) * Math.sin(a * RAD), -(R + h) * Math.cos(a * RAD)]; };
+
+      // The camera's views. The anchor is the canvas's usual one (16:9 the middle, 9:16 x 540 y 740).
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { close: [0, -330, 3.0], wide: [0, -150, 1.5], close2: [0, -380, 3.4] }
+        : { close: [0, -330, 2.2], wide: [0, -170, 0.9], close2: [0, -358, 2.4] };
+      var toPlate = function (sx, sy, v) { return [v[0] + (sx - A[0]) / v[2], v[1] + (sy - A[1]) / v[2]]; };
+      var toScreen = function (px, py, v) { return [A[0] + (px - v[0]) * v[2], A[1] + (py - v[1]) * v[2]]; };
+
+      // "122", in the sky, on screen (it stays put while the camera moves): cream Fraunces Black on the navy.
+      var N = V ? { y: 230, size: 128 } : { y: 220, size: 168 };
+
+      // ── Drawings
+      // A four-point atomic-age star; a six-armed snowflake r long (as the sketch).
+      function star(x, y, r) {
+        var pts = [];
+        for (var i = 0; i < 8; i++) { var a = (Math.PI * i) / 4 - Math.PI / 2, rr = i % 2 ? r * 0.22 : r; pts.push(f(x + rr * Math.cos(a)) + "," + f(y + rr * Math.sin(a))); }
+        return '<polygon points="' + pts.join(" ") + '" fill="' + C.yellow + '"/>';
+      }
+      function flake(r) {
+        var d = "";
+        for (var i = 0; i < 3; i++) {
+          var a = (i * 60) * RAD, c = Math.cos(a), s = Math.sin(a);
+          d += "M" + f(-r * c) + "," + f(-r * s) + " L" + f(r * c) + "," + f(r * s) + " ";
+          [-1, 1].forEach(function (k) {
+            var bx = k * r * 0.55 * c, by = k * r * 0.55 * s;
+            [-1, 1].forEach(function (t2) { var b = a + (k * t2 * Math.PI) / 4; d += "M" + f(bx) + "," + f(by) + " l" + f(k * r * 0.3 * Math.cos(b)) + "," + f(k * r * 0.3 * Math.sin(b)) + " "; });
+          });
+        }
+        return '<path d="' + d + '" stroke="' + ink + '" stroke-width="' + f(r * 0.34) + '" stroke-linecap="round" fill="none"/>' +
+          '<path d="' + d + '" stroke="' + C.war + '" stroke-width="' + f(r * 0.2) + '" stroke-linecap="round" fill="none"/>';
+      }
+      // A picket fence section from x0 to x1 on y 0, h tall (as the sketch).
+      function fence(x0, x1, h) {
+        var p = "";
+        for (var x = x0; x <= x1 - 10; x += 14) p += '<path d="M' + x + ",0 V" + (-h + 6) + " l5,-6 l5,6 V0 Z" + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>';
+        return '<rect x="' + (x0 - 3) + '" y="' + f(-h * 0.72) + '" width="' + (x1 - x0 + 6) + '" height="5" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<rect x="' + (x0 - 3) + '" y="' + f(-h * 0.32) + '" width="' + (x1 - x0 + 6) + '" height="5" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' + p;
+      }
+      // A daisy on a stem, standing on y 0.
+      function daisy() {
+        var petals = [0, 60, 120, 180, 240, 300].map(function (a) { return '<ellipse cx="0" cy="-7" rx="4" ry="7" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="1.6" transform="translate(0,-34) rotate(' + a + ')"/>'; }).join("");
+        return '<path d="M0,0 Q-3,-16 0,-32" fill="none" stroke="' + C.moneyDark + '" stroke-width="3"/><path d="M-1,-12 q-10,-6 -12,-14 q8,2 12,10" fill="' + C.money + '" stroke="' + ink + '" stroke-width="1.6"/>' +
+          petals + '<circle cx="0" cy="-34" r="5" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.6"/>';
+      }
+
+      // ── The man: an everyday human (the brief's options), watering his flower with the can in his left hand and
+      // waving at us with his right; drawn smiling, then worried (the snow). He is half the planet's height.
+      var MAN = { tone: 2, outfit: "shirt", color: 2, hair: 0, seed: 31, arms: [[-35, -62], [150, 170]] };
+      var RM = KIT.rig(MAN), MK = (R) / (100 - RM.top[1] + 4), MA = 0;
+      var hl = RM.hand[0];
+      var can = '<g transform="translate(' + f(hl[0]) + "," + f(hl[1] + 4) + ') rotate(-22)">' +
+        '<path d="M-12,-8 H10 V12 H-12 Z" fill="#9AA6B8" stroke="' + ink + '" stroke-width="2.2"/><path d="M-12,-2 L-30,-10 L-31,-6 L-12,4" fill="#9AA6B8" stroke="' + ink + '" stroke-width="2"/>' +
+        '<path d="M-6,-8 Q0,-18 6,-8" fill="none" stroke="' + ink + '" stroke-width="2.2"/></g>';
+      var SPOUT = [hl[0] + (-30.5 * Math.cos(-22 * RAD) - (-8) * Math.sin(-22 * RAD)), hl[1] + 4 + (-30.5 * Math.sin(-22 * RAD) + (-8) * Math.cos(-22 * RAD))];
+      var scarf = '<g id="' + ID + '-scarf" opacity="0"><g id="' + ID + '-scarf-in">' +
+        '<path d="M' + f(RM.neck[0] - 9) + "," + f(RM.neck[1] - 2) + " H" + f(RM.neck[0] + 10) + " L" + f(RM.neck[0] + 9) + "," + f(RM.neck[1] + 6) + " H" + f(RM.neck[0] - 8) + ' Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2"/>' +
+        '<g id="' + ID + '-tail"><path d="M' + f(RM.neck[0] + 4) + "," + f(RM.neck[1] + 4) + " l3,20 h7 l-2,-20 Z" + '" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2"/>' +
+        '<path d="M' + f(RM.neck[0] + 7) + "," + f(RM.neck[1] + 22) + " h6" + '" stroke="' + C.rust + '" stroke-width="2"/></g></g></g>';
+      var manPose = function (mood) { return '<g class="man-pose" data-mood="' + mood + '"' + (mood === "smile" ? "" : ' opacity="0"') + ">" + KIT.person(copy(MAN, { mood: mood })) + "</g>"; };
+      var drops = [0, 1, 2, 3].map(function (i) { return '<circle class="drop" r="2.6" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="1" opacity="0"/>'; }).join("");
+      // the ice block, in his units: round him and his can, from his feet to above his head
+      var ICE = { x0: Math.min(hl[0] - 38, -40), x1: 44, y0: RM.top[1] - 26, y1: 104 };
+      var ice = '<g id="' + ID + '-ice" opacity="0"><g id="' + ID + '-ice-in">' +
+        '<rect x="' + f(ICE.x0) + '" y="' + f(ICE.y0) + '" width="' + f(ICE.x1 - ICE.x0) + '" height="' + f(ICE.y1 - ICE.y0) + '" rx="5" fill="#BFE3EA" opacity="0.55"/>' +
+        '<rect x="' + f(ICE.x0) + '" y="' + f(ICE.y0) + '" width="' + f(ICE.x1 - ICE.x0) + '" height="' + f(ICE.y1 - ICE.y0) + '" rx="5" fill="none" stroke="#F7FBFC" stroke-width="3.5"/>' +
+        '<path d="M' + f(ICE.x0 + 8) + "," + f(ICE.y0 + 12) + " h18 M" + f(ICE.x0 + 8) + "," + f(ICE.y0 + 22) + " h9 M" + f(ICE.x1 - 10) + "," + f(ICE.y0 + 40) + " l-12,26" + '" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" opacity="0.9"/>' +
+        '<g id="' + ID + '-glint" transform="translate(' + f(ICE.x1 - 6) + "," + f(ICE.y0 + 8) + ')"><g id="' + ID + '-glint-in" opacity="0">' +
+        '<path d="M0,-14 L3,-3 L14,0 L3,3 L0,14 L-3,3 L-14,0 L-3,-3 Z" fill="#FFFFFF"/></g></g></g></g>';
+      var manSvg = '<g id="' + ID + '-man" transform="translate(0,' + f(-R - 100 * MK) + ") scale(" + MK.toFixed(4) + ')">' +
+        manPose("smile") + manPose("worried") + can + drops + scarf + "</g>";
+      var iceSvg = '<g transform="translate(0,' + f(-R - 100 * MK) + ") scale(" + MK.toFixed(4) + ')">' + ice + "</g>";
+
+      // ── The missiles: three by him, then 119 in two staggered rows all round the rest of the globe's rim (a short
+      // inner row and a taller outer row behind it), each standing on its base, pointing out, so the little Earth
+      // bristles like a pincushion and he keeps the one clear patch on top. The first wears a price tag on its nose.
+      var MS = [];
+      MS.push({ a: 10, ring: 0, size: 0.5, tag: true }, { a: 38, ring: 0, size: 0.44 }, { a: -44, ring: 0, size: 0.44 });
+      var rim = [];
+      for (var i = 0; i < 60; i++) rim.push({ a: 50 + (260 * i) / 59, ring: 1, size: 0.42 });
+      for (i = 0; i < 59; i++) rim.push({ a: 50 + (260 * (i + 0.5)) / 59, ring: 2, size: 0.6, sink: 14 });
+      var away = function (m) { return Math.min(m.a, 360 - m.a); };
+      rim.sort(function (a, b) { return away(a) - away(b) || a.ring - b.ring; });
+      rim.forEach(function (m) { m.a = m.a > 180 ? m.a - 360 : m.a; MS.push(m); });
+      if (MS.length !== 122) throw new Error("nuclear-winters: " + MS.length + " missiles, not 122");
+      // pop times: one on "nuclear", two on "bombs", then the rest from "one" to "nuclear" (2), faster and faster
+      MS[0].tp = tNuc; MS[1].tp = tBombs; MS[2].tp = tBombs + 0.28;
+      for (i = 3; i < 122; i++) MS[i].tp = tOne + (tNuc2 - 0.12 - tOne) * Math.sqrt((i - 3) / 118);
+      // "winters": each blinks into a snowflake, top first
+      MS.forEach(function (m, k) {
+        m.tc = tWin + 0.7 * (k / 121);
+        var h = 160 * m.size, base = surf(m.a, -(m.sink || 8));
+        m.mid = [base[0] + (h / 2) * Math.sin(m.a * RAD), base[1] - (h / 2) * Math.cos(m.a * RAD)];
+        m.svg = '<g transform="translate(' + f(base[0]) + "," + f(base[1]) + ") rotate(" + f(m.a) + ')"><g class="pop" data-k="' + k + '">' +
+          KIT.props.missile({ size: m.size, look: m.a < 0 ? "left" : "right" }) +
+          (m.tag ? '<g transform="translate(0,' + f(-160 * m.size) + ') rotate(' + f(-m.a) + ')"><g class="tag"><g transform="scale(1.1)">' + KIT.props.priceTag({ text: "$$$", angle: 30 }) + "</g></g></g>" : "") +
+          "</g></g>";
+      });
+      // Where each snowflake floats to: most to a place in the sky as the last view (close2) sees it, so the final
+      // frame is full of them (the sketch), the rest out in the wide sky; each clear of the number, of him and of the
+      // planet in its view.
+      var rs = KIT.rng(122), NB = V ? [300, N.y - N.size * 0.8, 780, N.y + 30] : [700, N.y - N.size * 0.8, 1220, N.y + 30];
+      MS.forEach(function (m, k) {
+        var v = k % 3 === 2 ? VIEW.wide : VIEW.close2, gc = toScreen(0, 0, v), gr = (R + 40) * v[2], ms = toScreen(0, -2 * R - 60, v);
+        var bottom = V ? 1400 : 860;
+        for (var tries = 0; tries < 400; tries++) {
+          var sx = 40 + rs() * (W - 80), sy = 40 + rs() * (bottom - 40);
+          if (Math.hypot(sx - gc[0], sy - gc[1]) < gr) continue;
+          if (sx > NB[0] && sx < NB[2] && sy > NB[1] && sy < NB[3]) continue;
+          if (Math.abs(sx - ms[0]) < 85 * v[2] && sy > ms[1]) continue;
+          break;
+        }
+        m.to = toPlate(sx, sy, v);
+        m.fr = (V ? 22 : 19) / v[2] * (0.8 + rs() * 0.5);
+        m.rot = rs() * 60;
+        m.sway = rs() * 6;
+      });
+      var flakes = MS.map(function (m, k) { return '<g class="flake" data-k="' + k + '" opacity="0">' + flake(m.fr) + "</g>"; }).join("");
+      var puffs = MS.map(function (m, k) { return '<circle class="puff" data-k="' + k + '" r="16" fill="#E9E1CF" stroke="' + ink + '" stroke-width="2.5" opacity="0"/>'; }).join("");
+
+      // The sky: stars over the whole plate (they move with the camera).
+      var sr = KIT.rng(3), sky = "";
+      for (i = 0; i < 160; i++) sky += star(-1800 + sr() * 3600, -1500 + sr() * 2300, 5 + sr() * 9);
+
+      // The globe, the tiny house, the flower, the fence.
+      var globe = '<g transform="translate(0,' + R + ')">' + KIT.props.earthGlobe({ r: R, face: "none" }) + "</g>";
+      var house = onGlobe(-24, -4, '<g transform="scale(0.24)">' + KIT.props.house({ variant: 1, smoke: true }) + "</g>");
+      var flower = onGlobe(-7, -2, daisy());
+      var fenceSvg = onGlobe(23, -2, fence(-27, 27, 34));
+
+      q("plate").innerHTML = KIT.svg(W, H,
+        '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + C.navy + '"/>' +
+        '<g id="' + ID + '-cam">' + sky + flakes +
+        MS.filter(function (m) { return m.ring === 2; }).map(function (m) { return m.svg; }).join("") +
+        MS.filter(function (m) { return m.ring !== 2; }).map(function (m) { return m.svg; }).join("") + globe +
+        '<path id="' + ID + '-cap" d="" fill="#F7F3EA" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+        house + fenceSvg + flower + manSvg + iceSvg +
+        '<path id="' + ID + '-drift" d="" fill="#F7F3EA" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' + puffs + "</g>");
+
+      // The red snow, falling on screen from "despite".
+      var nr = KIT.rng(41), SNOW = [];
+      for (i = 0; i < 90; i++) SNOW.push({ x: nr() * W, y: nr() * H, v: 120 + nr() * 140, r: 2.5 + nr() * 3.5, ph: nr() * 6 });
+      q("snow").innerHTML = KIT.svg(W, H, SNOW.map(function (s) { return '<circle r="' + f(s.r) + '" fill="' + C.war + '" opacity="0.85"/>'; }).join(""));
+      q("num").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-n" opacity="0" data-layout-allow-overlap><text data-layout-allow-overlap x="' + W / 2 + '" y="' + N.y + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + N.size + '" letter-spacing="4" fill="' + C.ink + '" transform="translate(6,8)">122</text>' +
+        '<text data-layout-allow-overlap x="' + W / 2 + '" y="' + N.y + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + N.size + '" letter-spacing="4" fill="' + C.cream + '">122</text></g>');
+
+      var cam = q("cam"), all = function (sel) { return Array.prototype.slice.call(cam.querySelectorAll(sel)); };
+      // (by data-k: the outer row is drawn first, so DOM order is not MS order)
+      var byK = function (sel) { var o = []; all(sel).forEach(function (e) { o[+e.getAttribute("data-k")] = e; }); return o; };
+      var pops = byK(".pop"), flakeEls = byK(".flake"), puffEls = byK(".puff"), tag = cam.querySelector(".tag");
+      var manPoses = all(".man-pose"), manEl = q("man"), dropEls = all(".drop");
+      var armsR = manPoses.map(function (g) { return g.querySelector(".arm-r"); }), heads = manPoses.map(function (g) { return g.querySelector(".head"); });
+      var scarfEl = q("scarf"), scarfIn = q("scarf-in"), tail = q("tail"), iceEl = q("ice"), iceIn = q("ice-in"), glint = q("glint-in");
+      var capEl = q("cap"), driftEl = q("drift"), snowEls = Array.prototype.slice.call(q("snow").querySelectorAll("circle"));
+      var FLOWER = surf(-7, 34);
+
+      // ── The camera: close on him; pull back to the whole planet as the rows pop up; hold; push in on "despite".
+      var KEYS = [[0, "close", 1], [tOne - 0.05, "close", 1.04], [tOne + 0.95, "wide", 1], [tDespite, "wide", 1.02], [tDespite + 1.05, "close2", 1], [D, "close2", 1.05]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+      var backOut = function (u) { var c1 = 1.9, c3 = c1 + 1; return 1 + c3 * Math.pow(u - 1, 3) + c1 * Math.pow(u - 1, 2); };
+      // a band on the globe's top, from angle -a1 to a1, h(a) thick
+      function band(a1, h) {
+        var out = [], inn = [];
+        for (var a = -a1; a <= a1 + 0.01; a += 2) { out.push(surf(a, h(a))); inn.push(surf(a, -6)); }
+        return "M" + out.concat(inn.reverse()).map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + " Z";
+      }
+      // the drift's top, at him: just under the watering can (so the can, the scarf and his arms stay in the ice
+      // block above it, as the sketch)
+      var DRIFT = (100 - (hl[1] + 20)) * MK;
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+
+        // the missiles pop up out of the ground, then blink into snowflakes that float up into the sky
+        MS.forEach(function (m, k) {
+          var p = pops[k], fl = flakeEls[k], pf = puffEls[k];
+          var u = (t - m.tp) / 0.2, on = u > 0 && t < m.tc;
+          p.setAttribute("opacity", on ? 1 : 0);
+          if (on) { var s = u >= 1 ? 1 : Math.max(0.001, backOut(u)); p.setAttribute("transform", "scale(" + Math.min(1, 0.6 + 0.4 * s).toFixed(3) + "," + s.toFixed(3) + ")"); }
+          var w = t - m.tc;
+          if (w > 0 && w < 0.5) {
+            pf.setAttribute("opacity", (1 - w / 0.5).toFixed(2));
+            pf.setAttribute("transform", "translate(" + f(m.mid[0]) + "," + f(m.mid[1]) + ") scale(" + (0.6 + w * 2.4).toFixed(2) + ")");
+          } else pf.setAttribute("opacity", 0);
+          if (w > 0) {
+            var e = 1 - Math.pow(1 - Math.min(1, w / 1.3), 3), x = m.mid[0] + (m.to[0] - m.mid[0]) * e + Math.sin(t * 1.3 + m.sway) * 4, y = m.mid[1] + (m.to[1] - m.mid[1]) * e;
+            var grow = Math.min(1, 0.4 + w * 3);
+            fl.setAttribute("opacity", 1);
+            fl.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") rotate(" + f(m.rot + t * 12) + ") scale(" + grow.toFixed(3) + ")");
+          } else fl.setAttribute("opacity", 0);
+        });
+        // the price tag swings on the first one's nose
+        if (tag) tag.setAttribute("transform", "rotate(" + f(Math.sin((t - tNuc) * 7) * 18 * Math.exp(-Math.max(0, t - tNuc) * 0.6)) + ")");
+
+        // the man: waving, then his arm comes down; worried from "despite", looking up at the snow; chattering
+        var mood = t >= tDespite ? "worried" : "smile";
+        manPoses.forEach(function (g) { g.setAttribute("opacity", g.getAttribute("data-mood") === mood ? 1 : 0); });
+        var frozen = t >= tApoc + 0.12;
+        var wave = t < tNuc ? Math.sin(t * 13) * 20 : 0, lower = smooth((t - tNuc - 0.05) / 0.3) * 140;
+        var look = -16 * smooth((t - tDespite) / 0.3) * (1 - smooth((t - tOnly) / 0.3)), chat = t >= tCiv && !frozen ? Math.sin(t * 90) * 4 : 0;
+        armsR.forEach(function (a) { a.setAttribute("transform", "rotate(" + f(wave + lower) + " " + f(RM.shoulder[1][0]) + " " + f(RM.shoulder[1][1]) + ")"); });
+        heads.forEach(function (h) { h.setAttribute("transform", "rotate(" + f(look + chat) + " " + f(RM.neck[0]) + " " + f(RM.neck[1]) + ") translate(0," + f(chat ? Math.abs(chat) * 0.2 : 0) + ")"); });
+        var shiver = t >= tCiv && !frozen ? Math.sin(t * 70) * 0.6 : 0;
+        manEl.setAttribute("transform", "translate(" + f(shiver) + "," + f(-R - 100 * MK) + ") scale(" + MK.toFixed(4) + ")");
+        // the water drops from the can to the flower, while he waters it
+        dropEls.forEach(function (d, i) {
+          var ph = ((t * 2.2 + i / 4) % 1), on = t < tNuc + 0.2;
+          d.setAttribute("opacity", on ? 1 : 0);
+          d.setAttribute("transform", "translate(" + f(SPOUT[0] - 3 * ph) + "," + f(SPOUT[1] + ph * 38) + ")");
+        });
+        // the scarf, on "only"
+        var su = smooth((t - tOnly) / 0.3);
+        scarfEl.setAttribute("opacity", su > 0 ? 1 : 0);
+        scarfIn.setAttribute("transform", "translate(" + f(RM.neck[0]) + "," + f(RM.neck[1]) + ") scale(" + Math.max(0.001, su).toFixed(3) + ") translate(" + f(-RM.neck[0]) + "," + f(-RM.neck[1]) + ")");
+        tail.setAttribute("transform", "rotate(" + f(frozen ? 18 : 10 + Math.sin(t * 9) * 12) + " " + f(RM.neck[0] + 6) + " " + f(RM.neck[1] + 4) + ")");
+
+        // the snow: falling on screen from "despite"; a cap on the planet, and the drift over his roof to his chest
+        var fall = t - tDespite;
+        snowEls.forEach(function (c, i) {
+          var s = SNOW[i];
+          if (fall <= 0) { c.setAttribute("opacity", 0); return; }
+          c.setAttribute("opacity", Math.min(0.85, fall * 2).toFixed(2));
+          c.setAttribute("cx", f(s.x + Math.sin(fall * 2 + s.ph) * 14));
+          c.setAttribute("cy", f(((s.y - H) + s.v * fall) % (H + 40)));
+        });
+        var capH = 14 * smooth((t - tDespite - 0.3) / 1.5), driftH = DRIFT * smooth((t - tHaving) / 1.0);
+        capEl.setAttribute("d", capH > 0.5 ? band(70, function (a) { return capH * (1 - Math.pow(Math.abs(a) / 70, 4)); }) : "");
+        driftEl.setAttribute("d", driftH > 1 ? band(46, function (a) { var x = Math.abs(a) / 46; return driftH * (1 - Math.pow(x, 2.4)) * (1 + 0.04 * Math.sin(a * 0.35)) + capH * 0.6 * (1 - x); }) : "");
+
+        // frozen solid on "apocalypse?": the block grows up round him; it glints on the ding
+        var iu = (t - tApoc) / 0.18;
+        iceEl.setAttribute("opacity", iu > 0 ? 1 : 0);
+        iceIn.setAttribute("transform", "translate(0," + f(ICE.y1) + ") scale(1," + Math.max(0.001, Math.min(1, iu)).toFixed(3) + ") translate(0," + f(-ICE.y1) + ")");
+        var gu = (t - tDing) / 0.5;
+        glint.setAttribute("opacity", gu > 0 && gu < 1 ? 1 : 0);
+        glint.setAttribute("transform", "scale(" + (gu > 0 && gu < 1 ? Math.sin(gu * Math.PI) * 1.6 : 0.001).toFixed(3) + ") rotate(" + f(gu * 45) + ")");
+      });
+
+      // "winters": the number stamps into the sky
+      var n = q("n"), oy = N.y - N.size * 0.35;
+      tl.fromTo(n, { opacity: 0, scale: 1.3, svgOrigin: W / 2 + " " + oy }, { opacity: 1, scale: 1, svgOrigin: W / 2 + " " + oy, duration: 0.14, ease: "power3.in" }, tWin);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

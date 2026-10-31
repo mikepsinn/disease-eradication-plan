@@ -1,0 +1,154 @@
+{
+  "id": "part-03",
+  "title": "The Gradual Irrationality Reduction Program",
+  "storyboard": "storyboards/part-03-gradual-irrationality-reduction.md",
+  "audio": {
+    "start": 298.184,
+    "end": 388.384
+  },
+  "noCaptions": [
+    "title-card"
+  ],
+  "scenes": [
+    {
+      "id": "title-card",
+      "file": "compositions/scenes/part-03/title-card.html",
+      "cue": "The",
+      "approx": 298.2,
+      "layer": "A"
+    },
+    {
+      "id": "host-opens",
+      "file": "compositions/scenes/part-03/host-opens.html",
+      "cue": "We",
+      "approx": 302.3,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "We", "expr": "happy", "rest": "smile", "body": "hand-chest", "mode": "big" },
+        { "cue": "Before", "expr": "thinking", "rest": "closed", "body": "thinking", "mode": "big" },
+        { "cue": "nobody", "expr": "skeptical", "rest": "closed", "body": "shrug", "mode": "big" }
+      ]
+    },
+    {
+      "id": "nations-foam-bats",
+      "file": "compositions/scenes/part-03/nations-foam-bats.html",
+      "cue": "Your",
+      "approx": 317.6,
+      "layer": "B"
+    },
+    {
+      "id": "toddlers-take-nap",
+      "file": "compositions/scenes/part-03/toddlers-take-nap.html",
+      "cue": "This",
+      "approx": 323.8,
+      "layer": "B"
+    },
+    {
+      "id": "dog-calculus",
+      "file": "compositions/scenes/part-03/dog-calculus.html",
+      "cue": "You",
+      "approx": 338.8,
+      "layer": "B"
+    },
+    {
+      "id": "host-manual",
+      "file": "compositions/scenes/part-03/host-manual.html",
+      "cue": "So",
+      "approx": 345.9,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "So", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "bribe", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" },
+        { "cue": "gradually:", "expr": "lookright", "rest": "smile", "body": "idle", "mode": "big" }
+      ]
+    },
+    {
+      "id": "year-one-to-twenty",
+      "file": "compositions/scenes/part-03/year-one-to-twenty.html",
+      "cue": "Year",
+      "approx": 352.9,
+      "layer": "B"
+    },
+    {
+      "id": "paint-chips",
+      "file": "compositions/scenes/part-03/paint-chips.html",
+      "cue": "It's",
+      "approx": 374.5,
+      "layer": "B"
+    },
+    {
+      "id": "host-closes",
+      "file": "compositions/scenes/part-03/host-closes.html",
+      "cue": "until",
+      "approx": 384.4,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "until", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "option.", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ]
+    }
+  ],
+  "sounds": [
+    { "scene": "title-card", "cue": "Gradual", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "title-card", "cue": "Program.", "offset": 0.6, "sfx": "thunk", "volume": 0.5 },
+    { "scene": "title-card", "cue": "Program.", "at": "after", "sfx": "tick", "volume": 0.55 },
+
+    { "scene": "host-opens", "cue": "exact", "sfx": "huff", "volume": 0.35 },
+    { "scene": "host-opens", "cue": "four", "sfx": "bell", "volume": 0.25 },
+    { "scene": "host-opens", "cue": "twelve", "sfx": "typewriter", "volume": 0.35 },
+    { "scene": "host-opens", "cue": "enjoyed.", "sfx": "whoosh", "volume": 0.45 },
+    { "scene": "host-opens", "cue": "enjoyed.", "offset": 0.35, "sfx": "slam", "volume": 0.5 },
+
+    { "scene": "nations-foam-bats", "cue": "hitting", "sfx": "boing", "volume": 0.45 },
+    { "scene": "nations-foam-bats", "cue": "hitting", "offset": 0.15, "sfx": "pop", "volume": 0.3 },
+    { "scene": "nations-foam-bats", "cue": "each", "sfx": "boing", "volume": 0.45 },
+    { "scene": "nations-foam-bats", "cue": "ten", "sfx": "whirr", "volume": 0.35 },
+    { "scene": "nations-foam-bats", "cue": "years", "sfx": "zap", "volume": 0.4 },
+    { "scene": "nations-foam-bats", "cue": "because", "sfx": "scratch", "volume": 0.45 },
+    { "scene": "nations-foam-bats", "cue": "last.", "at": "after", "sfx": "boing", "volume": 0.5 },
+
+    { "scene": "toddlers-take-nap", "cue": "resolution", "sfx": "squeak", "volume": 0.45 },
+    { "scene": "toddlers-take-nap", "cue": "four-year-olds,", "sfx": "squeak", "volume": 0.4 },
+    { "scene": "toddlers-take-nap", "cue": "tired", "sfx": "huff", "volume": 0.45 },
+    { "scene": "toddlers-take-nap", "cue": "nap.", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "toddlers-take-nap", "cue": "nap.", "at": "after", "sfx": "hum", "volume": 0.2 },
+    { "scene": "toddlers-take-nap", "cue": "naps", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "toddlers-take-nap", "cue": "refused", "sfx": "boing", "volume": 0.45 },
+    { "scene": "toddlers-take-nap", "cue": "geopolitics.", "sfx": "boom", "volume": 0.6 },
+
+    { "scene": "dog-calculus", "cue": "You", "sfx": "marker", "volume": 0.4 },
+    { "scene": "dog-calculus", "cue": "calculus", "sfx": "whistle", "volume": 0.35 },
+    { "scene": "dog-calculus", "cue": "before", "sfx": "fire", "volume": 0.35 },
+    { "scene": "dog-calculus", "cue": "sit.", "sfx": "splat", "volume": 0.45 },
+    { "scene": "dog-calculus", "cue": "sit.", "offset": 0.2, "sfx": "sizzle", "volume": 0.3 },
+
+    { "scene": "host-manual", "cue": "manual", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "host-manual", "cue": "bribe", "sfx": "boing", "volume": 0.4 },
+
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 1, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "murder", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "year-one-to-twenty", "cue": "medicine", "sfx": "ding", "volume": 0.35 },
+    { "scene": "year-one-to-twenty", "cue": "steps).", "sfx": "boing", "volume": 0.35 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 2, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "die!", "sfx": "pat", "volume": 0.45 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 3, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "weird.\".", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 4, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "war?\".", "at": "after", "sfx": "crickets", "volume": 0.35 },
+    { "scene": "year-one-to-twenty", "cue": "Year", "n": 5, "sfx": "tick", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "WHAT?!\".", "sfx": "boing", "volume": 0.5 },
+    { "scene": "year-one-to-twenty", "cue": "WHAT?!\".", "at": "after", "sfx": "boing", "volume": 0.4 },
+
+    { "scene": "paint-chips", "cue": "chips.", "sfx": "snip", "volume": 0.4 },
+    { "scene": "paint-chips", "cue": "all", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "paint-chips", "cue": "cry.", "sfx": "yelp", "volume": 0.4 },
+    { "scene": "paint-chips", "cue": "cry.", "offset": 0.3, "sfx": "splat", "volume": 0.45 },
+    { "scene": "paint-chips", "cue": "cry.", "at": "after", "sfx": "slam", "volume": 0.45 },
+    { "scene": "paint-chips", "cue": "gradually", "sfx": "pop", "volume": 0.35 },
+    { "scene": "paint-chips", "cue": "replace", "sfx": "pop", "volume": 0.35 },
+    { "scene": "paint-chips", "cue": "food", "sfx": "pop", "volume": 0.35 },
+
+    { "scene": "host-closes", "cue": "until", "sfx": "pat", "volume": 0.3 },
+    { "scene": "host-closes", "cue": "option.", "sfx": "huff", "volume": 0.4 }
+  ]
+}

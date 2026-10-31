@@ -1,0 +1,354 @@
+<template id="nations-foam-bats-template">
+  <!-- nations-foam-bats · style "atomic" (cartoon-style-bible.md), plate the-strait (storyboards/part-03-gradual-irrationality-reduction.md,
+       scene 3). One plate: a calm sea under a pale sky; far, up and right, two small sand islands face each other over a
+       narrow strait, each with a domed capitol and a Politician (red tie on the left, blue tie on the right) holding an
+       orange foam bat long enough to reach the other island; a tear-off calendar ("YEAR") on a post in the strait; near,
+       down and left, a cutaway 1950s house with its playroom (toddlers-take-nap). The camera stays on the islands here:
+       "Your": both islands, bats on shoulders, then a push in; "hitting": the left one bonks the right one, whose head
+       squashes and springs back, and a tiny mushroom cloud pops behind the right capitol; "each other": the bonk back
+       and a tiny cloud on the left; "ten thousand": the bonks blur, the calendar's pages fly off in a blizzard while its
+       number races up, hair goes white, beards grow to the shoes, the capitols crumble into smoking craters under a
+       crowd of tiny clouds; "years": both x-ray into grinning skeletons (ties and beards on), still swinging; "because":
+       a freeze mid-swing, the calendar on 10,000, a push in; "last.": each points a bony finger at the other; after
+       "last.": they bonk each other at the same moment and get right back to it. toddlers-take-nap starts on this
+       scene's last frame and copies the plate's drawing code. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #8FA2A6; }
+    #nations-foam-bats-weave, #nations-foam-bats-shake, #nations-foam-bats-plate, #nations-foam-bats-film { position: absolute; inset: 0; }
+    #nations-foam-bats-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="nations-foam-bats" data-width="1920" data-height="1080" data-start="0" data-duration="6.18">
+    <div id="nations-foam-bats-weave">
+      <div id="nations-foam-bats-shake"><div id="nations-foam-bats-plate"></div></div>
+      <div id="nations-foam-bats-flash"></div>
+    </div>
+    <div id="nations-foam-bats-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "nations-foam-bats";
+      var sc = KIT.scene(ID), D = sc.duration, T0 = sc.start;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 303);
+
+      // ════ The plate the-strait: the same code in nations-foam-bats.html and toddlers-take-nap.html (change both) ════
+      // Plate units. The sea runs from the horizon (y -780) down; the islands' ground is at y -466, the politicians stand
+      // on it at x 40 (left, facing right) and 380 (right, the same drawing mirrored), drawn at FK. The house's
+      // playroom floor is at y 150 between x -1250 and -300, its toddlers drawn at NK (twice FK: near, so bigger).
+      var SKY = "#E9DEC2", SEA = "#8FA2A6", SEA2 = "#A9B9B6", SAND = "#D9C08B", GRASS = "#9CA46B", WHITE = "#FBF6E6";
+      var HORIZON = -780, GI = -466, FK = 0.8, NK = 1.6, XA = 40, XB = 380, CAPX = [-180, 600], CAPK = 0.4, CALX = 210, CALY = -418;
+      var HX0 = -1250, HX1 = -300, HTOP = -350, FLOOR = 150, PEAK = -610, HMID = (HX0 + HX1) / 2;
+      var TXA = -900, TXB = -650, TFEET = 146, PILLOW0 = [-605, -158];
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var rad = function (d) { return (d * Math.PI) / 180; };
+      var deg = function (r) { return (r * 180) / Math.PI; };
+      // The nations' orange foam bat: its grip at (0, 0), pointing +x, len long, w thick (person units).
+      function bat(len, w) {
+        return '<path d="M0,' + -4 * w + " L" + f(len * 0.28) + "," + -6 * w + " L" + f(len) + "," + -16 * w + " Q" + f(len + 12 * w) + ",0 " + f(len) + "," + 16 * w + " L" + f(len * 0.28) + "," + 6 * w + " L0," + 4 * w + ' Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="' + 3 * w + '" stroke-linejoin="round"/>' +
+          '<path d="M' + f(len * 0.34) + "," + -4 * w + " L" + f(len * 0.94) + "," + -11 * w + '" stroke="#F6C98A" stroke-width="' + 3 * w + '" stroke-linecap="round"/>' +
+          '<rect x="' + -16 * w + '" y="' + -5 * w + '" width="' + 18 * w + '" height="' + 10 * w + '" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="' + 2.4 * w + '"/>';
+      }
+      // A long white beard hanging from y0 (person units) down to the shoes, centered on bx; .beard grows from y0.
+      function beard(bx, y0) {
+        var low = 96, mid = (y0 + low) / 2;
+        return '<g class="beard" data-y0="' + y0 + '"><path d="M' + (bx - 7) + "," + y0 + " L" + (bx + 7) + "," + y0 + " L" + (bx + 6) + "," + (y0 + 24) + " L" + (bx + 8) + "," + (y0 + 40) + " L" + (bx + 4) + "," + f(mid + 10) + " L" + (bx + 6) + "," + (low - 18) + " L" + (bx + 1) + "," + low +
+          " L" + (bx - 2) + "," + (low - 22) + " L" + (bx - 6) + "," + f(mid) + " L" + (bx - 4) + "," + (y0 + 30) + " L" + (bx - 8) + "," + (y0 + 14) + ' Z" fill="#E4E1D8" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+          '<path d="M' + (bx - 1) + "," + (y0 + 6) + " L" + bx + "," + (y0 + 40) + " M" + (bx + 2) + "," + (y0 + 10) + " L" + (bx + 3) + "," + (y0 + 52) + '" stroke="#A9A496" stroke-width="1.2"/></g>';
+      }
+      // A smoke wisp rising from (x, y), in plate units; .wisp drifts in the update.
+      function wisp(x, y, k) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"><path class="wisp" d="M0,0 q-12,-22 0,-44 q12,-22 0,-44 q-12,-22 0,-44" fill="none" stroke="#8C8782" stroke-width="7" stroke-linecap="round" opacity="0.85"/></g>'; }
+      // A sand island: its top from x0 to x1 at the ground, the front face sloping out to the waterline.
+      function island(x0, x1) {
+        return '<path d="M' + (x0 - 36) + ",-394 L" + x0 + "," + GI + " L" + (x0 + 30) + "," + (GI - 14) + " H" + (x1 - 30) + " L" + x1 + "," + GI + " L" + (x1 + 36) + ',-394 Z" fill="' + SAND + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x0 + 8) + "," + (GI - 2) + " L" + (x0 + 32) + "," + (GI - 12) + " H" + (x1 - 32) + " L" + (x1 - 8) + "," + (GI - 2) + ' Z" fill="' + GRASS + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x0 - 50) + ",-390 Q" + (x0 + x1) / 2 + ",-374 " + (x1 + 50) + ',-390" fill="none" stroke="' + SEA2 + '" stroke-width="6" stroke-linecap="round"/>';
+      }
+
+      // The cast. A Politician: young, old (white hair, a beard that grows) and his skeleton (tie and beard on the bones).
+      // Arms hang ([[-8,-4],[8,4]]); the bat is in his left hand: the arm turns about its shoulder and the bat is a lever
+      // from the hand (setSwing). The right one is the same drawing, mirrored.
+      var POLS = [{ x: XA, tie: C.war, tone: 1 }, { x: XB, tie: C.peri, tone: 3 }];
+      POLS.forEach(function (p) {
+        p.o = KIT.castOpts("politician", { look: "right", arms: [[-8, -4], [8, 4]], tieColor: p.tie, tone: p.tone });
+        p.R = KIT.rig(p.o);
+      });
+      var RP = POLS[0].R;
+      // Lever geometry (person units, facing right): from the left shoulder through the hand, then the bat. The hit
+      // points the lever at the other one's crown; the bat is as long as that takes.
+      function lever(R, dist) {
+        var S = R.shoulder[0], h0 = R.hand[0], l0 = Math.hypot(h0[0] - S[0], h0[1] - S[1]);
+        var T = [dist - R.head[0], R.head[1] - 14 * R.hs], hit = deg(Math.atan2(T[1] - S[1], T[0] - S[0]));
+        var S2 = R.shoulder[1], h2 = R.hand[1];
+        return { S: S, l0: l0, phi0: deg(Math.atan2(h0[1] - S[1], h0[0] - S[0])), hit: hit, len: Math.hypot(T[0] - S[0], T[1] - S[1]) - l0 + 4,
+          S2: S2, phi2: deg(Math.atan2(h2[1] - S2[1], h2[0] - S2[0])), point: deg(Math.atan2(T[1] + 20 - S2[1], T[0] - S2[0])) };
+      }
+      var LP = lever(RP, (XB - XA) / FK);
+      // Poses: [arm angle, bat angle] in SVG degrees. Rest: the bat over the shoulder; windup: overhead and back.
+      var REST = [40, -135], WIND = [-100, -165], HIT = [LP.hit, LP.hit];
+      function polDrawing(p, kind) {
+        var R = p.R;
+        if (kind === "young") return KIT.person(p.o);
+        if (kind === "old") return KIT.person(copy(p.o, { hairColor: "#EEEAE0" })) + beard(8, R.hy + 26 * R.hs);
+        var o = copy(p.o, { skeleton: true }), T = R.shoulder[0][1] - 4;
+        var tie = '<path d="M-3,' + T + " L3," + T + " L12," + (T + 34) + " L0," + (T + 44) + " L-12," + (T + 34) + ' Z" fill="' + p.tie + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>';
+        return KIT.person(o).replace('<g class="head">', tie + beard(5, R.hy + 20 * R.hs) + '<g class="head">');
+      }
+      function polSvg(p, i) {
+        var batSvg = bat(LP.len, 1.7);
+        return '<g id="' + ID + "-pol" + i + '" transform="translate(' + f(p.x) + "," + f(GI - 100 * FK) + ") scale(" + (i ? -FK : FK) + "," + FK + ')">' +
+          '<g class="alive"><g class="v-young">' + polDrawing(p, "young") + '</g><g class="v-old" opacity="0">' + polDrawing(p, "old") + "</g></g>" +
+          '<g class="bones">' + polDrawing(p, "bones") + "</g>" +
+          '<g class="ghost" opacity="0">' + batSvg + '</g><g class="ghost" opacity="0">' + batSvg + "</g>" +
+          '<g class="lever">' + batSvg + "</g></g>";
+      }
+      // A toddler (an everyday human with a big head and short legs): awake (scowling), yawning (eyes squeezed shut,
+      // mouth wider than the head) and asleep (lids shut), the bat a lever from the left hand as for the politicians.
+      var TB = { hs: 1.35, legs: 0.55, th: 0.62, tw: 0.8, neck: 0.2 };
+      var TODS = [{ x: TXA, o: { tone: 1, outfit: "overalls", color: 1, look: "right", mood: "cross", arms: [[-8, -4], [8, 4]], build: TB } },
+        { x: TXB, o: { tone: 2, outfit: "dress", hair: 1, color: 3, look: "right", mood: "cross", arms: [[-8, -4], [8, 4]], build: TB } }];
+      TODS.forEach(function (t) { t.R = KIT.rig(t.o); });
+      var LT = lever(TODS[0].R, (TXB - TXA) / NK);
+      function eyesTo(markup, mk) { var i = 0; return markup.replace(/<g class="eye">[\s\S]*?<\/g>/g, function () { return mk([-2.5, 10.8][i++ % 2]); }); }
+      function todDrawing(t, kind) {
+        if (kind === "awake") return KIT.person(t.o);
+        if (kind === "asleep") return eyesTo(KIT.person(copy(t.o, { mood: "smile" })), function (x) { return '<path d="M' + (x - 5) + ",-4 Q" + x + ",-0.5 " + (x + 5) + ',-4" fill="none" stroke="' + ink + '" stroke-width="2"/>'; });
+        var m = eyesTo(KIT.person(t.o), function (x) { return '<path d="M' + (x - 5) + ",-7 L" + (x + 4) + ",-4 L" + (x - 5) + ',-1" fill="none" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>'; });
+        return m.replace(/<path class="mouth"[^>]*\/>/, '<path class="mouth" d="M-4,6 Q6,-2 18,6 Q24,22 12,34 Q2,40 -6,30 Q-12,18 -4,6 Z" fill="#5A1F1A" stroke="' + ink + '" stroke-width="2.2"/><path d="M0,28 Q6,22 12,29 Q6,34 0,28 Z" fill="#D9715C"/>');
+      }
+      function todSvg(t, i) {
+        var batSvg = bat(LT.len, 1.4);
+        return '<g id="' + ID + "-tod" + i + '" transform="translate(' + f(t.x) + "," + f(TFEET - 100 * NK) + ") scale(" + (i ? -NK : NK) + "," + NK + ')"><g class="tbody">' +
+          '<g class="v-awake">' + todDrawing(t, "awake") + '</g><g class="v-yawn" opacity="0">' + todDrawing(t, "yawn") + '</g><g class="v-asleep" opacity="0">' + todDrawing(t, "asleep") + "</g>" +
+          '<g class="lever">' + batSvg + "</g></g></g>";
+      }
+      // The winged pillow, in plate units around (0, 0): about 116 x 46, a wing on each end (.wing-l, .wing-r flap).
+      function pillow() {
+        var wing = function (s) { return '<g class="wing-' + (s < 0 ? "l" : "r") + '" opacity="0"><path d="M' + 50 * s + ",-6 C" + 70 * s + ",-40 " + 96 * s + ",-46 " + 104 * s + ",-38 C" + 92 * s + ",-30 " + 96 * s + ",-22 " + 86 * s + ",-18 C" + 80 * s + ",-10 " + 66 * s + ",-4 " + 50 * s + ',4 Z" fill="#FFFFFF" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="round"/>' +
+          '<path d="M' + 62 * s + ",-14 L" + 84 * s + ",-30 M" + 60 * s + ",-6 L" + 82 * s + ',-18" stroke="#C9C2B5" stroke-width="2.2"/></g>'; };
+        return wing(-1) + wing(1) + '<path d="M-58,-14 Q-62,-24 -48,-23 Q0,-30 48,-23 Q62,-24 58,-14 Q64,4 58,18 Q62,26 48,25 Q0,30 -48,25 Q-62,26 -58,18 Q-64,4 -58,-14 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path d="M-38,-10 Q0,-4 38,-10 M-30,14 Q0,8 30,14" fill="none" stroke="#DCD3BC" stroke-width="3" stroke-linecap="round"/>';
+      }
+      // The cutaway house: rust gable roof, wallpapered back wall with a window onto the sea, cut wall sections, the
+      // floor slab, a round orange rug and toy blocks.
+      function house() {
+        var wp = '<defs><pattern id="' + ID + '-wp" width="60" height="60" patternUnits="userSpaceOnUse" x="' + HX0 + '" y="' + HTOP + '"><rect width="60" height="60" fill="#EFE3C4"/><path d="M30,8 L38,30 L30,52 L22,30 Z" fill="none" stroke="#E3C88F" stroke-width="3"/></pattern></defs>';
+        var blocks = [[HX0 + 60, FLOOR - 15, C.war], [HX0 + 92, FLOOR - 15, C.med], [HX0 + 76, FLOOR - 45, C.yellow], [HX0 + 124, FLOOR - 15, C.peri]].map(function (b) {
+          return '<rect x="' + (b[0] - 15) + '" y="' + (b[1] - 15) + '" width="30" height="30" fill="' + b[2] + '" stroke="' + ink + '" stroke-width="3"/>'; }).join("");
+        return wp + '<path d="M' + (HX0 - 70) + "," + HTOP + " L" + HMID + "," + PEAK + " L" + (HX1 + 70) + "," + HTOP + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>' +
+          '<path d="M' + (HX0 + 10) + "," + (HTOP - 16) + " L" + HMID + "," + (PEAK + 22) + " L" + (HX1 - 10) + "," + (HTOP - 16) + '" fill="none" stroke="#B5684A" stroke-width="5"/>' +
+          '<rect x="' + (HX0 + 20) + '" y="' + HTOP + '" width="' + (HX1 - HX0 - 40) + '" height="' + (FLOOR - HTOP) + '" fill="url(#' + ID + '-wp)" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="-700" y="-280" width="190" height="140" fill="' + SEA2 + '" stroke="' + ink + '" stroke-width="5"/><path d="M-605,-280 V-140 M-700,-210 H-510" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="-722" y="-140" width="234" height="14" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + HX0 + '" y="' + HTOP + '" width="24" height="' + (FLOOR - HTOP + 10) + '" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + (HX1 - 24) + '" y="' + HTOP + '" width="24" height="' + (FLOOR - HTOP + 10) + '" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + (HX0 - 14) + '" y="' + FLOOR + '" width="' + (HX1 - HX0 + 28) + '" height="40" fill="#A8794E" stroke="' + ink + '" stroke-width="5"/>' +
+          '<ellipse cx="' + (HMID + 10) + '" cy="' + (FLOOR - 6) + '" rx="340" ry="24" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="4"/><ellipse cx="' + (HMID + 10) + '" cy="' + (FLOOR - 6) + '" rx="290" ry="15" fill="none" stroke="' + C.cream + '" stroke-width="4"/>' + blocks;
+      }
+      // The whole plate. Element ids: cap0/1 and crater0/1 (each capitol, whole and burnt flat), nk0..nk7 (the tiny
+      // clouds), bign (the big cloud), cal (the calendar), pg0..pg13 (its flying pages), pol0/1, tod0/1, pillow, z0..z5.
+      var NKS = [[CAPX[1] - 30, 0.2], [CAPX[0] + 30, 0.2], [CAPX[1] - 60, 0.13], [CAPX[0] + 50, 0.13], [CAPX[1] + 110, 0.15], [CAPX[0] - 110, 0.15], [CAPX[1] - 10, 0.12], [CAPX[0] + 5, 0.12]];
+      function plateSvg() {
+        var waves = "", r = KIT.rng(77);
+        for (var i = 0; i < 70; i++) { var wx = -2400 + r() * 4200, wy = HORIZON + 40 + r() * 1150; waves += '<path d="M' + f(wx) + "," + f(wy) + ' q14,-8 28,0 q14,8 28,0" fill="none" stroke="' + SEA2 + '" stroke-width="4" stroke-linecap="round"/>'; }
+        var bg = '<rect x="-4000" y="-4000" width="8000" height="' + (4000 + HORIZON) + '" fill="' + SKY + '"/><rect x="-4000" y="' + HORIZON + '" width="8000" height="8000" fill="' + SEA + '"/>' +
+          '<path d="M-4000,' + HORIZON + ' H4000" stroke="' + ink + '" stroke-width="3"/>' + waves;
+        var nks = NKS.map(function (n, i) { return '<g id="' + ID + "-nk" + i + '" opacity="0" transform="translate(' + f(n[0]) + "," + f(GI - 8) + ") scale(" + n[1] + ')">' + KIT.nuke() + "</g>"; }).join("");
+        var bign = '<g id="' + ID + '-bign" opacity="0" transform="translate(' + CALX + "," + (GI - 6) + ') scale(0.45)">' + KIT.nuke() + "</g>";
+        var caps = CAPX.map(function (x, i) {
+          var whole = '<g id="' + ID + "-cap" + i + '" transform="translate(' + x + "," + (GI - 6) + ') scale(' + CAPK + ')">' + KIT.props.capitol() + "</g>";
+          var crater = '<g id="' + ID + "-crater" + i + '" opacity="0"><ellipse cx="' + x + '" cy="' + (GI - 8) + '" rx="96" ry="9" fill="#3B3229" stroke="' + ink + '" stroke-width="3"/>' +
+            '<g transform="translate(' + x + "," + (GI - 6) + ') scale(' + CAPK * 1.06 + "," + CAPK * 0.2 + ')">' + KIT.burn(KIT.props.capitol()) + "</g>" +
+            [-50, 0, 50].map(function (dx) { return wisp(x + dx, GI - 20, 0.8); }).join("") + "</g>";
+          return whole + crater;
+        }).join("");
+        var calSvg = '<rect x="' + (CALX - 6) + '" y="' + (CALY - 4) + '" width="12" height="60" fill="#7A5634" stroke="' + ink + '" stroke-width="3"/>' +
+          '<g id="' + ID + '-cal" transform="translate(' + CALX + "," + CALY + ')">' + KIT.props.calendar({ month: "YEAR", day: "1" }) + "</g>";
+        var pages = "";
+        for (var j = 0; j < 14; j++) pages += '<g id="' + ID + "-pg" + j + '" opacity="0"><path d="M-40,-41 H40 V41 H-40 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="3.6"/><path d="M-40,-41 H40 V-22 H-40 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="3.6"/></g>';
+        var shore = '<path d="M-4000,80 Q-1800,0 -900,50 Q-200,95 700,70 Q1600,50 4000,100 V4000 H-4000 Z" fill="' + SAND + '" stroke="' + ink + '" stroke-width="5"/>';
+        var zs = [0, 1, 2, 3, 4, 5].map(function (i) { return '<g id="' + ID + "-z" + i + '" opacity="0"><path d="M-9,-27 H9 L-9,-2 H9" fill="none" stroke="' + C.navy + '" stroke-width="5.5" stroke-linejoin="miter" stroke-linecap="square"/></g>'; }).join("");
+        return bg + island(-330, 150) + island(270, 750) + nks + bign + caps + calSvg + POLS.map(polSvg).join("") +
+          shore + house() + '<g id="' + ID + '-pillow" transform="translate(' + PILLOW0[0] + "," + PILLOW0[1] + ')"><g class="pil">' + pillow() + "</g></g>" + TODS.map(todSvg).join("") + zs + pages;
+      }
+      // Posing (every frame). A pose is [arm angle, bat angle] in SVG degrees; the arm turns about its shoulder from
+      // where it hangs, and the bat sits on the hand at its own angle.
+      function setSwing(g, L, pose) {
+        var ra = pose[0] - L.phi0, hx = L.S[0] + L.l0 * Math.cos(rad(pose[0])), hy = L.S[1] + L.l0 * Math.sin(rad(pose[0]));
+        Array.prototype.forEach.call(g.querySelectorAll(".arm-l"), function (a) { a.setAttribute("transform", "rotate(" + f(ra) + " " + f(L.S[0]) + " " + f(L.S[1]) + ")"); });
+        g.querySelector(".lever").setAttribute("transform", "translate(" + f(hx) + "," + f(hy) + ") rotate(" + f(pose[1]) + ")");
+      }
+      function ghost(g, L, pose, i, op) {
+        var gh = g.querySelectorAll(".ghost")[i], hx = L.S[0] + L.l0 * Math.cos(rad(pose[0])), hy = L.S[1] + L.l0 * Math.sin(rad(pose[0]));
+        gh.setAttribute("opacity", op.toFixed(2));
+        gh.setAttribute("transform", "translate(" + f(hx) + "," + f(hy) + ") rotate(" + f(pose[1]) + ")");
+      }
+      function setPoint(g, L, u) {
+        Array.prototype.forEach.call(g.querySelectorAll(".bones .arm-r"), function (a) { a.setAttribute("transform", "rotate(" + f((L.point - L.phi2) * u) + " " + f(L.S2[0]) + " " + f(L.S2[1]) + ")"); });
+      }
+      // squash a head flat about its neck: k 0 is round, 1 is flat
+      function setSquash(g, R, k) {
+        var sx = 1 + 0.45 * k, sy = 1 - 0.6 * k, n = R.neck;
+        Array.prototype.forEach.call(g.querySelectorAll(".head"), function (h) { h.setAttribute("transform", k ? "translate(" + f(n[0]) + "," + f(n[1]) + ") scale(" + sx.toFixed(3) + "," + sy.toFixed(3) + ") translate(" + f(-n[0]) + "," + f(-n[1]) + ")" : ""); });
+      }
+      var mixP = function (a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; };
+      // One bonk landing at time h: wind up over w seconds, strike in the last 0.09, hold the contact, swing back.
+      function bonkPose(t, h, w, rest, hit) {
+        rest = rest || REST; hit = hit || HIT;
+        var a = t - (h - w);
+        if (a < 0 || t > h + 0.42) return null;
+        if (t < h - 0.09) return mixP(rest, WIND, KIT.smooth(a / (w - 0.09)));
+        if (t < h) { var u = (t - (h - 0.09)) / 0.09; return mixP(WIND, hit, u * u); }
+        if (t < h + 0.06) return hit;
+        return mixP(hit, rest, KIT.smooth((t - h - 0.06) / 0.36));
+      }
+      // The squash a head takes from a bonk that lands at h: flat at once, then a springy rebound.
+      function squashAt(t, h) { var d = t - h; return d < 0 || d > 0.6 ? 0 : Math.max(-0.25, Math.exp(-d * 7) * Math.cos(d * 26)); }
+      // After the double bonk the skeletons keep at it for good: the same rhythm in both scenes, in part time.
+      var LOOP0 = KIT.scene("nations-foam-bats").start + KIT.after("nations-foam-bats", "last."), LOOPP = 1.0;
+      function loopHits(first, a, b) { var out = []; for (var h = LOOP0 + first; h < T0 + b + 1; h += LOOPP) if (h > T0 + a - 1) out.push(h - T0); return out; }
+      // the craters' smoke (and any other .wisp), drifting up in part time so it carries across the seam
+      function drift(root, t) {
+        Array.prototype.forEach.call(root.querySelectorAll(".wisp"), function (w, j) {
+          var tt = T0 + t, ph = (tt * 0.9 + j * 0.37) % 1;
+          w.setAttribute("transform", "translate(" + f(Math.sin(tt * 2 + j) * 6) + "," + f(-ph * 30) + ")");
+          w.setAttribute("opacity", (0.85 * Math.sin(Math.PI * ph)).toFixed(2));
+        });
+      }
+      // ════ end of the plate ════
+
+      q("plate").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-cam">' + plateSvg() + "</g>");
+      var cam = q("cam"), pol = [q("pol0"), q("pol1")], cal = q("cal");
+      var calNums = cal.querySelectorAll('text[font-weight="900"]');
+      // the calendar prints every page twice (the page over its under-print), so their numbers overlap on purpose
+      Array.prototype.forEach.call(cal.querySelectorAll("text"), function (tx) { tx.setAttribute("data-layout-allow-overlap", ""); });
+      var pages = []; for (var pi = 0; pi < 14; pi++) pages.push(q("pg" + pi));
+
+      // ── Cues ──
+      var tHit = cue("hitting") + 0.03, tEach = cue("each") + 0.04, tTen = cue("ten"), tYears = cue("years"), tBecause = cue("because"), tLast = cue("last.");
+      var tDouble = KIT.after(ID, "last."), tWhite = tTen + 0.5, tCrumble = cue("thousand") + 0.3, tCal1 = tYears + 0.45;
+
+      // ── The camera: both islands for the establishing beat, a push in for the duel, and a push in at the freeze.
+      var VIEW = V
+        ? { islands: [CALX, -660, 1.15], pair: [CALX, -650, 1.34], duel: [CALX, -700, 1.85], close: [CALX, -715, 2.3] }
+        : { islands: [CALX, -585, 1.5], duel: [CALX, -585, 2.15], close: [CALX, -590, 2.6] };
+      // (9:16 is too narrow for the capitols in the duel framing, so it holds a looser pair, the tiny clouds in view, until the blur)
+      var KEYS = V
+        ? [[0, "islands", 1], [0.5, "islands", 1.03], [0.85, "pair", 1], [tTen - 0.35, "pair", 1.03], [tTen + 0.1, "duel", 1], [tBecause, "duel", 1.04], [tBecause + 0.3, "close", 1], [D, "close", 1.04]]
+        : [[0, "islands", 1], [0.5, "islands", 1.03], [0.85, "duel", 1], [tBecause, "duel", 1.04], [tBecause + 0.3, "close", 1], [D, "close", 1.04]];
+      var camera = KIT.camera(VIEW, KEYS);
+
+      // ── The tiny clouds: one behind each capitol on the first two bonks, then a crowd during the blur.
+      var NK_T = [tHit + 0.12, tEach + 0.12, tTen + 0.15, tTen + 0.3, tTen + 0.45, tTen + 0.6, tTen + 0.75, tTen + 0.9];
+      NK_T.forEach(function (tn, i) {
+        var e = q("nk" + i);
+        tl.set(e, { opacity: 1 }, tn);
+        KIT.boom(tl, e, tn);
+        tl.to(e, { opacity: 0, duration: 0.5, ease: "power1.in" }, tn + (i < 2 ? 1.0 : 0.7));
+      });
+      // ── "years": both x-ray into skeletons.
+      pol.forEach(function (g) { KIT.xray(tl, g.querySelector(".alive"), g.querySelector(".bones"), tYears); });
+
+      // A's and B's bonks before the blur, and the loop after the double bonk.
+      var HITS = [[tHit], [tEach]];
+      var LOOPH = [loopHits(0.8, 0, D), loopHits(1.3, 0, D)];
+      var BLUR = 0.18;
+      function blurS(i, t) { var ph = (t - tTen) / BLUR + (i ? 0.5 : 0); return 0.5 - 0.5 * Math.cos(2 * Math.PI * ph); }
+      var FREEZE = [0.94, 0.04];
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+
+        // the politicians
+        var sq = [0, 0];
+        pol.forEach(function (g, i) {
+          var pose = REST, pointU = 0, gh = [0, 0];
+          if (t < tTen) {
+            HITS[i].forEach(function (h) { pose = bonkPose(t, h, 0.32) || pose; });
+          } else if (t < tBecause) {
+            var s = blurS(i, t), ramp = KIT.smooth((t - tTen) / 0.15);
+            pose = mixP(REST, mixP(WIND, HIT, s), ramp);
+            gh = [mixP(WIND, HIT, blurS(i, t - BLUR * 0.22)), mixP(WIND, HIT, blurS(i, t - BLUR * 0.44))];
+            ghost(g, LP, gh[0], 0, 0.42 * ramp); ghost(g, LP, gh[1], 1, 0.24 * ramp);
+            if (s > 0.8) sq[1 - i] = Math.max(sq[1 - i], (s - 0.8) / 0.2 * 0.9);
+          } else if (t < tLast) {
+            pose = mixP(WIND, HIT, FREEZE[i]);
+          } else if (t < tDouble - 0.32) {
+            var u = KIT.smooth((t - tLast) / 0.18);
+            pose = mixP(mixP(WIND, HIT, FREEZE[i]), REST, u);
+            pointU = u * (1 - KIT.smooth((t - (tDouble - 0.45)) / 0.12));
+          } else {
+            pose = bonkPose(t, tDouble, 0.32) || REST;
+            LOOPH[i].forEach(function (h) { pose = bonkPose(t, h, 0.32) || pose; });
+          }
+          if (t < tTen || t >= tBecause) { g.querySelectorAll(".ghost").forEach(function (e) { e.setAttribute("opacity", 0); }); }
+          setSwing(g, LP, pose);
+          setPoint(g, LP, pointU);
+          // the hair goes white and the beard grows during the blur
+          var old = t >= tWhite;
+          g.querySelector(".v-young").setAttribute("opacity", old ? 0 : 1);
+          g.querySelector(".v-old").setAttribute("opacity", old ? 1 : 0);
+          var grow = KIT.smooth((t - tTen - 0.2) / 0.9);
+          Array.prototype.forEach.call(g.querySelectorAll(".beard"), function (b) {
+            var y0 = +b.getAttribute("data-y0");
+            b.setAttribute("transform", "translate(0," + f(y0) + ") scale(1," + Math.max(0.001, grow).toFixed(3) + ") translate(0," + f(-y0) + ")");
+          });
+        });
+        // the heads squash on each bonk (B's head when A lands one, and the other way round)
+        [0, 1].forEach(function (i) {
+          var k = sq[i];
+          HITS[1 - i].concat(LOOPH[1 - i], [tDouble]).forEach(function (h) { var s2 = squashAt(t, h); if (Math.abs(s2) > Math.abs(k)) k = s2; });
+          if (t >= tBecause && t < tLast) k = 0;
+          setSquash(pol[i], POLS[i].R, k);
+        });
+
+        // the calendar: its number races up during the blur and stops on 10,000
+        var cu = KIT.smooth((t - tTen) / (tCal1 - tTen)), n = t < tTen ? 1 : Math.max(1, Math.round(10000 * Math.pow(cu, 2.2)));
+        if (cu >= 1) n = 10000;
+        var str = n.toLocaleString("en-US");
+        Array.prototype.forEach.call(calNums, function (tx) {
+          tx.textContent = str;
+          if (KIT.textWidth(str, 32, "Fraunces") > 62) { tx.setAttribute("font-size", "30"); tx.setAttribute("textLength", "62"); tx.setAttribute("lengthAdjust", "spacingAndGlyphs"); }
+          else { tx.setAttribute("font-size", str.length > 2 ? "32" : "44"); tx.removeAttribute("textLength"); }
+        });
+        // its torn pages fly off in a blizzard
+        pages.forEach(function (pg, j) {
+          var born = tTen + 0.05 + j * ((tCal1 - tTen - 0.1) / 14), age = t - born, life = 0.75;
+          if (age < 0 || age > life) { pg.setAttribute("opacity", 0); return; }
+          var r = KIT.rng(j * 31 + 7), dx = (r() < 0.5 ? -1 : 1) * (120 + r() * 260), u = age / life;
+          var x = CALX + dx * u, y = CALY - 60 - (420 + r() * 200) * u + 260 * u * u, rot = (r() - 0.5) * 900 * u;
+          pg.setAttribute("opacity", (1 - u * u).toFixed(2));
+          pg.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") rotate(" + f(rot) + ") scale(" + (0.9 - 0.3 * u).toFixed(2) + ")");
+        });
+
+        // the capitols crumble into smoking craters
+        [0, 1].forEach(function (i) {
+          var cg = q("cap" + i), cr = q("crater" + i), cu2 = (t - tCrumble) / 0.22;
+          cg.setAttribute("opacity", cu2 < 1 ? 1 : 0);
+          var sy = cu2 <= 0 ? 1 : Math.max(0.2, 1 - 0.8 * cu2);
+          cg.setAttribute("transform", "translate(" + CAPX[i] + "," + (GI - 6) + ") scale(" + CAPK + "," + (CAPK * sy).toFixed(3) + ")");
+          cr.setAttribute("opacity", cu2 >= 1 ? 1 : 0);
+        });
+        drift(cam, t);
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

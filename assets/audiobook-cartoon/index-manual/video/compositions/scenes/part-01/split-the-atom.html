@@ -1,0 +1,392 @@
+<template id="split-the-atom-template">
+  <!-- split-the-atom · Layer B, plate atom-globe (storyboards/part-01-opening.md): one long plate on a plain field.
+       Left: a fluted pedestal with a red velvet cushion and a big glowing atom wearing a "DO NOT CUT" tag. Right, DX
+       further along: a 1950s classroom globe on its brass stand, two little men standing on top of it (the US in an
+       Uncle Sam hat on the left, the USSR in an ushanka on the right), each with his flag planted beside him.
+       "watching": on the atom, humming; "nineteen forty-five": "1945" stamps into the sky; "split": the Scientist
+       tiptoes in with giant shears; "Greek": push in on the tag; "cut,": the blades open round the atom, she reads the
+       tag and looks at us; "naturally,": she grins; after "it.": SNIP, the halves drop off the cushion, sparks, the tag
+       flutters down; "very human": she holds the shears up, proud; "assumed": the halves fly off to the right (the
+       camera travels with them) over to the globe and into the two men's raised hands; "unlimited": the halves glow;
+       "free energy": the land lights up with little warm city lights, one after another, and both men grin. Hold.
+       The plate's drawing code and VIEW table are copied in pointing-at-each-other.html: change both. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #EFE3C4; }
+    #split-the-atom-weave, #split-the-atom-shake, #split-the-atom-plate, #split-the-atom-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="split-the-atom" data-width="1920" data-height="1080" data-start="0" data-duration="17.9">
+    <div id="split-the-atom-weave">
+      <div id="split-the-atom-shake"><div id="split-the-atom-plate"></div></div>
+    </div>
+    <div id="split-the-atom-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "split-the-atom";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, smooth = KIT.smooth;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 141);
+
+      // ═══ ATOM-GLOBE plate (the same code is in pointing-at-each-other.html: change both) ═══
+      // In plate units. The horizon is at y 700; the pedestal and the globe's base stand on y 920 (FEET). The atom
+      // station is at x 300..1300; DX further right, a 1950s classroom globe with two little men standing on top of it.
+      var SKY = "#EFE3C4", GROUND = "#C8B07B", EDGE = "#B09363", BRASS = "#C99A3E", CITY_LIT = "#FFD66E";
+      var HZ = 700, FEET = 920, DX = 1800;
+      var AT = [960, 410], AR = 105, NUC = 40;
+      var SCI_X = V ? 610 : 470, SCI_K = 2.4;
+      var KNOT = [AT[0] + 95, AT[1] - 10], HALF_K = 0.75, HELD_K = 0.42;
+      // The globe: radius GR round GC, cradled in a brass half-ring on a post and a round base. The men stand straight
+      // out from it MAN_A degrees either side of the top, each half the radius tall; their flags are planted at FLAG_A.
+      var GR = 300, GC = [DX + 960, FEET - 130 - GR], MAN_A = 38, MAN_K = GR / 200, FLAG_A = 66, FLAG_K = 0.66;
+      // The camera's views: [plate x, plate y, scale]. split-the-atom ends on "globe", where pointing-at-each-other starts.
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { atom: [1010, 430, 1.75], sky: [990, 330, 1.2], stage: [900, 560, 1.25], tag: [1180, 490, 3.3], sci: [830, 640, 1.4],
+            globe: [GC[0], 500, 1.1], top: [GC[0], 290, 1.2], boom: [GC[0], 190, 1.12], char: [GC[0], 280, 1.22] }
+        : { atom: [1010, 440, 1.55], sky: [980, 390, 1.1], stage: [780, 580, 1.05], tag: [1180, 490, 2.6], sci: [660, 515, 1.25],
+            globe: [GC[0], 420, 1.04], top: [GC[0], 250, 1.45], boom: [GC[0], 170, 1.2], char: [GC[0], 255, 1.5] };
+
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var burn = KIT.burn;
+
+      function field() {
+        return '<rect x="-3000" y="-3000" width="9000" height="' + (3000 + HZ) + '" fill="' + SKY + '"/>' +
+          '<rect x="-3000" y="' + HZ + '" width="9000" height="4000" fill="' + GROUND + '"/>' +
+          '<path d="M-3000,' + HZ + ' H6000" stroke="' + EDGE + '" stroke-width="4"/>';
+      }
+      // The fluted pedestal and the red velvet cushion with gold tassels, the cushion's top at about y 508.
+      function pedestal() {
+        var col = '<rect x="860" y="596" width="200" height="294" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5"/>' +
+          [895, 940, 985, 1030].map(function (x) { return '<path d="M' + x + ',606 V880" stroke="#D8CCAE" stroke-width="6"/>'; }).join("") +
+          '<rect x="830" y="560" width="260" height="36" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="830" y="890" width="260" height="30" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5"/>';
+        var tassel = function (x, d) { return '<path d="M' + x + ',560 l' + 4 * d + ',22 l' + -8 * d + ',2 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.5" stroke-linejoin="round"/><circle cx="' + x + '" cy="561" r="5" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.5"/>'; };
+        var cushion = '<path d="M818,562 Q826,510 960,506 Q1094,510 1102,562 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M850,540 Q900,522 960,520" fill="none" stroke="#E06A50" stroke-width="5" stroke-linecap="round"/>' + tassel(822, -1) + tassel(1098, 1);
+        return col + cushion;
+      }
+      // The atom (the film's emblem) around (0, 0): a soft glow, three orbits, a big orange nucleus, three electrons.
+      function nucleus(r) {
+        return '<circle r="' + r + '" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="5"/><circle cx="-12" cy="-13" r="' + f(r * 0.3) + '" fill="' + C.yellow + '"/>';
+      }
+      function atomWhole() {
+        var e = [0, 1, 2].map(function (i) { return '<circle class="atom-e" r="9" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>'; }).join("");
+        return '<circle class="atom-glow" r="128" fill="' + C.yellow + '" opacity="0.28"/><circle class="atom-glow2" r="92" fill="' + C.yellow + '" opacity="0.3"/>' +
+          KIT.atom(0, 0, AR, ink) + nucleus(NUC) + e;
+      }
+      // A half of the atom (side -1 keeps x < 0, +1 keeps x > 0): half the glow, half the orbits, half the nucleus,
+      // and its glowing cut face along x 0. Its .half-glow (off at first) is the free energy.
+      function half(side) {
+        var cid = ID + "-clip" + (side < 0 ? "L" : "R"), clip = side < 0 ? "M-200,-200 H0 V200 H-200 Z" : "M0,-200 H200 V200 H0 Z";
+        return '<circle class="half-glow" r="170" fill="' + CITY_LIT + '" opacity="0"/><circle class="half-glow" r="120" fill="' + CITY_LIT + '" opacity="0"/>' +
+          '<clipPath id="' + cid + '"><path d="' + clip + '"/></clipPath><g clip-path="url(#' + cid + ')">' +
+          '<circle r="128" fill="' + C.yellow + '" opacity="0.3"/>' + KIT.atom(0, 0, AR, ink) + nucleus(NUC) + "</g>" +
+          '<path d="M0,-' + (NUC + 2) + " V" + (NUC + 2) + '" stroke="' + C.yellow + '" stroke-width="10" stroke-linecap="round"/>' +
+          '<path d="M0,-' + (NUC - 8) + " V" + (NUC - 8) + '" stroke="#FFF6D8" stroke-width="4" stroke-linecap="round"/>';
+      }
+      // The giant shears, pivot at (0, 0), pointing +x, blades `len` long; two pieces (a blade and the ring on the
+      // other side) that open by turning about the pivot.
+      function shears(len) {
+        var piece = function (s, fill) {
+          return '<g class="shear-' + (s < 0 ? "a" : "b") + '"><path d="M-14,' + 7 * s + " L" + len + "," + 1 * s + " L" + (len - 46) + "," + -9 * s + " L-14," + -6 * s + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+            '<path d="M' + (len - 60) + "," + -4 * s + " L" + 40 + "," + -2 * s + '" stroke="#FFFFFF" stroke-width="3" opacity="0.7"/>' +
+            '<path d="M-8,' + -3 * s + " L-58," + -16 * s + '" stroke="' + C.slate + '" stroke-width="10" stroke-linecap="round"/>' +
+            '<circle cx="-80" cy="' + -20 * s + '" r="24" fill="none" stroke="' + ink + '" stroke-width="15"/><circle cx="-80" cy="' + -20 * s + '" r="24" fill="none" stroke="' + C.war + '" stroke-width="9"/></g>';
+        };
+        return piece(-1, "#C9CED6") + piece(1, "#AEB6C2") + '<circle r="8" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3"/>';
+      }
+
+      // ── The globe ──
+      // A point `up` above the globe's surface, `deg` degrees clockwise from its top.
+      function surf(deg, up) { var r = (deg * Math.PI) / 180, d = GR + (up || 0); return [GC[0] + d * Math.sin(r), GC[1] - d * Math.cos(r)]; }
+      // The classroom globe (KIT.props.earthGlobe) in a brass half-ring from side to side, on a post and a round base.
+      function globe() {
+        var cx = GC[0], cy = GC[1], rr = GR + 24, bot = cy + rr;
+        var ringD = "M" + f(cx - rr) + "," + f(cy) + " A" + rr + "," + rr + " 0 0 0 " + f(cx + rr) + "," + f(cy);
+        var base = '<path d="M' + (cx - 150) + "," + FEET + " Q" + (cx - 140) + "," + (FEET - 74) + " " + cx + "," + (FEET - 76) + " Q" + (cx + 140) + "," + (FEET - 74) + " " + (cx + 150) + "," + FEET + ' Z" fill="' + BRASS + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M' + (cx - 104) + "," + (FEET - 38) + " Q" + (cx - 64) + "," + (FEET - 62) + " " + (cx - 14) + "," + (FEET - 64) + '" fill="none" stroke="' + C.yellow + '" stroke-width="7" stroke-linecap="round"/>' +
+          '<rect x="' + (cx - 166) + '" y="' + (FEET - 12) + '" width="332" height="16" rx="5" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="4"/>';
+        var post = '<rect x="' + (cx - 13) + '" y="' + f(bot - 6) + '" width="26" height="' + f(FEET - 70 - bot + 6) + '" fill="' + BRASS + '" stroke="' + ink + '" stroke-width="4"/>';
+        var ring = '<path d="' + ringD + '" fill="none" stroke="' + ink + '" stroke-width="24"/><path d="' + ringD + '" fill="none" stroke="' + BRASS + '" stroke-width="14"/>';
+        var knob = function (s) { return '<circle cx="' + f(cx + s * rr) + '" cy="' + f(cy) + '" r="15" fill="' + BRASS + '" stroke="' + ink + '" stroke-width="4"/><circle cx="' + f(cx + s * rr) + '" cy="' + f(cy) + '" r="5" fill="' + ink + '"/>'; };
+        return base + post + ring + at(cx, cy + GR, 1, KIT.props.earthGlobe({ r: GR })) + knob(-1) + knob(1);
+      }
+      // The city lights, on the globe's land (in KIT.props.earthGlobe's continent units, 110 to the radius), in the
+      // order they come on; each a .city group, hidden at first.
+      var CITY = [[-35, -64], [52, -62], [-55, -50], [62, 30], [-14, -66], [-24, -38], [46, 50], [-48, -26], [58, -49], [72, 48], [-62, -12], [-8, -14], [40, 24], [-36, 10], [58, 64]];
+      function cities() {
+        return CITY.map(function (c) {
+          var p = [GC[0] + (c[0] * GR) / 110, GC[1] + (c[1] * GR) / 110];
+          return '<g class="city" opacity="0" transform="translate(' + f(p[0]) + "," + f(p[1]) + ')"><circle class="city-glow" r="34" fill="' + CITY_LIT + '" opacity="0.5"/>' +
+            '<circle r="13" fill="' + CITY_LIT + '" stroke="' + ink + '" stroke-width="2.6"/><circle cx="-2.5" cy="-2.5" r="4.5" fill="#FFFBEF"/></g>';
+        }).join("");
+      }
+      // The flags, the pole's foot at (0, 0) and the cloth to its right: the US (side -1) and the USSR (+1).
+      function flag(side) {
+        var x = 0, top = -210, w = 112, h = 74, fx = x + 5, us = side < 0, cloth = "";
+        if (us) {
+          for (var s = 0; s < 7; s++) cloth += '<rect x="' + fx + '" y="' + f(top + (s * h) / 7) + '" width="' + w + '" height="' + f(h / 7 + 0.5) + '" fill="' + (s % 2 ? C.cream : C.war) + '"/>';
+          cloth += '<rect x="' + fx + '" y="' + top + '" width="48" height="' + f((h * 4) / 7) + '" fill="' + C.navy + '"/>';
+          for (var r = 0; r < 3; r++) for (var c = 0; c < 4; c++) cloth += '<circle cx="' + (fx + 7 + c * 11) + '" cy="' + f(top + 7 + r * 13) + '" r="2.6" fill="' + C.cream + '"/>';
+        } else {
+          // the Soviet flag: the hammer and sickle under a small star, top left
+          var hx = fx + 24, hy = top + 30, gold = C.yellow;
+          cloth += '<rect x="' + fx + '" y="' + top + '" width="' + w + '" height="' + h + '" fill="' + C.war + '"/>' + KIT.star(hx + 2, top + 9, 6, gold, 5) +
+            '<path d="M' + (hx - 9) + "," + (hy - 6) + " A11,11 0 1 0 " + (hx + 6) + "," + (hy - 12) + '" fill="none" stroke="' + gold + '" stroke-width="3.6" stroke-linecap="round"/>' +
+            '<path d="M' + (hx - 7) + "," + (hy + 9) + " L" + (hx + 6) + "," + (hy - 4) + '" stroke="' + gold + '" stroke-width="3.6" stroke-linecap="round"/>' +
+            '<path d="M' + (hx + 2) + "," + (hy - 9) + " L" + (hx + 11) + "," + hy + '" stroke="' + gold + '" stroke-width="5.5" stroke-linecap="butt"/>';
+        }
+        return '<rect x="' + (x - 4) + '" y="' + (top - 8) + '" width="8" height="' + (-top + 8) + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.5"/>' +
+          '<circle cx="' + x + '" cy="' + (top - 10) + '" r="7" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.5"/>' +
+          '<g>' + cloth + '<rect x="' + fx + '" y="' + top + '" width="' + w + '" height="' + h + '" fill="none" stroke="' + ink + '" stroke-width="3"/></g>';
+      }
+      // A flag planted in the globe at FLAG_A on its side, standing straight out, its cloth toward the top.
+      function flagAt(side, draw) {
+        var p = surf(side * FLAG_A);
+        return '<g transform="translate(' + f(p[0]) + "," + f(p[1]) + ") rotate(" + side * FLAG_A + ") scale(" + (side > 0 ? -FLAG_K : FLAG_K) + "," + FLAG_K + ')">' + (draw || flag)(side) + "</g>";
+      }
+
+      // ── The two men: the powers that got the bomb, the US on the left (0) and the USSR on the right (1).
+      var NB = [
+        { tone: 1, outfit: "shirt", color: 2, hair: 0, seed: 21, hat: "uncleSam" },
+        { tone: 0, outfit: "shirt", color: 1, hair: 0, seed: 22, hat: "ushanka" },
+      ];
+      // Each holds his half up in front of him in his near hand (A's .arm-r, B's .arm-l), toward the other.
+      var HOLD_ARMS = [[[-10, -4], [100, 140]], [[-100, -140], [10, 4]]], HOLD_HAND = [1, 0];
+      // An actor: one drawing per pose, one shown at a time, in a group placed by the update.
+      function actor(name, base, poses, k) {
+        var g = "", rig = {};
+        Object.keys(poses).forEach(function (n) {
+          var o = copy(base, poses[n]);
+          rig[n] = KIT.rig(o);
+          g += '<g class="pose" data-pose="' + n + '" opacity="0">' + KIT.person(o) + "</g>";
+        });
+        return { name: name, k: k, rig: rig, svg: '<g id="' + ID + "-" + name + '"><g transform="scale(' + k + ')">' + g + "</g></g>" };
+      }
+      // Man i stands MAN_A degrees left (0) or right (1) of the top, turned to stand straight out from the globe.
+      function manRot(i) { return i ? MAN_A : -MAN_A; }
+      function placeMan(a, i, pose) {
+        Object.keys(a.els).forEach(function (n) { a.els[n].setAttribute("opacity", n === pose ? 1 : 0); });
+        var p = surf(manRot(i));
+        document.getElementById(ID + "-" + a.name).setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + manRot(i) + ") translate(0," + f(-100 * a.k) + ")");
+      }
+      // A point of man i, in his own units, in plate units.
+      function manPt(a, i, pt) {
+        var p = surf(manRot(i)), r = (manRot(i) * Math.PI) / 180, x = a.k * pt[0], y = a.k * (pt[1] - 100);
+        return [p[0] + x * Math.cos(r) - y * Math.sin(r), p[1] + x * Math.sin(r) + y * Math.cos(r)];
+      }
+      // Where man i's half sits when he holds it up in pose `pose`: just past his hand, along the arm.
+      function heldAt(a, i, pose) {
+        var R = a.rig[pose], j = HOLD_HAND[i], h = R.hand[j], s = R.shoulder[j], dx = h[0] - s[0], dy = h[1] - s[1], d = Math.hypot(dx, dy) || 1;
+        return manPt(a, i, [h[0] + (dx / d) * 18, h[1] + (dy / d) * 18]);
+      }
+      // ═══ end of the shared plate ═══
+
+      // ── The cast ──
+      // The Scientist holds the shears in both hands.
+      var SCI = KIT.castOpts("scientist", { look: "right", mood: "eager", arms: [[70, 92], [60, 84]] });
+      var SCI_POSE = {
+        sneak: {}, read: { mood: "flat" }, atUs: { look: null, mood: "flat" }, grin: { look: null, mood: "grin" },
+        proud: { look: null, mood: "grin", arms: [[118, 142], [108, 132]] },
+      };
+      // The men look at each other across the top, smiling, a hand up for the halves; on "free" they grin.
+      var MAN_POSE = [0, 1].map(function (i) {
+        var look = i ? "left" : "right";
+        return { hold: { look: look, mood: "smile", arms: HOLD_ARMS[i] }, grin: { look: look, mood: "grin", arms: HOLD_ARMS[i] } };
+      });
+      var sci = actor("sci", SCI, SCI_POSE, SCI_K);
+      var men = [0, 1].map(function (i) { return actor("man" + i, NB[i], MAN_POSE[i], MAN_K); });
+
+      // ── Assemble the plate ──
+      var year = '<g transform="translate(960,215)"><g id="' + ID + '-year" opacity="0"><text x="0" y="0" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="190" fill="' + C.navy + '">1945</text></g></g>';
+      var atomSvg = '<g transform="translate(' + AT[0] + "," + AT[1] + ')"><g id="' + ID + '-atom">' + atomWhole() + "</g></g>";
+      var tagSvg = '<g id="' + ID + '-tag" transform="translate(' + KNOT[0] + "," + KNOT[1] + ')">' + KIT.props.priceTag({ text: "DO NOT CUT", ink: C.war, size: 2.0, angle: 18 }) + "</g>";
+      var halves = [-1, 1].map(function (s) { return '<g id="' + ID + "-half" + (s < 0 ? "L" : "R") + '" opacity="0">' + half(s) + "</g>"; }).join("");
+      var sparks = [0, 1, 2, 3, 4, 5, 6].map(function (i) { return '<g id="' + ID + "-spark" + i + '" opacity="0">' + KIT.star(0, 0, 22, C.yellow) + "</g>"; }).join("");
+      var shearSvg = '<g id="' + ID + '-shears"></g>';
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + SKY + '"/>' +
+        '<g id="' + ID + '-cam">' + field() + year + pedestal() + atomSvg + tagSvg + globe() + '<g id="' + ID + '-cities">' + cities() + "</g>" + flagAt(-1) + flagAt(1) +
+        men[0].svg + men[1].svg + sci.svg + halves + shearSvg + sparks + "</g>");
+
+      var el = q, cam = el("cam");
+      var poseEls = function (a) { var m = {}; Array.prototype.forEach.call(el(a.name).querySelectorAll(".pose"), function (p) { m[p.getAttribute("data-pose")] = p; }); return m; };
+      sci.els = poseEls(sci); men.forEach(function (a) { a.els = poseEls(a); });
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      // Put an actor in a pose with its feet at (x, feet); returns that pose's rig.
+      function place(a, pose, x, feet, rot) {
+        Object.keys(a.els).forEach(function (n) { show(a.els[n], n === pose); });
+        el(a.name).setAttribute("transform", "translate(" + f(x) + "," + f(feet - 100 * a.k) + ")" + (rot ? " rotate(" + f(rot) + " 0 " + f(100 * a.k) + ")" : ""));
+        return a.rig[pose];
+      }
+      function handAt(a, pose, i, x, feet) { var h = a.rig[pose].hand[i]; return [x + a.k * h[0], feet - 100 * a.k + a.k * h[1]]; }
+      function legs(a, pose, ang) {
+        var R = a.rig[pose];
+        Array.prototype.forEach.call(a.els[pose].querySelectorAll(".leg-l, .leg-r"), function (lg, j) {
+          lg.setAttribute("transform", "rotate(" + f(ang * (j ? -1 : 1)) + " " + f(R.hip[j][0]) + " " + f(R.hip[j][1]) + ")");
+        });
+      }
+      var arc = function (p0, p1, u, h) { return [p0[0] + (p1[0] - p0[0]) * u, p0[1] + (p1[1] - p0[1]) * u - Math.sin(Math.PI * u) * h]; };
+      var lerp = function (a, b, u) { return a + (b - a) * u; };
+
+      // ── Cues ──
+      var tNine = cue("nineteen"), tSplit = cue("split"), tGreek = cue("Greek"), tCut = cue("cut,"), tNat = cue("naturally,");
+      var tSnip = KIT.after(ID, "it."), tVery = cue("very"), tAssumed = cue("assumed"), tUnl = cue("unlimited"), tFree = cue("free");
+      var tIn0 = tSplit, tIn1 = tSplit + 1.55;           // the Scientist tiptoes in
+      var tRead = tCut + 0.05, tLook = tCut + 0.55;        // she reads the tag, then looks at us
+      var tFly = [tAssumed + 0.05, tAssumed + 0.11], FLY = 1.1, tTravel = tAssumed + 1.3;
+      var tLit = tFree - 0.15, LIT_GAP = 0.045;           // the city lights come on one after another
+
+      // ── The shears: the hold is fixed by the Scientist's standing pose, aimed at the atom.
+      var HS = handAt(sci, "read", 0, SCI_X, FEET), HS2 = handAt(sci, "read", 1, SCI_X, FEET), HM = [(HS[0] + HS2[0]) / 2, (HS[1] + HS2[1]) / 2];
+      var AIM = Math.atan2(AT[1] - HM[1], AT[0] - HM[0]), PIV = [HM[0] + 80 * Math.cos(AIM), HM[1] + 80 * Math.sin(AIM)];
+      var LEN = Math.round(Math.hypot(AT[0] - PIV[0], AT[1] - PIV[1]) + 70);
+      el("shears").innerHTML = shears(LEN);
+      var shearsEl = el("shears"), shA = shearsEl.querySelector(".shear-a"), shB = shearsEl.querySelector(".shear-b");
+      function placeShears(hm, angDeg, open) {
+        var r = (angDeg * Math.PI) / 180, p = [hm[0] + 80 * Math.cos(r), hm[1] + 80 * Math.sin(r)];
+        shearsEl.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + f(angDeg) + ")");
+        shA.setAttribute("transform", "rotate(" + f(-open) + ")");
+        shB.setAttribute("transform", "rotate(" + f(open) + ")");
+      }
+      var AIM_DEG = (AIM * 180) / Math.PI;
+
+      // ── The halves' path: they drop off the cushion and sit; on "assumed" they fly over to the globe, one into
+      // each man's raised hand.
+      var LAND = [[790, FEET - 8], [1140, FEET - 8]];
+      var REST = [90, -90]; // dome up, the cut face on the ground
+      function manPose(i, t) { return t < tFree + i * 0.06 ? "hold" : "grin"; }
+      function halfAt(i, t) {
+        var s = i ? 1 : -1;
+        if (t < tSnip) return null;
+        if (t < tSnip + 0.5) {
+          var u = (t - tSnip) / 0.5, p = arc([AT[0] + s * 6, AT[1]], LAND[i], u * u, -40 - 90 * u);
+          return { x: p[0] + s * 70 * u, y: p[1], r: REST[i] * smooth(u) + s * 40 * Math.sin(Math.PI * u), k: lerp(1, HALF_K, u) };
+        }
+        var p0 = [LAND[i][0] + s * 70, LAND[i][1]];
+        if (t < tFly[i]) {
+          var b = (t - tSnip - 0.5) / 0.25, bh = b < 1 ? Math.sin(Math.PI * b) * 26 : 0;
+          return { x: p0[0], y: p0[1] - bh, r: REST[i], k: HALF_K };
+        }
+        var hp = heldAt(men[i], i, manPose(i, t)), hr = manRot(i), fu = Math.min(1, (t - tFly[i]) / FLY), e = smooth(fu);
+        if (fu < 1) { var q2 = arc(p0, hp, e, 330); return { x: q2[0], y: q2[1], r: lerp(REST[i], hr + (i ? -360 : 360), e), k: lerp(HALF_K, HELD_K, e) }; }
+        return { x: hp[0], y: hp[1], r: hr, k: HELD_K };
+      }
+
+      // ── The camera: keys [time, view, extra scale]; while the halves fly it travels with them.
+      var KEYS = [[0, "atom", 1], [tNine - 0.35, "atom", 1.05], [tNine - 0.05, "sky", 1], [tSplit - 0.25, "sky", 1.02], [tSplit + 0.25, "stage", 1],
+        [tGreek - 0.1, "stage", 1.02], [tGreek + 0.3, "tag", 1], [tCut - 0.3, "tag", 1.04], [tCut + 0.05, "stage", 1], [tSnip - 0.05, "stage", 1.03], [tSnip + 0.08, "stage", 1.07],
+        [tVery - 0.15, "stage", 1.06], [tVery + 0.25, "sci", 1], [tAssumed - 0.05, "sci", 1.03], [tTravel, "globe", 1], [D, "globe", 1.03]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+      function camAt(t) {
+        var c = camera.at(t);
+        if (t > tAssumed && t < tTravel) {
+          var u = (t - tAssumed) / (tTravel - tAssumed), w = 0.8 * smooth(u / 0.25) * (1 - smooth((u - 0.55) / 0.45));
+          var a0 = halfAt(0, t), a1 = halfAt(1, t);
+          c.x += ((a0.x + a1.x) / 2 - c.x) * w; c.y += ((a0.y + a1.y) / 2 - c.y) * w;
+        }
+        return c;
+      }
+
+      var atomEl = el("atom"), atomE = Array.prototype.slice.call(atomEl.querySelectorAll(".atom-e")), glow = atomEl.querySelector(".atom-glow"), glow2 = atomEl.querySelector(".atom-glow2");
+      var tagEl = el("tag"), tagSwing = tagEl.querySelector(".tag-swing");
+      var halfEls = [el("halfL"), el("halfR")], halfGlow = halfEls.map(function (h) { return h.querySelectorAll(".half-glow"); });
+      var cityEls = Array.prototype.slice.call(el("cities").querySelectorAll(".city"));
+      var SPARK = [[-1, -1.3], [1, -1.2], [0.2, -1.6], [-1.4, -0.4], [1.5, -0.3], [-0.6, -1.5], [0.8, -0.8]];
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camAt(t));
+
+        // the atom hums: its electrons whizz round their orbits and its glow breathes; after the snip it is two halves
+        var whole = t < tSnip;
+        show(atomEl, whole);
+        if (whole) {
+          atomE.forEach(function (e, i) {
+            var th = t * (5.2 + i * 0.9) + i * 2.1, a = ([0, 60, -60][i] * Math.PI) / 180, ex = AR * Math.cos(th), ey = AR * 0.31 * Math.sin(th);
+            e.setAttribute("transform", "translate(" + f(ex * Math.cos(a) - ey * Math.sin(a)) + "," + f(ex * Math.sin(a) + ey * Math.cos(a)) + ")");
+          });
+          glow.setAttribute("opacity", (0.24 + 0.08 * Math.sin(t * 7)).toFixed(3));
+          glow2.setAttribute("opacity", (0.26 + 0.1 * Math.sin(t * 7 + 1)).toFixed(3));
+        }
+        // the tag hangs and sways; after the snip it flutters down to the ground
+        if (t < tSnip) tagEl.setAttribute("transform", "translate(" + KNOT[0] + "," + KNOT[1] + ")"), tagSwing.setAttribute("transform", "rotate(" + f(Math.sin(t * 2.1) * 4) + ")");
+        else {
+          var fu = Math.min(1, (t - tSnip) / 0.95), fy = KNOT[1] + (FEET - 60 - KNOT[1]) * fu * fu, fx = KNOT[0] + 70 * fu + Math.sin(fu * 9) * 30 * (1 - fu);
+          tagEl.setAttribute("transform", "translate(" + f(fx) + "," + f(fy) + ")");
+          tagSwing.setAttribute("transform", "rotate(" + f(Math.sin(fu * 11) * 40 * (1 - fu) + 50 * fu) + ")");
+        }
+        // the sparks burst out of the cut
+        SPARK.forEach(function (s, i) {
+          var e = el("spark" + i), age = t - tSnip;
+          if (age < 0 || age > 0.6) { show(e, 0); return; }
+          e.setAttribute("opacity", (1 - age / 0.6).toFixed(2));
+          e.setAttribute("transform", "translate(" + f(AT[0] + s[0] * 190 * Math.sqrt(age / 0.6)) + "," + f(AT[1] + s[1] * 150 * Math.sqrt(age / 0.6) + 200 * age * age) + ") scale(" + (1.4 - age).toFixed(2) + ")");
+        });
+
+        // the Scientist: tiptoes in from the left with the shears up, reads the tag, looks at us, grins, snips, gloats
+        var pose = t < tRead ? "sneak" : t < tLook ? "read" : t < tNat ? "atUs" : t < tVery ? "grin" : "proud";
+        var iu = smooth((t - tIn0) / (tIn1 - tIn0)), sx = lerp(-420, SCI_X, iu), walking = t > tIn0 && t < tIn1;
+        var bob = walking ? -Math.abs(Math.sin((t - tIn0) * 7)) * 18 : 0;
+        place(sci, pose, sx, FEET + bob, walking ? 6 : 0);
+        legs(sci, pose, walking ? Math.sin((t - tIn0) * 7) * 24 : 0);
+        var h0 = handAt(sci, pose, 0, sx, FEET + bob), h1 = handAt(sci, pose, 1, sx, FEET + bob), hm = [(h0[0] + h1[0]) / 2, (h0[1] + h1[1]) / 2];
+        var ang, open = 0;
+        if (t < tCut) ang = -64;
+        else if (t < tVery) {
+          var ou = smooth((t - tCut) / 0.3);
+          ang = lerp(-64, AIM_DEG, ou);
+          open = t < tSnip ? 23 * ou : 23 * (1 - Math.min(1, (t - tSnip) / 0.07));
+        } else ang = lerp(AIM_DEG, -32, smooth((t - tVery) / 0.25));
+        if (t >= tVery) open = 4 * Math.max(0, Math.sin((t - tVery) * 9)) * (t < tVery + 1.2 ? 1 : 0); // a proud snip-snip
+        placeShears(hm, ang, open);
+        show(shearsEl, t > tIn0 - 0.1);
+
+        // the men on the globe, and the halves: flown into their hands; on "unlimited" the halves glow
+        [0, 1].forEach(function (i) {
+          placeMan(men[i], i, manPose(i, t));
+          var hp = halfAt(i, t);
+          show(halfEls[i], !!hp);
+          if (hp) halfEls[i].setAttribute("transform", "translate(" + f(hp.x) + "," + f(hp.y) + ") rotate(" + f(hp.r) + ") scale(" + hp.k.toFixed(3) + ")");
+          var gu = Math.min(1, Math.max(0, (t - tUnl - i * 0.05) / 0.3));
+          halfGlow[i][0].setAttribute("opacity", (gu * (0.3 + 0.08 * Math.sin(t * 8 + i))).toFixed(3));
+          halfGlow[i][1].setAttribute("opacity", (gu * (0.45 + 0.1 * Math.sin(t * 8 + i + 1))).toFixed(3));
+        });
+
+        // "free energy": the city lights come on, one after another, and twinkle
+        cityEls.forEach(function (c, i) {
+          var cu = Math.min(1, Math.max(0, (t - tLit - i * LIT_GAP) / 0.08));
+          c.setAttribute("opacity", cu.toFixed(2));
+          c.querySelector(".city-glow").setAttribute("opacity", (0.5 + 0.15 * Math.sin(t * 9 + i * 1.7)).toFixed(2));
+        });
+      });
+
+      // ── "nineteen forty-five": 1945 stamps into the sky (and the picture jolts)
+      var year1 = el("year");
+      gsap.set(year1, { svgOrigin: "0 -60" });
+      tl.fromTo(year1, { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.13, ease: "power3.in" }, tNine - 0.12);
+      // it goes as the Scientist comes in, so the camera never finds it half cut off at the top of the frame
+      tl.to(year1, { opacity: 0, duration: 0.3, ease: "power1.in" }, tSplit);
+      tl.fromTo(q("shake"), { y: 0 }, { y: 7, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, tNine + 0.01);
+      // ── the snip jolts the picture too
+      tl.fromTo(q("shake"), { x: 0 }, { x: 9, duration: 0.035, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, tSnip);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

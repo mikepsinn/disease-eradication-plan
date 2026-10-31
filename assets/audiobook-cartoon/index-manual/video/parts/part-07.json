@@ -1,0 +1,290 @@
+{
+  "id": "part-07",
+  "title": "Humanity's Death Wish",
+  "storyboard": "storyboards/part-07-humanitys-death-wish.md",
+  "audio": {
+    "start": 848.504,
+    "end": 898.004
+  },
+  "noCaptions": [
+    "death-wish-title"
+  ],
+  "scenes": [
+    {
+      "id": "death-wish-title",
+      "file": "compositions/scenes/part-07/death-wish-title.html",
+      "cue": "Humanity's",
+      "approx": 848.5,
+      "layer": "A"
+    },
+    {
+      "id": "host-knows",
+      "file": "compositions/scenes/part-07/host-knows.html",
+      "cue": "What's",
+      "approx": 850.8,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "What's",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "hand-chest",
+          "mode": "big"
+        },
+        {
+          "cue": "KNOWS",
+          "expr": "excited",
+          "rest": "ee",
+          "body": "point-right",
+          "mode": "big"
+        },
+        {
+          "cue": "illogical:",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "shrug",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "museum-of-knowing",
+      "file": "compositions/scenes/part-07/museum-of-knowing.html",
+      "cue": "You",
+      "approx": 856.2,
+      "layer": "B"
+    },
+    {
+      "id": "lose-elaborately",
+      "file": "compositions/scenes/part-07/lose-elaborately.html",
+      "cue": "It's",
+      "approx": 883,
+      "layer": "B"
+    },
+    {
+      "id": "host-digress",
+      "file": "compositions/scenes/part-07/host-digress.html",
+      "cue": "That's",
+      "approx": 892.2,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "That's",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "hand-chest",
+          "mode": "big"
+        },
+        {
+          "cue": "continuing",
+          "expr": "neutral",
+          "rest": "smile",
+          "body": "point-right",
+          "mode": "big"
+        },
+        {
+          "cue": "stopped.",
+          "expr": "smirk",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "military",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "spending.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "palms-down",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "death-wish-title",
+      "cue": "Humanity's",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "death-wish-title",
+      "cue": "Wish.",
+      "offset": 0.2,
+      "sfx": "slide-down",
+      "volume": 0.3
+    },
+    {
+      "scene": "death-wish-title",
+      "cue": "Wish.",
+      "offset": 0.62,
+      "sfx": "boom",
+      "volume": 0.3
+    },
+    {
+      "scene": "host-knows",
+      "cue": "illogical:",
+      "offset": 0.3,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "host-knows",
+      "cue": "illogical:",
+      "offset": 0.55,
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "between",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "wars).",
+      "n": 2,
+      "sfx": "boom",
+      "volume": 0.25
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "tax",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "bombs).",
+      "sfx": "boom",
+      "volume": 0.6
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "manufacturers).",
+      "offset": 0.45,
+      "sfx": "splat",
+      "volume": 0.45
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "manufacturers).",
+      "at": "after",
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "attacks",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "people).",
+      "n": 2,
+      "sfx": "scratch",
+      "volume": 0.35
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "coronaviruses",
+      "offset": 0.2,
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "observable",
+      "sfx": "tick",
+      "volume": 0.45
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "observable",
+      "offset": 0.2,
+      "sfx": "tick",
+      "volume": 0.45
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "observable",
+      "offset": 0.4,
+      "sfx": "tick",
+      "volume": 0.45
+    },
+    {
+      "scene": "museum-of-knowing",
+      "cue": "health).",
+      "n": 2,
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "lose-elaborately",
+      "cue": "game",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "lose-elaborately",
+      "cue": "lose,",
+      "sfx": "whistle",
+      "volume": 0.3
+    },
+    {
+      "scene": "lose-elaborately",
+      "cue": "elaborately",
+      "sfx": "typewriter",
+      "volume": 0.4
+    },
+    {
+      "scene": "lose-elaborately",
+      "cue": "possible.",
+      "offset": 0.1,
+      "sfx": "boom",
+      "volume": 0.65
+    },
+    {
+      "scene": "lose-elaborately",
+      "cue": "digress.",
+      "offset": 0.1,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "host-digress",
+      "cue": "continuing",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "host-digress",
+      "cue": "military",
+      "offset": 0.1,
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "host-digress",
+      "cue": "spending.",
+      "offset": 0.45,
+      "sfx": "splat",
+      "volume": 0.25
+    },
+    {
+      "scene": "host-digress",
+      "cue": "spending.",
+      "offset": 0.9,
+      "sfx": "squeak",
+      "volume": 0.35
+    }
+  ]
+}

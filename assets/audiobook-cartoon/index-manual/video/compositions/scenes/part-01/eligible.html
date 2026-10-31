@@ -1,0 +1,283 @@
+<template id="eligible-template">
+  <!-- eligible · style "atomic" (cartoon-style-bible.md): the first time the film shows Wishonia. It irises in on her face at her lectern (the PLANETS out-tray
+       on its left end, VENUS and MARS in it); on the little easel to her left stands the Earth case file, its cover the
+       1950s eligibility form. On "so," a pencil by itself ticks YES, YES. Before "eligible" the rubber stamp hops off the
+       ledge and she huffs on it; on "eligible" it slams MAY BE ELIGIBLE FOR OPTIMIZATION across the form and the picture
+       shakes. After "optimization." she blows on the ink and the file flies across in front of her into the PLANETS tray,
+       onto VENUS and MARS. meet-wishonia continues this shot with no seam (the same set dressing code). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+    #eligible-weave, #eligible-zoom, #eligible-cam, #eligible-wall, #eligible-wish, #eligible-front, #eligible-flash, #eligible-iris, #eligible-film { position: absolute; inset: 0; }
+    #eligible-zoom { transform-origin: 0 0; }
+    #eligible-flash { background: #FFFFFF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="eligible" data-width="1920" data-height="1080" data-start="0" data-duration="5.3">
+    <div id="eligible-weave">
+      <div id="eligible-zoom">
+        <div id="eligible-cam">
+          <div id="eligible-wall"></div>
+          <div id="eligible-wish"></div>
+          <div id="eligible-front"></div>
+        </div>
+      </div>
+      <div id="eligible-flash"></div>
+      <div id="eligible-iris"></div>
+    </div>
+    <div id="eligible-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "eligible";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, S = KIT.STUDIO;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+// duration: 5.3
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 131);
+
+// ════ The set dressing, shared by eligible, meet-wishonia, my-surprise and earth-means-dirt (the same code in all
+      // four files: change one, change them all). The PLANETS out-tray on the lectern's left end, the little studio
+      // easel on the free wall right of the lectern, the Earth case file (its cover sheet the 1950s eligibility form),
+      // the rubber stamp and the breath puffs. Everything is in canvas px, inside the camera (the front layer).
+      var ink = C.line, MANILA = "#E2B865", SHEET = "#FBF6E6";
+      var esc = function (s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); };
+      var tw = function (s, size, sp) { return KIT.textWidth(s, size, "Oswald", 600, sp || 0); };
+      var fit = function (s, size, w, sp) { return KIT.fitText(s, size, w, "Oswald", 600, sp || 0); };
+      var label = function (x, y, size, s, anchor, col, extra) {
+        return '<text x="' + f(x) + '" y="' + f(y) + '" text-anchor="' + (anchor || "middle") + '" font-family="Oswald" font-weight="600" font-size="' + size.toFixed(1) + '" fill="' + (col || ink) + '"' + (extra || "") + ">" + esc(s) + "</text>";
+      };
+      var clamp01 = function (u) { return Math.min(1, Math.max(0, u)); };
+      var span = function (t, a, b) { return clamp01((t - a) / (b - a)); };
+      var sm = KIT.smooth;
+      var easeOut = function (u) { u = clamp01(u); return 1 - (1 - u) * (1 - u); };
+      var easeIn = function (u) { u = clamp01(u); return u * u; };
+      var backOut = function (u, c) { u = clamp01(u); c = c === undefined ? 1.7 : c; var x = u - 1; return 1 + (c + 1) * x * x * x + c * x * x; };
+      // LAY.tray: [left x, bottom y (the reading top), scale]; LAY.easel: [the file's left x, its tab's top y, scale]
+      var LAY = V ? { tray: [176, 1100, 0.9], easel: [690, 540, 0.82] } : { tray: [486, 790, 1], easel: [1190, 450, 1] };
+      // her mouth (the sprite's, measured: 0.598 w across, 0.786 w down the rig), where the breath puffs start
+      var MOUTH = [S.wish.x + 0.598 * S.wish.w, S.wish.y + 0.786 * S.wish.w];
+
+      // The PLANETS wire out-tray, in its own units: 250 wide, standing on y 0. Two parts, so the Earth file can sit
+      // between them: the back (VENUS and MARS, standing in it) and the front (the wire basket and its label plate).
+      function trayFile(top, tabX, fill, text) {
+        var tabW = tw(text, 15) + 22;
+        if (tabX === "right") tabX = 242 - tabW;
+        return '<rect x="10" y="' + top + '" width="230" height="' + (-6 - top) + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<path d="M' + tabX + "," + top + " v-20 q0,-4 4,-4 h" + f(tabW - 8) + " q4,0 4,4 v20 Z" + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="3"/>' +
+          label(tabX + tabW / 2, top - 6, 15, text);
+      }
+      var tray = function (part) {
+        var x = LAY.tray[0], y = LAY.tray[1], k = LAY.tray[2], inner;
+        if (part === "back") inner = trayFile(-70, 8, "#E9C27A", "VENUS: TOO HOT") + trayFile(-48, "right", "#C08C5E", "MARS: NOBODY HOME");
+        else {
+          inner = '<path d="M0,-34 H250 L240,0 H10 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+            [0, 1, 2, 3, 4, 5, 6].map(function (i) { return '<path d="M' + (22 + i * 34) + ",-30 V-6" + '" stroke="' + C.peri + '" stroke-width="2.5"/>'; }).join("") +
+            '<rect x="70" y="-31" width="110" height="24" rx="3" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.5"/>' + label(125, -13, 17, "PLANETS");
+        }
+        return '<g transform="translate(' + x + "," + y + ") scale(" + k + ')">' + inner + "</g>";
+      };
+
+      // The Earth case file, in its own units: a manila folder 300 x 270 (its tab across the top, 30 deep), the
+      // eligibility form on its cover with two numbered YES/NO boxes and the fine print, and the stamp's mark.
+      // o: { ticks: "drawn" | "hidden", mark: true | false, dirt: "drawn" | "hidden" }. Parts (ids): -tick1, -tick2,
+      // -mark, -strike (the red line through EARTH), -dirtclip (the clip rect DIRT is written through).
+      var FILE_W = 300, FILE_H = 270, TAB_X = 123;
+      var TAB_FS = fit("EARTH: CASE #847", 22, 160), TAB_W = tw("EARTH: CASE #847", TAB_FS), TAB_X0 = TAB_X - TAB_W / 2, EARTH_W = tw("EARTH", TAB_FS);
+      var MARK = KIT.props.stampMark({ text: "MAY BE ELIGIBLE\nFOR OPTIMIZATION", angle: -9, fontSize: 26, size: 0.9 });
+      var MARK_CY = parseFloat(/data-cy="(-?[0-9.]+)"/.exec(MARK)[1]) * 0.9, MARK_AT = [152, 156];
+      var DIRT_AT = [TAB_X0 + EARTH_W / 2, -8], DIRT_FS = 44, DIRT_W = KIT.textWidth("DIRT", DIRT_FS, "Fraunces", 900);
+      function caseFile(o) {
+        var out = '<path d="M0,30 H18 L30,0 H216 L228,30 H' + FILE_W + " V" + FILE_H + ' H0 Z" fill="' + MANILA + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>';
+        out += label(TAB_X0, 23, TAB_FS, "EARTH", "start") + label(TAB_X0 + EARTH_W, 23, TAB_FS, ": CASE #847", "start");
+        // the cover sheet: the 1950s mail-in form, with only its boxes
+        var fx = 20, fy = 42, fw = 260, fh = 214;
+        out += '<rect x="' + fx + '" y="' + fy + '" width="' + fw + '" height="' + fh + '" fill="' + SHEET + '" stroke="' + ink + '" stroke-width="3"/>' +
+          label(fx + fw / 2, fy + 32, fit("PLANET ELIGIBILITY CHECK", 24, fw - 28), "PLANET ELIGIBILITY CHECK") +
+          '<path d="M' + (fx + 14) + "," + (fy + 44) + " H" + (fx + fw - 14) + '" stroke="' + C.orange + '" stroke-width="3"/>';
+        [0, 1].forEach(function (i) {
+          var by = fy + 60 + i * 58;
+          out += label(fx + 16, by + 30, 26, i + 1 + ".", "start") + KIT.checkbox(fx + 52, by + 2, 34) + label(fx + 94, by + 30, 22, "YES", "start") +
+            KIT.checkbox(fx + 148, by + 2, 34) + label(fx + 190, by + 30, 22, "NO", "start");
+          out += '<g id="' + ID + "-tick" + (i + 1) + '">' + KIT.tick(fx + 48, by - 6, 44, C.med).replace('stroke-dashoffset="1"', 'stroke-dashoffset="' + (o.ticks === "drawn" ? 0 : 1) + '"') + "</g>";
+        });
+        var fp = "Please allow 4 to 6 weeks for optimization.", fps = KIT.fitText(fp, 11, fw - 30, "Inter", 500);
+        out += '<text x="' + (fx + 13) + '" y="' + (fy + fh - 11) + '" font-family="Inter" font-style="italic" font-weight="500" font-size="' + fps.toFixed(1) + '" fill="' + ink + '" opacity="0.8">' + fp + "</text>";
+        // the stamp's mark, its center at MARK_AT
+        out += '<g transform="translate(' + MARK_AT[0] + "," + f(MARK_AT[1] - MARK_CY) + ')"><g id="' + ID + '-mark"' + (o.mark ? "" : ' opacity="0"') + ">" + MARK + "</g></g>";
+        // the correction: a red line through EARTH, and DIRT written above it (drawn through a clip that opens left to right)
+        out += '<path id="' + ID + '-strike" d="M' + f(TAB_X0 - 4) + ",16 L" + f(TAB_X0 + EARTH_W + 4) + ',13" stroke="' + C.war + '" stroke-width="6" stroke-linecap="round" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="' + (o.dirt === "drawn" ? 0 : 1) + '"/>';
+        var dx0 = DIRT_AT[0] - DIRT_W / 2 - 8;
+        out += '<g transform="rotate(-6 ' + f(DIRT_AT[0]) + " " + DIRT_AT[1] + ')"><defs><clipPath id="' + ID + '-dirtc"><rect id="' + ID + '-dirtclip" x="' + f(dx0) + '" y="-70" width="' + (o.dirt === "drawn" ? f(DIRT_W + 16) : 0) + '" height="80"/></clipPath></defs>' +
+          '<text x="' + f(DIRT_AT[0]) + '" y="' + DIRT_AT[1] + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + DIRT_FS + '" fill="' + C.war + '" stroke="' + C.war + '" stroke-width="1.5" clip-path="url(#' + ID + '-dirtc)">DIRT</text></g>';
+        return out;
+      }
+      // A pose of the file: its bottom center (x, y) in canvas px, its scale k and its turn r (degrees).
+      var EASEL = { x: LAY.easel[0] + (FILE_W / 2) * LAY.easel[2], y: LAY.easel[1] + FILE_H * LAY.easel[2], k: LAY.easel[2], r: -3 };
+      var IN_TRAY = { x: LAY.tray[0] + 125 * LAY.tray[2], y: LAY.tray[1] + 66.4 * LAY.tray[2], k: 0.72 * LAY.tray[2], r: 0 };
+      var fileAt = function (p, px, py) {
+        var a = (p.r * Math.PI) / 180, u = (px - FILE_W / 2) * p.k, v = (py - FILE_H) * p.k;
+        return [p.x + u * Math.cos(a) - v * Math.sin(a), p.y + u * Math.sin(a) + v * Math.cos(a)];
+      };
+      var poseStr = function (p) { return "translate(" + f(p.x) + "," + f(p.y) + ") rotate(" + p.r.toFixed(2) + ") scale(" + p.k.toFixed(4) + ") translate(" + -FILE_W / 2 + "," + -FILE_H + ")"; };
+      // a pose between a and b, u of the way, lifted on an arc `lift` px high and turned `spin` degrees at the middle
+      var poseMix = function (a, b, u, lift, spin) {
+        var e = sm(u);
+        return { x: a.x + (b.x - a.x) * e, y: a.y + (b.y - a.y) * e - Math.sin(Math.PI * e) * lift, k: Math.exp(Math.log(a.k) + (Math.log(b.k) - Math.log(a.k)) * e), r: a.r + (b.r - a.r) * e + Math.sin(Math.PI * e) * spin };
+      };
+
+      // The little rust studio easel, in the file's units (its ledge carries the file and, at its right end, the stamp).
+      var LEDGE = [-16, FILE_H - 4, FILE_W + 132, 22];
+      function easel() {
+        var foot = (S.floor < H ? S.floor : H + 40) - LAY.easel[1];
+        foot = foot / LAY.easel[2] + 10;
+        var legs = "M40," + f(foot) + " L150,-34 L260," + f(foot) + " M150,-34 L178," + f(foot);
+        return '<path d="' + legs + '" fill="none" stroke="' + ink + '" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '<path d="' + legs + '" fill="none" stroke="' + C.rust + '" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '<rect x="' + LEDGE[0] + '" y="' + LEDGE[1] + '" width="' + LEDGE[2] + '" height="' + LEDGE[3] + '" rx="4" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M' + (LEDGE[0] + 8) + "," + (LEDGE[1] + LEDGE[3] - 6) + " H" + (LEDGE[0] + LEDGE[2] - 8) + '" stroke="' + C.rust + '" stroke-width="3"/>';
+      }
+      // the easel's origin (the file's top-left) slid dx px to the right, and a point of it in canvas px
+      var easelStr = function (dx) { return "translate(" + f(LAY.easel[0] + dx) + "," + LAY.easel[1] + ") scale(" + LAY.easel[2] + ")"; };
+      var easelAt = function (dx, px, py) { return [LAY.easel[0] + dx + px * LAY.easel[2], LAY.easel[1] + py * LAY.easel[2]]; };
+      var EASEL_OFF = W + 120 - LAY.easel[0];
+      // The rubber stamp (KIT.props.stamp, a blank label and war-red ink), standing on its rubber at (0, 0), and where it
+      // waits on the ledge.
+      var STAMP_K = 1.75 * LAY.easel[2], STAMP_REST = [FILE_W + 60, LEDGE[1]];
+      var stamp = function () { return KIT.props.stamp({ text: "", color: C.war, size: STAMP_K }); };
+      var stampStr = function (p, r, sx, sy) { return "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + (r || 0).toFixed(1) + ") scale(" + (sx || 1).toFixed(3) + "," + (sy || 1).toFixed(3) + ")"; };
+      // Breath: a few puffs of cream air from a to b over [t0, t0 + dur]. Returns the markup; puffsAt(t) moves them.
+      var PUFFS = 5;
+      var puffs = function (name) {
+        var s = "";
+        for (var i = 0; i < PUFFS; i++) s += '<circle class="' + name + '" r="0" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.5" opacity="0"/>';
+        return '<g id="' + ID + "-" + name + '">' + s + "</g>";
+      };
+      var puffsAt = function (name, t, t0, dur, a, b, size, col) {
+        var els = q(name).querySelectorAll("circle");
+        for (var i = 0; i < els.length; i++) {
+          var u = (t - t0 - i * 0.045) / dur, on = u > 0 && u < 1;
+          var e = easeOut(u), x = a[0] + (b[0] - a[0]) * e, y = a[1] + (b[1] - a[1]) * e + Math.sin(i * 2.1 + e * 5) * 10 * e;
+          els[i].setAttribute("cx", f(x)); els[i].setAttribute("cy", f(y));
+          els[i].setAttribute("r", on ? f(size * (0.35 + 0.65 * e) * (1 - 0.12 * i)) : 0);
+          els[i].setAttribute("opacity", on ? (0.95 * (1 - u * u)).toFixed(2) : 0);
+          if (col) els[i].setAttribute("fill", col);
+        }
+      };
+      // The Earth file's wrapper clips it at the tray's floor, so it can drop in behind the tray's front and the
+      // other planets' files.
+      var fileWrap = function () {
+        return '<defs><clipPath id="' + ID + '-fileclip"><rect x="-4000" y="-4000" width="8000" height="' + (4000 + LAY.tray[1] - 2) + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + ID + '-fileclip)"><g id="' + ID + '-file">' + caseFile(FILE_OPTS) + "</g></g>";
+      };
+      // The picture's own move (a crash zoom, a push, a shake) on the zoom layer: scale s about point o, moved by (dx, dy).
+      var zoomTo = function (s, o, dx, dy) {
+        q("zoom").style.transform = "translate(" + ((1 - s) * o[0] + (dx || 0)).toFixed(2) + "px," + ((1 - s) * o[1] + (dy || 0)).toFixed(2) + "px) scale(" + s.toFixed(4) + ")";
+      };
+      // ════ end of the shared set dressing
+
+      // ── The file starts on the easel with its boxes empty and no mark.
+      var FILE_OPTS = { ticks: "hidden", mark: false, dirt: "hidden" };
+      var front = '<g id="' + ID + '-easel" transform="' + easelStr(0) + '">' + easel() + "</g>" + fileWrap() + tray("back") + tray("front") +
+        '<g id="' + ID + '-stamp">' + stamp() + "</g>" + '<g id="' + ID + '-pencil"><g transform="scale(' + (V ? 0.8 : 1) + ')">' + KIT.pencil() + "</g></g>" + puffs("huff") + puffs("blow");
+
+      // ── The host's set (KIT.studio) and a slow push, which meet-wishonia carries on from where this one stops.
+      KIT.studio(tl, ID, { cam: q("cam"), wall: q("wall"), wish: q("wish"), front: q("front") }, { front: front, push: V ? [1, 1.015] : [1, 1.025] });
+      var fileEl = q("file"), stampEl = q("stamp"), pencilEl = q("pencil"), markEl = q("mark");
+
+      // ── The times
+      var tSo = cue("so,"), tTick = [tSo, tSo + 0.35];           // the two scratches (parts/part-01.json)
+      var tHop = KIT.before(ID, "eligible"), tSlam = cue("eligible"), tBlow = KIT.after(ID, "optimization.");
+      var tFly = [tBlow + 0.03, tBlow + 0.40];
+      // the lean-in on the file: [x, y, scale] about that point, in over ZIN and out over ZOUT
+      var ZOOM = V ? [880, 640, 1.38] : [1150, 480, 1.12], ZIN = [0.5, 1.3], ZOUT = [tBlow - 0.75, tBlow - 0.15];
+
+      // ── The pencil's tip follows each tick as KIT.drawTick draws it (0.3 s, power2.out).
+      var tickPts = function (i) {
+        var fx = 20, by = 42 + 60 + i * 58, x = fx + 48, y = by - 6, s = 44;
+        return [[x + s * 0.18, y + s * 0.52], [x + s * 0.42, y + s * 0.8], [x + s * 0.95, y + s * 0.05]].map(function (p) { return fileAt(EASEL, p[0], p[1]); });
+      };
+      var along = function (pts, u) {
+        var L1 = Math.hypot(pts[1][0] - pts[0][0], pts[1][1] - pts[0][1]), L2 = Math.hypot(pts[2][0] - pts[1][0], pts[2][1] - pts[1][1]), d = u * (L1 + L2);
+        if (d < L1) return [pts[0][0] + (pts[1][0] - pts[0][0]) * (d / L1), pts[0][1] + (pts[1][1] - pts[0][1]) * (d / L1)];
+        var v = (d - L1) / L2;
+        return [pts[1][0] + (pts[2][0] - pts[1][0]) * v, pts[1][1] + (pts[2][1] - pts[1][1]) * v];
+      };
+      var T1 = tickPts(0), T2 = tickPts(1);
+      KIT.drawTick(tl, q("tick1").querySelector(".tick"), tTick[0]);
+      KIT.drawTick(tl, q("tick2").querySelector(".tick"), tTick[1]);
+
+      // ── The stamp's stations, in canvas px: waiting on the ledge, hovering over the file, on the mark.
+      var REST = easelAt(0, STAMP_REST[0], STAMP_REST[1]);
+      var HOVER = fileAt(EASEL, MARK_AT[0] + 10, -40), SLAM = fileAt(EASEL, MARK_AT[0], MARK_AT[1]), LIFT = fileAt(EASEL, MARK_AT[0] + 40, -30);
+      var lerp = function (a, b, u, lift) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u - Math.sin(Math.PI * u) * (lift || 0)]; };
+
+      KIT.onTime(tl, D, function (t) {
+        // the pencil: drops in to box 1, ticks YES, jumps to box 2, ticks YES, and flies off up and right
+        var p, pr = 0, pv = true;
+        var draw = function (u) { return 1 - (1 - clamp01(u)) * (1 - clamp01(u)); };
+        if (t < tTick[0]) p = lerp([T1[0][0] + 260, T1[0][1] - 380], T1[0], easeOut(span(t, -0.1, tTick[0])));
+        else if (t < tTick[0] + 0.3) p = along(T1, draw((t - tTick[0]) / 0.3));
+        else if (t < tTick[1]) p = lerp(T1[2], T2[0], sm(span(t, tTick[0] + 0.3, tTick[1])), 18);
+        else if (t < tTick[1] + 0.3) p = along(T2, draw((t - tTick[1]) / 0.3));
+        else { var u = easeIn(span(t, tTick[1] + 0.36, tTick[1] + 0.8)); p = lerp(T2[2], [T2[2][0] + 520, T2[2][1] - 760], u); pr = -40 * u; pv = u < 1; }
+        var wig = t > tTick[0] && t < tTick[1] + 0.3 ? Math.sin(t * 60) * 4 : 0;
+        pencilEl.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + (pr + wig).toFixed(1) + ")");
+        pencilEl.setAttribute("opacity", pv ? 1 : 0);
+
+        // the stamp: hops off the ledge (a flip), hovers while she huffs on it, slams onto the form, lifts off, hops back
+        var sp = REST, sr = 0, sx = 1, sy = 1;
+        if (t >= tHop && t < tHop + 0.34) { var h = sm(span(t, tHop, tHop + 0.34)); sp = lerp(REST, HOVER, h, 110); sr = -360 * h; }
+        else if (t >= tHop + 0.34 && t < tSlam - 0.09) { sp = [HOVER[0], HOVER[1] + Math.sin((t - tHop) * 14) * 5]; sr = Math.sin((t - tHop) * 9) * 4; }
+        else if (t >= tSlam - 0.09 && t < tSlam) { sp = lerp(HOVER, SLAM, easeIn(span(t, tSlam - 0.09, tSlam))); }
+        else if (t >= tSlam && t < tSlam + 0.32) { var w = span(t, tSlam, tSlam + 0.22); sp = SLAM; sy = 1 - 0.32 * Math.sin(Math.PI * w); sx = 1 + 0.18 * Math.sin(Math.PI * w); }
+        else if (t >= tSlam + 0.32 && t < tSlam + 0.62) sp = lerp(SLAM, LIFT, easeOut(span(t, tSlam + 0.32, tSlam + 0.62)));
+        else if (t >= tSlam + 0.62 && t < tSlam + 1.2) { sp = [LIFT[0], LIFT[1] + Math.sin((t - tSlam) * 6) * 4]; sr = 6; }
+        else if (t >= tSlam + 1.2) { var b = sm(span(t, tSlam + 1.2, tSlam + 1.55)); sp = lerp(LIFT, REST, b, 70); sr = 6 * (1 - b); }
+        if (t >= tSlam + 1.55) { var bb = span(t, tSlam + 1.55, tSlam + 1.75); sy = 1 - 0.12 * Math.sin(Math.PI * bb); sx = 1 + 0.08 * Math.sin(Math.PI * bb); }
+        stampEl.setAttribute("transform", stampStr(sp, sr, sx, sy));
+
+        // the mark slams in with the stamp, and the picture jolts
+        var m = span(t, tSlam, tSlam + 0.07), ms = 1.6 - 0.6 * m;
+        markEl.setAttribute("opacity", t >= tSlam ? 1 : 0);
+        markEl.setAttribute("transform", "translate(0," + f(MARK_CY) + ") scale(" + ms.toFixed(3) + ") translate(0," + f(-MARK_CY) + ")");
+        var j = span(t, tSlam, tSlam + 0.45), jy = t >= tSlam ? 9 * Math.exp(-7 * j) * Math.sin(j * 46) : 0;
+        // the camera leans in on the file for the stamp (much more in 9:16, where the form is small), and back out for the fling
+        var zs = 1 + (ZOOM[2] - 1) * (sm(span(t, ZIN[0], ZIN[1])) - sm(span(t, ZOUT[0], ZOUT[1])));
+        zoomTo(zs, ZOOM, 0, jy);
+
+        // the breath: a huff on the stamp before it lands, a blow on the wet ink after "optimization."
+        puffsAt("huff", t, tHop + 0.12, 0.42, MOUTH, [HOVER[0] - 40, HOVER[1] - 50], V ? 26 : 32);
+        puffsAt("blow", t, tBlow - 0.14, 0.36, MOUTH, fileAt(EASEL, 150, 130), V ? 28 : 34);
+
+        // the file: on the easel, then flung across in front of her into the PLANETS tray, onto VENUS and MARS
+        var fp = EASEL;
+        if (t >= tFly[0]) {
+          var fu = span(t, tFly[0], tFly[1]);
+          fp = poseMix(EASEL, IN_TRAY, fu, V ? 260 : 300, -26);
+          if (t > tFly[1]) { var d = span(t, tFly[1], tFly[1] + 0.12); fp = { x: IN_TRAY.x, y: IN_TRAY.y - Math.sin(Math.PI * d) * 14, k: IN_TRAY.k, r: 0 }; }
+        }
+        fileEl.setAttribute("transform", poseStr(fp));
+      });
+
+      // ── The iris opens on her face at the head of the shot (the first time the film shows her).
+      KIT.iris(tl, ID, q("iris"), S.face, "in", 0, 0.42);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

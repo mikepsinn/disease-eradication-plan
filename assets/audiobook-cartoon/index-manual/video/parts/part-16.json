@@ -1,0 +1,167 @@
+{
+  "id": "part-16",
+  "title": "The Math",
+  "storyboard": "storyboards/part-16-the-math.md",
+  "audio": {
+    "start": 2060.644,
+    "end": 2143.444
+  },
+  "noCaptions": [
+    "the-math-title"
+  ],
+  "scenes": [
+    {
+      "id": "the-math-title",
+      "file": "compositions/scenes/part-16/the-math-title.html",
+      "cue": "The",
+      "approx": 2060.6,
+      "layer": "A"
+    },
+    {
+      "id": "host-remembers",
+      "file": "compositions/scenes/part-16/host-remembers.html",
+      "cue": "Remember",
+      "approx": 2062.4,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "Remember", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "shift?", "expr": "skeptical", "rest": "smile", "body": "hands-hips", "mode": "big" }
+      ]
+    },
+    {
+      "id": "quadrillion-equation",
+      "file": "compositions/scenes/part-16/quadrillion-equation.html",
+      "cue": "Treatments",
+      "approx": 2065.6,
+      "layer": "B"
+    },
+    {
+      "id": "calculator-scream",
+      "file": "compositions/scenes/part-16/calculator-scream.html",
+      "cue": "Your",
+      "approx": 2095.0,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "Your", "expr": "happy", "rest": "smile", "body": "hands-hips", "mode": "big" },
+        { "cue": "desk.", "expr": "smirk", "rest": "closed", "body": "idle", "mode": "big" },
+        { "cue": "correct.", "expr": "happy", "rest": "closed", "body": "hands-hips", "mode": "big" }
+      ]
+    },
+    {
+      "id": "greatest-hits-trophies",
+      "file": "compositions/scenes/part-16/greatest-hits-trophies.html",
+      "cue": "Cost-effectiveness:",
+      "approx": 2102.7,
+      "layer": "B"
+    },
+    {
+      "id": "one-percent-chance",
+      "file": "compositions/scenes/part-16/one-percent-chance.html",
+      "cue": "Even",
+      "approx": 2130.2,
+      "layer": "B"
+    },
+    {
+      "id": "calculator-returns",
+      "file": "compositions/scenes/part-16/calculator-returns.html",
+      "cue": "than",
+      "approx": 2139.9,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "than", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "nets.", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ]
+    }
+  ],
+  "sounds": [
+    { "scene": "the-math-title", "cue": "The", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "the-math-title", "cue": "Math.", "at": "after", "sfx": "boing", "volume": 0.35 },
+    { "scene": "the-math-title", "cue": "Math.", "at": "after", "offset": 0.45, "sfx": "pop", "volume": 0.3 },
+
+    { "scene": "host-remembers", "cue": "two", "sfx": "click", "volume": 0.4 },
+    { "scene": "host-remembers", "cue": "hundred", "sfx": "click", "volume": 0.4 },
+    { "scene": "host-remembers", "cue": "twelve", "sfx": "click", "volume": 0.4 },
+    { "scene": "host-remembers", "cue": "shift?", "at": "after", "sfx": "bell", "volume": 0.35 },
+    { "scene": "host-remembers", "cue": "shift?", "at": "after", "offset": 0.22, "sfx": "bell", "volume": 0.3 },
+
+    { "scene": "quadrillion-equation", "cue": "patients", "sfx": "pop", "volume": 0.35 },
+    { "scene": "quadrillion-equation", "cue": "sooner", "sfx": "sparkle", "volume": 0.35 },
+    { "scene": "quadrillion-equation", "cue": "life.", "sfx": "boing", "volume": 0.35 },
+    { "scene": "quadrillion-equation", "cue": "Value", "sfx": "squeak", "volume": 0.25 },
+    { "scene": "quadrillion-equation", "cue": "Value", "offset": 0.16, "sfx": "squeak", "volume": 0.25 },
+    { "scene": "quadrillion-equation", "cue": "Value", "offset": 0.32, "sfx": "squeak", "volume": 0.25 },
+    { "scene": "quadrillion-equation", "cue": "thousand", "sfx": "stamp", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "standard", "sfx": "pat", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "standard", "offset": 0.36, "sfx": "pat", "volume": 0.25 },
+    { "scene": "quadrillion-equation", "cue": "valuation),", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "quadrillion-equation", "cue": "acceleration", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "quadrillion-equation", "cue": "window,", "sfx": "clank", "volume": 0.45 },
+    { "scene": "quadrillion-equation", "cue": "window,", "offset": 0.25, "sfx": "splat", "volume": 0.45 },
+    { "scene": "quadrillion-equation", "cue": "window,", "offset": 0.4, "sfx": "splat", "volume": 0.4 },
+    { "scene": "quadrillion-equation", "cue": "seven", "n": 1, "sfx": "slide-up", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "quadrillion", "sfx": "stamp", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "quadrillion", "offset": 0.25, "sfx": "stamp", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "quadrillion", "offset": 0.5, "sfx": "stamp", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "quadrillion", "offset": 0.75, "sfx": "stamp", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "quadrillion", "offset": 1.0, "sfx": "stamp", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "quadrillion", "offset": 1.25, "sfx": "stamp", "volume": 0.3 },
+    { "scene": "quadrillion-equation", "cue": "billion", "sfx": "squeak", "volume": 0.25 },
+    { "scene": "quadrillion-equation", "cue": "billion", "offset": 0.15, "sfx": "squeak", "volume": 0.25 },
+    { "scene": "quadrillion-equation", "cue": "billion", "offset": 0.3, "sfx": "squeak", "volume": 0.25 },
+    { "scene": "quadrillion-equation", "cue": "return", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "quadrillion-equation", "cue": "seven", "n": 2, "sfx": "thunk", "volume": 0.35 },
+    { "scene": "quadrillion-equation", "cue": "point", "n": 2, "sfx": "thunk", "volume": 0.35 },
+    { "scene": "quadrillion-equation", "cue": "five", "n": 2, "sfx": "thunk", "volume": 0.35 },
+    { "scene": "quadrillion-equation", "cue": "three", "n": 2, "sfx": "thunk", "volume": 0.35 },
+    { "scene": "quadrillion-equation", "cue": "one.", "n": 3, "sfx": "stamp", "volume": 0.45 },
+    { "scene": "quadrillion-equation", "cue": "one.", "n": 3, "at": "after", "sfx": "squeak", "volume": 0.25 },
+
+    { "scene": "calculator-scream", "cue": "error,", "sfx": "zap", "volume": 0.3 },
+    { "scene": "calculator-scream", "cue": "scream,", "sfx": "yelp", "volume": 0.45 },
+    { "scene": "calculator-scream", "cue": "attempt", "sfx": "squeak", "volume": 0.25 },
+    { "scene": "calculator-scream", "cue": "to", "sfx": "squeak", "volume": 0.25 },
+    { "scene": "calculator-scream", "cue": "leave", "sfx": "squeak", "volume": 0.25 },
+    { "scene": "calculator-scream", "cue": "correct.", "at": "after", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "calculator-scream", "cue": "correct.", "at": "after", "offset": 0.45, "sfx": "clank", "volume": 0.5 },
+    { "scene": "calculator-scream", "cue": "correct.", "at": "after", "offset": 0.7, "sfx": "pop", "volume": 0.3 },
+
+    { "scene": "greatest-hits-trophies", "cue": "cents", "sfx": "whistle", "volume": 0.25 },
+    { "scene": "greatest-hits-trophies", "cue": "life.", "sfx": "ding", "volume": 0.3 },
+    { "scene": "greatest-hits-trophies", "cue": "gold", "sfx": "stamp", "volume": 0.4 },
+    { "scene": "greatest-hits-trophies", "cue": "keeping", "sfx": "whirr", "volume": 0.2 },
+    { "scene": "greatest-hits-trophies", "cue": "alive,", "sfx": "boing", "volume": 0.4 },
+    { "scene": "greatest-hits-trophies", "cue": "eighty-four", "sfx": "cash-register", "volume": 0.35 },
+    { "scene": "greatest-hits-trophies", "cue": "This", "sfx": "boom", "volume": 0.25 },
+    { "scene": "greatest-hits-trophies", "cue": "hundred", "n": 2, "sfx": "click", "volume": 0.35 },
+    { "scene": "greatest-hits-trophies", "cue": "hundred", "n": 2, "offset": 0.12, "sfx": "click", "volume": 0.35 },
+    { "scene": "greatest-hits-trophies", "cue": "hundred", "n": 2, "offset": 0.24, "sfx": "click", "volume": 0.35 },
+    { "scene": "greatest-hits-trophies", "cue": "hundred", "n": 2, "offset": 0.36, "sfx": "click", "volume": 0.35 },
+    { "scene": "greatest-hits-trophies", "cue": "cheaper.", "sfx": "ding", "volume": 0.35 },
+    { "scene": "greatest-hits-trophies", "cue": "cheaper.", "at": "after", "sfx": "clank", "volume": 0.5 },
+    { "scene": "greatest-hits-trophies", "cue": "cheaper.", "at": "after", "offset": 0.15, "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "greatest-hits-trophies", "cue": "cheaper.", "at": "after", "offset": 0.8, "sfx": "clank", "volume": 0.25 },
+    { "scene": "greatest-hits-trophies", "cue": "eradication", "sfx": "splat", "volume": 0.5 },
+    { "scene": "greatest-hits-trophies", "cue": "vaccinations", "sfx": "pop", "volume": 0.45 },
+    { "scene": "greatest-hits-trophies", "cue": "vaccinations", "offset": 0.05, "sfx": "yelp", "volume": 0.3 },
+    { "scene": "greatest-hits-trophies", "cue": "humanity's", "sfx": "sparkle", "volume": 0.4 },
+    { "scene": "greatest-hits-trophies", "cue": "previous", "sfx": "stamp", "volume": 0.5 },
+    { "scene": "greatest-hits-trophies", "cue": "genre.", "at": "after", "sfx": "pop", "volume": 0.4 },
+
+    { "scene": "one-percent-chance", "cue": "percent", "sfx": "clank", "volume": 0.4 },
+    { "scene": "one-percent-chance", "cue": "probability", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "one-percent-chance", "cue": "treaty", "sfx": "huff", "volume": 0.3 },
+    { "scene": "one-percent-chance", "cue": "you),", "n": 2, "sfx": "zap", "volume": 0.45 },
+    { "scene": "one-percent-chance", "cue": "you),", "n": 2, "offset": 0.1, "sfx": "sizzle", "volume": 0.3 },
+    { "scene": "one-percent-chance", "cue": "ninety-two", "sfx": "slide-down", "volume": 0.45 },
+    { "scene": "one-percent-chance", "cue": "ninety-two", "offset": 0.75, "sfx": "pop", "volume": 0.35 },
+    { "scene": "one-percent-chance", "cue": "point", "sfx": "click", "volume": 0.4 },
+    { "scene": "one-percent-chance", "cue": "point", "offset": 0.12, "sfx": "click", "volume": 0.4 },
+    { "scene": "one-percent-chance", "cue": "times", "sfx": "ding", "volume": 0.4 },
+
+    { "scene": "calculator-returns", "cue": "than", "sfx": "boing", "volume": 0.3 },
+    { "scene": "calculator-returns", "cue": "nets.", "sfx": "yelp", "volume": 0.25 },
+    { "scene": "calculator-returns", "cue": "nets.", "offset": 0.15, "sfx": "pop", "volume": 0.3 },
+    { "scene": "calculator-returns", "cue": "nets.", "at": "after", "offset": 0.25, "sfx": "clank", "volume": 0.4 },
+    { "scene": "calculator-returns", "cue": "nets.", "at": "after", "offset": 0.5, "sfx": "pop", "volume": 0.3 }
+  ]
+}

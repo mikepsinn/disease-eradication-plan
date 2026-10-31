@@ -1,0 +1,504 @@
+<template id="debug-37-trillion-cells-template">
+  <!-- debug-37-trillion-cells · style "atomic" (cartoon-style-bible.md), Layer B, plate the-body: ONE plate. Part 2's
+       hungry human (less-crazy-goal's build, sandwich in hand) strolls along a street that scrolls under his walk, and
+       the inside of him is drawn on the same plate inside his chest light, very small: flat print organs on a
+       rust-pink field, a blood vessel along the bottom, and the liver made of cells, each with its own little light.
+       The camera (KIT.camera, log-scale zoom) dives in through the light and climbs back out.
+       "That's": close on his blinking light. "thirty-seven": the dive into the cells; 37,000,000,000,000 stamps across
+       a group of zeros at a time, squeezing to fit. "thousand": the cells' lights go red one after another, faster
+       and faster. "chemistry": in one cell a molecule chain knots, then ties itself in a bow. "organs": back out to
+       the organs; a bite of sandwich drops into the stomach. "simulate,": a laptop by the liver, stuck at 3%, shakes
+       and smokes, and after the word bursts into flames for good. "pathogens": germs race along the vessel.
+       "evolve": a pill bottle fires a pill; the lead germ grows a spike and the pill bounces off. "treatments.": the
+       second shot (pill and cap) is eaten; the germ swells into a grinning disease and burps the cap back.
+       "debug": the tiny Scientist rappels in with her wrench; "all": her to-do list unrolls off the bottom of the frame;
+       "once.": every light in the body red at once, she spins round on her rope, wrench up (the key frame). "While":
+       a footstep thumps through everything and she lands flat on her back. "walking": all the way back out, he is
+       still strolling and chewing; "using": another bite; after "itself.": a tiny yelp, a pat on the chest, a shrug,
+       and he takes another bite. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #D9937C; }
+    #debug-37-trillion-cells-weave, #debug-37-trillion-cells-shake, #debug-37-trillion-cells-plate, #debug-37-trillion-cells-over, #debug-37-trillion-cells-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="debug-37-trillion-cells" data-width="1920" data-height="1080" data-start="0" data-duration="23.02">
+    <div id="debug-37-trillion-cells-weave">
+      <div id="debug-37-trillion-cells-shake"><div id="debug-37-trillion-cells-plate"></div></div>
+      <div id="debug-37-trillion-cells-over"></div>
+    </div>
+    <div id="debug-37-trillion-cells-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "debug-37-trillion-cells";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var f3 = function (n) { return n.toFixed(3); };
+      var smooth = KIT.smooth, clamp = function (v, a, b) { return Math.min(b, Math.max(a, v)); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put through the zooms.
+      KIT.film(tl, ID, q("weave"), q("film"), 437);
+
+      // ── The plate, in plate units ("body units"): the inside of him is drawn at 1 : 1, centered on his chest light
+      // at (0, 0). He is drawn K0 times bigger, so his chest light (radius 6 of his units, as in less-crazy-goal) is a
+      // disc of radius DISC that holds the whole inside. The street around him is drawn in his units too.
+      var K0 = 400, LIGHT = [1, -34], DISC = 6 * K0;
+      var FIELD = "#D9937C", LUNG = "#EDB9AA", HEART = C.war, LIVER = "#B85E4C", CELL = "#F0C9A8", NUC = "#D89C86", STOMACH = "#E6B36A", VESSEL = "#8C2E26", VESSEL2 = "#A8423A";
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var rnd = KIT.rng(4137);
+
+      // ── Positions inside him (body units) ──
+      var LIVER_PTS = [[-590, 120], [-520, 40], [-360, 10], [-150, 20], [-20, 60], [0, 150], [-40, 300], [-160, 400], [-360, 430], [-540, 380], [-605, 260]];
+      var STOM = [300, 230], HEARTP = [40, -230], LUNGS = [[-290, -380], [330, -380]];
+      var VY = 560, VR = 45; // the vessel's middle and half thickness
+      var LAP = [-560, VY - VR], LAPK = 4; // the laptop stands on the vessel by the liver
+      var BOT = [770, VY - VR - 29 * 1.4], BOTK = 1.4; // the pill bottle lies on the vessel, its mouth to the left
+      var MOUTH = [BOT[0] - 106 * BOTK, BOT[1]];
+      var HIT = 330; // where the lead germ stops
+      var SCI = [-330, 150], SCIK = 0.38; // the Scientist's rope hand, and her scale
+
+      // ── The camera's views: [plate x, plate y, scale]. full: the whole man on his street; close: his chest light.
+      var VIEW = V
+        ? { full: [0, 9600, 0.0128], close: [0, -2800, 0.03], lightC: [0, 0, 0.11], organs: [-40, 0, 0.62], cells: [-330, 190, 7],
+            lap: [-540, 380, 2.4], vessel: [380, 470, 1.3], blob: [380, 430, 2.2], liverW: [-300, 230, 1.8], sci: [-330, 200, 7] }
+        : { full: [0, 13600, 0.0092], close: [0, -2800, 0.022], lightC: [0, 0, 0.09], organs: [0, 60, 0.7], cells: [-330, 170, 5],
+            lap: [-520, 360, 2.2], vessel: [200, 450, 1.25], blob: [380, 430, 1.8], liverW: [-300, 230, 1.6], sci: [-330, 190, 5] };
+
+      // ── The hungry human (less-crazy-goal's MAN), his chest light moved to LIGHT and hidden: the plate draws it.
+      var MAN = { kind: "shirt", head: "long", hairStyle: "short", tone: 2, color: 2, look: "left", build: { tw: 0.72, legs: 1.18, th: 1.12, neck: 1.6, hs: 0.95, nose: 1.5 } };
+      var HOLD = [-20, -100];
+      var POSES = {
+        walk: { mood: "smile", arms: [HOLD, [22, 10]] },
+        bite: { mood: "smile", arms: [[-30, -160], [22, 10]] },
+        pat: { mood: "worried", brows: true, arms: [HOLD, [40, -95]] },
+        shrug: { mood: "flat", look: null, arms: [[-60, -150], [60, 150]] },
+      };
+      var rigs = {}, manSvg = "";
+      Object.keys(POSES).forEach(function (n) {
+        var o = copy(MAN, POSES[n]);
+        rigs[n] = KIT.rig(o);
+        manSvg += '<g id="' + ID + "-p-" + n + '" opacity="' + (n === "walk" ? 1 : 0) + '">' + KIT.person(o).replace(/<circle class="chest-light"[^>]*\/>/, "") + "</g>";
+      });
+      var R0 = rigs.walk;
+      var pocket = function (x, s) { return '<path d="M' + f(x) + "," + f(R0.hipY - 4) + " l" + 13 * s + ",0 l" + -3 * s + ",15 l" + -9 * s + ",-3 Z" + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="round"/>'; };
+      manSvg += pocket(R0.hip[0][0] - 9, -1) + pocket(R0.hip[1][0] + 9, 1);
+      // the club sandwich (less-crazy-goal's, two bites out of it; a third after "using"), in his units
+      var SK = 0.74;
+      function sandwich() {
+        var bread = function (y, h) { return '<rect x="-32" y="' + y + '" width="64" height="' + h + '" rx="7" fill="#E9C07A" stroke="' + ink + '" stroke-width="2.6"/>'; };
+        var body = bread(10, 11) + '<path d="M-33,8 q6,-6 11,0 q6,-6 11,0 q6,-6 11,0 q6,-6 11,0 q6,-6 11,0 q6,-6 11,0 v4 h-66 Z" fill="#9DB25A" stroke="' + ink + '" stroke-width="2"/>' +
+          '<rect x="-31" y="0" width="62" height="7" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/>' + bread(-10, 10) +
+          '<rect x="-31" y="-17" width="62" height="7" fill="#D99A8F" stroke="' + ink + '" stroke-width="2"/><path d="M-31,-11 H31 V-8 l-5,7 l-4,-7 H-31 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.6"/>' + bread(-29, 12);
+        var pick = '<path d="M4,-29 L1,-50" stroke="' + C.tan + '" stroke-width="2.4"/><circle cx="1" cy="-52" r="5.5" fill="#7E8C3A" stroke="' + ink + '" stroke-width="2"/><circle cx="1" cy="-52" r="2" fill="' + C.war + '"/>';
+        var c = ID + "-bite";
+        return '<defs><clipPath id="' + c + '2"><path d="M-60,-80 H-8 V-31 Q2,-31 4,-22 Q-8,-19 -4,-10 Q-12,-5 -5,3 Q-11,9 -2,15 Q8,17 12,22 H60 V60 H-60 Z"/></clipPath>' +
+          '<clipPath id="' + c + '3"><path d="M-60,-80 H-22 V-31 Q-12,-31 -10,-22 Q-22,-19 -18,-10 Q-26,-5 -19,3 Q-25,9 -16,15 Q-6,17 -2,22 H60 V60 H-60 Z"/></clipPath></defs>' +
+          '<g class="sandwich-body" clip-path="url(#' + c + '2)">' + body + pick + "</g>";
+      }
+      var sand = '<g id="' + ID + '-sand"><g id="' + ID + '-sand-in" transform="scale(-' + SK + "," + SK + ')">' + sandwich() + "</g></g>";
+      // a tiny yelp out of his chest after "itself.": a jolt of short lines round the light (his units)
+      var yelp = '<g id="' + ID + '-yelp" opacity="0">' + [0, 1, 2, 3, 4, 5].map(function (i) {
+        var a = (i / 6) * Math.PI * 2 + 0.3, r0 = 10, r1 = 17;
+        return '<path d="M' + f(LIGHT[0] + r0 * Math.cos(a)) + "," + f(LIGHT[1] + r0 * Math.sin(a)) + " L" + f(LIGHT[0] + r1 * Math.cos(a)) + "," + f(LIGHT[1] + r1 * Math.sin(a)) + '" stroke="' + ink + '" stroke-width="2.2" stroke-linecap="round"/>';
+      }).join("") + "</g>";
+
+      // ── The street (his units, his feet on y 100): a row of shop fronts and lamp posts that scrolls by, a sidewalk
+      // with joints, a curb and the road. One stretch of PER units, drawn three times.
+      var PER = 900, SPEED = 62;
+      function stretch(x0) {
+        var s = "", cols = [C.peri, C.cyan, C.rust, "#7A8A5A"], i;
+        for (i = 0; i < 4; i++) {
+          var x = x0 + i * 225, h = 250 + ((i * 37) % 3) * 30, col = cols[i];
+          s += '<rect x="' + x + '" y="' + (100 - h) + '" width="225" height="' + h + '" fill="' + col + '" stroke="' + ink + '" stroke-width="3"/>' +
+            '<rect x="' + (x + 30) + '" y="' + (100 - h + 30) + '" width="60" height="70" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/><rect x="' + (x + 135) + '" y="' + (100 - h + 30) + '" width="60" height="70" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>' +
+            '<rect x="' + (x + 20) + '" y="-40" width="110" height="120" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="3"/><rect x="' + (x + 150) + '" y="-30" width="56" height="130" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3"/>';
+          // a striped awning over the window
+          for (var j = 0; j < 5; j++) s += '<path d="M' + (x + 14 + j * 24.4) + ",-62 h24.4 l-3,18 h-18.4 Z" + '" fill="' + (j % 2 ? C.cream : C.orange) + '" stroke="' + ink + '" stroke-width="2"/>';
+        }
+        // a lamp post
+        s += '<rect x="' + (x0 + 440) + '" y="-170" width="9" height="270" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.5"/><path d="M' + (x0 + 430) + ",-170 h29 l-6,-22 h-17 Z" + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.5"/>';
+        // the sidewalk joints
+        for (i = 0; i < 6; i++) s += '<path d="M' + (x0 + i * 150) + ",100 l-12,40" + '" stroke="#B9A57E" stroke-width="2.4"/>';
+        return s;
+      }
+      var street = '<rect x="-3000" y="-900" width="6000" height="1000" fill="#EAD9AE"/>' +
+        '<rect x="-3000" y="100" width="6000" height="40" fill="#D8C9A3"/>' +
+        '<rect x="-3000" y="140" width="6000" height="12" fill="#C9B48A" stroke="' + ink + '" stroke-width="3"/><rect x="-3000" y="152" width="6000" height="400" fill="' + C.slate + '"/>' +
+        '<g id="' + ID + '-scroll">' + stretch(-PER * 2) + stretch(-PER) + stretch(0) + stretch(PER) + "</g>" + '<path d="M-3000,100 H3000" stroke="' + ink + '" stroke-width="3"/>';
+
+      // ── The inside (body units) ──
+      var poly = function (pts) { return pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" "); };
+      var inside = function (p, pts) {
+        var c = false;
+        for (var i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+          if ((pts[i][1] > p[1]) !== (pts[j][1] > p[1]) && p[0] < ((pts[j][0] - pts[i][0]) * (p[1] - pts[i][1])) / (pts[j][1] - pts[i][1]) + pts[i][0]) c = !c;
+        }
+        return c;
+      };
+      // a small light (a check-engine light), r its radius
+      var lamp = function (x, y, r, cls) { return '<g class="' + cls + '"><circle class="lamp-glow" cx="' + f(x) + '" cy="' + f(y) + '" r="' + f(r * 1.9) + '" fill="' + C.war + '" opacity="0"/><circle class="lamp" cx="' + f(x) + '" cy="' + f(y) + '" r="' + f(r) + '" fill="#E9E1CC" stroke="' + ink + '" stroke-width="' + f(r * 0.32) + '"/></g>'; };
+      // the cells of the liver: a jittered hex grid; each a cream-peach polygon with a nucleus and its own light
+      var cells = [], cellSvg = "";
+      for (var row = -1; row < 16; row++) {
+        for (var col = -1; col < 19; col++) {
+          var cx = -625 + col * 36 + (row % 2 ? 18 : 0) + (rnd() - 0.5) * 6, cy = -5 + row * 31 + (rnd() - 0.5) * 5, rr = 15.5 + rnd() * 2.5;
+          var pts = [];
+          for (var i = 0; i < 7; i++) { var a = (i / 7) * Math.PI * 2 + rnd() * 0.35, r1 = rr * (0.86 + rnd() * 0.2); pts.push([cx + r1 * Math.cos(a), cy + r1 * Math.sin(a) * 0.86]); }
+          var live = inside([cx, cy], LIVER_PTS);
+          cellSvg += '<polygon points="' + poly(pts) + '" fill="' + CELL + '" stroke="' + ink + '" stroke-width="1.5" stroke-linejoin="miter"/>' +
+            '<ellipse cx="' + f(cx - rr * 0.25) + '" cy="' + f(cy + rr * 0.12) + '" rx="' + f(rr * 0.26) + '" ry="' + f(rr * 0.19) + '" fill="' + NUC + '" stroke="' + ink + '" stroke-width="0.9"/>';
+          if (live) { cells.push({ x: cx, y: cy, r: rr, i: cells.length }); cellSvg += lamp(cx + rr * 0.3, cy - rr * 0.22, 4.2, "cell-lamp"); }
+        }
+      }
+      // the hero cell (the molecule chain): the cell nearest a point in the "cells" view
+      var HERO = cells.reduce(function (b, c) { var d = Math.hypot(c.x + 270, c.y - 140); return !b || d < b.d ? { c: c, d: d } : b; }, null).c;
+      VIEW.hero = [HERO.x, HERO.y, V ? 20 : 15];
+      // the landing cell: where she lands on her back, below her
+      var LANDC = cells.reduce(function (b, c) { var d = Math.hypot(c.x - SCI[0] - 8, c.y - (SCI[1] + 78)); return !b || d < b.d ? { c: c, d: d } : b; }, null).c;
+      var livSvg = '<defs><clipPath id="' + ID + '-liv"><polygon points="' + poly(LIVER_PTS) + '"/></clipPath></defs>' +
+        '<polygon points="' + poly(LIVER_PTS) + '" fill="' + LIVER + '"/><g clip-path="url(#' + ID + '-liv)">' + cellSvg + "</g>" +
+        '<polygon points="' + poly(LIVER_PTS) + '" fill="none" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/>';
+      // the lungs: two lobes with their bronchi
+      var lobe = function (x, y, s) {
+        var p = [[-110, -170], [-40, -205], [60, -190], [120, -100], [125, 60], [95, 190], [0, 205], [-90, 180], [-125, 40], [-125, -100]].map(function (q2) { return [x + q2[0] * s, y + q2[1]]; });
+        return '<polygon points="' + poly(p) + '" fill="' + LUNG + '" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/>' +
+          '<path d="M' + f(x + 60 * s) + "," + f(y - 230) + " L" + f(x + 20 * s) + "," + f(y - 40) + " L" + f(x - 50 * s) + "," + f(y + 80) + " M" + f(x + 20 * s) + "," + f(y - 40) + " L" + f(x + 10 * s) + "," + f(y + 120) + " M" + f(x + 30 * s) + "," + f(y - 120) + " L" + f(x - 50 * s) + "," + f(y - 60) + '" fill="none" stroke="#C47F74" stroke-width="12" stroke-linecap="round"/>';
+      };
+      var heart = '<path d="M' + f(HEARTP[0]) + "," + f(HEARTP[1] + 120) + " L" + f(HEARTP[0] - 110) + "," + f(HEARTP[1] + 10) + " L" + f(HEARTP[0] - 105) + "," + f(HEARTP[1] - 70) + " L" + f(HEARTP[0] - 50) + "," + f(HEARTP[1] - 100) + " L" + f(HEARTP[0]) + "," + f(HEARTP[1] - 60) +
+        " L" + f(HEARTP[0] + 50) + "," + f(HEARTP[1] - 100) + " L" + f(HEARTP[0] + 105) + "," + f(HEARTP[1] - 70) + " L" + f(HEARTP[0] + 110) + "," + f(HEARTP[1] + 10) + ' Z" fill="' + HEART + '" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/>' +
+        '<path d="M' + f(HEARTP[0] - 30) + "," + f(HEARTP[1] - 85) + " l-10,-90 M" + f(HEARTP[0] + 25) + "," + f(HEARTP[1] - 85) + ' l14,-95" stroke="' + ink + '" stroke-width="22" stroke-linecap="square"/><path d="M' + f(HEARTP[0] - 30) + "," + f(HEARTP[1] - 85) + " l-10,-90 M" + f(HEARTP[0] + 25) + "," + f(HEARTP[1] - 85) + ' l14,-95" stroke="' + VESSEL2 + '" stroke-width="12"/>';
+      var ESO = [[70, -1300], [70, -500], [130, -150], [215, 95]];
+      var eso = '<path d="M' + ESO[0] + " C" + ESO[1] + " " + ESO[2] + " " + ESO[3] + '" fill="none" stroke="' + ink + '" stroke-width="44"/><path d="M' + ESO[0] + " C" + ESO[1] + " " + ESO[2] + " " + ESO[3] + '" fill="none" stroke="#E7A796" stroke-width="32"/>';
+      var stomach = '<g id="' + ID + '-stom"><path d="M' + f(STOM[0] - 90) + "," + f(STOM[1] - 120) + " L" + f(STOM[0] - 40) + "," + f(STOM[1] - 135) + " L" + f(STOM[0] + 20) + "," + f(STOM[1] - 90) + " L" + f(STOM[0] + 120) + "," + f(STOM[1] - 70) +
+        " L" + f(STOM[0] + 165) + "," + f(STOM[1] + 10) + " L" + f(STOM[0] + 130) + "," + f(STOM[1] + 110) + " L" + f(STOM[0] + 20) + "," + f(STOM[1] + 140) + " L" + f(STOM[0] - 110) + "," + f(STOM[1] + 100) + " L" + f(STOM[0] - 130) + "," + f(STOM[1] + 10) +
+        ' L' + f(STOM[0] - 60) + "," + f(STOM[1] - 40) + ' Z" fill="' + STOMACH + '" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/>' +
+        '<path d="M' + f(STOM[0] - 70) + "," + f(STOM[1] + 40) + " q60,40 150,-10" + '" fill="none" stroke="#C99550" stroke-width="5"/>' + lamp(STOM[0] + 90, STOM[1] - 20, 14, "organ-lamp") + "</g>";
+      var vessel = '<rect x="-2600" y="' + (VY - VR - 4) + '" width="5200" height="' + (2 * VR + 8) + '" fill="' + ink + '"/><rect x="-2600" y="' + (VY - VR) + '" width="5200" height="' + 2 * VR + '" fill="' + VESSEL + '"/>' +
+        '<rect x="-2600" y="' + (VY - VR + 10) + '" width="5200" height="10" fill="' + VESSEL2 + '"/>';
+      // the laptop by the liver: its progress bar stuck at 3%
+      var screen = '<rect x="-17" y="-24" width="34" height="6" fill="' + C.slate + '" stroke="' + C.cream + '" stroke-width="1.2"/><rect x="-16.4" y="-23.4" width="1.1" height="4.8" fill="' + C.yellow + '"/>' +
+        '<text x="0" y="-28" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="9" fill="' + C.cream + '">3%</text>';
+      var lapSvg = '<g id="' + ID + '-lap"><g id="' + ID + '-lap-in">' + KIT.props.laptop({}).replace("<!--laptop-screen-->", screen) + "</g>" +
+        '<g id="' + ID + '-lap-fire" opacity="0">' + KIT.flames(-6, -40, 0.62) + KIT.flames(16, -36, 0.42) + "</g></g>";
+      var smoke = [0, 1, 2, 3].map(function (i) { return '<circle id="' + ID + "-smoke" + i + '" r="14" fill="#8C8782" stroke="' + ink + '" stroke-width="2" opacity="0"/>'; }).join("");
+      // the germs: three, inside the vessel; the lead one can grow a new spike (toward the bottle, +x)
+      var spike = '<g id="' + ID + '-spike"><path d="M18,-38 L52,-30 L18,-22 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3.6" stroke-linejoin="miter"/></g>';
+      var germs = [0, 1, 2].map(function (i) { return '<g id="' + ID + "-germ" + i + '"><g class="germ-in">' + (i === 0 ? spike : "") + KIT.props.germ({ color: i === 1 ? "orange" : "yellow" }) + "</g></g>"; }).join("");
+      var blob = '<g id="' + ID + '-blob" opacity="0"><g id="' + ID + '-blob-in">' + KIT.props.diseaseBlob({ mood: "grin", color: "peri", seed: 3 }) + "</g></g>";
+      var bottle = at(BOT[0], BOT[1], BOTK, '<g transform="rotate(-90)">' + KIT.props.pillBottle({ label: "Rx", pills: false }) + "</g>", ' id="' + ID + '-bottle"');
+      // a capsule (as the bottle's), 16 x 7, pointing +x
+      var capsule = '<g><path d="M-8,-1.6 L-6.4,-3.6 L0,-3.6 L0,3.6 L-6.4,3.6 L-8,1.6 Z" fill="' + C.med + '" stroke="' + ink + '" stroke-width="1.6"/><path d="M8,-1.6 L6.4,-3.6 L0,-3.6 L0,3.6 L6.4,3.6 L8,1.6 Z" fill="#FBF6E6" stroke="' + ink + '" stroke-width="1.6"/></g>';
+      var pills = [0, 1].map(function (i) { return '<g id="' + ID + "-pill" + i + '" opacity="0"><g transform="scale(3)">' + capsule + "</g></g>"; }).join("");
+      var capFly = '<g id="' + ID + '-cap" opacity="0"><g transform="scale(' + BOTK + ')"><path d="M-27,0 L27,0 L27,-18 L23,-22 L-23,-22 L-27,-18 Z" fill="#FBF6E6" stroke="' + ink + '" stroke-width="3.2" stroke-linejoin="miter"/><path d="M-20,-8 H20" stroke="' + ink + '" stroke-width="1.4" opacity="0.5"/></g></g>';
+      // the bite of sandwich that drops into the stomach
+      var chunk = '<g id="' + ID + '-chunk" opacity="0"><g transform="scale(1.2)"><rect x="-20" y="-16" width="40" height="10" rx="5" fill="#E9C07A" stroke="' + ink + '" stroke-width="2.6"/><rect x="-19" y="-6" width="38" height="6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/>' +
+        '<path d="M-20,0 q5,-5 10,0 q5,-5 10,0 q5,-5 10,0 q5,-5 10,0 v4 h-40 Z" fill="#9DB25A" stroke="' + ink + '" stroke-width="2"/><rect x="-20" y="4" width="40" height="10" rx="5" fill="#E9C07A" stroke="' + ink + '" stroke-width="2.6"/></g></g>';
+      // the molecule chain in the hero cell (body units, around the cell's middle): beads on a line
+      var NB = 15, beadCols = [C.yellow, C.med, C.peri];
+      var chain = '<g id="' + ID + '-chain"><path class="chain-line" d="" fill="none" stroke="' + ink + '" stroke-width="0.9"/>' + Array.apply(null, Array(NB)).map(function (_, i) {
+        return '<circle class="bead" r="1.05" fill="' + beadCols[i % 3] + '" stroke="' + ink + '" stroke-width="0.45"/>';
+      }).join("") + '<path class="bow-tails" d="" fill="none" stroke="' + ink + '" stroke-width="0.9" opacity="0"/></g>';
+
+      // ── The Scientist (tiny), with her wrench and her clipboard, on her rope. Her drawings: rappelling in, wrench
+      // up (the spin), and flat on her back.
+      var SPOSE = {
+        drop: { mood: "eager", arms: [[-170, -178], [70, 120]] },
+        up: { mood: "eager", arms: [[-170, -178], [-60, -150]] },
+        flat: { mood: "worried", brows: true, arms: [[-120, -160], [120, 160]] },
+      };
+      var srig = {}, sciSvg = "";
+      Object.keys(SPOSE).forEach(function (n) {
+        var o = KIT.castOpts("scientist", SPOSE[n]), R = KIT.rig(o);
+        srig[n] = R;
+        var wrench = '<g transform="translate(' + f(R.hand[1][0]) + "," + f(R.hand[1][1]) + ') rotate(' + (n === "drop" ? 70 : -20) + ')"><rect x="-3" y="-34" width="7" height="34" fill="#9BA7B8" stroke="' + ink + '" stroke-width="2"/><path d="M-9,-46 a10,10 0 1,1 18,0 l-4,6 h-10 Z" fill="#9BA7B8" stroke="' + ink + '" stroke-width="2"/></g>';
+        var clip = '<g transform="translate(' + f(R.hand[0][0]) + "," + f(R.hand[0][1] + 8) + ')"><rect x="-12" y="-8" width="24" height="18" fill="#B98A55" stroke="' + ink + '" stroke-width="2"/><rect x="-5" y="-11" width="10" height="5" fill="' + C.slate + '"/></g>';
+        sciSvg += '<g class="spose" data-pose="' + n + '" opacity="0">' + KIT.person(o) + wrench + clip + "</g>";
+      });
+      // she hangs from her rope hand (hand[0] of "drop" / "up"): her group is placed so that hand sits on the rope's end
+      var SH = srig.drop.hand[0];
+      var sci = '<g id="' + ID + '-sci" opacity="0"><g id="' + ID + '-sci-spin"><g transform="scale(' + SCIK + ") translate(" + f(-SH[0]) + "," + f(-SH[1]) + ')">' + sciSvg + "</g></g></g>";
+      var rope = '<g id="' + ID + '-rope" opacity="0"><path class="rope-a" d="" stroke="' + C.tan + '" stroke-width="3.2" fill="none"/><path class="rope-b" d="" stroke="' + ink + '" stroke-width="0.9" stroke-dasharray="2.4 4" fill="none"/></g>';
+      // her to-do list: a long strip of empty boxes that unrolls down from her clipboard (in her own units x SCIK)
+      var LISTW = 34, listRows = "";
+      for (var ly = 8; ly < 900; ly += 13) listRows += '<rect x="' + f(-LISTW / 2 + 4) + '" y="' + ly + '" width="6" height="6" fill="none" stroke="' + ink + '" stroke-width="1.2"/><path d="M' + f(-LISTW / 2 + 13) + "," + (ly + 3.5) + " H" + f(LISTW / 2 - 4) + '" stroke="' + ink + '" stroke-width="1.2"/>';
+      var list = '<g id="' + ID + '-list" opacity="0"><defs><clipPath id="' + ID + '-listclip"><rect class="list-clip" x="-30" y="0" width="60" height="0"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-listclip)"><rect x="' + -LISTW / 2 + '" y="0" width="' + LISTW + '" height="900" fill="#FBF5E4" stroke="' + ink + '" stroke-width="1.8"/>' + listRows + "</g>" +
+        '<g class="list-roll"><rect x="' + f(-LISTW / 2 - 2) + '" y="-4" width="' + (LISTW + 4) + '" height="8" rx="4" fill="#FBF5E4" stroke="' + ink + '" stroke-width="1.8"/></g></g>';
+      var spinLines = '<g id="' + ID + '-spinl" opacity="0">' + [0, 1].map(function (i) {
+        return '<path d="M' + f(-26 - i * 7) + "," + (14 + i * 14) + " q-10,12 0,26 M" + f(26 + i * 7) + "," + (14 + i * 14) + ' q10,12 0,26" fill="none" stroke="' + ink + '" stroke-width="1.6" stroke-linecap="round"/>';
+      }).join("") + "</g>";
+
+      // ── Assemble: the street (not bobbing), then his body (bobbing): him, his inside clipped to the light's disc,
+      // and the light itself on top (its fill fades as the camera passes through it).
+      var interior = '<defs><clipPath id="' + ID + '-disc"><circle cx="0" cy="0" r="' + DISC + '"/></clipPath></defs><g clip-path="url(#' + ID + '-disc)">' +
+        '<circle cx="0" cy="0" r="' + DISC + '" fill="' + FIELD + '"/>' + eso + lobe(LUNGS[0][0], LUNGS[0][1], -1) + lobe(LUNGS[1][0], LUNGS[1][1], 1) +
+        lamp(LUNGS[0][0] - 30, LUNGS[0][1] - 80, 14, "organ-lamp") + lamp(LUNGS[1][0] + 40, LUNGS[1][1] - 70, 14, "organ-lamp") +
+        '<g id="' + ID + '-heart">' + heart + lamp(HEARTP[0] + 40, HEARTP[1] - 20, 14, "organ-lamp") + "</g>" + livSvg + stomach + vessel +
+        at(LAP[0], LAP[1], LAPK, lapSvg) + smoke + germs + blob + bottle + pills + capFly + chunk +
+        '<g transform="translate(' + f(HERO.x) + "," + f(HERO.y) + ')">' + chain + "</g>" + rope + list + sci + '<g id="' + ID + '-spinl-at">' + spinLines + "</g></g>";
+      var lightDisc = '<circle id="' + ID + '-glow" cx="0" cy="0" r="' + f(DISC * 1.7) + '" fill="' + C.war + '" opacity="0"/>' +
+        '<circle id="' + ID + '-lamp" cx="0" cy="0" r="' + DISC + '" fill="' + C.war + '"/>' +
+        '<circle cx="0" cy="0" r="' + DISC + '" fill="none" stroke="' + ink + '" stroke-width="' + 2 * K0 + '" id="' + ID + '-ring"/>';
+      var manAt = "translate(" + f(-LIGHT[0] * K0) + "," + f(-LIGHT[1] * K0) + ") scale(" + K0 + ")";
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="#EAD9AE"/>' +
+        '<g id="' + ID + '-cam"><g transform="' + manAt + '">' + street + '</g><g id="' + ID + '-body"><g transform="' + manAt + '"><g id="' + ID + '-man">' + manSvg + sand + yelp + "</g></g>" +
+        interior + lightDisc + "</g></g>");
+
+      // ── The big number, over the picture (outside the camera): 37, then a group of zeros at a time, squeezing to
+      // fit the frame when the zeros no longer fit.
+      var NUM_Y = V ? 520 : 300, NUM_W = W - (V ? 90 : 180), NUM_FS = KIT.fitText("37,000,000", V ? 220 : 270, NUM_W, "Fraunces", 900);
+      q("over").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-num" opacity="0"><text x="' + W / 2 + '" y="' + NUM_Y + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + f(NUM_FS) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="' + f(NUM_FS * 0.06) + '" paint-order="stroke" stroke-linejoin="round">37</text></g>');
+      var numG = q("num"), numT = numG.querySelector("text");
+
+      // ── Elements ──
+      var cam = q("cam"), body = q("body"), lampEl = q("lamp"), glowEl = q("glow"), ring = q("ring"), scroll = q("scroll");
+      var poseEls = Object.keys(POSES).map(function (n) { return { n: n, el: q("p-" + n) }; });
+      var sandEl = q("sand"), sandBody = sandEl.querySelector(".sandwich-body"), yelpEl = q("yelp");
+      var cellLamps = Array.prototype.slice.call(cam.querySelectorAll(".cell-lamp")), organLamps = Array.prototype.slice.call(cam.querySelectorAll(".organ-lamp"));
+      var lapIn = q("lap-in"), lapFire = q("lap-fire"), smokes = [0, 1, 2, 3].map(function (i) { return q("smoke" + i); });
+      var germEls = [0, 1, 2].map(function (i) { return q("germ" + i); }), spikeEl = q("spike"), blobEl = q("blob"), blobIn = q("blob-in");
+      var pillEls = [q("pill0"), q("pill1")], capEl = q("cap"), bottleCap = q("bottle").querySelector(".pill-cap"), chunkEl = q("chunk"), stomEl = q("stom");
+      var chainEl = q("chain"), beads = Array.prototype.slice.call(chainEl.querySelectorAll(".bead")), chainLine = chainEl.querySelector(".chain-line"), tails = chainEl.querySelector(".bow-tails");
+      var sciEl = q("sci"), sciSpin = q("sci-spin"), sposes = Array.prototype.slice.call(sciEl.querySelectorAll(".spose")), ropeEl = q("rope"), listEl = q("list"), listClip = listEl.querySelector(".list-clip"), spinL = q("spinl");
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+
+      // ── Cues ──
+      var t37 = cue("thirty-seven"), tTril = cue("trillion"), tHuman = KIT.cueEnd(ID, "human,"), tThou = cue("thousand"), tChem = cue("chemistry"), tUnder = cue("understand,");
+      var tOrg = cue("organs"), tSim = cue("simulate,"), tFire = KIT.after(ID, "simulate,"), tPath = cue("pathogens"), tEvolve = cue("evolve"), tTreat = cue("treatments."), tBurp = KIT.after(ID, "treatments.");
+      var tDebug = cue("debug"), tAll = cue("all"), tOnce = cue("once."), tWhile = cue("While"), tWalk = cue("walking"), tUsing = cue("using"), tYelp = KIT.after(ID, "itself.");
+
+      // ── The camera ──
+      var KEYS = [[0, "close", 1], [t37, "close", 1.06], [t37 + 0.3, "lightC", 1], [t37 + 1.45, "cells", 1], [tChem - 0.35, "cells", 1.07], [tChem + 0.05, "hero", 1], [tOrg - 0.25, "hero", 1.06],
+        [tOrg + 0.35, "organs", 1], [tSim - 0.5, "organs", 1.03], [tSim - 0.05, "lap", 1], [tPath - 0.15, "lap", 1.05], [tPath + 0.35, "vessel", 1], [tTreat - 0.1, "vessel", 1.04], [tTreat + 0.3, "blob", 1],
+        [tBurp + 0.25, "blob", 1.03], [tDebug - 0.2, "liverW", 1], [tDebug + 0.15, "liverW", 1.02], [tAll - 0.05, "sci", 1], [tWhile + 0.4, "sci", 1.05], [tWalk - 0.1, "sci", 1.05], [tWalk + 0.85, "full", 1], [D, "full", 1.04]];
+      var camera = KIT.camera(VIEW, KEYS);
+      var LS0 = Math.log(V ? 0.12 : 0.1), LS1 = Math.log(V ? 0.34 : 0.3);
+
+      // his walk: the stride, the bob (his units), and the chew
+      var walkPh = function (t) { return t * 9; };
+      var bobAt = function (t) { return -Math.abs(Math.sin(walkPh(t))) * 4; };
+
+      // the germs' run: each enters from the left; the lead one stops at HIT; the others pile up behind it
+      var gx = function (i, t) { var s0 = tPath - 0.25 + i * 0.12, x = -1500 + (t - s0) * 1900; return Math.min(x, HIT - i * 75); };
+      // the pills: the first leaves the mouth on "evolve", hits the new spike and bounces off; the second (with the cap)
+      // leaves before "treatments." and is eaten on the word
+      var P1 = [tEvolve - 0.05, tEvolve + 0.25], P2 = [tTreat - 0.32, tTreat];
+      var lerp2 = function (a, b, u, h) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u - Math.sin(Math.PI * u) * (h || 0)]; };
+      var GERM_C = [HIT, VY]; // the lead germ's middle
+      // the bite's fall: down the gullet into the stomach
+      var bez = function (P, u) { var m = 1 - u, c = [m * m * m, 3 * m * m * u, 3 * m * u * u, u * u * u]; return [0, 1].map(function (k) { return c[0] * P[0][k] + c[1] * P[1][k] + c[2] * P[2][k] + c[3] * P[3][k]; }); };
+      var CH0 = tOrg + 0.15, CH1 = CH0 + 0.75;
+
+      // the cells' lights go red one after another from "thousand", the nearest to the frame's middle first, faster
+      // and faster; then each blinks on its own beat; on "once." all of them (and the organs') are red together
+      var order = cells.slice().sort(function (a, b) { return Math.hypot(a.x - VIEW.cells[0], a.y - VIEW.cells[1]) - Math.hypot(b.x - VIEW.cells[0], b.y - VIEW.cells[1]); });
+      var redAt = new Array(cells.length), beat = new Array(cells.length);
+      order.forEach(function (c, k) { redAt[c.i] = tThou + 1.75 * (1 - Math.exp(-k * 0.13)); beat[c.i] = [0.45 + KIT.rng(c.i * 7 + 3)() * 0.6, KIT.rng(c.i * 13 + 1)()]; });
+
+      // the molecule chain: a wiggly line, a knot (it crosses itself), then a bow (a figure eight with two tails)
+      var chainPt = function (shape, u) {
+        if (shape === 0) return [-11 + 22 * u, 2.2 * Math.sin(u * Math.PI * 3)];
+        if (shape === 1) return [-11 + 22 * u + 9 * Math.sin(2 * Math.PI * u), -6 * Math.sin(2 * Math.PI * u) * Math.cos(Math.PI * u)];
+        return [11 * Math.sin(2 * Math.PI * u), 4.5 * Math.sin(4 * Math.PI * u)];
+      };
+      var tKnot = tChem, tBow = tChem + 1.25;
+
+      // the Scientist: drops in on "debug", hangs, spins on "once.", falls on "While"
+      var ROPE_TOP = SCI[1] - 2600;
+      var LAND = [LANDC.x + 4, LANDC.y - LANDC.r * 0.75];
+
+      KIT.onTime(tl, D, function (t) {
+        // ── camera: chase his bob once inside him (so the inside holds still)
+        var c = camera.at(t), bob = bobAt(t) * K0, w = clamp((Math.log(c.s) - Math.log(0.05)) / (Math.log(0.2) - Math.log(0.05)), 0, 1);
+        c.y += bob * smooth(w);
+        camera.place(cam, c);
+        body.setAttribute("transform", "translate(0," + f(bob) + ")");
+        // the light: blinking red on the street; its fill fades out as the camera passes through it
+        var fade = 1 - smooth((Math.log(c.s) - LS0) / (LS1 - LS0)), blinkOn = Math.floor(t * 4.2) % 3 !== 2;
+        lampEl.setAttribute("fill", blinkOn ? C.war : "#E9E1CC");
+        lampEl.setAttribute("opacity", f3(fade));
+        glowEl.setAttribute("opacity", f3(blinkOn ? 0.3 * fade : 0));
+        ring.setAttribute("stroke-width", f(Math.min(2 * K0, 6 / c.s)));
+        ring.setAttribute("opacity", f3(fade));
+        // the street scrolls under his walk
+        scroll.setAttribute("transform", "translate(" + f(-((t * SPEED) % PER)) + ",0)");
+
+        // ── him: the walk, the chew, the bites, the yelp, the pat and the shrug
+        var p = t > tUsing && t < tUsing + 0.45 ? "bite" : t > tYelp + 0.05 && t < tYelp + 0.22 ? "pat" : t >= tYelp + 0.22 && t < tYelp + 0.42 ? "shrug" : t >= tYelp + 0.42 ? "bite" : "walk";
+        poseEls.forEach(function (pe) {
+          show(pe.el, pe.n === p);
+          if (pe.n !== p) return;
+          var R = rigs[p];
+          Array.prototype.forEach.call(pe.el.querySelectorAll(".leg-l, .leg-r"), function (lg, i) {
+            lg.setAttribute("transform", "rotate(" + f(Math.sin(walkPh(t)) * 22 * (i ? -1 : 1)) + " " + f(R.hip[i][0]) + " " + f(R.hip[i][1]) + ")");
+          });
+          if (p === "walk" || p === "pat") {
+            var arm = pe.el.querySelector(p === "walk" ? ".arm-r" : ".arm-l");
+            if (p === "walk") arm.setAttribute("transform", "rotate(" + f(-Math.sin(walkPh(t)) * 16) + " " + f(R.shoulder[1][0]) + " " + f(R.shoulder[1][1]) + ")");
+          }
+          var head = pe.el.querySelector(".head");
+          if (head) head.setAttribute("transform", "rotate(" + f(Math.sin(t * 11) * 3) + " " + f(R.neck[0]) + " " + f(R.neck[1]) + ")");
+        });
+        var hh = rigs[p].hand[0];
+        sandEl.setAttribute("transform", "translate(" + f(hh[0] + (p === "bite" ? 4 : 0)) + "," + f(hh[1] - 8) + ")");
+        sandBody.setAttribute("clip-path", "url(#" + ID + (t > tUsing + 0.25 ? "-bite3)" : "-bite2)"));
+        show(yelpEl, t > tYelp && t < tYelp + 0.25 && Math.floor(t * 30) % 2 === 0);
+
+        // ── the big number: 37 on "thirty-seven", then ",000" four times up to "trillion"'s end; gone after "human,"
+        var groups = t < tTril ? 0 : Math.min(4, 1 + Math.floor((t - tTril) / 0.17));
+        var txt = "37" + new Array(groups + 1).join(",000"), wid = KIT.textWidth(txt, NUM_FS, "Fraunces", 900);
+        numT.textContent = txt;
+        if (wid > NUM_W) { numT.setAttribute("textLength", f(NUM_W)); numT.setAttribute("lengthAdjust", "spacingAndGlyphs"); } else numT.removeAttribute("textLength");
+        var nIn = t37 + 0.35, nOut = tHuman + 0.25;
+        numG.setAttribute("opacity", t > nIn && t < nOut + 0.3 ? f3(1 - smooth((t - nOut) / 0.3)) : 0);
+        var lastStamp = groups ? tTril + (groups - 1) * 0.17 : nIn, sp = clamp((t - lastStamp) / 0.12, 0, 1);
+        numG.setAttribute("transform", "translate(" + W / 2 + "," + NUM_Y + ") scale(" + f3(1 + 0.18 * (1 - sp)) + ") translate(" + -W / 2 + "," + -NUM_Y + ")");
+
+        // ── the cells' lights
+        var allRed = t >= tOnce;
+        cellLamps.forEach(function (g, i) {
+          var red = allRed || (t >= redAt[i] && ((t - redAt[i]) < 0.3 || ((t * 1 + beat[i][1] * beat[i][0]) % beat[i][0]) < beat[i][0] * 0.62));
+          g.lastChild.setAttribute("fill", red ? C.war : "#E9E1CC");
+          g.firstChild.setAttribute("opacity", allRed ? 0.45 : red && t - redAt[i] < 0.3 ? 0.4 : 0);
+        });
+        organLamps.forEach(function (g) {
+          g.lastChild.setAttribute("fill", allRed ? C.war : "#E9E1CC");
+          g.firstChild.setAttribute("opacity", allRed ? 0.5 : 0);
+        });
+
+        // ── the molecule chain: wiggles, knots (a squeak), then ties a bow
+        var u1 = smooth((t - tKnot) / 0.4), u2 = smooth((t - tBow) / 0.5), wig = Math.sin(t * 6) * 0.6, pts = [];
+        beads.forEach(function (b, i) {
+          var u = i / (NB - 1), a = chainPt(0, u), k = chainPt(1, u), bw = chainPt(2, u);
+          var x = a[0] + (k[0] - a[0]) * u1 + (bw[0] - k[0]) * u2, y = a[1] + wig * Math.sin(u * 9 + t * 3) * (1 - u1) + (k[1] - a[1]) * u1 + (bw[1] - k[1]) * u2;
+          b.setAttribute("cx", f3(x)); b.setAttribute("cy", f3(y)); pts.push([x, y]);
+        });
+        chainLine.setAttribute("d", "M" + pts.map(function (q2) { return f3(q2[0]) + "," + f3(q2[1]); }).join(" L") + (u2 > 0.98 ? " Z" : ""));
+        tails.setAttribute("d", "M0,0 L-4,9 M0,0 L4,9");
+        tails.setAttribute("opacity", f3(u2));
+
+        // ── the bite of sandwich drops down the gullet into the stomach, which gulps
+        if (t > CH0 && t < CH1) { var cp = bez(ESO, smooth((t - CH0) / (CH1 - CH0))); show(chunkEl, 1); chunkEl.setAttribute("transform", "translate(" + f(cp[0]) + "," + f(cp[1] + 30) + ") rotate(" + f((t - CH0) * 400) + ")"); }
+        else show(chunkEl, 0);
+        var gulp = t > CH1 && t < CH1 + 0.4 ? Math.sin(((t - CH1) / 0.4) * Math.PI) * 0.12 : 0;
+        stomEl.setAttribute("transform", "translate(" + STOM[0] + "," + STOM[1] + ") scale(" + f3(1 + gulp) + "," + f3(1 - gulp) + ") translate(" + -STOM[0] + "," + -STOM[1] + ")");
+
+        // ── the laptop: shakes and smokes on "simulate,", then burns for good
+        var shake = t > tSim && t < tFire ? Math.sin(t * 70) * 3.5 : t >= tFire ? Math.sin(t * 40) * 1.2 : 0;
+        lapIn.setAttribute("transform", "rotate(" + f(shake) + ")");
+        show(lapFire, t >= tFire);
+        smokes.forEach(function (s2, i) {
+          var age = (t - tSim - i * 0.22), per = 0.9;
+          if (age < 0) { show(s2, 0); return; }
+          age = age % per;
+          var x = LAP[0] + LAPK * (i % 2 ? 10 : -12) + age * 30, y = LAP[1] - LAPK * 50 - age * 160;
+          s2.setAttribute("opacity", f3(0.75 * (1 - age / per)));
+          s2.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") scale(" + f3(0.7 + age * 1.4) + ")");
+        });
+
+        // ── the germs race along the vessel; the lead one grows a spike on "evolve"
+        var burst = smooth((t - tTreat) / 0.4);
+        germEls.forEach(function (g, i) {
+          var x = gx(i, t), wob = Math.sin(t * 18 + i) * 4;
+          var vis = x > -1600 && !(i === 0 && t > tTreat + 0.4);
+          show(g, vis);
+          g.setAttribute("transform", "translate(" + f(x) + "," + f(VY + 30 + wob) + ") scale(" + f3(i === 0 ? 1.15 * (1 + 1.6 * burst) : 1.05) + ")");
+          g.firstChild.setAttribute("transform", "rotate(" + f(x < HIT - i * 75 - 1 ? (t * 600) % 360 : Math.sin(t * 10 + i) * 6) + " 0 -30)");
+        });
+        var sg = t < tEvolve + 0.1 ? 0 : 1 + 0.3 * Math.exp(-(t - tEvolve - 0.1) * 8) * Math.sin((t - tEvolve) * 40);
+        spikeEl.setAttribute("transform", "translate(18,-30) scale(" + f3(clamp((t - tEvolve - 0.05) / 0.15, 0, 1) * sg) + ") translate(-18,30)");
+        // the disease: the lead germ swells into it on "treatments.", grins, and burps the cap back after the word
+        show(blobEl, t > tTreat + 0.3);
+        var bsq = t > tBurp && t < tBurp + 0.3 ? Math.sin(((t - tBurp) / 0.3) * Math.PI) : 0;
+        blobEl.setAttribute("transform", "translate(" + HIT + "," + (VY + VR) + ") scale(" + f3(1.45 * clamp((t - tTreat - 0.3) / 0.15 + 0.7, 0, 1)) + ")");
+        blobIn.setAttribute("transform", "scale(" + f3(1 + 0.12 * bsq) + "," + f3(1 - 0.1 * bsq + 0.03 * Math.sin(t * 5)) + ")");
+
+        // ── the pills
+        var pill = function (k, t0, t1, eaten) {
+          var e = pillEls[k];
+          if (t < t0) { show(e, 0); return; }
+          var tgt = [GERM_C[0] + 40, GERM_C[1] - 36];
+          if (t < t1) { var pp = lerp2(MOUTH, tgt, (t - t0) / (t1 - t0), 40); show(e, 1); e.setAttribute("transform", "translate(" + f(pp[0]) + "," + f(pp[1]) + ") rotate(" + f(-8 + (t - t0) * 60) + ")"); return; }
+          if (eaten) { show(e, 0); return; }
+          // bounces off the spike: back up and away to the upper right, spinning
+          var a = t - t1;
+          if (a > 1.2) { show(e, 0); return; }
+          e.setAttribute("transform", "translate(" + f(tgt[0] + a * 380) + "," + f(tgt[1] - a * 900 + a * a * 900) + ") rotate(" + f(a * 900) + ")");
+        };
+        pill(0, P1[0], P1[1], false);
+        pill(1, P2[0], P2[1], true);
+        // the cap: off the bottle with the second pill, eaten with it, burped back out
+        var capOff = t > P2[0] - 0.05;
+        if (bottleCap) bottleCap.setAttribute("opacity", capOff ? 0 : 1);
+        if (t > P2[0] - 0.05 && t < P2[1]) { var cp2 = lerp2([MOUTH[0] - 10, MOUTH[1]], [GERM_C[0] + 50, GERM_C[1] - 30], (t - P2[0] + 0.05) / (P2[1] - P2[0] + 0.05), 60); show(capEl, 1); capEl.setAttribute("transform", "translate(" + f(cp2[0]) + "," + f(cp2[1]) + ") rotate(" + f(-90 - (t - P2[0]) * 500) + ")"); }
+        else if (t > tBurp) {
+          var ba = t - tBurp, mouth = [HIT + 10, VY + VR - 120 * 1.45];
+          if (ba < 1.1) { show(capEl, 1); capEl.setAttribute("transform", "translate(" + f(mouth[0] + ba * 260) + "," + f(mouth[1] - ba * 520 + ba * ba * 380) + ") rotate(" + f(ba * 720) + ")"); } else show(capEl, 0);
+        } else show(capEl, 0);
+
+        // ── the Scientist: drops in on her rope on "debug" (with a bounce), the list unrolls on "all"
+        var sAt = null, sRot = 0, spin = 1, spose = "drop";
+        if (t >= tDebug - 0.05) {
+          var du = (t - tDebug + 0.05) / 0.35, drop = du < 1 ? -900 * (1 - du) * (1 - du) : 14 * Math.exp(-(t - tDebug - 0.3) * 6) * Math.sin((t - tDebug - 0.3) * 18);
+          sAt = [SCI[0], SCI[1] + drop + Math.sin(t * 2.2) * 1.5];
+          if (t >= tOnce) { spose = "up"; spin = Math.cos((t - tOnce) * 13); }
+          if (t >= tWhile) {
+            // THUMP: she drops off the rope and lands flat on her back on the cell below
+            var fu = clamp((t - tWhile) / 0.28, 0, 1);
+            spose = fu < 0.5 ? "up" : "flat"; spin = 1;
+            sAt = [SCI[0] + (LAND[0] - SCI[0]) * fu, SCI[1] + (LAND[1] - 6 - SCI[1]) * fu * fu];
+            sRot = -90 * smooth(fu * 1.6);
+          }
+        }
+        show(sciEl, !!sAt);
+        if (sAt) {
+          sciEl.setAttribute("transform", "translate(" + f(sAt[0]) + "," + f(sAt[1]) + ") rotate(" + f(sRot) + ")");
+          sciSpin.setAttribute("transform", "scale(" + f3(Math.abs(spin) < 0.08 ? 0.08 * (spin < 0 ? -1 : 1) : spin) + ",1)");
+          sposes.forEach(function (sp2) { show(sp2, sp2.getAttribute("data-pose") === spose); });
+          // the rope: from far above down to her hand; slack and swinging once she drops off it
+          show(ropeEl, 1);
+          var rEnd = t < tWhile ? sAt : [SCI[0] + Math.sin((t - tWhile) * 7) * 14, SCI[1] - 10];
+          var rd = "M" + f(SCI[0]) + "," + f(ROPE_TOP) + " L" + f(rEnd[0]) + "," + f(rEnd[1]);
+          ropeEl.firstChild.setAttribute("d", rd); ropeEl.lastChild.setAttribute("d", rd);
+        } else show(ropeEl, 0);
+        // the spin lines while she spins
+        show(spinL, t > tOnce + 0.05 && t < tWhile);
+        if (sAt) spinL.setAttribute("transform", "translate(" + f(sAt[0]) + "," + f(sAt[1]) + ")");
+        // the list hangs from her clipboard (just under her rope hand) and unrolls off the bottom of the frame
+        var lu = smooth((t - tAll) / 0.8), lH = lu * (V ? 210 : 170);
+        show(listEl, sAt && t > tAll - 0.02 && t < tWhile + 0.15);
+        if (sAt) {
+          var lx = sAt[0] + (spin < 0 ? -1 : 1) * 1.5, ly2 = sAt[1] + 6;
+          listEl.setAttribute("transform", "translate(" + f(lx) + "," + f(ly2 + (t > tWhile ? (t - tWhile) * 300 : 0)) + ")");
+          listClip.setAttribute("height", f(lH));
+          listEl.querySelector(".list-roll").setAttribute("transform", "translate(0," + f(lH) + ")");
+        }
+      });
+
+      // ── THUMP on "While": the footstep shakes everything
+      tl.fromTo(q("shake"), { y: 0 }, { y: 26, duration: 0.06, ease: "power2.out", immediateRender: false }, tWhile);
+      tl.to(q("shake"), { y: -14, duration: 0.09, ease: "sine.inOut" }, tWhile + 0.06);
+      tl.to(q("shake"), { y: 6, duration: 0.08, ease: "sine.inOut" }, tWhile + 0.15);
+      tl.to(q("shake"), { y: 0, duration: 0.1, ease: "sine.out" }, tWhile + 0.23);
+      // the laptop's flames dance from the moment they catch
+      KIT.flicker(tl, lapFire, tFire, D - 0.2);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

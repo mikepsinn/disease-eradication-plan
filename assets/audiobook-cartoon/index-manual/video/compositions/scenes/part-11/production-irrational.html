@@ -1,0 +1,449 @@
+<template id="production-irrational-template">
+  <!-- production-irrational · Layer B (storyboards/part-11-civilization-countdown.md): slide left onto a little factory
+       with a SUCCESS sign on its roof. The Builder loads crates onto a conveyor that carries them off the paper
+       ("manufacture", thunk); on "exports" every crate gets its EXPORTS stencil. Next door, behind a desk, the Masked
+       Crook types ("hacking", typewriter) and his laptop spits war papers onto a pile ("banks", cash register) that grows
+       past the factory roof by "extraction,". "producing anything": the SUCCESS sign lights up like a marquee. "target":
+       it flips over to a bullseye (switch); "rather": a grinning missile pokes in at the top of the frame and whistles
+       down (slide-down); "success." +0.1: it hits. A white flash, a boom, a mushroom cloud, the frame shakes. The Crook
+       keeps typing. "irrational.": the smoke clears (sizzle) on the factory charred and bent and the Builder charred
+       black, hair straight up, smoking, still holding a crate, blinking. "Parasitism": he drops the crate and his hammer
+       (thunk), zips over, sits down at the desk next to the Crook and opens the spare laptop (click). After "survival.":
+       the Crook hands him a domino mask and he puts it on (pop). The fuse burns in the top-left corner. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #production-irrational-cam, #production-irrational-bg, #production-irrational-art, #production-irrational-pip, #production-irrational-fuse, #production-irrational-grain { position: absolute; inset: 0; }
+    #production-irrational-flash { position: absolute; inset: -40px; background: #FFFFFF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="production-irrational" data-width="1920" data-height="1080" data-start="0" data-duration="17.06">
+    <div id="production-irrational-cam">
+      <div id="production-irrational-bg"></div>
+      <div id="production-irrational-art"></div>
+      <!-- the blast's white flash: over the Earth art, under Wishonia's corner frame (her reaction stays visible) -->
+      <div id="production-irrational-flash"></div>
+      <div id="production-irrational-pip"></div>
+    </div>
+    <!-- the fuse burns in its own layer, above the camera (the slide does not move it) and under the grain -->
+    <div id="production-irrational-fuse"></div>
+    <div id="production-irrational-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "production-irrational";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function txt(x, y, size, s, col, extra) { return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (col || ink) + '"' + (extra ? " " + extra : "") + ">" + s + "</text>"; }
+      // Burn a drawing's markup (as KIT's charred people are burnt): every color but the ink turns a dark brown of the same lightness.
+      function burn(markup) {
+        var inkU = ink.toUpperCase();
+        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
+          if (col.toUpperCase() === inkU) return m;
+          var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
+          return a + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
+        });
+      }
+      // Singe a drawing (the crates, which must still read as crates in a charred human's arms): every color but the ink
+      // goes darker, keeping its hue.
+      function singe(markup) {
+        var inkU = ink.toUpperCase();
+        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
+          if (col.toUpperCase() === inkU) return m;
+          var n = parseInt(col.slice(1), 16), k = 0.55;
+          return a + '="rgb(' + Math.round((n >> 16) * k) + "," + Math.round(((n >> 8) & 255) * k) + "," + Math.round((n & 255) * k) + ')"';
+        });
+      }
+      // A cloud of soot in KIT.nuke's style (navy outline, a body, highlights on every other puff), around (0,0).
+      function soot(circles) {
+        var outline = circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="10"/>'; }).join("");
+        var body = circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#8E8780"/>'; }).join("");
+        var hi = circles.filter(function (c, i) { return i % 2 === 0; }).map(function (c) {
+          return '<circle cx="' + (c[0] - c[2] * 0.25) + '" cy="' + (c[1] - c[2] * 0.3) + '" r="' + c[2] * 0.42 + '" fill="#C9C2B8" opacity="0.85"/>';
+        }).join("");
+        return outline + body + hi;
+      }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene (copied from war-through-wifi). ──
+      // The civilization is a cartoon bomb: a small Earth with a navy screw collar and a lit fuse that burns by part
+      // time (L = L0 - k t), so it is continuous across scenes. Returns the spark's flare group (scale it to flare).
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── A stack of war papers seen edge-on (as war-through-wifi draws it), one group per bill (so the pile can grow
+      // bill by bill): thin green bills, each with its red seal at one end; w wide, standing on y 0 around x 0. ──
+      function billAt(i, w, r) {
+        var y = -12 * (i + 1), j = Math.round((r() - 0.5) * 10), wj = Math.round((r() - 0.5) * 8), x0 = -w / 2 + j, ww = w + wj;
+        return '<rect x="' + x0 + '" y="' + y + '" width="' + ww + '" height="12" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<path d="M' + (x0 + 8) + "," + (y + 4) + " H" + (x0 + ww - 22) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>' +
+          '<circle cx="' + (i % 2 ? x0 + ww - 9 : x0 + 9) + '" cy="' + (y + 6) + '" r="3.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.2"/>';
+      }
+
+      // ── Layout, per canvas shape ──────────────────────────────────────────────────────────────────
+      // G: the front ground (the conveyor, the Builder, the desk, the pile); GF: the factory's ground (behind, in 9:16).
+      // conv: [center x, belt length, scale]; bx: where the Builder stands; s: the humans' scale.
+      // fac: [center x, scale]; sign: [x of its center over the roof, font size]; desk: [x0, x1]; crook, seat: the Crook's
+      // and the Builder's x behind the desk; pile: [x, width, scale, bills by "extraction,", bills at the end].
+      // nuke: the mushroom cloud's scale; crate: [w, h, font size].
+      var L = V
+        ? { G: 1420, GF: 1060, conv: [192, 250, 1.0], bx: 410, s: 1.45, fac: [460, 1.3], sign: [650, 34], desk: [540, 922], crook: 796, seat: 616,
+            pile: [978, 70, 1.3, 44, 52], nuke: 1.08, crate: [74, 56, 15] }
+        : { G: 840, GF: 840, conv: [250, 300, 1.25], bx: 545, s: 1.7, fac: [880, 1.05], sign: [1050, 38], desk: [1110, 1482], crook: 1336, seat: 1166,
+            pile: [1545, 100, 1, 21, 34], nuke: 1.0, crate: [88, 64, 17] };
+      var G = L.G, GF = L.GF, s = L.s;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The Builder (storyboard Cast) and his crates ──
+      var BUILDER = { tone: 1, outfit: "overalls", color: 0, seed: 7, mood: "eager" };
+      var CW = L.crate[0] / s, CH = L.crate[1] / s; // a crate in person units
+      // A crate: tan boards with navy slats; o.stencil: EXPORTS stenciled on its side (in its own group, .stencil).
+      function crate(w, h, fs, stencil) {
+        var out = S([pg(R(-w / 2, -h, w, h))], C.tan, 3.4) + line("M" + n1(-w / 2 + 3) + "," + n1(-h * 0.5) + " H" + n1(w / 2 - 3), C.rust, 2, 'opacity="0.6"') +
+          S([pg(R(-w / 2, -h, w, h * 0.16)), pg(R(-w / 2, -h * 0.16, w, h * 0.16))], C.rust, 2.4) +
+          S([pg(R(-w / 2, -h, w * 0.12, h)), pg(R(w / 2 - w * 0.12, -h, w * 0.12, h))], C.rust, 2.4) + line("M" + n1(-w / 2 + w * 0.12) + "," + n1(-h * 0.84) + " L" + n1(w / 2 - w * 0.12) + "," + n1(-h * 0.16), C.rust, 2.6);
+        if (stencil !== undefined) out += '<g class="stencil"' + (stencil ? "" : ' opacity="0"') + ">" + F(pg(R(-w * 0.36, -h * 0.66, w * 0.72, h * 0.36)), C.cream, 'opacity="0.85"') +
+          txt(0, -h * 0.38, fs, "EXPORTS", ink, 'letter-spacing="0.5"') + "</g>";
+        return out;
+      }
+      // The Builder carrying a crate in both arms (it goes in before his arms, so his hands are in front), a hammer
+      // hanging at his hip; he faces left, toward the conveyor. charred: the same, burnt black after the blast.
+      var oLoad = mix(BUILDER, { look: "left", arms: [[10, 40], [-10, -40]] }), rLoad = KIT.rig(oLoad);
+      var oEmpty = mix(BUILDER, { look: "left", charred: true, arms: [[16, 8], [-16, -8]] }), rEmpty = KIT.rig(oEmpty);
+      var cAt = [(rLoad.hand[0][0] + rLoad.hand[1][0]) / 2, (rLoad.hand[0][1] + rLoad.hand[1][1]) / 2 + CH * 0.12];
+      function hipHammer(r) {
+        var x = 26, y = r.hipY - 6;
+        return '<g class="hip-hammer">' + line("M" + pt(x, y - 4) + " L" + pt(x + 4, y + 30), ink, 6) + line("M" + pt(x, y - 4) + " L" + pt(x + 4, y + 30), C.tan, 3) +
+          S([pg([[x - 9, y - 10], [x + 10, y - 12], [x + 11, y - 4], [x - 8, y - 2]])], C.slate, 2.4) + "</g>";
+      }
+      function carrying(o, r, burnt) {
+        var c = at(cAt[0], cAt[1], 1, crate(CW, CH, L.crate[2] / s, !!burnt)), hm = hipHammer(r);
+        if (burnt) { c = singe(c); hm = burn(hm); }
+        return KIT.person(o).replace('<g class="arm-l">', hm + '<g class="held">' + c + '</g><g class="arm-l">');
+      }
+      // At the desk: sitting behind it, typing (charred), and the same with the Crook's domino mask on. On a charred face
+      // the kit's navy mask hardly shows, so the mask is drawn here with a cream edge, in the face's own units.
+      var SEATED = { legPose: [[85, 10], [95, 15]] }, TYPE = [[25, 80], [15, 80]];
+      var oDesk = mix(BUILDER, { look: "right", charred: true, build: SEATED, arms: TYPE }), rDesk = KIT.rig(oDesk);
+      var MASK = '<path d="M-17,-6 L-27,-11 M-17,-3 L-26,1" stroke="' + ink + '" stroke-width="2.2"/>' +
+        '<path d="M-17,-11 L18,-12 L19,-1 L13,1 L9,-3 L4,1 L-4,-2 L-10,1 L-17,-1 Z" fill="' + ink + '" stroke="' + C.cream + '" stroke-width="1.6" stroke-linejoin="miter"/>';
+      var maskedDesk = KIT.person(oDesk).replace('<g class="char-eyes">', MASK + '<g class="char-eyes">');
+      // The Crook behind his desk, typing; and turning to hand over a mask.
+      var crO = KIT.castOpts("lobbyist", { arms: TYPE, look: "right" }), crR = KIT.rig(crO);
+      var crO2 = KIT.castOpts("lobbyist", { arms: [[-72, -100], TYPE[1]], look: "left", mood: "grin" }), crR2 = KIT.rig(crO2);
+
+      // ── Where things are ──
+      var CV = L.conv, convTop = G - 66 * CV[2], convL = CV[0] - CV[1] * CV[2] / 2, convR = CV[0] + CV[1] * CV[2] / 2;
+      var crHands = crR.hand.map(function (h) { return [L.crook + s * h[0], 0 + s * h[1]]; });
+      // the Crook's feet are on the ground; the desk top sits just under his hands
+      var crY = G - 100 * s, deskTop = crY + Math.max(crHands[0][1], crHands[1][1]) + 6;
+      var lapX = (crHands[0][0] + crHands[1][0]) / 2 + 8 * s, lapK = s;
+      // the Builder at the desk: his hands on the desk top too
+      var bdHandY = Math.max(rDesk.hand[0][1], rDesk.hand[1][1]), bdY = deskTop - 6 - s * bdHandY;
+      var bdLap = L.seat + s * ((rDesk.hand[0][0] + rDesk.hand[1][0]) / 2 + 8);
+
+      // ── The factory with its SUCCESS sign (the sign's back is a bullseye), and its burnt copy ──
+      var FC = L.fac, fk = FC[1], signY = GF - 250 * fk, SG = L.sign, sf = SG[1];
+      var sw = Math.round(7 * sf * 0.56 + 64), sh = Math.round(sf * 1.75), sTop = signY - 26 - sh, sCy = sTop + sh / 2;
+      var bulbs = "", nb = 0;
+      for (var bx = -sw / 2 + 10; bx <= sw / 2 - 9; bx += 22) { bulbs += g("bulb-" + nb++, S([ci(bx, sTop + 2, 6.5)], C.yellow, 2.6)); bulbs += g("bulb-" + nb++, S([ci(bx + 11, sTop + sh - 2, 6.5)], C.yellow, 2.6)); }
+      var front = at(SG[0], signY, 1, KIT.props.sign({ text: "SUCCESS", fontSize: sf, height: 26 }));
+      var bullR = sh * 0.95;
+      var bull = [1, 0.75, 0.5, 0.25].map(function (f, i) { return S([ci(0, 0, bullR * f)], i % 2 ? C.cream : C.war, i ? 3 : 4.4); }).join("");
+      // (the glow behind the card, while it is lit)
+      var signArt = at(SG[0], 0, 1, g("glow", F(pg(R(-sw / 2 - 16, sTop - 16, sw + 32, sh + 32)), C.yellow, 'opacity="0.55"') + F(pg(R(-sw / 2 - 8, sTop - 8, sw + 16, sh + 16)), C.yellow, 'opacity="0.7"'), 'opacity="0"')) + g("sign-front", front) +
+        at(SG[0], sCy, 1, g("sign-back", line("M" + n1(-sw / 2 + 30) + "," + n1(signY - sCy) + " V0", ink, 7) + line("M" + n1(sw / 2 - 30) + "," + n1(signY - sCy) + " V0", ink, 7) + bull, 'opacity="0"')) +
+        at(SG[0], 0, 1, g("bulbs", bulbs, 'opacity="0"'));
+      var factory = at(FC[0], GF, fk, g("factory", KIT.props.factory({ label: "", smoke: true })));
+      // burnt: no smoke, the middle chimney bent over, the bullseye scorched black in the middle
+      var factoryB = at(FC[0], GF, fk, g("factory-b", burn(KIT.props.factory({ label: "", smoke: false }))));
+      var bullB = at(SG[0], sCy, 1, g("bull-b", line("M" + n1(-sw / 2 + 30) + "," + n1(signY - sCy) + " L" + n1(-sw / 2 + 40) + ",14", ink, 7) + line("M" + n1(sw / 2 - 30) + "," + n1(signY - sCy) + " L" + n1(sw / 2 - 42) + ",-4", ink, 7) +
+        at(0, 8, 1, bull + S([pg([[-14, -6], [-4, -16], [8, -12], [16, 2], [6, 14], [-10, 12]])], "#1B1714", 2.4) + line("M-4,-24 q-7,-8 0,-15 q7,-8 0,-15 M10,-22 q-6,-8 0,-14", "#8C8782", 3), -14), 'opacity="0"'));
+
+      // ── The conveyor and its crates (clipped at the paper's left edge, where they leave) ──
+      var conv = at(CV[0], G, CV[2], g("conv", KIT.props.conveyor({ w: CV[1] })));
+      var convB = at(CV[0], G, CV[2], g("conv-b", burn(KIT.props.conveyor({ w: CV[1] }))));
+      // a crate is loaded every 1.4 s from "manufacture" until the missile shows up; one is already on the belt
+      var tM = cue("manufacture"), tBoom = cue("success.") + 0.1, SPEED = 125 * (V ? 0.8 : 1);
+      var loads = [];
+      for (var lt = tM; lt < cue("target") - 0.4; lt += 1.4) loads.push(lt);
+      var crX0 = convR - L.crate[0] * 0.62;
+      var crates = [{ t: 0, x0: crX0 - SPEED * 1.6 }].concat(loads.map(function (t) { return { t: t, x0: crX0 }; }));
+      var cratesArt = crates.map(function (c, i) {
+        // (the stencil goes on at "exports": crates loaded before it start without one)
+        return g("crate-" + i, g("crate-n-" + i, crate(L.crate[0], L.crate[1], L.crate[2], !(i === 0 || c.t < cue("exports")))) + g("crate-b-" + i, singe(crate(L.crate[0], L.crate[1], L.crate[2], true)), 'opacity="0"'));
+      }).join("");
+      var clip = '<defs><clipPath id="' + P + 'clip"><rect x="48" y="0" width="' + (W - 48) + '" height="' + H + '"/></clipPath></defs>';
+
+      // ── The Crook's desk, laptops and pile ──
+      var DK = L.desk, deskArt = S([pg(R(DK[0] + 10, deskTop + 12, DK[1] - DK[0] - 20, G - deskTop - 12))], C.rust) +
+        line("M" + (DK[1] - 14) + "," + (deskTop + 16) + " V" + (G - 4), C.orange, 2) +
+        S([pg(R(DK[0] + 30, deskTop + 30, (DK[1] - DK[0]) * 0.3, 34)), pg(R(DK[1] - 30 - (DK[1] - DK[0]) * 0.3, deskTop + 30, (DK[1] - DK[0]) * 0.3, 34))], C.tan, 3) +
+        S([pg(R(DK[0] + 30 + (DK[1] - DK[0]) * 0.15 - 12, deskTop + 44, 24, 6)), pg(R(DK[1] - 30 - (DK[1] - DK[0]) * 0.15 - 12, deskTop + 44, 24, 6))], C.yellow, 2) +
+        S([pg(R(DK[0], deskTop, DK[1] - DK[0], 14))], C.tan) + line("M" + (DK[0] + 4) + "," + (deskTop + 4) + " H" + (DK[1] - 4), C.cream, 2, 'opacity="0.7"');
+      var seal = function (k) { return '<rect x="-24" y="-42" width="48" height="31" fill="' + C.cyan + '" opacity="0.35"/><g transform="translate(0,-27)">' + KIT.moneySeal("war", 0, 0, 8.5) + "</g>" + line("M-19,-37 h10 M-19,-15 h14 M10,-15 h9", C.cream, 1.6); };
+      var lapCrook = at(lapX, deskTop, lapK, KIT.props.laptop({}).replace("<!--laptop-screen-->", g("scr-c", seal(), 'opacity="0"')));
+      var lapB = at(bdLap, deskTop, lapK, g("lap-b", KIT.props.laptop({}).replace("<!--laptop-screen-->", g("scr-b", seal(), 'opacity="0"'))));
+      var crook = at(L.crook, crY, s, g("crook", KIT.person(crO)) + g("crook2", KIT.person(crO2), 'opacity="0"'));
+      var PL = L.pile, rP = KIT.rng(23), pileArt = "";
+      for (var pi = 0; pi < PL[4]; pi++) pileArt += g("pb-" + pi, billAt(pi, PL[1], rP), 'opacity="0"');
+      var pile = at(PL[0], G, PL[2], g("pile", pileArt));
+      // the flying papers: one per two bills, from the laptop's screen to the top of the pile
+      var flights = [];
+      var tBank = cue("banks"), tEx = cue("extraction,");
+      var billT = [];
+      for (var bi = 0; bi < PL[4]; bi++) {
+        var tb = bi < PL[3] ? tBank + (tEx - tBank) * Math.pow(bi / (PL[3] - 1), 0.85) : tEx + (D - 0.6 - tEx) * ((bi - PL[3] + 1) / (PL[4] - PL[3]));
+        billT.push(tb);
+        if (bi % 2 === 0) flights.push(tb);
+      }
+      var flyArt = flights.map(function (t, i) { return g("fly-" + i, g("fly-in-" + i, at(0, 0, 0.36 * s / 1.35, KIT.money("war", i % 2))), 'opacity="0"'); }).join("");
+      var mask = g("mask", MASK, 'opacity="0"');
+
+      // ── The Builder's states ──
+      var BX = L.bx;
+      var bLoad = g("b-load", g("b-dip", carrying(oLoad, rLoad, false)));
+      var bChar = g("b-char", carrying(mix(oLoad, { charred: true }), rLoad, true), 'opacity="0"');
+      var bEmpty = g("b-empty", KIT.person(oEmpty), 'opacity="0"');
+      var builder = at(BX, G - 100 * s, s, g("b-move", bLoad + bChar + bEmpty));
+      // the crate and hammer he drops, the speed lines of his zip, and at the desk
+      var dropped = at(BX, G - 100 * s, s, g("drop", at(cAt[0], cAt[1], 1, singe(crate(CW, CH, L.crate[2] / s, true))), 'opacity="0"') + g("drop-h", burn(hipHammer(rLoad)), 'opacity="0"'));
+      var speed = g("zip", [0, 1, 2].map(function (i) { return line("M0," + (-40 - i * 50) * s / 1.7 + " h-" + (120 + i * 30), ink, 5); }).join(""), 'opacity="0"');
+      var atDesk = at(L.seat, bdY, s, g("b-desk", KIT.person(oDesk)) + g("b-desk-m", maskedDesk, 'opacity="0"'));
+      // The missile (grinning, nose down, its flame up), the mushroom cloud and the soot on the Builder.
+      var mk = V ? 1.3 : 1.45;
+      var missile = at(SG[0], 0, 1, g("missile", at(0, 0, mk, at(0, 0, 1, KIT.props.missile({ mood: "grin", flame: true }), 180)), 'opacity="0"'));
+      var cloud = at(FC[0], GF, L.nuke, g("nuke", KIT.nuke()));
+      var SOOT = [[0, -84, 36], [34, -62, 32], [-30, -50, 34], [70, -40, 26], [28, -24, 38], [-28, 2, 38], [30, 22, 40], [-22, 52, 36], [22, 68, 34], [0, 88, 24], [-4, -116, 24], [-70, -20, 30]];
+      var sootB = at(BX, G - 100 * s, s, g("soot-b", soot(SOOT), 'opacity="0"'));
+      var sootC = at(convR - 40, G - 40, 1, g("soot-c", soot([[0, -40, 46], [-60, -20, 40], [-120, -36, 44], [-180, -16, 38], [-240, -30, 40], [-60, 20, 30], [-150, 18, 30]]), 'opacity="0"'));
+
+      var ground = line("M60," + G + " H" + (W - 60), ink, 5) + [0.12, 0.42, 0.72].map(function (f) {
+        var gx = 70 + f * (W - 140);
+        return line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
+      }).join("");
+      if (GF !== G) ground += line("M" + (FC[0] - 300) + "," + GF + " H" + (FC[0] + 420), ink, 5) + line("M" + (FC[0] - 250) + "," + (GF + 12) + " H" + (FC[0] + 300), ink, 2, 'opacity="0.4"');
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + clip + ground + factory + factoryB + signArt + bullB +
+        pile + flyArt + crook + atDesk + deskArt + lapCrook + lapB + mask +
+        conv + convB + '<g clip-path="url(#' + P + 'clip)">' + cratesArt + "</g>" + dropped + speed + builder + cloud + sootB + sootC + missile);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t); };
+      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
+      var fB = q("factory-b");
+
+      // The factory works: its smoke puffs swell and shrink until the blast.
+      Array.prototype.forEach.call(q("factory").querySelectorAll(".factory-puff"), function (p, i) {
+        gsap.set(p, { svgOrigin: p.dataset.ox + " " + p.dataset.oy });
+        tl.fromTo(p, { scale: 0.85 }, { scale: 1.15, duration: 0.5 + (i % 3) * 0.12, repeat: Math.floor(tBoom / (0.5 + (i % 3) * 0.12)) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+      });
+      // The conveyor runs leftward until the blast; each crate rides it off the paper.
+      KIT.props.conveyor.run(tl, q("conv"), 0, tBoom, -SPEED / CV[2]);
+      crates.forEach(function (c, i) {
+        var el = q("crate-" + i), end = Math.min(tBoom, c.t + (c.x0 - 40) / SPEED);
+        if (i) show(el, c.t);
+        tl.fromTo(el, { x: c.x0, y: convTop }, { x: c.x0 - SPEED * (end - c.t), duration: end - c.t, ease: "none" }, c.t);
+        if (c.t + (c.x0 - 40) / SPEED > tBoom) {
+          hide(q("crate-n-" + i), tBoom + 0.05);
+          show(q("crate-b-" + i), tBoom + 0.05);
+        }
+      });
+      // "manufacture" (thunk) and every 1.4 s: he dips to the belt, the crate in his arms goes on it, he grabs the next.
+      var dip = q("b-dip"), held = dip.querySelector(".held");
+      gsap.set(dip, { svgOrigin: "0 100" });
+      loads.forEach(function (t, i) {
+        tl.to(dip, { x: -22, rotation: -7, duration: 0.18, ease: "power2.out" }, t - 0.18);
+        tl.to(dip, { x: 0, rotation: 0, duration: 0.3, ease: "power2.inOut" }, t + 0.05);
+        hide(held, t);
+        tl.to(held, { opacity: 1, y: -14, duration: 0.01 }, t + 0.42);
+        tl.to(held, { y: 0, duration: 0.18, ease: "back.out(3)" }, t + 0.43);
+      });
+      // "exports": EXPORTS goes on every crate with a stencil swipe (the one in his arms too)
+      var tE = cue("exports");
+      var stencils = [];
+      crates.forEach(function (c, i) { if (i === 0 || c.t < tE) stencils.push(q("crate-n-" + i).querySelector(".stencil")); });
+      stencils.push(held.querySelector(".stencil"));
+      stencils.forEach(function (st, i) { tl.fromTo(st, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "steps(3)" }, tE + i * 0.08); });
+
+      // "hacking": the Crook wakes his laptop and types (typewriter) for the rest of the scene.
+      var tH = cue("hacking"), cr = q("crook"), crArmL = cr.querySelector(".arm-l"), crArmR = cr.querySelector(".arm-r");
+      show(q("scr-c"), tH);
+      gsap.set(crArmL, { svgOrigin: crR.shoulder[0].join(" ") });
+      gsap.set(crArmR, { svgOrigin: crR.shoulder[1].join(" ") });
+      tl.fromTo(crArmR, { rotation: 0 }, { rotation: -7, duration: 0.08, repeat: Math.floor((D - tH) / 0.08) - 1, yoyo: true, ease: "sine.inOut" }, tH);
+      tl.fromTo(crArmL, { rotation: -5 }, { rotation: 3, duration: 0.11, repeat: Math.floor((D - tH) / 0.11) - 1, yoyo: true, ease: "sine.inOut" }, tH + 0.03);
+      // "banks" (cash register): his laptop spits war papers onto the pile; by "extraction," it is past the roof.
+      var scr = [lapX, deskTop - 26 * lapK];
+      flights.forEach(function (t, i) {
+        var el = q("fly-" + i), top = G - 12 * PL[2] * (2 * i + 1) - 30, t0 = t - 0.4;
+        show(el, t0);
+        tl.fromTo(el, { x: scr[0], y: scr[1], scale: 0.2 }, { x: PL[0], scale: 1, duration: 0.4, ease: "none" }, t0);
+        tl.fromTo(el, { y: scr[1] }, { y: Math.min(scr[1], top) - 90, duration: 0.2, ease: "power2.out" }, t0);
+        tl.to(el, { y: top, duration: 0.2, ease: "power2.in" }, t0 + 0.2);
+        hide(el, t);
+      });
+      var pileG = q("pile");
+      gsap.set(pileG, { svgOrigin: "0 0" });
+      billT.forEach(function (t, i) { show(q("pb-" + i), t); });
+      tl.fromTo(pileG, { scaleY: 1 }, { scaleY: 1.06, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tEx);
+
+      // "producing anything": the SUCCESS sign lights up like a marquee, its bulbs chasing.
+      var tPd = cue("producing"), tTg = cue("target"), bul = q("bulbs");
+      show(bul, tPd); show(q("glow"), tPd);
+      for (var bi2 = 0; bi2 < nb; bi2++) tl.fromTo(q("bulb-" + bi2), { opacity: 1 }, { opacity: 0.25, duration: 0.15, repeat: Math.floor((tTg - tPd) / 0.15) - 1, yoyo: true, ease: "steps(1)" }, tPd + (bi2 % 2) * 0.15);
+      // "target" (switch): the sign flips over to its bullseye. The Builder looks up at it.
+      var front$ = q("sign-front"), back$ = q("sign-back");
+      gsap.set(front$, { svgOrigin: SG[0] + " " + sCy });
+      gsap.set(back$, { svgOrigin: "0 0" });
+      tl.to(front$, { scaleX: 0, duration: 0.1, ease: "power2.in" }, tTg);
+      hide(bul, tTg); hide(q("glow"), tTg);
+      show(back$, tTg + 0.1);
+      tl.fromTo(back$, { scaleX: 0 }, { scaleX: 1, duration: 0.14, ease: "back.out(2)", immediateRender: false }, tTg + 0.1);
+      var bHead = q("b-load").querySelector(".head");
+      gsap.set(bHead, { svgOrigin: rLoad.neck.join(" ") });
+      tl.to(bHead, { rotation: 16, duration: 0.25, ease: "power2.out" }, tTg + 0.15);
+      // "rather" (slide-down): a grinning missile pokes in at the top of the frame, wiggles to aim, and whistles down.
+      // (the missile is drawn from its tail, nose down: its nose is 160 x its scale below)
+      var tRa = cue("rather"), ms = q("missile"), mTop = V ? 110 : 40, mHit = sCy - 150 * mk;
+      show(ms, tRa);
+      tl.fromTo(ms, { y: -200 }, { y: mTop, duration: 0.22, ease: "back.out(1.6)" }, tRa);
+      tl.to(ms, { x: -12, duration: 0.08, yoyo: true, repeat: 3, ease: "sine.inOut" }, tRa + 0.24);
+      tl.to(ms, { y: mHit, duration: tBoom - (tRa + 0.58), ease: "power3.in" }, tRa + 0.58);
+      KIT.flicker(tl, ms, tRa, tBoom);
+      hide(ms, tBoom);
+
+      // "success." +0.1: it hits. The flash, the boom, the mushroom cloud, a shake; under the flash everything near
+      // the factory is burnt and soot hides the Builder and the belt.
+      KIT.boom(tl, q("nuke"), tBoom, { flash: q("flash"), shake: q("cam") });
+      tl.fromTo(q("cam"), { y: 0 }, { y: 6, duration: 0.05, repeat: 11, yoyo: true, ease: "none", immediateRender: false }, tBoom + 0.45);
+      var tF = tBoom + 0.05;
+      [q("factory"), q("sign-back"), q("conv"), q("b-load")].forEach(function (el) { tl.set(el, { opacity: 0 }, tF); });
+      show(fB, tF); show(q("conv-b"), tF); show(q("b-char"), tF);
+      show(q("bull-b"), tF);
+      var bend = q("factory-b").querySelector('.factory-chimney[data-i="1"]');
+      gsap.set(bend, { svgOrigin: bend.dataset.ox + " " + bend.dataset.oy, rotation: -38 });
+      tl.fromTo([q("soot-b"), q("soot-c")], { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.01 }, tF);
+      gsap.set(q("soot-b"), { svgOrigin: "0 0" }); gsap.set(q("soot-c"), { svgOrigin: "-120 -20" });
+      tl.to([q("soot-b"), q("soot-c")], { scale: 1.06, duration: 0.9, ease: "sine.out" }, tF + 0.05);
+      // "irrational." (sizzle): the soot and the cloud thin away: the factory charred and bent, the Builder charred,
+      // hair up, smoking, still holding his crate. Only his eyes move.
+      var tI = cue("irrational.");
+      tl.to([q("soot-b"), q("soot-c")], { opacity: 0, scale: 1.2, duration: 0.35, ease: "power1.in" }, tI - 0.25);
+      tl.to(q("nuke"), { opacity: 0, duration: 0.55, ease: "power1.in" }, tI - 0.3);
+      var wisps = q("b-char").querySelectorAll(".smoke");
+      tl.fromTo(wisps, { y: 0, opacity: 1 }, { y: -6, opacity: 0.5, duration: 0.22, yoyo: true, repeat: Math.floor((D - tI) / 0.22) - 1, ease: "sine.inOut" }, tI - 0.1);
+      var eyesC = q("b-char").querySelector(".char-eyes");
+      gsap.set(eyesC, { svgOrigin: rLoad.faceEyes.join(" ") });
+      [tI + 0.35, tI + 0.62].forEach(function (t) { tl.fromTo(eyesC, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, t); });
+
+      // "Parasitism": he drops the crate and the hammer (thunk), zips over to the desk, sits down next to the Crook
+      // and opens the spare laptop (click at +0.5).
+      var tPa = cue("Parasitism"), tLet = tPa - 0.14;
+      hide(q("b-char"), tLet);
+      show(q("b-empty"), tLet);
+      show(q("drop"), tLet); show(q("drop-h"), tLet);
+      tl.fromTo(q("drop"), { y: 0 }, { y: 100 - cAt[1] + 2, duration: 0.14, ease: "power2.in" }, tLet);
+      gsap.set(q("drop-h"), { svgOrigin: "28 " + (rLoad.hipY + 10) });
+      tl.fromTo(q("drop-h"), { y: 0, rotation: 0 }, { y: 100 - rLoad.hipY - 16, rotation: 80, duration: 0.16, ease: "power2.in" }, tLet);
+      var zipT = tPa + 0.16, zipD = 0.22, deskX = L.seat - BX;
+      tl.to(q("b-move"), { x: deskX / s, duration: zipD, ease: "power2.in" }, zipT);
+      hide(q("b-empty"), zipT + zipD);
+      var zp = q("zip");
+      gsap.set(zp, { x: BX, y: G - 60 });
+      tl.fromTo(zp, { opacity: 0, x: BX }, { opacity: 1, x: L.seat - 30, duration: zipD, ease: "power2.in" }, zipT);
+      hide(zp, zipT + zipD + 0.12);
+      var bd = q("b-desk");
+      show(bd, zipT + zipD);
+      tl.fromTo(bd, { y: -16 }, { y: 0, duration: 0.2, ease: "bounce.out", immediateRender: false }, zipT + zipD);
+      var lid = q("lap-b").querySelector(".laptop-lid"), tCl = tPa + 0.5;
+      gsap.set(lid, { svgOrigin: "0 -7.2" });
+      tl.fromTo(lid, { scaleY: 0 }, { scaleY: 1, duration: 0.12, ease: "back.out(2)" }, tCl - 0.08);
+      show(q("scr-b"), tCl + 0.1);
+      // and he types, like the Crook
+      [q("b-desk"), q("b-desk-m")].forEach(function (b, j) {
+        var aL = b.querySelector(".arm-l"), aR = b.querySelector(".arm-r");
+        gsap.set(aL, { svgOrigin: rDesk.shoulder[0].join(" ") }); gsap.set(aR, { svgOrigin: rDesk.shoulder[1].join(" ") });
+        var t0 = tCl + 0.25;
+        tl.fromTo(aR, { rotation: 0 }, { rotation: -8, duration: 0.09, repeat: Math.floor((D - t0) / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, t0);
+        tl.fromTo(aL, { rotation: -4 }, { rotation: 4, duration: 0.12, repeat: Math.floor((D - t0) / 0.12) - 1, yoyo: true, ease: "sine.inOut" }, t0 + 0.04);
+      });
+      var dWisps = document.querySelectorAll("#" + P + "b-desk .smoke, #" + P + "b-desk-m .smoke");
+      tl.fromTo(dWisps, { y: 0, opacity: 1 }, { y: -6, opacity: 0.5, duration: 0.22, yoyo: true, repeat: Math.floor((D - tPa) / 0.22) - 1, ease: "sine.inOut" }, tPa);
+
+      // after "survival.": the Crook turns, hands him a domino mask, and he puts it on (pop).
+      var tS = cue("survival."), tOn = KIT.after(ID, "survival.");
+      hide(q("crook"), tS - 0.2); show(q("crook2"), tS - 0.2);
+      tl.to(q("crook"), { opacity: 1, duration: 0.01 }, tOn + 0.25); hide(q("crook2"), tOn + 0.25);
+      var mHand = [L.crook + s * crR2.hand[0][0], crY + s * crR2.hand[0][1]];
+      var face = [L.seat + s * rDesk.head[0], bdY + s * rDesk.head[1]];
+      var mk2 = q("mask");
+      gsap.set(mk2, { svgOrigin: "0 0" });
+      show(mk2, tS - 0.1);
+      tl.fromTo(mk2, { x: mHand[0], y: mHand[1], scale: s * rDesk.hs * 0.9, rotation: 20 }, { x: face[0], y: face[1], scale: s * rDesk.hs, rotation: 0, duration: tOn - (tS + 0.15), ease: "power2.inOut" }, tS + 0.15);
+      hide(mk2, tOn);
+      hide(bd, tOn); show(q("b-desk-m"), tOn);
+      gsap.set(q("b-desk-m"), { svgOrigin: "0 100" });
+      tl.fromTo(q("b-desk-m"), { scale: 1.08 }, { scale: 1, duration: 0.25, ease: "back.out(3)", immediateRender: false }, tOn);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

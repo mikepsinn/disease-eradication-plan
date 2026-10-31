@@ -1,0 +1,940 @@
+<template id="step-5-treaty-split-template">
+  <!-- step-5-treaty-split · Layer B (storyboards/part-05-sacred-order-of-paper-distribution.md), the last scene of Part 5.
+       The step 5 card unrolls, keeps unrolling past the right edge on "(Forever)" ("AND EVER AND EVER..."), whips back
+       and rolls into its STEP 5 tab. The Politician (LEGAL on his forehead) signs the treaty with a giant quill; a stamp
+       slams PASSED. The war factory's door rolls up and a river of war money marches along the ledge into the
+       color-flip funnel; its counter spins up to $27.2 billion / year; the bills walk out of the spout and every seal
+       flips from the red missile to the teal cross with a sparkle. 80% march into the lab (the scientist catches them,
+       her flask bubbles over; THE POINT springs up on the roof) and the hospital; on the first "Ten" a tenth peel off
+       into the YES-VOTE FUND bank; the Politician slaps YES and the bank pins a ribbon on him and showers him in teal
+       papers (more teeth); on the second "Ten" a tenth run up the Rich Human's hill into his arms ($ eyes on
+       "returns,"), a neon infinity lights over the hill, the calendar sheds its years and his mustache grows into a
+       white beard that pours down the hill. The Grim Reaper rises, scribbling tallies, taps him; he x-rays into a
+       grinning skeleton still catching his returns; the lab door bursts open and the scientist sprints to the hill,
+       leaps past his head and dumps her flask on him; he flickers back (beard kept, chest light teal) and gives a
+       thumbs-up; the Reaper's pencil snaps, he looks at the camera and sinks behind the hill.
+       The hill (a dome of plain bills) and Part 4's swivel chair are step-1-dice-in-a-suit's master drawings, copied.
+       Final frame (what Part 6's leaders-title may zoom out of): the three teal streams still flowing, the infinity
+       looping, the bearded Rich Human's thumbs-up with his teal chest light and button, the Politician with ribbon and
+       LEGAL stamp, the scientist on the slope beside him, the Reaper gone. It is simply the timeline at D: the art is
+       drawn once and the onTime callbacks put the streams and the scientist where they are at any time.
+       Reuse for Part 6 (redirect-math): riverArt() (factory, ledge, funnel, counter), labArt() (the lab building with
+       the bench and the scientist) and the stream code (mkPath / along / runStream) draw the $27.2 billion teal
+       stream into the lab on their own. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #step-5-treaty-split-cam, #step-5-treaty-split-bg, #step-5-treaty-split-art, #step-5-treaty-split-pip, #step-5-treaty-split-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="step-5-treaty-split" data-width="1920" data-height="1080" data-start="0" data-duration="34.9">
+    <div id="step-5-treaty-split-cam">
+      <div id="step-5-treaty-split-bg"></div>
+      <div id="step-5-treaty-split-art"></div>
+      <div id="step-5-treaty-split-pip"></div>
+      <div id="step-5-treaty-split-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "step-5-treaty-split";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var aft = function (w, n) { return KIT.after(ID, w, n); };
+      var bef = function (w, n) { return KIT.before(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line, CARD = "#FBF6E6", BONE = "#F1EAD6", PR = KIT.props;
+
+      // ── Layout, one per canvas shape ───────────────────────────────────────────────────────────
+      // 16:9: the war factory upstairs on a ledge (top left), its money walking off the ledge into the funnel, which
+      // stands on the ground; under the ledge the hospital and the lab; the bank, the YES button and the Politician in
+      // the middle; the Rich Human's hill on the right (x 1162 to 1594), clear of Wishonia's corner.
+      // 9:16: the same pieces stacked in three tiers: the factory ledge, the funnel's floor (lab and hospital) and the
+      // bottom floor (the Politician, the bank and the hill), with a glass pipe taking the two tenths down a floor.
+      var L = V ? {
+        card: { x0: 40, x1: 720, y0: 70, y1: 330, far: 2100, step: { x: 380, y: 158, size: 84, anchor: "middle" }, lsize: 40, lanchor: "middle",
+          lines: [{ t: "GIVE PAPERS YOU GET BACK", x: 380, y: 214 }, { t: "FROM THE GOVERNMENT BACK TO", x: 380, y: 262 }, { t: "THE RICH HUMANS (FOREVER)", x: 380, y: 310 }], ever: { x: 760, y: 310, dx: 230 } },
+        tab: { x0: 46, x1: 266, y0: 46, y1: 116, size: 46 },
+        shelf: { y: 690, x0: 40, x1: 414, posts: [50, 404] },
+        floors: [{ y: 1010, x0: 40, x1: 764, slab: true }, { y: 1430, x0: 40, x1: 1040 }],
+        factory: { x: 220, y: 690, s: 0.6 },
+        funnel: { x: 560, y: 1010, s: 1.22 },
+        counter: { x: 740, y: 540, w: 520, h: 132, post: [700, 672], big: 60, small: 32 },
+        hospital: { x: 122, y: 1010, s: 0.5 },
+        lab: { x: 214, y: 834, w: 196, h: 176, s: 0.82, bench: 0.42 },
+        pipe: { x: 612, y0: 1010, y1: 1408 },
+        bank: { x: 430, y: 1430, s: 0.55 },
+        button: { x: 290, y: 1430, s: 1.0 },
+        pol: { x: 186, y: 1430, s: 1.12 },
+        hill: [674, 1030, 1430, 1212], man: { x: 852, s: 1.6 },
+        cal: { x: 724, y: 1006, s: 0.8 },
+        inf: { x: 852, y: 800, a: 104 },
+        reaper: { x: 978, feet: 1322, s: 0.98, rise: 420 },
+        tags: { t80: [128, 742], tb: [430, 1196], th: [452, 1098] },
+        lanes: [0, 9, 18], bill: 0.5, war: { lanes: [0, 8] }, sci: 0.82,
+        // the scientist runs to the end of the lab's floor, leaps off it over his head (the pour) and lands on the slope
+        sciEnd: { a: [746, 1010], b: [712, null], lx: 30, h: 160 },
+      } : {
+        card: { x0: 120, x1: 1500, y0: 40, y1: 170, far: 3000, step: { x: 152, y: 136, size: 84, anchor: "start" }, lsize: 42, lanchor: "start",
+          lines: [{ t: "GIVE PAPERS YOU GET BACK FROM THE GOVERNMENT", x: 476, y: 97 }, { t: "BACK TO THE RICH HUMANS (FOREVER)", x: 476, y: 147 }], ever: { x: 1560, y: 147, dx: 250 } },
+        tab: { x0: 46, x1: 266, y0: 46, y1: 116, size: 46 },
+        shelf: { y: 500, x0: 50, x1: 536, posts: [58, 312] },
+        floors: [{ y: 860, x0: 50, x1: 1592 }],
+        factory: { x: 290, y: 500, s: 0.62 },
+        funnel: { x: 680, y: 860, s: 1.3 },
+        counter: { x: 800, y: 318, w: 400, h: 120, post: [770, 500], big: 56, small: 30 },
+        hospital: { x: 178, y: 860, s: 0.66 },
+        lab: { x: 326, y: 646, w: 204, h: 214, s: 1.0, bench: 0.5 },
+        bank: { x: 1106, y: 860, s: 0.5 },
+        button: { x: 992, y: 860, s: 1.0 },
+        pol: { x: 918, y: 860, s: 1.15 },
+        hill: [1162, 1594, 860, 640], man: { x: 1378, s: 1.9 },
+        cal: { x: 1112, y: 330, s: 1.0, nail: 196 },
+        inf: { x: 1378, y: 160, a: 120 },
+        reaper: { x: 1520, feet: 770, s: 1.18, rise: 400 },
+        tags: { t80: [186, 574], tb: [1106, 646], th: [1004, 520] },
+        lanes: [0, 11, 22], bill: 0.55, war: { lanes: [0, 9] }, sci: 1.0,
+        // the scientist sprints along the ground and up the slope, leaps past his head (the pour) and lands where she took off
+        sciEnd: { a: [1244, null], b: [1244, null], lx: 55, h: 215 },
+      };
+      var GY = L.floors[0].y;                      // the funnel's floor
+      var BY = L.floors[L.floors.length - 1].y;    // the floor of the bank, the Politician and the hill
+
+      // ── Helpers ───────────────────────────────────────────────────────────────────────────────
+      function f(v) { return String(Math.round(v * 10) / 10); }
+      function at(x, y, s, inner) { return '<g transform="translate(' + f(x) + "," + f(y) + ")" + (s === undefined || s === 1 ? "" : " scale(" + s + ")") + '">' + inner + "</g>"; }
+      function gid(name, inner, extra) { return '<g id="' + ID + "-" + name + '"' + (extra ? " " + extra : "") + ">" + inner + "</g>"; }
+      function pts(list) { return list.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L"); }
+      function poly(list, fill, sw, extra) { return '<path d="M' + pts(list) + ' Z" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (sw || 4) + '" stroke-linejoin="miter"' + (extra ? " " + extra : "") + "/>"; }
+      function ln(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || INK) + '" stroke-width="' + (w || 3) + '" stroke-linecap="round" stroke-linejoin="round"' + (extra ? " " + extra : "") + "/>"; }
+      function rect(x, y, w, h, fill, sw, extra) { return '<rect x="' + f(x) + '" y="' + f(y) + '" width="' + f(w) + '" height="' + f(h) + '" fill="' + fill + '"' + (sw ? ' stroke="' + INK + '" stroke-width="' + sw + '"' : "") + (extra ? " " + extra : "") + "/>"; }
+      function text(x, y, size, s, o) {
+        o = o || {};
+        return '<text x="' + f(x) + '" y="' + f(y) + '" text-anchor="' + (o.anchor || "middle") + '" font-family="' + (o.font || "Oswald") + '" font-weight="' + (o.font === "Fraunces" ? 900 : 600) + '" font-size="' + size + '"' +
+          (o.ls ? ' letter-spacing="' + o.ls + '"' : "") + ' fill="' + (o.fill || INK) + '"' + (o.id ? ' id="' + ID + "-" + o.id + '"' : "") + (o.extra ? " " + o.extra : "") + ">" + s + "</text>";
+      }
+      // A person standing with its feet at (x, feet), scale s; G maps the person's units to the frame.
+      function personAt(x, feet, s, inner) { return at(x, feet - 100 * s, s, inner); }
+      function G(x, feet, s) { return function (p) { return [x + p[0] * s, feet - 100 * s + p[1] * s]; }; }
+      function rotAbout(p, o, deg) { var a = (deg * Math.PI) / 180, dx = p[0] - o[0], dy = p[1] - o[1]; return [o[0] + dx * Math.cos(a) - dy * Math.sin(a), o[1] + dx * Math.sin(a) + dy * Math.cos(a)]; }
+      function setO(el, x, y) { gsap.set(el, { svgOrigin: f(x) + " " + f(y) }); }
+      // repeats for a loop of period dur from t0 that ends by t1
+      function loops(dur, t0, t1) { return Math.max(0, Math.floor((t1 - t0) / dur) - 1); }
+      function all(sel) { return Array.prototype.slice.call(document.querySelectorAll("#" + ID + "-art " + sel)); }
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The step card and its tab ──────────────────────────────────────────────────────────────
+      function roll(x, y0, y1, w) {
+        w = w || 15;
+        return poly([[x - w, y0 - 12], [x + w, y0 - 12], [x + w + 3, y0 - 6], [x + w + 3, y1 + 6], [x + w, y1 + 12], [x - w, y1 + 12], [x - w - 3, y1 + 6], [x - w - 3, y0 - 6]], CARD, 4.5) +
+          ln("M" + f(x + w * 0.45) + "," + f(y0 - 6) + " V" + f(y1 + 6), C.orange, 2.4) + ln("M" + f(x - w * 0.5) + "," + f(y0 - 4) + " V" + f(y1 + 4), INK, 1.2, 'opacity="0.45"');
+      }
+      function cardArt() {
+        var c = L.card, h = c.y1 - c.y0;
+        var paper = rect(c.x0, c.y0, c.far - c.x0, h, CARD, 5) + rect(c.x0 + 11, c.y0 + 11, c.far - c.x0 - 22, h - 22, "none", 0, 'stroke="' + C.orange + '" stroke-width="2.5"') +
+          rect(c.x0, c.y0, c.far - c.x0, h, "url(#" + ID + "-fine)", 0, 'opacity="0.12"') +
+          text(c.step.x, c.step.y, c.step.size, "STEP 5", { font: "Fraunces", anchor: c.step.anchor }) +
+          c.lines.map(function (l) { return text(l.x, l.y, c.lsize, l.t, { anchor: c.lanchor, ls: 1.5 }); }).join("");
+        // (FOREVER): the paper past the card's right end keeps going
+        var ever = "";
+        for (var x = c.ever.x; x < c.far - 100; x += c.ever.dx) ever += text(x, c.ever.y, c.lsize, "AND EVER", { anchor: "start", ls: 1.5 });
+        return '<defs><clipPath id="' + ID + '-card-clip"><rect id="' + ID + '-card-reveal" x="' + c.x0 + '" y="' + (c.y0 - 14) + '" width="0" height="' + (h + 28) + '"/></clipPath></defs>' +
+          gid("card", '<g clip-path="url(#' + ID + '-card-clip)">' + paper + ever + "</g>" + roll(c.x0, c.y0, c.y1) + gid("card-rollR", roll(c.x0, c.y0, c.y1)));
+      }
+      function tabArt() {
+        var t = L.tab, h = t.y1 - t.y0;
+        var paper = rect(t.x0, t.y0, t.x1 - t.x0, h, CARD, 4.5) + rect(t.x0 + 8, t.y0 + 8, t.x1 - t.x0 - 16, h - 16, "none", 0, 'stroke="' + C.orange + '" stroke-width="2"') +
+          text((t.x0 + t.x1) / 2, t.y0 + h / 2 + t.size * 0.36, t.size, "STEP 5", { font: "Fraunces" });
+        return '<defs><clipPath id="' + ID + '-tab-clip"><rect id="' + ID + '-tab-reveal" x="' + t.x0 + '" y="' + (t.y0 - 12) + '" width="0" height="' + (h + 24) + '"/></clipPath></defs>' +
+          gid("tab", '<g clip-path="url(#' + ID + '-tab-clip)">' + paper + "</g>" + roll(t.x0, t.y0, t.y1, 9) + gid("tab-rollR", roll(t.x0, t.y0, t.y1, 9)), 'opacity="0"');
+      }
+
+      // ── Floors, the ledge, the river (factory, funnel, counter) ───────────────────────────────
+      function floorArt(fl) {
+        var out = ln("M" + fl.x0 + "," + fl.y + " H" + fl.x1, INK, 5);
+        if (fl.slab) out = poly([[fl.x0, fl.y], [fl.x1, fl.y], [fl.x1, fl.y + 18], [fl.x0, fl.y + 18]], C.tan, 4) + rect(fl.x0, fl.y, fl.x1 - fl.x0, 18, "url(#" + ID + "-hatch)", 0, 'opacity="0.3"') + ln("M" + (fl.x0 + 4) + "," + (fl.y + 14) + " H" + (fl.x1 - 4), C.orange, 2);
+        for (var x = fl.x0 + 40; x < fl.x1 - 20; x += 190) out += ln("M" + x + "," + fl.y + " l-6,-12 M" + (x + 6) + "," + fl.y + " l2,-15 M" + (x + 12) + "," + fl.y + " l8,-10", INK, 2.6);
+        return out;
+      }
+      function riverArt() {
+        var S = L.shelf, FA = L.factory, FU = L.funnel, CT = L.counter, out = "";
+        // the ledge: a slab on two posts
+        out += S.posts.map(function (x) { return poly([[x - 7, S.y + 16], [x + 7, S.y + 16], [x + 7, GY], [x - 7, GY]], C.slate, 3.6) + ln("M" + (x + 4) + "," + (S.y + 20) + " V" + (GY - 4), C.orange, 1.6); }).join("") +
+          poly([[S.x0, S.y], [S.x1, S.y], [S.x1 - 6, S.y + 20], [S.x0, S.y + 20]], C.tan, 4) + rect(S.x0, S.y, S.x1 - S.x0, 20, "url(#" + ID + "-hatch)", 0, 'opacity="0.3"') +
+          ln("M" + (S.x0 + 4) + "," + (S.y + 15) + " H" + (S.x1 - 10), C.orange, 2);
+        out += at(FA.x, FA.y, FA.s, gid("factory", PR.factory({})));
+        return out;
+      }
+      function funnelArt() {
+        var FU = L.funnel, CT = L.counter;
+        var board = rect(CT.x - CT.w / 2 + 8, CT.y - CT.h / 2 + 10, CT.w, CT.h, C.ink, 0, 'opacity="0.85"') + rect(CT.x - CT.w / 2, CT.y - CT.h / 2, CT.w, CT.h, CARD, 5) +
+          rect(CT.x - CT.w / 2 + 10, CT.y - CT.h / 2 + 10, CT.w - 20, CT.h - 20, "none", 0, 'stroke="' + C.orange + '" stroke-width="2.5"') +
+          text(CT.x, CT.y + CT.big * 0.12, CT.big, "$0.0 billion", { font: "Fraunces", id: "counter-num" }) + text(CT.x, CT.y + CT.h / 2 - 18, CT.small, "/ year", { ls: 2 });
+        var post = poly([[CT.post[0] - 6, CT.y + CT.h / 2], [CT.post[0] + 6, CT.y + CT.h / 2], [CT.post[0] + 6, CT.post[1]], [CT.post[0] - 6, CT.post[1]]], C.slate, 3);
+        return at(FU.x, FU.y, FU.s, gid("funnel", PR.colorFlipFunnel({ inN: 0, outN: 0 }))) +
+          gid("counter-post", post, 'opacity="0"') + gid("counter", board, 'opacity="0"');
+      }
+
+      // ── The lab (a little building: the bench and the scientist seen through its window) and the hospital ──
+      var LB = L.lab, labWin = { x: LB.x + 12, y: LB.y + 30, w: Math.round(LB.w * 0.6), h: Math.round(LB.h * 0.6) };
+      var labDoor = { x: LB.x + LB.w - 62 * LB.s, w: 48 * LB.s, h: 120 * LB.s };
+      var SCI_LAB = KIT.castOpts("scientist", { look: "right", arms: [[-30, -125], [70, 128]], holdL: "flask" });
+      var SCI_RUN = KIT.castOpts("scientist", { look: "right", mood: "eager", arms: [[-70, -20], [96, 120]], holdR: "flask" });
+      var sciLab = { x: labWin.x + labWin.w * 0.36, feet: LB.y + LB.h, s: L.sci };
+      var SLR = KIT.rig(SCI_LAB), SRR = KIT.rig(SCI_RUN);
+      var catchAt = G(sciLab.x, sciLab.feet, sciLab.s)(SLR.hand[1]);
+      function foam(cx, cy) {
+        return [[0, -6, 4], [-4, -14, 5], [5, -22, 6], [-2, -32, 7], [6, -42, 5]].map(function (b, i) {
+          return '<g class="s5-foam" data-i="' + i + '"><circle cx="' + f(cx + b[0]) + '" cy="' + f(cy + b[1]) + '" r="' + b[2] + '" fill="#E7F3F1" stroke="' + INK + '" stroke-width="1.8"/></g>';
+        }).join("");
+      }
+      var pointSvg = "";
+      function pointArt() { return pointSvg; }
+      function labArt() {
+        var x = LB.x, y = LB.y, w = LB.w, h = LB.h, gy = y + h, wn = labWin, dr = labDoor;
+        var hl = SLR.hand[0], fx = hl[0] - 2, fy = hl[1] - 18;
+        var inside = rect(wn.x, wn.y, wn.w, wn.h, "#D5E5E2") + rect(wn.x, wn.y, wn.w, wn.h, "url(#" + ID + "-fine)", 0, 'opacity="0.25"') +
+          personAt(sciLab.x, sciLab.feet, sciLab.s, gid("sci-lab", gid("sci-lab-j", KIT.person(SCI_LAB) + gid("sci-foam", foam(fx, fy), 'opacity="0"')))) +
+          at(wn.x + wn.w * 0.66, gy, LB.bench, gid("bench", PR.lab({})));
+        var wall = '<path d="M' + x + "," + y + " H" + (x + w) + " V" + gy + " H" + x + " Z M" + wn.x + "," + wn.y + " V" + (wn.y + wn.h) + " H" + (wn.x + wn.w) + " V" + wn.y + ' Z" fill="' + C.cream + '" fill-rule="evenodd" stroke="' + INK + '" stroke-width="4.5"/>' +
+          '<path d="M' + (x + w * 0.62) + "," + y + " H" + (x + w) + " V" + gy + " H" + (x + w * 0.62) + ' Z" fill="url(#' + ID + '-fine)" opacity="0.3"/>';
+        var frame = rect(wn.x - 5, wn.y - 5, wn.w + 10, wn.h + 10, "none", 0, 'stroke="' + INK + '" stroke-width="5"') + ln("M" + (wn.x + wn.w / 2) + "," + wn.y + " V" + (wn.y + 14), INK, 3) +
+          poly([[wn.x - 10, wn.y + wn.h + 4], [wn.x + wn.w + 10, wn.y + wn.h + 4], [wn.x + wn.w + 6, wn.y + wn.h + 12], [wn.x - 6, wn.y + wn.h + 12]], C.tan, 3);
+        var cornice = poly([[x - 8, y - 16], [x + w + 8, y - 16], [x + w + 8, y + 6], [x - 8, y + 6]], C.peri, 4) + text(x + w / 2, y + 1, 18, "LAB", { fill: C.cream, ls: 5 });
+        var doorway = rect(dr.x, gy - dr.h, dr.w, dr.h, C.ink, 3);
+        var door = gid("lab-door", rect(dr.x, gy - dr.h, dr.w, dr.h, C.slate, 3.4) + rect(dr.x + 7, gy - dr.h + 10, dr.w - 14, dr.h * 0.38, C.cyan, 2.4) +
+          '<circle cx="' + f(dr.x + 8) + '" cy="' + f(gy - dr.h * 0.45) + '" r="3.5" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.5"/>' + ln("M" + f(dr.x + dr.w - 3) + "," + f(gy - dr.h + 3) + " V" + (gy - 3), C.orange, 1.6));
+        // THE POINT, folded flat on the roof until "point)." (a sign card on posts with an arrow down at the lab)
+        var sign = PR.sign({ text: "THE POINT", height: 22, fontSize: 34, size: V ? 0.62 : 0.72 });
+        var ar = V ? 0.62 : 0.72, aw = (9 * 34 * 0.56 + 64) * ar / 2 + 34;
+        var arrow = poly([[aw - 12, -62 * ar], [aw + 12, -62 * ar], [aw + 12, -26 * ar], [aw + 26, -26 * ar], [aw, 0], [aw - 26, -26 * ar], [aw - 12, -26 * ar]].map(function (p) { return [p[0], p[1] - 6]; }), C.orange, 3.6);
+        // (drawn later, by pointArt, so the ledge posts do not cover its arrow)
+        pointSvg = at(x + w * 0.42, y - 16, 1, gid("point", sign + arrow, 'opacity="0"'));
+        return inside + wall + frame + cornice + doorway + door;
+      }
+      function hospitalArt() { var HO = L.hospital; return at(HO.x, HO.y, HO.s, gid("hospital", PR.hospital({}))); }
+
+      // ── The bank, the YES button, the Politician and his treaty ──────────────────────────────
+      var POL = KIT.castOpts("politician", { look: "right", arms: [[-8, -3], [25, 35]] });
+      var PRG = KIT.rig(POL), polG = G(L.pol.x, L.pol.y, L.pol.s);
+      var polT = PRG.hipY - 52 * PRG.build.th - 4;
+      // the giant quill in his right hand, its nib forward and down (in the hand's frame, person units)
+      var hand = PRG.handLocal[1];
+      var SIGN_ROT = -28; // the arm rotation that puts the nib on the treaty
+      // In the signing pose the nib points down and forward, the plume up; drawn in the resting arm's frame.
+      var qNib = rotAbout([hand[0] + 26, hand[1] + 22], hand, -SIGN_ROT), qTop = rotAbout([hand[0] - 14, hand[1] - 60], hand, -SIGN_ROT);
+      var nibL = qNib;
+      var nibAt = polG(rotAbout(nibL, PRG.shoulder[1], SIGN_ROT));
+      function quill() {
+        var a = qNib, b = qTop;
+        var dx = b[0] - a[0], dy = b[1] - a[1], L0 = Math.hypot(dx, dy), nx = -dy / L0, ny = dx / L0;
+        var vane = [];
+        for (var i = 0; i <= 10; i++) { var u = 0.18 + 0.82 * (i / 10), wv = 11 * Math.sin(Math.PI * Math.min(1, (u - 0.18) / 0.82)); vane.push([a[0] + dx * u + nx * wv, a[1] + dy * u + ny * wv]); }
+        for (var j = 10; j >= 0; j--) { var u2 = 0.18 + 0.82 * (j / 10), w2 = 5 * Math.sin(Math.PI * Math.min(1, (u2 - 0.18) / 0.82)); vane.push([a[0] + dx * u2 - nx * w2, a[1] + dy * u2 - ny * w2]); }
+        var barbs = "";
+        for (var k = 3; k < 10; k++) { var u3 = 0.18 + 0.82 * (k / 10); barbs += "M" + f(a[0] + dx * u3) + "," + f(a[1] + dy * u3) + " l" + f(nx * 8 + dx * 0.05) + "," + f(ny * 8 + dy * 0.05) + " "; }
+        return gid("quill", poly(vane, CARD, 2.4) + ln(barbs, C.orange, 1.4) + ln("M" + f(a[0]) + "," + f(a[1]) + " L" + f(b[0]) + "," + f(b[1]), INK, 2.2) +
+          poly([[a[0], a[1]], [a[0] - dx * 0.16 + nx * 3, a[1] - dy * 0.16 + ny * 3], [a[0] - dx * 0.16 - nx * 3, a[1] - dy * 0.16 - ny * 3]].map(function (p, i) { return i ? [p[0] + dx * 0.32, p[1] + dy * 0.32] : p; }), INK, 1.4), 'opacity="0"');
+      }
+      // the grin with more teeth (after "yes."), in person units at his mouth, facing right
+      function bigGrin() {
+        var m = PRG.mouth, k = PRG.hs;
+        var g = [[m[0] - 12 * k, m[1] - 4 * k], [m[0] + 14 * k, m[1] - 5 * k], [m[0] + 10 * k, m[1] + 8 * k], [m[0] - 7 * k, m[1] + 7 * k]], teeth = "";
+        for (var i = 1; i < 7; i++) { var tx = m[0] - 12 * k + i * 3.7 * k; teeth += "M" + f(tx) + "," + f(m[1] - 5 * k) + " V" + f(m[1] + 7.5 * k) + " "; }
+        teeth += "M" + f(m[0] - 11 * k) + "," + f(m[1] + 1.2 * k) + " H" + f(m[0] + 12 * k);
+        return gid("pol-grin", poly(g, "#FFFFFF", 1.8) + ln(teeth, INK, 1), 'opacity="0"');
+      }
+      function ribbon() {
+        var petals = "";
+        for (var i = 0; i < 12; i++) { var a = (i * Math.PI) / 6; petals += [f(11 * Math.cos(a)), f(11 * Math.sin(a))].join(",") + " " + [f(7 * Math.cos(a + 0.26)), f(7 * Math.sin(a + 0.26))].join(",") + " "; }
+        return poly([[-6, 4], [-11, 26], [-6, 22], [-2, 27], [0, 6]], C.med, 2) + poly([[6, 4], [11, 26], [6, 22], [2, 27], [0, 6]], C.med, 2) +
+          '<polygon points="' + petals + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2"/><circle r="6.5" fill="' + C.med + '" stroke="' + INK + '" stroke-width="1.8"/>' + KIT.star(0, 0, 4.5, C.cream);
+      }
+      var ribbonAt = [-12, polT + 18];
+      function politicianArt() {
+        var head = PRG.head, hs = PRG.hs;
+        var legal = at(head[0] + 3 * hs, head[1] - 8 * hs, 1, PR.stampMark({ text: "LEGAL", size: 0.27, angle: -10 }));
+        return personAt(L.pol.x, L.pol.y, L.pol.s, gid("pol", KIT.person(POL) + legal + bigGrin() + at(ribbonAt[0], ribbonAt[1], 1, gid("ribbon", ribbon(), 'opacity="0"'))));
+      }
+      // The treaty stands on the ground where the quill's nib lands; the stamp comes down onto it.
+      var TS = 1.0, treatyX = nibAt[0] + 34, treatyTop = BY - 158 * TS;
+      function treatyArt() {
+        var sig = "M" + f(nibAt[0] - 24) + "," + f(nibAt[1] - 4) + " c10,-22 18,-26 14,-4 c-4,18 10,14 16,-6 c4,-14 10,-10 8,4 c-2,12 10,8 18,-8 c8,-16 22,-6 12,6 c-14,16 -60,26 -98,6 c-30,-16 6,-46 46,-34 c30,9 58,26 96,8";
+        return at(treatyX, BY, TS, gid("treaty", PR.scroll({ text: "TREATY" }))) +
+          gid("treaty-sig", '<path d="' + sig + '" fill="none" stroke="' + INK + '" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>') +
+          at(treatyX, BY - 96 * TS, 1, gid("treaty-mark", PR.stampMark({ text: "PASSED", size: 0.62, angle: -12 }), 'opacity="0"')) +
+          at(treatyX + 8, BY - 98 * TS + 4, 1.35, gid("stamp", PR.stamp({ text: "PASSED" }), 'opacity="0"'));
+      }
+      function bankArt() {
+        var B = L.bank;
+        return at(B.x, B.y, B.s, gid("bank", PR.bank({ label: "YES-VOTE FUND" }))) + at(L.button.x, L.button.y, L.button.s, gid("button", PR.yesButton({})));
+      }
+
+      // ── The Rich Human's hill, chair and the Rich Human ──────────────────────────────────────
+      // The hill and the chair are step-1-dice-in-a-suit's master drawings (s1Hill, s1HillTop, s1Backrest, s1Rich),
+      // copied here with this scene's sizes: a dome of plain bills on a dark green mound; Part 4's swivel chair, seen
+      // from the front (its UNREALISTIC sticker is on the back), with the Rich Human's person origin at (MAN.x, OY).
+      var HL = L.hill, HCX = (HL[0] + HL[1]) / 2, HHALF = (HL[1] - HL[0]) / 2, HHT = (HL[2] - HL[3]) * 1.15;
+      function hillTop(x) { var u = Math.min(1, Math.abs(x - HCX) / HHALF); return HL[2] - Math.min(HL[2] - HL[3], HHT * Math.sqrt(1 - u * u)); }
+      var MAN = L.man, MS = MAN.s, OY = HL[3] - 138 * MS; // the chair's casters stand on the hilltop
+      var RICH = {
+        a: KIT.castOpts("richHuman", { arms: [[22, 72], [-22, -72]] }),
+        b: KIT.castOpts("richHuman", { arms: [[22, 72], [-22, -72]], mood: "greedy" }),
+        c: KIT.castOpts("richHuman", { arms: [[22, 72], [-22, -72]], mood: "smile", light: "teal" }),
+        d: KIT.castOpts("richHuman", { arms: [[-165, -185], [-22, -72]], mood: "smile", light: "teal" }),
+      };
+      var MR = KIT.rig(RICH.a), MRD = KIT.rig(RICH.d);
+      var manFeet = OY + 100 * MS, manG = G(MAN.x, manFeet, MS);
+      var manT = MR.hipY - 52 * MR.build.th - 4;
+      var hug = [(MR.hand[0][0] + MR.hand[1][0]) / 2, (MR.hand[0][1] + MR.hand[1][1]) / 2 + 2];
+      var hugG = manG(hug);
+      function hillArt() {
+        var x0 = HL[0], x1 = HL[1], base = HL[2], peak = HL[3], cx = HCX, half = HHALF, Ht = HHT;
+        var prof = function (h) { return half * Math.sqrt(Math.max(0, 1 - (h / Ht) * (h / Ht))); };
+        var rnd = KIT.rng(5150), rh = 23, rows = Math.ceil((base - peak) / rh), mp = [], i, k;
+        for (i = 0; i <= 30; i++) { var a = i / 30, hh = (base - peak) * (1 - Math.abs(2 * a - 1)); mp.push(f(cx + (2 * a - 1) * prof(hh) * 1.02) + "," + f(base - hh - 6)); }
+        var mound = '<path d="M' + f(x0 - 8) + "," + base + " L" + mp.join(" L") + " L" + f(x1 + 8) + "," + base + ' Z" fill="' + C.moneyDark + '" stroke="' + INK + '" stroke-width="5" stroke-linejoin="round"/>';
+        var bills = "", bill = KIT.money("plain").replace(/<path class="legs"[^>]*\/>/, "");
+        for (i = rows - 1; i >= 0; i--) {
+          var y = base - rh * (i + 0.55), hw = prof(rh * (i + 0.5)), n = Math.max(2, Math.round((2 * hw) / 44)), sp = (2 * hw - 30) / n;
+          for (k = 0; k < n; k++) {
+            var bx = cx - hw + 15 + sp * (k + 0.5) + (i % 2 ? sp * 0.22 : -sp * 0.22) + (rnd() - 0.5) * 6;
+            bills += '<g transform="translate(' + f(bx) + "," + f(y + (rnd() - 0.5) * 5) + ") rotate(" + f((rnd() - 0.5) * 16) + ') scale(0.5)">' + bill + "</g>";
+          }
+        }
+        var lip = '<path d="M' + f(x0 - 14) + "," + (base + 2) + " H" + f(x1 + 14) + '" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>';
+        return gid("hill", mound + bills + lip);
+      }
+      // Part 4's swivel chair (step-1's s1Rich, front view), in the Rich Human's person units: the star base on its
+      // casters (y 133), the backrest and the seat behind him; the armrests in front.
+      var CHAIR = "#3A4766";
+      function chairBehind() {
+        var spokes = "M0,111 L-56,124 M0,111 L56,124 M0,111 L-22,130 M0,111 L22,130";
+        var base = ln(spokes, INK, 9) + ln(spokes, C.slate, 4) +
+          [[-56, 132], [56, 132], [-22, 133], [22, 133]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="5.5" fill="' + INK + '"/>'; }).join("") +
+          '<rect x="-5.5" y="94" width="11" height="19" fill="' + C.peri + '" stroke="' + INK + '" stroke-width="3"/>';
+        var tufts = [[-36, -24], [36, -24], [-40, 0], [40, 0]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.4" fill="' + C.cream + '" opacity="0.8"/>'; }).join("");
+        var back = '<path d="M-50,88 L-55,-20 L-46,-40 L46,-40 L55,-20 L50,88 Z" fill="' + CHAIR + '" stroke="' + INK + '" stroke-width="4.4" stroke-linejoin="miter"/>' +
+          '<path d="M-44,-34 L44,-34 L49,-20 L45,82 L-45,82 L-49,-20 Z" fill="none" stroke="' + C.cream + '" stroke-width="1.6" opacity="0.55"/>' +
+          '<path d="M46,-36 L52,-20 L47,84" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>' + tufts;
+        var seat = '<path d="M-60,79 L60,79 L63,96 L-63,96 Z" fill="' + CHAIR + '" stroke="' + INK + '" stroke-width="4.4" stroke-linejoin="miter"/>' + ln("M-56,82 H56", C.orange, 2.2);
+        return at(MAN.x, OY, MS, base + back + seat);
+      }
+      function chairArms() {
+        return at(MAN.x, OY, MS, '<path d="M-63,47 L-46,47 L-46,57 L-63,57 Z M46,47 L63,47 L63,57 L46,57 Z" fill="' + CHAIR + '" stroke="' + INK + '" stroke-width="3.6"/>' + ln("M-56,57 V80 M56,57 V80", INK, 5));
+      }
+      // The I PREFER LIVING button on his lapel, clear of the beard (person units).
+      function liveButton() {
+        var bx = -19, by = manT + 13, r = 9;
+        return '<g transform="translate(' + bx + "," + by + ')"><circle r="' + (r + 1.6) + '" fill="' + INK + '"/><circle r="' + r + '" fill="' + CARD + '"/><circle r="' + (r - 2.2) + '" fill="none" stroke="' + C.orange + '" stroke-width="0.8"/>' +
+          text(0, -2.6, 3.2, "I PREFER", { fill: "#1F6E68" }) + text(0, 2.6, 4.6, "LIVING", { fill: "#1F6E68" }) + gid("glint", KIT.star(5, -5, 7, "#FFFFFF") + KIT.star(5, -5, 3.5, C.yellow), 'opacity="0"') + "</g>";
+      }
+      // The white walrus mustache and the long beard that pours from his chin down the hill. Drawn in the face's own
+      // units (the head faces right; x -20 to 25, the chin at y 26) and mapped to person units around the head. The
+      // beard covers the jaw from ear to chin, then falls as a wavy rope of hair with jagged (hard-cornered) edges and
+      // fans out in points where it lands on the hill.
+      function beardArt() {
+        var k = MR.hs, hc = MR.head, m = MR.mouth, my = m[1];
+        var P = function (fx, fy) { return [hc[0] + fx * k, hc[1] + fy * k]; };
+        var st = [[1, -3], [9, -6], [17, -5], [27, -11], [22, -1], [9, -1.5], [0, -0.5], [-8, -8]].map(function (p) { return [m[0] + p[0] * k, my + p[1] * k]; });
+        // the jaw part, face units: a sideburn from the ear, round the jowl and the chin, its top edge running up from
+        // under the mouth (the white mustache covers the mouth; his eyes, nose and cigar stay clear)
+        var jawL = [[-15, 2], [-18, 11], [-16, 20], [-11, 27]], jawR = [[20, 15], [21, 21], [17, 28]];
+        var fy0 = 28, fy1 = (BY - 30 - manG(P(0, 0))[1]) / (MS * k), N = 26, left = [], right = [];
+        for (var i = 0; i <= N; i++) {
+          var u = i / N, fy = fy0 + (fy1 - fy0) * u, cx = 3 + Math.sin(u * Math.PI * 2.3) * 7 * Math.min(1, u * 3);
+          var hw = 13 - 3 * Math.min(1, u * 4) + 22 * Math.pow(Math.max(0, u - 0.62) / 0.38, 1.6), zig = i % 2 ? -1 : 2.6;
+          left.push([cx - hw - zig, fy]); right.push([cx + hw + zig, fy]);
+        }
+        var xl = left[N][0], xr = right[N][0], tips = [];
+        for (var j = 0; j <= 6; j++) tips.push([xl + ((xr - xl) * j) / 6, fy1 + (j % 2 ? -4 : 6)]);
+        var shape = jawL.concat(left, tips, right.reverse(), jawR.reverse()).map(function (p) { return P(p[0], p[1]); });
+        var shade = jawL.concat(left).map(function (p, i2) { return P(p[0], p[1]); }).concat(left.slice().reverse().map(function (p) { return P(p[0] + 7, p[1]); }), [P(-6, 8)]);
+        var strands = "";
+        for (var s2 = 0; s2 < 5; s2++) {
+          var d = "";
+          for (var t2 = 0; t2 <= 12; t2++) { var u2 = t2 / 12, fy2 = 22 + (fy1 - 8 - 22) * u2, c2 = 3 + Math.sin(u2 * Math.PI * 2.3) * 7 * Math.min(1, u2 * 3) + (s2 - 2) * (4 + 6 * Math.pow(Math.max(0, u2 - 0.62) / 0.38, 1.6)); var pp = P(c2, fy2); d += (t2 ? " L" : "M") + f(pp[0]) + "," + f(pp[1]); }
+          strands += d + " ";
+        }
+        return { beard: gid("beard", poly(shape, "#FFFFFF", 2.4) + '<path d="M' + pts(shade) + ' Z" fill="#E4E0D3"/>' + ln(strands, INK, 1, 'opacity="0.4"'), 'opacity="0"'),
+          stache: gid("stache", poly(st, "#FFFFFF", 1.6), 'opacity="0"') };
+      }
+      // the cash he hugs, and two piles in his lap on either side of it that grow by one bill per arrival
+      var PILE_N = 24;
+      function stackArt() {
+        var out = "", seatTop = MR.hipY - 4 / MS;
+        for (var i = 0; i < 5; i++) out += rect(hug[0] - 17 + (i % 2), hug[1] - 4 - i * 4.2, 34, 5, C.money, 1.4) + rect(hug[0] - 4, hug[1] - 4 - i * 4.2, 8, 5, C.cream);
+        for (var j = 0; j < PILE_N; j++) {
+          var side = j % 2 ? 1 : -1, lvl = Math.floor(j / 2), px = side * 37 - 13 + ((lvl % 2) ? 1.5 : -1.5), py = seatTop - 5 - lvl * 4.2;
+          out += '<g class="s5-slab" visibility="hidden">' + rect(px, py, 26, 5, C.money, 1.4) + rect(px + 9, py, 8, 5, C.cream) + "</g>";
+        }
+        return gid("stack", out);
+      }
+      function thumbFist() {
+        var hd = MRD.handLocal[0];
+        // a big fist with the thumb straight up (person units, the hand's own scale 2.1)
+        return '<g transform="translate(' + f(hd[0]) + "," + f(hd[1] + 1) + ') scale(2.1)">' + poly([[-6, -4], [6, -4], [7, 6], [-5, 7]], "#F4E3CC", 1.4) +
+          poly([[-1.6, -4], [3.2, -4], [3.4, -14.5], [1, -16], [-1.6, -14.5]], "#F4E3CC", 1.4) + ln("M-5,-0.5 H5 M-5,2.6 H5", INK, 0.8) + ln("M-0.4,-13.4 H2.2", INK, 0.7) + "</g>";
+      }
+      function manArt() {
+        var light = '<circle id="' + ID + '-light" cx="27" cy="' + f(manT + 40) + '" r="5.5" fill="#E9E1CC" stroke="' + INK + '" stroke-width="2"/>';
+        var alive = gid("man-a", KIT.person(RICH.a)) + gid("man-b", KIT.person(RICH.b), 'opacity="0"') + gid("man-c", KIT.person(RICH.c), 'opacity="0"') + gid("man-d", KIT.person(RICH.d), 'opacity="0"') + liveButton() + light;
+        var bones = KIT.cast("richHuman", { skeleton: true });
+        var bd = beardArt();
+        return { man: personAt(MAN.x, manFeet, MS, gid("man-alive", alive) + gid("man-bones", bones) + stackArt() + bd.stache), beard: personAt(MAN.x, manFeet, MS, bd.beard) };
+      }
+      function calendarArt() {
+        var c = L.cal;
+        // 16:9: it hangs on a nail by a string from its two rings, up on the paper beside the hill
+        var hang = c.nail ? ln("M" + f(c.x - 22 * c.s) + "," + f(c.y - 111 * c.s) + " L" + c.x + "," + c.nail + " L" + f(c.x + 22 * c.s) + "," + f(c.y - 111 * c.s), INK, 2.4) +
+          '<circle cx="' + c.x + '" cy="' + c.nail + '" r="5" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="2"/>' : "";
+        return hang + at(c.x, c.y, c.s, gid("cal", PR.calendar({ month: "YEAR", day: 2026, pages: 34 })));
+      }
+      // The neon infinity sign: a lemniscate tube, dark until it lights; then a bright chaser loops round it.
+      function infinityArt() {
+        var I = L.inf, a = I.a, list = [];
+        for (var i = 0; i < 72; i++) {
+          var t = (i / 72) * Math.PI * 2, d = 1 + Math.sin(t) * Math.sin(t);
+          list.push([I.x + (a * Math.cos(t)) / d, I.y + (a * Math.sin(t) * Math.cos(t)) / d * 1.25]);
+        }
+        var d = "M" + pts(list) + " Z", w = a / 150;
+        var wires = ln("M" + f(I.x - a * 0.62) + "," + f(I.y - a * 0.3) + " V" + (V ? I.y - a * 0.75 : 46) + " M" + f(I.x + a * 0.62) + "," + f(I.y - a * 0.3) + " V" + (V ? I.y - a * 0.75 : 46), INK, 2, 'opacity="0.6"');
+        return gid("inf", wires + '<path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="' + f(11 * w) + '" opacity="0.55"/><path d="' + d + '" fill="none" stroke="#ECE6D2" stroke-width="' + f(7 * w) + '"/>' +
+          gid("inf-lit", '<path d="' + d + '" fill="none" stroke="' + C.orange + '" stroke-width="' + f(40 * w) + '" opacity="0.28"/><path d="' + d + '" fill="none" stroke="' + C.orange + '" stroke-width="' + f(26 * w) + '" opacity="0.35"/>' +
+            '<path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="' + f(17 * w) + '"/><path d="' + d + '" fill="none" stroke="' + C.yellow + '" stroke-width="' + f(10 * w) + '"/>' +
+            '<path d="' + d + '" fill="none" stroke="#FFF6D8" stroke-width="' + f(3.5 * w) + '"/>' +
+            '<path id="' + ID + '-inf-chase" d="' + d + '" fill="none" stroke="#FFFFFF" stroke-width="' + f(7 * w) + '" stroke-linecap="round" pathLength="1" stroke-dasharray="0.09 0.91" stroke-dashoffset="0"/>', 'opacity="0"'), 'opacity="0"');
+      }
+
+      // ── The Grim Reaper, his clipboard of tallies and his pencil (reaper units) ────────────────
+      var RP = L.reaper, rpTop = RP.feet - 100 * RP.s;
+      var CB = { x: 30, y: -24, s: 0.55 };
+      var tallies = [];
+      (function () {
+        for (var r = 0; r < 6; r++) for (var g = 0; g < 3; g++) for (var m = 0; m < 5; m++) {
+          var x0 = -38 + g * 26, y0 = -128 + r * 21;
+          tallies.push(m < 4 ? "M" + (x0 + m * 5) + "," + y0 + " V" + (y0 + 15) : "M" + (x0 - 3) + "," + (y0 + 12) + " L" + (x0 + 18) + "," + (y0 + 2));
+        }
+      })();
+      var OLD_TALLY = 40;
+      var pencilTip = [16, -76];
+      function reaperArt() {
+        var marks = tallies.map(function (d, i) { return '<path class="s5-tally"' + (i < OLD_TALLY ? "" : ' opacity="0"') + ' d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="2.6" stroke-linecap="round"/>'; }).join("");
+        var board = at(CB.x, CB.y, CB.s, PR.clipboard({ title: "", items: [] }) + marks);
+        var sh = [-22, -104], el = [-34, -66];
+        var arm = ln("M" + sh.join(",") + " L" + el.join(",") + " L" + pencilTip.join(","), INK, 9) + ln("M" + sh.join(",") + " L" + el.join(",") + " L" + pencilTip.join(","), BONE, 4.5) +
+          '<circle cx="' + pencilTip[0] + '" cy="' + pencilTip[1] + '" r="6.5" fill="' + BONE + '" stroke="' + INK + '" stroke-width="2.4"/>';
+        // the pencil in two halves (it snaps at the end): its tip on the clipboard, the eraser up and right
+        var k = 0.34, pt = function (list) { return list.map(function (p) { return [pencilTip[0] - 4 + p[0] * k, pencilTip[1] + 4 + p[1] * k]; }); };
+        var tipHalf = poly(pt([[0, 0], [18, -10], [78, -45], [90, -25], [30, 10]]), C.yellow, 2.4) + poly(pt([[0, 0], [18, -10], [20, 4]]), INK, 1);
+        var endHalf = poly(pt([[78, -45], [138, -80], [150, -60], [90, -25]]), C.yellow, 2.4) + poly(pt([[138, -80], [150, -60], [164, -68], [152, -88]]), C.war, 2.4);
+        var hand2 = '<circle cx="46" cy="-36" r="9" fill="' + BONE + '" stroke="' + INK + '" stroke-width="2.5"/>';
+        return gid("reaper-rise", KIT.reaper() + board + hand2 + gid("reaper-arm", arm + gid("pencil-a", tipHalf) + gid("pencil-b", endHalf)));
+      }
+
+      // ── The streams (walking bills, drawn with <use> so a hundred of them stay cheap) ───────────
+      var defs = "<defs>" + '<g id="' + ID + '-billA">' + KIT.money("plain", 0) + '</g><g id="' + ID + '-billB">' + KIT.money("plain", 1) + "</g>" +
+        '<g id="' + ID + '-sealW">' + KIT.moneySeal("war", 0, 0, 10) + '</g><g id="' + ID + '-sealM">' + KIT.moneySeal("med", 0, 0, 10) + "</g>" +
+        '<g id="' + ID + '-spark">' + KIT.star(0, 0, 17, C.yellow) + KIT.star(0, 0, 8, "#FFFFFF") + "</g></defs>";
+      // A path: points [x, y, mode, hop height] where the mode is how the bill gets there: walk (upright, legs going),
+      // drop and fall (straight, legs still; fall turns it sideways in the pipe), hop (an arc), in (shrinks into a
+      // door), out (grows out of a door).
+      // A fifth entry weighs a segment: w 1.8 takes 1.8 times as long to cross (a climb).
+      function mkPath(list) {
+        var segs = [], len = 0;
+        for (var i = 1; i < list.length; i++) {
+          var a = list[i - 1], b = list[i], l = Math.hypot(b[0] - a[0], b[1] - a[1]) * (b[4] || 1);
+          segs.push({ a: a, b: b, l: l, d0: len, mode: b[2] || "walk", h: b[3] || 0 });
+          len += l;
+        }
+        return { segs: segs, len: len };
+      }
+      function along(p, d) {
+        for (var i = 0; i < p.segs.length; i++) {
+          var s = p.segs[i];
+          if (d <= s.d0 + s.l || i === p.segs.length - 1) {
+            var u = s.l ? Math.min(1, Math.max(0, (d - s.d0) / s.l)) : 1;
+            var x = s.a[0] + (s.b[0] - s.a[0]) * u, y = s.a[1] + (s.b[1] - s.a[1]) * u;
+            if (s.mode === "hop") y -= 4 * s.h * u * (1 - u);
+            return { x: x, y: y, mode: s.mode, u: u };
+          }
+        }
+      }
+      function slotsArt(name, n, spark) {
+        var out = "";
+        for (var j = 0; j < n; j++) out += '<g id="' + ID + "-" + name + j + '" visibility="hidden"><use href="#' + ID + '-billA"/><g transform="translate(31,0)"><g><use href="#' + ID + '-sealW"/></g></g>' +
+          (spark ? '<g opacity="0"><use href="#' + ID + '-spark"/></g>' : "") + "</g>";
+        return out;
+      }
+      function bindSlots(name, n) {
+        var els = [];
+        for (var j = 0; j < n; j++) {
+          var g = q(name + j);
+          els.push({ g: g, body: g.children[0], flip: g.children[1].children[0], seal: g.children[1].children[0].children[0], spark: g.children[2] || null, shown: false, frame: -1, sealK: "W" });
+        }
+        return els;
+      }
+      function placeBill(e, st, path, d) {
+        var p = along(path, d), s = st.scale, rot = 0, frame = 0, y = p.y;
+        if (p.mode === "walk") { var ph = d / 15; frame = Math.floor(ph) % 2; rot = Math.sin(ph * Math.PI) * 3; y -= Math.abs(Math.sin(ph * Math.PI)) * 3; }
+        if (p.mode === "in") s *= 1 - 0.8 * p.u;
+        if (p.mode === "out") s *= 0.35 + 0.65 * p.u;
+        if (p.mode === "fall") rot = 90;
+        if (p.mode === "hop") rot = -12 * Math.sin(p.u * Math.PI);
+        e.g.setAttribute("transform", "translate(" + f(p.x) + "," + f(y - (p.mode === "fall" ? 0 : 47 * s)) + ") scale(" + s.toFixed(3) + ") rotate(" + f(rot) + ")");
+        if (e.frame !== frame) { e.body.setAttribute("href", "#" + ID + (frame ? "-billB" : "-billA")); e.frame = frame; }
+        // the seal: war red on the way in; out of the spout it flips to the teal cross with a sparkle
+        var sk = "W", sx = 1;
+        if (st.flip) {
+          if (d >= 20) sk = "M";
+          else if (d >= 2) { var v = (d - 2) / 18; sx = Math.abs(Math.cos(v * Math.PI)); sk = v < 0.5 ? "W" : "M"; }
+          var sp = d >= 3 && d <= 40 ? Math.sin(((d - 3) / 37) * Math.PI) : 0;
+          e.spark.setAttribute("opacity", sp > 0 ? 1 : 0);
+          if (sp > 0) e.spark.setAttribute("transform", "translate(31,-10) scale(" + sp.toFixed(3) + ") rotate(" + f(d * 5) + ")");
+        }
+        if (e.sealK !== sk) { e.seal.setAttribute("href", "#" + ID + (sk === "M" ? "-sealM" : "-sealW")); e.sealK = sk; }
+        e.flip.setAttribute("transform", "scale(" + sx.toFixed(3) + ",1)");
+      }
+      // Bill k leaves at t0 + k * dt; slot k mod N draws it (N * dt is longer than any bill's walk).
+      function runStream(st, t) {
+        var N = st.els.length, kmax = Math.floor((t - st.t0) / st.dt + 1e-6);
+        for (var j = 0; j < N; j++) {
+          var e = st.els[j], show = false;
+          if (kmax >= 0) {
+            var k = kmax - ((((kmax - j) % N) + N) % N);
+            if (k >= 0) {
+              var path = st.path(k);
+              if (path) {
+                var d = (t - st.t0 - k * st.dt) * st.speed(k);
+                if (d >= 0 && d <= path.len) { show = true; placeBill(e, st, path, d); }
+              }
+            }
+          }
+          if (e.shown !== show) { e.g.setAttribute("visibility", show ? "visible" : "hidden"); e.shown = show; }
+        }
+      }
+
+      // Paths, in the frame's units, through the feet of the bills.
+      var FU = L.funnel, FA = L.factory, spoutY = FU.y - 40 * FU.s;
+      var WAR = L.war.lanes.map(function (dy) {
+        return mkPath([[FA.x, L.shelf.y + dy], [FA.x + 46, L.shelf.y + dy, "out"], [L.shelf.x1 - 6, L.shelf.y + dy], [FU.x - 30, FU.y - 236 * FU.s, "hop", 44 * FU.s]]);
+      });
+      var HO = L.hospital, B = L.bank;
+      var vaultAt = [B.x, B.y - 100 * B.s];
+      var P80 = [], PBANK, PHILL;
+      // up the hill's left slope, from its foot to x xe, on the bills (a climb: each step weighs 1.8)
+      function climbTo(xe, n) {
+        var out = [];
+        for (var i = 0; i <= n; i++) { var x = HL[0] + 8 + (xe - HL[0] - 8) * (i / n); out.push([x, hillTop(x) + 3, "walk", 0, i ? 1.8 : 1]); }
+        return out;
+      }
+      var climb = climbTo(HCX - (V ? 70 : 90), 6);
+      var intoArms = [hugG[0], hugG[1] + 6, "hop", 40];
+      L.lanes.forEach(function (dy) {
+        var lab = mkPath([[FU.x, spoutY], [FU.x, GY + dy, "drop", 0, 0.25], [labWin.x + labWin.w + 26, GY + dy], [catchAt[0] + 4, catchAt[1] + 22, "hop", 46]]);
+        var hos = mkPath([[FU.x, spoutY], [FU.x, GY + dy, "drop", 0, 0.25], [HO.x + 36 * HO.s, GY + dy], [HO.x, GY + dy - 6, "in"]]);
+        P80.push(lab, hos);
+      });
+      if (V) {
+        var PI = L.pipe;
+        var down = [[FU.x, spoutY], [FU.x, GY, "drop", 0, 0.25], [PI.x, GY], [PI.x, PI.y1, "fall"], [PI.x, BY, "drop"]];
+        PBANK = mkPath(down.concat([[vaultAt[0] + 40, BY], [vaultAt[0], vaultAt[1] + 8, "in"]]));
+        PHILL = mkPath(down.concat(climb, [intoArms]));
+      } else {
+        PBANK = mkPath([[FU.x, spoutY], [FU.x, GY, "drop", 0, 0.25], [vaultAt[0] - 40, GY], [vaultAt[0], vaultAt[1] + 8, "in"]]);
+        PHILL = mkPath([[FU.x, spoutY], [FU.x, GY, "drop", 0, 0.25]].concat(climb, [intoArms]));
+      }
+      var T = {
+        step: cue("Step"), humans: KIT.cueEnd(ID, "Humans"), ever: cue("forever", 1), everEnd: aft("forever", 1),
+        treaty: cue("treaty"), passes: cue("passes,"), redirect: cue("redirecting"), num: cue("twenty-seven"), dollars: cue("dollars"),
+        eighty: cue("Eighty"), point: cue("point", 2), ten1: cue("Ten", 1), yes: cue("yes."), afterYes: aft("yes."), ten2: cue("Ten", 2),
+        returns: cue("returns,"), forever2: cue("forever", 2), forever3: cue("forever", 3), long: cue("long"), time: cue("time."),
+        unless: bef("Unless"), die: cue("die"), prev: cue("preventable"), diseases: cue("diseases."), fixing: cue("fixing,"),
+        works: cue("works"), out: aft("out."),
+      };
+      var OUT = { t0: T.dollars, dt: 0.09, flip: true, scale: L.bill };
+      OUT.path = function (k) {
+        var te = OUT.t0 + k * OUT.dt;
+        if (te >= T.ten2 && k % 10 === 9) return PHILL;
+        if (te >= T.ten1 && k % 10 === 4) return PBANK;
+        return P80[(k % 3) * 2 + (k % 2)];
+      };
+      OUT.speed = function (k) { var p = OUT.path(k); return p === PHILL ? 420 : p === PBANK ? 220 : 135; };
+      var WARS = { t0: T.redirect + 0.25, dt: 0.11, flip: false, scale: L.bill, path: function (k) { return WAR[k % WAR.length]; }, speed: function () { return 215; } };
+
+      // ── The scientist's sprint (frame units) ─────────────────────────────────────────────────
+      var runStart = [labDoor.x + labDoor.w / 2, GY];
+      var SE = L.sciEnd, leapA = [SE.a[0], SE.a[1] === null ? hillTop(SE.a[0]) + 3 : SE.a[1]], leapB = [SE.b[0], SE.b[1] === null ? hillTop(SE.b[0]) + 3 : SE.b[1]];
+      var RUN = mkPath(V ? [runStart, leapA] : [runStart, [HL[0] - 10, BY]].concat(climbTo(leapA[0], 4)));
+      // she runs from the door to leapA by runT1, leaps (the top of the leap on "fixing,") and lands on leapB
+      var runT0 = T.diseases + 0.06, runT1 = T.fixing - 0.32, LEAP = 0.7;
+      function sciPos(t) {
+        if (t < runT1) { var u = Math.max(0, Math.min(1, (t - runT0) / (runT1 - runT0))), p = along(RUN, u * RUN.len); return { x: p.x, y: p.y, run: true, air: false, hop: p.mode === "hop" }; }
+        var v = Math.min(1, (t - runT1) / LEAP);
+        return { x: leapA[0] + (leapB[0] - leapA[0]) * v + SE.lx * Math.sin(Math.PI * v), y: leapA[1] + (leapB[1] - leapA[1]) * v - 4 * SE.h * v * (1 - v), run: false, air: v < 1 };
+      }
+
+      // ── Build the frame ──────────────────────────────────────────────────────────────────────
+      var stars = V ? [[120, 400, 16, C.orange], [520, 380, 11, C.yellow], [980, 640, 14, C.orange]] : [[110, 230, 16, C.orange], [520, 250, 12, C.yellow], [1060, 300, 10, C.orange], [640, 150, 9, C.yellow]];
+      // the sky above the hill's outline (the Reaper stands behind the hill)
+      var hillClip = (function () {
+        var top = [];
+        for (var i = 0; i <= 40; i++) { var x = HL[1] - (HL[1] - HL[0]) * (i / 40); top.push([x, hillTop(x) + 4]); }
+        return "M-200,-200 H" + (W + 200) + " V" + HL[2] + " H" + HL[1] + " L" + pts(top) + " L" + HL[0] + "," + HL[2] + " H-200 Z";
+      })();
+      var tagsArt = (function () {
+        var T80 = L.tags.t80, TB = L.tags.tb, TH = L.tags.th;
+        // a tag card; arrow: a dx to put an orange arrow pointing right (toward the hill) beside it
+        function tag(name, x, y, big, small, w, arrow) {
+          var ar = arrow ? poly([[w / 2 + 8, -8], [w / 2 + 30, -8], [w / 2 + 30, -18], [w / 2 + 50, 0], [w / 2 + 30, 18], [w / 2 + 30, 8], [w / 2 + 8, 8]], C.orange, 3.4) : "";
+          return at(x, y, 1, gid(name, rect(-w / 2 + 6, -36 + 7, w, 72, C.ink, 0, 'opacity="0.85"') + rect(-w / 2, -36, w, 72, CARD, 4.5) + rect(-w / 2 + 8, -28, w - 16, 56, "none", 0, 'stroke="' + C.orange + '" stroke-width="2"') +
+            text(0, -2, 34, big, { font: "Fraunces", fill: "#1F6E68" }) + text(0, 25, 22, small, { ls: 0.5 }) + ar, 'opacity="0"'));
+        }
+        var hang = ln("M" + (T80[0] - 50) + "," + (L.shelf.y + 20) + " V" + (T80[1] - 36) + " M" + (T80[0] + 50) + "," + (L.shelf.y + 20) + " V" + (T80[1] - 36), INK, 2);
+        return gid("t80-hang", hang, 'opacity="0"') + tag("t80", T80[0], T80[1], "80%", "clinical trials", 172) + tag("tb", TB[0], TB[1], "10%", "YES-VOTE FUND", 160) + tag("th", TH[0], TH[1], "10%", "rich humans, forever", 218, true);
+      })();
+      // the teal shower out of the bank's vault (after "yes.") and the splash from the flask (after "fixing,")
+      var shower = "";
+      for (var si = 0; si < 12; si++) shower += '<g transform="translate(' + f(vaultAt[0]) + "," + f(vaultAt[1]) + ')"><g id="' + ID + "-sh" + si + '" opacity="0"><g transform="scale(' + (L.bill * 0.8).toFixed(2) + ')">' + KIT.money("med").replace(/<path class="legs"[^>]*\/>/, "") + "</g></g></g>";
+      var splash = (function () {
+        var c = manG([MR.head[0], MR.head[1] - 10]), out = [], r0 = 46 * MS / 1.5;
+        for (var i = 0; i < 16; i++) { var a = (i / 16) * Math.PI * 2, rr = i % 2 ? r0 * 0.55 : r0 * (0.9 + (i % 4) * 0.12); out.push([c[0] + rr * Math.cos(a), c[1] + rr * Math.sin(a) * 0.8]); }
+        var drops = [[-1.3, -0.9], [1.4, -0.7], [-0.4, -1.5], [0.9, -1.4], [1.6, 0.2]].map(function (d) { return '<circle cx="' + f(c[0] + d[0] * r0) + '" cy="' + f(c[1] + d[1] * r0) + '" r="' + f(r0 * 0.12) + '" fill="' + C.med + '" stroke="' + INK + '" stroke-width="2"/>'; }).join("");
+        return at(0, 0, 1, gid("splash", poly(out, C.med, 3.4) + poly(out.map(function (p) { return [c[0] + (p[0] - c[0]) * 0.5, c[1] + (p[1] - c[1]) * 0.5]; }), "#7FC7BF", 0, 'stroke="none"') + drops, 'opacity="0"')) + "";
+      })();
+      var dust = "";
+      for (var di = 0; di < 12; di++) dust += '<g id="' + ID + "-dust" + di + '" visibility="hidden"><circle cx="0" cy="-10" r="12" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3"/><circle cx="-12" cy="-4" r="8" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3"/></g>';
+      var speedLines = ln("M-40,-70 H-90 M-46,-40 H-110 M-40,-10 H-84", INK, 4, 'opacity="0.6"');
+      var runner = '<g id="' + ID + '-sci-run" visibility="hidden"><g id="' + ID + '-sci-bob">' + gid("sci-lines", speedLines) + KIT.person(SCI_RUN) + "</g></g>";
+      var cardFirst = cardArt(), tabFirst = tabArt(), manParts = manArt();
+
+      var art = defs + KIT.paperDefs(ID) + stars.map(function (s) { return KIT.star(s[0], s[1], s[2], s[3]); }).join("") +
+        infinityArt() + calendarArt() +
+        hillArt() + chairBehind() + manParts.man + chairArms() + manParts.beard +
+        L.floors.map(floorArt).join("") +
+        hospitalArt() + labArt() + riverArt() + pointArt() +
+        gid("war", slotsArt("w", 24, false)) + funnelArt() +
+        (V ? '<g id="' + ID + '-pipe-back">' + rect(L.pipe.x - 26, L.pipe.y0 + 6, 52, L.pipe.y1 - L.pipe.y0, "#E4F0EE", 0) + "</g>" : "") +
+        bankArt() + tagsArt +
+        gid("out", slotsArt("o", 72, true)) +
+        (V ? (function () {
+          var p = L.pipe, x0 = p.x - 26, x1 = p.x + 26;
+          return ln("M" + x0 + "," + (p.y0 + 4) + " V" + p.y1 + " M" + x1 + "," + (p.y0 + 4) + " V" + p.y1, INK, 5) + ln("M" + (x0 + 9) + "," + (p.y0 + 30) + " V" + (p.y1 - 30), "#FFFFFF", 4, 'opacity="0.8"') +
+            poly([[x0 - 8, p.y0 - 2], [x1 + 8, p.y0 - 2], [x1 + 8, p.y0 + 12], [x0 - 8, p.y0 + 12]], C.peri, 3.4) + poly([[x0 - 8, p.y1 - 6], [x1 + 8, p.y1 - 6], [x1 + 8, p.y1 + 6], [x0 - 8, p.y1 + 6]], C.peri, 3.4);
+        })() : "") +
+        treatyArt() + politicianArt() + shower +
+        '<defs><clipPath id="' + ID + '-above-hill"><path d="' + hillClip + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-above-hill)">' + at(RP.x, rpTop, RP.s, reaperArt()) + "</g>" +
+        splash + dust + runner + cardFirst + tabFirst;
+      q("art").innerHTML = KIT.svg(W, H, art);
+
+      // the quill rides in the Politician's right hand; the thumb in the Rich Human's raised fist
+      var polArmR = q("pol").querySelector(".arm-r");
+      polArmR.insertAdjacentHTML("beforeend", quill());
+      var manArmD = q("man-d").querySelector(".arm-l");
+      manArmD.insertAdjacentHTML("beforeend", thumbFist());
+      // one chest light for all four of his drawings: the person's own sits behind the cash he hugs, so hide it and
+      // use the one drawn below the cash (#light), which blinks red for the Reaper and turns teal for the lab
+      all("#" + ID + "-man-alive .chest-light").forEach(function (cl) { cl.setAttribute("visibility", "hidden"); });
+
+      // ── The timeline ─────────────────────────────────────────────────────────────────────────
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      // "Step five": the card unrolls (whoosh); "(Forever)": it keeps unrolling past the right edge (whirr), "AND EVER
+      // AND EVER"; after it, it whips back and rolls into its STEP 5 tab in the corner.
+      var c = L.card, cw = c.x1 - c.x0, far = c.far - c.x0;
+      tl.fromTo(q("card-reveal"), { attr: { width: 0 } }, { attr: { width: cw }, duration: 0.5, ease: "power2.out" }, T.step);
+      tl.fromTo(q("card-rollR"), { x: 0 }, { x: cw, duration: 0.5, ease: "power2.out" }, T.step);
+      tl.to(q("card-reveal"), { attr: { width: far }, duration: 0.8, ease: "power1.in" }, T.ever);
+      tl.to(q("card-rollR"), { x: far, duration: 0.8, ease: "power1.in" }, T.ever);
+      tl.to(q("card-reveal"), { attr: { width: 0 }, duration: 0.3, ease: "power3.in" }, T.everEnd);
+      tl.to(q("card-rollR"), { x: 0, duration: 0.3, ease: "power3.in" }, T.everEnd);
+      tl.to(q("card"), { opacity: 0, duration: 0.1 }, T.everEnd + 0.3);
+      var tw = L.tab.x1 - L.tab.x0;
+      tl.set(q("tab"), { opacity: 1 }, T.everEnd + 0.3);
+      tl.fromTo(q("tab-reveal"), { attr: { width: 0 } }, { attr: { width: tw }, duration: 0.25, ease: "power2.out" }, T.everEnd + 0.32);
+      tl.fromTo(q("tab-rollR"), { x: 0 }, { x: tw, duration: 0.25, ease: "power2.out" }, T.everEnd + 0.32);
+      // the neon sign, still off, swings down into place over the hill once the card is out of the way
+      var infG = q("inf");
+      setO(infG, L.inf.x, V ? L.inf.y - L.inf.a * 0.75 : 46);
+      tl.fromTo(infG, { opacity: 0, rotation: -14 }, { opacity: 1, rotation: 0, duration: 0.6, ease: "elastic.out(1, 0.45)", immediateRender: false }, T.everEnd + 0.4);
+
+      // the factory puffs smoke all along; its lab burner flickers
+      all(".factory-puff").forEach(function (p, i) {
+        setO(p, +p.getAttribute("data-ox"), +p.getAttribute("data-oy"));
+        var pd = 0.6 + (i % 3) * 0.1, p0 = (i % 3) * 0.15;
+        tl.fromTo(p, { scale: 0.8, opacity: 0.9 }, { scale: 1.15, opacity: 1, duration: pd, yoyo: true, repeat: loops(pd, p0, D), ease: "sine.inOut" }, p0);
+      });
+      KIT.flicker(tl, q("bench"), 0, D - 0.3); // (flicker's last swing runs one period past t1)
+
+      // "treaty": the Politician raises the giant quill and signs with a huge flourish (pen scratch); "passes,": the
+      // stamp slams PASSED onto it (thunk); then the treaty rolls up and he tucks it away.
+      var armR = polArmR, sh = PRG.shoulder[1];
+      setO(armR, sh[0], sh[1]);
+      var qu = q("quill");
+      tl.set(qu, { opacity: 1 }, T.treaty - 0.5);
+      tl.to(armR, { rotation: SIGN_ROT - 8, duration: 0.3, ease: "back.out(2)" }, T.treaty - 0.5);
+      [[SIGN_ROT + 3, 0.05], [SIGN_ROT - 6, 0.05], [SIGN_ROT + 4, 0.05], [SIGN_ROT - 4, 0.05], [SIGN_ROT - 42, 0.12], [SIGN_ROT, 0.1]].reduce(function (t, k) {
+        tl.to(armR, { rotation: k[0], duration: k[1], ease: "sine.inOut" }, t); return t + k[1];
+      }, T.treaty - 0.12);
+      var sig = q("treaty-sig").firstChild;
+      tl.fromTo(sig, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.42, ease: "power1.inOut" }, T.treaty - 0.12);
+      var treaty = q("treaty"), reveal = treaty.querySelector(".scroll-reveal"), rollB = treaty.querySelector(".scroll-roll-bottom");
+      tl.fromTo(reveal, { attr: { height: 0 } }, { attr: { height: 150 }, duration: 0.3, ease: "power2.out" }, T.treaty - 0.9);
+      tl.fromTo(rollB, { y: -150 }, { y: 0, duration: 0.3, ease: "power2.out" }, T.treaty - 0.9);
+      var stamp = q("stamp"), mark = q("treaty-mark").querySelector(".stamp-mark");
+      tl.set(stamp, { opacity: 1 }, T.passes - 0.3);
+      tl.fromTo(stamp, { y: -420 }, { y: 0, duration: 0.3, ease: "power3.in", immediateRender: false }, T.passes - 0.3);
+      tl.set(q("treaty-mark"), { opacity: 1 }, T.passes);
+      setO(mark, 0, +mark.getAttribute("data-cy"));
+      tl.fromTo(mark, { scale: 1.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.12, ease: "power3.out", immediateRender: false }, T.passes);
+      tl.to(stamp, { y: -420, duration: 0.35, ease: "power2.in" }, T.passes + 0.25);
+      tl.set(stamp, { opacity: 0 }, T.passes + 0.6);
+      tl.to(armR, { rotation: 0, duration: 0.3, ease: "power2.inOut" }, T.passes + 0.2);
+      tl.set(qu, { opacity: 0 }, T.passes + 0.35);
+      var rollUp = T.redirect + 0.5;
+      tl.to(reveal, { attr: { height: 0 }, duration: 0.3, ease: "power2.in" }, rollUp);
+      tl.to(rollB, { y: -150, duration: 0.3, ease: "power2.in" }, rollUp);
+      tl.to([q("treaty-sig"), q("treaty-mark")], { opacity: 0, duration: 0.15 }, rollUp);
+      tl.to(treaty, { x: (polG(ribbonAt)[0] - treatyX) / TS, y: (polG(ribbonAt)[1] - BY) / TS + 150, scale: 0.2, opacity: 0, duration: 0.3, ease: "power2.in" }, rollUp + 0.3);
+
+      // "redirecting": the factory's shutter rolls up, the funnel lever pulls itself and the funnel hums;
+      // the war money marches out along the ledge and hops in.
+      var door = q("factory").querySelector(".factory-door");
+      setO(door, 0, -172);
+      tl.fromTo(door, { scaleY: 1 }, { scaleY: 0, duration: 0.3, ease: "power2.out", immediateRender: false }, T.redirect);
+      var lever = q("funnel").querySelector(".funnel-lever");
+      setO(lever, 80, -112);
+      tl.to(lever, { rotation: 36, duration: 0.25, ease: "back.out(2)" }, T.redirect);
+      tl.fromTo(q("funnel"), { x: 0 }, { x: 2.2, duration: 0.05, repeat: loops(0.05, T.redirect + 0.1, D), yoyo: true, ease: "none", immediateRender: false }, T.redirect + 0.1);
+      // "twenty-seven point two billion": the counter pops up and spins to $27.2 billion / year
+      var CT = L.counter, cnt = q("counter"), num = q("counter-num");
+      setO(cnt, CT.x, CT.y + CT.h / 2);
+      var cpost = q("counter-post");
+      setO(cpost, CT.post[0], CT.post[1]);
+      tl.fromTo(cpost, { opacity: 1, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.15, ease: "power2.out", immediateRender: false }, T.num - 0.3);
+      tl.fromTo(cnt, { opacity: 0, scaleY: 0.2 }, { opacity: 1, scaleY: 1, duration: 0.2, ease: "back.out(2)", immediateRender: false }, T.num - 0.15);
+      var spun = "";
+      KIT.onTime(tl, D, function (t) {
+        var u = Math.max(0, Math.min(1, (t - T.num) / (T.dollars - T.num))), v = (27.2 * (1 - Math.pow(1 - u, 2))).toFixed(1), s = "$" + v + " billion";
+        if (s !== spun) { num.textContent = s; spun = s; }
+      });
+
+      // "Eighty": the hospital doors swing open, the 80% tag drops; the scientist catches bills, her flask bubbles over
+      all("#" + ID + "-hospital .hospital-door-l, #" + ID + "-hospital .hospital-door-r").forEach(function (d, i) {
+        setO(d, i ? 42 : -42, -76);
+        tl.fromTo(d, { scaleX: 1 }, { scaleX: 0.08, duration: 0.25, ease: "power2.out", immediateRender: false }, T.eighty - 0.4);
+      });
+      tl.set(q("t80-hang"), { opacity: 1 }, T.eighty);
+      [["t80", T.eighty], ["tb", T.ten1], ["th", T.ten2]].forEach(function (g) {
+        var el = q(g[0]);
+        setO(el, 0, -36);
+        tl.fromTo(el, { opacity: 0, scale: 0.2, rotation: -8 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.3, ease: "back.out(2.2)", immediateRender: false }, g[1]);
+      });
+      var catchArm = q("sci-lab").querySelector(".arm-r"), csh = SLR.shoulder[1];
+      setO(catchArm, csh[0], csh[1]);
+      tl.fromTo(catchArm, { rotation: 0 }, { rotation: -10, duration: 0.15, yoyo: true, repeat: Math.floor((T.diseases - T.eighty) / 0.15) - 1, ease: "sine.inOut", immediateRender: false }, T.eighty - 0.4);
+      tl.set(q("sci-foam"), { opacity: 1 }, T.eighty);
+      all(".s5-foam").forEach(function (b, i) {
+        var cc = b.firstChild;
+        setO(b, +cc.getAttribute("cx"), +cc.getAttribute("cy"));
+        tl.fromTo(b, { y: 6, scale: 0.4 }, { y: -10, scale: 1.2, duration: 0.5, repeat: loops(0.5, T.eighty + i * 0.09, T.diseases), ease: "sine.out", immediateRender: false }, T.eighty + i * 0.09);
+      });
+      all("#" + ID + "-bench .lab-bubble").forEach(function (b, i) {
+        setO(b, +b.getAttribute("data-ox"), +b.getAttribute("data-oy"));
+        tl.fromTo(b, { y: 0, scale: 0.6 }, { y: -26, scale: 1.25, duration: 0.6, repeat: loops(0.6, T.eighty + i * 0.1, D), ease: "sine.out", immediateRender: false }, T.eighty + i * 0.1);
+      });
+      // "point).": THE POINT springs up on the lab roof (pop)
+      var point = q("point");
+      setO(point, 0, 0);
+      tl.fromTo(point, { opacity: 1, scaleY: 0 }, { opacity: 1, scaleY: 1, duration: 0.35, ease: "back.out(3)", immediateRender: false }, T.point);
+
+      // "Ten" (first): the vault door swings open and a tenth of the bills walk in
+      var vault = q("bank").querySelector(".bank-vault");
+      setO(vault, -70, -100);
+      tl.to(vault, { scaleX: -0.3, duration: 0.35, ease: "back.out(1.6)" }, T.ten1 - 0.45);
+      // "yes.": the Politician slaps the YES button (click); after it, the bank pins a ribbon on him, showers him in teal
+      // papers (cash register) and his grin grows more teeth.
+      tl.to(armR, { rotation: -150, duration: 0.25, ease: "power2.out" }, T.yes - 0.45);
+      tl.to(armR, { rotation: 6, duration: 0.1, ease: "power3.in" }, T.yes - 0.1);
+      tl.to(armR, { rotation: 0, duration: 0.2, ease: "power2.out" }, T.yes + 0.2);
+      var cap = q("button").querySelector(".yes-cap");
+      tl.to(cap, { y: 9, duration: 0.06, ease: "power2.in" }, T.yes);
+      tl.to(cap, { y: 0, duration: 0.2, ease: "back.out(2)" }, T.yes + 0.18);
+      var rib = q("ribbon"), ribG = polG(ribbonAt), vaultL = [(vaultAt[0] - ribG[0]) / L.pol.s, (vaultAt[1] - ribG[1]) / L.pol.s];
+      tl.fromTo(rib, { opacity: 1, x: vaultL[0], y: vaultL[1], rotation: -200, scale: 0.6 }, { x: 0, y: 0, rotation: 0, scale: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, T.afterYes - 0.3);
+      tl.fromTo(rib, { scale: 1.4 }, { scale: 1, duration: 0.2, ease: "back.out(3)", immediateRender: false }, T.afterYes);
+      var headG = polG([PRG.head[0], PRG.head[1] - 30]), rs = KIT.rng(55);
+      for (var i2 = 0; i2 < 12; i2++) {
+        var el = q("sh" + i2), dx = headG[0] - vaultAt[0] + (rs() - 0.5) * 120, peak = headG[1] - vaultAt[1] - 60 - rs() * 70;
+        var topG = polG(PRG.top), land = i2 < 3 ? topG[1] - 8 - i2 * 7 - vaultAt[1] : BY - 8 - vaultAt[1] - rs() * 6;
+        var lx = i2 < 3 ? topG[0] - vaultAt[0] + (i2 - 1) * 6 : headG[0] - vaultAt[0] + (i2 % 2 ? 1 : -1) * (30 + rs() * 60), t0 = T.afterYes + i2 * 0.045;
+        tl.set(el, { opacity: 1 }, t0);
+        tl.fromTo(el, { x: 0, y: 0, rotation: 0 }, { x: dx * 0.7, y: peak, rotation: (rs() - 0.5) * 300, duration: 0.3, ease: "power2.out", immediateRender: false }, t0);
+        tl.to(el, { x: lx, y: land, rotation: i2 < 3 ? (i2 - 1) * 8 : (rs() - 0.5) * 40, duration: 0.45, ease: "power2.in" }, t0 + 0.3);
+      }
+      var grin = q("pol-grin"), mo = PRG.mouth;
+      setO(grin, mo[0], mo[1]);
+      tl.fromTo(grin, { opacity: 1, scaleX: 0.6 }, { opacity: 1, scaleX: 1.25, duration: 0.25, ease: "back.out(3)", immediateRender: false }, T.afterYes + 0.15);
+
+      // "returns,": dollar-sign eyes; "forever." (second): the neon infinity lights (switch) and its chaser loops.
+      tl.set(q("man-a"), { opacity: 0 }, T.returns);
+      tl.set(q("man-b"), { opacity: 1 }, T.returns);
+      var lit = q("inf-lit");
+      [[0, 1], [0.06, 0], [0.12, 1], [0.17, 0], [0.24, 1]].forEach(function (k) { tl.set(lit, { opacity: k[1] }, T.forever2 + k[0]); });
+      tl.fromTo(q("inf-chase"), { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": -1 }, duration: 1.1, repeat: loops(1.1, T.forever2, D), ease: "none", immediateRender: false }, T.forever2);
+      // "forever" (third): the sign flares and keeps looping
+      tl.fromTo(lit, { opacity: 0.6 }, { opacity: 1, duration: 0.15, yoyo: true, repeat: 3, ease: "none", immediateRender: false }, T.forever3);
+
+      // "long time.": the calendar sheds its years in a blizzard (whoosh) and the mustache turns into a long white beard
+      // that pours down the hill (falling slide whistle).
+      var pages = all("#" + ID + "-cal .cal-page").reverse(), rc = KIT.rng(2026);
+      pages.forEach(function (pg, i) {
+        setO(pg, 0, -98);
+        var t0 = T.long - 0.05 + i * 0.022, dx = (rc() - 0.3) * 380, dy = -120 - rc() * 260;
+        tl.fromTo(pg, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: dx, y: dy, rotation: (rc() - 0.5) * 720, duration: 0.5, ease: "power2.out", immediateRender: false }, t0);
+        tl.to(pg, { y: dy + 160, x: dx * 1.3, rotation: "+=" + Math.round((rc() - 0.5) * 360), opacity: 0, duration: 0.6, ease: "sine.in" }, t0 + 0.5);
+      });
+      var stache = q("stache"), beard = q("beard"), m0 = MR.mouth;
+      tl.set(stache, { opacity: 1 }, T.long);
+      setO(beard, m0[0], m0[1]);
+      tl.set(beard, { opacity: 1 }, T.time);
+      tl.fromTo(beard, { scaleY: 0, scaleX: 0.6 }, { scaleY: 1, scaleX: 1, duration: 0.85, ease: "power2.in", immediateRender: false }, T.time);
+
+      // before "Unless": the Reaper rises behind the hill (whoosh), scribbling tallies, and taps the Rich Human on the
+      // shoulder with his pencil; the chest light blinks red. "die": x-ray to a grinning skeleton (zap), still catching.
+      // "preventable": one more mark (scratch).
+      var rise = q("reaper-rise"), rarm = q("reaper-arm");
+      tl.fromTo(rise, { y: RP.rise }, { y: 0, duration: 0.45, ease: "back.out(1.3)", immediateRender: true }, T.unless);
+      setO(rarm, -22, -104);
+      var tapTarget = manG([MR.shoulder[1][0] - 4, MR.shoulder[1][1] - 4]);
+      var tapL = [(tapTarget[0] - RP.x) / RP.s, (tapTarget[1] - rpTop) / RP.s];
+      var restV = [pencilTip[0] + 22, pencilTip[1] + 104], tapV = [tapL[0] + 22, tapL[1] + 104];
+      var tapRot = (Math.atan2(tapV[1], tapV[0]) - Math.atan2(restV[1], restV[0])) * 180 / Math.PI;
+      if (tapRot > 0) tapRot -= 360;
+      function scribble(t0, t1) {
+        var n = Math.max(1, Math.floor((t1 - t0) / 0.07));
+        tl.fromTo(rarm, { rotation: -4 }, { rotation: 4, duration: 0.07, repeat: n - 1, yoyo: true, ease: "sine.inOut", immediateRender: false }, t0);
+      }
+      scribble(T.unless + 0.1, T.unless + 0.45);
+      var tap = T.unless + 0.5;
+      tl.to(rarm, { rotation: tapRot, duration: 0.14, ease: "power2.out" }, tap);
+      tl.to(rarm, { rotation: tapRot + 10, duration: 0.07, yoyo: true, repeat: 3, ease: "sine.inOut" }, tap + 0.14);
+      tl.to(rarm, { rotation: 0, duration: 0.12, ease: "power2.in" }, tap + 0.44);
+      scribble(T.die + 0.05, T.prev - 0.02);
+      tl.to(rarm, { rotation: -14, duration: 0.08, ease: "power2.out" }, T.prev);
+      tl.to(rarm, { rotation: 0, duration: 0.12, ease: "power2.in" }, T.prev + 0.08);
+      scribble(T.prev + 0.22, T.fixing);
+      var marks = all(".s5-tally");
+      for (var mi = OLD_TALLY; mi < marks.length; mi++) {
+        var tm = mi < OLD_TALLY + 14 ? T.unless + 0.1 + (mi - OLD_TALLY) * 0.025 : mi < OLD_TALLY + 26 ? T.die + 0.05 + (mi - OLD_TALLY - 14) * 0.025 : mi === OLD_TALLY + 26 ? T.prev + 0.04 : T.prev + 0.25 + (mi - OLD_TALLY - 27) * 0.05;
+        if (tm < T.fixing) tl.set(marks[mi], { opacity: 1 }, tm);
+      }
+      var lightB = q("light");
+      [0, 1, 2, 3, 4, 5].forEach(function (i) { tl.set(lightB, { attr: { fill: i % 2 ? "#E9E1CC" : C.war } }, tap + 0.14 + i * 0.07); });
+      tl.set(lightB, { attr: { fill: C.war } }, tap + 0.6);
+      KIT.xray(tl, q("man-alive"), q("man-bones"), T.die);
+
+      // "diseases.": the lab door bursts open (slam) and the scientist sprints up the hill in a cloud of dust;
+      // "fixing,": she dumps the flask on him (splat) and he flickers back, beard and all, his light teal (zap).
+      var labDoorEl = q("lab-door");
+      setO(labDoorEl, labDoor.x + labDoor.w, GY - labDoor.h / 2);
+      tl.to(labDoorEl, { scaleX: -0.25, duration: 0.08, ease: "power3.out" }, T.diseases);
+      tl.to(labDoorEl, { scaleX: 0.05, duration: 0.25, ease: "back.out(2)" }, T.diseases + 0.08);
+      tl.set(q("sci-lab"), { opacity: 0 }, T.diseases);
+      var runEl = q("sci-run"), bob = q("sci-bob"), lines = q("sci-lines"), legs = runEl.querySelectorAll(".leg-l, .leg-r");
+      var dustEls = [];
+      for (var dj = 0; dj < 12; dj++) dustEls.push(q("dust" + dj));
+      var SS = L.sci, sciShown = false;
+      KIT.onTime(tl, D, function (t) {
+        var show = t >= runT0;
+        if (show !== sciShown) { runEl.setAttribute("visibility", show ? "visible" : "hidden"); sciShown = show; }
+        if (show) {
+          var p = sciPos(t), ph = (t - runT0) * 22;
+          runEl.setAttribute("transform", "translate(" + f(p.x) + "," + f(p.y - 100 * SS) + ") scale(" + SS + ")");
+          // running: bobbing, leaning in; in the air: leaning back, legs apart; landed: standing still
+          bob.setAttribute("transform", p.run ? "translate(0," + f(-Math.abs(Math.sin(ph)) * 7) + ") rotate(" + (p.hop ? -8 : 10) + " 0 100)" : p.air ? "rotate(-10 0 100)" : "");
+          lines.setAttribute("opacity", p.run ? 1 : 0);
+          for (var li = 0; li < legs.length; li++) {
+            var hip = SRR.hip[li], a = p.run ? Math.sin(ph + li * Math.PI) * 38 : p.air ? (li ? 28 : -22) : 0;
+            legs[li].setAttribute("transform", "rotate(" + f(a) + " " + f(hip[0]) + " " + f(hip[1]) + ")");
+          }
+        }
+        for (var di2 = 0; di2 < dustEls.length; di2++) {
+          var ts = runT0 + di2 * ((runT1 - runT0) / dustEls.length), age = t - ts, on = age >= 0 && age < 0.55;
+          dustEls[di2].setAttribute("visibility", on ? "visible" : "hidden");
+          if (on) { var dp = sciPos(ts); dustEls[di2].setAttribute("transform", "translate(" + f(dp.x - 26) + "," + f(dp.y - age * 30) + ") scale(" + (0.6 + age * 1.6).toFixed(2) + ")"); dustEls[di2].setAttribute("opacity", (1 - age / 0.55).toFixed(2)); }
+        }
+      });
+      var pour = runEl.querySelector(".arm-r"), psh = SRR.shoulder[1];
+      setO(pour, psh[0], psh[1]);
+      tl.to(pour, { rotation: -70, duration: 0.14, ease: "power2.out" }, T.fixing - 0.12);
+      tl.to(pour, { rotation: 30, duration: 0.12, ease: "power3.in" }, T.fixing + 0.02);
+      tl.to(pour, { rotation: -20, duration: 0.3, ease: "power2.out" }, T.fixing + 0.4);
+      var spl = q("splash"), spc = manG([MR.head[0], MR.head[1] - 10]);
+      setO(spl, spc[0], spc[1]);
+      tl.fromTo(spl, { opacity: 1, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.18, ease: "power3.out", immediateRender: false }, T.fixing);
+      tl.to(spl, { opacity: 0, scale: 1.3, y: 24, duration: 0.5, ease: "power1.in" }, T.fixing + 0.35);
+      var back = T.fixing + 0.1;
+      tl.set(q("man-b"), { opacity: 0 }, back);
+      tl.set(q("man-c"), { opacity: 1 }, back);
+      tl.set(lightB, { attr: { fill: C.med } }, back);
+      for (var xi = 0; xi < 7; xi++) {
+        tl.set(q("man-alive"), { opacity: xi % 2 ? 0 : 1 }, back + xi * 0.06);
+        tl.set(q("man-bones"), { opacity: xi % 2 ? 1 : 0 }, back + xi * 0.06);
+      }
+
+      // "works": thumbs-up (ding) and the button glints; after "out.": the Reaper's pencil snaps (snip), he looks at the
+      // camera, then sinks behind the hill (falling slide whistle).
+      tl.set(q("man-c"), { opacity: 0 }, T.works);
+      tl.set(q("man-d"), { opacity: 1 }, T.works);
+      var armD = manArmD, dsh = MRD.shoulder[0];
+      setO(armD, dsh[0], dsh[1]);
+      tl.fromTo(armD, { rotation: -120 }, { rotation: 0, duration: 0.22, ease: "back.out(2.2)", immediateRender: false }, T.works);
+      var glint = q("glint");
+      setO(glint, 5, -5); // the star's own center, inside the button's group
+      tl.fromTo(glint, { opacity: 1, scale: 0, rotation: 0 }, { opacity: 1, scale: 1.4, rotation: 90, duration: 0.18, ease: "power2.out", immediateRender: false }, T.works + 0.12);
+      tl.to(glint, { scale: 0, rotation: 180, duration: 0.2, ease: "power2.in" }, T.works + 0.32);
+      var pb = q("pencil-b"), pa = q("pencil-a");
+      setO(pb, pencilTip[0] + 22, pencilTip[1] - 10);
+      tl.to(pb, { rotation: 70, x: 10, y: 60, opacity: 0, duration: 0.45, ease: "power2.in" }, T.out);
+      setO(pa, pencilTip[0], pencilTip[1]);
+      tl.to(pa, { rotation: -25, duration: 0.15, ease: "power2.out" }, T.out);
+      var rhead = q("reaper-rise").querySelector(".head");
+      setO(rhead, 0, -118);
+      tl.to(rhead, { rotation: -12, x: -3, duration: 0.2, ease: "power2.out" }, T.out + 0.05);
+      tl.to(rise, { y: RP.rise, duration: 0.6, ease: "power2.in" }, T.out + 0.3);
+
+      // the streams and the Rich Human's growing stack, placed every frame
+      var outSt = OUT, warSt = WARS;
+      outSt.els = bindSlots("o", 72); warSt.els = bindSlots("w", 24);
+      var slabs = all(".s5-slab"), stackN = 0;
+      var hillKs = [];
+      for (var hk = 0; hk < 400; hk++) if (OUT.path(hk) === PHILL) hillKs.push(OUT.t0 + hk * OUT.dt + PHILL.len / 420);
+      KIT.onTime(tl, D, function (t) {
+        runStream(warSt, t);
+        runStream(outSt, t);
+        var n = 0;
+        for (var i = 0; i < hillKs.length; i++) if (hillKs[i] <= t) n++;
+        n = Math.min(n, slabs.length);
+        if (n !== stackN) { for (var j = 0; j < slabs.length; j++) slabs[j].setAttribute("visibility", j < n ? "visible" : "hidden"); stackN = n; }
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

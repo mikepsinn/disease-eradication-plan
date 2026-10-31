@@ -1,0 +1,742 @@
+<template id="better-loop-teal-tail-template">
+  <!-- better-loop-teal-tail · Layer B (storyboards/part-06-leaders-arent-the-problem.md): the war loop turning, the
+       Politician at his podium. The manual drops onto the podium. A halo comes down on a string onto his slick hair and
+       slides right off; it comes down again, he grins his widest, and it shorts out: he stands there charred black and
+       smoking, hair straight up, still grinning, and the halo drops and rolls away out of the frame. The manual flips
+       open and its pencil redraws the ring; the factory pops down and a lab pops up with the Scientist. A stream of war
+       papers jumps off the track into the color-flip funnel and comes out medicine papers, into the charred Politician's
+       raised hands; dollar signs light in his eyes. The arrows flip from red to teal one after another, the ring's angry
+       face flips to a smile, and the horns pop off and fall away. The same Democracy Dog drops in and runs round with
+       the same tail of war papers and skeletons; the camera pushes in; poof, the tail is teal pills with knocked-out
+       disease blobs. A REELECTED rosette lands on its collar, the voters throw confetti, the dog catches its tail,
+       chomps a pill, swallows, sparkles and runs faster. The part ends there. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #better-loop-teal-tail-cam, #better-loop-teal-tail-bg, #better-loop-teal-tail-zoom, #better-loop-teal-tail-art, #better-loop-teal-tail-pip, #better-loop-teal-tail-grain { position: absolute; inset: 0; }
+    #better-loop-teal-tail-cam { overflow: hidden; }
+    #better-loop-teal-tail-zoom { transform-origin: 0 0; }
+  </style>
+  <div id="root" data-composition-id="better-loop-teal-tail" data-width="1920" data-height="1080" data-start="0" data-duration="20.34">
+    <div id="better-loop-teal-tail-cam">
+      <div id="better-loop-teal-tail-bg"></div>
+      <div id="better-loop-teal-tail-zoom">
+        <div id="better-loop-teal-tail-art"></div>
+      </div>
+      <div id="better-loop-teal-tail-pip"></div>
+    </div>
+    <div id="better-loop-teal-tail-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "better-loop-teal-tail";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line;
+
+      // ── LOOP ──────────────────────────────────────────────────────────────────────────────────────────────
+      // LOOP: copied in loop-is-evil, redirect-math, no-rational-beneficiary, red-blue-ties, better-loop-teal-tail; change all.
+      // The part's spine: a ring drawn on the paper (two navy circles 26 apart with 8 arrowheads) and four stations
+      // just outside it: WEAPONS MAKERS at the top (the missile-chimney factory, the Weapons Maker in its door),
+      // POLITICIANS on the left (the Politician behind a podium), VOTES at the bottom (three voters and a ballot box)
+      // and POWER on the right (a brass tap with a cross handle: ballots go in at its foot, papers pour out of its
+      // spout). The ring's power cord runs to a socket at its bottom left. The papers and the dog run counterclockwise.
+      // Angles are clock degrees: 0 at 12 o'clock, 90 at 3, increasing clockwise, so counterclockwise is a falling
+      // angle. loopAt(a, r) is the point at angle a, radius r. Things that run inside the ring (the dog, the track
+      // papers) stand with their feet toward the outside: loopIn(a, r) is their transform ("down" = outward, local +x
+      // = counterclockwise).
+      // loopArt(id, state) returns the markup; state "empty" (the track only), "war", "cut" (war with a gap at
+      // LOOP_G.cut, between POWER and the factory) or "better" (the lab and the Scientist instead of the factory, teal
+      // arrows, no horns, the smiling face). Every part is in the markup, hidden parts at opacity 0 for the scene to
+      // show. Ids (all prefixed "<id>-"):
+      //   ring (the two circles: ring-in, ring-out, each pathLength 1 for a draw-on), spin (turn it about the centre
+      //   with the transform attribute "rotate(deg cx cy)", negative = counterclockwise) holding arrow-0..7 (each
+      //   with arrow-fill-k and arrow-glow-k) and paper-0..7 (track papers; paper-k-in to pop them; .legs to scramble);
+      //   horns (horn-l, horn-r: the outer groups are placed, horn-l-in / horn-r-in tween); face (brows, eyes, grin,
+      //   each a group with an "-in" child to tween; .pupil in the eyes); grounds; cord, plug (plug-in), socket;
+      //   st-weapons: factory (factory-in), wm (wm-in, poses inside); st-politicians: podium, pol (pol-in);
+      //   st-votes: voter-0..2 (voter-k-in), box (box-in); st-power: tap (tap-in), tap-wheel, tap-spout;
+      //   sign-weapons, sign-politicians, sign-votes, sign-power (each with -lit, the plate lit mustard).
+      //   People are in "<key>-in" groups as <g data-pose="base">; a scene adds more poses beside it (loopPose).
+      // loopDog(id, state) returns the Democracy Dog for the ring: <id>-dog (place it with loopIn), <id>-dog-sq
+      // (squash it about its feet, "0 0"), the tag <id>-dog-tag (pivot "0 0"), .tail-charm groups (pivot "0 0") on
+      // its tail: tiny grinning skeletons ("war", "cut") or dead disease blobs ("better").
+      var LOOP_G = V
+        ? { cx: 540, cy: 880, r: 280, w: 26, k: 1.08, cut: 62,
+            factory: [540, 586, 0.66], wm: [540, 586, 0.9], pol: [130, 1010, 1.0], podium: [214, 1010, 0.9],
+            voters: [[322, 1440], [612, 1440], [728, 1440]], vs: 1.12, box: [466, 1440, 1.6],
+            tap: [950, 780, 0.85], socket: [196, 1440], cordA: 222,
+            signs: { weapons: [900, 586, 0.62, 70], politicians: [130, 1010, 0.58, 345], votes: [905, 1440, 0.62, 160], power: [962, 1112, 0.56, 50] },
+            grounds: { weapons: [[380, 700, 586]], politicians: [[44, 252, 1010]], votes: [[160, 1000, 1440]], power: [[858, 1036, 1022], [888, 1036, 1112]] },
+            horn: 1.45, dog: 1.02, paper: 0.42 }
+        : { cx: 800, cy: 500, r: 260, w: 26, k: 1, cut: 62,
+            factory: [800, 226, 0.48], wm: [800, 226, 0.74], pol: [395, 600, 0.95], podium: [470, 600, 0.9],
+            voters: [[698, 895], [900, 895], [985, 895]], vs: 0.7, box: [800, 895, 1.0],
+            tap: [1190, 410, 1.0], socket: [600, 895], cordA: 222,
+            signs: { weapons: [1196, 226, 0.62, 64], politicians: [150, 600, 0.6, 70], votes: [1095, 895, 0.6, 50], power: [1350, 676, 0.6, 100] },
+            grounds: { weapons: [[590, 1010, 226], [1120, 1270, 226]], politicians: [[96, 540, 600]], votes: [[560, 1140, 895]], power: [[1080, 1450, 676]] },
+            horn: 1.35, dog: 0.95, paper: 0.4 };
+      function loopAt(a, r) {
+        var t = (a * Math.PI) / 180;
+        return [LOOP_G.cx + r * Math.sin(t), LOOP_G.cy - r * Math.cos(t)];
+      }
+      function loopIn(a, r, s) {
+        var p = loopAt(a, r);
+        return "translate(" + p[0].toFixed(1) + "," + p[1].toFixed(1) + ") rotate(" + (a + 180).toFixed(2) + ")" + (s ? " scale(" + s + ")" : "");
+      }
+      function loopPerson(id, key, at, s, opts) {
+        return '<g id="' + id + "-" + key + '" transform="translate(' + at[0] + "," + (at[1] - 100 * s).toFixed(1) + ") scale(" + s + ')"><g id="' + id + "-" + key + '-in">' +
+          '<g data-pose="base">' + KIT.person(opts) + "</g></g></g>";
+      }
+      // Add poses to a person drawn by loopPerson: list [[name, opts], ...], each hidden.
+      function loopPose(id, key, list) {
+        var el = document.getElementById(id + "-" + key + "-in");
+        list.forEach(function (p) { el.insertAdjacentHTML("beforeend", '<g data-pose="' + p[0] + '" opacity="0">' + KIT.person(p[1]) + "</g>"); });
+      }
+      var LOOP_PEOPLE = {
+        voters: [{ tone: 0, outfit: "shirt", color: 1 }, { tone: 2, hair: 1, outfit: "dress", color: 3 }, { tone: 3, outfit: "suit", color: 0 }],
+      };
+      function loopArt(id, state) {
+        var G = LOOP_G, k = G.k, cx = G.cx, cy = G.cy, r = G.r, rin = r - G.w / 2, rout = r + G.w / 2, better = state === "better", empty = state === "empty";
+        var P = function (x, y) { return x.toFixed(1) + "," + y.toFixed(1); };
+        var poly = function (pts) { return "M" + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + " Z"; };
+        var solid = function (d, fill, w) { return '<path d="' + d + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (w || 4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; };
+        var I = function (s) { return id + "-" + s; };
+        var out = "";
+        // the grounds the stations stand on, with a few tufts (each in its station's group: ground-<station>)
+        var ground = function (key) { return '<g id="' + I("ground-" + key) + '">' + G.grounds[key].map(function (g) {
+          var tufts = [0.2, 0.55, 0.85].map(function (f) {
+            var x = g[0] + f * (g[1] - g[0]);
+            return "M" + x + "," + g[2] + " l-5,-12 M" + (x + 5) + "," + g[2] + " l2,-15 M" + (x + 10) + "," + g[2] + " l7,-10";
+          }).join(" ");
+          return '<path d="M' + g[0] + "," + g[2] + " H" + g[1] + '" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/><path d="' + tufts + '" stroke="' + INK + '" stroke-width="3" stroke-linecap="round" fill="none"/>';
+        }).join("") + "</g>"; };
+        // the power cord, from the ring's bottom left to the socket (the scene may redraw the path: loopCord)
+        var A = loopAt(G.cordA, rout - 2), S = G.socket;
+        out += '<g id="' + I("plugset") + '"><g id="' + I("socket") + '"><g transform="translate(' + S[0] + "," + S[1] + ") scale(" + k + ')">' +
+          solid("M-20,0 V-52 H20 V0 Z", "#FBF6E6", 4) + '<rect x="-12" y="-44" width="24" height="34" rx="4" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="2.5"/>' +
+          '<path d="M-5,-34 v9 M5,-34 v9" stroke="' + INK + '" stroke-width="3.4" stroke-linecap="butt"/><circle cx="0" cy="-17" r="2.6" fill="' + INK + '"/></g></g>';
+        out += '<path id="' + I("cord") + '" d="" fill="none" stroke="' + INK + '" stroke-width="' + (5 * k).toFixed(1) + '" stroke-linecap="round"/>' +
+          '<circle cx="' + A[0].toFixed(1) + '" cy="' + A[1].toFixed(1) + '" r="' + (7 * k).toFixed(1) + '" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="3"/>';
+        out += '<g id="' + I("plug") + '"><g transform="scale(' + k + ')"><g id="' + I("plug-in") + '">' +
+          '<path d="M-5,-16 V-26 M5,-16 V-26" stroke="' + C.yellow + '" stroke-width="3.4"/>' + solid("M-11,-16 H11 V6 L6,12 H-6 L-11,6 Z", C.slate, 3) +
+          '<path d="M-7,-10 H7" stroke="' + C.orange + '" stroke-width="1.6"/></g></g></g></g>';
+        // the track: two circles (drawn from 12 o'clock), the turning group with the arrows and the track papers
+        var arrowCol = better ? C.med : C.war;
+        out += '<g id="' + I("ring") + '">' + [["ring-in", rin], ["ring-out", rout]].map(function (c) {
+          return '<circle id="' + I(c[0]) + '" cx="' + cx + '" cy="' + cy + '" r="' + c[1] + '" fill="none" stroke="' + INK + '" stroke-width="4" pathLength="1" stroke-dasharray="1 0" transform="rotate(-90 ' + cx + " " + cy + ')"/>';
+        }).join("") + "</g>";
+        var spin = "";
+        for (var i = 0; i < 8; i++) {
+          var a = 22.5 + 45 * i;
+          if (state === "cut" && Math.abs(((a - G.cut + 540) % 360) - 180) < 16) continue;
+          spin += '<g id="' + I("arrow-" + i) + '" transform="' + loopIn(a, r, k) + '">' +
+            '<path id="' + I("arrow-glow-" + i) + '" d="M14,0 L-9,-12 L-3,0 L-9,12 Z" fill="' + C.war + '" stroke="' + C.war + '" stroke-width="12" stroke-linejoin="round" opacity="0"/>' +
+            '<path id="' + I("arrow-fill-" + i) + '" d="M14,0 L-9,-12 L-3,0 L-9,12 Z" fill="' + (empty ? C.cream : arrowCol) + '" stroke="' + INK + '" stroke-width="2.6" stroke-linejoin="miter"/></g>';
+        }
+        for (var j = 0; j < 8; j++) {
+          spin += '<g id="' + I("paper-" + j) + '" transform="' + loopIn(45 * j, r - 2, G.paper * k) + '"><g id="' + I("paper-" + j + "-in") + '"' + (empty || better ? ' opacity="0"' : "") + ">" +
+            '<g transform="translate(0,-14)">' + KIT.money(better ? "med" : "war", 0.5) + "</g></g></g>";
+        }
+        out += '<g id="' + I("spin") + '">' + spin + "</g>";
+        // the cut (state "cut"): the track snipped open at LOOP_G.cut, its two ends curled
+        if (state === "cut") {
+          var e1 = loopAt(G.cut - 7, rin), e2 = loopAt(G.cut - 7, rout), e3 = loopAt(G.cut + 7, rin), e4 = loopAt(G.cut + 7, rout);
+          out += '<path d="M' + P(e1[0], e1[1]) + " L" + P(e2[0], e2[1]) + " M" + P(e3[0], e3[1]) + " L" + P(e4[0], e4[1]) + '" stroke="' + INK + '" stroke-width="4"/>';
+        }
+        // the horns, on the outer edge at 11 and 1 o'clock (hidden in "empty" and "better")
+        var hornPts = [[-20, 0], [-31, -20], [-36, -44], [-33, -64], [-24, -84], [-21, -64], [-14, -46], [-1, -28], [20, 0]];
+        var horn = function (sx) {
+          var pts = hornPts.map(function (p) { return [p[0] * sx, p[1]]; });
+          return solid(poly(pts), C.war, 4) + '<path d="M' + P(-12 * sx, -50) + " L" + P(-4 * sx, -32) + " L" + P(12 * sx, -8) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+            '<path d="M' + P(-28 * sx, -24) + " L" + P(-31 * sx, -46) + '" fill="none" stroke="#E9806A" stroke-width="3" opacity="0.8"/>';
+        };
+        out += '<g id="' + I("horns") + '"' + (empty || better ? ' opacity="0"' : "") + ">" + [["horn-l", -30, 1], ["horn-r", 30, -1]].map(function (h) {
+          var p = loopAt(h[1], rout - 4);
+          return '<g id="' + I(h[0]) + '" transform="translate(' + P(p[0], p[1]) + ") rotate(" + h[1] + ") scale(" + (G.horn * k).toFixed(3) + ')"><g id="' + I(h[0] + "-in") + '">' + horn(h[2]) + "</g></g>";
+        }).join("") + "</g>";
+        // the face in the ring's middle: angry brows, narrow eyes, a fanged grin on the inner bottom arc
+        // ("better": friendly brows, round eyes, a smile)
+        var fk = r / 260, eyeL = better ? "M-128,-52 Q-82,-92 -36,-52 Q-82,-20 -128,-52 Z" : "M-142,-66 L-30,-44 L-46,-24 L-126,-34 Z";
+        var browL = better ? "M-138,-96 L-82,-112 L-28,-98 L-30,-88 L-82,-100 L-136,-86 Z" : "M-150,-98 L-22,-62 L-26,-46 L-150,-82 Z";
+        var mirror = function (d) { return d.replace(/(-?\d+(\.\d+)?),/g, function (m, x) { return (-parseFloat(x)) + ","; }); };
+        var eyes = [eyeL, mirror(eyeL)].map(function (d, n) {
+          var px = n ? 86 : -86, cid = I("eye-clip-" + n);
+          return '<defs><clipPath id="' + cid + '"><path d="' + d + '"/></clipPath></defs><path d="' + d + '" fill="#FBF6E6" stroke="' + INK + '" stroke-width="5" stroke-linejoin="miter"/>' +
+            '<g clip-path="url(#' + cid + ')"><circle class="pupil" cx="' + px + '" cy="-42" r="13" fill="' + (better ? INK : C.war) + '" stroke="' + INK + '" stroke-width="3"/><circle cx="' + (px - 3) + '" cy="-46" r="3" fill="#FFF"/></g>';
+        }).join("");
+        var grin = "", RA = 236, a0 = 120, a1 = 240, deep = better ? 34 : 64;
+        var lip = function (a) { var u = (a - a0) / (a1 - a0); return RA - 12 - deep * Math.sin(Math.PI * u); };
+        var outerPts = [], innerPts = [];
+        for (var g = 0; g <= 24; g++) {
+          var aa = a0 + ((a1 - a0) * g) / 24, rad = (aa * Math.PI) / 180;
+          outerPts.push([RA * Math.sin(rad), -RA * Math.cos(rad)]);
+          innerPts.push([lip(aa) * Math.sin(rad), -lip(aa) * Math.cos(rad)]);
+        }
+        if (better) {
+          grin = '<path d="M' + innerPts.map(function (p) { return P(p[0], p[1]); }).join(" L") + '" fill="none" stroke="' + INK + '" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>';
+        } else {
+          grin = solid(poly(outerPts.concat(innerPts.slice().reverse())), C.ink, 5);
+          // fangs: two big ones near the corners and small teeth between, hanging from the upper lip (pointing out)
+          [[0.16, 26, 15], [0.84, 26, 15], [0.32, 13, 9], [0.42, 13, 9], [0.5, 13, 9], [0.58, 13, 9], [0.68, 13, 9]].forEach(function (f) {
+            var aa = a0 + (a1 - a0) * f[0], rad = (aa * Math.PI) / 180, ri = lip(aa) - 1, half = (f[2] / ri) * (180 / Math.PI);
+            var b1 = ((aa - half) * Math.PI) / 180, b2 = ((aa + half) * Math.PI) / 180, rt = ri + f[1];
+            grin += solid(poly([[ri * Math.sin(b1), -ri * Math.cos(b1)], [ri * Math.sin(b2), -ri * Math.cos(b2)], [rt * Math.sin(rad), -rt * Math.cos(rad)]]), "#FBF6E6", 3);
+          });
+        }
+        out += '<g id="' + I("face") + '" opacity="0" transform="translate(' + cx + "," + cy + ") scale(" + fk.toFixed(3) + ')">' +
+          '<g id="' + I("eyes") + '"><g id="' + I("eyes-in") + '">' + eyes + "</g></g>" +
+          '<g id="' + I("brows") + '"><g id="' + I("brows-in") + '">' + solid(browL, C.ink, 3) + solid(mirror(browL), C.ink, 3) + "</g></g>" +
+          '<g id="' + I("grin") + '"><g id="' + I("grin-in") + '">' + grin + "</g></g></g>";
+
+        // ── the stations ──
+        var sign = function (key, text) {
+          var g = G.signs[key], m = KIT.props.sign({ text: text, fontSize: 34, height: g[3], posts: 1 });
+          var lit = m.replace('class="sign-posts"', 'class="sign-posts" opacity="0"').replace(/fill="#FBF6E6"/, 'fill="' + C.yellow + '"');
+          return '<g transform="translate(' + g[0] + "," + g[1] + ") scale(" + (g[2] * k).toFixed(3) + ')"><g id="' + I("sign-" + key) + '">' + m + '<g id="' + I("sign-" + key + "-lit") + '" opacity="0">' + lit + "</g></g></g>";
+        };
+        // top: the factory and the Weapons Maker in its door ("better": the lab and the Scientist)
+        var F = G.factory, WM = G.wm;
+        out += '<g id="' + I("st-weapons") + '">' + ground("weapons") + sign("weapons", better ? "SCIENTISTS" : "WEAPONS MAKERS") +
+          '<g id="' + I("factory") + '" transform="translate(' + F[0] + "," + F[1] + ") scale(" + F[2] + ')"><g id="' + I("factory-in") + '">' +
+          (better ? KIT.props.lab({}) : KIT.props.factory({ label: "" })) + "</g></g>" +
+          loopPerson(id, "wm", WM, WM[2], better ? KIT.castOpts("scientist") : KIT.castOpts("weaponsMaker")) + "</g>";
+        // left: the podium and the Politician
+        var PD = G.podium, ps = PD[2];
+        var podium = solid("M-30,0 L-24,-74 H24 L30,0 Z", C.rust, 4) + solid("M-40,-74 L-34,-92 H40 L34,-74 Z", C.tan, 4) +
+          '<path d="M24,-70 L29,-4" stroke="' + C.orange + '" stroke-width="2.4"/>' + KIT.star(0, -44, 13, C.yellow) + KIT.star(0, -44, 5, C.cream);
+        out += '<g id="' + I("st-politicians") + '">' + ground("politicians") + sign("politicians", "POLITICIANS") +
+          loopPerson(id, "pol", G.pol, G.pol[2], KIT.castOpts("politician")) +
+          '<g id="' + I("podium") + '" transform="translate(' + PD[0] + "," + PD[1] + ") scale(" + ps + ')"><g id="' + I("podium-in") + '">' + podium + "</g></g></g>";
+        // bottom: three voters and the ballot box
+        var B = G.box;
+        out += '<g id="' + I("st-votes") + '">' + ground("votes") + sign("votes", "VOTES") +
+          '<g id="' + I("box") + '" transform="translate(' + B[0] + "," + B[1] + ") scale(" + B[2] + ')"><g id="' + I("box-in") + '">' + KIT.props.ballotBox({}) + "</g></g>" +
+          G.voters.map(function (v, n) { return loopPerson(id, "voter-" + n, v, G.vs, LOOP_PEOPLE.voters[n]); }).join("") + "</g>";
+        // right: the POWER tap (around its body; ballots in at the funnel at its foot, papers out of the spout)
+        var T = G.tap, brass = C.yellow;
+        var tap = solid("M-11,30 H11 V262 H-11 Z", brass, 4) + '<path d="M6,34 V258" stroke="' + C.orange + '" stroke-width="2.4"/>' +
+          solid("M-20,24 H20 V36 H-20 Z", C.tan, 3) + solid("M-30,256 H30 V268 H-30 Z", C.slate, 3) +
+          // the funnel at the foot, its mouth facing the ring
+          solid("M-12,206 L-78,180 L-78,262 L-12,238 Z", C.tan, 4) + '<ellipse cx="-78" cy="221" rx="9" ry="41" fill="' + C.ink + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<path d="M-20,212 L-70,192" stroke="' + C.cream + '" stroke-width="2.4" opacity="0.7"/>' +
+          // the spout: a neck out of the body to the left, then down
+          '<g id="' + I("tap-spout") + '">' + solid("M-50,-15 H-126 V13 H-50 Z", brass, 4) + solid("M-140,-15 H-104 V44 H-140 Z", brass, 4) + solid("M-146,40 H-98 V52 H-146 Z", C.tan, 3) +
+          '<path d="M-120,-9 H-56 M-112,-6 V36" stroke="' + C.orange + '" stroke-width="2.4"/></g>' +
+          // the body and its plate
+          solid("M-46,-38 H46 L56,-26 V26 L46,38 H-46 L-56,26 V-26 Z", brass, 4.5) + '<path d="M50,-24 V24" stroke="' + C.orange + '" stroke-width="2.6"/>' +
+          '<path d="M-40,-30 H-14" stroke="#FBF6E6" stroke-width="3" opacity="0.8"/>' +
+          '<rect x="-34" y="-12" width="68" height="26" rx="3" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3"/>' +
+          '<path d="M5,-10 L-8,3 H0 L-5,12 L9,-2 H1 Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+          // the stem and the cross handle (spin #tap-wheel about "0 -96")
+          solid("M-7,-38 V-80 H7 V-38 Z", C.tan, 3.4) +
+          '<g id="' + I("tap-wheel") + '">' + [0, 90, 180, 270].map(function (d) {
+            return '<g transform="rotate(' + d + ' 0 -96)">' + solid("M-6,-96 V-138 H6 V-96 Z", brass, 3.4) + '<circle cx="0" cy="-140" r="9" fill="' + C.war + '" stroke="' + INK + '" stroke-width="3.4"/></g>';
+          }).join("") + '<circle cx="0" cy="-96" r="13" fill="' + brass + '" stroke="' + INK + '" stroke-width="4"/><circle cx="0" cy="-96" r="4" fill="' + INK + '"/></g>';
+        out += '<g id="' + I("st-power") + '">' + ground("power") + sign("power", "POWER") +
+          '<g id="' + I("tap") + '" transform="translate(' + T[0] + "," + T[1] + ") scale(" + (T[2] * k).toFixed(3) + ')"><g id="' + I("tap-in") + '">' + tap + "</g></g></g>";
+        return out;
+      }
+      // Where the tap's spout mouth and funnel mouth are (world), and the factory's side door.
+      function loopTap(name) {
+        var T = LOOP_G.tap, s = T[2] * LOOP_G.k, p = { spout: [-122, 52], funnel: [-78, 221] }[name];
+        return [T[0] + p[0] * s, T[1] + p[1] * s];
+      }
+      function loopSideDoor() {
+        var F = LOOP_G.factory;
+        return [F[0] + 170 * F[2], F[1] - 50 * F[2]];
+      }
+      // The cord from the ring to a plug at [x, y] (the plug's prongs end there): a sagging curve.
+      function loopCord(id, plug) {
+        var A = loopAt(LOOP_G.cordA, LOOP_G.r + LOOP_G.w / 2 - 2), k = LOOP_G.k, top = [plug[0], plug[1] - 16 * k];
+        var c1 = [A[0] - 40 * k, A[1] + 60 * k], c2 = [top[0], top[1] - 70 * k];
+        document.getElementById(id + "-cord").setAttribute("d", "M" + A[0].toFixed(1) + "," + A[1].toFixed(1) + " C" + c1[0].toFixed(1) + "," + c1[1].toFixed(1) + " " + c2[0].toFixed(1) + "," + c2[1].toFixed(1) + " " + top[0].toFixed(1) + "," + top[1].toFixed(1));
+        document.getElementById(id + "-plug").setAttribute("transform", "translate(" + plug[0].toFixed(1) + "," + plug[1].toFixed(1) + ")");
+      }
+      // The plug's place in the socket.
+      function loopSocketPlug() { var S = LOOP_G.socket, k = LOOP_G.k; return [S[0], S[1] - 22 * k]; }
+      // The Democracy Dog for the ring (state as loopArt). Charms hang from its tail between the papers.
+      function loopDog(id, state) {
+        var better = state === "better", s = LOOP_G.dog * LOOP_G.k;
+        var dog = KIT.props.democracyDog(better ? { tail: "pills", mood: "smile" } : { tail: "papers", seal: "war" });
+        var R = [46, -64], Q = [108, -150], E = [20, -134];
+        var tailAt = function (t) { var u = 1 - t; return [u * u * R[0] + 2 * u * t * Q[0] + t * t * E[0], u * u * R[1] + 2 * u * t * Q[1] + t * t * E[1]]; };
+        var SK = { skeleton: true, plain: true, outfit: "shirt", arms: [[172, 178], [-30, -14]], build: { legPose: [[-20, 4], [18, 36]] } }, sk = 0.24, hand = KIT.rig(SK).handLocal[0];
+        // [t on the tail, the string's end (dx, dy)]: tied on like tin cans, they trail back and down off the curl,
+        // in a staircase behind the running dog, each hanging by one bony hand
+        var charms = [[0.2, [34, 24]], [0.45, [60, 30]], [0.7, [104, 30]]].map(function (c) {
+          var p = tailAt(c[0]), d = c[1], fig = better
+            ? '<g transform="translate(' + d[0] + "," + (d[1] + 26) + ') scale(0.17)">' + KIT.props.diseaseBlob({ mood: "dead", arms: "none", seed: Math.round(c[0] * 10) }) + "</g>"
+            : '<g transform="translate(' + d[0] + "," + d[1] + ") scale(" + sk + ") translate(" + (-hand[0]).toFixed(1) + "," + (-hand[1]).toFixed(1) + ')">' + KIT.person(SK) + "</g>";
+          return '<g transform="translate(' + p[0].toFixed(1) + "," + p[1].toFixed(1) + ')"><g class="tail-charm"><path d="M0,0 L' + d[0] + "," + d[1] + '" stroke="' + INK + '" stroke-width="2"/>' + fig + "</g></g>";
+        }).join("");
+        // in front of the tail's papers: just before the tail group closes (the collar follows it)
+        var tailEnd = dog.indexOf('<g class="dog-head"'), cut = dog.lastIndexOf("</g>", tailEnd);
+        dog = dog.slice(0, cut) + charms + dog.slice(cut);
+        // the collar tag (counter-mirrored, so its text reads)
+        var tag = '<g transform="translate(-31,-68) scale(-1,1)"><g id="' + id + '-dog-tag"><path d="M0,0 V9" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<path d="M-44,10 H44 L50,22 L44,34 H-44 L-50,22 Z" fill="' + (better ? C.med : C.yellow) + '" stroke="' + INK + '" stroke-width="3.2" stroke-linejoin="miter"/>' +
+          '<text x="0" y="28.5" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="16" letter-spacing="1.2" fill="' + (better ? C.cream : INK) + '">DEMOCRACY</text></g></g>';
+        // speed lines and dust behind it, low, under the trailing charms (its own +x is behind: it faces -x before the mirror)
+        var speed = '<g class="dog-speed" opacity="0">' + [[-10, 58, 84], [-24, 62, 80]].map(function (l) {
+          return '<path d="M' + l[1] + "," + l[0] + " H" + l[2] + '" stroke="' + INK + '" stroke-width="4" stroke-linecap="round"/>';
+        }).join("") + [[64, -6, 9], [84, -12, 12], [104, -4, 8]].map(function (c) {
+          return '<circle class="dog-dust" cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#FBF6E6" stroke="' + INK + '" stroke-width="2.4"/>';
+        }).join("") + "</g>";
+        return '<g id="' + id + '-dog" opacity="0"><g transform="scale(' + (-s).toFixed(3) + "," + s.toFixed(3) + ')"><g id="' + id + '-dog-sq">' + speed + dog + tag + "</g></g></g>";
+      }
+      // ── end LOOP ──────────────────────────────────────────────────────────────────────────────────────────
+
+      var G = LOOP_G, k = G.k, RIN = G.r - G.w / 2, ROUT = G.r + G.w / 2;
+      function f1(n) { return (+n).toFixed(1); }
+      function clamp01(u) { return u < 0 ? 0 : u > 1 ? 1 : u; }
+      function smooth(u) { u = clamp01(u); return u * u * (3 - 2 * u); }
+      function easeOut(u) { u = clamp01(u); return 1 - (1 - u) * (1 - u); }
+      function easeIn(u) { u = clamp01(u); return u * u; }
+      function backOut(u) { u = clamp01(u); var c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(u - 1, 3) + c1 * Math.pow(u - 1, 2); }
+      function lerp(a, b, u) { return a + (b - a) * u; }
+      function mix(a, b) { var o = {}, x; for (x in a) o[x] = a[x]; for (x in b) o[x] = b[x]; return o; }
+      function P2(p) { return f1(p[0]) + "," + f1(p[1]); }
+      // a point on a hop from a to b, h high at the middle
+      function hop(a, b, u, h) { return [lerp(a[0], b[0], u), lerp(a[1], b[1], u) - h * 4 * u * (1 - u)]; }
+      // piecewise smooth through keys [[t, v], ...]
+      function keys(list, t) {
+        if (t <= list[0][0]) return list[0][1];
+        for (var i = 0; i < list.length - 1; i++) if (t <= list[i + 1][0]) return lerp(list[i][1], list[i + 1][1], smooth((t - list[i][0]) / (list[i + 1][0] - list[i][0])));
+        return list[list.length - 1][1];
+      }
+
+      // ── Cue words (scene seconds) ──
+      var tManual = cue("manual"), tBetter = cue("better"), tPeople = cue("people"), tClearly = cue("clearly"), tQuest = cue("question)."),
+        tBuilds = cue("builds"), tLoop = cue("loop."), tMore = cue("MORE"), tPapers = cue("papers"), tOpp = cue("OPPOSITE"), tThing = cue("thing."),
+        tDog = cue("dog,"), tCured = cue("cured"), tRe = cue("reelected"), tChase = cue("chasing"), tSwallow = KIT.after(ID, "it.", 2);
+
+      // ── Layout per shape (world = the LOOP's own coordinates) ──
+      // pol / dogv: the camera [zoom, x, y] on the Politician and on the dog at the bottom of the ring; funnel: the
+      // color-flip funnel [x, y (its feet), scale]; ms: the manual's size on the podium; src: where the war papers jump
+      // off the track (clock degrees).
+      var L = V
+        ? { pol: [2.3, 126, -931.5], dogv: [2.1, -560, -1653], funnel: [180, 700, 0.5], ms: 0.62, src: 296, confetti: 1.15 }
+        : { pol: [2.4, -72, -588], dogv: [2.3, -1164, -1185], funnel: [300, 330, 0.62], ms: 0.6, src: 296, confetti: 1 };
+      var WIDE = [1, 0, 0];
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The Politician's poses: the cast pose, praying with his widest grin, then charred (still grinning) ──
+      var S = G.pol[2], PRAY = [[40, 150], [-40, -150]], UP = [[-163, -175], [163, 175]];
+      var O_PRAY = KIT.castOpts("politician", { arms: PRAY }), O_UP = KIT.castOpts("politician", { arms: UP });
+      var R_BASE = KIT.rig(KIT.castOpts("politician")), R_UP = KIT.rig(O_UP);
+      function grinOf(o) { return KIT.person(o).match(/<path class="mouth"[^>]*\/>(<path d="[^"]*" fill="none" stroke="#112845" stroke-width="1\.1"[^>]*\/>)?/)[0]; }
+      // dollar signs over the charred white eyes (the face's units: the eyes at x -2.5 and 10.8, y -4)
+      var DOLLARS = [-2.5, 10.8].map(function (x) {
+        return '<circle cx="' + x + '" cy="-4" r="5.2" fill="#FBF6E6" stroke="' + INK + '" stroke-width="1.2"/><path d="M' + (x + 2.6) + ",-7 C" + (x + 2.6) + ",-9.6 " + (x - 2.6) + ",-9.6 " + (x - 2.6) + ",-7 C" + (x - 2.6) + ",-4.6 " + (x + 2.6) + ",-4.4 " + (x + 2.6) + ",-1.8 C" + (x + 2.6) + ",0.8 " + (x - 2.6) + ",0.8 " + (x - 2.6) + ",-1.6 M" + x + ",-11 V2.2" + '" fill="none" stroke="' + C.moneyDark + '" stroke-width="1.9" stroke-linecap="round"/>';
+      }).join("");
+      function charred(arms) {
+        var m = KIT.person(KIT.castOpts("politician", { arms: arms, charred: true }));
+        m = m.replace(/<path class="mouth"[^>]*\/>/, grinOf(KIT.castOpts("politician", { arms: arms })));
+        return m.replace('<g class="smoke">', '<g class="dollar-eyes" opacity="0">' + DOLLARS + '</g><g class="smoke">');
+      }
+
+      // ── The picture ──
+      var out = KIT.paperDefs(ID);
+      // the ghost of the old ring while the pencil redraws it
+      out += '<g id="' + ID + '-ghost" opacity="0">' + [RIN, ROUT].map(function (r) { return '<circle cx="' + G.cx + '" cy="' + G.cy + '" r="' + r + '" fill="none" stroke="' + INK + '" stroke-width="2.4" stroke-dasharray="7 9" opacity="0.45"/>'; }).join("") + "</g>";
+      out += loopArt(ID, "war");
+      // the better loop's teal arrows and medicine papers, its smiling face and its lab station (the rest of it is removed)
+      out += '<g id="' + ID + '-bset">' + loopArt(ID + "-b", "better") + "</g>";
+      // the funnel on a patch of ground
+      var F = L.funnel, FS = F[2];
+      out += '<g id="' + ID + '-fset" opacity="0"><path d="M' + f1(F[0] - 110 * FS) + "," + F[1] + " H" + f1(F[0] + 110 * FS) + '" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>' +
+        '<path d="M' + f1(F[0] - 80 * FS) + "," + F[1] + " l-5,-12 M" + f1(F[0] + 84 * FS) + "," + F[1] + ' l6,-12" stroke="' + INK + '" stroke-width="3" stroke-linecap="round"/>' +
+        '<g id="' + ID + '-funnel">' + KIT.props.colorFlipFunnel({ inN: 0, outN: 0 }) + "</g></g>";
+      // the bills that jump off the track into the funnel, and the ones that come out into his hands
+      var NB = 7;
+      for (var b = 0; b < NB; b++) {
+        out += '<g id="' + ID + "-win-" + b + '" opacity="0"><g transform="scale(' + (0.42 * k).toFixed(3) + ')">' + KIT.money("war", 0.5) + "</g></g>";
+        out += '<g id="' + ID + "-mout-" + b + '" opacity="0"><g transform="scale(' + (0.42 * k).toFixed(3) + ')">' + KIT.money("med", 0.5) + "</g></g>";
+      }
+      // the halo (person units, scaled with him), its string, the zap
+      out += '<path id="' + ID + '-string" d="M0,0" stroke="' + INK + '" stroke-width="' + f1(2.4 * k) + '" fill="none" opacity="0"/>';
+      out += '<g id="' + ID + '-halo" opacity="0">' +
+        '<ellipse id="' + ID + '-halo-o" rx="30" ry="8" fill="none" stroke="' + INK + '" stroke-width="11"/>' +
+        '<ellipse id="' + ID + '-halo-c" rx="30" ry="8" fill="none" stroke="' + C.yellow + '" stroke-width="6"/>' +
+        '<ellipse id="' + ID + '-halo-h" rx="30" ry="8" fill="none" stroke="#FFFFFF" stroke-width="2.2" pathLength="100" stroke-dasharray="13 87" stroke-dashoffset="-56"/>' +
+        '<g id="' + ID + '-halo-twinkle">' + KIT.star(-40, -8, 7, C.yellow) + KIT.star(42, -12, 5, C.cream) + KIT.star(30, -22, 4, C.yellow) + "</g>" +
+        '<g id="' + ID + '-halo-smoke" opacity="0"><path d="M-12,-10 l-5,-8 l5,-8 l-5,-8 M8,-12 l-5,-8 l5,-8 l-5,-8" stroke="#8C8782" stroke-width="3.2" fill="none" stroke-linecap="round"/></g></g>';
+      var BOLT = "M0,0 L9,-15 L3,-15 L11,-32 L-5,-12 L2,-12 L-6,0 Z";
+      out += '<g id="' + ID + '-zap" opacity="0"><g id="' + ID + '-zap-burst">' + KIT.star(0, 0, 110, "#FFFFFF", 8) + KIT.star(0, 0, 60, C.yellow, 8) + "</g>" +
+        [[-56, -10, -70], [-34, -46, -30], [34, -46, 30], [58, -6, 70], [0, -64, 0]].map(function (z, n) {
+          return '<g class="zap-bolt" data-n="' + n + '" transform="translate(' + z[0] + "," + z[1] + ") rotate(" + z[2] + ') scale(1.6)"><path d="' + BOLT + '" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.8" stroke-linejoin="miter"/></g>';
+        }).join("") + "</g>";
+      // the manual on the podium, and its pencil
+      out += '<g id="' + ID + '-manual">' + KIT.props.manual({ size: L.ms }) + "</g>";
+      out += '<g id="' + ID + '-pencil" opacity="0"><g transform="rotate(-8) scale(' + (1.05 * k).toFixed(3) + ')">' + KIT.pencil() + "</g></g>";
+      // the sparkle where the seals flip
+      out += '<g id="' + ID + '-flip" opacity="0">' + KIT.star(0, 0, 30, C.yellow) + KIT.star(0, 0, 12, "#FFFFFF") + KIT.star(26, -22, 11, C.med) + KIT.star(-24, -18, 9, C.cream) + "</g>";
+      // the dogs: the same dog with its tail of war papers and skeletons, then with its tail of pills and knocked-out diseases
+      out += loopDog(ID, "war") + loopDog(ID + "-p", "better");
+      // the confetti
+      var CONF = [], cr = KIT.rng(1606), CCOL = [C.yellow, C.orange, C.med, C.cream, C.war, C.peri];
+      for (var c = 0; c < 60; c++) CONF.push({ v: c % 3, t0: tRe + 0.02 + (c / 60) * 0.6, vx: (cr() - 0.5) * 380, vy: -(520 + cr() * 440), spin: (cr() - 0.5) * 1400, w: 10 + cr() * 8, col: CCOL[c % CCOL.length] });
+      out += '<g id="' + ID + '-confetti">' + CONF.map(function (p, n) {
+        return '<rect id="' + ID + "-cf-" + n + '" x="' + f1(-p.w / 2) + '" y="-4.5" width="' + f1(p.w) + '" height="9" fill="' + p.col + '" stroke="' + INK + '" stroke-width="1.4" opacity="0"/>';
+      }).join("") + "</g>";
+      q("art").innerHTML = KIT.svg(W, H, out, 'style="overflow:visible"');
+
+      // keep only the better loop's spin, face and lab station
+      ["plugset", "ring", "horns", "st-politicians", "st-votes", "st-power"].forEach(function (s) { var e = q("b-" + s); e.parentNode.removeChild(e); });
+      // the war loop as loop-is-evil left it: the angry face on, the plug in
+      q("face").setAttribute("opacity", 1);
+      q("b-face").setAttribute("opacity", 1);
+      loopCord(ID, loopSocketPlug());
+      // wrap both faces, so they can flip about the ring's centre
+      function wrap(el) { var g = document.createElementNS("http://www.w3.org/2000/svg", "g"); el.parentNode.insertBefore(g, el); g.appendChild(el); return g; }
+      var faceW = wrap(q("face")), faceB = wrap(q("b-face"));
+      // the Politician's extra poses and the stack of medicine papers he catches (in his own units)
+      var polIn = q("pol-in");
+      polIn.insertAdjacentHTML("beforeend", '<g data-pose="pray" opacity="0">' + KIT.person(mix(O_PRAY, { mood: "grin" })) + "</g>" +
+        '<g data-pose="charred" opacity="0">' + charred(PRAY) + "</g>" + '<g data-pose="charredUp" opacity="0">' + charred(UP) + "</g>");
+      var MID = [(R_UP.hand[0][0] + R_UP.hand[1][0]) / 2, (R_UP.hand[0][1] + R_UP.hand[1][1]) / 2 - 2];
+      var stack = "";
+      for (var s = 0; s < NB; s++) stack += '<g class="stack-bill" opacity="0" transform="translate(' + f1(MID[0] + (s % 2 ? 2 : -2)) + "," + f1(MID[1] - s * 5.2) + ')"><rect x="-17" y="-5" width="34" height="9" fill="' + C.money + '" stroke="' + INK + '" stroke-width="1.6"/><circle cx="10" cy="-0.5" r="2.6" fill="' + C.med + '" stroke="' + INK + '" stroke-width="0.8"/></g>';
+      polIn.insertAdjacentHTML("beforeend", '<g id="' + ID + '-stack">' + stack + "</g>");
+      // the voters' cheer
+      LOOP_PEOPLE.voters.forEach(function (v, n) { loopPose(ID, "voter-" + n, [["cheer", mix(v, { arms: [[-158, -172], [158, 172]], mood: "smile" })]]); });
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var RUN = [];
+      function run(fn) { RUN.push(fn); }
+      function show(el, on) { el.setAttribute("opacity", on ? 1 : 0); }
+      function pose(el, name) { Array.prototype.forEach.call(el.children, function (c) { if (c.getAttribute("data-pose")) c.setAttribute("opacity", c.getAttribute("data-pose") === name ? 1 : 0); }); }
+      function polWorld(p) { return [G.pol[0] + p[0] * S, G.pol[1] - 100 * S + p[1] * S]; }
+      var legsD = function (l) { return "M-16,24 l" + (-6 + l * 10).toFixed(1) + ",22 h-8 M16,24 l" + (6 - l * 10).toFixed(1) + ",22 h8"; };
+      function scramble(el, t, f, ph) { var legs = el && el.querySelector(".legs"); if (legs) legs.setAttribute("d", legsD(0.5 + 0.5 * Math.sin(2 * Math.PI * f * t + ph))); }
+
+      // ── The camera: the whole loop; in on the Politician for the halo; out for the redraw; in on the dog for its tail ──
+      var zoom = q("zoom");
+      var CAM = [[0, WIDE], [1.45, WIDE], [2.45, L.pol], [tBuilds - 0.2, L.pol], [tBuilds + 0.55, WIDE], [tCured - 1.75, WIDE], [tCured - 0.95, L.dogv]];
+      run(function (t) {
+        var z = [0, 1, 2].map(function (i) { return keys(CAM.map(function (kk) { return [kk[0], kk[1][i]]; }), t); });
+        zoom.style.transform = "translate(" + z[1].toFixed(2) + "px," + z[2].toFixed(2) + "px) scale(" + z[0].toFixed(4) + ")";
+      });
+
+      // ── The loop keeps turning; its papers scramble; the factory puffs, the lab's burner flickers ──
+      var spinW = q("spin"), spinB = q("b-spin");
+      run(function (t) {
+        var a = "rotate(" + (-34 * t).toFixed(2) + " " + G.cx + " " + G.cy + ")";
+        spinW.setAttribute("transform", a); spinB.setAttribute("transform", a);
+        for (var n = 0; n < 8; n++) { scramble(q("paper-" + n), t, 6, n * 1.3); scramble(q("b-paper-" + n), t, 6, n * 1.3); }
+      });
+      var puffs = q("factory-in").querySelectorAll(".factory-puff");
+      run(function (t) {
+        Array.prototype.forEach.call(puffs, function (pf, n) {
+          var sc2 = 1 + 0.12 * Math.sin(2 * Math.PI * t / (0.9 + (n % 3) * 0.26) + n), ox = pf.getAttribute("data-ox"), oy = pf.getAttribute("data-oy");
+          pf.setAttribute("transform", "translate(" + ox + "," + oy + ") scale(" + sc2.toFixed(3) + ") translate(" + -ox + "," + -oy + ")");
+        });
+      });
+      var labFlame = q("b-st-weapons").querySelector(".lab-flame");
+      if (labFlame) KIT.flicker(tl, labFlame, 0, D - 0.1);
+      // the face's eyes follow the action: the Politician, then the funnel, then the dog
+      var pupilsW = q("face").querySelectorAll(".pupil"), pupilsB = q("b-face").querySelectorAll(".pupil");
+      run(function (t) {
+        var lx = t < tBuilds ? -8 : t < tOpp ? -6 : 0, ly = t < tBuilds ? 4 : t < tOpp ? -6 : 8;
+        Array.prototype.forEach.call(pupilsW, function (p) { p.setAttribute("transform", "translate(" + lx + "," + ly + ")"); });
+        Array.prototype.forEach.call(pupilsB, function (p) { p.setAttribute("transform", "translate(0," + (t < tDog ? 0 : 7) + ")"); });
+      });
+
+      // ── "manual": the manual drops onto the podium (thunk) ──
+      var manual = q("manual"), cover = manual.querySelector(".manual-cover"), coverText = cover.querySelectorAll("text"), MT = [G.podium[0], G.podium[1] - 92 * G.podium[2]];
+      run(function (t) {
+        var u = clamp01(t / tManual), y = MT[1] - (1 - easeIn(u)) * 700, sq = t >= tManual && t < tManual + 0.22 ? 1 - 0.22 * Math.sin(Math.PI * (t - tManual) / 0.22) : 1;
+        manual.setAttribute("transform", "translate(" + f1(MT[0]) + "," + f1(y) + ") scale(" + (2 - sq).toFixed(3) + "," + sq.toFixed(3) + ")");
+        // "builds": its cover swings open about the spine (and shuts again when the pencil is back)
+        var sx = 1 - 2 * smooth((t - tBuilds + 0.06) / 0.14) + 2 * smooth((t - tLoop - 0.12) / 0.14);
+        cover.setAttribute("transform", "translate(-42,-59) scale(" + sx.toFixed(3) + ",1) translate(42,59)");
+        // (seen from inside, the open cover is blank)
+        Array.prototype.forEach.call(coverText, function (e) { e.setAttribute("opacity", sx < 0 ? 0 : 1); });
+      });
+
+      // ── The Politician: his poses, the halo gags and the paper catch ──
+      var pol = q("pol-in"), HT = polWorld(R_BASE.top), HAIRUP = 25 * S;
+      run(function (t) {
+        pose(pol, t < tClearly - 0.42 ? "base" : t < tClearly ? "pray" : t < tMore - 0.25 ? "charred" : "charredUp");
+        var de = pol.querySelector('[data-pose="charredUp"] .dollar-eyes');
+        de.setAttribute("opacity", t >= tPapers + 0.12 ? 1 : 0);
+        // the charred one smokes
+        Array.prototype.forEach.call(pol.querySelectorAll(".smoke"), function (sm, n) {
+          var ph = (t * 1.6 + n * 0.37) % 1;
+          sm.setAttribute("transform", "translate(0," + f1(-10 * ph) + ")");
+          sm.setAttribute("opacity", (0.4 + 0.6 * (1 - ph)).toFixed(2));
+        });
+        // the zap jolt: he shivers
+        var j = t >= tClearly && t < tClearly + 0.3 ? 4 * Math.sin(t * 120) : 0;
+        pol.setAttribute("transform", "translate(" + f1(j) + ",0)");
+      });
+      // the halo: down on its string onto his hair; "people" it slides off; it comes back up and down again; "clearly" it
+      // shorts out (zap) and he is charred; it sits smoking on his spiky hair; "question)." it drops and rolls away
+      var halo = q("halo"), haloO = q("halo-o"), haloC = q("halo-c"), haloH = q("halo-h"), twinkle = q("halo-twinkle"), haloSmoke = q("halo-smoke"), string = q("string");
+      var tDown = tBetter - 0.42, tRest = tPeople - 0.12, tSlid = tPeople + 0.42, tUp0 = tSlid + 0.2, tUp1 = tClearly - 0.36, tFall = tQuest + 0.02, tLand = tQuest + 0.3, tRoll = tLand + 0.12;
+      var REST = HT[1] - 3 * S, TOPY = HT[1] - 640 * S, GROUND = G.pol[1];
+      function haloAt(t) {
+        var o = { x: HT[0], y: TOPY, rot: 0, ry: 8, str: true };
+        if (t < tDown) return o;
+        if (t < tRest) { o.y = lerp(TOPY, REST, easeOut((t - tDown) / (tRest - tDown))); return o; }
+        if (t < tPeople) { o.y = REST; return o; }
+        if (t < tSlid) { var u = easeIn((t - tPeople) / (tSlid - tPeople)); o.x = HT[0] - 36 * S * u; o.y = REST + 48 * S * u; o.rot = -72 * u; return o; }
+        if (t < tUp0) { var w = (t - tSlid) / (tUp0 - tSlid); o.x = HT[0] - 36 * S + 5 * S * Math.sin(w * 9) * (1 - w); o.y = REST + 48 * S; o.rot = -72 + 10 * Math.sin(w * 9) * (1 - w); return o; }
+        if (t < tUp1) { var v = smooth((t - tUp0) / (tUp1 - tUp0)); o.x = HT[0] - 36 * S * (1 - v); o.y = lerp(REST + 48 * S, HT[1] - 170 * S, v); o.rot = -72 * (1 - v); return o; }
+        if (t < tClearly) { o.y = lerp(HT[1] - 170 * S, REST, easeIn((t - tUp1) / (tClearly - tUp1))); return o; }
+        o.str = false;
+        if (t < tFall) { o.y = REST - HAIRUP * easeOut((t - tClearly) / 0.08); o.rot = 7 * Math.sin(t * 30) * Math.exp(-(t - tClearly) * 4); return o; }
+        var R = 30 * S;
+        if (t < tLand) { var f = (t - tFall) / (tLand - tFall); o.x = HT[0] - 30 * S * f; o.y = lerp(REST - HAIRUP, GROUND - R, easeIn(f)); o.ry = lerp(8, 30, smooth(f * 1.4)); return o; }
+        o.ry = 30; o.x = HT[0] - 30 * S; o.y = GROUND - R;
+        if (t < tRoll) { o.y -= 14 * S * Math.sin(Math.PI * (t - tLand) / (tRoll - tLand)); return o; }
+        var d = 1500 * easeIn((t - tRoll) / 1.1) + 260 * (t - tRoll);
+        o.x -= d; o.rot = (-d / R) * (180 / Math.PI);
+        return o;
+      }
+      run(function (t) {
+        var on = t >= tDown && t < tRoll + 1.4;
+        show(halo, on);
+        if (!on) { show(string, false); return; }
+        var h = haloAt(t), dark = t >= tClearly;
+        halo.setAttribute("transform", "translate(" + P2([h.x, h.y]) + ") rotate(" + h.rot.toFixed(1) + ") scale(" + S.toFixed(3) + ")");
+        [haloO, haloC, haloH].forEach(function (e) { e.setAttribute("ry", h.ry.toFixed(1)); });
+        haloC.setAttribute("stroke", dark ? "#4A3E2A" : C.yellow);
+        haloH.setAttribute("stroke", dark ? "#6B625A" : "#FFFFFF");
+        twinkle.setAttribute("opacity", dark ? 0 : 0.55 + 0.45 * Math.sin(t * 14));
+        haloSmoke.setAttribute("opacity", dark && t < tLand ? 1 : 0);
+        // the string: down from above to the halo's rim; after the zap its burnt end whips back up
+        var top = [h.x, HT[1] - 900 * S], end = [h.x + Math.sin((h.rot * Math.PI) / 180) * 8 * S, h.y - h.ry * S * Math.cos((h.rot * Math.PI) / 180)];
+        if (h.str) { show(string, true); string.setAttribute("d", "M" + P2(top) + " L" + P2(end)); }
+        else if (t < tClearly + 0.35) { show(string, true); var up = easeIn((t - tClearly) / 0.35) * 500 * S; string.setAttribute("d", "M" + P2(top) + " L" + P2([HT[0], REST - 20 * S - up])); }
+        else show(string, false);
+      });
+      // the zap: a white burst and bolts round his head, flickering
+      var zap = q("zap"), burst = q("zap-burst"), bolts = zap.querySelectorAll(".zap-bolt");
+      zap.setAttribute("transform", "translate(" + P2([HT[0], HT[1] + 30 * S]) + ") scale(" + S.toFixed(3) + ")");
+      run(function (t) {
+        var on = t >= tClearly && t < tClearly + 0.42;
+        show(zap, on);
+        if (!on) return;
+        var step = Math.floor((t - tClearly) / 0.05);
+        burst.setAttribute("opacity", step < 3 ? (step % 2 ? 0.5 : 1) : 0);
+        Array.prototype.forEach.call(bolts, function (bo, n) { bo.setAttribute("opacity", (step + n) % 2 ? 1 : 0); });
+      });
+
+      // ── "builds": the manual's pencil redraws the ring (marker); "loop.": the factory pops down, the lab pops up ──
+      var pencil = q("pencil"), ghost = q("ghost"), rings = [q("ring-in"), q("ring-out")];
+      rings.forEach(function (r) { r.setAttribute("transform", "rotate(180 " + G.cx + " " + G.cy + ")"); r.setAttribute("stroke-dasharray", "1 1"); });
+      var pOut = tBuilds + 0.1, pRing = tBuilds + 0.26, pDone = tLoop - 0.1, pBack = tLoop + 0.1, MTOP = [MT[0], MT[1] - 110 * L.ms];
+      run(function (t) {
+        var u = clamp01((t - pRing) / (pDone - pRing));
+        rings.forEach(function (r) { r.setAttribute("stroke-dashoffset", (t < pRing ? 0 : 1 - u).toFixed(4)); });
+        show(ghost, t >= pRing && t < pDone);
+        var on = t >= pOut && t < pBack;
+        show(pencil, on);
+        if (!on) return;
+        var tip, start = loopAt(270, G.r);
+        if (t < pRing) tip = hop(MTOP, start, smooth((t - pOut) / (pRing - pOut)), 90);
+        else if (t < pDone) tip = loopAt(270 + 360 * u, G.r);
+        else tip = hop(start, MTOP, smooth((t - pDone) / (pBack - pDone)), 90);
+        pencil.setAttribute("transform", "translate(" + P2(tip) + ") rotate(" + f1(4 * Math.sin(t * 50)) + ")");
+      });
+      var stW = q("st-weapons"), stB = q("b-st-weapons"), BASE = [G.factory[0], G.factory[1]];
+      function squashY(el, sy) { el.setAttribute("transform", "translate(" + BASE[0] + "," + BASE[1] + ") scale(" + (1 + (1 - sy) * 0.15).toFixed(3) + "," + Math.max(0.001, sy).toFixed(3) + ") translate(" + -BASE[0] + "," + -BASE[1] + ")"); }
+      run(function (t) {
+        var down = 1 - easeIn((t - (tLoop - 0.14)) / 0.14);
+        squashY(stW, down); show(stW, down > 0.01);
+        var up = backOut((t - tLoop) / 0.32);
+        squashY(stB, up); show(stB, t >= tLoop);
+      });
+
+      // ── "MORE papers": war papers jump off the track into the funnel (ka-ching), come out medicine papers (sparkle) and
+      // land in the charred Politician's raised hands; dollar signs light in his eyes ──
+      var fset = q("fset"), funnel = q("funnel"), lever = funnel.querySelector(".funnel-lever"), flip = q("flip");
+      var MOUTH = [F[0], F[1] - 290 * FS], SPOUT = [F[0], F[1] - 36 * FS], SRC = loopAt(L.src, G.r);
+      var tFun = tMore - 0.34;
+      run(function (t) {
+        show(fset, t >= tFun);
+        var p = backOut((t - tFun) / 0.3), shake = t > tMore + 0.1 && t < tPapers + NB * 0.1 + 0.4 ? 2.5 * Math.sin(t * 70) : 0;
+        funnel.setAttribute("transform", "translate(" + f1(F[0] + shake) + "," + F[1] + ") scale(" + (FS * Math.max(0.001, p)).toFixed(4) + ")");
+        var lu = clamp01((t - tMore + 0.05) / 0.4);
+        lever.setAttribute("transform", "rotate(" + (50 * Math.sin(Math.PI * lu)).toFixed(1) + " 80 -112)");
+        var caught = 0;
+        for (var n = 0; n < NB; n++) {
+          var wi = q("win-" + n), mo = q("mout-" + n), a0 = tMore - 0.02 + n * 0.1, b0 = tPapers - 0.05 + n * 0.1;
+          var ua = (t - a0) / 0.5, ub = (t - b0) / 0.42;
+          show(wi, ua >= 0 && ua < 1);
+          if (ua >= 0 && ua < 1) wi.setAttribute("transform", "translate(" + P2(hop(SRC, MOUTH, ua, V ? 120 : 110)) + ") rotate(" + f1(-200 * ua) + ")");
+          var target = polWorld([MID[0], MID[1] - n * 5.2 - 4]);
+          show(mo, ub >= 0 && ub < 1);
+          if (ub >= 0 && ub < 1) mo.setAttribute("transform", "translate(" + P2(hop(SPOUT, target, ub, V ? 80 : 70)) + ") rotate(" + f1(300 * ub) + ") scale(" + lerp(0.8, 1, ub).toFixed(2) + ")");
+          if (ub >= 1) caught++;
+        }
+        Array.prototype.forEach.call(q("stack").children, function (sb, n) { sb.setAttribute("opacity", n < caught && t >= tMore - 0.25 ? 1 : 0); });
+        // the seal flip sparkle at the spout
+        var fu = (t - tPapers + 0.04) / 0.5;
+        show(flip, fu >= 0 && fu < 1);
+        if (fu >= 0 && fu < 1) flip.setAttribute("transform", "translate(" + P2([SPOUT[0] + 30 * FS, SPOUT[1] - 10]) + ") rotate(" + f1(90 * fu) + ") scale(" + (k * (0.4 + 0.8 * Math.sin(Math.PI * fu))).toFixed(3) + ")");
+      });
+
+      // ── "OPPOSITE": the arrows flip red to teal one after another (switch), the papers flip their seals, the face flips
+      // to a smile; "thing.": the horns pop off and fall away (pop) ──
+      run(function (t) {
+        for (var n = 0; n < 8; n++) {
+          var tn = tOpp + n * 0.045, flipped = t >= tn;
+          var aw = q("arrow-" + n), ab = q("b-arrow-" + n);
+          if (aw) show(aw, !flipped);
+          if (ab) show(ab, flipped);
+          var gl = q("b-arrow-glow-" + n);
+          if (gl) { gl.setAttribute("fill", C.med); gl.setAttribute("stroke", C.med); gl.setAttribute("opacity", flipped ? (0.85 * (1 - clamp01((t - tn) / 0.45))).toFixed(2) : 0); }
+          var pw = q("paper-" + n + "-in"), pb = q("b-paper-" + n + "-in");
+          show(pw, !flipped); show(pb, flipped);
+        }
+        var oldS = 1 - smooth((t - tOpp) / 0.1), newS = t < tOpp + 0.08 ? 0 : backOut((t - tOpp - 0.08) / 0.3);
+        faceW.setAttribute("transform", "translate(" + G.cx + "," + G.cy + ") scale(1," + Math.max(0.001, oldS).toFixed(3) + ") translate(" + -G.cx + "," + -G.cy + ")");
+        faceB.setAttribute("transform", "translate(" + G.cx + "," + G.cy + ") scale(1," + Math.max(0.001, newS).toFixed(3) + ") translate(" + -G.cx + "," + -G.cy + ")");
+        show(faceW, oldS > 0.01); show(faceB, newS > 0.01);
+      });
+      [["horn-l", -30, -1], ["horn-r", 30, 1]].forEach(function (hh) {
+        var inner = q(hh[0] + "-in"), sc0 = G.horn * k, th = (-hh[1] * Math.PI) / 180;
+        run(function (t) {
+          var u = t - tThing + 0.06;
+          if (u < 0) { inner.removeAttribute("transform"); return; }
+          // world: up and out, then down off the frame, spinning
+          var dx = hh[2] * 150 * u, dy = -300 * u + 1500 * u * u, lx = (dx * Math.cos(th) - dy * Math.sin(th)) / sc0, ly = (dx * Math.sin(th) + dy * Math.cos(th)) / sc0;
+          inner.setAttribute("transform", "translate(" + f1(lx) + "," + f1(ly) + ") rotate(" + f1(hh[2] * 420 * u) + " 0 -40)");
+        });
+      });
+
+      // ── "Same dog,": the Democracy Dog drops in (woof) and laps the ring with its same tail; "cured": poof, its tail is
+      // teal pills (pop) knotted with knocked-out diseases (pop) ──
+      var dogs = [q("dog"), q("p-dog")], sqs = [q("dog-sq"), q("p-dog-sq")];
+      var lap0 = tDog + 0.32, lap1 = lap0 + 1.75;
+      function dogAngle(t) { return t < lap0 ? 180 : 180 - 360 * (0.5 - 0.5 * Math.cos(Math.PI * clamp01((t - lap0) / (lap1 - lap0)))); }
+      var parts = dogs.map(function (d) {
+        return {
+          legs: d.querySelectorAll(".dog-leg"), speed: d.querySelector(".dog-speed"), head: d.querySelector(".dog-head"), tail: d.querySelector(".dog-tail"),
+          charms: Array.prototype.map.call(d.querySelectorAll(".tail-charm"), function (c) { return c; }),
+        };
+      });
+      parts.forEach(function (p) { p.legPiv = Array.prototype.map.call(p.legs, function (l) { return l.getAttribute("data-pivot").split(" ").map(Number); }); });
+      // the pill dog: its tip pill (it bites it off), a pill for its mouth, the poof, the ribbon and the sparkles
+      var pd = parts[1], pills = Array.prototype.filter.call(pd.tail.children, function (c) { return c.tagName.toLowerCase() === "g" && /rotate/.test(c.getAttribute("transform") || ""); });
+      var tipPill = pills[pills.length - 1];
+      var PILL = '<rect x="-14" y="-6" width="28" height="12" rx="6" fill="' + INK + '" stroke="' + INK + '" stroke-width="4"/><path d="M0,-6 H-8 A6,6 0 0 0 -8,6 H0 Z" fill="' + C.med + '"/><path d="M0,-6 H8 A6,6 0 0 1 8,6 H0 Z" fill="#FBF6E6"/><path d="M0,-6 V6" stroke="' + INK + '" stroke-width="1.6"/>';
+      pd.head.insertAdjacentHTML("beforeend", '<g class="mouth-pill" opacity="0" transform="translate(6,-82) rotate(-20) scale(0.9)">' + PILL + "</g>");
+      var mouthPill = pd.head.querySelector(".mouth-pill");
+      var ROS = (function () {
+        var pts = [];
+        for (var i = 0; i < 24; i++) { var a = (i * Math.PI) / 12, r = i % 2 ? 19 : 25; pts.push(f1(r * Math.cos(a)) + "," + f1(r * Math.sin(a))); }
+        return '<path d="M-10,8 L-22,52 L-14,46 L-8,56 L0,12 Z M10,8 L22,52 L14,46 L8,56 L0,12 Z" fill="' + C.med + '" stroke="' + INK + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
+          '<polygon points="' + pts.join(" ") + '" fill="' + C.med + '" stroke="' + INK + '" stroke-width="2.8" stroke-linejoin="miter"/>' +
+          '<circle r="14" fill="#FBF6E6" stroke="' + INK + '" stroke-width="2.4"/>' + KIT.star(0, 0, 9, C.yellow, 5) +
+          '<path d="M-50,22 H50 L44,31 L50,40 H-50 L-44,31 Z" fill="#FBF6E6" stroke="' + INK + '" stroke-width="2.8" stroke-linejoin="miter"/>' +
+          '<text x="0" y="36.5" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="15" letter-spacing="1" fill="#1F6E68">REELECTED</text>';
+      })();
+      sqs[1].insertAdjacentHTML("beforeend", '<g transform="translate(40,-100) scale(-0.72,0.72)"><g id="' + ID + '-ribbon" opacity="0">' + ROS + "</g></g>" +
+        '<g transform="translate(62,-118)"><g id="' + ID + '-poof" opacity="0">' + [[0, 0, 30], [-26, 14, 22], [24, 16, 24], [-8, -24, 20], [20, -20, 18]].map(function (c) {
+          return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#FBF6E6" stroke="' + INK + '" stroke-width="3"/>';
+        }).join("") + KIT.star(-34, -26, 12, C.yellow) + KIT.star(38, -8, 10, C.med) + "</g></g>" +
+        '<g id="' + ID + '-sparkles" opacity="0">' + [[-70, -120, 18, C.yellow], [70, -150, 14, C.med], [90, -40, 16, C.yellow], [-80, -30, 12, C.cream], [0, -175, 13, C.orange]].map(function (s2) {
+          return KIT.star(s2[0], s2[1], s2[2], s2[3]) + KIT.star(s2[0], s2[1], s2[2] * 0.4, "#FFFFFF");
+        }).join("") + "</g>");
+      var ribbon = q("ribbon"), poof = q("poof"), sparkles = q("sparkles");
+      var tBite = tChase, tRelease = tSwallow - 0.12, tPoof = tCured, tCharm = [tCured + 0.2, tCured + 0.2, tCured + 0.32];
+      run(function (t) {
+        var fast = t >= tSwallow, f = fast ? 8.5 : 5.2, running = t > tDog + 0.22;
+        for (var d = 0; d < 2; d++) {
+          var el = dogs[d], p = parts[d], on = d === 0 ? t >= tDog - 0.3 && t < tPoof : t >= tPoof;
+          show(el, on);
+          if (!on) continue;
+          var bobv = running ? Math.abs(Math.sin(Math.PI * f * t)) * 6 : 0;
+          if (t < tDog) {
+            var u = clamp01((t - (tDog - 0.3)) / 0.3);
+            el.setAttribute("transform", "translate(" + G.cx + "," + f1(lerp(G.cy - RIN - 260, G.cy + RIN, easeIn(u))) + ")");
+          } else el.setAttribute("transform", loopIn(dogAngle(t), RIN) + " translate(0," + (-bobv).toFixed(1) + ")");
+          for (var n = 0; n < p.legs.length; n++) p.legs[n].setAttribute("transform", "rotate(" + (running ? 30 * Math.sin(2 * Math.PI * f * t + n * 1.7) : 0).toFixed(1) + " " + p.legPiv[n][0] + " " + p.legPiv[n][1] + ")");
+          show(p.speed, running);
+          Array.prototype.forEach.call(p.speed.querySelectorAll(".dog-dust"), function (c, m) {
+            var ph = (t * (fast ? 5 : 3) + m * 0.33) % 1;
+            c.setAttribute("transform", "translate(" + (ph * 40).toFixed(1) + "," + (-ph * 14).toFixed(1) + ")");
+            c.setAttribute("opacity", (1 - ph).toFixed(2));
+          });
+          // the landing squash and the gulp
+          var sq = t >= tDog && t < tDog + 0.4 ? 1 - 0.26 * Math.exp(-(t - tDog) * 9) * Math.cos((t - tDog) * 26) : 1;
+          if (t >= tSwallow - 0.08 && t < tSwallow + 0.2) sq = 1 - 0.14 * Math.sin(Math.PI * (t - tSwallow + 0.08) / 0.28);
+          sqs[d].setAttribute("transform", "scale(" + (2 - sq).toFixed(3) + "," + sq.toFixed(3) + ")");
+          // the head snaps and bobs, the tail wags; the bite: the tail swings round into its mouth
+          var bite = smooth((t - tBite + 0.22) / 0.22) * (1 - smooth((t - tRelease) / 0.16));
+          var wag = running ? (fast ? 14 : 7) * Math.sin(2 * Math.PI * (fast ? 5 : 3.1) * t) : 0, nod = running ? -5 + 5 * Math.sin(2 * Math.PI * 2.1 * t) : 0;
+          if (d === 0 && t < tDog + 0.12) nod = 14 * Math.sin(Math.PI * clamp01((t - tDog) / 0.12));
+          p.head.setAttribute("transform", "rotate(" + f1(lerp(nod, -35, bite)) + " -26 -72)");
+          p.tail.setAttribute("transform", "rotate(" + f1(lerp(wag, -45, bite)) + " 46 -64)");
+          // the charms swing as it runs (the pill dog's pop in)
+          p.charms.forEach(function (c, m) {
+            var cs = d === 1 ? backOut((t - tCharm[m]) / 0.25) : 1;
+            c.setAttribute("transform", "scale(" + Math.max(0.001, cs).toFixed(3) + ") rotate(" + (running ? 9 * Math.sin(2 * Math.PI * 1.7 * t + m * 1.3) : 0).toFixed(1) + ")");
+          });
+        }
+        // the poof as the tail changes
+        var pu = (t - tPoof + 0.03) / 0.4;
+        show(poof, pu >= 0 && pu < 1);
+        if (pu >= 0 && pu < 1) poof.setAttribute("transform", "scale(" + (0.4 + 0.9 * easeOut(pu)).toFixed(3) + ")"), poof.setAttribute("opacity", (1 - easeIn(pu)).toFixed(2));
+        // "chasing": it catches the tip pill (pop); after "it.": it swallows it, sparkles and runs faster (sparkle)
+        show(tipPill, t < tBite);
+        show(mouthPill, t >= tBite && t < tSwallow - 0.04);
+        var su = (t - tSwallow + 0.02) / 0.3;
+        show(sparkles, su >= 0);
+        if (su >= 0) sparkles.setAttribute("transform", "scale(" + (0.3 + 0.9 * easeOut(su * 1.6)).toFixed(3) + ")");
+        // "reelected": the rosette drops onto its collar (bell)
+        var ru = (t - tRe + 0.3) / 0.3;
+        show(ribbon, ru >= 0);
+        if (ru >= 0) {
+          var ry = ru < 1 ? -260 * (1 - easeIn(ru)) : -16 * Math.sin(Math.PI * clamp01((t - tRe) / 0.2)), rr = ru < 1 ? 30 * (1 - ru) : 8 * Math.sin((t - tRe) * 12) * Math.exp(-(t - tRe) * 3);
+          ribbon.setAttribute("transform", "translate(0," + f1(ry) + ") rotate(" + f1(rr) + ")");
+        }
+      });
+
+      // ── "reelected": the voters at VOTES cheer and throw confetti ──
+      var VO = LOOP_PEOPLE.voters.map(function (v, n) {
+        var at = G.voters[n], R = KIT.rig(mix(v, { arms: [[-158, -172], [158, 172]] }));
+        return { el: q("voter-" + n + "-in"), hand: R.hand.map(function (h) { return [at[0] + h[0] * G.vs, at[1] - 100 * G.vs + h[1] * G.vs]; }) };
+      });
+      run(function (t) {
+        VO.forEach(function (v, n) {
+          var cheer = t >= tRe - 0.06 + n * 0.05;
+          pose(v.el, cheer ? "cheer" : "base");
+          var jmp = cheer ? Math.abs(Math.sin(Math.PI * 3.2 * (t - tRe - n * 0.05))) * 9 : 0;
+          v.el.setAttribute("transform", "translate(0," + f1(-jmp) + ")");
+        });
+        CONF.forEach(function (p, n) {
+          var el = q("cf-" + n), u = t - p.t0;
+          if (u < 0) { el.setAttribute("opacity", 0); return; }
+          var h = VO[p.v].hand[n % 2], sc3 = L.confetti, x = h[0] + p.vx * u * sc3, y = h[1] + (p.vy * u + 0.5 * 950 * u * u) * sc3;
+          el.setAttribute("opacity", 1);
+          el.setAttribute("transform", "translate(" + P2([x, y]) + ") rotate(" + f1(p.spin * u) + ") scale(" + (Math.cos(u * 9 + n) * 0.6 + 0.4).toFixed(2) + ",1)");
+        });
+      });
+
+      KIT.onTime(tl, D, function (t) { for (var n = 0; n < RUN.length; n++) RUN[n](t); });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

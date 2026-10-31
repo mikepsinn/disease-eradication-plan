@@ -1,0 +1,344 @@
+<template id="sane-insane-buzzer-template">
+  <!-- sane-insane-buzzer · plate game-show (storyboards/part-04-institutionalize.md): a 1950s TV game-show stage, one
+       plate the camera travels over. "That:" → card 1 flips: a picture of the inside of a body with a tiny scientist
+       and her wrench. "sane." → the SANE lamp lights, confetti, the audience cheers. "Give" → card 2 flips: a tall stack
+       of war bills with one bill tiptoeing off it; the patient in his straitjacket beams, it is his idea. "murder" → the
+       camera finds the front row: the Weapons Maker clutches his missile, sweating. "insane." → back on the host and the
+       trapdoor: the Politician slaps the buzzer, INSANE lights, the trapdoor drops open, the patient hangs in the air a
+       beat, looks down, and falls through. After it the host grins on, the audience cheers, more confetti. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0C2240; }
+    #sane-insane-buzzer-weave, #sane-insane-buzzer-plate, #sane-insane-buzzer-film { position: absolute; inset: 0; }
+    #sane-insane-buzzer-flash { position: absolute; inset: -40px; background: #FFF4D6; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="sane-insane-buzzer" data-width="1920" data-height="1080" data-start="0" data-duration="7.74">
+    <div id="sane-insane-buzzer-weave">
+      <div id="sane-insane-buzzer-plate"></div>
+      <div id="sane-insane-buzzer-flash"></div>
+    </div>
+    <div id="sane-insane-buzzer-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "sane-insane-buzzer";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth;
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 47);
+
+      // ── The plate, in plate units (the sketch's 1920 x 1080 frame is the wide view). The stage floor's back edge is
+      // at FY; the stage's front lip at LIP; below it the dark audience pit, the front row's heads along y 1080.
+      var FY = 820, LIP = 1060, DT = 640;
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+
+      // ── The patient (the part's spine): a mustard shirt; in his straitjacket, cream canvas with tan straps and
+      // mustard buckles over folded arms (the same recipe as the sketch's jacketed(); the padded cell uses it too).
+      var PATIENT = { tone: 1, outfit: "shirt", color: 3 }, CANVAS = "#E9DFC6", STRAP = "#B9935E";
+      function jacketed(o) {
+        var p = copy(PATIENT, copy({ colorHex: CANVAS, arms: [[52, 104], [-52, -104]] }, o));
+        var R = KIT.rig(p), sx = R.shoulder[1][0] + 4, y1 = R.shoulder[0][1] + 22, y2 = R.hipY - 12;
+        var strap = function (y) {
+          return '<path d="M' + f(-sx) + "," + f(y) + " L" + f(sx) + "," + f(y - 2) + " L" + f(sx) + "," + f(y + 7) + " L" + f(-sx) + "," + f(y + 9) + ' Z" fill="' + STRAP + '" stroke="' + ink + '" stroke-width="2.2"/>' +
+            '<rect x="' + f(sx * 0.35) + '" y="' + f(y - 1) + '" width="9" height="10" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>';
+        };
+        return KIT.person(p) + strap(y1) + strap(y2);
+      }
+
+      // ── The set ──
+      var curtain = "";
+      for (var x = -560; x < 2480; x += 80) curtain += '<rect x="' + (x - 20) + '" y="-400" width="40" height="' + (FY + 400) + '" fill="' + ((x + 560) % 160 ? "#1B3A60" : "#0C2240") + '"/><rect x="' + (x + 20) + '" y="-400" width="40" height="' + (FY + 400) + '" fill="' + ((x + 560) % 160 ? "#1B3A60" : "#0C2240") + '"/>';
+      var floor = '<rect x="-600" y="' + FY + '" width="3120" height="' + (LIP - FY) + '" fill="' + C.rust + '"/>' +
+        '<rect x="-600" y="' + (FY - 8) + '" width="3120" height="14" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="3"/>' +
+        '<rect x="-600" y="' + LIP + '" width="3120" height="18" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<rect x="-600" y="' + (LIP + 18) + '" width="3120" height="900" fill="#081428"/>';
+      // the marquee: SANE OR INSANE? on a mustard board between two rows of bulbs (Fraunces, sized to the board)
+      var MQ = [540, 56, 840, 208], bulbs = "", nb = 0;
+      for (var bx = 590; bx <= 1330; bx += 46) {
+        bulbs += '<circle class="bulb" data-i="' + nb + '" cx="' + bx + '" cy="76" r="9" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4"/>' +
+          '<circle class="bulb" data-i="' + (nb + 1) + '" cx="' + bx + '" cy="244" r="9" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4"/>';
+        nb += 2;
+      }
+      var mqText = "SANE OR INSANE?", mqFs = KIT.fitText(mqText, 76, MQ[2] - 110, "Fraunces", 900);
+      var marquee = '<g><rect x="' + MQ[0] + '" y="' + MQ[1] + '" width="' + MQ[2] + '" height="' + MQ[3] + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="6"/>' + bulbs +
+        '<text x="960" y="' + f(160 + mqFs * 0.36) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + f(mqFs) + '" fill="' + C.navy + '">' + mqText + "</text></g>";
+      // the two lamps: dark glass when off; lit in their color with cream letters and mustard rays
+      function lamp(x, text, col) {
+        var fs = KIT.fitText(text, 64, 280 - 60, "Oswald", 600, 3), rays = "";
+        for (var i = 0; i < 8; i++) {
+          var a = (i * Math.PI) / 4;
+          rays += '<path d="M' + f(x + Math.cos(a) * 160) + "," + f(370 + Math.sin(a) * 76) + " L" + f(x + Math.cos(a) * 205) + "," + f(370 + Math.sin(a) * 104) + '" stroke="' + C.yellow + '" stroke-width="9" stroke-linecap="round"/>';
+        }
+        var box = function (fill, tc) {
+          return '<rect x="' + (x - 140) + '" y="320" width="280" height="100" rx="12" fill="' + fill + '" stroke="' + ink + '" stroke-width="6"/>' +
+            '<text x="' + x + '" y="' + f(370 + fs * 0.36) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + f(fs) + '" letter-spacing="3" fill="' + tc + '">' + text + "</text>";
+        };
+        return '<g class="lamp-rays" opacity="0" transform="translate(' + x + ',370)"><g class="rays-in">' + '<g transform="translate(' + -x + ',-370)">' + rays + "</g></g></g>" +
+          '<g class="lamp-off">' + box("#3A3F52", "#6E7488") + '</g><g class="lamp-on" opacity="0">' + box(col, C.cream) + "</g>";
+      }
+      var lamps = '<g id="' + ID + '-sane">' + lamp(760, "SANE", C.med) + '</g><g id="' + ID + '-insane">' + lamp(1160, "INSANE", C.war) + "</g>";
+
+      // ── The flip cards: two picture cards on easels, under the lamps. Card units: 230 x 270 around (0, 0).
+      var CARD = [[760, 625], [1160, 625]], CW = 115, CH = 135;
+      function cardFrame(inner) {
+        return '<rect x="' + -CW + '" y="' + -CH + '" width="' + 2 * CW + '" height="' + 2 * CH + '" rx="6" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="6"/>' +
+          '<rect x="' + (-CW + 12) + '" y="' + (-CH + 12) + '" width="' + (2 * CW - 24) + '" height="' + (2 * CH - 24) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.5"/>' + inner;
+      }
+      // the back: navy with the show's mustard star
+      var cardBack = '<rect x="' + -CW + '" y="' + -CH + '" width="' + 2 * CW + '" height="' + 2 * CH + '" rx="6" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="6"/>' +
+        '<rect x="' + (-CW + 12) + '" y="' + (-CH + 12) + '" width="' + (2 * CW - 24) + '" height="' + (2 * CH - 24) + '" fill="none" stroke="' + C.yellow + '" stroke-width="3"/>' + KIT.star(0, 0, 62, C.yellow);
+      // card 1: the inside of a body, cells with their little lights, and the tiny Scientist with her wrench up
+      function wrench() {
+        return '<path d="M-3.2,6 L-3.2,-30 L-8.5,-33 L-10.5,-44 L-6,-50 L-3,-43 L3,-43 L6,-50 L10.5,-44 L8.5,-33 L3.2,-30 L3.2,6 Z" fill="' + ink + '" stroke="' + ink + '" stroke-width="2" stroke-linejoin="miter"/>' +
+          '<path d="M-1,2 V-28" stroke="' + C.peri + '" stroke-width="1.6"/><circle cx="0" cy="9" r="5" fill="' + ink + '"/><circle cx="0" cy="9" r="2" fill="' + C.paper + '"/>';
+      }
+      var SCI = KIT.castOpts("scientist", { look: "right", mood: "eager", arms: [[-160, -176], [-10, -4]], holdR: "clipboard" }), RSCI = KIT.rig(SCI);
+      var cells = "", cr = KIT.rng(41);
+      [[-62, -78, 34], [10, -92, 30], [70, -60, 32], [-78, 4, 30], [74, 20, 30], [-50, 80, 28], [40, 90, 30], [-6, -24, 22]].forEach(function (c) {
+        var lx = c[0] + c[2] * 0.4, ly = c[1] - c[2] * 0.3;
+        cells += '<ellipse cx="' + c[0] + '" cy="' + c[1] + '" rx="' + c[2] + '" ry="' + f(c[2] * (0.78 + cr() * 0.2)) + '" fill="#D98C76" stroke="' + ink + '" stroke-width="3"/>' +
+          '<circle cx="' + f(c[0] - c[2] * 0.2) + '" cy="' + f(c[1] + c[2] * 0.1) + '" r="' + f(c[2] * 0.3) + '" fill="#9E4A3A" stroke="' + ink + '" stroke-width="2"/>' +
+          '<circle cx="' + f(lx) + '" cy="' + f(ly) + '" r="5" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.8"/>';
+      });
+      var sciK = 0.95, sciX = 6, sciGY = 112;
+      var sciSvg = at(sciX, sciGY - 100 * sciK, sciK, KIT.person(SCI) + '<g transform="translate(' + f(RSCI.hand[0][0]) + "," + f(RSCI.hand[0][1] - 4) + ') rotate(-18) scale(0.9)">' + wrench() + "</g>");
+      var card1Front = cardFrame('<rect x="' + (-CW + 18) + '" y="' + (-CH + 18) + '" width="' + (2 * CW - 36) + '" height="' + (2 * CH - 36) + '" fill="#B85E4C"/>' +
+        '<g clip-path="url(#' + ID + '-c1clip)">' + cells + sciSvg + "</g>");
+      // card 2: a tall stack of war bills, and one bill tiptoeing off it
+      var stack = "";
+      for (var i = 0; i < 17; i++) {
+        var sy = 104 - i * 12, sx2 = -44 + ((i * 7) % 5) - 2;
+        stack += '<rect x="' + f(sx2 - 46) + '" y="' + sy + '" width="92" height="12" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2.4"/>' +
+          '<circle cx="' + f(sx2 + 30) + '" cy="' + (sy + 6) + '" r="3.6" fill="' + C.moneyDark + '"/>';
+      }
+      stack += at(-44, 104 - 17 * 12 - 16, 0.62, KIT.money("war", 0).replace('class="legs"', 'class="legs" opacity="0"'));
+      var tiptoe = '<g id="' + ID + '-tip"><g transform="scale(0.5)">' + KIT.money("war", 0) + "</g></g>";
+      var card2Front = cardFrame('<rect x="' + (-CW + 18) + '" y="' + (-CH + 18) + '" width="' + (2 * CW - 36) + '" height="' + (2 * CH - 36) + '" fill="' + C.peri + '"/>' +
+        '<rect x="' + (-CW + 18) + '" y="116" width="' + (2 * CW - 36) + '" height="1" fill="none"/>' +
+        '<g clip-path="url(#' + ID + '-c2clip)">' + '<rect x="-97" y="116" width="194" height="2" fill="' + ink + '"/>' + stack + tiptoe + "</g>");
+      var clips = '<defs><clipPath id="' + ID + '-c1clip"><rect x="' + (-CW + 18) + '" y="' + (-CH + 18) + '" width="' + (2 * CW - 36) + '" height="' + (2 * CH - 36) + '"/></clipPath>' +
+        '<clipPath id="' + ID + '-c2clip"><rect x="' + (-CW + 18) + '" y="' + (-CH + 18) + '" width="' + (2 * CW - 36) + '" height="' + (2 * CH - 36) + '"/></clipPath>' +
+        '<clipPath id="' + ID + '-pclip"><rect x="-600" y="-1200" width="3120" height="' + (FY + 1214) + '"/><path d="M1300,' + (FY + 10) + " H1640 L1610," + (FY + 74) + " H1330 Z" + '"/></clipPath></defs>';
+      var easel = function (x, y) {
+        return '<path d="M' + (x - 70) + "," + FY + " L" + (x - 40) + "," + (y + CH - 10) + " M" + (x + 70) + "," + FY + " L" + (x + 40) + "," + (y + CH - 10) + '" stroke="' + ink + '" stroke-width="12" stroke-linecap="round"/>' +
+          '<path d="M' + (x - 70) + "," + FY + " L" + (x - 40) + "," + (y + CH - 10) + " M" + (x + 70) + "," + FY + " L" + (x + 40) + "," + (y + CH - 10) + '" stroke="' + C.tan + '" stroke-width="6" stroke-linecap="round"/>' +
+          '<rect x="' + (x - CW - 10) + '" y="' + (y + CH - 4) + '" width="' + (2 * CW + 20) + '" height="14" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>';
+      };
+      var cards = [card1Front, card2Front].map(function (front, i) {
+        var c = CARD[i];
+        return easel(c[0], c[1]) + '<g transform="translate(' + c[0] + "," + c[1] + ')"><g id="' + ID + "-card" + i + '">' +
+          '<g class="card-back">' + cardBack + '</g><g class="card-front" opacity="0">' + front + "</g></g></g>";
+      }).join("");
+
+      // ── The host: the Politician behind his desk, his right hand on the big red buzzer. His drawings: pointing at
+      // the cards, winding up (arm high), and the slap (palm down on the buzzer).
+      var PK = 2.3, PX = 330, POL = {
+        point: KIT.castOpts("politician", { look: "right", arms: [[-10, -4], [96, 104]] }),
+        raise: KIT.castOpts("politician", { look: "right", arms: [[-10, -4], [168, 178]] }),
+        slap: KIT.castOpts("politician", { look: "right", arms: [[-10, -4], [40, 52]] }),
+      };
+      var RPS = KIT.rig(POL.slap), HAND = [PX + RPS.hand[1][0] * PK, FY - 100 * PK + RPS.hand[1][1] * PK];
+      var polSvg = at(PX, FY - 100 * PK, PK, Object.keys(POL).map(function (n) { return '<g id="' + ID + "-pol-" + n + '" opacity="' + (n === "point" ? 1 : 0) + '">' + KIT.person(POL[n]) + "</g>"; }).join(""));
+      var desk = '<path d="M150,' + FY + " L170," + DT + " H560 L580," + FY + ' Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/><path d="M190,' + (DT + 60) + ' H545" stroke="' + C.orange + '" stroke-width="5"/>' +
+        '<rect x="140" y="' + (DT - 20) + '" width="450" height="26" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="5"/>';
+      var BZ = [HAND[0], DT - 48];
+      var buzzer = '<rect x="' + f(BZ[0] - 50) + '" y="' + (DT - 48) + '" width="100" height="30" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<g id="' + ID + '-dome"><path d="M' + f(BZ[0] - 44) + "," + (DT - 48) + " Q" + f(BZ[0]) + "," + (DT - 86) + " " + f(BZ[0] + 44) + "," + (DT - 48) + ' Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<path d="M' + f(BZ[0] - 22) + "," + (DT - 62) + " q10,-8 22,-9" + '" fill="none" stroke="#F2B9A6" stroke-width="4" stroke-linecap="round"/></g>' +
+        '<g id="' + ID + '-zap" opacity="0">' + [0, 1, 2].map(function (i) { return '<path d="M' + f(BZ[0] - 60 + i * 60) + "," + (DT - 96 - (i === 1 ? 16 : 0)) + " l" + (-10 + i * 10) + ',-26" stroke="' + C.yellow + '" stroke-width="7" stroke-linecap="round"/>'; }).join("") + "</g>";
+      var palm = '<path id="' + ID + '-palm" opacity="0" d="M' + f(HAND[0] - 22) + "," + f(DT - 78) + " L" + f(HAND[0] + 18) + "," + f(DT - 84) + " L" + f(HAND[0] + 28) + "," + f(DT - 66) + " L" + f(HAND[0] - 24) + "," + f(DT - 60) + ' Z" fill="#D9B48F" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>';
+
+      // ── The trapdoor in the stage floor beside the contestant's podium: a closed lid; then the hole, and the flap
+      // hanging from its near edge (drawn by the update).
+      var lid = '<path id="' + ID + '-lid" d="M1300,' + (FY + 14) + " H1640 L1610," + (FY + 74) + " H1330 Z" + '" fill="#9C5636" stroke="#6E3520" stroke-width="4"/>';
+      var hole = '<path id="' + ID + '-hole" opacity="0" d="M1300,' + (FY + 14) + " H1640 L1610," + (FY + 74) + " H1330 Z" + '" fill="#0B0805" stroke="' + ink + '" stroke-width="5"/>';
+      var flap = '<path id="' + ID + '-flap" opacity="0" d="" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>';
+      var hangLines = '<g id="' + ID + '-hang" opacity="0">' + [0, 1, 2].map(function (i) { return '<path d="M' + (1390 + i * 80) + "," + (FY - 22) + ' v26" stroke="' + C.cream + '" stroke-width="6" stroke-linecap="round"/>'; }).join("") + "</g>";
+      var podium = '<g><path d="M1700,' + FY + " L1715," + (FY - 250) + " H1855 L1870," + FY + ' Z" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter"/>' +
+        '<rect x="1690" y="' + (FY - 272) + '" width="190" height="24" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<text x="1785" y="' + (FY - 104) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="96" fill="' + C.cream + '">?</text></g>';
+      // the patient on the trapdoor: waiting, beaming (his idea), worried (looking down at the hole)
+      var PATK = 2.3, PAT = [1470, FY];
+      var PPOSE = { wait: { mood: "eager", look: "left" }, beam: { mood: "smile", look: "left" }, worried: { mood: "worried", look: "left" } };
+      var RPAT = KIT.rig(copy(PATIENT, copy({ colorHex: CANVAS, arms: [[52, 104], [-52, -104]] }, PPOSE.worried)));
+      var patSvg = '<g clip-path="url(#' + ID + '-pclip)"><g id="' + ID + '-pat"><g transform="scale(' + PATK + ')">' +
+        Object.keys(PPOSE).map(function (n) { return '<g id="' + ID + "-pat-" + n + '" opacity="' + (n === "wait" ? 1 : 0) + '">' + jacketed(PPOSE[n]) + "</g>"; }).join("") + "</g></g></g>";
+
+      // ── The audience: dark heads and shoulders along the front of the stage, and in the middle of the front row the
+      // Weapons Maker with his missile: grinning, then clutching it and sweating.
+      var WM = { calm: KIT.castOpts("weaponsMaker", {}), clutch: KIT.castOpts("weaponsMaker", { mood: "worried", arms: [[44, 100], [-44, -100]], hold: "missile" }) };
+      var RWM = KIT.rig(WM.calm), WMK = 2.3, WMX = 960, WMY = 1000 - RWM.top[1] * WMK;
+      var crowd = "", AUD = [];
+      for (var a = -2; a < 12; a++) { var ax = 120 + a * 210; if (ax !== WMX) AUD.push(ax); }
+      AUD.forEach(function (ax2, i) {
+        crowd += '<g class="aud" data-i="' + i + '" transform="translate(' + ax2 + ',1086)">' +
+          '<g class="aud-arms" opacity="0"><path d="M-56,80 L-84,-34 M56,80 L84,-34" stroke="#0E1C33" stroke-width="24" stroke-linecap="round"/><circle cx="-86" cy="-42" r="16" fill="#0E1C33"/><circle cx="86" cy="-42" r="16" fill="#0E1C33"/></g>' +
+          '<path d="M-118,340 L-108,104 Q-96,62 -48,56 L48,56 Q96,62 108,104 L118,340 Z" fill="#0E1C33"/><ellipse cx="0" cy="0" rx="56" ry="62" fill="#0E1C33"/></g>';
+      });
+      var wmSvg = '<g id="' + ID + '-wm" transform="translate(' + WMX + "," + f(WMY) + ')"><g id="' + ID + '-wm-in"><g transform="scale(' + WMK + ')">' +
+        '<g id="' + ID + '-wm-calm">' + KIT.person(WM.calm) + '</g><g id="' + ID + '-wm-clutch" opacity="0">' + KIT.person(WM.clutch) + "</g>" +
+        [0, 1, 2, 3].map(function (i) { return '<path class="sweat" data-i="' + i + '" opacity="0" d="M0,-6 Q-5.5,2 0,6 Q5.5,2 0,-6 Z" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="1.4"/>'; }).join("") +
+        "</g></g></g>" +
+        // the seat backs of the row in front of them hide the front row's knees
+        '<path d="M-600,1196 Q-500,1170 -400,1196 ' + Array.apply(null, Array(15)).map(function (_, i) { var sx3 = -400 + i * 200; return "Q" + (sx3 + 100) + ",1170 " + (sx3 + 200) + ",1196 "; }).join("") + 'V1700 H-600 Z" fill="#071022" stroke="#1B3A60" stroke-width="5"/>';
+
+      // ── Confetti: two bursts, on "sane." and on the buzzer. Each piece falls and sways across the stage.
+      var CONF = [], crng = KIT.rng(907);
+      [[0, 60, -60, 1400], [1, 90, -100, 2020]].forEach(function (b) {
+        for (var n = 0; n < b[1]; n++) CONF.push({ burst: b[0], x: b[2] + crng() * (b[3] - b[2]), y: -60 - crng() * 520, v: 240 + crng() * 200, sw: 18 + crng() * 30, ph: crng() * 6.28, rot: crng() * 360, spin: (crng() - 0.5) * 900, col: [C.yellow, C.cream, C.orange, C.cyan][n % 4], w: 14 + crng() * 6 });
+      });
+      var confSvg = CONF.map(function (p, i) { return '<rect class="conf" data-i="' + i + '" x="' + f(-p.w / 2) + '" y="-4" width="' + f(p.w) + '" height="8" fill="' + p.col + '" stroke="' + ink + '" stroke-width="1" opacity="0"/>'; }).join("");
+
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="#0C2240"/>' + clips +
+        '<g id="' + ID + '-cam">' + curtain + floor + marquee + lamps + cards + polSvg + desk + buzzer + palm + lid + hole + hangLines + patSvg + flap + podium + crowd + wmSvg +
+        '<g id="' + ID + '-conf">' + confSvg + "</g></g>");
+
+      // ── Elements ──
+      var cam = q("cam"), pat = q("pat"), tip = q("tip"), flapEl = q("flap"), dome = q("dome"), wmIn = q("wm-in");
+      var bulbEls = Array.prototype.slice.call(cam.querySelectorAll(".bulb"));
+      var lampEl = { sane: q("sane"), insane: q("insane") };
+      var cardEls = [q("card0"), q("card1")];
+      var aud = Array.prototype.slice.call(cam.querySelectorAll(".aud"));
+      var sweat = Array.prototype.slice.call(q("wm").querySelectorAll(".sweat"));
+      var confEls = Array.prototype.slice.call(cam.querySelectorAll(".conf"));
+      var patHead = q("pat-worried").querySelector(".head"), patPupils = Array.prototype.slice.call(q("pat-worried").querySelectorAll(".pupil"));
+      var tipLegs = tip.querySelector(".legs");
+
+      // ── Cues ──
+      var tThat = cue("That:"), tSane = cue("sane."), tGive = cue("\"Give"), tMurder = cue("murder"), tMach = KIT.cueEnd(ID, "machines\":"), tIns = cue("insane."), tAfter = KIT.after(ID, "insane.");
+      var tSlap = tIns, tOpen = tIns + 0.3, tFall = tIns + 0.72;
+
+      // ── The camera: one framing per phrase. 16:9: host and card 1, the patient and card 2, the front row, then wide
+      // on the host and the trapdoor. 9:16: the same, but the verdict is the slap on the host, then a whip pan to the
+      // trapdoor as it opens.
+      var VIEW = V
+        ? { card1: [530, 713, 1.55], card2: [1320, 665, 1.7], wm: [960, 1060, 3.2], slap: [400, 690, 1.7], trap: [1385, 690, 1.55] }
+        : { card1: [620, 470, 1.3], card2: [1250, 470, 1.3], wm: [960, 1080, 2.6], wide: [960, 540, 1.0] };
+      var KEYS = V
+        ? [[0, "card1", 1], [tGive - 0.2, "card1", 1.03], [tGive + 0.22, "card2", 1], [tMurder - 0.1, "card2", 1.04], [tMurder + 0.3, "wm", 1], [tMach + 0.1, "wm", 1.05],
+           [tIns - 0.18, "slap", 1], [tOpen - 0.12, "slap", 1.02], [tOpen + 0.08, "trap", 1], [D, "trap", 1.06]]
+        : [[0, "card1", 1], [tGive - 0.2, "card1", 1.03], [tGive + 0.22, "card2", 1], [tMurder - 0.1, "card2", 1.04], [tMurder + 0.3, "wm", 1], [tMach + 0.1, "wm", 1.05],
+           [tIns - 0.1, "wide", 1], [D, "wide", 1.04]];
+      var camera = KIT.camera(VIEW, KEYS);
+
+      // a card flips: the back squeezes to nothing, the front opens out
+      function flip(el, t0, t) {
+        var u = (t - t0) / 0.38, back = el.querySelector(".card-back"), front = el.querySelector(".card-front");
+        if (u <= 0) { show(back, 1); show(front, 0); el.setAttribute("transform", ""); return; }
+        if (u >= 1) { show(back, 0); show(front, 1); el.setAttribute("transform", ""); return; }
+        var sx = u < 0.5 ? 1 - smooth(u / 0.5) : smooth((u - 0.5) / 0.5);
+        show(back, u < 0.5); show(front, u >= 0.5);
+        el.setAttribute("transform", "scale(" + Math.max(0.02, sx).toFixed(3) + "," + (1 + 0.06 * Math.sin(Math.PI * u)).toFixed(3) + ")");
+      }
+      function setLamp(el, on, t, t0) {
+        show(el.querySelector(".lamp-off"), !on); show(el.querySelector(".lamp-on"), on);
+        var rays = el.querySelector(".lamp-rays"), rin = el.querySelector(".rays-in");
+        show(rays, on);
+        if (on) { var p = 1 + 0.08 * Math.sin((t - t0) * 18); rin.setAttribute("transform", "scale(" + (Math.min(1, (t - t0) / 0.12) * p).toFixed(3) + ")"); }
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+
+        // the marquee bulbs chase; on a verdict they all flash together
+        var flashing = (t > tSane && t < tGive) || t > tSlap;
+        bulbEls.forEach(function (b, i) {
+          var on = flashing ? Math.floor(t * 8) % 2 === 0 : (Math.floor(t * 7) + Math.floor(i / 2)) % 3 === 0;
+          b.setAttribute("fill", on ? "#FFF6C8" : C.cream);
+          b.setAttribute("stroke", on ? C.orange : ink);
+        });
+
+        // the cards; the bill on card 2 tiptoes off its stack in high slow steps
+        flip(cardEls[0], tThat + 0.02, t);
+        flip(cardEls[1], tGive - 0.04, t);
+        var tu = Math.min(1, Math.max(0, (t - tGive - 0.3) / 3.4)), step = Math.floor(tu * 7), su = tu * 7 - step;
+        var tx = -10 + 92 * smooth(tu), ty = 52 - Math.sin(Math.PI * su) * 16 - 40 * Math.max(0, 1 - tu * 6);
+        tip.setAttribute("transform", "translate(" + f(tx) + "," + f(ty) + ") rotate(" + f(Math.sin(Math.PI * su) * 6 - 4) + ")");
+        tipLegs.setAttribute("d", step % 2 ? "M-16,24 l-14,12 h-6 M16,24 l2,22 h6" : "M-16,24 l-2,22 h-6 M16,24 l14,12 h6");
+
+        // the lamps: SANE from "sane." until card 2; INSANE on the buzzer, to the end
+        setLamp(lampEl.sane, t > tSane && t < tGive, t, tSane);
+        setLamp(lampEl.insane, t > tSlap, t, tSlap);
+        q("flash").style.opacity = t > tSlap && t < tSlap + 0.16 ? (0.5 * (1 - (t - tSlap) / 0.16)).toFixed(3) : 0;
+
+        // the host points at the cards, winds up on "machines", and slaps the buzzer on "insane."
+        var pp = t < tMach + 0.15 ? "point" : t < tSlap ? "raise" : "slap";
+        ["point", "raise", "slap"].forEach(function (n) { show(q("pol-" + n), n === pp); });
+        show(q("palm"), pp === "slap");
+        var du = (t - tSlap) / 0.25, squash = du > 0 && du < 1 ? 1 - 0.45 * Math.sin(Math.PI * du) : 1;
+        dome.setAttribute("transform", "translate(0," + (DT - 48) + ") scale(1," + squash.toFixed(3) + ") translate(0," + -(DT - 48) + ")");
+        show(q("zap"), t > tSlap && t < tSlap + 0.5 && Math.floor(t * 16) % 2 === 0);
+
+        // the trapdoor drops open: the lid is gone, the flap swings down from the near edge with a bounce
+        var opened = t >= tOpen;
+        show(q("lid"), !opened); show(q("hole"), opened); show(flapEl, opened);
+        if (opened) {
+          var fu = Math.min(1, (t - tOpen) / 0.22), sw = fu < 1 ? fu : 1 + 0.08 * Math.sin((t - tOpen - 0.22) * 22) * Math.exp(-(t - tOpen - 0.22) * 6);
+          var lerp = function (a, b) { return a + (b - a) * sw; };
+          flapEl.setAttribute("d", "M1330," + (FY + 74) + " L" + f(lerp(1300, 1336)) + "," + f(lerp(FY + 14, FY + 230)) + " H" + f(lerp(1640, 1604)) + " L1610," + (FY + 74) + " Z");
+        }
+
+        // the patient: waiting, beaming on "Give", worried when the floor goes; he hangs a beat, looks down, falls
+        var pose = t < tGive + 0.1 ? "wait" : t < tOpen ? "beam" : "worried";
+        Object.keys(PPOSE).forEach(function (n) { show(q("pat-" + n), n === pose); });
+        var hop = t > tGive + 0.1 && t < tGive + 0.5 ? -Math.sin(Math.PI * (t - tGive - 0.1) / 0.4) * 22 : 0;
+        var fall = t > tFall ? 1600 * Math.pow(t - tFall, 2) + 140 * (t - tFall) : 0;
+        pat.setAttribute("transform", "translate(" + PAT[0] + "," + f(PAT[1] - 100 * PATK + hop + fall) + ")");
+        var look = smooth((t - tOpen - 0.12) / 0.2);
+        patHead.setAttribute("transform", "rotate(" + f(-24 * look) + " " + f(RPAT.neck[0]) + " " + f(RPAT.neck[1]) + ")");
+        patPupils.forEach(function (p) { p.setAttribute("transform", "translate(0," + f(1.6 * look) + ")"); });
+        show(q("hang"), t > tOpen + 0.05 && t < tFall);
+
+        // the Weapons Maker: grinning; on "murder" he clutches his missile, shivering and sweating; relief after
+        var clutch = t > tMurder && t < tAfter;
+        show(q("wm-calm"), !clutch); show(q("wm-clutch"), clutch);
+        var shiver = clutch ? Math.sin(t * 70) * 1.6 : 0;
+        wmIn.setAttribute("transform", "translate(" + f(shiver * WMK) + ",0)");
+        sweat.forEach(function (s, i) {
+          var su2 = ((t - tMurder) * 1.4 + i * 0.25) % 1, side = i % 2 ? 1 : -1;
+          if (!clutch || t < tMurder + i * 0.1) { show(s, 0); return; }
+          var hx = RWM.top[0] + side * (16 + su2 * 22), hy = RWM.top[1] + 14 - Math.sin(Math.PI * su2) * 14 + su2 * 24;
+          s.setAttribute("opacity", (1 - su2 * 0.7).toFixed(2));
+          s.setAttribute("transform", "translate(" + f(hx) + "," + f(hy) + ") scale(1.4)");
+        });
+
+        // the audience cheers on "sane." and again after the patient drops
+        var cheer = (t > tSane + 0.1 && t < tGive + 0.3) || t > tFall + 0.1;
+        aud.forEach(function (g, i) {
+          var ax = parseFloat(g.getAttribute("transform").match(/translate\(([-\d.]+)/)[1]);
+          var bob = cheer ? -Math.abs(Math.sin(t * 9 + i * 1.7)) * 18 : 0;
+          g.setAttribute("transform", "translate(" + ax + "," + f(1086 + bob) + ")");
+          show(g.querySelector(".aud-arms"), cheer);
+        });
+
+        // confetti
+        confEls.forEach(function (e, i) {
+          var p = CONF[i], t0 = p.burst ? tSlap + 0.05 : tSane + 0.05, age = t - t0;
+          if (age < 0) { show(e, 0); return; }
+          var y = p.y + p.v * age, xx = p.x + Math.sin(age * 3 + p.ph) * p.sw;
+          if (y > LIP + 40) { show(e, 0); return; }
+          show(e, 1);
+          e.setAttribute("transform", "translate(" + f(xx) + "," + f(y) + ") rotate(" + f(p.rot + p.spin * age) + ") scale(1," + Math.cos(age * 7 + p.ph).toFixed(2) + ")");
+        });
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

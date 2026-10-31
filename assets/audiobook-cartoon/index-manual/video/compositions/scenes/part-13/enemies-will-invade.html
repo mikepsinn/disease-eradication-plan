@@ -1,0 +1,394 @@
+<template id="enemies-will-invade-template">
+  <!-- enemies-will-invade · Layer B (storyboards/part-13-one-percent-treaty.md): two of every-leader-at-once's ring (L1,
+       mustard sash, left; L3, tan sash, right) face each other over a cream picket fence, each behind a ramp-shaped heap
+       of fifteen grumpy price-tagged missiles laid on their sides and aimed across it. "craziness": each pats his top
+       missile like a pet. "second": a sign "OBJECTION 2" springs up on the fence post. "cut": both clutch their heaps.
+       "enemies": both rise on tiptoe, peek over and narrow their eyes. "invade": a thought bubble puffs up over each: in
+       it, the other one stands on the fence with an armful of missiles and hops down; "us!": in both bubbles a white
+       flash and a little mushroom cloud, and when it clears the thinker (and the invader) stand there charred, hair up,
+       smoking, blinking, while the real two hug their heaps and shake. "Everyone": the bubbles pop and both reach for
+       the top missile; "one percent": the missiles wiggle loose; "same time.": both lift it at once (the clank) and
+       smile awkwardly at each other. "security": a SECURITY gauge with a hundred fine marks springs up on each side as
+       the sign drops away; "increases": each needle ticks up one mark, and after it both hoist their missile like a
+       trophy and cheer as if they had won the war. "fewer": they toss the missiles onto the fence top (the thunk), each
+       heap now with a gap; "pointed": the two missiles look at each other, shrug, and shake hands over the post. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #enemies-will-invade-cam, #enemies-will-invade-bg, #enemies-will-invade-art, #enemies-will-invade-pip, #enemies-will-invade-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="enemies-will-invade" data-width="1920" data-height="1080" data-start="0" data-duration="16.72">
+    <div id="enemies-will-invade-cam">
+      <div id="enemies-will-invade-bg"></div>
+      <div id="enemies-will-invade-art"></div>
+      <div id="enemies-will-invade-pip"></div>
+    </div>
+    <div id="enemies-will-invade-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "enemies-will-invade";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+      var f1 = function (n) { return String(Math.round(n * 10) / 10); };
+      var g = function (id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; };
+      var at = function (x, y, inner, s, rot) {
+        return '<g transform="translate(' + f1(x) + "," + f1(y) + ")" + (rot ? " rotate(" + f1(rot) + ")" : "") + (s && s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>";
+      };
+      var el = function (id) { return document.getElementById(P + id); };
+      var setO = function (e, o) { gsap.set(e, { svgOrigin: o }); };
+
+      // ── Layout, per canvas shape ──
+      // ground: the ground line. FX, FW, FH: the fence's middle, half width and height (its flat cap board on top, a taller
+      // post in the middle). S: the leaders' scale; lx: L1's and L3's x. hx: where each heap starts (its tall end, at the
+      // leader); MS: the missiles' size, sp the spacing along a row of the heap (in missile units). bub: the two thought bubbles' centers, brx/bry their radii. gauge: each gauge's
+      // bottom middle (on a post down to the ground, behind the heap), gs its size. sign, signH: the OBJECTION 2 sign's size and the height of its pole.
+      var L = V
+        ? { ground: 1400, FX: 540, FW: 92, FH: 130, S: 1.5, lx: [100, 980], hx: [160, 920], MS: 0.5, sp: 64, bub: [[300, 600], [790, 700]], brx: 235, bry: 210,
+            gauge: [[290, 900], [790, 900]], gs: 1.9, sign: 1.3, signH: 155, groundX: [56, 1024] }
+        : { ground: 870, FX: 830, FW: 168, FH: 150, S: 1.62, lx: [205, 1455], hx: [285, 1375], MS: 0.6, bub: [[420, 250], [1240, 250]], brx: 250, bry: 170,
+            gauge: [[480, 470], [1180, 470]], gs: 1.4, sign: 0.85, signH: 52, groundX: [70, 1590] };
+      var GR = L.ground, FX = L.FX, MS = L.MS, S = L.S;
+      var CAP = GR - L.FH;                 // the tops of the pickets
+      var SIDES = [{ k: "L1", tone: 1, sash: C.yellow, dir: 1 }, { k: "L3", tone: 3, sash: C.tan, dir: -1 }];
+
+      // ── Leaders: KIT.castOpts("politician") with a plain sash (as in every-leader-at-once) ──
+      function polO(sd, extra) { return KIT.castOpts("politician", Object.assign({ tone: sd.tone, flagPin: false, look: sd.dir > 0 ? "right" : "left" }, extra || {})); }
+      function withSash(o, col) {
+        var R = KIT.rig(o), T = R.shoulder[1][1] - 3, w = R.shoulder[1][0] * 33 / 27, Wy = R.hipY - 8;
+        var a = [-w * 0.66, T + 1], b = [13, Wy + 4], dx = b[0] - a[0], dy = b[1] - a[1], n = Math.hypot(dx, dy), nx = (-dy / n) * 5.5, ny = (dx / n) * 5.5;
+        var pts = [[a[0] + nx, a[1] + ny], [b[0] + nx, b[1] + ny], [b[0] - nx, b[1] - ny], [a[0] - nx, a[1] - ny]];
+        var band = '<path d="M' + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + ' Z" fill="' + col + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>' +
+          '<path d="M' + f1(a[0] + nx * 0.45) + "," + f1(a[1] + ny * 0.45) + " L" + f1(b[0] + nx * 0.45) + "," + f1(b[1] + ny * 0.45) + '" stroke="' + C.cream + '" stroke-width="1.1" opacity="0.7"/>';
+        return KIT.person(o).replace('<g class="arm-l">', band + '<g class="arm-l">');
+      }
+      // A pose in "facing" terms: back arm and front arm, angles toward the fence positive; mirrored for L3.
+      var neg = function (a) { return [-a[0], -a[1]]; };
+      function arms(sd, back, front) { return sd.dir > 0 ? [back, front] : [neg(front), neg(back)]; }
+      var POSES = {
+        idle: { mood: "smug", back: [8, 3], front: [48, 74] },
+        pat: { mood: "smug", back: [8, 3], front: [62, 112] },
+        clutch: { mood: "worried", back: [52, 84], front: [62, 96] },
+        peek: { mood: "cross", back: [40, 76], front: [52, 92] },
+        hug: { mood: "worried", back: [76, 118], front: [86, 126] },
+        reach: { mood: "flat", back: [44, 62], front: [52, 70] },
+        lift: { mood: "smile", back: [50, 100], front: [58, 108] },
+        cheer: { mood: "grin", back: [158, 176], front: [166, 182] },
+        after: { mood: "smile", back: [10, 4], front: [30, 20] },
+      };
+      var POSE_ORDER = ["idle", "pat", "clutch", "peek", "hug", "reach", "lift", "cheer", "after"];
+      var poseO = function (sd, name) { var p = POSES[name]; return polO(sd, { mood: p.mood, arms: arms(sd, p.back, p.front) }); };
+      // Canvas position of a point in leader units (feet at (0,100)).
+      var lw = function (i, p) { return [L.lx[i] + p[0] * S, GR + (p[1] - 100) * S]; };
+      var handsMid = function (i, name, dy) { var h = KIT.rig(poseO(SIDES[i], name)).hand, m = [(h[0][0] + h[1][0]) / 2, (h[0][1] + h[1][1]) / 2 + (dy || 0)]; return lw(i, m); };
+
+      // ── Missiles ──
+      // A missile lying on its side (dir 1: nose to the right), drawn around its center.
+      var lying = function (o, dir) { return at(0, 0, at(0, 80 * (o.size || 1), KIT.props.missile(o)), 1, dir * 90); };
+      var standing = function (o) { return at(0, 80 * (o.size || 1), KIT.props.missile(o)); };
+      // The heap: rows of 5, 4, 3, 2, 1, every row starting at the leader's end (a ramp that slopes down toward the fence),
+      // drawn back to front so each nose sits on the next one's tail. The top missile (row 4) is left out: it is the
+      // .carry missile, lifted later, and its empty slot is the gap.
+      var SP = (L.sp || 104) * MS, RS = 48 * MS, LEN = 160 * MS;
+      var rowY = function (r) { return GR - 28 * MS - r * RS; };
+      var PRICES = [["$3,000,000", "$1,900,000", "$4,200,000"], ["$2,500,000", "$3,700,000", "$5,100,000"]];
+      function heap(i) {
+        var sd = SIDES[i], d = sd.dir, x0 = L.hx[i], out = "", tags = "", ti = 0;
+        [[0, 5], [1, 4], [2, 3], [3, 2]].reverse().forEach(function (rw) {
+          var r = rw[0];
+          for (var k = rw[1] - 1; k >= 0; k--) {
+            var cx = x0 + d * (k * SP + LEN / 2 + (r % 2) * 6), cy = rowY(r);
+            out += at(cx, cy, lying({ size: MS, mood: (k + r) % 4 === 1 ? "cross" : "grumpy" }, d));
+            if ((r === 0 && k === 3) || (r === 1 && k === 1) || (r === 2 && k === 2)) {
+              tags += at(cx - d * LEN * 0.42, cy - 13 * MS * 2, KIT.props.priceTag({ text: PRICES[i][ti++], size: V ? 0.5 : 0.58 }));
+            }
+          }
+        });
+        return out + tags;
+      }
+      var SLOT = SIDES.map(function (sd, i) { return [L.hx[i] + sd.dir * (LEN / 2), rowY(4)]; });
+
+      // ── The fence: pointed cream pickets on two rails, with a gate in the middle between two square posts (at cx +/- gp,
+      // their flat caps gy - h - 18k), braced with a Z ──
+      function fence(cx, gy, hw, h, k, gp) {
+        var out = '', n = Math.round((2 * hw) / (26 * k)), ph = h + 18 * k;
+        [0.72, 0.3].forEach(function (u) { out += '<rect x="' + f1(cx - hw) + '" y="' + f1(gy - h * u) + '" width="' + f1(2 * hw) + '" height="' + f1(9 * k) + '" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="' + f1(2.6 * k) + '"/>'; });
+        out += '<path d="M' + f1(cx - gp + 12 * k) + ',' + f1(gy - h * 0.3 + 4 * k) + ' L' + f1(cx + gp - 12 * k) + ',' + f1(gy - h * 0.72 + 6 * k) + '" stroke="' + ink + '" stroke-width="' + f1(7 * k) + '"/>' +
+          '<path d="M' + f1(cx - gp + 12 * k) + ',' + f1(gy - h * 0.3 + 4 * k) + ' L' + f1(cx + gp - 12 * k) + ',' + f1(gy - h * 0.72 + 6 * k) + '" stroke="' + C.tan + '" stroke-width="' + f1(4 * k) + '"/>';
+        for (var j = 0; j <= n; j++) {
+          var x = cx - hw + (j * 2 * hw) / n;
+          if (Math.abs(Math.abs(x - cx) - gp) < 18 * k) continue;
+          out += '<path d="M' + f1(x - 8 * k) + ',' + gy + ' V' + f1(gy - h + 9 * k) + ' L' + f1(x) + ',' + f1(gy - h) + ' L' + f1(x + 8 * k) + ',' + f1(gy - h + 9 * k) + ' V' + gy + ' Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="' + f1(2.8 * k) + '" stroke-linejoin="miter"/>' +
+            '<path d="M' + f1(x + 3.5 * k) + ',' + f1(gy - 4 * k) + ' V' + f1(gy - h + 13 * k) + '" stroke="' + ink + '" stroke-width="' + f1(1.2 * k) + '" opacity="0.35"/>';
+        }
+        [-1, 1].forEach(function (sx) {
+          var px = cx + sx * gp;
+          out += '<rect x="' + f1(px - 13 * k) + '" y="' + f1(gy - ph + 6 * k) + '" width="' + f1(26 * k) + '" height="' + f1(ph - 6 * k) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="' + f1(3 * k) + '"/>' +
+            '<path d="M' + f1(px + 6 * k) + ',' + f1(gy - 4 * k) + ' V' + f1(gy - ph + 12 * k) + '" stroke="' + C.orange + '" stroke-width="' + f1(1.6 * k) + '"/>' +
+            '<rect x="' + f1(px - 18 * k) + '" y="' + f1(gy - ph) + '" width="' + f1(36 * k) + '" height="' + f1(8 * k) + '" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="' + f1(2.6 * k) + '"/>';
+        });
+        return out;
+      }
+      var GP = 74 * MS, POST_TOP = GR - L.FH - 18;      // the gate posts' x offset and the top of their caps
+
+      // ── Thought bubbles ──
+      // A cream cloud (navy outline, as KIT.nuke's clouds) around (0,0), radii rx, ry; clip: the same shape as a clipPath.
+      function cloudCircles(rx, ry) {
+        var cs = [];
+        for (var j = 0; j < 12; j++) {
+          var a = (j / 12) * Math.PI * 2, rr = ry * (0.36 + 0.06 * ((j * 5) % 3));
+          cs.push([Math.cos(a) * rx * 0.8, Math.sin(a) * ry * 0.74, rr]);
+        }
+        return cs;
+      }
+      function cloud(rx, ry, fill) {
+        var cs = cloudCircles(rx, ry);
+        var body = '<ellipse cx="0" cy="0" rx="' + f1(rx * 0.86) + '" ry="' + f1(ry * 0.8) + '"';
+        return cs.map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + f1(c[2]) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="10"/>'; }).join("") +
+          body + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="10"/>' +
+          cs.map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + f1(c[2]) + '" fill="' + fill + '"/>'; }).join("") + body + ' fill="' + fill + '"/>';
+      }
+      function cloudClip(id, rx, ry) {
+        return '<clipPath id="' + id + '">' + cloudCircles(rx, ry).map(function (c) { return '<circle cx="' + f1(c[0]) + '" cy="' + f1(c[1]) + '" r="' + f1(c[2]) + '"/>'; }).join("") +
+          '<ellipse cx="0" cy="0" rx="' + f1(rx * 0.86) + '" ry="' + f1(ry * 0.8) + '"/></clipPath>';
+      }
+      // Inside the bubble of side i (the thinker), in bubble units: a mini fence, the thinker on his own side, the other
+      // one on the fence top with an armful of missiles; after the blast both stand charred.
+      var MK = 0.5 * L.bry / 170, MG = L.bry * 0.66;  // the minis' scale and their ground
+      function bubbleInner(i) {
+        var me = SIDES[i], other = SIDES[1 - i], d = me.dir, k = L.bry / 160;
+        var mx = -d * L.brx * 0.62, ix = -d * L.brx * 0.06, fh = 46 * k;
+        var mine = function (o) { return withSash(o, o.charred ? "#3A332C" : me.sash); }, theirs = function (o) { return withSash(o, o.charred ? "#3A332C" : other.sash); };
+        var me0 = polO(me, { mood: "worried", arms: arms(me, [30, 60], [40, 80]) }), meC = polO(me, { charred: true, arms: arms(me, [30, 60], [40, 80]) });
+        var inv = polO(other, { mood: "grin", arms: arms(other, [62, 128], [70, 136]) }), invC = polO(other, { charred: true, arms: arms(other, [62, 128], [70, 136]) });
+        var armful = at(0, -4, [0, 1, 2].map(function (j) { return at(-other.dir * (j - 1) * 14, -j * 17, lying({ size: 0.36 }, -me.dir)); }).join(""));
+        var invH = KIT.rig(inv).hand, carryAt = [(invH[0][0] + invH[1][0]) / 2, (invH[0][1] + invH[1][1]) / 2];
+        return '<rect x="' + f1(-L.brx) + '" y="' + f1(-L.bry) + '" width="' + f1(2 * L.brx) + '" height="' + f1(2 * L.bry) + '" fill="' + C.cream + '"/>' +
+          '<path d="M' + f1(-L.brx) + "," + f1(MG) + " H" + f1(L.brx) + '" stroke="' + ink + '" stroke-width="3"/>' + fence(0, MG, 70 * k, fh, 0.45 * k, 16 * k) +
+          at(mx, MG, at(0, -100, g("m-me-" + i, mine(me0)) + g("m-meC-" + i, mine(meC), 'opacity="0"')), MK) +
+          at(ix, MG - fh, g("m-inv-" + i, at(0, 0, at(0, -100, g("m-inv0-" + i, theirs(inv) + at(carryAt[0], carryAt[1] - 4, g("m-arm-" + i, armful))) + g("m-invC-" + i, theirs(invC), 'opacity="0"')), MK))) +
+          at((mx + ix - d * 58 * k) / 2, MG, g("nuke-" + i, KIT.nuke()), 0.27 * k) +
+          g("flash-" + i, '<rect x="' + f1(-L.brx) + '" y="' + f1(-L.bry) + '" width="' + f1(2 * L.brx) + '" height="' + f1(2 * L.bry) + '" fill="#FFFFFF"/>', 'opacity="0"');
+      }
+      function bubble(i) {
+        var sd = SIDES[i], b = L.bub[i], head = lw(i, [0, -90]), base = [b[0] - sd.dir * L.brx * 0.42, b[1] + L.bry * 0.78];
+        var puffs = [0.18, 0.45, 0.75].map(function (u, j) {
+          var x = head[0] + (base[0] - head[0]) * u, y = head[1] + (base[1] - head[1]) * u, r = (8 + j * 6) * (L.bry / 160);
+          return at(x, y, g("puff-" + i + "-" + j, '<circle cx="0" cy="0" r="' + f1(r) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="4"/>'));
+        }).join("");
+        return puffs + at(b[0], b[1], g("bub-" + i, g("bub-shake-" + i, cloud(L.brx, L.bry, C.cream) +
+          '<defs>' + cloudClip(P + "clip-" + i, L.brx - 6, L.bry - 6) + '</defs><g clip-path="url(#' + P + "clip-" + i + ')">' + bubbleInner(i) + "</g>")));
+      }
+
+      // ── Assemble ──
+      var groundSvg = '<path d="M' + L.groundX[0] + "," + GR + " H" + L.groundX[1] + '" stroke="' + ink + '" stroke-width="5"/>' +
+        [0.08, 0.3, 0.47, 0.66, 0.88].map(function (u) {
+          var x = L.groundX[0] + u * (L.groundX[1] - L.groundX[0]);
+          return '<path d="M' + f1(x) + "," + GR + " l-6,-13 M" + f1(x + 6) + "," + GR + " l2,-17 M" + f1(x + 12) + "," + GR + ' l8,-11" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"/>';
+        }).join("");
+      // The gauges: a SECURITY box gauge on a post, with a hundred fine marks added round the dial (the prop draws 21),
+      // and the mark one step up from the needle drawn in teal, lit when the needle reaches it.
+      var G0 = 0.4, GSTEP = 0.01;
+      function gaugeSvg(i) {
+        var marks = "", gp = KIT.props.gauge.pivot({}), A = function (v) { return ((-120 + 240 * v) * Math.PI) / 180; };
+        for (var m = 0; m <= 100; m++) {
+          var a = A(m / 100), r0 = m % 10 ? 45 : 41;
+          marks += '<path d="M' + f1(Math.sin(a) * r0) + "," + f1(gp[1] - Math.cos(a) * r0) + " L" + f1(Math.sin(a) * 50) + "," + f1(gp[1] - Math.cos(a) * 50) + '" stroke="' + ink + '" stroke-width="0.7"/>';
+        }
+        var an = A(G0 + GSTEP), lit = '<path d="M' + f1(Math.sin(an) * 38) + "," + f1(gp[1] - Math.cos(an) * 38) + " L" + f1(Math.sin(an) * 51) + "," + f1(gp[1] - Math.cos(an) * 51) + '" stroke="' + C.med + '" stroke-width="3"/>';
+        var gauge = KIT.props.gauge({ label: "SECURITY", value: G0, zones: [] });
+        // the marks go under the needle: insert them before it
+        gauge = gauge.replace('<g class="gauge-needle"', marks + g("lit-" + i, lit, 'opacity="0"') + '<g class="gauge-needle"');
+        var post = '<rect x="-7" y="0" width="14" height="' + f1((GR - L.gauge[i][1]) / L.gs) + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3"/>';
+        return at(L.gauge[i][0], L.gauge[i][1], g("gauge-" + i, post + gauge), L.gs);
+      }
+      var sign = at(FX - GP, POST_TOP, g("sign", KIT.props.sign({ text: "OBJECTION 2", posts: 1, height: L.signH })), L.sign);
+      var leadersSvg = SIDES.map(function (sd, i) {
+        return at(L.lx[i], GR, g("body-" + i, at(0, -100, POSE_ORDER.map(function (name, j) {
+          return g("pose-" + i + "-" + name, withSash(poseO(sd, name), sd.sash), j ? 'opacity="0"' : "");
+        }).join(""))), S);
+      }).join("");
+      // The carried missile of each side: starts in its heap's top slot, lying, aimed across.
+      var carry = SIDES.map(function (sd, i) {
+        return at(SLOT[i][0], SLOT[i][1], g("cjump-" + i, g("carry-" + i, g("carry-grump-" + i, standing({ size: MS })) + g("carry-up-" + i, standing({ size: MS, mood: "flat", arms: "up", look: sd.dir > 0 ? "right" : "left" }), 'opacity="0"') +
+          g("carry-smile-" + i, standing({ size: MS, mood: "smile", arms: "up", look: sd.dir > 0 ? "right" : "left" }), 'opacity="0"'))));
+      }).join("");
+      var heaps = heap(0) + heap(1);
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + gaugeSvg(0) + gaugeSvg(1) + groundSvg + sign + fence(FX, GR, L.FW, L.FH, 1, GP) + leadersSvg + heaps + carry + bubble(0) + bubble(1));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var tCraz = cue("craziness"), tSecond = cue("second"), tCut = cue("cut"), tEnem = cue("enemies"), tInv = cue("invade"), tUs = cue("us!\"."), tEvery = cue("Everyone");
+      var tOne = cue("one"), tSame = cue("same"), tTime = cue("time."), tSec = cue("security"), tInc = cue("increases"), tIncA = KIT.after(ID, "increases");
+      var tFewer = cue("fewer"), tPoint = cue("pointed");
+
+      // Pose swaps, both leaders together.
+      var pose = function (name, t, only) {
+        SIDES.forEach(function (sd, i) {
+          if (only !== undefined && only !== i) return;
+          POSE_ORDER.forEach(function (n) { tl.set(el("pose-" + i + "-" + n), { opacity: n === name ? 1 : 0 }, t); });
+        });
+      };
+      var bodies = [el("body-0"), el("body-1")];
+      setO(bodies, "0 100");
+      var carries = [el("carry-0"), el("carry-1")], cjumps = [el("cjump-0"), el("cjump-1")];
+      SIDES.forEach(function (sd, i) { setO(carries[i], "0 0"); gsap.set(carries[i], { rotation: sd.dir * 90 }); });
+
+      // "craziness": each pats his top missile like a pet (twice), and it scowls a little harder.
+      pose("pat", tCraz, 0); pose("idle", tCraz + 0.16, 0); pose("pat", tCraz + 0.32, 0); pose("idle", tCraz + 0.48, 0);
+      pose("pat", tCraz + 0.24, 1); pose("idle", tCraz + 0.4, 1); pose("pat", tCraz + 0.56, 1); pose("idle", tCraz + 0.72, 1);
+      carries.forEach(function (c, i) { tl.to(c, { y: 4, duration: 0.08, yoyo: true, repeat: 3, ease: "power1.inOut" }, tCraz + i * 0.24); });
+
+      // "second": the sign springs up on the fence post (the pop) and wobbles.
+      var signEl = el("sign"), card = signEl.querySelector(".sign-card");
+      setO(signEl, "0 0"); setO(card, "0 " + -L.signH);
+      tl.fromTo(signEl, { scaleY: 0 }, { scaleY: 1, duration: 0.3, ease: "back.out(3)" }, tSecond);
+      tl.fromTo(card, { rotation: -7 }, { rotation: 0, duration: 0.7, ease: "elastic.out(1.2, 0.35)", immediateRender: false }, tSecond + 0.2);
+
+      // "cut": both clutch their heaps.
+      pose("clutch", tCut);
+      // "enemies": up on tiptoe, peek over, narrow eyes.
+      pose("peek", tEnem);
+      tl.to(bodies, { y: -14 * 1, duration: 0.18, ease: "back.out(2)" }, tEnem);
+      tl.to(bodies[0], { rotation: 5, duration: 0.18 }, tEnem);
+      tl.to(bodies[1], { rotation: -5, duration: 0.18 }, tEnem);
+
+      // "invade": a thought bubble puffs up over each (the whoosh): the other one is on the fence with an armful of
+      // missiles, and hops down onto the thinker's side.
+      SIDES.forEach(function (sd, i) {
+        [0, 1, 2].forEach(function (j) {
+          var p = el("puff-" + i + "-" + j);
+          setO(p, "0 0");
+          tl.fromTo(p, { scale: 0 }, { scale: 1, duration: 0.1, ease: "back.out(3)" }, tInv - 0.14 + j * 0.05);
+          tl.to(p, { scale: 0, duration: 0.08, ease: "power2.in" }, tEvery + j * 0.03);
+        });
+        var b = el("bub-" + i);
+        setO(b, f1(-sd.dir * L.brx * 0.42) + " " + f1(L.bry * 0.78));
+        tl.fromTo(b, { scale: 0 }, { scale: 1, duration: 0.16, ease: "back.out(1.8)" }, tInv);
+        var inv = el("m-inv-" + i), k = L.bry / 160, fh = 46 * k;
+        tl.to(inv, { x: -sd.dir * 34 * k, y: -18 * k, duration: 0.07, ease: "power2.out" }, tInv + 0.1);
+        tl.to(inv, { x: -sd.dir * 58 * k, y: fh, duration: 0.09, ease: "power2.in" }, tInv + 0.17);
+        // "us!": the armful goes off: a flash and a little mushroom cloud, and under the flash both turn to charcoal.
+        KIT.boom(tl, el("nuke-" + i), tUs, { shake: el("bub-shake-" + i) });
+        // a quicker flash than KIT.boom's, so the charred pair has a moment in the clear before the bubble pops
+        tl.fromTo(el("flash-" + i), { opacity: 0 }, { opacity: 1, duration: 0.04 }, tUs).to(el("flash-" + i), { opacity: 0, duration: 0.32, ease: "power2.in" }, tUs + 0.1);
+        var tF = tUs + 0.05;
+        tl.set([el("m-me-" + i), el("m-inv0-" + i)], { opacity: 0 }, tF);
+        tl.set([el("m-meC-" + i), el("m-invC-" + i)], { opacity: 1 }, tF);
+        tl.to(el("nuke-" + i), { opacity: 0, duration: 0.25, ease: "power1.in" }, tF + 0.32);
+        var wisps = document.querySelectorAll("#" + P + "m-meC-" + i + " .smoke, #" + P + "m-invC-" + i + " .smoke");
+        tl.fromTo(wisps, { y: 0 }, { y: -7, duration: 0.2, repeat: 4, yoyo: true, ease: "sine.inOut", immediateRender: false }, tF + 0.6);
+        var eyes = document.querySelectorAll("#" + P + "m-meC-" + i + " .char-eyes"), eyes2 = document.querySelectorAll("#" + P + "m-invC-" + i + " .char-eyes");
+        var R0 = KIT.rig(polO(sd, { charred: true }));
+        setO(eyes, R0.faceEyes.join(" ")); setO(eyes2, R0.faceEyes.join(" "));
+        tl.fromTo(eyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, tF + 0.5 + i * 0.08);
+        tl.fromTo(eyes2, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, tF + 0.7 + i * 0.06);
+        // "Everyone": the bubble pops (the pop).
+        tl.to(b, { scale: 1.12, opacity: 0, duration: 0.1, ease: "power2.out" }, tEvery);
+      });
+      // ... and the real two hug their heaps and shake.
+      pose("hug", tUs);
+      tl.to(bodies, { y: 0, duration: 0.1 }, tUs);
+      tl.to(bodies[0], { rotation: 9, duration: 0.1 }, tUs);
+      tl.to(bodies[1], { rotation: -9, duration: 0.1 }, tUs);
+      tl.fromTo(bodies, { x: -3 }, { x: 3, duration: 0.04, repeat: Math.floor((tEvery - tUs - 0.1) / 0.04), yoyo: true, ease: "none", immediateRender: false }, tUs + 0.06);
+
+      // "Everyone": both straighten up and reach for the top missile; "one percent": it wiggles loose.
+      pose("reach", tEvery);
+      tl.to(bodies, { x: 0, rotation: 0, duration: 0.12 }, tEvery);
+      carries.forEach(function (c, i) {
+        var r0 = SIDES[i].dir * 90;
+        tl.to(c, { rotation: r0 + 6, duration: 0.07, yoyo: true, repeat: 5, ease: "sine.inOut" }, tOne + i * 0.05);
+      });
+      // "same time.": both lift it at once (the clank) and smile awkwardly at each other.
+      pose("lift", tSame);
+      carries.forEach(function (c, i) {
+        var m = handsMid(i, "lift", 4);
+        tl.to(c, { x: m[0] - SLOT[i][0], y: m[1] - SLOT[i][1], rotation: SIDES[i].dir * 90, duration: tTime - tSame, ease: "power2.out" }, tSame);
+      });
+      tl.to(bodies, { y: -6, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.out" }, tTime);
+      tl.to(cjumps, { y: -6 * S, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.out" }, tTime);
+
+      // "security": the sign drops away and a SECURITY gauge springs up on each side.
+      tl.to(signEl, { scaleY: 0, duration: 0.18, ease: "back.in(2)" }, tSec - 0.1);
+      [0, 1].forEach(function (i) {
+        var gEl = el("gauge-" + i);
+        setO(gEl, "0 " + f1((GR - L.gauge[i][1]) / L.gs));
+        tl.fromTo(gEl, { scaleY: 0, scaleX: 0.6 }, { scaleY: 1, scaleX: 1, duration: 0.35, ease: "back.out(2)" }, tSec + i * 0.08);
+      });
+      // "increases": each needle ticks up one mark (two ticks), with a little overshoot, and the mark lights teal.
+      [0, 1].forEach(function (i) {
+        var nd = el("gauge-" + i).querySelector(".gauge-needle"), t = tInc + i * 0.15, piv = KIT.props.gauge.pivot({});
+        setO(nd, piv.join(" "));
+        tl.fromTo(nd, { rotation: 0 }, { rotation: KIT.props.gauge.turn(G0, G0 + GSTEP), duration: 0.5, ease: "elastic.out(1.4, 0.25)", immediateRender: false }, t);
+        tl.set(el("lit-" + i), { opacity: 1 }, t + 0.04);
+      });
+      // after "increases": both hoist their missile like a trophy and cheer as if they had won the war (the whistle).
+      pose("cheer", tIncA);
+      carries.forEach(function (c, i) {
+        var m = handsMid(i, "cheer", -18);
+        tl.to(c, { x: m[0] - SLOT[i][0], y: m[1] - SLOT[i][1], duration: 0.14, ease: "back.out(2)" }, tIncA);
+      });
+      tl.to(bodies, { y: -26, duration: 0.16, yoyo: true, repeat: 3, ease: "power2.out" }, tIncA + 0.05);
+      tl.to(cjumps, { y: -26 * S, duration: 0.16, yoyo: true, repeat: 3, ease: "power2.out" }, tIncA + 0.05);
+
+      // "fewer": they toss their missiles onto the fence top, where they land upright on either side of the post (the
+      // thunk). Each heap keeps its gap.
+      var tToss = tFewer - 0.34, LAND = [[FX - GP, POST_TOP - 80 * MS], [FX + GP, POST_TOP - 80 * MS]];
+      pose("after", tToss + 0.06);
+      carries.forEach(function (c, i) {
+        var d = SIDES[i].dir, dx = LAND[i][0] - SLOT[i][0], dy = LAND[i][1] - SLOT[i][1], m = handsMid(i, "cheer", -18);
+        tl.to(c, { x: dx, duration: tFewer - tToss, ease: "none" }, tToss);
+        tl.to(c, { y: Math.min(m[1], LAND[i][1]) - SLOT[i][1] - 70, duration: (tFewer - tToss) * 0.45, ease: "power2.out" }, tToss);
+        tl.to(c, { y: dy, duration: (tFewer - tToss) * 0.55, ease: "power2.in" }, tToss + (tFewer - tToss) * 0.45);
+        tl.to(c, { rotation: -d * 360, duration: tFewer - tToss, ease: "power1.out" }, tToss);
+        var gr = el("carry-grump-" + i);
+        setO(gr, "0 " + f1(80 * MS));
+        tl.fromTo(gr, { scaleY: 1, scaleX: 1 }, { scaleY: 0.8, scaleX: 1.15, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tFewer);
+      });
+
+      // "pointed": the two missiles look at each other, shrug, and shake hands over the post (the squeak).
+      SIDES.forEach(function (sd, i) {
+        var up = el("carry-up-" + i), sm = el("carry-smile-" + i), d = sd.dir;
+        tl.set(el("carry-grump-" + i), { opacity: 0 }, tPoint);
+        tl.set(up, { opacity: 1 }, tPoint);
+        var arm = function (e, side) { return e.querySelector(".missile-arm-" + side); };
+        var aL = [arm(up, "l"), arm(sm, "l")], aR = [arm(up, "r"), arm(sm, "r")];
+        setO(aL, "-27 -62"); setO(aR, "27 -62");
+        // arms down, then out to the sides with the palms up (the shrug), shoulders and all
+        tl.fromTo(aL, { rotation: -115 }, { rotation: -40, duration: 0.14, ease: "back.out(2)", immediateRender: false }, tPoint + 0.06);
+        tl.fromTo(aR, { rotation: 115 }, { rotation: 40, duration: 0.14, ease: "back.out(2)", immediateRender: false }, tPoint + 0.06);
+        tl.set(aL, { rotation: -115 }, 0);
+        tl.set(aR, { rotation: 115 }, 0);
+        var body = el("carry-" + i);
+        tl.to(body, { y: LAND[i][1] - SLOT[i][1] - 6, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.out" }, tPoint + 0.08);
+        // then the near hand reaches over the post and they shake: up, down, up, down
+        var tS = tPoint + 0.5, near = d > 0 ? aR : aL, far = d > 0 ? aL : aR;
+        tl.set(up, { opacity: 0 }, tS);
+        tl.set(sm, { opacity: 1 }, tS);
+        tl.to(near, { rotation: d * 62, duration: 0.12, ease: "power2.out" }, tS);
+        tl.to(far, { rotation: -d * 115, duration: 0.14, ease: "power2.inOut" }, tS);
+        tl.to(near, { rotation: d * 62 + 10, duration: 0.08, yoyo: true, repeat: 5, ease: "sine.inOut" }, tS + 0.14);
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

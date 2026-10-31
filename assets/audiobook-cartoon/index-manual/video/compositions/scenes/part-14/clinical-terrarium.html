@@ -1,0 +1,435 @@
+<template id="clinical-terrarium-template">
+  <!-- clinical-terrarium · Layer B (storyboards/part-14-decentralized-fda.md): slide left. A glass terrarium thunks down on
+       a lab bench (KIT.props.lab), stocked like a lizard tank (heat lamp, water dish, plastic plant) with thirty identical
+       tidy humans, all smiling, chest lights off; "two": a 200 sticker on the glass. The fat cat looms behind the bench
+       with long tweezers and, on "selected", drops in one more. "pharmaceutical": the patient (red chest light, scarf)
+       has climbed the bench; he plucks her up, sees her light, and flicks her away (whistle); she lands in a heap
+       (boing). "terrariums,": the CLINICAL TERRARIUM label, and the tidy humans wave in unison. "real": the glass lifts
+       off (he gapes). "real hospitals.": they file off the bench into a row of hospitals; the patient picks herself up
+       and goes in with them. "Where": the camera pans along the hospitals; "diseases": in every window a disease blob
+       looming over a bed turns to the door and goes from smug to scared (yelp); after "are." one climbs out a window. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #clinical-terrarium-cam { position: absolute; inset: 0; overflow: hidden; }
+    #clinical-terrarium-bg, #clinical-terrarium-art, #clinical-terrarium-frame, #clinical-terrarium-pip, #clinical-terrarium-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="clinical-terrarium" data-width="1920" data-height="1080" data-start="0" data-duration="11.68">
+    <div id="clinical-terrarium-cam">
+      <div id="clinical-terrarium-bg"></div>
+      <!-- the world, wider than the frame: the camera pans it along the hospitals -->
+      <div id="clinical-terrarium-art"></div>
+      <div id="clinical-terrarium-frame"></div>
+      <div id="clinical-terrarium-pip"></div>
+    </div>
+    <div id="clinical-terrarium-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script>
+    (function () {
+      var ID = "clinical-terrarium";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var P = function (s) { return ID + "-" + s; };
+      var el = function (s) { return document.getElementById(P(s)); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line, WHITE = "#FBF6E6";
+      var f1 = function (n) { return (+n).toFixed(1); };
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function at(x, y, k, inner) { return '<g transform="translate(' + f1(x) + "," + f1(y) + ")" + (k === 1 ? "" : " scale(" + (+k).toFixed(3) + ")") + '">' + inner + "</g>"; }
+      function poly(pts, fill, sw, extra) { return '<path d="M' + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (sw || 3) + '" stroke-linejoin="miter"' + (extra || "") + "/>"; }
+      function rect(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function clamp(x) { return Math.max(0, Math.min(1, x)); }
+      function smooth(x) { x = clamp(x); return x * x * (3 - 2 * x); }
+      function easeOut(x) { x = clamp(x); return 1 - (1 - x) * (1 - x); }
+      function easeIn(x) { x = clamp(x); return x * x; }
+      function backOut(x, s) { x = clamp(x); s = s || 1.7; var y = x - 1; return 1 + (s + 1) * y * y * y + s * y * y; }
+      function seg(t, t0, t1) { return clamp((t - t0) / (t1 - t0)); }
+      function lerp(a, b, k) { return a + (b - a) * k; }
+      function vis(e, on) { e.setAttribute("opacity", on ? "1" : "0"); }
+      function setT(e, s) { e.setAttribute("transform", s); }
+
+      // ── Layout for each canvas shape (world units = frame pixels before the pan) ──
+      // fy: the floor; lab: the full lab bench [x, scale] (glassware, the fat cat behind it); bench: the bare bench the
+      // terrarium stands on [x, scale]; tank: the terrarium [x0, x1, height]; cat: the fat cat [x, scale]; kh: the little
+      // humans' scale; pat0: where the patient starts; land: where she lands; hosp: the hospitals' x and scale; cam: the
+      // camera's x at the start, after "real hospitals" and after "Where"; inspect: where he holds her up to his monocle.
+      var L = V
+        ? { fy: 1400, lab: [110, 1.9], bench: [702, 1.9], tank: [425, 980, 500], cat: [175, 3.6], kh: 0.85, pat0: 1030, land: 1420,
+            hosp: [1600, 2220, 2840, 3460], hk: 1.9, cam: [0, 1060, 2300], peak: 580, model: [300, 400, 300, 290], sky: [760, 1020] }
+        : { fy: 880, lab: [290, 1.8], bench: [851, 1.8], tank: [590, 1112, 340], cat: [270, 3.5], kh: 0.8, pat0: 1180, land: 1300,
+            hosp: [1450, 2060, 2670, 3280], hk: 1.7, cam: [0, 0, 1350], peak: 150, model: [650, 90, 220, 236], sky: [640, 800] };
+      var FY = L.fy, KH = L.kh, BT = FY - 96 * L.bench[1]; // the bench top
+
+      var T = {
+        land: 0.08, two: cue("two"), selected: cue("selected"), pharma: cue("pharmaceutical"), boing: cue("pharmaceutical") + 0.6,
+        label: cue("terrariums,"), lift: cue("real", 1), hosp: cue("real", 2), squeak: cue("hospitals."), where: cue("Where"), diseases: cue("diseases"), out: KIT.after(ID, "are.")
+      };
+      T.climb0 = 1.0; T.climb1 = 2.15;                 // she climbs the bench
+      T.place0 = 1.9;                                   // the tweezers lower the spare human; it is let go on "selected"
+      T.grab = T.selected + 0.33; T.lifted = T.grab + 0.22; T.inspect = T.lifted + 0.02;
+      T.wave = T.label + 0.45;
+      T.up = T.hosp - 0.05;                              // she picks herself up
+      T.pan1 = [T.hosp - 0.1, T.hosp + 0.6]; T.pan2 = [T.where, T.where + 0.8];
+
+      q("bg").innerHTML = KIT.svg(W, H, '<rect width="' + W + '" height="' + H + '" fill="' + C.paper + '"/>');
+      q("frame").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID + "-f") +
+        '<path d="M0,0 H' + W + " V" + H + " H0 Z M30,30 V" + (H - 30) + " H" + (W - 30) + ' V30 Z" fill="' + C.paper + '" fill-rule="evenodd"/>' +
+        '<rect x="30" y="30" width="' + (W - 60) + '" height="' + (H - 60) + '" fill="none" stroke="' + INK + '" stroke-width="5"/>' +
+        '<rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+        KIT.star(W - 92, 96, 22, C.orange) + KIT.star(W - 130, 140, 10, C.yellow) + KIT.star(84, H - 84, 18, C.orange));
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The patient (the spine): the same options as every scene of the part, and her mustard-and-orange scarf ──
+      var PAT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      function scarf(o) {
+        var n = KIT.rig(o).neck, x = n[0], y = n[1] + 1, stripe = function (pts) { return poly(pts, C.orange, 1.4); };
+        var wrapPts = [[x - 9, y - 4], [x + 9, y - 5], [x + 10, y + 3], [x - 10, y + 4]];
+        var tail = [[x + 3, y + 1], [x + 9, y + 1], [x + 12, y + 24], [x + 5, y + 25]];
+        return '<g class="scarf">' + '<g class="scarf-tail" data-ox="' + (x + 6) + '" data-oy="' + (y + 1) + '">' + poly(tail, C.yellow, 2.2) +
+          stripe([[x + 4.5, y + 8], [x + 10, y + 8], [x + 10.5, y + 12], [x + 5, y + 12]]) + stripe([[x + 5.3, y + 16], [x + 11, y + 16], [x + 11.5, y + 20], [x + 5.7, y + 20]]) +
+          '<path d="M' + (x + 5) + "," + (y + 25) + " l-1,4 M" + (x + 8) + "," + (y + 25) + " l0,4 M" + (x + 11) + "," + (y + 24.5) + ' l1,4" stroke="' + C.orange + '" stroke-width="1.5"/></g>' +
+          poly(wrapPts, C.yellow, 2.4) + stripe([[x - 4, y - 4.5], [x, y - 4.7], [x, y + 3.6], [x - 4, y + 3.8]]) + stripe([[x + 4, y - 4.8], [x + 7, y - 4.9], [x + 7.4, y + 3.2], [x + 4, y + 3.4]]) + "</g>";
+      }
+      function patient(extra) {
+        var o = mix(PAT, extra);
+        return KIT.person(o).replace('<g class="head">', scarf(o) + '<g class="head">');
+      }
+      var PO = {
+        look: { look: "left" },
+        climb: { look: "left", arms: [[-165, -175], [-150, -170]], mood: "eager" },
+        dangle: { arms: [[-140, -120], [140, 120]], mood: "eager" },
+        heap: { look: "right", mood: "sad", arms: [[60, 110], [-60, -110]] },
+        walk: { look: "right" },
+      };
+
+      // ── The tidy humans: all the same (the plain build, the same pale gown, the same smile, chest lights off) ──
+      var TIDY = { plain: true, tone: 0, outfit: "shirt", colorHex: "#DDE9E6", mood: "smile" };
+      var TR = KIT.rig(TIDY), TRW = KIT.rig(mix(TIDY, { look: "right" }));
+      // three rows of ten on the terrarium floor, the back rows a touch smaller; a gap in the front row for the spare
+      var TK = L.tank, TW = TK[1] - TK[0], TIDIES = [];
+      var rk = L.bench[1] / 1.35;
+      [[BT - 34 * rk, 0.88, 0.5], [BT - 18 * rk, 0.94, 0], [BT - 3 * rk, 1, 0.25]].forEach(function (r, row) {
+        for (var k = 0; k < 10; k++) {
+          var x = TK[0] + 26 + ((TW - 52) * (k + r[2])) / 10;
+          if (row === 2 && k === 5) continue;
+          TIDIES.push({ x: x, y: r[0], s: KH * r[1], row: row });
+        }
+      });
+      var SPARE = { x: TK[0] + 26 + ((TW - 52) * 5.25) / 10, y: BT - 3 * rk, s: KH, row: 2, spare: true };
+      TIDIES.push(SPARE);
+      // the order they leave in: the front row first, right to left, then the next rows
+      var LEAVE = TIDIES.slice().sort(function (a, b) { return b.row - a.row || b.x - a.x; });
+      LEAVE.forEach(function (h, i) { h.i = i; h.hosp = Math.min(3, Math.floor(i / 8)); h.t0 = T.hosp + i * 0.05; });
+      function tidySvg(h, k) {
+        return '<g id="' + P("t-" + k) + '"><g id="' + P("tj-" + k) + '">' +
+          '<g class="t-front">' + KIT.person(TIDY) + "</g>" +
+          '<g class="t-walk" opacity="0">' + KIT.person(mix(TIDY, { look: "right" })) + "</g>" + "</g></g>";
+      }
+
+      // ── The terrarium: a glass tank on the bare bench, its rim and posts navy, with a heat lamp clamped on the back
+      // rim, the 200 sticker and the CLINICAL TERRARIUM label (all of it lifts off on "real"); inside, sand, a water
+      // dish and a plastic plant (they stay). ──
+      var tx0 = TK[0], tx1 = TK[1], ty1 = BT, ty0 = BT - TK[2], depth = 26;
+      function tankInside() {
+        return poly([[tx0, ty1 - depth], [tx1, ty1 - depth], [tx1, ty1], [tx0, ty1]], "#E6D3A3", 2) +
+          '<rect x="' + tx0 + '" y="' + (ty1 - depth) + '" width="' + TW + '" height="' + depth + '" fill="url(#' + ID + '-fine)" opacity="0.35"/>' +
+          // the plastic plant (back left) and the water dish (back right)
+          '<g transform="translate(' + f1(tx0 + 40) + "," + f1(ty1 - depth + 4) + ")scale(" + (KH * 1.4).toFixed(2) + ')">' +
+          poly([[-12, 0], [12, 0], [9, -18], [-9, -18]], C.rust, 2.4) +
+          [[-4, -18, -26, -70], [0, -18, 6, -86], [4, -18, 30, -64], [-2, -18, -40, -46], [2, -18, 40, -40]].map(function (l) { return poly([[l[0], l[1]], [l[2], l[3]], [l[0] + (l[2] - l[0]) * 0.45 + 7, l[1] + (l[3] - l[1]) * 0.6]], C.money, 2); }).join("") + "</g>" +
+          '<g transform="translate(' + f1(tx1 - 46) + "," + f1(ty1 - depth + 6) + ")scale(" + (KH * 1.4).toFixed(2) + ')">' + poly([[-24, -8], [24, -8], [18, 2], [-18, 2]], C.slate, 2.4) + '<path d="M-20,-8 H20" stroke="' + C.cyan + '" stroke-width="4"/></g>';
+      }
+      function tankGlass() {
+        var post = function (x) { return poly(rect(x - 5, ty0, 10, TK[2]), C.slate, 2.6); };
+        var lampX = tx0 + TW * 0.72;
+        return '<rect x="' + tx0 + '" y="' + ty0 + '" width="' + TW + '" height="' + TK[2] + '" fill="' + C.cyan + '" opacity="0.12"/>' +
+          '<path d="M' + (tx0 + 24) + "," + (ty1 - 30) + " L" + (tx0 + 80) + "," + (ty0 + 24) + " M" + (tx0 + 52) + "," + (ty1 - 40) + " L" + (tx0 + 96) + "," + (ty0 + 64) +
+          " M" + (tx1 - 70) + "," + (ty1 - 20) + " L" + (tx1 - 30) + "," + (ty0 + 70) + '" stroke="#FFFFFF" stroke-width="5" opacity="0.7"/>' +
+          post(tx0) + post(tx1) + poly(rect(tx0 - 8, ty0 - 10, TW + 16, 12), C.slate, 3) + poly(rect(tx0 - 8, ty1 - 10, TW + 16, 12), C.slate, 3) +
+          // the heat lamp: a clamp on the rim, an orange dome and its glow
+          '<g transform="translate(' + f1(lampX) + "," + f1(ty0 - 10) + ")scale(" + (KH * 1.5).toFixed(2) + ')">' +
+          '<path d="M-6,0 V-26 L20,-48" fill="none" stroke="' + INK + '" stroke-width="5"/>' + poly([[2, -46], [40, -62], [50, -38], [16, -26]], C.orange, 3) +
+          '<path d="M16,-26 L50,-38 L60,10 L-10,0 Z" fill="' + C.yellow + '" opacity="0.35"/>' + "</g>" +
+          // the 200 sticker
+          '<g id="' + P("count") + '" opacity="0"><g transform="translate(' + f1(tx0 + 66) + "," + f1(ty0 + 54) + ')"><g id="' + P("count-in") + '">' +
+          '<circle r="46" fill="' + C.ink + '" opacity="0.85" cx="5" cy="6"/><circle r="46" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<circle r="38" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          '<text x="0" y="13" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="38" fill="' + INK + '">200</text></g></g></g>' +
+          // the label
+          '<g id="' + P("label") + '" opacity="0"><g transform="translate(' + f1((tx0 + tx1) / 2 + 50) + "," + f1(ty0 + 40) + ')"><g id="' + P("label-in") + '">' +
+          '<rect x="-' + (V ? 196 : 158) + '" y="-22" width="' + (V ? 392 : 316) + '" height="48" fill="' + C.ink + '" opacity="0.85" transform="translate(5,6)"/>' +
+          '<rect x="-' + (V ? 196 : 158) + '" y="-22" width="' + (V ? 392 : 316) + '" height="48" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<rect x="-' + (V ? 188 : 150) + '" y="-15" width="' + (V ? 376 : 300) + '" height="34" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          '<text x="0" y="12" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + (V ? 34 : 28) + '" letter-spacing="2" fill="' + INK + '">CLINICAL TERRARIUM</text></g></g></g>';
+      }
+
+      // ── The fat cat (cast) behind the lab bench, holding long tweezers out over the terrarium; his left hand on a
+      // money bag. Three faces: smug, cross (he sees her red light), agape (the glass goes). ──
+      var CAT_ARMS = { look: "right", arms: [[20, 60], [100, 96]], holdL: "moneybag" };
+      var CAT = KIT.castOpts("richHuman", CAT_ARMS), CR = KIT.rig(CAT), CX = L.cat[0], CS = L.cat[1];
+      var HAND = [CX + CR.hand[1][0] * CS, FY - 100 * CS + CR.hand[1][1] * CS];
+      // where he holds her up to his monocle: the tweezers' tip just right of and above his eyes
+      L.inspect = [CX + (CR.eyes[0] + 40) * CS, FY - 100 * CS + (CR.eyes[1] - 22) * CS];
+      function tweezers() {
+        // drawn along +x, 100 long; scaled to length every frame (#tw-len), turned about the hand (#tw)
+        return '<path d="M0,-5 L100,-1.6 L100,0.6 L0,-1.4 Z M0,5 L100,1.6 L100,-0.6 L0,1.4 Z" fill="#D6D0C4" stroke="' + INK + '" stroke-width="0.9" stroke-linejoin="miter"/>' +
+          '<path d="M0,-5 L0,5" stroke="' + INK + '" stroke-width="2"/>';
+      }
+
+      // ── The hospitals (KIT.props.hospital), and in every window a bed with a disease blob looming over it: two
+      // stacked drawings (smug, scared), swapped on "diseases". ──
+      var WINS = [[-108, -258, 40, 36], [-36, -258, 40, 36], [36, -258, 40, 36], [108, -258, 40, 36], [-108, -208, 40, 36], [-36, -208, 40, 36], [36, -208, 40, 36], [108, -208, 40, 36], [-108, -124, 44, 46], [108, -124, 44, 46]];
+      var BLOB_COL = ["peri", "orange", "rust", "cyan", "tan", "yellow", "red", "peri", "orange", "rust"];
+      function windowArt(hi, wi) {
+        var w = WINS[wi], x = w[0] - w[2] / 2, y = w[1], cid = P("wc-" + hi + "-" + wi), col = BLOB_COL[(wi + hi * 3) % BLOB_COL.length], seed = hi * 10 + wi;
+        // the blob looms behind the bed, its face filling the window
+        var bk = (w[2] / 175) * 1.7, bx = w[0] + (wi % 2 ? -3 : 3), by = y + w[3] * 0.42 + 98 * bk;
+        // the bed: a headboard, the sheet over a sleeping lump, the pillow
+        var bed = poly([[x + 3, y + w[3] - 13], [x + 7, y + w[3] - 13], [x + 7, y + w[3]], [x + 3, y + w[3]]], C.slate, 1.2) +
+          poly([[x + 5, y + w[3] - 9], [x + w[2] - 2, y + w[3] - 9], [x + w[2] - 2, y + w[3] - 2], [x + 5, y + w[3] - 2]], WHITE, 1.2) +
+          poly([[x + 7, y + w[3] - 12], [x + 13, y + w[3] - 12], [x + 13, y + w[3] - 9], [x + 7, y + w[3] - 9]], WHITE, 1);
+        var blob = function (mood) { return '<g transform="translate(' + f1(bx) + "," + f1(by) + ") scale(" + bk.toFixed(3) + ')">' + KIT.props.diseaseBlob({ color: col, mood: mood, seed: seed, arms: mood === "scared" ? "up" : "steeple" }) + "</g>"; };
+        return '<defs><clipPath id="' + cid + '"><rect x="' + x + '" y="' + y + '" width="' + w[2] + '" height="' + w[3] + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + cid + ')"><rect x="' + x + '" y="' + y + '" width="' + w[2] + '" height="' + w[3] + '" fill="#E7DDC0"/>' +
+          '<g id="' + P("bl-" + hi + "-" + wi) + '"><g class="bl-smug">' + blob("smug") + '</g><g class="bl-scared" opacity="0">' + blob("scared") + "</g></g>" + bed + "</g>" +
+          '<rect x="' + x + '" y="' + y + '" width="' + w[2] + '" height="' + w[3] + '" fill="' + C.cyan + '" opacity="0.18"/>' +
+          '<path d="M' + x + "," + (y + w[3] * 0.45) + " H" + (x + w[2]) + '" stroke="' + INK + '" stroke-width="1.4" opacity="0.6"/>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w[2] + '" height="' + w[3] + '" fill="none" stroke="' + INK + '" stroke-width="3.6"/>';
+      }
+      function hospitalSvg(hi) {
+        var hp = KIT.props.hospital({});
+        // the doors open with scaleX about their hinges: tag them so they can be set every frame
+        hp = hp.replace('<g class="hospital-door-l"', '<g id="' + P("dl-" + hi) + '" class="hospital-door-l"').replace('<g class="hospital-door-r"', '<g id="' + P("dr-" + hi) + '" class="hospital-door-r"');
+        return '<g transform="translate(' + L.hosp[hi] + "," + FY + ") scale(" + L.hk + ')">' + hp + WINS.map(function (w, wi) { return windowArt(hi, wi); }).join("") + "</g>";
+      }
+
+      // ════ BUILD (back to front) ════
+      var art = KIT.paperDefs(ID);
+      // the floor line and a faint street behind the hospitals
+      art += '<rect x="-200" y="' + FY + '" width="' + (L.hosp[3] + 800) + '" height="' + (H - FY + 200) + '" fill="#E8DDBE"/>' +
+        '<rect x="-200" y="' + FY + '" width="' + (L.hosp[3] + 800) + '" height="' + (H - FY + 200) + '" fill="url(#' + ID + '-fine)" opacity="0.25"/>' +
+        '<path d="M-200,' + FY + " H" + (L.hosp[3] + 600) + '" stroke="' + INK + '" stroke-width="4"/>';
+      // outside: a pale city behind the hospitals (KIT.rng heights)
+      var WALL_X = L.bench[0] + 158 * L.bench[1] + 34, sr = KIT.rng(9), city = "";
+      for (var bx = WALL_X + 10; bx < L.hosp[3] + 700; ) {
+        var bw = 120 + sr() * 140, bh = L.sky[0] + sr() * (L.sky[1] - L.sky[0]), wins = "";
+        for (var wy = FY - bh + 30; wy < FY - 60; wy += 46) for (var wx = bx + 18; wx < bx + bw - 24; wx += 38) wins += '<rect x="' + f1(wx) + '" y="' + f1(wy) + '" width="14" height="20" fill="#C2BBA6"/>';
+        city += '<rect x="' + f1(bx) + '" y="' + f1(FY - bh) + '" width="' + f1(bw) + '" height="' + f1(bh) + '" fill="#E2DAC3" stroke="' + INK + '" stroke-width="2.4" stroke-opacity="0.45"/>' + wins;
+        bx += bw + 14 + sr() * 30;
+      }
+      art += '<g opacity="0.9">' + city + "</g>";
+      // inside: the lab's tiled wall, and on it a framed portrait of the ideal trial subject (one of the tidy humans)
+      var tiles = "";
+      for (var ty = FY - 40; ty > -300; ty -= 40) tiles += "M-300," + ty + " H" + f1(WALL_X) + " ";
+      for (var tx = -300; tx < WALL_X; tx += 40) tiles += "M" + tx + ",-300 V" + FY + " ";
+      art += '<rect x="-300" y="-300" width="' + f1(WALL_X + 300) + '" height="' + (FY + 300) + '" fill="#DCE5DC"/>' +
+        '<path d="' + tiles + '" stroke="#B9C9BD" stroke-width="2"/>' + '<path d="M' + f1(WALL_X) + ",-300 V" + FY + '" stroke="' + INK + '" stroke-width="6"/>';
+      var MD = L.model, mclip = P("model");
+      art += '<rect x="' + (MD[0] + 8) + '" y="' + (MD[1] + 10) + '" width="' + MD[2] + '" height="' + MD[3] + '" fill="' + C.ink + '" opacity="0.8"/>' +
+        poly(rect(MD[0], MD[1], MD[2], MD[3]), C.tan, 4) + '<defs><clipPath id="' + mclip + '"><rect x="' + (MD[0] + 14) + '" y="' + (MD[1] + 14) + '" width="' + (MD[2] - 28) + '" height="' + (MD[3] - 64) + '"/></clipPath></defs>' +
+        '<rect x="' + (MD[0] + 14) + '" y="' + (MD[1] + 14) + '" width="' + (MD[2] - 28) + '" height="' + (MD[3] - 64) + '" fill="#F6E7C2" stroke="' + INK + '" stroke-width="2.4"/>' +
+        '<g clip-path="url(#' + mclip + ')">' + at(MD[0] + MD[2] / 2 - 4, MD[1] + 14 + 0.4 * (MD[3] - 64) - (MD[2] / 86) * (TR.head[1] - 100), MD[2] / 86, '<g transform="translate(0,-100)">' + KIT.person(TIDY) + "</g>") + "</g>" +
+        poly(rect(MD[0] + 22, MD[1] + MD[3] - 44, MD[2] - 44, 30), WHITE, 2.4) +
+        '<text x="' + (MD[0] + MD[2] / 2) + '" y="' + (MD[1] + MD[3] - 22) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + (V ? 22 : 18) + '" letter-spacing="1.5" fill="' + INK + '">MODEL PATIENT</text>';
+      art += L.hosp.map(function (x, hi) { return hospitalSvg(hi); }).join("");
+      // the fat cat stands behind the lab bench; the bare bench beside it carries the tank
+      var catFaces = ["smug", "cross", "eager"].map(function (m, k) { return '<g class="cat-' + m + '"' + (k ? ' opacity="0"' : "") + ">" + KIT.person(mix(CAT, { mood: m })) + "</g>"; }).join("");
+      art += '<g id="' + P("cat") + '" transform="translate(' + CX + "," + (FY - 100 * CS) + ") scale(" + CS + ')"><g id="' + P("catj") + '">' + catFaces + "</g></g>";
+      art += '<g id="' + P("tw") + '"><g id="' + P("tw-len") + '">' + tweezers() + "</g></g>";
+      // two lab benches (KIT.props.lab, cut off at the bench top, so the glassware does not hide him) end to end
+      var benchClip = P("benchclip");
+      art += '<defs><clipPath id="' + benchClip + '"><rect x="-170" y="-98" width="340" height="110"/></clipPath></defs>' +
+        at(L.lab[0], FY, L.lab[1], '<g clip-path="url(#' + benchClip + ')">' + KIT.props.lab({ fire: false }) + "</g>") +
+        at(L.bench[0], FY, L.bench[1], '<g clip-path="url(#' + benchClip + ')">' + KIT.props.lab({ fire: false }) + "</g>");
+      // the tank: inside, the humans, the glass (which lifts)
+      art += '<g id="' + P("tank") + '">' + tankInside() + "</g>";
+      art += '<g id="' + P("tidies") + '">' + TIDIES.map(function (h, k) { return tidySvg(h, k); }).join("") + "</g>";
+      art += '<g id="' + P("glass") + '"><g id="' + P("glass-in") + '">' + tankGlass() + "</g></g>";
+      // the patient, and the dizzy stars over her heap
+      var stars = [0, 1, 2].map(function (i) { return '<g class="dz">' + KIT.star(0, 0, 9, i % 2 ? C.orange : C.yellow) + "</g>"; }).join("");
+      art += '<g id="' + P("pat") + '"><g id="' + P("patj") + '">' + Object.keys(PO).map(function (k) { return '<g class="p-' + k + '" opacity="0">' + patient(PO[k]) + "</g>"; }).join("") + "</g>" +
+        '<g id="' + P("dizzy") + '">' + stars + "</g></g>";
+      // the blob that climbs out after "are." (H3's top right window)
+      art += '<g id="' + P("esc") + '" opacity="0"><g id="' + P("esc-in") + '">' + KIT.props.diseaseBlob({ color: "peri", mood: "scared", seed: 23, arms: "up" }) + "</g></g>";
+      // the boing star where she lands
+      art += '<g id="' + P("bonk") + '" opacity="0">' + KIT.star(0, 0, 40, C.yellow, 8) + KIT.star(0, 0, 18, "#FFFFFF", 8) + "</g>";
+      q("art").innerHTML = KIT.svg(W, H, '<g id="' + P("world") + '">' + art + "</g>", 'style="overflow:visible"');
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      // ════ MOTION (placed every frame from the scene time) ════
+      var world = el("world"), catG = el("cat"), catJ = el("catj");
+      var catF = { smug: catG.querySelector(".cat-smug"), cross: catG.querySelector(".cat-cross"), eager: catG.querySelector(".cat-eager") };
+      var tw = el("tw"), twLen = el("tw-len"), glass = el("glass");
+      var tidies = TIDIES.map(function (h, k) { var g = el("t-" + k); return { g: g, j: el("tj-" + k), front: g.querySelector(".t-front"), walk: g.querySelector(".t-walk"), h: h }; });
+      var patG = el("pat"), patJ = el("patj"), pv = {};
+      Object.keys(PO).forEach(function (k) { pv[k] = patG.querySelector(".p-" + k); });
+      var PR = {}; Object.keys(PO).forEach(function (k) { PR[k] = KIT.rig(mix(PAT, PO[k])); });
+      var dz = el("dizzy").querySelectorAll(".dz");
+
+      // the tweezers' tip over time: holding the spare over the tank, lowering it on "selected", over to the patient
+      // on the bench's edge, up to his monocle, then the flick
+      var SPARE_TOP = [SPARE.x, SPARE.y - 182 * KH];
+      var EDGE = [L.bench[0] + 150 * L.bench[1], BT];                                   // where she gets to on the bench top
+      var GRAB = [EDGE[0] - 4, EDGE[1] - 182 * KH];
+      var REST = [SPARE.x, ty0 - 40];
+      function tipAt(t) {
+        if (t < T.place0) return [REST[0], REST[1] + Math.sin(t * 3) * 6];
+        if (t < T.selected) { var k = smooth(seg(t, T.place0, T.selected)); return [lerp(REST[0], SPARE_TOP[0], k), lerp(REST[1], SPARE_TOP[1], k)]; }
+        if (t < T.grab) { var k2 = smooth(seg(t, T.selected + 0.05, T.grab)); return [lerp(SPARE_TOP[0], GRAB[0], k2), lerp(SPARE_TOP[1], GRAB[1], k2) - Math.sin(k2 * Math.PI) * 120]; }
+        if (t < T.lifted) { var k3 = smooth(seg(t, T.grab, T.lifted)); return [lerp(GRAB[0], L.inspect[0], k3), lerp(GRAB[1], L.inspect[1], k3)]; }
+        if (t < T.pharma) return [L.inspect[0], L.inspect[1] + Math.sin(t * 40) * 2];
+        // the flick: a quick snap out and up, then back to rest
+        var k4 = seg(t, T.pharma, T.pharma + 0.08), k5 = smooth(seg(t, T.pharma + 0.1, T.pharma + 0.6));
+        var fx = lerp(L.inspect[0], L.inspect[0] + 120, k4), fy = lerp(L.inspect[1], L.inspect[1] - 60, k4);
+        return [lerp(fx, REST[0], k5), lerp(fy, REST[1], k5)];
+      }
+      // the patient: [x, feet y, rotation, pose]
+      var PEAK = L.peak;
+      function patAt(t) {
+        var x0 = L.pat0;
+        if (t < T.climb0) return { x: x0, y: FY, rot: 0, pose: "look", hop: Math.max(0, Math.sin(t * 9)) * 10 };
+        if (t < T.climb1) { var k = seg(t, T.climb0, T.climb1); return { x: lerp(x0, EDGE[0] + 8, smooth(k * 3)), y: lerp(FY, BT, smooth(k)), rot: 0, pose: "climb", climb: 1 }; }
+        if (t < T.grab) return { x: EDGE[0], y: BT, rot: 0, pose: "look", hop: Math.max(0, Math.sin((t - T.climb1) * 12)) * 6 };
+        if (t < T.pharma) { var tp = tipAt(t); return { x: tp[0], y: tp[1] + 182 * KH, rot: Math.sin(t * 30) * 6, pose: "dangle" }; }
+        if (t < T.boing) {
+          // sailing off in an arc, spinning
+          var k2 = seg(t, T.pharma, T.boing), sx = L.inspect[0] + 60, sy = L.inspect[1] + 182 * KH;
+          return { x: lerp(sx, L.land, k2), y: lerp(sy, FY, k2) - Math.sin(k2 * Math.PI) * (sy - PEAK) * 0.9 - (1 - k2) * 0, rot: k2 * 720, pose: "dangle" };
+        }
+        if (t < T.up) return { x: L.land, y: FY, rot: 0, pose: "heap" };
+        // picks herself up and walks into the first hospital with the tidy humans
+        var door = L.hosp[0] - 20 * L.hk, k3 = seg(t, T.up + 0.25, T.up + 0.25 + Math.abs(door - L.land) / 300);
+        return { x: lerp(L.land, door, k3), y: FY, rot: 0, pose: k3 > 0 || t > T.up + 0.1 ? "walk" : "heap", walking: k3 > 0 && k3 < 1, gone: k3 >= 1 };
+      }
+      // a tidy human leaving: along the bench top to its end, a hop down, along the floor to its hospital's door
+      var BENCH_END = L.bench[0] + 158 * L.bench[1], SPD = V ? 700 : 620, RUN = V ? 1000 : 900;
+      function tidyAt(h, t) {
+        if (h.spare && t < T.selected) { var tp = tipAt(t); return { x: tp[0], y: tp[1] + 182 * h.s, s: h.s, walk: 0, dangle: 1 }; }
+        if (t < h.t0) return { x: h.x, y: h.y, s: h.s, walk: 0 };
+        var e = t - h.t0, d1 = Math.max(0, BENCH_END - 10 - h.x), t1 = d1 / SPD, door = L.hosp[h.hosp] + (h.i % 2 ? -18 : 18) * L.hk;
+        if (e < t1) return { x: h.x + e * SPD, y: lerp(h.y, BT, smooth(e / Math.max(0.01, t1))), s: h.s, walk: 1, ph: e };
+        if (e < t1 + 0.22) { var k = (e - t1) / 0.22; return { x: BENCH_END - 10 + k * 40, y: lerp(BT, FY, easeIn(k)) - Math.sin(k * Math.PI) * 30, s: lerp(h.s, KH, k), walk: 0 }; }
+        var d2 = door - (BENCH_END + 30), t2 = d2 / RUN, e2 = e - t1 - 0.22;
+        if (e2 < t2) return { x: BENCH_END + 30 + e2 * RUN, y: FY, s: KH, walk: 1, ph: e };
+        var k2 = seg(e2, t2, t2 + 0.18);
+        return { x: door, y: FY - 6 * k2, s: KH * (1 - 0.35 * k2), walk: 1, ph: e, fade: k2 };
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        // ── the camera ──
+        var cx = L.cam[0] + (L.cam[1] - L.cam[0]) * smooth(seg(t, T.pan1[0], T.pan1[1])) + (L.cam[2] - L.cam[1]) * smooth(seg(t, T.pan2[0], T.pan2[1]));
+        setT(world, "translate(" + f1(-cx) + ",0)");
+
+        // ── the tank drops in (thunk), the glass lifts on "real" ──
+        var drop = t < T.land ? -(1 - easeIn(t / T.land)) * 260 : Math.sin(Math.min(1, (t - T.land) / 0.25) * Math.PI) * -8 * (1 - seg(t, T.land, T.land + 0.25));
+        var lift = easeIn(seg(t, T.lift, T.lift + 0.7)) * -(V ? 1300 : 900);
+        setT(el("tank"), "translate(0," + f1(drop) + ")");
+        setT(el("tidies"), "translate(0," + f1(drop) + ")");
+        setT(glass, "translate(0," + f1(drop + lift) + ")");
+        setT(el("glass-in"), t >= T.lift ? "rotate(" + f1(-3 * seg(t, T.lift, T.lift + 0.4)) + " " + f1((tx0 + tx1) / 2) + " " + f1(ty0) + ")" : "");
+        // "two": the 200 sticker slaps on; "terrariums,": the label
+        var cn = el("count"), ck = backOut(seg(t, T.two, T.two + 0.25), 2.6);
+        vis(cn, t >= T.two);
+        setT(el("count-in"), "scale(" + Math.max(0.01, ck).toFixed(3) + ") rotate(" + f1(-14 * ck) + ")");
+        var lb = el("label"), lk = backOut(seg(t, T.label, T.label + 0.25), 2.2);
+        vis(lb, t >= T.label);
+        setT(el("label-in"), "translate(0," + f1((1 - lk) * -40) + ") scale(" + Math.max(0.01, lk).toFixed(3) + ")");
+
+        // ── the fat cat: leans in, scowls at her red light, gapes when the glass goes ──
+        var face = t >= T.lift ? "eager" : t >= T.inspect + 0.05 && t < T.pharma + 0.5 ? "cross" : "smug";
+        Object.keys(catF).forEach(function (m) { vis(catF[m], m === face); });
+        var lean = smooth(seg(t, T.grab - 0.2, T.grab)) * (1 - smooth(seg(t, T.pharma + 0.3, T.pharma + 0.7))) * 6;
+        var gasp = t >= T.lift ? Math.sin(Math.min(1, (t - T.lift) / 0.3) * Math.PI) * -12 : 0;
+        setT(catJ, "rotate(" + f1(lean) + " 0 100) translate(0," + f1(gasp / CS) + ")");
+        // ── the tweezers ──
+        var tip = tipAt(t), dx = tip[0] - HAND[0], dy = tip[1] - HAND[1], len = Math.sqrt(dx * dx + dy * dy), ang = (Math.atan2(dy, dx) * 180) / Math.PI;
+        setT(tw, "translate(" + f1(HAND[0]) + "," + f1(HAND[1]) + ") rotate(" + f1(ang) + ")");
+        setT(twLen, "scale(" + (len / 100).toFixed(3) + "," + (CS * 0.8).toFixed(3) + ")");
+
+        // ── the tidy humans ──
+        var waveA = t >= T.wave && t < T.wave + 1.2 ? Math.sin(((t - T.wave) / 0.3) * Math.PI) * 50 : 0;
+        tidies.forEach(function (o, k) {
+          var s = tidyAt(o.h, t);
+          var gone = s.fade >= 1 || (t >= T.hosp && o.h.t0 + 6 < t);
+          o.g.setAttribute("opacity", gone ? 0 : s.fade ? (1 - s.fade).toFixed(2) : 1);
+          var bob = s.walk ? -Math.abs(Math.sin((s.ph || 0) * 14)) * 5 : 0;
+          setT(o.g, "translate(" + f1(s.x) + "," + f1(s.y - 100 * s.s + bob * s.s) + ") scale(" + s.s.toFixed(3) + ")");
+          vis(o.front, !s.walk); vis(o.walk, !!s.walk);
+          var d = s.walk ? o.walk : o.front, r = s.walk ? TRW : TR;
+          [".leg-l", ".leg-r"].forEach(function (c, i) { setT(d.querySelector(c), "rotate(" + f1(s.walk ? Math.sin((s.ph || 0) * 14 + i * Math.PI) * 24 : 0) + " " + r.hip[i][0] + " " + r.hip[i][1] + ")"); });
+          // the wave in unison (the right arm), and the spare's dangle
+          setT(o.front.querySelector(".arm-r"), "rotate(" + f1(-150 * smooth(seg(t, T.wave - 0.15, T.wave)) * (1 - smooth(seg(t, T.wave + 1.2, T.wave + 1.4))) + waveA * 0.4) + " " + TR.shoulder[1][0] + " " + TR.shoulder[1][1] + ")");
+          setT(o.j, s.dangle ? "rotate(" + f1(Math.sin(t * 5) * 8) + " 0 -82)" : "");
+        });
+
+        // ── the patient ──
+        var pa = patAt(t);
+        Object.keys(pv).forEach(function (k) { vis(pv[k], k === pa.pose && !pa.gone); });
+        var cur = pv[pa.pose], rg = PR[pa.pose];
+        var heap = pa.pose === "heap";
+        var hop = pa.hop || 0, wph = t * 12;
+        var lift2 = pa.pose === "dangle" ? -182 * KH : 0;
+        // dangling from the tweezers she hangs from her head; in the heap she lies on her side, squashed
+        setT(patG, "translate(" + f1(pa.x) + "," + f1(pa.y - 100 * KH - hop + (pa.walking ? -Math.abs(Math.sin(wph)) * 4 : 0)) + ") scale(" + KH + ")");
+        var sq = t >= T.boing && t < T.boing + 0.3 ? 1 - 0.35 * Math.sin(seg(t, T.boing, T.boing + 0.3) * Math.PI) : 1;
+        setT(patJ, (heap ? "translate(0,100) rotate(-84) translate(0,-100) translate(-30,60) scale(1," + sq.toFixed(2) + ")" : "rotate(" + f1(pa.rot) + " 0 " + (pa.pose === "dangle" ? -82 : 100) + ")") + (pa.climb ? " translate(" + f1(Math.sin(t * 22) * 3) + ",0)" : ""));
+        [".leg-l", ".leg-r"].forEach(function (c, i) {
+          var a = pa.walking ? Math.sin(wph + i * Math.PI) * 24 : pa.pose === "dangle" ? Math.sin(t * 26 + i * 2) * 30 : pa.climb ? Math.sin(t * 18 + i * Math.PI) * 26 : 0;
+          setT(cur.querySelector(c), "rotate(" + f1(a) + " " + rg.hip[i][0] + " " + rg.hip[i][1] + ")");
+        });
+        var tail = cur.querySelector(".scarf-tail");
+        setT(tail, "rotate(" + f1(pa.walking ? 22 + Math.sin(wph * 2) * 14 : pa.pose === "dangle" ? Math.sin(t * 20) * 30 : Math.sin(t * 2) * 3) + " " + tail.dataset.ox + " " + tail.dataset.oy + ")");
+        // her red chest light flares when he looks at it
+        var cl = cur.querySelector(".chest-light"), flare = t >= T.inspect && t < T.pharma ? 1 + 0.8 * Math.abs(Math.sin((t - T.inspect) * 18)) : 1;
+        setT(cl, "translate(" + cl.getAttribute("cx") + "," + cl.getAttribute("cy") + ") scale(" + flare.toFixed(2) + ") translate(" + -cl.getAttribute("cx") + "," + -cl.getAttribute("cy") + ")");
+        // dizzy stars over the heap
+        var dzOn = heap && t > T.boing + 0.1;
+        Array.prototype.forEach.call(dz, function (s, i) {
+          var a = t * 8 + (i * 2 * Math.PI) / 3;
+          s.setAttribute("opacity", dzOn ? 1 : 0);
+          setT(s, "translate(" + f1(-60 + 26 * Math.cos(a)) + "," + f1(84 + 8 * Math.sin(a)) + ")");
+        });
+        var bonk = el("bonk"), bk = seg(t, T.boing, T.boing + 0.25);
+        bonk.setAttribute("opacity", bk > 0 && bk < 1 ? 1 : 0);
+        setT(bonk, "translate(" + f1(L.land - 30) + "," + f1(FY - 20) + ") scale(" + (0.4 + bk).toFixed(2) + ")");
+
+        // ── the hospitals: doors open for the line; blobs turn scared on "diseases"; one escapes after "are." ──
+        L.hosp.forEach(function (x, hi) {
+          var op = smooth(seg(t, T.hosp + 0.2 + hi * 0.35, T.hosp + 0.45 + hi * 0.35));
+          setT(el("dl-" + hi), "translate(-42,0) scale(" + (1 - 0.85 * op).toFixed(3) + ",1) translate(42,0)");
+          setT(el("dr-" + hi), "translate(42,0) scale(" + (1 - 0.85 * op).toFixed(3) + ",1) translate(-42,0)");
+          for (var wi = 0; wi < WINS.length; wi++) {
+            var b = el("bl-" + hi + "-" + wi), tt = T.diseases + hi * 0.04 + (wi % 4) * 0.02, scared = t >= tt;
+            vis(b.querySelector(".bl-smug"), !scared); vis(b.querySelector(".bl-scared"), scared);
+            var w = WINS[wi], jump = scared ? Math.sin(seg(t, tt, tt + 0.2) * Math.PI) * -6 : Math.sin(t * 2 + wi + hi) * 1.2;
+            var hide = hi === 2 && wi === 3 && t >= T.out;
+            b.setAttribute("opacity", hide ? 0 : 1);
+            setT(b, "translate(0," + f1(jump) + ")");
+          }
+        });
+        // the escape: it squeezes out of H3's top right window, hops off the sill and drops down the wall
+        var esc = el("esc"), ek = t - T.out, ew = WINS[3], hk = L.hk, wx = L.hosp[2] + ew[0] * hk, wy = FY + (ew[1] + ew[3]) * hk;
+        esc.setAttribute("opacity", ek >= 0 ? 1 : 0);
+        var ex = wx, ey = wy, st = 1;
+        if (ek < 0.15) { ey = wy - 26 * hk * (ek / 0.15); st = 1 + 2.4 * Math.max(0, ek); }
+        else { var tau = ek - 0.15; ex = wx + 260 * hk * tau; ey = Math.min(FY, wy - 26 * hk - 320 * hk * tau + 3200 * hk * tau * tau); }
+        setT(esc, "translate(" + f1(ex) + "," + f1(ey) + ") scale(" + (0.26 * hk / st).toFixed(3) + "," + (0.26 * hk * st).toFixed(3) + ") rotate(" + f1(ek > 0.15 ? (ek - 0.15) * 300 : 0) + " 0 -70)");
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

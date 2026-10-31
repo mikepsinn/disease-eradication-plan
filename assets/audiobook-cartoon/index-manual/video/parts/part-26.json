@@ -1,0 +1,163 @@
+{
+  "id": "part-26",
+  "title": "The Part Where Humanity Has No Choice",
+  "storyboard": "storyboards/part-26-humanity-has-no-choice.md",
+  "audio": {
+    "start": 3337.744,
+    "end": 3413.48
+  },
+  "noCaptions": [
+    "humanity-has-no-choice-title"
+  ],
+  "scenes": [
+    {
+      "id": "humanity-has-no-choice-title",
+      "file": "compositions/scenes/part-26/humanity-has-no-choice-title.html",
+      "cue": "The",
+      "approx": 3337.7,
+      "layer": "A"
+    },
+    {
+      "id": "the-twist",
+      "file": "compositions/scenes/part-26/the-twist.html",
+      "cue": "The",
+      "approx": 3341.0,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "The", "expr": "smirk", "rest": "smile", "body": "counting", "mode": "big" },
+        { "cue": "right", "expr": "happy", "rest": "smile", "body": "hand-chest", "mode": "big" },
+        { "cue": "because:", "expr": "smirk", "rest": "smile", "body": "idle", "mode": "big" }
+      ]
+    },
+    {
+      "id": "greed-ropes",
+      "file": "compositions/scenes/part-26/greed-ropes.html",
+      "cue": "The",
+      "approx": 3347.4,
+      "layer": "B"
+    },
+    {
+      "id": "cure-death-by-mistake",
+      "file": "compositions/scenes/part-26/cure-death-by-mistake.html",
+      "cue": "Everyone's",
+      "approx": 3364.5,
+      "layer": "B"
+    },
+    {
+      "id": "cheese-genius",
+      "file": "compositions/scenes/part-26/cheese-genius.html",
+      "cue": "You",
+      "approx": 3375.4,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "You", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "genius.", "expr": "excited", "rest": "open", "body": "wide-gesture", "mode": "big" },
+        { "cue": "apply", "expr": "smirk", "rest": "smile", "body": "point-right", "mode": "big" }
+      ]
+    },
+    {
+      "id": "doubling-starts",
+      "file": "compositions/scenes/part-26/doubling-starts.html",
+      "cue": "Go",
+      "approx": 3385.5,
+      "layer": "B"
+    },
+    {
+      "id": "countdown-104",
+      "file": "compositions/scenes/part-26/countdown-104.html",
+      "cue": "Every",
+      "approx": 3394.9,
+      "layer": "B"
+    },
+    {
+      "id": "eligible-final-stamp",
+      "file": "compositions/scenes/part-26/eligible-final-stamp.html",
+      "cue": "The",
+      "approx": 3406.4,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "The", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "thinking", "expr": "skeptical", "rest": "closed", "body": "idle", "mode": "big" },
+        { "cue": "aliens", "expr": "smirk", "rest": "smile", "body": "palms-down", "mode": "big" },
+        { "cue": "visit.", "expr": "sideeye", "rest": "closed", "body": "palms-down", "mode": "big" }
+      ]
+    }
+  ],
+  "sounds": [
+    { "scene": "humanity-has-no-choice-title", "cue": "The", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "humanity-has-no-choice-title", "cue": "Choice.", "sfx": "clank", "volume": 0.45 },
+
+    { "scene": "the-twist", "cue": "right", "sfx": "sparkle", "volume": 0.35 },
+    { "scene": "the-twist", "cue": "is),", "sfx": "ding", "volume": 0.35 },
+    { "scene": "the-twist", "cue": "because:", "n": 2, "sfx": "slide-down", "volume": 0.4 },
+
+    { "scene": "greed-ropes", "cue": "want", "n": 1, "sfx": "click", "volume": 0.5 },
+    { "scene": "greed-ropes", "cue": "greedy).", "sfx": "cash-register", "volume": 0.45 },
+    { "scene": "greed-ropes", "cue": "want", "n": 2, "sfx": "click", "volume": 0.5 },
+    { "scene": "greed-ropes", "cue": "keep", "sfx": "switch", "volume": 0.4 },
+    { "scene": "greed-ropes", "cue": "vain).", "sfx": "sparkle", "volume": 0.35 },
+    { "scene": "greed-ropes", "cue": "vain).", "offset": 0.25, "sfx": "snip", "volume": 0.45 },
+    { "scene": "greed-ropes", "cue": "want", "n": 3, "sfx": "click", "volume": 0.5 },
+    { "scene": "greed-ropes", "cue": "sick).", "sfx": "huff", "volume": 0.5 },
+    { "scene": "greed-ropes", "cue": "sick).", "at": "after", "sfx": "boing", "volume": 0.4 },
+    { "scene": "greed-ropes", "cue": "want", "n": 4, "sfx": "click", "volume": 0.5 },
+    { "scene": "greed-ropes", "cue": "care", "sfx": "switch", "volume": 0.5 },
+    { "scene": "greed-ropes", "cue": "from).", "at": "after", "sfx": "clank", "volume": 0.45 },
+    { "scene": "greed-ropes", "cue": "from).", "at": "after", "offset": 0.3, "sfx": "pop", "volume": 0.45 },
+
+    { "scene": "cure-death-by-mistake", "cue": "aligns", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "cure-death-by-mistake", "cue": "perfectly", "sfx": "pat", "volume": 0.35 },
+    { "scene": "cure-death-by-mistake", "cue": "save", "sfx": "splat", "volume": 0.5 },
+    { "scene": "cure-death-by-mistake", "cue": "humanity.", "sfx": "splat", "volume": 0.45 },
+    { "scene": "cure-death-by-mistake", "cue": "humanity.", "at": "after", "sfx": "ding", "volume": 0.3 },
+    { "scene": "cure-death-by-mistake", "cue": "death", "sfx": "splat", "volume": 0.6 },
+    { "scene": "cure-death-by-mistake", "cue": "death", "offset": 0.3, "sfx": "boing", "volume": 0.45 },
+    { "scene": "cure-death-by-mistake", "cue": "rich.", "sfx": "cash-register", "volume": 0.45 },
+    { "scene": "cure-death-by-mistake", "cue": "stupid.", "sfx": "thunk", "volume": 0.6 },
+    { "scene": "cure-death-by-mistake", "cue": "stupid.", "at": "after", "sfx": "pat", "volume": 0.45 },
+
+    { "scene": "cheese-genius", "cue": "cheese,", "sfx": "slide-up", "volume": 0.35 },
+    { "scene": "cheese-genius", "cue": "bad", "sfx": "pop", "volume": 0.5 },
+    { "scene": "cheese-genius", "cue": "good", "sfx": "sparkle", "volume": 0.35 },
+    { "scene": "cheese-genius", "cue": "genius.", "sfx": "ding", "volume": 0.4 },
+    { "scene": "cheese-genius", "cue": "dying.", "sfx": "slide-up", "volume": 0.35 },
+
+    { "scene": "doubling-starts", "cue": "war", "sfx": "typewriter", "volume": 0.35 },
+    { "scene": "doubling-starts", "cue": "cast", "sfx": "boing", "volume": 0.4 },
+    { "scene": "doubling-starts", "cue": "vote", "sfx": "ding", "volume": 0.4 },
+    { "scene": "doubling-starts", "cue": "referendum", "sfx": "click", "volume": 0.5 },
+    { "scene": "doubling-starts", "cue": "friends", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "doubling-starts", "cue": "same.", "sfx": "ding", "volume": 0.35 },
+    { "scene": "doubling-starts", "cue": "That's", "sfx": "pop", "volume": 0.4 },
+    { "scene": "doubling-starts", "cue": "doubling", "sfx": "pop", "volume": 0.4 },
+    { "scene": "doubling-starts", "cue": "starts.", "sfx": "pop", "volume": 0.4 },
+    { "scene": "doubling-starts", "cue": "starts.", "offset": 0.35, "sfx": "typewriter", "volume": 0.25 },
+    { "scene": "doubling-starts", "cue": "starts.", "at": "after", "offset": 0.2, "sfx": "squeak", "volume": 0.35 },
+
+    { "scene": "countdown-104", "cue": "minute", "sfx": "ding", "volume": 0.35 },
+    { "scene": "countdown-104", "cue": "minute", "sfx": "zap", "volume": 0.25 },
+    { "scene": "countdown-104", "cue": "minute", "offset": 0.576, "sfx": "ding", "volume": 0.3 },
+    { "scene": "countdown-104", "cue": "minute", "offset": 1.152, "sfx": "ding", "volume": 0.3 },
+    { "scene": "countdown-104", "cue": "minute", "offset": 1.728, "sfx": "ding", "volume": 0.3 },
+    { "scene": "countdown-104", "cue": "four", "n": 1, "sfx": "click", "volume": 0.45 },
+    { "scene": "countdown-104", "cue": "vote", "sfx": "ding", "volume": 0.4 },
+    { "scene": "countdown-104", "cue": "saves", "sfx": "bell", "volume": 0.35 },
+    { "scene": "countdown-104", "cue": "saves", "sfx": "zap", "volume": 0.25 },
+    { "scene": "countdown-104", "cue": "two", "sfx": "pop", "volume": 0.4 },
+    { "scene": "countdown-104", "cue": "point", "sfx": "pop", "volume": 0.4 },
+    { "scene": "countdown-104", "cue": "six", "sfx": "pop", "volume": 0.4 },
+    { "scene": "countdown-104", "cue": "thousand", "sfx": "cash-register", "volume": 0.45 },
+    { "scene": "countdown-104", "cue": "thousand", "offset": 0.3, "sfx": "typewriter", "volume": 0.3 },
+    { "scene": "countdown-104", "cue": "hours", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "countdown-104", "cue": "suffering.", "sfx": "clank", "volume": 0.5 },
+    { "scene": "countdown-104", "cue": "suffering.", "at": "after", "sfx": "ding", "volume": 0.15 },
+
+    { "scene": "eligible-final-stamp", "cue": "offering", "sfx": "pop", "volume": 0.4 },
+    { "scene": "eligible-final-stamp", "cue": "world", "sfx": "hum", "volume": 0.25 },
+    { "scene": "eligible-final-stamp", "cue": "it.", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "eligible-final-stamp", "cue": "This", "sfx": "huff", "volume": 0.4 },
+    { "scene": "eligible-final-stamp", "cue": "aliens", "sfx": "stamp", "volume": 0.6 },
+    { "scene": "eligible-final-stamp", "cue": "don't", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "eligible-final-stamp", "cue": "visit.", "sfx": "whistle", "volume": 0.35 }
+  ]
+}

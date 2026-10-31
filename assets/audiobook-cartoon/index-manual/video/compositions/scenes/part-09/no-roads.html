@@ -1,0 +1,245 @@
+<template id="no-roads-template">
+  <!-- no-roads · Layer B (storyboards/part-09-unexplored-therapeutic-frontier.md). On "Department" a grand domed
+       government building builds itself up out of the grass; on "Transportation" its sign drops onto the portico,
+       "DEPARTMENT OF TRANSPORTATION". On "hasn't" the camera whips right past its front steps, which end in grass:
+       a long empty field, a "ROAD" sign with an arrow pointing across the grass, and a commuter in a bowler hat (the
+       refrigerator-box suit) at the wheel of a 1950s convertible (fins, chrome, no make or badge). He honks on
+       "gotten" and "around", floors it on "roads", bounces past the sign to where the field ends at a cliff, shoots
+       off the edge on "yet." and hangs in the air, looking at the camera. A beat later the car drops out of the
+       frame, his hat a moment behind it, and a little puff of dust rises from far below. In: slide left. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #no-roads-cam, #no-roads-bg, #no-roads-art, #no-roads-pip, #no-roads-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="no-roads" data-width="1920" data-height="1080" data-start="0" data-duration="4.52">
+    <div id="no-roads-cam">
+      <div id="no-roads-bg"></div>
+      <div id="no-roads-art"></div>
+      <div id="no-roads-pip"></div>
+    </div>
+    <div id="no-roads-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "no-roads";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var ink = C.line, P = ID + "-", WHITE = "#FBF6E6";
+
+      // One strip of world, panned by the camera. GY: the top of the grass; cap: the building's middle and scale;
+      // sign: the ROAD sign (x, scale); car: where the car starts (its middle) and its scale; edge: the cliff; pan:
+      // how far the camera moves right. After the pan the car starts near the left, the sign stands at the cliff
+      // with its arrow pointing over the edge, and the hanging car stays left of the PiP corner (16:9: its bumper
+      // at x 1600). 9:16: the building big under a
+      // high sky; the camera tilts down as it pans (tilt), so the field sits high in the frame, the cliff face runs
+      // down the rest of it and the car falls the whole way. puffY: where the dust rises to (world units).
+      var L = V
+        ? { GY: 1180, cap: [540, 1.68], sign: [1530, 1.1], car: [1255, 1.1], edge: 1630, pan: 1000, tilt: 440, puffY: 1780 }
+        : { GY: 760, cap: [600, 1.36], sign: [2750, 1.45], car: [2120, 1.2], edge: 2920, pan: 1760, tilt: 0, puffY: 830 };
+      var GY = L.GY, E = L.edge, CS = L.car[1];
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      var f1 = function (n) { return (+n).toFixed(1); };
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner) { return '<g transform="translate(' + f1(x) + "," + f1(y) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function poly(pts, fill, sw, extra) {
+        return '<path d="M' + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (sw === undefined ? 3 : sw) + '" stroke-linejoin="miter" stroke-miterlimit="8"' + (extra ? " " + extra : "") + "/>";
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="miter"' + (extra ? " " + extra : "") + "/>"; }
+      function puff(r) {
+        return '<circle cx="0" cy="0" r="' + r + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<circle cx="' + f1(-r * 0.8) + '" cy="' + f1(r * 0.35) + '" r="' + f1(r * 0.62) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<circle cx="' + f1(r * 0.85) + '" cy="' + f1(r * 0.3) + '" r="' + f1(r * 0.56) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>';
+      }
+      // A flat 1950s cloud: lumps outlined in navy (a navy pass under the cream), its base on y 0.
+      function cloud(w) {
+        var lumps = [[-0.36, -0.16, 0.2], [-0.12, -0.3, 0.26], [0.16, -0.24, 0.22], [0.36, -0.12, 0.16]];
+        var c = function (col, extra) {
+          return lumps.map(function (l) { return '<circle cx="' + f1(l[0] * w) + '" cy="' + f1(l[1] * w) + '" r="' + f1(l[2] * w + extra) + '" fill="' + col + '"/>'; }).join("") +
+            '<rect x="' + f1(-0.5 * w - extra) + '" y="' + f1(-0.12 * w - extra) + '" width="' + f1(w + 2 * extra) + '" height="' + f1(0.12 * w + 2 * extra) + '" rx="' + f1(0.06 * w) + '" fill="' + col + '"/>';
+        };
+        return c(ink, 3) + c(WHITE, 0) + line("M" + f1(-0.3 * w) + "," + f1(-0.04 * w) + " H" + f1(0.2 * w), C.peri, 2, 'opacity="0.6"');
+      }
+
+      // ── The sky (it drifts slower than the ground as the camera pans): clouds and far hills ──
+      var span = E + W;
+      var sky = "", cr = KIT.rng(17);
+      for (var cx = 260; cx < span * 0.6 + W; cx += (V ? 420 : 560) + cr() * 220) {
+        sky += at(cx, (V ? 220 : 150) + cr() * (V ? 760 : 190), 1, cloud((V ? 170 : 190) + cr() * 90));
+      }
+      var hills = "M-100," + f1(GY + 2);
+      for (var hx = -100; hx < span * 0.6 + W; hx += 260) hills += " L" + f1(hx + 130) + "," + f1(GY - 34 - ((hx / 260) % 3) * 18) + " L" + f1(hx + 260) + "," + f1(GY - 10);
+      hills += " L" + f1(span * 0.6 + W + 200) + "," + f1(GY + 2) + " Z";
+      sky += '<path d="' + hills + '" fill="' + C.peri + '" opacity="0.32" stroke="' + ink + '" stroke-width="2.4" stroke-opacity="0.5" stroke-linejoin="miter"/>';
+
+      // ── The ground: a slab of earth with grass on top, ending in a jagged cliff at E ──
+      var bot = H + L.tilt + 80, x0 = -80;
+      var cliff = [[E, GY], [E + 8, GY + 46], [E - 12, GY + 120], [E + 6, GY + 210], [E - 18, GY + 330], [E - 4, GY + 470], [E - 24, GY + 640], [E - 10, bot]];
+      var earth = poly([[x0, GY]].concat(cliff, [[x0, bot]]), C.tan, 4) +
+        poly([[x0, GY]].concat(cliff, [[x0, bot]]), "url(#" + P + "fine)", 0, 'opacity="0.35" stroke="none"');
+      var strata = [70, 150, 260, 400, 560].map(function (dy, i) {
+        return line("M" + f1(x0) + "," + f1(GY + dy) + " Q" + f1(E * 0.4) + "," + f1(GY + dy + (i % 2 ? 14 : -10)) + " " + f1(E - 14) + "," + f1(GY + dy + 4), C.rust, 3, 'opacity="0.7"');
+      }).join("");
+      var stones = "", sr = KIT.rng(4);
+      for (var k = 0; k < (V ? 22 : 14); k++) {
+        var sx = 120 + sr() * (E - 220), sy = GY + 60 + sr() * (V ? 640 : 230), rr = 7 + sr() * 9;
+        stones += poly([[sx - rr, sy], [sx - rr * 0.5, sy - rr * 0.8], [sx + rr * 0.6, sy - rr * 0.7], [sx + rr, sy + rr * 0.1], [sx + rr * 0.3, sy + rr * 0.7], [sx - rr * 0.7, sy + rr * 0.6]], C.rust, 2);
+      }
+      var grass = poly([[x0, GY], [E, GY], [E + 4, GY + 26], [x0, GY + 26]], C.money, 4) +
+        poly([[x0, GY], [E, GY], [E + 4, GY + 26], [x0, GY + 26]], "url(#" + P + "fine)", 0, 'opacity="0.3" stroke="none"');
+      var tufts = "", tr = KIT.rng(9);
+      for (var tx = 60; tx < E - 30; tx += 60 + tr() * 80) {
+        tufts += poly([[tx - 9, GY + 1], [tx - 8, GY - 12], [tx - 3, GY - 5], [tx, GY - 17], [tx + 3, GY - 5], [tx + 8, GY - 13], [tx + 10, GY + 1]], C.moneyDark, 2.2);
+      }
+      var ground = earth + strata + stones + grass + tufts;
+
+      // ── The building: builds up out of the grass on "Department"; the sign drops on "Transportation" ──
+      var CX = L.cap[0], CSc = L.cap[1], capH = 400 * CSc;
+      var capitol = '<defs><clipPath id="' + P + 'capclip"><rect id="' + P + 'caprect" x="' + f1(CX - 260 * CSc) + '" y="' + f1(GY - capH - 20) + '" width="' + f1(520 * CSc) + '" height="' + f1(capH + 22) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'capclip)">' + at(CX, GY, CSc, KIT.props.capitol({})) + "</g>" +
+        at(CX, GY - 170 * CSc, CSc, g("dsign", KIT.props.sign({ text: "DEPARTMENT OF\nTRANSPORTATION", fontSize: 26, height: 0 })));
+      // grass right up against the bottom step, both sides
+      [-1, 1].forEach(function (s) {
+        var sx = CX + s * 238 * CSc;
+        capitol += poly([[sx - 9, GY + 1], [sx - 7, GY - 14], [sx - 2, GY - 5], [sx + 1, GY - 19], [sx + 4, GY - 5], [sx + 9, GY - 14], [sx + 11, GY + 1]], C.moneyDark, 2.2);
+      });
+
+      // ── The ROAD sign, its arrow pointing across the grass at the cliff ──
+      var arrow = poly([[-74, -100], [56, -100], [56, -114], [96, -84], [56, -54], [56, -68], [-74, -68]], WHITE, 4) +
+        line("M-64,-92 H52 M-64,-76 H52", C.orange, 1.8);
+      var roadSign = at(L.sign[0], GY, L.sign[1], KIT.props.sign({ text: "ROAD", fontSize: 40, height: 124 }) + arrow);
+
+      // ── The car: a 1950s convertible facing right, its ground contact at (0, 0); car units ──
+      var BODY = C.orange, CHROME = "#C9C2B5";
+      var hull = [[-162, -30], [-165, -62], [-186, -104], [-136, -82], [-34, -80], [44, -80], [74, -74], [150, -66], [168, -50], [168, -30], [150, -22], [-150, -22]];
+      function wheel(id, x) {
+        return at(x, -26, 1, '<circle r="27" fill="' + ink + '"/><circle r="18" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2"/><circle r="11" fill="' + CHROME + '" stroke="' + ink + '" stroke-width="2.2"/>' +
+          g(id, line("M-10,0 H10 M0,-10 V10", ink, 2.4) + '<circle r="3" fill="' + ink + '"/>'));
+      }
+      // The commuter: the refrigerator box in a suit, hands on the wheel; two heads (on the road / at the camera).
+      var CM = { kind: "box", outfit: "suit", tone: 0, color: 1, hat: null, arms: [[64, 96], [58, 92]] };
+      var drive = Object.assign({ mood: "smug", look: "right" }, CM), stare = Object.assign({ mood: "flat" }, CM);
+      var R = KIT.rig(drive), PS = 0.98, seat = [-34, -80 - 6 * PS]; // his waist (person y 6) on the door line
+      var pAt = function (p) { return [seat[0] + PS * p[0], seat[1] + PS * (p[1] - 6)]; };
+      var handR = pAt(R.hand[1]), headC = pAt(R.head);
+      var person = '<defs><clipPath id="' + P + 'door"><rect x="-200" y="-400" width="400" height="' + f1(400 - 79) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'door)">' + at(seat[0], seat[1] - 6 * PS, PS, g("p-drive", KIT.person(drive)) + g("p-stare", KIT.person(stare), 'opacity="0"')) + "</g>";
+      var steering = line("M" + f1(handR[0] + 4) + "," + f1(handR[1] + 4) + " L" + f1(handR[0] + 22) + ",-80", ink, 4) +
+        '<ellipse cx="' + f1(handR[0] + 2) + '" cy="' + f1(handR[1]) + '" rx="5" ry="17" fill="none" stroke="' + ink + '" stroke-width="4.5"/>';
+      var carSvg = poly([[44, -80], [24, -120], [34, -122], [62, -80]], "#DDEBEA", 3, 'opacity="0.9"') + person + steering +
+        poly(hull, BODY, 4) + poly([[-150, -46], [150, -54], [160, -48], [-150, -40]], WHITE, 2.2) +
+        poly([[-186, -104], [-176, -98], [-170, -86], [-178, -92]], C.war, 2) +
+        poly([[150, -36], [174, -36], [176, -24], [150, -24]], CHROME, 2.4) + poly([[-176, -36], [-152, -36], [-152, -24], [-174, -24]], CHROME, 2.4) +
+        '<circle cx="158" cy="-58" r="8" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.6"/>' +
+        line("M-24,-78 V-30 M-24,-58 h10", ink, 2) + line("M160,-68 L120,-76", "#C46F25", 2) +
+        wheel("w-back", -104) + wheel("w-front", 104);
+      var honk = g("honk", line("M184,-74 l20,-12 M188,-56 l24,0 M184,-38 l20,12", ink, 4), 'opacity="0"');
+      var speed = g("speed", [[-210, -96], [-230, -66], [-205, -40]].map(function (s, i) { return line("M" + s[0] + "," + s[1] + " h" + (-90 - i * 24), ink, 4); }).join(""), 'opacity="0"');
+      var dust = [0, 1, 2].map(function (k) { return at(-150 - k * 34, -14 - k * 6, 1, g("dust-" + k, g("dust-s-" + k, puff(12 + k * 3)), 'opacity="0"')); }).join("");
+      // Each transform has its own group (one svgOrigin each): the car moves, falls (nose down about its middle),
+      // squats (about the rear wheel) and squashes on the honks (about its ground contact).
+      var car = at(L.car[0], GY, 1, g("car", at(0, 0, CS, g("car-fall", g("car-tilt", g("car-sq", carSvg + honk) + speed + dust)))));
+      // His bowler, on its own so it can hang in the air a moment after the car drops (face units, as kit.js draws it).
+      var hs = R.build.hs;
+      var bowler = '<path d="M-16,-21 L-12,-38 L1,-43 L14,-38 L18,-21 Z" fill="' + ink + '"/><path d="M-27,-18 L-21,-23 H23 L29,-18 Z" fill="' + ink + '"/>' +
+        '<path d="M-15,-27 H17" stroke="' + C.orange + '" stroke-width="2"/>';
+      var hat = at(L.car[0] + CS * headC[0], GY + CS * headC[1], 1, g("hat", at(0, 0, CS * PS * hs, bowler)));
+
+      // The dust that rises from far below at the end, under where the car hung.
+      var xHang = E + 188 * CS;
+      var bigPuff = at(xHang, L.puffY, 1, g("thud", g("thud-s", puff(30) + at(-56, 22, 1, puff(20)) + at(58, 26, 1, puff(18))), 'opacity="0"'));
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) +
+        '<defs><clipPath id="' + P + 'frame"><rect x="46" y="46" width="' + (W - 92) + '" height="' + (H - 92) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'frame)">' + g("sky", sky) + g("world", ground + capitol + roadSign + bigPuff + car + hat) + "</g>");
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var set = function (id, v, t) { tl.set(q(id), { opacity: v }, t); };
+      var sq = q("car-sq"), tilt = q("car-tilt"), fallG = q("car-fall"), carG = q("car"), hatG = q("hat");
+      gsap.set(sq, { svgOrigin: "0 0" });
+      gsap.set(tilt, { svgOrigin: "-104 0" });
+      gsap.set(fallG, { svgOrigin: "0 -60" });
+      gsap.set(q("thud-s"), { svgOrigin: "0 0" });
+      gsap.set(q("dsign"), { svgOrigin: "0 0" });
+
+      // "Department": the building builds up out of the grass (pen scratch).
+      var tDep = cue("Department");
+      tl.fromTo(q("caprect"), { attr: { y: GY, height: 0 } }, { attr: { y: GY - capH - 20, height: capH + 22 }, duration: 0.45, ease: "power2.out" }, tDep);
+      // "Transportation": its sign drops onto the portico (thunk) and wobbles.
+      var tTr = cue("Transportation"), ds = q("dsign");
+      tl.fromTo(ds, { y: -(GY / CSc + 200) }, { y: 0, duration: 0.26, ease: "power3.in" }, tTr - 0.26);
+      tl.fromTo(ds, { rotation: 0 }, { rotation: -3, duration: 0.07, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, tTr);
+
+      // "hasn't": the camera whips right, past the steps that end in grass, along the empty field (whoosh). The sky
+      // drifts a third as far sideways (the tilt moves it as much as the ground).
+      var tPan = cue("hasn't"), dPan = Math.min(V ? 0.34 : 0.3, cue("gotten") - tPan - 0.02);
+      tl.fromTo(q("world"), { x: 0, y: 0 }, { x: -L.pan, y: -L.tilt, duration: dPan, ease: "power2.inOut" }, tPan);
+      tl.fromTo(q("sky"), { x: 0, y: 0 }, { x: -L.pan * 0.35, y: -L.tilt, duration: dPan, ease: "power2.inOut" }, tPan);
+
+      // "gotten", "around": two honks; the car squashes on each.
+      ["gotten", "around"].forEach(function (w) {
+        var t = cue(w);
+        tl.fromTo(sq, { scaleY: 1, scaleX: 1 }, { scaleY: 0.86, scaleX: 1.05, duration: 0.05, ease: "power2.out", immediateRender: false }, t);
+        tl.to(sq, { scaleY: 1, scaleX: 1, duration: 0.07, ease: "power2.in" }, t + 0.05);
+        set("honk", 1, t);
+        set("honk", 0, t + 0.1);
+      });
+
+      // "roads": he floors it (whistle): the car squats, then bounces across the grass past the sign to the edge.
+      var tGo = cue("roads"), tYet = cue("yet.");
+      var xEdge = E - L.car[0] - 110 * CS, xOff = xHang - L.car[0];
+      tl.to(tilt, { rotation: -4, duration: 0.08, ease: "power2.out" }, tGo - 0.04);
+      tl.to(tilt, { rotation: 0, duration: 0.1, ease: "power2.in" }, tGo + 0.06);
+      tl.fromTo([carG, hatG], { x: 0 }, { x: xEdge, duration: tYet - tGo, ease: "power2.in" }, tGo);
+      tl.fromTo([carG, hatG], { y: 0 }, { y: -14, duration: (tYet - tGo) / 4, repeat: 3, yoyo: true, ease: "power1.out", immediateRender: false }, tGo);
+      set("speed", 1, tGo + 0.04);
+      [0, 1, 2].forEach(function (k) {
+        var t = tGo + k * 0.07, d = q("dust-s-" + k);
+        gsap.set(d, { svgOrigin: "0 0" });
+        set("dust-" + k, 1, t);
+        tl.fromTo(d, { scale: 0.4 }, { scale: 1.5, duration: 0.4, ease: "power1.out", immediateRender: false }, t);
+        tl.to(q("dust-" + k), { opacity: 0, duration: 0.3, ease: "power1.in" }, t + 0.1);
+      });
+      var tDrop = KIT.after(ID, "yet.");
+      [q("w-back"), q("w-front")].forEach(function (w) { gsap.set(w, { svgOrigin: "0 0" }); });
+      tl.fromTo([q("w-back"), q("w-front")], { rotation: 0 }, { rotation: 1440, duration: tDrop - tGo, ease: "power1.in" }, tGo);
+
+      // "yet.": off the edge, and it hangs in the air; he turns and looks at the camera.
+      // It leaves the edge on a little hop, so it hangs clear of the field line.
+      tl.to([carG, hatG], { x: xOff, duration: 0.12, ease: "power2.out" }, tYet);
+      tl.to([carG, hatG], { y: V ? -60 : -70, duration: 0.14, ease: "power2.out" }, tYet);
+      set("speed", 0, tYet + 0.12);
+      set("p-drive", 0, tYet + 0.14);
+      set("p-stare", 1, tYet + 0.14);
+
+      // after "yet.": it drops out of the frame (falling slide whistle), nose first; the hat hangs there a moment,
+      // then follows. Then a little puff of dust rises from far below (thunk).
+      var fall = H + L.tilt - GY + 300 * CS;
+      tl.to(carG, { y: fall, duration: 0.5, ease: "power2.in" }, tDrop);
+      tl.to(fallG, { rotation: 32, duration: 0.5, ease: "power1.in" }, tDrop);
+      tl.to(hatG, { y: fall + 80, duration: 0.45, ease: "power2.in" }, tDrop + 0.22);
+      var tThud = Math.min(D - 0.12, tDrop + 0.7); // the thunk
+      set("thud", 1, tThud - 0.06);
+      tl.fromTo(q("thud"), { y: H + L.tilt - L.puffY + 60 }, { y: 0, duration: 0.16, ease: "power2.out", immediateRender: false }, tThud - 0.06);
+      tl.fromTo(q("thud-s"), { scale: 0.4 }, { scale: 1, duration: 0.16, ease: "power2.out", immediateRender: false }, tThud - 0.06);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

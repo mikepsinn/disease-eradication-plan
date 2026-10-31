@@ -1,0 +1,851 @@
+<template id="queue-to-not-die-template">
+  <!-- queue-to-not-die · Layer B (storyboards/part-09-unexplored-therapeutic-frontier.md): the ticket window in its long
+       wall, the wait sign over it. "fifteen": its top line flips to 15 PER YEAR; "diseases": WAIT TIME FROM HERE: and its
+       digit wheels start spinning, and never stop. "first": the shutter rolls up; "treatment": an arm hands ticket 15 a
+       teal bottle, her chest light goes out and she skips away; "year.": the shutter slams on ticket 16's nose and
+       flattens it. "Six thousand": the long pan back along the roped line, the tickets popping 17 to 21; the line goes
+       grey and bearded, then x-rays into grinning skeletons like dominoes, still holding their tickets; it zigzags
+       through a graveyard where the headstones queue too, climbs a hill and goes over it; at the end, skeleton 6,650
+       waves. "Disneyland.": a whip pan to a plain theme park, WAIT: 45 MIN, where the fat cat at the front taps his
+       watch, goes red and steams until the steam blows his top hat off. The window, the sign and the queue are the
+       Part 9 spine (copied in untested-warehouse and weirdly-calm). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #queue-to-not-die-cam, #queue-to-not-die-bg, #queue-to-not-die-frame, #queue-to-not-die-pip, #queue-to-not-die-grain { position: absolute; inset: 0; }
+    #queue-to-not-die-view { position: absolute; left: 30px; top: 30px; right: 30px; bottom: 30px; overflow: hidden; }
+    #queue-to-not-die-pan { position: absolute; left: -30px; top: -30px; width: 100%; height: 100%; }
+  </style>
+  <div id="root" data-composition-id="queue-to-not-die" data-width="1920" data-height="1080" data-start="0" data-duration="17.4">
+    <div id="queue-to-not-die-cam">
+      <div id="queue-to-not-die-bg"></div>
+      <div id="queue-to-not-die-view"><div id="queue-to-not-die-pan"></div></div>
+      <div id="queue-to-not-die-frame"></div>
+      <div id="queue-to-not-die-pip"></div>
+      <div id="queue-to-not-die-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script>
+    (function () {
+      var ID = "queue-to-not-die";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+
+      // ══ The Part 9 spine (the same code in queue-to-not-die, untested-warehouse and weirdly-calm; Parts 12, 14 and
+      // 25 reuse it, so change every copy together): the ticket window in its plaster-and-brick wall, the wait sign
+      // over it, the germ tickets, the brass posts and red ropes, the old humans' beards and canes, and the warehouse
+      // of untested compounds behind the window. Everything is in frame units (or a person's units where noted). ══
+      var INK = C.line, CARD = "#FBF5E4", WHITE = "#FBF6E6", GREY = "#B9B5AE", PLASTER = "#EADDBD", BRICK = "#B86A4B", BEARD = "#E4E0D8";
+      // The outside face for each shape: the ground (feet) line, the wall box, the window opening [x, y, w, h] (shaped
+      // like the frame, so the warehouse picture fits it exactly), the wait sign (center x, top, w, h), where the
+      // front of the line stands (front: x of the human at the window), which way the front faces, scale and step.
+      var SPN = V
+        ? { ground: 856, wall: [-60, -60, 480, 916], win: [90, 470, 180, 320], sign: { cx: 360, top: 96, w: 600, h: 318 }, front: 318, look: "left", s: 0.95, step: 120 }
+        : { ground: 860, wall: [1150, -60, 830, 920], win: [1290, 560, 288, 162], sign: { cx: 1434, top: 112, w: 560, h: 330 }, front: 1262, look: "right", s: 1.1, step: 125 };
+      var SPF = SPN.look === "right" ? 1 : -1; // +1: the front of the line faces right (16:9), -1: left (9:16)
+      function spMix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function spF(v) { return (Math.round(v * 10) / 10).toString(); }
+      function spPts(p) { return p.map(function (a) { return spF(a[0]) + "," + spF(a[1]); }).join(" "); }
+      function spNum(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+      function spText(x, y, size, t, fill, extra, fam) {
+        return '<text x="' + spF(x) + '" y="' + spF(y) + '" text-anchor="middle" font-family="' + (fam || "Oswald") + '" font-weight="' + (fam === "Fraunces" ? 900 : 600) + '" font-size="' + size + '" fill="' + fill + '"' + (extra ? " " + extra : "") + ">" + t + "</text>";
+      }
+
+      // Ticket 15 (the pear-shaped woman who gets the teal bottle) and ticket 16 (the man the shutter flattens).
+      var T15 = { tone: 1, outfit: "dress", hair: 1, color: 3, seed: 0 }, T16 = { tone: 1, outfit: "suit", color: 3 };
+      // Everyone else in line, in turn (Part 14's queue uses the same looks).
+      var LOOKS = [
+        { tone: 1, outfit: "shirt", color: 0 }, { tone: 3, outfit: "dress", hair: 1, color: 3 }, { tone: 0, outfit: "suit", color: 2, stache: true },
+        { tone: 2, outfit: "overalls", color: 1 }, { tone: 0, outfit: "dress", hair: 1, color: 0 }, { tone: 3, outfit: "shirt", color: 2 },
+        { tone: 1, outfit: "suit", color: 1 }, { tone: 2, outfit: "shirt", color: 3 }, { tone: 0, outfit: "dress", hair: 1, color: 2 },
+        { tone: 3, outfit: "suit", color: 0 }, { tone: 1, outfit: "overalls", color: 2 }, { tone: 2, outfit: "dress", hair: 1, color: 1, seed: 3 },
+        { tone: 0, outfit: "shirt", color: 1 }, { tone: 1, outfit: "shirt", color: 2, seed: 1 }, { tone: 3, outfit: "dress", hair: 1, color: 0 },
+        { tone: 2, outfit: "suit", color: 2 }, { tone: 0, outfit: "overalls", color: 3 }, { tone: 1, outfit: "dress", hair: 1, color: 3, seed: 2 },
+      ];
+      // The look of the human holding ticket n (15 and 16 are fixed); old: grey, hunched and sad.
+      function spLook(n, look, old) {
+        var o = n === 15 ? spMix(T15, {}) : n === 16 ? spMix(T16, {}) : spMix(LOOKS[n % LOOKS.length], { seed: (LOOKS[n % LOOKS.length].seed || 0) + Math.floor(n / LOOKS.length) * 7 });
+        o.look = look; o.light = "red"; o.mood = n === 16 ? "worried" : "flat";
+        if (old) { o.hairColor = GREY; o.build = { hunch: 12 }; o.mood = "sad"; }
+        return o;
+      }
+
+      // A paper ticket printed with a germ and its number, around (0,0), in person units (as in Part 14).
+      var GERMS = ["yellow", "orange", "peri", "rust"];
+      function spTicket(n, k) {
+        var t = spNum(n), w = Math.max(40, 28 + t.length * 7.2), x0 = -w / 2;
+        return '<g transform="rotate(-12)' + (k && k !== 1 ? " scale(" + k + ")" : "") + '"><rect x="' + spF(x0) + '" y="-13" width="' + spF(w) + '" height="26" fill="' + CARD + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<path d="M' + spF(x0) + ",-4 a4,4 0 0 1 0,8 M" + spF(-x0) + ',-4 a4,4 0 0 0 0,8" fill="' + C.paper + '" stroke="' + INK + '" stroke-width="1.6"/>' +
+          '<g transform="translate(' + spF(x0 + 12) + ',8) scale(0.29)">' + KIT.props.germ({ color: GERMS[n % 4] }) + "</g>" +
+          spText(x0 + 22 + (w - 24) / 2, 5.5, 14, t, INK) + "</g>";
+      }
+      // The ticket in a human's front hand (a skeleton keeps it too: it is drawn apart from the body).
+      function spHeld(o, n, k) {
+        var h = KIT.rig(o).hand[1];
+        return '<g class="sp-ticket" transform="translate(' + spF(h[0] + 4) + "," + spF(h[1] + 6) + ')"><g class="sp-tk">' + spTicket(n, k) + "</g></g>";
+      }
+      // An old man's beard, from his chin to the floor (95-percent-untreated's shape), in person units.
+      function spBeard(o) {
+        var m = KIT.rig(o).mouth, my = m[1] - 2, f = o.look === "left" ? -1 : 1;
+        var pts = [[-11, my - 2], [7, my + 1], [12, my + 12], [10, my + 30], [16, 30], [14, 60], [20, 88], [44, 92], [50, 100], [-24, 100], [-20, 92], [-25, 84], [-19, 60], [-22, 34], [-15, my + 22], [-17, my + 8]]
+          .map(function (p) { return [m[0] + f * p[0], p[1]]; });
+        var strands = [[[0, my + 12], [-2, 40], [2, 80]], [[-9, my + 22], [-12, 56], [-10, 90]], [[8, my + 30], [10, 64], [26, 94]]].map(function (st) {
+          return "M" + st.map(function (p) { return spF(m[0] + f * p[0]) + "," + spF(p[1]); }).join(" L");
+        }).join(" ");
+        return '<g class="sp-beard" data-o="' + spF(m[0]) + " " + spF(my) + '"><polygon points="' + spPts(pts) + '" fill="' + BEARD + '" stroke="' + INK + '" stroke-width="2.2" stroke-linejoin="miter"/>' +
+          '<path d="' + strands + '" fill="none" stroke="' + INK + '" stroke-width="1.3" opacity="0.5"/></g>';
+      }
+      // A walking cane in the back hand, down to the floor, in person units.
+      function spCane(o) {
+        var h = KIT.rig(o).hand[0], f = o.look === "left" ? -1 : 1, x = h[0] + 2 * f, y = h[1] - 4;
+        return '<path d="M' + spF(x) + "," + spF(y) + " q" + spF(-2 * f) + ",-9 " + spF(-9 * f) + ",-7 M" + spF(x) + "," + spF(y) + " L" + spF(x + 5 * f) + ',100" fill="none" stroke="' + INK + '" stroke-width="5.4" stroke-linecap="round"/>' +
+          '<path d="M' + spF(x) + "," + spF(y) + " L" + spF(x + 5 * f) + ',99" stroke="' + C.rust + '" stroke-width="2.4"/>';
+      }
+      // A brass post, around its foot (0,0), 62 tall: the rope ties on at (0,-54) (in person units).
+      function spPost() {
+        return '<ellipse cx="0" cy="0" rx="12" ry="4" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+          '<rect x="-3" y="-56" width="6" height="56" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4"/><path d="M1,-52 V-4" stroke="' + C.orange + '" stroke-width="1.4"/>' +
+          '<circle cx="0" cy="-60" r="6" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.4"/>';
+      }
+      // A sagging red velvet rope between two post tops (frame units; s: the people's scale).
+      function spRope(a, b, s) {
+        var sag = Math.min(26, Math.hypot(b[0] - a[0], b[1] - a[1]) * 0.12) * s, d = "M" + spF(a[0]) + "," + spF(a[1]) + " Q" + spF((a[0] + b[0]) / 2) + "," + spF((a[1] + b[1]) / 2 + 2 * sag) + " " + spF(b[0]) + "," + spF(b[1]);
+        return '<path d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="' + spF(9 * s) + '" stroke-linecap="round"/><path d="' + d + '" fill="none" stroke="' + C.war + '" stroke-width="' + spF(5.4 * s) + '" stroke-linecap="round"/>';
+      }
+
+      // ── The wall and the ticket window (outside face) ───────────────────────────────────────────────────
+      var WN = SPN.win;
+      function spWall() {
+        var w = SPN.wall, x0 = w[0], y0 = w[1], x1 = w[0] + w[2], g = SPN.ground, lip = WN[1] + WN[3] + 40, bricks = "";
+        for (var r = 0, y = lip + 10; y < g; y += 22, r++)
+          for (var x = x0 + (r % 2 ? 0 : 26); x < x1; x += 52) bricks += "M" + spF(x) + "," + spF(y) + " v22 ";
+        for (var yy = lip + 10; yy < g; yy += 22) bricks += "M" + spF(x0) + "," + spF(yy) + " H" + spF(x1) + " ";
+        // its open end: a darker corner strip, on the left in 16:9 and on the right in 9:16
+        var cx = V ? x1 - 26 : x0;
+        return '<rect x="' + x0 + '" y="' + y0 + '" width="' + w[2] + '" height="' + (g - y0) + '" fill="' + PLASTER + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<rect x="' + x0 + '" y="' + y0 + '" width="' + w[2] + '" height="' + (g - y0) + '" fill="url(#' + ID + '-fine)" opacity="0.16"/>' +
+          '<rect x="' + x0 + '" y="' + lip + '" width="' + w[2] + '" height="' + (g - lip) + '" fill="' + BRICK + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<path d="' + bricks + '" stroke="' + INK + '" stroke-width="1.4" opacity="0.45"/>' +
+          '<rect x="' + x0 + '" y="' + (lip - 12) + '" width="' + w[2] + '" height="14" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="3"/>' +
+          '<rect x="' + cx + '" y="' + y0 + '" width="26" height="' + (g - y0) + '" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<rect x="' + cx + '" y="' + y0 + '" width="26" height="' + (g - y0) + '" fill="url(#' + ID + '-hatch)" opacity="0.3"/>';
+      }
+      // The window's back: its rust frame, a scalloped awning, the opening (`inside`: markup drawn in the opening's
+      // place, clipped to it) and the counter ledge. People stand in front of this; the shutter goes over them.
+      function spWinBack(inside) {
+        var x = WN[0], y = WN[1], w = WN[2], h = WN[3], sc = "", n = V ? 4 : 6, sw = (w + 44) / n;
+        for (var i = 0; i < n; i++) sc += '<path d="M' + spF(x - 22 + i * sw) + "," + (y - 26) + " a" + spF(sw / 2) + "," + spF(sw / 2.3) + ' 0 0 0 ' + spF(sw) + ',0 Z" fill="' + (i % 2 ? CARD : C.war) + '" stroke="' + INK + '" stroke-width="3"/>';
+        return '<rect x="' + (x - 16) + '" y="' + (y - 16) + '" width="' + (w + 32) + '" height="' + (h + 24) + '" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<defs><clipPath id="' + ID + '-open"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '"/></clipPath></defs>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + C.deep + '"/>' +
+          '<g clip-path="url(#' + ID + '-open)">' + (inside || "") + "</g>" +
+          '<path d="M' + (x - 30) + "," + (y - 26) + " L" + (x - 14) + "," + (y - 58) + " H" + (x + w + 14) + " L" + (x + w + 30) + "," + (y - 26) + ' Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="4" stroke-linejoin="miter"/>' + sc +
+          '<path d="M' + (x - 34) + "," + (y + h) + " H" + (x + w + 34) + " L" + (x + w + 24) + "," + (y + h + 18) + " H" + (x - 24) + ' Z" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="3.4" stroke-linejoin="miter"/>';
+      }
+      // The roll-up shutter, clipped to the opening: #<ID>-shutter (y 0 is down, -h is up).
+      function spShutter() {
+        var x = WN[0], y = WN[1], w = WN[2], h = WN[3], slats = "";
+        for (var yy = 14; yy < h; yy += 14) slats += "M" + x + "," + (y + yy) + " H" + (x + w) + " ";
+        return '<g clip-path="url(#' + ID + '-open)"><g id="' + ID + '-shutter"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + C.peri + '"/>' +
+          '<path d="' + slats + '" stroke="' + INK + '" stroke-width="2" opacity="0.7"/><rect x="' + x + '" y="' + (y + h - 16) + '" width="' + w + '" height="16" fill="#4A5A78"/>' +
+          '<rect x="' + (x + w / 2 - 14) + '" y="' + (y + h - 12) + '" width="28" height="7" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.6"/></g></g>' +
+          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="none" stroke="' + INK + '" stroke-width="4"/>';
+      }
+
+      // ── The wait sign ───────────────────────────────────────────────────────────────────────────────────
+      // An enamel plate on two chains: a red band (#<ID>-rate, "15 PER YEAR"), "WAIT TIME FROM HERE:" (#<ID>-label),
+      // three digit wheels (#<ID>-strip0..2; spWheels sets them) and "YEARS". Blank flaps cover the band
+      // (#<ID>-flap-rate) and the lower line (#<ID>-flap-low) until they flip; #<ID>-blur streaks the spinning wheels.
+      var SG = SPN.sign, SGX = SG.cx - SG.w / 2, WH = V ? [88, 118] : [80, 108];
+      var SGW = { y: SG.top + SG.h * 0.55, x0: 0, xs: [] };
+      function spSign() {
+        var t = SG.top, w = SG.w, h = SG.h, band = h * 0.24, fs = V ? 50 : 46, lfs = V ? 40 : 38, yfs = V ? 64 : 58;
+        var tot = 3 * WH[0] + 2 * 10 + 22 + yfs * 2.75;
+        SGW.x0 = SG.cx - tot / 2;
+        var wheels = "";
+        for (var i = 0; i < 3; i++) {
+          var x = SGW.x0 + i * (WH[0] + 10), strip = "";
+          SGW.xs.push(x);
+          for (var c = 0; c <= 10; c++) strip += spText(WH[0] / 2, c * WH[1] + WH[1] * 0.8, Math.round(WH[1] * 0.8), String(c % 10), CARD, "", "Fraunces");
+          wheels += '<defs><clipPath id="' + ID + "-wc" + i + '"><rect x="0" y="0" width="' + WH[0] + '" height="' + WH[1] + '"/></clipPath></defs>' +
+            '<g transform="translate(' + spF(x) + "," + spF(SGW.y) + ')"><rect x="-5" y="-5" width="' + (WH[0] + 10) + '" height="' + (WH[1] + 10) + '" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="4"/>' +
+            '<g clip-path="url(#' + ID + "-wc" + i + ')"><g id="' + ID + "-strip" + i + '">' + strip + "</g>" +
+            '<g class="sp-blur" opacity="0">' + [0.2, 0.42, 0.64, 0.86].map(function (f) { return '<path d="M' + spF(WH[0] * f) + ",4 V" + (WH[1] - 4) + '" stroke="' + CARD + '" stroke-width="5" opacity="0.55"/>'; }).join("") + "</g></g>" +
+            '<path d="M0,' + WH[1] / 2 + " H" + WH[0] + '" stroke="' + INK + '" stroke-width="1.4" opacity="0.5"/><rect x="0" y="0" width="' + WH[0] + '" height="' + spF(WH[1] * 0.2) + '" fill="' + INK + '" opacity="0.3"/></g>';
+        }
+        var years = '<text x="' + spF(SGW.x0 + 3 * WH[0] + 20 + 22) + '" y="' + spF(SGW.y + WH[1] * 0.78) + '" font-family="Oswald" font-weight="600" font-size="' + yfs + '" letter-spacing="3" fill="' + INK + '">YEARS</text>';
+        var flap = function (id, y0, y1, fill) {
+          return '<g id="' + ID + "-flap-" + id + '"><rect x="' + (SGX + 14) + '" y="' + spF(y0) + '" width="' + (w - 28) + '" height="' + spF(y1 - y0) + '" fill="' + fill + '"/>' +
+            '<path d="M' + (SGX + 14) + "," + spF((y0 + y1) / 2) + " H" + (SGX + w - 14) + '" stroke="' + INK + '" stroke-width="2" opacity="0.4"/></g>';
+        };
+        return '<g id="' + ID + '-sign">' +
+          '<path d="M' + (SGX + 70) + ",-40 V" + t + " M" + (SGX + w - 70) + ",-40 V" + t + '" stroke="' + INK + '" stroke-width="5" stroke-dasharray="10 5"/>' +
+          '<rect x="' + (SGX + 12) + '" y="' + (t + 14) + '" width="' + w + '" height="' + h + '" fill="' + C.ink + '" opacity="0.85"/>' +
+          '<rect x="' + SGX + '" y="' + t + '" width="' + w + '" height="' + h + '" rx="8" fill="' + CARD + '" stroke="' + INK + '" stroke-width="6"/>' +
+          '<rect x="' + (SGX + 14) + '" y="' + (t + 14) + '" width="' + (w - 28) + '" height="' + spF(band) + '" fill="' + C.war + '" stroke="' + INK + '" stroke-width="3"/>' +
+          '<g id="' + ID + '-rate">' + spText(SG.cx, t + 14 + band * 0.5 + fs * 0.36, fs, "15 PER YEAR", CARD, 'letter-spacing="4"') + "</g>" +
+          flap("rate", t + 16, t + 12 + band, C.war) +
+          '<rect x="' + (SGX + 14) + '" y="' + spF(t + 26 + band) + '" width="' + (w - 28) + '" height="' + spF(h - band - 40) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.5"/>' +
+          '<g id="' + ID + '-label">' + spText(SG.cx, t + band + 30 + lfs * 1.05, lfs, "WAIT TIME FROM HERE:", INK, 'letter-spacing="2"') + "</g>" +
+          wheels + years + flap("low", t + band + 30, t + h - 16, CARD) + "</g>";
+      }
+      // Set the wheels: p = [hundreds, tens, units] in digit cells (fractions roll between digits); spin: 0..1 streaks.
+      var SG_STRIPS = null, SG_BLUR = null;
+      function spWheels(p, spin) {
+        if (!SG_STRIPS) {
+          SG_STRIPS = [0, 1, 2].map(function (i) { return document.getElementById(ID + "-strip" + i); });
+          SG_BLUR = document.querySelectorAll("#" + ID + "-sign .sp-blur");
+        }
+        for (var i = 0; i < 3; i++) {
+          var c = ((p[i] % 10) + 10) % 10;
+          SG_STRIPS[i].setAttribute("transform", "translate(0," + spF(-c * WH[1]) + ")");
+          SG_BLUR[i].setAttribute("opacity", spF(Math.max(0, Math.min(1, spin[i]))));
+        }
+      }
+
+      // ══ The warehouse behind the window: shelves of known safe compounds in one-point perspective, running back
+      // to a vanishing point, in the frame's own units (untested-warehouse shows it full frame; the other scenes,
+      // inside the window). The rack on the near right has the rolling ladder; the front wall's inside face, with the
+      // window, is on the right. 16:9: the four aisles are four bays deep; 9:16: four bands of shelves, top to bottom.
+      var WH9 = V
+        ? { vp: [430, 600], xl: -110, xr: 770, top: -80, floor: 1440, levels: [130, 290, 450, 610, 770, 930, 1090, 1250], z: [1, 1.5, 2.3, 3.5, 5.4], bs: 0.6, groupBy: "level",
+            ladder: { x0: 618, x1: 696, top: 240, foot: 1428, rung: 50 }, frontWall: 770, iwin: [812, 930, 220, 300], floorY: 1428 }
+        : { vp: [560, 440], xl: -80, xr: 1180, top: -70, floor: 960, levels: [120, 268, 416, 564, 712, 860], z: [1, 1.5, 2.3, 3.5, 5.4], bs: 0.7, groupBy: "bay",
+            ladder: { x0: 1010, x1: 1094, top: 150, foot: 902, rung: 50 }, frontWall: 1180, iwin: [1330, 420, 250, 250], floorY: 902 };
+      // A point on the near plane (x, y) seen at depth z.
+      function whAt(x, y, z) { return [WH9.vp[0] + (x - WH9.vp[0]) / z, WH9.vp[1] + (y - WH9.vp[1]) / z]; }
+      // The bottles on the shelves: every one with its wall, level, depth, screen place, scale and fill group.
+      function whBottles() {
+        var out = [], zmax = WH9.z[WH9.z.length - 1];
+        [WH9.xl, WH9.xr].forEach(function (xn, wi) {
+          var span = Math.abs(xn - WH9.vp[0]), bw = 58 * WH9.bs;
+          WH9.levels.forEach(function (yn, li) {
+            var z = 1.04 + ((li * 7 + wi * 3) % 5) * 0.012;
+            while (z < zmax - 0.05) {
+              var p = whAt(xn, yn, z), k = WH9.bs / z, bay = 0;
+              while (bay < 3 && z >= WH9.z[bay + 1]) bay++;
+              var grp = WH9.groupBy === "bay" ? bay : Math.floor(li / 2);
+              // nudge toward the aisle, so a bottle stands on the board's front edge
+              out.push({ w: wi, l: li, z: z, x: p[0] + (wi ? -1 : 1) * 14 * k, y: p[1], k: k, g: grp });
+              z += 0.78 * bw * z / span;
+            }
+          });
+        });
+        // far ones first, so the near ones overlap them
+        return out.sort(function (a, b) { return b.z - a.z; });
+      }
+      var WHB = whBottles();
+      // Which bottles have a teal check (tested), which carry a legible tag, and the one the scientist takes.
+      WHB.forEach(function (b, i) {
+        var r = KIT.rng(1000 + Math.round(b.z * 1000) + b.l * 31 + b.w * 7)();
+        b.check = r < 0.022 && b.z > 1.25;
+        b.big = b.w === (V ? 0 : 0) && b.z < 1.32 && b.l >= (V ? 3 : 2) && b.l <= (V ? 6 : 4) && !b.check;
+      });
+      var WH_TAKE = (function () {
+        var best = null;
+        WHB.forEach(function (b, i) { if (b.w === 1 && b.l === 0 && (!best || Math.abs(b.z - 1.22) < Math.abs(best.b.z - 1.22))) best = { b: b, i: i }; });
+        best.b.take = true;
+        return best.b;
+      })();
+      // The warehouse picture. PF: an id prefix (each copy needs its own); st: what is there yet
+      // { bottles, tags, dust, webs, sign } (true: shown from the start; false: present, hidden, for the scene to bring in).
+      function warehouse(PF, st) {
+        st = st || {};
+        var vp = WH9.vp, z = WH9.z, zmax = z[z.length - 1], out = "", L9 = WH9;
+        var defs = '<defs><g id="' + PF + '-btl">' + KIT.props.pillBottle({ label: "", pills: false }) + "</g>" +
+          '<g id="' + PF + '-tagf"><path d="M0,0 L4,10" stroke="' + INK + '" stroke-width="1.6"/><rect x="-6" y="10" width="34" height="16" fill="' + CARD + '" stroke="' + INK + '" stroke-width="2"/><path d="M-1,15 H22 M-1,20 H16" stroke="' + INK + '" stroke-width="1.6" opacity="0.6"/></g>' +
+          '<g id="' + PF + '-chk"><path d="M-12,-46 L-3,-36 L14,-60" fill="none" stroke="' + INK + '" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M-12,-46 L-3,-36 L14,-60" fill="none" stroke="' + C.med + '" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></g></defs>';
+        // the back wall, the ceiling and the floor
+        var far = [whAt(L9.xl, L9.top, zmax), whAt(L9.xr, L9.top, zmax), whAt(L9.xr, L9.floor, zmax), whAt(L9.xl, L9.floor, zmax)];
+        out += '<rect x="-200" y="-200" width="' + (W + 400) + '" height="' + (H + 400) + '" fill="#D8C9A2"/>' +
+          '<polygon points="' + spPts([[-200, -200], [W + 200, -200], far[1], far[0]]) + '" fill="' + C.slate + '"/>' +
+          '<polygon points="' + spPts([[-200, H + 200], [W + 200, H + 200], far[2], far[3]]) + '" fill="' + C.tan + '"/>' +
+          '<polygon points="' + spPts([[-200, H + 200], [W + 200, H + 200], far[2], far[3]]) + '" fill="url(#' + ID + '-fine)" opacity="0.25"/>';
+        // ceiling beams and floor seams, running to the vanishing point
+        [0.15, 0.4, 0.62, 0.85].forEach(function (f) {
+          var xn = L9.xl + (L9.xr - L9.xl) * f, a = whAt(xn, L9.floor, 1), b = whAt(xn, L9.floor, zmax), c = whAt(xn, L9.top, 1), d = whAt(xn, L9.top, zmax);
+          out += '<path d="M' + spPts([a]) + " L" + spPts([b]) + '" stroke="' + INK + '" stroke-width="2" opacity="0.35"/><path d="M' + spPts([c]) + " L" + spPts([d]) + '" stroke="' + C.peri + '" stroke-width="5" opacity="0.6"/>';
+        });
+        z.forEach(function (zz) { var a = whAt(L9.xl, L9.floor, zz), b = whAt(L9.xr, L9.floor, zz); out += '<path d="M' + spPts([a]) + " L" + spPts([b]) + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.3"/>'; });
+        // the far wall: a door with a lamp over it
+        var fd = [whAt(vp[0] - 60, L9.floor, zmax), whAt(vp[0] + 60, L9.floor, zmax), whAt(vp[0] + 60, L9.floor - 320, zmax), whAt(vp[0] - 60, L9.floor - 320, zmax)];
+        out += '<polygon points="' + spPts(far) + '" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3"/><polygon points="' + spPts(far) + '" fill="url(#' + ID + '-fine)" opacity="0.3"/>' +
+          '<polygon points="' + spPts(fd) + '" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="2.4"/>';
+        // each wall of shelving: the backing, the boards and the uprights
+        [L9.xl, L9.xr].forEach(function (xn, wi) {
+          var back = [whAt(xn, L9.top, 1), whAt(xn, L9.top, zmax), whAt(xn, L9.floor, zmax), whAt(xn, L9.floor, 1)];
+          out += '<polygon points="' + spPts(back) + '" fill="#C9AE7E" stroke="' + INK + '" stroke-width="3"/><polygon points="' + spPts(back) + '" fill="url(#' + ID + '-hatch)" opacity="0.18"/>';
+          L9.levels.concat([L9.floor]).forEach(function (yn) {
+            var a = whAt(xn, yn, 1), b = whAt(xn, yn, zmax), dx = (wi ? -1 : 1) * 22;
+            var a2 = whAt(xn + dx, yn, 1), b2 = whAt(xn + dx, yn, zmax);
+            out += '<polygon points="' + spPts([a, b, b2, a2]) + '" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="2.2"/>' +
+              '<polygon points="' + spPts([a2, b2, whAt(xn + dx, yn + 12, zmax), whAt(xn + dx, yn + 12, 1)]) + '" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="2"/>';
+          });
+          z.forEach(function (zz) {
+            var a = whAt(xn, L9.top, zz), b = whAt(xn, L9.floor, zz), wd = 16 / zz, dx = (wi ? -1 : 1) * wd;
+            out += '<polygon points="' + spPts([a, [a[0] + dx, a[1]], [b[0] + dx, b[1]], b]) + '" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+              '<path d="M' + spF(a[0] + dx * 0.7) + "," + spF(a[1]) + " V" + spF(b[1]) + '" stroke="' + C.orange + '" stroke-width="1.4"/>';
+          });
+        });
+        // the bottles, a group per aisle, then the tags and checks over them (one group per bottle)
+        var groups = ["", "", "", ""], tags = "", checks = "";
+        WHB.forEach(function (b, i) {
+          var tr = 'transform="translate(' + spF(b.x) + "," + spF(b.y) + ") scale(" + b.k.toFixed(4) + ')"';
+          if (b.take) groups[b.g] += '<g id="' + PF + '-take"><g ' + tr + '><use href="#' + PF + '-btl"/></g></g>';
+          else groups[b.g] += '<use href="#' + PF + '-btl" ' + tr + "/>";
+          if (b.check) checks += '<g class="wh-chk" data-i="' + i + '" ' + tr + '><use href="#' + PF + '-chk"/></g>';
+          else if (b.big) tags += '<g class="wh-tag" data-i="' + i + '" data-z="' + b.z.toFixed(3) + '" transform="translate(' + spF(b.x) + "," + spF(b.y - 76 * b.k) + ") scale(" + (b.k / WH9.bs * 1.05).toFixed(4) + ')">' +
+            '<path d="M0,0 L-2,9" stroke="' + INK + '" stroke-width="1.6"/><rect x="-38" y="9" width="76" height="34" fill="' + CARD + '" stroke="' + INK + '" stroke-width="2.2"/>' +
+            spText(0, 24, 12.5, "NEVER TESTED", C.war, 'letter-spacing="0.6"') + spText(0, 38, 12.5, "FOR THIS", INK, 'letter-spacing="0.6"') + "</g>";
+          else tags += '<g class="wh-tag" data-i="' + i + '" data-z="' + b.z.toFixed(3) + '" transform="translate(' + spF(b.x - 6 * b.k) + "," + spF(b.y - 80 * b.k) + ") scale(" + b.k.toFixed(4) + ')"><use href="#' + PF + '-tagf"/></g>';
+        });
+        if (st.bottles !== null) out += groups.map(function (gsvg, gi) { return '<g id="' + PF + "-aisle" + gi + '"' + (st.bottles === false ? ' opacity="0"' : "") + ">" + gsvg + "</g>"; }).join("");
+        if (st.bottles !== null) out += '<g id="' + PF + '-tags"' + (st.tags ? "" : ' opacity="0"') + ">" + tags + checks + "</g>";
+        // the hanging sign over the aisles
+        var sp = whAt(vp[0], V ? 260 : 150, 1.1);
+        out += '<g transform="translate(' + spF(sp[0]) + "," + spF(sp[1]) + ')"><g id="' + PF + '-hsign"><path d="M' + (V ? -140 : -200) + ",-60 V-400 M" + (V ? 140 : 200) + ',-60 V-400" stroke="' + INK + '" stroke-width="4" stroke-dasharray="9 5"/>' +
+          '<g class="wh-hsign-card">' + KIT.props.sign({ text: V ? "KNOWN SAFE\nCOMPOUNDS: 9,500" : "KNOWN SAFE COMPOUNDS: 9,500", fontSize: V ? 40 : 36, height: 0, posts: 1 }).replace(/<g class="sign-posts">[\s\S]*?<\/g>/, "") + "</g></g></g>";
+        // dust over the shelves (a halftone veil and cobwebs in the corners)
+        var webs = "";
+        [[0, 0, 1], [0, 2, 1], [1, 0, 2], [1, 3, 1], [0, 4, 2], [1, 5, 3]].forEach(function (wb, k) {
+          var lv = Math.min(wb[1], L9.levels.length - 2), xn = wb[0] ? L9.xr : L9.xl, za = z[wb[2]], zb = z[wb[2] + 1];
+          var c = whAt(xn, L9.levels[lv], za), a = whAt(xn, L9.levels[lv], (za + zb) / 2), b = whAt(xn, L9.levels[lv + 1] - 10, za);
+          var d = "";
+          [0.35, 0.65, 1].forEach(function (f) { d += "M" + spF(c[0] + (a[0] - c[0]) * f) + "," + spF(c[1] + (a[1] - c[1]) * f) + " Q" + spF(c[0] + (a[0] + b[0] - 2 * c[0]) * f * 0.42) + "," + spF(c[1] + (a[1] + b[1] - 2 * c[1]) * f * 0.42) + " " + spF(c[0] + (b[0] - c[0]) * f) + "," + spF(c[1] + (b[1] - c[1]) * f) + " "; });
+          d += "M" + spPts([c]) + " L" + spPts([a]) + " M" + spPts([c]) + " L" + spPts([b]) + " M" + spPts([c]) + " L" + spF((a[0] + b[0]) / 2) + "," + spF((a[1] + b[1]) / 2);
+          webs += '<path class="wh-web" d="' + d + '" fill="none" stroke="' + INK + '" stroke-width="1.6" opacity="0.7" pathLength="1" stroke-dasharray="1" stroke-dashoffset="' + (st.webs ? 0 : 1) + '"/>';
+        });
+        // strands across the aisle, high up
+        var s1 = whAt(L9.xl, L9.levels[0], 1.8), s2 = whAt(L9.xr, L9.levels[0], 1.8), s3 = whAt(L9.xl, L9.levels[1], 2.8), s4 = whAt(L9.xr, L9.levels[1], 2.8);
+        webs += '<path class="wh-web" d="M' + spPts([s1]) + " Q" + spF((s1[0] + s2[0]) / 2) + "," + spF(s1[1] + 60) + " " + spPts([s2]) + " M" + spPts([s3]) + " Q" + spF((s3[0] + s4[0]) / 2) + "," + spF(s3[1] + 40) + " " + spPts([s4]) +
+          '" fill="none" stroke="' + INK + '" stroke-width="1.4" opacity="0.55" pathLength="1" stroke-dasharray="1" stroke-dashoffset="' + (st.webs ? 0 : 1) + '"/>';
+        out += '<g id="' + PF + '-dust"' + (st.dust ? "" : ' opacity="0"') + '><rect x="-200" y="-200" width="' + (W + 400) + '" height="' + (H + 400) + '" fill="url(#' + ID + '-fine)" opacity="0.32"/>' +
+          '<rect x="-200" y="-200" width="' + (W + 400) + '" height="' + (H + 400) + '" fill="#B9B5AE" opacity="0.16"/></g>' + webs;
+        // the rolling ladder, hooked on a rail at the top, on two wheels
+        var Ld = L9.ladder, rungs = "";
+        for (var y = Ld.foot - Ld.rung; y > Ld.top + 20; y -= Ld.rung) {
+          var f = (Ld.foot - y) / (Ld.foot - Ld.top), lx = Ld.x0 + (Ld.x1 - Ld.x0) * f * 0.35;
+          rungs += '<path d="M' + spF(lx) + "," + spF(y) + " H" + spF(lx + (Ld.x1 - Ld.x0)) + '" stroke="' + INK + '" stroke-width="8" stroke-linecap="square"/><path d="M' + spF(lx) + "," + spF(y) + " H" + spF(lx + (Ld.x1 - Ld.x0)) + '" stroke="' + C.tan + '" stroke-width="4"/>';
+        }
+        var lw = Ld.x1 - Ld.x0, tx = Ld.x0 + lw * 0.35;
+        var rail = function (x0, x1) { return '<path d="M' + x0 + "," + Ld.foot + " L" + spF(x1) + "," + Ld.top + '" stroke="' + INK + '" stroke-width="11"/><path d="M' + x0 + "," + Ld.foot + " L" + spF(x1) + "," + Ld.top + '" stroke="' + C.rust + '" stroke-width="6"/>'; };
+        out += '<path d="M' + (Ld.x0 - 120) + "," + (Ld.top - 6) + " H" + (Ld.x1 + 80) + '" stroke="' + INK + '" stroke-width="7"/>' +
+          '<g id="' + PF + '-ladder">' + rungs + rail(Ld.x0, tx) + rail(Ld.x1, tx + lw) +
+          '<circle cx="' + Ld.x0 + '" cy="' + (Ld.foot + 4) + '" r="9" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="3"/><circle cx="' + Ld.x1 + '" cy="' + (Ld.foot + 4) + '" r="9" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="3"/>' +
+          '<path d="M' + spF(tx) + "," + Ld.top + " q-4,-14 8,-14 M" + spF(tx + lw) + "," + Ld.top + ' q-4,-14 8,-14" fill="none" stroke="' + INK + '" stroke-width="5"/></g>';
+        return defs + out;
+      }
+      // The front wall's inside face (right of the shelves), with the window: its shutter half up, and through it
+      // the outside: `outside` markup drawn in frame units, clipped to the opening.
+      function whFrontWall(PF, outside) {
+        var x0 = WH9.frontWall, iw = WH9.iwin, slats = "";
+        for (var yy = 14; yy < iw[3]; yy += 14) slats += "M" + iw[0] + "," + (iw[1] + yy) + " H" + (iw[0] + iw[2]) + " ";
+        return '<rect x="' + x0 + '" y="-200" width="' + (W - x0 + 200) + '" height="' + (WH9.floorY + 200) + '" fill="' + PLASTER + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<rect x="' + x0 + '" y="-200" width="' + (W - x0 + 200) + '" height="' + (WH9.floorY + 200) + '" fill="url(#' + ID + '-hatch)" opacity="0.14"/>' +
+          '<rect x="' + (iw[0] - 16) + '" y="' + (iw[1] - 16) + '" width="' + (iw[2] + 32) + '" height="' + (iw[3] + 24) + '" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<defs><clipPath id="' + PF + '-iwin"><rect x="' + iw[0] + '" y="' + iw[1] + '" width="' + iw[2] + '" height="' + iw[3] + '"/></clipPath></defs>' +
+          '<rect x="' + iw[0] + '" y="' + iw[1] + '" width="' + iw[2] + '" height="' + iw[3] + '" fill="' + C.paper + '"/>' +
+          '<g clip-path="url(#' + PF + '-iwin)">' + (outside || "") +
+          '<g id="' + PF + '-ishutter"><rect x="' + iw[0] + '" y="' + iw[1] + '" width="' + iw[2] + '" height="' + spF(iw[3] * 0.42) + '" fill="' + C.peri + '"/>' +
+          '<path d="' + slats.split(" M").filter(function (s, i) { return i < Math.floor(iw[3] * 0.42 / 14); }).join(" M") + '" stroke="' + INK + '" stroke-width="2" opacity="0.6"/>' +
+          '<rect x="' + iw[0] + '" y="' + spF(iw[1] + iw[3] * 0.42 - 14) + '" width="' + iw[2] + '" height="14" fill="#4A5A78"/></g></g>' +
+          '<rect x="' + iw[0] + '" y="' + iw[1] + '" width="' + iw[2] + '" height="' + iw[3] + '" fill="none" stroke="' + INK + '" stroke-width="4"/>' +
+          '<path d="M' + (iw[0] - 30) + "," + (iw[1] + iw[3]) + " H" + (iw[0] + iw[2] + 30) + " L" + (iw[0] + iw[2] + 20) + "," + (iw[1] + iw[3] + 18) + " H" + (iw[0] - 20) + ' Z" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="3.4"/>';
+      }
+      // ══ end of the spine ══
+
+      // The paper (its border is drawn over the panning strip, which is clipped inside it) and the grain.
+      q("bg").innerHTML = KIT.svg(W, H, '<rect width="' + W + '" height="' + H + '" fill="' + C.paper + '"/>');
+      q("frame").innerHTML = KIT.svg(W, H, '<rect x="30" y="30" width="' + (W - 60) + '" height="' + (H - 60) + '" fill="none" stroke="' + C.line + '" stroke-width="5"/>' +
+        '<rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+        KIT.star(W - 92, 96, 22, C.orange) + KIT.star(W - 130, 140, 10, C.yellow) + KIT.star(84, H - 84, 18, C.orange));
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ══ The line ═══════════════════════════════════════════════════════════════════════════════════════════
+      // Its path, from the window back. 16:9: one long row running left, which climbs a hill near its end; 9:16:
+      // rows that zigzag down the page (even rows run right, odd rows left). Each slot: x, ground y, facing, and its
+      // kind: sick, grey (old: beard, cane), dom (old, x-rays into bones on a zap), bones, stone (a headstone in
+      // line), end (skeleton 6,650). n: its ticket number.
+      var S = SPN.s, slots = [];
+      function add(x, y, look, kind, row) { slots.push({ x: x, y: y, look: look, kind: kind, row: row || 0 }); }
+      var HILL = null, PARK = null, XE = 0, YE = 0;
+      if (!V) {
+        var kinds = [["sick", 26], ["grey", 10], ["dom", 12], ["bones", 5], ["grave", 12]], x = SPN.front;
+        kinds.forEach(function (kd) {
+          for (var i = 0; i < kd[1]; i++) {
+            var k = kd[0] === "grave" ? (i % 2 ? "bones" : "stone") : kd[0];
+            add(x, SPN.ground, "right", k); x -= SPN.step;
+          }
+        });
+        // the hill: the near slope rises 300 over 700, a short flat top, then the far slope down to the ground
+        var xb = x + SPN.step - 110;
+        HILL = { xb: xb, xc0: xb - 700, xc1: xb - 800, xf: xb - 1242, top: SPN.ground - 300 };
+        for (var h = 0; h < 7; h++) { var hx = xb - 30 - 100 * h; add(hx, hillY(hx), "right", "bones"); }
+        XE = xb - 852; YE = hillY(XE);
+        add(XE, YE, "right", "end");
+        PARK = { gate: XE - 740, line: [XE - 660, XE - 565, XE - 470], look: "left", ground: SPN.ground, coaster: [XE - 1250, XE - 790] };
+      } else {
+        // row r: ground 856 + 232 r
+        var rowY = function (r) { return SPN.ground + 232 * r; };
+        var plan = [["sick", 6], ["sick", 8], ["sick", 8], ["grey", 8], ["grey", 8], ["dom", 8], ["mix6", 8], ["grave", 8]];
+        plan.forEach(function (p, r) {
+          for (var i = 0; i < p[1]; i++) {
+            var xx = r === 0 ? SPN.front + i * SPN.step : r % 2 ? 960 - 120 * i : 120 + 120 * i;
+            var k = p[0] === "mix6" ? (i < 4 ? "bones" : i % 2 ? "bones" : "stone") : p[0] === "grave" ? (i % 2 ? "stone" : "bones") : p[0];
+            add(xx, rowY(r), r % 2 ? "right" : "left", k, r);
+          }
+        });
+        // row 8 runs right and climbs the hill (its crest at x 640 to 690), the end just past the crest
+        var y8 = rowY(8);
+        HILL = { row: 8, y: y8, x0: 280, xc0: 600, xc1: 680, x1: 940, h: 150 };
+        [120, 225, 330, 425, 520, 610].forEach(function (hx) { add(hx, hillY(hx), "left", "bones", 8); });
+        XE = 730; YE = hillY(XE);
+        add(XE, YE, "left", "end", 8);
+        PARK = { gate: 790, line: [690, 600, 510], look: "right", ground: y8 + 560, coaster: [70, 560] };
+      }
+      function hillY(x) {
+        if (!V) {
+          var Hh = HILL;
+          if (x > Hh.xb) return SPN.ground;
+          if (x >= Hh.xc0) return SPN.ground - 300 * (Hh.xb - x) / 700;
+          if (x >= Hh.xc1) return Hh.top;
+          if (x >= Hh.xf) return Hh.top + 300 * (Hh.xc1 - x) / (Hh.xc1 - Hh.xf);
+          return SPN.ground;
+        }
+        var g = HILL;
+        if (x <= g.x0 || x >= g.x1) return g.y;
+        if (x < g.xc0) return g.y - g.h * (x - g.x0) / (g.xc0 - g.x0);
+        if (x <= g.xc1) return g.y - g.h;
+        return g.y - g.h * (g.x1 - x) / (g.x1 - g.xc1);
+      }
+      // Ticket numbers: 15, 16, ... at the front, then bigger and bigger jumps to 6,650 at the end.
+      var NS = slots.length;
+      slots.forEach(function (s, i) {
+        s.n = i < 24 ? 15 + i : Math.round(38 + (6650 - 38) * Math.pow((i - 23) / (NS - 24), 1.7));
+        if (s.kind === "end") s.n = 6650;
+        s.old = s.kind === "grey" || s.kind === "dom";
+      });
+
+      // ══ The camera: where the strip is at time t (a smooth path through the keys) ══════════════════════════
+      var T = {
+        fifteen: cue("fifteen"), diseases: cue("diseases"), first: cue("first"), treatment: cue("treatment"), year: cue("year."),
+        six: cue("Six"), thousand: cue("thousand,"), hundred: cue("hundred"), waiting: cue("waiting."), queue: cue("queue"), not: cue("not"), die: cue("die,"),
+        longer: cue("longer"), voluntarily: cue("voluntarily"), stood: cue("stood"), invented: cue("invented"), disney: cue("Disneyland."),
+      };
+      T.sparkle = T.treatment + 0.35; T.blowoff = KIT.after(ID, "Disneyland.");
+      var KEYS;
+      if (!V) {
+        var sx = function (i) { return -slots[i].x; }; // the camera x that puts slot i at the frame's left edge
+        KEYS = [[0, 0], [T.six, 0], [T.hundred, 230], [T.waiting, sx(26) + 700], [T.queue, sx(36) + 940], [T.not, sx(40) + 940], [T.die, sx(44) + 940],
+          [T.longer, sx(53) + 900], [T.voluntarily, -HILL.xb + 800], [T.stood + 0.12, -XE + 380], [T.invented, -XE + 380], [T.disney, -XE + 1250], [D, -XE + 1250]];
+      } else {
+        var sy = function (r) { return -(SPN.ground + 232 * r); }; // the camera y that puts row r at the frame's top
+        KEYS = [[0, 0], [T.six, 0], [T.hundred, -80], [T.waiting, sy(3) + 1000], [T.queue, sy(5) + 1150], [T.die, sy(5) + 1080],
+          [T.longer, sy(6) + 1050], [T.voluntarily, sy(8) + 1350], [T.stood + 0.12, sy(8) + 1250], [T.invented, sy(8) + 1250], [T.disney, sy(8) + 770], [D, sy(8) + 770]];
+      }
+      // Monotone cubic interpolation (no overshoot), so the pan eases between its keys.
+      var KT = KEYS.map(function (k) { return k[0]; }), KV = KEYS.map(function (k) { return k[1]; }), KM = [];
+      (function () {
+        var n = KT.length, d = [], h = [];
+        for (var i = 0; i < n - 1; i++) { h.push(Math.max(1e-6, KT[i + 1] - KT[i])); d.push((KV[i + 1] - KV[i]) / h[i]); }
+        KM.push(0);
+        for (var j = 1; j < n - 1; j++) {
+          if (d[j - 1] * d[j] <= 0) { KM.push(0); continue; }
+          var w1 = 2 * h[j] + h[j - 1], w2 = h[j] + 2 * h[j - 1];
+          KM.push((w1 + w2) / (w1 / d[j - 1] + w2 / d[j]));
+        }
+        KM.push(0);
+      })();
+      function camAt(t) {
+        if (t <= KT[0]) return KV[0];
+        for (var i = 0; i < KT.length - 1; i++) {
+          if (t <= KT[i + 1]) {
+            var h = KT[i + 1] - KT[i], u = (t - KT[i]) / h, u2 = u * u, u3 = u2 * u;
+            return (2 * u3 - 3 * u2 + 1) * KV[i] + (u3 - 2 * u2 + u) * h * KM[i] + (-2 * u3 + 3 * u2) * KV[i + 1] + (u3 - u2) * h * KM[i + 1];
+          }
+        }
+        return KV[KV.length - 1];
+      }
+
+      // ══ The drawings ═══════════════════════════════════════════════════════════════════════════════════════
+      function at(x, y, s, inner, attrs) { return '<g transform="translate(' + spF(x) + "," + spF(y) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function g(id, inner, attrs) { return '<g id="' + ID + "-" + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function person(o) { return KIT.person(o); }
+      // One slot: its alive drawing (and the bones it x-rays into), its beard and cane, its ticket. A headstone in
+      // line wears its ticket taped to its face.
+      var DOM = [];
+      function slotSvg(s, i) {
+        var o = spLook(s.n, s.look, s.old), inner = "";
+        if (s.kind === "stone") {
+          var tape = '<rect x="-20" y="-7" width="40" height="9" fill="#E9E1CC" opacity="0.85" transform="rotate(8)"/>';
+          inner = '<g transform="translate(0,100) scale(0.95)">' + KIT.props.headstone({ text: "RIP" }) + "</g>" + at(0, 34, 1, spTicket(s.n, 1.15) + tape);
+        } else if (s.kind === "end") {
+          var eo = spMix(o, { mood: "flat", arms: [[-40, -160], [160, 176]] });
+          var eh = KIT.rig(eo).hand[0];
+          inner = g("end-bones", person(spMix(eo, { skeleton: true }))) + at(eh[0] - 6, eh[1] - 26, 1, g("end-ticket", spTicket(6650, 2.1)));
+          s.rig = KIT.rig(eo);
+        } else {
+          var bones = s.kind === "bones" || s.kind === "dom";
+          var alive = s.kind !== "bones";
+          var man = o.hair !== 1;
+          var extra = s.old ? spCane(o) : "";
+          if (alive) inner += '<g class="alive">' + person(o) + (s.old && man ? spBeard(o) : "") + "</g>";
+          if (bones) inner += '<g class="bones"' + (alive ? ' opacity="0"' : "") + ">" + person(spMix(o, { skeleton: true })) + "</g>";
+          inner += extra + spHeld(o, s.n, 1);
+          if (s.kind === "dom") DOM.push(i);
+        }
+        var shadow = '<ellipse cx="0" cy="101" rx="26" ry="5" fill="url(#' + ID + '-fine)" opacity="0.6"/>';
+        return '<g id="' + ID + "-s" + i + '" transform="translate(' + spF(s.x) + "," + spF(s.y - 100 * S) + ") scale(" + S + ')"><g id="' + ID + "-s" + i + '-j">' + shadow + inner + "</g></g>";
+      }
+
+      // Ticket 15 and ticket 16, at the front, with the drawings they change into.
+      var F15 = spLook(15, SPN.look), F16 = spLook(16, SPN.look);
+      var R16 = KIT.rig(F16), R15 = KIT.rig(F15);
+      // 16 stands one step back, then steps up and leans in, nose into the window's jamb.
+      var X16 = SPN.front - SPF * SPN.step;
+      var frontX15 = SPN.front;
+      var noseX = R16.head[0] + SPF * R16.hs * (23 + 9 * (R16.build.nose - 1));
+      var lean16 = 10;
+      // the place 16 steps to: its nose (after the lean) about 12 into the opening
+      var jamb = SPF > 0 ? WN[0] : WN[0] + WN[2];
+      var th16 = SPF * lean16 * Math.PI / 180, nY = R16.hy + 4 * R16.hs - 100;
+      var noseLean = noseX * Math.cos(th16) - nY * Math.sin(th16);
+      var X16b = jamb + SPF * 12 - S * noseLean;
+      var f15served = spMix(F15, { arms: SPF > 0 ? [[20, 10], [160, 176]] : [[-160, -176], [-20, -10]], mood: "grin", light: null });
+      var r15s = KIT.rig(f15served), up15 = SPF > 0 ? r15s.hand[1] : r15s.hand[0];
+      function tealBottle(size) { return KIT.props.pillBottle({ size: size, face: "smile", label: "", pills: false }).split(C.orange).join(C.med); }
+      var front15 = '<g id="' + ID + '-t15" transform="translate(' + spF(frontX15) + "," + spF(SPN.ground - 100 * S) + ") scale(" + S + ')"><g id="' + ID + '-t15-j">' +
+        '<ellipse cx="0" cy="101" rx="26" ry="5" fill="url(#' + ID + '-fine)" opacity="0.6"/>' +
+        g("t15-a", person(F15) + spHeld(F15, 15, 1)) +
+        g("t15-b", person(f15served) + at(up15[0], up15[1] + 12, 1, tealBottle(0.55)), 'opacity="0"') + "</g></g>";
+      var flat16 = spMix(F16, { build: { nose: 0.25 }, mood: "sad" });
+      var front16 = '<g id="' + ID + '-t16" transform="translate(' + spF(X16) + "," + spF(SPN.ground - 100 * S) + ") scale(" + S + ')"><g id="' + ID + '-t16-j">' +
+        '<ellipse cx="0" cy="101" rx="26" ry="5" fill="url(#' + ID + '-fine)" opacity="0.6"/>' +
+        g("t16-a", person(F16)) + g("t16-b", person(flat16), 'opacity="0"') + spHeld(F16, 16, 1) +
+        // dizzy stars over his head, after the slam
+        g("t16-stars", [0, 1, 2].map(function (k) { return at(R16.top[0] - 14 + 14 * k, R16.top[1] - 10 - (k % 2) * 6, 1, KIT.star(0, 0, 7, C.yellow)); }).join(""), 'opacity="0"') + "</g></g>";
+      // the splat at his nose, in frame units
+      var nosePt = [jamb + SPF * 2, SPN.ground - 100 * S + S * (R16.hy + 4)];
+      var splat = at(nosePt[0], nosePt[1], 1, g("splat", (function () {
+        var pts = [];
+        for (var i = 0; i < 16; i++) { var a = (Math.PI * i) / 8, r = i % 2 ? 9 : 24; pts.push([r * Math.cos(a), r * Math.sin(a)]); }
+        return '<polygon points="' + spPts(pts) + '" fill="#FFFFFF" stroke="' + INK + '" stroke-width="2.4"/>' + KIT.star(0, 0, 10, C.yellow);
+      })(), 'opacity="0"'));
+      // The clerk's arm out of the window, holding the teal bottle (in frame units).
+      var armBase = [SPF > 0 ? WN[0] + 70 : WN[0] + WN[2] - 70, WN[1] + WN[3] - 34];
+      var hand15 = [frontX15 + S * (SPF > 0 ? KIT.rig(F15).hand[1][0] : KIT.rig(F15).hand[0][0]) + SPF * 30, SPN.ground - 100 * S + S * (R15.hy + 40)];
+      var armLen = Math.hypot(hand15[0] - armBase[0], hand15[1] - armBase[1]), armAng = Math.atan2(hand15[1] - armBase[1], hand15[0] - armBase[0]) * 180 / Math.PI;
+      var clerk = at(armBase[0], armBase[1], 1, '<g transform="rotate(' + spF(armAng) + ')"><g id="' + ID + '-arm">' +
+        '<path d="M-60,-8 H' + spF(armLen - 14) + ' L' + spF(armLen - 8) + ',9 H-60 Z" fill="' + C.navy + '" stroke="' + INK + '" stroke-width="3"/>' +
+        '<path d="M' + spF(armLen - 22) + ',-9 L' + spF(armLen - 8) + ',-10 L' + spF(armLen - 8) + ',10 L' + spF(armLen - 22) + ',10 Z" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+        '<path d="M' + spF(armLen - 8) + ',-7 L' + spF(armLen + 10) + ',-5 L' + spF(armLen + 12) + ',6 L' + spF(armLen - 8) + ',8 Z" fill="' + "#D9B48F" + '" stroke="' + INK + '" stroke-width="2.4"/>' +
+        '<g transform="translate(' + spF(armLen + 4) + ',4) rotate(' + spF(-armAng) + ')"><g id="' + ID + '-bottle">' + tealBottle(0.5) + "</g></g></g></g>");
+
+      // ══ The theme park (plain: a roller coaster of sharp polygons, striped pennants, a fence and a gate) ═══
+      function park() {
+        var P = PARK, gy = P.ground, out = "", c0 = P.coaster[0], c1 = P.coaster[1], wdt = c1 - c0, hk = V ? 0.72 : 1;
+        // the track: sharp peaks and dips, in park units across [c0, c1]
+        var tr = [[0, -110], [0.12, -300], [0.2, -330], [0.3, -150], [0.4, -120], [0.52, -360], [0.6, -380], [0.7, -190], [0.8, -150], [0.9, -260], [1, -120]]
+          .map(function (p) { return [c0 + p[0] * wdt, gy + p[1] * hk]; });
+        var sup = "";
+        tr.forEach(function (p, i) {
+          if (i % 1 === 0) sup += '<path d="M' + spF(p[0] - 10) + "," + gy + " L" + spF(p[0]) + "," + spF(p[1]) + " L" + spF(p[0] + 10) + "," + gy + '" fill="none" stroke="' + INK + '" stroke-width="3"/>';
+          for (var y = gy - 40; y > p[1] + 20; y -= 46) sup += '<path d="M' + spF(p[0] - 8) + "," + spF(y) + " L" + spF(p[0] + 8) + "," + spF(y - 23) + '" stroke="' + INK + '" stroke-width="1.6"/>';
+        });
+        var td = "M" + tr.map(function (p) { return spF(p[0]) + "," + spF(p[1]); }).join(" L");
+        out += sup + '<path d="' + td + '" fill="none" stroke="' + INK + '" stroke-width="12" stroke-linejoin="miter"/><path d="' + td + '" fill="none" stroke="' + C.cream + '" stroke-width="5" stroke-linejoin="miter"/>';
+        // the car at the top of the tallest hill, three riders with their arms up
+        var top = tr[6], car = "";
+        [-26, 0, 26].forEach(function (dx, k) {
+          car += '<circle cx="' + dx + '" cy="-30" r="7" fill="' + ["#F4E3CC", "#A87B57", "#D9B48F"][k] + '" stroke="' + INK + '" stroke-width="2"/><path d="M' + (dx - 5) + ",-24 L" + (dx - 9) + ",-46 M" + (dx + 5) + ",-24 L" + (dx + 9) + ',-46" stroke="' + INK + '" stroke-width="2.4"/>';
+        });
+        car += '<path d="M-42,-24 H40 L48,-8 H-46 Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="3" stroke-linejoin="miter"/><circle cx="-28" cy="-6" r="5" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="2"/><circle cx="26" cy="-6" r="5" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="2"/>';
+        out += at(top[0], top[1] - 4, V ? 0.8 : 1, g("car", car));
+        // striped pennants on poles
+        [0.08, 0.36, 0.64, 0.95].forEach(function (f, k) {
+          var px = c0 + f * wdt, py = gy - (V ? 300 : 420) - (k % 2) * 30;
+          out += '<path d="M' + spF(px) + "," + gy + " V" + spF(py) + '" stroke="' + INK + '" stroke-width="4"/>' +
+            at(px, py, 1, g("flag" + k, '<polygon points="0,0 54,12 0,26" fill="' + (k % 2 ? C.yellow : C.war) + '" stroke="' + INK + '" stroke-width="2.4"/><polygon points="0,9 20,13.5 0,17" fill="' + CARD + '"/>'));
+        });
+        // the fence of striped boards along the ground, and the gate
+        var fence = "";
+        for (var fx = c0 - 20; fx < P.gate - 30; fx += 22) fence += '<polygon points="' + spPts([[fx, gy], [fx, gy - 52], [fx + 8, gy - 60], [fx + 16, gy - 52], [fx + 16, gy]]) + '" fill="' + (Math.round((fx - c0) / 22) % 2 ? CARD : C.war) + '" stroke="' + INK + '" stroke-width="2"/>';
+        out += fence + '<path d="M' + spF(c0 - 20) + "," + (gy - 30) + " H" + spF(P.gate - 30) + '" stroke="' + INK + '" stroke-width="3"/>';
+        var gx = P.gate;
+        out += [-34, 34].map(function (dx) { return '<rect x="' + (gx + dx - 8) + '" y="' + (gy - 230) + '" width="16" height="230" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3"/><path d="M' + (gx + dx - 8) + "," + (gy - 200) + " l16,-14 M" + (gx + dx - 8) + "," + (gy - 150) + " l16,-14 M" + (gx + dx - 8) + "," + (gy - 100) + " l16,-14 M" + (gx + dx - 8) + "," + (gy - 50) + ' l16,-14" stroke="' + C.war + '" stroke-width="6"/>'; }).join("") +
+          '<path d="M' + (gx - 46) + "," + (gy - 230) + " L" + gx + "," + (gy - 262) + " L" + (gx + 46) + "," + (gy - 230) + ' Z" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="3" stroke-linejoin="miter"/>';
+        out += at(gx, gy - 266, 1, KIT.props.sign({ text: "WAIT: 45 MIN", fontSize: V ? 30 : 34, height: 0, posts: 1 }).replace(/<g class="sign-posts">[\s\S]*?<\/g>/, ""));
+        return out;
+      }
+      // The park's short line: two everyday humans and, at the front, the fat cat, without his hat (drawn apart).
+      var CAT = KIT.castOpts("richHuman", { hat: null, look: PARK.look, mood: "cross", arms: PARK.look === "left" ? [[-70, -150], [30, 10]] : [[-30, -10], [70, 150]] });
+      var RC = KIT.rig(CAT), catHand = PARK.look === "left" ? RC.hand[0] : RC.hand[1], catX = PARK.line[0];
+      var watch = at(catHand[0] + (PARK.look === "left" ? -4 : 4), catHand[1] - 6, 1, '<path d="M0,6 q-6,14 -2,26" fill="none" stroke="' + C.yellow + '" stroke-width="2"/><circle r="10" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.6"/><circle r="6.6" fill="' + CARD + '" stroke="' + INK + '" stroke-width="1.4"/><path d="M0,0 V-5 M0,0 L3,2" stroke="' + INK + '" stroke-width="1.6"/><rect x="-2.5" y="-14" width="5" height="4" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.4"/>');
+      var redFace = person(CAT).split("#F4E3CC").join("#E0654A");
+      var hy = RC.hy, hs = RC.hs;
+      var catSvg = '<g id="' + ID + '-cat" transform="translate(' + spF(catX) + "," + spF(PARK.ground - 100 * S) + ") scale(" + S + ')"><g id="' + ID + '-cat-j">' +
+        '<ellipse cx="0" cy="101" rx="34" ry="5" fill="url(#' + ID + '-fine)" opacity="0.6"/>' + person(CAT) +
+        '<defs><clipPath id="' + ID + '-redclip"><rect id="' + ID + '-redrect" x="-50" y="' + spF(hy + 26 * hs) + '" width="100" height="0"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-redclip)">' + redFace + "</g>" + g("watch", watch) +
+        // steam puffs from both sides of his head
+        [-1, 1].map(function (sd, k) { return at(RC.head[0] + sd * 20 * hs, hy - 2, 1, g("steam" + k, [0, 1, 2].map(function (j) { return '<circle class="qp-puff" cx="' + sd * (4 + j * 8) + '" cy="' + (-j * 10) + '" r="' + (5 + j * 2) + '" fill="#FFFFFF" stroke="' + INK + '" stroke-width="2"/>'; }).join(""), 'opacity="0"')); }).join("") +
+        at(RC.top[0], RC.top[1] - 4, 1, g("jet", '<path d="M-8,0 L-14,-60 L0,-90 L14,-60 L8,0 Z" fill="#FFFFFF" stroke="' + INK + '" stroke-width="2.4" stroke-linejoin="miter"/>', 'opacity="0"')) +
+        at(RC.top[0], RC.top[1] + 4, hs * 0.92, g("hat", KIT.tophat())) + "</g></g>";
+      var parkLine = [1, 2].map(function (k) {
+        var po = spMix(LOOKS[(k * 5 + 2) % LOOKS.length], { look: PARK.look, mood: "flat" });
+        return at(PARK.line[k], PARK.ground - 100 * S, S, '<ellipse cx="0" cy="101" rx="26" ry="5" fill="url(#' + ID + '-fine)" opacity="0.6"/>' + person(po));
+      }).join("") + catSvg;
+
+      // ══ The ground, the graveyard behind the line, the hill ═══════════════════════════════════════════════
+      var ground = "", back = "";
+      if (!V) {
+        var hl = HILL, gpts = [[1960, SPN.ground], [hl.xb, SPN.ground], [hl.xc0, hl.top], [hl.xc1, hl.top], [hl.xf, SPN.ground], [-10400, SPN.ground], [-10400, 1200], [1960, 1200]];
+        ground = '<polygon points="' + spPts(gpts) + '" fill="#E3D3A8" stroke="' + INK + '" stroke-width="5" stroke-linejoin="miter"/><polygon points="' + spPts(gpts) + '" fill="url(#' + ID + '-fine)" opacity="0.3"/>';
+        // grass tufts on the hill
+        for (var gx = hl.xb - 40; gx > hl.xf + 40; gx -= 90) ground += '<path d="M' + spF(gx - 8) + "," + spF(hillY(gx) + 2) + " l4,-14 l4,10 l4,-16 l4,12 l4,-10" + '" fill="none" stroke="' + C.moneyDark + '" stroke-width="3" stroke-linejoin="miter"/>';
+      } else {
+        ground = '<rect x="-100" y="' + SPN.ground + '" width="1280" height="3200" fill="#E3D3A8"/><rect x="-100" y="' + SPN.ground + '" width="1280" height="3200" fill="url(#' + ID + '-fine)" opacity="0.28"/>' +
+          '<path d="M-100,' + SPN.ground + ' H1180" stroke="' + INK + '" stroke-width="5"/>';
+        var hg = HILL, hp = [[hg.x0 - 30, hg.y + 6], [hg.xc0, hg.y - hg.h], [hg.xc1, hg.y - hg.h], [hg.x1 + 30, hg.y + 6]];
+        ground += '<polygon points="' + spPts(hp) + '" fill="#D8C48F" stroke="' + INK + '" stroke-width="4" stroke-linejoin="miter"/><polygon points="' + spPts(hp) + '" fill="url(#' + ID + '-hatch)" opacity="0.2"/>';
+        ground += '<path d="M-100,' + spF(PARK.ground) + ' H1180" stroke="' + INK + '" stroke-width="4"/>';
+      }
+      // the graveyard: an iron fence behind the line, crooked headstones and crosses, a bare tree
+      function fence(x0, x1, y, hgt) {
+        var out = '<path d="M' + spF(x0) + "," + spF(y - hgt * 0.3) + " H" + spF(x1) + " M" + spF(x0) + "," + spF(y - hgt * 0.8) + " H" + spF(x1) + '" stroke="' + INK + '" stroke-width="3"/>';
+        for (var fx = x0; fx <= x1; fx += 18) out += '<path d="M' + spF(fx) + "," + spF(y) + " V" + spF(y - hgt) + " l-4,6 M" + spF(fx) + "," + spF(y - hgt) + ' l4,6" fill="none" stroke="' + INK + '" stroke-width="2.6"/>';
+        return out;
+      }
+      function cross(x, y, k) { return '<g transform="translate(' + spF(x) + "," + spF(y) + ") scale(" + k + ') rotate(-6)"><path d="M-6,0 V-70 H6 V0 Z M-22,-52 H22 V-40 H-22 Z" fill="' + C.peri + '" stroke="' + INK + '" stroke-width="3" stroke-linejoin="miter"/></g>'; }
+      function tree(x, y, k) {
+        return '<g transform="translate(' + spF(x) + "," + spF(y) + ") scale(" + k + ')"><path d="M-10,0 L-6,-160 L-40,-230 L-30,-236 L-2,-190 L4,-260 L14,-258 L10,-176 L48,-226 L56,-218 L12,-130 L10,0 Z" fill="' + C.slate + '" stroke="' + INK + '" stroke-width="3" stroke-linejoin="miter"/></g>';
+      }
+      var gStones = slots.map(function (s, i) { return s.kind === "stone" ? i : -1; }).filter(function (i) { return i >= 0; });
+      if (!V) {
+        var gx0 = slots[gStones[0]].x + 160, gx1 = slots[gStones[gStones.length - 1]].x - 140, by = SPN.ground - 40;
+        back += fence(gx1, gx0, by, 96) + tree(gx0 - 520, by, 1.3);
+        [0.1, 0.32, 0.55, 0.78, 0.92].forEach(function (f, k) {
+          var bx = gx0 + (gx1 - gx0) * f;
+          back += k % 2 ? cross(bx, by - 6, 0.9) : '<g transform="translate(' + spF(bx) + "," + spF(by) + ') scale(0.6) rotate(' + (k * 3 - 5) + ')">' + KIT.props.headstone({ text: "RIP" }) + "</g>";
+        });
+      } else {
+        [6, 7].forEach(function (r) {
+          var by = SPN.ground + 232 * r - 52;
+          back += fence(r === 6 ? 560 : 70, 1010, by, 70);
+          [0.2, 0.5, 0.8].forEach(function (f, k) { var bx = (r === 6 ? 600 : 100) + (r === 6 ? 380 : 880) * f; back += k % 2 ? cross(bx, by - 4, 0.6) : '<g transform="translate(' + spF(bx) + "," + spF(by) + ') scale(0.42)">' + KIT.props.headstone({ text: "RIP" }) + "</g>"; });
+        });
+        back += tree(1000, SPN.ground + 232 * 7 - 50, 0.8);
+      }
+
+      // ══ The posts and ropes in front of each row (and the turns between rows in 9:16) ═════════════════════
+      function ropes(rowSlots, isRow0) {
+        var pts = [], out = "", posts = "";
+        for (var i = 0; i < rowSlots.length; i++) {
+          if (i % 2 === 1 || i === rowSlots.length - 1) {
+            var s = rowSlots[i], nx = i + 1 < rowSlots.length ? rowSlots[i + 1].x : s.x + (s.x - rowSlots[i - 1].x);
+            var px = (s.x + nx) / 2;
+            pts.push([px, (V ? s.y : hillY(px)) + 14 * S]);
+          }
+        }
+        if (isRow0) pts.unshift([SPN.front + (V ? -1 : 1) * 70, SPN.ground + 14 * S]);
+        pts.forEach(function (p, i) {
+          posts += at(p[0], p[1], S, spPost());
+          if (i) out += spRope([pts[i - 1][0], pts[i - 1][1] - 54 * S], [p[0], p[1] - 54 * S], S);
+        });
+        return { svg: posts + out, ends: pts };
+      }
+
+      // ══ Build the strip ═══════════════════════════════════════════════════════════════════════════════════
+      var people = slots.map(function (s, i) { return i < 2 ? "" : slotSvg(s, i); });
+      var strip = ground + back + spWall() +
+        spWinBack('<g transform="translate(' + WN[0] + "," + WN[1] + ") scale(" + (WN[2] / W).toFixed(5) + ')">' + warehouse(ID + "-wh", { bottles: null }) + "</g>");
+      var parkSvg = park();
+      if (!V) {
+        var rp = ropes(slots.filter(function (s, i) { return s.kind !== "end"; }), true);
+        // back to front: the far slope and the park, the line (its back first), the ropes, the front two, the shutter
+        strip += parkSvg + parkLine;
+        for (var pi = slots.length - 1; pi >= 2; pi--) strip += people[pi];
+        strip += rp.svg + front16 + front15;
+      } else {
+        var lastEnd = null;
+        for (var r = 0; r <= 8; r++) {
+          var rs = slots.filter(function (s) { return s.row === r && s.kind !== "end"; });
+          var idx = slots.map(function (s, i) { return s.row === r ? i : -1; }).filter(function (i) { return i >= 0; });
+          var rowSvg = "";
+          idx.forEach(function (i) { rowSvg += people[i]; });
+          if (r === 0) rowSvg += front16 + front15;
+          var rr = ropes(rs, r === 0);
+          // the turn from the last row's end post to this row's first
+          var turn = lastEnd ? spRope([lastEnd[0], lastEnd[1] - 54 * S], [rr.ends[0][0], rr.ends[0][1] - 54 * S], S) : "";
+          strip += rowSvg + rr.svg + turn;
+          lastEnd = rr.ends[rr.ends.length - 1];
+        }
+        strip += parkSvg + parkLine;
+      }
+      strip += splat + spShutter() + clerk + spSign();
+      q("pan").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + " " + H + '" style="position:absolute;left:0;top:0;overflow:visible">' + KIT.paperDefs(ID) + strip + "</svg>";
+
+      // ══ Time ══════════════════════════════════════════════════════════════════════════════════════════════
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
+
+      // "fifteen": the top line flips to 15 PER YEAR (two clicks: the flap folds in two steps).
+      var flapR = q("flap-rate"), flapL = q("flap-low");
+      var rateMid = SG.top + 14 + SG.h * 0.12, lowMid = SG.top + SG.h * 0.24 + 30 + (SG.h - SG.h * 0.24 - 46) / 2;
+      pivot(flapR, SG.cx + " " + spF(rateMid));
+      tl.fromTo(flapR, { scaleY: 1 }, { scaleY: 0.5, duration: 0.06, ease: "power2.in" }, T.fifteen);
+      tl.to(flapR, { scaleY: 0, duration: 0.06, ease: "power2.in" }, T.fifteen + 0.08);
+      // "diseases": the lower line flips to WAIT TIME FROM HERE: and the wheels start spinning (and never stop).
+      pivot(flapL, SG.cx + " " + spF(lowMid));
+      tl.fromTo(flapL, { scaleY: 1 }, { scaleY: 0, duration: 0.1, ease: "power2.in" }, T.diseases);
+      var SPEED = [3.1, 7.3, 13.7];
+      KIT.onTime(tl, D, function (t) {
+        var run = Math.max(0, t - T.diseases), ramp = Math.min(1, run / 0.4), dist = run < 0.4 ? run * run / 0.8 : run - 0.2;
+        spWheels(SPEED.map(function (v, i) { return 4 + i * 3 + v * dist; }), SPEED.map(function (v) { return ramp * v / 8; }));
+      });
+
+      // "first": the shutter rolls up. "year.": it slams down on ticket 16's nose.
+      var shut = q("shutter");
+      tl.fromTo(shut, { y: 0 }, { y: -WN[3], duration: 0.3, ease: "power2.inOut" }, T.first);
+      tl.to(shut, { y: 0, duration: 0.07, ease: "power3.in" }, T.year - 0.07);
+      tl.fromTo(shut, { y: 0 }, { y: -8, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.year);
+
+      // "treatment": the clerk's arm hands ticket 15 the teal bottle (ding); a beat later her chest light goes out
+      // (sparkle), she lifts the bottle and skips away.
+      var arm = q("arm");
+      tl.fromTo(arm, { x: -armLen - 20 }, { x: 0, duration: 0.24, ease: "back.out(1.4)" }, T.treatment - 0.24);
+      tl.to(arm, { x: -armLen - 20, duration: 0.2, ease: "power2.in" }, T.sparkle);
+      tl.set(q("bottle"), { opacity: 0 }, T.sparkle);
+      tl.set(q("t15-a"), { opacity: 0 }, T.sparkle);
+      tl.set(q("t15-b"), { opacity: 1 }, T.sparkle);
+      var t15 = q("t15-j");
+      tl.fromTo(t15, { y: 0 }, { y: -14, duration: 0.09, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.sparkle);
+      var skipTo = SPF > 0 ? 980 : -700;
+      tl.to(q("t15"), { x: frontX15 + skipTo, duration: 0.9, ease: "power1.in" }, T.sparkle + 0.2);
+      tl.to(t15, { y: -26, duration: 0.11, yoyo: true, repeat: 7, ease: "sine.out" }, T.sparkle + 0.2);
+      // the sparkle on her chest light
+      // ticket 16 steps up to the window and leans in; the shutter flattens his nose: the splat, his nose flat, he
+      // straightens up dazed, and stays put.
+      var t16 = q("t16"), t16j = q("t16-j");
+      tl.fromTo(t16, { x: X16 }, { x: X16b, duration: 0.32, ease: "power2.inOut" }, T.sparkle + 0.22);
+      pivot(t16j, "0 100");
+      tl.fromTo(t16j, { rotation: 0 }, { rotation: SPF * lean16, duration: 0.2, ease: "power2.out", immediateRender: false }, T.sparkle + 0.5);
+      tl.set(q("t16-a"), { opacity: 0 }, T.year);
+      tl.set(q("t16-b"), { opacity: 1 }, T.year);
+      tl.to(t16j, { rotation: -SPF * 4, duration: 0.12, ease: "power3.out" }, T.year);
+      tl.to(t16j, { rotation: 0, duration: 0.3, ease: "elastic.out(1.2, 0.4)" }, T.year + 0.12);
+      tl.to(t16, { x: X16b - SPF * 14, duration: 0.12, ease: "power3.out" }, T.year);
+      tl.fromTo(q("splat"), { opacity: 0, scale: 0.4, svgOrigin: "0 0" }, { opacity: 1, scale: 1.2, svgOrigin: "0 0", duration: 0.08, ease: "power2.out" }, T.year + 0.06);
+      tl.to(q("splat"), { opacity: 0, duration: 0.25 }, T.year + 0.3);
+      var stars = q("t16-stars");
+      tl.set(stars, { opacity: 1 }, T.year + 0.1);
+      pivot(stars, spF(R16.top[0]) + " " + spF(R16.top[1] - 12));
+      tl.fromTo(stars, { rotation: 0 }, { rotation: 360, duration: 0.8, repeat: 2, ease: "none" }, T.year + 0.1);
+      tl.set(stars, { opacity: 0 }, T.year + 2.5);
+
+      // "Six thousand": the pan back along the line. The tickets 17 to 21 pop up one per tick.
+      var pan = q("pan"), slotEls = slots.map(function (s, i) { return i < 2 ? null : q("s" + i); });
+      [0, 1, 2, 3, 4].forEach(function (k) {
+        var el = slotEls[2 + k].querySelector(".sp-tk"), hnd = KIT.rig(spLook(slots[2 + k].n, slots[2 + k].look)).hand[1];
+        pivot(el, "0 0");
+        tl.fromTo(el, { scale: 1 }, { scale: 1.9, duration: 0.09, ease: "back.out(3)", immediateRender: false }, T.thousand + 0.15 * k);
+        tl.to(el, { scale: 1.3, duration: 0.4, ease: "power2.inOut" }, T.thousand + 0.15 * k + 0.12);
+      });
+      // Every sick chest light blinks red; the grey ones blink slower.
+      var lights = [];
+      slots.forEach(function (s, i) {
+        if (i < 2 || s.kind === "stone" || s.kind === "bones" || s.kind === "end") return;
+        var cl = slotEls[i].querySelector(".alive .chest-light");
+        if (cl) lights.push({ el: cl, ph: (i * 0.37) % 1, per: s.old ? 1.1 : 0.6, on: true });
+      });
+      [q("t15-a"), q("t16-a"), q("t16-b")].forEach(function (el, k) { var cl = el.querySelector(".chest-light"); if (cl) lights.push({ el: cl, ph: k * 0.3, per: 0.6, on: true }); });
+      KIT.onTime(tl, D, function (t) {
+        var v = camAt(t);
+        pan.style.transform = V ? "translate(0px," + v.toFixed(1) + "px)" : "translate(" + v.toFixed(1) + "px,0px)";
+        // cull what is far off frame
+        for (var i = 2; i < slotEls.length; i++) {
+          var s = slots[i], p = V ? s.y + v : s.x + v, show = V ? p > -200 && p < H + 260 : p > -260 && p < W + 260;
+          slotEls[i].style.display = show ? "" : "none";
+        }
+        for (var j = 0; j < lights.length; j++) {
+          var L0 = lights[j], on = ((t / L0.per + L0.ph) % 1) < 0.55;
+          if (on !== L0.on) { L0.el.setAttribute("fill", on ? C.war : "#E9E1CC"); L0.on = on; }
+        }
+      });
+
+      // "queue", "not", "die,": the dominoes. On each zap a run of the old ones x-rays into skeletons one after
+      // another, each tipping a little into the next, still in line, still holding their tickets.
+      var ZAPS = [T.queue, T.not, T.die], per = Math.ceil(DOM.length / 3);
+      DOM.forEach(function (si, k) {
+        var run = Math.min(2, Math.floor(k / per)), j = k - run * per, t0 = ZAPS[run] + j * 0.07;
+        var el = slotEls[si], al = el.querySelector(".alive"), bn = el.querySelector(".bones"), jj = q("s" + si + "-j");
+        tl.set(bn, { opacity: 0 }, 0);
+        for (var f = 0; f < 5; f++) { tl.set(al, { opacity: f % 2 ? 1 : 0 }, t0 + f * 0.05); tl.set(bn, { opacity: f % 2 ? 0 : 1 }, t0 + f * 0.05); }
+        pivot(jj, "0 100");
+        tl.fromTo(jj, { rotation: 0 }, { rotation: SPF * -7, duration: 0.08, ease: "power2.out", immediateRender: false }, t0);
+        tl.to(jj, { rotation: 0, duration: 0.25, ease: "back.out(2)" }, t0 + 0.08);
+      });
+
+      // "stood": skeleton 6,650 at the end of the line waves, bones rattling, its ticket held high.
+      var endI = slots.length - 1, endS = slots[endI], er = endS.rig;
+      var endEl = q("s" + endI + "-j"), endArm = endEl.querySelector(".arm-r");
+      pivot(endArm, spF(er.shoulder[1][0]) + " " + spF(er.shoulder[1][1]));
+      tl.fromTo(endArm, { rotation: 0 }, { rotation: -32, duration: 0.18, yoyo: true, repeat: Math.floor((D - T.stood) / 0.18) - 1, ease: "sine.inOut" }, T.stood);
+      pivot(endEl, "0 100");
+      tl.fromTo(endEl, { x: -1.5 }, { x: 1.5, duration: 0.05, yoyo: true, repeat: 9, ease: "none", immediateRender: false }, T.stood);
+      tl.fromTo(endEl, { y: 0 }, { y: -10, duration: 0.14, yoyo: true, repeat: 3, ease: "power2.out", immediateRender: false }, T.stood);
+      pivot(q("end-ticket"), "0 0");
+      tl.fromTo(q("end-ticket"), { rotation: -6 }, { rotation: 6, duration: 0.36, yoyo: true, repeat: Math.floor((D - T.stood) / 0.36) - 1, ease: "sine.inOut" }, T.stood);
+      var skull = endEl.querySelector(".head");
+      pivot(skull, spF(er.neck[0]) + " " + spF(er.neck[1]));
+      tl.fromTo(skull, { rotation: -5 }, { rotation: 5, duration: 0.07, yoyo: true, repeat: 11, ease: "none", immediateRender: false }, T.stood);
+
+      // "Disneyland.": (the whip pan lands on the park) the fat cat at its front taps his watch, goes red in the face
+      // and steams (whistle); a beat after the word the steam jet blows his top hat off (pop).
+      var cat = q("cat-j"), catLeg = cat.querySelector(".leg-l"), catArm = cat.querySelector(".arm-l"), catDir = PARK.look === "left" ? -1 : 1;
+      var watchArm = catDir < 0 ? cat.querySelector(".arm-l") : cat.querySelector(".arm-r");
+      var tapStart = T.invented;
+      pivot(catLeg, spF(RC.hip[0][0]) + " " + spF(RC.hip[0][1]));
+      tl.fromTo(catLeg, { rotation: 0 }, { rotation: catDir * 14, duration: 0.13, yoyo: true, repeat: Math.floor((D - tapStart) / 0.13) - 1, ease: "power1.inOut" }, tapStart);
+      var sh = catDir < 0 ? RC.shoulder[0] : RC.shoulder[1];
+      pivot(watchArm, spF(sh[0]) + " " + spF(sh[1]));
+      var watchG = q("watch");
+      tl.fromTo(watchG, { y: 0 }, { y: -4, duration: 0.11, yoyo: true, repeat: Math.floor((D - tapStart) / 0.11) - 1, ease: "power1.inOut" }, tapStart);
+      tl.fromTo(q("redrect"), { attr: { y: hy + 26 * hs, height: 0 } }, { attr: { y: hy - 30 * hs, height: 56 * hs }, duration: 0.7, ease: "power1.in" }, T.disney);
+      [0, 1].forEach(function (k) {
+        var st = q("steam" + k), puffs = st.querySelectorAll(".qp-puff");
+        tl.set(st, { opacity: 1 }, T.disney + 0.1);
+        Array.prototype.forEach.call(puffs, function (p, j) {
+          pivot(p, p.getAttribute("cx") + " " + p.getAttribute("cy"));
+          tl.fromTo(p, { scale: 0.3, opacity: 1, y: 0 }, { scale: 1.4, opacity: 0.2, y: -18, duration: 0.3, repeat: Math.floor((D - T.disney) / 0.3) - 1, ease: "power1.out", immediateRender: false }, T.disney + 0.1 + j * 0.1 + k * 0.05);
+        });
+      });
+      var catJ = q("cat-j");
+      pivot(catJ, "0 100");
+      tl.fromTo(catJ, { x: -1 }, { x: 1, duration: 0.04, yoyo: true, repeat: Math.floor((T.blowoff - T.disney) / 0.04), ease: "none", immediateRender: false }, T.disney + 0.2);
+      var jet = q("jet"), hat = q("hat");
+      pivot(jet, "0 0");
+      tl.fromTo(jet, { opacity: 0, scaleY: 0.2 }, { opacity: 1, scaleY: 1.2, duration: 0.12, ease: "power3.out" }, T.blowoff - 0.05);
+      tl.to(jet, { opacity: 0, duration: 0.4, ease: "power1.in" }, T.blowoff + 0.45);
+      pivot(hat, "0 -20");
+      tl.to(hat, { y: -420, x: catDir * -60, rotation: catDir * -540, duration: 1.1, ease: "power2.out" }, T.blowoff);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

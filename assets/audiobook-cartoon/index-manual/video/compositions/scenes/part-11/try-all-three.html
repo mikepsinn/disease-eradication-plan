@@ -1,0 +1,365 @@
+<template id="try-all-three-template">
+  <!-- try-all-three · Layer B (storyboards/part-11-civilization-countdown.md). The three usual ways out drop in one by
+       one, a ballot box ("vote"), a light bulb ("innovate") and a plain round rug with a headset microphone on a stand
+       ("TED Talk"), and each gets a red marker X on its "out," ("it."). Then the charred Watcher from neighbors-house
+       runs in anyway, still smoking, teacup in hand: the box spits his ballot back into his face ("try"), he runs to
+       the bulb ("all") and it zaps him into a flash of x-rayed skeleton (the ballot burns off), and he hops onto the rug,
+       taps the microphone, tap, tap, tap, to nobody, and leans in to speak ("three"). In 9:16 the three stand on a
+       staircase of shelves, so he works his way down. The civilization fuse burns on in the top-left corner.
+       The Watcher's scale here (person units to px): 2.6 in 16:9, 2.0 in 9:16. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #try-all-three-cam, #try-all-three-bg, #try-all-three-art, #try-all-three-pip, #try-all-three-fuse, #try-all-three-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="try-all-three" data-width="1920" data-height="1080" data-start="0" data-duration="7.44">
+    <div id="try-all-three-cam">
+      <div id="try-all-three-bg"></div>
+      <div id="try-all-three-art"></div>
+      <div id="try-all-three-pip"></div>
+    </div>
+    <!-- the civilization fuse: above the camera (the slide does not move it), under the grain -->
+    <div id="try-all-three-fuse"></div>
+    <div id="try-all-three-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "try-all-three";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      // tags: 'path d=".."', 'circle ..' (pg / ci); each drawn twice, a navy pass under the fill
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene. ──
+      // The civilization is a cartoon bomb: a small Earth with a navy screw collar and a lit fuse that burns by part
+      // time (L = L0 - k t), so it is continuous across scenes. Returns the spark's flare group (scale it to flare).
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── Layout, per shape ─────────────────────────────────────────────
+      // s: the Watcher's scale. box / bulb / rug: [x, the floor y it stands on, scale] (the rug: [x, floor y, half
+      // width]). 16:9: one floor, the three in a row. 9:16: a staircase of shelves, the box on the top one, the bulb
+      // on the middle one, the rug on the floor, so he works his way down. shelves: [x0, x1, top y].
+      var L = V
+        ? { s: 2.0, box: [270, 800, 3.4], bulb: [830, 1100, 3.2], rug: [360, 1420, 220], runIn: -170,
+            shelves: [[60, 500, 800], [600, 1020, 1100]], floor: [60, 1020, 1420] }
+        : { s: 2.6, box: [400, 860, 4.2], bulb: [860, 860, 4.0], rug: [1320, 860, 262], runIn: -240,
+            shelves: [], floor: [60, 1600, 860] };
+      var s = L.s;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The Watcher, charred (neighbors-house), teacup in his left hand, facing right ──
+      var WO = { tone: 0, outfit: "suit", color: 1, seed: 3, mood: "smug", charred: true, look: "right" };
+      var CUP = [20, 120];
+      var POSE = {
+        run1: { arms: [CUP, [-55, -20]], legs: [[-40, -15], [40, 75]] },
+        run2: { arms: [CUP, [45, 110]], legs: [[35, 70], [-30, -5]] },
+        hop: { arms: [[-120, -150], [120, 150]], legs: [[-30, 40], [30, 80]] },
+        stuff: { arms: [CUP, [50, 60]] },
+        grab: { arms: [CUP, [80, 80]] },
+        tap: { arms: [CUP, [70, 140]] },
+      };
+      function wOpts(name, extra) {
+        var p = POSE[name], o = mix(WO, { arms: p.arms });
+        if (p.legs) o.build = { legPose: p.legs };
+        return mix(o, extra);
+      }
+      var Rg = {};
+      Object.keys(POSE).forEach(function (k) { Rg[k] = KIT.rig(wOpts(k)); });
+      // The teacup and saucer (it came through the blast without a mark), at a hand, in person units.
+      function teacup(h) {
+        return at(h[0] + 1, h[1] - 3, 1, S([pg([[-11, 1], [11, 1], [8, 4], [-8, 4]])], C.cream, 1.8) +
+          line("M7,-6 q6,0 5,4 q-1,3 -6,2", ink, 1.8) + S([pg([[-7, -10], [7, -10], [5, 1], [-5, 1]])], "#FBF6E6", 1.8) + line("M-6.4,-6.5 H6.4", C.orange, 1.6));
+      }
+      function watcher(name) { return KIT.person(wOpts(name)) + (name === "hop" ? teacup(Rg.hop.hand[0]) : teacup(Rg[name].hand[0])); }
+
+      // ── The three things ──────────────────────────────────────────────
+      // The light bulb on its wooden block (Part 1's split-the-atom bulb, larger), standing on y 0, about 100 tall:
+      // the glass, the zigzag filament, the lit glass and rays (#bulb-lit, hidden), and zap bolts (#zap, hidden).
+      function bulbArt() {
+        var glass = "M-12,-48 L-18,-58 A26,26 0 1 1 18,-58 L12,-48 Z", rays = "";
+        for (var k = 0; k < 8; k++) {
+          var a = (k * Math.PI) / 4 - Math.PI / 2;
+          rays += line("M" + pt(36 * Math.cos(a), -76 + 36 * Math.sin(a)) + " L" + pt(50 * Math.cos(a), -76 + 50 * Math.sin(a)), C.orange, 5);
+        }
+        var bolt = function (dx, dy, k) { return at(dx, dy, 1, '<path transform="scale(' + k + ',1)" d="M0,-20 L14,-6 L6,-4 L22,14 L4,0 L11,-2 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>'); };
+        return S([pg(R(-36, -18, 72, 18))], C.tan, 3.6) + line("M-31,-5 H31", C.rust, 2, 'opacity="0.6"') +
+          S([pg(R(-13, -46, 26, 28))], "#C9C2B5", 3.4) + line("M-13,-26 L13,-29 M-13,-33 L13,-36 M-13,-40 L13,-43", ink, 2) +
+          S(['path d="' + glass + '"'], "#FBF6E6", 3.6) + '<path d="' + glass + '" fill="url(#' + P + 'cross)" opacity="0.3"/>' +
+          g("bulb-lit", rays + S(['path d="' + glass + '"'], C.yellow, 3.6), 'opacity="0"') +
+          line("M-7,-50 L-7,-70 M7,-50 L7,-70 M-7,-70 l3.5,-8 l3.5,8 l3.5,-8 l3.5,8", ink, 2.4) +
+          line("M-13,-86 Q-12,-96 -4,-99", "#FFFFFF", 4) +
+          g("zap", bolt(-46, -80, -1) + bolt(46, -80, 1) + bolt(-34, -112, -0.8) + bolt(36, -108, 0.8), 'opacity="0"');
+      }
+      // The plain round rug (no stage, no logo), its top at y -12, half width rw.
+      function rugArt(rw) {
+        var ry = rw * 0.15;
+        return '<path d="M' + n1(-rw) + ",-12 A" + n1(rw) + "," + n1(ry) + " 0 0 0 " + n1(rw) + ",-12 L" + n1(rw) + ",0 A" + n1(rw) + "," + n1(ry) + " 0 0 1 " + n1(-rw) + ',0 Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<ellipse cx="0" cy="-12" rx="' + n1(rw) + '" ry="' + n1(ry) + '" fill="#B5553A" stroke="' + ink + '" stroke-width="4"/>' +
+          '<ellipse cx="0" cy="-12" rx="' + n1(rw * 0.8) + '" ry="' + n1(ry * 0.8) + '" fill="none" stroke="' + C.orange + '" stroke-width="3"/>' +
+          '<ellipse cx="0" cy="-12" rx="' + n1(rw * 0.55) + '" ry="' + n1(ry * 0.55) + '" fill="none" stroke="' + C.orange + '" stroke-width="2" opacity="0.7"/>';
+      }
+      // The microphone stand in person units (it stands on y 0), a headset hung over its top, its little boom mic
+      // pointing left at MIC (#mic-head pulses on the taps).
+      var MIC = [-34, -132];
+      function micArt() {
+        return '<ellipse cx="0" cy="0" rx="18" ry="4.5" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.4"/>' +
+          line("M0,-2 V-146", ink, 5.5) + line("M0,-2 V-146", "#9AA3B5", 2.2) +
+          line("M-14,-142 Q-15,-170 0,-170 Q15,-170 14,-142", ink, 5) +
+          S([pg(R(-19, -152, 9, 18)), pg(R(10, -152, 9, 18))], C.slate, 2.2) + line("M-17,-149 h5 M12,-149 h5", C.orange, 1.6) +
+          line("M-19,-138 Q-28,-134 " + (MIC[0] + 4) + "," + (MIC[1] + 1), ink, 2.8) +
+          g("mic-head", F('path d="M' + (MIC[0] - 6) + "," + (MIC[1] - 4) + ' h10 l2,4 l-2,4 h-10 z"', ink) + line("M" + (MIC[0] - 4) + "," + (MIC[1] - 2) + " h5", "#9AA3B5", 1.6));
+      }
+      // A red marker X, its two strokes drawn on in turn.
+      function cross(cx, cy, r) {
+        var a = "M" + pt(cx - r, cy - r * 0.92) + " Q" + pt(cx - r * 0.1, cy + r * 0.05) + " " + pt(cx + r, cy + r * 0.95);
+        var b = "M" + pt(cx + r * 0.95, cy - r) + " Q" + pt(cx + r * 0.05, cy - r * 0.1) + " " + pt(cx - r * 0.95, cy + r);
+        return [a, b].map(function (d) {
+          return '<path class="x-stroke" d="' + d + '" fill="none" stroke="' + C.war + '" stroke-width="' + n1(r * 0.2) + '" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" opacity="0.93"/>';
+        }).join("");
+      }
+      // A ballot (cream, two lines and a teal tick), around its center, about 28 x 36 person units.
+      var BALLOT = S([pg([[-13, -17], [13, -18], [12, 17], [-14, 16]])], "#FBF6E6", 2.2) + line("M-8,-10 H8 M-8,-4 H8", ink, 1.6) + line("M-5,5 L-1,10 L8,0", C.med, 2.8);
+      function shadow(id, x, y, rx) { return '<ellipse id="' + P + id + '" cx="' + n1(x) + '" cy="' + n1(y) + '" rx="' + n1(rx) + '" ry="' + n1(rx * 0.14) + '" fill="' + ink + '" opacity="0"/>'; }
+
+      // ── Where things stand ──────────────────────────────────────────
+      var bx = L.box[0], by = L.box[1], kb = L.box[2], ux = L.bulb[0], uy = L.bulb[1], ku = L.bulb[2], rx = L.rug[0], ry = L.rug[1], rw = L.rug[2];
+      var rugTop = ry - 12;
+      var slot = [bx + 4 * kb, by - 57 * kb];
+      var glassL = [ux - 26 * ku, uy - 76 * ku];
+      // The Watcher's feet x at each stop (his origin is at his feet y - 100 s): at the box his hand is over the slot;
+      // at the bulb it is on the glass; on the rug the mic is at his tapping hand.
+      var Wbox = slot[0] - s * Rg.stuff.hand[1][0] - 4;
+      var Wbulb = glassL[0] + 12 - s * Rg.grab.hand[1][0];
+      var Wrug = rx - rw * 0.42;
+      var micX = Wrug + s * (Rg.tap.hand[1][0] + 4) - s * MIC[0];
+      var Ybox = by - 100 * s, Ybulb = uy - 100 * s, Yrug = rugTop - 100 * s;
+
+      // the floor (drawn on as the line starts) and, in 9:16, the shelves: thick planks on navy brackets
+      var floors = '<path id="' + P + 'floor" d="M' + L.floor[0] + "," + L.floor[2] + " H" + L.floor[1] + '" stroke="' + ink + '" stroke-width="5" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      var shelves = L.shelves.map(function (sh, i) {
+        var x0 = sh[0], x1 = sh[1], y = sh[2], plank = R(x0, y, x1 - x0, 24), br = function (x, d) { return S([pg([[x, y + 24], [x + d * 8, y + 24], [x + d * 8, y + 84], [x - d * 0, y + 24]]), pg([[x, y + 24], [x + d * 52, y + 24], [x, y + 76]])], ink, 2); };
+        return g("shelf" + i, br(x0 + 40, 1) + br(x1 - 40, -1) + S([pg(plank)], C.tan, 4) + line("M" + (x0 + 4) + "," + (y + 5) + " H" + (x1 - 4), C.orange, 2) +
+          '<rect x="' + x0 + '" y="' + y + '" width="' + (x1 - x0) + '" height="24" fill="url(#' + P + 'hatch)" opacity="0.18"/>', 'opacity="0"');
+      }).join("");
+      // Each thing drops in from above: #<n>-drop (moved, px), #<n>-sq (squash on landing, about its feet).
+      var box = at(bx, by, 1, g("box-drop", g("box-sq", '<g transform="scale(' + kb + ')">' + KIT.props.ballotBox({}) + "</g>")));
+      var bulb = at(ux, uy, 1, g("bulb-drop", g("bulb-sq", '<g transform="scale(' + ku + ')">' + bulbArt() + "</g>")));
+      var stage = at(rx, ry, 1, g("rug-drop", g("rug-sq", rugArt(rw) + at(micX - rx, -12, s, micArt()))));
+      var shadows = shadow("sh-box", bx + 4 * kb, by + 2, 44 * kb) + shadow("sh-bulb", ux, uy + 2, 38 * ku) + shadow("sh-rug", rx, ry + 2, rw * 1.02);
+      // the X marks, over each thing's middle
+      var X = [[bx + 4 * kb, by - 40 * kb, 52 * kb], [ux, uy - 56 * ku, 46 * ku], [rx + rw * 0.05, rugTop - 0.62 * 180 * s, 0.64 * rw]];
+      var crosses = X.map(function (x, i) { return g("x" + i, cross(x[0], x[1], x[2])); }).join("");
+
+      // The Watcher: #w-move (his feet, px) > #w-lean (leans in, about his feet) > the poses, one shown at a time.
+      var poses = g("w-run1", watcher("run1")) + g("w-run2", watcher("run2"), 'opacity="0"') + g("w-hop", watcher("hop"), 'opacity="0"') +
+        g("w-stuff", watcher("stuff"), 'opacity="0"') + g("w-grab", watcher("grab"), 'opacity="0"') +
+        g("w-bones", KIT.person(wOpts("grab", { charred: false, skeleton: true, hat: null })), 'opacity="0"') +
+        g("w-tap", watcher("tap") + g("w-say", '<ellipse cx="' + n1(Rg.tap.mouth[0] - 1) + '" cy="' + n1(Rg.tap.mouth[1] + 1.5) + '" rx="4.2" ry="3.4" fill="' + ink + '"/>', 'opacity="0"'), 'opacity="0"');
+      // the ballot he posts: in his hand over the slot (px), then stuck on his face until the zap burns it off
+      var face = [Rg.stuff.eyes[0] + 1, Rg.stuff.eyes[1] + 6];
+      var ballotHand = at(slot[0], slot[1] - 8 * kb, 1, g("ballot-in", '<g transform="scale(' + (s * 0.95) + ')">' + BALLOT + "</g>", 'opacity="0"'));
+      var slotClip = '<defs><clipPath id="' + P + 'slotclip"><rect x="0" y="-2000" width="' + W + '" height="' + n1(2000 + slot[1]) + '"/></clipPath></defs>';
+      var ash = g("ash", S([ci(face[0], face[1] - 2, 7), ci(face[0] + 8, face[1] - 10, 6), ci(face[0] - 4, face[1] - 14, 5)], "#8C8782", 1.6), 'opacity="0"');
+      // speed lines behind him as he runs (in his own frame, px)
+      var speed = g("speed", [-60, -20, 20].map(function (dy, i) { return line("M" + (-70 - i * 18) + "," + n1(dy * s * 0.9) + " h" + (-90 + i * 20), ink, 5, 'opacity="0.7"'); }).join(""), 'opacity="0"');
+      var watcherSvg = g("w-move", speed + g("w-lean", at(0, 0, s, poses + g("ballot-face", at(face[0], face[1], 1, BALLOT, -8), 'opacity="0"') + ash)), 'opacity="0"');
+      // spit lines over the slot
+      var spit = at(slot[0], slot[1] - 6, 1, g("spit", line("M-30,-14 l-16,-12 M0,-22 v-20 M30,-14 l16,-12", ink, 5), 'opacity="0"'));
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + shelves + floors + shadows + box + bulb + stage + slotClip +
+        '<g clip-path="url(#' + P + 'slotclip)">' + ballotHand + "</g>" + spit + crosses + watcherSvg);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+      var show = function (id, t) { tl.set(q(id), { opacity: 1 }, t); };
+      var hide = function (id, t) { tl.set(q(id), { opacity: 0 }, t); };
+
+      // ── Pivots, set once while everything is untransformed ──
+      ["box-sq", "bulb-sq", "rug-sq"].forEach(function (id) { gsap.set(q(id), { svgOrigin: "0 0" }); });
+      gsap.set(q("w-lean"), { svgOrigin: "0 " + n1(100 * s) });
+      var tapArm = q("w-tap").querySelector(".arm-r");
+      gsap.set(tapArm, { svgOrigin: Rg.tap.shoulder[1].join(" ") });
+      gsap.set(q("mic-head"), { svgOrigin: MIC.join(" ") });
+
+      // The floor draws on and the shelves pop in as the line starts.
+      tl.fromTo(q("floor"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.6, ease: "power2.out" }, 0.2);
+      L.shelves.forEach(function (sh, i) {
+        var el = q("shelf" + i);
+        gsap.set(el, { svgOrigin: n1((sh[0] + sh[1]) / 2) + " " + sh[2] });
+        tl.fromTo(el, { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "back.out(1.8)" }, 0.3 + i * 0.15);
+      });
+
+      // Each thing: its shadow grows, it drops in and lands on its word (the thunk), squashes and settles.
+      function drop(name, t, h) {
+        var sh = q("sh-" + name), o = sh.getAttribute("cx") + " " + sh.getAttribute("cy");
+        tl.fromTo(sh, { opacity: 0, scale: 0.2, svgOrigin: o }, { opacity: 0.22, scale: 1, svgOrigin: o, duration: 0.32, ease: "power1.in" }, t - 0.32);
+        tl.fromTo(q(name + "-drop"), { y: -h }, { y: 0, duration: 0.3, ease: "power3.in" }, t - 0.3);
+        tl.fromTo(q(name + "-sq"), { scaleX: 1, scaleY: 1 }, { scaleX: 1.14, scaleY: 0.8, duration: 0.06, ease: "power2.out", immediateRender: false }, t);
+        tl.to(q(name + "-sq"), { scaleX: 1, scaleY: 1, duration: 0.3, ease: "back.out(3)" }, t + 0.06);
+      }
+      drop("box", cue("vote"), by + 400);
+      drop("bulb", cue("innovate"), uy + 400);
+      drop("rug", cue("TED"), ry + 400);
+      // Each "out," (and "it."): a red marker X, one stroke, then the other (the marker squeak).
+      function strike(i, t) {
+        var strokes = q("x" + i).querySelectorAll(".x-stroke");
+        tl.fromTo(strokes[0], { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.14, ease: "power1.in" }, t);
+        tl.fromTo(strokes[1], { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.14, ease: "power1.in" }, t + 0.17);
+      }
+      strike(0, cue("out,"));
+      strike(1, cue("out,", 2));
+      strike(2, cue("it.", 2));
+
+      // ── The Watcher tries all three anyway ──
+      var tYou = cue("(You", 2), tTry = cue("try"), tAll = cue("all"), tThree = cue("three.).");
+      var mv = q("w-move");
+      // the run cycle: two drawings, swapped every 0.08 s while he runs
+      var current = "w-run1";
+      function pose(id, t) { if (id !== current) { hide(current, t); show(id, t); current = id; } }
+      function run(t0, t1) {
+        var k = 0;
+        for (var t = t0; t < t1 - 0.01; t += 0.08) pose(k++ % 2 ? "w-run2" : "w-run1", t);
+        tl.set(q("speed"), { opacity: 1 }, t0);
+        tl.set(q("speed"), { opacity: 0 }, t1);
+      }
+      // a hop from where he is to (x, y), peaking `lift` px above the higher end
+      function hopTo(x0, y0, x1, y1, t0, t1, lift) {
+        var top = Math.min(y0, y1) - lift, k = 0.42;
+        tl.to(mv, { x: x1, duration: t1 - t0, ease: "none" }, t0);
+        tl.to(mv, { y: top, duration: (t1 - t0) * k, ease: "power2.out" }, t0);
+        tl.to(mv, { y: y1, duration: (t1 - t0) * (1 - k), ease: "power2.in" }, t0 + (t1 - t0) * k);
+      }
+      // "(You": he zips in from the left to the ballot box, still smoking.
+      var tIn = tYou - 0.38, tAtBox = tTry - 0.16;
+      tl.set(mv, { x: L.runIn, y: Ybox }, 0);
+      show("w-move", tIn);
+      tl.to(mv, { x: Wbox, duration: tAtBox - tIn, ease: "power2.out" }, tIn);
+      run(tIn, tAtBox);
+      // he posts his ballot: it goes into the slot...
+      pose("w-stuff", tAtBox);
+      show("ballot-in", tAtBox);
+      tl.fromTo(q("ballot-in"), { y: -10 }, { y: 24 * kb, duration: 0.14, ease: "power2.in" }, tAtBox);
+      // "try": ...and the box spits it straight back into his face (the pop).
+      hide("ballot-in", tTry);
+      tl.fromTo(q("box-sq"), { scaleY: 1, scaleX: 1 }, { scaleY: 1.12, scaleX: 0.94, duration: 0.07, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tTry);
+      show("spit", tTry);
+      tl.fromTo(q("spit"), { scale: 0.6, svgOrigin: "0 0" }, { scale: 1.3, svgOrigin: "0 0", duration: 0.3, ease: "power1.out" }, tTry);
+      hide("spit", tTry + 0.3);
+      show("ballot-face", tTry);
+      tl.fromTo(q("ballot-face"), { scale: 0.4, svgOrigin: n1(face[0]) + " " + n1(face[1]) }, { scale: 1, svgOrigin: n1(face[0]) + " " + n1(face[1]), duration: 0.12, ease: "back.out(3)" }, tTry);
+      tl.to(mv, { x: Wbox - 14, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out" }, tTry + 0.04);
+      // "all": ballot still on his face, he dashes to the bulb (the whistle): a run in 16:9, a hop down a shelf in 9:16.
+      var tAtBulb = tAll + 0.3;
+      if (Ybulb === Ybox) {
+        tl.to(mv, { x: Wbulb, duration: tAtBulb - tAll, ease: "power2.inOut" }, tAll);
+        run(tAll, tAtBulb);
+      } else {
+        pose("w-hop", tAll);
+        hopTo(Wbox, Ybox, Wbulb, Ybulb, tAll, tAtBulb, 70);
+      }
+      // he grabs the bulb; at "all" +0.45 it zaps him (the zap): the bulb blazes, he flickers into his x-ray, and the
+      // ballot burns off his face in a puff of ash.
+      pose("w-grab", tAtBulb);
+      var tZap = tAll + 0.45;
+      show("bulb-lit", tZap);
+      show("zap", tZap);
+      hide("ballot-face", tZap);
+      var zp = q("zap");
+      gsap.set(zp, { svgOrigin: "0 -80" });
+      for (var i = 0; i < 6; i++) {
+        tl.set(q("w-grab"), { opacity: i % 2 ? 1 : 0 }, tZap + i * 0.05);
+        tl.set(q("w-bones"), { opacity: i % 2 ? 0 : 1 }, tZap + i * 0.05);
+        tl.set(zp, { scaleX: i % 2 ? 1 : -1 }, tZap + i * 0.05);
+      }
+      tl.set(q("w-grab"), { opacity: 1 }, tZap + 0.3);
+      tl.set(q("w-bones"), { opacity: 0 }, tZap + 0.3);
+      hide("zap", tZap + 0.3);
+      hide("bulb-lit", tZap + 0.36);
+      show("ash", tZap + 0.3);
+      gsap.set(q("ash"), { svgOrigin: n1(face[0]) + " " + n1(face[1]) });
+      tl.fromTo(q("ash"), { y: 0, scale: 0.6, opacity: 1 }, { y: -26, scale: 1.4, opacity: 0, duration: 0.5, ease: "power1.out", immediateRender: false }, tZap + 0.3);
+      // then he hops onto the rug (an arc)...
+      var tHop = tZap + 0.32, tLand = tAll + 0.98;
+      pose("w-hop", tHop);
+      hopTo(Wbulb, Ybulb, Wrug, Yrug, tHop, tLand, V ? 60 : 150);
+      pose("w-tap", tLand);
+      tl.fromTo(q("rug-sq"), { scaleY: 1 }, { scaleY: 0.82, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tLand);
+      // ...and taps the microphone, tap, tap, tap, to nobody (the pat at "all" +1.0).
+      [0, 0.13, 0.26].forEach(function (d) {
+        var t = tAll + 1.0 + d;
+        tl.fromTo(tapArm, { rotation: 0 }, { rotation: -8, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t - 0.1);
+        tl.fromTo(q("mic-head"), { scale: 1 }, { scale: 1.6, duration: 0.04, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t);
+      });
+      // "three": he leans in to speak.
+      var tLean = Math.min(tThree - 0.1, D - 0.24);
+      tl.fromTo(q("w-lean"), { rotation: 0 }, { rotation: 8, duration: 0.22, ease: "power2.out" }, tLean);
+      show("w-say", tLean + 0.12);
+
+      // The smoke keeps rising off him; his eyes blink at the box and at the empty room.
+      tl.fromTo(mv.querySelectorAll(".smoke"), { y: 0, opacity: 1 }, { y: -6, opacity: 0.45, duration: 0.22, yoyo: true, repeat: Math.floor((D - tIn) / 0.22) - 1, ease: "sine.inOut" }, tIn);
+      var eyes = mv.querySelectorAll(".char-eyes");
+      gsap.set(eyes, { svgOrigin: "4 -4" });
+      [tTry + 0.2, tLand + 0.08].forEach(function (t) { tl.fromTo(eyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.inOut", immediateRender: false }, t); });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

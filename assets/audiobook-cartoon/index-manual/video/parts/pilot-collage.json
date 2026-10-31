@@ -1,0 +1,35 @@
+{
+  "id": "pilot-collage",
+  "title": "Collage pilot: split the atom",
+  "storyboard": "storyboards/part-01-opening.md",
+  "audio": { "start": 149.344, "end": 174.584 },
+  "scenes": [
+    { "id": "split-the-atom", "file": "compositions/scenes/pilot-collage/split-the-atom.html", "cue": "I", "approx": 149.3, "layer": "B" },
+    { "id": "my-surprise", "file": "compositions/scenes/part-01/my-surprise.html", "cue": "You", "approx": 167.2, "layer": "A",
+      "wishonia": [
+        { "cue": "You", "expr": "neutral", "rest": "smile", "body": "open-palms", "mode": "big" },
+        { "cue": "surprise", "expr": "surprised", "rest": "oh", "body": "open-palms", "mode": "big" }
+      ] },
+    { "id": "pointing-at-each-other", "file": "compositions/scenes/pilot-collage/pointing-at-each-other.html", "cue": "when", "approx": 169.2, "layer": "B" }
+  ],
+  "sounds": [
+    { "scene": "split-the-atom", "cue": "nineteen", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "split-the-atom", "cue": "split", "sfx": "boing", "volume": 0.3 },
+    { "scene": "split-the-atom", "cue": "\"Atom\"", "n": 2, "sfx": "pop", "volume": 0.4 },
+    { "scene": "split-the-atom", "cue": "\"unable", "sfx": "stamp", "volume": 0.5 },
+    { "scene": "split-the-atom", "cue": "naturally,", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "split-the-atom", "cue": "cut", "n": 2, "offset": 0.06, "sfx": "snip", "volume": 0.65 },
+    { "scene": "split-the-atom", "cue": "human", "sfx": "squeak", "volume": 0.3 },
+    { "scene": "split-the-atom", "cue": "assumed", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "split-the-atom", "cue": "unlimited", "sfx": "sparkle", "volume": 0.35 },
+    { "scene": "split-the-atom", "cue": "free", "sfx": "switch", "volume": 0.6 },
+    { "scene": "my-surprise", "cue": "surprise", "sfx": "whistle", "volume": 0.35 },
+    { "scene": "pointing-at-each-other", "cue": "when", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "pointing-at-each-other", "cue": "realized", "sfx": "boing", "volume": 0.3 },
+    { "scene": "pointing-at-each-other", "cue": "pointing", "sfx": "hum", "volume": 0.3 },
+    { "scene": "pointing-at-each-other", "cue": "each", "sfx": "zap", "volume": 0.45 },
+    { "scene": "pointing-at-each-other", "cue": "other!", "offset": 0.04, "sfx": "boom", "volume": 0.65 },
+    { "scene": "pointing-at-each-other", "cue": "That's", "sfx": "sizzle", "volume": 0.35 },
+    { "scene": "pointing-at-each-other", "cue": "kind", "offset": -0.15, "sfx": "slide-down", "volume": 0.4 }
+  ]
+}

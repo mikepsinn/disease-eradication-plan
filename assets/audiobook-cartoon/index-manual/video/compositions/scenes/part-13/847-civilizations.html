@@ -1,0 +1,666 @@
+<template id="847-civilizations-template">
+  <!-- 847-civilizations · Layer A (storyboards/part-13-one-percent-treaty.md): zoom out of the wall screen, which still shows
+       treaties-you-signed's last frame, onto earth-means-dirt's office with the filing cabinet; Earth's case file lies on
+       the desk, stamped MAY BE ELIGIBLE FOR OPTIMIZATION and SUBOPTIMAL. "before.": the bottom drawer clunks open an inch.
+       "eight": it rolls out across the floor (behind Wishonia in 16:9, in front of the desk in 9:16) and off the edge of
+       the frame, and keeps rolling, while the counter on the cabinet spins to 847. "planets.": a tiny planet pops up on
+       every folder tab. "listened.": some folders light up teal. "didn't.": the rest blacken and curl, smoking, and the
+       corner of Earth's file starts to smoke too, and stops there. "data.": a clipboard flips up in the drawer: THE DATA.
+       "redirected": one teal folder springs open: war papers march into a funnel on its little planet and its aliens
+       wave; "resources": the funnel flips their seals and medicine papers walk out. "didn't" (second): a burnt folder
+       creaks open: two grinning skeletons still point glowing atoms at each other under a rising mushroom cloud.
+       "extincted": it crumbles to ash. "themselves.": HOLD to the end, silent. -->
+  <!-- The scene id starts with a digit, which is not a valid CSS #id selector: every element is reached by reference
+       (q()) and styled inline, never by "#847-civilizations-..." selectors. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #112845; }
+  </style>
+  <div id="root" data-composition-id="847-civilizations" data-width="1920" data-height="1080" data-start="0" data-duration="23.28">
+    <div id="847-civilizations-cam" style="position: absolute; inset: 0;">
+      <div id="847-civilizations-bg" style="position: absolute; inset: 0;"></div>
+      <div id="847-civilizations-back" style="position: absolute; inset: 0;"></div>
+      <div id="847-civilizations-wish" style="position: absolute; inset: 0;"></div>
+      <div id="847-civilizations-front" style="position: absolute; inset: 0;"></div>
+    </div>
+    <div id="847-civilizations-grain" style="position: absolute; inset: 0;"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "847-civilizations";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, O = KIT.OFFICE, ink = C.line;
+      var P = ID + "-", WHITE = "#FBF6E6", MANILA = "#E2B865", ASH = "#3B312A";
+      var f1 = function (n) { return String(Math.round(n * 10) / 10); };
+      var at = function (x, y, k, inner) { return '<g transform="translate(' + f1(x) + "," + f1(y) + ")" + (k && k !== 1 ? " scale(" + k + ")" : "") + '">' + inner + "</g>"; };
+      var clamp = function (x) { return Math.max(0, Math.min(1, x)); };
+
+      // ── Copied from treaties-you-signed.html, to draw its last frame on the wall screen: keep the two copies the same. ──
+      // Per canvas shape. table: the line the scrolls stand on (the cloth hangs to cloth); tx: the table's ends. lx, ls: the
+      // leader's x and scale (he stands behind the table, cut off at the hips). pile: the rolled treaties at his elbow.
+      // ss: the scrolls' size; slots: where scrolls 1 to 4 stand. wx, wy, ws: the weapons maker, risen. nuke, can, germ,
+      // mine: sizes. bunt: the bunting [x0, x1, y, sag, swags]. peak: how high a hurled scroll flies. germFrom: where the
+      // germ starts. In 16:9 the leader stands at the left end; in 9:16 the row of scrolls fills the width and he stands
+      // behind it, so his head ends up over the treaties, and the weapons maker rises behind scroll 1, scroll 3 in 16:9
+      // (a scroll in front hides his legs).
+      var TS = V
+        ? { table: 1400, cloth: 1455, tx: [40, 1040], lx: 520, ls: 4.0, pile: 870, ss: 1.75, slots: [165, 400, 635, 870], wx: 165, wy: 1015, ws: 3.0, germFrom: -70,
+            nuke: 0.55, can: 1.5, germ: 1.8, mine: 1.4, bunt: [60, 1020, 690, 46, 2], peak: 820 }
+        : { table: 730, cloth: 868, tx: [52, 1868], lx: 240, ls: 3.1, pile: 420, ss: 1.75, slots: [665, 935, 1205, 1460], wx: 1205, wy: 315, ws: 3.2, germFrom: 420,
+            nuke: 0.6, can: 1.6, germ: 1.9, mine: 1.5, bunt: [70, 1700, 72, 46, 3], peak: 190 };
+      // (in 9:16 he stands a little taller, so his grin clears the treaties in front of him)
+      TS.ly = TS.table - 28 * TS.ls - (V ? 34 : 0);
+      var TS_WHITE = "#FBF6E6";
+      function tsF(n) { return String(Math.round(n * 10) / 10); }
+      function tsMix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function tsD(pts) { return "M" + pts.map(function (p) { return tsF(p[0]) + "," + tsF(p[1]); }).join(" L") + " Z"; }
+      // a shape drawn twice, a navy pass under the fill (as kit.js draws the humans)
+      function tsSolid(d, fill, w) {
+        return '<path d="' + d + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + d + '" fill="' + fill + '"/>';
+      }
+      function tsLine(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="miter"' + (extra || "") + "/>"; }
+      // the charred gag's colors (kit.js charify): any color turns a dark brown of the same lightness
+      function tsChar(col) {
+        var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
+        return "rgb(" + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ")";
+      }
+      // ── The leader (L0: the politician, tone 0, a plain orange sash) and his poses ──
+      var TS_ARMS = { idle: [[-12, -6], [12, 6]], fold: [[20, 100], [-20, -100]], reach: [[-12, -6], [40, 60]], lift: [[-12, -6], [130, 150]], hurl: [[-12, -6], [110, 100]], cough: [[40, 150], [12, 6]] };
+      function tsLead(pose, extra) { return KIT.castOpts("politician", tsMix({ tone: 0, arms: TS_ARMS[pose], mood: "grin" }, extra)); }
+      // The plain sash, over the jacket and under the arms, clipped to the jacket (the politician's "vee" build).
+      function tsSash(cid, o) {
+        var r = KIT.rig(o), T = r.shoulder[0][1] - 3, hip = r.hipY, w = (-r.shoulder[0][0] / 27) * 33, Wy = hip - 8;
+        var torso = [[-6, T - 3], [6, T - 3], [w - 4, T - 1], [w, T + 4], [13, Wy], [15, hip + 8], [2, hip + 8], [0, hip + 4], [-2, hip + 8], [-15, hip + 8], [-13, Wy], [-w, T + 4], [-w + 4, T - 1]];
+        var A = [-w + 3, T], B = [15, hip + 7], dx = B[0] - A[0], dy = B[1] - A[1], L = Math.sqrt(dx * dx + dy * dy), nx = (-dy / L) * 5.5, ny = (dx / L) * 5.5;
+        var band = [[A[0] + nx, A[1] + ny], [B[0] + nx, B[1] + ny], [B[0] - nx, B[1] - ny], [A[0] - nx, A[1] - ny]];
+        var col = o.charred ? tsChar(C.orange) : C.orange, edge = o.charred ? tsChar(C.rust) : C.rust;
+        return '<defs><clipPath id="' + cid + '"><path d="' + tsD(torso) + '"/></clipPath></defs><g clip-path="url(#' + cid + ')">' +
+          '<path d="' + tsD(band) + '" fill="' + col + '" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+          tsLine("M" + tsF(A[0] - nx * 0.55) + "," + tsF(A[1] - ny * 0.55) + " L" + tsF(B[0] - nx * 0.55) + "," + tsF(B[1] - ny * 0.55), edge, 1.6) + "</g>";
+      }
+      // In the charred drawing he keeps grinning: the white grin and teeth go back on the charred face (the jaw head's
+      // mouth line, in the face's units).
+      var TS_GRIN = '<path class="mouth" d="M-4,12.6 L17,11.6 L12,22.6 L2,22.6 Z" fill="' + TS_WHITE + '" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+        tsLine("M2.5,12.4 V22.6 M7.5,12.2 V22.6 M12.5,12 V22.6 M-1.5,17.4 H15.6", ink, 1.1);
+      function tsLeader(pid, pose, extra) {
+        var o = tsLead(pose, extra), m = KIT.person(o);
+        m = m.replace('<g class="arm-l">', tsSash(pid + "-sash-" + pose + (o.charred ? "c" : "") + (extra && extra.look2 ? "2" : ""), o) + '<g class="arm-l">');
+        if (o.charred) m = m.replace(/<path class="mouth"[^>]*\/>/, TS_GRIN);
+        // look2: the charred eyes turn toward the pencil, down the table
+        if (extra && extra.look2) m = m.replace(/<circle cx="([-\d.]+)" cy="-4" r="1.8"/g, function (x, cx) { return '<circle cx="' + (+cx + 2) + '" cy="-2.9" r="1.8"'; });
+        return m;
+      }
+      // ── The weapons maker (the cast's barrel, his baby missile) and his three drawings ──
+      var TS_WM = {
+        proud: KIT.castOpts("weaponsMaker", { mood: "smile" }),
+        sniff: KIT.castOpts("weaponsMaker", { arms: [[32, 84], [-45, -150]], holdL: "missile", mood: "sad" }),
+        hug: KIT.castOpts("weaponsMaker", { arms: [[44, 102], [-44, -102]], hold: "missile", mood: "worried" }),
+      };
+      // Where the cast's missile sits (kit.js PROPS.missile, held between both hands or in the left), and its upper fin.
+      function tsFin(o) {
+        var r = KIT.rig(o), h = r.handLocal, base = o.hold ? [(h[0][0] + h[1][0]) / 2, (h[0][1] + h[1][1]) / 2 + 2] : [h[0][0] - 2, h[0][1] + 6];
+        var a = (-14 * Math.PI) / 180, fx = -44, fy = -17;
+        return [base[0] + fx * Math.cos(a) - fy * Math.sin(a), base[1] - 6 + fx * Math.sin(a) + fy * Math.cos(a)];
+      }
+      function tsMaker(pid, pose) {
+        var o = TS_WM[pose], fin = tsFin(o), r = KIT.rig(o);
+        var out = '<g id="' + pid + "-wm-" + pose + '"' + (pose === "hug" ? "" : ' opacity="0"') + '><g id="' + pid + "-wm-" + pose + '-in">' + KIT.person(o) +
+          '<g transform="translate(' + tsF(fin[0]) + "," + tsF(fin[1]) + ')">' + KIT.props.priceTag({ text: "$4,000,000", size: 0.36, angle: -12 }) + "</g>";
+        if (pose === "sniff") {
+          var hx = r.hand[1][0], hy = r.hand[1][1];
+          out += '<g id="' + pid + '-hanky"><path d="M' + tsF(hx - 3) + "," + tsF(hy - 8) + " L" + tsF(hx + 8) + "," + tsF(hy - 9) + " L" + tsF(hx + 9) + "," + tsF(hy - 2) + " L" + tsF(hx + 5) + "," + tsF(hy + 5) + " L" + tsF(hx - 4) + "," + tsF(hy + 3) + " L" + tsF(hx - 6) + "," + tsF(hy - 3) + ' Z" fill="' + TS_WHITE + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/>' +
+            tsLine("M" + tsF(hx - 2) + "," + tsF(hy - 6) + " L" + tsF(hx + 6) + "," + tsF(hy - 7) + " M" + tsF(hx - 3) + "," + tsF(hy + 1) + " L" + tsF(hx + 4) + "," + tsF(hy), C.orange, 1.2) + "</g>" +
+            '<g transform="translate(' + tsF(r.eyes[0] + 4) + "," + tsF(r.eyes[1] + 2) + ')"><path id="' + pid + '-tear" d="M0,-3 Q-3,2 0,4 Q3,2 0,-3 Z" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="1.1" opacity="0"/></g>';
+        }
+        return out + "</g></g>";
+      }
+      // ── Props drawn here: a rolled treaty, the gas canister, the landmine, a little front-view face ──
+      function tsRoll() {
+        var r = [[-62, -16], [62, -16], [66, -12], [66, -4], [62, 0], [-62, 0], [-66, -4], [-66, -12]];
+        return tsSolid(tsD(r), TS_WHITE, 4.4) + tsLine("M-60,-3 H60", C.orange, 2) + tsLine("M-62,-15 V-1 M62,-15 V-1", ink, 1.5) +
+          tsSolid(tsD([[-7, -17], [7, -17], [7, 1], [-7, 1]]), C.war, 2.6) + tsSolid(tsD([[-3, 0], [-9, 9], [-4, 8], [-1, 2]]), C.war, 2) + tsSolid(tsD([[3, 0], [9, 9], [4, 8], [1, 2]]), C.war, 2);
+      }
+      function tsFace(x, y, k, mood) {
+        var out = "";
+        [-1, 1].forEach(function (s) {
+          var ex = x + s * 7 * k;
+          if (mood === "x") { out += tsLine("M" + tsF(ex - 3 * k) + "," + tsF(y - 3 * k) + " L" + tsF(ex + 3 * k) + "," + tsF(y + 3 * k) + " M" + tsF(ex + 3 * k) + "," + tsF(y - 3 * k) + " L" + tsF(ex - 3 * k) + "," + tsF(y + 3 * k), ink, 2 * k); return; }
+          out += '<path d="M' + tsF(ex - 4.6 * k) + "," + tsF(y) + " Q" + tsF(ex) + "," + tsF(y - 4 * k) + " " + tsF(ex + 4.6 * k) + "," + tsF(y) + " Q" + tsF(ex) + "," + tsF(y + 3.4 * k) + " " + tsF(ex - 4.6 * k) + "," + tsF(y) + ' Z" fill="' + TS_WHITE + '" stroke="' + ink + '" stroke-width="' + tsF(k) + '"/>' +
+            '<circle cx="' + tsF(ex - s * 0.6 * k) + '" cy="' + tsF(y + 0.2 * k) + '" r="' + tsF(1.5 * k) + '" fill="' + ink + '"/>' +
+            tsLine("M" + tsF(ex - 5.2 * k) + "," + tsF(y + 0.4 * k) + " Q" + tsF(ex) + "," + tsF(y - 2.4 * k) + " " + tsF(ex + 5.2 * k) + "," + tsF(y - 0.2 * k), ink, 2 * k) +
+            tsLine("M" + tsF(ex + s * 6 * k) + "," + tsF(y - 7.5 * k) + " L" + tsF(ex - s * 4 * k) + "," + tsF(y - 4 * k), ink, 2.2 * k);
+        });
+        return out + tsLine("M" + tsF(x - 6 * k) + "," + tsF(y + 11 * k) + " Q" + tsF(x) + "," + tsF(y + 5.5 * k) + " " + tsF(x + 6 * k) + "," + tsF(y + 11 * k), ink, 2.2 * k);
+      }
+      // The gas canister standing on y 0 on its tiptoes: a steel cylinder with a hazard band, a red valve and a scowl.
+      // Parts: .ts-can-leg-l / -r (hips at (-8, -14) and (8, -14)).
+      function tsCanister(pid) {
+        var body = [[-20, -14], [20, -14], [23, -19], [23, -66], [15, -78], [-15, -78], [-23, -66], [-23, -19]];
+        var stripes = "";
+        for (var x = -19; x < 20; x += 9) stripes += '<path d="' + tsD([[x, -38], [x + 4, -38], [x - 1, -29], [x - 5, -29]]) + '" fill="' + ink + '"/>';
+        var leg = function (s, cls) { return '<g class="' + cls + '">' + tsLine("M" + 8 * s + ",-14 L" + 9 * s + ",-4 L" + 7 * s + ",0", ink, 3) + '<path d="M' + (7 * s - 3) + ",1 L" + (7 * s + 6) + ",0 L" + (7 * s - 1) + ',-3 Z" fill="' + ink + '"/></g>'; };
+        return leg(-1, "ts-can-leg-l") + leg(1, "ts-can-leg-r") +
+          '<defs><clipPath id="' + pid + '-canclip"><path d="' + tsD(body) + '"/></clipPath></defs>' + tsSolid(tsD(body), C.peri, 4) +
+          '<g clip-path="url(#' + pid + '-canclip)"><rect x="-24" y="-38" width="48" height="9" fill="' + C.yellow + '"/>' + stripes + "</g>" + tsLine("M-23,-38 H23 M-23,-29 H23", ink, 1.6) +
+          tsLine("M19,-20 V-65 L13,-74", C.orange, 2) + tsSolid(tsD([[-6, -86], [6, -86], [6, -77], [-6, -77]]), C.slate, 3) + tsSolid(tsD([[-15, -92], [15, -92], [15, -86], [-15, -86]]), C.war, 3) +
+          tsFace(0, -58, 0.9, "grumpy");
+      }
+      // ...and squashed flat: a pancake with crossed-out eyes, its valve knocked off, its legs sticking out.
+      function tsCanFlat() {
+        return tsLine("M-40,-5 L-56,-12 L-62,-8 M40,-5 L55,-13 L62,-10", ink, 3) +
+          tsSolid(tsD([[-42, 0], [42, 0], [46, -8], [38, -20], [-38, -20], [-46, -8]]), C.peri, 3.6) + '<rect x="-34" y="-17" width="68" height="5" fill="' + C.yellow + '"/>' + tsLine("M36,-18 L42,-8", C.orange, 1.8) +
+          tsFace(0, -9, 0.6, "x") + '<g transform="translate(58,0) rotate(18)">' + tsSolid(tsD([[-12, -5], [12, -5], [12, 0], [-12, 0]]), C.war, 2.6) + "</g>";
+      }
+      function tsMine(pid) {
+        return tsSolid(tsD([[-50, 0], [50, 0], [55, -8], [46, -18], [-46, -18], [-55, -8]]), C.slate, 4) + tsLine("M46,-15 L52,-8", C.orange, 2) +
+          tsLine("M-40,-9 H40", C.peri, 2) + tsSolid(tsD([[-24, -18], [24, -18], [19, -26], [-19, -26]]), C.peri, 3) +
+          tsLine("M-8,-26 V-33 M0,-26 V-34 M8,-26 V-33", ink, 2.6) + '<circle id="' + pid + '-mine-light" cx="34" cy="-11" r="4.2" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.6"/>';
+      }
+      // Scroll i's markup in the scroll's own units (the shared library scroll, plus more signatures crowded in, or the
+      // 1% treaty's empty signature line).
+      var TS_SCROLLS = [{ text: "CHEMICAL", lines: ["WEAPONS BAN"], signatures: 8 }, { text: "BIOLOGICAL", lines: ["WEAPONS BAN"], signatures: 8 }, { text: "LANDMINE", lines: ["BAN"], signatures: 8 },
+        { text: "THE 1% TREATY", lines: ["Redirect 1% of military spending to clinical trials."], signatures: 0, wax: false }];
+      function tsScroll(i) {
+        var s = KIT.props.scroll(TS_SCROLLS[i]);
+        if (i === 3) return s + tsLine("M-40,-40 H40", ink, 1.4) + '<text x="-47" y="-41" font-family="Oswald" font-weight="600" font-size="9" fill="' + ink + '">X</text>';
+        var rnd = KIT.rng(31 + i * 7), sigs = "";
+        [[-44, -94], [-6, -92], [-26, -84], [14, -82], [-44, -78]].forEach(function (p) {
+          var d = "M" + p[0] + "," + p[1];
+          for (var j = 0; j < 4; j++) d += " C" + tsF(p[0] + j * 6 + 2) + "," + tsF(p[1] - 5 - rnd() * 3) + " " + tsF(p[0] + j * 6 + 4) + "," + tsF(p[1] + 3) + " " + tsF(p[0] + j * 6 + 6) + "," + tsF(p[1] - rnd() * 2);
+          sigs += tsLine(d, ink, 1.2);
+        });
+        return s + sigs;
+      }
+      // Scroll 3's singed edges: a burnt, jagged rim on the paper and the rolls' ends, and a smoke wisp.
+      function tsSinge() {
+        var outer = [[-57, -159], [57, -159], [57, -7], [-57, -7]], inner = [], k, rnd = KIT.rng(97);
+        for (k = 0; k <= 10; k++) inner.push([-50 + k * 10, -150 + (k % 2 ? 6 : 1) + rnd() * 4]);
+        for (k = 1; k <= 13; k++) inner.push([49 - (k % 2 ? 6 : 0) - rnd() * 3, -150 + k * 10.3]);
+        for (k = 10; k >= 0; k--) inner.push([-50 + k * 10, -15 - (k % 2 ? 7 : 2) - rnd() * 3]);
+        for (k = 13; k >= 1; k--) inner.push([-49 + (k % 2 ? 7 : 1) + rnd() * 3, -150 + k * 10.3]);
+        return '<path d="' + tsD(outer) + " " + tsD(inner) + '" fill="#2A221C" fill-rule="evenodd" opacity="0.9"/>' +
+          '<path d="' + tsD([[-66, -166], [-50, -166], [-50, -150], [-66, -150]]) + " " + tsD([[50, -166], [66, -166], [66, -150], [50, -150]]) + " " + tsD([[-66, -16], [-50, -16], [-50, 0], [-66, 0]]) + " " + tsD([[50, -16], [66, -16], [66, 0], [50, 0]]) + '" fill="#2A221C"/>' +
+          '<g class="ts-smoke">' + tsLine("M30,-170 l-6,-9 l6,-9 l-6,-9", "#8C8782", 3.4) + tsLine("M-34,-172 l-6,-9 l6,-9", "#8C8782", 3) + "</g>";
+      }
+      // Soot in KIT.nuke's style, around (0,0) (split-the-atom.html's soot).
+      function tsSoot(circles) {
+        return circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="10"/>'; }).join("") +
+          circles.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#8E8780"/>'; }).join("") +
+          circles.filter(function (c, i) { return i % 2 === 0; }).map(function (c) { return '<circle cx="' + tsF(c[0] - c[2] * 0.25) + '" cy="' + tsF(c[1] - c[2] * 0.3) + '" r="' + tsF(c[2] * 0.42) + '" fill="#C9C2B8" opacity="0.85"/>'; }).join("");
+      }
+      function tsBunting() {
+        var b = TS.bunt, n = b[4], seg = (b[1] - b[0]) / n, out = "", cols = [C.orange, C.yellow, C.peri, C.tan, C.cream], k = 0;
+        for (var i = 0; i < n; i++) {
+          var x0 = b[0] + i * seg, x1 = x0 + seg;
+          out += tsLine("M" + x0 + "," + b[2] + " Q" + (x0 + seg / 2) + "," + (b[2] + b[3] * 2) + " " + x1 + "," + b[2], ink, 2.4);
+          for (var j = 1; j < 9; j++) {
+            var t = j / 9, x = x0 + seg * t, y = b[2] + b[3] * 4 * t * (1 - t);
+            out += tsSolid(tsD([[x - 16, y], [x + 16, y], [x, y + 40]]), cols[k++ % cols.length], 3);
+          }
+          out += tsSolid(tsD([[x0 - 6, b[2] - 6], [x0 + 6, b[2] - 6], [x0 + 6, b[2] + 6], [x0 - 6, b[2] + 6]]), C.rust, 2.4);
+        }
+        return out + tsSolid(tsD([[b[1] - 6, b[2] - 6], [b[1] + 6, b[2] - 6], [b[1] + 6, b[2] + 6], [b[1] - 6, b[2] + 6]]), C.rust, 2.4);
+      }
+      function tsTableTop() {
+        var x0 = TS.tx[0], x1 = TS.tx[1], y = TS.table;
+        return tsSolid(tsD([[x0 + 14, y - 16], [x1 - 14, y - 16], [x1, y + 6], [x0, y + 6]]), C.tan, 4) + tsLine("M" + (x0 + 30) + "," + (y - 6) + " H" + (x1 - 30), C.rust, 2, ' opacity="0.6"');
+      }
+      function tsTable(pid) {
+        var x0 = TS.tx[0], x1 = TS.tx[1], y = TS.table, yb = TS.cloth, hem = [];
+        for (var x = x1; x >= x0; x -= 30) hem.push([x, yb + ((x1 - x) / 30) % 2 * 10]);
+        var cloth = [[x0, y + 6], [x1, y + 6]].concat(hem.length ? [[x1, yb]] : [], hem, [[x0, yb]]);
+        var pleats = "";
+        for (var px = x0 + 90; px < x1 - 40; px += 120) pleats += tsLine("M" + px + "," + (y + 14) + " L" + px + "," + (yb - 6), ink, 1.6, ' opacity="0.35"');
+        return '<defs><clipPath id="' + pid + '-cloth"><path d="' + tsD(cloth) + '"/></clipPath></defs>' + tsSolid(tsD(cloth), TS_WHITE, 4) +
+          '<g clip-path="url(#' + pid + '-cloth)"><rect x="' + (x0 + (x1 - x0) * 0.62) + '" y="' + y + '" width="' + (x1 - x0) + '" height="' + (yb - y + 20) + '" fill="url(#' + pid + '-fine)" opacity="0.22"/>' +
+          '<rect x="' + x0 + '" y="' + (yb - 34) + '" width="' + (x1 - x0) + '" height="9" fill="' + C.orange + '"/></g>' + pleats;
+      }
+      // The whole last frame (without the paper, which is KIT.paper): every part sits where it ends up; parts that are
+      // gone by the end are drawn with opacity 0.
+      function tsArt(pid) {
+        var P = pid + "-", ss = TS.ss, t = TS.table;
+        var at = function (x, y, k, inner) { return '<g transform="translate(' + tsF(x) + "," + tsF(y) + ")" + (k && k !== 1 ? " scale(" + k + ")" : "") + '">' + inner + "</g>"; };
+        var clip = function (id, inner) { return '<defs><clipPath id="' + P + id + '"><rect x="-200" y="-400" width="' + (W + 400) + '" height="' + (t + 404) + '"/></clipPath></defs><g clip-path="url(#' + P + id + ')">' + inner + "</g>"; };
+        var poses = ["idle", "fold", "reach", "lift", "hurl", "cough"].map(function (p) {
+          var m = tsLeader(pid, p);
+          if (p === "cough") {
+            // eyes squeezed shut while he coughs (papers-with-presidents' squint)
+            m = m.replace(/<g class="eye">[\s\S]*?<\/g>/g, "").replace("<!--face-end-->", tsLine("M-7,-7.5 l4.5,3.5 l-4.5,3.5 M15.3,-7.5 l-4.5,3.5 l4.5,3.5", ink, 2.8) + "<!--face-end-->");
+          }
+          return '<g id="' + P + "ld-" + p + '" opacity="0">' + m + "</g>";
+        }).join("") +
+          '<g id="' + P + 'ld-char" opacity="0">' + tsLeader(pid, "hurl", { charred: true }) + "</g>" +
+          '<g id="' + P + 'ld-char2">' + tsLeader(pid, "hurl", { charred: true, look2: true }) + "</g>";
+        var leader = clip("lclip", at(TS.lx, TS.ly, TS.ls, '<g id="' + P + 'lead">' + poses + "</g>"));
+        var maker = clip("wclip", at(TS.wx, TS.wy, TS.ws, '<g id="' + P + 'wm">' + tsMaker(pid, "proud") + tsMaker(pid, "sniff") + tsMaker(pid, "hug") + "</g>"));
+        var pile = at(TS.pile, t, ss, '<g id="' + P + 'pile">' + [[-6, 0, -2], [8, -16, 2], [0, -32, -1]].map(function (r, k) {
+          return '<g transform="translate(' + r[0] + "," + r[1] + ") rotate(" + r[2] + ')"><g id="' + P + "roll-" + k + '" opacity="0">' + tsRoll() + "</g></g>";
+        }).join("") + "</g>");
+        var scrolls = TS.slots.map(function (x, i) {
+          var body = i === 2 ? '<g id="' + P + 'sc2-clean" opacity="0">' + tsScroll(2) + '</g><g id="' + P + 'sc2-singed">' + tsScroll(2) + tsSinge() + "</g>" : tsScroll(i);
+          return at(x, t, 1, '<g id="' + P + "sc" + i + '"><g id="' + P + "sq" + i + '">' + at(0, 0, ss, body) + "</g></g>");
+        }).join("");
+        var mine = at(TS.slots[2], t, TS.mine, '<g id="' + P + 'mine" opacity="0">' + tsMine(pid) + "</g>");
+        var scorch = '<g id="' + P + 'scorch"><ellipse cx="' + TS.slots[2] + '" cy="' + (t - 2) + '" rx="' + tsF(84 * ss) + '" ry="' + tsF(7 * ss) + '" fill="#2A221C" opacity="0.6"/>' +
+          [-70, -40, 36, 62, 90].map(function (dx, k) { return '<circle cx="' + tsF(TS.slots[2] + dx * ss) + '" cy="' + tsF(t - 3 - (k % 2) * 6) + '" r="' + tsF(2.5 * ss) + '" fill="#2A221C"/>'; }).join("") + "</g>";
+        // the canister and the germ, each walking in a group of its own; their squashed drawings show from the slam on
+        var can = at(TS.slots[0], t, 1, '<g id="' + P + 'can-walk">' + at(0, 0, TS.can, '<g id="' + P + 'can-alive" opacity="0"><g id="' + P + 'can-bob">' + tsCanister(pid) + '</g></g><g id="' + P + 'can-flat">' + tsCanFlat() + "</g>") + "</g>");
+        var germWalk = at(TS.slots[1], t, 1, '<g id="' + P + 'germ-walk">' + at(0, 0, TS.germ, '<g id="' + P + 'germ-alive" opacity="0"><g id="' + P + 'germ-hop">' + KIT.props.germ({ mood: "scared" }) + "</g></g>") + "</g>");
+        var drops = [[-46, -10, 7], [-30, -26, 5], [40, -14, 6], [28, -30, 4.5], [56, -4, 4]].map(function (d) { return '<circle cx="' + d[0] + '" cy="' + d[1] + '" r="' + d[2] + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>'; }).join("");
+        var splat = at(TS.slots[1], t, TS.germ, '<g id="' + P + 'germ-splat"><path d="M-44,0 L-34,-8 L-38,-16 L-20,-12 L-10,-22 L0,-12 L14,-20 L18,-10 L36,-14 L32,-4 L46,0 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<g transform="scale(1.5,0.34)">' + KIT.props.germ({ mood: "dead" }) + '</g><g id="' + P + 'germ-drops">' + drops + "</g></g>");
+        var nuke = at(TS.slots[2], t, TS.nuke, '<g id="' + P + 'nuke" opacity="0">' + KIT.nuke() + "</g>");
+        var SOOT = [[0, -84, 36], [34, -62, 32], [-30, -50, 34], [70, -40, 26], [28, -24, 38], [-28, 2, 38], [30, 22, 40], [-4, -116, 24]];
+        var soot = at(TS.lx, TS.ly, TS.ls, '<g id="' + P + 'soot" opacity="0">' + tsSoot(SOOT) + "</g>");
+        var gas = at(TS.slots[0], t, TS.can, '<g id="' + P + 'gas" opacity="0">' + [[0, -30, 24], [-22, -22, 18], [22, -18, 20], [-8, -52, 18], [14, -50, 15], [-30, -44, 13]].map(function (c) {
+          return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>';
+        }).join("") + '<circle cx="0" cy="-34" r="40" fill="url(#' + P + 'hatch)" opacity="0.3"/></g>');
+        var rc = KIT.rig(tsLead("cough")), mo = [TS.lx + rc.mouth[0] * TS.ls, TS.ly + rc.mouth[1] * TS.ls];
+        var puffs = at(mo[0], mo[1], TS.ls / 2.9, [0, 1].map(function (k) {
+          return '<g id="' + P + "cough-" + k + '" opacity="0"><circle cx="10" cy="0" r="10" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.6"/><circle cx="24" cy="-6" r="8" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.6"/></g>';
+        }).join(""));
+        var rh = KIT.rig(tsLead("hurl", { charred: true })), mh = [TS.lx + (rh.mouth[0] + 6) * TS.ls, TS.ly + (rh.mouth[1] + 4) * TS.ls];
+        var twinkle = at(mh[0], mh[1], TS.ls / 2.9, '<g id="' + P + 'twinkle" opacity="0">' + KIT.star(0, 0, 22, ink) + KIT.star(0, 0, 17, "#FFFFFF") + "</g>");
+        // the pencil on scroll 4's signature line (KIT.pencil's tip at its origin, turned to lie along the line)
+        var pen = at(TS.slots[3] - 36 * ss, t - 41 * ss, 1, '<g id="' + P + 'pen">' + at(0, 0, 1, '<g transform="rotate(20) scale(' + tsF(0.42 * ss) + ')">' + KIT.pencil() + "</g>") + "</g>");
+        return '<g id="' + P + 'bunting">' + tsBunting() + "</g>" + leader + maker + tsTableTop() + mine + scorch + germWalk + pile + scrolls + can + splat + tsTable(pid) + nuke + soot + gas + puffs + twinkle + pen;
+      }
+      // KIT.paper's frame without its own <svg> (for the copy on 847-civilizations' wall screen)
+      function tsPaper(pid) {
+        return KIT.paperDefs(pid) + '<rect width="' + W + '" height="' + H + '" fill="' + C.paper + '"/>' +
+          '<rect x="30" y="30" width="' + (W - 60) + '" height="' + (H - 60) + '" fill="none" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          KIT.star(W - 92, 96, 22, C.orange) + KIT.star(W - 130, 140, 10, C.yellow) + KIT.star(84, H - 84, 18, C.orange);
+      }
+      // ── end of the copied part ──
+
+      // earth-means-dirt's office with the filing cabinet (its L table): in 16:9 the wall screen moves right and Wishonia is
+      // a little smaller; 9:16 keeps the standard office, and the cabinet stands on the floor in front of the desk, so its
+      // long drawer can roll across the desk front, under her. The case file lies on the desk (to her right in 9:16, with
+      // the mug on her left). DR: the drawer: its scale k (the cabinet's), folder spacing, width and top, the side panel's
+      // top, how far it rolls (the front ends at xEnd), how many folders, where the pop-up folders land (x targets), the
+      // clipboard [x, bottom, size], the pop-ups' bottom and size.
+      var L = V
+        ? { screen: O.screen, wish: O.wish, halo: O.halo, desk: O.desk, mug: [300, 1173, 1.1], cab: [40, 1110, 1.05],
+            file: { x: 785, y: 1098, w: 255, h: 152, tab: [805, 1066, 205, 32], fs: 15, m1: [880, 1180, 12], m2: [962, 1238, 15] },
+            counter: { x: 161, y: 1104, k: 0.8 } }
+        : { screen: [420, 190, 820, 520], wish: { x: 1280, y: 80, w: 600 }, halo: [1580, 350], desk: [1220, 905, 700], mug: [1790, 800, 1.5], cab: [50, 406, 1.45],
+            file: { x: 1405, y: 742, w: 340, h: 163, tab: [1450, 708, 240, 34], fs: 18, m1: [1500, 834, 15], m2: [1662, 884, 20] },
+            counter: { x: 216, y: 402, k: 1 } };
+      var DR = V
+        ? { FS: 34, FW: 50, top: 1300, tab: 14, pr: 8, panel: 1380, xEnd: 3000, n: 92, popT: 470, popB: 760, popY: 700, popS: 1.12, popAt: [300, 780], spring: false, clip: [338, 1444, 1.1] }
+        : { FS: 44, FW: 66, top: 674, tab: 18, pr: 11, panel: 774, xEnd: 4200, n: 100, popT: 700, popB: 1050, popY: 600, popS: 1, spring: true, clip: [468, 866, 1.4] };
+      // where each pop-up opens: right over its folder in 16:9 (on a spring); in 9:16, where Wishonia stands between the
+      // drawer and the wall screen, the folder flies up from behind her and opens over the screen
+      DR.popAt = DR.popAt || [DR.popT, DR.popB];
+      var S = L.screen, hole = [S[0] + 34, S[1] + 34, S[2] - 68, S[3] - 68], cb = L.cab, ck = cb[2];
+      // The cabinet's F slot (its bottom drawer) in screen units; the drawer's front panel starts there.
+      var FX = cb[0] + 16 * ck, FY = cb[1] + 226 * ck, FWd = 198 * ck, FHd = 92 * ck, OPEN = 12 * ck, CABR = cb[0] + 230 * ck;
+
+      q("bg").innerHTML = KIT.office(L.halo[0], L.halo[1]);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      function txt(x, y, size, fill, text, extra) {
+        return '<text x="' + x + '" y="' + y + '" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + fill + '" ' + (extra || "") + ">" + text + "</text>";
+      }
+      var sk = 'stroke="' + C.ink + '"';
+
+      // ── The wall screen: treaties-you-signed's last frame, drawn at the size the zoom-out starts from ──
+      var zv = KIT.zoomView(S), PM = ID + "-mini";
+      var screen = KIT.wallScreen(S[0], S[1], S[2], S[3]) +
+        '<defs><clipPath id="' + P + 'hole"><rect x="' + hole[0] + '" y="' + hole[1] + '" width="' + hole[2] + '" height="' + hole[3] + '" rx="22"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'hole)"><g transform="' + zv.mini + '">' + tsPaper(PM) + tsArt(PM) + "</g></g>";
+
+      // ── The cabinet (earth-means-dirt.html's, in its own units, 230 x 330): drawers D and E, and the F slot, whose front
+      // is the rolling drawer's ──
+      function slot(i) { return 18 + i * 104; }
+      function front(i, letter) {
+        var y = slot(i);
+        return '<rect x="16" y="' + y + '" width="198" height="92" rx="6" fill="#7486A3" ' + sk + ' stroke-width="6"/>' +
+          '<rect x="85" y="' + (y + 12) + '" width="60" height="38" rx="4" fill="' + C.cream + '" ' + sk + ' stroke-width="3"/>' +
+          txt(115, y + 42, 30, C.ink, letter, 'text-anchor="middle"') + '<rect x="90" y="' + (y + 60) + '" width="50" height="14" rx="7" fill="' + C.ink + '"/>';
+      }
+      var cabinet = at(cb[0], cb[1], ck, '<rect x="0" y="0" width="230" height="330" rx="10" fill="' + C.peri + '" ' + sk + ' stroke-width="6"/>' + front(0, "D") + front(1, "E") +
+        '<rect x="16" y="' + slot(2) + '" width="198" height="92" rx="4" fill="' + C.ink + '"/>');
+      // The counter bolted on top of the cabinet: three wheels (nuclear-winters' counter), each a column of digits.
+      var WH = { w: 50, h: 70, fs: 56, gap: 6, pad: 8 };
+      function counter() {
+        var c = L.counter, cw = 3 * WH.w + 2 * WH.gap + 2 * WH.pad, ch = WH.h + 2 * WH.pad, x0 = -cw / 2, out = "";
+        out += '<rect x="' + (x0 + 14) + '" y="-6" width="10" height="8" fill="' + C.ink + '"/><rect x="' + (-x0 - 24) + '" y="-6" width="10" height="8" fill="' + C.ink + '"/>' +
+          '<rect x="' + x0 + '" y="' + (-ch - 4) + '" width="' + cw + '" height="' + ch + '" rx="10" fill="' + C.navy + '" ' + sk + ' stroke-width="4"/>';
+        for (var i = 0; i < 3; i++) {
+          var wx = x0 + WH.pad + i * (WH.w + WH.gap), wy = -ch - 4 + WH.pad, col = "";
+          for (var d = 0; d <= 10; d++) col += '<text x="' + (wx + WH.w / 2) + '" y="' + f1(wy + WH.h / 2 + WH.fs * 0.36 + d * WH.h) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + WH.fs + '" fill="' + C.yellow + '">' + (d % 10) + "</text>";
+          out += '<defs><clipPath id="' + P + "wheel" + i + '"><rect x="' + wx + '" y="' + wy + '" width="' + WH.w + '" height="' + WH.h + '" rx="6"/></clipPath></defs>' +
+            '<rect x="' + wx + '" y="' + wy + '" width="' + WH.w + '" height="' + WH.h + '" rx="6" fill="' + C.slate + '"/>' +
+            '<g clip-path="url(#' + P + "wheel" + i + ')"><g id="' + P + "digits" + i + '">' + col + "</g></g>" +
+            '<path d="M' + wx + "," + (wy + WH.h / 2) + " h" + WH.w + '" stroke="' + C.ink + '" stroke-width="2.5" opacity="0.5"/>';
+        }
+        return at(c.x, c.y, c.k, out);
+      }
+
+      // ── The drawer: a long side panel on casters with the front panel (the F drawer's face) at its leading end, and the
+      // folders standing in it; drawn in the drawer's own units (the front panel's left edge at x 0), moved as one. ──
+      var rnd = KIT.rng(847), PLANETS = [C.orange, C.yellow, C.peri, C.tan, C.cyan, C.rust, C.cream];
+      var LEN = 24 + DR.FW + DR.n * DR.FS + 60;
+      function xl(i) { return -24 - DR.FW - i * DR.FS; }
+      var travel = DR.xEnd - FX;
+      // the folder whose final spot is nearest a target x
+      function nearest(x) { return Math.round((DR.xEnd + xl(0) + DR.FS / 2 - x) / DR.FS); }
+      var iT = nearest(DR.popT), iB = nearest(DR.popB);
+      var FOLD = [];
+      for (var i = 0; i < DR.n; i++) {
+        var fate = i === iT ? "teal" : i === iB ? "burnt" : rnd() < 0.45 ? "teal" : "burnt";
+        FOLD.push({ i: i, fate: fate, col: PLANETS[Math.floor(rnd() * PLANETS.length)], ring: rnd() < 0.35, end: DR.xEnd + xl(i), jit: Math.floor(rnd() * 4) * 4 });
+      }
+      FOLD[iT].col = C.yellow; FOLD[iT].ring = true; FOLD[iB].col = C.tan; FOLD[iB].ring = false;
+      var fk = DR.FW / 66;
+      function folderSvg(f) {
+        // the tabs are staggered (three positions) and the folders stand at a few heights, like real files
+        var to = [2, 9, 16][f.i % 3] * fk, x = xl(f.i), y = DR.top + f.jit * fk, w = DR.FW, h = DR.panel + 30 - y, tb = DR.tab;
+        var body = [[x, y], [x + w, y], [x + w, y + h], [x, y + h]], tab = [[x + to, y], [x + to + 3 * fk, y - tb], [x + to + 26 * fk, y - tb], [x + to + 29 * fk, y]];
+        var poly = function (pts) { return "M" + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + " Z"; };
+        var px = x + to + 14.5 * fk, py = y - tb - DR.pr - 2;
+        var planet = function (fill, ring, ringCol) {
+          return (ring ? '<ellipse cx="0" cy="0" rx="' + f1(DR.pr * 1.7) + '" ry="' + f1(DR.pr * 0.5) + '" fill="none" stroke="' + ink + '" stroke-width="' + f1(4 * fk) + '"/><ellipse cx="0" cy="0" rx="' + f1(DR.pr * 1.7) + '" ry="' + f1(DR.pr * 0.5) + '" fill="none" stroke="' + ringCol + '" stroke-width="' + f1(2 * fk) + '"/>' : "") +
+            '<circle r="' + DR.pr + '" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + f1(2.6 * fk) + '"/>' +
+            (ring ? '<path d="M' + f1(-DR.pr * 1.7) + ",0 A" + f1(DR.pr * 1.7) + "," + f1(DR.pr * 0.5) + " 0 0 0 " + f1(DR.pr * 1.7) + ',0" fill="none" stroke="' + ringCol + '" stroke-width="' + f1(2 * fk) + '"/>' : "");
+        };
+        var base = '<path d="' + poly(body) + '" fill="' + MANILA + '" ' + sk + ' stroke-width="' + f1(3 * fk) + '"/><path d="' + poly(tab) + '" fill="' + MANILA + '" ' + sk + ' stroke-width="' + f1(2.6 * fk) + '"/>' +
+          '<path d="M' + f1(x + 6 * fk) + "," + f1(y + 10 * fk) + " H" + f1(x + 36 * fk) + '" stroke="' + C.rust + '" stroke-width="' + f1(1.6 * fk) + '" opacity="0.6"/>';
+        var teal = '<g class="ft" opacity="0"><circle cx="' + f1(px) + '" cy="' + f1(py) + '" r="' + f1(DR.pr * 2.2) + '" fill="' + C.med + '" opacity="0.3"/>' +
+          '<path d="' + poly(body) + '" fill="#CFE7DF" stroke="' + C.med + '" stroke-width="' + f1(3.4 * fk) + '"/><path d="' + poly(tab) + '" fill="#CFE7DF" stroke="' + C.med + '" stroke-width="' + f1(3 * fk) + '"/>' +
+          '<path d="M' + f1(px - 7 * fk) + "," + f1(y - tb / 2) + " h" + f1(14 * fk) + " M" + f1(px) + "," + f1(y - tb / 2 - 5 * fk) + " v" + f1(10 * fk) + '" stroke="' + C.med + '" stroke-width="' + f1(2.6 * fk) + '"/></g>';
+        var jag = [[x, y + h], [x, y + 6 * fk]];
+        for (var j = 0; j <= 6; j++) jag.push([x + (j * w) / 6, y + (j % 2 ? -4 : 8) * fk]);
+        jag.push([x + w, y + h]);
+        var burnt = '<g class="fb" opacity="0"><path d="' + poly(jag) + '" fill="' + ASH + '" ' + sk + ' stroke-width="' + f1(3 * fk) + '"/>' +
+          '<path d="' + poly([[x + to + 1 * fk, y + 4 * fk], [x + to + 5 * fk, y - tb + 4 * fk], [x + to + 15 * fk, y - tb - 2 * fk], [x + to + 23 * fk, y - tb + 6 * fk], [x + to + 28 * fk, y + 4 * fk]]) + '" fill="' + ASH + '" ' + sk + ' stroke-width="' + f1(2.4 * fk) + '"/>' +
+          '<circle cx="' + f1(x + 14 * fk) + '" cy="' + f1(y + 14 * fk) + '" r="' + f1(2.2 * fk) + '" fill="' + C.orange + '"/><circle cx="' + f1(x + 30 * fk) + '" cy="' + f1(y + 22 * fk) + '" r="' + f1(1.8 * fk) + '" fill="' + C.orange + '"/>' +
+          (f.i % 3 === 0 ? '<g class="fsmoke"><path d="M' + f1(x + 18 * fk) + "," + f1(y - tb - 6 * fk) + " l-5,-8 l5,-8 l-5,-8" + '" fill="none" stroke="#8C8782" stroke-width="' + f1(3 * fk) + '" stroke-linecap="round"/></g>' : "") + "</g>";
+        var pl = '<g transform="translate(' + f1(px) + "," + f1(py) + ')"><g class="pl" id="' + P + "pl" + f.i + '">' + planet(f.col, f.ring, C.cream) +
+          '<g class="pl-burnt" opacity="0">' + planet(ASH, f.ring, "#5A4C40") + "</g></g></g>";
+        return '<g id="' + P + "f" + f.i + '">' + base + teal + burnt + pl + "</g>";
+      }
+      var folders = "";
+      for (var k = DR.n - 1; k >= 0; k--) folders += folderSvg(FOLD[k]);
+      var side = '<rect x="' + f1(-LEN) + '" y="' + DR.panel + '" width="' + f1(LEN + 10) + '" height="' + f1(FY + FHd - DR.panel) + '" fill="' + C.peri + '" ' + sk + ' stroke-width="' + f1(5 * fk) + '"/>' +
+        '<path d="M' + f1(-LEN) + "," + f1(DR.panel + 12 * fk) + " H0" + '" stroke="' + C.orange + '" stroke-width="' + f1(2.4 * fk) + '"/>';
+      for (var rv = -60; rv > -LEN; rv -= 140 * fk) side += '<circle cx="' + f1(rv) + '" cy="' + f1((DR.panel + FY + FHd) / 2 + 8 * fk) + '" r="' + f1(4 * fk) + '" fill="' + C.cream + '" ' + sk + ' stroke-width="1.6"/>';
+      var wheels = "";
+      for (var wv = -80 * fk; wv > -LEN; wv -= 200 * fk) wheels += '<circle cx="' + f1(wv) + '" cy="' + f1(FY + FHd + 7 * fk) + '" r="' + f1(8 * fk) + '" fill="' + C.ink + '"/><circle cx="' + f1(wv) + '" cy="' + f1(FY + FHd + 7 * fk) + '" r="' + f1(3 * fk) + '" fill="' + C.cream + '"/>';
+      var face = '<rect x="0" y="' + f1(FY) + '" width="' + f1(FWd) + '" height="' + f1(FHd) + '" rx="' + f1(6 * ck) + '" fill="#7486A3" ' + sk + ' stroke-width="' + f1(6 * ck) + '"/>' +
+        '<rect x="' + f1(69 * ck) + '" y="' + f1(FY + 12 * ck) + '" width="' + f1(60 * ck) + '" height="' + f1(38 * ck) + '" rx="4" fill="' + C.cream + '" ' + sk + ' stroke-width="3"/>' +
+        txt(f1(99 * ck), f1(FY + 42 * ck), f1(30 * ck), C.ink, "F", 'text-anchor="middle"') + '<rect x="' + f1(74 * ck) + '" y="' + f1(FY + 60 * ck) + '" width="' + f1(50 * ck) + '" height="' + f1(14 * ck) + '" rx="7" fill="' + C.ink + '"/>' +
+        '<circle cx="' + f1(FWd - 30 * ck) + '" cy="' + f1(FY + FHd + 7 * fk) + '" r="' + f1(8 * fk) + '" fill="' + C.ink + '"/>';
+      // Seen through the F slot while it is inside the cabinet, and everything once it is out to the right of it.
+      var drawerClip = '<defs><clipPath id="' + P + 'dclip"><rect x="' + f1(FX) + '" y="' + f1(FY) + '" width="' + f1(FWd) + '" height="' + f1(FHd + 30) + '"/>' +
+        '<rect x="' + f1(CABR) + '" y="-200" width="' + (W * 4) + '" height="' + (H + 400) + '"/></clipPath></defs>';
+      var drawer = drawerClip + '<g clip-path="url(#' + P + 'dclip)"><g id="' + P + 'drawer" transform="translate(' + f1(FX) + ',0)">' + wheels + folders + side + face + "</g></g>";
+
+      // The clipboard that flips up in the drawer, near the cabinet.
+      var clipboard = at(DR.clip[0], DR.clip[1], 1, '<g id="' + P + 'clip">' + KIT.props.clipboard({ title: "THE DATA", items: [["REDIRECTED", "tick"], ["DIDN'T", "cross"]], tickColor: "#1F6E68", size: DR.clip[2] }) + "</g>");
+
+      // ── The two pop-up folders, drawn around their bottom middle, 340 x 300 (16:9 units) ──
+      function alien(x, k, look) {
+        // a little citizen of the planet: Wishonia's blue, her black bob and antennae, an orange dress
+        var s = look || 1, out = '<g transform="translate(' + x + ",-70) scale(" + (k * s) + "," + k + ')">';
+        out += '<path d="M-4,-2 L-5,-14 M4,-2 L5,-14" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"/>' +
+          '<path d="M-11,-12 L11,-12 L6,-36 L-6,-36 Z" fill="' + C.orange + '" ' + sk + ' stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M-6,-34 L-14,-50" stroke="' + ink + '" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<g class="wave" data-o="6 -34"><path d="M6,-34 L16,-50 L20,-62" fill="none" stroke="' + C.cyan + '" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M6,-34 L16,-50 L20,-62" fill="none" stroke="' + ink + '" stroke-width="1.2" opacity="0.5"/></g>' +
+          '<path d="M-6,-34 L-14,-50" stroke="' + C.cyan + '" stroke-width="2.2" stroke-linecap="round"/>' +
+          '<path d="M-5,-60 L-9,-74 M5,-60 L9,-74" stroke="' + ink + '" stroke-width="1.8"/><circle cx="-9" cy="-75" r="2.6" fill="' + C.cyan + '" ' + sk + ' stroke-width="1.4"/><circle cx="9" cy="-75" r="2.6" fill="' + C.cyan + '" ' + sk + ' stroke-width="1.4"/>' +
+          '<path d="M-10,-46 Q0,-40 10,-46 L11,-56 Q0,-68 -11,-56 Z" fill="#000" ' + sk + ' stroke-width="1.4"/>' +
+          '<circle cx="0" cy="-49" r="8" fill="' + C.cyan + '" ' + sk + ' stroke-width="1.8"/><path d="M-8,-52 Q0,-62 8,-52 L8,-55 Q0,-63 -8,-55 Z" fill="#000"/>' +
+          '<circle cx="-3" cy="-48" r="1.3" fill="' + ink + '"/><circle cx="3" cy="-48" r="1.3" fill="' + ink + '"/><path d="M-3,-44 Q0,-42 3,-44" fill="none" stroke="' + ink + '" stroke-width="1.2"/></g>';
+        return out;
+      }
+      // split-the-atom.html's glowing atom, in person units at (x, y)
+      function atom(x, y) {
+        var orbit = function (a) { return '<ellipse cx="' + x + '" cy="' + y + '" rx="25" ry="8.5" fill="none" stroke="' + ink + '" stroke-width="2.6" transform="rotate(' + a + " " + x + " " + y + ')"/>'; };
+        return '<circle class="glow" cx="' + x + '" cy="' + y + '" r="31" fill="' + C.war + '" opacity="0.24"/>' +
+          '<circle class="glow" cx="' + x + '" cy="' + y + '" r="20" fill="' + C.yellow + '" opacity="0.5"/>' +
+          orbit(0) + orbit(60) + orbit(120) +
+          '<circle cx="' + x + '" cy="' + y + '" r="8" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.6"/>' +
+          '<circle cx="' + (x + 25) + '" cy="' + y + '" r="3.4" fill="' + ink + '"/><circle cx="' + (x - 12) + '" cy="' + (y - 19) + '" r="3.4" fill="' + ink + '"/>';
+      }
+      function popup(kind) {
+        var burnt = kind === "burnt", id = P + "pop" + (burnt ? "B" : "T"), back = burnt ? ASH : MANILA;
+        var edge = burnt ? "M-170,0 L-170,-40 L-176,-80 L-168,-130 L-174,-190 L-166,-250 L-170,-300 L-130,-306 L-90,-298 L-40,-305 L10,-297 L60,-304 L110,-296 L150,-305 L170,-300 L176,-240 L168,-180 L174,-110 L168,-50 L170,0 Z"
+          : "M-170,0 L-170,-300 L170,-300 L170,0 Z";
+        var tabTxt = burnt ? "DIDN'T" : "REDIRECTED";
+        var out = '<path d="' + edge + '" fill="' + back + '" ' + sk + ' stroke-width="5" stroke-linejoin="miter"/>' +
+          '<path d="M-150,-299 L-144,-332 L-20,-332 L-14,-299 Z" fill="' + back + '" ' + sk + ' stroke-width="4" stroke-linejoin="miter"/>' +
+          '<g id="' + id + '-tab"' + (burnt ? "" : ' opacity="0"') + ">" + txt(-82, -308, 22, burnt ? C.orange : C.ink, tabTxt, 'text-anchor="middle" letter-spacing="1"') + "</g>" +
+          '<defs><clipPath id="' + id + '-in"><rect x="-155" y="-285" width="310" height="270"/></clipPath></defs>' +
+          '<g clip-path="url(#' + id + '-in)"><rect x="-155" y="-285" width="310" height="270" fill="' + C.navy + '"/>' +
+          KIT.star(-110, -250, 9, C.cream) + KIT.star(120, -232, 7, C.yellow) + KIT.star(-40, -268, 5, C.cream) + KIT.star(70, -262, 6, C.cream);
+        if (!burnt) {
+          var funnel = '<g transform="translate(0,-70) scale(0.5)"><g id="' + id + '-funnel">' + KIT.props.colorFlipFunnel({ inN: 0, outN: 0 }) + "</g></g>";
+          var bills = "";
+          for (var b = 0; b < 4; b++) bills += '<g id="' + id + "-in" + b + '"><g transform="scale(0.3)">' + KIT.money("war", b % 2) + "</g></g>";
+          for (var m = 0; m < 4; m++) bills += '<g id="' + id + "-out" + m + '" opacity="0"><g transform="scale(0.3)">' + KIT.money("med", m % 2) + "</g></g>";
+          out += '<ellipse id="' + id + '-glow" cx="0" cy="-60" rx="200" ry="70" fill="' + C.med + '" opacity="0"/>' +
+            '<circle cx="0" cy="840" r="910" fill="' + C.yellow + '" ' + sk + ' stroke-width="5"/>' +
+            '<circle cx="-90" cy="-50" r="10" fill="' + C.orange + '" opacity="0.5"/><circle cx="110" cy="-42" r="7" fill="' + C.orange + '" opacity="0.5"/>' +
+            funnel + bills + '<g id="' + id + '-aliens">' + alien(-118, 1.35) + alien(100, 1.2, -1) + alien(138, 1.05, -1) + "</g>";
+        } else {
+          var A = { tone: 1, outfit: "shirt", color: 0, hair: 0, plain: true, look: "right", skeleton: true, arms: [[105, 95], [20, 10]] };
+          var B = { tone: 3, outfit: "dress", color: 3, hair: 1, plain: true, look: "left", skeleton: true, arms: [[-20, -10], [255, 265]] };
+          var ha = KIT.rig(A).hand[0], hb = KIT.rig(B).hand[1];
+          out += '<ellipse cx="0" cy="-90" rx="160" ry="90" fill="' + C.war + '" opacity="0.25"/>' +
+            '<circle cx="0" cy="840" r="910" fill="' + ASH + '" ' + sk + ' stroke-width="5"/>' +
+            '<ellipse cx="-60" cy="-48" rx="22" ry="5" fill="#1B1714"/><ellipse cx="80" cy="-40" rx="16" ry="4" fill="#1B1714"/>' +
+            '<g transform="translate(0,-70) scale(0.27)"><g id="' + id + '-nuke">' + KIT.nuke() + "</g></g>" +
+            at(-100, -130, 0.6, KIT.person(A) + '<g class="atoms">' + atom(ha[0] + 16, ha[1] - 2) + "</g>") +
+            at(100, -130, 0.6, KIT.person(B) + '<g class="atoms">' + atom(hb[0] - 16, hb[1] - 2) + "</g>") +
+            '<rect id="' + id + '-ash" x="-160" y="-290" width="320" height="280" fill="' + ASH + '" opacity="0"/>';
+        }
+        out += "</g>";
+        if (burnt) out = out + '<rect id="' + id + '-ash2" x="-176" y="-334" width="352" height="334" fill="#5A4C40" opacity="0"/>';
+        return out;
+      }
+      var popX = function (i) { return DR.xEnd + xl(i) + DR.FS / 2; };
+      var popAt = function (i) { return i === iT ? DR.popAt[0] : DR.popAt[1]; };
+      var spring = function (x0, top, bot) {
+        if (!DR.spring) return "";
+        var d = "M" + x0 + "," + bot, n = 6;
+        for (var z = 1; z <= n; z++) d += " L" + (x0 + (z % 2 ? 14 : -14)) + "," + f1(bot - ((bot - top) * z) / n);
+        return '<path d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>';
+      };
+      var tabY = DR.top - DR.tab;
+      var pops = ["teal", "burnt"].map(function (kind) {
+        var x = popX(kind === "teal" ? iT : iB), id = P + "pop" + (kind === "teal" ? "T" : "B");
+        return '<g id="' + id + '-all" opacity="0">' + '<g id="' + id + '-spring">' + spring(x, DR.popY, tabY) + "</g>" + at(popAt(kind === "teal" ? iT : iB), DR.popY, DR.popS, '<g id="' + id + '">' + popup(kind) + "</g>") + "</g>";
+      }).join("");
+      // the ash the burnt folder crumbles into, in its spot in the drawer
+      var ashX = popX(iB);
+      var ash = '<g id="' + P + 'ashheap" opacity="0"><path d="M' + f1(ashX - 30 * fk) + "," + f1(DR.panel + 2) + " Q" + f1(ashX - 18 * fk) + "," + f1(DR.panel - 26 * fk) + " " + f1(ashX) + "," + f1(DR.panel - 30 * fk) +
+        " Q" + f1(ashX + 18 * fk) + "," + f1(DR.panel - 26 * fk) + " " + f1(ashX + 30 * fk) + "," + f1(DR.panel + 2) + ' Z" fill="#8E8780" ' + sk + ' stroke-width="3"/></g>';
+      // the ash falling from the crumbled pop-up (behind Wishonia in 9:16)
+      pops += '<g id="' + P + 'ashfall" opacity="0">' + [-50, -30, -12, 6, 24, 44, -40, 14, 36, -22].map(function (dx, j) {
+          return '<circle cx="' + f1(popAt(iB) + dx * 1.6) + '" cy="' + f1(DR.popY - 120 - (j % 4) * 40) + '" r="' + f1((4 + (j % 3) * 2) * fk) + '" fill="#8E8780" ' + sk + ' stroke-width="1.6"/>';
+        }).join("") + "</g>";
+
+      // ── Earth's case file on the desk, as Part 12's suboptimal-stamp left it: tab "EARTH DIRT: CASE #847" (EARTH struck
+      // out, DIRT written over it), stamped twice; its corner will smoke ──
+      var F = L.file, T0 = F.tab;
+      var file = '<g id="' + P + 'file">' +
+        '<rect x="' + T0[0] + '" y="' + f1(T0[1] - F.fs) + '" width="' + T0[2] + '" height="' + f1(T0[3] + 10 + F.fs) + '" rx="6" fill="' + MANILA + '" ' + sk + ' stroke-width="5"/>' +
+        txt(T0[0] + T0[2] / 2, f1(T0[1] + T0[3] / 2 + F.fs * 0.5), F.fs, C.ink, "EARTH: CASE #847", 'text-anchor="middle"') +
+        '<path d="M' + f1(T0[0] + T0[2] / 2 - F.fs * 4.05) + "," + f1(T0[1] + T0[3] / 2 + F.fs * 0.16) + " h" + f1(F.fs * 2.75) + '" stroke="' + C.red + '" stroke-width="' + f1(F.fs * 0.16) + '" stroke-linecap="round"/>' +
+        txt(f1(T0[0] + T0[2] / 2 - F.fs * 3.9), f1(T0[1] + T0[3] / 2 - F.fs * 0.75), f1(F.fs * 1.05), C.red, "DIRT", 'letter-spacing="1"') +
+        '<rect x="' + F.x + '" y="' + F.y + '" width="' + F.w + '" height="' + F.h + '" rx="4" fill="' + MANILA + '" ' + sk + ' stroke-width="5"/>' +
+        at(F.m1[0], F.m1[1], 1, KIT.props.stampMark({ text: "MAY BE ELIGIBLE\nFOR OPTIMIZATION", fontSize: F.m1[2], angle: -6 })) +
+        at(F.m2[0], F.m2[1], 1, KIT.props.stampMark({ text: "SUBOPTIMAL", fontSize: F.m2[2], angle: 7 })) +
+        '<g id="' + P + 'corner" opacity="0"><path d="M' + f1(F.x + F.w - 40 * (F.fs / 18)) + "," + F.y + " L" + (F.x + F.w) + "," + F.y + " L" + (F.x + F.w) + "," + f1(F.y + 40 * (F.fs / 18)) + " Q" + f1(F.x + F.w - 20 * (F.fs / 18)) + "," + f1(F.y + 22 * (F.fs / 18)) + " " + f1(F.x + F.w - 40 * (F.fs / 18)) + "," + F.y + ' Z" fill="' + ASH + '" ' + sk + ' stroke-width="3"/>' +
+        '<circle cx="' + f1(F.x + F.w - 14 * (F.fs / 18)) + '" cy="' + f1(F.y + 12 * (F.fs / 18)) + '" r="' + f1(2.6 * (F.fs / 18)) + '" fill="' + C.orange + '"/>' +
+        '<g id="' + P + 'fsmoke">' + [0, 1, 2].map(function (j) { return '<path d="M' + f1(F.x + F.w - (10 + j * 14) * (F.fs / 18)) + "," + f1(F.y - (8 + j * 5) * (F.fs / 18)) + " l-6,-9 l6,-9 l-6,-9" + '" fill="none" stroke="#8C8782" stroke-width="' + f1(3.4 * (F.fs / 18)) + '" stroke-linecap="round"/>'; }).join("") + "</g></g></g>";
+      var mug = at(L.mug[0], L.mug[1], L.mug[2], KIT.mug(0, 0));
+      var desk = KIT.desk(L.desk[0], L.desk[1], L.desk[2]);
+      // 16:9: the drawer rolls behind Wishonia and the file lies on the desk in front of her (clipped at the desk top, as
+      // in eligible); 9:16: the cabinet stands in front of the desk and the drawer rolls across the desk front.
+      // twinkles over a few of the folders that listened, where they stop
+      var shine = FOLD.filter(function (f) { return f.fate === "teal" && f.i !== iT && f.end > CABR + 40 && f.end < (V ? W - 60 : L.wish.x + 60); }).slice(0, 5);
+      var twinkles = shine.map(function (f, j) {
+        var px = f.end + [2, 9, 16][f.i % 3] * fk + 14.5 * fk + (j % 2 ? 12 : -10) * fk, py = DR.top + f.jit * fk - DR.tab - DR.pr * 2 - 16 * fk;
+        return at(px, py, fk, '<g class="twk" opacity="0">' + KIT.star(0, 0, 16, ink) + KIT.star(0, 0, 12, "#FFFFFF") + "</g>");
+      }).join("");
+      var drawerSet = '<g id="' + P + 'cabset">' + cabinet + counter() + drawer + "</g>" + twinkles + clipboard + ash + (V ? "" : pops);
+      if (V) {
+        q("back").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + screen + pops);
+        q("front").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + desk + mug + file + drawerSet);
+      } else {
+        q("back").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + screen + drawerSet);
+        q("front").innerHTML = KIT.svg(W, H, desk + '<defs><clipPath id="' + P + 'desktop"><rect x="0" y="0" width="' + W + '" height="' + (L.desk[1] - 2) + '"/></clipPath></defs><g clip-path="url(#' + P + 'desktop)">' + file + "</g>" + mug);
+      }
+
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("wish"), { scene: ID, x: L.wish.x, y: L.wish.y, w: L.wish.w });
+      KIT.enter(tl, q("cam"), "zoom out of the wall screen", zv);
+      var g = function (s) { return document.getElementById(P + s); };
+      var T = {
+        before: cue("before."), eight: cue("eight"), civ: cue("civilizations"), planets: cue("planets."), listened: cue("listened."), didnt: cue("didn't."),
+        data: cue("data."), redirected: cue("redirected"), resources: cue("resources"), alive: cue("alive"), didnt2: cue("didn't", 2), extincted: cue("extincted"), hold: cue("themselves."),
+      };
+      T.counted = cue("civilizations") + 0.2; T.stop = T.planets - 0.4;
+
+      // "before.": the F drawer clunks open an inch (thunk); "eight": it rolls out, and keeps rolling, slowing to a stop
+      // before "planets.". The counter on the cabinet spins up to 847, its last two clicks on "civilizations".
+      var drawerEl = g("drawer"), digits = [0, 1, 2].map(function (j) { return g("digits" + j); });
+      function wheelY(v) { return f1(-v * WH.h); }
+      KIT.onTime(tl, D, function (t) {
+        var dx = 0, dy = 0;
+        if (t >= T.before && t < T.eight) { var u = t - T.before; dy = OPEN * (u < 0.08 ? u / 0.08 : 1 + 0.25 * Math.exp(-14 * (u - 0.08)) * Math.cos(30 * (u - 0.08))); }
+        if (t >= T.eight) {
+          var p = clamp((t - T.eight) / (T.stop - T.eight));
+          dx = travel * (1 - Math.pow(1 - p, 2.4));
+          dy = OPEN * (1 - clamp((t - T.eight) / 0.2));
+        }
+        drawerEl.setAttribute("transform", "translate(" + f1(FX + dx) + "," + f1(dy) + ")");
+        var pc = clamp((t - T.eight) / (T.counted - T.eight)), v = 847 * (1 - Math.pow(1 - pc, 1.8));
+        var ones = v % 10, tens = Math.floor(v / 10) % 10 + Math.max(0, (v % 10) - 9), hund = Math.floor(v / 100) % 10 + Math.max(0, (v % 100) - 99);
+        if (pc >= 1) { hund = 8; tens = 4; ones = 7; }
+        digits[0].setAttribute("transform", "translate(0," + wheelY(hund) + ")");
+        digits[1].setAttribute("transform", "translate(0," + wheelY(tens) + ")");
+        digits[2].setAttribute("transform", "translate(0," + wheelY(pc >= 1 ? ones : ones < 9 ? Math.floor(ones) : ones) + ")");
+      });
+      tl.to(g("cabset"), { keyframes: [{ x: -6, duration: 0.04 }, { x: 5, duration: 0.06 }, { x: -2, duration: 0.06 }, { x: 0, duration: 0.06 }] }, T.before);
+
+      // Which folders are in view once the drawer stops, in order across the frame (the rest are set at once).
+      var vis = FOLD.filter(function (f) { return f.end > CABR - DR.FW && f.end < W; }).sort(function (a, b) { return a.end - b.end; });
+      var span = function (f) { return (f.end - (CABR - DR.FW)) / (W - CABR + DR.FW); };
+      // "planets.": a tiny planet pops up on every tab, left to right (two pops).
+      FOLD.forEach(function (f) {
+        var el = g("pl" + f.i);
+        gsap.set(el, { svgOrigin: "0 " + f1(DR.pr) });
+        var tp = vis.indexOf(f) >= 0 ? T.planets + span(f) * 0.32 : T.planets;
+        tl.fromTo(el, { scale: 0 }, { scale: 1, duration: 0.22, ease: "back.out(2.6)" }, tp);
+      });
+      // "listened.": some light up teal (sparkle); "didn't.": the rest blacken and curl, smoking (sizzle).
+      var rr = KIT.rng(12);
+      FOLD.forEach(function (f) {
+        var el = g("f" + f.i), on = f.fate === "teal" ? el.querySelector(".ft") : el.querySelector(".fb"), t0 = f.fate === "teal" ? T.listened : T.didnt;
+        var tt = t0 + (vis.indexOf(f) >= 0 ? rr() * 0.3 : 0);
+        tl.fromTo(on, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power1.out" }, tt);
+        if (f.fate === "burnt") tl.fromTo(el.querySelector(".pl-burnt"), { opacity: 0 }, { opacity: 1, duration: 0.12 }, tt);
+      });
+      Array.prototype.forEach.call(q(V ? "front" : "back").querySelectorAll(".twk"), function (el, j) {
+        gsap.set(el, { svgOrigin: "0 0" });
+        tl.fromTo(el, { opacity: 0, scale: 0, rotation: -45 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.16, ease: "back.out(2.5)" }, T.listened + 0.05 + j * 0.07);
+        tl.to(el, { opacity: 0, scale: 0, rotation: 45, duration: 0.2, ease: "power2.in" }, T.listened + 0.45 + j * 0.07);
+      });
+      var fsm = g("drawer").querySelectorAll(".fsmoke");
+      tl.fromTo(fsm, { y: 0, opacity: 1 }, { y: -5, opacity: 0.4, duration: 0.25, yoyo: true, repeat: Math.floor((T.hold - T.didnt - 0.2) / 0.25) - 1, ease: "sine.inOut", immediateRender: false }, T.didnt + 0.15);
+      // Earth's file: its corner starts to smoke, and stops there, undecided.
+      tl.fromTo(g("corner"), { opacity: 0 }, { opacity: 1, duration: 0.15 }, T.didnt + 0.1);
+      tl.fromTo(g("fsmoke"), { y: 0, opacity: 1 }, { y: -6, opacity: 0.45, duration: 0.25, yoyo: true, repeat: Math.floor((T.hold - T.didnt - 0.3) / 0.25) - 1, ease: "sine.inOut", immediateRender: false }, T.didnt + 0.25);
+
+      // "data.": the clipboard flips up in the drawer (click).
+      gsap.set(g("clip"), { svgOrigin: "0 0" });
+      tl.fromTo(g("clip"), { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.25, ease: "back.out(2.2)" }, T.data);
+
+      // "redirected": one teal folder springs out of the drawer and open (boing); its planet's war papers march into the
+      // funnel. "resources": the lever drops (ding), medicine papers walk out, the planet glows, its aliens wave.
+      function popOpen(key, i, t, dur, ease) {
+        var all = g("pop" + key + "-all"), pop = g("pop" + key), sp = g("pop" + key + "-spring");
+        gsap.set(pop, { svgOrigin: "0 0" });
+        tl.set(g("f" + i), { opacity: 0 }, t);
+        tl.set(all, { opacity: 1 }, t);
+        tl.fromTo(pop, { scale: 0.18, x: (popX(i) - popAt(i)) / DR.popS, y: (DR.top - DR.popY) / DR.popS }, { scale: 1, x: 0, y: 0, duration: dur, ease: ease }, t);
+        gsap.set(sp, { svgOrigin: f1(popX(i)) + " " + f1(DR.top - DR.tab) });
+        tl.fromTo(sp, { scaleY: 0 }, { scaleY: 1, duration: dur, ease: ease }, t);
+      }
+      popOpen("T", iT, T.redirected, 0.5, "back.out(2.2)");
+      tl.fromTo(g("popT-tab"), { opacity: 0 }, { opacity: 1, duration: 0.12 }, T.resources);
+      var lever = g("popT-funnel").querySelector(".funnel-lever");
+      gsap.set(lever, { svgOrigin: "80 -112" });
+      tl.fromTo(lever, { rotation: 0 }, { rotation: 50, duration: 0.12, ease: "power2.in" }, T.resources - 0.06);
+      tl.fromTo(g("popT-glow"), { opacity: 0 }, { opacity: 0.35, duration: 0.3 }, T.resources);
+      tl.to(g("popT-glow"), { opacity: 0.18, duration: 0.6, yoyo: true, repeat: Math.floor((T.hold - T.resources - 0.3) / 0.6) - 1, ease: "sine.inOut" }, T.resources + 0.3);
+      var waves = g("popT-aliens").querySelectorAll(".wave");
+      Array.prototype.forEach.call(waves, function (w, j) {
+        gsap.set(w, { svgOrigin: w.getAttribute("data-o") });
+        var d0 = 0.17 + j * 0.02;
+        tl.fromTo(w, { rotation: 0 }, { rotation: -32, duration: d0, yoyo: true, repeat: 2 * Math.floor((T.hold - T.resources - 0.1) / (2 * d0)) - 1, ease: "sine.inOut", immediateRender: false }, T.resources + j * 0.05);
+      });
+      // "alive": the aliens jump for joy.
+      var aliens = g("popT-aliens");
+      tl.to(aliens, { y: -14, duration: 0.14, yoyo: true, repeat: 3, ease: "power1.out" }, T.alive);
+      // The papers: war papers walk in from the left and hop into the funnel's mouth; medicine papers walk out of its spout.
+      var ins = [0, 1, 2, 3].map(function (j) { return g("popT-in" + j); }), outs = [0, 1, 2, 3].map(function (j) { return g("popT-out" + j); });
+      var PER = 2.2;
+      KIT.onTime(tl, D, function (t) {
+        var tt = Math.min(t, T.hold) - T.redirected;
+        ins.forEach(function (el, j) {
+          var ph = tt / PER + j / 4, f = ph - Math.floor(ph), x, y, s = 1, o = tt >= 0 ? 1 : 0;
+          if (f < 0.6) { x = -175 + (f / 0.6) * 115; y = -85 - Math.abs(Math.sin(f * 40)) * 3; }
+          else { var h = (f - 0.6) / 0.4; x = -60 + h * 52; y = -85 - Math.sin(h * Math.PI * 0.75) * 150 + h * 20; s = 1 - Math.max(0, h - 0.7) * 3; }
+          el.setAttribute("transform", "translate(" + f1(x) + "," + f1(y) + ") scale(" + f1(Math.max(0.01, s)) + ")");
+          el.setAttribute("opacity", o);
+        });
+        var t2 = Math.min(t, T.hold) - T.resources;
+        outs.forEach(function (el, j) {
+          var ph = t2 / PER - j / 4, f = ph - Math.floor(ph), on = t2 >= 0 && ph >= 0;
+          el.setAttribute("transform", "translate(" + f1(8 + f * 175) + "," + f1(-84 - Math.abs(Math.sin(f * 40)) * 3) + ")");
+          el.setAttribute("opacity", on ? 1 : 0);
+        });
+      });
+
+      // "didn't" (second): a burnt folder creaks open (squeak): two grinning skeletons still aim glowing atoms at each
+      // other, the mushroom cloud still rising between them. "extincted": it crumbles to ash in the drawer.
+      popOpen("B", iB, T.didnt2, 0.55, "steps(5)");
+      var glows = g("popB").querySelectorAll(".glow");
+      tl.fromTo(glows, { scale: 1, transformOrigin: "50% 50%" }, { scale: 1.25, transformOrigin: "50% 50%", duration: 0.2, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, T.didnt2);
+      gsap.set(g("popB-nuke"), { svgOrigin: "0 0" });
+      tl.fromTo(g("popB-nuke"), { y: 0, scale: 0.85 }, { y: -40, scale: 1, duration: T.extincted - T.didnt2, ease: "sine.out" }, T.didnt2);
+      tl.fromTo(g("popB-ash"), { opacity: 0 }, { opacity: 0.9, duration: 0.12 }, T.extincted);
+      tl.fromTo(g("popB-ash2"), { opacity: 0 }, { opacity: 0.85, duration: 0.12 }, T.extincted + 0.06);
+      var tc = T.extincted + 0.14;
+      tl.to(g("popB"), { scaleY: 0.02, scaleX: 1.08, duration: 0.3, ease: "power2.in" }, tc);
+      tl.to(g("popB-spring"), { scaleY: 0, duration: 0.25, ease: "power2.in" }, tc);
+      tl.set(g("popB-all"), { opacity: 0 }, tc + 0.3);
+      tl.fromTo(g("ashfall"), { opacity: 0, y: 0 }, { opacity: 1, y: 0, duration: 0.05 }, tc);
+      tl.to(g("ashfall"), { y: DR.panel - DR.popY + 140, duration: 0.36, ease: "power2.in" }, tc + 0.05);
+      tl.to(g("ashfall"), { opacity: 0, duration: 0.06 }, tc + 0.4);
+      gsap.set(g("ashheap"), { svgOrigin: f1(ashX) + " " + f1(DR.panel) });
+      tl.fromTo(g("ashheap"), { opacity: 0, scaleY: 0.2 }, { opacity: 1, scaleY: 1, duration: 0.14, ease: "power2.out" }, tc + 0.3);
+      // "themselves.": HOLD. Nothing moves to the end but Wishonia, and there is no sound.
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

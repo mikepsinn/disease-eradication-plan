@@ -1,0 +1,223 @@
+<template id="diagnostic-criteria-template">
+  <!-- diagnostic-criteria · host (storyboards/part-04-institutionalize.md): the studio set (the same code as host-opens,
+       no iris). "This" → the straitjacketed patient plummets past the right of the frame, still falling from the game
+       show's trapdoor; Wishonia does not look. "diagnostic" → the Earth case file on her lectern
+       ("~~EARTH~~ DIRT: CASE #847", the MAY BE ELIGIBLE stamp on its cover) opens; "looked" → she reads: a page
+       turns to a photo. "nailed" → the file closes slowly. HOLD: nothing else moves and no sound until "So". "So" → the
+       mug floats up to her mouth for a long sip; "light-years" → it comes down (thunk). After "away." the camera pulls
+       back fast: the whole set shrinks to a small lit box hanging in starry black space, and far off, from a tiny
+       Earth, the Orderly's butterfly net on an endless pole wobbles up toward the studio, stops short and droops. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #050A18; }
+    #diagnostic-criteria-weave, #diagnostic-criteria-space, #diagnostic-criteria-zoom, #diagnostic-criteria-clip, #diagnostic-criteria-push,
+    #diagnostic-criteria-cam, #diagnostic-criteria-wall, #diagnostic-criteria-wish, #diagnostic-criteria-front, #diagnostic-criteria-box,
+    #diagnostic-criteria-far, #diagnostic-criteria-film { position: absolute; inset: 0; }
+    #diagnostic-criteria-zoom, #diagnostic-criteria-push { transform-origin: 0 0; }
+    #diagnostic-criteria-clip { overflow: hidden; }
+  </style>
+  <div id="root" data-composition-id="diagnostic-criteria" data-width="1920" data-height="1080" data-start="0" data-duration="15.76">
+    <div id="diagnostic-criteria-weave">
+      <div id="diagnostic-criteria-space"></div>
+      <div id="diagnostic-criteria-zoom">
+        <div id="diagnostic-criteria-clip">
+          <div id="diagnostic-criteria-push">
+            <div id="diagnostic-criteria-cam">
+              <div id="diagnostic-criteria-wall"></div>
+              <div id="diagnostic-criteria-wish"></div>
+              <div id="diagnostic-criteria-front"></div>
+            </div>
+          </div>
+        </div>
+        <div id="diagnostic-criteria-box"></div>
+      </div>
+      <div id="diagnostic-criteria-far"></div>
+    </div>
+    <div id="diagnostic-criteria-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "diagnostic-criteria";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth;
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera and the pull-back, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 71);
+
+      var S = KIT.STUDIO;
+      // ── Layout for this shape (canvas px). FILE: the case file's spine-middle on the lectern and its scale; MUG: the
+      // mug on the lectern; MOUTH: where the mug's rim meets her lips; FALL: the patient's line past the right of the
+      // frame and his scale. BOX: the studio box out in space after the pull-back (x, y, scale); EARTH and NET: the tiny
+      // Earth (x, ground y, scale) and the net's pole base and the hoop's farthest reach.
+      var L = V
+        ? { FILE: [335, S.top + 8, 1.15], MUG: [575, S.top + 8, 1.7], MOUTH: [470, 858], FALL: [880, 2.0],
+            BOX: [600, 150, 0.36], EARTH: [250, 1330, 0.75], NET: [[300, 1196], [690, 960]] }
+        : { FILE: [610, S.top + 8, 1.35], MUG: [925, S.top + 8, 1.6], MOUTH: [830, 565], FALL: [1520, 2.4],
+            BOX: [1080, 170, 0.34], EARTH: [330, 860, 0.7], NET: [[400, 722], [880, 520]] };
+
+      // ── The patient in his straitjacket (the same drawing as the game show's): worried, looking down.
+      var PATIENT = { tone: 1, outfit: "shirt", color: 3 }, CANVAS = "#E9DFC6", STRAP = "#B9935E";
+      function jacketed(o) {
+        var p = copy(PATIENT, copy({ colorHex: CANVAS, arms: [[52, 104], [-52, -104]] }, o));
+        var R = KIT.rig(p), sx = R.shoulder[1][0] + 4, y1 = R.shoulder[0][1] + 22, y2 = R.hipY - 12;
+        var strap = function (y) {
+          return '<path d="M' + f(-sx) + "," + f(y) + " L" + f(sx) + "," + f(y - 2) + " L" + f(sx) + "," + f(y + 7) + " L" + f(-sx) + "," + f(y + 9) + ' Z" fill="' + STRAP + '" stroke="' + ink + '" stroke-width="2.2"/>' +
+            '<rect x="' + f(sx * 0.35) + '" y="' + f(y - 1) + '" width="9" height="10" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>';
+        };
+        return KIT.person(p) + strap(y1) + strap(y2);
+      }
+      var streaks = [-26, 0, 24].map(function (x, i) { return '<path d="M' + x + "," + (-60 - i * 14) + ' v-70" stroke="' + C.cream + '" stroke-width="5" stroke-linecap="round" opacity="0.85"/>'; }).join("");
+      var fallSvg = '<g id="' + ID + '-fall" opacity="0"><g transform="scale(' + L.FALL[1] + ')">' + streaks + jacketed({ mood: "worried", look: "left" }) + "</g></g>";
+
+      // ── The case file (KIT.props.caseFile: "~~EARTH~~ DIRT: CASE #847" with the MAY BE ELIGIBLE stamp), standing on
+      // the lectern. Behind its cover: the back of the folder and two pages with no writing, only ruled lines; the
+      // second page has a paper-clipped photo of a smiling human. The cover swings open about its left edge.
+      var MANILA = "#E7C98C", BACKF = "#D3B072", PAGE = "#FBF5E4", RULE = "#B9AE95";
+      var rules = function (y0, y1, x0, x1) { var s = ""; for (var y = y0; y <= y1; y += 13) s += '<path d="M' + x0 + "," + y + " H" + x1 + '" stroke="' + RULE + '" stroke-width="2"/>'; return s; };
+      var pageRect = '<rect x="-88" y="-144" width="178" height="138" fill="' + PAGE + '" stroke="' + ink + '" stroke-width="3"/>';
+      var photo = '<g transform="translate(-30,-82) rotate(-4)"><rect x="-38" y="-46" width="76" height="86" fill="#FFFFFF" stroke="' + ink + '" stroke-width="2.6"/>' +
+        '<rect x="-31" y="-39" width="62" height="62" fill="' + C.peri + '"/>' +
+        '<g transform="translate(0,-10) scale(0.82)"><g transform="translate(0,-14)">' + KIT.person({ tone: 1, outfit: "shirt", color: 0, hair: 0, mood: "smile", look: "right", seed: 9 }).replace(/^/, "") + "</g></g>" +
+        '<path d="M-24,-52 v14 a5,5 0 0,0 10,0 v-16" fill="none" stroke="#8C96A8" stroke-width="3"/></g>';
+      var page1 = pageRect + rules(-126, -20, -76, 78);
+      var page2 = pageRect + '<g clip-path="url(#' + ID + '-pclip)">' + photo + "</g>" + rules(-126, -20, 28, 78);
+      var coverIn = '<path d="M-95,0 V-150 H95 V0 Z" fill="' + BACKF + '" stroke="' + ink + '" stroke-width="4"/>';
+      var fileSvg = '<defs><clipPath id="' + ID + '-pclip"><rect x="-88" y="-144" width="178" height="138"/></clipPath></defs>' +
+        '<g id="' + ID + '-file" transform="translate(' + L.FILE[0] + "," + L.FILE[1] + ") scale(" + L.FILE[2] + ')">' +
+        '<path d="M-95,0 V-150 H99 L101,0 Z" fill="' + BACKF + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<g>' + page2 + '</g><g id="' + ID + '-page1">' + page1 + "</g>" +
+        '<g id="' + ID + '-cover"><g class="cover-front">' + KIT.props.caseFile({ stamps: 1 }) + '</g><g class="cover-in" opacity="0">' + coverIn + "</g></g></g>";
+
+      // ── The coffee mug (style bible gag 3), standing on (0, 0); it floats up to her mouth and back.
+      function mug() {
+        return '<path d="M18,-44 q16,0 16,14 q0,14 -16,14" fill="none" stroke="' + ink + '" stroke-width="7"/><path d="M18,-44 q16,0 16,14 q0,14 -16,14" fill="none" stroke="' + C.cream + '" stroke-width="3"/>' +
+          '<path d="M-20,-54 H22 L18,0 H-16 Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/><path d="M-19,-44 H21" stroke="' + C.cream + '" stroke-width="5"/>' +
+          '<g class="steam"><path d="M-6,-62 q-6,-10 0,-18 q6,-8 0,-18 M8,-62 q-6,-10 0,-18" fill="none" stroke="' + C.cream + '" stroke-width="3" opacity="0.8"/></g>';
+      }
+      var mugSvg = '<g id="' + ID + '-mug" transform="translate(' + L.MUG[0] + "," + L.MUG[1] + ") scale(" + L.MUG[2] + ')">' + mug() + "</g>";
+
+      // ── The set: wall, Wishonia, lectern, and in front the file, the mug and the falling patient. The push is ours
+      // (on the push layer), so KIT.studio's own push is held at 1.
+      KIT.studio(tl, ID, { cam: q("cam"), wall: q("wall"), wish: q("wish"), front: q("front") }, { front: fileSvg + mugSvg + fallSvg, push: [1, 1] });
+
+      // ── Out in space: stars, a glow where the box ends up, the box's edges round the set, the tiny Earth and the net.
+      var B = L.BOX, bw = W * B[2], bh = H * B[2], bcx = B[0] + bw / 2, bcy = B[1] + bh / 2;
+      var rnd = KIT.rng(7), stars = "", twinkle = [];
+      for (var i = 0; i < 170; i++) stars += '<circle cx="' + f(rnd() * W) + '" cy="' + f(rnd() * H) + '" r="' + f(0.8 + rnd() * 2.2) + '" fill="' + C.cream + '" opacity="' + (0.4 + rnd() * 0.6).toFixed(2) + '"/>';
+      for (var j = 0; j < 10; j++) { stars += '<g class="tw" opacity="1">' + KIT.star(rnd() * W, rnd() * H * 0.9, 8 + rnd() * 10, j % 3 ? C.cream : C.yellow) + "</g>"; twinkle.push(rnd() * 6.28); }
+      var glow = '<g id="' + ID + '-glow" opacity="0"><ellipse cx="' + f(bcx) + '" cy="' + f(bcy) + '" rx="' + f(bw * 0.66) + '" ry="' + f(bh * 0.72) + '" fill="#F3E5BE" opacity="0.035"/>' +
+        '<ellipse cx="' + f(bcx) + '" cy="' + f(bcy) + '" rx="' + f(bw * 0.6) + '" ry="' + f(bh * 0.64) + '" fill="#F3E5BE" opacity="0.035"/></g>';
+      q("space").innerHTML = KIT.svg(W, H, '<rect x="-60" y="-60" width="' + (W + 120) + '" height="' + (H + 120) + '" fill="#050A18"/>' + stars + glow);
+      var k = 1 / B[2], dx = 40 * k, dy = -34 * k;
+      q("box").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-edges" opacity="0">' +
+        '<path d="M0,0 L' + f(dx) + "," + f(dy) + " H" + f(W + dx) + " L" + W + ',0 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="' + f(5 * k) + '" stroke-linejoin="round"/>' +
+        '<path d="M' + W + ",0 L" + f(W + dx) + "," + f(dy) + " V" + f(H + dy) + " L" + W + "," + H + ' Z" fill="#1B2236" stroke="' + ink + '" stroke-width="' + f(5 * k) + '" stroke-linejoin="round"/>' +
+        '<rect x="0" y="0" width="' + W + '" height="' + H + '" fill="none" stroke="' + ink + '" stroke-width="' + f(6 * k) + '"/></g>', 'style="position:absolute;inset:0;overflow:visible"');
+      var E = L.EARTH;
+      q("far").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-farin" opacity="0"><g id="' + ID + '-net"></g>' +
+        '<g transform="translate(' + E[0] + "," + E[1] + ") scale(" + E[2] + ')">' + KIT.props.earthGlobe({ r: 110 }) + "</g></g>");
+
+      // The butterfly net (the Orderly's, from net-falls-short and butterfly-net): the pole from (px, py) to the hoop
+      // centered on (hx, hy), r its radius, tilt (deg), the bag hanging below.
+      function net(px, py, hx, hy, r, tilt, sag) {
+        var bag = "M" + -r + ",0 Q" + f(-r * 0.8) + "," + f(r * sag) + " 0," + f(r * sag * 1.25) + " Q" + f(r * 0.8) + "," + f(r * sag) + " " + r + ",0", mesh = "";
+        for (var a = -3; a <= 3; a++) mesh += "M" + f(a * r * 0.26) + "," + f(-r * 0.05) + " Q" + f(a * r * 0.18) + "," + f(r * sag * 0.8) + " 0," + f(r * sag * 1.2) + " ";
+        for (var b = 1; b <= 4; b++) { var yy = r * sag * b * 0.25, ww = r * (1 - b * 0.18); mesh += "M" + f(-ww) + "," + f(yy) + " Q0," + f(yy + r * 0.12) + " " + f(ww) + "," + f(yy) + " "; }
+        var ex = hx + Math.cos((tilt * Math.PI) / 180) * r, ey = hy + Math.sin((tilt * Math.PI) / 180) * r;
+        return '<path d="M' + f(px) + "," + f(py) + " L" + f(ex) + "," + f(ey) + '" stroke="' + ink + '" stroke-width="16" stroke-linecap="round"/>' +
+          '<path d="M' + f(px) + "," + f(py) + " L" + f(ex) + "," + f(ey) + '" stroke="' + C.tan + '" stroke-width="10" stroke-linecap="round"/>' +
+          '<g transform="translate(' + f(hx) + "," + f(hy) + ") rotate(" + f(tilt) + ')"><path d="' + bag + '" fill="#F7F1E0" fill-opacity="0.5" stroke="' + ink + '" stroke-width="3.4"/><path d="' + mesh + '" fill="none" stroke="' + ink + '" stroke-width="1.6" opacity="0.7"/>' +
+          '<ellipse cx="0" cy="0" rx="' + r + '" ry="' + f(r * 0.22) + '" fill="none" stroke="' + ink + '" stroke-width="8"/><ellipse cx="0" cy="0" rx="' + r + '" ry="' + f(r * 0.22) + '" fill="none" stroke="' + C.yellow + '" stroke-width="3.5"/></g>';
+      }
+
+      // ── Elements ──
+      var zoom = q("zoom"), push = q("push"), fallEl = q("fall"), cover = q("cover"), page1 = q("page1"), mugEl = q("mug"), netEl = q("net");
+      var coverFront = cover.querySelector(".cover-front"), coverIn2 = cover.querySelector(".cover-in"), steam = mugEl.querySelector(".steam");
+      var tw = Array.prototype.slice.call(q("space").querySelectorAll(".tw"));
+
+      // ── Cues ──
+      var tThis = cue("This"), tDiag = cue("diagnostic"), tLooked = cue("looked"), tNailed = cue("nailed"), tSo = cue("So"), tLY = cue("light-years"), tAway = KIT.cueEnd(ID, "away.");
+      var tOpen = tDiag + 0.02, tClose0 = tNailed, tClose1 = tNailed + 1.3, tSip0 = tSo, tSip1 = tSo + 0.55, tDown0 = tLY - 0.55, tDown1 = tLY;
+      var tPull0 = tAway + 0.03, tPull1 = tAway + 0.5, tNet0 = tPull1 - 0.15, tNet1 = tNet0 + 0.4, tDroop1 = tNet1 + 0.22;
+
+      // ── The camera on the set (the push layer), in canvas px: medium at the lectern while he falls past, in on the
+      // file while she reads, a little closer on "nailed" (and frozen through the HOLD), close on her face for the
+      // sip, then back to the whole set for the pull-back.
+      var VIEW = V
+        ? { med: [540, 740, 1.0], file: [450, 900, 1.2], nailed: [450, 840, 1.32], sip: [440, 760, 1.6] }
+        : { med: [960, 540, 1.0], file: [800, 560, 1.22], nailed: [800, 520, 1.42], sip: [820, 470, 1.62] };
+      var KEYS = [[0, "med", 1], [tDiag - 0.1, "med", 1.01], [tDiag + 0.45, "file", 1], [tNailed - 0.25, "file", 1.04], [tNailed + 0.2, "nailed", 1],
+        [tSo - 0.02, "nailed", 1], [tSo + 0.5, "sip", 1], [tAway, "sip", 1.04], [tPull1, "med", 1], [D, "med", 1]];
+      var camera = KIT.camera(VIEW, KEYS);
+      var A = camera.A;
+
+      KIT.onTime(tl, D, function (t) {
+        // the camera on the set
+        var c = camera.at(t);
+        push.style.transform = "translate(" + f(A[0] - c.x * c.s) + "px," + f(A[1] - c.y * c.s) + "px) scale(" + c.s.toFixed(4) + ")";
+
+        // the patient plummets past the right of the frame, top to bottom, wobbling
+        var fu = (t - tThis - 0.02) / 0.8;
+        show(fallEl, fu > 0 && fu < 1);
+        if (fu > 0 && fu < 1) {
+          var fy = -260 * L.FALL[1] + (H + 300 * L.FALL[1]) * fu * (0.7 + 0.3 * fu);
+          fallEl.setAttribute("transform", "translate(" + L.FALL[0] + "," + f(fy) + ") rotate(" + f(Math.sin(fu * 14) * 7) + ")");
+        }
+
+        // the case file: the cover swings open on "diagnostic", a page turns on "looked", it closes slowly on "nailed"
+        var openU = smooth((t - tOpen) / 0.4) * (1 - smooth((t - tClose0) / (tClose1 - tClose0)));
+        var ang = openU * 156, sx = Math.cos((ang * Math.PI) / 180);
+        cover.setAttribute("transform", "translate(-95,0) scale(" + sx.toFixed(3) + ",1) translate(95,0)");
+        show(coverFront, sx >= 0); show(coverIn2, sx < 0);
+        var pu = smooth((t - tLooked) / 0.35), psx = Math.cos(pu * 160 * Math.PI / 180);
+        page1.setAttribute("transform", "translate(-88,0) scale(" + psx.toFixed(3) + ",1) translate(88,0)");
+        show(page1, openU > 0.02);
+
+        // the mug floats up to her mouth on "So", a long sip, and comes down slowly to land on "light-years"
+        var up = smooth((t - tSip0) / (tSip1 - tSip0)) * (1 - smooth((t - tDown0) / (tDown1 - tDown0)));
+        var mx = L.MUG[0] + (L.MOUTH[0] + 46 - L.MUG[0]) * up, my = L.MUG[1] + (L.MOUTH[1] + 52 - L.MUG[1]) * up;
+        var sip = up > 0.98 ? Math.sin((t - tSip1) * 3) * 2 : 0;
+        mugEl.setAttribute("transform", "translate(" + f(mx) + "," + f(my) + ") rotate(" + f(-48 * up + sip) + ") scale(" + L.MUG[2] + ")");
+        show(steam, up < 0.3);
+
+        // the pull-back: the whole set shrinks into a lit box in space
+        var zu = smooth((t - tPull0) / (tPull1 - tPull0)), zs = 1 + (B[2] - 1) * (1 - Math.pow(1 - zu, 2.2));
+        var zx = B[0] * (1 - zs) / (1 - B[2]), zy = B[1] * (1 - zs) / (1 - B[2]);
+        zoom.style.transform = t > tPull0 ? "translate(" + f(zx) + "px," + f(zy) + "px) scale(" + zs.toFixed(4) + ")" : "none";
+        show(q("edges"), t > tPull0);
+        q("glow").setAttribute("opacity", f(smooth((t - tPull0) / 0.5)));
+        tw.forEach(function (g, i) { g.setAttribute("opacity", (0.55 + 0.45 * Math.sin(t * 3 + twinkle[i])).toFixed(2)); });
+
+        // far off, the net reaches up from tiny Earth toward the studio, wobbling, stops short and droops
+        show(q("farin"), t > tPull0 + 0.1);
+        var base = L.NET[0], tip = L.NET[1], nu = smooth((t - tNet0) / (tNet1 - tNet0));
+        var ddx = tip[0] - base[0], ddy = tip[1] - base[1], len = Math.hypot(ddx, ddy), ux = ddx / len, uy = ddy / len;
+        var wob = Math.sin(nu * Math.PI * 3) * 26 * (1 - nu);
+        var droop = smooth((t - tNet1) / (tDroop1 - tNet1)), bounce = t > tDroop1 ? Math.sin((t - tDroop1) * 18) * 2 * Math.exp(-(t - tDroop1) * 8) : 0;
+        var rot = ((14 * droop + bounce) * Math.PI) / 180, ext = 0.08 + 0.92 * nu;
+        var rx = ux * Math.cos(rot) - uy * Math.sin(rot), ry = ux * Math.sin(rot) + uy * Math.cos(rot);
+        var hx = base[0] + rx * len * ext - uy * wob, hy = base[1] + ry * len * ext + ux * wob;
+        netEl.innerHTML = nu > 0 ? net(base[0], base[1], hx, hy, 62, 12 + 30 * droop + Math.sin(nu * 9) * 8 * (1 - nu), 1.5) : "";
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

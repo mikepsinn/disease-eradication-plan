@@ -1,0 +1,444 @@
+<template id="orderly-door-slot-template">
+  <!-- orderly-door-slot · Layer B, plate padded-cell (storyboards/part-04-institutionalize.md, scene 8), in the film look
+       of Part 2. "Anyway,": the hatch in the ceiling drops open and the straitjacketed patient falls in, bounces twice on
+       the padded floor and sits up with stars circling his head. "orderly": the Orderly's eyes rise into the door window,
+       then his neck keeps rising until his chin is in it. "slides": the slot flap clicks open and a paper cup comes in on
+       his arm, which keeps coming, snaking across the whole floor (the camera pulls back) to the patient's feet;
+       "medication": the pills rattle; after it the arm zips back out. The patient hops up and wriggles; "Nobody": one arm
+       pops out of the straitjacket (the empty sleeve flaps), he kicks the cup aside, a fat crayon in his hand, and hops to
+       the wall. "accidentally": a little crayon human walks, trips over a crayon toolbox; the tools fly up and come down,
+       by accident, as a lopsided birdhouse ("builds"), and the little human jumps for joy. "carrier": a huge crayon
+       aircraft carrier; "bomb.": a nuclear bomb; after "bomb." one big red crayon X over both, and the little human shrugs.
+       The camera ends on the key frame, which war-supply-chain starts on. -->
+  <style>
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #EFE4C6; }
+    #orderly-door-slot-weave, #orderly-door-slot-shake, #orderly-door-slot-plate, #orderly-door-slot-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="orderly-door-slot" data-width="1920" data-height="1080" data-start="0" data-duration="11.68">
+    <div id="orderly-door-slot-weave">
+      <div id="orderly-door-slot-shake"><div id="orderly-door-slot-plate"></div></div>
+    </div>
+    <div id="orderly-door-slot-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "orderly-door-slot";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 404);
+
+      // ════════════════════════════════════════════════════════════════════════════════════════════════════════════
+      // PLATE padded-cell: shared by orderly-door-slot, war-supply-chain and chain-goes-dark. Copy this whole block
+      // (down to "END PLATE padded-cell") and change all three files together (AGENTS.md, Continuity).
+      // Plate units: the floor line is y 0 (people stand on it at scale S, so KIT.person's feet at y 100 land on 0),
+      // the floor's padding runs toward the viewer below it, the ceiling's underside is y -1150.
+      //   the door: doorway x 0..300, top y -620 (frame 18 wider); window x 84..216, y -530..-410; slot x 75..225,
+      //     y -290..-260 with a flap hinged at its top
+      //   the ceiling hatch: x 1380..1620, its flap hinged at (1380, -1150)
+      //   the crayon drawings (y -380..-120, on the ground line y -148): the little human, the birdhouse (x 470..580)
+      //     and the toolbox (x 600..660); the carrier x 820..1300; the bomb x 1316..1504; the X spans 800..1520
+      //   x 1650 onward is blank wall: the switch goes at (1720, -400), the war wheel's hub at (2400, -580), rim 440
+      // ════════════════════════════════════════════════════════════════════════════════════════════════════════════
+      var S = 2.4, CEIL = -1150, DOOR = [0, 300, -620], WIN = [84, -530, 216, -410], SLOT = [75, -290, 225, -260], HATCH = [1380, 1620];
+      var GL = -148; // the crayon drawings' ground line
+      var PATIENT = { tone: 1, outfit: "shirt", color: 3 };
+      var CANVAS = "#E9DFC6", STRAP = "#B9935E", WINDOW_DARK = "#1D2338", SKIN_O = "#A87B57";
+      var FOLDED = [[52, 104], [-52, -104]], FREE_ARMS = [[-100, -100], [-52, -104]];
+      var f = function (n) { return (+n).toFixed(1); };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      // A person (or any person-unit drawing) standing with its feet on plate y gy.
+      var standAt = function (x, gy, inner, attrs) { return at(x, gy - 100 * S, S, inner, attrs); };
+      // A crayon line: two passes of a waxy round-capped stroke, slightly apart. pathLength 1, so setting
+      // stroke-dasharray "1 2" and stroke-dashoffset 1 → 0 on the group draws it on (crayonDraw).
+      function crayon(d, col, w, attrs) {
+        w = w || 7;
+        return "<g" + (attrs || "") + '><path d="' + d + '" pathLength="1" fill="none" stroke="' + col + '" stroke-width="' + w + '" stroke-linecap="round" stroke-linejoin="round" opacity="0.88"/>' +
+          '<path d="' + d + '" pathLength="1" transform="translate(1.6,1.2)" fill="none" stroke="' + col + '" stroke-width="' + f(w * 0.45) + '" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></g>';
+      }
+      function crayonDraw(g, u) {
+        u = Math.max(0, Math.min(1, u));
+        g.setAttribute("opacity", u > 0 ? 1 : 0);
+        if (u >= 1) { g.removeAttribute("stroke-dasharray"); g.removeAttribute("stroke-dashoffset"); return; }
+        g.setAttribute("stroke-dasharray", "1 2"); g.setAttribute("stroke-dashoffset", (1 - u).toFixed(4));
+      }
+      // The little crayon human, feet at (0, 0), h tall: "walk", "joy" (arms up, a smile) or "shrug".
+      function crayonGuy(h, col, pose) {
+        var hr = h * 0.13, hy = -h + hr, ny = hy + hr, hip = -h * 0.42, w = h * 0.045;
+        var head = "M" + f(-hr) + "," + f(hy) + " a" + f(hr) + "," + f(hr) + " 0 1,0 " + f(2 * hr) + ",0 a" + f(hr) + "," + f(hr) + " 0 1,0 " + f(-2 * hr) + ",0";
+        var legs = pose === "walk" ? "M" + f(-h * 0.22) + ",0 L0," + f(hip) + " L" + f(h * 0.24) + ",0" : "M" + f(-h * 0.18) + ",0 L0," + f(hip) + " L" + f(h * 0.18) + ",0";
+        var arms = pose === "shrug" ? "M" + f(-h * 0.28) + "," + f(ny + h * 0.02) + " L" + f(-h * 0.16) + "," + f(ny + h * 0.16) + " L0," + f(ny + h * 0.12) + " L" + f(h * 0.16) + "," + f(ny + h * 0.16) + " L" + f(h * 0.28) + "," + f(ny + h * 0.02)
+          : pose === "joy" ? "M" + f(-h * 0.26) + "," + f(ny - h * 0.16) + " L0," + f(ny + h * 0.1) + " L" + f(h * 0.26) + "," + f(ny - h * 0.16)
+          : "M" + f(-h * 0.2) + "," + f(ny + h * 0.3) + " L0," + f(ny + h * 0.1) + " L" + f(h * 0.24) + "," + f(ny + h * 0.24);
+        var smile = pose === "joy" ? " M" + f(-hr * 0.5) + "," + f(hy + hr * 0.25) + " q" + f(hr * 0.5) + "," + f(hr * 0.45) + " " + f(hr) + ",0" : pose === "shrug" ? " M" + f(-hr * 0.45) + "," + f(hy + hr * 0.35) + " h" + f(hr * 0.9) : "";
+        return crayon(head + " M0," + f(ny) + " L0," + f(hip) + " " + legs + " " + arms + smile, col, w);
+      }
+      // The patient in his straitjacket (person units): canvas over the mustard shirt, folded arms, two tan straps.
+      function jacketed(o) {
+        var p = copy(PATIENT, copy({ colorHex: CANVAS, arms: FOLDED }, o)), R = KIT.rig(p);
+        var sx = R.shoulder[1][0] + 4, y1 = R.shoulder[0][1] + 22, y2 = R.hipY - 12;
+        var strap = function (y) {
+          return '<path d="M' + f(-sx) + "," + f(y) + " L" + f(sx) + "," + f(y - 2) + " L" + f(sx) + "," + f(y + 7) + " L" + f(-sx) + "," + f(y + 9) + ' Z" fill="' + STRAP + '" stroke="' + ink + '" stroke-width="2.2"/>' +
+            '<rect x="' + f(sx * 0.35) + '" y="' + f(y - 1) + '" width="9" height="10" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>';
+        };
+        return KIT.person(p) + strap(y1) + strap(y2);
+      }
+      // The patient with his near arm (arm-l) out of the jacket: hide the jacket's .arm-l after inserting (patientFree
+      // returns markup; freeArm(g) does the DOM part). The bare arm is the mustard shirt's, holding a fat crayon.
+      var RFREE = KIT.rig(copy(PATIENT, { look: "left", arms: FREE_ARMS }));
+      var SH0 = RFREE.shoulder[0], HAND0 = RFREE.hand[0];
+      var CRAYON_ANG = (Math.atan2(HAND0[1] - (SH0[1] + 0), HAND0[0] - SH0[0]) * 180) / Math.PI;
+      function patientFree(o) {
+        var sleeve = '<g class="pt-sleeve"><path d="M' + f(SH0[0] - 6) + "," + f(SH0[1] + 1) + " q-9,20 0,42 l9,-1 q-6,-18 3,-38 Z" + '" fill="' + CANVAS + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="round"/></g>';
+        var crayonStick = '<g transform="translate(' + f(HAND0[0]) + "," + f(HAND0[1]) + ") rotate(" + f(CRAYON_ANG) + ')"><g class="pt-crayon">' +
+          '<rect x="-4" y="-5" width="20" height="10" rx="1" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="1.8"/><path d="M16,-5 L24,0 L16,5 Z" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="round"/>' +
+          '<rect x="2" y="-5" width="7" height="10" fill="' + C.cream + '" opacity="0.55"/></g></g>';
+        return '<g class="pt-jacket">' + jacketed(copy({ look: "left" }, o)) + "</g>" + sleeve +
+          '<g class="pt-arm"><g class="pt-armsrc">' + KIT.person(copy(PATIENT, { look: "left", arms: FREE_ARMS })) + "</g>" + crayonStick + "</g>";
+      }
+      function freeArm(g) {
+        g.querySelector(".pt-jacket .arm-l").setAttribute("opacity", 0);
+        var src = g.querySelector(".pt-armsrc"), arm = src.querySelector(".arm-l");
+        while (src.firstChild) src.removeChild(src.firstChild);
+        src.appendChild(arm);
+      }
+      // The Orderly behind the door (KIT.cast("orderly")), standing on the floor at x OX: the window shows his head.
+      // His neck stretches: move his .head up by ext person units and draw neck under it (orderlyNeck).
+      var OE = KIT.castOpts("orderly", { look: "right" }), RO = KIT.rig(OE), OX = 150 - RO.eyes[0] * S;
+      function orderlyNeck(g, ext) {
+        g.querySelector(".head").setAttribute("transform", "translate(0," + f(-ext) + ")");
+        var n = g.querySelector(".neck-ext"), y0 = RO.neck[1] - 3 - ext;
+        n.setAttribute("d", "M" + f(RO.neck[0] - 4.6) + "," + f(y0) + " H" + f(RO.neck[0] + 5.4) + " V" + f(RO.neck[1] + 2) + " H" + f(RO.neck[0] - 4.6) + " Z");
+        n.setAttribute("opacity", ext > 0.5 ? 1 : 0);
+      }
+      function orderly() {
+        return KIT.person(OE).replace('<g class="head">', '<path class="neck-ext" d="" fill="' + SKIN_O + '" stroke="' + ink + '" stroke-width="3.2" opacity="0"/><g class="head">');
+      }
+      // The wall, the floor and the shaft over the hatch (drawn first).
+      function cellBack() {
+        return "<defs>" +
+          '<pattern id="' + ID + '-quilt" width="96" height="96" patternUnits="userSpaceOnUse"><rect width="96" height="96" fill="#EFE4C6"/>' +
+          '<path d="M0,48 L48,0 L96,48 L48,96 Z" fill="none" stroke="#D5C397" stroke-width="3"/><circle cx="48" cy="0" r="5" fill="#C9B07E"/><circle cx="0" cy="48" r="5" fill="#C9B07E"/><circle cx="96" cy="48" r="5" fill="#C9B07E"/><circle cx="48" cy="96" r="5" fill="#C9B07E"/>' +
+          '<path d="M48,8 L88,48" stroke="#FFF8E6" stroke-width="3" opacity="0.7"/></pattern>' +
+          '<pattern id="' + ID + '-pad" width="120" height="40" patternUnits="userSpaceOnUse"><rect width="120" height="40" fill="#DCCB9E"/><path d="M0,20 H120 M60,0 V20 M0,20 V40" stroke="#C4AF7E" stroke-width="3"/></pattern>' +
+          '<clipPath id="' + ID + '-win"><rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + (WIN[2] - WIN[0]) + '" height="' + (WIN[3] - WIN[1]) + '"/></clipPath></defs>' +
+          '<rect x="-1200" y="-2000" width="5200" height="2000" fill="url(#' + ID + '-quilt)"/>' +
+          '<rect x="-1200" y="0" width="5200" height="1400" fill="url(#' + ID + '-pad)"/><rect x="-1200" y="-6" width="5200" height="10" fill="#B99D68"/>' +
+          '<rect x="' + HATCH[0] + '" y="-2000" width="' + (HATCH[1] - HATCH[0]) + '" height="' + (2000 + CEIL) + '" fill="' + WINDOW_DARK + '"/>';
+      }
+      // The ceiling (drawn over the patient, so he drops out of the shaft): a padded slab with a gap for the hatch, and
+      // the hatch's flap (class "hatch-flap", hinged at (HATCH[0], CEIL); rotate it about that point to open it).
+      function cellCeiling() {
+        var slab = function (x0, x1) {
+          return '<rect x="' + x0 + '" y="-2000" width="' + (x1 - x0) + '" height="' + (2000 + CEIL) + '" fill="#D8C596"/>' +
+            '<rect x="' + x0 + '" y="' + (CEIL - 16) + '" width="' + (x1 - x0) + '" height="16" fill="#B99D68"/>';
+        };
+        var seams = "";
+        for (var x = -1200; x < 4000; x += 120) if (x < HATCH[0] - 10 || x > HATCH[1] + 10) seams += "M" + x + "," + (CEIL - 16) + " V-2000 ";
+        return slab(-1200, HATCH[0]) + slab(HATCH[1], 4000) + '<path d="' + seams + '" stroke="#C4AF7E" stroke-width="3"/>' +
+          '<path d="M' + HATCH[0] + ',-2000 V' + CEIL + " M" + HATCH[1] + ",-2000 V" + CEIL + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<g class="hatch-flap"><rect x="' + HATCH[0] + '" y="' + (CEIL - 20) + '" width="' + (HATCH[1] - HATCH[0]) + '" height="20" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<circle cx="' + (HATCH[0] + 10) + '" cy="' + (CEIL - 10) + '" r="5" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2"/></g>';
+      }
+      // The steel door, its window (holding `inWindow`, clipped) and its slot (class "slot-flap", hinged at the top).
+      function cellDoor(inWindow) {
+        var x0 = DOOR[0], x1 = DOOR[1], top = DOOR[2], w = x1 - x0, ww = WIN[2] - WIN[0], wh = WIN[3] - WIN[1];
+        return '<rect x="' + (x0 - 18) + '" y="' + (top - 18) + '" width="' + (w + 36) + '" height="' + (18 - top) + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="' + x0 + '" y="' + top + '" width="' + w + '" height="' + -top + '" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<path d="M' + (x1 - 8) + "," + (top + 8) + " V-8" + '" stroke="' + C.orange + '" stroke-width="4"/>' +
+          [0.1, 0.9].map(function (u) { return '<circle cx="' + (x0 + w * u) + '" cy="' + f(top - top * 0.06) + '" r="5" fill="' + ink + '"/><circle cx="' + (x0 + w * u) + '" cy="' + f(top * 0.06) + '" r="5" fill="' + ink + '"/>'; }).join("") +
+          '<rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + ww + '" height="' + wh + '" fill="' + WINDOW_DARK + '"/>' +
+          '<g clip-path="url(#' + ID + '-win)">' + (inWindow || "") + "</g>" +
+          [1, 2, 3].map(function (i) { return '<path d="M' + f(WIN[0] + (ww * i) / 4) + "," + WIN[1] + " V" + WIN[3] + '" stroke="' + C.slate + '" stroke-width="6"/>'; }).join("") +
+          '<rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + ww + '" height="' + wh + '" fill="none" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="' + SLOT[0] + '" y="' + SLOT[1] + '" width="' + (SLOT[2] - SLOT[0]) + '" height="' + (SLOT[3] - SLOT[1]) + '" fill="' + WINDOW_DARK + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<g class="slot-flap"><rect x="' + (SLOT[0] - 6) + '" y="' + (SLOT[1] - 4) + '" width="' + (SLOT[2] - SLOT[0] + 12) + '" height="' + (SLOT[3] - SLOT[1] + 8) + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M' + (SLOT[0] + 20) + "," + (SLOT[1] + 7) + " H" + (SLOT[2] - 20) + '" stroke="' + C.peri + '" stroke-width="3"/></g>';
+      }
+      // A paper pill cup with two pills (class "cup-pills"), standing on (0, 0), plate units.
+      function pillCup() {
+        return '<path d="M-24,-46 H24 L17,0 H-17 Z" fill="#FBF6E6" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path d="M-12,-44 L-9,-2 M0,-44 V-2 M12,-44 L9,-2" stroke="#D9CFB5" stroke-width="2.4"/>' +
+          '<g class="cup-pills"><circle cx="-7" cy="-50" r="8" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4"/><circle cx="8" cy="-52" r="8" fill="' + C.med + '" stroke="' + ink + '" stroke-width="2.4"/></g>' +
+          '<path d="M-25,-46 H25" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>';
+      }
+      // The crayon drawings in their final state (the key frame of orderly-door-slot), as the next scenes see them.
+      var BIRD = { cx: 525, tilt: 5 };
+      // the birdhouse's pieces: [path around its own center, final center x, y, final rotation, color]
+      var BIRD_PIECES = [
+        ["M0,-26 V26", 525, GL - 26, 2, C.rust],                // the post
+        ["M-40,0 H40", 525, GL - 52, -3, C.rust],               // the floor
+        ["M0,-40 V40", 487, GL - 92, 4, C.rust],                // the left wall
+        ["M0,-40 V40", 565, GL - 94, -2, C.rust],               // the right wall
+        ["M-34,0 H34", 497, GL - 158, -40, C.rust],             // the roof, left
+        ["M-34,0 H34", 551, GL - 160, 44, C.rust],              // the roof, right
+        ["M-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0", 526, GL - 100, 0, C.rust], // the hole
+        ["M-60,0 H60", 520, GL - 134, -7, C.navy],              // the plank that landed askew across it
+      ];
+      var TOOLBOX = "M-30,0 h60 v-28 h-60 z M-15,-28 v-10 h30 v10", TOOLBOX_AT = [630, GL];
+      var CARRIER = "M820,-220 L860,-160 H1260 L1300,-220 Z M1040,-220 V-280 H1100 V-220 M1060,-280 V-310 M880,-228 l40,-10 l-6,12 M960,-230 l40,-10 l-6,12 M1150,-232 l40,-10 l-6,12";
+      var BOMB = "M1340,-220 a70,62 0 1,0 140,0 a70,62 0 1,0 -140,0 M1410,-282 V-316 M1400,-316 h20 M1420,-316 q20,-20 40,-6 M1352,-220 L1316,-250 M1468,-220 L1504,-250";
+      var XMARK = ["M800,-340 L1520,-120", "M1520,-340 L800,-120"];
+      var GUY_END = [740, GL]; // where the little human stands up, pleased, then shrugs
+      function drawingsDone() {
+        var bird = BIRD_PIECES.map(function (p) { return '<g transform="translate(' + p[1] + "," + p[2] + ") rotate(" + p[3] + ')">' + crayon(p[0], p[4], 7) + "</g>"; }).join("");
+        return '<g transform="translate(' + GUY_END[0] + "," + GUY_END[1] + ')">' + crayonGuy(120, C.navy, "shrug") + "</g>" + bird +
+          '<g transform="translate(' + TOOLBOX_AT[0] + "," + TOOLBOX_AT[1] + ')">' + crayon(TOOLBOX.replace("M-15,-28 v-10 h30 v10", "M-30,-28 l-18,-30"), C.navy, 5) + "</g>" +
+          crayon(CARRIER, C.navy, 7) + crayon(BOMB, C.navy, 7) + crayon(XMARK[0], C.war, 12) + crayon(XMARK[1], C.war, 12);
+      }
+      // END PLATE padded-cell ═════════════════════════════════════════════════════════════════════════════════════
+
+      // ── The cues ──
+      var tOrd = cue("orderly"), tSlides = cue("slides"), tMed = cue("medication"), tZip = KIT.after(ID, "medication");
+      var tNobody = cue("Nobody"), tAcc = cue("accidentally"), tBuilds = cue("builds"), tCarrier = cue("carrier"), tBomb = cue("bomb."), tX = KIT.after(ID, "bomb.");
+      // The sounds (parts/part-04.json) land on: the two bounces at 0.75 and 1.05, the squeak on "orderly", the click on
+      // "slides", the ticks on "medication", the whistle after it, the boing on "Nobody", the marker on "accidentally",
+      // the clank 0.6 s later, the hammer on "builds", the markers on "carrier" and "bomb.", the scratch after "bomb.".
+      var T_FALL = 0.12, T_LAND = 0.75, T_B1 = 1.05, T_B2 = 1.25, T_SITUP = 1.3;
+      var T_STAND = Math.max(tZip + 0.35, 4.6), T_WRIG = T_STAND + 0.45, T_KICK = tNobody + 0.08;
+      var T_HOP1 = tNobody + 0.3, T_DRAW1 = tAcc + 0.08, T_TRIP = tAcc + 0.6, T_HOP2 = tCarrier - 0.48, T_HOP3 = tCarrier + 0.95;
+      var X1 = 1500, X2 = 1385, X3 = 905, X4 = 1385, X5 = 1620; // the patient's places (feet x)
+
+      // ── The camera's views: [plate x, plate y, scale]. 16:9 keeps the floor near y 850 (nothing important below 900);
+      // 9:16 keeps it above the captions (1450). war-supply-chain starts on "final".
+      var VIEW = V
+        ? { hatch: [1500, -1080, 1.3], land: [1430, -190, 2.2], door: [160, -430, 2.0], wide: [800, -600, 0.64], pat: [1390, -230, 1.6],
+            draw1: [690, -250, 1.45], carrier: [1110, -250, 1.0], final: [1050, -560, 0.76] }
+        : { hatch: [1500, -1120, 1.0], land: [1430, -170, 1.8], door: [190, -440, 1.7], wide: [800, -300, 1.0], pat: [1400, -250, 1.3],
+            draw1: [660, -240, 1.45], carrier: [1080, -260, 1.15], final: [840, -340, 1.0] };
+      var KEYS = [[0, "hatch", 1], [0.3, "hatch", 1], [0.85, "land", 1], [1.6, "land", 1.04], [tOrd - 0.12, "door", 1], [tSlides, "door", 1.04],
+        [tSlides + 0.55, "wide", 1], [T_STAND - 0.1, "wide", 1.02], [T_STAND + 0.35, "pat", 1], [T_HOP1, "pat", 1.04], [T_DRAW1, "draw1", 1],
+        [T_HOP2 - 0.05, "draw1", 1.04], [tCarrier - 0.05, "carrier", 1], [T_HOP3 - 0.05, "carrier", 1.03], [tBomb, "final", 1.03], [D, "final", 1]];
+      var camera = KIT.camera(VIEW, KEYS), smooth = KIT.smooth;
+
+      // ── The arm through the slot: a path out of the slot, down the door and snaking along the floor to the cup.
+      var ARM_END = 1262, CUP_AT = [ARM_END + 26, 34], CUP_KICKED = [1172, 34];
+      function armPts(t) {
+        var pts = [], i, u, m;
+        for (i = 0; i <= 24; i++) { // out of the slot and down the door: a cubic
+          u = i / 24; m = 1 - u;
+          var P = [[150, -268], [180, -200], [160, -50], [222, 18]];
+          pts.push([m * m * m * P[0][0] + 3 * m * m * u * P[1][0] + 3 * m * u * u * P[2][0] + u * u * u * P[3][0], m * m * m * P[0][1] + 3 * m * m * u * P[1][1] + 3 * m * u * u * P[2][1] + u * u * u * P[3][1]]);
+        }
+        var ph = Math.min(t, tMed) * 16; // the snake's wiggle travels while the arm comes, and freezes when it stops
+        for (var x = 228; x <= ARM_END; x += 8) {
+          var taper = Math.min(1, (x - 228) / 80) * Math.min(1, (ARM_END - x) / 120);
+          pts.push([x, 20 + 13 * Math.sin((x - 228) / 46 - ph) * taper]);
+        }
+        return pts;
+      }
+      var ARM_LEN = (function () { var p = armPts(tMed), L = 0; for (var i = 1; i < p.length; i++) L += Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]); return L; })();
+      function armPath(t, len) {
+        var p = armPts(t), d = "M" + f(p[0][0]) + "," + f(p[0][1]), L = 0, end = p[0], dir = [1, 0];
+        for (var i = 1; i < p.length; i++) {
+          var s = Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]);
+          if (L + s >= len) { var u = (len - L) / s; end = [p[i - 1][0] + (p[i][0] - p[i - 1][0]) * u, p[i - 1][1] + (p[i][1] - p[i - 1][1]) * u]; dir = [p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]]; d += " L" + f(end[0]) + "," + f(end[1]); return { d: d, end: end, dir: dir }; }
+          L += s; d += " L" + f(p[i][0]) + "," + f(p[i][1]); end = p[i]; dir = [p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]];
+        }
+        return { d: d, end: end, dir: dir };
+      }
+
+      // ── Assemble the plate ──
+      // the drawings, animated: the little human's poses, the toolbox (lid shut, lid open), the birdhouse's pieces, the
+      // carrier, the bomb and the X (drawn on).
+      var guySvg = ["walk", "joy", "shrug"].map(function (p) { return '<g class="guy-' + p + '" opacity="0">' + crayonGuy(120, C.navy, p) + "</g>"; }).join("");
+      var toolboxSvg = '<g id="' + ID + '-toolbox" transform="translate(' + TOOLBOX_AT[0] + "," + TOOLBOX_AT[1] + ')">' + crayon(TOOLBOX, C.navy, 5, ' class="tb-shut"') +
+        crayon(TOOLBOX.replace("M-15,-28 v-10 h30 v10", "M-30,-28 l-18,-30"), C.navy, 5, ' class="tb-open" opacity="0"') + "</g>";
+      var piecesSvg = BIRD_PIECES.map(function (p, i) { return '<g id="' + ID + "-bp" + i + '" opacity="0">' + crayon(p[0], p[4], 7) + "</g>"; }).join("");
+      var drawings = '<g id="' + ID + '-guy">' + guySvg + "</g>" + toolboxSvg + piecesSvg +
+        crayon(CARRIER, C.navy, 7, ' id="' + ID + '-carrier" opacity="0"') + crayon(BOMB, C.navy, 7, ' id="' + ID + '-bomb" opacity="0"') +
+        crayon(XMARK[0], C.war, 12, ' id="' + ID + '-x0" opacity="0"') + crayon(XMARK[1], C.war, 12, ' id="' + ID + '-x1" opacity="0"');
+      var orderlySvg = '<g id="' + ID + '-ord">' + orderly() + "</g>";
+      var arm = '<g id="' + ID + '-arm"><path class="arm-ink" d="" fill="none" stroke="' + ink + '" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '<path class="arm-skin" d="" fill="none" stroke="' + SKIN_O + '" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '<g class="arm-cuff"><rect x="130" y="-286" width="42" height="26" fill="#DDE9E6" stroke="' + ink + '" stroke-width="3.4"/></g>' +
+        '<g class="arm-hand"><path d="M-4,-9 L14,-11 L22,-3 L20,7 L6,9 L-4,7 Z M8,-11 L12,-22 L18,-20 L15,-9 Z" fill="' + SKIN_O + '" stroke="' + ink + '" stroke-width="3.2" stroke-linejoin="round"/></g></g>';
+      var cup = '<g id="' + ID + '-cup">' + pillCup() + "</g>";
+      var pose = function (name, inner) { return '<g class="pt-' + name + '" opacity="0">' + inner + "</g>"; };
+      var stars = [0, 1, 2].map(function (i) { return '<g class="pt-star">' + KIT.star(0, 0, 13, i === 1 ? C.orange : C.yellow) + '<circle r="2.2" fill="' + ink + '" opacity="0"/></g>'; }).join("");
+      var patient = '<g id="' + ID + '-pat"><g class="pt-squash">' +
+        pose("fall", jacketed({ look: "left", mood: "worried" })) +
+        '<g class="pt-sitrot">' + pose("sit", jacketed({ look: "left", mood: "worried", build: { legPose: [[90, 90], [90, 90]] } })) + "</g>" +
+        pose("stand", jacketed({ look: "left", mood: "flat" })) +
+        pose("free", patientFree({ mood: "flat" })) +
+        '<g class="pt-stars" opacity="0">' + stars + "</g></g></g>";
+      var plate = cellBack() + drawings + cellDoor(orderlySvg) + patient + arm + cup + cellCeiling();
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="#EFE4C6"/><g id="' + ID + '-cam">' + plate + "</g>");
+
+      var cam = q("cam"), pat = q("pat"), ord = q("ord"), armG = q("arm"), cupG = q("cup");
+      var ptSquash = pat.querySelector(".pt-squash"), sitRot = pat.querySelector(".pt-sitrot"), ptStars = pat.querySelector(".pt-stars");
+      var P = {}; ["fall", "sit", "stand", "free"].forEach(function (n) { P[n] = pat.querySelector(".pt-" + n); });
+      freeArm(P.free);
+      var freeArmG = P.free.querySelector(".pt-arm"), sleeve = P.free.querySelector(".pt-sleeve"), crayonBody = P.free.querySelectorAll(".pt-crayon rect, .pt-crayon path");
+      var freeLeg = P.free.querySelector(".pt-jacket .leg-l"), standG = P.stand;
+      var starEls = Array.prototype.slice.call(ptStars.querySelectorAll(".pt-star"));
+      var flap = cam.querySelector(".hatch-flap"), slotFlap = cam.querySelector(".slot-flap");
+      var armInk = armG.querySelector(".arm-ink"), armSkin = armG.querySelector(".arm-skin"), armHand = armG.querySelector(".arm-hand"), armCuff = armG.querySelector(".arm-cuff");
+      var pills = cupG.querySelector(".cup-pills");
+      var guy = q("guy"), guyPose = { walk: guy.querySelector(".guy-walk"), joy: guy.querySelector(".guy-joy"), shrug: guy.querySelector(".guy-shrug") };
+      var guyWalkCr = guyPose.walk.firstChild, tbShut = q("toolbox").querySelector(".tb-shut"), tbOpen = q("toolbox").querySelector(".tb-open");
+      var pieces = BIRD_PIECES.map(function (p, i) { return q("bp" + i); });
+      var RSIT = KIT.rig(copy(PATIENT, { colorHex: CANVAS, arms: FOLDED, look: "left", build: { legPose: [[90, 90], [90, 90]] } }));
+      var RST = KIT.rig(copy(PATIENT, { colorHex: CANVAS, arms: FOLDED, look: "left" }));
+
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var clamp = function (u) { return Math.max(0, Math.min(1, u)); };
+      var hop = function (t, t0, t1, x0, x1, h) { var u = clamp((t - t0) / (t1 - t0)); return [x0 + (x1 - x0) * smooth(u), -h * 4 * u * (1 - u)]; };
+      // the free arm's angle (degrees, about the shoulder; negative points the crayon lower), keyed, plus a scribble
+      var ARMK = [[tNobody, 75], [tNobody + 0.12, -10], [T_HOP1, 20], [T_DRAW1 - 0.05, 20], [T_DRAW1 + 0.05, -34], [T_TRIP - 0.08, -30], [T_TRIP + 0.1, -12],
+        [T_HOP2, -12], [T_HOP2 + 0.15, 22], [tCarrier - 0.04, 20], [tCarrier + 0.08, -18], [T_HOP3 - 0.1, -18], [T_HOP3 + 0.1, 22], [tBomb - 0.06, 20], [tBomb + 0.06, -26],
+        [tBomb + 0.45, -26], [tBomb + 0.6, 12], [tX - 0.04, 22], [tX + 0.13, -44], [tX + 0.15, 22], [tX + 0.28, -44], [tX + 0.45, 40], [D, 44]];
+      function armAngle(t) {
+        var i = 0;
+        while (i < ARMK.length - 2 && t >= ARMK[i + 1][0]) i++;
+        var a = ARMK[i], b = ARMK[i + 1], u = b[0] > a[0] ? smooth((t - a[0]) / (b[0] - a[0])) : 1, ang = a[1] + (b[1] - a[1]) * u;
+        var draw = (t > T_DRAW1 && t < T_TRIP - 0.12) || (t > tCarrier + 0.08 && t < T_HOP3 - 0.15) || (t > tBomb + 0.06 && t < tBomb + 0.45);
+        return ang + (draw ? 9 * Math.sin(t * 46) : 0);
+      }
+      // a birdhouse piece's flight: out of the toolbox on the trip, up and spinning, down into place on "builds" and after
+      function pieceAt(i, t) {
+        var p = BIRD_PIECES[i], t0 = T_TRIP + 0.02 + i * 0.025, t1 = tBuilds + i * 0.07, u = clamp((t - t0) / (t1 - t0));
+        var from = [TOOLBOX_AT[0] + (i % 3 - 1) * 10, TOOLBOX_AT[1] - 20], to = [p[1], p[2]], apex = 230 + (i % 4) * 40;
+        var x = from[0] + (to[0] - from[0]) * u, y = from[1] + (to[1] - from[1]) * u - apex * 4 * u * (1 - u);
+        var rot = p[3] + (1 - u) * (i % 2 ? 1 : -1) * (360 + i * 40);
+        return { on: t >= t0, x: x, y: y, rot: rot, landed: u >= 1, land: t1 };
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        // ── The hatch drops open; the patient falls, bounces twice, sits up dizzy.
+        var fo = clamp((t - 0.05) / 0.16);
+        var flapA = t < T_LAND ? 100 * (1 - Math.pow(1 - fo, 3)) : 100 + 6 * Math.sin((t - T_LAND) * 8) * Math.exp(-(t - T_LAND) * 2.5);
+        flap.setAttribute("transform", "rotate(" + f(flapA) + " " + HATCH[0] + " " + CEIL + ")");
+
+        var px = X1, py = 0, cur, squash = 1, sitA = 0;
+        if (t < T_LAND) { cur = "fall"; var fu = clamp((t - T_FALL) / (T_LAND - T_FALL)); py = (CEIL - 22) * (1 - fu * fu); }
+        else if (t < T_STAND) {
+          cur = "sit";
+          if (t < T_B1) py = -100 * 4 * ((t - T_LAND) / (T_B1 - T_LAND)) * (1 - (t - T_LAND) / (T_B1 - T_LAND));
+          else if (t < T_B2) py = -34 * 4 * ((t - T_B1) / (T_B2 - T_B1)) * (1 - (t - T_B1) / (T_B2 - T_B1));
+          var land = [T_LAND, T_B1, T_B2].some(function (b) { return t >= b && t < b + 0.07; });
+          if (land) squash = 0.8;
+          sitA = t < T_SITUP ? 62 : 62 * (1 - KIT.smooth((t - T_SITUP) / 0.25));
+          if (t > T_SITUP + 0.25) sitA = 3.5 * Math.sin((t - T_SITUP) * 3.2); // woozy
+        } else if (t < tNobody) {
+          cur = "stand";
+          var h1 = hop(t, T_STAND, T_STAND + 0.32, X1, X2, 70); px = h1[0]; py = h1[1];
+        } else {
+          cur = "free"; px = X2;
+          if (t >= T_HOP1) { var h2 = hop(t, T_HOP1, T_HOP1 + 0.17, X2, (X2 + X3) / 2, 60), h3 = hop(t, T_HOP1 + 0.17, T_HOP1 + 0.34, (X2 + X3) / 2, X3, 60); var hh = t < T_HOP1 + 0.17 ? h2 : h3; px = hh[0]; py = hh[1]; }
+          if (t >= T_HOP2) { var h4 = hop(t, T_HOP2, T_HOP2 + 0.2, X3, (X3 + X4) / 2, 60), h5 = hop(t, T_HOP2 + 0.2, T_HOP2 + 0.4, (X3 + X4) / 2, X4, 60); var hh2 = t < T_HOP2 + 0.2 ? h4 : h5; px = hh2[0]; py = hh2[1]; }
+          if (t >= T_HOP3) { var h6 = hop(t, T_HOP3, T_HOP3 + 0.3, X4, X5, 70); px = h6[0]; py = h6[1]; }
+        }
+        ["fall", "sit", "stand", "free"].forEach(function (n) { show(P[n], n === cur); });
+        pat.setAttribute("transform", "translate(" + f(px) + "," + f(py - 100 * S) + ") scale(" + S + ")");
+        ptSquash.setAttribute("transform", squash === 1 ? "" : "translate(0,100) scale(" + f(2 - squash) + "," + squash + ") translate(0,-100)");
+        sitRot.setAttribute("transform", "rotate(" + f(sitA) + " 0 " + f(RSIT.hipY) + ")");
+        // stars circle his head from the sit-up until he stands
+        var starOn = t > T_SITUP && t < T_STAND;
+        show(ptStars, starOn);
+        if (starOn) {
+          var hx = RSIT.head[0], hy = RSIT.top[1] - 10;
+          starEls.forEach(function (s, i) { var a = t * 7 + (i * Math.PI * 2) / 3; s.setAttribute("transform", "translate(" + f(hx + 28 * Math.cos(a)) + "," + f(hy + 6 * Math.sin(a)) + ") scale(" + (0.75 + 0.25 * Math.sin(a)).toFixed(2) + ")"); });
+          ptStars.setAttribute("transform", "rotate(" + f(sitA) + " 0 " + f(RSIT.hipY) + ")");
+        }
+        // he wriggles in the jacket before the arm pops out
+        var wr = t > T_WRIG && t < tNobody ? 7 * Math.sin((t - T_WRIG) * 30) * Math.min(1, (t - T_WRIG) * 3) : 0;
+        standG.setAttribute("transform", "rotate(" + f(wr) + " 0 100)");
+        // the free arm: pops out on "Nobody", scribbles, sweeps the X; the empty sleeve flaps; the crayon changes color
+        freeArmG.setAttribute("transform", "rotate(" + f(armAngle(t)) + " " + f(SH0[0]) + " " + f(SH0[1]) + ")");
+        sleeve.setAttribute("transform", "rotate(" + f(18 * Math.sin((t - tNobody) * 13) * Math.exp(-Math.max(0, t - tNobody) * 0.9) + 6 * Math.sin(t * 5)) + " " + f(SH0[0]) + " " + f(SH0[1]) + ")");
+        var crCol = t > tX - 0.3 ? C.war : C.navy;
+        Array.prototype.forEach.call(crayonBody, function (e) { e.setAttribute("fill", crCol); });
+        var kick = t > T_KICK - 0.06 && t < T_KICK + 0.3 ? 46 * Math.sin(Math.PI * clamp((t - T_KICK + 0.06) / 0.36)) : 0;
+        freeLeg.setAttribute("transform", "rotate(" + f(kick) + " " + f(RST.hip[0][0]) + " " + f(RST.hip[0][1]) + ")");
+
+        // ── The Orderly: his eyes rise into the window, then his neck keeps rising.
+        var rise = 118 - 58 * smooth((t - (tOrd - 0.15)) / 0.22);
+        var ext = 24 * smooth((t - (tOrd + 0.1)) / 0.45);
+        ord.setAttribute("transform", "translate(" + f(OX) + "," + f(rise - 100 * S) + ") scale(" + S + ")");
+        orderlyNeck(ord, ext);
+
+        // ── The slot flap, the arm and the cup.
+        var flapOpen = t >= tSlides && t < tZip + 0.32 ? (t < tZip + 0.22 ? 1 : 1 - (t - tZip - 0.22) / 0.1) : 0;
+        slotFlap.setAttribute("transform", "translate(0," + (SLOT[1] - 4) + ") scale(1," + (1 - 0.88 * clamp(flapOpen)).toFixed(3) + ") translate(0," + -(SLOT[1] - 4) + ")");
+        var len = 0;
+        if (t >= tSlides + 0.04 && t < tZip) len = ARM_LEN * (1 - Math.pow(1 - clamp((t - tSlides - 0.04) / (tMed - tSlides - 0.04)), 2.2));
+        else if (t >= tZip) len = ARM_LEN * Math.pow(1 - clamp((t - tZip) / 0.22), 2);
+        show(armG, len > 1);
+        if (len > 1) {
+          var ap = armPath(t, len), ang = (Math.atan2(ap.dir[1], ap.dir[0]) * 180) / Math.PI;
+          armInk.setAttribute("d", ap.d); armSkin.setAttribute("d", ap.d);
+          var shake = t > tMed && t < tMed + 0.42 ? 3.5 * Math.sin(t * 90) : 0;
+          armHand.setAttribute("transform", "translate(" + f(ap.end[0] + shake) + "," + f(ap.end[1]) + ") rotate(" + f(ang) + ")");
+          show(armCuff, true);
+        }
+        // the cup rides in the hand, stays when the arm zips back, and is kicked aside after "Nobody"
+        var cx = CUP_AT[0], cy = CUP_AT[1], crot = 0;
+        if (t < tSlides + 0.04) show(cupG, 0);
+        else {
+          show(cupG, 1);
+          if (t < tMed) { var ap2 = armPath(t, Math.max(len, 1)); cx = ap2.end[0] + 26; cy = ap2.end[1] + 14; }
+          if (t > tMed && t < tMed + 0.42) cx += 3.5 * Math.sin(t * 90);
+          if (t > T_KICK) { var ku = clamp((t - T_KICK) / 0.38); cx = CUP_AT[0] + (CUP_KICKED[0] - CUP_AT[0]) * (1 - Math.pow(1 - ku, 2)); cy = CUP_AT[1] - 60 * Math.sin(Math.PI * Math.min(1, ku * 1.6)) * (ku < 0.625 ? 1 : 0); crot = -40 * Math.sin(Math.PI * ku); }
+        }
+        cupG.setAttribute("transform", "translate(" + f(cx) + "," + f(cy) + ") rotate(" + f(crot) + ")");
+        var rattle = (t > tMed && t < tMed + 0.42) || (t > T_KICK && t < T_KICK + 0.38);
+        pills.setAttribute("transform", rattle ? "translate(0," + f(-Math.abs(Math.sin(t * 60)) * 9) + ")" : "");
+
+        // ── The drawings. The little human walks on, trips over the toolbox, lands flat, jumps up pleased; shrugs after the X.
+        crayonDraw(guyWalkCr, (t - T_DRAW1) / 0.22);
+        var gx = 520, gy = GL, grot = 0, gpose = "walk";
+        if (t >= T_TRIP - 0.12 && t < T_TRIP) gx = 520 + 45 * smooth((t - T_TRIP + 0.12) / 0.12);
+        else if (t >= T_TRIP && t < tBuilds + 0.5) {
+          var tu = clamp((t - T_TRIP) / 0.32); gx = 565 + 110 * tu; gy = GL - 70 * 4 * tu * (1 - tu); grot = 92 * smooth(tu);
+          if (tu >= 1) { gx = 675; gy = GL - (t < T_TRIP + 0.4 ? 8 * Math.sin(Math.PI * (t - T_TRIP - 0.32) / 0.08) : 0); }
+        } else if (t >= tBuilds + 0.5) {
+          gx = GUY_END[0]; gpose = t >= tX + 0.3 ? "shrug" : "joy";
+          gy = GL - (gpose === "joy" ? Math.abs(Math.sin((t - tBuilds - 0.5) * 7)) * 16 * Math.exp(-(t - tBuilds - 0.5) * 0.9) : 0);
+        }
+        show(guy, t >= T_DRAW1);
+        guy.setAttribute("transform", "translate(" + f(gx) + "," + f(gy) + ") rotate(" + f(grot) + ")");
+        Object.keys(guyPose).forEach(function (n) { if (n !== "walk") show(guyPose[n], n === gpose); });
+        show(guyPose.walk, gpose === "walk");
+        var tbu = (t - T_DRAW1 - 0.22) / 0.2;
+        crayonDraw(tbShut, t < T_TRIP ? tbu : 0);
+        crayonDraw(tbOpen, t >= T_TRIP ? 1 : 0);
+        pieces.forEach(function (pe, i) {
+          var s = pieceAt(i, t);
+          show(pe, s.on);
+          if (s.on) pe.setAttribute("transform", "translate(" + f(s.x) + "," + f(s.y) + ") rotate(" + f(s.rot) + ")");
+        });
+        crayonDraw(q("carrier"), (t - tCarrier) / 0.85);
+        crayonDraw(q("bomb"), (t - tBomb) / 0.42);
+        crayonDraw(q("x0"), (t - tX) / 0.13);
+        crayonDraw(q("x1"), (t - tX - 0.15) / 0.13);
+
+        // ── The camera, chasing the patient down out of the hatch.
+        var c = camera.at(t);
+        if (t > T_FALL && t < T_LAND + 0.25) {
+          var cu = (t - T_FALL) / (T_LAND + 0.25 - T_FALL), w = 0.85 * smooth(cu / 0.2) * (1 - smooth((cu - 0.7) / 0.3));
+          var target = py - 210;
+          c.y += (target - c.y) * w;
+        }
+        camera.place(cam, c);
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+      // The final frame (war-supply-chain starts on it): the camera on VIEW.final (16:9 [840, -340, 1.0], 9:16
+      // [1050, -560, 0.76]); drawingsDone() as drawn; the patient at x 1620 in the "free" pose, crayon up (arm angle
+      // 44 about his shoulder), the cup kicked to (1172, 34); the Orderly's eyes and chin in the window (risen 60, neck
+      // stretched 24 person units); the hatch hanging open (flap at 100 degrees).
+    })();
+  </script>
+</template>

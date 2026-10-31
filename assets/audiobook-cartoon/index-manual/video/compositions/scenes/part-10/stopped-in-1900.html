@@ -1,0 +1,353 @@
+<template id="stopped-in-1900-template">
+  <!-- stopped-in-1900 · Layer B split screen (storyboards/part-10-cost-of-war.md, scene 8). YOU twice, each next to one
+       plain paper. Left, STOPPED IN 1900: the paper doubles 2, 4, 8, 16 into a column, then climbs to 23.2 papers (the .2
+       a torn sliver, on "two"); a puff of smoke and YOU is the fat cat, hugging it. Right, WHAT YOU DID: one paper. Life
+       rulers unroll under both; a disease blob snaps 10.1 years off the right one and walks off with it, price tag and
+       all; right-YOU walks to the new end and x-rays into his grinning bowler skeleton. The fat cat's big paycheck flips
+       up, his monocle pops out; the skeleton turns, holds up his small one, and his jaw drops off onto the floor.
+       Plain papers only (no seals): this money is not redirected. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #stopped-in-1900-cam, #stopped-in-1900-bg, #stopped-in-1900-art, #stopped-in-1900-pip, #stopped-in-1900-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="stopped-in-1900" data-width="1920" data-height="1080" data-start="0" data-duration="22.4">
+    <div id="stopped-in-1900-cam">
+      <div id="stopped-in-1900-bg"></div>
+      <div id="stopped-in-1900-art"></div>
+      <div id="stopped-in-1900-pip"></div>
+      <div id="stopped-in-1900-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "stopped-in-1900";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var P = ID + "-", ink = C.line, cream = "#FBF6E6", BONE = "#F1EAD6";
+
+      // Per shape: ground y, the divider, the human scales (YOU, the fat cat), the bill scale, where each YOU stands,
+      // the right paper, the two life rulers [x0, length], the header centers and font size, the "23.2x" label, the two
+      // paychecks [w, h], how far the fat cat raises his check arm, the blob and tag sizes, and the two ground lines.
+      var L = V
+        ? { G: 1330, dx: 540, dy: [470, 1404], S: 1.4, SF: 1.68, bs: 0.6, lx: 300, rx: 720, rbill: 622,
+            rulL: [75, 430], rulR: [575, 430], head: [[290, 482], [790, 482]], hfs: 38, lab: [372, 742, 96],
+            big: [196, 96], small: [164, 76], fatRaise: -150, blob: 0.6, tag: 1.05, ground: [[56, 532], [548, 1024]] }
+        : { G: 800, dx: 905, dy: [62, 872], S: 1.45, SF: 1.74, bs: 0.58, lx: 470, rx: 1180, rbill: 1060,
+            rulL: [150, 600], rulR: [935, 600], head: [[640, 92], [1250, 92]], hfs: 46, lab: [610, 300, 104],
+            big: [270, 124], small: [190, 88], fatRaise: -95, blob: 0.72, tag: 1.25, ground: [[56, 897], [913, 1864]] };
+      var G = L.G, S = L.S, SF = L.SF, bs = L.bs;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner) { return '<g transform="translate(' + (+x).toFixed(1) + "," + (+y).toFixed(1) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      var hide = 'opacity="0"';
+      function text(x, y, size, t, fill, family, extra) {
+        return '<text x="' + (+x).toFixed(1) + '" y="' + (+y).toFixed(1) + '" text-anchor="middle" font-family="' + (family || "Oswald") + '" font-weight="' + (family === "Fraunces" ? 900 : 600) + '" font-size="' + size + '" fill="' + (fill || ink) + '" ' + (extra || "") + ">" + t + "</text>";
+      }
+      // Move a person's pupils up (dy < 0) or down, in the face's units (Part 1's without-with-papers).
+      function eyes(svg, dy) {
+        return svg.replace(/<circle class="pupil" cx="([-\d.]+)" cy="([-\d.]+)"/g, function (m, cx, cy) { return '<circle class="pupil" cx="' + cx + '" cy="' + (+cy + dy * 0.5) + '"'; });
+      }
+      // A vector turned by deg degrees clockwise (screen coordinates, as GSAP's rotation).
+      function turn(v, deg) {
+        var r = (deg * Math.PI) / 180, c = Math.cos(r), s = Math.sin(r);
+        return [v[0] * c - v[1] * s, v[0] * s + v[1] * c];
+      }
+      // Where a hand ends up when its arm group turns by deg about the shoulder (person units, then frame units).
+      function raisedHand(o, side, deg, ox, oy, scale) {
+        var r = KIT.rig(o), s = r.shoulder[side], h = r.handLocal[side], v = turn([h[0] - s[0], h[1] - s[1]], deg);
+        return [ox + scale * (s[0] + v[0]), oy + scale * (s[1] + v[1])];
+      }
+
+      // ── The papers ───────────────────────────────────────────────────
+      // A plain bill without its legs (for the column); the bottom bill and the right paper keep theirs.
+      var flat = KIT.money("plain").replace(/<path class="legs"[^>]*\/>/, "");
+      var rnd = KIT.rng(1900);
+      var colX = L.lx - 85 * SF;            // the column stands at the fat cat's hugging hand
+      var N = 23;                           // 23 whole papers (0..22), then the .2 sliver (23)
+      function billY(i) { return G - 48 * bs - i * 50 * bs; }
+      var column = "";
+      for (var i = 0; i < N; i++) {
+        var jx = i === 0 ? 0 : Math.round((rnd() - 0.5) * 8);
+        var art = i === 0 ? g("b0-a", KIT.money("plain", 0.35)) + g("b0-b", KIT.money("plain", 1.05), hide) : flat;
+        column += at(colX + jx, billY(i), bs, g("b" + i, art));
+      }
+      // The .2: the bottom fifth of a paper, torn across the top.
+      var tornEdge = "M48,16 " + [38.4, 28.8, 19.2, 9.6, 0, -9.6, -19.2, -28.8, -38.4].map(function (x, k) { return "L" + x + "," + (k % 2 ? 17 : 12); }).join(" ") + " L-48,15";
+      var sliver = '<defs><clipPath id="' + P + 'torn"><path d="M-48,25 L48,25 L' + tornEdge.slice(1) + ' Z"/></clipPath></defs><g clip-path="url(#' + P + 'torn)">' + flat + "</g>" +
+        '<path d="' + tornEdge + '" fill="none" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>';
+      column += at(colX + 3, billY(N), bs, g("b" + N, sliver));
+      var col = g("sway", column);
+      // The right side's one paper, with its legs.
+      var rbill = at(L.rbill, G - 48 * bs, bs, g("rb-sq", KIT.money("plain", 0.35)));
+
+      // ── The humans ───────────────────────────────────────────────────
+      var YOU = { tone: 2, outfit: "suit", hat: "bowler" };
+      function you(extra) { return Object.assign({}, YOU, extra); }
+      var oy = G - 100 * S, oyF = G - 100 * SF;
+      // left YOU: watching his paper, then looking up at the column, delighted
+      var lman = at(L.lx, oy, S, g("la", KIT.person(you({ look: "left", mood: "flat" }))) + g("lb", eyes(KIT.person(you({ look: "left", mood: "eager" })), -3), hide));
+      // the fat cat: the far arm round the column, the near arm free for the paycheck (his monocle is drawn apart, to pop)
+      var FAT = KIT.castOpts("richHuman", { prop: null, arms: [[-70, -100], [-10, 0]] });
+      var fatman = at(L.lx, oyF, SF, g("fat", KIT.person(FAT), hide));
+      // right YOU: watching the left, worried, then facing his own ruler; his skeleton, facing right, then turned back
+      // to the left with the jaw drawn as its own piece (so it can drop off).
+      function jawless(svg) {
+        var cut = svg.replace(/L8\.0,11\.0 L8\.0,20\.0 L-8\.0,20\.0 L-8\.0,11\.0/g, "L8.0,11.0 L-8.0,11.0")
+          .replace(/<path class="mouth"[^>]*\/>/, '<path d="M-4.5,8.5 v2.5 M0,8.5 v2.5 M4.5,8.5 v2.5" stroke="' + ink + '" stroke-width="1.6"/>');
+        var jaw = '<g id="' + P + 'jaw"><path d="M-8,11 L8,11 L8,20 L-8,20 Z" fill="' + BONE + '" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="miter"/>' +
+          '<path d="M-8,14.5 H8 M-4.5,11 v6 M0,11 v6 M4.5,11 v6" fill="none" stroke="' + ink + '" stroke-width="1.8"/></g>';
+        return cut.replace("<!--face-end-->", jaw + "<!--face-end-->");
+      }
+      var BONES_L = you({ skeleton: true, look: "left" });
+      var rman = '<g transform="translate(' + L.rx + "," + oy.toFixed(1) + ") scale(" + S + ')"><g id="' + P + 'rmove">' +
+        g("ra", KIT.person(you({ look: "left", mood: "flat" }))) +
+        g("rb", KIT.person(you({ look: "left", mood: "worried" })), hide) +
+        g("rc", KIT.person(you({ look: "right", mood: "worried" })), hide) +
+        g("bR", KIT.person(you({ skeleton: true, look: "right" })), hide) +
+        g("bL", jawless(KIT.person(BONES_L)), hide) + "</g></g>";
+
+      // ── The life rulers (0 to 80 years) ──────────────────────────────
+      var RY = G - 2, RH = V ? 30 : 32;
+      function rulerPart(x0, ppy, y0, y1, jagL, jagR) {
+        var xa = x0 + y0 * ppy, xb = x0 + y1 * ppy, top = RY, bot = RY + RH;
+        var zz = function (x, dir) { return [[x, top], [x - 4 * dir, top + RH * 0.25], [x + 3 * dir, top + RH * 0.5], [x - 3 * dir, top + RH * 0.75], [x, bot]]; };
+        var pts = [[xa, top]].concat(jagR ? zz(xb, 1) : [[xb, top], [xb, bot]], jagL ? zz(xa, -1).reverse() : [[xa, bot]]);
+        var d = "M" + pts.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" L") + " Z";
+        var out = '<path d="' + d + '" fill="' + cream + '" stroke="' + ink + '" stroke-width="3.5" stroke-linejoin="miter"/>' +
+          '<path d="M' + (xa + (jagL ? 4 : 2)) + "," + (top + 5) + " H" + (xb - (jagR ? 4 : 2)) + '" stroke="' + C.orange + '" stroke-width="2"/>';
+        for (var yr = Math.ceil(y0 / 5) * 5; yr <= y1 + 0.01; yr += 5) {
+          if ((yr === y0 && jagL) || (yr === y1 && jagR)) continue;
+          var x = x0 + yr * ppy, big = yr % 10 === 0;
+          out += '<path d="M' + x.toFixed(1) + "," + top + " v" + (big ? 13 : 7) + '" stroke="' + ink + '" stroke-width="' + (big ? 2.6 : 1.8) + '"/>';
+          if (yr % 20 === 0) out += text(x + (yr === 0 ? 9 : yr === 80 ? -11 : 0), bot - 4, V ? 15 : 17, String(yr), ink);
+        }
+        return out;
+      }
+      var ppyL = L.rulL[1] / 80, ppyR = L.rulR[1] / 80, CUTY = 80 - 10.1;
+      var cutX = L.rulR[0] + CUTY * ppyR, endX = L.rulR[0] + L.rulR[1];
+      var rulers = g("rulL", rulerPart(L.rulL[0], ppyL, 0, 80)) + g("rulR", rulerPart(L.rulR[0], ppyR, 0, 80)) +
+        g("rulR-main", rulerPart(L.rulR[0], ppyR, 0, CUTY, false, true), hide);
+      // The stolen piece, and its price tag (the library tag, mirrored so it hangs down to the left; its text flipped back).
+      var tag = KIT.props.priceTag({ text: "10.1 YEARS", size: L.tag }).replace(/<text x="([-\d.]+)"/g, function (m, x) {
+        return '<text transform="translate(' + (2 * x).toFixed(1) + ',0) scale(-1,1)" x="' + x + '"';
+      });
+      var piece = g("piece", rulerPart(L.rulR[0], ppyR, CUTY, 80, true, false) +
+        at(cutX + 8, RY + 4, 1, '<g transform="scale(-1,1)">' + g("tag", tag, hide) + "</g>"), hide);
+      var snip = g("snip", [[-1, -1], [1, -1], [-1, 1], [1, 1]].map(function (s) {
+        return '<path d="M' + (cutX + s[0] * 10).toFixed(1) + "," + (RY + RH / 2 + s[1] * 10) + " l" + s[0] * 14 + "," + s[1] * 12 + '" stroke="' + ink + '" stroke-width="4" stroke-linecap="round"/>';
+      }).join(""), hide);
+
+      // ── The disease blob ─────────────────────────────────────────────
+      var bx1 = endX - 16, bx0 = W + 130, bx2 = W + 170, BS = L.blob;
+      var blob = at(bx1, G, BS, g("blob", g("blob-a", KIT.props.diseaseBlob({ seed: 4, mood: "smug" })) + g("blob-b", KIT.props.diseaseBlob({ seed: 4, mood: "grin" }), hide)));
+      var clawY = G - 42 * BS;
+
+      // ── Headers on hanging signs, the paychecks, the label ───────────
+      function header(c, t, col, id) {
+        var s = KIT.props.sign({ text: t, fontSize: L.hfs, color: col }).replace(/<g class="sign-posts">[\s\S]*?<\/g>/, "");
+        var h = Math.round(L.hfs * 1.75), w = Math.round(t.length * L.hfs * 0.56 + 64), top = -70 - h, Y0 = c[1] - top;
+        var ropes = [-1, 1].map(function (k) { return '<path d="M' + k * (w / 2 - 34) + "," + (top - Y0 - 400) + " V" + (top + 4) + '" stroke="' + ink + '" stroke-width="3"/>'; }).join("");
+        return at(c[0], Y0, 1, g(id, ropes + s));
+      }
+      var heads = header(L.head[0], "STOPPED IN 1900", ink, "headL") + header(L.head[1], "WHAT YOU DID", C.war, "headR");
+      function payCheck(w, h, amt) {
+        var x0 = -w / 2, y0 = -h, pad = Math.round(h * 0.09);
+        return '<rect x="' + (x0 + 6) + '" y="' + (y0 + 7) + '" width="' + w + '" height="' + h + '" fill="' + C.ink + '" opacity="0.8"/>' +
+          '<rect x="' + x0 + '" y="' + y0 + '" width="' + w + '" height="' + h + '" rx="3" fill="' + C.money + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + (x0 + pad) + '" y="' + (y0 + pad) + '" width="' + (w - 2 * pad) + '" height="' + (h - 2 * pad) + '" rx="2" fill="none" stroke="' + C.moneyDark + '" stroke-width="2"/>' +
+          text(x0 + pad + 6, y0 + pad + h * 0.17, Math.round(h * 0.15), "PAYCHECK", ink, "Oswald", 'text-anchor="start" letter-spacing="1.5"').replace('text-anchor="middle" ', "") +
+          '<rect x="' + (x0 + pad + 4) + '" y="' + (y0 + h * 0.34) + '" width="' + (w - 2 * pad - 8) + '" height="' + (h * 0.4) + '" fill="' + cream + '" stroke="' + C.moneyDark + '" stroke-width="2"/>' +
+          text(0, y0 + h * 0.66, Math.round(h * 0.32), amt, ink, "Fraunces") +
+          text(x0 + w - pad - 6, -pad - 4, Math.round(h * 0.13), "/ YEAR", ink, "Oswald", 'letter-spacing="1"').replace('text-anchor="middle"', 'text-anchor="end"');
+      }
+      // The fat cat's check rises with his near arm; the skeleton's with his left arm.
+      var fatHand = raisedHand(FAT, 1, L.fatRaise, L.lx, oyF, SF);
+      var bigAt = V ? [fatHand[0] + L.big[0] / 2 - 26, fatHand[1] + 12] : [fatHand[0] + L.big[0] / 2 - 18, fatHand[1] + L.big[1] / 2];
+      var walkTo = cutX - 20, walkDX = walkTo - L.rx;
+      var boneHand = raisedHand(BONES_L, 0, 150, walkTo, oy, S);
+      var smallAt = [boneHand[0] - L.small[0] / 2 + 18, boneHand[1] + 12];
+      var checks = at(bigAt[0], bigAt[1], 1, g("chkBig", payCheck(L.big[0], L.big[1], "$333,636"), hide)) +
+        at(smallAt[0], smallAt[1], 1, g("chkSmall", payCheck(L.small[0], L.small[1], "$14,375"), hide));
+      // His monocle, apart from the face so it can pop out (the kit draws it on the far eye, 6.4 face units wide).
+      var fr = KIT.rig(FAT), mono = [L.lx + SF * fr.hs * 10.8, oyF + SF * (fr.hy - 4 * fr.hs)], mr = 6.4 * fr.hs * SF;
+      var monocle = at(mono[0], mono[1], 1, g("mono", '<circle r="' + mr.toFixed(1) + '" fill="#FFFFFF" fill-opacity="0.25" stroke="' + C.yellow + '" stroke-width="' + (2.4 * fr.hs * SF).toFixed(1) + '"/>' +
+        '<path d="M' + (mr * 0.8).toFixed(1) + "," + (mr * 0.6).toFixed(1) + " q" + (mr * 0.9).toFixed(1) + "," + (mr * 1.6).toFixed(1) + " 0," + (mr * 3.4).toFixed(1) + '" fill="none" stroke="' + C.yellow + '" stroke-width="1.8"/>', hide));
+      // the puff of smoke and the sparkles of the transformation
+      var puffs = [[-62, -30, 48], [0, -86, 56], [62, -24, 50], [-34, 44, 46], [40, 52, 44], [0, -6, 62], [-70, -96, 34], [74, -92, 36]];
+      var puff = at(L.lx, oy + 6 * S, S, g("puff", puffs.map(function (p) {
+        return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="' + cream + '" stroke="' + ink + '" stroke-width="4"/>';
+      }).join("") + puffs.map(function (p) { return '<circle cx="' + (p[0] - p[2] * 0.3) + '" cy="' + (p[1] - p[2] * 0.3) + '" r="' + p[2] * 0.35 + '" fill="#FFFFFF" opacity="0.8"/>'; }).join(""), hide));
+      var sparkAt = [[-90, -150, 16], [96, -120, 12], [-70, 30, 11], [104, 10, 14], [10, -196, 10]];
+      var sparks = sparkAt.map(function (s, i) { return at(L.lx + s[0] * SF / 1.74, oyF + s[1] * SF / 1.74, 1, g("spark-" + i, KIT.star(0, 0, s[2] * 1.6, i % 2 ? C.yellow : C.orange), hide)); }).join("");
+      var b = L.lab;
+      var label = g("lab", text(b[0] + b[2] * 0.05, b[1] + b[2] * 0.07, b[2], "23.2&#215;", C.ink, "Fraunces") +
+        text(b[0], b[1], b[2], "23.2&#215;", C.ink, "Fraunces", 'stroke="' + C.cream + '" stroke-width="' + (b[2] * 0.09).toFixed(1) + '" stroke-linejoin="round" style="paint-order:stroke"'), hide);
+
+      // ── The ground and the divider ───────────────────────────────────
+      var ground = L.ground.map(function (gl) {
+        return '<path d="M' + gl[0] + "," + G + " H" + gl[1] + '" stroke="' + ink + '" stroke-width="5"/>';
+      }).join("");
+      var divider = g("div", [0, 10].map(function (o) {
+        return '<path d="M' + (L.dx + o) + "," + L.dy[0] + " V" + L.dy[1] + '" stroke="' + ink + '" stroke-width="3" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+      }).join(""));
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + divider + heads + ground + rulers + col + rbill + lman + fatman + monocle + puff + sparks +
+        rman + piece + snip + blob + checks + label);
+
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var set = function (id, v, t) { tl.set(q(id), { opacity: v }, t); };
+      var hop = function (id, t, h, n, d) { tl.fromTo(q(id), { y: 0 }, { y: -h, duration: d || 0.08, repeat: 2 * (n || 1) - 1, yoyo: true, ease: "power1.out", immediateRender: false }, t); };
+
+      var COMP = cue("compounding"), YEAR1900 = cue("nineteen"), T23 = cue("twenty-three"), TWO = cue("two"), TIMES = cue("times");
+      var RICH = cue("richer"), DIS = cue("disease"), STEAL = cue("stealing"), TEN = cue("ten"), YEARS = cue("years"), LIFE = cue("life.");
+      var AVG = cue("average"), T333 = cue("thirty-three"), SIX = cue("six"), INSTEAD = cue("instead"), T14 = cue("fourteen");
+      var JAW = KIT.after(ID, "dollars.", 2);
+
+      // "Through": the line splits the paper in two.
+      tl.fromTo(q("div").children, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power2.out" }, 0);
+
+      // "compounding": the left paper doubles, 2, 4, 8, 16, each new lot popping up on top of the last (pops).
+      var pop = function (i, t, d) { tl.fromTo(q("b" + i), { scale: 0, svgOrigin: "0 25" }, { scale: 1, svgOrigin: "0 25", duration: d || 0.16, ease: "back.out(2.6)" }, t); };
+      [[1, 1, COMP], [2, 3, COMP + 0.2], [4, 7, COMP + 0.43], [8, 15, COMP + 0.68]].forEach(function (lot) {
+        for (var i = lot[0]; i <= lot[1]; i++) pop(i, lot[2] + (i - lot[0]) * 0.012);
+      });
+      for (var i = 16; i <= N; i++) gsap.set(q("b" + i), { scale: 0, svgOrigin: "0 25" });
+      var CX = colX + " " + G;
+      [[-1.6, 0.18], [1.2, 0.22], [-0.6, 0.24], [0, 0.26]].reduce(function (t, k) {
+        tl.to(q("sway"), { rotation: k[0], svgOrigin: CX, duration: k[1], ease: "sine.inOut" }, t);
+        return t + k[1];
+      }, COMP + 0.86);
+      // the right paper tries to split too, and cannot
+      tl.fromTo(q("rb-sq"), { scaleY: 1, scaleX: 1, svgOrigin: "0 46" }, { scaleY: 1.18, scaleX: 0.88, svgOrigin: "0 46", duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }, COMP + 0.45);
+      tl.to(q("rb-sq"), { scaleY: 0.92, scaleX: 1.05, svgOrigin: "0 46", duration: 0.2, ease: "power2.out" }, COMP + 0.7);
+      // "governments had stopped": left-YOU looks up at his column; right-YOU's head turns to watch it.
+      set("la", 0, cue("governments")); set("lb", 1, cue("governments"));
+
+      // "nineteen hundred": the headers drop in on their signs (thunk).
+      [["headL", YEAR1900], ["headR", YEAR1900 + 0.08]].forEach(function (h) {
+        tl.fromTo(q(h[0]), { y: -560 }, { y: 0, duration: 0.3, ease: "power3.in" }, h[1] - 0.3);
+        tl.to(q(h[0]), { y: -14, duration: 0.1, ease: "power1.out" }, h[1]);
+        tl.to(q(h[0]), { y: 0, duration: 0.16, ease: "bounce.out" }, h[1] + 0.1);
+      });
+
+      // "twenty-three point two times": seven more papers stack on, faster and faster (rising whistle); on "two" the .2
+      // lands, a torn sliver; the bottom paper's legs splay under the weight; "23.2x" lands on "times".
+      for (var j = 16; j < N; j++) pop(j, T23 + (j - 16) * 0.117, 0.12);
+      pop(N, TWO, 0.14);
+      set("b0-a", 0, T23 + 0.5); set("b0-b", 1, T23 + 0.5);
+      [[1.4, 0.2], [-1, 0.24], [0.5, 0.26], [0, 0.3]].reduce(function (t, k) {
+        tl.to(q("sway"), { rotation: k[0], svgOrigin: CX, duration: k[1], ease: "sine.inOut" }, t);
+        return t + k[1];
+      }, TWO + 0.12);
+      tl.fromTo(q("lab"), { opacity: 0, scale: 2.2, svgOrigin: b[0] + " " + (b[1] - b[2] * 0.35) }, { opacity: 1, scale: 1, svgOrigin: b[0] + " " + (b[1] - b[2] * 0.35), duration: 0.24, ease: "back.out(2)" }, TIMES);
+
+      // "richer": a puff of smoke (pop, sparkle) and left-YOU is the fat cat, top hat, monocle and cigar, hugging the column.
+      set("puff", 1, RICH);
+      tl.fromTo(q("puff"), { scale: 0.25, svgOrigin: "0 0" }, { scale: 1, svgOrigin: "0 0", duration: 0.14, ease: "back.out(2)" }, RICH);
+      tl.to(q("puff"), { scale: 1.3, opacity: 0, svgOrigin: "0 0", duration: 0.4, ease: "power1.in" }, RICH + 0.3);
+      set("lb", 0, RICH + 0.12);
+      tl.fromTo(q("fat"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, RICH + 0.12);
+      set("mono", 1, RICH + 0.12);
+      sparkAt.forEach(function (s, i) {
+        var t = RICH + 0.1 + i * 0.09, el = q("spark-" + i);
+        set("spark-" + i, 1, t);
+        tl.fromTo(el, { scale: 0, rotation: 0, svgOrigin: "0 0" }, { scale: 1.2, rotation: 45, svgOrigin: "0 0", duration: 0.16, ease: "back.out(3)" }, t);
+        tl.to(el, { scale: 0, rotation: 90, svgOrigin: "0 0", duration: 0.2, ease: "power1.in" }, t + 0.3);
+      });
+      tl.fromTo(q("sway"), { rotation: 0 }, { rotation: -1.4, svgOrigin: CX, duration: 0.14, yoyo: true, repeat: 1, ease: "sine.inOut", immediateRender: false }, RICH + 0.3);
+      // right-YOU, a beat later: worried.
+      set("ra", 0, KIT.after(ID, "richer")); set("rb", 1, KIT.after(ID, "richer"));
+
+      // "disease": a life ruler unrolls under each of them.
+      tl.fromTo(q("rulL"), { scaleX: 0, svgOrigin: L.rulL[0] + " " + RY }, { scaleX: 1, svgOrigin: L.rulL[0] + " " + RY, duration: 0.36, ease: "power2.out" }, DIS);
+      tl.fromTo(q("rulR"), { scaleX: 0, svgOrigin: L.rulR[0] + " " + RY }, { scaleX: 1, svgOrigin: L.rulR[0] + " " + RY, duration: 0.36, ease: "power2.out" }, DIS + 0.1);
+
+      // "stealing": the disease blob sneaks in from the right; "ten": it snaps the last 10.1 years off the right ruler
+      // (snip), grins, and on "years" walks off with it under its arm, price tag swinging (squeaky steps).
+      var blobEl = q("blob"), bodyA = q("blob-a").querySelector(".blob-body"), bodyB = q("blob-b").querySelector(".blob-body");
+      tl.fromTo(blobEl, { x: (bx0 - bx1) / BS }, { x: 0, duration: 0.3, ease: "power2.out" }, STEAL - 0.02);
+      hop("blob", STEAL - 0.02, 14, 2, 0.075);
+      tl.fromTo([bodyA, bodyB], { scaleY: 1, scaleX: 1, svgOrigin: "0 0" }, { scaleY: 0.8, scaleX: 1.14, svgOrigin: "0 0", duration: 0.07, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, TEN - 0.04);
+      set("rulR", 0, TEN); set("rulR-main", 1, TEN); set("piece", 1, TEN);
+      set("snip", 1, TEN); set("snip", 0, TEN + 0.16);
+      var pcx = (cutX + endX) / 2, pdx = bx1 - pcx, pdy = clawY - (RY + RH / 2);
+      tl.to(q("piece"), { x: pdx * 0.4, y: pdy - 28, rotation: -8, svgOrigin: pcx + " " + RY, duration: 0.14, ease: "power2.out" }, TEN + 0.02);
+      tl.to(q("piece"), { x: pdx, y: pdy, rotation: 0, svgOrigin: pcx + " " + RY, duration: 0.14, ease: "power2.in" }, TEN + 0.16);
+      set("blob-a", 0, TEN + 0.12); set("blob-b", 1, TEN + 0.12);
+      set("tag", 1, TEN + 0.3);
+      var swing = q("tag").querySelector(".tag-swing");
+      tl.fromTo(swing, { rotation: -40, svgOrigin: "0 0" }, { rotation: 16, svgOrigin: "0 0", duration: 0.24, ease: "power2.out" }, TEN + 0.3);
+      tl.to(swing, { rotation: -6, svgOrigin: "0 0", duration: 0.26, ease: "sine.inOut" }, TEN + 0.54);
+      tl.to(swing, { rotation: 0, svgOrigin: "0 0", duration: 0.24, ease: "sine.inOut" }, TEN + 0.8);
+      var EXIT = YEARS + 0.02, exitD = 0.8;
+      tl.to(blobEl, { x: (bx2 - bx1) / BS, duration: exitD, ease: "power1.in" }, EXIT);
+      tl.to(q("piece"), { x: pdx + (bx2 - bx1), duration: exitD, ease: "power1.in" }, EXIT);
+      hop("blob", EXIT, 12, 4, 0.1);
+      tl.to(swing, { rotation: 22, svgOrigin: "0 0", duration: 0.2, yoyo: true, repeat: 3, ease: "sine.inOut" }, EXIT);
+
+      // On "ten" right-YOU turns to his ruler; a beat after "years" he walks to its new end, and on "life." x-rays (zap)
+      // into his grinning skeleton, bowler still on.
+      set("rb", 0, TEN + 0.1); set("rc", 1, TEN + 0.1);
+      var W0 = YEARS + 0.14, W1 = LIFE - 0.06, rc = q("rc"), hipsR = KIT.rig(you({ look: "right" })).hip;
+      tl.fromTo(q("rmove"), { x: 0 }, { x: walkDX / S, duration: W1 - W0, ease: "none" }, W0);
+      [[".leg-l", hipsR[0].join(" "), 16], [".leg-r", hipsR[1].join(" "), -16]].forEach(function (lg) {
+        var leg = rc.querySelector(lg[0]), n = Math.max(1, Math.round((W1 - W0) / 0.15));
+        tl.fromTo(leg, { rotation: lg[2], svgOrigin: lg[1] }, { rotation: -lg[2], svgOrigin: lg[1], duration: (W1 - W0) / n, repeat: n - 1, yoyo: true, ease: "sine.inOut" }, W0);
+        tl.to(leg, { rotation: 0, svgOrigin: lg[1], duration: 0.05 }, W1);
+      });
+      tl.fromTo(rc, { y: 0 }, { y: -4, duration: (W1 - W0) / 8, repeat: 7, yoyo: true, ease: "sine.inOut", immediateRender: false }, W0);
+      KIT.xray(tl, rc, q("bR"), LIFE);
+
+      // "average": the fat cat pats his column, twice.
+      var fatArmL = q("fat").querySelector(".arm-l"), fatArmR = q("fat").querySelector(".arm-r");
+      var SHL = fr.shoulder[0].join(" "), SHR = fr.shoulder[1].join(" ");
+      tl.fromTo(fatArmL, { rotation: 0, svgOrigin: SHL }, { rotation: 7, svgOrigin: SHL, duration: 0.1, yoyo: true, repeat: 3, ease: "power1.inOut", immediateRender: false }, AVG);
+      // "thirty-three": he raises his big paycheck and it flips up, $333,636 / YEAR (cash register).
+      tl.fromTo(fatArmR, { rotation: 0, svgOrigin: SHR }, { rotation: L.fatRaise, svgOrigin: SHR, duration: 0.2, ease: "back.out(1.6)", immediateRender: false }, T333 - 0.1);
+      set("chkBig", 1, T333 + 0.08);
+      tl.fromTo(q("chkBig"), { scaleY: 0, svgOrigin: "0 0" }, { scaleY: 1, svgOrigin: "0 0", duration: 0.22, ease: "back.out(2.4)" }, T333 + 0.08);
+      // "six": his monocle pops out, bounces on the floor and rolls away (pop).
+      var mo = q("mono"), floor = G - mono[1] - mr;
+      tl.to(mo, { y: -mr * 5, x: mr * 2, rotation: 200, duration: 0.18, ease: "power2.out" }, SIX);
+      tl.to(mo, { y: floor, x: mr * 5, rotation: 420, duration: 0.3, ease: "power2.in" }, SIX + 0.18);
+      tl.to(mo, { y: floor - mr * 2.4, x: mr * 7, duration: 0.12, ease: "power1.out" }, SIX + 0.48);
+      tl.to(mo, { y: floor, x: mr * 8.6, duration: 0.12, ease: "power1.in" }, SIX + 0.6);
+      tl.to(mo, { x: mr * 13, rotation: 720, duration: 0.6, ease: "power2.out" }, SIX + 0.72);
+      // "instead": the skeleton turns to look at the big check; "fourteen": he holds up his small one.
+      set("bR", 0, INSTEAD); set("bL", 1, INSTEAD);
+      var boneArm = q("bL").querySelector(".arm-l"), BSH = KIT.rig(BONES_L).shoulder[0].join(" ");
+      tl.fromTo(boneArm, { rotation: 0, svgOrigin: BSH }, { rotation: 150, svgOrigin: BSH, duration: 0.24, ease: "back.out(1.4)", immediateRender: false }, T14 - 0.08);
+      set("chkSmall", 1, T14 + 0.12);
+      tl.fromTo(q("chkSmall"), { scaleY: 0, svgOrigin: "0 0" }, { scaleY: 1, svgOrigin: "0 0", duration: 0.2, ease: "back.out(2.4)" }, T14 + 0.12);
+      // "seventy-five": the fat cat fans himself with his big check.
+      var BIG0 = cue("seventy-five");
+      tl.to(fatArmR, { rotation: L.fatRaise + 10, svgOrigin: SHR, duration: 0.16, yoyo: true, repeat: 3, ease: "sine.inOut" }, BIG0 - 0.5);
+      tl.to(q("chkBig"), { rotation: 6, svgOrigin: "0 0", duration: 0.16, yoyo: true, repeat: 3, ease: "sine.inOut" }, BIG0 - 0.5);
+      // after "dollars." (the second): the skeleton's jaw drops off onto the floor (thunk).
+      var r = KIT.rig(BONES_L), fall = (100 - r.hy) / r.hs - 20, jaw = q("jaw");
+      tl.to(jaw, { y: fall, rotation: 18, svgOrigin: "0 15", duration: 0.13, ease: "power2.in" }, JAW - 0.13);
+      tl.to(jaw, { y: fall - 6, rotation: 8, svgOrigin: "0 15", duration: 0.06, ease: "power1.out" }, JAW);
+      tl.to(jaw, { y: fall, rotation: 0, svgOrigin: "0 15", duration: 0.06, ease: "power1.in" }, JAW + 0.06);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

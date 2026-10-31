@@ -1,0 +1,457 @@
+<template id="smoke-detector-live-template">
+  <!-- smoke-detector-live · Layer B (storyboards/part-14-decentralized-fda.md): the patient's kitchen. The charred smoke
+       detector from Part 12 still holds up its singed "RE: SMOKE" letter and starts writing another; its mailbox flag
+       pops up on "mail?". On "automatically" a live detector slams onto it and flattens it into a pancake, leaving only
+       the flag sticking out, which droops; the letter flutters to the floor. On "real" its screen blinks on and readings
+       scroll. The patient holds up her SAFE bottle; a side panel flips out and lights "HEADACHES 12%" and "SEVERE 3%";
+       she reads it with the cap on, rubs her temple, nods and sets it down. The lawyer rushes in with $ eyes and an
+       "INJURED?" sign, finds nobody, opens his briefcase (a moth), and slinks off. The FDA's own bottle pops up and its
+       panel flips out blank; she flips a coin over it, and it lands on its edge on the FDA bottle's cap. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #smoke-detector-live-cam, #smoke-detector-live-bg, #smoke-detector-live-art, #smoke-detector-live-pip, #smoke-detector-live-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="smoke-detector-live" data-width="1920" data-height="1080" data-start="0" data-duration="22.74">
+    <div id="smoke-detector-live-cam">
+      <div id="smoke-detector-live-bg"></div>
+      <div id="smoke-detector-live-art"></div>
+      <div id="smoke-detector-live-pip"></div>
+      <div id="smoke-detector-live-grain"></div>
+    </div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "smoke-detector-live";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
+      var P = ID + "-", INK = C.line, WHITE = "#FBF6E6", CARD = "#FBF5E4", CHAR = "#3A302A";
+
+      // Layout per shape. floor: the ground line; S: the patient's scale and pat her x; law/lawS: the lawyer's x and
+      // scale, lawIn/lawOut where he runs in from and slinks off to; det: the detectors' wall spot [x, y, scale];
+      // counter: [x0, x1] (its top is where her hand sets the bottle down, with the arm pointing adn degrees);
+      // win: the window [x, y, w, h]; banner: [x, y, w, h, font size, lines]; fda: the FDA bottle's x and fdaPanel the
+      // right edge of its blank panel (bottle units); BS: the bottles' size; toaster: its x on the counter (16:9).
+      var L = V
+        ? { floor: 1440, S: 3.4, pat: 270, law: 860, lawS: 3.0, lawIn: 1420, lawOut: 1460, det: [300, 600, 1.35], counter: [385, 1036], adn: 45,
+            win: [600, 620, 360, 250], banner: [60, 92, 660, 210, 58, ["REAL-TIME SAFETY", "MONITORING"]], fda: 832, fdaPanel: 90, BS: 0.56 }
+        : { floor: 880, S: 3.1, pat: 460, law: 1340, lawS: 3.1, lawIn: 2260, lawOut: 2300, det: [300, 205, 1.25], counter: [590, 1500], adn: 80,
+            win: [1120, 205, 320, 235], banner: [700, 46, 820, 112, 50, ["REAL-TIME SAFETY MONITORING"]], fda: 1100, fdaPanel: 96, BS: 0.66, toaster: 1440 };
+      var S = L.S, PY = L.floor - 100 * S, BS = L.BS;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner) { return '<g transform="translate(' + (+x).toFixed(1) + "," + (+y).toFixed(1) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b) o[k] = b[k]; return o; }
+      function pts(a) { return a.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" "); }
+      function poly(a, fill, w, extra) { return '<polygon points="' + pts(a) + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (w || 3) + '" stroke-linejoin="miter" ' + (extra || "") + "/>"; }
+      function text(x, y, size, t, fill, family, extra) {
+        return '<text x="' + x + '" y="' + y + '" font-family="' + (family || "Oswald") + '" font-weight="' + (family === "Inter" ? 700 : 600) + '" font-size="' + size + '" fill="' + (fill || INK) + '" ' + (extra || "") + ">" + t + "</text>";
+      }
+      var uid = 0;
+
+      // ── The kitchen (shared with outcome-label) ───────────────────────────
+      // A checker floor, a tiled backsplash over cream cabinets with a mustard top, and a window with orange curtains.
+      function kitchen(k) {
+        var out = "", x, y, i, j, top = k.top, x0 = k.counter[0], x1 = k.counter[1], fl = k.floor;
+        var cs = V ? 64 : 58;
+        out += '<defs><clipPath id="' + P + 'floor"><rect x="44" y="' + fl + '" width="' + (W - 88) + '" height="' + (H - 88 - fl + 44) + '"/></clipPath></defs><g clip-path="url(#' + P + 'floor)">' +
+          '<rect x="44" y="' + fl + '" width="' + (W - 88) + '" height="' + (H - 44 - fl) + '" fill="' + CARD + '"/>';
+        for (i = 0; 44 + i * cs < W - 44; i++) for (j = 0; fl + j * cs < H - 44; j++) if ((i + j) % 2) out += '<rect x="' + (44 + i * cs) + '" y="' + (fl + j * cs) + '" width="' + cs + '" height="' + cs + '" fill="' + C.peri + '" opacity="' + (V ? 0.32 : 0.5) + '"/>';
+        out += '</g><rect x="44" y="' + (fl - 3) + '" width="' + (W - 88) + '" height="6" fill="' + INK + '"/>';
+        if (k.win) {
+          var w = k.win;
+          out += '<rect x="' + (w[0] + 10) + '" y="' + (w[1] + 10) + '" width="' + w[2] + '" height="' + w[3] + '" fill="' + C.ink + '" opacity="0.85"/>' +
+            '<rect x="' + w[0] + '" y="' + w[1] + '" width="' + w[2] + '" height="' + w[3] + '" fill="' + C.cyan + '" stroke="' + INK + '" stroke-width="5"/>' +
+            '<rect x="' + w[0] + '" y="' + w[1] + '" width="' + w[2] + '" height="' + w[3] + '" fill="url(#' + P + 'fine)" opacity="0.25"/>' +
+            KIT.star(w[0] + w[2] * 0.72, w[1] + w[3] * 0.3, 14, WHITE) +
+            '<path d="M' + (w[0] + w[2] / 2) + "," + w[1] + " V" + (w[1] + w[3]) + " M" + w[0] + "," + (w[1] + w[3] / 2) + " H" + (w[0] + w[2]) + '" stroke="' + INK + '" stroke-width="5"/>' +
+            poly([[w[0] - 14, w[1] + w[3]], [w[0] + w[2] + 14, w[1] + w[3]], [w[0] + w[2] + 8, w[1] + w[3] + 16], [w[0] - 8, w[1] + w[3] + 16]], C.tan, 4) +
+            poly([[w[0] - 6, w[1] - 8], [w[0] + w[2] * 0.3, w[1] - 8], [w[0] + w[2] * 0.2, w[1] + w[3] * 0.62], [w[0] - 6, w[1] + w[3] * 0.72]], C.orange, 4) +
+            poly([[w[0] + w[2] + 6, w[1] - 8], [w[0] + w[2] * 0.7, w[1] - 8], [w[0] + w[2] * 0.8, w[1] + w[3] * 0.62], [w[0] + w[2] + 6, w[1] + w[3] * 0.72]], C.orange, 4) +
+            '<rect x="' + (w[0] - 16) + '" y="' + (w[1] - 16) + '" width="' + (w[2] + 32) + '" height="12" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="4"/>';
+        }
+        var sh = V ? 150 : 140, ts = V ? 38 : 35;
+        out += '<rect x="' + x0 + '" y="' + (top - sh) + '" width="' + (x1 - x0) + '" height="' + sh + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="3"/>';
+        for (x = x0; x < x1; x += ts) out += '<path d="M' + x + "," + (top - sh) + " V" + top + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.5"/>';
+        for (y = top - sh; y < top; y += ts) out += '<path d="M' + x0 + "," + y + " H" + x1 + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.5"/>';
+        var tr = KIT.rng(3);
+        for (x = x0; x < x1 - ts; x += ts) for (y = top - sh; y < top - ts + 1; y += ts) if (tr() < 0.12) out += '<rect x="' + (x + 2) + '" y="' + (y + 2) + '" width="' + (ts - 4) + '" height="' + (ts - 4) + '" fill="' + C.orange + '" opacity="0.8"/>';
+        var ch = fl - top;
+        out += '<rect x="' + x0 + '" y="' + top + '" width="' + (x1 - x0) + '" height="' + ch + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="5"/>';
+        var nd = Math.max(1, Math.round((x1 - x0) / (V ? 190 : 200))), dw = (x1 - x0) / nd;
+        for (i = 0; i < nd; i++) {
+          var dx = x0 + i * dw;
+          out += '<rect x="' + (dx + 14) + '" y="' + (top + 34) + '" width="' + (dw - 28) + '" height="' + (ch - 56) + '" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3"/>' +
+            '<rect x="' + (dx + dw * 0.55) + '" y="' + (top + 34) + '" width="' + (dw * 0.45 - 14) + '" height="' + (ch - 56) + '" fill="url(#' + P + 'fine)" opacity="0.3"/>' +
+            '<rect x="' + (dx + dw / 2 - 16) + '" y="' + (top + 52) + '" width="32" height="9" rx="2" fill="' + C.orange + '" stroke="' + INK + '" stroke-width="2.4"/>';
+        }
+        out += '<rect x="' + (x0 - 12) + '" y="' + (top - 6) + '" width="' + (x1 - x0 + 24) + '" height="22" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="5"/>' +
+          '<path d="M' + (x0 - 6) + "," + (top + 9) + " H" + (x1 + 6) + '" stroke="' + WHITE + '" stroke-width="3" opacity="0.8"/>';
+        // a chrome 1950s toaster at the far end of the counter
+        if (k.toaster) {
+          var tx = k.toaster, ty = top - 6;
+          out += poly([[tx - 50, ty], [tx + 50, ty], [tx + 46, ty - 64], [tx + 34, ty - 76], [tx - 34, ty - 76], [tx - 46, ty - 64]], "#C9CED6", 4) +
+            '<rect x="' + (tx + 10) + '" y="' + (ty - 74) + '" width="30" height="72" fill="url(#' + P + 'fine)" opacity="0.35"/>' +
+            '<path d="M' + (tx - 30) + "," + (ty - 72) + " h22 M" + (tx + 8) + "," + (ty - 72) + ' h22" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>' +
+            '<path d="M' + (tx - 46) + "," + (ty - 30) + " H" + (tx + 46) + '" stroke="' + C.orange + '" stroke-width="4"/>' +
+            poly([[tx + 50, ty - 40], [tx + 62, ty - 40], [tx + 62, ty - 32], [tx + 50, ty - 32]], INK, 2);
+        }
+        return out;
+      }
+
+      // ── The patient (the same woman in every Part 14 scene) ───────────────
+      var PAT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      // Her mustard-and-orange striped scarf, at KIT.rig(o).neck (person units); the tails are .scarf-tails.
+      function scarf(o) {
+        var r = KIT.rig(o), n = r.neck, f = r.facing, x = n[0], y = n[1] + 1, cid = P + "scarf" + ++uid;
+        var band = [[x - 9, y - 3], [x + 9, y - 5], [x + 10.5, y + 3], [x - 9.5, y + 5]];
+        var t1 = [[x + 3 * f, y + 3], [x + 9 * f, y + 2], [x + 15 * f, y + 19], [x + 9 * f, y + 21]];
+        var t2 = [[x + 2 * f, y + 4], [x + 7 * f, y + 5], [x + 6 * f, y + 25], [x + 0 * f, y + 23]];
+        var stripes = "";
+        for (var s = -16; s < 30; s += 5) stripes += '<path d="M' + (x + s) + "," + (y - 8) + " l-8,36" + '" stroke="' + C.yellow + '" stroke-width="2.4"/>';
+        var c1 = cid + "b", c2 = cid + "t1", c3 = cid + "t2";
+        return '<g class="scarf"><defs><clipPath id="' + c1 + '"><polygon points="' + pts(band) + '"/></clipPath><clipPath id="' + c2 + '"><polygon points="' + pts(t1) + '"/></clipPath><clipPath id="' + c3 + '"><polygon points="' + pts(t2) + '"/></clipPath></defs>' +
+          '<g class="scarf-tails">' + poly(t2, C.orange, 2) + '<g clip-path="url(#' + c3 + ')">' + stripes + "</g>" + poly(t1, C.orange, 2) + '<g clip-path="url(#' + c2 + ')">' + stripes + "</g></g>" +
+          poly(band, C.orange, 2) + '<g clip-path="url(#' + c1 + ')">' + stripes + "</g>" +
+          poly([[x + 1 * f, y + 1], [x + 7 * f, y], [x + 8 * f, y + 6], [x + 2 * f, y + 7]], C.yellow, 2) + "</g>";
+      }
+      // A person with a second left arm drawing (class alt-b, hidden) to swap to: both arm-l drawings in one figure.
+      function twoLeftArms(o, armsB) {
+        var a = KIT.person(o), b = KIT.person(mix(o, { arms: [armsB, o.arms[1]] }));
+        var ia = a.indexOf('<g class="arm-l">'), ja = a.indexOf('<g class="arm-r">'), ib = b.indexOf('<g class="arm-l">'), jb = b.indexOf('<g class="arm-r">');
+        return a.slice(0, ia) + '<g class="alt-a">' + a.slice(ia, ja) + '</g><g class="alt-b" opacity="0">' + b.slice(ib, jb) + "</g>" + a.slice(ja);
+      }
+
+      // ── Her SAFE bottle (KIT.props.pillBottle, in bottle units) with a teal tick and the side panel ──
+      // The panel: a slate screen on an arm from the bottle's right side; it flips out about (29, -52). lit: drawn
+      // already lit (outcome-label). Parts: .panel (flip it), .panel-screen (fill), .panel-l1 / .panel-l2 (the lines).
+      function panel(lines, lit, x1) {
+        var x0 = 36, y0 = -82, y1 = -22;
+        x1 = x1 || 172;
+        return '<g class="panel"><path d="M27,-60 H' + x0 + ' M27,-42 H' + x0 + '" stroke="' + INK + '" stroke-width="4"/>' +
+          '<rect x="' + (x0 + 5) + '" y="' + (y0 + 5) + '" width="' + (x1 - x0) + '" height="' + (y1 - y0) + '" fill="' + C.ink + '" opacity="0.8"/>' +
+          '<rect x="' + x0 + '" y="' + y0 + '" width="' + (x1 - x0) + '" height="' + (y1 - y0) + '" rx="4" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3.4"/>' +
+          '<rect class="panel-screen" x="' + (x0 + 6) + '" y="' + (y0 + 6) + '" width="' + (x1 - x0 - 12) + '" height="' + (y1 - y0 - 12) + '" rx="2" fill="' + (lit ? C.slate : "#151A28") + '"/>' +
+          (lines ? text(x0 + 13, y0 + 27, 15, lines[0], C.cream, "Oswald", 'class="panel-l1" letter-spacing="0.5"' + (lit ? "" : ' opacity="0"')) +
+            text(x0 + 13, y0 + 49, 15, lines[1], C.yellow, "Oswald", 'class="panel-l2" letter-spacing="0.5"' + (lit ? "" : ' opacity="0"')) : "") + "</g>";
+      }
+      function safeBottle(lit) {
+        return panel(["HEADACHES 12%", "SEVERE 3%"], lit) + KIT.props.pillBottle({ face: "smile", label: "SAFE" }) +
+          '<path d="M16,-29 l4,4 l8,-10" fill="none" stroke="' + C.med + '" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>';
+      }
+
+      // ── The lawyer (box build, jowls, bald; the same man in every Part 14 scene) ──
+      var LAW = { tone: 3, outfit: "suit", color: 1, holdR: "briefcase" };
+      // His briefcase, hanging from his hand at (0,0) (person units), closed or open (lid up, empty).
+      function briefcase(open) {
+        var body = [[-18, 6], [18, 6], [18, 30], [-18, 30]];
+        return open
+          ? poly([[-18, 6], [18, 6], [24, -12], [-12, -12]], "#8A6440", 2.6) + poly([[-14, 2], [14, 2], [12, -8], [-10, -8]], "#2A1D12", 1.6) +
+            poly(body, "#6B4A2F", 2.6) + '<path d="M-18,12 H18" stroke="' + INK + '" stroke-width="1.6"/>'
+          : poly(body, "#6B4A2F", 2.6) + '<path d="M-6,6 V0 H6 V6" fill="none" stroke="' + INK + '" stroke-width="2.4"/>' +
+            '<path d="M-18,13 H18" stroke="' + INK + '" stroke-width="1.6"/><rect x="-3" y="10" width="6" height="6" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="1.4"/>';
+      }
+
+      // ── The two smoke detectors ──────────────────────────────────────────
+      // The old one (Part 12): round, charred black and smoking, white eyes, little stick arms: the left holds up the
+      // singed "RE: SMOKE" letter, the right a pen over a fresh letter on a clipboard. Units: r 60 around (0,0).
+      var eyes = [-18, 18].map(function (x) {
+        return '<g class="od-eye"><ellipse cx="' + x + '" cy="-12" rx="10" ry="12" fill="#FFF" stroke="' + INK + '" stroke-width="2.4"/><circle class="od-pupil" cx="' + (x + 2) + '" cy="-11" r="4.2" fill="' + INK + '"/></g>';
+      }).join("");
+      function singed(w, h) {
+        var e = [], r = KIT.rng(7), i;
+        for (i = 0; i <= 10; i++) e.push([-w / 2 + (w * i) / 10, -h / 2 + (i % 2 ? 4 : 0) + r() * 3]);
+        e.push([w / 2, h / 2 - 6]);
+        for (i = 10; i >= 0; i--) e.push([-w / 2 + (w * i) / 10, h / 2 - (i % 2 ? 5 : 0) - r() * 3]);
+        return e;
+      }
+      var letter = poly(singed(96, 60), "#E9DFC2", 2.6) + '<path d="M-46,-28 L0,4 L46,-28" fill="none" stroke="' + INK + '" stroke-width="2"/>' +
+        poly([[-48, -30], [-30, -27], [-34, -14], [-48, -10]], "#4A3A30", 1.4) + poly([[48, 27], [30, 25], [36, 12], [48, 10]], "#4A3A30", 1.4) +
+        text(0, 22, 18, "RE: SMOKE", INK, "Oswald", 'text-anchor="middle" letter-spacing="1"');
+      var clip = poly([[72, -8], [118, -8], [118, 54], [72, 54]], "#B98A55", 2.4) + '<rect x="77" y="-2" width="36" height="52" fill="' + CARD + '"/>' +
+        '<path d="M82,8 H107 M82,18 H107 M82,28 H100" stroke="' + INK + '" stroke-width="1.6" opacity="0.35"/>' +
+        g("od-scrib", '<path d="M81,9 l3,-3 l3,3 l3,-3 l3,3 l3,-3 l3,3 l3,-3 l3,3 M81,19 l3,-3 l3,3 l3,-3 l3,3 l3,-3 l3,3 l3,-3 M81,29 l3,-3 l3,3 l3,-3 l3,3 l3,-3" fill="none" stroke="' + INK + '" stroke-width="1.8" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>');
+      var smoke = [-14, 4, 20].map(function (dx, i) { return '<path class="od-smoke" d="M' + dx + "," + (-66 - i * 3) + ' l-7,-10 l7,-10 l-7,-10" fill="none" stroke="#8C8782" stroke-width="4" stroke-linecap="round"/>'; }).join("");
+      var oldDet = g("od-sq",
+        '<path d="M-48,-30 L-74,-58 L-100,-62" fill="none" stroke="' + INK + '" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '<circle r="60" fill="' + CHAR + '" stroke="' + INK + '" stroke-width="5"/><circle r="40" fill="none" stroke="#241C17" stroke-width="3"/>' +
+        '<path d="M-14,30 H14 M-10,40 H10" stroke="#241C17" stroke-width="3"/>' + '<path d="M18,-50 Q40,-44 50,-20" fill="none" stroke="#5B4C40" stroke-width="4"/>' +
+        eyes + '<path d="M-10,12 Q0,8 10,12" fill="none" stroke="#FFF" stroke-width="2.4"/>' + clip +
+        '<path d="M50,20 L66,32" fill="none" stroke="' + INK + '" stroke-width="4" stroke-linecap="round"/>' +
+        g("od-pen", '<path d="M66,32 L84,4" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/><path d="M66,32 L84,4" stroke="' + C.yellow + '" stroke-width="2.4" stroke-linecap="round"/>') +
+        g("od-smoke", smoke));
+      // flattened: a crinkled charred pancake under the new detector's rim, its two eyes still blinking
+      var pk = [], pr = KIT.rng(12);
+      for (var pi = 0; pi <= 16; pi++) pk.push([-116 + pi * 14.5, 84 - pr() * 5 - (pi > 3 && pi < 13 ? 0 : 0)]);
+      for (pi = 16; pi >= 0; pi--) pk.push([-116 + pi * 14.5, 104 + pr() * 6]);
+      var pancake = poly(pk, CHAR, 4) + [-30, 30].map(function (x) { return '<g class="pk-eye"><ellipse cx="' + x + '" cy="95" rx="9" ry="6" fill="#FFF" stroke="' + INK + '" stroke-width="2"/><circle cx="' + (x + 1) + '" cy="96" r="3" fill="' + INK + '"/></g>'; }).join("");
+      // the mailbox flag: a post and a little flag, pivot (0,0); rotation 0 = up (raised), 150 = lowered
+      var flag = '<path d="M0,0 V-40" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>' + poly([[0, -40], [22, -40], [22, -26], [0, -26]], "#6E2C20", 2.6) + '<circle r="4" fill="' + CHAR + '" stroke="' + INK + '" stroke-width="2"/>';
+
+      // The live one: cream, an orange ring, a slate screen with scrolling readings and a red LIVE lamp. r 88.
+      var wave = "", wx;
+      for (wx = -70; wx < 760; wx += 60) wave += " L" + (wx + 14) + ",6 L" + (wx + 20) + ",-14 L" + (wx + 26) + ",14 L" + (wx + 31) + ",2 L" + (wx + 60) + ",2";
+      var bars = "";
+      for (wx = -60; wx < 760; wx += 14) { var bh = ((Math.abs(wx * 7) % 9) + 3) * 1.4; bars += '<rect x="' + wx + '" y="' + (20 - bh).toFixed(1) + '" width="8" height="' + bh.toFixed(1) + '" fill="' + C.cyan + '" opacity="0.75"/>'; }
+      var liveDet = '<ellipse cx="6" cy="10" rx="92" ry="90" fill="' + C.ink + '" opacity="0.8"/>' +
+        '<circle r="88" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="5"/><circle r="78" fill="none" stroke="' + C.orange + '" stroke-width="5"/>' +
+        '<defs><clipPath id="' + P + 'dc"><circle r="86"/></clipPath><clipPath id="' + P + 'screen"><rect x="-62" y="-26" width="124" height="52" rx="3"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'dc)"><rect x="30" y="-90" width="70" height="180" fill="url(#' + P + 'fine)" opacity="0.35"/></g>' +
+        '<rect x="-70" y="-34" width="140" height="68" rx="6" fill="' + C.cream + '" stroke="' + INK + '" stroke-width="3.4"/>' +
+        '<rect x="-62" y="-26" width="124" height="52" rx="3" fill="#151A28"/>' +
+        '<g clip-path="url(#' + P + 'screen)">' + g("ld-on", '<rect x="-62" y="-26" width="124" height="52" fill="' + C.slate + '"/>' +
+          g("ld-wave", '<path d="M-70,-4' + wave.replace(/,(-?\d+)/g, function (m, y) { return "," + (+y - 6); }) + '" fill="none" stroke="' + C.yellow + '" stroke-width="3" stroke-linejoin="round"/>' + '<g transform="translate(0,4)">' + bars + "</g>"), 'opacity="0"') + "</g>" +
+        g("ld-lamp", '<circle cx="-30" cy="-54" r="8" fill="' + C.war + '" stroke="' + INK + '" stroke-width="2.6"/>', 'opacity="0.35"') +
+        text(-16, -47, 19, "LIVE", INK, "Oswald", 'letter-spacing="1.5"') +
+        '<path d="M-26,50 H26 M-18,62 H18" stroke="' + INK + '" stroke-width="3.4" stroke-linecap="round"/>';
+
+      // ── The patient: arms down, the bottle in her right hand ──
+      // Her right arm is a nearly straight arm turned about her shoulder: handAt(a) is her hand with the arm pointing
+      // a degrees (0 = down). The counter top is where the bottle stands when she sets it down (a = L.adn).
+      var patO = mix(PAT, { look: "right", arms: [[-8, -4], [8, 4]] });
+      var R = KIT.rig(patO), SH = R.shoulder[1], HAND = R.hand[1];
+      var A0 = 6, AUP = 115, ADN = L.adn;
+      function handAt(a) {
+        var th = ((A0 - a) * Math.PI) / 180, vx = HAND[0] - SH[0], vy = HAND[1] - SH[1];
+        return [SH[0] + vx * Math.cos(th) - vy * Math.sin(th), SH[1] + vx * Math.sin(th) + vy * Math.cos(th)];
+      }
+      var down = handAt(ADN), top = Math.round(PY + S * (down[1] + 26));
+      var patArt = twoLeftArms(patO, [-150, 119]) + scarf(patO) + g("pat-bottle", safeBottle(false));
+
+      // ── The lawyer: rushing in with $ eyes and his sign up; then glum. The briefcase hangs from his right hand. ──
+      var lawO = mix(LAW, { holdR: null, look: "left", arms: [[-160, -172], [8, 4]] }), LR = KIT.rig(lawO);
+      var sign = KIT.props.sign({ text: "INJURED?", posts: 1, height: 60, size: 0.45 });
+      var moth = g("moth", g("moth-w", '<path d="M0,0 l-10,-7 l2,10 Z M0,0 l10,-7 l-2,10 Z" fill="#E9E1CC" stroke="' + INK + '" stroke-width="1.8" stroke-linejoin="round"/>') + '<ellipse rx="1.8" ry="4.5" fill="' + INK + '"/>', 'opacity="0"');
+      var law = g("law-j",
+        g("law-a", KIT.person(mix(lawO, { mood: "greedy" }))) + g("law-b", KIT.person(mix(lawO, { mood: "sad" })), 'opacity="0"') +
+        at(LR.hand[0][0], LR.hand[0][1] + 8, 1, g("law-sign", sign)) +
+        at(LR.hand[1][0], LR.hand[1][1] - 2, 1, g("brief-c", briefcase(false)) + g("brief-o", briefcase(true), 'opacity="0"') + at(4, -4, 1, moth)));
+
+      // The FDA's own bottle: plain, "FDA", with a blank panel. The coin: mustard, a star on its face.
+      var fdaBottle = panel(null, false, L.fdaPanel) + KIT.props.pillBottle({ label: "FDA" });
+      var coin = g("coin-s", '<ellipse rx="11" ry="11" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.6"/>' + KIT.star(0, 0, 7, C.orange));
+
+      // The banner, unrolled from the left behind a little roll.
+      var B = L.banner, nt = 34;
+      var ribbon = function (dx, dy, fill, extra) {
+        return '<path d="M' + (B[0] + dx) + "," + (B[1] + dy) + " H" + (B[0] + B[2] + dx) + " l" + -nt + "," + B[3] / 2 + " l" + nt + "," + B[3] / 2 + " H" + (B[0] + dx) + " l" + nt + "," + -B[3] / 2 + ' Z" fill="' + fill + '" ' + (extra || "") + "/>";
+      };
+      var banner = '<defs><clipPath id="' + P + 'bclip"><rect id="' + P + 'bmask" x="' + (B[0] - 4) + '" y="' + (B[1] - 10) + '" width="0" height="' + (B[3] + 30) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'bclip)">' + ribbon(10, 10, C.ink, 'opacity="0.85"') + ribbon(0, 0, CARD, 'stroke="' + INK + '" stroke-width="5" stroke-linejoin="round"') +
+        '<rect x="' + (B[0] + nt + 14) + '" y="' + (B[1] + 12) + '" width="' + (B[2] - 2 * nt - 28) + '" height="' + (B[3] - 24) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+        B[5].map(function (ln, i) { return text(B[0] + B[2] / 2, B[1] + B[3] / 2 + B[4] * 0.36 + (i - (B[5].length - 1) / 2) * B[4] * 1.2, B[4], ln, INK, "Oswald", 'text-anchor="middle" letter-spacing="3"'); }).join("") + "</g>" +
+        g("broll", '<rect x="-9" y="' + (B[1] - 8) + '" width="18" height="' + (B[3] + 16) + '" rx="8" fill="' + CARD + '" stroke="' + INK + '" stroke-width="4"/>', 'opacity="0"');
+
+      var DT = L.det;
+      var shadow = g("ld-shadow", '<ellipse cx="0" cy="0" rx="92" ry="92" fill="' + C.ink + '" opacity="0.22"/>', 'opacity="0"');
+      var puffs = [[-104, 70], [104, 70], [-70, 100], [70, 100]].map(function (p) { return '<circle class="ld-puff" cx="' + p[0] + '" cy="' + p[1] + '" r="20" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3" opacity="0"/>'; }).join("");
+      var jolt = '<g id="' + P + 'jolt" opacity="0">' + [[4, -98, 2, -122], [26, -94, 36, -114], [44, -84, 60, -98]].map(function (l) { return '<path d="M' + l[0] + "," + l[1] + " L" + l[2] + "," + l[3] + '" stroke="' + INK + '" stroke-width="4" stroke-linecap="round"/>'; }).join("") + "</g>";
+      var floorDet = (L.floor - DT[1]) / DT[2]; // the floor, in detector units
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + kitchen({ floor: L.floor, top: top, counter: L.counter, win: L.win, toaster: L.toaster }) +
+        // the detectors on the wall; the singed letter is separate, so it can flutter down
+        at(DT[0], DT[1], DT[2], shadow + g("od", oldDet) + at(-120, -80, 1, g("letter", letter)) +
+          at(58, 4, 1, g("flag-pos", g("flag", flag))) + g("ld-drop", liveDet) + g("pk", pancake, 'opacity="0"') + puffs) +
+        // the FDA bottle and the coin on the counter
+        at(L.fda, top, S * BS, g("fda-pop", fdaBottle, 'opacity="0"')) +
+        g("coin", at(0, 0, S, coin), 'opacity="0"') +
+        // the lawyer, then the patient in front
+        at(L.law, L.floor - 100 * L.lawS, L.lawS, g("law", law)) +
+        at(L.pat, PY, S, g("pat-j", g("pat-a", patArt) + jolt)) +
+        banner);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+
+      var T = {
+        mon: cue("Monitoring."), smoke: cue("smoke"), mail: cue("mail?"), collect: cue("collect"), auto: cue("automatically"), real: cue("real"),
+        twelve: cue("twelve"), three: cue("three"), before: cue("BEFORE"), cls: cue("class"), suit: cue("lawsuit."), fda: cue("F.D.A."), guess: cue("guess.")
+      };
+      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
+      function set(el, op, t) { tl.set(el, { opacity: op }, t); }
+
+      // "Monitoring.": the banner unrolls from the left (whoosh).
+      var bm = q("bmask"), br = q("broll");
+      tl.fromTo(bm, { attr: { width: 0 } }, { attr: { width: B[2] + 30 }, duration: 0.5, ease: "power2.out" }, T.mon);
+      set(br, 1, T.mon);
+      tl.fromTo(br, { x: B[0] }, { x: B[0] + B[2] + 8, duration: 0.5, ease: "power2.out" }, T.mon);
+      tl.set(br, { opacity: 0 }, T.mon + 0.5);
+
+      // The old detector: smoke rising, eyes blinking; "smoke": it scribbles another letter (pen scratch).
+      var od = q("od-sq"), pen = q("od-pen"), scrib = q("od-scrib").firstChild;
+      pivot(od, "0 60"); pivot(pen, "66 32");
+      document.querySelectorAll("#" + P + "od-smoke .od-smoke").forEach(function (s, i) {
+        tl.fromTo(s, { y: 0, opacity: 0.9 }, { y: -10, opacity: 0.2, duration: 0.9, repeat: Math.floor((T.auto - 0.2) / 0.9) - 1, ease: "sine.out" }, 0.2 + i * 0.3);
+      });
+      document.querySelectorAll("#" + P + "od .od-eye").forEach(function (e) {
+        pivot(e, e.firstChild.getAttribute("cx") + " -12");
+        [2.2, 6.4].forEach(function (b) { tl.to(e, { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1 }, b); });
+      });
+      tl.fromTo(pen, { rotation: 0 }, { rotation: -10, duration: 0.09, repeat: 15, yoyo: true, ease: "sine.inOut" }, T.smoke);
+      tl.fromTo(scrib, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: T.mail - T.smoke, ease: "none" }, T.smoke);
+      // "mail?": the flag pops up (squeak)
+      var fl = q("flag"), flp = q("flag-pos");
+      pivot(fl, "0 0");
+      tl.set(fl, { rotation: 150 }, 0);
+      tl.to(fl, { rotation: 0, duration: 0.18, ease: "back.out(3)" }, T.mail);
+      tl.to(fl, { rotation: -8, duration: 0.12, yoyo: true, repeat: 3, ease: "sine.inOut" }, T.mail + 0.18);
+
+      // "collect": a shadow grows on the wall and the old one looks up; "automatically": the live one slams down (slam),
+      // flattening it into a pancake (splat): only its flag sticks out from under, then droops; the letter flutters down.
+      var drop = q("ld-drop"), sh = q("ld-shadow"), pk = q("pk");
+      pivot(drop, "0 88"); pivot(sh, "0 0"); pivot(pk, "0 94");
+      tl.fromTo(sh, { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1.1, duration: T.auto - T.collect, ease: "power1.in" }, T.collect);
+      tl.set(sh, { opacity: 0 }, T.auto);
+      document.querySelectorAll("#" + P + "od .od-pupil").forEach(function (p) { tl.to(p, { attr: { cy: -18 }, duration: 0.25 }, T.collect + 0.4); });
+      tl.fromTo(drop, { y: -(DT[1] + 280) / DT[2] }, { y: 0, duration: 0.3, ease: "power4.in" }, T.auto - 0.3);
+      tl.to(drop, { scaleY: 0.86, scaleX: 1.08, duration: 0.06, ease: "power2.out" }, T.auto);
+      tl.to(drop, { scaleY: 1, scaleX: 1, duration: 0.45, ease: "elastic.out(1, 0.4)" }, T.auto + 0.06);
+      tl.to(od, { scaleY: 0.2, duration: 0.05, ease: "power3.in" }, T.auto);
+      set(od, 0, T.auto + 0.05);
+      set(pk, 1, T.auto + 0.05);
+      tl.fromTo(pk, { scaleY: 2.2, scaleX: 0.7 }, { scaleY: 1, scaleX: 1, duration: 0.25, ease: "back.out(2)" }, T.auto + 0.05);
+      pk.querySelectorAll(".pk-eye").forEach(function (e, i) {
+        pivot(e, (i ? 30 : -30) + " 95");
+        [1.4, 3.6, 6.8, 10.5].forEach(function (b) { if (T.auto + b + 0.1 < D) tl.to(e, { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1 }, T.auto + b); });
+      });
+      document.querySelectorAll("#" + P + "art .ld-puff").forEach(function (c, i) {
+        var cx = +c.getAttribute("cx"), cy = +c.getAttribute("cy");
+        pivot(c, cx + " " + cy);
+        set(c, 1, T.auto + 0.04);
+        tl.fromTo(c, { scale: 0.4, x: 0, y: 0 }, { opacity: 0, scale: 1.7, x: (cx < 0 ? -1 : 1) * 46, y: 10, duration: 0.55, ease: "power2.out" }, T.auto + 0.04);
+      });
+      tl.to(flp, { x: 58, y: 90, duration: 0.06, ease: "power3.in" }, T.auto);
+      tl.to(fl, { rotation: 70, duration: 0.06 }, T.auto);
+      tl.to(fl, { rotation: 132, duration: 1.1, ease: "sine.inOut" }, T.auto + 0.5);
+      tl.to(fl, { rotation: 124, duration: 0.3, yoyo: true, repeat: 1, ease: "sine.inOut" }, T.auto + 1.6);
+      var lt = q("letter"), fall = floorDet + 80 - 30;
+      pivot(lt, "0 0");
+      tl.to(lt, { y: fall, duration: 1.6, ease: "power1.in" }, T.auto + 0.05);
+      tl.to(lt, { x: 40, rotation: 18, duration: 0.4, repeat: 3, yoyo: true, ease: "sine.inOut" }, T.auto + 0.05);
+      tl.to(lt, { rotation: 0, scaleY: 0.5, duration: 0.15 }, T.auto + 1.65);
+
+      // "real": the screen blinks on, the lamp blinks and the readings scroll to the end.
+      var on = q("ld-on"), lamp = q("ld-lamp"), wv = q("ld-wave");
+      [0, 0.12, 0.2].forEach(function (d, i) { set(on, i % 2 ? 0 : 1, T.real + d); });
+      tl.to(lamp, { opacity: 1, duration: 0.25, repeat: Math.floor((D - T.real) / 0.5) * 2 - 1, yoyo: true, ease: "steps(1)" }, T.real);
+      tl.fromTo(wv, { x: 0 }, { x: -60 * Math.floor((D - T.real) * 1.0), duration: D - T.real, ease: "none" }, T.real);
+
+      // ── The patient ──
+      var patA = q("pat-a"), patJ = q("pat-j"), head = patA.querySelector(".head"), armR = patA.querySelector(".arm-r");
+      var altA = patA.querySelector(".alt-a"), altB = patA.querySelector(".alt-b"), bottle = q("pat-bottle"), pan = bottle.querySelector(".panel");
+      pivot(head, R.neck.join(" ")); pivot(altB, R.shoulder[0].join(" ")); pivot(patJ, "0 100"); pivot(pan, "29 -52");
+      // She looks up at the detector on "smoke", and back down after "mail?".
+      tl.to(head, { rotation: -14, duration: 0.35, ease: "power2.inOut" }, T.smoke + 0.1);
+      tl.to(head, { rotation: 0, duration: 0.4, ease: "power2.inOut" }, T.mail + 0.8);
+      // The slam makes her jump.
+      var jo = q("jolt");
+      tl.to(patJ, { y: -12, scaleY: 1.04, duration: 0.08, ease: "power2.out" }, T.auto + 0.02);
+      tl.to(patJ, { y: 0, scaleY: 1, duration: 0.3, ease: "bounce.out" }, T.auto + 0.1);
+      set(jo, 1, T.auto + 0.02);
+      tl.to(jo, { opacity: 0, duration: 0.5, ease: "steps(3)" }, T.auto + 0.1);
+
+      // Her right arm over time: "twelve": up to read the bottle; after the nod she sets it on the counter; "guess.":
+      // a flick for the coin. The bottle rides in her hand until she lets go of it.
+      var RUB = T.before + 0.75, SET = RUB + 0.65;
+      var KEYS = [[0, A0], [T.twelve - 0.3, A0], [T.twelve + 0.15, AUP], [SET, AUP], [SET + 0.36, ADN], [SET + 0.46, ADN], [SET + 0.8, A0],
+        [T.guess - 0.15, A0], [T.guess, A0 + 40], [T.guess + 0.25, A0]];
+      var RELEASE = SET + 0.46;
+      function ease(x) { return x * x * (3 - 2 * x); }
+      function armAt(t) {
+        for (var i = 1; i < KEYS.length; i++) if (t < KEYS[i][0]) { var a = KEYS[i - 1], b = KEYS[i], k = ease((t - a[0]) / (b[0] - a[0])); return a[1] + (b[1] - a[1]) * k; }
+        return KEYS[KEYS.length - 1][1];
+      }
+      KIT.onTime(tl, D, function (t) {
+        var a = armAt(t), h = t < RELEASE ? handAt(a) : down;
+        armR.setAttribute("transform", "rotate(" + (A0 - a).toFixed(2) + " " + SH[0] + " " + SH[1] + ")");
+        bottle.setAttribute("transform", "translate(" + (h[0] + 3).toFixed(2) + "," + (h[1] + 26).toFixed(2) + ") scale(" + BS + ")");
+      });
+      // "twelve": the side panel flips out and lights its first line; "three": the second line (dings)
+      tl.fromTo(pan, { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "back.out(2)" }, T.twelve);
+      tl.to(bottle.querySelector(".panel-screen"), { attr: { fill: C.slate }, duration: 0.1 }, T.twelve + 0.1);
+      tl.fromTo(bottle.querySelector(".panel-l1"), { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "steps(2)" }, T.twelve + 0.12);
+      tl.fromTo(bottle.querySelector(".panel-l2"), { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "steps(2)" }, T.three);
+      // "BEFORE": she reads it with the cap still on, rubs her temple and nods
+      tl.to(head, { rotation: -10, duration: 0.25 }, T.twelve + 0.1);
+      set(altA, 0, T.before); set(altB, 1, T.before);
+      tl.fromTo(altB, { rotation: -6 }, { rotation: 6, duration: 0.125, repeat: 5, yoyo: true, ease: "sine.inOut" }, T.before);
+      set(altB, 0, RUB); set(altA, 1, RUB);
+      tl.to(head, { rotation: 4, duration: 0.15, repeat: 3, yoyo: true, ease: "sine.inOut" }, RUB);
+      tl.to(head, { rotation: 0, duration: 0.25 }, SET);
+
+      // ── The lawyer ── "class": he rushes in with $ eyes (two squeaky steps), waving his sign, and looks around:
+      // nobody is injured. "lawsuit.": he snaps his briefcase open (click), and a moth flies out. He slinks off.
+      var lawG = q("law"), lawJ = q("law-j"), lawA = q("law-a"), lawB = q("law-b"), lsign = q("law-sign");
+      pivot(lawJ, "0 100");
+      tl.fromTo(lawG, { x: (L.lawIn - L.law) / L.lawS }, { x: 0, duration: 0.42, ease: "power2.out" }, T.cls - 0.22);
+      tl.to(lawJ, { rotation: -6, duration: 0.08, yoyo: true, repeat: 1 }, T.cls + 0.2);
+      ["leg-l", "leg-r"].forEach(function (c, i) {
+        var leg = lawA.querySelector("." + c);
+        pivot(leg, LR.hip[i].join(" "));
+        tl.fromTo(leg, { rotation: i ? 26 : -26 }, { rotation: i ? -26 : 26, duration: 0.1, repeat: 3, yoyo: true, ease: "sine.inOut" }, T.cls - 0.22);
+        tl.to(leg, { rotation: 0, duration: 0.1 }, T.cls + 0.2);
+      });
+      pivot(lsign, "0 0");
+      tl.fromTo(lsign, { rotation: -10 }, { rotation: 10, duration: 0.14, repeat: 5, yoyo: true, ease: "sine.inOut" }, T.cls - 0.2);
+      var lhead = lawA.querySelector(".head");
+      pivot(lhead, LR.head.join(" "));
+      tl.to(lhead, { scaleX: -1, duration: 0.06 }, T.cls + 0.3);
+      tl.to(lhead, { scaleX: 1, duration: 0.06 }, T.suit - 0.08);
+      set(q("brief-c"), 0, T.suit); set(q("brief-o"), 1, T.suit);
+      set(lawA, 0, T.suit + 0.15); set(lawB, 1, T.suit + 0.15);
+      tl.to(lsign, { rotation: -32, y: 10, duration: 0.5, ease: "power2.in" }, T.suit + 0.3);
+      var mo = q("moth"), mw = q("moth-w");
+      set(mo, 1, T.suit + 0.1);
+      tl.fromTo(mw, { scaleX: 1, transformOrigin: "50% 50%" }, { scaleX: 0.3, transformOrigin: "50% 50%", duration: 0.06, repeat: 23, yoyo: true, ease: "none" }, T.suit + 0.1);
+      tl.to(mo, { x: 16, y: -20, duration: 0.25, ease: "power1.out" }, T.suit + 0.1);
+      tl.to(mo, { x: 34, y: -50, duration: 0.3, ease: "sine.inOut" }, T.suit + 0.35);
+      tl.to(mo, { x: 20, y: -82, duration: 0.3, ease: "sine.inOut" }, T.suit + 0.65);
+      tl.to(mo, { x: 40, y: -124, opacity: 0, duration: 0.45, ease: "sine.in" }, T.suit + 0.95);
+      var lb0 = lawB.querySelector(".leg-l"), lb1 = lawB.querySelector(".leg-r"), out0 = T.fda - 0.9;
+      pivot(lb0, LR.hip[0].join(" ")); pivot(lb1, LR.hip[1].join(" "));
+      tl.to(lawG, { x: (L.lawOut - L.law) / L.lawS, duration: 0.85, ease: "power1.in" }, out0);
+      tl.fromTo(lb0, { rotation: 0 }, { rotation: 18, duration: 0.14, repeat: 5, yoyo: true, ease: "sine.inOut" }, out0);
+      tl.fromTo(lb1, { rotation: 0 }, { rotation: -18, duration: 0.14, repeat: 5, yoyo: true, ease: "sine.inOut" }, out0);
+
+      // "F.D.A.": the FDA's bottle pops up beside hers and its panel flips out: blank.
+      var fda = q("fda-pop"), fpan = fda.querySelector(".panel");
+      pivot(fda, "0 0"); pivot(fpan, "29 -52");
+      set(fda, 0, 0);
+      set(fda, 1, T.fda);
+      tl.fromTo(fda, { scaleY: 0, scaleX: 1.2 }, { scaleY: 1, scaleX: 1, duration: 0.35, ease: "back.out(2.5)" }, T.fda);
+      tl.fromTo(fpan, { scaleX: 0 }, { scaleX: 1, duration: 0.25, ease: "back.out(2)" }, T.fda + 0.4);
+      tl.to(head, { rotation: 6, duration: 0.3 }, T.fda + 0.2);
+
+      // "guess.": she flicks a coin over the FDA bottle (ding); it lands on its edge on the cap (tick) and stays up.
+      var cn = q("coin"), cs = q("coin-s"), land = T.guess + 0.45, capTop = top - 106 * BS * S;
+      var h0 = handAt(A0 + 40), x0 = L.pat + S * h0[0], y0 = PY + S * (h0[1] - 4);
+      pivot(cs, "0 11");
+      set(cn, 0, 0);
+      set(cn, 1, T.guess);
+      var apex = capTop - (V ? 300 : 260);
+      tl.fromTo(cn, { x: x0 }, { x: L.fda, duration: land - T.guess, ease: "none" }, T.guess);
+      tl.fromTo(cn, { y: y0 }, { y: apex, duration: (land - T.guess) * 0.5, ease: "power2.out" }, T.guess);
+      tl.to(cn, { y: capTop - 11 * S, duration: (land - T.guess) * 0.5, ease: "power2.in" }, T.guess + (land - T.guess) * 0.5);
+      tl.fromTo(cs, { scaleX: 1 }, { scaleX: -1, duration: 0.075, repeat: 5, yoyo: true, ease: "sine.inOut" }, T.guess);
+      tl.to(cs, { scaleX: 0.3, duration: 0.03 }, land);
+      tl.fromTo(cs, { rotation: -16 }, { rotation: 0, duration: 0.6, ease: "elastic.out(1.2, 0.3)" }, land);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

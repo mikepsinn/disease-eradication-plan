@@ -1,0 +1,374 @@
+{
+  "id": "part-19",
+  "title": "Step 3: Bribe the Bribers",
+  "storyboard": "storyboards/part-19-step-3-bribe-the-bribers.md",
+  "audio": {
+    "start": 2590.884,
+    "end": 2660.684
+  },
+  "noCaptions": [
+    "step-3-bribe-the-bribers-title"
+  ],
+  "scenes": [
+    {
+      "id": "step-3-bribe-the-bribers-title",
+      "file": "compositions/scenes/part-19/step-3-bribe-the-bribers-title.html",
+      "cue": "Step",
+      "approx": 2590.9,
+      "layer": "A"
+    },
+    {
+      "id": "conversion-therapy",
+      "file": "compositions/scenes/part-19/conversion-therapy.html",
+      "cue": "Professional",
+      "approx": 2594.7,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Professional",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "Therapy",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "arms-crossed",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "democracy-jackpot",
+      "file": "compositions/scenes/part-19/democracy-jackpot.html",
+      "cue": "Military",
+      "approx": 2597.3,
+      "layer": "B"
+    },
+    {
+      "id": "current-job-column",
+      "file": "compositions/scenes/part-19/current-job-column.html",
+      "cue": "Current",
+      "approx": 2607.5,
+      "layer": "B"
+    },
+    {
+      "id": "your-offer-column",
+      "file": "compositions/scenes/part-19/your-offer-column.html",
+      "cue": "Your",
+      "approx": 2620.5,
+      "layer": "B"
+    },
+    {
+      "id": "lobbyists-have-clients",
+      "file": "compositions/scenes/part-19/lobbyists-have-clients.html",
+      "cue": "They",
+      "approx": 2636.7,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "They",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "beliefs.",
+          "expr": "skeptical",
+          "rest": "closed",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "clients.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "two-clients",
+      "file": "compositions/scenes/part-19/two-clients.html",
+      "cue": "The",
+      "approx": 2642.5,
+      "layer": "B"
+    },
+    {
+      "id": "it-is-arithmetic",
+      "file": "compositions/scenes/part-19/it-is-arithmetic.html",
+      "cue": "This",
+      "approx": 2657,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "This",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "arithmetic.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "step-3-bribe-the-bribers-title",
+      "cue": "Step",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "step-3-bribe-the-bribers-title",
+      "cue": "Bribers.",
+      "at": "after",
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "step-3-bribe-the-bribers-title",
+      "cue": "Bribers.",
+      "at": "after",
+      "offset": 0.7,
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "conversion-therapy",
+      "cue": "Briber",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "conversion-therapy",
+      "cue": "Therapy",
+      "at": "after",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "lobbyists",
+      "offset": 0.3,
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "currently",
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "thousand,",
+      "sfx": "bell",
+      "volume": 0.45
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "thirteen",
+      "sfx": "cash-register",
+      "volume": 0.45
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "invested",
+      "sfx": "bell",
+      "volume": 0.35
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "corruption.",
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "spreadsheet:",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "current-job-column",
+      "cue": "thousand",
+      "offset": 0.1,
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "current-job-column",
+      "cue": "dollars.",
+      "at": "after",
+      "sfx": "pat",
+      "volume": 0.45
+    },
+    {
+      "scene": "current-job-column",
+      "cue": "moral",
+      "sfx": "switch",
+      "volume": 0.4
+    },
+    {
+      "scene": "current-job-column",
+      "cue": "raisins",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "current-job-column",
+      "cue": "Here",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "current-job-column",
+      "cue": "made",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "your-offer-column",
+      "cue": "same,",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "your-offer-column",
+      "cue": "clinical",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "your-offer-column",
+      "cue": "bombs.",
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "your-offer-column",
+      "cue": "bombs.",
+      "at": "after",
+      "sfx": "boom",
+      "volume": 0.55
+    },
+    {
+      "scene": "your-offer-column",
+      "cue": "Philanthropist",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "your-offer-column",
+      "cue": "Philanthropist",
+      "offset": 0.3,
+      "sfx": "bell",
+      "volume": 0.35
+    },
+    {
+      "scene": "your-offer-column",
+      "cue": "Accidentally",
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "your-offer-column",
+      "cue": "humanity",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "lobbyists-have-clients",
+      "cue": "beliefs.",
+      "sfx": "click",
+      "volume": 0.55
+    },
+    {
+      "scene": "lobbyists-have-clients",
+      "cue": "clients.",
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "lobbyists-have-clients",
+      "cue": "clients.",
+      "offset": 0.1,
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "lobbyists-have-clients",
+      "cue": "clients.",
+      "at": "after",
+      "offset": 0.15,
+      "sfx": "click",
+      "volume": 0.5
+    },
+    {
+      "scene": "two-clients",
+      "cue": "diseases",
+      "sfx": "zap",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-clients",
+      "cue": "smaller",
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-clients",
+      "cue": "offering",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-clients",
+      "cue": "salary",
+      "sfx": "stamp",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-clients",
+      "cue": "don't",
+      "sfx": "zap",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-clients",
+      "cue": "one",
+      "sfx": "slide-up",
+      "volume": 0.4
+    },
+    {
+      "scene": "it-is-arithmetic",
+      "cue": "This",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "it-is-arithmetic",
+      "cue": "This",
+      "offset": 0.2,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "it-is-arithmetic",
+      "cue": "arithmetic.",
+      "sfx": "ding",
+      "volume": 0.4
+    }
+  ]
+}

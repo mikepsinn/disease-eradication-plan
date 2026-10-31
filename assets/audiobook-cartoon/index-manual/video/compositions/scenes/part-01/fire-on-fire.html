@@ -1,0 +1,225 @@
+<template id="fire-on-fire-template">
+  <!-- fire-on-fire · Layer B, plate cave (storyboards/part-01-opening.md): the mouth of a cave in a tan stone hillside,
+       a sandy ground strip, two crossed logs, and two cavemen (everyday humans in spotted tan pelts) on either side.
+       "discovering": they look down at the unlit fire; "fire": it lights, both smile and warm a hand; "using": each
+       reaches in and comes out with a burning stick, and the sticks cross over the flames; "set": they wind up, frowning;
+       "yourself": they jab each other (head, belly) and both go up in flames all over, arms up, yelping, running round
+       the fire; "fire." (last): the flames go out in a puff of soot on two charred cavemen, hair up, smoking, blinking;
+       then they look at each other, look at the fire, and each reaches in for a new stick. -->
+  <style>
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #EFE3C4; }
+    #fire-on-fire-weave, #fire-on-fire-shake, #fire-on-fire-plate, #fire-on-fire-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="fire-on-fire" data-width="1920" data-height="1080" data-start="0" data-duration="5.84">
+    <div id="fire-on-fire-weave">
+      <div id="fire-on-fire-shake"><div id="fire-on-fire-plate"></div></div>
+    </div>
+    <div id="fire-on-fire-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "fire-on-fire";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, smooth = KIT.smooth;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 147);
+
+      // ═══ CAVE plate, in plate units: the ground line at y 880, the cavemen stand on y 930, the campfire at x 960.
+      var SKY = "#EFE3C4", SAND = "#A88A5E", ROCK = C.tan, DARK = "#2A2420", PELT = "#C99A5B";
+      var GL = 880, FEET = 930, FIRE = [960, 900], K = 2.2, CX = [740, 1180];
+      var RUN = { cx: 960, cy: FEET, rx: 220, ry: 45 };
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { wide: [960, 600, 1.0], two: [960, 570, 1.5], run: [960, 590, 1.35], char: [960, 580, 1.6] }
+        : { wide: [960, 590, 1.0], two: [960, 640, 1.2], run: [960, 650, 1.12], char: [960, 660, 1.35] };
+
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+
+      function hillside() {
+        return '<rect x="-3000" y="-3000" width="9000" height="9000" fill="' + SKY + '"/>' +
+          '<path d="M-900,3000 V420 L-300,330 L180,250 L520,170 L980,130 L1420,180 L1760,260 L2200,340 L2820,430 V3000 Z" fill="' + ROCK + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M260,300 L420,260 M1500,240 L1660,300 M700,200 L820,180 M-120,420 L40,380 M1960,360 L2120,400 M300,520 L380,600 M1560,540 L1620,620" stroke="#8C5E3C" stroke-width="6" stroke-linecap="round"/>' +
+          '<path d="M420,' + (GL + 20) + ' V640 L540,420 L760,330 L1160,330 L1380,420 L1500,640 V' + (GL + 20) + ' Z" fill="' + DARK + '" stroke="' + ink + '" stroke-width="6" stroke-linejoin="round"/>' +
+          '<path d="M560,450 L640,400 M1300,430 L1360,470" stroke="#3A322B" stroke-width="6" stroke-linecap="round"/>' +
+          '<rect x="-3000" y="' + GL + '" width="9000" height="4000" fill="' + SAND + '"/><path d="M-3000,' + GL + ' H6000" stroke="' + ink + '" stroke-width="4"/>' +
+          [[180, 1010], [1720, 1000], [430, 1120], [1500, 1150], [-200, 1080], [2100, 1090]].map(function (p) { return '<path d="M' + p[0] + "," + p[1] + ' l26,-10 l30,6 l10,12 Z" fill="#8F7350" stroke="' + ink + '" stroke-width="3" stroke-linejoin="round"/>'; }).join("");
+      }
+      function logs() {
+        return '<g stroke="' + ink + '" stroke-width="5"><rect x="-120" y="-17" width="240" height="34" rx="16" fill="' + C.rust + '" transform="rotate(12)"/><rect x="-120" y="-17" width="240" height="34" rx="16" fill="' + C.rust + '" transform="rotate(-12)"/>' +
+          '<circle cx="-112" cy="-24" r="12" fill="#C98A5A"/><circle cx="112" cy="-24" r="12" fill="#C98A5A"/></g>';
+      }
+      // A burning stick in person units, from the hand along `deg` (0 = down, as the arms), 78 long, flame at the tip.
+      function stick(hand, deg) {
+        var r = (deg * Math.PI) / 180, tip = [hand[0] + 78 * Math.sin(r), hand[1] + 78 * Math.cos(r)];
+        return '<path d="M' + f(hand[0] - 8 * Math.sin(r)) + "," + f(hand[1] - 8 * Math.cos(r)) + " L" + f(tip[0]) + "," + f(tip[1]) + '" stroke="' + ink + '" stroke-width="8" stroke-linecap="round"/>' +
+          '<path d="M' + f(hand[0] - 8 * Math.sin(r)) + "," + f(hand[1] - 8 * Math.cos(r)) + " L" + f(tip[0]) + "," + f(tip[1]) + '" stroke="#7A4A2A" stroke-width="4.5" stroke-linecap="round"/>' +
+          KIT.flames(tip[0], tip[1] + 4, 0.24);
+      }
+      // Flames on the head, the shoulders, the raised hands and the back (behind the body), so the yelling face shows.
+      function burning(o) {
+        var R = KIT.rig(o);
+        return KIT.flames(R.top[0] + 4, R.top[1] + 12, 0.62) + KIT.flames(R.shoulder[0][0] - 8, R.shoulder[0][1] + 12, 0.48) + KIT.flames(R.shoulder[1][0] + 8, R.shoulder[1][1] + 12, 0.48) +
+          KIT.flames(R.hand[0][0], R.hand[0][1] + 8, 0.36) + KIT.flames(R.hand[1][0], R.hand[1][1] + 8, 0.36) + KIT.flames(-4, R.hipY + 14, 0.66);
+      }
+      var SPOTS = '<g fill="' + C.rust + '" opacity="0.85"><ellipse cx="-8" cy="8" rx="5" ry="4"/><ellipse cx="9" cy="22" rx="4" ry="3"/><ellipse cx="-4" cy="34" rx="5" ry="3.5"/><ellipse cx="10" cy="-6" rx="3.5" ry="3"/></g>';
+
+      // ── The cavemen. Each pose: { o: the options, hand: which hand holds the stick (or -1), deg: the stick's angle,
+      // fire: on fire }. A starts on the left facing the fire; B on the right.
+      var BASE = [
+        { tone: 0, outfit: "shirt", colorHex: PELT, hair: 0, seed: 41 },
+        { tone: 2, outfit: "shirt", colorHex: PELT, hair: 0, seed: 42 },
+      ];
+      var m = function (s) { return [[-s * 8, -s * 4], [s * 8, s * 4]]; };
+      var POSES = [
+        { look: { o: { look: "right", mood: "flat", arms: m(1) } }, warm: { o: { look: "right", mood: "smile", arms: [[-8, -4], [62, 96]] } },
+          reach: { o: { look: "right", mood: "eager", arms: [[-8, -4], [56, 30]] } }, hold: { o: { look: "right", mood: "flat", arms: [[-8, -4], [104, 128]] }, hand: 1, deg: 132 },
+          wind: { o: { look: "right", mood: "cross", arms: [[-8, -4], [-150, -128]] }, hand: 1, deg: -110 }, jab: { o: { look: "right", mood: "cross", arms: [[-8, -4], [96, 104]] }, hand: 1, deg: 102 },
+          burnR: { o: { look: "right", mood: "eager", arms: [[-138, -162], [138, 162]] }, fire: true },
+          char: { o: { charred: true, arms: m(1) } }, charLook: { o: { charred: true, look: "left", arms: m(1) } },
+          charReach: { o: { charred: true, look: "left", arms: [[-58, -34], [8, 4]] } } },
+        { look: { o: { look: "left", mood: "flat", arms: m(1) } }, warm: { o: { look: "left", mood: "smile", arms: [[-62, -96], [8, 4]] } },
+          reach: { o: { look: "left", mood: "eager", arms: [[-56, -30], [8, 4]] } }, hold: { o: { look: "left", mood: "flat", arms: [[-104, -128], [8, 4]] }, hand: 0, deg: -132 },
+          wind: { o: { look: "left", mood: "cross", arms: [[150, 128], [8, 4]] }, hand: 0, deg: 110 }, jab: { o: { look: "left", mood: "cross", arms: [[-58, -66], [8, 4]] }, hand: 0, deg: -64 },
+          burnR: { o: { look: "left", mood: "eager", arms: [[-138, -162], [138, 162]] }, fire: true },
+          char: { o: { charred: true, arms: m(1) } }, charLook: { o: { charred: true, look: "right", arms: m(1) } },
+          charReach: { o: { charred: true, look: "right", arms: [[-8, -4], [58, 34]] } } },
+      ];
+      var men = [0, 1].map(function (i) {
+        var g = "", rig = {};
+        Object.keys(POSES[i]).forEach(function (n) {
+          var p = POSES[i][n], o = copy(BASE[i], p.o), R = KIT.rig(o);
+          rig[n] = R;
+          var body = (p.fire ? burning(o) : "") + KIT.person(o) + (o.charred ? "" : SPOTS) + (p.hand >= 0 ? stick(R.hand[p.hand], p.deg) : "");
+          g += '<g class="pose" data-pose="' + n + '" opacity="0">' + body + "</g>";
+        });
+        return { name: "man" + i, rig: rig, svg: '<g id="' + ID + "-man" + i + '"><g transform="scale(' + K + ')">' + g + "</g></g>" };
+      });
+      var soot = [0, 1].map(function (i) {
+        return '<g id="' + ID + "-soot" + i + '" opacity="0">' + [[0, -60, 120], [-80, -10, 90], [80, -20, 95], [-40, -150, 85], [50, -140, 90], [0, 60, 80]].map(function (c) {
+          return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#4A4440" stroke="' + ink + '" stroke-width="5"/>';
+        }).join("") + '<circle cx="-30" cy="-90" r="40" fill="#6A625C"/></g>';
+      }).join("");
+
+      // ── Assemble: B (who runs round the back) behind the fire, A (who runs round the front) in front of it.
+      var fireSvg = at(FIRE[0], FIRE[1], 1, logs()) + '<g transform="translate(' + FIRE[0] + "," + (FIRE[1] - 6) + ')"><g id="' + ID + '-blaze">' + KIT.flames(0, 0, 1.6) + "</g></g>" +
+        '<g transform="translate(' + FIRE[0] + "," + (FIRE[1] - 20) + ')"><path id="' + ID + '-wisp" d="M0,0 q-10,-20 0,-40 q10,-20 0,-40" fill="none" stroke="#8A8478" stroke-width="5" stroke-linecap="round"/></g>';
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + SKY + '"/>' +
+        '<g id="' + ID + '-cam">' + hillside() + men[1].svg + fireSvg + men[0].svg + soot + "</g>");
+
+      var el = q, cam = el("cam"), blaze = el("blaze"), wisp = el("wisp");
+      men.forEach(function (mm) { mm.g = el(mm.name); mm.els = {}; Array.prototype.forEach.call(mm.g.querySelectorAll(".pose"), function (p) { mm.els[p.getAttribute("data-pose")] = p; }); });
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var lerp = function (a, b, u) { return a + (b - a) * u; };
+
+      // ── Cues ──
+      var tFire = cue("fire"), tUsing = cue("using"), tSet = cue("set"), tYou = cue("yourself"), tOut = cue("fire.", 2);
+      var tWarm = tFire + 0.3, tHold = tUsing + 0.3, tFlame = tYou + 0.1, tRun0 = tFlame + 0.06, tChar = tOut + 0.08;
+      var tLook = tChar + 0.45, tDown = tLook + 0.35, tReach = tDown + 0.2;
+      var BLINKS = [tChar + 0.3, tLook + 0.15];
+
+      function poseOf(i, t) {
+        if (t < tWarm) return "look";
+        if (t < tUsing) return "warm";
+        if (t < tHold) return "reach";
+        if (t < tSet) return "hold";
+        if (t < tYou) return "wind";
+        if (t < tFlame) return "jab";
+        if (t < tChar) return "burnR";
+        if (t < tLook) return "char";
+        if (t < tReach) return "charLook";
+        return "charReach";
+      }
+      // where each stands: at his place, lunging on the jab, then half a lap round the fire (A round the front, B
+      // round the back), so they end on each other's side
+      function posOf(i, t) {
+        var home = CX[i], s = i ? -1 : 1;
+        if (t < tYou) {
+          var wu = t > tSet ? smooth((t - tSet) / 0.25) : 0;
+          return [home - s * 26 * wu, FEET, 0];
+        }
+        if (t < tRun0) { var ju = smooth((t - tYou) / 0.08); return [home + s * 46 * ju, FEET, s * 8 * ju]; }
+        var ru = Math.min(1, (t - tRun0) / (tOut - tRun0 + 0.04)), th = i ? -Math.PI * ru : Math.PI * (1 - ru);
+        if (i) th = -Math.PI * ru; // B: from angle 0 round the back (sin < 0) to pi
+        var x = RUN.cx + RUN.rx * Math.cos(i ? th : th), y = RUN.cy + RUN.ry * (i ? Math.sin(th) : Math.sin(th));
+        if (!i) { x = RUN.cx - RUN.rx * Math.cos(Math.PI * ru); y = RUN.cy + RUN.ry * Math.sin(Math.PI * ru); }
+        else { x = RUN.cx + RUN.rx * Math.cos(Math.PI * ru); y = RUN.cy - RUN.ry * Math.sin(Math.PI * ru); }
+        if (t >= tChar) {
+          var reach = t > tReach ? smooth((t - tReach) / 0.2) * 18 : 0;
+          return [i ? CX[0] + reach : CX[1] - reach, FEET, 0];
+        }
+        var bob = -Math.abs(Math.sin((t - tRun0) * 16 + i)) * 26;
+        return [x, y + bob, (i ? -1 : 1) * 10 * Math.sin((t - tRun0) * 16 + i)];
+      }
+
+      // ── The camera
+      var KEYS = [[0, "wide", 1], [tFire - 0.1, "wide", 1.02], [tFire + 0.4, "two", 1], [tSet - 0.05, "two", 1.04], [tYou - 0.05, "two", 1.1],
+        [tRun0 + 0.1, "run", 1], [tOut - 0.05, "run", 1.02], [tChar + 0.3, "char", 1], [D, "char", 1.03]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+        show(wisp, t < tFire);
+        wisp.setAttribute("transform", "translate(" + f(Math.sin(t * 3) * 4) + "," + f(-((t * 30) % 20)) + ")");
+
+        men.forEach(function (mm, i) {
+          var pose = poseOf(i, t), p = posOf(i, t);
+          Object.keys(mm.els).forEach(function (n) { show(mm.els[n], n === pose); });
+          // the scale is about the feet, so a man on the far side of the lap stands a little smaller
+          var depth = 1 + (p[1] - FEET) / 900;
+          mm.g.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1] - 100 * K * depth) + ") rotate(" + f(p[2]) + " 0 " + f(100 * K * depth) + ") scale(" + depth.toFixed(3) + ")");
+          var R = mm.rig[pose], pg = mm.els[pose];
+          // the look down at the unlit fire, and down again at it at the end: the head tips toward the fire
+          var tip = pose === "look" ? 14 : pose === "charLook" && t > tDown ? 16 : 0;
+          var head = pg.querySelector(".head");
+          if (head) head.setAttribute("transform", tip ? "rotate(" + f((i ? -1 : 1) * tip * (pose === "charLook" ? -1 : 1)) + " " + f(R.neck[0]) + " " + f(R.neck[1]) + ")" : "");
+          // running legs
+          var running = pose === "burnR" && t > tRun0;
+          Array.prototype.forEach.call(pg.querySelectorAll(".leg-l, .leg-r"), function (lg, j) {
+            var a = running ? Math.sin((t - tRun0) * 16 + i) * 30 * (j ? -1 : 1) : 0;
+            lg.setAttribute("transform", "rotate(" + f(a) + " " + f(R.hip[j][0]) + " " + f(R.hip[j][1]) + ")");
+          });
+          // waving their burning arms
+          if (pose === "burnR") ["arm-l", "arm-r"].forEach(function (c, j) {
+            var arm = pg.querySelector("." + c);
+            if (arm) arm.setAttribute("transform", "rotate(" + f(Math.sin((t - tFlame) * 19 + j * 2 + i) * 14) + " " + f(R.shoulder[j][0]) + " " + f(R.shoulder[j][1]) + ")");
+          });
+          var eyes = pg.querySelector(".char-eyes");
+          if (eyes) {
+            var bl = BLINKS.some(function (b) { return t > b + i * 0.05 && t < b + i * 0.05 + 0.11; });
+            eyes.setAttribute("transform", bl ? "translate(0,-4) scale(1,0.12) translate(0,4)" : "");
+          }
+          var smoke = pg.querySelector(".smoke");
+          if (smoke) smoke.setAttribute("transform", "translate(0," + f(-Math.abs(Math.sin(t * 3 + i)) * 5) + ")");
+
+          // the soot puff as the flames go out
+          var se = el("soot" + i), su = (t - tOut) / 0.42;
+          if (su > 0 && su < 1) {
+            show(se, 1);
+            var cp = posOf(i, Math.min(t, tChar - 0.001));
+            se.setAttribute("opacity", (su < 0.3 ? 1 : 1 - (su - 0.3) / 0.7).toFixed(2));
+            se.setAttribute("transform", "translate(" + f(cp[0]) + "," + f(cp[1] - 230) + ") scale(" + (0.7 + su * 0.6).toFixed(2) + ")");
+          } else show(se, 0);
+        });
+      });
+
+      // ── "fire": the campfire lights; the flames dance until the end
+      gsap.set(blaze, { svgOrigin: "0 0" });
+      tl.fromTo(blaze, { scale: 0 }, { scale: 1, duration: 0.3, ease: "back.out(2.4)" }, tFire);
+      KIT.flicker(tl, cam, 0, D);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

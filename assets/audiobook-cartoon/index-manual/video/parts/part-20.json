@@ -1,0 +1,502 @@
+{
+  "id": "part-20",
+  "title": "Step 4: Purchase Democracy",
+  "storyboard": "storyboards/part-20-step-4-purchase-democracy.md",
+  "audio": {
+    "start": 2660.684,
+    "end": 2756.924
+  },
+  "noCaptions": [
+    "step-4-purchase-democracy-title"
+  ],
+  "scenes": [
+    {
+      "id": "step-4-purchase-democracy-title",
+      "file": "compositions/scenes/part-20/step-4-purchase-democracy-title.html",
+      "cue": "Step",
+      "approx": 2660.7,
+      "layer": "A"
+    },
+    {
+      "id": "coin-op-politician",
+      "file": "compositions/scenes/part-20/coin-op-politician.html",
+      "cue": "Politicians",
+      "approx": 2665.2,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Politicians",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "papers",
+          "expr": "thinking",
+          "rest": "small",
+          "body": "counting",
+          "mode": "big"
+        },
+        {
+          "cue": "jobs.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "democracy-auction",
+      "file": "compositions/scenes/part-20/democracy-auction.html",
+      "cue": "Currently,",
+      "approx": 2668.8,
+      "layer": "B"
+    },
+    {
+      "id": "bidder-paddles",
+      "file": "compositions/scenes/part-20/bidder-paddles.html",
+      "cue": "Your",
+      "approx": 2683.1,
+      "layer": "B"
+    },
+    {
+      "id": "corrupt-the-corruption",
+      "file": "compositions/scenes/part-20/corrupt-the-corruption.html",
+      "cue": "Politicians",
+      "approx": 2698.3,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Politicians",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "It's",
+          "expr": "neutral",
+          "rest": "smile",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "corrupt",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "hands-hips",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "super-pac-rewards",
+      "file": "compositions/scenes/part-20/super-pac-rewards.html",
+      "cue": "Remember",
+      "approx": 2704.3,
+      "layer": "B"
+    },
+    {
+      "id": "scenic-route-algorithm",
+      "file": "compositions/scenes/part-20/scenic-route-algorithm.html",
+      "cue": "Vote",
+      "approx": 2721.5,
+      "layer": "B"
+    },
+    {
+      "id": "nra-letter-grade",
+      "file": "compositions/scenes/part-20/nra-letter-grade.html",
+      "cue": "The",
+      "approx": 2734,
+      "layer": "B"
+    },
+    {
+      "id": "most-problems-scroll",
+      "file": "compositions/scenes/part-20/most-problems-scroll.html",
+      "cue": "The",
+      "approx": 2747.5,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "The",
+          "expr": "neutral",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "problem",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "planet",
+          "expr": "surprised",
+          "rest": "oh",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "most",
+          "expr": "eyeroll",
+          "rest": "smile",
+          "body": "shrug",
+          "mode": "big"
+        },
+        {
+          "cue": "problems.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "shrug",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "step-4-purchase-democracy-title",
+      "cue": "Step",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "step-4-purchase-democracy-title",
+      "cue": "four:",
+      "offset": 0.3,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "step-4-purchase-democracy-title",
+      "cue": "Anyway",
+      "offset": 0.3,
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "coin-op-politician",
+      "cue": "papers",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "coin-op-politician",
+      "cue": "votes",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "coin-op-politician",
+      "cue": "jobs.",
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "provide",
+      "sfx": "click",
+      "volume": 0.5
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "provide",
+      "offset": 0.3,
+      "sfx": "click",
+      "volume": 0.5
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "both.",
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "both.",
+      "at": "after",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "enemy",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "do),",
+      "at": "after",
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "not",
+      "n": 2,
+      "sfx": "squeak",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "free,",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-auction",
+      "cue": "running.",
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "bidder-paddles",
+      "cue": "explosion",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "bidder-paddles",
+      "cue": "explosion",
+      "offset": 0.25,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "bidder-paddles",
+      "cue": "billion",
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "bidder-paddles",
+      "cue": "eight",
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "bidder-paddles",
+      "cue": "eight",
+      "offset": 0.2,
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "bidder-paddles",
+      "cue": "eight",
+      "offset": 0.4,
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "bidder-paddles",
+      "cue": "cycle).",
+      "sfx": "slam",
+      "volume": 0.5
+    },
+    {
+      "scene": "bidder-paddles",
+      "cue": "cycle).",
+      "at": "after",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "corrupt-the-corruption",
+      "cue": "surprisingly",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "corrupt-the-corruption",
+      "cue": "corrupt",
+      "sfx": "sparkle",
+      "volume": 0.4
+    },
+    {
+      "scene": "super-pac-rewards",
+      "cue": "two",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "super-pac-rewards",
+      "cue": "goes.",
+      "sfx": "slide-up",
+      "volume": 0.4
+    },
+    {
+      "scene": "super-pac-rewards",
+      "cue": "voted",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "super-pac-rewards",
+      "cue": "retiring.",
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "super-pac-rewards",
+      "cue": "yes",
+      "sfx": "click",
+      "volume": 0.6
+    },
+    {
+      "scene": "super-pac-rewards",
+      "cue": "rewarded.",
+      "sfx": "fire",
+      "volume": 0.45
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "no,",
+      "sfx": "click",
+      "volume": 0.6
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "rewarded.",
+      "sfx": "fire",
+      "volume": 0.45
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "rewarded.",
+      "offset": 0.2,
+      "sfx": "boom",
+      "volume": 0.35
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "rewarded.",
+      "at": "after",
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "politicians.",
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "scenic",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "route",
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "scoring",
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "train",
+      "sfx": "bell",
+      "volume": 0.45
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "senator.",
+      "sfx": "toaster",
+      "volume": 0.5
+    },
+    {
+      "scene": "scenic-route-algorithm",
+      "cue": "senator.",
+      "at": "after",
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "nra-letter-grade",
+      "cue": "N.R.A.",
+      "sfx": "scratch",
+      "volume": 0.35
+    },
+    {
+      "scene": "nra-letter-grade",
+      "cue": "grade,",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "nra-letter-grade",
+      "cue": "bad",
+      "sfx": "slide-up",
+      "volume": 0.4
+    },
+    {
+      "scene": "nra-letter-grade",
+      "cue": "mark",
+      "sfx": "yelp",
+      "volume": 0.35
+    },
+    {
+      "scene": "nra-letter-grade",
+      "cue": "guns",
+      "sfx": "marker",
+      "volume": 0.45
+    },
+    {
+      "scene": "nra-letter-grade",
+      "cue": "diseases.",
+      "sfx": "sparkle",
+      "volume": 0.45
+    },
+    {
+      "scene": "nra-letter-grade",
+      "cue": "diseases.",
+      "at": "after",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "most-problems-scroll",
+      "cue": "Bond",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "most-problems-scroll",
+      "cue": "problem",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "most-problems-scroll",
+      "cue": "problem",
+      "offset": 0.25,
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "most-problems-scroll",
+      "cue": "most",
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "most-problems-scroll",
+      "cue": "most",
+      "offset": 0.35,
+      "sfx": "thunk",
+      "volume": 0.5
+    }
+  ]
+}

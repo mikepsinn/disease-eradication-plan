@@ -1,0 +1,369 @@
+<template id="25-percent-by-2033-template">
+  <!-- 25-percent-by-2033 · Layer B (storyboards/part-11-civilization-countdown.md). One big gauge, "% OF GDP", 0 to 30,
+       its needle on 11.5 (the slice from destroy-beats-make). It creeps on "destructive"; the red zone at 25 to 30
+       lights with its lamp on "twenty-five"; the year window spins to 2033 and the needle swings into the red on
+       "thirty-three."; the gauge rattles and steams. On "Soviet" the needle drops back and a red pin drops in at 15
+       with its tag, SOVIET UNION: (the tag sags on "collapsed" as COLLAPSED lands), MILITARY ONLY on "alone.". The
+       Soviet side builds up left of the dial: the crank computer (a TV cabinet on a box of gears; it cranks itself,
+       puffing, and works out 2+2=5) on "technology,", a tiny red sprout of war money on "smaller parasitic sector,",
+       and the PLAN binder, which lands on "plan.", sags at "It was", gets a TERRIBLE sticker on "terrible" and stands
+       up straight and proud after "one." as the crank falls off. The fuse burns on in the top-left corner. -->
+  <!-- The scene id starts with a digit, which is not a valid CSS #id selector: every element is reached with
+       getElementById (q()) and styled inline, never by "#25-percent-by-2033-..." selectors. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+  </style>
+  <div id="root" data-composition-id="25-percent-by-2033" data-width="1920" data-height="1080" data-start="0" data-duration="19.36">
+    <div id="25-percent-by-2033-cam" style="position: absolute; inset: 0;">
+      <div id="25-percent-by-2033-bg" style="position: absolute; inset: 0;"></div>
+      <div id="25-percent-by-2033-art" style="position: absolute; inset: 0;"></div>
+      <div id="25-percent-by-2033-pip" style="position: absolute; inset: 0;"></div>
+    </div>
+    <!-- the civilization fuse: above the camera (the slide does not move it), under the grain -->
+    <div id="25-percent-by-2033-fuse" style="position: absolute; inset: 0;"></div>
+    <div id="25-percent-by-2033-grain" style="position: absolute; inset: 0;"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "25-percent-by-2033";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function chamf(x0, y0, x1, y1, c) { return [[x0 + c, y0], [x1 - c, y0], [x1, y0 + c], [x1, y1 - c], [x1 - c, y1], [x0 + c, y1], [x0, y1 - c], [x0, y0 + c]]; }
+      // tags: 'path d=".."', 'circle ..' (pg / ci); each drawn twice, a navy pass under the fill
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function txt(x, y, s, size, col, extra, anchor) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="' + (anchor || "middle") + '" font-family="Oswald" font-weight="600" font-size="' + n1(size) + '" fill="' + col + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+      // halftone dots over a shape (print shading), clipped to it
+      var hid = 0;
+      function dotsOn(pts, op) {
+        var id = P + "hd" + ++hid;
+        return '<defs><clipPath id="' + id + '"><' + pg(pts) + '/></clipPath></defs><rect x="-400" y="-600" width="800" height="800" fill="url(#' + P + 'hatch)" opacity="' + (op || 0.25) + '" clip-path="url(#' + id + ')"/>';
+      }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene. ──
+      // The civilization is a cartoon bomb: a small Earth with a navy screw collar and a lit fuse that burns by part
+      // time (L = L0 - k t), so it is continuous across scenes. Returns the spark's flare group (scale it to flare).
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ══ THE GAUGE STAGE: copied in no-plan.html, which starts on this scene's last frame; change both. ══
+      // G: the floor. The gauge (KIT.props.gauge, box mount) at gx, its cabinet bottom at gb, scale GS; in 9:16 it
+      // stands on a column down to the floor. lamp: the red-zone lamp's x on the cabinet top (gauge units).
+      // steam: where the steam puffs come out (gauge units). The Soviet side: its origin (sx, G), scale SS; the
+      // computer at x 0, the binder at x bx (Soviet units). tag: the SOVIET UNION card (center, size, the corner
+      // the leader hangs it by); mil: the MILITARY ONLY tag (card units). you: no-plan's YOU side.
+      var L = V
+        ? { G: 1430, fl: [60, 1020], gx: 600, gb: 990, GS: 3.0, lamp: 36, steam: [[-62, -168], [20, -168]],
+            sx: 210, SS: 1.2, bx: 205, sprout: 118,
+            tag: { x: 205, y: 640, w: 260, h: 200, anchor: [130, -100], lines: [["SOVIET", 46, -48], ["UNION:", 46, 4]], col: 72 }, mil: [0, 134, -4],
+            you: { lx: 730, LS: 2.8, px: 890, ps: 1.85, sgx: 935, sgy: 655, sgk: 1.35 } }
+        : { G: 860, fl: [60, 1600], gx: 900, gb: 860, GS: 3.0, lamp: 52, steam: [[-62, -168], [62, -168]],
+            sx: 215, SS: 1.3, bx: 240, sprout: 118,
+            tag: { x: 390, y: 240, w: 360, h: 130, anchor: [180, -65], lines: [["SOVIET UNION:", 42, -15]], col: 45 }, mil: [-60, 100, -4],
+            you: { lx: 1240, LS: 3.2, px: 1410, ps: 2.3, sgx: 1530, sgy: 320, sgk: 2 } };
+      var GS = L.GS, SS = L.SS, G = L.G;
+      // Gauge values: the dial reads 0 to 30 % of GDP over the prop's 0..1.
+      var gv = function (pct) { return pct / 30; };
+      var V0 = gv(11.5), VZ = gv(25);
+      var gAt = function (v, r) { var a = ((-120 + 240 * v) * Math.PI) / 180; return [r * Math.sin(a), -100 - r * Math.cos(a)]; };
+      var turn = function (pct) { return (gv(pct) - V0) * 240; };
+      var YEARS = [2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033], YH = 18;
+      // where the pin at 15 stands (frame px) and where the tag's leader starts
+      var PIN = [L.gx, L.gb - 164 * GS];
+      var TA = [L.tag.x + L.tag.anchor[0], L.tag.y + L.tag.anchor[1]];
+      var CAX = [100, -80]; // the crank's axle on the computer (Soviet units)
+
+      function stage() {
+        // ── the gauge, with the scene's own pieces slipped in under its needle ──
+        var band = function (a, b, r0, r1) {
+          var pts = [], n = 16, i;
+          for (i = 0; i <= n; i++) pts.push(gAt(a + ((b - a) * i) / n, r1));
+          for (i = n; i >= 0; i--) pts.push(gAt(a + ((b - a) * i) / n, r0));
+          return pts;
+        };
+        var nums = [[0, "0"], [1 / 3, "10"], [2 / 3, "20"], [1, "30"]].map(function (m) { var p = gAt(m[0], 33.5); return txt(p[0], p[1] + 3, m[1], 8, ink); }).join("");
+        var zone = g("zone-lit", F(pg(band(VZ, 1, 38.5, 50.5)), C.yellow) + F(pg(band(VZ, 1, 40, 49)), C.war) +
+          txt(gAt(0.885, 31)[0], gAt(0.885, 31)[1] + 3.5, "25%", 9.5, C.war, 'font-weight="600"'), 'opacity="0"');
+        // the year window under the pivot: a rolling column of years, clipped
+        var win = S([pg(chamf(-23, -85, 23, -61, 3))], C.slate, 2.6) +
+          '<defs><clipPath id="' + P + 'yclip"><rect x="-20" y="-82" width="40" height="' + YH + '"/></clipPath></defs>' +
+          '<g clip-path="url(#' + P + 'yclip)">' + g("years", YEARS.map(function (y, i) { return txt(0, -73 + 5.6 + i * YH, String(y), 15, C.cream, 'letter-spacing="0.6"'); }).join("")) + "</g>" +
+          line("M-20,-73 H-16 M16,-73 H20", C.orange, 1.4);
+        // the mark at 15: a red tick and its label in the face, and the pushpin that drops onto the rim
+        var mark = g("tick15", line("M0,-150 L0,-127", C.war, 3.4) + txt(8.5, -117, "15%", 8.5, C.war), 'opacity="0"') +
+          g("pin", line("M0,-161 L0,-151", ink, 2.2) + S([ci(0, -165, 6.5)], C.war, 3) + F(ci(-2, -167.5, 1.8), "#FFFFFF"));
+        var gauge = KIT.props.gauge({ label: "% OF GDP", value: V0, zones: [[VZ, 1, "#E6C4B2"]] });
+        gauge = gauge.replace('<g class="gauge-needle"', nums + zone + win + mark + '<g class="gauge-needle"');
+        // the red-zone lamp on the cabinet top, off (rust) and on (red, with rays)
+        var lx = L.lamp, rays = [-60, -30, 0, 30, 60].map(function (a) {
+          var r = (a * Math.PI) / 180; return line("M" + pt(lx + 13 * Math.sin(r), -171 - 13 * Math.cos(r)) + " L" + pt(lx + 21 * Math.sin(r), -171 - 21 * Math.cos(r)), C.war, 2.6);
+        }).join("");
+        var lampD = "M" + (lx - 9) + ",-171 A9,9 0 0 1 " + (lx + 9) + ",-171 Z";
+        var lamp = S([pg(R(lx - 11, -172, 22, 6))], C.slate, 2.6) + S(['path d="' + lampD + '"'], "#8A4A3A", 2.6) +
+          g("lamp-on", rays + S(['path d="' + lampD + '"'], C.war, 2.6) + line("M" + (lx - 4) + ",-176 q2,-3 5,-3", "#FFFFFF", 1.6), 'opacity="0"');
+        // steam puffs (hidden until the rattle)
+        var steam = L.steam.map(function (s, i) {
+          return at(s[0], s[1], 1, g("steam" + i, S([ci(-6, -4, 7), ci(5, -9, 8), ci(1, -17, 6)], "#DCD6C8", 2.4), 'opacity="0"'));
+        }).join("");
+        // 9:16: the column under the gauge, down to the floor
+        var colH = (G - L.gb) / GS;
+        var column = colH > 1 ? S([pg(R(-11, 0, 22, colH - 3)), pg(R(-24, colH - 6, 48, 6))], C.slate, 3) + line("M8,4 V" + n1(colH - 8), C.orange, 1.6) : "";
+        var gaugeSvg = at(L.gx, L.gb, 1, g("g-shake", '<g transform="scale(' + GS + ')">' + column + steam + gauge + lamp + g("vine-slot", "") + "</g>"));
+
+        // ── the SOVIET UNION tag: hung from its corner by a leader to the pin ──
+        var T = L.tag, hw = T.w / 2, hh = T.h / 2;
+        var card = S([pg(chamf(-hw, -hh, hw, hh, 6))], "#FBF6E6", 5) + '<path d="' + polyD(chamf(-hw + 9, -hh + 9, hw - 9, hh - 9, 3)) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
+          T.lines.map(function (l) { return txt(0, l[2], l[0], l[1], ink, 'letter-spacing="1.5"'); }).join("") +
+          g("tag-col", txt(0, T.col, "COLLAPSED", 50, C.war, 'letter-spacing="2"'), 'opacity="0"') +
+          S([ci(T.anchor[0] - (T.anchor[0] > 0 ? 14 : -14), T.anchor[1] - (T.anchor[1] > 0 ? 14 : -14), 6)], C.cream, 2.6);
+        var milW = 240;
+        var mil = at(L.mil[0], L.mil[1], 1, g("mil", S([pg(chamf(-milW / 2, -24, milW / 2, 24, 4))], "#FBF6E6", 4) +
+          '<path d="' + polyD(chamf(-milW / 2 + 6, -18, milW / 2 - 6, 18, 2)) + '" fill="none" stroke="' + C.war + '" stroke-width="2.4"/>' +
+          txt(0, 11, "MILITARY ONLY", 30, C.war, 'letter-spacing="1.5"'), 'opacity="0"'), L.mil[2]);
+        var ax = T.anchor[0] - (T.anchor[0] > 0 ? 14 : -14), ay = T.anchor[1] - (T.anchor[1] > 0 ? 14 : -14);
+        var tagSvg = at(T.x, T.y, 1, g("tag-drop", g("tag-sag", card + mil)), 0);
+        var midX = (TA[0] + PIN[0]) / 2, midY = Math.min(TA[1], PIN[1]) - (V ? -30 : 30);
+        var leader = '<path id="' + P + 'leader" d="M' + pt(T.x + ax, T.y + ay) + " Q" + pt(midX, midY) + " " + pt(PIN[0], PIN[1] - 4) + '" fill="none" stroke="' + ink + '" stroke-width="3.2" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
+
+        // ── the Soviet side (Soviet units: the floor at y 0) ──
+        // The crank computer: a 1950s TV cabinet (KIT.props.tvSet) on a slate box with a window onto its gears
+        // (KIT.props.gears), a stubby exhaust pipe on top, and a hand crank on its right side (axle CAX).
+        var box = chamf(-100, -150, 100, -8, 10), winP = chamf(-82, -136, 82, -24, 6);
+        var tv = KIT.props.tvSet({}).replace("<!--tv-screen-->",
+          g("scr1", txt(-9, -82, "2+2=", 27, C.cream, "", "end"), 'opacity="0"') + g("scr2", txt(-6, -82, "5", 27, C.yellow, "", "start"), 'opacity="0"'));
+        var comp = S([pg(R(-90, -10, 26, 10)), pg(R(64, -10, 26, 10))], ink, 2) +
+          S([pg(R(-78, -178, 16, 30)), pg(R(-82, -184, 24, 8))], C.slate, 3) +
+          S([pg(box)], C.slate) + line("M" + pt(96.5, -138) + " L96.5,-14", C.orange, 1.8) + line("M-88,-146.5 H88", C.orange, 1.6) +
+          S([pg(winP)], "#E9E1CC", 3.2) + dotsOn(winP, 0.18) +
+          '<defs><clipPath id="' + P + 'winclip"><' + pg(winP) + '/></clipPath></defs><g clip-path="url(#' + P + 'winclip)">' +
+          g("gears", at(0, -30, 0.72, KIT.props.gears({ n: 3 }))) + "</g>" +
+          S([pg(R(-60, -24, 120, 6))], C.rust, 2) +
+          at(0, -150, 1, tv);
+        var crank = g("crank-fall", g("crank", S([pg([[95, -80], [105, -80], [104, -131], [96, -131]])], C.slate, 3) + line("M100,-127 H116", ink, 4) +
+          S([pg(chamf(113, -136, 127, -116, 2))], C.tan, 3) + S([ci(CAX[0], CAX[1], 10)], C.yellow, 3) + F(ci(CAX[0], CAX[1], 3), ink)));
+        var puffs = [0, 1, 2].map(function (i) { return at(-70, -192, 1, g("puff" + i, S([ci(0, 0, 9), ci(10, -6, 7), ci(-8, -8, 6)], "#C9C2B5", 2.4), 'opacity="0"')); }).join("");
+        // The tiny red sprout of parasitic sector: a stem, a leaf and one tiny war-money leaf.
+        var sprout = at(L.sprout, 0, 1, g("sprout", line("M0,0 C-3,-14 7,-22 2,-40", ink, 7) + line("M0,0 C-3,-14 7,-22 2,-40", C.war, 3.6) +
+          S([pg([[1, -18], [-14, -26], [-20, -20], [-8, -15]])], C.war, 2.4) +
+          g("sprout-bill", at(3, -44, 0.22, KIT.money("war"), -24))));
+        // The PLAN binder: a thick navy ring binder with stick legs and eyes, a cream PLAN label; the TERRIBLE sticker
+        // (hidden) slaps on its front; the proud eyes (closed arcs) swap in after "one.".
+        var cover = R(-62, -238, 132, 206), spine = [[-78, -232], [-62, -238], [-62, -32], [-78, -38]], pages = [[-62, -238], [70, -238], [62, -246], [-70, -246]];
+        var burst = [], k;
+        for (k = 0; k < 28; k++) { var ra = (k * Math.PI) / 14, rr = k % 2 ? 46 : 62; burst.push([6 + rr * Math.cos(ra), -80 + rr * Math.sin(ra) * 0.82]); }
+        var binder = line("M-24,-34 l-6,30 h-12 M24,-34 l6,30 h12", ink, 6) +
+          S([pg(pages)], "#FBF6E6", 3.4) + S([pg(spine)], "#1A2238", 4) + S([pg(cover)], "#24304D") +
+          [-200, -136, -72].map(function (y) { return S([pg(R(-76, y, 12, 8))], C.yellow, 2); }).join("") +
+          line("M66,-234 V-36", C.orange, 1.8) + line("M-58,-234 H66", C.orange, 1.4) +
+          S([pg(chamf(-46, -176, 54, -122, 4))], "#FBF6E6", 3.4) + txt(4, -134, "PLAN", 46, ink, 'letter-spacing="3"') +
+          g("b-eyes", [-14, 22].map(function (x) { return S(['ellipse cx="' + x + '" cy="-204" rx="9" ry="10"'], "#FFFFFF", 2.4); }).join("") +
+            g("b-pupils", F(ci(-13, -203, 4), ink) + F(ci(23, -203, 4), ink))) +
+          g("b-proud", line("M-22,-202 Q-14,-212 -6,-202 M14,-202 Q22,-212 30,-202", "#FFFFFF", 3.4), 'opacity="0"') +
+          g("sticker", S([pg(burst)], C.war, 3) + txt(6, -71, "TERRIBLE", 27, "#FBF6E6", 'textLength="94" lengthAdjust="spacingAndGlyphs" letter-spacing="1"'), 'opacity="0"');
+        var soviet = at(L.sx, G, SS, sprout + g("comp-pop", g("comp", comp) + crank + puffs) +
+          at(L.bx, 0, 1, g("bind-drop", g("bind-lean", binder))) + g("twinkle", KIT.star(L.bx + 70, -262, 18, C.yellow) + KIT.star(L.bx + 92, -236, 9, C.orange), 'opacity="0"'));
+
+        var floor = line("M" + L.fl[0] + "," + G + " H" + L.fl[1], ink, 5) +
+          [0.12, 0.38, 0.66, 0.88].map(function (f) { var x = L.fl[0] + 20 + f * (L.fl[1] - L.fl[0] - 40); return line("M" + x + "," + G + " l-6,-14 M" + (x + 6) + "," + G + " l2,-18 M" + (x + 12) + "," + G + " l8,-12", ink, 3); }).join("");
+        return floor + gaugeSvg + soviet + leader + tagSvg;
+      }
+      // ══ end of the shared stage ══
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + stage());
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+
+      var show = function (id, t) { tl.set(q(id), { opacity: 1 }, t); };
+      var needle = q("art").querySelector(".gauge-needle");
+      gsap.set(needle, { svgOrigin: "0 -100" });
+
+      // "current": the needle settles on 11.5 as the paper lands; "destructive": it creeps up, trembling.
+      tl.fromTo(needle, { rotation: -26 }, { rotation: 0, duration: 0.9, ease: "elastic.out(1, 0.45)" }, 0.3);
+      var tD = cue("destructive");
+      tl.to(needle, { rotation: turn(12.4), duration: 1.3, ease: "sine.inOut" }, tD);
+      tl.to(needle, { rotation: turn(12.1), duration: 0.12, repeat: 3, yoyo: true, ease: "sine.inOut" }, tD + 1.3);
+
+      // "twenty-five": the red zone at 25 to 30 lights up with its lamp (the switch click).
+      var t25 = cue("twenty-five");
+      show("zone-lit", t25);
+      show("lamp-on", t25);
+      tl.fromTo(q("zone-lit"), { scale: 1.08, svgOrigin: "0 -100" }, { scale: 1, svgOrigin: "0 -100", duration: 0.2, ease: "back.out(3)" }, t25);
+      gsap.set(q("lamp-on"), { svgOrigin: L.lamp + " -168" });
+      tl.fromTo(q("lamp-on"), { scale: 1.6 }, { scale: 1, duration: 0.18, ease: "back.out(3)", immediateRender: false }, t25);
+
+      // "thirty-three.": the year window spins to 2033 (the whirr) as the needle swings up into the red.
+      var t33 = cue("thirty-three.");
+      tl.fromTo(q("years"), { y: 0 }, { y: -(YEARS.length - 1) * YH, duration: 0.85, ease: "power2.inOut" }, t33);
+      tl.to(needle, { rotation: turn(26), duration: 0.6, ease: "power2.in" }, t33 + 0.05);
+      tl.to(needle, { rotation: turn(25), duration: 0.3, ease: "back.out(2)" }, t33 + 0.65);
+      // after "thirty-three.": the gauge rattles and steams (the sizzle); the needle quivers in the red.
+      var tA = KIT.after(ID, "thirty-three.");
+      tl.fromTo(q("g-shake"), { x: 0 }, { x: 6, duration: 0.035, repeat: 7, yoyo: true, ease: "none", immediateRender: false }, tA);
+      tl.to(needle, { rotation: turn(25.8), duration: 0.05, repeat: 5, yoyo: true, ease: "none" }, tA);
+      L.steam.forEach(function (s, i) {
+        var el = q("steam" + i), dir = V ? -1 : i ? 1 : -1;
+        gsap.set(el, { svgOrigin: "0 0" });
+        tl.fromTo(el, { opacity: 1, scale: 0.4, x: 0, y: 0 }, { opacity: 0, scale: 1.7, x: dir * 14, y: -46, duration: 0.85, ease: "power1.out", immediateRender: false }, tA + i * 0.08);
+      });
+
+      // "Soviet": the needle drops back to 11.5 and a red pin drops in on the rim at 15 (the thunk); the tag drops in
+      // on its leader, SOVIET UNION:.
+      var tS = cue("Soviet");
+      tl.to(needle, { rotation: 0, duration: 0.32, ease: "power3.in" }, tS - 0.24);
+      tl.to(needle, { rotation: turn(10.6), duration: 0.1, yoyo: true, repeat: 1, ease: "power1.out" }, tS + 0.08);
+      tl.fromTo(q("pin"), { y: -260, opacity: 1 }, { y: 0, duration: 0.24, ease: "power2.in" }, tS - 0.24);
+      show("tick15", tS);
+      gsap.set(q("pin"), { svgOrigin: "0 -151" });
+      tl.fromTo(q("pin"), { rotation: 0 }, { rotation: 9, duration: 0.07, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, tS);
+      var tagIn = tS + 0.14;
+      tl.fromTo(q("tag-drop"), { y: -L.tag.y - 200 }, { y: 0, duration: 0.3, ease: "power2.in" }, tagIn);
+      tl.to(q("tag-drop"), { y: -14, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.out" }, tagIn + 0.3);
+      tl.fromTo(q("leader"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.25, ease: "power1.out" }, tagIn + 0.3);
+      // "collapsed": COLLAPSED lands on the tag, and the tag sags off its corner.
+      var tCol = cue("collapsed");
+      var anc = L.tag.anchor[0] - 14 + " " + (L.tag.anchor[1] - (L.tag.anchor[1] > 0 ? 14 : -14));
+      gsap.set(q("tag-sag"), { svgOrigin: anc });
+      tl.fromTo(q("tag-col"), { opacity: 0, scale: 1.5, svgOrigin: "0 " + (L.tag.col - 18) }, { opacity: 1, scale: 1, svgOrigin: "0 " + (L.tag.col - 18), duration: 0.14, ease: "power3.in" }, tCol);
+      tl.to(q("tag-sag"), { rotation: -9, duration: 0.3, ease: "back.out(2.4)" }, tCol + 0.22);
+      tl.to(q("tag-sag"), { rotation: -7, duration: 0.25, ease: "sine.inOut" }, tCol + 0.52);
+      // "fifteen": the 15% mark pulses.
+      var t15 = cue("fifteen");
+      tl.fromTo(q("tick15"), { scale: 1, svgOrigin: "0 -127" }, { scale: 1.35, svgOrigin: "0 -127", duration: 0.14, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t15);
+      // "alone.": the MILITARY ONLY tag pops on under it (the pop).
+      var tAl = cue("alone.");
+      show("mil", tAl);
+      tl.fromTo(q("mil"), { scale: 0.2, svgOrigin: "0 -24" }, { scale: 1, svgOrigin: "0 -24", duration: 0.24, ease: "back.out(2.6)" }, tAl);
+
+      // "They had worse technology,": the crank computer pops up; on "technology," it cranks itself, puffing, gears
+      // turning, and works out 2+2=5.
+      var tThey = cue("They"), tTech = cue("technology,");
+      gsap.set(q("comp-pop"), { svgOrigin: "0 0" });
+      tl.fromTo(q("comp-pop"), { scaleY: 0, scaleX: 0.6, opacity: 1 }, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(1.8)" }, tThey);
+      var tOneA = KIT.after(ID, "one."), tFall = tOneA - 0.26, revs = 6;
+      gsap.set(q("crank"), { svgOrigin: CAX0() });
+      tl.fromTo(q("crank"), { rotation: 0 }, { rotation: 360 * revs, duration: tFall - 0.08 - tTech, ease: "sine.inOut" }, tTech);
+      // the gears turn with the crank: gear 0 seven whole turns, so every gear ends as drawn
+      KIT.props.gears.spin(tl, q("gears"), tTech, tFall - 0.08 - tTech, 0, 2520, "sine.inOut");
+      for (var tp = tTech + 0.15, ip = 0; tp < tFall; tp += 0.62, ip++) {
+        var pf = q("puff" + (ip % 3));
+        gsap.set(pf, { svgOrigin: "0 0" });
+        tl.fromTo(pf, { opacity: 1, scale: 0.4, x: 0, y: 0 }, { opacity: 0, scale: 1.4, x: -16, y: -70, duration: 0.95, ease: "power1.out", immediateRender: false }, tp);
+      }
+      var tvAnt = q("art").querySelectorAll(".tv-antenna-l, .tv-antenna-r");
+      Array.prototype.forEach.call(tvAnt, function (a, i) {
+        gsap.set(a, { svgOrigin: (i ? 3 : -3) + " -156" });
+        // an even number of swings, so they end upright (no-plan starts on this frame)
+        var nSw = Math.floor((tFall - tTech) / 0.31);
+        tl.fromTo(a, { rotation: 0 }, { rotation: i ? 7 : -7, duration: 0.31, repeat: nSw - (nSw % 2) - 1, yoyo: true, ease: "sine.inOut" }, tTech);
+      });
+      show("scr1", tTech + 0.3);
+      show("scr2", tTech + 0.75);
+      tl.fromTo(q("scr2"), { scale: 1.6, svgOrigin: "4 -92" }, { scale: 1, svgOrigin: "4 -92", duration: 0.16, ease: "back.out(3)" }, tTech + 0.75);
+
+      // "smaller parasitic sector,": a tiny red sprout pokes up beside it, and grows one tiny war-money leaf.
+      var tSm = cue("smaller");
+      gsap.set(q("sprout"), { svgOrigin: "0 0" });
+      tl.fromTo(q("sprout"), { scaleY: 0, scaleX: 0.5 }, { scaleY: 1, scaleX: 1, duration: 0.35, ease: "back.out(2.2)" }, tSm);
+      gsap.set(q("sprout-bill"), { svgOrigin: "0 0" });
+      tl.fromTo(q("sprout-bill"), { scale: 0 }, { scale: 1, duration: 0.22, ease: "back.out(3)" }, cue("parasitic"));
+      tl.to(q("sprout"), { rotation: 6, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, cue("parasitic") + 0.25);
+
+      // "plan.": the PLAN binder drops in (the thunk), squashes and settles.
+      var tPl = cue("plan.");
+      gsap.set(q("bind-drop"), { svgOrigin: "0 0" });
+      gsap.set(q("bind-lean"), { svgOrigin: "0 0" });
+      tl.fromTo(q("bind-drop"), { y: -(G + 300) / SS, opacity: 1 }, { y: 0, duration: 0.3, ease: "power2.in" }, tPl - 0.3);
+      tl.fromTo(q("bind-drop"), { scaleY: 1, scaleX: 1 }, { scaleY: 0.84, scaleX: 1.12, duration: 0.06, ease: "power2.out", immediateRender: false }, tPl);
+      tl.to(q("bind-drop"), { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(3)" }, tPl + 0.06);
+      // "It was": it slumps, looking at its feet; "terrible": the TERRIBLE sticker slaps on (the splat).
+      var tIt = cue("It"), tTer = cue("terrible");
+      tl.to(q("bind-lean"), { rotation: -7, scaleY: 0.95, duration: 0.3, ease: "power2.out" }, tIt);
+      tl.to(q("b-pupils"), { y: 4, x: -2, duration: 0.2 }, tIt);
+      show("sticker", tTer);
+      tl.fromTo(q("sticker"), { scale: 2.3, rotation: 18, svgOrigin: "6 -80" }, { scale: 1, rotation: 0, svgOrigin: "6 -80", duration: 0.1, ease: "power3.in" }, tTer - 0.04);
+      tl.to(q("bind-lean"), { scaleY: 0.9, scaleX: 1.04, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out" }, tTer + 0.06);
+      // "but they had one.": it looks up; after "one." it stands up straight, proud, as the crank falls off the computer
+      // (the clank) and bounces on the floor.
+      tl.to(q("b-pupils"), { y: -2, x: 1, duration: 0.2 }, cue("had") + 0.2);
+      tl.to(q("bind-lean"), { rotation: 2, scaleY: 1.06, scaleX: 0.98, duration: 0.22, ease: "back.out(2)" }, tOneA - 0.12);
+      tl.to(q("bind-lean"), { rotation: 0, scaleY: 1, scaleX: 1, duration: 0.28, ease: "sine.inOut" }, tOneA + 0.12);
+      tl.set(q("b-eyes"), { opacity: 0 }, tOneA - 0.05);
+      show("b-proud", tOneA - 0.05);
+      show("twinkle", tOneA + 0.05);
+      Array.prototype.forEach.call(q("twinkle").children, function (s, i) {
+        var bb = [L.bx + (i ? 92 : 70), i ? -236 : -262];
+        tl.fromTo(s, { scale: 0, rotation: 0, svgOrigin: bb.join(" ") }, { scale: 1.2, rotation: 45, svgOrigin: bb.join(" "), duration: 0.16, yoyo: true, repeat: 1, ease: "power2.out" }, tOneA + 0.05 + i * 0.07);
+      });
+      var cf = q("crank-fall");
+      gsap.set(cf, { svgOrigin: CAX0() });
+      tl.to(cf, { x: 16, y: -12, rotation: 25, duration: 0.1, ease: "power1.out" }, tFall);
+      tl.to(cf, { x: 30, y: 52, rotation: 96, duration: 0.16, ease: "power2.in" }, tFall + 0.1);
+      tl.to(cf, { x: 36, y: 38, rotation: 92, duration: 0.09, ease: "power1.out" }, tOneA);
+      tl.to(cf, { x: 40, y: 52, rotation: 90, duration: 0.11, ease: "power1.in" }, tOneA + 0.09);
+      // the computer winces as its crank goes
+      tl.to(q("comp-pop"), { scaleY: 0.96, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out" }, tFall + 0.04);
+
+      function CAX0() { return CAX[0] + " " + CAX[1]; }
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

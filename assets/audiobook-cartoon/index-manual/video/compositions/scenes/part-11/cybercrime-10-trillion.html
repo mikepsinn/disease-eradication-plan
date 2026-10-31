@@ -1,0 +1,467 @@
+<template id="cybercrime-10-trillion-template">
+  <!-- cybercrime-10-trillion · Layer B (storyboards/part-11-civilization-countdown.md). Starts on official-murder-
+       budget's last frame (no seam). "Cybercrime": the Masked Crook pops up in the big cart's back end and opens a laptop
+       on its rim (click). "ten point five trillion": a bank stands up on a hill at the right with a WiFi symbol on a pole
+       beside it; its vault swings open and plain papers walk out in single file, hop into the WiFi and pop out of the
+       laptop with the red missile seal on (pops), arcing into the big cart, whose tag drops on: CYBERCRIME: $10.5
+       TRILLION / YEAR. "fifteen percent": the line goes two abreast, then three; a second tag, +15% / YEAR, clips onto
+       the first. "annually.": the big cart sags, its wheels splaying out under the weight. "This is not a": the Weapons
+       Maker and the Crook look at each other across the gap; "separate": they lean over and shake hands (pat).
+       "problem.": a chain snaps the two carts together, right across the Weapons Maker's middle (clank). after
+       "problem.": both turn to us and grin, and his cigar perks up. The fuse burns in the top-left corner.
+
+       FOR destroy-beats-make (which rolls these two chained carts in), the carts as this scene leaves them. Cart units are
+       KIT.props.shoppingCart's (facing right, the floor at y 0, the basket x -40..54, y -74..-38, the grip at (-53,-91));
+       a cart [x, s, m] puts its (u, v) at (x + m s u, G + s v), m -1 mirroring it to face left.
+         16:9: G 820. Small cart [480, 2.4, -1] (facing left, its handle on the right). The Weapons Maker's feet at
+               x 745, scale 2.3, in the gap. Big cart [1124, 4.56, 1] (1.9 times), facing right, sagged 6 cart units
+               (its basket down 27 px, its wheels splayed out to u -35 and 49). The chain: five navy links from the small
+               cart's basket corner (u -40, v -74) at (576, 642) to the big cart's (u -30, v -38) at (987, 674).
+         9:16: G 1380. Small cart [210, 2.0, -1]; the Weapons Maker at x 440, scale 2.0; big cart [775, 3.8, 1], sagged
+               the same 6 units (23 px); the chain from (290, 1232) to (661, 1259).
+       The big cart holds a heap of 37 war papers (KIT.money("war"), scale 0.6 in 16:9, 0.5 in 9:16) and the Masked Crook
+       (scale 1.9 / 1.6) with his laptop on its back rim; the small cart holds Part 10's warheads (in tiny tags, one
+       SPARE), the frowning robot and the crank box. Tags: OFFICIAL MURDER BUDGET on the small cart; CYBERCRIME: $10.5
+       TRILLION / YEAR with +15% / YEAR on the big one. The WiFi symbol: a navy dot r 8 and three arcs, r 22, 40, 58,
+       stroke 8, opening up, on a 120 px navy pole. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #cybercrime-10-trillion-cam, #cybercrime-10-trillion-bg, #cybercrime-10-trillion-art, #cybercrime-10-trillion-pip, #cybercrime-10-trillion-fuse, #cybercrime-10-trillion-grain { position: absolute; inset: 0; }
+    /* the big cart's shadow (from official-murder-budget): its own drawing, every fill and line in navy */
+    #cybercrime-10-trillion-shadow * { fill: #112845 !important; stroke: #112845 !important; }
+  </style>
+  <div id="root" data-composition-id="cybercrime-10-trillion" data-width="1920" data-height="1080" data-start="0" data-duration="7.52">
+    <div id="cybercrime-10-trillion-cam">
+      <div id="cybercrime-10-trillion-bg"></div>
+      <div id="cybercrime-10-trillion-art"></div>
+      <div id="cybercrime-10-trillion-pip"></div>
+    </div>
+    <!-- the civilization fuse: above the camera, under the grain -->
+    <div id="cybercrime-10-trillion-fuse"></div>
+    <div id="cybercrime-10-trillion-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script>
+    (function () {
+      var ID = "cybercrime-10-trillion";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function el(cx, cy, rx, ry) { return 'ellipse cx="' + n1(cx) + '" cy="' + n1(cy) + '" rx="' + n1(rx) + '" ry="' + n1(ry) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function txt(x, y, size, s, col, extra) {
+        return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (col || ink) + '"' + (extra ? " " + extra : "") + ">" + s + "</text>";
+      }
+      function rotAbout(p, deg, c) {
+        var r = (deg * Math.PI) / 180, x = p[0] - c[0], y = p[1] - c[1];
+        return [c[0] + x * Math.cos(r) - y * Math.sin(r), c[1] + x * Math.sin(r) + y * Math.cos(r)];
+      }
+      function lerp(a, b, f) { return a + (b - a) * f; }
+      function clamp01(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+      function ease2(f) { return f < 0.5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2; }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene. ──
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── THE TWO CARTS: copied from official-murder-budget (this scene starts on its last frame); change both. ──
+      // destroy-beats-make rolls these two carts in: the positions and scales are listed at the top of this file.
+      // Cart units are KIT.props.shoppingCart's (facing right, the floor at y 0, the basket
+      // x -40..54, y -74..-38, the grip at (-53,-91)). A cart [x, s, m] puts its (u, v) at (x + m s u, G + s v); m -1
+      // mirrors it to face left. small: Part 10's cart, heaped, facing left, so its handle is on the right; wm: the
+      // Weapons Maker [x of his feet, scale], standing at that handle in the gap between the carts and leaning back on it;
+      // big: the same cart at 1.9 times the scale, facing right, on the far side of the gap, on the same floor.
+      var CART = V
+        ? { G: 1380, small: [210, 2.0, -1], wm: [440, 2.0], big: [775, 3.8, 1], tagS: 1.3, shadowDx: -460 }
+        : { G: 820, small: [480, 2.4, -1], wm: [745, 2.3], big: [1124, 4.56, 1], tagS: 1.6, shadowDx: -470 };
+      var G = CART.G;
+      function cpt(c, u, v) { return [c[0] + (c[2] || 1) * c[1] * u, G + c[1] * v]; }
+      function cartAt(c, inner, id) {
+        return '<g transform="translate(' + n1(c[0]) + "," + G + ") scale(" + (c[2] || 1) * c[1] + "," + c[1] + ')">' + (id ? g(id, inner) : inner) + "</g>";
+      }
+      // Part 10's things in the small cart (in cart units, drawn unmirrored at their mirrored spots, so the tags read):
+      // the warhead heap (grinning bombs, each in its own tiny price tag, the top one SPARE), the frowning robot at the
+      // back and the question-mark crank box at the front.
+      function cartLoad(c) {
+        function put(u, v, inner) { var p = cpt(c, u, v); return at(p[0], p[1], c[1], inner); }
+        var out = put(-27, -50, at(0, 0, 0.36, g("robot", KIT.props.robot({ mood: "grumpy", arms: [[16, 6], [-24, -12]] }))));
+        var crate = S([pg(R(-11, -22, 22, 22))], C.tan, 2.2) + line("M-9,-7 H9 M-9,-15 H9", C.rust, 1) + txt(0, -4.5, 17, "?", ink) +
+          line("M-11,-12 h-6 v-8", ink, 2.4) + S([pg(R(-20, -24, 6, 4))], C.war, 1.4);
+        out += put(41, -72, crate);
+        [[-12, -66, 1], [10, -68, 0], [31, -64, 1], [-2, -86, 0], [21, -87, 1], [8, -107, 2]].forEach(function (b) {
+          var tag = b[2] === 2 ? "SPARE" : "$";
+          out += put(b[0], b[1], KIT.props.bomb({ size: 0.3, lit: false, face: b[2] === 1 ? "grin" : b[2] === 2 ? "smug" : undefined }) +
+            at(-9, -21, 1, KIT.props.priceTag({ text: tag, size: b[2] === 2 ? 0.4 : 0.32, angle: b[2] === 2 ? 14 : 34 })));
+        });
+        return out;
+      }
+      // The Weapons Maker with a cigar of his own in place of the kit's, so it can droop: #<id> in the face's units,
+      // pivot (0, 0) at his lips. MY: this build's mouth line in face units (12, plus 2 for the "jaw" head).
+      var MY = 14;
+      function wmDraw(extra, cigId) {
+        var o = KIT.castOpts("weaponsMaker", mix({ cigar: false }, extra));
+        var cig = '<g transform="translate(13,' + (MY + 2) + ')"><g id="' + P + cigId + '">' +
+          '<g transform="rotate(-12)">' + S([pg([[0, -2.6], [22, -2.6], [22, 2.6], [0, 2.6]])], "#7A4A2A", 2) +
+          '<rect x="19" y="-2.6" width="4" height="5.2" fill="#C9C2B5"/><rect x="5" y="-2.6" width="3" height="5.2" fill="' + C.war + '"/></g>' +
+          line("M25,-9 q-5,-6 0,-11 q5,-6 0,-11", "#8C8782", 2.4) + "</g></g>";
+        return KIT.person(o).replace("<!--face-end-->", cig + "<!--face-end-->");
+      }
+      // The small cart's tag hangs from its basket's front-top corner, slanting down across the basket.
+      var TAG_KNOT = [54, -74], TAG_ANGLE = 20;
+
+      // ── This scene's layout, per canvas shape ──
+      // crook: the Masked Crook [x of his feet, scale], standing in the big cart's back end (feet on its basket floor),
+      // facing the Weapons Maker; laptop: its scale. bank: [x, scale, ground y]; wifi: x of its pole (on the same
+      // ground); hill: that ground's line. paper / heap: the walking and the landed papers' scales. tagBig / tagUp: the
+      // big cart's two tags' sizes.
+      var L = V
+        ? { crook: [742, 1.6], laptop: 1.25, bank: [860, 0.8, 900], wifi: 640, paper: 0.48, heap: 0.5,
+            hill: "M46,900 H1034", tagBig: 1.1, tagUp: 1.0, arc: 140 }
+        : { crook: [1076, 1.9], laptop: 1.45, bank: [1750, 0.8, 642], wifi: 1520, paper: 0.55, heap: 0.6,
+            hill: "M1380,820 C1420,812 1442,662 1520,646 L1874,642", tagBig: 1.35, tagUp: 1.15, arc: 170 };
+      var SM = CART.small, BG = CART.big, WM = CART.wm, SAG = 6; // the sag, in cart units
+      var WMY = G - 100 * WM[1], sagPx = SAG * BG[1];
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // ── The big cart: the prop with its legs tagged so they can splay; then everything that rides in it. ──
+      var LEGS = "M-30,-38 L-28,-15 M44,-38 L37,-15 M-38,-15 H48 M-28,-15 V-8 M37,-15 V-8";
+      var LEGS_SPLAY = "M-30,-38 L-35,-20 M44,-38 L49,-20 M-44,-20 H57 M-35,-20 V-" + (7.5 + SAG) + " M49,-20 V-" + (7.5 + SAG);
+      var bigProp = KIT.props.shoppingCart({}).split('d="' + LEGS + '"').join('class="' + P + 'legs" d="' + LEGS + '"');
+      var rim = cpt(BG, 0, -74)[1], backTop = cpt(BG, -40, -74), frontTop = cpt(BG, 54, -74), backBot = cpt(BG, -30, -38), frontBot = cpt(BG, 44, -38);
+
+      // The Masked Crook: two drawings (typing, smug; shaking, grinning), each drawn facing right and mirrored to face
+      // the Weapons Maker; clipped out where the basket is (down to the floor), so his legs are inside the cart.
+      var CK = L.crook, cs = CK[1], CY = backBot[1] - 100 * cs; // his origin's y (feet on the basket floor)
+      var typeO = KIT.castOpts("lobbyist", { arms: [[40, 95], [30, 95]], look: "right" }), typeR = KIT.rig(typeO);
+      var LEAN_C = 22, LEAN_W = 8; // the leans for the handshake (deg; the Crook's on top of his own hunch)
+      var wmO = KIT.castOpts("weaponsMaker", { cigar: false }), wmRig = KIT.rig(wmO);
+      // both right shoulders at the handshake (screen, the big cart sagged), where the hands meet (outside the basket,
+      // so his hand is not clipped), and each arm bent to reach it
+      var wq = rotAbout(wmRig.shoulder[1], LEAN_W, [0, 100]), wSh = [WM[0] + WM[1] * wq[0], WMY + WM[1] * wq[1]];
+      var cq = rotAbout(typeR.shoulder[1], typeR.lean + LEAN_C, [0, typeR.hipY]), cSh = [CK[0] - cs * cq[0], CY + sagPx + cs * cq[1]];
+      var segW = wmRig.armLength * WM[1], segC = typeR.armLength * cs;
+      var Mx = lerp(wSh[0], cSh[0], segW / (segW + segC)), My = lerp(wSh[1], cSh[1], segW / (segW + segC));
+      var edgeX = backTop[0] + ((My - sagPx - rim) / (backBot[1] - rim)) * (backBot[0] - backTop[0]);
+      Mx = Math.min(Mx, edgeX - 16);
+      function armTo(dx, dy, seg, elbowOut) {
+        var d = Math.sqrt(dx * dx + dy * dy), a = (Math.atan2(dx, dy) * 180) / Math.PI;
+        var th = d >= 2 * seg ? 0 : (Math.acos(d / (2 * seg)) * 180) / Math.PI;
+        return elbowOut ? [a - th, a + th] : [a + th, a - th];
+      }
+      var wd = rotAbout([Mx - wSh[0], My - wSh[1]], -LEAN_W, [0, 0]);
+      var cd = rotAbout([-(Mx - cSh[0]), My - cSh[1]], -(typeR.lean + LEAN_C), [0, 0]);
+      var shakeO = KIT.castOpts("lobbyist", { arms: [[40, 95], armTo(cd[0], cd[1], segC, false)], look: "right", mood: "grin" }), shakeR = KIT.rig(shakeO);
+      // (the typing one behind the laptop, the shaking one, who leans over it, in front of it)
+      function crookAt(id, o, extra) {
+        return '<g clip-path="url(#' + P + 'incart)">' + at(CK[0], CY, 1, '<g transform="scale(' + -cs + "," + cs + ')">' +
+          g(id + "-pop", g(id + "-lean", g(id, KIT.person(o))), extra) + "</g>") + "</g>";
+      }
+      var cutD = "M0,-400 H" + W + " V" + (H + 400) + " H0 Z " +
+        polyD([[backTop[0], rim], [frontTop[0], rim], [frontBot[0], frontBot[1]], [frontBot[0], H + 300], [backBot[0], H + 300], [backBot[0], backBot[1]]]);
+      var crookType = '<defs><clipPath id="' + P + 'incart"><path d="' + cutD + '" clip-rule="evenodd"/></clipPath></defs>' + crookAt("crook-type", typeO);
+      var crookShake = crookAt("crook-shake", shakeO, 'opacity="0"');
+      // the laptop, on the rim between his hands, its lid shut until he opens it; a red seal on its screen
+      var hands = typeR.hand.map(function (h) { return [CK[0] - cs * h[0], CY + cs * h[1]]; });
+      var lapX = (hands[0][0] + hands[1][0]) / 2, lapK = L.laptop;
+      var screen = '<rect x="-24" y="-42" width="48" height="31" fill="' + C.cyan + '" opacity="0.3"/>' +
+        '<g transform="translate(0,-27)">' + KIT.moneySeal("war", 0, 0, 8.5) + "</g>" + line("M-19,-37 h10 M-19,-15 h14 M10,-15 h9", C.cream, 1.6);
+      var laptop = at(lapX, rim, lapK, g("laptop", KIT.props.laptop({}).replace("<!--laptop-screen-->", g("screen-on", screen, 'opacity="0"'))));
+      var lapScreen = [lapX, rim - 26.4 * lapK];
+
+      // The big cart's tag (on its basket face, from near its back corner), and the +15% tag that clips onto its far end.
+      var bigText = "CYBERCRIME: $10.5 TRILLION / YEAR", bigKnot = cpt(BG, -30, -72), tagW = bigText.length * 9 + 30, tagA = 5;
+      // (clipped on at its far end in 16:9; in 9:16, where that end is at the frame's edge, a little past its middle)
+      var endK = rotAbout([3 + (tagW - 16) * (V ? 0.62 : 1), 28 + 15], tagA, [3, 28]);
+      endK = [bigKnot[0] + L.tagBig * endK[0], bigKnot[1] + L.tagBig * endK[1]];
+      var bigTag = at(bigKnot[0], bigKnot[1], 1, g("tag-big", g("tag-big-in", KIT.props.priceTag({ text: bigText, angle: tagA, size: L.tagBig })), 'opacity="0"')) +
+        at(endK[0], endK[1], 1, g("tag-up", g("tag-up-in", KIT.props.priceTag({ text: "+15% / YEAR", angle: V ? 34 : 24, size: L.tagUp, color: C.yellow })), 'opacity="0"'));
+
+      // ── The stream: plain papers walk out of the bank, hop into the WiFi, pop out of the laptop as war papers and land
+      // in the heap. Each paper has a lane and the moment it goes into the WiFi; it pops out of the laptop dOut later
+      // (the pops in the part file: "trillion" +0.25 and +0.55, "fifteen" +0 and +0.15). ──
+      var tTr = cue("trillion"), tFif = cue("fifteen");
+      var papers = [];
+      [0, 1, 2, 3, 4, 5, 6].forEach(function (k) { papers.push({ lane: 0, tIn: tTr + 0.25 - 0.12 + 0.3 * k, dOut: 0.12 }); });
+      [0, 1, 2].forEach(function (k) { [0, 1].forEach(function (j) { papers.push({ lane: j, tIn: tFif - 0.12 + 0.3 * k, dOut: 0.12 + 0.15 * j }); }); });
+      for (var k3 = 0; k3 < 8; k3++) [0, 1, 2].forEach(function (j) { papers.push({ lane: j, tIn: tFif + 0.78 + 0.3 * k3, dOut: 0.12 + 0.1 * j }); });
+      var BK = L.bank, door = [BK[0], BK[2] - 100 * BK[1]], pole = [L.wifi, BK[2]], dot = [L.wifi, BK[2] - 128];
+      var LANE = [[0, 1], [-11, 0.9], [9, 1.06]]; // [y offset, scale] per lane (the back lane a bit smaller)
+      var walkV = V ? 260 : 320, walkDur = (door[0] - pole[0] - 24) / walkV, hopDur = 0.26, flyDur = 0.44, drop = 0.18;
+      // the heap: rows of spots in big-cart units, a mound over the basket, behind the Crook
+      var rows = V ? [5, 5, 4, 4, 4, 4, 3, 3, 2, 2, 1] : [7, 6, 6, 5, 4, 4, 3, 2], spots = [], rr = KIT.rng(1050);
+      rows.forEach(function (n, r) {
+        for (var i = 0; i < n; i++) spots.push([18 + (i - (n - 1) / 2) * (V ? 9 : 8.4) + (rr() - 0.5) * 3, -77 - r * 4.4 - rr() * 1.5, (rr() - 0.5) * 30]);
+      });
+      papers.forEach(function (p, i) {
+        p.tOut = p.tIn + p.dOut; p.tHop = p.tIn - hopDur; p.tDoor = p.tHop - walkDur - drop;
+        p.spot = cpt(BG, spots[i][0], spots[i][1]);
+        p.rot = spots[i][2];
+      });
+      var walkers = papers.map(function (p, i) {
+        return g("w" + i, g("w" + i + "-a", KIT.money("plain", 0)) + g("w" + i + "-b", KIT.money("plain", 1), 'opacity="0"'), 'opacity="0"');
+      }).join("");
+      var flyers = papers.map(function (p, i) { return g("f" + i, KIT.money("war", 0.5), 'opacity="0"'); }).join("");
+
+      // ── The bank (its vault swings open) and the WiFi symbol on its pole, on their own ground. ──
+      function arcD(r) {
+        var a0 = (-135 * Math.PI) / 180, a1 = (-45 * Math.PI) / 180;
+        return "M" + pt(r * Math.cos(a0), r * Math.sin(a0)) + " A" + r + "," + r + " 0 0 1 " + pt(r * Math.cos(a1), r * Math.sin(a1));
+      }
+      var wifi = line("M0,8 V128", ink, 8) + line("M0,10 V126", C.peri, 3) + S([pg(R(-16, 122, 32, 8))], C.slate, 2.6) +
+        g("arcs", [22, 40, 58].map(function (r) { return line(arcD(r), ink, 8, 'stroke-linecap="round"'); }).join("")) + F(ci(0, 0, 8), ink);
+      var hill = line(L.hill, ink, 5) + [0.12, 0.45, 0.85].map(function (f) {
+        var gx = V ? 80 + f * 920 : 1560 + f * 280, gy = BK[2];
+        return line("M" + gx + "," + gy + " l-5,-12 M" + (gx + 5) + "," + gy + " l2,-15 M" + (gx + 10) + "," + gy + " l7,-10", ink, 2.6);
+      }).join("");
+      var bankArt = at(BK[0], BK[2], 1, g("bank-up", at(0, 0, BK[1], KIT.props.bank({}))));
+      var wifiArt = at(dot[0], dot[1], 1, g("wifi-up", wifi));
+
+      // ── The chain: five navy links from the small cart's basket (its back-top corner) to the big cart's (back-bottom,
+      // sagged), across the Weapons Maker's middle. ──
+      var chA = cpt(SM, -40, -74), chB = cpt(BG, -30, -38); chB[1] += sagPx;
+      var cdx = chB[0] - chA[0], cdy = chB[1] - chA[1], clen = Math.sqrt(cdx * cdx + cdy * cdy), cang = (Math.atan2(cdy, cdx) * 180) / Math.PI;
+      var linkL = clen / 5, links = "", lw = Math.max(9, linkL * 0.2);
+      for (var li = 0; li < 5; li++) {
+        var lx = linkL * (li + 0.5), flat = li % 2 === 1;
+        links += g("link" + li, flat
+          ? S([el(lx, 0, linkL * 0.62, lw * 0.45)], C.navy, 3) + line("M" + n1(lx - linkL * 0.45) + ",-1 H" + n1(lx + linkL * 0.3), C.peri, 2)
+          : S([el(lx, 0, linkL * 0.62, lw)], C.navy, 3) + F(el(lx, 0, linkL * 0.4, lw * 0.42), C.paper) + line("M" + n1(lx - linkL * 0.45) + "," + n1(-lw * 0.72) + " H" + n1(lx + linkL * 0.1), C.orange, 1.6), 'opacity="0"');
+      }
+      var chain = at(chA[0], chA[1], 1, '<g transform="rotate(' + cang.toFixed(1) + ')">' + links + "</g>");
+
+      // ── The Weapons Maker: the cradling drawing (as official-murder-budget left him) and the handshake drawing (the
+      // missile in his left arm, his right hand out to the Crook). ──
+      var wmShakeArms = [[32, 84], armTo(wd[0], wd[1], segW, true)];
+      var wm = at(WM[0], WMY, WM[1], g("wm-lean", g("wm", wmDraw({}, "cig")) + g("wm-shake", wmDraw({ arms: wmShakeArms, holdL: "missile" }, "cig2"), 'opacity="0"')));
+
+      // ── The small cart's tag and the big cart's shadow, as official-murder-budget left them. ──
+      var knot = cpt(SM, TAG_KNOT[0], TAG_KNOT[1]);
+      var tags = at(knot[0], knot[1], 1, KIT.props.priceTag({ text: "OFFICIAL MURDER BUDGET", angle: TAG_ANGLE, size: CART.tagS }));
+      var shadow = cartAt([BG[0] + CART.shadowDx, BG[1] * 1.08, 1], KIT.props.shoppingCart({}));
+      var ground = line("M60," + G + " H" + (W - 60), ink, 5) +
+        [0.06, 0.24, 0.47, 0.71, 0.9].map(function (f) {
+          var gx = 70 + f * (W - 140);
+          return line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
+        }).join("");
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + ground + g("hill-wrap", hill, 'opacity="0"') + g("bank-wrap", bankArt, 'opacity="0"') +
+        g("wifi-wrap", wifiArt, 'opacity="0"') + g("walkers", walkers) +
+        g("big-ride", g("big-cart", cartAt(BG, bigProp)) + crookType + laptop + crookShake + g("flyers", flyers) + bigTag) +
+        g("small", cartAt(SM, KIT.props.shoppingCart({})) + cartLoad(SM)) + tags + wm + chain +
+        g("shadow", shadow, 'opacity="0.2"'));
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      fuse(q("fuse"), tl);
+
+      // The first frame is official-murder-budget's last: he leans back at -3 degrees, head up 26, eyes up, cigar drooped.
+      var lean = q("wm-lean");
+      gsap.set(lean, { svgOrigin: "0 100", rotation: -3 });
+      var wmA = q("wm"), wmB = q("wm-shake"), headA = wmA.querySelector(".head"), headB = wmB.querySelector(".head");
+      gsap.set([headA, headB], { svgOrigin: wmRig.neck.join(" "), rotation: -26 });
+      gsap.set(wmA.querySelectorAll(".pupil"), { y: -1.4, x: 0.6 });
+      var cig = q("cig"), cig2 = q("cig2");
+      gsap.set([cig, cig2], { svgOrigin: "0 0", rotation: 62 });
+      // the shadow lifts off once the Crook is up
+      tl.to(q("shadow"), { opacity: 0, duration: 0.8, ease: "power1.in" }, 0.4);
+
+      // "Cybercrime": the Crook pops up out of the big cart and opens the laptop on its rim (click).
+      var t0 = cue("Cybercrime"), lid = q("laptop").querySelector(".laptop-lid");
+      // (he and the laptop are not there in official-murder-budget's last frame: both appear as he pops up)
+      tl.fromTo(q("crook-type-pop"), { y: 110, opacity: 0 }, { y: 0, opacity: 1, duration: 0.18, ease: "back.out(1.8)" }, t0);
+      tl.fromTo(q("laptop"), { opacity: 0 }, { opacity: 1, duration: 0.05 }, t0 + 0.05);
+      gsap.set(lid, { svgOrigin: "0 -7.2" });
+      tl.fromTo(lid, { scaleY: 0.05 }, { scaleY: 1, duration: 0.14, ease: "back.out(2)" }, t0 + 0.06);
+      tl.set(q("screen-on"), { opacity: 1 }, t0 + 0.18);
+      tl.to(headA, { rotation: -20, duration: 0.15, ease: "power2.out" }, t0 + 0.12);
+      tl.to(wmA.querySelectorAll(".pupil"), { x: 1.4, y: -1.2, duration: 0.12 }, t0 + 0.12);
+      // he types until he reaches out
+      var tSep = cue("separate"), tLook = cue("This"), tSwap = tSep - 0.14;
+      var ct = q("crook-type"), cArmL = ct.querySelector(".arm-l"), cArmR = ct.querySelector(".arm-r");
+      gsap.set(cArmL, { svgOrigin: typeR.shoulder[0].join(" ") });
+      gsap.set(cArmR, { svgOrigin: typeR.shoulder[1].join(" ") });
+      tl.fromTo(cArmR, { rotation: 0 }, { rotation: -7, duration: 0.08, repeat: Math.floor((tSwap - 0.4) / 0.08) - 1, yoyo: true, ease: "sine.inOut" }, 0.3);
+      tl.fromTo(cArmL, { rotation: -5 }, { rotation: 3, duration: 0.11, repeat: Math.floor((tSwap - 0.4) / 0.11) - 1, yoyo: true, ease: "sine.inOut" }, 0.3);
+
+      // "ten point five trillion": the hill rises at the right with the bank on it, the WiFi pole beside it; the vault
+      // swings open.
+      var tTen = cue("ten"), bu = q("bank-up"), wu = q("wifi-up");
+      tl.fromTo(q("hill-wrap"), { opacity: 0 }, { opacity: 1, duration: 0.15 }, tTen - 0.1);
+      tl.set(q("bank-wrap"), { opacity: 1 }, tTen);
+      gsap.set(bu, { svgOrigin: "0 0" });
+      tl.fromTo(bu, { scaleY: 0 }, { scaleY: 1, duration: 0.24, ease: "back.out(2)", immediateRender: false }, tTen);
+      tl.set(q("wifi-wrap"), { opacity: 1 }, tTen + 0.12);
+      gsap.set(wu, { svgOrigin: "0 128" });
+      tl.fromTo(wu, { scaleY: 0 }, { scaleY: 1, duration: 0.22, ease: "back.out(2)", immediateRender: false }, tTen + 0.12);
+      var vault = bu.querySelector(".bank-vault");
+      gsap.set(vault, { svgOrigin: vault.dataset.ox + " " + vault.dataset.oy });
+      tl.to(vault, { scaleX: -0.3, duration: 0.25, ease: "power2.out" }, papers[0].tDoor - 0.3);
+
+      // The stream, by scene time: each walker steps out of the vault (growing), drops to the ground, walks to the pole
+      // (legs swinging), hops up into the dot and is gone; then it pops out of the laptop red-sealed and arcs into the
+      // heap, where it stays. The arcs pulse as each paper goes in.
+      var arcs = q("arcs");
+      var wEls = papers.map(function (p, i) { return [q("w" + i), q("w" + i + "-a"), q("w" + i + "-b")]; });
+      var fEls = papers.map(function (p, i) { return q("f" + i); });
+      KIT.onTime(tl, D, function (lt) {
+        var pulse = 0;
+        papers.forEach(function (p, i) {
+          var w = wEls[i], f = fEls[i], ln = LANE[p.lane], k = L.paper * ln[1];
+          if (lt < p.tDoor || lt >= p.tIn) w[0].setAttribute("opacity", "0");
+          else {
+            var x, y, s = k, groundY = BK[2] + ln[0] * (V ? 0.8 : 1) - 48 * k;
+            if (lt < p.tDoor + drop) { var f0 = (lt - p.tDoor) / drop; x = door[0] - 10 * f0; y = lerp(door[1], groundY, f0 * f0); s = k * (0.3 + 0.7 * clamp01(f0 * 2)); }
+            else if (lt < p.tHop) { var f1 = (lt - p.tDoor - drop) / walkDur; x = lerp(door[0] - 10, pole[0] + 24, f1); y = groundY - Math.abs(Math.sin(f1 * walkDur * 20)) * 3; }
+            else { var f2 = (lt - p.tHop) / hopDur; x = lerp(pole[0] + 24, dot[0], f2); y = lerp(groundY, dot[1], f2) - Math.sin(f2 * Math.PI) * 50; s = k * (1 - 0.8 * f2 * f2); }
+            w[0].setAttribute("opacity", "1");
+            w[0].setAttribute("transform", "translate(" + n1(x) + "," + n1(y) + ") scale(" + s.toFixed(3) + ")");
+            var step = Math.floor((lt - p.tDoor) / 0.09) % 2;
+            w[1].setAttribute("opacity", step ? "0" : "1");
+            w[2].setAttribute("opacity", step ? "1" : "0");
+          }
+          if (lt >= p.tIn - 0.05 && lt < p.tIn + 0.15) pulse = Math.max(pulse, 1 - Math.abs(lt - p.tIn - 0.03) / 0.12);
+          if (lt < p.tOut) f.setAttribute("opacity", "0");
+          else {
+            var g1 = clamp01((lt - p.tOut) / flyDur), e = ease2(g1);
+            var fx = lerp(lapScreen[0], p.spot[0], e), fy = lerp(lapScreen[1], p.spot[1], e) - Math.sin(g1 * Math.PI) * L.arc;
+            var fs = L.heap * Math.min(1, 0.25 + (lt - p.tOut) / 0.1), fr = lerp(-30, p.rot, g1);
+            f.setAttribute("opacity", "1");
+            f.setAttribute("transform", "translate(" + n1(fx) + "," + n1(fy) + ") rotate(" + n1(fr) + ") scale(" + fs.toFixed(3) + ")");
+          }
+        });
+        arcs.setAttribute("transform", "scale(" + (1 + 0.3 * Math.max(0, pulse)).toFixed(3) + ")");
+      });
+
+      // "dollars" (after the first papers land): the big cart's tag drops on, CYBERCRIME: $10.5 TRILLION / YEAR.
+      var tTag = cue("dollars"), tb = q("tag-big"), sw = q("tag-big-in").querySelector(".tag-swing");
+      tl.set(tb, { opacity: 1 }, tTag);
+      tl.fromTo(tb, { y: -320 }, { y: 0, duration: 0.3, ease: "bounce.out", immediateRender: false }, tTag);
+      gsap.set(sw, { svgOrigin: "0 0" });
+      tl.fromTo(sw, { rotation: 10 }, { rotation: 0, duration: 0.9, ease: "elastic.out(1.2,0.3)", immediateRender: false }, tTag + 0.3);
+      // "percent": +15% / YEAR clips onto its far end and swings.
+      var tPct = cue("percent"), tu = q("tag-up"), sw2 = q("tag-up-in").querySelector(".tag-swing");
+      tl.set(tu, { opacity: 1 }, tPct);
+      gsap.set(sw2, { svgOrigin: "0 0" });
+      tl.fromTo(sw2, { rotation: -70, scale: 0.3 }, { rotation: 0, scale: 1, duration: 0.5, ease: "elastic.out(1.1,0.35)", immediateRender: false }, tPct);
+      // the Weapons Maker watches his own cart's tag lose: his head turns slowly after the papers
+      tl.to(headA, { rotation: -32, duration: 0.6, ease: "sine.inOut" }, tPct + 0.1);
+
+      // "annually.": the big cart sags under the heap; its wheels splay out and its legs bow.
+      var tAnn = cue("annually."), ride = q("big-ride"), sag = 0.22;
+      tl.to(ride, { y: sagPx, duration: sag, ease: "back.out(2)" }, tAnn);
+      tl.to(q("big-cart").querySelectorAll("." + P + "legs"), { attr: { d: LEGS_SPLAY }, duration: sag, ease: "back.out(2)" }, tAnn);
+      Array.prototype.forEach.call(q("big-cart").querySelectorAll(".cart-wheel"), function (w) {
+        var out = +w.dataset.cx < 0 ? -7 : 12;
+        gsap.set(w, { svgOrigin: w.dataset.cx + " " + w.dataset.cy });
+        tl.to(w, { x: out, y: -SAG, rotation: out < 0 ? -18 : 18, duration: sag, ease: "back.out(2)" }, tAnn);
+      });
+      // his cigar droops a little further
+      tl.to(cig, { rotation: 80, duration: 0.2, ease: "power2.in" }, tAnn + 0.1);
+
+      // "This is not a": they look at each other across the gap.
+      tl.to(headA, { rotation: -16, duration: 0.2 }, tLook);
+      var ckHeadA = ct.querySelector(".head");
+      gsap.set(ckHeadA, { svgOrigin: typeR.neck.join(" ") });
+      tl.to(ckHeadA, { rotation: 14, duration: 0.2 }, tLook + 0.08);
+
+      // "separate": they lean over and shake (pat): the handshake drawings, each arm swinging out from the body.
+      tl.set(wmA, { opacity: 0 }, tSwap);
+      tl.set(wmB, { opacity: 1 }, tSwap);
+      gsap.set(headB, { rotation: -16 });
+      gsap.set(wmB.querySelectorAll(".pupil"), { x: 1.4, y: -1.2 });
+      gsap.set(cig2, { rotation: 80 });
+      tl.set(ct, { opacity: 0 }, tSwap);
+      tl.set(q("crook-shake-pop"), { opacity: 1 }, tSwap);
+      var cl = q("crook-shake-lean");
+      gsap.set(cl, { svgOrigin: "0 " + typeR.hipY });
+      tl.to(cl, { rotation: LEAN_C, duration: 0.14, ease: "power2.out" }, tSwap);
+      tl.to(lean, { rotation: LEAN_W, duration: 0.14, ease: "power2.out" }, tSwap);
+      var wArm = wmB.querySelector(".arm-r"), cArm = q("crook-shake").querySelector(".arm-r");
+      gsap.set(wArm, { svgOrigin: wmRig.shoulder[1].join(" ") });
+      gsap.set(cArm, { svgOrigin: shakeR.shoulder[1].join(" ") });
+      tl.fromTo(wArm, { rotation: 60 }, { rotation: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, tSwap);
+      tl.fromTo(cArm, { rotation: -60 }, { rotation: 0, duration: 0.14, ease: "power2.out", immediateRender: false }, tSwap);
+      // the pump: three shakes
+      [wArm, cArm].forEach(function (a, i) {
+        tl.fromTo(a, { rotation: 0 }, { rotation: i ? 5 : -5, duration: 0.09, repeat: 5, yoyo: true, ease: "sine.inOut", immediateRender: false }, tSep);
+      });
+
+      // "problem.": the chain snaps the two carts together across his middle (clank), link by link from both ends.
+      var tProb = cue("problem.");
+      [0, 4, 1, 3, 2].forEach(function (li, k) {
+        var lk = q("link" + li), from = li < 2 ? -50 : li > 2 ? 50 : 0, o = n1(linkL * (li + 0.5)) + " 0";
+        tl.set(lk, { opacity: 1 }, tProb - 0.15 + k * 0.03);
+        tl.fromTo(lk, { x: from, scale: 1.7, svgOrigin: o }, { x: 0, scale: 1, svgOrigin: o, duration: 0.1, ease: "power3.in", immediateRender: false }, tProb - 0.15 + k * 0.03);
+      });
+      tl.fromTo(q("small"), { x: 0 }, { x: 8, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tProb);
+      tl.fromTo(q("big-cart"), { x: 0 }, { x: -8, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tProb);
+
+      // after "problem.": both turn to us and grin; his cigar perks up.
+      var tGrin = KIT.after(ID, "problem.");
+      tl.to(headB, { rotation: 3, duration: 0.25, ease: "power2.out" }, tGrin);
+      tl.to(wmB.querySelectorAll(".pupil"), { x: 0, y: 0, duration: 0.2 }, tGrin);
+      tl.to(cig2, { rotation: -14, duration: 0.2, ease: "back.out(3)" }, tGrin + 0.05);
+      var ckHeadB = q("crook-shake").querySelector(".head");
+      gsap.set(ckHeadB, { svgOrigin: shakeR.neck.join(" ") });
+      tl.to(ckHeadB, { rotation: -10, duration: 0.25, ease: "power2.out" }, tGrin);
+      tl.to(q("crook-shake").querySelectorAll(".pupil"), { x: -1.6, duration: 0.2 }, tGrin);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

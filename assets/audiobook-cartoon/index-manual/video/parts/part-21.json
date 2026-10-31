@@ -1,0 +1,181 @@
+{
+  "id": "part-21",
+  "title": "Step 5: Enjoy",
+  "storyboard": "storyboards/part-21-step-5-enjoy.md",
+  "audio": {
+    "start": 2756.924,
+    "end": 2843.704
+  },
+  "noCaptions": [
+    "step-5-enjoy-title"
+  ],
+  "scenes": [
+    {
+      "id": "step-5-enjoy-title",
+      "file": "compositions/scenes/part-21/step-5-enjoy-title.html",
+      "cue": "Step",
+      "approx": 2756.9,
+      "layer": "A"
+    },
+    {
+      "id": "money-defeats-morality",
+      "file": "compositions/scenes/part-21/money-defeats-morality.html",
+      "cue": "Your",
+      "approx": 2762.7,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "Your", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
+        { "cue": "tradition.", "expr": "smirk", "rest": "closed", "body": "shrug", "mode": "big" }
+      ]
+    },
+    {
+      "id": "money-volcano",
+      "file": "compositions/scenes/part-21/money-volcano.html",
+      "cue": "The",
+      "approx": 2767.9,
+      "layer": "B"
+    },
+    {
+      "id": "pharma-per-patient",
+      "file": "compositions/scenes/part-21/pharma-per-patient.html",
+      "cue": "Instead",
+      "approx": 2780.5,
+      "layer": "B"
+    },
+    {
+      "id": "insurance-zero-claims",
+      "file": "compositions/scenes/part-21/insurance-zero-claims.html",
+      "cue": "Insurance",
+      "approx": 2789.7,
+      "layer": "B"
+    },
+    {
+      "id": "investor-lobby-force",
+      "file": "compositions/scenes/part-21/investor-lobby-force.html",
+      "cue": "Investors",
+      "approx": 2803.2,
+      "layer": "B"
+    },
+    {
+      "id": "wiki-voters-hammock",
+      "file": "compositions/scenes/part-21/wiki-voters-hammock.html",
+      "cue": "Lobbyists",
+      "approx": 2818.6,
+      "layer": "B"
+    },
+    {
+      "id": "evolve-morally",
+      "file": "compositions/scenes/part-21/evolve-morally.html",
+      "cue": "Nobody",
+      "approx": 2836.5,
+      "layer": "A",
+      "wishonia": [
+        { "cue": "Nobody", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "big" },
+        { "cue": "morally.", "expr": "sideeye", "rest": "closed", "body": "idle", "mode": "big" }
+      ]
+    },
+    {
+      "id": "greed-arrow",
+      "file": "compositions/scenes/part-21/greed-arrow.html",
+      "cue": "You",
+      "approx": 2838.9,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    { "scene": "step-5-enjoy-title", "cue": "Step", "sfx": "whirr", "volume": 0.25 },
+    { "scene": "step-5-enjoy-title", "cue": "Enjoy.", "at": "after", "sfx": "sparkle", "volume": 0.3 },
+    { "scene": "step-5-enjoy-title", "cue": "Dies*", "offset": 0.6, "sfx": "clank", "volume": 0.35 },
+
+    { "scene": "money-defeats-morality", "cue": "treaty", "sfx": "pat", "volume": 0.4 },
+    { "scene": "money-defeats-morality", "cue": "money", "sfx": "pop", "volume": 0.35 },
+    { "scene": "money-defeats-morality", "cue": "money", "offset": 0.2, "sfx": "pop", "volume": 0.3 },
+    { "scene": "money-defeats-morality", "cue": "defeats", "sfx": "slam", "volume": 0.6 },
+    { "scene": "money-defeats-morality", "cue": "defeats", "offset": 0.12, "sfx": "slide-up", "volume": 0.45 },
+    { "scene": "money-defeats-morality", "cue": "tradition.", "offset": 0.3, "sfx": "ding", "volume": 0.35 },
+
+    { "scene": "money-volcano", "cue": "billion", "sfx": "stamp", "volume": 0.45 },
+    { "scene": "money-volcano", "cue": "year", "sfx": "stamp", "volume": 0.35 },
+    { "scene": "money-volcano", "cue": "volcano", "sfx": "hum", "volume": 0.35 },
+    { "scene": "money-volcano", "cue": "erupts:", "sfx": "boom", "volume": 0.6 },
+    { "scene": "money-volcano", "cue": "erupts:", "offset": 0.35, "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "money-volcano", "cue": "ninety-nine", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "money-volcano", "cue": "budget", "sfx": "clank", "volume": 0.4 },
+    { "scene": "money-volcano", "cue": "PLUS", "sfx": "splat", "volume": 0.5 },
+    { "scene": "money-volcano", "cue": "PLUS", "offset": 0.2, "sfx": "splat", "volume": 0.45 },
+    { "scene": "money-volcano", "cue": "hundred", "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "money-volcano", "cue": "returns.", "sfx": "thunk", "volume": 0.55 },
+
+    { "scene": "pharma-per-patient", "cue": "forty-one", "sfx": "tick", "volume": 0.45 },
+    { "scene": "pharma-per-patient", "cue": "dollars", "sfx": "pat", "volume": 0.45 },
+    { "scene": "pharma-per-patient", "cue": "trials,", "n": 1, "sfx": "click", "volume": 0.55 },
+    { "scene": "pharma-per-patient", "cue": "treaty", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "pharma-per-patient", "cue": "pays", "sfx": "boing", "volume": 0.45 },
+    { "scene": "pharma-per-patient", "cue": "each", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "pharma-per-patient", "cue": "joins", "sfx": "click", "volume": 0.5 },
+    { "scene": "pharma-per-patient", "cue": "joins", "offset": 0.2, "sfx": "click", "volume": 0.5 },
+    { "scene": "pharma-per-patient", "cue": "joins", "offset": 0.4, "sfx": "click", "volume": 0.5 },
+    { "scene": "pharma-per-patient", "cue": "their", "sfx": "whirr", "volume": 0.4 },
+
+    { "scene": "insurance-zero-claims", "cue": "fewer", "sfx": "pat", "volume": 0.4 },
+    { "scene": "insurance-zero-claims", "cue": "claims", "n": 1, "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "insurance-zero-claims", "cue": "dead", "n": 1, "sfx": "squeak", "volume": 0.35 },
+    { "scene": "insurance-zero-claims", "cue": "dead", "n": 1, "offset": 0.2, "sfx": "squeak", "volume": 0.3 },
+    { "scene": "insurance-zero-claims", "cue": "zero", "n": 1, "sfx": "crickets", "volume": 0.22 },
+    { "scene": "insurance-zero-claims", "cue": "ideal", "sfx": "sparkle", "volume": 0.4 },
+    { "scene": "insurance-zero-claims", "cue": "premiums,", "sfx": "thunk", "volume": 0.45 },
+    { "scene": "insurance-zero-claims", "cue": "revenue", "sfx": "slide-down", "volume": 0.45 },
+    { "scene": "insurance-zero-claims", "cue": "problem).", "sfx": "whoosh", "volume": 0.35 },
+    { "scene": "insurance-zero-claims", "cue": "problem).", "offset": 0.3, "sfx": "pop", "volume": 0.3 },
+    { "scene": "insurance-zero-claims", "cue": "problem).", "offset": 0.45, "sfx": "pop", "volume": 0.3 },
+    { "scene": "insurance-zero-claims", "cue": "problem).", "offset": 0.6, "sfx": "pop", "volume": 0.3 },
+
+    { "scene": "investor-lobby-force", "cue": "seventy-two", "sfx": "pop", "volume": 0.45 },
+    { "scene": "investor-lobby-force", "cue": "every", "sfx": "click", "volume": 0.5 },
+    { "scene": "investor-lobby-force", "cue": "treaty", "sfx": "click", "volume": 0.5 },
+    { "scene": "investor-lobby-force", "cue": "expansion,", "sfx": "click", "volume": 0.5 },
+    { "scene": "investor-lobby-force", "cue": "expansion,", "offset": 0.1, "sfx": "slide-up", "volume": 0.35 },
+    { "scene": "investor-lobby-force", "cue": "aggressive", "sfx": "pop", "volume": 0.4 },
+    { "scene": "investor-lobby-force", "cue": "pro-health", "sfx": "whoosh", "volume": 0.45 },
+    { "scene": "investor-lobby-force", "cue": "pro-health", "offset": 0.3, "sfx": "yelp", "volume": 0.3 },
+    { "scene": "investor-lobby-force", "cue": "anti-war", "sfx": "thunk", "volume": 0.55 },
+    { "scene": "investor-lobby-force", "cue": "anti-war", "offset": 0.25, "sfx": "squeak", "volume": 0.4 },
+    { "scene": "investor-lobby-force", "cue": "lobbying", "sfx": "pat", "volume": 0.45 },
+    { "scene": "investor-lobby-force", "cue": "lobbying", "offset": 0.35, "sfx": "pat", "volume": 0.4 },
+    { "scene": "investor-lobby-force", "cue": "lobbying", "offset": 0.7, "sfx": "pat", "volume": 0.4 },
+    { "scene": "investor-lobby-force", "cue": "expected", "sfx": "boing", "volume": 0.45 },
+
+    { "scene": "wiki-voters-hammock", "cue": "salary,", "sfx": "cash-register", "volume": 0.35 },
+    { "scene": "wiki-voters-hammock", "cue": "Wikipedia", "sfx": "whoosh", "volume": 0.3 },
+    { "scene": "wiki-voters-hammock", "cue": "Controversies", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "wiki-voters-hammock", "cue": "Controversies", "offset": 0.45, "sfx": "scratch", "volume": 0.45 },
+    { "scene": "wiki-voters-hammock", "cue": "Controversies", "offset": 0.85, "sfx": "scratch", "volume": 0.45 },
+    { "scene": "wiki-voters-hammock", "cue": "section.", "sfx": "pop", "volume": 0.4 },
+    { "scene": "wiki-voters-hammock", "cue": "reelected", "sfx": "sparkle", "volume": 0.35 },
+    { "scene": "wiki-voters-hammock", "cue": "living", "sfx": "tick", "volume": 0.45 },
+    { "scene": "wiki-voters-hammock", "cue": "living", "offset": 0.18, "sfx": "tick", "volume": 0.45 },
+    { "scene": "wiki-voters-hammock", "cue": "living", "offset": 0.36, "sfx": "tick", "volume": 0.45 },
+    { "scene": "wiki-voters-hammock", "cue": "living", "offset": 0.54, "sfx": "tick", "volume": 0.45 },
+    { "scene": "wiki-voters-hammock", "cue": "voters", "at": "after", "sfx": "click", "volume": 0.45 },
+    { "scene": "wiki-voters-hammock", "cue": "revolutionary", "sfx": "whoosh", "volume": 0.4 },
+    { "scene": "wiki-voters-hammock", "cue": "strategy).", "offset": 0.15, "sfx": "boing", "volume": 0.4 },
+    { "scene": "wiki-voters-hammock", "cue": "stupid", "sfx": "slide-down", "volume": 0.35 },
+    { "scene": "wiki-voters-hammock", "cue": "things", "sfx": "boing", "volume": 0.5 },
+    { "scene": "wiki-voters-hammock", "cue": "things", "offset": 0.3, "sfx": "thunk", "volume": 0.55 },
+    { "scene": "wiki-voters-hammock", "cue": "things", "offset": 0.45, "sfx": "hammer", "volume": 0.3 },
+    { "scene": "wiki-voters-hammock", "cue": "(priceless,", "sfx": "squeak", "volume": 0.35 },
+    { "scene": "wiki-voters-hammock", "cue": "free).", "sfx": "ding", "volume": 0.35 },
+
+    { "scene": "evolve-morally", "cue": "Nobody", "sfx": "slide-down", "volume": 0.4 },
+    { "scene": "evolve-morally", "cue": "evolve", "sfx": "splat", "volume": 0.55 },
+    { "scene": "evolve-morally", "cue": "morally.", "sfx": "sparkle", "volume": 0.3 },
+
+    { "scene": "greed-arrow", "cue": "You", "sfx": "hammer", "volume": 0.35 },
+    { "scene": "greed-arrow", "cue": "point", "sfx": "huff", "volume": 0.35 },
+    { "scene": "greed-arrow", "cue": "diseases", "sfx": "whoosh", "volume": 0.45 },
+    { "scene": "greed-arrow", "cue": "diseases", "offset": 0.3, "sfx": "clank", "volume": 0.45 },
+    { "scene": "greed-arrow", "cue": "instead", "sfx": "hammer", "volume": 0.4 },
+    { "scene": "greed-arrow", "cue": "each", "sfx": "splat", "volume": 0.5 },
+    { "scene": "greed-arrow", "cue": "each", "offset": 0.18, "sfx": "splat", "volume": 0.45 }
+  ]
+}

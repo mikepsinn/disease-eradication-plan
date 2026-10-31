@@ -1,0 +1,37 @@
+[
+  {
+    "words": ["The", "Earth", "Optimization", "Game."],
+    "near": 3045.984,
+    "start": 3043.46,
+    "end": 3045.16,
+    "why": "The forced alignment squeezed the heading into zero-length words at 50:46.0; ffmpeg silencedetect and Whisper put it at 50:43.5 to 50:45.2."
+  },
+  {
+    "words": ["Build", "bombs"],
+    "near": 236.82,
+    "start": 236.61,
+    "end": 237.35,
+    "why": "The alignment gave \"Build\" zero length at 3:56.8; silencedetect puts the two words between the pauses at 3:56.6 and 3:57.4."
+  },
+  {
+    "words": ["(you", "love", "giving", "papers", "for", "this)."],
+    "near": 237.1,
+    "start": 237.68,
+    "end": 239.64,
+    "why": "The alignment started \"(you\" inside the pause; Whisper and silencedetect start it at 3:57.7."
+  },
+  {
+    "words": ["Start", "wars"],
+    "near": 241.7,
+    "start": 240.33,
+    "end": 241.36,
+    "why": "The alignment put \"Start wars\" 1.3 s late; Whisper and silencedetect put it at 4:00.3 to 4:01.4."
+  },
+  {
+    "words": ["(somehow", "this", "makes", "more", "papers)."],
+    "near": 242.86,
+    "start": 241.59,
+    "end": 243.24,
+    "why": "The alignment squeezed four of these words into zero length at 4:02.9; Whisper and silencedetect put the aside at 4:01.6 to 4:03.2."
+  }
+]

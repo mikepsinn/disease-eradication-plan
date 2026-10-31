@@ -1,0 +1,357 @@
+<template id="war-through-wifi-template">
+  <!-- war-through-wifi · Layer B (storyboards/part-11-civilization-countdown.md): the Masked Crook types at his laptop
+       ("Cybercrime": the screen wakes on a red missile seal, click). "war": a toy tank rolls up, the Weapons Maker
+       standing in its hatch with his cigar and his baby missile (clank). "WiFi,": the WiFi arcs over the laptop turn red
+       and fly out across the paper as three war arrows that hit a little bank, a hospital and a house on the horizon
+       (zap). "pays": payday, a small pile of war papers drops beside the tank and the Weapons Maker admires it (thunk).
+       after "better.": a shadow, he looks up, and a tower of war papers drops out of the sky onto the tank and flattens
+       it like a pancake (splat): the barrel bent to the ground, the hatch lid sprung on its spring, his two eyes
+       blinking out of the flat hatch. The Crook keeps typing. The fuse burns in the top-left corner. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #war-through-wifi-cam, #war-through-wifi-bg, #war-through-wifi-art, #war-through-wifi-pip, #war-through-wifi-fuse, #war-through-wifi-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="war-through-wifi" data-width="1920" data-height="1080" data-start="0" data-duration="4.46">
+    <div id="war-through-wifi-cam">
+      <div id="war-through-wifi-bg"></div>
+      <div id="war-through-wifi-art"></div>
+      <div id="war-through-wifi-pip"></div>
+    </div>
+    <!-- the fuse burns in its own layer, above the camera (the slide does not move it) and under the grain -->
+    <div id="war-through-wifi-fuse"></div>
+    <div id="war-through-wifi-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "war-through-wifi";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
+
+      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
+      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
+      function pt(x, y) { return n1(x) + "," + n1(y); }
+      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
+      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
+      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
+      function el(cx, cy, rx, ry) { return 'ellipse cx="' + n1(cx) + '" cy="' + n1(cy) + '" rx="' + n1(rx) + '" ry="' + n1(ry) + '"'; }
+      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
+      // tags: 'path d=".."', 'circle ..' (pg / ci / el); each drawn twice, a navy pass under the fill
+      function S(tags, col, w) {
+        w = w || 4.4;
+        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
+      }
+      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+
+      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene. ──
+      // The civilization is a cartoon bomb: a small Earth with a navy screw collar and a lit fuse that burns by part
+      // time (L = L0 - k t), so it is continuous across scenes. Returns the spark's flare group (scale it to flare).
+      function fuse(layer, tl) {
+        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
+          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
+        var c = Fz.collar, t0 = sc.start;
+        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
+          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
+        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
+          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
+          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
+        layer.innerHTML = KIT.svg(W, H, cords +
+          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
+          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
+          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
+        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
+        KIT.onTime(tl, D, function (lt) {
+          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
+          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
+          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
+        });
+        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
+        gsap.set(fl, { svgOrigin: "0 0" });
+        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
+        return document.getElementById(P + "spark-flare");
+      }
+
+      // ── TANK: copied in thats-homework (which uses the flat one); change both. ─────────────────────────
+      // A toy tank facing right, drawn around (0,0) with its treads on y 0, in tank units: about 360 x 150 (with the
+      // barrel x -184..258, the turret top y -126). Slate hull and trapezoid turret with orange print edges, a long
+      // barrel with a muzzle brake, six tan road wheels on navy treads, rivets, no insignia. Scale it with an outer group.
+      // o.flat: flattened like a pancake: squashed to 18% height on the tread line (8% wider), the turret squeezed
+      //   forward, the barrel bent down to the ground, the hatch lid sprung up on a coil spring, and two eyes in the
+      //   hatch slot (the Weapons Maker, still in there).
+      // Parts (normal): .tank-spin (each wheel's spokes: spin them about the wheel's data-cx, data-cy), .tank-lid (the
+      //   open hatch lid, hinge at (-36,-126)); "<!--tank-hatch-->" marks where a person standing in the hatch goes
+      //   (between the hatch hole and its front rim); TANK_HATCH is the hatch rim's center [x, y]: put a person's
+      //   waist there and clip him at that y.
+      // Parts (flat): .tank-eyes (blink them: scaleY 1 -> 0.1 about the eyes' center, data-cx, data-cy), .tank-lid-flat
+      //   (wobble the sprung lid about the spring's foot, data-cx, data-cy); TANK_FLAT_HATCH is the slot's center.
+      var TANK_HATCH = [-10, -126], TANK_FLAT_HATCH = [40, -24];
+      function tank(o) {
+        o = o || {};
+        if (o.flat) return tankFlat();
+        var tread = [[-178, -40], [-164, -52], [164, -52], [178, -40], [174, -10], [162, 0], [-162, 0], [-174, -10]];
+        var hull = [[-186, -50], [186, -50], [180, -62], [152, -90], [-154, -90], [-182, -64]];
+        var tur = [[-72, -90], [66, -90], [50, -126], [-58, -126]];
+        var out = S([pg(tread)], C.navy), links = "";
+        for (var x = -152; x <= 152; x += 13) links += "M" + x + ",-49 v5 M" + x + ",-3 v-5 ";
+        out += line(links, C.peri, 2.4) + line("M-170,-40 L-160,-48 H160", C.orange, 1.6);
+        [-125, -75, -25, 25, 75, 125].forEach(function (wx) {
+          out += S([ci(wx, -24, 17)], C.tan, 3.4) + '<g class="tank-spin" data-cx="' + wx + '" data-cy="-24">' + line("M" + (wx - 11) + ",-24 H" + (wx + 11) + " M" + wx + ",-35 V-13", ink, 2.2) + "</g>" +
+            S([ci(wx, -24, 5.5)], C.slate, 2.2);
+        });
+        out += S([ci(-162, -28, 11), ci(162, -28, 11)], C.slate, 3) + line("M-168,-28 H-156 M156,-28 H168", C.orange, 1.6);
+        out += S([pg(hull)], C.slate) + line("M-150,-87 H149 L176,-61", C.orange, 1.8) + line("M-182,-57 H182", ink, 1.6, 'opacity="0.55"');
+        for (var rx = -136; rx <= 136; rx += 34) out += F(ci(rx, -72, 2.8), C.cream);
+        // the toolbox on the fender and a headlamp
+        out += S([pg(R(-128, -100, 50, 12))], C.rust, 2.6) + S([pg([[160, -78], [172, -78], [176, -70], [160, -70]])], C.yellow, 2.4);
+        // the barrel, then the turret over its root
+        out += S([pg([[70, -112], [236, -111], [236, -100], [70, -99]])], C.slate, 3.4) + line("M74,-109 H232", C.orange, 1.6) +
+          S([pg(R(232, -117, 26, 22))], C.slate, 3.4) + line("M238,-117 V-95 M246,-117 V-95", ink, 1.6) +
+          S([pg(tur)], C.slate) + line("M-54,-123 H47 L62,-93", C.orange, 1.8) + S([pg(R(60, -118, 20, 24))], C.slate, 3) +
+          line("M-60,-104 H52", ink, 1.4, 'opacity="0.5"');
+        // the open hatch: the lid standing up behind, the dark hole, (the person), the front rim
+        var lid = '<g class="tank-lid">' + S([pg([[-36, -126], [-48, -158], [-40, -163], [-28, -128]])], C.slate, 3) + line("M-44,-156 L-34,-129", C.orange, 1.4) + "</g>";
+        out += lid + S([el(-10, -126, 25, 7)], C.ink, 3) + "<!--tank-hatch-->" +
+          '<path d="M-35,-126 A25,7 0 0 0 15,-126" fill="none" stroke="' + ink + '" stroke-width="7"/><path d="M-35,-126 A25,7 0 0 0 15,-126" fill="none" stroke="' + C.slate + '" stroke-width="3"/>';
+        return out;
+      }
+      function tankFlat() {
+        var sx = 1.08, sy = 0.18, T = function (pts, dx) { return pts.map(function (p) { return [p[0] * sx + (dx || 0), p[1] * sy]; }); };
+        var tread = [[-178, -40], [-164, -52], [164, -52], [178, -40], [174, -10], [162, 0], [-162, 0], [-174, -10]];
+        var hull = [[-186, -50], [186, -50], [180, -62], [152, -90], [-154, -90], [-182, -64]];
+        var tur = [[-76, -90], [70, -90], [54, -126], [-62, -126]];
+        var out = S([pg(T(tread))], C.navy, 3.4);
+        [-125, -75, -25, 25, 75, 125].forEach(function (wx) { out += S([el(wx * sx, -4.5, 17, 3.2)], C.tan, 2.2); });
+        out += S([pg(T(hull))], C.slate, 3.4) + line("M-162,-15.8 H160", C.orange, 1.4);
+        // the barrel, bent down to the ground, its muzzle in the dirt
+        var bd = "M80,-19 L170,-21 L204,-3 L238,-2";
+        out += line(bd, ink, 15) + line(bd, C.slate, 8.5) + S([pg([[234, -9], [258, -10], [260, 3], [234, 4]])], C.slate, 3);
+        out += S([pg(T(tur, 40))], C.slate, 3.4) + line("M-20,-22.4 H95", C.orange, 1.4);
+        // the hatch slot with the two eyes in it, and the lid sprung up on a coil spring
+        var h = TANK_FLAT_HATCH, spring = "";
+        for (var i = 0; i < 6; i++) spring += (i ? " L" : "M") + pt(h[0] - 18 + (i % 2 ? 7 : -7) - i * 1.5, h[1] - 6 - i * 7);
+        out += '<g class="tank-lid-flat" data-cx="' + (h[0] - 18) + '" data-cy="' + (h[1] - 3) + '">' + line(spring, ink, 2.6) +
+          '<g transform="translate(' + pt(h[0] - 27, h[1] - 48) + ') rotate(-24)">' + S([pg([[-24, -5], [24, -5], [22, 4], [-22, 4]])], C.slate, 3) + line("M-20,-3 H20", C.orange, 1.4) + "</g></g>";
+        out += S([el(h[0], h[1], 26, 6)], C.ink, 3) +
+          '<g class="tank-eyes" data-cx="' + h[0] + '" data-cy="' + (h[1] - 5) + '">' + [-8, 8].map(function (dx) {
+            return S([el(h[0] + dx, h[1] - 5, 7, 8)], "#FFFFFF", 2) + F(ci(h[0] + dx - 1.5, h[1] - 7, 2.8), ink);
+          }).join("") + "</g>";
+        return out;
+      }
+
+      // ── THE WIFI SYMBOL (as cybercrime-10-trillion draws it): a navy dot r 8 and three arcs, r 22, 40, 58, stroke 8,
+      // opening up, on a 120 px pole. Drawn around the dot (0,0); the pole goes down to y 128. Each arc is .wifi-arc. ──
+      function arcD(r) {
+        var a0 = (-135 * Math.PI) / 180, a1 = (-45 * Math.PI) / 180;
+        return "M" + pt(r * Math.cos(a0), r * Math.sin(a0)) + " A" + r + "," + r + " 0 0 1 " + pt(r * Math.cos(a1), r * Math.sin(a1));
+      }
+      function wifi() {
+        return line("M0,8 V128", ink, 8) + line("M0,10 V126", C.peri, 3) + S([pg(R(-16, 122, 32, 8))], C.slate, 2.6) +
+          [22, 40, 58].map(function (r, i) { return '<g id="' + P + "arc" + i + '">' + line(arcD(r), ink, 8, 'stroke-linecap="round"') + "</g>"; }).join("") +
+          F(ci(0, 0, 8), ink);
+      }
+
+      // A stack of war papers seen edge-on: thin green bills, each with its red seal at one end, nudged so it reads as
+      // paper, not a bar; w wide, n bills, standing on y 0 around x 0.
+      function billStack(w, n, seed) {
+        var r = KIT.rng(seed), out = "";
+        for (var i = 0; i < n; i++) {
+          var y = -12 * (i + 1), j = Math.round((r() - 0.5) * 10), wj = Math.round((r() - 0.5) * 8), x0 = -w / 2 + j, ww = w + wj;
+          out += '<rect x="' + x0 + '" y="' + y + '" width="' + ww + '" height="12" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+            '<path d="M' + (x0 + 8) + "," + (y + 4) + " H" + (x0 + ww - 22) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>' +
+            '<circle cx="' + (i % 2 ? x0 + ww - 9 : x0 + 9) + '" cy="' + (y + 6) + '" r="3.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.2"/>';
+        }
+        return out;
+      }
+
+      // ── Layout, per canvas shape ──────────────────────────────────────────────────────────────────
+      // G: the ground. tank: [x of its center, scale]; wm: the Weapons Maker's scale in tank units; crook: [x, scale];
+      // table: [x0, x1]; wifi: x of its pole (on the table); pile: x; tower: [x center, width, bills]; hill: the horizon
+      // [y, x0, x1] with its three targets [prop, x, scale] and where each arrow lands [x, y] and bends [cx, cy].
+      var L = V
+        ? { G: 1400, tank: [380, 1.12], wm: 1.0, CG: 1010, crook: [600, 1.35], table: [640, 900], wifi: 860, pile: 820,
+            tower: [300, 210, 50], hill: [600, 110, 760],
+            targets: [["house", 230, 0.42], ["bank", 440, 0.4], ["hospital", 640, 0.36]],
+            arrows: [[[262, 486], [520, 470]], [[452, 450], [700, 520]], [[628, 455], [840, 600]]] }
+        : { G: 800, tank: [470, 1.15], wm: 1.0, CG: 800, crook: [1010, 1.35], table: [1060, 1280], wifi: 1238, pile: 860,
+            tower: [370, 230, 46], hill: [430, 1290, 1860],
+            targets: [["bank", 1420, 0.4], ["hospital", 1600, 0.36], ["house", 1770, 0.42]],
+            arrows: [[[1410, 288], [1270, 300]], [[1590, 285], [1420, 330]], [[1752, 345], [1560, 420]]] };
+      var G = L.G, TK = L.tank;
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+
+      // The horizon on the far side: a low hill line with three little buildings, the arrows' targets.
+      var Hh = L.hill, hill = line("M" + Hh[1] + "," + Hh[0] + " Q" + ((Hh[1] + Hh[2]) / 2) + "," + (Hh[0] - 26) + " " + Hh[2] + "," + Hh[0], ink, 3.4) +
+        line("M" + (Hh[1] + 30) + "," + (Hh[0] + 18) + " H" + (Hh[1] + 120) + " M" + (Hh[2] - 160) + "," + (Hh[0] + 22) + " H" + (Hh[2] - 60), ink, 2, 'opacity="0.45"');
+      var targets = L.targets.map(function (t, i) {
+        var art = KIT.props[t[0]](t[0] === "house" ? { variant: 1, smoke: false } : {});
+        var burst = "", pts = [];
+        for (var k = 0; k < 18; k++) { var a = (k * Math.PI) / 9, rr = k % 2 ? 26 : 56; pts.push([rr * Math.cos(a), rr * Math.sin(a)]); }
+        burst = S([pg(pts)], C.war, 3.4) + F(pg(pts.map(function (p) { return [p[0] * 0.55, p[1] * 0.55]; })), C.yellow);
+        var smoke = [[-30, -40, 22], [8, -62, 28], [36, -34, 20]].map(function (s) { return S([ci(s[0], s[1], s[2])], "#C9C2B5", 3); }).join("");
+        return at(t[1], Hh[0] - 6, t[2], g("tgt" + i, art)) +
+          at(t[1], Hh[0] - 120 * t[2] * 2.2, 1, g("smoke" + i, smoke, 'opacity="0"') + g("burst" + i, burst, 'opacity="0"'));
+      }).join("");
+
+      // The war arrows: from the WiFi dot to each target, drawn on (a navy pass under a red one) with a head popping on.
+      var WX = L.wifi, Tt = [L.table[0], L.table[1]], tableTop = L.CG - 120 * L.crook[1] / 1.35, WY = tableTop - 128;
+      var arrows = L.arrows.map(function (a, i) {
+        var to = a[0], c = a[1], d = "M" + pt(WX, WY - 10) + " Q" + pt(c[0], c[1]) + " " + pt(to[0], to[1]);
+        var ang = (Math.atan2(to[1] - c[1], to[0] - c[0]) * 180) / Math.PI;
+        return '<path id="' + P + "arw-a" + i + '" d="' + d + '" fill="none" stroke="' + ink + '" stroke-width="22" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+          '<path id="' + P + "arw-b" + i + '" d="' + d + '" fill="none" stroke="' + C.war + '" stroke-width="13" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+          at(to[0], to[1], 1, g("head" + i, S([pg([[-10, -22], [30, 0], [-10, 22]])], C.war, 4), 'opacity="0"'), ang.toFixed(1));
+      }).join("");
+
+      // The Crook at his laptop, arms posed to type. The laptop stands on a little table at his hands.
+      var CR = L.crook, crookO = KIT.castOpts("lobbyist", { arms: [[50, 95], [40, 95]], look: "right" }), crR = KIT.rig(crookO);
+      var cy0 = L.CG - 100 * CR[1];
+      var hands = crR.hand.map(function (h) { return [CR[0] + h[0] * CR[1], cy0 + h[1] * CR[1]]; });
+      var lapX = (hands[0][0] + hands[1][0]) / 2 + 6, lapK = 1.75;
+      var screen = '<rect x="-24" y="-42" width="48" height="31" fill="' + C.cyan + '" opacity="0.35"/>' +
+        '<g transform="translate(0,-27)">' + KIT.moneySeal("war", 0, 0, 8.5) + "</g>" + line("M-19,-37 h10 M-19,-15 h14 M10,-15 h9", C.cream, 1.6);
+      var laptop = at(lapX, tableTop, lapK, KIT.props.laptop({}).replace("<!--laptop-screen-->", g("screen-on", screen, 'opacity="0"')));
+      var table = S([pg(R(Tt[0], tableTop, Tt[1] - Tt[0], 12))], C.tan, 3.4) + line("M" + (Tt[0] + 6) + "," + (tableTop + 3) + " H" + (Tt[1] - 6), C.cream, 2) +
+        S([pg([[Tt[0] + 16, tableTop + 12], [Tt[0] + 26, tableTop + 12], [Tt[0] + 18, L.CG], [Tt[0] + 8, L.CG]]),
+           pg([[Tt[1] - 26, tableTop + 12], [Tt[1] - 16, tableTop + 12], [Tt[1] - 8, L.CG], [Tt[1] - 18, L.CG]])], C.navy, 3);
+      var crook = at(CR[0], cy0, CR[1], g("crook", KIT.person(crookO)));
+      var wifiArt = at(WX, WY, 1, wifi());
+
+      // The tank and the Weapons Maker in its hatch (his waist at the rim, clipped there).
+      var wmO = KIT.castOpts("weaponsMaker"), wmR = KIT.rig(wmO), hx = TANK_HATCH[0], hy = TANK_HATCH[1];
+      var wm = '<defs><clipPath id="' + P + 'hatchclip"><rect x="-200" y="-460" width="400" height="' + (460 + hy + 1) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + P + 'hatchclip)">' + at(hx, hy - (wmR.hipY - 6) * L.wm, L.wm, g("wm", KIT.person(wmO))) + "</g>";
+      var tankUp = tank().replace("<!--tank-hatch-->", wm);
+      var tankArt = '<g transform="translate(' + TK[0] + "," + G + ')"><g id="' + P + 'tank-move"><g id="' + P + 'tank-rock">' +
+        '<g transform="scale(' + TK[1] + ')">' + g("tank-up", g("tank-squash", tankUp)) + g("tank-flat", g("tank-flat-in", tank({ flat: true })), 'opacity="0"') + "</g></g></g></g>";
+
+      // The small payday pile beside the tank, and the tower that lands on it (its bottom on the flat tank's top).
+      var flatTop = G - 22 * TK[1], TW = L.tower;
+      var pile = at(L.pile, G, 1, g("pile", g("pile-sq", billStack(120, 5, 31))));
+      var tower = at(TW[0], flatTop, 1, g("tower", g("tower-sq", billStack(TW[1], TW[2], 77) +
+        at(0, -12 * TW[2] - 50, 1, KIT.money("war", 0.5)))));
+      var shadow = at(TW[0], flatTop, 1, g("shadow", F(el(0, 0, TW[1] * 0.6, 12), ink, 'opacity="0.3"'), 'opacity="0"'));
+      var splat = g("splat", [[-1, -10], [-1, -34], [1, -10], [1, -34]].map(function (s) {
+        var x = TW[0] + s[0] * (TW[1] / 2 + 34), y = flatTop + s[1];
+        return line("M" + x + "," + y + " l" + s[0] * 40 + "," + (s[1] < -20 ? -20 : -2), ink, 5);
+      }).join("") + [-1, 1].map(function (s) { return S([ci(TW[0] + s * (TW[1] / 2 + 70), G - 18, 18), ci(TW[0] + s * (TW[1] / 2 + 100), G - 10, 12)], "#C9C2B5", 3); }).join(""), 'opacity="0"');
+
+      var ground = line("M60," + G + " H" + (W - 60), ink, 5) + (L.CG !== G ? line("M" + (Tt[0] - 160) + "," + L.CG + " H" + (Tt[1] + 80), ink, 4) : "") +
+        [0.1, 0.3, 0.55, 0.8].map(function (f) {
+          var gx = 70 + f * (W - 140);
+          return line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
+        }).join("");
+
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + hill + targets + arrows + ground + table + wifiArt + crook + laptop + pile + shadow + tankArt + tower + splat);
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      fuse(q("fuse"), tl);
+
+      // "Cybercrime": the laptop wakes on its red seal (click), and the Crook types for the rest of the scene.
+      var t0 = cue("Cybercrime");
+      tl.fromTo(q("screen-on"), { opacity: 0 }, { opacity: 1, duration: 0.08 }, t0 + 0.02);
+      var crook$ = q("crook"), armL = crook$.querySelector(".arm-l"), armR = crook$.querySelector(".arm-r");
+      gsap.set(armL, { svgOrigin: crR.shoulder[0].join(" ") });
+      gsap.set(armR, { svgOrigin: crR.shoulder[1].join(" ") });
+      tl.fromTo(armR, { rotation: 0 }, { rotation: -7, duration: 0.08, repeat: Math.floor((D - 0.2) / 0.08) - 1, yoyo: true, ease: "sine.inOut" }, 0.15);
+      tl.fromTo(armL, { rotation: -5 }, { rotation: 3, duration: 0.11, repeat: Math.floor((D - 0.2) / 0.11) - 1, yoyo: true, ease: "sine.inOut" }, 0.1);
+
+      // "war": the tank rolls up from the left (clank) and rocks to a stop; its wheels turn as it rolls.
+      var war = cue("war"), rollIn = war - 0.2, stop = war + 0.38;
+      tl.fromTo(q("tank-move"), { x: -TK[0] - 320 * TK[1] }, { x: 0, duration: stop - rollIn, ease: "power2.out" }, rollIn);
+      var rk = q("tank-rock");
+      gsap.set(rk, { svgOrigin: 180 * TK[1] + " 0" });
+      tl.to(rk, { rotation: 2.5, duration: 0.1, ease: "power2.out" }, stop);
+      tl.to(rk, { rotation: -1, duration: 0.12, ease: "sine.inOut" }, stop + 0.1);
+      tl.to(rk, { rotation: 0, duration: 0.14, ease: "sine.out" }, stop + 0.22);
+      Array.prototype.forEach.call(q("tank-up").querySelectorAll(".tank-spin"), function (w) {
+        gsap.set(w, { svgOrigin: w.dataset.cx + " " + w.dataset.cy });
+        tl.fromTo(w, { rotation: -540 }, { rotation: 0, duration: stop - rollIn, ease: "power2.out" }, rollIn);
+      });
+      var wm$ = q("wm"), wmHead = wm$.querySelector(".head");
+      gsap.set(wmHead, { svgOrigin: wmR.neck.join(" ") });
+
+      // "WiFi,": the arcs turn red and fly out as war arrows (zap), drawn on toward the targets, which get hit.
+      var wf = cue("WiFi,");
+      [0, 1, 2].forEach(function (i) {
+        var arc = q("arc" + i), path = arc.firstChild;
+        gsap.set(arc, { svgOrigin: "0 0" });
+        tl.to(path, { attr: { stroke: C.war }, duration: 0.05 }, wf - 0.06 + i * 0.03);
+        tl.to(arc, { scale: 1.35, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out" }, wf - 0.06 + i * 0.03);
+        var ts = wf + 0.04 + i * 0.09, td = 0.34;
+        tl.to(q("arw-a" + i), { attr: { "stroke-dashoffset": 0 }, duration: td, ease: "power2.out" }, ts);
+        tl.to(q("arw-b" + i), { attr: { "stroke-dashoffset": 0 }, duration: td, ease: "power2.out" }, ts);
+        var head = q("head" + i);
+        gsap.set(head, { svgOrigin: "0 0" });
+        tl.fromTo(head, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.12, ease: "back.out(2.5)" }, ts + td - 0.1);
+        var hit = ts + td - 0.02, bu = q("burst" + i), sm = q("smoke" + i), tg = q("tgt" + i);
+        gsap.set(bu, { svgOrigin: "0 0" });
+        tl.fromTo(bu, { opacity: 1, scale: 0.2 }, { scale: 1, duration: 0.1, ease: "back.out(2)", immediateRender: false }, hit);
+        tl.to(bu, { opacity: 0, scale: 1.3, duration: 0.2 }, hit + 0.16);
+        tl.fromTo(sm, { opacity: 0, y: 10 }, { opacity: 0.9, y: -16, duration: 0.6, ease: "power1.out" }, hit + 0.1);
+        tl.to(sm, { opacity: 0.55, duration: 0.5 }, hit + 0.7);
+        tl.fromTo(tg, { x: 0 }, { x: 4, duration: 0.04, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, hit);
+      });
+
+      // "pays": payday, a small pile of war papers drops beside the tank (thunk); the Weapons Maker admires it.
+      var pay = cue("pays"), pl = q("pile"), ps = q("pile-sq");
+      tl.fromTo(pl, { y: -G - 100 }, { y: 0, duration: 0.2, ease: "power2.in" }, pay - 0.2);
+      gsap.set(ps, { svgOrigin: "0 0" });
+      tl.fromTo(ps, { scaleY: 1, scaleX: 1 }, { scaleY: 0.75, scaleX: 1.12, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, pay);
+      tl.to(wmHead, { rotation: 18, duration: 0.14, ease: "power2.out" }, pay + 0.05);
+
+      // after "better.": a shadow grows, he looks up, and the tower drops onto the tank and flattens it (splat).
+      var land = KIT.after(ID, "better."), fall = 0.34;
+      tl.fromTo(q("shadow"), { opacity: 0, scale: 0.3, svgOrigin: "0 0" }, { opacity: 1, scale: 1, svgOrigin: "0 0", duration: fall + 0.1, ease: "power1.in" }, land - fall - 0.1);
+      tl.to(wmHead, { rotation: -22, duration: 0.12, ease: "power2.out" }, land - fall);
+      tl.fromTo(q("tower"), { y: -flatTop - 12 * TW[2] - 160 }, { y: 0, duration: fall, ease: "power2.in" }, land - fall);
+      var sq = q("tank-squash");
+      gsap.set(sq, { svgOrigin: "0 0" });
+      tl.to(sq, { scaleY: 0.2, duration: 0.05, ease: "power2.in" }, land - 0.05);
+      tl.set(q("tank-up"), { opacity: 0 }, land);
+      tl.set(q("tank-flat"), { opacity: 1 }, land);
+      tl.set(q("shadow"), { opacity: 0 }, land);
+      var fin = q("tank-flat-in");
+      gsap.set(fin, { svgOrigin: "0 0" });
+      tl.fromTo(fin, { scaleX: 1.12, scaleY: 0.5 }, { scaleX: 1, scaleY: 1, duration: 0.3, ease: "elastic.out(1.2,0.4)", immediateRender: false }, land);
+      var tsq = q("tower-sq");
+      gsap.set(tsq, { svgOrigin: "0 0" });
+      tl.fromTo(tsq, { scaleY: 1, scaleX: 1 }, { scaleY: 0.86, scaleX: 1.06, duration: 0.06, ease: "power2.out", immediateRender: false }, land);
+      tl.to(tsq, { scaleY: 1, scaleX: 1, duration: 0.3, ease: "back.out(3)" }, land + 0.06);
+      tl.set(q("splat"), { opacity: 1 }, land);
+      tl.to(q("splat"), { opacity: 0, duration: 0.25 }, land + 0.3);
+      tl.fromTo(q("cam"), { y: 0 }, { y: 10, duration: 0.04, repeat: 5, yoyo: true, ease: "none", immediateRender: false }, land);
+      // the sprung lid wobbles on its spring; his two eyes blink out of the flat hatch
+      var lid = q("tank-flat").querySelector(".tank-lid-flat"), eyes = q("tank-flat").querySelector(".tank-eyes");
+      gsap.set(lid, { svgOrigin: lid.dataset.cx + " " + lid.dataset.cy });
+      tl.fromTo(lid, { rotation: -26 }, { rotation: 0, duration: 0.7, ease: "elastic.out(1.4,0.25)", immediateRender: false }, land);
+      gsap.set(eyes, { svgOrigin: eyes.dataset.cx + " " + eyes.dataset.cy });
+      [land + 0.3, land + 0.55].forEach(function (b) {
+        tl.fromTo(eyes, { scaleY: 1 }, { scaleY: 0.1, duration: 0.05, yoyo: true, repeat: 1, ease: "none", immediateRender: false }, b);
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

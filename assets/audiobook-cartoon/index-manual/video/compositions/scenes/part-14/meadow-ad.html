@@ -1,0 +1,357 @@
+<template id="meadow-ad-template">
+  <!-- meadow-ad · Layer B (storyboards/part-14-decentralized-fda.md). A living room: the patient (scarf, chest light
+       blinking red) sunk into the couch, an old console TV with rabbit ears. On its screen, a drug ad: a smiling woman in a
+       sundress and a sun hat, holding daisies, in a meadow. "frolicking": she skips (three boings) and never stops; the
+       meadow scrolls past. "voiceover": a crawl of small print starts along the bottom of the screen; "auctioneer": it
+       blurs and the rabbit ears wiggle; it slows so STROKE passes on "stroke." (her smile does not move; a cricket on
+       the TV chirps). "death,": DEATH crawls past at the same small size and she x-rays into a grinning skeleton
+       mid-skip, sun hat and daisies and all, still skipping. CONSTIPATION is just ahead of it, MILD RASH just behind
+       ("mild": red spots pop onto the bones); "skin.": the skeleton scratches its elbow bone with its free hand. After
+       "skin.", the patient turns her head slowly to the camera. ask-your-doctor starts on this scene's last frame and
+       copies its drawing code (the block marked "shared"): change both. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #meadow-ad-cam, #meadow-ad-bg, #meadow-ad-art, #meadow-ad-pip, #meadow-ad-grain { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="meadow-ad" data-width="1920" data-height="1080" data-start="0" data-duration="20.18">
+    <div id="meadow-ad-cam">
+      <div id="meadow-ad-bg"></div>
+      <div id="meadow-ad-art"></div>
+      <div id="meadow-ad-pip"></div>
+    </div>
+    <div id="meadow-ad-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      var ID = "meadow-ad";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var P = ID + "-";
+
+      // ═══ Shared with ask-your-doctor.html (its first frame is this scene's last): copy this block, change both. ═══
+      // The room, the TV and its ad are drawn by livingRoom() (the TV keeps its <!--tv-screen--> marker, over the ad, for
+      // ask-your-doctor's end card); adAt(T) poses the ad and the patient at time T on
+      // meadow-ad's clock (ask-your-doctor passes T = this scene's duration + its own time), so the skip, the meadow,
+      // the crawl and the chest light carry on across the cut.
+      var M = "meadow-ad", MD = KIT.scene(M).duration;
+      var AT = { smile: KIT.cue(M, "smiling"), hop0: KIT.cue(M, "frolicking"), voice: KIT.cue(M, "voiceover"), auct: KIT.cue(M, "auctioneer"),
+        stroke: KIT.cue(M, "stroke"), death: KIT.cue(M, "death"), dry: KIT.cue(M, "dry"), skinEnd: KIT.cueEnd(M, "skin") };
+      var PAT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
+      var MEAD = { tone: 0, outfit: "dress", hair: 1, color: 3, kind: "hourglass", mood: "smile", arms: [[-25, -15], [115, 160]] };
+      // tv: its feet [x, y] and scale (screen box in TV units x -63..17, y -134..-51); splay: the rabbit ears' resting
+      // turn (deg); couch: its left and right; floor: where her feet and the couch stand (the frame crops the floor in
+      // 16:9); pat: her [x, scale] and the way she faces (at the TV); clock: [x, y, r]; lamp: x or null; tvFloor and rug
+      // (9:16, where the TV stands back on its own floor line).
+      var LR = V
+        ? { tv: [440, 1180, 4.8], splay: [-25, 0], couch: [660, 1090], floor: 1500, pat: [900, 3.4], look: "left", clock: [958, 620, 42], lamp: null, tvFloor: [60, 1180, 1020], rug: [640, 1500, 420, 34] }
+        : { tv: [1170, 1060, 5.0], splay: [-25, 25], couch: [110, 690], floor: 1060, pat: [400, 3.2], look: "right", clock: [400, 250, 60], lamp: 650, tvFloor: null, rug: null };
+      // She sits with her hands clasped in her lap, her elbows out, so her chest light shows.
+      var PATO = Object.assign({}, PAT, { look: LR.look, build: { legPose: [[84, 6], [90, 0]] }, arms: [[-18, 60], [18, -60]] });
+      var HIPS = LR.floor - LR.pat[1] * (100 - KIT.rig(PATO).hipY);
+      LR.seat = [LR.couch[0], LR.couch[1], HIPS - 52 * LR.pat[1], HIPS, HIPS + 30 * LR.pat[1], LR.floor];
+      var SCR = { x0: -63, y0: -134, x1: 17, y1: -51, cx: -23 };
+      var AD = { x: -32, feet: -63, s: 0.32, hop: 7, period: 0.35, fs: 5.2, band: -62.5 };
+
+      function f1(v) { return (+v).toFixed(1); }
+      function tr(x, y, s) { return "translate(" + f1(x) + "," + f1(y) + ")" + (s && s !== 1 ? " scale(" + s + ")" : ""); }
+      function at(x, y, s, inner, id, attrs) { return "<g" + (id ? ' id="' + P + id + '"' : "") + ' transform="' + tr(x, y, s) + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function poly(pts, fill, w, extra) {
+        return '<path d="M' + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="' + (w || 3) + '" stroke-linejoin="miter"' + (extra || "") + "/>";
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="round"' + (extra || "") + "/>"; }
+      // Two-bone reach (person angles: 0 = down, positive toward +x): the arm angles that put the hand on target.
+      function reach(S, T, len) {
+        var dx = T[0] - S[0], dy = T[1] - S[1], d = Math.min(Math.hypot(dx, dy), 2 * len - 0.01);
+        var phi = (Math.atan2(dx, dy) * 180) / Math.PI, al = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+        var A = [phi + al, phi - al], B = [phi - al, phi + al], ey = function (a) { return S[1] + len * Math.cos((a[0] * Math.PI) / 180); };
+        return ey(A) > ey(B) ? A : B;
+      }
+      // Put markup into a person's group (before its first child of class cls, or at a marker).
+      function into(svg, cls, inner) { return svg.replace('<g class="' + cls + '">', '<g class="' + cls + '">' + inner); }
+      // The patient's mustard-and-orange striped scarf, at her neck (drawn over the dress, under the head).
+      // (Her chin comes down to the collar, so the band sits on the collar and its knot and tails hang on her left.)
+      function scarf(o) {
+        var r = KIT.rig(o), x = r.neck[0], y = r.shoulder[0][1] - 5;
+        var band = [[x - 13, y + 1], [x + 12, y - 1], [x + 13, y + 6], [x - 13, y + 8]];
+        var tails = [[x - 7, y + 5], [x - 3, y + 21], [x - 7.5, y + 22.5], [x - 10, y + 8], [x - 14, y + 20], [x - 18, y + 18], [x - 12, y + 5]];
+        var st = "";
+        for (var i = -10; i <= 11; i += 4.2) st += line("M" + f1(x + i) + "," + f1(y + 0.4) + " L" + f1(x + i + 0.8) + "," + f1(y + 7), C.orange, 2.4);
+        var tst = line("M" + f1(x - 8) + "," + f1(y + 12) + " L" + f1(x - 4.5) + "," + f1(y + 12) + " M" + f1(x - 7.5) + "," + f1(y + 17) + " L" + f1(x - 4) + "," + f1(y + 17) +
+          " M" + f1(x - 11) + "," + f1(y + 11) + " L" + f1(x - 14) + "," + f1(y + 13.5) + " M" + f1(x - 12) + "," + f1(y + 16) + " L" + f1(x - 15.5) + "," + f1(y + 18), C.orange, 2.4);
+        var knot = [[x - 12, y + 2], [x - 6, y + 1], [x - 5, y + 8], [x - 11, y + 9]];
+        return poly(band, C.yellow, 1.8) + st + poly(tails, C.yellow, 1.8) + tst + poly(knot, C.orange, 1.8);
+      }
+      function patient(o) { return KIT.person(o).replace('<g class="head">', scarf(o) + '<g class="head">'); }
+      // The ad woman's straw sun hat (face units) and her bunch of daisies (person units, at a hand).
+      var HAT = poly([[-15, -21], [-12, -34], [0, -38.5], [13, -34], [17, -22]], C.yellow, 1.8) +
+        poly([[-15, -25.5], [16.5, -26.5], [17, -21.5], [-15, -21]], C.orange, 1.4) +
+        poly([[-34, -18.5], [-20, -24], [22, -25], [38, -17.5], [24, -14.5], [-22, -14]], C.yellow, 1.8) +
+        line("M-24,-17 L20,-18.5", C.tan, 1.4);
+      function daisy(x, y, r) {
+        var out = "";
+        for (var k = 0; k < 8; k++) out += '<ellipse cx="' + f1(x) + '" cy="' + f1(y - r * 0.62) + '" rx="' + f1(r * 0.3) + '" ry="' + f1(r * 0.55) + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="0.9" transform="rotate(' + k * 45 + " " + f1(x) + " " + f1(y) + ')"/>';
+        return out + '<circle cx="' + f1(x) + '" cy="' + f1(y) + '" r="' + f1(r * 0.34) + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="0.9"/>';
+      }
+      function bunch(o, i) {
+        var r = KIT.rig(o), h = r.handLocal[i], a = o.arms[i][1], out = "", heads = "";
+        [-26, 0, 24].forEach(function (da, k) {
+          var rad = ((a + da) * Math.PI) / 180, L = 17 + (k === 1 ? 4 : 0), ex = h[0] + L * Math.sin(rad), ey = h[1] + L * Math.cos(rad);
+          out += line("M" + f1(h[0]) + "," + f1(h[1]) + " L" + f1(ex) + "," + f1(ey), "#3B6644", 2.2);
+          heads += daisy(ex, ey, 6.2);
+        });
+        return out + heads;
+      }
+      function sunHat(svg) { return svg.replace("<!--face-end-->", HAT + "<!--face-end-->"); }
+      function withDaisies(svg, o) { return into(svg, "arm-r", bunch(o, 1)); }
+      // Red rash spots for the skeleton: on the skull (face units), the ribs and the pelvis (person units).
+      function spots(list, r) { return list.map(function (s) { return '<circle cx="' + s[0] + '" cy="' + s[1] + '" r="' + (r || 3.4) + '" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1"/>'; }).join(""); }
+      function rashy(svg) {
+        return svg.replace("<!--face-end-->", '<g class="rash rash-1">' + spots([[-8, -13], [6, -17], [12, -9]]) + "</g><!--face-end-->") +
+          '<g class="rash rash-2">' + spots([[-6, -16], [6, -9], [-3, -2]]) + '</g><g class="rash rash-3">' + spots([[6, 21], [-7, 23]]) + "</g>";
+      }
+      var MR = KIT.rig(MEAD);
+      // The scratch: the free hand reaches across to the raised arm's elbow.
+      var ELBOW = [MR.shoulder[1][0] + MR.armLength * Math.sin((MEAD.arms[1][0] * Math.PI) / 180) - 1.5, MR.shoulder[1][1] + MR.armLength * Math.cos((MEAD.arms[1][0] * Math.PI) / 180) + 2.5];
+      var SCRATCH = Object.assign({}, MEAD, { arms: [reach(MR.shoulder[0], ELBOW, MR.armLength), MEAD.arms[1]] });
+      function adWoman() {
+        var alive = withDaisies(sunHat(KIT.person(MEAD)), MEAD);
+        var boneA = rashy(withDaisies(sunHat(KIT.person(Object.assign({ skeleton: true }, MEAD))), MEAD));
+        var boneB = rashy(withDaisies(sunHat(KIT.person(Object.assign({ skeleton: true }, SCRATCH))), SCRATCH));
+        var sparkle = at(MR.mouth[0] + 8, MR.mouth[1] - 4, 1, g("sparkle", KIT.star(0, 0, 9, "#FFFFFF").replace("/>", ' stroke="' + ink + '" stroke-width="1.2"/>') + KIT.star(0, 0, 4, C.yellow)));
+        return g("ad-alive", alive) + g("ad-bones", g("ad-boneA", boneA) + g("ad-boneB", boneB, 'opacity="0"'), 'opacity="0"') + sparkle;
+      }
+      // The ad on the screen, in TV units: sky, sun, far hills and the meadow (both scroll), the woman, the crawl band.
+      var crawl = (function () {
+        var fs = AD.fs, gap = 1.7 * fs;
+        var width = function (s) { var w = 0; for (var i = 0; i < s.length; i++) w += s[i] === " " ? 0.26 : /[.,:]/.test(s[i]) ? 0.22 : /[I1]/.test(s[i]) ? 0.26 : /[MW]/.test(s[i]) ? 0.62 : 0.48; return w * fs; };
+        var key = ["STROKE", "CONSTIPATION", "DEATH", "MILD RASH", "DRY SKIN", "ITCHING", "SEE PAGE 1 OF 40"];
+        var kc = [], u = 0;
+        key.forEach(function (s) { var w = width(s); kc.push(u + w / 2); u += w + gap; });
+        // Speeds (TV units a second): readable from "voiceover", a blur from "auctioneer", then slowing so STROKE sits
+        // in the middle of the screen on "stroke." and DRY SKIN on "dry", at one steady speed in between.
+        var vEnd = (kc[4] - kc[0]) / (AT.dry - AT.stroke), vMax = 250, b0 = AT.stroke - 1.05, b1 = AT.stroke - 0.4;
+        var ss = function (a, b, t) { var k = Math.min(1, Math.max(0, (t - a) / (b - a))); return k * k * (3 - 2 * k); };
+        var speed = function (t) {
+          if (t < AT.voice) return 0;
+          if (t < AT.auct) return 16;
+          return 16 + (vMax - 16) * ss(AT.auct, AT.auct + 0.3, t) - (vMax - vEnd) * ss(b0, b1, t);
+        };
+        var dt = 1 / 200, tab = [0], end = MD + 3;
+        for (var i = 1; i * dt <= end; i++) tab.push(tab[i - 1] + speed((i - 0.5) * dt) * dt);
+        var dist = function (t) { var k = Math.max(0, t) / dt, i = Math.min(tab.length - 2, Math.floor(k)); return tab[i] + (tab[i + 1] - tab[i]) * (k - i); };
+        // Lay out the text: "MAY CAUSE:", filler (seen mostly as a blur), then the key items from uS on.
+        var uS = SCR.cx - SCR.x1 + dist(AT.stroke), items = [], x = 0;
+        var put = function (s, x0) { items.push({ s: s, x: x0, w: width(s) }); return x0 + width(s) + gap; };
+        x = put("MAY CAUSE:", 0);
+        var filler = ["HEADACHE", "NAUSEA", "DIZZINESS", "DRY MOUTH", "INSOMNIA", "DROWSINESS", "HAIR LOSS", "HAIR GROWTH", "BLURRED VISION", "SWEATING", "FEVER", "CHILLS", "HICCUPS", "MOOD SWINGS", "JOINT PAIN", "SNEEZING", "CRAMPS", "YAWNING", "BLOATING", "DRY EYES"];
+        var stop = uS - kc[0] - gap, k = 0, first = items.length;
+        while (x + width(filler[k % filler.length]) <= stop) { x = put(filler[k % filler.length], x); k++; }
+        // the space left over goes into the middle of the filler, where the crawl is a blur
+        var extra = stop - (x - gap), half = first + Math.floor((items.length - first) / 2);
+        for (var j = half; j < items.length; j++) items[j].x += extra;
+        key.forEach(function (s, i) { put(s, uS - kc[0] + (kc[i] - width(s) / 2)); });
+        var y = AD.band + 11.5 / 2 + fs * 0.36, txt = "";
+        items.forEach(function (it, i) {
+          txt += '<text x="' + f1(it.x) + '" y="' + f1(y) + '" font-family="Oswald" font-weight="600" font-size="' + fs + '" fill="#FBF6E6" textLength="' + f1(it.w) + '" lengthAdjust="spacingAndGlyphs">' + it.s + "</text>";
+          if (i < items.length - 1) txt += '<circle cx="' + f1((it.x + it.w + items[i + 1].x) / 2) + '" cy="' + f1(y - fs * 0.33) + '" r="0.75" fill="' + C.yellow + '"/>';
+        });
+        return { svg: txt, dist: dist, speed: speed, vEnd: vEnd, vMax: vMax };
+      })();
+      function adScreen() {
+        var sky = '<rect x="' + SCR.x0 + '" y="' + SCR.y0 + '" width="80" height="83" fill="' + C.cyan + '"/>';
+        var rays = "";
+        for (var k = 0; k < 12; k++) {
+          var a = (k * Math.PI) / 6;
+          rays += line("M" + f1(4 + 11 * Math.cos(a)) + "," + f1(-121 + 11 * Math.sin(a)) + " L" + f1(4 + 15 * Math.cos(a)) + "," + f1(-121 + 15 * Math.sin(a)), C.yellow, 1.6);
+        }
+        var sun = rays + '<circle cx="4" cy="-121" r="8" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.2"/>';
+        var cloud = function (x, y) { return [[0, 0, 4], [5, -2, 5], [10, 0, 4]].map(function (c) { return '<circle cx="' + (x + c[0]) + '" cy="' + (y + c[1]) + '" r="' + c[2] + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="0.9"/>'; }).join("") + '<rect x="' + (x - 1) + '" y="' + y + '" width="12" height="4" fill="#FBF6E6"/>'; };
+        // far hills, period 60; the meadow, period 40 (each drawn wide enough to scroll one period)
+        var hills = "";
+        for (var hx = -123; hx < 77; hx += 60) hills += '<path d="M' + hx + ",-84 Q" + (hx + 15) + ",-104 " + (hx + 30) + ",-90 Q" + (hx + 45) + ",-99 " + (hx + 60) + ',-84 Z" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="1.1"/>';
+        var mead = '<path d="M-110,-84 ' + (function () { var s = ""; for (var mx = -110; mx < 70; mx += 20) s += "Q" + (mx + 10) + ",-88 " + (mx + 20) + ",-84 "; return s; })() + 'L70,-40 L-110,-40 Z" fill="' + C.money + '" stroke="' + ink + '" stroke-width="1.2"/>';
+        var tufts = "", flowers = "";
+        for (var tx = -103; tx < 70; tx += 40) {
+          [[0, -77], [17, -69], [29, -80], [9, -66]].forEach(function (p, j) {
+            tufts += line("M" + (tx + p[0] - 2) + "," + p[1] + " l1,-3 l1,3 l1,-3.5 l1,3.5", C.moneyDark, 0.9);
+            if (j % 2 === 0) flowers += daisy(tx + p[0] + 5, p[1] - 3, 2.6);
+          });
+        }
+        var band = g("ad-band", '<rect x="' + SCR.x0 + '" y="' + AD.band + '" width="80" height="12" fill="' + C.ink + '"/>' +
+          '<path d="M' + SCR.x0 + "," + AD.band + ' h80" stroke="' + C.orange + '" stroke-width="1"/>' +
+          g("ad-streaks", line("M-60,-60 H-20 M-40,-58.2 H10 M-55,-53.5 H-5 M-15,-55.3 H14", "#FBF6E6", 0.6), 'opacity="0"') +
+          g("ad-crawl", '<use href="#' + P + 'ad-text" x="14" opacity="0" id="' + P + 'ad-ghost2"/><use href="#' + P + 'ad-text" x="7" opacity="0" id="' + P + 'ad-ghost1"/>' + g("ad-text", crawl.svg)));
+        return sky + sun + g("ad-clouds", cloud(-50, -122) + cloud(-22, -116) + cloud(30, -122)) + g("ad-hills", hills) + g("ad-meadow", mead + tufts + flowers) +
+          at(AD.x, AD.feet - 100 * AD.s, AD.s, adWoman(), "ad-hop") + band;
+      }
+      // A cricket (Part 1's), and its chirp marks, to sit on the TV.
+      function cricket() {
+        return '<path d="M-4,-4 l-7,-9 l-4,12 M2,-4 l3,4" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/>' +
+          '<ellipse cx="0" cy="-7" rx="10" ry="5" fill="' + ink + '"/><circle cx="10" cy="-9" r="4" fill="' + ink + '"/><path d="M12,-12 q6,-12 15,-9" fill="none" stroke="' + ink + '" stroke-width="1.6"/>' +
+          g("chirp", '<path d="M24,-20 q5,4 0,9 M31,-24 q8,7 0,17" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>', 'opacity="0"');
+      }
+      function tv() {
+        return KIT.props.tvSet({}).replace("<!--tv-screen-->", adScreen() + "<!--tv-screen-->") + at(54, -150, 0.5, cricket(), "cricket");
+      }
+      // The couch (back and arms behind her, the seat cushion in front, so she sinks into it), the lamp, the clock, the rug.
+      function couchBack(c) {
+        var x0 = c[0], x1 = c[1], bt = c[2], st = c[3], fb = c[4];
+        var back = [[x0 + 30, bt + 18], [x0 + 52, bt], [x1 - 52, bt], [x1 - 30, bt + 18], [x1 - 30, st + 10], [x0 + 30, st + 10]];
+        var tufts = "";
+        for (var x = x0 + 110; x < x1 - 90; x += 120) tufts += '<circle cx="' + x + '" cy="' + (bt + (st - bt) * 0.45) + '" r="5" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="2"/>';
+        var arm = function (a, b) { return poly([[a, st - 60], [a + 8, st - 74], [b - 8, st - 74], [b, st - 60], [b, fb], [a, fb]], C.orange, 4) + '<path d="M' + (a + 10) + "," + (st - 60) + " H" + (b - 10) + '" stroke="' + C.cream + '" stroke-width="4" opacity="0.6"/>'; };
+        return poly(back, C.orange, 5) + '<rect x="' + (x0 + 30) + '" y="' + bt + '" width="' + (x1 - x0 - 60) + '" height="' + (st - bt + 10) + '" fill="url(#' + P + 'hatch)" opacity="0.18"/>' + tufts +
+          arm(x0, x0 + 70) + arm(x1 - 70, x1);
+      }
+      function couchFront(c) {
+        var x0 = c[0], x1 = c[1], st = c[3], fb = c[4], fl = c[5];
+        var leg = function (x, d) { return poly([[x - 9, fb], [x + 9, fb], [x + 4 * d + 3, fl], [x + 4 * d - 3, fl]], C.rust, 3); };
+        return poly([[x0 + 58, st - 8], [x1 - 58, st - 8], [x1 - 50, st + 6], [x1 - 50, fb], [x0 + 50, fb], [x0 + 50, st + 6]], C.orange, 5) +
+          '<path d="M' + (x0 + 66) + "," + (st + 2) + " H" + (x1 - 66) + '" stroke="' + C.cream + '" stroke-width="4" opacity="0.6"/>' +
+          '<path d="M' + ((x0 + x1) / 2) + "," + (st + 6) + " V" + (fb - 8) + '" stroke="' + ink + '" stroke-width="2.4" opacity="0.6"/>' +
+          leg(x0 + 40, -1) + leg(x1 - 40, 1);
+      }
+      function lamp(x, fl) {
+        if (x === null) return "";
+        var top = fl - 500;
+        return '<path d="M' + x + "," + fl + " L" + x + "," + top + '" stroke="' + ink + '" stroke-width="6"/>' +
+          poly([[x - 22, top - 50], [x + 22, top - 50], [x + 40, top + 20], [x - 40, top + 20]], C.yellow, 4) +
+          '<path d="M' + (x - 30) + "," + (top - 10) + " H" + (x + 30) + '" stroke="' + C.orange + '" stroke-width="5"/>';
+      }
+      function clock(x, y, r) {
+        var rays = "";
+        for (var k = 0; k < 12; k++) {
+          var a = (k * Math.PI) / 6, rr = k % 2 ? r * 1.45 : r * 1.75;
+          rays += '<path d="M' + f1(x + r * 0.9 * Math.cos(a)) + "," + f1(y + r * 0.9 * Math.sin(a)) + " L" + f1(x + rr * Math.cos(a)) + "," + f1(y + rr * Math.sin(a)) + '" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>' +
+            '<circle cx="' + f1(x + rr * Math.cos(a)) + '" cy="' + f1(y + rr * Math.sin(a)) + '" r="' + (k % 2 ? 6 : 8) + '" fill="' + (k % 2 ? C.orange : C.yellow) + '" stroke="' + ink + '" stroke-width="2.4"/>';
+        }
+        return rays + '<circle cx="' + x + '" cy="' + y + '" r="' + r + '" fill="#FBF6E6" stroke="' + ink + '" stroke-width="5"/>' +
+          '<path d="M' + x + "," + y + " L" + x + "," + (y - r * 0.62) + " M" + x + "," + y + " L" + f1(x + r * 0.45) + "," + f1(y + r * 0.2) + '" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>' +
+          '<circle cx="' + x + '" cy="' + y + '" r="5" fill="' + C.war + '"/>';
+      }
+      // The room, cropped by the paper's inner border.
+      function livingRoom() {
+        var c = LR.seat, t = LR.tvFloor, r = LR.rug;
+        // (9:16: the floor from the TV's floor line down, in boards, so the bottom of the frame is floor, not paper)
+        var boards = "";
+        if (t) for (var by = t[1] + 46, k = 1; by < H - 44; by += 40 + k * 14, k++) boards += '<path d="M44,' + by + " H" + (W - 44) + '" stroke="' + ink + '" stroke-width="2.5" opacity="0.5"/>';
+        var floor = (t ? '<rect x="44" y="' + t[1] + '" width="' + (W - 88) + '" height="' + (H - 44 - t[1]) + '" fill="' + C.tan + '" opacity="0.35"/>' + boards +
+          '<path d="M44,' + t[1] + " H" + (W - 44) + '" stroke="' + ink + '" stroke-width="5"/>' : "") +
+          (r ? '<ellipse cx="' + r[0] + '" cy="' + r[1] + '" rx="' + r[2] + '" ry="' + r[3] + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="4"/>' +
+            '<ellipse cx="' + r[0] + '" cy="' + r[1] + '" rx="' + (r[2] - 26) + '" ry="' + (r[3] - 10) + '" fill="none" stroke="' + C.orange + '" stroke-width="4"/>' : "");
+        var pat = at(LR.pat[0], HIPS - LR.pat[1] * KIT.rig(PATO).hipY, LR.pat[1], g("pat", patient(PATO)));
+        return '<defs><clipPath id="' + P + 'frame"><rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '"/></clipPath></defs><g clip-path="url(#' + P + 'frame)">' +
+          clock(LR.clock[0], LR.clock[1], LR.clock[2]) + floor + at(LR.tv[0], LR.tv[1], LR.tv[2], g("tv", tv())) +
+          lamp(LR.lamp, LR.floor - 40) + couchBack(c) + pat + couchFront(c) + "</g>";
+      }
+      // Pose everything that moves continuously, at time T on meadow-ad's clock.
+      var AE = {};
+      function adBind() {
+        var hop = q("ad-hop"), who = function (s) { return hop.querySelectorAll(s); };
+        AE = { hop: hop, meadow: q("ad-meadow"), hills: q("ad-hills"), clouds: q("ad-clouds"), crawl: q("ad-crawl"), g1: q("ad-ghost1"), g2: q("ad-ghost2"), streaks: q("ad-streaks"),
+          text: q("ad-text"), boneA: q("ad-boneA"), boneB: q("ad-boneB"), legL: who(".leg-l"), legR: who(".leg-r"),
+          armL: [q("ad-alive").querySelector(".arm-l"), q("ad-boneA").querySelector(".arm-l")], armR: [q("ad-alive").querySelector(".arm-r"), q("ad-boneA").querySelector(".arm-r"), q("ad-boneB").querySelector(".arm-r")],
+          scrub: q("ad-boneB").querySelector(".arm-l"), light: q("pat").querySelector(".chest-light") };
+      }
+      function rot(el, a, o) { el.setAttribute("transform", "rotate(" + a.toFixed(2) + " " + f1(o[0]) + " " + f1(o[1]) + ")"); }
+      function adAt(T) {
+        var run = Math.max(0, T - AT.hop0), n = 0, p = 0, y = 0;
+        AE.meadow.setAttribute("transform", "translate(" + (-((run * 14) % 40)).toFixed(2) + ",0)");
+        AE.hills.setAttribute("transform", "translate(" + (-((run * 4) % 60)).toFixed(2) + ",0)");
+        AE.clouds.setAttribute("transform", "translate(" + (-((T * 1.5) % 30)).toFixed(2) + ",0)");
+        if (T >= AT.hop0) { var k = run / AD.period; n = Math.floor(k); p = k - n; y = -AD.hop * 4 * p * (1 - p); }
+        AE.hop.setAttribute("transform", tr(AD.x, AD.feet - 100 * AD.s + y, AD.s));
+        var s = Math.sin(Math.PI * p), lead = n % 2 === 0, sway = T < AT.hop0 ? Math.sin(T * 5) * 5 : 0;
+        Array.prototype.forEach.call(AE.legL, function (el) { rot(el, lead ? -34 * s : 16 * s, MR.hip[0]); });
+        Array.prototype.forEach.call(AE.legR, function (el) { rot(el, lead ? 16 * s : -34 * s, MR.hip[1]); });
+        AE.armL.forEach(function (el) { rot(el, (lead ? 22 : -22) * s, MR.shoulder[0]); });
+        AE.armR.forEach(function (el) { rot(el, -8 * s + sway, MR.shoulder[1]); });
+        // the elbow scratch: from "dry" to just after "skin.", the free hand scrubs the raised elbow
+        var scratching = T >= AT.dry && T < AT.skinEnd + 0.3;
+        AE.boneA.setAttribute("opacity", scratching ? 0 : 1);
+        AE.boneB.setAttribute("opacity", scratching ? 1 : 0);
+        rot(AE.scrub, scratching ? 5 * Math.sin((T - AT.dry) * Math.PI * 2 * 7) : 0, MR.shoulder[0]);
+        // the crawl, its blur, and the chest light blinking red
+        AE.crawl.setAttribute("transform", "translate(" + (SCR.x1 - crawl.dist(T)).toFixed(2) + ",0)");
+        var b = Math.min(1, Math.max(0, (crawl.speed(T) - 40) / 150));
+        AE.g1.setAttribute("opacity", (0.4 * b).toFixed(3));
+        AE.g2.setAttribute("opacity", (0.22 * b).toFixed(3));
+        AE.text.setAttribute("opacity", (1 - 0.45 * b).toFixed(3));
+        AE.streaks.setAttribute("opacity", (0.7 * b).toFixed(3));
+        AE.light.setAttribute("fill", T % 0.9 < 0.5 ? C.war : "#E9E1CC");
+      }
+      // The rabbit ears at rest, splayed (their pivot set once), and the patient's head and eyes: looking at the TV
+      // (LOOK), or turned to the camera (FACING) after "skin.". Pass a time to put that pose there.
+      var PR = KIT.rig(PATO), NECK = PR.neck.map(f1).join(" ");
+      var LOOK = { head: -5 * PR.facing, eyes: 1.6 }, FACING = { head: 2 * PR.facing, eyes: -1.6 };
+      function earsAt(tl) {
+        var ears = [q("tv").querySelector(".tv-antenna-l"), q("tv").querySelector(".tv-antenna-r")];
+        gsap.set(ears, { svgOrigin: "0 -156" });
+        tl.fromTo(ears[0], { rotation: LR.splay[0] }, { rotation: LR.splay[0], duration: 0.01 }, 0);
+        tl.fromTo(ears[1], { rotation: LR.splay[1] }, { rotation: LR.splay[1], duration: 0.01 }, 0);
+        return ears;
+      }
+      function patientPose(tl, pose) {
+        var pat = q("pat"), head = pat.querySelector(".head"), pupils = pat.querySelectorAll(".pupil");
+        gsap.set(head, { svgOrigin: NECK });
+        tl.fromTo(head, { rotation: pose.head }, { rotation: pose.head, duration: 0.01 }, 0);
+        tl.fromTo(pupils, { x: pose.eyes }, { x: pose.eyes, duration: 0.01 }, 0);
+        return { head: head, pupils: pupils, eyes: pat.querySelectorAll(".eye") };
+      }
+      // ═══ end of the shared block ═══
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + livingRoom());
+      adBind();
+
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      KIT.onTime(tl, D, adAt);
+
+      // "smiling": a sparkle pings off her teeth.
+      gsap.set(q("sparkle"), { svgOrigin: "0 0" });
+      tl.fromTo(q("sparkle"), { scale: 0, rotation: 0 }, { scale: 1.2, rotation: 45, duration: 0.18, ease: "back.out(3)" }, AT.smile + 0.1);
+      tl.to(q("sparkle"), { scale: 0, rotation: 90, duration: 0.2, ease: "power2.in" }, AT.smile + 0.45);
+      // "voiceover": the crawl band rises into the bottom of the screen.
+      tl.fromTo(q("ad-band"), { y: 13 }, { y: 0, duration: 0.25, ease: "power2.out" }, AT.voice);
+      // "auctioneer": the rabbit ears wiggle while the crawl blurs.
+      var ears = earsAt(tl);
+      tl.fromTo(ears[0], { rotation: LR.splay[0] }, { rotation: LR.splay[0] - 16, duration: 0.09, repeat: 23, yoyo: true, ease: "sine.inOut" }, AT.auct);
+      tl.fromTo(ears[1], { rotation: LR.splay[1] }, { rotation: LR.splay[1] + 14, duration: 0.11, repeat: 19, yoyo: true, ease: "sine.inOut" }, AT.auct + 0.04);
+      tl.to(q("tv"), { y: -1.5, duration: 0.05, repeat: 9, yoyo: true, ease: "none" }, AT.auct);
+      // after "stroke.": nothing; a cricket on the TV chirps.
+      tl.fromTo(q("chirp"), { opacity: 0 }, { opacity: 1, duration: 0.08, repeat: 15, yoyo: true, ease: "none" }, KIT.after(ID, "stroke"));
+      // "death,": she x-rays into a skeleton mid-skip and keeps skipping.
+      KIT.xray(tl, q("ad-alive"), q("ad-bones"), AT.death);
+      // "mild": the rash pops out in three bursts.
+      var rash = [1, 2, 3].map(function (i) { return q("ad-hop").querySelectorAll(".rash-" + i); });
+      rash.forEach(function (els, i) {
+        tl.fromTo(els, { scale: 0, transformOrigin: "50% 50%" }, { scale: 1, transformOrigin: "50% 50%", duration: 0.12, ease: "back.out(3)" }, cue("mild") + i * 0.1);
+      });
+      // The patient watches and blinks now and then; after "skin." she turns her head slowly to the camera.
+      var pp = patientPose(tl, LOOK);
+      [AT.auct - 1.2, cue("listed") + 0.3].forEach(function (t) {
+        tl.to(pp.eyes, { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.06, repeat: 1, yoyo: true, ease: "power1.inOut" }, t);
+      });
+      var turn = KIT.after(ID, "skin") - 0.25;
+      tl.to(pp.head, { rotation: FACING.head, duration: 0.75, ease: "sine.inOut" }, turn);
+      tl.to(pp.pupils, { x: FACING.eyes, duration: 0.6, ease: "sine.inOut" }, turn + 0.1);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

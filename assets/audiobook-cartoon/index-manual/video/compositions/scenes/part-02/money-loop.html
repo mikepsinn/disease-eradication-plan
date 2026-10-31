@@ -1,0 +1,480 @@
+<template id="money-loop-template">
+  <!-- money-loop · style "atomic" (cartoon-style-bible.md): the money loop as ONE illustrated plate,
+       a looping road on a plain field, and the camera travels round it, framing one station per phrase:
+       "print": the Politician cranks a printing press whose paper tray is empty; "nothing": the camera pushes into the
+       empty tray and holds there while a moth flutters slowly up out of it (no papers pop out meanwhile); "policy": the
+       Politician grins at us. "give": the new papers march along the road to the Weapons Maker's factory and file in
+       (in 9:16 the camera travels with them); "makers": a close-up, his eyes ring up dollar signs. "make": he lets his
+       smiling baby missile go; the camera follows it round the bend to a little house, the family waves at it, and on
+       "everything" the bomb goes off: a flash, a mushroom cloud held until "This", the house flat, the family charred
+       and blinking. "jobs": a pay window pops up out of the rubble and a hairy arm hands them papers; they march on to
+       the farm stand and buy bread. The camera leaves the stand for a bare patch of field; "grows": the wheat shoots up
+       by itself; "free": a price tag (a "$", no words) drops onto it on its string. "economy": the camera pulls back
+       and the whole thing is a loop: the farmer's papers walk back round to the press, and the factory launches the
+       next missile. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #money-loop-weave, #money-loop-shake, #money-loop-plate, #money-loop-film { position: absolute; inset: 0; }
+    #money-loop-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="money-loop" data-width="1920" data-height="1080" data-start="0" data-duration="20.06">
+    <div id="money-loop-weave">
+      <div id="money-loop-shake"><div id="money-loop-plate"></div></div>
+      <div id="money-loop-flash"></div>
+    </div>
+    <div id="money-loop-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "money-loop";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 37);
+
+      // ── The plate, in plate units. A stadium-shaped road (straights from x -850 to 850 at y -640 and 640, bends of
+      // radius 640) on a plain field. The press and the factory stand behind the top straight (ground y -760); the
+      // house and the farm stand stand inside the loop behind the bottom straight (ground y 520); people and papers
+      // walk on the road. Every person and prop is drawn at scale S.
+      var S = 1.5, HL = 850, RR = 640, RW = 160, TOPG = -760, ING = 520, ROADY = -615, FEETY = 652;
+      var GROUND = "#C8B07B", ROAD = "#EEE3C4", EDGE = "#B09363", DASH = "#C7AB78";
+      var LEN = [1700, Math.PI * RR, 1700, Math.PI * RR], TOTAL = LEN[0] + LEN[1] + LEN[2] + LEN[3];
+      // The point u along the road's middle, clockwise from the top straight's left end.
+      function roadPt(u) {
+        u = ((u % TOTAL) + TOTAL) % TOTAL;
+        if (u < LEN[0]) return [-HL + u, -RR];
+        u -= LEN[0];
+        if (u < LEN[1]) { var a = -Math.PI / 2 + u / RR; return [HL + RR * Math.cos(a), RR * Math.sin(a)]; }
+        u -= LEN[1];
+        if (u < LEN[2]) return [HL - u, RR];
+        u -= LEN[2];
+        var b = Math.PI / 2 + u / RR;
+        return [-HL + RR * Math.cos(b), RR * Math.sin(b)];
+      }
+      // The camera's views (KIT.camera): where it looks (plate x, y) and its scale; A is that point's place on the screen.
+      var A = V ? [540, 740] : [960, 540];
+      // (tray and face are set from the positions below.) The wheat view frames the stalks alone, with the farm stand
+      // out of the picture to the right.
+      var VIEW = V
+        ? { press: [-640, -930, 1.3], pol: [-800, -990, 1.6], factory: [800, -960, 1.25], wm: [690, -900, 2.2], boom: [530, 250, 1.12],
+            town: [600, 380, 1.25], farm: [-390, 380, 1.12], wheat: [-965, 330, 3.0], wide: [0, -365, 0.33] }
+        : { press: [-335, -900, 1.15], pol: [-760, -990, 1.5], factory: [800, -920, 1.15], wm: [700, -900, 2.2], boom: [830, 220, 0.82],
+            town: [600, 390, 1.1], farm: [-390, 390, 1.1], wheat: [-985, 360, 2.4], wide: [0, -175, 0.4] };
+
+      // ── Drawings ──
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var person = function (o, x, groundY, k, inner) { return at(x, groundY - 100 * k, k, inner || KIT.person(o)); };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var burn = KIT.burn;
+      // A walking paper (KIT.money) whose legs we move: in a group positioned by the update.
+      function walker(id, kind, k) { return '<g id="' + ID + "-" + id + '" opacity="0"><g transform="scale(' + k + ')">' + KIT.money(kind, 0) + "</g></g>"; }
+      function setLegs(el, l) { el.querySelector(".legs").setAttribute("d", "M-16,24 l" + (-6 + l * 10) + ",22 h-8 M16,24 l" + (6 - l * 10) + ",22 h8"); }
+      // A held paper, in person units (a little smaller than a walking one), centered on (x, y).
+      function heldBill(x, y, rot) { return '<g transform="translate(' + f(x) + "," + f(y) + ") rotate(" + (rot || 0) + ') scale(0.5)">' + KIT.money("war", 0).replace('class="legs"', 'class="legs" opacity="0"') + "</g>"; }
+      // A loaf of bread, in plate units (or person units), centered on (0, 0), about 60 x 30.
+      function loaf() {
+        return '<path d="M-30,6 Q-32,-14 -10,-16 Q8,-20 24,-12 Q34,-4 30,8 Q0,14 -30,6 Z" fill="#D49A4E" stroke="' + ink + '" stroke-width="3.2" stroke-linejoin="round"/>' +
+          '<path d="M-16,-8 l8,-6 M-2,-9 l8,-6 M12,-8 l8,-6" stroke="#F3DFB0" stroke-width="3" stroke-linecap="round"/>';
+      }
+      // The Weapons Maker's smiling baby missile (the cast prop, drawn at the same size), pointing +x, around (0, 0).
+      function missile() {
+        return '<g transform="translate(-2,0)"><path d="M-34,-7 L14,-7 L30,0 L14,7 L-34,7 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<path d="M-34,-7 L-44,-17 L-40,-7 Z M-34,7 L-44,17 L-40,7 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+          '<path d="M14,-7 L30,0 L14,7 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<path d="M-4,2 Q2,6 8,2" fill="none" stroke="' + ink + '" stroke-width="1.8" stroke-linecap="round"/><circle cx="-2" cy="-2.5" r="1.6" fill="' + ink + '"/><circle cx="6" cy="-2.5" r="1.6" fill="' + ink + '"/></g>';
+      }
+      // The moth from Part 1's empty wallet: open or shut wings (they flap), in plate units, around (0, 0).
+      function moth(open) {
+        var w = open ? '<path d="M0,-2 L-26,-16 L-22,6 Z M0,-2 L26,-16 L22,6 Z" fill="#B9AE98" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M0,2 L-14,14 L-4,6 Z M0,2 L14,14 L4,6 Z" fill="#9C907A" stroke="' + ink + '" stroke-width="2" stroke-linejoin="round"/>'
+          : '<path d="M0,-2 L-8,-24 L-3,2 Z M0,-2 L8,-24 L3,2 Z" fill="#B9AE98" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>';
+        return '<g class="moth-' + (open ? "open" : "shut") + '">' + w + '<ellipse cx="0" cy="2" rx="4" ry="11" fill="#6B5B45" stroke="' + ink + '" stroke-width="2"/><path d="M-1,-8 q-6,-10 -12,-10 M1,-8 q6,-10 12,-10" fill="none" stroke="' + ink + '" stroke-width="1.6"/></g>';
+      }
+      // The pay window that pops up out of the rubble, in person units, standing on (0, 0): a booth with a shutter
+      // over its window, and a hairy forearm with a missile tattoo that reaches out (left) with a fan of papers.
+      function booth() {
+        var out = '<path d="M-74,-150 L-62,-178 H62 L74,-150 Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<rect x="-62" y="-150" width="124" height="150" fill="#E2B866" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="-62" y="-26" width="124" height="26" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="-44" y="-130" width="88" height="58" fill="' + C.ink + '"/>' +
+          '<rect x="-54" y="-76" width="108" height="10" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="3"/>';
+        var slats = '<rect x="-44" y="-130" width="88" height="56" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="3"/>';
+        for (var y = -122; y < -76; y += 8) slats += '<path d="M-42,' + y + ' H42" stroke="' + C.peri + '" stroke-width="2"/>';
+        out += '<g class="booth-shutter">' + slats + "</g>";
+        var arm = '<path d="M-36,-108 L-128,-104 L-130,-92 L-36,-88 Z" fill="#6F4B33" stroke="' + ink + '" stroke-width="3" stroke-linejoin="round"/>' +
+          '<path d="M-60,-104 l-5,-5 M-76,-104 l-5,-5 M-92,-103 l-5,-5 M-108,-103 l-5,-5" stroke="' + ink + '" stroke-width="1.6"/>' +
+          '<path d="M-96,-98 h12 l5,2 l-5,2 h-12 l-3,3 v-10 Z" fill="' + C.war + '"/>' +
+          '<rect x="-46" y="-111" width="14" height="26" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="3"/>';
+        var fan = [-18, 0, 18].map(function (r, i) { return '<g class="booth-bill" data-i="' + i + '">' + heldBill(-142 - i * 3, -118 + i * 2, r - 8) + "</g>"; }).join("");
+        arm += fan + '<path d="M-128,-104 L-142,-110 L-150,-100 L-142,-90 L-130,-92 Z" fill="#6F4B33" stroke="' + ink + '" stroke-width="3" stroke-linejoin="round"/>';
+        out += '<g class="booth-arm">' + arm + "</g>";
+        return '<g class="booth-pop">' + out + "</g>";
+      }
+      // The farm stand, in person units on (0, 0): a striped awning on two posts, and a plank counter.
+      function standBack() {
+        var stripes = "";
+        for (var i = 0; i < 6; i++) {
+          var x0 = -118 + i * 39.3;
+          stripes += '<path d="M' + f(x0 + 4) + ",-262 H" + f(x0 + 4 + 35.3) + " L" + f(x0 + 39.3) + ",-226 H" + f(x0) + ' Z" fill="' + (i % 2 ? C.cream : C.rust) + '"/>';
+        }
+        var scallop = "";
+        for (var j = 0; j < 6; j++) scallop += '<path d="M' + f(-118 + j * 39.3) + ",-226 a19.6,12 0 0,0 39.3,0 Z" + '" fill="' + (j % 2 ? C.cream : C.rust) + '" stroke="' + ink + '" stroke-width="3"/>';
+        return '<rect x="-96" y="-236" width="9" height="150" fill="#7A5634" stroke="' + ink + '" stroke-width="3"/><rect x="87" y="-236" width="9" height="150" fill="#7A5634" stroke="' + ink + '" stroke-width="3"/>' +
+          stripes + '<path d="M-114,-262 H114 L118,-226 H-118 Z" fill="none" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' + scallop;
+      }
+      function standFront() {
+        var planks = "";
+        for (var y = -78; y < 0; y += 17) planks += '<path d="M-92,' + y + ' H92" stroke="#8C6440" stroke-width="2"/>';
+        return '<rect x="-95" y="-95" width="190" height="95" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' + planks +
+          '<rect x="-104" y="-104" width="208" height="12" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>';
+      }
+      // A wheat stalk standing on (0, 0), h tall when grown, in plate units; .grow scales it up from the ground.
+      function stalk(h, lean) {
+        var head = "";
+        for (var k = 0; k < 7; k++) {
+          var y = -h + 10 + k * 11;
+          head += '<ellipse cx="' + f(lean - 7) + '" cy="' + f(y) + '" rx="6" ry="9" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2" transform="rotate(-24 ' + f(lean - 7) + " " + f(y) + ')"/>' +
+            '<ellipse cx="' + f(lean + 7) + '" cy="' + f(y) + '" rx="6" ry="9" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2" transform="rotate(24 ' + f(lean + 7) + " " + f(y) + ')"/>';
+        }
+        return '<g class="grow"><path d="M0,0 Q' + f(lean * 0.2) + "," + f(-h * 0.5) + " " + f(lean) + "," + f(-h + 70) + '" fill="none" stroke="#9E7A3C" stroke-width="5" stroke-linecap="round"/>' +
+          '<path d="M0,-40 q-24,-14 -30,-40 q16,10 30,26 M0,-90 q22,-14 26,-40 q-14,12 -26,26" fill="#B89A52" stroke="' + ink + '" stroke-width="2"/>' + head +
+          '<path d="M' + f(lean) + "," + f(-h + 8) + " l-2,-26 M" + f(lean - 4) + "," + f(-h + 16) + " l-10,-22 M" + f(lean + 4) + "," + f(-h + 16) + ' l10,-22" stroke="#9E7A3C" stroke-width="1.8"/></g>';
+      }
+
+      // ── The cast ──
+      var POL = KIT.castOpts("politician", { look: "right", mood: "smug", arms: [[10, 4], [62, 102]] });
+      var POL2 = copy(POL, { look: null, mood: "grin" });
+      var WM = KIT.castOpts("weaponsMaker", { arms: [[32, 84], [-32, -84]] });
+      var WM2 = copy(WM, { mood: "greedy" });
+      var FARMER = { tone: 2, outfit: "overalls", colorHex: C.peri, hair: 2, stache: true, look: "right", mood: "smile", arms: [[-14, -40], [24, 70]] };
+      // The family: everyday humans. Their drawings: waving at the missile, then charred (standing; a paper held up;
+      // marching left with the paper; marching left with empty hands; holding a loaf).
+      var FAM = [
+        { o: { tone: 1, outfit: "shirt", color: 1, hair: 0, seed: 3 }, x: 380, k: S },
+        { o: { tone: 1, outfit: "dress", color: 3, hair: 1, seed: 2 }, x: 500, k: S },
+        { o: { tone: 1, outfit: "shirt", color: 0, hair: 0, seed: 5, build: { hs: 1.18, legs: 0.8 } }, x: 615, k: S * 0.72 },
+      ];
+      var FPOSE = {
+        wave: { mood: "smile", arms: [[18, 8], [158, 176]] },
+        char: { charred: true, arms: [[14, 6], [-14, -6]] },
+        charBill: { charred: true, arms: [[14, 6], [150, 170]] },
+        charWalk: { charred: true, look: "left", arms: [[-50, -100], [12, 6]] },
+        charGive: { charred: true, look: "left", arms: [[-62, -96], [12, 6]] },
+        charLoaf: { charred: true, look: "left", arms: [[-22, -112], [-8, -106]] },
+      };
+
+      // ── Positions ──
+      var PRESS = [-560, TOPG], AXLE = [PRESS[0] - 136 * S, PRESS[1] - 150 * S], BED = [PRESS[0] + 70, PRESS[1] - 97 * S];
+      var TRAY = [PRESS[0] + 148 * S, PRESS[1] - 205 * S];
+      // "nothing": the empty tray sits low and left of center with open field above it, for the moth to flutter up into.
+      // (The tray box spans about TRAY x -45 to +58, y -15 to +86; its mouth is at TRAY y -15.)
+      VIEW.tray = V ? [TRAY[0] + 6, TRAY[1] - 108, 2.8] : [TRAY[0] + 73, TRAY[1] - 52, 3.0];
+      var RPOL = KIT.rig(POL), POLAT = [AXLE[0] - 44 * S - S * RPOL.hand[1][0], TOPG - 100 * S];
+      POLAT[1] = TOPG - 100 * S;
+      var FACT = [880, TOPG], WMAT = [640, TOPG];
+      var RWM = KIT.rig(WM);
+      // the dollar-sign eyes: a head-and-shoulders close-up (in 9:16 tight enough that the road is out of the picture)
+      VIEW.face = [WMAT[0] + S * RWM.head[0], TOPG - 100 * S + S * RWM.head[1] + (V ? 20 : 22), V ? 7.0 : 5.0];
+      var CRADLE = [WMAT[0] + S * ((RWM.hand[0][0] + RWM.hand[1][0]) / 2), TOPG - 100 * S + S * ((RWM.hand[0][1] + RWM.hand[1][1]) / 2 - 4)];
+      var HOUSE = [560, ING], BOOTH = [800, ING], STAND = [-530, ING], NUKE = [560, ING], WALK = 690;
+      var COUNTER_Y = ING - 104 * S, LOAVES = [-630, -585, -540, -495], PILE = [-450, -428, -406], BACK_U = 5010;
+      var WHEAT = [[-1025, 250, -6], [-995, 300, 4], [-965, 330, -4], [-935, 280, 8], [-905, 245, -2]];
+      // three papers pop out on "print papers from", none while the camera looks into the empty tray, three more after
+      var BIRTH = [0.1, 0.45, 0.8, 2.6, 3.0, 3.4], SLOT = [300, 180, 60, -60, -180, -300];
+      var MARCH = 4.3, VEL = 477, DOORX = FACT[0];
+
+      // ── Assemble the plate ──
+      var road = '<path d="M' + -HL + "," + -RR + " H" + HL + " A" + RR + "," + RR + " 0 0,1 " + HL + "," + RR + " H" + -HL + " A" + RR + "," + RR + " 0 0,1 " + -HL + "," + -RR + ' Z" fill="none" stroke="' + EDGE + '" stroke-width="' + (RW + 14) + '"/>' +
+        '<path d="M' + -HL + "," + -RR + " H" + HL + " A" + RR + "," + RR + " 0 0,1 " + HL + "," + RR + " H" + -HL + " A" + RR + "," + RR + " 0 0,1 " + -HL + "," + -RR + ' Z" fill="none" stroke="' + ROAD + '" stroke-width="' + RW + '"/>' +
+        '<path d="M' + -HL + "," + -RR + " H" + HL + " A" + RR + "," + RR + " 0 0,1 " + HL + "," + RR + " H" + -HL + " A" + RR + "," + RR + " 0 0,1 " + -HL + "," + -RR + ' Z" fill="none" stroke="' + DASH + '" stroke-width="7" stroke-dasharray="46 54"/>';
+      var polSvg = '<g id="' + ID + '-pol1">' + KIT.person(POL) + '</g><g id="' + ID + '-pol2" opacity="0">' + KIT.person(POL2) + "</g>";
+      var pressSvg = at(PRESS[0], PRESS[1], 1, '<g transform="scale(' + -S + "," + S + ')">' + KIT.props.printingPress({ seal: "war", tray: 0 }) + "</g>");
+      var wmSvg = '<g id="' + ID + '-wm1">' + KIT.person(WM) + '</g><g id="' + ID + '-wm2" opacity="0">' + KIT.person(WM2) + "</g>";
+      var top = at(POLAT[0], POLAT[1], S, polSvg) + pressSvg + at(FACT[0], FACT[1], S, KIT.props.factory({ label: "" }), ' id="' + ID + '-factory"') + person(WM, WMAT[0], TOPG, S, wmSvg);
+      var mothSvg = '<g id="' + ID + '-moth" opacity="0">' + moth(true) + moth(false) + "</g>";
+      var billsA = BIRTH.map(function (b, i) { return walker("a" + i, "war", 1.3); }).join("") + [0, 1, 2, 3, 4].map(function (i) { return walker("c" + i, "war", 1.3); }).join("");
+      var wheat = WHEAT.map(function (w, i) { return '<g transform="translate(' + w[0] + "," + ING + ')"><g id="' + ID + "-wheat" + i + '">' + stalk(w[1], w[2]) +
+        (i === 2 ? '<g transform="translate(' + f(w[2] - 4) + "," + f(-w[1] + 70) + ')"><g id="' + ID + '-tag" opacity="0"><g transform="scale(3)">' + KIT.props.priceTag({ text: "$" }) + "</g></g></g>" : "") + "</g></g>"; }).join("");
+      var farmer = person(FARMER, STAND[0] + 10, ING, S, KIT.person(FARMER).replace("<!--face-end-->",
+        '<path d="M-30,-22 L32,-24 L30,-19 L-28,-17 Z" fill="#E8C26A" stroke="' + ink + '" stroke-width="2"/><path d="M-16,-22 L-14,-38 L17,-39 L18,-24 Z" fill="#E8C26A" stroke="' + ink + '" stroke-width="2"/><path d="M-15,-27 L18,-28" stroke="' + C.war + '" stroke-width="4"/><!--face-end-->'));
+      var counterLoaves = LOAVES.map(function (x, i) { return '<g id="' + ID + "-cl" + i + '" transform="translate(' + x + "," + f(COUNTER_Y - 14) + ')">' + loaf() + "</g>"; }).join("");
+      var house = at(HOUSE[0], HOUSE[1], S, KIT.props.house({ variant: 2 }), ' id="' + ID + '-house"');
+      var rubble = at(HOUSE[0], HOUSE[1], 1, '<g transform="scale(' + S * 1.06 + "," + S * 0.16 + ')">' + burn(KIT.props.house({ variant: 2, smoke: false })) + "</g>", ' id="' + ID + '-rubble" opacity="0"');
+      var boothSvg = at(BOOTH[0], BOOTH[1], S, booth());
+      var nuke = at(NUKE[0], NUKE[1], 1.25, KIT.nuke(), ' id="' + ID + '-nuke"');
+      var inner = wheat + at(STAND[0], STAND[1], S, standBack()) + farmer + at(STAND[0], STAND[1], S, standFront()) + counterLoaves + house + rubble + boothSvg + nuke;
+      // the family: each member a group of drawings (one shown at a time), positioned by the update
+      var fam = FAM.map(function (m, i) {
+        var g = "";
+        Object.keys(FPOSE).forEach(function (n) {
+          var o = copy(m.o, FPOSE[n]), R = KIT.rig(o), extra = "";
+          if (n === "charBill") extra = heldBill(R.hand[1][0] + 4, R.hand[1][1] - 16, -12);
+          if (n === "charWalk") extra = heldBill(R.hand[0][0] - 6, R.hand[0][1] - 6, 10);
+          if (n === "charLoaf") extra = '<g transform="translate(' + f((R.hand[0][0] + R.hand[1][0]) / 2 - 4) + "," + f((R.hand[0][1] + R.hand[1][1]) / 2 - 4) + ') scale(0.62)">' + loaf() + "</g>";
+          g += '<g class="pose" data-pose="' + n + '" opacity="0">' + KIT.person(o) + extra + "</g>";
+        });
+        return '<g id="' + ID + "-fam" + i + '"><g transform="scale(' + m.k + ')">' + g + "</g></g>";
+      }).join("");
+      var flyBills = [0, 1, 2].map(function (i) { return walker("b" + i, "war", 0.75); }).join("");
+      var flyLoaves = [0, 1, 2].map(function (i) { return '<g id="' + ID + "-fl" + i + '" opacity="0">' + loaf() + "</g>"; }).join("");
+      var MSL = '<g id="' + ID + '-msl"><g id="' + ID + '-msl-in" transform="scale(' + S * 1.25 + ')">' + missile() + "</g></g>";
+      var puffs = [0, 1, 2, 3, 4, 5].map(function (i) { return '<circle id="' + ID + "-puff" + i + '" r="26" fill="#E9E1CF" stroke="' + ink + '" stroke-width="4" opacity="0"/>'; }).join("");
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + GROUND + '"/>' +
+        '<g id="' + ID + '-cam">' + road + top + mothSvg + billsA + inner + fam + flyBills + flyLoaves + puffs + MSL + "</g>");
+
+      var el = function (id) { return q(id); };
+      var cam = el("cam"), msl = el("msl"), mslIn = el("msl-in"), mothEl = el("moth");
+      var pressCrank = cam.querySelector(".press-crank"), pressPlate = cam.querySelector(".press-plate");
+      var factoryDoor = el("factory").querySelector(".factory-door");
+      factoryDoor.setAttribute("transform", "translate(0,-172) scale(1,0.05) translate(0,172)");
+      var launcher = el("factory").querySelector('.factory-chimney[data-i="1"]');
+      launcher.insertAdjacentHTML("beforeend", '<g class="launch-flame" opacity="0" transform="translate(-62,-214) scale(0.45,-0.55)">' + KIT.flames(0, 0, 1) + "</g>");
+      var launchFlame = launcher.querySelector(".launch-flame");
+      var polArms = [el("pol1"), el("pol2")].map(function (g) { return g.querySelector(".arm-r"); });
+      var polHead = el("pol2").querySelector(".head");
+      var bills = BIRTH.map(function (b, i) { return el("a" + i); }), billsC = [0, 1, 2, 3, 4].map(function (i) { return el("c" + i); });
+      var famEls = FAM.map(function (m, i) { return { g: el("fam" + i), poses: Array.prototype.slice.call(el("fam" + i).querySelectorAll(".pose")) }; });
+      var famRig = FAM.map(function (m) { var r = {}; Object.keys(FPOSE).forEach(function (n) { r[n] = KIT.rig(copy(m.o, FPOSE[n])); }); return r; });
+      var flyB = [0, 1, 2].map(function (i) { return el("b" + i); }), flyL = [0, 1, 2].map(function (i) { return el("fl" + i); });
+      var boothBills = Array.prototype.slice.call(cam.querySelectorAll(".booth-bill"));
+      var stalks = WHEAT.map(function (w, i) { return el("wheat" + i).querySelector(".grow"); });
+      var tag = el("tag"), tagSwing = tag.querySelector(".tag-swing");
+
+      // ── Cues ──
+      var tNothing = cue("nothing"), tPolicy = cue("policy\")."), tMakers = cue("makers."), tMake = cue("make"), tBoom = cue("everything."), tDestroy = cue("destroy");
+      var tThis = cue("This"), tThis2 = cue("This", 2), tJobs = cue("\"jobs\""), tGive = cue("give", 2), tPeople = cue("People"), tBuy = cue("buy"), tGrows = cue("grows");
+      var tFree = cue("free).") + 0.15, tEcon = cue("economy\"."), tLaunch = KIT.after(ID, "economy\".");
+      var tCharred = tBoom + 0.05, tWalk0 = KIT.cueEnd(ID, "papers.", 2) + 0.05, tWalk1 = tWalk0 + 1.7;
+
+      // ── The camera: keys [time, view, extra scale]; it eases from key to key, and drifts slowly in between.
+      var KEYS = [[0, "press", 1], [tNothing, "press", 1.03], [tNothing + 0.42, "tray", 1], [tPolicy - 0.5, "tray", 1.05], [tPolicy - 0.05, "pol", 1],
+        [MARCH - 0.05, "pol", 1.02], [MARCH + 1.4, "factory", 1], [tMakers - 0.05, "factory", 1.01], [tMakers + 0.3, "face", 1], [tMake - 0.25, "face", 1.03], [tMake + 0.15, "wm", 1],
+        [tBoom - 0.06, "boom", 1], [tThis - 0.05, "boom", 1.015], [tThis + 0.55, "town", 1], [tWalk0, "town", 1.02], [tWalk1 + 0.05, "farm", 1],
+        [tGrows - 0.5, "farm", 1.02], [tGrows + 0.05, "wheat", 1], [tThis2 + 0.25, "wheat", 1.03], [tEcon + 0.62, "wide", 1], [D, "wide", 0.97]];
+      var smooth = KIT.smooth, camera = KIT.camera(VIEW, KEYS, A);
+      function camAt(t) {
+        var c = camera.at(t);
+        // the pan from the press to the factory travels with the marching papers, lifting them off the bottom of the frame
+        if (t > MARCH && t < MARCH + 1.4) {
+          var gu = (t - MARCH) / 1.4, gw = (V ? 0.9 : 0.75) * smooth(gu / 0.3) * (1 - smooth((gu - 0.7) / 0.3));
+          c.x += (VEL * (t - MARCH) - c.x) * gw; c.y += (ROADY - (V ? 230 : 190) - c.y) * gw;
+        }
+        // while the missile flies, the camera chases it round the bend
+        if (t > tFly0 && t < tFly1) {
+          var fu = (t - tFly0) / (tFly1 - tFly0), mp = missileAt(t), w = 0.9 * smooth(fu / 0.15) * (1 - smooth((fu - 0.84) / 0.16));
+          c.x += (mp[0] - c.x) * w; c.y += (mp[1] - c.y) * w;
+        }
+        return c;
+      }
+      // the missile's flight: a hop out of his arms, then a bezier round the bend into the house
+      var FLY = [[CRADLE[0], CRADLE[1] - 70], [700, -2000], [1700, 0], [HOUSE[0] + 20, HOUSE[1] - 260]];
+      var bez = function (u) {
+        var m = 1 - u, c = [m * m * m, 3 * m * m * u, 3 * m * u * u, u * u * u];
+        return [0, 1].map(function (k) { return c[0] * FLY[0][k] + c[1] * FLY[1][k] + c[2] * FLY[2][k] + c[3] * FLY[3][k]; });
+      };
+      var tFly0 = tMake + 0.22, tFly1 = tBoom - 0.02;
+      var flyU = function (t) { var uu = (t - tFly0) / (tFly1 - tFly0); return uu * uu * (1.6 - 0.6 * uu); };
+      var missileAt = function (t) { return bez(flyU(t)); };
+      var PUFF_U = [0.08, 0.22, 0.36, 0.5, 0.64, 0.78];
+      var legs = function (t, hz) { return Math.floor(t * hz) % 2; };
+      var arc = function (p0, p1, u, h) { return [p0[0] + (p1[0] - p0[0]) * u, p0[1] + (p1[1] - p0[1]) * u - Math.sin(Math.PI * u) * h]; };
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var famAt = function (i, t) { var m = FAM[i], dx = -WALK * smooth((t - tWalk0) / (tWalk1 - tWalk0)); return [m.x + dx, FEETY - 100 * m.k]; };
+      var handAt = function (i, pose, which, t) {
+        var p = famAt(i, t), h = famRig[i][pose].hand, k = FAM[i].k, hh = which === 2 ? [(h[0][0] + h[1][0]) / 2, (h[0][1] + h[1][1]) / 2] : h[which];
+        return [p[0] + k * hh[0], p[1] + k * hh[1]];
+      };
+      var tPay = [0, 1, 2].map(function (i) { return tGive + 0.18 + i * 0.2; });
+      var tBuyI = [0, 1, 2].map(function (i) { return tBuy + i * 0.13; });
+
+      KIT.onTime(tl, D, function (t) {
+        // camera
+        var c = camAt(t);
+        camera.place(cam, c);
+
+        // the press: the wheel turns, the plate stamps once a turn, the Politician's arm cranks; he grins at us on "policy"
+        var per = 0.65, ph = t / per, sub = ph - Math.floor(ph);
+        pressCrank.setAttribute("transform", "rotate(" + f(-ph * 360) + " 136 -150)");
+        var down = sub < 0.25 ? sub / 0.25 : sub < 0.45 ? 1 - (sub - 0.25) / 0.2 : 0;
+        pressPlate.setAttribute("transform", "translate(0," + f(46 * down) + ")");
+        var sw = Math.sin(ph * Math.PI * 2) * 11;
+        polArms.forEach(function (a) { a.setAttribute("transform", "rotate(" + f(sw) + " " + f(RPOL.shoulder[1][0]) + " " + f(RPOL.shoulder[1][1]) + ")"); });
+        var grin = t >= tPolicy - 0.05 && t < tMakers;
+        show(el("pol1"), !grin); show(el("pol2"), grin);
+        polHead.setAttribute("transform", "rotate(" + f(grin ? -9 * smooth((t - tPolicy + 0.05) / 0.2) : 0) + " " + f(RPOL.neck[0]) + " " + f(RPOL.neck[1]) + ")");
+
+        // the moth flutters up out of the empty tray, slowly, in a lazy zigzag, while the camera holds on the tray
+        var m0 = tNothing + 0.38, mu = (t - m0) / 1.7;
+        if (mu > 0 && mu < 1) {
+          var mx = TRAY[0] + 6 + Math.sin(mu * 8) * 26 + mu * (V ? 40 : 140), my = TRAY[1] - 22 - mu * (V ? 230 : 170) - Math.sin(mu * 13) * 14;
+          show(mothEl, 1);
+          mothEl.setAttribute("transform", "translate(" + f(mx) + "," + f(my) + ") scale(" + (1.35 + mu * 0.25).toFixed(2) + ")");
+          var open = legs(t, 14) === 0;
+          show(mothEl.querySelector(".moth-open"), open); show(mothEl.querySelector(".moth-shut"), !open);
+        } else show(mothEl, 0);
+
+        // the papers: popped out by the press, they wait in line jogging on the spot, march to the factory and file in
+        bills.forEach(function (b, i) {
+          var tb = BIRTH[i];
+          if (t < tb) { show(b, 0); return; }
+          var x, y = ROADY - 50, op = 1, sc2 = 1, l = legs(t + i * 0.13, 4);
+          if (t < tb + 0.35) { var p = arc(BED, [SLOT[i], y], (t - tb) / 0.35, 120); x = p[0]; y = p[1]; }
+          else if (t < MARCH) { x = SLOT[i]; y -= Math.abs(Math.sin((t + i) * 7)) * 8; }
+          else {
+            x = SLOT[i] + VEL * (t - MARCH); l = legs(t + i * 0.07, 9); y -= Math.abs(Math.sin((t + i) * 14)) * 10;
+            if (x > DOORX) { var u = Math.min(1, (x - DOORX) / 140); x = DOORX + 30 * u; y = ROADY - 50 - 110 * u; op = 1 - u; sc2 = 1 - 0.3 * u; }
+          }
+          show(b, op > 0.02);
+          b.setAttribute("opacity", op.toFixed(2));
+          b.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") scale(" + sc2.toFixed(3) + ")");
+          setLegs(b, l);
+        });
+
+        // and once the loop is shown whole, the press's next batch heads off to the factory
+        billsC.forEach(function (b, i) {
+          var tb = tThis2 + 0.3 + i * 0.42, age = t - tb;
+          if (age < 0) { show(b, 0); return; }
+          var p = age < 0.35 ? arc(BED, [-300, ROADY - 50], age / 0.35, 120) : [-300 + 330 * (age - 0.35), ROADY - 50 - Math.abs(Math.sin(age * 14 + i)) * 10];
+          show(b, 1);
+          b.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ")");
+          setLegs(b, legs(age, 9));
+        });
+
+        // the Weapons Maker: his eyes ring up on "makers."; on "make" his baby missile hops out of his arms and flies
+        var greedy = t >= tMakers;
+        show(el("wm1"), !greedy); show(el("wm2"), greedy);
+        var mp, ang = -14, mscale = 1;
+        if (t < tMake) { mp = [CRADLE[0], CRADLE[1]]; mscale = 0.8; }
+        else if (t < tFly0) { var hu = smooth((t - tMake) / (tFly0 - tMake)); mp = [CRADLE[0], CRADLE[1] - 70 * hu]; ang = -14 - 40 * hu; mscale = 0.8 + 0.2 * hu; }
+        else if (t < tFly1) {
+          var ue = flyU(t);
+          mp = bez(ue); var p2 = bez(Math.min(1, ue + 0.01)); ang = (Math.atan2(p2[1] - mp[1], p2[0] - mp[0]) * 180) / Math.PI; mscale = 1 + 0.7 * smooth(ue * 4);
+        } else mp = null;
+        show(msl, !!mp && t < tCharred);
+        if (mp) msl.setAttribute("transform", "translate(" + f(mp[0]) + "," + f(mp[1]) + ") rotate(" + f(ang) + ") scale(" + mscale.toFixed(3) + ")");
+        PUFF_U.forEach(function (pu, i) {
+          var tp = tFly0 + (tFly1 - tFly0) * Math.sqrt(pu), e2 = el("puff" + i), age = t - tp;
+          if (age < 0 || age > 1.2 || t > tCharred) { show(e2, 0); return; }
+          var p = bez(pu);
+          e2.setAttribute("opacity", (1 - age / 1.2).toFixed(2));
+          e2.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") scale(" + (0.6 + age * 0.8).toFixed(2) + ")");
+        });
+
+        // the town: the house, then (under the flash) the rubble
+        show(el("house"), t < tCharred); show(el("rubble"), t >= tCharred);
+
+        // the family
+        famEls.forEach(function (fm, i) {
+          var p = famAt(i, t), pose;
+          if (t < tCharred) pose = "wave";
+          else if (t < tPay[i]) pose = "char";
+          else if (t < tWalk0) pose = "charBill";
+          else if (t < tBuyI[i]) pose = "charWalk";
+          else if (t < tBuyI[i] + 0.62) pose = "charGive";
+          else pose = "charLoaf";
+          var walking = t > tWalk0 && t < tWalk1, bob = walking ? -Math.abs(Math.sin((t - tWalk0) * 9 + i)) * 7 : 0;
+          if (t > tBuyI[i] + 0.9) bob = -Math.abs(Math.sin((t - tBuy) * 6 + i * 1.3)) * 3; // munching
+          fm.g.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1] + bob) + ")");
+          fm.poses.forEach(function (pg) {
+            var on = pg.getAttribute("data-pose") === pose;
+            show(pg, on);
+            if (!on) return;
+            // waving, marching legs, blinking soot-black eyes, smoking hair
+            var R = famRig[i][pose];
+            if (pose === "wave") {
+              var wv = t > tDestroy - 0.3 ? Math.sin((t - tDestroy) * 18) * 16 : 0;
+              pg.querySelector(".arm-r").setAttribute("transform", "rotate(" + f(wv) + " " + f(R.shoulder[1][0]) + " " + f(R.shoulder[1][1]) + ")");
+            }
+            Array.prototype.forEach.call(pg.querySelectorAll(".leg-l, .leg-r"), function (lg, j) {
+              var a = walking ? Math.sin((t - tWalk0) * 9 + i) * 20 * (j ? -1 : 1) : 0;
+              lg.setAttribute("transform", "rotate(" + f(a) + " " + f(R.hip[j][0]) + " " + f(R.hip[j][1]) + ")");
+            });
+            var eyes = pg.querySelector(".char-eyes");
+            if (eyes) {
+              var bl = [tBoom + 1.25, tBoom + 1.5, tThis + 0.9, tPeople - 0.4].some(function (b) { return t > b + i * 0.05 && t < b + i * 0.05 + 0.1; });
+              eyes.setAttribute("transform", bl ? "translate(0,-4) scale(1,0.12) translate(0,4)" : "");
+            }
+            var smoke = pg.querySelector(".smoke");
+            if (smoke) smoke.setAttribute("transform", "translate(0," + f(-Math.abs(Math.sin(t * 3 + i)) * 5) + ")");
+          });
+        });
+
+        // the pay window's fan of papers empties one paper per family member
+        boothBills.forEach(function (bb, i) { show(bb, t < tPay[2 - i]); });
+
+        // buying bread: each paper hops onto the counter, and a loaf hops back
+        [0, 1, 2].forEach(function (i) {
+          var tb = tBuyI[i], b = flyB[i], lf = flyL[i];
+          if (t < tb) { show(b, 0); }
+          else {
+            var u = Math.min(1, (t - tb) / 0.3), from = handAt(i, "charWalk", 0, tb), to = [PILE[i], COUNTER_Y - 30 - i * 8];
+            var p, l = 0, rot = 0;
+            if (t < tLaunch - 1.4) { p = arc(from, to, smooth(u), 70); }
+            else {
+              // after "the economy": they hop down onto the road and walk off round the loop, back toward the press
+              var w0 = tLaunch - 1.4 + i * 0.15, uw = Math.max(0, t - w0);
+              if (uw < 0.3) p = arc(to, roadPt(BACK_U - i * 110).map(function (v, k) { return k ? v - 34 : v; }), uw / 0.3, 60);
+              else { var rp = roadPt(BACK_U - i * 110 + (uw - 0.3) * 380); p = [rp[0], rp[1] - 34 - Math.abs(Math.sin(uw * 12 + i)) * 8]; l = legs(uw + i * 0.1, 9); }
+            }
+            show(b, 1);
+            b.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + rot + ")");
+            setLegs(b, l);
+          }
+          var tl0 = tb + 0.32, tl1 = tl0 + 0.3;
+          show(el("cl" + i), t < tl0);
+          if (t >= tl0 && t < tl1) {
+            var to2 = handAt(i, "charLoaf", 2, t), p3 = arc([LOAVES[i], COUNTER_Y - 14], to2, smooth((t - tl0) / 0.3), 80);
+            show(lf, 1);
+            lf.setAttribute("transform", "translate(" + f(p3[0]) + "," + f(p3[1]) + ") scale(" + (1 - 0.38 * (t - tl0) / 0.3).toFixed(3) + ")");
+          } else show(lf, 0);
+        });
+
+        // the wheat grows by itself on "grows", and after "free" it has a price tag
+        stalks.forEach(function (s, i) {
+          var u = (t - tGrows - 0.1 - i * 0.05) / 0.42, k = u <= 0 ? 0.14 : u >= 1 ? 1 : 0.14 + 0.86 * (1 + 2.4 * Math.pow(u - 1, 3) + 1.4 * Math.pow(u - 1, 2));
+          s.setAttribute("transform", "scale(1," + k.toFixed(3) + ")");
+        });
+        // the tag drops in on its string from above the frame, lands with a little bounce and swings
+        show(tag, t >= tFree);
+        if (t >= tFree) {
+          var du = (t - tFree) / 0.22, dy = du < 1 ? -300 * (1 - du * du) : du < 1.8 ? -14 * Math.sin(Math.PI * (du - 1) / 0.8) : 0;
+          tag.setAttribute("transform", "translate(0," + f(dy) + ")");
+          var st = Math.max(0, t - tFree - 0.22);
+          tagSwing.setAttribute("transform", "rotate(" + f(Math.sin(st * 9) * 22 * Math.exp(-st * 2.2)) + ")");
+        }
+
+        // after "economy": the factory launches the next one
+        var lu = t - tLaunch;
+        launcher.setAttribute("transform", lu > 0 ? "translate(0," + f(-lu * lu * 260 - lu * 60) + ")" : "");
+        show(launchFlame, lu > 0);
+      });
+
+      // ── The bomb: on "everything." a white flash, a shake and the mushroom cloud over the house; it thins away to
+      // show the family standing in the rubble, charred.
+      KIT.boom(tl, el("nuke"), tBoom, { flash: q("flash"), shake: q("shake") });
+      tl.fromTo(el("nuke"), { opacity: 1 }, { opacity: 0, duration: 0.45, ease: "power1.in", immediateRender: false }, tThis - 0.25);
+
+      // ── The pay window pops up out of the rubble on "jobs"; its shutter rolls up; the arm reaches out on "give".
+      var pop = cam.querySelector(".booth-pop"), shutter = cam.querySelector(".booth-shutter"), arm = cam.querySelector(".booth-arm");
+      tl.fromTo(pop, { scaleY: 0, svgOrigin: "0 0" }, { scaleY: 1, svgOrigin: "0 0", duration: 0.32, ease: "back.out(2.2)" }, tJobs);
+      tl.fromTo(shutter, { scaleY: 1, svgOrigin: "0 -130" }, { scaleY: 0.06, svgOrigin: "0 -130", duration: 0.2, ease: "power2.in", immediateRender: false }, tJobs + 0.45);
+      tl.fromTo(arm, { scaleX: 0, svgOrigin: "-36 -98" }, { scaleX: 1, svgOrigin: "-36 -98", duration: 0.22, ease: "back.out(1.6)" }, tGive - 0.05);
+      tl.to(arm, { scaleX: 0, svgOrigin: "-36 -98", duration: 0.2, ease: "power2.in" }, tWalk0 - 0.1);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

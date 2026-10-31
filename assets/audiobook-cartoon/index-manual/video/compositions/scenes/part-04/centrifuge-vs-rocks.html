@@ -1,0 +1,514 @@
+<template id="centrifuge-vs-rocks-template">
+  <!-- centrifuge-vs-rocks · style "atomic" (cartoon-style-bible.md), plate rock-field: one open field under a big cream
+       sky, drawn once, and the camera travels over it. "Building": a wide look at a whole centrifuge cascade standing
+       on the field while the Weapons Maker strides in with his baby missile. "spectrometers,": close on the cabinet of
+       dials as it prints its paper readout. "cascades,": the two rows of slate drums spin up under their pipes.
+       "precise": close on the engineer, loupe in, tweezers trembling, sweat flying. "attempted.": the dial clicks, the
+       camera pulls back, every drum whines up and the Weapons Maker kisses his missile. "Not": everything stops dead,
+       a drop of sweat hanging in the air. "nothing.": the whole cascade vanishes in one pop, engineer and all; the
+       Weapons Maker looks left, looks right and pops too; his hard hat drops and rolls to a stop. "Rocks": a gray rock
+       rolls in beside a DAYS OF PEACE counter at 0; "day.": the sun arcs over once and it reads 1; the days pass;
+       "colored": a rust rock rolls up and a heart floats between them; "thousands": the sun streaks over and over, the
+       counter spins into the hundreds of thousands, moss and flowers grow, a bird nests on the gray rock; "years.": a
+       human strolls in, picks up the rust rock and hurls it off the right edge (it lands in billionaire-pdf), the heart
+       pops, and the counter clicks back to 0. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #centrifuge-vs-rocks-weave, #centrifuge-vs-rocks-plate, #centrifuge-vs-rocks-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="centrifuge-vs-rocks" data-width="1920" data-height="1080" data-start="0" data-duration="20.1">
+    <div id="centrifuge-vs-rocks-weave">
+      <div id="centrifuge-vs-rocks-plate"></div>
+    </div>
+    <div id="centrifuge-vs-rocks-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "centrifuge-vs-rocks";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var cueEnd = function (w, n) { return KIT.cueEnd(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, WHITE = "#FBF6E6";
+      var f = function (n) { return (+n).toFixed(1); };
+      var smooth = KIT.smooth, clamp = function (u) { return Math.min(1, Math.max(0, u)); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 404);
+
+      // ── The plate, in plate units: the feet of everything stand on y 0, the horizon is at y -220, and the key view
+      // (the rocks, as the sketch draws them) puts plate (0, -280) mid-screen at scale 1. The cascade stands where
+      // the rocks will be: the engineer at the far left, then the spectrometer, two rows of drums, and the Weapons
+      // Maker at the right; the DAYS OF PEACE counter springs up where he stood.
+      var HZ = -220, SKY = "#EFE3C4", FIELD = "#C8B07B", S = 1.5;
+      var ENGX = -930, SPEC = [-620, 1.25], CW = 76, CT = -430, CB = -34;
+      var CENTS = [-420, -300, -180, -60, 60, 180], BACK = [-360, -240, -120, 0, 120, 240];
+      var WMX = 470, WMFROM = 1250, WS = 1.6, HATX = V ? -310 : -500;
+      var GRAYX = -120, RUSTX = 220, GK = 2.4, RK = 2.1, COUNTX = 632, MANX = 410;
+      // (in 9:16 the counter stands nearer the rocks and higher, so the tall frame holds the rocks and the count)
+      var CDX = V ? -132 : 0, CDY = V ? -360 : 0;
+      var SUN = { rx: 780, ry: 470, r: 44 };
+
+      // ── Drawing helpers (the kit's way: a navy pass under each fill, so touching shapes share one outline) ──
+      function pd(pts) { return "M" + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + " Z"; }
+      function solid(d, col, w) {
+        return '<path d="' + d + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 4.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + d + '" fill="' + col + '"/>';
+      }
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="round"' + (extra || "") + "/>"; }
+      function at(x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; }
+      function copy(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function wave(t, a, b) { return Math.sin(t * a + b); }
+      // Two-link arm angles (the kit's convention: angle a points along (sin a, cos a)) that put the wrist at T.
+      function ik(Sh, T, len, bend) {
+        var dx = T[0] - Sh[0], dy = T[1] - Sh[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len * 0.995);
+        var th = Math.atan2(dx, dy), ph = Math.acos(d / (2 * len));
+        return [((th + bend * ph) * 180) / Math.PI, ((th - bend * ph) * 180) / Math.PI];
+      }
+
+      // ── The rocks: a faceted boulder 124 wide and 78 tall standing on y 0 (center (0, -39)). The same drawing flies
+      // into billionaire-pdf, where this throw lands.
+      var ROCK = { body: [[-62, 0], [-64, -24], [-50, -56], [-20, -76], [20, -78], [50, -62], [63, -32], [58, 0]],
+        top: [[-50, -56], [-20, -76], [20, -78], [50, -62], [18, -52], [-22, -50]],
+        side: [[50, -62], [63, -32], [58, 0], [30, 0], [34, -32], [18, -52]] };
+      function rock(col, lit, shade) {
+        return solid(pd(ROCK.body), col) + '<path d="' + pd(ROCK.top) + '" fill="' + lit + '"/><path d="' + pd(ROCK.side) + '" fill="' + shade + '"/>' +
+          line("M-22,-50 L-30,-28 L-18,-12 M18,-52 L34,-32", ink, 2.2) + line("M-42,-38 L-36,-30", ink, 1.8) +
+          '<path d="' + pd(ROCK.body) + '" fill="none" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/>';
+      }
+      var GRAY = ["#8E8A84", "#B9B4AB", "#6C6863"], RUST = [C.rust, C.tan, "#6A3420"];
+      // moss on a rock's top (rock units), a flower on a stem (feet at 0), the bird, its nest and the heart
+      function moss() {
+        var cap = [[-48, -58], [-22, -78], [20, -80], [52, -64], [40, -54], [24, -60], [6, -54], [-14, -60], [-30, -52]];
+        return solid(pd(cap), "#7E9A48", 3) + [[-34, -52], [-6, -50], [30, -54]].map(function (p) { return '<path d="M' + p[0] + "," + p[1] + ' l3,9 l3,-8" fill="#7E9A48" stroke="' + ink + '" stroke-width="2"/>'; }).join("");
+      }
+      function flower(col) {
+        var petals = "";
+        for (var i = 0; i < 5; i++) { var a = (i * 2 * Math.PI) / 5 - Math.PI / 2; petals += '<circle cx="' + f(7 * Math.cos(a)) + '" cy="' + f(-34 + 7 * Math.sin(a)) + '" r="6" fill="' + col + '" stroke="' + ink + '" stroke-width="2"/>'; }
+        return line("M0,0 Q-3,-16 0,-30", ink, 3.4) + '<path d="M-1,-14 Q-12,-20 -14,-12 Q-6,-8 -1,-14 Z" fill="#7E9A48" stroke="' + ink + '" stroke-width="1.8"/>' + petals +
+          '<circle cx="0" cy="-34" r="4.6" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>';
+      }
+      function bird() {
+        var body = [[-20, 4], [-30, -4], [-16, -12], [4, -14], [14, -24], [26, -22], [32, -16], [22, -12], [20, 2], [6, 10], [-10, 10]];
+        return '<g class="bird-bob">' + solid(pd(body), C.cyan, 3) + '<path d="M-4,8 Q8,10 18,0 L6,-2 Z" fill="' + C.cream + '"/>' +
+          solid(pd([[31, -19], [42, -16], [31, -13]]), C.orange, 2) + '<circle cx="24" cy="-18" r="2.4" fill="' + ink + '"/>' +
+          '<g class="bird-wing">' + solid(pd([[-12, -8], [10, -10], [-2, -34], [-22, -26]]), C.peri, 2.6) + "</g>" + line("M-2,10 l-3,8 M6,10 l2,8", ink, 2.4) + "</g>";
+      }
+      function nest() {
+        var tw = "";
+        for (var i = 0; i < 7; i++) tw += "M" + (-34 + i * 4) + "," + (-2 - (i % 3) * 3) + " Q0," + (10 + (i % 2) * 4) + " " + (34 - i * 3) + "," + (-3 - (i % 2) * 4) + " ";
+        return '<ellipse cx="0" cy="0" rx="36" ry="12" fill="#8C6440" stroke="' + ink + '" stroke-width="3"/><path d="' + tw + '" fill="none" stroke="' + C.rust + '" stroke-width="2.2"/>';
+      }
+      var HEART = '<path d="M0,10 C-22,-6 -14,-24 0,-12 C14,-24 22,-6 0,10 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="3"/><path d="M-9,-10 Q-12,-4 -8,0" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity="0.7"/>';
+
+      // ── The spectrometer: a slate cabinet of dials (KIT.props.gauge) and lamps that prints a paper readout from a
+      // slot, standing on y 0, 200 wide and 330 tall in its own units.
+      var DIALS = [[-54, 0.25], [0, 0.6], [54, 0.82]];
+      function spectrometer() {
+        var cab = [[-100, 0], [100, 0], [100, -300], [84, -330], [-84, -330], [-100, -300]];
+        var dials = DIALS.map(function (d, i) { return '<g transform="translate(' + d[0] + ',-262) scale(0.46)"><g class="spec-dial">' + KIT.props.gauge({ mount: "dial", value: d[1], zones: [[0.78, 1, C.war]] }) + "</g></g>"; }).join("");
+        var lamps = [[-60, C.war], [-20, C.yellow], [20, C.cyan], [60, C.orange]].map(function (l) {
+          return '<circle cx="' + l[0] + '" cy="-196" r="10" fill="#5A5248" stroke="' + ink + '" stroke-width="3"/>' +
+            '<g class="spec-lamp" opacity="0"><circle cx="' + l[0] + '" cy="-196" r="17" fill="' + l[1] + '" opacity="0.3"/><circle cx="' + l[0] + '" cy="-196" r="10" fill="' + l[1] + '" stroke="' + ink + '" stroke-width="3"/></g>';
+        }).join("");
+        // the readout: a paper strip that feeds down out of the slot (its clip grows), a jagged trace on it
+        var plot = "M-34,-150";
+        for (var i = 1; i <= 30; i++) plot += " L" + f(((i * 37) % 60) - 30) + "," + f(-150 + i * 7);
+        var strip = '<g clip-path="url(#' + ID + '-strip-clip)"><g class="spec-paper"><path d="M-48,-152 H48 V62 L38,70 L28,62 L18,70 L8,62 L-2,70 L-12,62 L-22,70 L-32,62 L-42,70 L-48,62 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<path d="' + plot + '" fill="none" stroke="' + C.war + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          [-130, -100, -70, -40, -10, 20, 50].map(function (yy) { return line("M-42," + yy + " H42", ink, 1, ' opacity="0.25"'); }).join("") + "</g></g>";
+        return '<defs><clipPath id="' + ID + '-strip-clip" clipPathUnits="userSpaceOnUse"><rect id="' + ID + '-strip-reveal" x="-60" y="-152" width="120" height="0"/></clipPath></defs>' +
+          solid(pd(cab), C.slate) + line("M97,-4 V-298 L82,-326", C.orange, 2.4) +
+          solid(pd([[-86, -318], [86, -318], [86, -218], [-86, -218]]), C.cream, 3) + dials + lamps +
+          [[-70, -60], [70, -60]].map(function (k) { return '<circle cx="' + k[0] + '" cy="' + k[1] + '" r="11" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>' + line("M" + k[0] + "," + k[1] + " l6,-7", ink, 2.4); }).join("") +
+          solid(pd([[-108, 0], [108, 0], [104, -10], [-104, -10]]), C.rust, 3) + strip + '<rect x="-62" y="-160" width="124" height="10" rx="2" fill="' + ink + '"/>';
+      }
+
+      // ── A centrifuge: a tall slate drum with an orange edge and two mustard bands; its cream stripes slide when it
+      // spins. x: its middle; k: 1 front row, smaller and higher for the back row.
+      function centrifuge(i, cx, k, back) {
+        var hw = (CW * k) / 2, t = back ? CT * k - 50 : CT, b = back ? -70 : CB, base = back ? -60 : 0, stripes = "";
+        for (var y = t - 80; y < b + 40; y += 30) stripes += "M" + f(cx - hw - 6) + "," + y + " L" + f(cx + hw + 6) + "," + (y + 26) + " ";
+        var body = [[cx - hw, t], [cx + hw, t], [cx + hw, b], [cx - hw, b]];
+        var cap = [[cx - hw, t], [cx - hw + 9, t - 16], [cx + hw - 9, t - 16], [cx + hw, t]];
+        var cid = ID + "-cclip-" + i;
+        return '<g class="drum" data-x="' + cx + '"><defs><clipPath id="' + cid + '" clipPathUnits="userSpaceOnUse"><path d="' + pd(body) + '"/></clipPath></defs>' +
+          solid(pd([[cx - hw - 10, b], [cx + hw + 10, b], [cx + hw + 10, base], [cx - hw - 10, base]]), back ? "#3A4766" : C.slate, 3.6) +
+          solid(pd(body), back ? "#3A4766" : C.slate) +
+          '<g clip-path="url(#' + cid + ')"><g class="stripes"><path d="' + stripes + '" stroke="' + C.cream + '" stroke-width="6" opacity="0.28"/></g></g>' +
+          line("M" + f(cx + hw - 6) + "," + (t + 6) + " V" + (b - 6), C.orange, 4) +
+          '<rect x="' + f(cx - hw) + '" y="' + f(t + (b - t) * 0.3) + '" width="' + f(2 * hw) + '" height="10" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4"/>' +
+          '<rect x="' + f(cx - hw) + '" y="' + f(t + (b - t) * 0.72) + '" width="' + f(2 * hw) + '" height="10" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4"/>' +
+          solid(pd(cap), C.peri, 3.6) + '<path d="' + pd(body) + '" fill="none" stroke="' + ink + '" stroke-width="4.4"/></g>';
+      }
+      function pipe(d, w) { return line(d, ink, w + 10) + line(d, C.peri, w) + line(d, C.cream, 3, ' opacity="0.55"'); }
+      function valve(x, y) {
+        var spokes = "";
+        for (var k = 0; k < 4; k++) { var a = (k * Math.PI) / 4; spokes += "M" + f(-19 * Math.cos(a)) + "," + f(-19 * Math.sin(a)) + " L" + f(19 * Math.cos(a)) + "," + f(19 * Math.sin(a)) + " "; }
+        return '<g transform="translate(' + x + "," + y + ')"><circle r="9" fill="' + ink + '"/><g class="valve"><circle r="22" fill="none" stroke="' + ink + '" stroke-width="10"/><circle r="22" fill="none" stroke="' + C.war + '" stroke-width="5"/>' +
+          '<path d="' + spokes + '" stroke="' + ink + '" stroke-width="4"/><circle r="6" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4"/></g></g>';
+      }
+
+      // ── The engineer: an everyday human in a lab coat, a loupe over his near eye (the other squeezed shut), hunched
+      // over a tiny dial on a console, tweezers in his hand; sweat flies off his head.
+      var ENG = { tone: 0, outfit: "labcoat", color: 3, glasses: true, look: "right", mood: "flat", build: { hunch: 16 } };
+      var er = KIT.rig(ENG), lean = (er.lean * Math.PI) / 180;
+      var leanPt = function (p, k) { var x = p[0], y = p[1] - er.hipY, c = Math.cos(k * lean), s = Math.sin(k * lean); return [x * c - y * s, er.hipY + x * s + y * c]; };
+      ENG.arms = [[-25, 25], ik(er.shoulder[1], leanPt([50, 6], -1), er.armLength, 1)];
+      er = KIT.rig(ENG);
+      var TIP = [er.hand[1][0] + 30, er.hand[1][1] + 4];
+      var DIAL = [ENGX + S * TIP[0], -100 * S + S * TIP[1]];
+      function engineer() {
+        var body = KIT.person(ENG), n = 0;
+        body = body.replace(/<g class="eye">[\s\S]*?<\/g>/g, function () { n++; return ""; });
+        if (n !== 2) throw new Error("engineer: expected 2 eyes, found " + n);
+        var loupe = '<circle cx="10.8" cy="-4" r="8.2" fill="#FFFFFF" stroke="' + ink + '" stroke-width="3.4"/><circle cx="11.4" cy="-4" r="4.6" fill="' + ink + '"/><circle cx="12.8" cy="-5.6" r="1.4" fill="#FFFFFF"/>' +
+          '<path d="M3,-8 L1,-12 M18,-9 L21,-12" stroke="' + ink + '" stroke-width="2"/>';
+        var squint = '<path d="M-7,-4 Q-2.5,-6.5 2,-3.6 M-7.5,-1.5 L-6,-3.5 M1.5,-0.8 L0.5,-3" fill="none" stroke="' + ink + '" stroke-width="2.2" stroke-linecap="round"/>';
+        body = body.replace("<!--face-end-->", squint + loupe + "<!--face-end-->");
+        var hx = er.hand[1][0] + 4, hy = er.hand[1][1] + 6;
+        var tw = function (dy, dt) { return line("M" + f(hx) + "," + f(hy + dy) + " L" + f(TIP[0]) + "," + f(TIP[1] + dt), ink, 4.2) + line("M" + f(hx) + "," + f(hy + dy) + " L" + f(TIP[0]) + "," + f(TIP[1] + dt), "#C9CBD0", 2); };
+        var sweat = [0, 1, 2, 3].map(function () { return '<g class="sweat" opacity="0"><path d="M0,-6 Q5,1 0,5 Q-5,1 0,-6 Z" fill="#DDEEF5" stroke="' + ink + '" stroke-width="1.6"/></g>'; }).join("");
+        return body.replace('<g class="arm-r">', '<g class="arm-r" id="' + ID + '-eng-arm">') + '<g id="' + ID + '-tweez">' + tw(-2, 0) + tw(3, 1.5) + "</g>" +
+          '<g transform="translate(' + f(er.top[0] - 6) + "," + f(er.top[1] + 6) + ')">' + sweat + "</g>";
+      }
+      // The console: a slate pedestal with a sloped panel, and the tiny dial under the tweezers' tip.
+      function consoleArt() {
+        var x = DIAL[0], y = DIAL[1] + 18;
+        return solid(pd([[x - 34, 0], [x + 34, 0], [x + 34, y + 40], [x + 46, y + 6], [x - 46, y - 2], [x - 34, y + 40]]), C.slate, 3.6) +
+          line("M" + (x + 31) + ",-4 V" + (y + 40), C.orange, 2.2) +
+          '<g transform="translate(' + f(x) + "," + f(y + 2) + ') scale(0.32)"><g id="' + ID + '-tiny">' + KIT.props.gauge({ mount: "dial", value: 0.2, zones: [], marks: [[0.62, "", C.med]] }) + "</g></g>";
+      }
+
+      // ── The Weapons Maker (KIT.cast), facing left at his cascade: grinning, then looking left and right, worried. His
+      // hard hat is drawn on its own, so it stays behind when he pops.
+      var WM = KIT.castOpts("weaponsMaker", { look: "left", hat: null }), wr = KIT.rig(WM);
+      var HATY = wr.head[1] + wr.hs * -22;
+      var hardHat = '<path d="M-23,5 L-18,-13 L0,-20 L18,-13 L23,5 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
+        '<path d="M-30,8 L-26,3 H26 L30,8 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/><path d="M-2,-19 V2" stroke="' + C.orange + '" stroke-width="2.6"/>';
+      var wmSvg = '<g class="wm-pose" data-p="a">' + KIT.person(WM) + "</g>" + '<g class="wm-pose" data-p="l" opacity="0">' + KIT.person(copy(WM, { mood: "worried" })) + "</g>" +
+        '<g class="wm-pose" data-p="r" opacity="0">' + KIT.person(copy(WM, { look: "right", mood: "worried" })) + "</g>" +
+        '<g id="' + ID + '-smooch" opacity="0"><path d="M0,6 C-14,-4 -9,-15 0,-8 C9,-15 14,-4 0,6 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/></g>';
+
+      // ── A poof: cream puffs and stars, for things that vanish (around (0, 0), about 200 across).
+      function poof() {
+        var c = [[0, -34, 36], [36, -12, 30], [-36, -10, 32], [20, 20, 32], [-22, 22, 30], [0, 0, 40], [46, 22, 20], [-48, 24, 20]];
+        return c.map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="9"/>'; }).join("") +
+          c.map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="' + WHITE + '"/>'; }).join("") +
+          [[-70, -50, 16, C.yellow], [72, -44, 13, C.orange], [64, 50, 11, C.yellow], [-64, 46, 12, C.orange]].map(function (s) { return KIT.star(s[0], s[1], s[2], s[3]); }).join("");
+      }
+
+      // ── The counter: a factory-floor sign on a post, DAYS OF PEACE in Oswald over seven flip tiles in Fraunces (the
+      // card spans x 424..840, y -624..-414, as the sketch draws it). The number sits right-aligned in the tiles.
+      var TILES = 7, TX0 = 449, TP = 52, TW = 48;
+      function counter() {
+        var fs = KIT.fitText("DAYS OF PEACE", 50, 352, "Oswald", 600, 3);
+        var tiles = "";
+        for (var i = 0; i < TILES; i++) tiles += '<g class="tile" data-x="' + (TX0 + i * TP + TW / 2) + '"><rect x="' + (TX0 + i * TP) + '" y="-520" width="' + TW + '" height="70" rx="4" fill="#1E1B24"/>' +
+          '<path d="M' + (TX0 + i * TP) + ",-485 h" + TW + '" stroke="#3A3542" stroke-width="2"/><text x="' + (TX0 + i * TP + TW / 2) + '" y="-466" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="50" fill="' + C.yellow + '"></text></g>';
+        return '<g transform="translate(' + CDX + "," + CDY + ')"><g id="' + ID + '-counter">' + line("M" + COUNTX + ",-414 V" + -CDY, ink, 22) + line("M" + COUNTX + ",-414 V" + -CDY, C.tan, 12) +
+          '<rect x="424" y="-624" width="416" height="210" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="6"/><rect x="436" y="-612" width="392" height="186" fill="none" stroke="' + C.orange + '" stroke-width="3"/>' +
+          '<text x="632" y="-552" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs.toFixed(1) + '" letter-spacing="3" fill="' + C.navy + '">DAYS OF PEACE</text>' + tiles + "</g></g>";
+      }
+
+      // ── The sun: a mustard disc with orange rays, carried round an arc over the field (clipped at the horizon), and
+      // its ghosts along the arc while the days streak past.
+      function sunDisc(ghost) {
+        var r = SUN.r, rays = "";
+        for (var i = 0; i < 10; i++) {
+          var a = (i * Math.PI) / 5, a1 = a - 0.16, a2 = a + 0.16;
+          rays += pd([[(r + 4) * Math.cos(a1), (r + 4) * Math.sin(a1)], [(r + 22) * Math.cos(a), (r + 22) * Math.sin(a)], [(r + 4) * Math.cos(a2), (r + 4) * Math.sin(a2)]]) + " ";
+        }
+        if (ghost) return '<circle r="' + (r + 4) + '" fill="' + C.yellow + '"/>';
+        return '<path d="' + rays + '" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/><circle r="' + r + '" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="4"/>';
+      }
+      var sunPt = function (u) { return [-SUN.rx * Math.cos(Math.PI * u), HZ - SUN.ry * Math.sin(Math.PI * u)]; };
+      var ARC = (function () { var a = sunPt(0.04), b = sunPt(0.96); return "M" + f(a[0]) + "," + f(a[1]) + " A" + SUN.rx + "," + SUN.ry + " 0 0,1 " + f(b[0]) + "," + f(b[1]); })();
+
+      // ── The human who throws the rock (an everyday human): walking in from the right, bent over the rock, holding it
+      // overhead (turned to face right), and the follow-through.
+      var HUM = { tone: 2, outfit: "suit", color: 1 }, HS = S;
+      var HPOSE = {
+        walk: { look: "left", mood: "smile", arms: [[-14, -6], [14, 6]] },
+        bend: { look: "left", mood: "eager", build: { hunch: 38 }, arms: [[-36, -20], [-28, -12]] },
+        up: { look: "right", mood: "grin", arms: [[-158, -176], [158, 176]] },
+        throw: { look: "right", mood: "grin", arms: [[-30, -60], [110, 96]] },
+      };
+      var hRig = {};
+      var humSvg = Object.keys(HPOSE).map(function (n) { var o = copy(HUM, HPOSE[n]); hRig[n] = KIT.rig(o); return '<g class="hum-pose" data-p="' + n + '" opacity="0">' + KIT.person(o) + "</g>"; }).join("");
+      var OVER = [(hRig.up.hand[0][0] + hRig.up.hand[1][0]) / 2, Math.min(hRig.up.hand[0][1], hRig.up.hand[1][1]) - 30];
+
+      // ── Assemble the plate ──
+      var BIG = 6000;
+      var bg = '<rect x="' + -BIG + '" y="' + -BIG + '" width="' + 2 * BIG + '" height="' + (BIG + HZ) + '" fill="' + SKY + '"/>' +
+        '<rect x="' + -BIG + '" y="' + HZ + '" width="' + 2 * BIG + '" height="' + BIG + '" fill="' + FIELD + '"/>' + line("M" + -BIG + "," + HZ + " H" + BIG, "#8E7A55", 3);
+      var grass = "";
+      for (var gi = 0; gi < 40; gi++) grass += line("M" + (-1560 + gi * 80) + "," + (60 + (gi % 3) * 30) + " l6,-22 l6,22", C.moneyDark, 4);
+      var ghosts = "";
+      for (var gh = 0; gh < 8; gh++) ghosts += '<g class="ghost" opacity="0">' + sunDisc(true) + "</g>";
+      var sky = '<defs><clipPath id="' + ID + '-sky" clipPathUnits="userSpaceOnUse"><rect x="' + -BIG + '" y="' + -BIG + '" width="' + 2 * BIG + '" height="' + (BIG + HZ - 2) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-sky)"><path id="' + ID + '-arc" d="' + ARC + '" fill="none" stroke="' + C.orange + '" stroke-width="5" stroke-dasharray="18 22" opacity="0"/>' + ghosts +
+        '<g id="' + ID + '-sun">' + sunDisc(false) + "</g></g>";
+      var drumsBack = BACK.map(function (cx, i) { return centrifuge("b" + i, cx, 0.82, true); }).join("");
+      var drums = CENTS.map(function (cx, i) { return centrifuge(i, cx, 1, false); }).join("");
+      var pipes = pipe("M" + SPEC[0] + ",-412 V-520 H330 V-640 H1100", 16) + pipe("M-420,-520 V-580 H-1300", 16) +
+        pipe(CENTS.concat(BACK).map(function (cx, i) { return "M" + cx + ",-520 V" + (i < 6 ? CT - 14 : CT * 0.82 - 64); }).join(" "), 10) + valve(330, -580) + valve(-760, -580);
+      var machines = '<g id="' + ID + '-machines">' + pipes + drumsBack + drums + at(SPEC[0], 0, SPEC[1], spectrometer()) + consoleArt() +
+        at(ENGX, -100 * S, S, '<g id="' + ID + '-eng">' + engineer() + "</g>") + "</g>";
+      var rocks = '<g id="' + ID + '-gray" opacity="0"><g transform="scale(' + GK + ')"><g class="lift"><g class="roll">' + rock(GRAY[0], GRAY[1], GRAY[2]) + '<g class="moss" opacity="0">' + moss() + "</g></g></g></g></g>" +
+        '<g id="' + ID + '-rust" opacity="0"><g transform="scale(' + RK + ')"><g class="lift"><g class="roll">' + rock(RUST[0], RUST[1], RUST[2]) + '<g class="moss" opacity="0">' + moss() + "</g></g></g></g></g>";
+      var FLOWERS = [[GRAYX + 168, 1.0, C.cream, 16.06], [GRAYX - 162, 0.9, C.orange, 18.5], [GRAYX + 128, 0.8, C.war, 18.62], [RUSTX - 140, 0.95, C.cream, 18.56],
+        [RUSTX + 150, 1.0, C.orange, 18.7], [HATX - 60, 1.0, C.cream, 18.66], [HATX + 70, 0.8, C.war, 18.76]];
+      var flowers = FLOWERS.map(function (p, i) { return at(p[0], 6, p[1] * 1.6, '<g class="flower" data-i="' + i + '">' + flower(p[2]) + "</g>"); }).join("");
+      var NEST = [GRAYX - 6, -76 * GK + 4];
+      var nestSvg = at(NEST[0], NEST[1], GK * 0.9, '<g id="' + ID + '-nest" opacity="0">' + nest() + "</g>");
+      var birdSvg = '<g id="' + ID + '-bird" opacity="0"><g transform="scale(' + f(GK * 0.85) + ')">' + bird() + "</g></g>";
+      var heartSvg = '<g id="' + ID + '-heart" opacity="0"><g transform="scale(' + f(GK * 0.8) + ')">' + HEART + "</g></g>";
+      var heartPop = '<g id="' + ID + '-heartpop" opacity="0">' + [0, 1, 2, 3, 4, 5].map(function (i) { var a = (i * Math.PI) / 3; return line("M" + f(26 * Math.cos(a)) + "," + f(26 * Math.sin(a)) + " L" + f(56 * Math.cos(a)) + "," + f(56 * Math.sin(a)), C.war, 7); }).join("") + "</g>";
+      var hatSvg = '<g id="' + ID + '-hat"><g transform="scale(' + f(WS * wr.hs) + ')"><g id="' + ID + '-hat-tip">' + hardHat + "</g></g></g>";
+      var poofs = [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { return '<g class="poof" opacity="0">' + poof() + "</g>"; }).join("") + '<g id="' + ID + '-wmpoof" opacity="0">' + poof() + "</g>";
+      var thrown = '<g id="' + ID + '-thrown" opacity="0"><g transform="scale(' + RK + ')"><g class="spin"><g transform="translate(0,39)">' + rock(RUST[0], RUST[1], RUST[2]) + moss() + "</g></g></g></g>";
+
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + FIELD + '"/>' +
+        '<g id="' + ID + '-cam">' + bg + sky + grass + machines + counter() + flowers + rocks + nestSvg + birdSvg + heartSvg + heartPop +
+        '<g id="' + ID + '-wm">' + wmSvg + "</g>" + hatSvg + '<g id="' + ID + '-hum">' + humSvg + "</g>" + thrown + poofs + "</g>");
+
+      // ── Elements ──
+      var cam = q("cam"), all = function (sel, root) { return Array.prototype.slice.call((root || cam).querySelectorAll(sel)); };
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var wmEl = q("wm"), wmPoses = all(".wm-pose", wmEl), smooch = q("smooch"), hatEl = q("hat"), hatTip = q("hat-tip");
+      var wmA = wmPoses[0], wmHead = wmA.querySelector(".head"), wmLegs = [wmA.querySelector(".leg-l"), wmA.querySelector(".leg-r")];
+      var machinesEl = q("machines"), stripes = all(".stripes"), drumEls = all(".drum"), valves = all(".valve"), lamps = all(".spec-lamp"), needles = all(".spec-dial .gauge-needle");
+      var stripReveal = q("strip-reveal"), sweats = all(".sweat"), engArm = q("eng-arm"), tweez = q("tweez"), tiny = q("tiny").querySelector(".gauge-needle");
+      var counterEl = q("counter"), tiles = all(".tile", counterEl).map(function (g) { return { g: g, t: g.querySelector("text"), x: +g.getAttribute("data-x") }; });
+      var sunEl = q("sun"), ghostEls = all(".ghost"), arcEl = q("arc");
+      var grayEl = q("gray"), rustEl = q("rust"), mossEls = all(".moss"), flowerEls = all(".flower"), nestEl = q("nest"), birdEl = q("bird"), birdWing = birdEl.querySelector(".bird-wing");
+      var heartEl = q("heart"), heartPopEl = q("heartpop"), humEl = q("hum"), humPoses = all(".hum-pose", humEl), thrownEl = q("thrown"), thrownSpin = thrownEl.querySelector(".spin");
+      var poofEls = all(".poof"), wmPoof = q("wmpoof");
+      var humWalk = humPoses[0], humLegs = [humWalk.querySelector(".leg-l"), humWalk.querySelector(".leg-r")];
+
+      // ── Cues ──
+      var tSpec = cue("spectrometers,"), tCent = cue("centrifuge"), tCasc = cue("cascades,"), tPrec = cue("precise"), tAtt = cue("attempted.");
+      var tNot = cue("Not"), tNothing = cue("nothing."), tRocks = cue("Rocks"), tDay = cue("day."), tPeace = cue("peacefully"), tDiff = cue("different"), tCol = cue("colored");
+      var tThou = cue("thousands"), tYears = cue("years."), tReset = KIT.after(ID, "years.");
+      var tWhirr = tAtt + 0.12, tKiss = tAtt + 0.5, tPop2 = tNothing + 0.6;
+      var tThrow = tYears + 0.25, tBend = tThrow - 0.34, tUp = tThrow - 0.2, tWalk0 = tThou + 0.28;
+
+      // ── The camera's views (KIT.camera): [plate x, plate y, scale] for each shape.
+      var ENGFACE = [ENGX + S * er.head[0], -100 * S + S * er.head[1]];
+      var VIEW = V
+        ? { wide: [-220, -330, 0.64], spec: [-640, -250, 1.55], drums: [-110, -300, 0.95], eng: [(ENGFACE[0] + DIAL[0]) / 2 + 10, ENGFACE[1] + 70, 2.5],
+            all: [-230, -330, 0.64], key: [220, -480, 0.95] }
+        : { wide: [-240, -340, 0.84], spec: [-610, -240, 2.0], drums: [-80, -290, 1.3], eng: [(ENGFACE[0] + DIAL[0]) / 2 + 20, ENGFACE[1] + 60, 2.6],
+            all: [-130, -330, 1.05], key: [0, -280, 1.0] };
+      var KEYS = [[0, "wide", 1], [1.35, "wide", 1.03], [1.85, "spec", 1], [tCent - 0.35, "spec", 1.04], [tCent + 0.15, "drums", 1], [tPrec - 0.45, "drums", 1.03], [tPrec + 0.02, "eng", 1],
+        [tAtt + 0.06, "eng", 1.05], [tAtt + 0.45, "all", 1], [tRocks - 0.15, "all", 1.02], [tRocks + 0.3, "key", 1], [tThou, "key", 1.015], [D, "key", 1.03]];
+      var camera = KIT.camera(VIEW, KEYS);
+
+      // ── Motion helpers ──
+      // drum speed (stripe periods per second) and its integral, the spin phase; everything freezes on "Not"
+      function speed(t) {
+        if (t < tCasc || t >= tNot) return 0;
+        if (t < tCasc + 0.8) return 2.4 * ((t - tCasc) / 0.8);
+        if (t < tWhirr) return 2.4;
+        if (t < tWhirr + 0.35) return 2.4 + 6.6 * ((t - tWhirr) / 0.35);
+        return 9;
+      }
+      function phase(t) { var s = 0, dt = 0.01; for (var u = tCasc; u < Math.min(t, tNot); u += dt) s += speed(u) * dt; return s; }
+      // a rolling rock's lift: how far its center must rise so its lowest corner stays on the floor at angle a (deg)
+      function lift(a) {
+        var r = (a * Math.PI) / 180, c = Math.cos(r), s = Math.sin(r), low = -1e9;
+        ROCK.body.forEach(function (v) { var y = v[0] * s + (v[1] + 39) * c; if (y > low) low = y; });
+        return 39 - low;
+      }
+      function rollRock(el, x0, x1, t0, t1, k, t) {
+        var u = clamp((t - t0) / (t1 - t0)), e = 1 - (1 - u) * (1 - u), x = x0 + (x1 - x0) * e;
+        var a = (((x - x1) / k) / 41) * (180 / Math.PI) + (u >= 1 ? Math.sin(Math.min(1, (t - t1) / 0.2) * Math.PI) * -4 * Math.sign(x1 - x0) : 0);
+        el.setAttribute("transform", "translate(" + f(x) + ",0)");
+        el.querySelector(".roll").setAttribute("transform", "rotate(" + f(a) + " 0 -39)");
+        el.querySelector(".lift").setAttribute("transform", "translate(0," + f(-lift(a)) + ")");
+      }
+      // the sun: parked low in the morning sky during the cascade; on "Rocks" it sets (day 1 on "day."), then the days
+      // pass one arc at a time, a little faster each time, and on "thousands" they streak by until it parks at noon
+      var ARCS = [[tRocks + 0.04, tDay, 0.62]], ta = tDay + 0.12, dur = 0.95;
+      while (ta + dur < tThou - 0.05) { ARCS.push([ta, ta + dur, 0]); ta += dur + 0.08; dur = Math.max(0.5, dur * 0.9); }
+      var LAPSE = [0.16, 0.13, 0.11, 0.09, 0.08, 0.08, 0.07, 0.07], tl0 = tThou;
+      LAPSE.forEach(function (d) { ARCS.push([tl0, tl0 + d, 0, 1]); tl0 += d; });
+      var NOON = [tl0, tl0 + 0.3];
+      function sunU(t) {
+        if (t >= NOON[0]) return 0.5 * smooth((t - NOON[0]) / (NOON[1] - NOON[0]));
+        for (var i = 0; i < ARCS.length; i++) if (t >= ARCS[i][0] && t < ARCS[i][1]) { var a = ARCS[i]; return a[2] + (1 - a[2]) * ((t - a[0]) / (a[1] - a[0])); }
+        return t < ARCS[0][0] ? 0.62 : -1;
+      }
+      function days(t) {
+        if (t < tDay || t >= tReset) return 0;
+        var n = 0;
+        if (t < tThou) { ARCS.forEach(function (a) { if (!a[3] && t >= a[1]) n++; }); return n; }
+        var u = clamp((t - tThou) / 0.5);
+        return Math.round(365 * Math.pow(348203 / 365, Math.pow(u, 0.7)));
+      }
+      var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); };
+      var pad = function (s) { while (s.length < TILES) s = " " + s; return s; };
+      var legs = function (t, hz) { return Math.floor(t * hz) % 2; };
+      var tiny0 = 0, tiny1 = KIT.props.gauge.turn(0.2, 0.62);
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+        var ph = phase(t), sp = speed(t), fz = Math.min(t, tNot);
+
+        // ── the cascade: drums spin and shiver, valves turn, lamps blink and needles twitch until "Not"
+        stripes.forEach(function (el) { el.setAttribute("transform", "translate(0," + f(-(ph % 1) * 30) + ")"); });
+        drumEls.forEach(function (el, i) { el.setAttribute("transform", sp > 6 ? "translate(" + f(1.8 * wave(t, 90, i)) + ",0)" : ""); });
+        valves.forEach(function (el) { el.setAttribute("transform", "rotate(" + f(ph * 90) + ")"); });
+        lamps.forEach(function (el, i) { show(el, fz > tSpec + 0.2 && Math.floor(fz * (4 + i) + i * 0.7) % 2); });
+        needles.forEach(function (el, i) { el.setAttribute("transform", fz > tSpec ? "rotate(" + f(9 * wave(fz, 11 + i * 3, i) + 5 * wave(fz, 29, i * 2)) + " 0 -62)" : ""); });
+        // the readout feeds out of the slot in jerks on "spectrometers,"
+        var su = clamp((t - tSpec - 0.1) / (cueEnd("spectrometers,") + 0.5 - tSpec)), steps = Math.floor(su * 10) / 10;
+        stripReveal.setAttribute("height", f(222 * steps));
+        // the tweezers hand trembles from "precise" until the dial clicks (and freezes mid-tremble on "Not")
+        var tr = fz >= tPrec - 0.2 && fz < tAtt + 0.02 ? 1 : 0, j = "translate(" + f(tr * 1.4 * wave(fz, 70, 0)) + "," + f(tr * 1.1 * wave(fz, 53, 1)) + ")";
+        engArm.setAttribute("transform", j); tweez.setAttribute("transform", j);
+        // the tiny dial clicks onto its mark on "attempted."
+        var ta2 = clamp((t - tAtt + 0.03) / 0.07);
+        tiny.setAttribute("transform", "rotate(" + f(tiny0 + (tiny1 - tiny0) * ta2 * ta2 - (t > tAtt + 0.04 && t < tAtt + 0.16 ? 6 : 0)) + " 0 -62)");
+        // sweat: a drop flies off his head every 0.3 s from "precise"; the last ones hang in the air from "Not"
+        sweats.forEach(function (el, i) {
+          var u = fz - (tPrec + 0.1 + i * 0.3), per = 1.2;
+          if (u < 0) { show(el, 0); return; }
+          var k = (u % per) / 0.6;
+          if (k > 1) { show(el, 0); return; }
+          var dir = i % 2 ? -1 : 1, x = dir * (14 + 30 * k), y = -22 * Math.sin(Math.PI * Math.min(1, k * 1.3)) + 34 * k * k;
+          el.setAttribute("opacity", (fz >= tNot ? 1 : 1 - k * 0.5).toFixed(2));
+          el.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ")");
+        });
+        show(machinesEl, t < tNothing + 0.05);
+
+        // ── the Weapons Maker strides in, grins, kisses his missile on "attempted.", looks left, right, and pops
+        var wu = clamp((t - 0.05) / 1.25), wx = WMFROM + (WMX - WMFROM) * (1 - (1 - wu) * (1 - wu)), walking = t > 0.05 && t < 1.3;
+        var bob = walking ? -Math.abs(Math.sin(t * 11)) * 6 : 0;
+        wmEl.setAttribute("transform", "translate(" + f(wx) + "," + f(-100 * WS + bob) + ") scale(" + WS + ")");
+        wmLegs.forEach(function (lg, i) { var a = walking ? Math.sin(t * 11) * 20 * (i ? -1 : 1) : 0; lg.setAttribute("transform", "rotate(" + f(a) + " " + f(wr.hip[i][0]) + " " + f(wr.hip[i][1]) + ")"); });
+        var kiss = smooth((t - tKiss) / 0.18) * (1 - smooth((t - tKiss - 0.55) / 0.25));
+        wmHead.setAttribute("transform", "rotate(" + f(-22 * kiss) + " " + f(wr.neck[0]) + " " + f(wr.neck[1]) + ")");
+        var su2 = clamp((t - tKiss - 0.14) / 0.8);
+        show(smooch, su2 > 0 && su2 < 1);
+        smooch.setAttribute("transform", "translate(" + f(-26 - 20 * su2) + "," + f(-10 - 70 * su2) + ") scale(" + (0.6 + 0.6 * smooth(su2 * 4)).toFixed(2) + ")");
+        var wp = t < tNothing + 0.14 ? "a" : t < tNothing + 0.32 ? "l" : t < tNothing + 0.5 ? "r" : "l";
+        wmPoses.forEach(function (g) { show(g, g.getAttribute("data-p") === wp); });
+        show(wmEl, t < tPop2 + 0.04);
+        // his hard hat: on his head, then it drops to the ground, bounces once and rolls left to a stop, rocking
+        var hs = WS * wr.hs, headX = wx + WS * wr.head[0], headY = -100 * WS + WS * HATY + bob, restY = -8 * hs, hx2 = headX, hy2 = headY, hrot = 0;
+        if (t > tPop2 + 0.04) {
+          var fu = clamp((t - tPop2 - 0.04) / 0.3);
+          hy2 = headY + (restY - headY) * fu * fu;
+          var bu = (t - tPop2 - 0.34) / 0.22;
+          if (bu > 0 && bu < 1) hy2 = restY - 26 * Math.sin(Math.PI * bu);
+          var ru = clamp((t - tPop2 - 0.56) / 0.6);
+          hx2 = headX + (HATX - headX) * (1 - (1 - ru) * (1 - ru));
+          hrot = ru > 0 ? -Math.sin(ru * Math.PI * 4) * 26 * (1 - ru) - 18 * smooth(ru) : 0;
+          if (ru >= 1) hrot = -18 + Math.sin(Math.min(1, (t - tPop2 - 1.16) / 0.4) * Math.PI * 2) * 4 * (1 - Math.min(1, (t - tPop2 - 1.16) / 0.4));
+        }
+        hatEl.setAttribute("transform", "translate(" + f(hx2) + "," + f(hy2) + ")");
+        hatTip.setAttribute("transform", "rotate(" + f(hrot) + " 0 6)");
+
+        // ── the pops: the whole cascade on "nothing.", then the Weapons Maker
+        var POOFAT = [[-930, -200], [-640, -250], [-420, -270], [-190, -290], [60, -280], [-330, -520], [-40, -520], [-760, -480]];
+        poofEls.forEach(function (el, i) {
+          var u = (t - tNothing - i * 0.012) / 0.55;
+          show(el, u > 0 && u < 1);
+          if (u > 0 && u < 1) { el.setAttribute("opacity", (1 - smooth((u - 0.55) / 0.45)).toFixed(2)); el.setAttribute("transform", "translate(" + POOFAT[i][0] + "," + POOFAT[i][1] + ") scale(" + (2.3 * (0.35 + 0.8 * smooth(u * 1.6))).toFixed(3) + ")"); }
+        });
+        var wpu = (t - tPop2) / 0.45;
+        show(wmPoof, wpu > 0 && wpu < 1);
+        if (wpu > 0 && wpu < 1) { wmPoof.setAttribute("opacity", (1 - smooth((wpu - 0.5) / 0.5)).toFixed(2)); wmPoof.setAttribute("transform", "translate(" + WMX + ",-170) scale(" + (1.1 * (0.35 + 0.8 * smooth(wpu * 1.6))).toFixed(3) + ")"); }
+
+        // ── the counter springs up on "Rocks" and counts the days; a tile mid-flip squashes
+        var cu = clamp((t - tRocks - 0.1) / 0.32), cb = cu < 1 ? 1 + 2.4 * Math.pow(cu - 1, 3) + 1.4 * Math.pow(cu - 1, 2) : 1;
+        show(counterEl, t > tRocks + 0.1);
+        counterEl.setAttribute("transform", "translate(0," + -CDY + ") scale(1," + cb.toFixed(3) + ") translate(0," + CDY + ")");
+        // (a tile flips, its digit squashed for a moment, when the count changes one at a time: the single days and
+        // the reset; during the time-lapse the digits just spin)
+        var s0 = pad(fmt(days(t))), s1 = pad(fmt(days(t - 0.06))), flips = t < tThou || t >= tReset;
+        if (t >= tReset && t < tReset + 0.06) s1 = pad(fmt(days(tReset - 0.01)));
+        tiles.forEach(function (ti, i) {
+          var ch = s0.charAt(i) === " " ? "" : s0.charAt(i);
+          if (ti.t.textContent !== ch) ti.t.textContent = ch;
+          ti.t.setAttribute("transform", flips && s0.charAt(i) !== s1.charAt(i) ? "translate(0,-485) scale(1,0.25) translate(0,485)" : "");
+        });
+
+        // ── the sun, its ghosts and the dashed arc while the days streak past
+        var u = sunU(t);
+        show(sunEl, u >= 0);
+        if (u >= 0) { var sp2 = sunPt(u); sunEl.setAttribute("transform", "translate(" + f(sp2[0]) + "," + f(sp2[1]) + ")"); }
+        var lapse = t >= tThou && t < NOON[0] + 0.15;
+        arcEl.setAttribute("opacity", lapse ? 0.6 : 0);
+        ghostEls.forEach(function (g, i) {
+          show(g, lapse);
+          if (lapse) { var gp = sunPt(0.1 + i * 0.115); g.setAttribute("transform", "translate(" + f(gp[0]) + "," + f(gp[1]) + ")"); g.setAttribute("opacity", (0.15 + i * 0.06).toFixed(2)); }
+        });
+
+        // ── the rocks: gray rolls in on "Rocks", rust on "different" (stopping on "colored"); moss on "thousands"
+        show(grayEl, t > tRocks);
+        rollRock(grayEl, -1250, GRAYX, tRocks, tRocks + 0.4, GK, t);
+        var thrownNow = t >= tUp;
+        show(rustEl, t > tDiff && !thrownNow);
+        rollRock(rustEl, V ? 1200 : 1350, RUSTX, tDiff, tCol, RK, t);
+        mossEls.forEach(function (m, i) { var mu = clamp((t - tThou - 0.06 - i * 0.08) / 0.4); show(m, mu > 0); m.setAttribute("transform", "translate(0,-60) scale(" + mu.toFixed(3) + ") translate(0,60)"); });
+        flowerEls.forEach(function (fl, i) {
+          var u2 = clamp((t - FLOWERS[i][3]) / 0.25), b2 = u2 < 1 ? 1 + 2.4 * Math.pow(u2 - 1, 3) + 1.4 * Math.pow(u2 - 1, 2) : 1;
+          fl.setAttribute("transform", "scale(" + (u2 > 0 ? b2 : 0).toFixed(3) + ")");
+        });
+        // the bird flies in from the top left, flapping, and settles into its nest on the gray rock
+        var bu2 = clamp((t - tThou - 0.12) / 0.45), nu = clamp((t - tThou - 0.5) / 0.2);
+        show(nestEl, nu > 0); nestEl.setAttribute("transform", "scale(" + (1 + 2.4 * Math.pow(nu - 1, 3) + 1.4 * Math.pow(nu - 1, 2)).toFixed(3) + ")");
+        show(birdEl, bu2 > 0);
+        var bx = NEST[0] + 4 - 420 * (1 - bu2), by = NEST[1] - 18 - 380 * (1 - bu2) * (1 - bu2);
+        var startle = t > tThrow ? -Math.sin(clamp((t - tThrow) / 0.3) * Math.PI) * 30 : 0;
+        birdEl.setAttribute("transform", "translate(" + f(bx) + "," + f(by + startle) + ")");
+        birdWing.setAttribute("transform", (bu2 > 0 && bu2 < 1) || (startle < -2) ? "translate(0,-10) scale(1," + (Math.floor(t * 16) % 2 ? -0.7 : 1) + ") translate(0,10)" : "");
+        // the heart floats up between the rocks after "colored", bobs, and pops when the rust rock is picked up
+        var hu = clamp((t - tCol - 0.2) / 0.35), hb = hu < 1 ? 1 + 2.4 * Math.pow(hu - 1, 3) + 1.4 * Math.pow(hu - 1, 2) : 1;
+        var HX = (GRAYX + RUSTX) / 2 + 10, HY = -250 - 30 * smooth(hu) + Math.sin((t - tCol) * 4) * 8;
+        show(heartEl, hu > 0 && t < tThrow + 0.06);
+        heartEl.setAttribute("transform", "translate(" + HX + "," + f(HY) + ") scale(" + (hu > 0 ? hb : 0).toFixed(3) + ")");
+        var pu = (t - tThrow - 0.06) / 0.25;
+        show(heartPopEl, pu > 0 && pu < 1);
+        heartPopEl.setAttribute("transform", "translate(" + HX + "," + f(HY) + ") scale(" + (0.5 + 0.9 * clamp(pu)).toFixed(3) + ")");
+
+        // ── the human: strolls in from the right during the streaking days, bends to the rust rock, swings it
+        // overhead and hurls it off the right edge
+        var HFROM = (V ? camera.views.key[0] + 540 / camera.views.key[2] : 960) + 160, hx = MANX, hp = "walk";
+        if (t < tBend) { var hwu = clamp((t - tWalk0) / (tBend - tWalk0)); hx = HFROM + (MANX - HFROM) * (1 - (1 - hwu) * (1 - hwu)); }
+        if (t >= tBend) hp = "bend";
+        if (t >= tUp) hp = "up";
+        if (t >= tThrow) hp = "throw";
+        show(humEl, t > tWalk0);
+        var hwalk = t > tWalk0 && t < tBend, hbob = hwalk ? -Math.abs(Math.sin((t - tWalk0) * 12)) * 7 : 0;
+        humEl.setAttribute("transform", "translate(" + f(hx) + "," + f(-100 * HS + hbob) + ") scale(" + HS + ")");
+        humPoses.forEach(function (g) { show(g, g.getAttribute("data-p") === hp); });
+        humLegs.forEach(function (lg, i) { var a = hwalk ? Math.sin((t - tWalk0) * 12) * 20 * (i ? -1 : 1) : 0, hip = hRig.walk.hip[i]; lg.setAttribute("transform", "rotate(" + f(a) + " " + f(hip[0]) + " " + f(hip[1]) + ")"); });
+        // the rock in his hands, then in flight (center of the rock, plate units)
+        show(thrownEl, thrownNow && t < tThrow + 0.6);
+        if (thrownNow) {
+          var ov = [MANX + HS * OVER[0], -100 * HS + HS * OVER[1]], rp, rr = 0;
+          if (t < tThrow) { var lu = smooth((t - tUp) / 0.1); rp = [RUSTX + (ov[0] - RUSTX) * lu, -39 * RK + (ov[1] + 39 * RK) * lu]; }
+          else { var fu2 = (t - tThrow) / 0.42, outX = (V ? camera.views.key[0] + 540 / camera.views.key[2] : 960) + 300; rp = [ov[0] + (outX - ov[0]) * fu2, ov[1] - 420 * Math.sin(Math.min(1, fu2) * Math.PI * 0.6)]; rr = 540 * fu2; }
+          thrownEl.setAttribute("transform", "translate(" + f(rp[0]) + "," + f(rp[1]) + ")");
+          thrownSpin.setAttribute("transform", "rotate(" + f(rr) + ")");
+        }
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,1086 @@
+{
+  "id": "part-17",
+  "title": "The Five-Step Plan, Step 1: Sell Incentive Alignment Bonds",
+  "storyboard": "storyboards/part-17-step-1-incentive-alignment-bonds.md",
+  "audio": {
+    "start": 2143.444,
+    "end": 2452.964
+  },
+  "noCaptions": [
+    "title-card"
+  ],
+  "scenes": [
+    {
+      "id": "title-card",
+      "file": "compositions/scenes/part-17/title-card.html",
+      "cue": "The",
+      "approx": 2143.44,
+      "layer": "A"
+    },
+    {
+      "id": "financial-instrument",
+      "file": "compositions/scenes/part-17/financial-instrument.html",
+      "cue": "On",
+      "approx": 2153.26,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "On",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "Earth,",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "point-right",
+          "mode": "big"
+        },
+        {
+          "cue": "instrument.",
+          "expr": "smirk",
+          "rest": "ee",
+          "body": "open-palms",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "the-arithmetic",
+      "file": "compositions/scenes/part-17/the-arithmetic.html",
+      "cue": "Not",
+      "approx": 2159.4,
+      "layer": "B"
+    },
+    {
+      "id": "heres-one",
+      "file": "compositions/scenes/part-17/heres-one.html",
+      "cue": "So",
+      "approx": 2175.58,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "So",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "palms-down",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "bond-splits-three-ways",
+      "file": "compositions/scenes/part-17/bond-splits-three-ways.html",
+      "cue": "An",
+      "approx": 2176.88,
+      "layer": "B"
+    },
+    {
+      "id": "wishocratic-allocation",
+      "file": "compositions/scenes/part-17/wishocratic-allocation.html",
+      "cue": "The",
+      "approx": 2211.4,
+      "layer": "B"
+    },
+    {
+      "id": "slow-sip",
+      "file": "compositions/scenes/part-17/slow-sip.html",
+      "cue": "Remember",
+      "approx": 2228.48,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Remember",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "grandmas-war-bond",
+      "file": "compositions/scenes/part-17/grandmas-war-bond.html",
+      "cue": "funded",
+      "approx": 2229.9,
+      "layer": "B"
+    },
+    {
+      "id": "what-youre-offering",
+      "file": "compositions/scenes/part-17/what-youre-offering.html",
+      "cue": "What",
+      "approx": 2251.7,
+      "layer": "B"
+    },
+    {
+      "id": "enemy-is-the-clock",
+      "file": "compositions/scenes/part-17/enemy-is-the-clock.html",
+      "cue": "This",
+      "approx": 2280.7,
+      "layer": "B"
+    },
+    {
+      "id": "stop-reading",
+      "file": "compositions/scenes/part-17/stop-reading.html",
+      "cue": "How",
+      "approx": 2289.98,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "How",
+          "expr": "skeptical",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "stop",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "more",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "counting",
+          "mode": "big"
+        },
+        {
+          "cue": "step:",
+          "expr": "annoyed",
+          "rest": "closed",
+          "body": "fist",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "loop-steps-one-two",
+      "file": "compositions/scenes/part-17/loop-steps-one-two.html",
+      "cue": "One.",
+      "approx": 2297.62,
+      "layer": "B"
+    },
+    {
+      "id": "loop-steps-three-four",
+      "file": "compositions/scenes/part-17/loop-steps-three-four.html",
+      "cue": "Three.",
+      "approx": 2316.6,
+      "layer": "B"
+    },
+    {
+      "id": "count-five",
+      "file": "compositions/scenes/part-17/count-five.html",
+      "cue": "Five.",
+      "approx": 2341.04,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Five.",
+          "expr": "eyeroll",
+          "rest": "closed",
+          "body": "palms-down",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "pavlovian-senators",
+      "file": "compositions/scenes/part-17/pavlovian-senators.html",
+      "cue": "The",
+      "approx": 2342.5,
+      "layer": "B"
+    },
+    {
+      "id": "greed-loop-runs",
+      "file": "compositions/scenes/part-17/greed-loop-runs.html",
+      "cue": "The",
+      "approx": 2360.84,
+      "layer": "B"
+    },
+    {
+      "id": "no-opposition",
+      "file": "compositions/scenes/part-17/no-opposition.html",
+      "cue": "None",
+      "approx": 2383.24,
+      "layer": "B"
+    },
+    {
+      "id": "sounds-familiar",
+      "file": "compositions/scenes/part-17/sounds-familiar.html",
+      "cue": "If",
+      "approx": 2395.7,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "If",
+          "expr": "skeptical",
+          "rest": "smile",
+          "body": "arms-crossed",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "military-industrial-loop",
+      "file": "compositions/scenes/part-17/military-industrial-loop.html",
+      "cue": "it",
+      "approx": 2397.28,
+      "layer": "B"
+    },
+    {
+      "id": "patient-industrial-loop",
+      "file": "compositions/scenes/part-17/patient-industrial-loop.html",
+      "cue": "You're",
+      "approx": 2414.7,
+      "layer": "B"
+    },
+    {
+      "id": "evolved-on-purpose",
+      "file": "compositions/scenes/part-17/evolved-on-purpose.html",
+      "cue": "The",
+      "approx": 2438.36,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "The",
+          "expr": "thinking",
+          "rest": "closed",
+          "body": "thinking",
+          "mode": "big"
+        },
+        {
+          "cue": "designed.",
+          "expr": "eyeroll",
+          "rest": "smile",
+          "body": "shrug",
+          "mode": "big"
+        },
+        {
+          "cue": "An",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "orphans.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "arms-crossed",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "title-card",
+      "cue": "The",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "title-card",
+      "cue": "Wealthy",
+      "at": "after",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "title-card",
+      "cue": "One:",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "financial-instrument",
+      "cue": "financial",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "financial-instrument",
+      "cue": "instrument.",
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "the-arithmetic",
+      "cue": "above),",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "the-arithmetic",
+      "cue": "hundred",
+      "sfx": "marker",
+      "volume": 0.35
+    },
+    {
+      "scene": "the-arithmetic",
+      "cue": "timeline.",
+      "sfx": "whoosh",
+      "volume": 0.45
+    },
+    {
+      "scene": "heres-one",
+      "cue": "here's",
+      "sfx": "slam",
+      "volume": 0.55
+    },
+    {
+      "scene": "heres-one",
+      "cue": "one.",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "Bond",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "campaign,",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "savings",
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "three",
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "investors",
+      "n": 1,
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "Super",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "voted",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "post-office",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "back.",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "reelected.",
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "reelected.",
+      "offset": 0.25,
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "reelected.",
+      "offset": 0.5,
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "diseases.",
+      "sfx": "splat",
+      "volume": 0.45
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "capped",
+      "sfx": "slam",
+      "volume": 0.55
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "capped",
+      "offset": 0.15,
+      "sfx": "yelp",
+      "volume": 0.35
+    },
+    {
+      "scene": "bond-splits-three-ways",
+      "cue": "transparent.",
+      "at": "after",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "allocation,",
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "allocation,",
+      "offset": 0.18,
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "allocation,",
+      "offset": 0.36,
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "money",
+      "sfx": "click",
+      "volume": 0.5
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "decide",
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "goes.",
+      "n": 2,
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "working",
+      "sfx": "toaster",
+      "volume": 0.55
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "expensive",
+      "sfx": "toaster",
+      "volume": 0.55
+    },
+    {
+      "scene": "wishocratic-allocation",
+      "cue": "expensive",
+      "offset": 0.45,
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "slow-sip",
+      "cue": "grandparents",
+      "offset": 0.25,
+      "sfx": "thunk",
+      "volume": 0.25
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "funded",
+      "sfx": "pat",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "bonds?",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "four",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "Four",
+      "n": 2,
+      "sfx": "ding",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "inflation).",
+      "sfx": "slide-down",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "nineteen",
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "eighty-seven.",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "diseases",
+      "n": 1,
+      "sfx": "yelp",
+      "volume": 0.3
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "diseases",
+      "n": 1,
+      "offset": 0.4,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "seventy-two",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "seventy-two",
+      "offset": 0.3,
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "grows,",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "lobbyists",
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "big",
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "bonus).",
+      "at": "after",
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "what-youre-offering",
+      "cue": "bonus).",
+      "at": "after",
+      "offset": 0.14,
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "enemy-is-the-clock",
+      "cue": "billion",
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "enemy-is-the-clock",
+      "cue": "machine.",
+      "n": 1,
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "enemy-is-the-clock",
+      "cue": "enemy.",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "enemy-is-the-clock",
+      "cue": "enemy.",
+      "n": 1,
+      "offset": 0.15,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "enemy-is-the-clock",
+      "cue": "enemy.",
+      "n": 1,
+      "offset": 0.3,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "enemy-is-the-clock",
+      "cue": "enemy.",
+      "n": 1,
+      "offset": 0.6,
+      "sfx": "pop",
+      "volume": 0.25
+    },
+    {
+      "scene": "enemy-is-the-clock",
+      "cue": "clock.",
+      "offset": 0.25,
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "enemy-is-the-clock",
+      "cue": "clock.",
+      "offset": 0.83,
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "stop-reading",
+      "cue": "reading",
+      "at": "after",
+      "sfx": "huff",
+      "volume": 0.3
+    },
+    {
+      "scene": "stop-reading",
+      "cue": "step:",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "stop-reading",
+      "cue": "step:",
+      "offset": 0.15,
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-steps-one-two",
+      "cue": "sell",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-steps-one-two",
+      "cue": "VICTORY",
+      "sfx": "pop",
+      "volume": 0.45
+    },
+    {
+      "scene": "loop-steps-one-two",
+      "cue": "investors.",
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-steps-one-two",
+      "cue": "campaign.",
+      "n": 1,
+      "offset": 0.35,
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-steps-one-two",
+      "cue": "succeeds.",
+      "sfx": "marker",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-steps-one-two",
+      "cue": "succeeds.",
+      "at": "after",
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-steps-one-two",
+      "cue": "percent",
+      "n": 1,
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "loop-steps-one-two",
+      "cue": "twenty-seven",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-steps-three-four",
+      "cue": "twenty",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-steps-three-four",
+      "cue": "dividends:",
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-steps-three-four",
+      "cue": "billion",
+      "n": 2,
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "loop-steps-three-four",
+      "cue": "seventy-two",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "loop-steps-three-four",
+      "cue": "typo.",
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-steps-three-four",
+      "cue": "not.",
+      "sfx": "stamp",
+      "volume": 0.55
+    },
+    {
+      "scene": "loop-steps-three-four",
+      "cue": "not.",
+      "offset": 0.35,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "Super",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "elected",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "post-office",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "more",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "more",
+      "n": 1,
+      "offset": 0.15,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "more",
+      "n": 1,
+      "offset": 0.3,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "get.",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "Pavlovian",
+      "sfx": "bell",
+      "volume": 0.45
+    },
+    {
+      "scene": "pavlovian-senators",
+      "cue": "senators.",
+      "sfx": "woof",
+      "volume": 0.5
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "alive.",
+      "sfx": "ding",
+      "volume": 0.3
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "alive.",
+      "at": "after",
+      "sfx": "scratch",
+      "volume": 0.35
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "greed",
+      "n": 1,
+      "sfx": "cash-register",
+      "volume": 0.3
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "greed",
+      "n": 2,
+      "sfx": "cash-register",
+      "volume": 0.3
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "greed",
+      "n": 3,
+      "sfx": "cash-register",
+      "volume": 0.3
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "passed.",
+      "sfx": "woof",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "circulates",
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "stop",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "greed-loop-runs",
+      "cue": "stop",
+      "offset": 0.25,
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "no-opposition",
+      "cue": "opposition.",
+      "n": 2,
+      "sfx": "bell",
+      "volume": 0.45
+    },
+    {
+      "scene": "no-opposition",
+      "cue": "opposition.",
+      "n": 2,
+      "offset": 0.5,
+      "sfx": "crickets",
+      "volume": 0.3
+    },
+    {
+      "scene": "no-opposition",
+      "cue": "arithmetic",
+      "sfx": "scratch",
+      "volume": 0.35
+    },
+    {
+      "scene": "no-opposition",
+      "cue": "hundred",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "no-opposition",
+      "cue": "finish.",
+      "offset": 0.2,
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "military-industrial-loop",
+      "cue": "warned",
+      "sfx": "bell",
+      "volume": 0.35
+    },
+    {
+      "scene": "military-industrial-loop",
+      "cue": "manufacturers",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "military-industrial-loop",
+      "cue": "contracts,",
+      "n": 1,
+      "sfx": "marker",
+      "volume": 0.35
+    },
+    {
+      "scene": "military-industrial-loop",
+      "cue": "self-sustaining",
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "military-industrial-loop",
+      "cue": "prints",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "military-industrial-loop",
+      "cue": "corpses.",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "military-industrial-loop",
+      "cue": "corpses.",
+      "offset": 0.4,
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "machine,",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "diseases",
+      "sfx": "yelp",
+      "volume": 0.3
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "Complex.",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "politicians,",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "trials,",
+      "n": 1,
+      "sfx": "marker",
+      "volume": 0.35
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "returns,",
+      "n": 1,
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "investors,",
+      "n": 2,
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "greed.",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "corpses",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "corpses",
+      "offset": 0.4,
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "patient-industrial-loop",
+      "cue": "(fewer",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "evolved-on-purpose",
+      "cue": "designed.",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "evolved-on-purpose",
+      "cue": "evolved,",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "evolved-on-purpose",
+      "cue": "aligned.",
+      "sfx": "click",
+      "volume": 0.4
+    },
+    {
+      "scene": "evolved-on-purpose",
+      "cue": "purpose,",
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "evolved-on-purpose",
+      "cue": "orphans.",
+      "sfx": "snip",
+      "volume": 0.5
+    }
+  ]
+}

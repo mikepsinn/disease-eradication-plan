@@ -1,0 +1,329 @@
+<template id="papers-with-presidents-template">
+  <!-- papers-with-presidents · Layer B, plate town-square (storyboards/part-01-opening.md): paving stones, a plain
+       facade with dark windows, a lamppost and a bench. "However,": the camera travels slowly along a crowd of bored
+       humans standing about; one yawns and stretches, one studies a thread on his sleeve. "fascinating": a fly lands
+       on somebody's nose; nobody moves. "paper": one plain paper walks in from the right on its stick legs.
+       "presidents": the camera pushes in on its oval portrait, who winks on "them.". "money,": back out, and every
+       head snaps toward it but one: a bored human at the far left keeps staring at the ground. After "money," the
+       crowd follows the paper off right in a conga line and he looks up, too late. "value": the line comes back
+       round from the left behind him and the paper walks straight over him, flattening him like a pancake (only his
+       eyes blink), and the whole line walks over him. "everyone": he peels up, springs back a little shorter, stars
+       circling, and limps to the back of the line. "pretends": the line squeezes its eyes shut and trembles, and the
+       paper glows. "hard": the woman at the front pretends so hard her head pops off and spins up. "enough.": the
+       paper sparkles; after it, the head lands back on upside down, eyes still shut. -->
+  <style>
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C9B58A; }
+    #papers-with-presidents-weave, #papers-with-presidents-plate, #papers-with-presidents-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="papers-with-presidents" data-width="1920" data-height="1080" data-start="0" data-duration="17.78">
+    <div id="papers-with-presidents-weave">
+      <div id="papers-with-presidents-plate"></div>
+    </div>
+    <div id="papers-with-presidents-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "papers-with-presidents";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth;
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 83);
+
+      // ── The plate, in plate units: the crowd's feet on y 0; the paving runs back to y -400, where the facade stands
+      // (its windows from y -690 to -530) under a strip of sky. People are KIT.person at scale K (feet at person y 100).
+      var K = 1.85, PAVE = "#C9B58A", JOINT = "#B79F72", FACADE = "#E6D7B4", SKY = "#D6C49A", EDGE = "#B09363";
+      var XB = 170, X0 = 380, GAP = 130, P0 = 1550, XL = -220, XR = 2140, LOOP = XR - XL, BILLK = 2;
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { pan0: [330, -300, 1.9], pan1: [1400, -300, 1.9], face: [P0, -96, 7.0], wide: [430, -350, 1.6], front: [1460, -350, 1.6] }
+        : { pan0: [560, -205, 1.25], pan1: [1300, -205, 1.25], face: [P0, -96, 9.0], wide: [960, -230, 1.0], front: [1100, -230, 1.15] };
+
+      // The crowd (sketch 13's CROWD, and a ninth human, the woman at the front of the line), left to right; rank k
+      // is each one's place behind the paper in the conga line (1 = first). The bored human stands apart at the far
+      // left (he is the flattened official of Part 12: keep his options).
+      var CROWD = [
+        { tone: 0, outfit: "suit", color: 0, seed: 1 },
+        { tone: 2, outfit: "dress", color: 1, hair: 1, seed: 2 },
+        { tone: 1, outfit: "shirt", color: 3, seed: 3 },
+        { tone: 3, outfit: "overalls", color: 2, seed: 4 },
+        { tone: 0, outfit: "dress", color: 2, hair: 1, seed: 5 },
+        { tone: 2, outfit: "suit", color: 3, seed: 6 },
+        { tone: 1, outfit: "shirt", color: 1, hair: 2, seed: 7 },
+        { tone: 3, outfit: "dress", color: 0, hair: 1, seed: 8 },
+        { tone: 1, outfit: "dress", color: 3, hair: 1, seed: 10 },
+      ];
+      var N = CROWD.length, BORED = { tone: 2, outfit: "shirt", color: 0, seed: 9 };
+      var YAWN = 4, THREAD = 6, FLY = 2, FRONT = N - 1;
+      var ARMS = [[35, 70], [75, 95]]; // the right hand reaches the shoulder of the human in front
+
+      // Eyes squeezed shut: drop person()'s two .eye groups for > < (in the face's own units), so they go with the head.
+      function squint(svg) {
+        var n = 0;
+        var out = svg.replace(/<g class="eye">[\s\S]*?<\/g>/g, function () { n++; return ""; });
+        if (n !== 2) throw new Error("squint: expected 2 eyes, found " + n);
+        var e = function (x, k) { return "M" + (x - 4.5 * k) + ",-7.5 l" + 4.5 * k + ",3.5 l" + -4.5 * k + ",3.5"; };
+        return out.replace("<!--face-end-->", '<path d="' + e(-2.5, 1) + " " + e(10.8, -1) + '" fill="none" stroke="' + ink + '" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><!--face-end-->');
+      }
+      // A person's drawings, stacked (one shown at a time), standing with the feet on (0, 0) of the group, in an
+      // inner .sq group that squashes about the feet.
+      function stack(id, poses) {
+        var g = "";
+        Object.keys(poses).forEach(function (n, i) { g += '<g class="pose" data-pose="' + n + '"' + (i ? ' opacity="0"' : "") + ">" + poses[n] + "</g>"; });
+        return '<g id="' + ID + "-" + id + '"><g class="sq"><g transform="scale(' + K + ') translate(0,-100)">' + g + "</g></g></g>";
+      }
+      var crowdOpts = CROWD.map(function (o, i) {
+        return {
+          bored: copy(o, { mood: "flat" }),
+          yawn: copy(o, { mood: "eager", arms: [[-150, -172], [150, 172]] }),
+          thread: copy(o, { mood: "flat", arms: [[20, 10], [70, 150]] }),
+          look: copy(o, { mood: "eager", look: "right" }),
+          conga: copy(o, { mood: "eager", look: "right", arms: ARMS }),
+          strain: copy(o, { mood: "flat", brows: true, look: "right", arms: ARMS }),
+        };
+      });
+      var crowdSvg = CROWD.map(function (o, i) {
+        var O = crowdOpts[i], poses = { bored: KIT.person(O.bored), look: KIT.person(O.look), conga: KIT.person(O.conga), strain: squint(KIT.person(O.strain)) };
+        if (i === YAWN) poses.yawn = KIT.person(O.yawn);
+        if (i === THREAD) {
+          var R = KIT.rig(O.thread), h = R.hand[1];
+          poses.thread = KIT.person(O.thread) + '<path class="thread" d="M' + f(h[0] + 2) + "," + f(h[1] - 2) + " q8,-6 14,-2 q6,4 12,-3" + '" fill="none" stroke="' + C.war + '" stroke-width="1.6" stroke-linecap="round"/>';
+        }
+        return stack("p" + i, poses);
+      }).join("");
+      // the bored human: bored (staring at the ground), looking up too late, surprised (the drawing that gets
+      // flattened), limping after the line, and squeezing his eyes shut at the back of it
+      var BO = {
+        bored: copy(BORED, { mood: "flat", look: "left" }),
+        late: copy(BORED, { mood: "flat", look: "right", arms: [[20, 10], [60, 120]] }),
+        flat: copy(BORED, { mood: "eager", look: "left", arms: [[-150, -165], [150, 165]] }),
+        limp: copy(BORED, { mood: "sad", look: "right", arms: ARMS }),
+        strain: copy(BORED, { mood: "flat", brows: true, look: "right", arms: ARMS }),
+      };
+      var boredSvg = stack("bored", { bored: KIT.person(BO.bored), late: KIT.person(BO.late), flat: KIT.person(BO.flat), limp: KIT.person(BO.limp), strain: squint(KIT.person(BO.strain)) });
+      var RB = KIT.rig(BO.bored), RL = KIT.rig(BO.limp);
+      // his eyes on top of the pancake, and the stars that circle his head once he is up
+      var flatEyes = '<g id="' + ID + '-flat-eyes" opacity="0">' + [-14, 14].map(function (x) {
+        return '<g transform="translate(' + x + ',0)"><g class="lid"><circle r="11" fill="#FFFFFF" stroke="' + ink + '" stroke-width="3"/><circle cx="-3" cy="1" r="4.2" fill="' + ink + '"/></g></g>';
+      }).join("") + "</g>";
+      var stars = [0, 1, 2].map(function (i) { return '<g class="star" opacity="0">' + KIT.star(0, 0, 16, i % 2 ? C.orange : C.yellow) + "</g>"; }).join("");
+      var starsSvg = '<g id="' + ID + '-stars">' + stars + "</g>";
+
+      // ── The paper: KIT.money (plain) with a face on its portrait, which winks, and a glow and sparkles behind it.
+      var face = '<g class="portrait-face"><circle class="eye-l" cx="-1.9" cy="-2.6" r="0.75" fill="' + ink + '"/><g class="eye-r"><circle cx="1.9" cy="-2.6" r="0.75" fill="' + ink + '"/></g>' +
+        '<path class="wink" d="M0.8,-2.6 q1.1,-1 2.2,0" fill="none" stroke="' + ink + '" stroke-width="0.6" stroke-linecap="round" opacity="0"/>' +
+        '<path d="M-1.6,0.4 q1.6,1.3 3.2,0" fill="none" stroke="' + ink + '" stroke-width="0.6" stroke-linecap="round"/></g>';
+      var rays = "";
+      for (var r = 0; r < 12; r++) { var a = (r * Math.PI) / 6; rays += '<path d="M' + f(Math.cos(a) * 64) + "," + f(Math.sin(a) * 46) + " L" + f(Math.cos(a) * 92) + "," + f(Math.sin(a) * 68) + '"/>'; }
+      var glow = '<g id="' + ID + '-glow" opacity="0"><ellipse rx="86" ry="62" fill="' + C.yellow + '" opacity="0.45"/><ellipse rx="64" ry="44" fill="#FFF3C4" opacity="0.6"/>' +
+        '<g stroke="' + C.yellow + '" stroke-width="5" stroke-linecap="round">' + rays + "</g></g>";
+      var sparkles = [[-62, -40, 12], [58, -34, 15], [70, 22, 10], [-54, 30, 11], [0, -58, 13]].map(function (s, i) {
+        return '<g class="spark" opacity="0" transform="translate(' + s[0] + "," + s[1] + ')">' + KIT.star(0, 0, s[2], i % 2 ? C.cream : C.yellow) + "</g>";
+      }).join("");
+      var billSvg = '<g id="' + ID + '-bill" opacity="0"><g transform="scale(' + BILLK + ')">' + glow + KIT.money("plain", 0.5).replace("</g>", "") + face + "</g>" + sparkles + "</g></g>";
+      function setLegs(el, l) { el.querySelector(".legs").setAttribute("d", "M-16,24 l" + (-6 + l * 10) + ",22 h-8 M16,24 l" + (6 - l * 10) + ",22 h8"); }
+
+      // ── The fly: a black body and two wings that buzz, in plate units around (0, 0).
+      var flySvg = '<g id="' + ID + '-fly" opacity="0"><g class="wings"><ellipse cx="-4" cy="-7" rx="6" ry="3.6" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.4" opacity="0.85" transform="rotate(-30 -4 -7)"/>' +
+        '<ellipse cx="4" cy="-7" rx="6" ry="3.6" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.4" opacity="0.85" transform="rotate(30 4 -7)"/></g>' +
+        '<ellipse cx="0" cy="0" rx="6.5" ry="4.6" fill="#1B1714"/><circle cx="6" cy="-1" r="3" fill="#7A1F1F"/></g>';
+
+      // ── The square: the facade with dark windows, the paving, a lamppost and a bench.
+      var setting = '<rect x="-3000" y="-3000" width="7000" height="2240" fill="' + SKY + '"/>' +
+        '<rect x="-3000" y="-760" width="7000" height="360" fill="' + FACADE + '"/><path d="M-3000,-760 H4000" stroke="' + ink + '" stroke-width="4"/>';
+      for (var wx = -1000; wx < 3200; wx += 240) setting += '<rect x="' + (wx + 80) + '" y="-690" width="110" height="160" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/><rect x="' + (wx + 70) + '" y="-530" width="130" height="14" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>';
+      setting += '<rect x="-3000" y="-400" width="7000" height="3400" fill="' + PAVE + '"/><path d="M-3000,-400 H4000" stroke="' + EDGE + '" stroke-width="4"/>';
+      for (var py = -360, row = 0; py < 600; py += 70, row++) {
+        setting += '<path d="M-3000,' + py + ' H4000" stroke="' + JOINT + '" stroke-width="3"/>';
+        for (var px = row % 2 ? -1060 : -1000; px < 3200; px += 120) setting += '<path d="M' + px + "," + py + ' v70" stroke="' + JOINT + '" stroke-width="3"/>';
+      }
+      // the bench, back by the facade, and the lamppost
+      var bench = '<g transform="translate(1880,-300)"><rect x="-110" y="-70" width="220" height="16" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/><rect x="-110" y="-46" width="220" height="16" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<rect x="-120" y="-22" width="240" height="16" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/><path d="M-96,-6 V30 M96,-6 V30 M-96,-70 V-6 M96,-70 V-6" stroke="' + ink + '" stroke-width="7"/></g>';
+      var lamp = '<path d="M1720,0 V-580" stroke="' + ink + '" stroke-width="12"/><path d="M1690,0 h60" stroke="' + ink + '" stroke-width="14"/>' +
+        '<path d="M1685,-580 L1700,-630 H1740 L1755,-580 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="4"/>';
+      q("plate").innerHTML = KIT.svg(W, H, '<rect width="' + W + '" height="' + H + '" fill="' + PAVE + '"/><g id="' + ID + '-cam">' + setting + bench + lamp +
+        boredSvg + flatEyes + starsSvg + crowdSvg + billSvg + flySvg + "</g>");
+
+      var cam = q("cam"), bill = q("bill"), glowEl = q("glow"), fly = q("fly"), boredEl = q("bored"), flatEl = q("flat-eyes");
+      var people = CROWD.map(function (o, i) { return q("p" + i); });
+      var poses = function (g) { return Array.prototype.slice.call(g.querySelectorAll(".pose")); };
+      var crowdPoses = people.map(poses), boredPoses = poses(boredEl);
+      var sparkEls = Array.prototype.slice.call(bill.querySelectorAll(".spark")), starEls = Array.prototype.slice.call(q("stars").querySelectorAll(".star"));
+      var lids = Array.prototype.slice.call(flatEl.querySelectorAll(".lid"));
+      var eyeR = bill.querySelector(".eye-r"), wink = bill.querySelector(".wink");
+      var rigs = crowdOpts.map(function (O) { var r = {}; Object.keys(O).forEach(function (n) { r[n] = KIT.rig(O[n]); }); return r; });
+      var rigsB = {}; Object.keys(BO).forEach(function (n) { rigsB[n] = KIT.rig(BO[n]); });
+      // the front woman's head pops off her straining drawing
+      var frontHead = crowdPoses[FRONT].filter(function (p) { return p.getAttribute("data-pose") === "strain"; })[0].querySelector(".head");
+      var RF = rigs[FRONT].strain;
+
+      // ── Cues ──
+      var tFasc = cue("fascinating"), tPaper = cue("paper"), tPres = cue("presidents"), tThem = cue("them."), tMoney = cue("money,");
+      var tConga = KIT.after(ID, "money,"), tLate = tConga + 0.6, tSplat = cue("value") + 0.16, tPeel = cue("everyone") + 0.1;
+      var tPret = cue("pretends"), tHard = cue("hard"), tEnough = cue("enough."), tLand = KIT.after(ID, "enough.");
+      var tYawn = 3.3, tThread = 5.2, tIn1 = tPaper + 0.75;
+      // the line's distance travelled: from the paper's spot round the loop to the bored human by the splat, then on
+      // until the last of the line is past him (easing in from standing, and out at the stop)
+      var DS = (XR - P0) + (XB - XL), DE = DS + (400 + N * GAP - XB), T2 = ((DE - DS) * (tSplat - tConga)) / DS;
+      var tStop = tSplat + T2;
+      function dist(t) {
+        if (t <= tConga) return 0;
+        if (t < tSplat) { var u = (t - tConga) / (tSplat - tConga); return DS * (u * u + u) / 2; }
+        if (t < tStop) { var w = (t - tSplat) / (tStop - tSplat); return DS + (DE - DS) * (3 * w - w * w * w) / 2; }
+        return DE;
+      }
+      var wrap = function (x) { return XL + ((((x - XL) % LOOP) + LOOP) % LOOP); };
+
+      // ── The camera
+      var KEYS = [[0, "pan0", 1], [tPaper - 0.3, "pan1", 1], [tPres - 0.12, "pan1", 1.02], [tPres + 0.3, "face", 1], [tMoney - 0.85, "face", 1.06],
+        [tMoney - 0.05, "wide", 1], [tPret, "wide", 1.02], [tHard - 0.05, "front", 1], [D, "front", 1.04]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      function pick(list, name) { list.forEach(function (p) { show(p, p.getAttribute("data-pose") === name); }); }
+      function legs(g, name, R, ph) {
+        var pg = g.filter(function (p) { return p.getAttribute("data-pose") === name; })[0];
+        Array.prototype.forEach.call(pg.querySelectorAll(".leg-l, .leg-r"), function (lg, j) {
+          lg.setAttribute("transform", "rotate(" + f(ph * (j ? -1 : 1)) + " " + f(R.hip[j][0]) + " " + f(R.hip[j][1]) + ")");
+        });
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+        var d = dist(t), walking = t > tConga && t < tStop, ph = walking ? Math.sin((t - tConga) * 13) * 22 : 0;
+
+        // the paper: walks in on "paper", waits (bobbing), then leads the line round the loop
+        var bx, by = -48 * BILLK, legL = 0.5;
+        if (t < tPaper) bx = null;
+        else if (t < tIn1) { var u = (t - tPaper) / (tIn1 - tPaper); bx = 2120 + (P0 - 2120) * (1 - (1 - u) * (1 - u)); legL = Math.floor(t * 9) % 2; by -= Math.abs(Math.sin(t * 18)) * 8; }
+        else { bx = wrap(P0 + d); if (walking) { legL = Math.floor(t * 9) % 2; by -= Math.abs(Math.sin(t * 18)) * 8; } }
+        if (bx !== null && walking && Math.abs(bx - XB) < 70 && t > tSplat - 0.15) by -= 24; // walking over him
+        show(bill, bx !== null);
+        if (bx !== null) { bill.setAttribute("transform", "translate(" + f(bx) + "," + f(by) + ")"); setLegs(bill, legL); }
+        // the wink on "them."
+        var wk = t >= tThem && t < tThem + 0.45;
+        show(eyeR, !wk); show(wink, wk);
+        // the glow (from "pretends", brighter on "hard") and the sparkles on "enough."
+        var gl = t < tPret ? 0 : t < tHard ? 0.5 * smooth((t - tPret) / 0.3) : 0.5 + 0.5 * smooth((t - tHard) / 0.2);
+        glowEl.setAttribute("opacity", gl.toFixed(2));
+        glowEl.setAttribute("transform", "scale(" + (0.9 + 0.1 * Math.sin(t * 20) * (gl > 0 ? 1 : 0) + 0.25 * gl).toFixed(3) + ")");
+        sparkEls.forEach(function (s, i) {
+          var a = t - tEnough - i * 0.06, on = a > 0 && a < 0.9;
+          s.setAttribute("opacity", on ? (a < 0.15 ? a / 0.15 : 1 - (a - 0.15) / 0.75).toFixed(2) : 0);
+          var base = s.getAttribute("transform").replace(/ scale\([^)]*\)/, "");
+          s.setAttribute("transform", base + " scale(" + (on ? 0.4 + 1.2 * Math.min(1, a / 0.2) : 0.4).toFixed(2) + ")");
+        });
+
+        // the crowd
+        people.forEach(function (g, i) {
+          var rank = N - i, x, y = 0, pose;
+          if (t < tMoney) pose = i === YAWN && t > tYawn && t < tYawn + 1.1 ? "yawn" : i === THREAD && t > tThread && t < tThread + 2.2 ? "thread" : "bored";
+          else if (t < tConga) pose = "look";
+          else if (t < tPret) pose = "conga";
+          else pose = "strain";
+          if (t < tConga) x = X0 + i * GAP;
+          else {
+            x = wrap(P0 + d - rank * GAP);
+            if (walking) y = -Math.abs(Math.sin((t - tConga) * 13 + i)) * 7;
+            if (walking && Math.abs(x - XB) < 50 && t > tSplat) y -= 22; // stepping over him
+          }
+          if (pose === "strain") { x += Math.sin(t * 60 + i * 1.7) * 2.2; y += Math.sin(t * 47 + i) * 1.2; }
+          g.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ")");
+          pick(crowdPoses[i], pose);
+          if (pose === "conga") legs(crowdPoses[i], "conga", rigs[i].conga, ph * (i % 2 ? 1 : -1));
+          // the thread-picker bows his head to his sleeve
+          if (pose === "thread") {
+            var th = crowdPoses[i].filter(function (p) { return p.getAttribute("data-pose") === "thread"; })[0].querySelector(".head"), R = rigs[i].thread;
+            th.setAttribute("transform", "rotate(" + f(16 * smooth((t - tThread) / 0.3)) + " " + f(R.neck[0]) + " " + f(R.neck[1]) + ")");
+          }
+        });
+
+        // the fly: buzzes in on "fascinating" and lands on a nose; it buzzes off when the heads snap round
+        var Rf = rigs[FLY].bored, nose = [X0 + FLY * GAP + K * (Rf.head[0] + Rf.hs * 22), -K * (100 - Rf.head[1] - Rf.hs * 2)];
+        var fa = (t - tFasc) / 0.75, fb = t - tMoney;
+        if (t < tFasc || fb > 0.8) show(fly, 0);
+        else {
+          var fx, fy;
+          if (fa < 1) { fx = nose[0] + 260 * (1 - fa) + Math.sin(fa * 18) * 30 * (1 - fa); fy = nose[1] - 220 * (1 - fa) + Math.cos(fa * 14) * 26 * (1 - fa); }
+          else if (fb < 0) { fx = nose[0]; fy = nose[1] - 6; }
+          else { fx = nose[0] - fb * 500; fy = nose[1] - 6 - fb * 420 + Math.sin(fb * 30) * 20; }
+          show(fly, 1);
+          var buzz = fa < 1 || fb > 0;
+          fly.setAttribute("transform", "translate(" + f(fx) + "," + f(fy) + ") scale(" + (buzz ? 3.0 : 2.8) + ")");
+          fly.querySelector(".wings").setAttribute("opacity", buzz ? (Math.floor(t * 30) % 2 ? 1 : 0.4) : 1);
+        }
+
+        // the bored human
+        var bxp = XB, sx = 1, sy = 1, bp = "bored", tilt = 0;
+        if (t >= tLate) bp = "late";
+        if (t >= tSplat - 0.06) bp = "flat";
+        if (t >= tSplat && t < tPeel) {
+          // flat as a pancake; every foot that walks over him flattens him again
+          sy = 0.07; sx = 1.55;
+          var near = people.some(function (g, i) { var x = wrap(P0 + dist(t) - (N - i) * GAP); return Math.abs(x - XB) < 45 && t < tStop; });
+          if (near) { sy = 0.05; sx = 1.7; }
+        } else if (t >= tPeel) {
+          // he peels up, springs back a little shorter, then limps to the back of the line
+          var pa = t - tPeel;
+          bp = t < tPret ? "limp" : "strain";
+          sy = pa < 0.18 ? 0.07 + (1.0 - 0.07) * (pa / 0.18) : 0.86 + 0.14 * Math.exp(-(pa - 0.18) * 7) * Math.cos((pa - 0.18) * 22);
+          sx = pa < 0.18 ? 1.55 - 0.55 * (pa / 0.18) : 1 + (0.86 - sy) * 0.6;
+          var lu = smooth((pa - 0.2) / 0.5);
+          bxp = XB + (400 - GAP - XB) * lu;
+          if (pa > 0.2 && pa < 0.7) tilt = Math.sin((pa - 0.2) * 22) * 7;
+        }
+        if (t >= tSplat - 0.06 && t < tSplat) { sy = 1 - (1 - 0.07) * ((t - tSplat + 0.06) / 0.06); sx = 1 + 0.55 * ((t - tSplat + 0.06) / 0.06); }
+        boredEl.setAttribute("transform", "translate(" + f(bxp) + ",0) rotate(" + f(tilt) + ")");
+        boredEl.querySelector(".sq").setAttribute("transform", "scale(" + sx.toFixed(3) + "," + sy.toFixed(3) + ")");
+        pick(boredPoses, bp);
+        // he stares at the ground: his head bowed
+        var bh = boredPoses[0].querySelector(".head");
+        bh.setAttribute("transform", "rotate(-14 " + f(RB.neck[0]) + " " + f(RB.neck[1]) + ")");
+        if (bp === "strain") { boredEl.setAttribute("transform", "translate(" + f(bxp + Math.sin(t * 60) * 2.2) + ",0)"); }
+        // his eyes on the pancake, blinking
+        var flat = t >= tSplat && t < tPeel;
+        show(flatEl, flat);
+        if (flat) {
+          flatEl.setAttribute("transform", "translate(" + f(XB) + "," + f(-K * 100 * sy - 6) + ")");
+          var since = t - tSplat, bl = [0.5, 0.75, 1.6, 2.2].some(function (b) { return since > b && since < b + 0.1; });
+          lids.forEach(function (l) { l.setAttribute("transform", bl ? "scale(1,0.12)" : ""); });
+        }
+        // stars circle his head once he is up
+        var up = t >= tPeel + 0.18;
+        var headY = -K * (100 - RL.head[1]) * sy - 40;
+        starEls.forEach(function (s, i) {
+          show(s, up);
+          if (!up) return;
+          var a = (t - tPeel) * 7 + (i * 2 * Math.PI) / 3;
+          s.setAttribute("transform", "translate(" + f(bxp + Math.cos(a) * 70) + "," + f(headY + Math.sin(a) * 14) + ") scale(" + (1.9 + 0.5 * Math.sin(a)).toFixed(2) + ")");
+        });
+
+        // "hard": the front woman's head pops off and spins up; after "enough." it lands back on upside down
+        var hx = RF.head[0], hy = RF.head[1];
+        if (t < tHard) frontHead.setAttribute("transform", "");
+        else if (t < tLand) {
+          var hu = (t - tHard) / (tLand - tHard), lift = 4 * 95 * hu * (1 - hu) + 6, spin = 720 * hu + 180 * smooth(hu);
+          frontHead.setAttribute("transform", "translate(0," + f(-lift) + ") rotate(" + f(spin) + " " + f(hx) + " " + f(hy) + ")");
+        } else {
+          var la = t - tLand, bounce = la < 0.2 ? -6 * Math.sin((Math.PI * la) / 0.2) : 0;
+          frontHead.setAttribute("transform", "translate(0," + f(bounce - 3) + ") rotate(180 " + f(hx) + " " + f(hy) + ")");
+        }
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

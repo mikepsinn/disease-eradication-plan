@@ -1,0 +1,71 @@
+<template id="25-percent-by-2033-template">
+  <!-- 25-percent-by-2033 · collage short (KIT.collage). A brass gauge, its needle at 11.5. "twenty-five": 25% is stamped
+       at the red zone; "thirty-three.": 2033 slams into the window, the needle swings into the red, the gauge rattles.
+       "Soviet": a General drops in on a string and the needle falls back; "collapsed": he swaps to a USSR headstone and
+       a 15% tag hangs on the gauge. "technology,": a steam calculator rises and cranks itself; "parasitic": a tiny
+       tree of war papers pokes up; "plan.": the binder thumps down and is stamped PLAN; "terrible": TERRIBLE; "one.":
+       it stands proud, the crank falls off. no-plan starts on this end state. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="25-percent-by-2033" data-width="1920" data-height="1080" data-start="0" data-duration="19.384">
+    <div id="25-percent-by-2033-weave"></div>
+    <div id="25-percent-by-2033-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    Object.assign(KIT.collage.SIZES, { gauge: [411, 474], needle: [81, 401], crank: [400, 234], headstone: [358, 436], machine: [556, 499], binder: [421, 432], sprout: [509, 465] });
+    var V = KIT.V, K = V ? 1.4 : 1.35, GX = V ? 540 : 960, GY = 360, SY = V ? 1000 : 890;
+    var HX = 150, BX = 400, MX = V ? 700 : 650, SX = V ? 960 : 880;
+    var HS = V ? 0.85 : 0.95, BS = V ? 0.66 : 0.68, MS = V ? 0.56 : 0.62, SS = V ? 0.22 : 0.26;
+    var crank = [];
+    for (var i = 0; i < 20; i++) crank.push({ on: "technology,", offset: 0.7 + i * 0.24, do: "hinge", who: "crank", angle: 85 });
+    KIT.collage({
+      id: "25-percent-by-2033", seed: 321,
+      cast: {
+        gauge: { art: "gauge", x: GX, y: GY, anchor: [205, 209], pivot: [205, 209], scale: K },
+        needle: { art: "needle", x: GX, y: GY, anchor: [39, 360], pivot: [39, 360], scale: 0.42 * K },
+        gen: { art: "general", x: HX, y: SY, anchor: "bottom", scale: V ? 0.5 : 0.6, faces: "left" },
+        stone: { art: "headstone", x: HX, y: SY, anchor: "bottom", scale: HS, hidden: true },
+        machine: { art: "machine", x: MX, y: SY, anchor: "bottom", scale: MS },
+        // the crank's square end (art 385, 40) goes in the socket on the machine's side (art 504, 309)
+        crank: { art: "crank", x: MX + (504 - 278) * MS, y: SY + (309 - 499) * MS, anchor: [385, 40], pivot: [385, 40], scale: 0.8 * MS },
+        sprout: { art: "sprout", x: SX, y: SY, anchor: "bottom", scale: SS },
+        binder: { art: "binder", x: BX, y: SY, anchor: "bottom", scale: BS },
+      },
+      beats: [
+        { at: -0.3, do: "hinge", who: "needle", angle: -29, frames: 1 },
+        { at: 0.05, do: "slideIn", who: ["gauge", "needle"], from: "bottom", dist: 1000, over: 18 },
+        { on: "twenty-five", do: "stamp", id: "pct", text: "25%", x: GX + (V ? 345 : 330), y: GY - (V ? 120 : 20), size: 54, tilt: 8, from: 2 },
+        { on: "twenty-five", do: "shiver", who: ["gauge", "needle"], dur: 0.4, amp: 5, rot: 1.5 },
+        { on: "thirty-three.", do: "banner", id: "year", text: "2033", x: GX, y: GY + 135 * K, size: 90, pad: 40, lineHeight: 1, width: 300, spacing: 2, color: "ink", tilt: -3 },
+        { on: "thirty-three.", offset: 0.1, do: "hinge", who: "needle", angle: 129, frames: 5 },
+        { on: "thirty-three.", offset: 0.5, do: "boom", shake: 9, flash: 0.12 },
+        { on: "thirty-three.", offset: 0.5, do: "shiver", who: ["gauge", "needle"], dur: 0.7, amp: 7, rot: 2 },
+        { on: "Soviet", offset: -0.05, do: "drop", who: "year", dist: 900, spin: -22, dur: 0.5 },
+        { on: "Soviet", offset: -0.05, do: "hide", who: "pct" },
+        { on: "Soviet", offset: -0.05, do: "hinge", who: "needle", angle: -129, frames: 4 },
+        { on: "Soviet", offset: -0.1, do: "slideIn", who: "gen", from: "top", over: 40, tilt: 3 },
+        { on: "collapsed", offset: 0.1, do: "swap", who: "gen", to: "stone" },
+        { on: "collapsed", offset: 0.1, do: "stamp", id: "ussr", text: "USSR", x: HX, y: SY - 250 * HS, size: V ? 44 : 50, tilt: -4, from: 2 },
+        { on: "fifteen", do: "tag", who: "gauge", text: "15%", x: GX - (V ? 330 : 390), y: GY - (V ? 260 : 250), w: V ? 260 : 300, h: V ? 130 : 150, knot: [67, 71] },
+        { on: "technology,", do: "slideIn", who: ["machine", "crank"], from: "bottom", dist: 700, over: 14 },
+        { on: "technology,", offset: 0.6, do: "shiver", who: ["machine", "crank"], dur: 5, amp: 2, rot: 0.6 },
+      ].concat(crank, [
+        { on: "parasitic", do: "pop", who: "sprout", squash: true },
+        { on: "plan.", do: "stamp", who: "binder" },
+        { on: "plan.", offset: 0.2, do: "stamp", id: "plan", text: "PLAN", x: BX, y: SY - 264 * BS, size: V ? 34 : 30, tilt: -2, from: 1.8 },
+        { on: "terrible", do: "banner", id: "terrible", text: "TERRIBLE", x: BX + 20, y: SY - 110 * BS, size: V ? 40 : 36, width: V ? 250 : 230, pad: 26, lineHeight: 1.1, tilt: 14, from: 2 },
+        { on: "one.", do: "hop", who: "binder", height: 60 },
+        { on: "one.", offset: 0.05, do: "drop", who: "crank", dist: 700, drift: -80, spin: 200, dur: 0.7 },
+      ]),
+    });
+  </script>
+</template>

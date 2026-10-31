@@ -1,0 +1,569 @@
+<template id="without-with-papers-template">
+  <!-- without-with-papers · style "atomic" (cartoon-style-bible.md): ONE long street on a plain field, and the camera
+       travels along it left to right, one station per line, then whips back to the start.
+       The left half has no papers. "Without": a patient in a dressing gown sits on the bench outside the hospital, a
+       thermometer in his mouth, his chest light blinking red; "Save lives": he looks hopefully at the door; "many": the
+       door sign flips to CLOSED; after "papers).": he x-rays into a skeleton, still sitting, grinning, thermometer in
+       his teeth. "Cure": the lab, the Scientist by her bubbling flask; "very many papers": a cobweb grows between her
+       and the flask, a spider lowers on its thread, the bubbling stops; after "papers).": she x-rays, clipboard and all.
+       "Feed": a thin hungry human on a bare field, belly growling; "grows": a wheat stalk shoots up by itself in front
+       of him; "free).": he looks into his wallet and a moth flies out; after it he x-rays, wallet still open.
+       "WITH": a flood of war papers runs in from the right and the camera travels with them into the busy half. The
+       Weapons Maker hammers a bomb on his workbench; "giving papers": two papers hop into its slot and it swells; after
+       "this).": it goes off in his face; he stands charred, hard hat on, grinning, and keeps hammering a new bomb.
+       "Start wars": two generals rake toy missiles across a map table at each other; after "wars": tiny mushroom clouds;
+       "more papers": a paper pops out of each cloud like popcorn into their hands. "Destroy": a sweating digger shovels
+       into a hill; after "planet": the dirt cracks and falls off both sides: it is the Earth, with a bite out of its
+       top, molten inside; "profitable": papers sprout from the bite like wheat and the digger grins. After the last
+       "papers).": the camera whips back to the start: three skeletons still grinning, and the wheat (it never stopped
+       growing) is taller than the hospital. -->
+  <style>
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #without-with-papers-weave, #without-with-papers-shake, #without-with-papers-plate, #without-with-papers-film { position: absolute; inset: 0; }
+    #without-with-papers-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="without-with-papers" data-width="1920" data-height="1080" data-start="0" data-duration="28">
+    <div id="without-with-papers-weave">
+      <div id="without-with-papers-shake"><div id="without-with-papers-plate"></div></div>
+      <div id="without-with-papers-flash"></div>
+    </div>
+    <div id="without-with-papers-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "without-with-papers";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var after = function (w, n) { return KIT.after(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth;
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 61);
+
+      // ── The plate, in plate units: feet and bases on y 0, the horizon at y HZ, the sky above it. Stations left to
+      // right: the hospital (x 0) with the patient's bench, the lab (x 1000), the bare field (x 1650); the busy half
+      // starts at BND: the workbench (about x 2900), the map table (TX), the hill (EX). People are drawn at scale S.
+      var S = 1.8, HZ = -250, BND = 2180;
+      var SKY = "#EFE3C4", GROUND = "#C8B07B", WALK = "#E6D6AE", WALK_EDGE = "#B09363";
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      // a person (feet on the ground) at plate x, scale k
+      var place = function (x, k, inner, attrs) { return at(x, -100 * k, k, inner, attrs); };
+      // a person-unit point of a person standing at plate x, scale k, as plate units
+      var toPlate = function (x, k, p) { return [x + k * p[0], -100 * k + k * p[1]]; };
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var legs = function (t, hz) { return Math.floor(t * hz) % 2; };
+      var arc = function (p0, p1, u, h) { return [p0[0] + (p1[0] - p0[0]) * u, p0[1] + (p1[1] - p0[1]) * u - Math.sin(Math.PI * u) * h]; };
+      function rotP(p, c, deg) {
+        var r = (deg * Math.PI) / 180, dx = p[0] - c[0], dy = p[1] - c[1];
+        return [c[0] + dx * Math.cos(r) - dy * Math.sin(r), c[1] + dx * Math.sin(r) + dy * Math.cos(r)];
+      }
+
+      // ── Drawings ──
+      // A walking paper (KIT.money) in a group positioned by the update.
+      function walker(id, kind, k) { return '<g id="' + ID + "-" + id + '" opacity="0"><g transform="scale(' + k + ')">' + KIT.money(kind, 0) + "</g></g>"; }
+      function setLegs(el, l) { el.querySelector(".legs").setAttribute("d", "M-16,24 l" + (-6 + l * 10) + ",22 h-8 M16,24 l" + (6 - l * 10) + ",22 h8"); }
+      // a paper with no legs, centered on (0, 0)
+      function flatBill(k) { return '<g transform="scale(' + k + ')">' + KIT.money("war", 0).replace('class="legs"', 'class="legs" opacity="0"') + "</g>"; }
+      // The moth from the empty wallet (Parts 2, 8): open or shut wings, around (0, 0).
+      function moth(open) {
+        var w = open ? '<path d="M0,-2 L-26,-16 L-22,6 Z M0,-2 L26,-16 L22,6 Z" fill="#B9AE98" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M0,2 L-14,14 L-4,6 Z M0,2 L14,14 L4,6 Z" fill="#9C907A" stroke="' + ink + '" stroke-width="2" stroke-linejoin="round"/>'
+          : '<path d="M0,-2 L-8,-24 L-3,2 Z M0,-2 L8,-24 L3,2 Z" fill="#B9AE98" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>';
+        return '<g class="moth-' + (open ? "open" : "shut") + '">' + w + '<ellipse cx="0" cy="2" rx="4" ry="11" fill="#6B5B45" stroke="' + ink + '" stroke-width="2"/><path d="M-1,-8 q-6,-10 -12,-10 M1,-8 q6,-10 12,-10" fill="none" stroke="' + ink + '" stroke-width="1.6"/></g>';
+      }
+      // A wheat stalk standing on (0, 0), h tall, in plate units (Part 2's money-loop).
+      function stalk(h, lean) {
+        var head = "";
+        for (var k = 0; k < 7; k++) {
+          var y = -h + 10 + k * 11;
+          head += '<ellipse cx="' + f(lean - 7) + '" cy="' + f(y) + '" rx="6" ry="9" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2" transform="rotate(-24 ' + f(lean - 7) + " " + f(y) + ')"/>' +
+            '<ellipse cx="' + f(lean + 7) + '" cy="' + f(y) + '" rx="6" ry="9" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2" transform="rotate(24 ' + f(lean + 7) + " " + f(y) + ')"/>';
+        }
+        return '<path d="M0,0 Q' + f(lean * 0.2) + "," + f(-h * 0.5) + " " + f(lean) + "," + f(-h + 70) + '" fill="none" stroke="#9E7A3C" stroke-width="5" stroke-linecap="round"/>' +
+          '<path d="M0,-40 q-24,-14 -30,-40 q16,10 30,26 M0,-90 q22,-14 26,-40 q-14,12 -26,26" fill="#B89A52" stroke="' + ink + '" stroke-width="2"/>' + head +
+          '<path d="M' + f(lean) + "," + f(-h + 8) + " l-2,-26 M" + f(lean - 4) + "," + f(-h + 16) + " l-10,-22 M" + f(lean + 4) + "," + f(-h + 16) + ' l10,-22" stroke="#9E7A3C" stroke-width="1.8"/>';
+      }
+      // A clipboard held in a hand at (0, 0), in person units (the cast's, for the skeleton, which drops held props).
+      function clipboard() {
+        return '<path d="M-4,-26 H18 V6 H-4 Z" fill="#B98A55" stroke="' + ink + '" stroke-width="2.2"/><rect x="0" y="-22" width="14" height="24" fill="' + C.paper + '"/>' +
+          '<path d="M2,-16 H12 M2,-11 H12 M2,-6 H9" stroke="' + ink + '" stroke-width="1.2"/>';
+      }
+      // A wallet held in both hands, centered on (0, 0), person units: shut, or open with its empty inside showing.
+      function wallet(open) {
+        if (!open) return '<path d="M-14,-9 H14 V9 H-14 Z" fill="#7A4A2A" stroke="' + ink + '" stroke-width="2.2"/><path d="M-11,-5 H11" stroke="#A86B42" stroke-width="1.4"/>';
+        return '<path d="M0,-9 L-22,-12 L-22,8 L0,9 Z" fill="#7A4A2A" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="round"/>' +
+          '<path d="M0,-9 L22,-12 L22,8 L0,9 Z" fill="#7A4A2A" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="round"/>' +
+          '<path d="M-3,-7 L-19,-9 L-19,5 L-3,6 Z M3,-7 L19,-9 L19,5 L3,6 Z" fill="#2A1A10"/>';
+      }
+      // The thermometer, in the face's units (facing +x): from the mouth out and up, a red bulb at the tip.
+      var THERMO = '<path d="M7,13 L29,5" stroke="' + ink + '" stroke-width="5.4" stroke-linecap="round"/><path d="M7,13 L29,5" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round"/>' +
+        '<path d="M8,12.6 L15,10.1" stroke="' + C.war + '" stroke-width="1.6" stroke-linecap="round"/>';
+      var THERMO_BONES = '<g transform="translate(-2,1)">' + THERMO + "</g>";
+      // A plain wooden bench, its seat top at y SEAT, centered on x 0, in plate units: the back (behind the sitter)
+      // and the seat (also behind; the thighs rest on it).
+      var SEAT = -50;
+      function benchBack() {
+        return '<path d="M-118,' + SEAT + " V-196 M118," + SEAT + ' V-196" stroke="' + ink + '" stroke-width="16"/><path d="M-118,' + SEAT + " V-196 M118," + SEAT + ' V-196" stroke="' + C.rust + '" stroke-width="9"/>' +
+          '<rect x="-140" y="-196" width="280" height="24" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5"/><rect x="-140" y="-150" width="280" height="24" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5"/>';
+      }
+      function benchSeat() {
+        return '<path d="M-118,' + (SEAT + 12) + " V0 M118," + (SEAT + 12) + ' V0" stroke="' + ink + '" stroke-width="16"/><path d="M-118,' + (SEAT + 12) + " V0 M118," + (SEAT + 12) + ' V0" stroke="' + C.rust + '" stroke-width="9"/>' +
+          '<rect x="-148" y="' + SEAT + '" width="296" height="18" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="5"/>';
+      }
+      // A general's peaked cap (face units, facing +x) and a row of medals (person units, around (0, 0)).
+      var CAP = '<path d="M-18,-16 L-16,-31 L-4,-37 L15,-35 L20,-19 Z" fill="#6E7045" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="round"/>' +
+        '<path d="M-18,-21 L20,-23 L20,-17 L-18,-15 Z" fill="' + ink + '"/><path d="M12,-18 L31,-14 L28,-11 L12,-14 Z" fill="' + ink + '"/><circle cx="7" cy="-29" r="3.2" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="1.2"/>';
+      function medals() {
+        return [[-6, C.war], [1, C.yellow], [8, C.med]].map(function (m) {
+          return '<path d="M' + (m[0] - 2.5) + ',-6 h5 v5 h-5 Z" fill="' + m[1] + '" stroke="' + ink + '" stroke-width="0.8"/><circle cx="' + m[0] + '" cy="2" r="2.6" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="0.9"/>';
+        }).join("");
+      }
+      // The toy missile on the map (the Weapons Maker's baby missile, small), pointing +x, around (0, 0).
+      function missile() {
+        return '<g transform="translate(-2,0)"><path d="M-34,-7 L14,-7 L30,0 L14,7 L-34,7 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<path d="M-34,-7 L-44,-17 L-40,-7 Z M-34,7 L-44,17 L-40,7 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+          '<path d="M14,-7 L30,0 L14,7 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<path d="M-4,2 Q2,6 8,2" fill="none" stroke="' + ink + '" stroke-width="1.8" stroke-linecap="round"/><circle cx="-2" cy="-2.5" r="1.6" fill="' + ink + '"/><circle cx="6" cy="-2.5" r="1.6" fill="' + ink + '"/></g>';
+      }
+      // A white grin over a charred face, in person units at the rig's mouth, facing dir.
+      function charGrin(R, dir) {
+        var m = R.mouth, x0 = m[0] + 4 * dir * -1, x1 = m[0] + 13 * dir, y = m[1];
+        return '<path d="M' + f(x0) + "," + f(y - 1.5) + " Q" + f((x0 + x1) / 2) + "," + f(y + 9) + " " + f(x1) + "," + f(y - 3) + ' Z" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.3" stroke-linejoin="round"/>' +
+          '<path d="M' + f(x0 + (x1 - x0) * 0.08) + "," + f(y + 0.8) + " L" + f(x1 - (x1 - x0) * 0.08) + "," + f(y + 0.2) + '" stroke="' + ink + '" stroke-width="0.9"/>';
+      }
+
+      // ── The left half: positions ──
+      var HX = 0, HS = 1.55, PX = -430, BX = PX - 20;
+      var PAT = { plain: true, tone: 2, outfit: "shirt", colorHex: C.cyan, hair: 2, look: "right", mood: "sad", light: "red",
+        arms: [[38, 84], [28, 78]], build: { legPose: [[86, 8], [92, 12]] } };
+      var LX = 1010, LS = 1.7, SX = 640;
+      var SCI = KIT.castOpts("scientist", { look: "right", mood: "eager", arms: [[-12, -4], [32, 128]], holdR: "clipboard" });
+      var FX = 1600, WX = 1760;
+      var HUN = { tone: 0, outfit: "shirt", color: 2, kind: "twig", hair: 0, look: "right", mood: "sad", arms: [[22, 62], [14, 52]], build: { legs: 1.12, neck: 1.5, tw: 0.78, hs: 0.95 } };
+      var RP = KIT.rig(PAT), RS = KIT.rig(SCI), RH = KIT.rig(HUN);
+
+      // ── The right half: positions. The workbench and the bomb are placed where the hammer comes down. ──
+      var WMX = 3100;
+      var WMO = KIT.castOpts("weaponsMaker", { look: "left", mood: "grin", arms: [[-96, -166], [-34, -70]] });
+      var RW = KIT.rig(WMO), SH = RW.shoulder[0], HD = RW.hand[0];
+      // the hammer in his fist (person units, drawn into the .arm-l group, so it turns with the arm): the handle runs
+      // forward (-x) from the fist, the head stands across its end
+      var HAM_L = 46, HAM = '<g class="hammer"><path d="M' + f(HD[0] + 6) + "," + f(HD[1] + 2) + " H" + f(HD[0] - HAM_L) + '" stroke="' + ink + '" stroke-width="8" stroke-linecap="round"/>' +
+        '<path d="M' + f(HD[0] + 6) + "," + f(HD[1] + 2) + " H" + f(HD[0] - HAM_L) + '" stroke="' + C.tan + '" stroke-width="4.4" stroke-linecap="round"/>' +
+        '<rect x="' + f(HD[0] - HAM_L - 9) + '" y="' + f(HD[1] - 13) + '" width="18" height="30" rx="2" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.6"/>' +
+        '<path d="M' + f(HD[0] - HAM_L - 5) + "," + f(HD[1] - 9) + " V" + f(HD[1] + 12) + '" stroke="' + C.peri + '" stroke-width="2"/></g>';
+      var HIT = [HD[0] - HAM_L, HD[1] + 17]; // the hammer face (person units, arm at rest = the strike)
+      var hitP = toPlate(WMX, S, HIT), BK = 1.35;
+      var BOMB = [hitP[0], hitP[1] + 84 * BK]; // the bomb's base (its ball's top meets the hammer's face)
+      var BENCH_Y = BOMB[1], BENCH = [BOMB[0] - 270, BOMB[0] + 190];
+      var TX = 4250, GLX = TX - 380, GRX = TX + 380, MAPW = 560, MAP_Y = -190, MAP_K = 0.4;
+      var GEN_L = { tone: 1, outfit: "suit", colorHex: "#6E7045", hair: 0, seed: 11, look: "right", mood: "grin", arms: [[44, 82], [56, 92]] };
+      var GEN_R = { tone: 3, outfit: "suit", colorHex: "#6E7045", hair: 0, seed: 12, look: "left", mood: "grin", arms: [[-56, -92], [-44, -82]] };
+      var RGL = KIT.rig(GEN_L), RGR = KIT.rig(GEN_R);
+      var EX = 5500, GR = 230, HW = 520, PEAK = 545, DIGX = EX + 150;
+      var hillY = function (x) { var u = (x - EX) / HW; return u <= -1 || u >= 1 ? 0 : -PEAK * Math.pow(1 - u * u, 0.75); };
+      var globeY = function (x) { var d = x - EX; return -GR - Math.sqrt(Math.max(0, GR * GR - d * d)); };
+      var DIG = { tone: 3, outfit: "overalls", colorHex: "#4F6A8A", hair: 0, seed: 21, look: "left", mood: "worried", arms: [[-34, -64], [-14, -46]] };
+      var RD = KIT.rig(DIG);
+
+      // ── The camera's views: [plate x, plate y, scale] (KIT.camera). Close views keep the feet above y 900 (16:9) and
+      // y 1450 (9:16); "end" is the whole left half, for the whip back.
+      var VIEW = V
+        ? { hosp: [-170, -430, 0.95], door: [-215, -250, 1.85], lab: [800, -260, 1.7], field: [1675, -265, 1.9], bench: [BOMB[0] + 135, -250, 1.75],
+            boom: [BOMB[0] + 110, -330, 1.4], table: [TX, -300, 1.15], dig: [EX + 70, -650, 1.45], earth: [EX, -420, 1.0], end: [665, -600, 0.4] }
+        : { hosp: [-130, -300, 1.0], door: [-215, -205, 1.75], lab: [840, -225, 1.55], field: [1660, -205, 1.7], bench: [BOMB[0] + 140, -210, 1.6],
+            boom: [BOMB[0] + 110, -270, 1.3], table: [TX, -250, 1.4], dig: [EX + 70, -560, 1.4], earth: [EX, -330, 1.05], end: [665, -340, 0.74] };
+
+      // ── Assemble the plate ──
+      var span = [-2600, 7600];
+      var field = '<rect x="' + span[0] + '" y="-3200" width="' + (span[1] - span[0]) + '" height="' + (3200 + HZ) + '" fill="' + SKY + '"/>' +
+        '<rect x="' + span[0] + '" y="' + HZ + '" width="' + (span[1] - span[0]) + '" height="2000" fill="' + GROUND + '"/>' +
+        '<path d="M' + span[0] + "," + HZ + " H" + span[1] + '" stroke="#A88F5C" stroke-width="4"/>' +
+        '<rect x="' + span[0] + '" y="-14" width="' + (span[1] - span[0]) + '" height="74" fill="' + WALK + '"/>' +
+        '<path d="M' + span[0] + ",-14 H" + span[1] + " M" + span[0] + ",60 H" + span[1] + '" stroke="' + WALK_EDGE + '" stroke-width="5"/>' +
+        '<path d="M' + span[0] + ",23 H" + span[1] + '" stroke="#CDB98A" stroke-width="4" stroke-dasharray="40 60"/>';
+
+      // the hospital and the patient on his bench
+      var patSad = KIT.person(PAT).replace("<!--face-end-->", THERMO + "<!--face-end-->");
+      var patEager = KIT.person(copy(PAT, { mood: "eager" })).replace("<!--face-end-->", THERMO + "<!--face-end-->");
+      var patBones = KIT.person(copy(PAT, { skeleton: true, plain: true })).replace("<!--face-end-->", THERMO_BONES + "<!--face-end-->");
+      var hosp = at(HX, 0, HS, KIT.props.hospital({}), ' id="' + ID + '-hosp"') +
+        at(BX, 0, 1, benchBack()) + at(BX, 0, 1, benchSeat()) +
+        place(PX, S, '<g id="' + ID + '-pat-alive"><g id="' + ID + '-pat-sad">' + patSad + '</g><g id="' + ID + '-pat-eager" opacity="0">' + patEager + "</g></g>" +
+          '<g id="' + ID + '-pat-bones" opacity="0">' + patBones + "</g>");
+
+      // the lab and the Scientist; the cobweb between her and the flask, and the spider on its thread
+      var sciBones = KIT.person(copy(SCI, { skeleton: true })) + '<g transform="translate(' + f(RS.hand[1][0] + 2) + "," + f(RS.hand[1][1] + 6) + ')">' + clipboard() + "</g>";
+      var lab = at(LX, 0, LS, KIT.props.lab({}), ' id="' + ID + '-lab"') +
+        place(SX, S, '<g id="' + ID + '-sci-alive">' + KIT.person(SCI) + '</g><g id="' + ID + '-sci-bones" opacity="0">' + sciBones + "</g>");
+      var FLASK_TOP = [LX + LS * -40, -LS * 193], FLASK_MID = [LX + LS * -40, -LS * 140];
+      var sciHead = toPlate(SX, S, RS.top), sciHand = toPlate(SX, S, RS.hand[1]);
+      var WEBC = [(sciHead[0] + FLASK_TOP[0]) / 2 + 10, (sciHead[1] + FLASK_TOP[1]) / 2 + 30];
+      var WEBA = [[sciHead[0] + 18, sciHead[1] + 10], [FLASK_TOP[0] - 6, FLASK_TOP[1] + 4], [FLASK_MID[0] - 30, FLASK_MID[1] + 20], [sciHand[0] + 14, sciHand[1] - 10], [WEBC[0] - 10, -560]];
+      var web = "";
+      WEBA.forEach(function (a) { web += "M" + f(WEBC[0]) + "," + f(WEBC[1]) + " L" + f(a[0]) + "," + f(a[1]) + " "; });
+      [0.28, 0.52, 0.76].forEach(function (r) {
+        web += "M" + WEBA.map(function (a) { return f(WEBC[0] + (a[0] - WEBC[0]) * r) + "," + f(WEBC[1] + (a[1] - WEBC[1]) * r); }).join(" L") + " ";
+      });
+      var webSvg = '<g id="' + ID + '-web" opacity="0"><path d="' + web + '" fill="none" stroke="' + ink + '" stroke-width="6" opacity="0.4"/><path d="' + web + '" fill="none" stroke="#FBF8EE" stroke-width="3.4"/></g>';
+      var SPIDER_X = WEBC[0] + 40;
+      var spider = '<g id="' + ID + '-spider"><path id="' + ID + '-thread" d="" stroke="#FBF8EE" stroke-width="2"/><g id="' + ID + '-spider-b">' +
+        '<path d="M-6,-2 l-14,-10 l-6,8 M-6,2 l-16,0 l-4,10 M-6,5 l-12,10 l0,8 M6,-2 l14,-10 l6,8 M6,2 l16,0 l4,10 M6,5 l12,10 l0,8" fill="none" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+        '<ellipse cx="0" cy="2" rx="10" ry="12" fill="' + ink + '"/><circle cx="0" cy="-10" r="6" fill="' + ink + '"/><circle cx="-2.4" cy="-11" r="1.8" fill="#FFFFFF"/><circle cx="2.4" cy="-11" r="1.8" fill="#FFFFFF"/></g></g>';
+
+      // the bare field: the hungry human with his wallet, the wheat that grows by itself, the moth
+      var hMid = [(RH.hand[0][0] + RH.hand[1][0]) / 2, (RH.hand[0][1] + RH.hand[1][1]) / 2 + 2];
+      var hunAlive = KIT.person(HUN) + '<g transform="translate(' + f(hMid[0]) + "," + f(hMid[1]) + ')"><g id="' + ID + '-wal-shut">' + wallet(false) + '</g><g id="' + ID + '-wal-open" opacity="0">' + wallet(true) + "</g></g>";
+      var hunBones = KIT.person(copy(HUN, { skeleton: true })) + '<g transform="translate(' + f(hMid[0]) + "," + f(hMid[1]) + ')">' + wallet(true) + "</g>";
+      var BELLY = toPlate(FX, S, [RH.hand[0][0] + 6, RH.hipY - 20]);
+      var growl = '<g id="' + ID + '-growl" opacity="0">' + [0, 1, 2].map(function (i) {
+        return '<path d="M' + f(BELLY[0] + 40 + i * 6) + "," + f(BELLY[1] - 26 + i * 22) + " l12,-6 l0,10 l12,-6 l0,10 l12,-6" + '" fill="none" stroke="' + ink + '" stroke-width="3.6" stroke-linejoin="miter"/>';
+      }).join("") + "</g>";
+      var WHEAT = [[WX, 200, -4], [WX + 34, 170, 8], [WX - 30, 150, -10]];
+      var wheat = WHEAT.map(function (w, i) { return '<g transform="translate(' + w[0] + ',0)"><g id="' + ID + "-wheat" + i + '" transform="scale(0)">' + stalk(w[1], w[2]) + "</g></g>"; }).join("");
+      var hun = place(FX, S, '<g id="' + ID + '-hun-alive">' + hunAlive + '</g><g id="' + ID + '-hun-bones" opacity="0">' + hunBones + "</g>");
+      var mothSvg = '<g id="' + ID + '-moth" opacity="0">' + moth(true) + moth(false) + "</g>";
+
+      // the workbench, the bomb with its paper slot, the Weapons Maker (and his charred self), the blast
+      var benchW = '<rect x="' + f(BENCH[0]) + '" y="' + f(BENCH_Y) + '" width="' + f(BENCH[1] - BENCH[0]) + '" height="30" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<rect x="' + f(BENCH[0] + 24) + '" y="' + f(BENCH_Y + 30) + '" width="26" height="' + f(-BENCH_Y - 30) + '" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<rect x="' + f(BENCH[1] - 50) + '" y="' + f(BENCH_Y + 30) + '" width="26" height="' + f(-BENCH_Y - 30) + '" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<rect x="' + f(BENCH[0] + 40) + '" y="' + f(BENCH_Y * 0.35 - 8) + '" width="' + f(BENCH[1] - BENCH[0] - 80) + '" height="16" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>';
+      var SLOT = '<g class="slot"><path d="M-20,-78 L10,-90 L14,-80 L-16,-68 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="round"/><path d="M-12,-75 L7,-83" stroke="#000" stroke-width="3.4" stroke-linecap="round"/></g>';
+      var bombSvg = at(BOMB[0], BOMB[1], BK, KIT.props.bomb({ face: "grin" }), ' id="' + ID + '-bomb"');
+      var bomb2Svg = at(BOMB[0], BOMB[1], BK, '<g id="' + ID + '-bomb2-in">' + KIT.props.bomb({ face: "grin" }) + "</g>", ' id="' + ID + '-bomb2" opacity="0"');
+      var WMC = copy(WMO, { charred: true, keepHat: true });
+      var wm = place(WMX, S, '<g id="' + ID + '-wm-alive">' + KIT.person(WMO) + '</g><g id="' + ID + '-wm-char" opacity="0">' + KIT.person(WMC) + charGrin(KIT.rig(WMC), -1) + "</g>");
+      var NUKE_K = 0.5, nukeW = at(BOMB[0], BOMB[1], NUKE_K, KIT.nuke(), ' id="' + ID + '-nuke"');
+
+      // the map table and the two generals with their rakes; the toy missiles and their tiny clouds
+      var table = '<path d="M' + f(TX - MAPW / 2 - 40) + "," + f(MAP_Y + 6) + " H" + f(TX + MAPW / 2 + 40) + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<rect x="' + f(TX - MAPW / 2 - 40) + '" y="' + f(MAP_Y + 4) + '" width="' + f(MAPW + 80) + '" height="34" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5"/>' +
+        [TX - MAPW / 2 - 10, TX + MAPW / 2 - 16].map(function (x) { return '<rect x="' + f(x) + '" y="' + f(MAP_Y + 38) + '" width="26" height="' + f(-MAP_Y - 38) + '" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>'; }).join("");
+      var mapTop = '<path d="M' + f(TX - MAPW / 2 - 40) + "," + f(MAP_Y + 6) + " L" + f(TX - MAPW / 2 - 10) + "," + f(MAP_Y - MAPW * 0.62 * MAP_K - 30) + " H" + f(TX + MAPW / 2 + 10) + " L" + f(TX + MAPW / 2 + 40) + "," + f(MAP_Y + 6) + ' Z" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+        '<g transform="translate(' + TX + "," + f(MAP_Y) + ") scale(1," + MAP_K + ')">' + KIT.props.worldMap({ w: MAPW }) + "</g>";
+      var genL = KIT.person(GEN_L).replace("<!--face-end-->", CAP + "<!--face-end-->"), genL2 = KIT.person(copy(GEN_L, { mood: "greedy" })).replace("<!--face-end-->", CAP + "<!--face-end-->");
+      var genR = KIT.person(GEN_R).replace("<!--face-end-->", CAP + "<!--face-end-->"), genR2 = KIT.person(copy(GEN_R, { mood: "greedy" })).replace("<!--face-end-->", CAP + "<!--face-end-->");
+      var gens = place(GLX, S, '<g id="' + ID + '-gl1">' + genL + '</g><g id="' + ID + '-gl2" opacity="0">' + genL2 + "</g>", ' id="' + ID + '-gl"') +
+        place(GRX, S, '<g id="' + ID + '-gr1">' + genR + '</g><g id="' + ID + '-gr2" opacity="0">' + genR2 + "</g>", ' id="' + ID + '-gr"');
+      var MY = MAP_Y - MAPW * 0.62 * MAP_K * 0.5 - 6; // the middle of the map's depth
+      var TOY = [{ x0: TX - 215, x1: TX - 62, y: MY + 14, dir: 1 }, { x0: TX + 215, x1: TX + 62, y: MY - 14, dir: -1 }];
+      var toys = TOY.map(function (m, i) { return '<g id="' + ID + "-toy" + i + '"><g transform="scale(' + 1.25 * m.dir + ',1.25)">' + missile() + "</g></g>"; }).join("");
+      var rakes = [0, 1].map(function (i) { return '<g id="' + ID + "-rake" + i + '"><path class="rk-o" d="" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/><path class="rk-i" d="" fill="none" stroke="' + C.tan + '" stroke-width="4.6" stroke-linecap="round"/></g>'; }).join("");
+      var CLOUD_K = 0.2, clouds = TOY.map(function (m, i) { return at(m.x1 + 4 * m.dir, m.y + 10, CLOUD_K, KIT.nuke(), ' id="' + ID + "-cloud" + i + '"'); }).join("");
+      var pops = [0, 1].map(function (i) { return '<g id="' + ID + "-pop" + i + '" opacity="0">' + flatBill(0.62) + "</g>"; }).join("");
+
+      // the hill: the Earth (bitten, molten inside) under two halves of dirt that crack apart; the digger; the sprouts
+      var biteC = [[-92, -GR * 2 + 10, 64], [0, -GR * 2 - 2, 74], [92, -GR * 2 + 10, 64]];
+      var gid = ID + "-gclip", biteCircles = biteC.map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '"/>'; }).join("");
+      var bite = '<defs><clipPath id="' + gid + '"><circle cx="0" cy="' + -GR + '" r="' + (GR - 3) + '"/></clipPath></defs>' +
+        '<g fill="' + SKY + '">' + biteCircles + "</g>" +
+        '<g clip-path="url(#' + gid + ')"><g fill="' + C.orange + '" stroke="' + ink + '" stroke-width="6">' + biteCircles + "</g>" +
+        '<g fill="' + C.orange + '">' + biteCircles + "</g>" +
+        '<ellipse cx="0" cy="' + (-GR * 2 + 40) + '" rx="120" ry="34" fill="' + C.yellow + '"/><ellipse cx="0" cy="' + (-GR * 2 + 44) + '" rx="62" ry="16" fill="#FFF3C8"/>' +
+        '<circle cx="-70" cy="' + (-GR * 2 + 52) + '" r="8" fill="' + C.yellow + '" stroke="' + C.rust + '" stroke-width="2"/><circle cx="56" cy="' + (-GR * 2 + 56) + '" r="6" fill="' + C.yellow + '" stroke="' + C.rust + '" stroke-width="2"/>' +
+        '<path d="M-40,' + (-GR * 2 + 64) + " l-14,30 l10,10 M48," + (-GR * 2 + 68) + ' l10,26 l-8,12" fill="none" stroke="' + C.rust + '" stroke-width="3"/></g>';
+      var globe = at(EX, 0, 1, KIT.props.earthGlobe({ r: GR }) + bite);
+      var hillPts = [];
+      for (var hx = -HW; hx <= HW + 0.1; hx += 20) hillPts.push([hx, hillY(EX + hx)]);
+      var CRACK = [[0, -PEAK], [-20, -450], [16, -350], [-14, -250], [18, -150], [-10, -60], [0, 0]];
+      var halfPts = function (side) {
+        var top = hillPts.filter(function (p) { return side < 0 ? p[0] <= 0 : p[0] >= 0; });
+        var crack = CRACK.slice();
+        return side < 0 ? top.concat(crack.slice(1)) : crack.slice().reverse().concat(top.slice(1));
+      };
+      var ptsD = function (pts) { return "M" + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + " Z"; };
+      var specks = "", sr = KIT.rng(77);
+      for (var si = 0; si < 26; si++) {
+        var sx2 = (sr() * 2 - 1) * HW * 0.85, sy2 = hillY(EX + sx2) * (0.15 + sr() * 0.75);
+        specks += '<ellipse cx="' + f(sx2) + '" cy="' + f(sy2) + '" rx="' + f(5 + sr() * 7) + '" ry="' + f(3 + sr() * 4) + '" fill="#8C6440" opacity="0.55"/>';
+      }
+      var halfSvg = function (side) {
+        var pts = halfPts(side), cid = ID + "-hclip" + (side < 0 ? "l" : "r");
+        return '<g id="' + ID + "-half" + (side < 0 ? "L" : "R") + '"><defs><clipPath id="' + cid + '"><path d="' + ptsD(pts) + '"/></clipPath></defs>' +
+          '<path d="' + ptsD(pts) + '" fill="' + C.tan + '" stroke="' + C.tan + '" stroke-width="3.5"/>' +
+          '<g clip-path="url(#' + cid + ')">' + specks + '<path d="M' + -HW + ",-12 H" + HW + '" stroke="#8C6440" stroke-width="10" opacity="0.4"/></g>' +
+          '<path d="M' + hillPts.filter(function (q) { return side < 0 ? q[0] <= 0 : q[0] >= 0; }).map(function (q) { return f(q[0]) + "," + f(q[1]); }).join(" L") + '" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path class="hedge" d="M' + CRACK.map(function (q) { return f(q[0]) + "," + f(q[1]); }).join(" L") + '" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter" opacity="0"/></g>';
+      };
+      var crackSvg = '<path id="' + ID + '-crack" d="' + "M" + CRACK.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + '" fill="none" stroke="' + ink + '" stroke-width="6" stroke-linejoin="miter" opacity="0"/>';
+      var crater = '<g id="' + ID + '-crater"><ellipse cx="-40" cy="' + f(-PEAK + 18) + '" rx="70" ry="20" fill="#5E4128" stroke="' + ink + '" stroke-width="4"/><ellipse cx="-40" cy="' + f(-PEAK + 14) + '" rx="50" ry="11" fill="#3E2A1A"/></g>';
+      var hill = at(EX, 0, 1, halfSvg(-1) + halfSvg(1) + crackSvg + crater);
+      var clods = [0, 1, 2, 3].map(function (i) { return '<path id="' + ID + "-clod" + i + '" d="M-9,-2 L-3,-9 L8,-6 L10,3 L1,8 L-8,5 Z" fill="#7A5634" stroke="' + ink + '" stroke-width="2.4" opacity="0"/>'; }).join("");
+      // the digger's shovel, in his person units: from above his hands down past them to the blade
+      var DH = [(RD.hand[0][0] + RD.hand[1][0]) / 2, (RD.hand[0][1] + RD.hand[1][1]) / 2];
+      var SHV_TOP = [DH[0] + 26, DH[1] - 34], SHV_END = [DH[0] - 34, DH[1] + 60];
+      var shovel = '<path d="M' + f(SHV_TOP[0]) + "," + f(SHV_TOP[1]) + " L" + f(SHV_END[0]) + "," + f(SHV_END[1]) + '" stroke="' + ink + '" stroke-width="6" stroke-linecap="round"/>' +
+        '<path d="M' + f(SHV_TOP[0]) + "," + f(SHV_TOP[1]) + " L" + f(SHV_END[0]) + "," + f(SHV_END[1]) + '" stroke="' + C.tan + '" stroke-width="3" stroke-linecap="round"/>' +
+        '<g transform="translate(' + f(SHV_END[0]) + "," + f(SHV_END[1]) + ') rotate(32)"><path d="M-9,-2 L9,-2 L8,14 L0,22 L-8,14 Z" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/></g>';
+      var sweat = '<g class="sweat">' + [[10, -20], [-12, -14]].map(function (p) { return '<path d="M' + p[0] + "," + p[1] + ' q-4,7 0,10 q4,-3 0,-10 Z" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="1.4"/>'; }).join("") + "</g>";
+      var digWorried = KIT.person(DIG).replace("<!--face-end-->", sweat + "<!--face-end-->") + shovel;
+      var digGrin = KIT.person(copy(DIG, { mood: "greedy" })) + shovel;
+      var digger = '<g id="' + ID + '-dig"><g id="' + ID + '-dig-in"><g transform="translate(0,' + f(-100 * S) + ") scale(" + S + ')"><g id="' + ID + '-dig1">' + digWorried + '</g><g id="' + ID + '-dig2" opacity="0">' + digGrin + "</g></g></g></g>";
+      var SPROUT = [[-70, 150, -8], [-24, 205, 4], [24, 180, -4], [70, 140, 10], [0, 240, 0]];
+      var sprouts = SPROUT.map(function (s, i) {
+        return '<g transform="translate(' + f(EX + s[0]) + "," + f(-GR * 2 + 40) + ')"><g id="' + ID + "-spr" + i + '" transform="scale(0)">' +
+          '<path d="M0,0 Q' + f(s[2] * 0.4) + "," + f(-s[1] * 0.5) + " " + f(s[2]) + "," + f(-s[1] + 20) + '" fill="none" stroke="' + C.moneyDark + '" stroke-width="5" stroke-linecap="round"/>' +
+          '<path d="M0,-30 q-20,-10 -24,-30 q14,8 24,20 M0,-62 q18,-10 22,-30 q-12,10 -22,20" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<g class="spr-bill" transform="translate(' + f(s[2]) + "," + f(-s[1]) + ') rotate(' + (s[2] * 2) + ')">' + flatBill(0.68) + "</g></g></g>";
+      }).join("");
+
+      // the flood of war papers: each runs in from the right to its own spot in the busy half
+      var SPOTS = [BENCH[0] - 190, BENCH[0] - 70, WMX + 150, WMX + 290, WMX + 430, GLX - 260, GLX - 150, TX - 60, TX + 80, GRX + 170, GRX + 290,
+        EX - HW - 200, EX - HW - 80, EX + HW + 90, EX + HW + 210, WMX - 80];
+      var HOPPERS = [1, 15]; // the papers by the bench that hop into the bomb's slot
+      var flood = SPOTS.map(function (x, i) { return walker("p" + i, "war", 1.3); }).join("");
+
+      var flash = "";
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + GROUND + '"/>' +
+        '<g id="' + ID + '-cam">' + field + hosp + lab + webSvg + spider + wheat + hun + growl + mothSvg +
+        nukeW + benchW + bombSvg + bomb2Svg + wm + table + mapTop + clouds + toys + rakes + gens + pops +
+        globe + sprouts + hill + digger + clods + flood + "</g>");
+
+      var el = function (id) { return q(id); };
+      var cam = el("cam");
+
+      // ── Cues ──
+      var tSave = cue("Save"), tMany = cue("many"), tX1 = after("papers", 2), tCure = cue("Cure"), tVery = cue("very"), tX2 = after("papers", 3);
+      var tFeed = cue("Feed"), tHungry = cue("hungry"), tReq3 = cue("requires", 3), tGrows = cue("grows"), tFree = cue("free)."), tX3 = after("free).");
+      var tWith = cue("WITH"), tBuild = cue("Build"), tGiving = cue("giving"), tBoom = after("this", 1), tStart = cue("Start"), tWars = after("wars");
+      var tMore = cue("more"), tDestroy = cue("Destroy"), tPlanet = after("planet"), tProfit = cue("profitable"), tLastEnd = KIT.cueEnd(ID, "papers", 8), tWhip = tLastEnd + 0.02;
+
+      // ── The camera: keys [time, view, extra scale]; it eases from key to key and drifts slowly in between.
+      var KEYS = [[0, "hosp", 1], [tSave - 0.25, "hosp", 1.03], [tSave + 0.35, "door", 1], [tCure + 0.05, "door", 1.04], [tCure + 0.7, "lab", 1],
+        [tX2 + 0.5, "lab", 1.04], [tX2 + 1.2, "field", 1], [tWith + 0.05, "field", 1.04], [tWith + 1.75, "bench", 1], [tBoom - 0.04, "bench", 1.04],
+        [tBoom + 0.08, "boom", 1], [tStart + 0.7, "boom", 1.03], [tWars - 0.12, "table", 1], [tMore + 0.75, "table", 1.04], [tDestroy - 0.15, "dig", 1],
+        [tPlanet - 0.05, "dig", 1.04], [tPlanet + 0.55, "earth", 1], [tWhip, "earth", 1.02], [tWhip + 0.46, "end", 1], [D, "end", 1.006]];
+      var camera = KIT.camera(VIEW, KEYS);
+
+      // ── Elements ──
+      var hospEl = el("hosp"), sign = hospEl.querySelector(".hospital-sign"), signOpen = hospEl.querySelector(".hospital-open"), signClosed = hospEl.querySelector(".hospital-closed");
+      var patLights = Array.prototype.slice.call(el("pat-alive").querySelectorAll(".chest-light"));
+      var patEagerHead = el("pat-eager").querySelector(".head");
+      var labEl = el("lab"), bubbles = Array.prototype.slice.call(labEl.querySelectorAll(".lab-bubble")), labFlame = labEl.querySelector(".lab-flame");
+      var webEl = el("web"), thread = el("thread"), spiderB = el("spider-b");
+      var walShut = el("wal-shut"), walOpen = el("wal-open"), hunHead = el("hun-alive").querySelector(".head"), growlEl = el("growl"), mothEl = el("moth");
+      var wheatEls = WHEAT.map(function (w, i) { return el("wheat" + i); });
+      var wmAlive = el("wm-alive"), wmChar = el("wm-char");
+      [wmAlive, wmChar].forEach(function (g) { g.querySelector(".arm-l").insertAdjacentHTML("beforeend", HAM); });
+      var wmArms = [wmAlive, wmChar].map(function (g) { return g.querySelector(".arm-l"); });
+      var wmSmoke = wmChar.querySelector(".smoke"), wmEyes = wmChar.querySelector(".char-eyes");
+      var bombEl = el("bomb"), bombBall = bombEl.querySelector(".bomb-ball"), bombSpark = bombEl.querySelector(".bomb-spark");
+      bombBall.insertAdjacentHTML("beforeend", SLOT);
+      var fusePaths = Array.prototype.slice.call(bombEl.querySelectorAll(".bomb-fuse path")), fuseLen = fusePaths[0].getTotalLength();
+      var bomb2 = el("bomb2"), bomb2In = el("bomb2-in"), bomb2Spark = bomb2.querySelector(".bomb-spark");
+      var floodEls = SPOTS.map(function (x, i) { return el("p" + i); });
+      var toyEls = [0, 1].map(function (i) { return el("toy" + i); }), rakeEls = [0, 1].map(function (i) { return el("rake" + i); });
+      var popEls = [0, 1].map(function (i) { return el("pop" + i); });
+      var genEls = { l: el("gl"), r: el("gr") };
+      // the generals' medals, beside their chest lights
+      [["gl1", 1], ["gl2", 1], ["gr1", -1], ["gr2", -1]].forEach(function (g) {
+        var lt = el(g[0]).querySelector(".chest-light"), cx = +lt.getAttribute("cx"), cy = +lt.getAttribute("cy");
+        lt.insertAdjacentHTML("afterend", '<g transform="translate(' + f(cx - 11 * g[1]) + "," + f(cy - 2) + ')">' + medals() + "</g>");
+      });
+      var halfL = el("halfL"), halfR = el("halfR"), crackEl = el("crack"), craterEl = el("crater");
+      var digEl = el("dig"), digIn = el("dig-in"), dig1 = el("dig1"), dig2 = el("dig2"), digSweat = dig1.querySelector(".sweat");
+      var sprEls = SPROUT.map(function (s, i) { return el("spr" + i); });
+      var clodEls = [0, 1, 2, 3].map(function (i) { return el("clod" + i); });
+
+      // the generals' hands (plate units) and where each rake meets its toy
+      var handsOf = function (x, R) { var m = [(R.hand[0][0] + R.hand[1][0]) / 2, (R.hand[0][1] + R.hand[1][1]) / 2]; return toPlate(x, S, m); };
+      var GH = [handsOf(GLX, RGL), handsOf(GRX, RGR)];
+
+      // ── Timing helpers ──
+      var tPush0 = tStart - 0.25, tPush1 = tWars - 0.12;
+      var toyAt = function (i, t) { var m = TOY[i], u = smooth((t - tPush0) / (tPush1 - tPush0)); return [m.x0 + (m.x1 - m.x0) * u, m.y]; };
+      var tPop = [tMore + 0.02, tMore + 0.16], tCatch = tPop.map(function (p) { return p + 0.5; });
+      var tHop = [tGiving + 0.05, tGiving + 0.42], tIn = tHop.map(function (h) { return h + 0.42; });
+      var tScoops = [tDestroy, tDestroy + 0.55, tDestroy + 1.1];
+      var tFall0 = tPlanet + 0.18, tFall1 = tFall0 + 0.5;
+      var BOMBC = [BOMB[0], BOMB[1] - 42 * BK];
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+
+        // ── the hospital: the patient's light blinks; "Save lives" he looks hopefully at the door; "many" the sign flips
+        var blink = legs(t, 2.4) === 0;
+        patLights.forEach(function (l) { l.setAttribute("fill", blink ? C.war : "#5A2A22"); });
+        var hopeful = t >= tSave && t < tMany + 0.15;
+        show(el("pat-sad"), !hopeful); show(el("pat-eager"), hopeful);
+        patEagerHead.setAttribute("transform", "rotate(" + f(-7 * smooth((t - tSave) / 0.25)) + " " + f(RP.neck[0]) + " " + f(RP.neck[1]) + ")");
+        var fu = (t - tMany) / 0.24, sxs = fu <= 0 || fu >= 1 ? 1 : Math.abs(Math.cos(Math.PI * fu));
+        show(signOpen, fu < 0.5); show(signClosed, fu >= 0.5);
+        var swing = fu > 1 ? Math.sin((fu - 1) * 0.24 * 14) * 9 * Math.exp(-(fu - 1) * 0.24 * 4) : 0;
+        sign.setAttribute("transform", "rotate(" + f(swing) + " 0 -128) translate(0,-100) scale(" + Math.max(0.04, sxs).toFixed(3) + ",1) translate(0,100)");
+
+        // ── the lab: the bubbles rise until "very", then stop; the flame dies; the cobweb grows; the spider lowers
+        var bubbling = t < tVery + 0.45;
+        bubbles.forEach(function (b, i) {
+          if (!bubbling) { show(b, 0); return; }
+          var ph = (t * 1.4 + i * 0.37) % 1;
+          b.setAttribute("opacity", (1 - ph * ph).toFixed(2));
+          b.setAttribute("transform", "translate(" + f(Math.sin((t + i) * 6) * 2) + "," + f(-ph * 26) + ")");
+        });
+        var fl = 1 - smooth((t - tVery - 0.35) / 0.4);
+        labFlame.setAttribute("transform", "translate(52,-128) scale(" + fl.toFixed(3) + ") translate(-52,128)");
+        var wu = smooth((t - tVery) / 0.7);
+        webEl.setAttribute("opacity", wu > 0 ? 1 : 0);
+        webEl.setAttribute("transform", "translate(" + f(WEBC[0]) + "," + f(WEBC[1]) + ") scale(" + Math.max(0.01, wu).toFixed(3) + ") translate(" + f(-WEBC[0]) + "," + f(-WEBC[1]) + ")");
+        var su = smooth((t - tVery - 0.3) / 0.9), spY = -620 + (WEBC[1] - 40 + 620) * su + Math.sin(t * 3) * 6 * su;
+        thread.setAttribute("d", "M" + f(SPIDER_X) + ",-760 V" + f(spY - 14));
+        spiderB.setAttribute("transform", "translate(" + f(SPIDER_X) + "," + f(spY) + ")");
+
+        // ── the field: the belly growls; the wheat grows by itself on "grows" and never stops; "free).": he looks into
+        // the wallet and a moth flies out
+        var gr = (t > tHungry + 0.3 && t < tHungry + 1.2) || (t > tReq3 && t < tReq3 + 0.8);
+        show(growlEl, gr);
+        if (gr) growlEl.setAttribute("transform", "translate(" + f(Math.sin(t * 60) * 3) + ",0)");
+        wheatEls.forEach(function (w, i) {
+          var u = (t - tGrows - 0.05 - i * 0.06) / 0.42, k0 = u <= 0 ? 0 : u >= 1 ? 1 : 1 + 2.4 * Math.pow(u - 1, 3) + 1.4 * Math.pow(u - 1, 2);
+          var k = k0 * (1 + 2.9 * smooth((t - tGrows - 1.0) / (tWhip - tGrows - 1.0)));
+          w.setAttribute("transform", "scale(" + Math.max(0, k).toFixed(3) + ")");
+        });
+        var look = smooth((t - tFree) / 0.25);
+        hunHead.setAttribute("transform", "rotate(" + f(16 * look) + " " + f(RH.neck[0]) + " " + f(RH.neck[1]) + ")");
+        show(walShut, t < tFree + 0.1); show(walOpen, t >= tFree + 0.1);
+        var wPlate = toPlate(FX, S, hMid), mu = (t - tFree - 0.15) / 1.6;
+        if (mu > 0 && mu < 1) {
+          show(mothEl, 1);
+          mothEl.setAttribute("transform", "translate(" + f(wPlate[0] + Math.sin(mu * 8) * 24 + mu * 160) + "," + f(wPlate[1] - 10 - mu * 260 - Math.sin(mu * 13) * 12) + ") scale(" + (1.2 + mu * 0.3).toFixed(2) + ")");
+          var op = legs(t, 14) === 0;
+          show(mothEl.querySelector(".moth-open"), op); show(mothEl.querySelector(".moth-shut"), !op);
+        } else show(mothEl, 0);
+
+        // ── the flood: on "WITH" the war papers run in from the right, each to its spot, and jog there
+        floodEls.forEach(function (b, i) {
+          var t0 = tWith + (i % 5) * 0.05, x0 = SPOTS[i] + 950 + (i % 3) * 140, sp = 1900, age = t - t0;
+          if (age < 0) { show(b, 0); return; }
+          var x = Math.max(SPOTS[i], x0 - sp * age), arrived = x <= SPOTS[i] + 0.5, y = -62, l, sc2 = 1, rot = 0;
+          if (!arrived) { l = legs(t + i * 0.05, 12); y -= Math.abs(Math.sin((t + i) * 18)) * 12; rot = -6; }
+          else { l = legs(t + i * 0.13, 4); y -= Math.abs(Math.sin((t + i) * 7)) * 7; }
+          var hop = HOPPERS.indexOf(i);
+          if (hop >= 0 && t >= tHop[hop]) {
+            if (t >= tIn[hop]) { show(b, 0); return; }
+            var hu = (t - tHop[hop]) / (tIn[hop] - tHop[hop]), slot = [BOMB[0] - 2 * BK, BOMB[1] - 84 * BK - 6], p = arc([SPOTS[i], -62], slot, hu, 170);
+            x = p[0]; y = p[1]; sc2 = 1 - 0.55 * smooth((hu - 0.6) / 0.4); rot = (hop ? -1 : 1) * 200 * hu; l = 1;
+          }
+          show(b, 1);
+          b.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") rotate(" + f(rot) + ") scale(" + sc2.toFixed(3) + ")");
+          setLegs(b, l);
+        });
+
+        // ── the workbench: frantic hammering from "WITH"; the bomb swells with each paper; its fuse burns; on the boom
+        // he is charred, grinning, and goes on hammering the new bomb
+        var hamOn = t > tWith && !(t > tBoom - 0.05 && t < tBoom + 0.75);
+        var hp = ((t - tWith) / 0.42) % 1, raise = hamOn ? (hp < 0.22 ? 1 - smooth(hp / 0.22) : smooth((hp - 0.22) / 0.78)) : 0.85;
+        if (t > tBoom - 0.05 && t < tBoom + 0.75) raise = 0.85;
+        wmArms.forEach(function (a) { a.setAttribute("transform", "rotate(" + f(62 * raise) + " " + f(SH[0]) + " " + f(SH[1]) + ")"); });
+        var charred = t >= tBoom + 0.03;
+        show(wmAlive, !charred); show(wmChar, charred);
+        var blk = [tBoom + 1.0, tBoom + 1.25, tBoom + 2.6].some(function (b) { return t > b && t < b + 0.09; });
+        wmEyes.setAttribute("transform", blk ? "translate(0,-4) scale(1,0.12) translate(0,4)" : "");
+        wmSmoke.setAttribute("transform", "translate(0," + f(-Math.abs(Math.sin(t * 3)) * 5) + ")");
+        var sw = 0;
+        tIn.forEach(function (ti, j) { var u = (t - ti) / 0.3; if (u > 0) sw += (j ? 0.16 : 0.12) * (u >= 1 ? 1 : 1 + 1.6 * Math.sin(Math.PI * u) * (1 - u) * 1.5 + (u - 1) * (1 - u)); });
+        var wob = t > tIn[1] ? Math.sin((t - tIn[1]) * 20) * 0.025 : 0;
+        bombBall.setAttribute("transform", "translate(0,-42) scale(" + (1 + sw + wob).toFixed(3) + "," + (1 + sw - wob).toFixed(3) + ") translate(0,42)");
+        show(bombEl, t < tBoom);
+        var burnU = Math.min(1, Math.max(0, (t - (tGiving - 0.6)) / (tBoom - tGiving + 0.6)));
+        fusePaths.forEach(function (p) { p.setAttribute("stroke-dashoffset", burnU.toFixed(3)); });
+        var spk = fusePaths[0].getPointAtLength(fuseLen * (1 - burnU)), pulse = 1 + 0.25 * Math.sin(t * 40);
+        bombSpark.setAttribute("transform", "translate(" + f(spk.x - 84) + "," + f(spk.y + 130) + ") scale(" + pulse.toFixed(3) + ")");
+        bomb2Spark.setAttribute("transform", "scale(" + pulse.toFixed(3) + ")");
+        var bu = (t - tBoom - 0.55) / 0.3;
+        show(bomb2, bu > 0);
+        if (bu > 0) bomb2In.setAttribute("transform", "translate(0," + f(bu < 1 ? -160 * (1 - bu * bu) : 0) + ") scale(1," + (bu < 1 ? 1 : 1 - 0.2 * Math.sin(Math.PI * Math.min(1, bu - 1) * 3) * Math.exp(-(bu - 1) * 6)).toFixed(3) + ")");
+
+        // ── the map table: the generals rake their toy missiles at each other; after "wars" they are tiny clouds;
+        // "more papers": a paper pops out of each cloud into a general's hands, and their eyes ring up
+        [0, 1].forEach(function (i) {
+          var p = toyAt(i, t), bob = t > tPush0 && t < tPush1 ? Math.sin((t - tPush0) * 14) * 3 : 0;
+          show(toyEls[i], t < tWars);
+          toyEls[i].setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1] + bob) + ")");
+          var h = GH[i], tip = t < tWars + 0.2 ? [p[0] - 30 * TOY[i].dir, p[1]] : [TOY[i].x1 - 120 * TOY[i].dir, p[1] + 10];
+          var d = "M" + f(h[0]) + "," + f(h[1]) + " L" + f(tip[0]) + "," + f(tip[1]) + " M" + f(tip[0]) + "," + f(tip[1] - 18) + " V" + f(tip[1] + 18);
+          rakeEls[i].querySelector(".rk-o").setAttribute("d", d); rakeEls[i].querySelector(".rk-i").setAttribute("d", d);
+          var g = i ? genEls.r : genEls.l, gx = i ? GRX : GLX, lean = t > tPush0 && t < tPush1 ? Math.sin((t - tPush0) * 7) * 8 * (i ? -1 : 1) : 0;
+          g.setAttribute("transform", "translate(" + f(gx + lean) + "," + f(-100 * S) + ") scale(" + S + ")");
+          var pe = popEls[i], pu = (t - tPop[i]) / (tCatch[i] - tPop[i]);
+          var top = [TOY[i].x1 + 4 * TOY[i].dir, TOY[i].y + 10 - 100];
+          if (pu > 0) {
+            var pp = pu < 1 ? arc(top, [h[0], h[1] - 12], smooth(pu), 220) : [h[0], h[1] - 12 + Math.sin((t - tCatch[i]) * 8) * 2];
+            show(pe, 1);
+            pe.setAttribute("transform", "translate(" + f(pp[0]) + "," + f(pp[1]) + ") rotate(" + f(pu < 1 ? 540 * pu : -8 * (i ? -1 : 1)) + ")");
+          } else show(pe, 0);
+          var greedy = t >= tCatch[i];
+          show(el(i ? "gr1" : "gl1"), !greedy); show(el(i ? "gr2" : "gl2"), greedy);
+        });
+
+        // ── the hill: the digger scoops three times on "Destroy"; after "planet" the crack, the halves fall, he drops
+        // onto the Earth; "profitable": the papers sprout from the bite and he grins
+        var dHillY = hillY(DIGX), dGlobeY = globeY(DIGX), dd = (t - tFall0) / 0.32;
+        var digY = dd <= 0 ? dHillY : dd >= 1 ? dGlobeY + (dd < 1.4 ? -14 * Math.sin(Math.PI * (dd - 1) / 0.4) : 0) : dHillY + (dGlobeY - dHillY) * dd * dd;
+        digEl.setAttribute("transform", "translate(" + f(DIGX) + "," + f(digY) + ")");
+        var scoopLean = 0;
+        tScoops.forEach(function (s0) { var u = (t - s0) / 0.45; if (u > 0 && u < 1) scoopLean = -14 * Math.sin(Math.PI * u); });
+        digIn.setAttribute("transform", "rotate(" + f(scoopLean) + ")");
+        if (digSweat) digSweat.setAttribute("transform", "translate(" + f(((t * 1.7) % 1) * 6) + "," + f(((t * 1.7) % 1) * 10) + ")");
+        var grin = t >= tProfit + 0.15;
+        show(dig1, !grin); show(dig2, grin);
+        var dug = tScoops.filter(function (s0) { return t > s0 + 0.25; }).length;
+        show(craterEl, dug > 0 && t < tFall0);
+        craterEl.setAttribute("transform", "translate(-40," + f(-PEAK + 16) + ") scale(" + (0.5 + dug * 0.25).toFixed(2) + ") translate(40," + f(PEAK - 16) + ")");
+        clodEls.forEach(function (c, i) {
+          var s0 = tScoops[i % 3] + 0.2 + (i > 2 ? 0.08 : 0), u = (t - s0) / 0.7;
+          if (u <= 0 || u >= 1 || t > tFall0) { show(c, 0); return; }
+          var p = arc([EX - 40, -PEAK + 10], [EX + 280 + i * 40, -PEAK - 40 + i * 50], u, 160);
+          show(c, 1);
+          c.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + f(u * 400) + ") scale(1.6)");
+        });
+        crackEl.setAttribute("opacity", t > tPlanet - 0.1 && t < tFall0 + 0.05 ? 1 : 0);
+        [halfL, halfR].forEach(function (h, i) {
+          var u = (t - tFall0) / (tFall1 - tFall0), side = i ? 1 : -1;
+          h.querySelector(".hedge").setAttribute("opacity", u > 0 ? 1 : 0);
+          if (u <= 0) { h.setAttribute("transform", ""); h.setAttribute("opacity", 1); return; }
+          var a = 92 * Math.min(1, u * u), piv = side * HW;
+          h.setAttribute("transform", "translate(" + f(side * 30 * Math.min(1, u)) + ",0) rotate(" + f(side * a) + " " + f(piv) + " 0)");
+          h.setAttribute("opacity", u < 1.2 ? 1 : Math.max(0, 1 - (u - 1.2) / 0.5).toFixed(2));
+        });
+        sprEls.forEach(function (s, i) {
+          var u = (t - tProfit - i * 0.08) / 0.4, k = u <= 0 ? 0 : u >= 1 ? 1 : 1 + 2.4 * Math.pow(u - 1, 3) + 1.4 * Math.pow(u - 1, 2);
+          var sway = u > 1 ? Math.sin((t - tProfit) * 3 + i) * 3 : 0;
+          s.setAttribute("transform", "rotate(" + f(sway) + ") scale(" + Math.max(0, k).toFixed(3) + ")");
+        });
+      });
+
+      // ── The x-rays: each "requires" line ends with its human a grinning skeleton.
+      KIT.xray(tl, el("pat-alive"), el("pat-bones"), tX1);
+      KIT.xray(tl, el("sci-alive"), el("sci-bones"), tX2);
+      KIT.xray(tl, el("hun-alive"), el("hun-bones"), tX3);
+      KIT.flicker(tl, labEl, 0, tVery + 0.8);
+
+      // ── The bomb goes off in his face: a flash, a shake, a little mushroom cloud that thins away.
+      KIT.boom(tl, el("nuke"), tBoom, { shake: q("shake") });
+      // (a short flash of its own, so the charred Weapons Maker is seen before the camera moves on)
+      tl.fromTo(q("flash"), { opacity: 0 }, { opacity: 1, duration: 0.04, immediateRender: false }, tBoom).to(q("flash"), { opacity: 0, duration: 0.38, ease: "power1.out" }, tBoom + 0.08);
+      tl.fromTo(el("nuke"), { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power1.in", immediateRender: false }, tStart + 0.55);
+      // the tiny clouds on the map, and they thin away after the papers pop out
+      [0, 1].forEach(function (i) {
+        KIT.boom(tl, el("cloud" + i), tWars + i * 0.05);
+        tl.fromTo(el("cloud" + i), { opacity: 1 }, { opacity: 0, duration: 0.4, ease: "power1.in", immediateRender: false }, tMore + 0.9);
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

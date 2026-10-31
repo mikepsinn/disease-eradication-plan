@@ -1,0 +1,178 @@
+<template id="less-crazy-goal-template">
+  <!-- less-crazy-goal · style "atomic" (cartoon-style-bible.md), Layer A: the host's set, with the mug and the Earth
+       case file on her lectern. Part 2's hungry human (host-closes: the same build, the turned-out pockets, the club
+       sandwich with his bite out of it) strolls in from the right on "Here's", chewing, and stops on the free wall.
+       "curing": his chest light starts blinking red. "disease": he notices, winds up and thumps it with his fist like
+       a car's dashboard; it goes out. "less": he grins at us, mouth full, fist still on the light, sandwich raised
+       (the key frame; Wishonia rolls her eyes). After "goal.": the light blinks back on behind his knuckles; he does
+       not notice and takes another bite, and the camera has pushed in on his chest for the cut in to
+       debug-37-trillion-cells. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+    #less-crazy-goal-weave, #less-crazy-goal-push, #less-crazy-goal-cam, #less-crazy-goal-wall, #less-crazy-goal-wish, #less-crazy-goal-front, #less-crazy-goal-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="less-crazy-goal" data-width="1920" data-height="1080" data-start="0" data-duration="7.08">
+    <div id="less-crazy-goal-weave">
+      <div id="less-crazy-goal-push">
+        <div id="less-crazy-goal-cam">
+          <div id="less-crazy-goal-wall"></div>
+          <div id="less-crazy-goal-wish"></div>
+          <div id="less-crazy-goal-front"></div>
+        </div>
+      </div>
+    </div>
+    <div id="less-crazy-goal-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "less-crazy-goal";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 404);
+
+      // ── The set (KIT.STUDIO). MAN_AT: where the hungry human stops (x, feet y) and his scale, as in host-closes.
+      var S = KIT.STUDIO, MAN_AT = V ? [870, 1650, 3.6] : [1390, 1066, 3.3];
+
+      // ── Part 2's hungry human (host-closes MAN): skinny, pockets turned out. His drawings, one shown at a time.
+      // The sandwich rides in his right hand (arm-r) until the last bite, which takes both hands.
+      var MAN = { kind: "shirt", head: "long", hairStyle: "short", tone: 2, color: 2, look: "left", build: { tw: 0.72, legs: 1.18, th: 1.12, neck: 1.6, hs: 0.95, nose: 1.5 } };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b) o[k] = b[k]; return o; };
+      // The sandwich rides in his front hand (arm-l); the other (arm-r) is the fist that thumps the light. The light sits mid-chest at
+      // LIGHT (the kit puts this shirt's at (7.8, -36.5), under his sleeve; debug-37-trillion-cells uses the same spot).
+      var LIGHT = [1, -34];
+      var HOLD = [-20, -100], FIST = [40, -95];
+      var POSES = {
+        walk: { mood: "smile", arms: [HOLD, [22, 10]] },
+        worry: { mood: "worried", brows: true, arms: [HOLD, [22, 10]] },
+        wind: { mood: "cross", brows: true, arms: [HOLD, [125, 70]] },
+        thump: { mood: "flat", arms: [HOLD, FIST] },
+        grin: { mood: "grin", look: null, arms: [[-150, -170], FIST] },
+        bite: { mood: "smile", arms: [[-30, -160], FIST] },
+      };
+      var k = MAN_AT[2], mx = MAN_AT[0], my = MAN_AT[1] - 100 * k;
+      var manSvg = "", rigs = {};
+      Object.keys(POSES).forEach(function (n) {
+        var o = copy(MAN, POSES[n]);
+        rigs[n] = KIT.rig(o);
+        // the fist: a knuckled ball over the hand that thumps
+        var fh = rigs[n].hand[1], fist = POSES[n].arms[1] === FIST ? '<circle cx="' + f(fh[0]) + '" cy="' + f(fh[1]) + '" r="6.5" fill="#A87B57" stroke="' + ink + '" stroke-width="2.4"/>' +
+          '<path d="M' + f(fh[0] - 3) + "," + f(fh[1] - 5.5) + " v4 M" + f(fh[0] + 1) + "," + f(fh[1] - 6) + ' v4" stroke="' + ink + '" stroke-width="1.5"/>' : "";
+        // his chest light, a little bigger than the kit's (so it reads at this size), with a glow ring when it is lit
+        var body = KIT.person(o).replace(/(<circle class="chest-light" cx="([-\d.]+)" cy="([-\d.]+)") r="[\d.]+"/, function (m, a, cx, cy) {
+          return '<circle class="light-glow" cx="' + LIGHT[0] + '" cy="' + LIGHT[1] + '" r="10" fill="' + C.war + '" opacity="0"/>' + a.replace(/cx="[-\d.]+" cy="[-\d.]+"/, 'cx="' + LIGHT[0] + '" cy="' + LIGHT[1] + '"') + ' r="6"';
+        });
+        manSvg += '<g id="' + ID + "-p-" + n + '" opacity="' + (n === "walk" ? 1 : 0) + '">' + body + fist + "</g>";
+      });
+      var R0 = rigs.walk;
+      var pocket = function (x, s) { return '<path d="M' + f(x) + "," + f(R0.hipY - 4) + " l" + 13 * s + ",0 l" + -3 * s + ",15 l" + -9 * s + ",-3 Z" + '" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2.2" stroke-linejoin="round"/>'; };
+      manSvg += pocket(R0.hip[0][0] - 9, -1) + pocket(R0.hip[1][0] + 9, 1);
+      // the thump: three little impact strokes beside the fist, shown for a moment
+      var tr = rigs.thump.hand[1];
+      manSvg += '<g id="' + ID + '-hit" opacity="0">' + [0, 1, 2].map(function (i) { return '<path d="M' + f(tr[0] + 12 + i * 3) + "," + f(tr[1] - 12 + i * 10) + " l10," + (-4 + i * 4) + '" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>'; }).join("") + "</g>";
+      // The club sandwich from host-closes (64 x 52 in its own units, around its middle), his first bite already out of
+      // it; the second bite takes a deeper notch.
+      function sandwich() {
+        var bread = function (y, h) { return '<rect x="-32" y="' + y + '" width="64" height="' + h + '" rx="7" fill="#E9C07A" stroke="' + C.line + '" stroke-width="2.6"/>'; };
+        var body = bread(10, 11) + '<path d="M-33,8 q6,-6 11,0 q6,-6 11,0 q6,-6 11,0 q6,-6 11,0 q6,-6 11,0 q6,-6 11,0 v4 h-66 Z" fill="#9DB25A" stroke="' + C.line + '" stroke-width="2"/>' +
+          '<rect x="-31" y="0" width="62" height="7" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2"/>' + bread(-10, 10) +
+          '<rect x="-31" y="-17" width="62" height="7" fill="#D99A8F" stroke="' + C.line + '" stroke-width="2"/><path d="M-31,-11 H31 V-8 l-5,7 l-4,-7 H-31 Z" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.6"/>' + bread(-29, 12);
+        var pick = '<path d="M4,-29 L1,-50" stroke="' + C.tan + '" stroke-width="2.4"/><circle cx="1" cy="-52" r="5.5" fill="#7E8C3A" stroke="' + C.line + '" stroke-width="2"/><circle cx="1" cy="-52" r="2" fill="' + C.war + '"/>';
+        var c = ID + "-bite";
+        return '<defs><clipPath id="' + c + '1"><path d="M-60,-80 H6 V-31 Q16,-31 18,-22 Q7,-19 11,-10 Q3,-5 10,3 Q4,9 13,15 Q22,17 26,22 H60 V60 H-60 Z"/></clipPath>' +
+          '<clipPath id="' + c + '2"><path d="M-60,-80 H-8 V-31 Q2,-31 4,-22 Q-8,-19 -4,-10 Q-12,-5 -5,3 Q-11,9 -2,15 Q8,17 12,22 H60 V60 H-60 Z"/></clipPath></defs>' +
+          '<g class="sandwich-body" clip-path="url(#' + c + '1)">' + body + pick + "</g>";
+      }
+      var ks = k * 0.74;
+      var sand = '<g id="' + ID + '-sand"><g id="' + ID + '-sand-in"><g transform="scale(' + ks + ')">' + sandwich() + "</g></g></g>";
+
+      // ── Her lectern props: the Earth case file lying on the reading top, and the mug (the sketch's mug and file).
+      function mug(x, y, s) {
+        return '<g transform="translate(' + x + "," + y + ") scale(" + s + ')"><path d="M18,-44 q16,0 16,14 q0,14 -16,14" fill="none" stroke="' + ink + '" stroke-width="7"/><path d="M18,-44 q16,0 16,14 q0,14 -16,14" fill="none" stroke="' + C.cream + '" stroke-width="3"/>' +
+          '<path d="M-20,-54 H22 L18,0 H-16 Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/><path d="M-19,-44 H21" stroke="' + C.cream + '" stroke-width="5"/>' +
+          '<path d="M-6,-62 q-6,-10 0,-18 q6,-8 0,-18 M8,-62 q-6,-10 0,-18" fill="none" stroke="' + C.cream + '" stroke-width="3" opacity="0.8"/></g>';
+      }
+      function caseFile(x, y, s) {
+        return '<g transform="translate(' + x + "," + y + ") scale(" + s + ')"><path d="M-92,0 L-84,-16 H76 L88,0 Z" fill="#D9B46A" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>' +
+          '<path d="M-62,-16 L-58,-24 H-22 L-18,-16 Z" fill="#D9B46A" stroke="' + ink + '" stroke-width="3"/><path d="M-70,-8 H40" stroke="' + ink + '" stroke-width="2" opacity="0.6"/></g>';
+      }
+      var props = V ? caseFile(300, 1110, 1.15) + mug(560, 1108, 1.2) : caseFile(640, 800, 1) + mug(920, 798, 1);
+
+      // the set, Wishonia, the slow push on her face; her props, the human and the sandwich in front
+      KIT.studio(tl, ID, { cam: q("cam"), wall: q("wall"), wish: q("wish"), front: q("front") },
+        { front: props + '<g id="' + ID + '-man"><g transform="scale(' + k + ')">' + manSvg + "</g></g>" + sand, push: [1.0, 1.04] });
+      var manEl = q("man"), sandEl = q("sand"), sandIn = q("sand-in"), sandBody = q("front").querySelector(".sandwich-body"), hit = q("hit");
+      var pose = function (n) { Object.keys(POSES).forEach(function (p) { q("p-" + p).setAttribute("opacity", p === n ? 1 : 0); }); };
+      var lights = Object.keys(POSES).map(function (n) { return q("p-" + n).querySelector(".chest-light"); });
+      var glows = Object.keys(POSES).map(function (n) { return q("p-" + n).querySelector(".light-glow"); });
+      // where his chest light sits, in his units (for the push in at the end)
+      var L0 = q("p-thump").querySelector(".chest-light"), LX = +L0.getAttribute("cx"), LY = +L0.getAttribute("cy");
+
+      var mAt = [mx, my];
+      var handAt = function (n, which) {
+        var h = rigs[n].hand, p = which === 2 ? [(h[0][0] + h[1][0]) / 2, (h[0][1] + h[1][1]) / 2] : h[which];
+        return [mAt[0] + k * p[0], mAt[1] + k * p[1] - 10 * ks];
+      };
+      var tCuring = cue("curing"), tDisease = cue("disease"), tLess = cue("less"), tBack = KIT.after(ID, "goal.") - 0.2;
+      var tThump = tDisease + 0.15, tBite = tBack + 0.16;
+      var walk0 = 0.05, walk1 = 1.15, x0 = W + 150;
+      var smooth = KIT.smooth;
+      KIT.onTime(tl, D, function (t) {
+        // strolls in, then stands chewing (a small bob)
+        var u = Math.min(1, Math.max(0, (t - walk0) / (walk1 - walk0))), x = x0 + (mx - x0) * (1 - (1 - u) * (1 - u));
+        var walking = t > walk0 && t < walk1, ph = (t - walk0) * 9;
+        var bob = walking ? -Math.abs(Math.sin(ph)) * 6 * k : -Math.abs(Math.sin(t * 10)) * 1.6 * k;
+        // the thump jolts him
+        if (t > tThump && t < tThump + 0.25) bob += Math.sin((t - tThump) / 0.25 * Math.PI) * 3 * k;
+        manEl.setAttribute("transform", "translate(" + f(x) + "," + f(my + bob) + ")");
+        mAt = [x, my + bob];
+        Array.prototype.forEach.call(q("p-walk").querySelectorAll(".leg-l, .leg-r"), function (lg, i) {
+          var a = walking ? Math.sin(ph) * 22 * (i ? -1 : 1) : 0, hip = R0.hip[i];
+          lg.setAttribute("transform", "rotate(" + a.toFixed(1) + " " + f(hip[0]) + " " + f(hip[1]) + ")");
+        });
+        var arm = q("p-walk").querySelector(".arm-r"), sh = R0.shoulder[1];
+        arm.setAttribute("transform", "rotate(" + f(walking ? -Math.sin(ph) * 18 : 0) + " " + f(sh[0]) + " " + f(sh[1]) + ")");
+
+        // the poses
+        var p = t < tCuring + 0.35 ? "walk" : t < tDisease + 0.04 ? "worry" : t < tThump ? "wind" : t < tLess - 0.05 ? "thump" : t < tBite ? "grin" : "bite";
+        pose(p);
+        hit.setAttribute("opacity", t > tThump && t < tThump + 0.22 ? 1 : 0);
+
+        // the chest light: blinks red from "curing" until the thump, then off; back on (blinking) after "goal."
+        var on = (t > tCuring && t < tThump && Math.floor((t - tCuring) * 5) % 2 === 0) || (t > tBack && Math.floor((t - tBack) * 5) % 2 === 0);
+        lights.forEach(function (l) { l.setAttribute("fill", on ? C.war : "#E9E1CC"); });
+        glows.forEach(function (g) { g.setAttribute("opacity", on ? 0.35 : 0); });
+
+        // the sandwich: in his right hand, raised on "less", then up to his mouth for another bite
+        var hs = handAt(p, 0);
+        if (p === "grin") { var gu = smooth((t - tLess + 0.05) / 0.2), h0 = handAt("thump", 0); hs = [h0[0] + (hs[0] - h0[0]) * gu, h0[1] + (hs[1] - h0[1]) * gu]; }
+        sandEl.setAttribute("transform", "translate(" + f(hs[0]) + "," + f(hs[1]) + ")");
+        sandIn.setAttribute("transform", p === "grin" ? "rotate(" + f(Math.sin(t * 7) * 4) + ")" : "");
+        sandBody.setAttribute("clip-path", "url(#" + ID + (t > tBite + 0.12 ? "-bite2)" : "-bite1)"));
+      });
+
+      // ── After "less" the camera eases in on his chest, so the cut to his blinking light in the next scene is a cut in.
+      // (the light's own point is the scale's origin; it also slides most of the way toward the middle of the frame)
+      // (clamped so the scaled set still covers the frame)
+      var PX = mx + k * LX, PY = my + k * LY, CX = V ? 540 : 960, CY = V ? 740 : 540, PS = V ? 1.5 : 1.7;
+      var clampTo = function (v, lo, hi) { return Math.min(hi, Math.max(lo, v)); };
+      var DX = clampTo((CX - PX) * 0.55, -(W - PX) * (PS - 1), PX * (PS - 1)), DY = clampTo((CY - PY) * 0.55, -(H - PY) * (PS - 1), PY * (PS - 1));
+      tl.fromTo(q("push"), { x: 0, y: 0, scale: 1, transformOrigin: f(PX) + "px " + f(PY) + "px" },
+        { x: DX, y: DY, scale: PS, transformOrigin: f(PX) + "px " + f(PY) + "px", duration: D - tLess - 0.55, ease: "power2.in" }, tLess + 0.55);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

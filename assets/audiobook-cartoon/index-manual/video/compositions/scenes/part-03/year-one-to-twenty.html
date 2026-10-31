@@ -1,0 +1,539 @@
+<template id="year-one-to-twenty-template">
+  <!-- year-one-to-twenty · Layer B, plate the-funnel (storyboards/part-03-gradual-irrationality-reduction.md, scene 7).
+       One plate on a plain tan field, drawn once; the camera travels over it. Left: the Weapons Maker's factory (mirrored,
+       so its side door and conveyor face left), his workbench and a mountain of war money. Middle: the tear-off calendar
+       on its post and the color-flip funnel. Right: the hospital, where a hill of medicine money grows. One human grows
+       up at the funnel's spout, a drawing per "Year": baby, toddler, kid, teenager, grown man.
+       "Year one": the baby crawls in under the spout. "Move": pull back left to the factory. "murder": one war bill hops
+       off the mountain and dives into the funnel; the Weapons Maker dives under his bench. "medicine": push in on the
+       spout; the bill walks out with a cross seal into the baby's hands. "(baby steps)": one wobbly step, plop.
+       "Year two": a toddler; "Hey" he peeks out; "die!" he pats himself all over and checks his pulse (the toddler pats
+       its own chest); "two percent!" two bills. "Year five": five bills, a kid; the Weapons Maker walks over and
+       offers his smiling missile; "bombs?" the kid holds it at arm's length; "That" hands it back; "weird." it
+       deflates over his forearms like a wet sock; he looks down at it, then at the kid. "Year ten": a stream of bills,
+       the camera pulls back past the factory (pill bottles on the conveyor, teal smoke); "What's" he strolls past in a
+       lab coat with a grinning pill bottle; "war?" the teenager shrugs (crickets). "Year twenty": the whole plate, the
+       mountain gone and the hill big; "used to" the old Weapons Maker holds out a framed photo of his missile;
+       "WHAT?!" the grown man's eyes shoot out on springs and his jaw hits the ground; after it, the eyes boing back. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
+    #year-one-to-twenty-weave, #year-one-to-twenty-plate, #year-one-to-twenty-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="year-one-to-twenty" data-width="1920" data-height="1080" data-start="0" data-duration="21.6">
+    <div id="year-one-to-twenty-weave">
+      <div id="year-one-to-twenty-plate"></div>
+    </div>
+    <div id="year-one-to-twenty-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/objects-b.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "year-one-to-twenty";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var cueEnd = function (w, n) { return KIT.cueEnd(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth;
+      var clamp = function (u) { return u < 0 ? 0 : u > 1 ? 1 : u; };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 53);
+
+      // ── Cues ──
+      var tY = [0, cue("Year", 2), cue("Year", 3), cue("Year", 4), cue("Year", 5)];
+      var tOne = cue("one:"), tMove = cue("Move"), tMurder = cue("murder"), tMed = cue("medicine"), tBaby = cue("(baby"), tSteps = cue("steps).");
+      var tHey = cue("\"Hey,"), tDie = cue("die!"), tTwo = cue("two", 2), tRemember = cue("\"Remember"), tBombs = cue("bombs?");
+      var tThat = cue("That"), tWeird = cue("weird.\"."), tWeirdA = KIT.after(ID, "weird.\".");
+      var tWhats = cue("\"What's"), tWar = cue("war?\"."), tWarA = KIT.after(ID, "war?\".");
+      var tUsed = cue("used"), tWhat = cue("WHAT?!\"."), tWhatA = KIT.after(ID, "WHAT?!\".");
+      var yearAt = function (t) { var j = 0; for (var i = 1; i < tY.length; i++) if (t >= tY[i]) j = i; return j; };
+
+      // ── The plate, in plate units: the ground is y 0, people stand on it at scale S, the funnel at FK.
+      var S = 1.5, FK = 1.6, FIELD = "#C8B07B", TEAL = "#9FD0C8";
+      var FACT = [-1500, 0], BENCH = [-600, 0], MOUNT = [-960, 20, 420, 300], CAL = [-230, -385], FUN = [0, 0], HOSP = [1010, 0], HILL = [1010, 26, 620, 330];
+      var DOOR = FACT[0] - 170 * S, CONV = [DOOR - 240, 0], CONV_W = 320;
+      var MOUTH_Y = -262 * FK, SPOUT = [0, -46 * FK];
+      var WM_HOME = -330, WM_AT = 165, KIDX = [40, 190, 340, 340, 440], OLDX = 170;
+
+      // The camera's views (KIT.camera): [plate x, plate y, scale].
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { open: [-60, -457, 1.4], move: [-1100, -889, 0.72], duck: [-480, -400, 1.6], spout: [40, -278, 2.3], yr2: [-480, -400, 1.6], yr2b: [-85, -400, 1.6],
+            five: [255, -337, 1.9], ten: [-1300, -853, 0.75], tenB: [260, -337, 1.9], wide: [-700, -853, 0.75], wideR: [700, -853, 0.75], two: [300, -337, 1.9], what: [300, -300, 2.1] }
+        : { open: [-40, -232, 1.38], move: [-760, -400, 0.72], duck: [-560, -262, 1.3], spout: [60, -130, 2.4], yr2: [-190, -237, 1.35], yr2b: [-190, -237, 1.35], five: [230, -230, 1.5],
+            ten: [-860, -420, 0.66], tenB: [230, -230, 1.4], wide: [-270, -430, 0.6], wideR: [-260, -430, 0.6], two: [330, -310, 1.1], what: [320, -262, 1.35] };
+
+      // ── Drawings ──
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var legs = function (t, hz) { return Math.floor(t * hz) % 2; };
+      var arc = function (p0, p1, u, h) { return [p0[0] + (p1[0] - p0[0]) * u, p0[1] + (p1[1] - p0[1]) * u - Math.sin(Math.PI * u) * h]; };
+      function walker(id, kind, k) { return '<g id="' + ID + "-" + id + '" opacity="0"><g transform="scale(' + k + ')">' + KIT.money(kind, 0) + "</g></g>"; }
+      function setLegs(el, l) { el.querySelector(".legs").setAttribute("d", "M-16,24 l" + (-6 + l * 10) + ",22 h-8 M16,24 l" + (6 - l * 10) + ",22 h8"); }
+      function still(kind) { return KIT.money(kind, 0).replace('class="legs"', 'class="legs" opacity="0"'); }
+      // A heap of bills: rows from the bottom up, each narrower; each row is its own group (row 0 is the bottom).
+      function heapRows(kind, cx, baseY, w, h, k, seed) {
+        var r = KIT.rng(seed), rows = Math.max(2, Math.round(h / (34 * k))), out = [];
+        for (var j = 0; j < rows; j++) {
+          var y = baseY - 16 * k - j * (h / rows), half = (w / 2) * Math.pow(1 - j / rows, 0.7), row = "";
+          for (var x = -half; x <= half; x += 70 * k) row += '<g transform="translate(' + f(cx + x + (r() - 0.5) * 20 * k) + "," + f(y + (r() - 0.5) * 10 * k) + ") rotate(" + f((r() - 0.5) * 50) + ") scale(" + k + ')">' + still(kind) + "</g>";
+          out.push(row);
+        }
+        return out;
+      }
+      // The Weapons Maker's smiling baby missile, pointing +x around (0, 0); u 0..1 lets the air out: it thins, sags
+      // over the forearm at both ends like a wet sock, and its grin turns down.
+      function missile(u) {
+        u = u || 0;
+        var hh = 7 * (1 - 0.72 * u), D2 = 30 * u, yc = function (x) { return D2 * Math.pow((x + 4) / 34, 2); };
+        var top = [], bot = [];
+        for (var x = -34; x <= 14.01; x += 6) { top.push([x, yc(x) - hh]); bot.unshift([x, yc(x) + hh]); }
+        var body = top.concat(bot), tip = [30 - 4 * u, yc(30) + 2 * u];
+        var pts = function (a) { return a.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L"); };
+        var fs = 1 - 0.45 * u, fy = yc(-34);
+        var fins = "M-34," + f(fy - hh) + " L" + f(-34 - 10 * fs) + "," + f(fy - hh - 10 * fs) + " L" + f(-34 - 6 * fs) + "," + f(fy - hh) + " Z M-34," + f(fy + hh) + " L" + f(-34 - 10 * fs) + "," + f(fy + hh + 10 * fs) + " L" + f(-34 - 6 * fs) + "," + f(fy + hh) + " Z";
+        var ey = yc(2) - 2.5 * (1 - u), my = yc(2) + 2 * (1 - u), smile = 4 * (1 - 2 * u);
+        var eyes = u < 0.6 ? '<circle cx="-2" cy="' + f(ey) + '" r="1.6" fill="' + ink + '"/><circle cx="6" cy="' + f(ey) + '" r="1.6" fill="' + ink + '"/>'
+          : '<path d="M-4,' + f(ey) + " q2,1.6 4,0 M4," + f(ey) + ' q2,1.6 4,0" fill="none" stroke="' + ink + '" stroke-width="1.4"/>';
+        return '<path d="M' + pts(body) + ' Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
+          '<path d="' + fins + '" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+          '<path d="M14,' + f(yc(14) - hh) + " L" + f(tip[0]) + "," + f(tip[1]) + " L14," + f(yc(14) + hh) + ' Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<path d="M-4,' + f(my) + " Q2," + f(my + smile) + " 8," + f(my) + '" fill="none" stroke="' + ink + '" stroke-width="1.8" stroke-linecap="round"/>' + eyes;
+      }
+      // A smiling missile lying on the conveyor, about 70 long, its belly at y 0.
+      function beltMissile() { return '<g transform="translate(0,-10) scale(0.95)">' + missile(0) + "</g>"; }
+      // The workbench, standing on (0, 0) in plate units, 300 wide and 170 tall: a plank top, four legs, a vise and a wrench.
+      function bench() {
+        var wood = "#A0703F", dark = "#7A5634";
+        return '<path d="M-130,0 L-122,-150 M130,0 L122,-150" stroke="' + ink + '" stroke-width="22"/><path d="M-130,0 L-122,-150 M130,0 L122,-150" stroke="' + dark + '" stroke-width="14"/>' +
+          '<path d="M-126,-48 H126" stroke="' + ink + '" stroke-width="14"/><path d="M-126,-48 H126" stroke="' + dark + '" stroke-width="7"/>' +
+          '<rect x="-150" y="-172" width="300" height="24" fill="' + wood + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M-146,-162 H146" stroke="' + dark + '" stroke-width="2"/>' +
+          '<rect x="80" y="-208" width="44" height="36" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/><rect x="70" y="-196" width="64" height="10" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<path d="M128,-191 h22" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>' +
+          '<g transform="translate(-60,-176) rotate(-8)"><path d="M-46,-4 H30 a9,9 0 1 1 0,8 H-46 Z" fill="#9AA3B0" stroke="' + ink + '" stroke-width="3"/><circle cx="36" cy="0" r="4" fill="' + FIELD + '"/></g>';
+      }
+      // A framed photo of the old missile, around (0, 0), about 92 x 68 (in person units).
+      function photo() {
+        return '<rect x="-46" y="-34" width="92" height="66" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/><rect x="-36" y="-25" width="72" height="48" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<g transform="scale(0.95)">' + missile(0) + "</g>";
+      }
+      // A smoke puff (circles), around (0, 0), radius r.
+      function puff(r, col) {
+        return '<g class="pf"><circle cx="0" cy="0" r="' + r + '" fill="' + col + '" stroke="' + ink + '" stroke-width="3"/><circle cx="' + f(r * 0.8) + '" cy="' + f(-r * 0.7) + '" r="' + f(r * 0.7) + '" fill="' + col + '" stroke="' + ink + '" stroke-width="3"/></g>';
+      }
+
+      // ── People: poses are drawings (one shown at a time) in a group positioned by the update.
+      var RIG = {};
+      function poses(key, list) {
+        // list: [[name, opts, extraFn(R)], ...] -> '<g class="pose" data-pose=name>...'
+        RIG[key] = {};
+        return list.map(function (p) {
+          var R = KIT.rig(p[1]); RIG[key][p[0]] = R;
+          var body = KIT.person(p[1]);
+          if (p[3]) body = body.replace("<!--face-end-->", p[3] + "<!--face-end-->");
+          return '<g class="pose" data-pose="' + p[0] + '" opacity="0">' + body + (p[2] ? p[2](R) : "") + "</g>";
+        }).join("");
+      }
+      var mid = function (R) { return [(R.hand[0][0] + R.hand[1][0]) / 2, (R.hand[0][1] + R.hand[1][1]) / 2]; };
+
+      // the human who grows up at the spout: tone 1, shirt color 0 (the sketch's grown man)
+      var KID0 = { tone: 1, outfit: "shirt", color: 0, hair: 0, kind: "shirt", head: "plain", look: "left" };
+      var BABY = copy(KID0, { hair: 2, mood: "smile", build: { hs: 1.85, legs: 0.5, th: 0.6, tw: 0.9, neck: 0.1, nose: 0.35, chin: 0.8 } });
+      var diaper = function (R) { return '<path d="M-15,' + f(R.hipY - 12) + " H15 L13," + f(R.hipY + 6) + " Q0," + f(R.hipY + 14) + " -13," + f(R.hipY + 6) + ' Z" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2.2"/>'; };
+      var curl = function (R) { return '<path d="M' + f(R.top[0] - 2) + "," + f(R.top[1] + 4) + ' q-2,-12 8,-12 q8,1 5,8 q-3,5 -7,1" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>'; };
+      var heldBill = function (x, y, rot, k) { return '<g transform="translate(' + f(x) + "," + f(y) + ") rotate(" + (rot || 0) + ") scale(" + (k || 0.42) + ')">' + still("med") + "</g>"; };
+      var SIT = { legPose: [[-82, -88], [-74, -84]] };
+      var babySvg = poses("baby", [
+        ["sit", copy(BABY, { arms: [[-50, -110], [-40, -100]], build: copy(BABY.build, SIT) }), function (R) { return diaper(R) + curl(R); }],
+        ["sitBill", copy(BABY, { mood: "grin", arms: [[-50, -120], [-40, -110]], build: copy(BABY.build, SIT) }), function (R) { var m = mid(R); return diaper(R) + curl(R) + heldBill(m[0] - 4, m[1] - 6, -10); }],
+        ["stand", copy(BABY, { mood: "eager", arms: [[-60, -130], [-50, -120]] }), function (R) { var m = mid(R); return diaper(R) + curl(R) + heldBill(m[0] - 4, m[1] - 6, -10); }],
+        ["plop", copy(BABY, { mood: "flat", arms: [[-50, -120], [-40, -110]], build: copy(BABY.build, SIT) }), function (R) { var m = mid(R); return diaper(R) + curl(R) + heldBill(m[0] - 4, m[1] - 6, -10); }],
+      ]);
+      var TOD = copy(KID0, { hair: 0, mood: "eager", build: { hs: 1.4, legs: 0.62, th: 0.7, tw: 0.9, neck: 0.2, nose: 0.5, chin: 0.85 } });
+      var todSvg = poses("tod", [
+        ["stand", copy(TOD, { arms: [[-20, -80], [-10, -70]] }), function (R) { var m = mid(R); return heldBill(m[0] - 4, m[1] - 4, -8, 0.4); }],
+        ["pat1", copy(TOD, { mood: "smile", arms: [[30, 150], [-30, -150]] })],
+        ["pat2", copy(TOD, { mood: "grin", arms: [[24, 120], [-24, -130]] })],
+      ]);
+      var KID = copy(KID0, { mood: "smile", build: { hs: 1.22, legs: 0.82, th: 0.82, tw: 0.9, neck: 0.5, nose: 0.75, chin: 0.9 } });
+      var wrinkle = '<path d="M14,-2 l5,-3 M15,3 l6,-1 M10,-9 l3,4" stroke="' + C.line + '" stroke-width="1.6" stroke-linecap="round"/>';
+      var kidSvg = poses("kid", [
+        ["stand", copy(KID, { arms: [[-12, -6], [12, 6]] })],
+        ["reach", copy(KID, { mood: "eager", arms: [[-60, -100], [-50, -90]] })],
+        ["hold", copy(KID, { mood: "cross", arms: [[-86, -94], [-80, -90]], build: copy(KID.build, { hunch: -10 }) }), function (R) {
+          var m = mid(R); return '<g transform="translate(' + f(m[0] - 18) + "," + f(m[1] - 4) + ') rotate(200) scale(1.25)">' + missile(0) + "</g>"; }, wrinkle],
+        ["give", copy(KID, { mood: "flat", arms: [[-70, -96], [-64, -92]] })],
+      ]);
+      var TEEN = copy(KID0, { mood: "flat", build: { hs: 1.0, legs: 1.15, th: 1.0, tw: 0.82, neck: 1.3, nose: 1.1 } });
+      var teenSvg = poses("teen", [
+        ["stand", copy(TEEN, { arms: [[-8, -3], [8, 3]] })],
+        ["shrug", copy(TEEN, { mood: "flat", arms: [[-34, -110], [34, 110]] })],
+      ]);
+      var MAN = copy(KID0, { mood: "eager", build: { hs: 1, legs: 1.05, th: 1.05, tw: 1 } });
+      var manSvg = poses("man", [
+        ["stand", copy(MAN, { arms: [[-14, -6], [14, 6]] })],
+        ["what", copy(MAN, { mood: "worried", arms: [[-34, -20], [34, 20]] })],
+      ]);
+      // the man's eyes on springs and his dropped jaw, drawn by the update (in person units)
+      var RMan = RIG.man.what;
+
+      // the Weapons Maker
+      var WMO = function (x) { return KIT.castOpts("weaponsMaker", copy({ look: "right" }, x)); };
+      var CRAD = [[32, 84], [-32, -84]];
+      var RWc = KIT.rig(WMO({ arms: CRAD })), cradle = mid(RWc);
+      var cradled = function (u) { return '<g transform="translate(' + f(cradle[0]) + "," + f(cradle[1] - 6) + ') rotate(-14) scale(1.25)">' + missile(u || 0) + "</g>"; };
+      var CROUCH = { hs: 0.66, tw: 1.15, arms: 1.35, legs: 0.78, neck: 0, hand: 1.35, hunch: 26, legPose: [[64, -12], [56, -18]] };
+      var wmSvg = poses("wm", [
+        ["hold", WMO({ arms: CRAD }), function () { return cradled(0); }],
+        ["duck", WMO({ mood: "worried", arms: [[200, 120], [-200, -120]], build: CROUCH })],
+        ["peek", WMO({ mood: "worried", arms: [[60, 140], [-10, -60]], build: CROUCH })],
+        ["stand", WMO({ mood: "worried", arms: [[14, 6], [-14, -6]] })],
+        ["pat1", WMO({ mood: "worried", arms: [[30, 150], [-34, -150]] })],
+        ["pat2", WMO({ mood: "worried", arms: [[18, 70], [-22, -70]] })],
+        ["pat3", WMO({ mood: "worried", arms: [[60, 160], [-10, -30]] })],
+        ["pulse", WMO({ mood: "smile", arms: [[44, 112], [-4, -150]] })],
+        ["walk", WMO({ arms: CRAD }), function () { return cradled(0); }],
+        ["offer", WMO({ mood: "grin", arms: [[70, 96], [60, 92]] }), function (R) { var m = mid(R); return '<g transform="translate(' + f(m[0] + 6) + "," + f(m[1] - 8) + ') rotate(-8) scale(1.25)">' + missile(0) + "</g>"; }],
+        ["empty", WMO({ mood: "grin", arms: [[16, 8], [-16, -8]] })],
+        ["back", WMO({ mood: "smile", arms: CRAD }), function () { return '<g class="deflate"></g>'; }],
+      ]);
+      var LAB = { kind: "lab", cigar: false };
+      var bottleAt = function (R) { var m = mid(R); return '<g transform="translate(' + f(m[0] + 2) + "," + f(m[1] - 2) + ') rotate(-72) scale(0.62)"><g transform="translate(0,52)">' + KIT.props.pillBottle({ face: "grin", label: "" }) + "</g></g>"; };
+      var labSvg = poses("lab", [["walk", WMO(copy(LAB, { mood: "smile", arms: CRAD })), bottleAt]]);
+      var OLD = WMO(copy(LAB, { mood: "smile", stache: true, hairColor: "#B9B5AE", build: { hs: 0.7, tw: 1.1, arms: 1.35, legs: 0.78, neck: 0, hand: 1.35, hunch: 14 } }));
+      var oldPhoto = function (R) { var m = mid(R); return '<g transform="translate(' + f(m[0] + 14) + "," + f(m[1] - 16) + ')">' + photo() + "</g>"; };
+      var oldSvg = poses("old", [
+        ["stand", copy(OLD, { arms: [[30, 70], [-20, -60]] })],
+        ["show", copy(OLD, { arms: [[70, 120], [84, 112]] }), oldPhoto],
+      ]);
+
+      // ── Assemble the plate ──
+      var mountRows = heapRows("war", MOUNT[0], MOUNT[1], MOUNT[2], MOUNT[3], 1.0, 7);
+      var hillRows = heapRows("med", HILL[0], HILL[1], HILL[2], HILL[3], 1.0, 31);
+      var NCAL = [1, 2, 5, 10, 20];
+      var cals = NCAL.map(function (d, j) { return '<g id="' + ID + "-cal" + j + '" opacity="0">' + KIT.props.calendar({ month: "YEAR", day: d }) + "</g>"; });
+      var pages = NCAL.map(function (d, j) {
+        return '<g id="' + ID + "-page" + j + '" opacity="0"><g class="tear"></g></g>';
+      });
+      var calSvg = '<rect x="' + (CAL[0] - 7) + '" y="' + CAL[1] + '" width="14" height="' + -CAL[1] + '" fill="#7A5634" stroke="' + ink + '" stroke-width="3"/>' +
+        at(CAL[0], CAL[1] + 12, 1.8, cals.reverse().join("") + pages.reverse().join(""));
+      // the conveyor's loads: four slots, each a missile and a pill bottle
+      var NB = 4, CONV_P = 130, VBELT = 80;
+      var loads = "";
+      for (var i = 0; i < NB; i++) loads += '<g id="' + ID + "-ld" + i + '"><g class="ld-m">' + beltMissile() + '</g><g class="ld-b" opacity="0"><g transform="scale(0.62)">' + KIT.props.pillBottle({ face: "smile" }) + "</g></g></g>";
+      var PUFFS = 9, puffSvg = "";
+      for (i = 0; i < PUFFS; i++) puffSvg += '<g id="' + ID + "-pf" + i + '" opacity="0"><g class="pf-g">' + puff(22, C.peri) + '</g><g class="pf-t" opacity="0">' + puff(22, TEAL) + "</g></g>";
+      // chimney noses (the factory is mirrored, so x flips): [-150,108], [-62,130], [26,100] above the roof at -221
+      var NOSE = [[-150, 108], [-62, 130], [26, 100]].map(function (c) { return [FACT[0] - c[0] * S, (-221 - c[1]) * S]; });
+      var strays = [[MOUNT[0] - 90, -4, 14], [MOUNT[0] + 80, 0, -20]].map(function (s, j) { return '<g id="' + ID + "-stray" + j + '" opacity="0">' + at(s[0], s[1] - 18, 1, '<g transform="rotate(' + s[2] + ')">' + still("war") + "</g>") + "</g>"; }).join("");
+
+      // the bills: N war walkers (with a clipped copy for the dive into the mouth) and N med walkers
+      var BILLS = [];
+      BILLS.push({ hop: tMurder, first: true });
+      [0, 1].forEach(function (j) { BILLS.push({ hop: tTwo - 0.05 + j * 0.42 }); });
+      [0, 1, 2, 3, 4].forEach(function (j) { BILLS.push({ hop: tY[2] + 0.1 + j * 0.3 }); });
+      for (var s2 = 0; s2 < 16; s2++) BILLS.push({ hop: tY[3] + 0.05 + s2 * 0.13 });
+      var NBILL = BILLS.length, BK = 1.0;
+      var warFree = "", warClip = "", medW = "";
+      BILLS.forEach(function (b, j) { warFree += walker("wf" + j, "war", BK); warClip += walker("wc" + j, "war", BK); medW += walker("mw" + j, "med", BK); });
+      var clipPts = [[-240, -1400], [240, -1400], [240, -264], [108, -262], [92, -254], [-92, -254], [-108, -262], [-240, -264]].map(function (p) { return f(p[0] * FK) + "," + f(p[1] * FK); }).join(" ");
+
+      var person = function (key, svg) { return '<g id="' + ID + "-" + key + '">' + svg + "</g>"; };
+      var hillSvg = hillRows.map(function (r, j) { return '<g id="' + ID + "-hr" + j + '" opacity="0">' + r + "</g>"; }).reverse().join("");
+      // nearer (lower) rows drawn last: reverse puts row 0 last
+      var mountSvg = mountRows.map(function (r, j) { return '<g id="' + ID + "-mr" + j + '">' + r + "</g>"; }).reverse().join("");
+
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + FIELD + '"/>' +
+        '<g id="' + ID + '-cam">' +
+          puffSvg +
+          at(CONV[0], CONV[1], S, KIT.props.conveyor({ w: CONV_W }), ' id="' + ID + '-conv"') +
+          '<g id="' + ID + '-loads">' + loads + "</g>" +
+          at(FACT[0], FACT[1], 1, '<g transform="scale(' + -S + "," + S + ')">' + KIT.props.factory({ label: "", smoke: false }) + "</g>") +
+          at(HOSP[0], HOSP[1], S, KIT.props.hospital({ label: "" })) + hillSvg +
+          calSvg + mountSvg + strays +
+          at(FUN[0], FUN[1], FK, KIT.props.colorFlipFunnel({ inN: 0, outN: 0 }), ' id="' + ID + '-funnel"') +
+          '<defs><clipPath id="' + ID + '-mouth"><polygon points="' + clipPts + '"/></clipPath></defs><g clip-path="url(#' + ID + '-mouth)">' + warClip + "</g>" +
+          medW + person("wm", wmSvg) + at(BENCH[0], BENCH[1], 1.25, bench()) + warFree +
+          person("baby", babySvg) + person("tod", todSvg) + person("kid", kidSvg) + person("teen", teenSvg) + person("man", manSvg) +
+          '<g id="' + ID + '-manfx"></g>' +
+          person("lab", labSvg) + person("old", oldSvg) +
+        "</g>");
+
+      var el = function (id) { return q(id); };
+      var cam = el("cam");
+      var PG = {};
+      ["baby", "tod", "kid", "teen", "man", "wm", "lab", "old"].forEach(function (k) {
+        PG[k] = { g: el(k), p: {} };
+        Array.prototype.forEach.call(el(k).querySelectorAll(":scope > .pose"), function (pg) { PG[k].p[pg.getAttribute("data-pose")] = pg; });
+      });
+      var deflate = PG.wm.p.back.querySelector(".deflate");
+      var calEls = NCAL.map(function (d, j) { return el("cal" + j); }), pageEls = NCAL.map(function (d, j) { return el("page" + j); });
+      pageEls.forEach(function (p, j) { p.querySelector(".tear").innerHTML = calEls[j].querySelector(".cal-page").outerHTML; });
+      // the calendar prints every page twice, and a torn-off page falls over the one beneath: their numbers overlap on purpose
+      Array.prototype.forEach.call(q("plate").querySelectorAll(".cal-page text, .cal-page-under text"), function (tx) { tx.setAttribute("data-layout-allow-overlap", ""); });
+      var mrEls = mountRows.map(function (r, j) { return el("mr" + j); }), hrEls = hillRows.map(function (r, j) { return el("hr" + j); });
+      var wf = BILLS.map(function (b, j) { return el("wf" + j); }), wc = BILLS.map(function (b, j) { return el("wc" + j); }), mw = BILLS.map(function (b, j) { return el("mw" + j); });
+      var ldEls = []; for (i = 0; i < NB; i++) ldEls.push(el("ld" + i));
+      var pfEls = []; for (i = 0; i < PUFFS; i++) pfEls.push(el("pf" + i));
+      var funnelEl = el("funnel"), lever = funnelEl.querySelector(".funnel-lever");
+      KIT.props.conveyor.run(tl, el("conv"), 0, D, -VBELT / S);
+
+      // Put a person's group on the ground at x, scale k; show one pose.
+      function place(key, x, k, pose, dy, extra) {
+        var P = PG[key];
+        if (!pose) { show(P.g, 0); return null; }
+        show(P.g, 1);
+        P.g.setAttribute("transform", "translate(" + f(x) + "," + f(-100 * k + (dy || 0)) + ") scale(" + k + ")" + (extra || ""));
+        var on = null;
+        Object.keys(P.p).forEach(function (n) { var o = n === pose; show(P.p[n], o); if (o) on = P.p[n]; });
+        return on;
+      }
+      function walkLegs(pg, R, t, hz, amp) {
+        Array.prototype.forEach.call(pg.querySelectorAll(".leg-l, .leg-r"), function (lg, j) {
+          var a = amp ? Math.sin(t * hz) * amp * (j ? -1 : 1) : 0;
+          lg.setAttribute("transform", amp ? "rotate(" + f(a) + " " + f(R.hip[j][0]) + " " + f(R.hip[j][1]) + ")" : "");
+        });
+      }
+      function headTilt(pg, R, a) { var h = pg.querySelector(".head"); if (h) h.setAttribute("transform", a ? "rotate(" + f(a) + " " + f(R.neck[0]) + " " + f(R.neck[1]) + ")" : ""); }
+
+      // ── The bills' paths ──
+      var MT = [MOUNT[0] + 40, MOUNT[1] - MOUNT[3] + 30], LAND = [-210, -48 * BK], MOUTH = [0, MOUTH_Y - 20];
+      function warAt(b, t) {
+        var a = t - b.hop;
+        if (a < 0) return null;
+        if (a < 0.36) return { p: arc(MT, LAND, a / 0.36, 90), l: 0, clip: false };
+        if (a < 0.42) return { p: LAND, l: 1, clip: false };
+        var u = (a - 0.42) / 0.42;
+        if (u < 1) { var p = arc(LAND, [MOUTH[0] - 10, MOUTH[1] + 60], u, 420), desc = u > 0.6; return { p: p, l: legs(t, 10), clip: desc, rot: -30 + 80 * u }; }
+        return null;
+      }
+      var OUT0 = 0.98; // from the hop to the med bill showing at the spout
+      function medAt(b, j, t) {
+        var a = t - b.hop - OUT0;
+        if (a < 0) return null;
+        var y0 = -48 * BK;
+        if (b.first) {
+          // drops out of the spout, walks to the baby and climbs into its hands; then the baby holds it
+          if (a < 0.18) return { p: [SPOUT[0] - 6, SPOUT[1] + (y0 - SPOUT[1]) * (a / 0.18)], k: 0.5 + 0.5 * a / 0.18, l: 0 };
+          var climb = tMed + 0.95 - (b.hop + OUT0);
+          if (a < climb) return { p: [SPOUT[0] - 6 + 20 * smooth((a - 0.18) / (climb - 0.18)), y0 - Math.abs(Math.sin(a * 14)) * 6], k: 1, l: legs(t, 8) };
+          return null;
+        }
+        if (a < 0.18) return { p: [SPOUT[0], SPOUT[1] + (y0 - SPOUT[1]) * (a / 0.18)], k: 0.5 + 0.5 * a / 0.18, l: 0 };
+        var x = SPOUT[0] + 640 * (a - 0.18), y = y0 - Math.abs(Math.sin(a * 14 + j)) * 8;
+        if (x > HILL[0] - 200) return null;
+        return { p: [x, y], k: 1, l: legs(t + j * 0.07, 9) };
+      }
+
+      // ── The camera ──
+      var KEYS = [[0, "open", 1], [tMove - 0.02, "open", 1.04], [tMove + 0.75, "move", 1], [tMurder - 0.15, "move", 1.02], [tMurder + 0.35, "duck", 1], [tMed - 0.32, "duck", 1.03], [tMed + 0.15, "spout", 1], [tY[1] - 0.15, "spout", 1.04],
+        [tY[1] + 0.45, "yr2", 1], [tDie - 0.55, "yr2", 1.02], [tDie - 0.1, "yr2b", 1], [tY[2] - 0.1, "yr2b", 1.03], [tY[2] + 0.55, "five", 1], [tY[3] - 0.1, "five", 1.05], [tY[3] + 0.6, "ten", 1], [tWhats - 0.3, "ten", 1.02],
+        [tWhats + 0.2, "tenB", 1], [tY[4] - 0.08, "tenB", 1.03], [tY[4] + 0.55, "wide", 1], [tY[4] + 0.8, "wide", 1.01], [tUsed - 0.2, "wideR", 1], [tUsed + 0.3, "two", 1], [tWhat - 0.02, "two", 1.02],
+        [tWhat + 0.32, "what", 1], [D, "what", 1.04]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+        var yr = yearAt(t);
+
+        // the calendar: the current year shows; the last page tears off and falls on each "Year"
+        calEls.forEach(function (c, j) { show(c, j === yr); });
+        pageEls.forEach(function (p, j) {
+          var a = j + 1 < tY.length ? t - tY[j + 1] : -1;
+          if (a < 0 || a > 0.7) { show(p, 0); return; }
+          show(p, 1);
+          var u = a / 0.7, tear = p.querySelector(".tear");
+          tear.setAttribute("transform", "translate(" + f(-30 * u) + "," + f(260 * u * u) + ") rotate(" + f(-70 * smooth(u * 2)) + " -40 -98)");
+          p.setAttribute("opacity", (1 - smooth((u - 0.6) / 0.4)).toFixed(2));
+        });
+
+        // the factory: chimney smoke (navy-blue puffs, teal from Year ten), the conveyor's loads (missiles, then pill bottles)
+        pfEls.forEach(function (e, j) {
+          var n = NOSE[j % 3], per = 2.1, ph = (t + j * 0.7) / per, cyc = Math.floor(ph), u = ph - cyc, born = (cyc * per) - j * 0.7;
+          var teal = born >= tY[3] - 0.3;
+          show(e, 1);
+          e.setAttribute("opacity", (u < 0.15 ? u / 0.15 : 1 - smooth((u - 0.55) / 0.45)).toFixed(2));
+          e.setAttribute("transform", "translate(" + f(n[0] + 30 * u + Math.sin(u * 5 + j) * 8) + "," + f(n[1] - 20 - 230 * u) + ") scale(" + (0.6 + 1.3 * u).toFixed(2) + ")");
+          show(e.querySelector(".pf-g"), !teal); show(e.querySelector(".pf-t"), teal);
+        });
+        ldEls.forEach(function (e, j) {
+          var run = VBELT * t + j * CONV_P, cyc = Math.floor(run / (CONV_P * NB)), u = run - cyc * CONV_P * NB;
+          var born = (cyc * CONV_P * NB - j * CONV_P) / VBELT, bottle = born > tY[3] - 2.2;
+          var x = DOOR - 10 - u, len = CONV_W * S - 20, y = -66 * S, fall = 0;
+          if (u > len) { fall = (u - len) / 60; x = DOOR - 10 - len - 20 * fall; y += 120 * fall * fall; }
+          e.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") scale(" + S + ")");
+          e.setAttribute("opacity", fall > 1 ? 0 : 1);
+          show(e.querySelector(".ld-m"), !bottle); show(e.querySelector(".ld-b"), bottle);
+        });
+
+        // the mountain drains from the top; the hill grows from the bottom
+        var drain = t < tMurder ? 0 : t < tTwo ? 0.04 : t < tY[2] ? 0.08 : t < tY[3] ? 0.18 : 0.18 + 0.82 * smooth((t - tY[3] - 0.1) / 2.6);
+        var nm = Math.round(mrEls.length * (1 - drain));
+        mrEls.forEach(function (e, j) { show(e, j < nm); });
+        show(el("stray0"), nm === 0); show(el("stray1"), nm === 0);
+        var grow = t < tTwo + 1.6 ? 0 : t < tY[2] + 1.6 ? 0.12 : t < tY[3] + 1.4 ? 0.25 : 0.25 + 0.75 * smooth((t - tY[3] - 1.4) / 2.6);
+        var nh = Math.round(hrEls.length * grow);
+        hrEls.forEach(function (e, j) { show(e, j < nh); });
+
+        // the bills
+        var busy = 0;
+        BILLS.forEach(function (b, j) {
+          var w = warAt(b, t);
+          show(wf[j], w && !w.clip); show(wc[j], w && w.clip);
+          if (w) {
+            var e = w.clip ? wc[j] : wf[j];
+            e.setAttribute("transform", "translate(" + f(w.p[0]) + "," + f(w.p[1]) + ") rotate(" + f(w.rot || 0) + ")");
+            setLegs(e, w.l);
+            if (w.clip) busy = 1;
+          }
+          var m = medAt(b, j, t);
+          show(mw[j], !!m);
+          if (m) { mw[j].setAttribute("transform", "translate(" + f(m.p[0]) + "," + f(m.p[1]) + ") scale(" + m.k.toFixed(3) + ")"); setLegs(mw[j], m.l); }
+          var a = t - b.hop;
+          if (a > 0.8 && a < 1.05) busy = 1;
+        });
+        // the funnel shudders while it works, and its lever jumps
+        funnelEl.setAttribute("transform", "translate(" + f(FUN[0] + (busy ? Math.sin(t * 70) * 3 : 0)) + "," + f(FUN[1]) + ") scale(" + FK + ")");
+        lever.setAttribute("transform", busy ? "rotate(" + f(30 + Math.sin(t * 40) * 12) + " 80 -112)" : "");
+
+        // ── the human at the spout ──
+        // Year one: the baby crawls in under the spout, sits, takes the bill, stands, one wobbly step, plop
+        var bk = S * 0.62;
+        if (yr === 0) {
+          var bx = KIDX[0], pose = "sit", dy = 0, rot = "";
+          if (t < tOne + 0.9) {
+            // it scoots in on its diaper, hop by hop
+            var cu = clamp((t - tOne) / 0.9);
+            bx = KIDX[0] + 340 * (1 - cu); pose = "sit";
+            dy = -Math.abs(Math.sin(cu * Math.PI * 4)) * 16;
+          } else if (t < tMed + 0.95) pose = "sit";
+          else if (t < tBaby - 0.35) pose = "sitBill";
+          else if (t < tSteps) {
+            pose = "stand";
+            var su = (t - (tBaby - 0.35)) / (tSteps - tBaby + 0.35);
+            bx = KIDX[0] + 26 * smooth((su - 0.45) / 0.55);
+            dy = -Math.abs(Math.sin(su * Math.PI)) * 10;
+            rot = " rotate(" + f(Math.sin(t * 22) * 7) + " 0 100)";
+          } else { pose = "plop"; dy = t < tSteps + 0.12 ? -14 * Math.sin(Math.PI * (t - tSteps) / 0.12) : 0; bx = KIDX[0] + 26; }
+          var pg0 = place("baby", bx, bk, pose, dy, rot);
+        } else place("baby", 0, 1, null);
+
+        // Year two: the toddler, holding the bill; pats its own chest on "die!"
+        if (yr === 1) {
+          var tp = t > tDie && t < tDie + 0.9 ? (legs(t, 7) ? "pat1" : "pat2") : "stand";
+          place("tod", KIDX[1], S * 0.72, tp, t < tY[1] + 0.12 ? -20 * (1 - (t - tY[1]) / 0.12) : 0);
+        } else place("tod", 0, 1, null);
+
+        // Year five: the kid; reaches for the missile, holds it at arm's length on "bombs?", hands it back on "That"
+        if (yr === 2) {
+          var kp = t < tRemember + 0.6 ? "stand" : t < tBombs ? "reach" : t < tThat ? "hold" : t < tWeird + 0.4 ? "give" : "stand";
+          var kpg = place("kid", KIDX[2], S * 0.84, kp);
+          headTilt(kpg, RIG.kid[kp], kp === "hold" ? 10 : 0);
+        } else place("kid", 0, 1, null);
+
+        // Year ten: the teenager shrugs on "war?"
+        if (yr === 3) {
+          var tpg = place("teen", KIDX[3], S * 0.98, t > tWar + 0.3 && t < tY[4] - 0.1 ? "shrug" : "stand", t > tWar + 0.3 && t < tWar + 0.5 ? -8 : 0);
+          headTilt(tpg, RIG.teen.shrug, t > tWar + 0.3 && t < tY[4] - 0.1 ? -8 : 0);
+        } else place("teen", 0, 1, null);
+
+        // Year twenty: the grown man; on "WHAT?!" his eyes shoot out on springs and his jaw drops to the ground
+        var fx = el("manfx");
+        if (yr === 4) {
+          var mpose = t >= tWhat ? "what" : "stand", mk = S * 1.02;
+          var mpg = place("man", KIDX[4], mk, mpose);
+          var eu = 0;
+          if (t >= tWhat) {
+            var a1 = t - tWhat, a2 = t - tWhatA;
+            eu = a1 < 0.16 ? a1 / 0.16 * 1.18 : a1 < 0.3 ? 1.18 - 0.18 * (a1 - 0.16) / 0.14 : 1 + Math.sin(a1 * 22) * 0.05 * Math.exp(-a1 * 3);
+            if (a2 > 0) eu = Math.max(0, 1 - a2 / 0.12) * eu;
+          }
+          var ju = t >= tWhat ? (t - tWhat < 0.18 ? (t - tWhat) / 0.18 : 1) : 0;
+          if (t > tWhatA) ju = Math.max(0, 1 - (t - tWhatA) / 0.16);
+          Array.prototype.forEach.call(mpg.querySelectorAll(".eye"), function (e) { show(e, eu < 0.05); });
+          var R = RMan, ey = R.eyes, mo = R.mouth, out = "";
+          if (eu > 0.05) {
+            [0, 1].forEach(function (i) {
+              var y0 = ey[1] - 2 + i * 2, x0 = ey[0] - i * 6, x1 = x0 + (-66 - i * 12) * eu, y1 = y0 + (-24 + i * 30) * eu;
+              var d = "M" + f(x0) + "," + f(y0);
+              for (var k = 1; k <= 8; k++) { var uu = k / 8; d += " L" + f(x0 + (x1 - x0) * uu) + "," + f(y0 + (y1 - y0) * uu + (k % 2 ? -5 : 5)); }
+              out += '<path d="' + d + '" fill="none" stroke="' + C.slate + '" stroke-width="2.4"/><circle cx="' + f(x1) + '" cy="' + f(y1) + '" r="12" fill="#FFFFFF" stroke="' + ink + '" stroke-width="2.4"/><circle cx="' + f(x1 - 4.5) + '" cy="' + f(y1) + '" r="4.8" fill="' + ink + '"/>';
+            });
+          }
+          if (ju > 0.02) {
+            var jb = mo[1] + (96 - mo[1]) * ju;
+            out = '<path d="M' + f(mo[0] - 12) + "," + f(mo[1] - 2) + " L" + f(mo[0] + 10) + "," + f(mo[1] - 2) + " L" + f(mo[0] + 14) + "," + f(jb) + " L" + f(mo[0] - 18) + "," + f(jb) + ' Z" fill="#D9B48F" stroke="' + ink + '" stroke-width="2.6"/>' +
+              '<path d="M' + f(mo[0] - 8) + "," + f(mo[1] + 2) + " L" + f(mo[0] + 6) + "," + f(mo[1] + 2) + " L" + f(mo[0] + 8) + "," + f(jb - 8 * ju) + " L" + f(mo[0] - 12) + "," + f(jb - 8 * ju) + ' Z" fill="#3A1E1A"/>' +
+              '<path d="M' + f(mo[0] - 10) + "," + f(jb - 8 * ju) + " Q" + f(mo[0] - 2) + "," + f(jb - 18 * ju) + " " + f(mo[0] + 6) + "," + f(jb - 8 * ju) + ' Z" fill="#D9707A"/>' + out;
+          }
+          fx.innerHTML = out;
+          fx.setAttribute("transform", "translate(" + f(KIDX[4]) + "," + f(-100 * mk) + ") scale(" + mk + ")");
+        } else fx.innerHTML = "";
+
+        // ── the Weapons Maker ──
+        var wk = S, wpg = null, wx = WM_HOME, wpose = null, wdy = 0, R2;
+        if (t < tY[3]) {
+          if (t < tMurder) wpose = "hold";
+          else if (t < tHey) {
+            // the dive: a hop sideways under the bench
+            var du = clamp((t - tMurder) / 0.3);
+            wpose = du < 0.4 ? "stand" : "duck"; wx = WM_HOME + (BENCH[0] + 60 - WM_HOME) * smooth(du); wdy = -Math.sin(Math.PI * du) * 60;
+          } else if (t < tDie - 0.45) { wpose = "peek"; wx = BENCH[0] + 60 + 70 * smooth((t - tHey) / 0.25); }
+          else if (t < tDie) { var cu2 = smooth((t - tDie + 0.45) / 0.4); wpose = "stand"; wx = BENCH[0] + 130 + (WM_HOME - BENCH[0] - 130) * cu2; wdy = -Math.sin(Math.PI * cu2) * 30; }
+          else if (t < tDie + 0.75) { wpose = ["pat1", "pat2", "pat3"][Math.floor((t - tDie) * 9) % 3]; }
+          else if (t < tY[2]) wpose = t < tDie + 1.35 ? "pulse" : "hold";
+          else if (t < tRemember - 0.05) {
+            // Year five: he walks over to the funnel with his missile
+            var wu = smooth((t - tY[2] - 0.2) / (tRemember - tY[2] - 0.3));
+            wpose = "walk"; wx = WM_HOME + (WM_AT - WM_HOME) * wu; wdy = -Math.abs(Math.sin(t * 9)) * 6 * (wu > 0 && wu < 1 ? 1 : 0);
+          } else if (t < tBombs) { wpose = "offer"; wx = WM_AT; }
+          else if (t < tThat + 0.2) { wpose = "empty"; wx = WM_AT; }
+          else { wpose = "back"; wx = WM_AT; }
+        }
+        wpg = place("wm", wx, wk, wpose, wdy);
+        if (wpg) {
+          R2 = RIG.wm[wpose];
+          walkLegs(wpg, R2, t, 9, wpose === "walk" && t > tY[2] + 0.2 && t < tRemember - 0.2 ? 22 : 0);
+          // under the bench he squashes down; peeking, he cranes out sideways
+          if (wpose === "duck" || wpose === "peek") wpg.setAttribute("transform", "translate(0,100) scale(1.04,0.8) translate(0,-100)" + (wpose === "duck" ? " translate(0," + f(Math.sin(t * 30) * 1.2) + ")" : ""));
+          else wpg.setAttribute("transform", "");
+          if (wpose === "pulse") headTilt(wpg, R2, t < tDie + 1.05 ? 14 : 0);
+          else if (wpose === "back") {
+            // the missile goes down like a balloon on "weird.", then he looks down at it, then at the kid
+            var mu = smooth((t - tWeird) / 0.9), buzz = mu > 0 && mu < 1 ? Math.sin(t * 60) * 7 * (1 - mu) : 0;
+            deflate.innerHTML = '<g transform="translate(' + f(cradle[0]) + "," + f(cradle[1] - 6 + 8 * mu) + ") rotate(" + f(-14 + 14 * mu + buzz) + ') scale(1.25)">' + missile(mu) +
+              (mu > 0.02 && mu < 0.98 ? '<path d="M-48,' + f(-4 + 30 * mu) + " l-14,-6 M-48," + f(2 + 30 * mu) + " l-16,2 M-46," + f(8 + 30 * mu) + ' l-12,8" stroke="' + ink + '" stroke-width="1.6" stroke-linecap="round" opacity="0.8"/>' : "") + "</g>";
+            var la = t - tWeirdA;
+            headTilt(wpg, R2, la > 0 && la < 0.2 ? 16 * smooth(la / 0.1) : 0);
+          } else headTilt(wpg, R2, 0);
+        }
+        // Year ten: in a lab coat now, he strolls past cradling a grinning pill bottle
+        if (yr === 3) {
+          var lu = (t - tWhats + 0.45) / 2.4, lx = -560 + 900 * lu;
+          var lpg = place("lab", lx, S, lu > -0.1 ? "walk" : null, -Math.abs(Math.sin(t * 7)) * 5);
+          if (lpg) walkLegs(lpg, RIG.lab.walk, t, 7, 18);
+        } else place("lab", 0, 1, null);
+        // Year twenty: old, gray and stooped, he holds out the framed photo
+        if (yr === 4) place("old", OLDX, S, t < tUsed ? "stand" : "show");
+        else place("old", 0, 1, null);
+      });
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>
