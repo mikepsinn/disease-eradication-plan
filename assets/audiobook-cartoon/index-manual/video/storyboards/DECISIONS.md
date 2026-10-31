@@ -2,7 +2,7 @@
 
 ## For Mike
 
-1. **Part 20, bidder-paddles.** The book itself says the $1B bribery budget is "8 times" the weapons makers' $198M a year (`index-manual.qmd` line 428, written as a plain number). It is really 5.05 times, and "about twice" an election cycle is really 2.5 times. The fix belongs in the book (compute the ratio as a parameter), and then the line can be re-recorded. Until then the chart is drawn to scale (five bars), so the picture and the narration disagree.
+1. **Part 20, bidder-paddles.** Fixed in the book (`index-manual.qmd`): "which is 5 times their annual spend", with the inaccurate election-cycle clause dropped. The current audio still says "eight times" until the episode audio is regenerated; the chart is drawn to scale (five bars).
 2. **Part 1, split-the-atom and pointing-at-each-other.** Decided: keep the pilot as approved (the Victorian scientist, Uncle Sam and the Soviet general); Uncle Sam reads as "the US" faster than Truman does. The storyboard and ART.md are back to that cast.
 
 ## Decided by default (Mike's calls), unless he says otherwise
