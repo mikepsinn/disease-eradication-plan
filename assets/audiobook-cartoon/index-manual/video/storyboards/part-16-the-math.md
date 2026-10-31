@@ -2,7 +2,7 @@
 format: 1920x1080
 duration: 1:22.8
 message: "A $1 billion campaign that gets treatments to patients 212 years sooner returns 7.53 million to one, at two cents per healthy year of life."
-arc: Title card (the Calculator peeks over MATH) → at the lectern, the Calculator warms up like a prize fighter → one plate: the queue of the dead fills back in, the Rich Human prices them, the blobs are bowled off the globe, a mountain of money, and dividing by a billion knocks nine zeros off the sky onto the campaign's bundle → the Calculator screams and walks off the lectern → the hall of greatest hits: the giant treaty trophy breaks the shelf → the pessimist hangs the gauge on 1%, and the shrunken trophy still towers → the Calculator peeks back, screams smaller and loses a second key
+arc: Title card (the Calculator peeks over MATH) → at the console, the Calculator warms up like a prize fighter → one plate: the queue of the dead fills back in, the fat cat prices them, the blobs are bowled off the globe, a mountain of money, and dividing by a billion knocks nine zeros off the sky onto the campaign's bundle → the Calculator screams and steps off the ledge → the hall of greatest hits: the giant treaty trophy breaks the shelf → the pessimist hangs the gauge on 1%, and the shrunken trophy still towers → the Calculator peeks back, screams smaller and loses a second key
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 16, "The Math"
@@ -12,178 +12,174 @@ version: v3
 
 # Part 16 storyboard: "The Math"
 
-Times are MP3 times. They come from each scene's cue word in `../../word-timings.json`, so do not edit them by hand; if the audio changes, rebuild the timings and the scenes follow. Each scene runs until the next one starts. Inside a scene, every move starts on the quoted word.
+**Source:** `index-manual.qmd` "The Math"; its numbers come from `knowledge/solution/dfda.qmd` and the parameters below.
 
-Scenes are named, not numbered. Use the name in feedback ("quadrillion-equation: hold the zeros longer"). The number in each heading is only the order.
+**The numbers (from `_variables.yml`):**
+- `dfda_trial_capacity_plus_efficacy_lag_years` 212 years sooner (from Part 14).
+- `standard_economic_qaly_value_usd` $150,000 per healthy year of life.
+- `dfda_trial_capacity_plus_efficacy_lag_dalys_discounted` 50.2 billion healthy years × $150,000 = `dfda_trial_capacity_plus_efficacy_lag_economic_value` $7.53 quadrillion ($7,530,000,000,000,000).
+- ÷ `treaty_campaign_total_cost` $1 billion = `treaty_roi_trial_capacity_plus_efficacy_lag` 7.53 million to 1: knock nine zeros off.
+- `treaty_cost_per_daly_trial_capacity_plus_efficacy_lag` $0.02 per healthy year ($1 billion ÷ 50.2 billion years) against `bed_nets_cost_per_daly` $184: `treaty_vs_bed_nets_multiplier` 9,200×. In pennies: a stack of 2 against a tower of 18,400.
+- Return per dollar: `childhood_vaccination_roi` 10.9, `smallpox_eradication_roi` 159, the treaty 7,530,000, which is 47,000 times smallpox's.
+- `political_success_probability` 1%: the expected cost per healthy year is 100 times more, about $2, a stack of 200 pennies, and the tower of 18,400 is still `treaty_expected_vs_bed_nets_multiplier` 92.1 times taller.
 
-Look, characters and rules: `../../cartoon-style-bible.md`. The part is a 1950s atomic-age instructional film. Layer A is the host's studio set (`KIT.studio`): Wishonia large at her navy lectern, her coffee mug on the left end of its reading top. Layer B is two illustrated plates the camera travels over (`KIT.camera`), one framing per phrase: the math-field (the sum, term by term) and the hall-of-hits (the trophies); Wishonia is not in them, she is the voice. Money is green: the money mountain and the campaign's bundle are plain money (`KIT.money("plain")`, no seal). Part 2 (`../parts/part-02.json`, `../compositions/scenes/part-02/`) is the reference for every kind of shot.
+**What the viewer must leave with:** a $1 billion campaign that gets treatments to people 212 years sooner returns 7.53 million to 1, buys a healthy year for 2 cents (9,200 times cheaper than bed nets), and still beats bed nets 92 times if it has a 1% chance.
 
-**Spine.** The Calculator (`KIT.props.calculator`), the viewer's calculator, standing on the right end of Wishonia's lectern. It peeks over MATH on the title card and ducks; in host-remembers it punches in "212" and bounces on its toes like a prize fighter before the bell; it is offstage doing the sums during the math-field; in calculator-scream it is back on the lectern buried in its own tape of zeros, shows "ERROR", screams and walks off the edge; in calculator-returns it peeks back up over the edge, a strip of tape across its cracked display, reads "92.1", screams a smaller scream and drops away again.
+**Plates:**
+- Host scenes (host-remembers, calculator-scream, calculator-returns): Wishonia at her console on the observation deck, Earth in the window, the Calculator on the right end of the ledge.
+- math-field: a field under a wide sky: a queue of patients at the front, open ground that fills with price-tagged hourglasses to the horizon, and sky for the number.
+- hall-of-hits: a hall-of-fame wall with a marquee, "GREATEST HITS IN NOT DYING"; on the left a penny chart (cost of one healthy year), on the right a column chart (return per dollar) with a gold cup on each column.
 
-**Running gag: the Calculator loses a key every time it leaves.** Its first crash bounces its "=" key back up onto the lectern, where it stays beside the mug; its second crash bounces a second key up beside the first.
+**Cast:** existing: `gauge` and `needle` (the 1% meter), `scientist`, `globe`. New: `pill-bottle` (a pill bottle riding Part 14's `arrow-sign`), `patient` (chest light red, then teal), `hourglass`, `fat-cat` with a roll of `price-tag`, `money-bundle` (a strapped bundle of plain green bills on stick legs), `zero` (one big stamped digit that can fall), `penny`, `bed-net-cup` (a gold cup under a little net, a tiny human asleep in it), `mosquito`, `smallpox-cup`, `vaccine-cup` (a syringe for a handle), `treaty-column`, `germ`, `magnifier`, `pessimist` (a gloomy man in a raincoat) with his own `raincloud`, `marquee`.
 
-**Second spine: the giant treaty trophy.** greatest-hits-trophies and one-percent-chance are one plate. The trophy rolls in so tall its top is out of the picture, its weight snaps the shelf of humanity's three little cups, and on "ninety-two" it shrinks to 1% of its size and still towers over the bed-net cup. The shelf stays tilted, the cups stay piled at its low end.
+**Callbacks:**
+- Part 14: the 212 years (the narrator: "Remember the two hundred and twelve years") and its fat arrow sign, "212 YEARS SOONER", which a pill bottle now rides like a rocket.
+- Set up here: the Calculator's cracked, taped display and the two keys it loses (Part 19, it-is-arithmetic; Part 22).
 
-**Callbacks.** From Part 14 (two-hundred-twelve-years-sooner): the 212 years (the Calculator's first sum) and the fat wooden arrow sign stamped "212 YEARS SOONER", which the rocket pill bottle rides through the window in quadrillion-equation. From Part 2 (the-toll): the x-ray, run backwards: the skeletons standing in the queue x-ray back into people. The Rich Human's dollar-sign eyes (the fat cat on his hill of papers). The mug sip (style bible, gag 3) and the iris (gag 6): host-remembers irises in on her face and calculator-returns irises out on it.
+**New art:** every new cut-out in the cast list. Host props, drawn in the host style: the Calculator (`KIT.props.calculator`) with its tape, its cracked and taped display, its "=" key and a second loose key, and the coffee mug.
 
-**Set up here.** Part 19 (it-is-arithmetic): the Calculator walks back onto the right end of the lectern with its cracked, taped display and two gaps in its keypad (the "=" and the key it loses here), reads "1.43" and, for once, does not scream; Part 22 brings it back screaming at a × sign. Draw its damage from calculator-returns.
-
-**Held frame.** None: there is no death toll in this part.
-
-**Transitions.** The title card comes up from black and goes down to black; host-remembers irises in on Wishonia's face. Cuts between the set and the plates. one-percent-chance continues greatest-hits-trophies' plate with no seam, the camera still traveling. calculator-returns irises out on her face to black, so Part 17's title card comes up from black.
-
-**Bans for this part.**
-- No equation written out: the sum is the pictures and the stamped numbers.
-- The 2¢ is a crumb-sized price tag, not a coin.
-- The Calculator's damage is continuous: clean until it crashes, then a cracked display, a strip of tape, and one more missing key per exit.
-
-## Changes from v2
-
-- Wishonia's office, the wall screen and her corner (PiP) are gone. She hosts from her lectern in three host shots (host-remembers opens the argument, calculator-scream, calculator-returns ends the part), and the Calculator lives on her lectern instead of a chalkboard ledge and a desk.
-- The chalkboard equation and its chalk lines are gone. The sum is one plate the camera travels over, one term per framing (the queue, the queue to the horizon, the price tags, the globe, the mountain, the bundle), and its only text is the numbers: "$150,000 A YEAR", "$7,530,000,000,000,000", "7,530,000 : 1".
-- New joke for the division (it needed a chalk bar): dividing by a billion knocks the "$" and the last nine zeros off the quadrillion in the sky, and they fall on the little campaign bundle and bury it.
-- The trophies are a plate of their own with the same gags; the yardstick's flags are just "9,200×" and "92.1×", and the gauge loses its "CHANCE OF PASSING" label (its window reads "1%").
-- The Calculator's last exit moves from the plate to the lectern, so the part ends on the host: it peeks back up over the lectern's edge, the way it peeked over MATH on the title card.
+**Kit additions:**
+- A chart move: axes and value tags on aged paper, and a flag at the top of a bar.
+- A stack move: copies of a cut-out (pennies) stacked into a column that grows to a count, faster as it goes, with the camera following its top.
+- A pictogram move: copies of a cut-out tiling a field row by row to the horizon, then all swapping to another cut-out (hourglass to money).
+- A stamped number that types in one character per thump, and characters that fall off it one by one.
+- A column that punches up through the top of the frame and through a shelf, with what stood on it sliding off.
 
 ## Scene 1 · the-math-title
 
 - id: the-math-title
 - act: Title
 - transition_in: up from black (the head of a reel)
-- key: after "Math.": "THE MATH" on the navy card under the emblem, the Calculator's display and eyes peeking over the top of "MATH"
 - cue: "The Math."
 - time: 34:20.6 to 34:22.4 (1.8 s)
 - voiceover: "The Math."
 - layer: A, title card
-- scene: `KIT.titleScene`'s period card (look "atomic"): plain navy, the film's emblem with its three running papers, and the heading under it. Heading lines, 16:9: "THE" (style small) / "MATH"; 9:16: the same two lines. The small gag: the Calculator, clean, display "0", pops up behind "MATH" like a gopher.
-- props: title-card, calculator
 - status: planned
 
-Moves: "The" → the card comes up from black with the whole heading on it, the emblem's papers running round their orbits. after "Math." → the Calculator pops up behind "MATH", only its display and eyes over the tops of the letters; its eyes read the heading left to right; a bead of sweat flies off it; it ducks back down before the card goes to black.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "The Math." | The heading. | The period title card: "THE" over "MATH" under the emblem. After "Math.", the Calculator pops up behind "MATH", only its display and eyes over the letters, display "0". | Its eyes read the heading left to right, a bead of sweat flies off, and it ducks. |
 
-Sound: a projector whirr from "The"; a boing as it pops up; a pop as it ducks.
-
-On screen: "THE MATH". Why: the narrator reads the heading, and the peek introduces the Calculator already nervous about it.
+Sound: the projector whirr; a boing as it pops up; a pop as it ducks.
 
 ## Scene 2 · host-remembers
 
 - id: host-remembers
 - act: The return
 - transition_in: iris in on her face
-- key: on "twelve": the Calculator on the lectern bouncing on its toes like a prize fighter, "212" on its display, Wishonia presenting it
 - cue: "Remember the two hundred"
 - time: 34:22.4 to 34:25.6 (3.2 s)
 - voiceover: "Remember the two hundred and twelve years timeline shift?"
 - layer: A, host
-- scene: The host's set (`KIT.studio`), with her coffee mug on the left end of the lectern's reading top and the Calculator standing on the right end, under her presenting hand, clean and calm, display "0".
 - wishonia: big, happy-smile + body-presenting; skeptical-smile + body-hands-hips on "shift?"
-- props: studio, lectern, mug, calculator
 - status: planned
 
-Moves: "Remember" → the iris opens on her face; the camera pushes in slowly for the whole shot. "two hundred and twelve" → the Calculator punches the number in, a ripple of keys going down, and its display reads "212". "years" → it gives the camera a cocky nod and starts bouncing from foot to foot on its stick legs like a prize fighter waiting for the bell. "shift?" → Wishonia raises a brow at the viewer, who does not remember. after "shift?" → a boxing bell rings twice: round one.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Remember the two hundred and twelve years timeline shift?" | Treatments arrive 212 years sooner (Part 14). | Wishonia at her console, the Calculator on the right end of the ledge. It punches in "212", a ripple of keys going down, then starts bouncing from foot to foot on its stick legs like a prize fighter before the bell. | A boxing bell rings twice after "shift?": round one. |
 
-Sound: a key click on "two", "hundred" and "twelve"; the bell twice after "shift?".
-
-On screen: "212" on its display. Why: she opens the argument to the viewer, and the Calculator climbs into the ring it is about to lose.
+Sound: a key click on "two", "hundred" and "twelve"; the bell, twice.
 
 ## Scene 3 · quadrillion-equation
 
 - id: quadrillion-equation
 - act: The return
 - transition_in: cut
-- key: after "one.": "7,530,000 : 1" in the sky over the mountain of money, and the campaign's little bundle buried at its foot under a heap of fallen zeros, its legs kicking out of the pile
 - cue: "Treatments reaching patients"
 - time: 34:25.6 to 34:55.0 (29.4 s)
 - voiceover: "Treatments reaching patients that many years sooner means billions of people gain years of healthy life. Value each of those life-years at one hundred and fifty thousand dollars (the standard economic valuation), multiply across the global disease burden over the acceleration window, and you get seven point five three quadrillion dollars in total economic value. Divide that by the one billion dollars campaign cost, and you get a return of seven point five three million to one."
 - layer: B, plate math-field
-- scene: One wide plate: a tan field under a cream sky. Left: a queue of everyday humans facing right, every chest light blinking red. Its front runs along the bottom of the field, and behind that it winds back and forth across the field to the horizon, its far end dots; a stretch of it just behind the front is grinning skeletons still standing in line. Right of the queue's front: open ground where the Rich Human waddles in. Further right: a classroom globe (`KIT.props.earthGlobe`) on a tall stand, a heap of smug disease blobs (`KIT.props.diseaseBlob`) piled on top of it, and beside it a window frame standing on its own in the field. Behind the globe, flat ground where the money mountain will rise, and a wide sky over it for the numbers. The camera travels left to right, pulls back and up for the number, and drops to the mountain's foot for the bundle.
-- props: human (queue, skeletons), xray, pill-bottle, rich-human, price-tag (a roll of them), earth-globe, disease-blob, window, arrow sign (Part 14's), rocket, money (plain), money-mountain, stamped number
 - status: planned
 
-Moves: "Treatments" → close on the queue: a troop of pill bottles on stick legs runs in from the right along the line. "patients" → each bottle hops into a patient's hands, and that patient's chest light goes dark. "sooner" → the last bottles reach the skeletons, and they x-ray back into people, look down at their own hands and pat their faces. "billions" → the camera pulls back along the queue: it winds back across the field to the horizon, every light blinking red, and a wave of lights going dark runs down it from the front to the horizon. "life." → the whole queue hops. "Value" → the camera pushes in on the front of the queue: the Rich Human waddles in from the right on his stub legs, a fat roll of price tags under one arm. "life-years" → he tears a tag off the roll and gives it a long, slow lick. "thousand dollars" → he slaps it onto the forehead of the first human in line, "$150,000 A YEAR"; the human crosses its eyes up at it. "standard" → he waddles on down the line, lick, slap, lick, slap, a tag on every forehead. "valuation)," → he looks back over the tagged line, and his eyes ring up dollar signs. "multiply" → the camera leaves him and travels right, past the front of the queue, to the globe, the stand bowing under its heap of blobs, which grin down at us. "acceleration" → a pill bottle roars in from the left riding Part 14's fat wooden arrow sign, "212 YEARS SOONER", flipped to point the way it flies, a rocket strapped under the sign. "window," → it crashes through the glass of the window frame and bowls the blobs off the globe like ninepins; they splat flat on the ground, eyes blinking, and the globe springs up and spins. "seven" (first) → the camera pulls back and tilts up: behind the globe, a mountain of green money heaves up out of the ground. "quadrillion" → a stamp machine-guns the number into the sky over it, one character per thump, "$7,530,000,000,000,000", and the camera keeps pulling back to fit the zeros. "value." → the last zero lands, wobbles and settles. "Divide" → the camera drops to the foot of the mountain: a small strapped bundle of plain green money walks in on stick legs. "cost," → it looks up, and up, at the number over the mountain, and gulps. "return" → the camera pulls back to take in the number and the bundle; the number shakes, the "$" drops off its front, and its last nine zeros drop off its end one after another onto the bundle, burying it. "million" → the sky reads "7,530,000". "to one." → ": 1" stamps in after it. after "one." → the bundle's little legs kick out of the heap of zeros.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Treatments reaching patients that many years sooner" | The 212 years, delivered. | A pill bottle roars in riding Part 14's fat arrow sign, "212 YEARS SOONER", like a rocket. It sprays bottles down a queue of patients with red chest lights; each catches one, and the lights go teal. | |
+| "means billions of people gain years of healthy life." | Each cured person gets healthy years back. | Over each patient's head pops a little stack of hourglasses, one per healthy year. The camera pulls back along the queue to the horizon, hourglasses popping all the way. | |
+| "Value each of those life-years at one hundred and fifty thousand dollars (the standard economic valuation)," | Each healthy year is priced at $150,000. | The fat cat waddles down the line with a fat roll of price tags, tears one off, licks it, and slaps it on the first hourglass: "$150,000". Lick, slap, lick, slap down the line. | His eyes ring up dollar signs. |
+| "multiply across the global disease burden over the acceleration window," | 50.2 billion healthy years in all. | The tagged hourglasses multiply into rows that tile the whole field to the horizon, popping in like a times table. | He licks faster and faster until his tongue hangs out. |
+| "and you get seven point five three quadrillion dollars in total economic value." | $7.53 quadrillion. | Every hourglass flips into a bundle of green money; the camera pulls up and back over a field of money to the horizon, and a stamp machine-guns "$7,530,000,000,000,000" into the sky, one character per thump. | The camera has to keep pulling back to fit the zeros. |
+| "Divide that by the one billion dollars campaign cost," | The campaign costs $1 billion. | At the field's edge, one small bundle walks in on stick legs, tagged "$1 BILLION". It looks up, and up, at the number, and gulps. | |
+| "and you get a return of seven point five three million to one." | Dividing by a billion knocks nine zeros off. | The number shakes; the "$" and then its last nine zeros drop off its end one by one, and the sky reads "7,530,000 : 1". | The falling zeros land on the little bundle and bury it; its legs kick out of the heap. |
 
-Sound: a pop as the first light goes dark on "patients"; a sparkle as the skeletons fill back in on "sooner"; a boing as the queue hops; squeaky footsteps for the Rich Human; a slap as the first tag goes on, then a run of slaps down the line; a cash-register ding for the dollar eyes; a whoosh for the rocket and a clank and two splats for the window and the blobs; a fast run of stamp thumps for the number; squeaky footsteps for the bundle; a slide whistle down and thunks as the zeros fall; a stamp thump for ": 1".
-
-On screen: the tag "$150,000 A YEAR" on every forehead; "212 YEARS SOONER" on the arrow sign; "$7,530,000,000,000,000", then "7,530,000 : 1", stamped in the sky in Fraunces Black, navy on the cream sky. No: no "÷" or "=" written anywhere; no seal on the money. Why: the return, built one term per picture so a viewer can follow it, and the division is the joke: a billion is nine zeros.
+Sound: a rocket whoosh and a crash; a run of soft pops as the lights turn; squeaky footsteps and a run of lick-slaps; a cash-register ding for the dollar eyes; a rolling patter as the field fills; a fast run of stamp thumps; a gulp; a whistle and a thunk for each falling zero; a stamp for ": 1".
 
 ## Scene 4 · calculator-scream
 
 - id: calculator-scream
 - act: The return
 - transition_in: cut
-- key: on "scream,": the Calculator on the lectern, "ERROR" on its display, mouth wide, shake lines, its tape of zeros heaped on the lectern and spilling over the front, Wishonia unbothered with her hands on her hips
 - cue: "Your calculator will display"
 - time: 34:55.0 to 35:02.7 (7.7 s)
 - voiceover: "Your calculator will display an error, emit a tiny electronic scream, and attempt to leave the desk. This is correct."
 - layer: A, host
-- scene: The host's set, the mug on the left end of the lectern. The Calculator is back on the right end, drenched in sweat, smoke curling out of its seams, a paper tape of zeros still spooling out of its display and heaped over the lectern's front: it has been doing the sums.
 - wishonia: big, happy-smile + body-hands-hips; smirk-closed + body-idle on "desk." (the sip); happy-closed + body-hands-hips on "correct."
-- props: studio, lectern, mug, calculator, paper tape, calculator key
 - status: planned
 
-Moves: "Your" → back at the lectern: the Calculator, sweating and smoking, tape spooling. "display" → it turns to the camera. "error," → its display flashes "ERROR". "scream," → its mouth opens wide: shake lines and a tiny electronic scream. "attempt" → it marches to the lectern's right edge on its stick legs, trailing its tape. "leave" → it looks down over the edge. "desk." → Wishonia's mug rises to her lips and she sips. "correct." → the mug goes down slowly, and the Calculator steps off the edge and drops out of the picture, its tape whipping after it. after "correct." → a falling whistle, a crash from below, and its "=" key bounces up into the picture, spins, and lands on the lectern beside the mug. Wishonia does not look.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Your calculator will display an error," | The number is too big for a calculator. | Back at the console: the Calculator, drenched in sweat, smoke curling from its seams, a tape of zeros spooling out of it over the ledge. Its display flashes "ERROR". | |
+| "emit a tiny electronic scream," | | Its mouth opens wide: shake lines and a tiny scream. | |
+| "and attempt to leave the desk." | | It marches to the ledge's right edge, trailing its tape, and looks down. Wishonia raises her mug and sips. | |
+| "This is correct." | The math is right. | She puts the mug down slowly, and the Calculator steps off the edge, its tape whipping after it. | A crash from below, and its "=" key bounces up, spins, and lands beside the mug. She does not look. |
 
-Sound: an electric zap on "error,"; a tiny yelp of a scream on "scream,"; squeaky footsteps on "attempt to leave"; a falling slide whistle, a clank from below and a pop as the key bounces in, after "correct.".
-
-On screen: "ERROR". Why: the number is so big the machine quits, and the host confirms that this is correct.
+Sound: an electric zap on "error,"; a tiny yelp of a scream; squeaky footsteps; a falling whistle, a crash and a pop as the key lands.
 
 ## Scene 5 · greatest-hits-trophies
 
 - id: greatest-hits-trophies
 - act: Cost-effectiveness
 - transition_in: cut
-- key: after "cheaper.": the giant treaty trophy beside the snapped shelf, its top out of the picture, the yardstick beside it flagged "9,200×", the three small cups piled at the shelf's low end
 - cue: "Cost-effectiveness: two cents"
 - time: 35:02.7 to 35:30.2 (27.5 s)
 - voiceover: "Cost-effectiveness: two cents to save one year of healthy human life. Anti-malaria bed nets, the gold standard for keeping humans alive, cost one hundred and eighty-four dollars. This is nine thousand two hundred times cheaper. It beats smallpox eradication (one hundred and fifty-nine to one) and childhood vaccinations (ten point nine to one), which were humanity's previous greatest hits in the "not dying" genre."
 - layer: B, plate hall-of-hits
-- scene: A second plate: a hall of fame, a mustard wall over a wood floor. Left: a wooden shelf on two brackets holding humanity's three best buys in staying alive as small gold cups: bed nets (a cup draped in a little net, a tiny human asleep in it), smallpox eradication (a cup standing on a germ, `KIT.props.germ`) and childhood vaccines (a cup with a syringe for a handle); above the shelf, a dark marquee sign with bulbs round it. Right of the shelf, open floor for the giant trophy, a yardstick and (in one-percent-chance) the gauge, and a tall stretch of wall above it, because the trophy is very tall. The Scientist (`KIT.cast("scientist")`) works the hall.
-- props: scientist, price-tag, magnifier, cup, bed net, mosquito, trophy, dolly, yardstick, germ, marquee sign
 - status: planned
 
-Moves: "Cost-effectiveness:" → on the open floor of the hall. "cents" → a price tag no bigger than a crumb flutters down onto the floor; the Scientist strides in with a magnifying glass and bends over it. "life." → the camera pushes in through her glass: "2¢". "Anti-malaria" → the camera travels left to the shelf and stops on the first cup: the tiny human asleep in it under its bed net. "gold" → a gold star slaps onto the cup. "keeping" → a mosquito buzzes in and dive-bombs the net. "alive," → it bounces off and spirals away dizzy; the sleeper does not wake. "eighty-four" → the cup's price tag swings out on its string: "$184". "This" → the floor shakes. "nine" → the camera pulls back as the giant treaty trophy rolls in from the right on a dolly pushed by the Scientist, so tall its top is out of the picture, "1% TREATY" on its plate and the crumb-sized 2¢ tag tied to its base; the bed-net cup is a speck beside it. "two hundred" → a wooden yardstick stands up beside the trophy and unfolds upward, click by click, from the height of the bed-net cup until it runs out of the top of the picture. "cheaper." → a flag pops out of it at the top of the picture: "9,200×". after "cheaper." → the floorboards bow under the trophy, the shelf's bracket snaps at one end, and the three small cups slide down the tilted shelf and clink together at the low end. "smallpox" → the camera pushes in on the pile of cups: the smallpox cup gleams. "eradication" → it stamps down on the germ under it: splat, the germ flat as a pancake, eyes blinking. "fifty-nine" → its tag swings out: "159 : 1". "childhood" → a second germ climbs up the side of the vaccine cup. "vaccinations" → the cup's syringe handle jabs it, and it pops. "ten" → the cup's tag swings out: "10.9 : 1". "humanity's" → the camera pulls back: the dark marquee over the tilted shelf lights up, its bulbs chasing round "GREATEST HITS IN NOT DYING". "previous" → a strip slaps across its top: "PREVIOUS". after "genre." → one bulb pops and goes out.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Cost-effectiveness: two cents to save one year of healthy human life." | A healthy year costs 2 cents. | The hall's penny chart: on its baseline, a stack of just two pennies, too small to see. The Scientist bends over it with a magnifying glass; the camera pushes in through the glass: "2¢". | |
+| "Anti-malaria bed nets, the gold standard for keeping humans alive," | Bed nets are the best buy known. | Beside it, on the baseline, the bed-net cup: a gold cup under a little net, a tiny human asleep in it. A gold star slaps onto it. | A mosquito dive-bombs the net and bounces off dizzy; the sleeper does not wake. |
+| "cost one hundred and eighty-four dollars." | A healthy year by bed net costs $184. | A tower of pennies stacks up behind the cup, faster and faster, off the top of the wall; tag "$184". | |
+| "This is nine thousand two hundred times cheaper." | 9,200×. | The camera tilts up the tower, past the marquee, to a flag at its top: "9,200×". | The tower sways; the Scientist steadies it with one finger. |
+| "It beats smallpox eradication (one hundred and fifty-nine to one)" | Return per dollar: smallpox 159. | The camera travels right to the column chart: the smallpox cup on a column 159 units tall, tag "159 : 1". | The cup stamps down on a germ under it: splat, flat as a pancake, eyes blinking. |
+| "and childhood vaccinations (ten point nine to one)," | Vaccines 10.9. | The vaccine cup on a column 10.9 units tall, tag "10.9 : 1". | A germ climbs its side; the syringe handle jabs it, and it pops. |
+| "which were humanity's previous greatest hits in the "not dying" genre." | The treaty's 7.53 million to 1 dwarfs both. | The marquee lights up, "GREATEST HITS IN NOT DYING". Between the two cups the floor bursts and the treaty's column punches up out of the top of the frame, tagged "7,530,000 : 1"; both cups slide off their columns and clink together at its base. A strip slaps across the marquee: "PREVIOUS". | One bulb pops and goes out. |
 
-Sound: a little whistle as the tag flutters down; a ding as the glass reads it; a slap for the gold star; a mosquito whirr and a boing; a cash-register ding as the $184 tag swings out; a rumble as the floor shakes; clicks as the yardstick unfolds; a ding for the flag; a clank as the bracket snaps, a slide down and a clink as the cups pile up; a splat for the first germ; a pop and a yelp for the second; a sparkle as the marquee lights; a stamp slap for PREVIOUS; a pop for the bulb.
-
-On screen: "2¢" / "$184" / "1% TREATY" / "9,200×" / "159 : 1" / "10.9 : 1" / "GREATEST HITS IN NOT DYING" / "PREVIOUS". No: no "PER HEALTHY YEAR" on the tags (the narrator says it). Why: the treaty against the best buys humans already know, at their own scale, and it breaks their shelf.
+Sound: a ding as the glass reads "2¢"; a slap for the star; a mosquito whine and a boing; a rising patter of pennies; a ding for the flag; a splat; a pop and a yelp; a sparkle for the marquee, a crash of floorboards, two clinks, a stamp slap, a pop for the bulb.
 
 ## Scene 6 · one-percent-chance
 
 - id: one-percent-chance
 - act: Cost-effectiveness
 - transition_in: same plate (no seam)
-- key: on "times": the shrunken treaty trophy, its top now in the picture and still far taller than the bed-net cup, the yardstick flagged "92.1×", the charred pessimist still hanging on the gauge's needle at 1%
 - cue: "Even if you assume"
 - time: 35:30.2 to 35:39.9 (9.8 s)
 - voiceover: "Even if you assume only a one percent probability of the treaty actually passing (because you're you), the expected return is still ninety-two point one times better"
 - layer: B, plate hall-of-hits
-- scene: The same hall. A gauge on a pole (`KIT.props.gauge`, its counter window under the needle) drops in on the floor beside the giant trophy's base, and a gloomy everyday human in a raincoat, under his own little raincloud, hangs on its needle to hold it down.
-- props: gauge, human (the pessimist; charred), raincloud, lightning, trophy, yardstick
 - status: planned
 
-Moves: "Even" → the first frame is greatest-hits-trophies' last: the tilted shelf, PREVIOUS on the marquee, the giant trophy, the yardstick flagged "9,200×". "one percent" → the gauge drops in beside the trophy's base with a clank, its needle high. "probability" → the pessimist trudges in under his raincloud, jumps up, grabs the needle and hangs his whole weight on it, hauling it down until its window reads "1%"; the needle bends under him, and his feet dangle. "(because" → the camera pushes in on him, hanging there. "you're" → he turns his head slowly and looks at the camera. "you)," → his raincloud zaps him with a bolt of lightning: charred black and smoking, hair straight up, still hanging on the needle at 1%; only his eyes blink. "ninety-two" → the camera pulls back as the giant trophy shrinks to 1% of its size; its top comes down into the picture, and it still towers over the bed-net cup. "point one" → the yardstick folds back down, click by click, to the shrunken trophy's top. "times" → its flag flips: "92.1×".
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Even if you assume only a one percent probability of the treaty actually passing" | Suppose it has a 1% chance. | The camera travels back to the penny chart. The brass gauge drops in beside it, needle high. The pessimist (raincoat, his own little raincloud) trudges in, jumps, grabs the needle and hangs his whole weight on it until its window reads "1%". | His feet dangle. |
+| "(because you're you)," | | He turns his head slowly and looks at the camera. | His raincloud zaps him with lightning: charred, smoking, still hanging on the needle at 1%; only his eyes blink. |
+| "the expected return is still ninety-two point one times better" | A 1% chance makes each year 100 times dearer, and it is still 92.1 times cheaper. | The two-penny stack grows a hundredfold into a short column of 200 pennies. The bed-net tower still runs off the top of the frame beside it; a flag between them: "92.1×". | |
 
-Sound: a clank as the gauge drops in; a slide whistle down as the needle is hauled to 1%; a huff as he strains; nothing for the look; a zap and a sizzle as the raincloud strikes; a slide whistle down and a pop as the trophy shrinks; clicks as the yardstick folds; a ding on "92.1×".
-
-On screen: "1%" in the gauge's window / "92.1×". Why: the worst case, worked out by the worst case himself, still beats the best buy on the shelf.
+Sound: a clank as the gauge lands; a whistle down as the needle is hauled to 1%; a zap and a sizzle; a rising patter of pennies; a ding on "92.1×".
 
 ## Scene 7 · calculator-returns
 
 - id: calculator-returns
 - act: Cost-effectiveness
 - transition_in: cut
-- key: on "nets.": the Calculator peeking up over the lectern's right edge, a strip of tape across its cracked display, "92.1" on it, its mouth trembling open, the "=" key lying beside the mug; Wishonia side-eyeing the camera
 - cue: "than anti-malaria bed nets."
 - time: 35:39.9 to 35:43.4 (3.5 s)
 - voiceover: "than anti-malaria bed nets."
 - layer: A, host
-- scene: The host's set: the mug on the left end of the lectern and the "=" key lying beside it, where it landed in calculator-scream. The Calculator is out of sight below the right edge.
 - wishonia: big, smirk-smile + body-presenting; sideeye-closed + body-idle on "nets."
-- props: studio, lectern, mug, calculator, calculator key, tape
 - status: planned
 
-Moves: "than" → the Calculator peeks up over the lectern's right edge like the gopher on the title card: a strip of tape across its cracked display, a gap in its keypad where the "=" was, "92.1" on its display. "anti-malaria" → it reads its own display. "nets." → its mouth trembles open in a smaller scream, the tape pops off its display, and it drops back down out of sight; Wishonia side-eyes the camera. after "nets." → a crash from below, and a second key bounces up and lands on the lectern beside the "="; the film irises out on her face, to black.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "than anti-malaria bed nets." | Even the worst case is too much for a calculator. | At the console, the "=" key beside the mug. The Calculator peeks up over the ledge's right edge, a strip of tape across its cracked display, a gap where the "=" was, "92.1" on the display. It reads its own display; its mouth trembles open in a smaller scream and it drops back out of sight. Wishonia side-eyes the camera. | A crash from below, and a second key bounces up and lands beside the "=". The film irises out on her face. |
 
-Sound: a boing as it peeks up; a small yelp and a pop for the tape on "nets."; a clank from below and a pop as the second key lands, after "nets.".
-
-On screen: "92.1" on its display. Why: even the worst case is too much for a calculator, and the host does not need one.
+Sound: a boing as it peeks up; a small yelp; a crash and a pop as the second key lands.

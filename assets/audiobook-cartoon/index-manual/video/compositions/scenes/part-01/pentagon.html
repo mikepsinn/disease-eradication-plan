@@ -1,272 +1,280 @@
 <template id="pentagon-template">
-  <!-- pentagon · Layer B (storyboards/part-01-opening.md): an honest sign "WAR BUILDING" pops up on bare ground; the
-       five-sided building draws on around it and a paint roller slaps "THE PENTAGON" over the sign; the sides count
-       off, a grumpy missile peeks out of the courtyard and ducks; a rectangle hospital and a square school thud down,
-       then a triangle doghouse nobody mentioned, and the democracy dog pokes its head out. -->
+  <!-- pentagon · Layer B, plate four-buildings (storyboards/part-01-opening.md): a plain field under a cream sky,
+       four lots in a row. Close on the bare first lot; "war": an honest sign springs up out of the ground, WAR
+       BUILDING. "Pentagon": a plain five-sided building draws itself on round the sign's posts, and a paint roller
+       slaps onto the sign and rolls THE PENTAGON over the old words; the fresh paint drips red. "five sides": its
+       five sides flash one after another. After "sides" the camera pushes into the courtyard, where a grumpy missile
+       pokes up, looks left, right and at us, scowls, and ducks back down on "a", leaving a puff of smoke.
+       "Rectangle": the camera travels right as a hospital drops onto the next lot, RECTANGLE on its cornice.
+       "Square": a square school with a bell drops in, SQUARE. After "Square" the camera pulls back on the row and a
+       fourth building nobody mentioned drops in, a triangle doghouse, TRIANGLE, and the Democracy Dog pokes its head
+       out (in 9:16 the pull back frames the school and the doghouse). -->
   <style>
-    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
-    #pentagon-cam, #pentagon-bg, #pentagon-art, #pentagon-pip, #pentagon-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #EFE3C4; }
+    #pentagon-weave, #pentagon-plate, #pentagon-film { position: absolute; inset: 0; }
   </style>
   <div id="root" data-composition-id="pentagon" data-width="1920" data-height="1080" data-start="0" data-duration="11.4">
-    <div id="pentagon-cam">
-      <div id="pentagon-bg"></div>
-      <div id="pentagon-art"></div>
-      <div id="pentagon-pip"></div>
+    <div id="pentagon-weave">
+      <div id="pentagon-plate"></div>
     </div>
-    <div id="pentagon-grain"></div>
+    <div id="pentagon-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script src="assets/js/props/characters.js"></script>
   <script>
     (function () {
+      window.__timelines = window.__timelines || {};
       var ID = "pentagon";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
+      var sc = KIT.scene(ID), D = sc.duration;
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-      var INK = C.line, CARD = "#FBF5E4";
-
-      // Each building's bottom center on its ground line, and the drawing scale. 9:16 stacks them in two rows.
-      var L = V
-        ? { s: 1.15, pent: [270, 950], hosp: [760, 950], school: [300, 1435], dog: [760, 1435], ground: [[60, 1020, 950], [60, 1020, 1435]] }
-        : { s: 1.1, pent: [268, 840], hosp: [715, 840], school: [1128, 840], dog: [1452, 840], ground: [[90, 1600, 840]] };
-
-      q("bg").innerHTML = KIT.paper(ID);
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-
-      function pts(list) {
-        return list.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" ");
-      }
-      // A sign card on posts, centered on x 0, its bottom at `bottom`; posts run down to `base` (one pole if `pole`).
-      function sign(text, size, bottom, base, pole, color) {
-        var w = Math.round(text.length * size * 0.56 + 64), h = Math.round(size * 1.75), top = bottom - h;
-        var posts = pole ? '<path d="M0,' + bottom + " V" + base + '" stroke="' + INK + '" stroke-width="7" stroke-linecap="round"/>'
-          : '<path d="M' + (-w / 2 + 30) + "," + bottom + " V" + base + " M" + (w / 2 - 30) + "," + bottom + " V" + base + '" stroke="' + INK + '" stroke-width="7"/>';
-        return posts + '<rect x="' + -w / 2 + '" y="' + top + '" width="' + w + '" height="' + h + '" rx="4" fill="' + CARD + '" stroke="' + INK + '" stroke-width="5"/>' +
-          '<rect x="' + (-w / 2 + 8) + '" y="' + (top + 8) + '" width="' + (w - 16) + '" height="' + (h - 16) + '" rx="2" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
-          '<text x="0" y="' + (bottom - h * 0.29).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" letter-spacing="' + (size * 0.05).toFixed(1) + '" fill="' + (color || INK) + '">' + text + "</text>";
-      }
-      function win(x, y, w, h) {
-        return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="url(#' + ID + '-hatch)" stroke="' + INK + '" stroke-width="3"/>';
-      }
-
-      // The democracy dog's head (style bible section 3; it returns in Part 6), drawn around (0,0), about 120 wide
-      // with the ears. Parts: .dog-ear-l and .dog-ear-r (pivots (-30,-28) and (30,-28)), .dog-tongue.
-      function dogHead() {
-        var fur = C.tan, ear = C.rust, muzzle = "#F6E7C8";
-        var earPath = function (k) {
-          return '<path d="M' + 28 * k + ",-30 C" + 58 * k + ",-40 " + 68 * k + ",0 " + 55 * k + ",28 C" + 48 * k + ",40 " + 34 * k + ",32 " + 31 * k + ',8 Z" fill="' + ear + '" stroke="' + INK + '" stroke-width="4.5" stroke-linejoin="round"/>';
-        };
-        return '<g class="dog-head">' +
-          '<g class="dog-ear-l">' + earPath(-1) + "</g>" + '<g class="dog-ear-r">' + earPath(1) + "</g>" +
-          '<circle r="40" fill="' + fur + '" stroke="' + INK + '" stroke-width="5"/>' +
-          '<path d="M4,-27 Q22,-36 31,-18 Q34,-2 20,-1 Q6,-2 4,-27 Z" fill="' + ear + '"/>' +
-          '<ellipse cx="0" cy="15" rx="24" ry="17" fill="' + muzzle + '" stroke="' + INK + '" stroke-width="3.5"/>' +
-          '<circle cx="-15" cy="-13" r="5.5" fill="' + INK + '"/><circle cx="16" cy="-13" r="5.5" fill="' + INK + '"/>' +
-          '<circle cx="-13.3" cy="-15" r="1.8" fill="#FFF"/><circle cx="17.7" cy="-15" r="1.8" fill="#FFF"/>' +
-          '<g class="dog-tongue"><path d="M-6,21 Q-6,36 0,36 Q6,36 6,21 Z" fill="#E9B4C1" stroke="' + INK + '" stroke-width="2.5" stroke-linejoin="round"/></g>' +
-          '<path d="M0,13 V18 M-11,17 Q-5.5,24 0,18 Q5.5,24 11,17" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>' +
-          '<path d="M-8,4 Q0,-1 8,4 Q6,11 0,12 Q-6,11 -8,4 Z" fill="' + INK + '"/>' +
-          "</g>";
-      }
-
-      // The Pentagon, seen from above, its bottom edge on y 0: an outer ring, an inner ring and a courtyard.
-      var R = 170, CY = -R * Math.cos(Math.PI / 5);
-      function pent(r) {
-        var out = [];
-        for (var k = 0; k < 5; k++) {
-          var a = -Math.PI / 2 + (k * 2 * Math.PI) / 5;
-          out.push([r * Math.cos(a), CY + r * Math.sin(a)]);
-        }
-        return out;
-      }
-      var P5 = pent(R);
-      var draw = 'pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" stroke-linecap="round" stroke-linejoin="round"';
-      // The sign card sits on a pole at the top corner. Before the building exists, the honest sign stands on
-      // bare ground, so its pole runs down to the ground behind the building, whose solid fill later hides it.
-      var SB = CY - R - 42, SW = Math.round(12 * 42 * 0.56 + 64), SH = Math.round(42 * 1.75), ST = SB - SH;
-      var pentArt = '<g id="pentagon-sign-pole"><path d="M0,' + SB + ' V0" stroke="' + INK + '" stroke-width="7" stroke-linecap="round"/></g>' +
-        '<polygon id="pentagon-pent-base" points="' + pts(P5) + '" fill="' + CARD + '"/>' +
-        '<polygon id="pentagon-pent-fill" points="' + pts(P5) + '" fill="url(#pentagon-hatch)"/>' +
-        '<polygon id="pentagon-pent-ring" points="' + pts(pent(148)) + '" fill="none" stroke="' + INK + '" stroke-width="2.5" ' + draw + "/>" +
-        '<polygon id="pentagon-pent-yard-fill" points="' + pts(pent(68)) + '" fill="' + CARD + '"/>' +
-        '<polygon id="pentagon-pent-yard" points="' + pts(pent(68)) + '" fill="none" stroke="' + INK + '" stroke-width="5" ' + draw + "/>" +
-        '<polygon id="pentagon-pent-line" points="' + pts(P5) + '" fill="none" stroke="' + INK + '" stroke-width="6" ' + draw + "/>";
-      // the count: an orange highlight and a numbered badge on each side, clockwise from the top
-      P5.forEach(function (a, k) {
-        var b = P5[(k + 1) % 5];
-        pentArt += '<line class="pentagon-side" x1="' + a[0].toFixed(1) + '" y1="' + a[1].toFixed(1) + '" x2="' + b[0].toFixed(1) + '" y2="' + b[1].toFixed(1) + '" stroke="' + C.orange + '" stroke-width="12" ' + draw + "/>";
-      });
-      P5.forEach(function (a, k) {
-        var b = P5[(k + 1) % 5];
-        pentArt += '<g transform="translate(' + ((a[0] + b[0]) / 2).toFixed(1) + "," + ((a[1] + b[1]) / 2).toFixed(1) + ')"><g class="pentagon-badge">' +
-          '<circle r="22" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="4"/>' +
-          '<text y="10" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="28" fill="' + INK + '">' + (k + 1) + "</text></g></g>";
-      });
-      // The purpose, peeking out: a grumpy missile in the courtyard, drawn at 1.45 x standing on the courtyard's
-      // bottom edge (y YB) and clipped there, so it rises out of the hole. Parts: #pentagon-missile (rises),
-      // .pentagon-pupils (look around), .pentagon-brows (scowl).
-      var YB = CY + 68 * Math.sin((54 * Math.PI) / 180);
-      var missile = '<path d="M-22,60 V-150 Q-20,-190 0,-214 Q20,-190 22,-150 V60 Z" fill="' + C.war + '" stroke="' + INK + '" stroke-width="5" stroke-linejoin="round"/>' +
-        '<path d="M-22,-150 Q-20,-190 0,-214 Q20,-190 22,-150 Z" fill="' + CARD + '" stroke="' + INK + '" stroke-width="5" stroke-linejoin="round"/>' +
-        '<path d="M-22,-138 H22" stroke="' + INK + '" stroke-width="4"/>' +
-        '<circle cx="-10" cy="-100" r="9.5" fill="#FFF" stroke="' + INK + '" stroke-width="3"/><circle cx="10" cy="-100" r="9.5" fill="#FFF" stroke="' + INK + '" stroke-width="3"/>' +
-        '<g class="pentagon-pupils"><circle cx="-10" cy="-99" r="4.4" fill="' + INK + '"/><circle cx="10" cy="-99" r="4.4" fill="' + INK + '"/></g>' +
-        '<g class="pentagon-brows"><path d="M-22,-118 L-3,-110 M22,-118 L3,-110" stroke="' + INK + '" stroke-width="5.5" stroke-linecap="round"/></g>' +
-        '<path d="M-10,-71 Q0,-80 10,-71" fill="none" stroke="' + INK + '" stroke-width="4" stroke-linecap="round"/>' +
-        '<circle cx="-14" cy="-40" r="2.6" fill="' + INK + '"/><circle cx="14" cy="-40" r="2.6" fill="' + INK + '"/>';
-      pentArt += '<defs><clipPath id="pentagon-missile-clip"><rect x="-90" y="-420" width="180" height="420"/></clipPath></defs>' +
-        '<g transform="translate(0,' + YB.toFixed(1) + ')"><g clip-path="url(#pentagon-missile-clip)"><g transform="scale(1.45)"><g id="pentagon-missile">' + missile + "</g></g></g>" +
-        '<g id="pentagon-smoke">' + [[-16, -14, 13], [10, -22, 16], [26, -8, 11]].map(function (c) {
-          return '<circle class="pentagon-smoke-puff" cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#D8D2C2" stroke="' + INK + '" stroke-width="3"/>';
-        }).join("") + "</g></g>";
-
-      // The sign card: "WAR BUILDING" (honest, war red), painted over by a roller with "THE PENTAGON". The new
-      // card is clipped to the roller's track (#pentagon-paint-rect grows with it), and two drips run.
-      var roller = '<rect x="-17" y="' + (ST - 10) + '" width="34" height="' + (SH + 20) + '" rx="12" fill="' + CARD + '" stroke="' + INK + '" stroke-width="4.5"/>' +
-        '<path d="M-10,' + (ST + 6) + " V" + (SB - 6) + " M0," + (ST + 2) + " V" + (SB - 2) + " M10," + (ST + 6) + " V" + (SB - 6) + '" stroke="' + INK + '" stroke-width="2" opacity="0.4"/>' +
-        '<path d="M0,' + (SB + 10) + " V" + (SB + 28) + " L34," + (SB + 62) + '" fill="none" stroke="' + INK + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '<path d="M34,' + (SB + 62) + " L64," + (SB + 98) + '" stroke="' + INK + '" stroke-width="17" stroke-linecap="round"/><path d="M34,' + (SB + 62) + " L64," + (SB + 98) + '" stroke="' + C.rust + '" stroke-width="11" stroke-linecap="round"/>';
-      var drips = [[-96, 22], [58, 30], [130, 16]].map(function (d) {
-        return '<g transform="translate(' + d[0] + "," + (SB - 3) + ')"><g class="pentagon-drip"><path d="M-4,0 V' + d[1] + ' a4,4 0 0 0 8,0 V0 Z" fill="' + CARD + '" stroke="' + INK + '" stroke-width="2.5"/></g></g>';
-      }).join("");
-      pentArt += '<g id="pentagon-pent-sign">' + sign("WAR BUILDING", 42, SB, SB, true, C.war) +
-        '<defs><clipPath id="pentagon-paint-clip"><rect id="pentagon-paint-rect" x="' + (-SW / 2 - 6) + '" y="' + (ST - 6) + '" width="0" height="' + (SH + 40) + '"/></clipPath></defs>' +
-        '<g clip-path="url(#pentagon-paint-clip)">' + sign("THE PENTAGON", 42, SB, SB, true) + drips + "</g>" +
-        '<g transform="translate(' + (-SW / 2 - 6) + ',0)"><g id="pentagon-roller" opacity="0">' + roller + "</g></g></g>";
-
-      // The hospital: a plain rectangle with an H.
-      var hosp = '<rect x="-190" y="-300" width="380" height="300" fill="' + CARD + '" stroke="' + INK + '" stroke-width="6"/>';
-      [-136, -68, 0, 68, 136].forEach(function (x) {
-        [-270, -200, -130].forEach(function (y) { if (!(x === 0 && y === -270)) hosp += win(x - 20, y, 40, 40); });
-      });
-      hosp += '<rect x="-30" y="-80" width="60" height="80" fill="' + C.deep + '" stroke="' + INK + '" stroke-width="4"/>' +
-        '<circle cx="0" cy="-250" r="28" fill="' + C.med + '" stroke="' + INK + '" stroke-width="4"/>' +
-        '<text x="0" y="-236" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="38" fill="' + CARD + '">H</text>' +
-        sign("RECTANGLE", 42, -336, -300);
-      // The school: a plain square with a clock.
-      var school = '<rect x="-130" y="-260" width="260" height="260" fill="' + CARD + '" stroke="' + INK + '" stroke-width="6"/>' +
-        win(-107, -225, 44, 40) + win(63, -225, 44, 40) + win(-107, -150, 44, 44) + win(-22, -150, 44, 44) + win(63, -150, 44, 44) +
-        '<rect x="-28" y="-84" width="56" height="84" fill="' + C.deep + '" stroke="' + INK + '" stroke-width="4"/><path d="M0,-84 V0" stroke="' + INK + '" stroke-width="3"/>' +
-        '<circle cx="0" cy="-205" r="30" fill="#FFF" stroke="' + INK + '" stroke-width="4"/>' +
-        '<path d="M0,-205 V-226 M0,-205 H15" stroke="' + INK + '" stroke-width="4" stroke-linecap="round"/>' +
-        sign("SQUARE", 42, -296, -260);
-      // The doghouse: a triangle with an arched door, and the dog inside it.
-      var dog = '<polygon points="-105,0 105,0 0,-188" fill="' + CARD + '" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
-        '<polygon points="-105,0 105,0 0,-188" fill="url(#pentagon-hatch)" opacity="0.3"/>' +
-        '<path d="M-38,0 V-58 A38,38 0 0 1 38,-58 V0 Z" fill="' + C.deep + '" stroke="' + INK + '" stroke-width="5"/>' +
-        '<g transform="translate(0,-50) scale(0.92)"><g id="pentagon-dog">' + dogHead() + "</g></g>" +
-        sign("TRIANGLE", 36, -224, -186, true);
-
-      function placed(name, at, inner) {
-        return '<g transform="translate(' + at[0] + "," + at[1] + ") scale(" + L.s + ')"><g id="' + ID + "-" + name + '">' + inner + "</g>" +
-          '<g id="' + ID + "-" + name + '-dust"></g></g>';
-      }
-      var ground = L.ground.map(function (g) { return '<path d="M' + g[0] + "," + g[2] + " H" + g[1] + '" stroke="' + INK + '" stroke-width="5" stroke-linecap="round"/>'; }).join("");
-      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + ground + placed("pent", L.pent, pentArt) + placed("hosp", L.hosp, hosp) +
-        placed("school", L.school, school) + placed("doghouse", L.dog, dog));
-
-      // Two dust puffs at the base corners of each building that drops in.
-      var halfW = { hosp: 190, school: 130, doghouse: 105 };
-      Object.keys(halfW).forEach(function (n) {
-        q(n + "-dust").innerHTML = [-1, 1].map(function (k) {
-          return '<circle class="pentagon-puff" cx="' + k * (halfW[n] + 4) + '" cy="-10" r="16" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3"/>';
-        }).join("");
-      });
-
-
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth;
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      // earth-means-dirt moves its wall screen right in 16:9 (to fit the cabinet); 9:16 keeps the standard one
-      KIT.enter(tl, q("cam"), "zoom into the wall screen", V ? KIT.OFFICE.screen : [420, 190, 820, 520]);
 
-      // Pivots are set once: an svgOrigin inside a fromTo's end values shifts the element (GSAP smoothOrigin).
-      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
-      function drawOn(el, t, d) {
-        tl.fromTo(el, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: d, ease: "power1.inOut" }, t);
-      }
-      // "war": the honest sign "WAR BUILDING" springs up out of the bare ground (pop).
-      var w0 = cue("war");
-      pivot(["#pentagon-sign-pole", "#pentagon-pent-sign"], "0 0");
-      tl.fromTo(["#pentagon-sign-pole", "#pentagon-pent-sign"], { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2)" }, w0);
-      // "Pentagon": the outline draws on around the sign's pole (pen scratch), the rings and fill follow (the fill
-      // hides the pole), and a paint roller slaps onto the sign (splat) and rolls "THE PENTAGON" over it.
-      var p = cue("Pentagon");
-      drawOn("#pentagon-pent-line", p, 0.7);
-      drawOn("#pentagon-pent-ring", p + 0.3, 0.5);
-      drawOn("#pentagon-pent-yard", p + 0.4, 0.45);
-      tl.fromTo(["#pentagon-pent-base", "#pentagon-pent-fill", "#pentagon-pent-yard-fill"], { opacity: 0 }, { opacity: 1, duration: 0.35 }, p + 0.45);
-      var roll = p + 0.5, rollD = 0.4, roller = q("roller");
-      pivot(roller, "0 " + (ST + SH / 2));
-      tl.fromTo(roller, { opacity: 0, x: -70, y: -110, rotation: -25 }, { opacity: 1, x: 0, y: 0, rotation: 0, duration: 0.12, ease: "power2.in" }, roll - 0.12);
-      tl.to(roller, { scaleX: 1.35, scaleY: 0.92, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out" }, roll);
-      tl.to(roller, { x: SW + 12, duration: rollD, ease: "power1.inOut" }, roll + 0.04);
-      tl.to(q("paint-rect"), { attr: { width: SW + 12 }, duration: rollD, ease: "power1.inOut" }, roll + 0.04);
-      tl.to(roller, { x: SW + 90, y: -140, rotation: 30, opacity: 0, duration: 0.22, ease: "power2.in" }, roll + 0.04 + rollD);
-      document.querySelectorAll("#pentagon-pent-sign .pentagon-drip").forEach(function (d, i) {
-        pivot(d, "0 0");
-        tl.fromTo(d, { scaleY: 0 }, { scaleY: 1, duration: 0.6 + i * 0.15, ease: "power1.out" }, roll + 0.2 + i * 0.12);
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 71);
+
+      // ── The plate, in plate units: the lots stand on the horizon (y 0), the sky above it, the ground below. The
+      // signs stand in front of their buildings, their posts in the ground at y SIGNY. Lots from left to right: the
+      // Pentagon (x 0), the hospital (900), the school (1600), the doghouse (2250).
+      var SKY = "#EFE3C4", GROUND = "#C8B07B", EDGE = "#B09363", SIGNY = 92, SIGNK = 1.6;
+      var LOT = [0, 900, 1600, 2250];
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { start: [0, -150, 1.42], pent: [0, -140, 1.6], court: [0, -385, 4.2], hosp: [900, -250, 1.85], school: [1600, -200, 1.85], wide: [1945, -300, 1.0] }
+        : { start: [0, -150, 1.12], pent: [0, -140, 1.35], court: [0, -292, 2.95], hosp: [900, -240, 1.3], school: [1600, -200, 1.3], wide: [1075, -260, 0.68] };
+
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var P = function (pts) { return pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" "); };
+      var esc = function (s) { return String(s).replace(/&/g, "&amp;"); };
+      var oswald = function (x, y, size, s, col, spacing) {
+        return '<text x="' + f(x) + '" y="' + f(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size.toFixed(1) + '" letter-spacing="' + (spacing || 0).toFixed(1) + '" fill="' + col + '">' + esc(s) + "</text>";
+      };
+
+      // ── Lot 1: the five-sided building, seen from a little above. Its roof is an outer pentagon (O) over a
+      // courtyard (I); the three front walls drop WH from the roof's front edges to the ground.
+      var RX = 300, RY = 140, WH = 110, CY = -(WH + RY * Math.cos(Math.PI / 5));
+      var pent = function (rx, ry) { return [0, 1, 2, 3, 4].map(function (i) { var a = -Math.PI / 2 + (i * 2 * Math.PI) / 5; return [rx * Math.cos(a), CY + ry * Math.sin(a)]; }); };
+      var O = pent(RX, RY), I = pent(120, 56);
+      var ROOF = "#CBD0D6", WALL1 = "#9AA2AE", WALL2 = "#838C9A", YARD = "#6E8E5A";
+      var wall = function (a, b, col) { return '<polygon points="' + P([a, b, [b[0], b[1] + WH], [a[0], a[1] + WH]]) + '" fill="' + col + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>'; };
+      // the windows: a row along each front wall
+      var windows = "";
+      [[3, 2, 9], [2, 1, 5], [4, 3, 5]].forEach(function (w) {
+        var a = O[w[0]], b = O[w[1]], n = w[2];
+        for (var k = 0; k < n; k++) {
+          var u = (k + 0.7) / (n + 0.4), x = a[0] + (b[0] - a[0]) * u, y = a[1] + (b[1] - a[1]) * u + WH * 0.36;
+          windows += '<rect x="' + f(x - 8) + '" y="' + f(y) + '" width="16" height="24" fill="' + C.slate + '"/>';
+        }
       });
+      var bldFill = wall(O[1], O[2], WALL2) + wall(O[3], O[4], WALL2) + wall(O[2], O[3], WALL1) + windows +
+        '<polygon points="' + P(O) + '" fill="' + ROOF + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+        '<polygon points="' + P(I) + '" fill="' + YARD + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+        // a roof ring line between the two pentagons
+        '<polygon points="' + P(pent(210, 98)) + '" fill="none" stroke="#AEB4BC" stroke-width="3"/>';
+      // the outline that draws itself on first (pathLength 1)
+      var outlineD = "M" + P(O).replace(/ /g, " L") + " Z M" + P(I).replace(/ /g, " L") + " Z" +
+        [1, 2, 3, 4].map(function (i) { return " M" + f(O[i][0]) + "," + f(O[i][1]) + " v" + WH; }).join("") +
+        " M" + f(O[1][0]) + "," + f(O[1][1] + WH) + " L" + f(O[2][0]) + "," + f(O[2][1] + WH) + " L" + f(O[3][0]) + "," + f(O[3][1] + WH) + " L" + f(O[4][0]) + "," + f(O[4][1] + WH);
+      // the five sides, each a thick mustard stroke that flashes on "five sides"
+      var sides = [0, 1, 2, 3, 4].map(function (i) {
+        var a = O[i], b = O[(i + 1) % 5];
+        return '<path class="side" d="M' + f(a[0]) + "," + f(a[1]) + " L" + f(b[0]) + "," + f(b[1]) + '" stroke="' + C.yellow + '" stroke-width="16" stroke-linecap="round" opacity="0"/>';
+      }).join("");
+      // the grumpy missile in the courtyard (three heads: looking left, right, and at us), clipped by the courtyard's
+      // front edges so it comes up out of the hole
+      var MK = 1.2, MBASE = I[2][1] + 4;
+      var missiles = ["left", "right", null].map(function (lk, i) {
+        return '<g class="msl" data-i="' + i + '"' + (i ? ' opacity="0"' : "") + ">" + KIT.props.missile({ mood: "grumpy", look: lk || undefined, arms: "crossed" }) + "</g>";
+      }).join("");
+      var clip = "M" + P([I[1], I[2], I[3], I[4]]).replace(/ /g, " L") + " L" + f(I[4][0] - 40) + ",-2000 L" + f(I[1][0] + 40) + ",-2000 Z";
+      var missileSvg = '<defs><clipPath id="' + ID + '-yard"><path d="' + clip + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-yard)"><g transform="translate(0,' + f(MBASE) + ')"><g id="' + ID + '-msl" transform="translate(0,200)"><g transform="scale(' + MK + ')">' + missiles + "</g></g></g></g>";
+      var puff = [[-26, -10, 22], [0, -24, 28], [26, -8, 20], [8, 4, 18]].map(function (c) {
+        return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#E9E1CF" stroke="' + ink + '" stroke-width="3.5"/>';
+      }).join("");
+      var puffSvg = '<g transform="translate(0,' + f(CY) + ')"><g id="' + ID + '-puff" opacity="0">' + puff + "</g></g>";
+      var building = '<g id="' + ID + '-bld-fill" opacity="0">' + bldFill + "</g>" + missileSvg + puffSvg +
+        '<path id="' + ID + '-bld-line" d="' + outlineD + '" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
+        '<g id="' + ID + '-sides">' + sides + "</g>";
 
-      // after "sides": the purpose peeks out. A grumpy missile rises out of the courtyard, looks left, looks right,
-      // looks at us, scowls, and ducks back down (slide whistle), leaving a puff of smoke.
-      var up = KIT.after(ID, "sides"), duck = cue("a") + 0.05;
-      var mis = q("missile"), pupils = mis.querySelector(".pentagon-pupils"), brows = mis.querySelector(".pentagon-brows");
-      // up at y 40 its nose stops just under the sign; at y 240 it is all below the courtyard edge
-      tl.fromTo(mis, { y: 240 }, { y: 40, duration: 0.3, ease: "back.out(1.5)" }, up);
-      tl.to(pupils, { x: -5, duration: 0.08 }, up + 0.32);
-      tl.to(pupils, { x: 5, duration: 0.1 }, up + 0.6);
-      tl.to(pupils, { x: 0, y: 1.5, duration: 0.08 }, up + 0.88);
-      tl.to(brows, { y: 4, duration: 0.1 }, up + 0.92);
-      tl.to(mis, { y: 240, duration: 0.14, ease: "power3.in" }, duck);
-      document.querySelectorAll("#pentagon-smoke .pentagon-smoke-puff").forEach(function (c, i) {
-        pivot(c, c.getAttribute("cx") + " " + c.getAttribute("cy"));
-        tl.fromTo(c, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.1 }, duck + 0.12 + i * 0.04);
-        tl.to(c, { opacity: 0, y: -40 - i * 10, scale: 1.4, duration: 0.6, ease: "power1.out" }, duck + 0.22 + i * 0.04);
-      });
+      // the honest sign, painted over: the card is KIT.props.sign's; a fresh coat of paint (clipped as the roller
+      // goes) covers it with THE PENTAGON, fitted to the coat, and red drips run off the card's bottom edge
+      var SFONT = 34, SH = 60;
+      var signW = Math.round(KIT.textWidth("WAR BUILDING", SFONT, "Oswald", 600, SFONT * 0.05) + 64), signHt = Math.round(SFONT * 1.75);
+      var cTop = -SH - signHt, cBot = -SH, cx0 = -signW / 2 + 5, cx1 = signW / 2 - 5;
+      var paintSize = KIT.fitText("THE PENTAGON", SFONT, cx1 - cx0 - 30, "Oswald", 600, SFONT * 0.05);
+      var streaks = [0.3, 0.55, 0.78].map(function (u) { return '<path d="M' + f(cx0 + 6) + "," + f(cTop + 5 + (signHt - 10) * u) + " H" + f(cx1 - 6) + '" stroke="#ECE6D6" stroke-width="2"/>'; }).join("");
+      var coat = '<g id="' + ID + '-coat" opacity="0"><defs><clipPath id="' + ID + '-roll"><rect id="' + ID + '-roll-r" x="' + f(cx0 - 4) + '" y="' + f(cTop - 6) + '" width="0" height="' + f(signHt + 12) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-roll)"><rect x="' + f(cx0) + '" y="' + f(cTop + 4) + '" width="' + f(cx1 - cx0) + '" height="' + f(signHt - 8) + '" fill="#FFFFFF"/>' + streaks +
+        oswald(0, (cTop + cBot) / 2 + paintSize * 0.37, paintSize, "THE PENTAGON", ink, paintSize * 0.05) + "</g></g>";
+      var DRIPS = [[-0.36, 30], [-0.12, 46], [0.1, 22], [0.3, 56]];
+      var drips = DRIPS.map(function (d, i) {
+        var x = d[0] * signW;
+        return '<g class="drip" data-i="' + i + '" transform="translate(' + f(x) + "," + f(cBot - 3) + ') scale(1,0)"><path d="M-5,0 V' + (d[1] - 6) + ' A5,6 0 0,0 5,' + (d[1] - 6) + ' V0 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/></g>';
+      }).join("");
+      // the paint roller: a handle and a white roller as tall as the card (pointing up and to the right)
+      var roller = '<g id="' + ID + '-roller" opacity="0"><path d="M14,' + f(cTop - 8) + " l26,-44 l60,-8" + '" fill="none" stroke="' + ink + '" stroke-width="6" stroke-linejoin="round"/>' +
+        '<rect x="94" y="' + f(cTop - 72) + '" width="58" height="18" rx="5" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<path d="M14,' + f(cTop - 8) + " V" + f(cTop - 2) + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<rect x="-2" y="' + f(cTop - 4) + '" width="30" height="' + f(signHt + 8) + '" rx="8" fill="#FFFFFF" stroke="' + ink + '" stroke-width="4"/>' +
+        '<path d="M6,' + f(cTop + 6) + " V" + f(cBot - 6) + '" stroke="#E6E0D2" stroke-width="4"/></g>';
+      var sign1 = '<g id="' + ID + '-sign1"><g transform="scale(' + SIGNK + ')">' + KIT.props.sign({ text: "WAR BUILDING", height: SH, fontSize: SFONT }) + coat + drips +
+        '<g id="' + ID + '-roller-at">' + roller + "</g></g></g>";
 
-      // "five sides": each side flashes orange and gets its number, 1 to 5; the numbers stay.
-      var f = cue("five");
-      var sides = document.querySelectorAll("#pentagon-pent .pentagon-side");
-      var badges = document.querySelectorAll("#pentagon-pent .pentagon-badge");
-      for (var k = 0; k < 5; k++) {
-        drawOn(sides[k], f + k * 0.14, 0.12);
-        pivot(badges[k], "0 0");
-        tl.fromTo(badges[k], { scale: 0 }, { scale: 1, duration: 0.24, ease: "back.out(3)" }, f + k * 0.14);
+      // ── Lot 2: the hospital, RECTANGLE on its cornice.
+      var HK = 1.45;
+      var hospital = '<g id="' + ID + '-drop1"><g transform="scale(' + HK + ')">' + KIT.props.hospital({ label: "RECTANGLE" }) + "</g></g>";
+      // ── Lot 3: the square school: mustard walls, a window grid, a door, a rust cupola with a bell.
+      var SW = 360, SCH = C.yellow;
+      var school = '<rect x="' + -SW / 2 + '" y="' + -SW + '" width="' + SW + '" height="' + SW + '" fill="' + SCH + '" stroke="' + ink + '" stroke-width="5"/>' +
+        '<path d="M' + (-SW / 2 - 16) + "," + -SW + " H" + (SW / 2 + 16) + '" stroke="' + ink + '" stroke-width="12"/>' +
+        '<path d="M-40,' + (-SW - 6) + " V" + (-SW - 80) + " H40 V" + (-SW - 6) + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+        '<path d="M-54,' + (-SW - 80) + " L0," + (-SW - 126) + " L54," + (-SW - 80) + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+        '<path d="M-24,' + (-SW - 12) + " V" + (-SW - 60) + " H24 V" + (-SW - 12) + ' Z" fill="' + C.slate + '"/>' +
+        '<g id="' + ID + '-bell"><path d="M-14,' + (-SW - 22) + " Q-14," + (-SW - 56) + " 0," + (-SW - 56) + " Q14," + (-SW - 56) + " 14," + (-SW - 22) + ' Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/></g>' +
+        '<rect x="-36" y="-130" width="72" height="130" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="5"/><path d="M0,-130 V0" stroke="' + ink + '" stroke-width="3"/>';
+      for (var r0 = 0; r0 < 2; r0++) for (var c0 = 0; c0 < 4; c0++) {
+        if (r0 === 1 && (c0 === 1 || c0 === 2)) continue;
+        var wx = -138 + c0 * 76, wy = -318 + r0 * 110;
+        school += '<rect x="' + wx + '" y="' + wy + '" width="54" height="66" fill="#8FB3B0" stroke="' + ink + '" stroke-width="4"/><path d="M' + (wx + 27) + "," + wy + " v66 M" + wx + "," + (wy + 33) + ' h54" stroke="' + ink + '" stroke-width="2.4"/>';
       }
-      tl.to(sides, { opacity: 0, duration: 0.4 }, f + 1.3);
+      var schoolSvg = '<g id="' + ID + '-drop2">' + school + "</g>";
+      // ── Lot 4: the triangle doghouse, a red A-frame with a round door, and the Democracy Dog inside it.
+      var DW = 190, DHT = 350, DK = 1.25, DOORK = 1.25;
+      var doorD = "M-56,0 V-72 A56,56 0 0,1 56,-72 V0 Z";
+      var dogIn = '<defs><clipPath id="' + ID + '-door"><path d="' + doorD + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-door)"><g id="' + ID + '-dog" transform="translate(0,160)"><g transform="translate(-4,6) scale(' + DK + ')">' +
+        KIT.props.democracyDog({ face: "front", tail: "plain", mood: "smile" }) + "</g></g></g>";
+      var dogHouse = '<polygon points="' + P([[-DW, 0], [0, -DHT], [DW, 0]]) + '" fill="' + C.war + '" stroke="' + ink + '" stroke-width="6" stroke-linejoin="round"/>' +
+        '<path d="M' + (-DW - 14) + "," + 14 + " L0," + (-DHT - 14) + " L" + (DW + 14) + ',14" fill="none" stroke="' + ink + '" stroke-width="14" stroke-linejoin="round" stroke-linecap="round"/>' +
+        '<path d="M' + f(-DW * 0.55) + "," + f(-DHT * 0.45) + " L" + f(-DW * 0.25) + "," + f(-DHT * 0.75) + '" stroke="#E07A62" stroke-width="5" stroke-linecap="round"/>' +
+        '<g transform="scale(' + DOORK + ')"><path d="' + doorD + '" fill="#2A2420" stroke="' + ink + '" stroke-width="4"/>' + dogIn + "</g>";
+      var dogSvg = '<g id="' + ID + '-drop3">' + dogHouse + "</g>";
+      // the signs of lots 3 and 4, each springing up as its building lands
+      var sign = function (n, text, k, h) { return '<g id="' + ID + "-sign" + n + '"><g transform="scale(' + k + ')">' + KIT.props.sign({ text: text, height: h, fontSize: SFONT }) + "</g></g>"; };
+      // a dust puff under each building as it lands
+      var dust = function (n, w) {
+        return '<g id="' + ID + "-dust" + n + '" opacity="0">' + [-1, -0.5, 0.5, 1].map(function (k) { return '<circle cx="' + f(k * w) + '" cy="-8" r="' + (Math.abs(k) > 0.7 ? 22 : 28) + '" fill="#E9E1CF" stroke="' + ink + '" stroke-width="3.5"/>'; }).join("") + "</g>";
+      };
 
-      // A building falls in from above and thuds down on time `land`, with a squash and two dust puffs.
-      function drop(name, land) {
-        var el = q(name);
-        pivot(el, "0 0");
-        tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01 }, land - 0.24);
-        tl.fromTo(el, { y: -1500 }, { y: 0, duration: 0.24, ease: "power2.in" }, land - 0.24);
-        tl.to(el, { scaleX: 1.07, scaleY: 0.86, duration: 0.06, ease: "power1.out" }, land);
-        tl.to(el, { scaleX: 1, scaleY: 1, duration: 0.4, ease: "elastic.out(1, 0.45)" }, land + 0.06);
-        q(name + "-dust").querySelectorAll(".pentagon-puff").forEach(function (c, i) {
-          pivot(c, c.getAttribute("cx") + " -10");
-          tl.fromTo(c, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 0.4, duration: 0.02 }, land);
-          tl.to(c, { opacity: 0, scale: 1.5, x: (i ? 1 : -1) * 26, duration: 0.42, ease: "power2.out" }, land + 0.02);
+      var field = '<rect x="-4000" y="-4000" width="9000" height="4000" fill="' + SKY + '"/><rect x="-4000" y="0" width="9000" height="4000" fill="' + GROUND + '"/>' +
+        '<path d="M-4000,0 H5000" stroke="' + EDGE + '" stroke-width="5"/>';
+      var plate = field +
+        at(LOT[0], 0, 1, building) + at(LOT[0], SIGNY, 1, sign1) +
+        at(LOT[1], 0, 1, dust(1, 200) + hospital) +
+        at(LOT[2], 0, 1, dust(2, 170) + schoolSvg) + at(LOT[2], SIGNY, 1, sign(2, "SQUARE", SIGNK, SH)) +
+        at(LOT[3], 0, 1, dust(3, 150) + dogSvg) + at(LOT[3], SIGNY, 1, sign(3, "TRIANGLE", 1.4, 22));
+      q("plate").innerHTML = KIT.svg(W, H, '<rect width="' + W + '" height="' + H + '" fill="' + SKY + '"/><g id="' + ID + '-cam">' + plate + "</g>");
+
+      var cam = q("cam"), msl = q("msl"), mslHeads = Array.prototype.slice.call(cam.querySelectorAll(".msl")), puffEl = q("puff");
+      var sideEls = Array.prototype.slice.call(cam.querySelectorAll(".side")), dripEls = Array.prototype.slice.call(cam.querySelectorAll(".drip"));
+      var rollR = q("roll-r"), rollerAt = q("roller-at"), dogEl = q("dog"), dogHead = dogEl.querySelector(".dog-head");
+      var earL = dogEl.querySelector(".dog-ear-l"), earR = dogEl.querySelector(".dog-ear-r");
+
+      // ── Cues ──
+      var tWar = cue("war"), tPent = cue("Pentagon"), tFive = cue("five"), tSides = KIT.after(ID, "sides"), tA = cue("a");
+      var tRect = cue("Rectangle"), tSq = cue("Square"), tAfterSq = KIT.after(ID, "Square");
+      var tRoll0 = tPent + 0.5, tRoll1 = tRoll0 + 0.55;
+
+      // ── The camera: keys [time, view, extra scale]
+      var KEYS = [[0, "start", 1], [tWar - 0.1, "start", 1.03], [tWar + 0.45, "pent", 1], [tSides - 0.3, "pent", 1.04], [tSides + 0.05, "court", 1],
+        [tA + 0.02, "court", 1.04], [tRect - 0.22, "hosp", 1], [tSq - 0.75, "hosp", 1.03], [tSq - 0.25, "school", 1], [tSq + 0.38, "school", 1.02],
+        [tAfterSq - 0.02, "wide", 1], [D, "wide", 0.98]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+
+      // a building or sign dropping in from above, landing at tl with a squash; returns [dy, squash]
+      function drop(t, tLand, h) {
+        var d0 = 0.22, u = (t - (tLand - d0)) / d0;
+        if (u < 0) return null;
+        if (u < 1) return [-h * (1 - u * u), 1];
+        var a = t - tLand;
+        return [0, a < 0.22 ? 1 - 0.14 * Math.sin((Math.PI * a) / 0.22) : 1];
+      }
+      function place(el, t, tLand, h) {
+        var d = drop(t, tLand, h);
+        el.setAttribute("opacity", d ? 1 : 0);
+        if (d) el.setAttribute("transform", "translate(0," + f(d[0]) + ") scale(" + (2 - d[1]).toFixed(3) + "," + d[1].toFixed(3) + ")");
+      }
+      function dustAt(el, t, tLand) {
+        var a = t - tLand;
+        if (a < 0 || a > 0.7) { el.setAttribute("opacity", 0); return; }
+        el.setAttribute("opacity", (1 - a / 0.7).toFixed(2));
+        el.setAttribute("transform", "scale(" + (1 + a * 1.2).toFixed(2) + "," + (1 + a * 0.6).toFixed(2) + ")");
+      }
+      // a sign springing up out of the ground from its base (overshoot, then settle)
+      function spring(el, t, t0) {
+        var a = t - t0;
+        if (a < 0) { el.setAttribute("opacity", 0); return; }
+        var k = a < 0.16 ? (a / 0.16) * 1.18 : 1 + 0.18 * Math.exp(-(a - 0.16) * 9) * Math.cos((a - 0.16) * 26);
+        el.setAttribute("opacity", 1);
+        el.setAttribute("transform", "scale(" + (1 / Math.max(0.6, Math.sqrt(k))).toFixed(3) + "," + k.toFixed(3) + ")");
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+
+        // "war": the honest sign springs up
+        spring(q("sign1"), t, tWar);
+        // "Pentagon": the outline draws itself on, then the walls fill in
+        var lu = Math.min(1, Math.max(0, (t - tPent) / 0.45));
+        q("bld-line").setAttribute("stroke-dashoffset", (1 - smooth(lu)).toFixed(3));
+        q("bld-line").setAttribute("opacity", t >= tPent ? 1 : 0);
+        q("bld-fill").setAttribute("opacity", smooth((t - tPent - 0.3) / 0.25).toFixed(2));
+        // the roller slaps on and rolls the new name over the old one; the paint drips
+        var ru = (t - tRoll0) / (tRoll1 - tRoll0), rx = cx0 - 2 + (cx1 - cx0) * smooth(Math.min(1, Math.max(0, ru)));
+        q("coat").setAttribute("opacity", t >= tRoll0 ? 1 : 0);
+        rollR.setAttribute("width", f(Math.max(0, rx - cx0 + 20)));
+        var rOn = t >= tRoll0 - 0.12 && t < tRoll1 + 0.35;
+        q("roller").setAttribute("opacity", rOn ? 1 : 0);
+        var rIn = t < tRoll0 ? (t - tRoll0) * 900 : t > tRoll1 ? (t - tRoll1) * 600 : 0;
+        rollerAt.setAttribute("transform", "translate(" + f(rx - 12 + Math.max(0, rIn)) + "," + f(Math.min(0, rIn)) + ")");
+        dripEls.forEach(function (d, i) {
+          var du = smooth((t - tRoll1 - 0.1 - i * 0.12) / 0.7);
+          var x = DRIPS[i][0] * signW;
+          d.setAttribute("transform", "translate(" + f(x) + "," + f(cBot - 3) + ") scale(1," + du.toFixed(3) + ")");
         });
-      }
-      drop("hosp", cue("Rectangle"));
-      drop("school", cue("Square"));
-      // after "Square": the doghouse nobody mentioned, then the dog pokes its head out, tilts it, and flaps its ears.
-      var a = KIT.after(ID, "Square");
-      drop("doghouse", a);
-      var dogEl = q("dog"), earL = dogEl.querySelector(".dog-ear-l"), earR = dogEl.querySelector(".dog-ear-r");
-      pivot(dogEl, "0 36"); pivot(earL, "-30 -28"); pivot(earR, "30 -28");
-      tl.fromTo(dogEl, { opacity: 0, scale: 0.2, y: 26 }, { opacity: 1, scale: 1, y: 0, duration: 0.22, ease: "back.out(2.4)" }, a + 0.1);
-      tl.to(dogEl, { rotation: -12, duration: 0.14, ease: "power2.out" }, a + 0.3);
-      tl.fromTo(earL, { rotation: 0 }, { rotation: 16, duration: 0.07, repeat: 3, yoyo: true, ease: "sine.inOut" }, a + 0.24);
-      tl.fromTo(earR, { rotation: 0 }, { rotation: -16, duration: 0.07, repeat: 3, yoyo: true, ease: "sine.inOut" }, a + 0.24);
+        // "five sides": the five sides flash one after another
+        sideEls.forEach(function (s, i) {
+          var a = t - (tFive + i * 0.14);
+          s.setAttribute("opacity", a >= 0 && a < 0.2 ? 1 : a >= 0.2 && a < 0.4 ? (1 - (a - 0.2) / 0.2).toFixed(2) : 0);
+        });
+        // after "sides": the missile pokes up, looks left, right, at us, and ducks back down on "a"
+        var up = 0, head = 0;
+        if (t >= tSides && t < tA) { up = smooth((t - tSides) / 0.22); head = t < tSides + 0.35 ? 2 : t < tSides + 0.62 ? 0 : t < tSides + 0.88 ? 1 : 2; }
+        else if (t >= tA && t < tA + 0.16) { up = 1 - (t - tA) / 0.16; head = 2; }
+        var shake = t > tSides + 0.88 && t < tA ? Math.sin(t * 70) * 1.2 : 0;
+        var tilt = head === 0 ? -9 : head === 1 ? 9 : 0, dx = head === 0 ? -10 : head === 1 ? 10 : 0;
+        msl.setAttribute("transform", "translate(" + f(shake + dx * up) + "," + f(200 - 150 * up) + ") rotate(" + f(tilt * up) + ")");
+        mslHeads.forEach(function (m, i) { m.setAttribute("opacity", i === head ? 1 : 0); });
+        var pa = t - tA - 0.1;
+        puffEl.setAttribute("opacity", pa > 0 && pa < 0.9 ? (1 - pa / 0.9).toFixed(2) : 0);
+        if (pa > 0) puffEl.setAttribute("transform", "translate(0," + f(-pa * 70) + ") scale(" + (0.6 + pa * 1.1).toFixed(2) + ")");
+
+        // the hospital, the school and the doghouse drop in; the signs spring up as they land
+        place(q("drop1"), t, tRect, 1300); dustAt(q("dust1"), t, tRect);
+        place(q("drop2"), t, tSq, 1300); dustAt(q("dust2"), t, tSq); spring(q("sign2"), t, tSq + 0.06);
+        place(q("drop3"), t, tAfterSq, 1300); dustAt(q("dust3"), t, tAfterSq); spring(q("sign3"), t, tAfterSq + 0.06);
+        // the school bell swings when it lands
+        var ba = t - tSq;
+        q("bell").setAttribute("transform", ba > 0 ? "rotate(" + f(Math.sin(ba * 18) * 24 * Math.exp(-ba * 3)) + " 0 " + (-SW - 56) + ")" : "");
+        // the dog pokes its head out of the door (the woof), its ears flapping
+        var da = t - (tAfterSq + 0.12), dy = da < 0 ? 160 : da < 0.16 ? 160 - 152 * (da / 0.16) : 8 + 14 * Math.min(1, (da - 0.16) / 0.12);
+        dogEl.setAttribute("transform", "translate(0," + f(dy) + ")");
+        var flap = da > 0 ? Math.sin(da * 30) * 18 * Math.exp(-da * 3) : 0;
+        if (earL) earL.setAttribute("transform", "rotate(" + f(-flap) + " " + earL.getAttribute("data-pivot") + ")");
+        if (earR) earR.setAttribute("transform", "rotate(" + f(flap) + " " + earR.getAttribute("data-pivot") + ")");
+        dogHead.setAttribute("transform", da > 0.16 ? "rotate(" + f(Math.sin((da - 0.16) * 9) * 6) + " " + dogHead.getAttribute("data-pivot") + ")" : "");
+      });
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;
     })();

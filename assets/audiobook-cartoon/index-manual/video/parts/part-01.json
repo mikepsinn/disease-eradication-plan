@@ -350,15 +350,14 @@
     },
     {
       "scene": "split-the-atom",
-      "cue": "free",
-      "sfx": "switch",
-      "volume": 0.6
+      "cue": "assumed",
+      "sfx": "whoosh",
+      "volume": 0.4
     },
     {
       "scene": "split-the-atom",
-      "cue": "energy.",
-      "offset": 0.3,
-      "sfx": "toaster",
+      "cue": "free",
+      "sfx": "switch",
       "volume": 0.6
     },
     {
@@ -388,7 +387,7 @@
     {
       "scene": "pointing-at-each-other",
       "cue": "other!",
-      "offset": 0.1,
+      "offset": 0.04,
       "sfx": "boom",
       "volume": 0.65
     },
@@ -401,8 +400,8 @@
     {
       "scene": "pointing-at-each-other",
       "cue": "kind",
-      "sfx": "toaster",
-      "volume": 0.7
+      "sfx": "huff",
+      "volume": 0.35
     },
     {
       "scene": "fire-on-fire",

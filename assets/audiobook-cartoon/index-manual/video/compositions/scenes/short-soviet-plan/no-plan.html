@@ -1,0 +1,75 @@
+<template id="no-plan-template">
+  <!-- no-plan · collage short (KIT.collage). Starts on 25-percent-by-2033's end (gauge, USSR headstone, PLAN binder,
+       calculator, tiny tree; the geometry is copied from that file). "approaching": the needle ticks up twice;
+       "technology,": a laptop drops in on our side; "faster-growing": a big tree of war papers pops up behind it;
+       "no": the Politician pops up, thumbs up, and "plan.": PLAN: is stamped on his empty clipboard; "beat": 1ST is
+       stamped on the Soviet binder; "lost.": a giant boot stomps the binder and calculator into a smoking heap, lifts
+       away, and the needle ticks once more. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="no-plan" data-width="1920" data-height="1080" data-start="0" data-duration="12.456">
+    <div id="no-plan-weave"></div>
+    <div id="no-plan-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    Object.assign(KIT.collage.SIZES, { gauge: [411, 474], needle: [81, 401], headstone: [358, 436], machine: [556, 499], binder: [421, 432], sprout: [509, 465],
+      laptop: [409, 326], politician: [384, 735], rubble: [414, 618], boot: [404, 551] });
+    var V = KIT.V, K = V ? 1.4 : 1.35, GX = V ? 540 : 960, GY = 360, SY = V ? 1000 : 890;
+    var HX = 150, BX = 400, MX = V ? 700 : 650, SX = V ? 960 : 880;
+    var HS = V ? 0.85 : 0.95, BS = V ? 0.66 : 0.68, MS = V ? 0.56 : 0.62, SS = V ? 0.22 : 0.26;
+    // our side
+    var OY = V ? 1440 : 890, LX = V ? 260 : 1330, LS = V ? 0.7 : 0.85, TX = V ? 270 : 1360, TS = V ? 0.74 : 1;
+    var PX = V ? 790 : 1730, PS = V ? 0.72 : 0.85, RX = V ? 555 : 525, KY = V ? SY - 150 : SY - 180;
+    KIT.collage({
+      id: "no-plan", seed: 322,
+      cast: {
+        gauge: { art: "gauge", x: GX, y: GY, anchor: [205, 209], pivot: [205, 209], scale: K },
+        needle: { art: "needle", x: GX, y: GY, anchor: [39, 360], pivot: [39, 360], scale: 0.42 * K },
+        stone: { art: "headstone", x: HX, y: SY, anchor: "bottom", scale: HS },
+        machine: { art: "machine", x: MX, y: SY, anchor: "bottom", scale: MS },
+        sprout: { art: "sprout", x: SX, y: SY, anchor: "bottom", scale: SS },
+        binder: { art: "binder", x: BX, y: SY, anchor: "bottom", scale: BS },
+        rubble: { art: "rubble", x: RX, y: SY, anchor: "bottom", scale: V ? 0.5 : 0.62 },
+        tree: { art: "sprout", x: TX, y: OY - (V ? 70 : 120), anchor: "bottom", scale: TS },
+        laptop: { art: "laptop", x: LX, y: OY, anchor: "bottom", scale: LS },
+        pol: { art: "politician", x: PX, y: OY, anchor: "bottom", scale: PS },
+        boot: { art: "boot", x: RX, y: KY, anchor: "bottom", scale: V ? 0.7 : 0.8 },
+      },
+      beats: [
+        // the end of 25-percent-by-2033, already in place
+        { at: -0.3, do: "hinge", who: "needle", angle: -29, frames: 1 },
+        { at: -0.5, do: "stamp", id: "ussr", text: "USSR", x: HX, y: SY - 250 * HS, size: V ? 44 : 50, tilt: -4, from: 1, shake: 0 },
+        { at: -0.5, do: "tag", who: "gauge", text: "15%", x: GX - (V ? 330 : 390), y: GY - (V ? 260 : 250), w: V ? 260 : 300, h: V ? 130 : 150, knot: [67, 71] },
+        { at: -0.5, do: "stamp", id: "plan", text: "PLAN", x: BX, y: SY - 264 * BS, size: V ? 34 : 30, tilt: -2, from: 1, shake: 0 },
+        { at: -0.5, do: "banner", id: "terrible", text: "TERRIBLE", x: BX + 20, y: SY - 110 * BS, size: V ? 40 : 36, width: V ? 250 : 230, pad: 26, lineHeight: 1.1, tilt: 14, from: 1, shake: 0 },
+        // approaching
+        { on: "approaching", do: "hinge", who: "needle", angle: 7, frames: 1 },
+        { on: "approaching", offset: 0.35, do: "hinge", who: "needle", angle: 7, frames: 1 },
+        { on: "technology,", do: "slideIn", who: "laptop", from: "top", over: 30, tilt: 4 },
+        { on: "faster-growing", do: "pop", who: "tree", squash: true, swell: 0.1 },
+        { on: "faster-growing", offset: 0.3, do: "bob", who: "tree", y: 5, r: 1.5 },
+        { on: "no", do: "pop", who: "pol", squash: true },
+        { on: "plan.", do: "stamp", id: "pplan", text: "PLAN:", x: PX + 124 * PS, y: OY - 494 * PS, size: V ? 28 : 28, tilt: -3, from: 1.8 },
+        { on: "beat", do: "stamp", id: "first", text: "1ST", x: BX + (V ? 80 : 95), y: SY - 390 * BS, size: V ? 46 : 44, tilt: 12, from: 2 },
+        { on: "no", n: 2, do: "hop", who: "pol", height: 40 },
+        // lost.
+        { on: "lost.", do: "stamp", who: "boot", from: 2.6, shake: 14 },
+        { on: "lost.", offset: 0.15, do: "hide", who: ["binder", "machine", "plan", "terrible", "first"] },
+        { on: "lost.", offset: 0.15, do: "pop", who: "rubble", squash: true },
+        { on: "lost.", offset: 0.15, do: "boom", shake: 10, flash: 0.1 },
+        { on: "lost.", offset: 0.9, do: "slideOut", who: "boot", to: "top", dur: 0.5 },
+        { on: "lost.", offset: 0.9, do: "hinge", who: "needle", angle: 7, frames: 1 },
+        { on: "lost.", offset: 1.1, do: "hop", who: "pol", height: 50 },
+      ],
+    });
+  </script>
+</template>

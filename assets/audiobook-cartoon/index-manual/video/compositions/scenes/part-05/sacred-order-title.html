@@ -1,21 +1,20 @@
 <template id="sacred-order-title-template">
-  <!-- sacred-order-title · Layer A title card (storyboards/part-05-sacred-order-of-paper-distribution.md), built by
-       KIT.titleScene (assets/js/props/title.js): cut in, no Wishonia, no captions. The heading slams in one word per
-       spoken word (a thunk each); soft mustard rays open behind SACRED (sparkle). "Order": along the floor a single file
-       of six plain papers in tiny navy monk hoods marches in from the left (squeaky footsteps), the leader swinging a
-       little censer on a chain. "Distribution.": they reach an upturned top hat on the right and dive into it one at a
-       time, the hat gulping each one down. A beat after: the hat burps (pop): it hops, a puff comes out, and one empty
-       monk hood floats back down onto the brim. -->
+  <!-- sacred-order-title · the period title card (KIT.titleScene, look "atomic"): THE SACRED ORDER OF PAPER
+       DISTRIBUTION on plain navy under the film's emblem. The gag: the atom's three electron papers are plain bills in
+       brown monk cowls (the Sacred Order), the second swinging a brass censer. An upturned top hat stands on the
+       baseline at the end of DISTRIBUTION like a full stop. From "Order" the monks leave their orbits one after
+       another, hop down onto the heading, process in single file along the tops of the letters and dive headfirst
+       into the hat; after "Distribution." the hat burps a puff and one empty cowl floats down onto its brim.
+       The kit's own electrons (#sacred-order-title-e0..e2, war money) are hidden; the monks orbit on the same math. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
     @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
   </style>
   <div id="root" data-composition-id="sacred-order-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.76">
     <div id="sacred-order-title-cam">
       <div id="sacred-order-title-bg"></div>
-      <div id="sacred-order-title-sun"></div>
       <div id="sacred-order-title-back"></div>
       <div id="sacred-order-title-words"></div>
       <div id="sacred-order-title-art"></div>
@@ -26,155 +25,164 @@
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
   <script src="assets/js/props/title.js"></script>
   <script>
     KIT.titleScene({
       id: "sacred-order-title",
-      lines: [["THE", "SACRED", "ORDER"], ["OF", "PAPER"], ["DISTRIBUTION"]],
-      linesTall: [["THE", "SACRED"], ["ORDER", "OF"], ["PAPER"], ["DISTRIBUTION"]],
-      spoken: ["The", "Sacred", "Order", "of", "Paper", "Distribution."],
-      // 16:9: the heading sits a little higher, so the papers can hop into the hat below it
-      cy: KIT.V ? undefined : 340,
+      // the small line a little bigger than "small": Fraunces sets wider than its measured widths below about 70 px
+      lines: [{ words: ["THE", "SACRED", "ORDER", "OF"], style: "small", scale: 0.6 }, ["PAPER", "DISTRIBUTION"]],
+      linesTall: [{ words: ["THE", "SACRED", "ORDER", "OF"], style: "small", scale: 0.62 }, ["PAPER"], ["DISTRIBUTION"]],
+      // narrower than the card, so the top hat fits at the end of DISTRIBUTION like a full stop (the gag below
+      // slides the DISTRIBUTION line left so the line and its hat are centered together)
+      width: KIT.V ? 787 : 1440,
+      cy: KIT.V ? 1090 : 750,
+      seed: 37,
       gag: function (c) {
-        var C = c.C, ink = C.line, tl = c.tl, V = c.V, id = c.id, W = c.W, H = c.H, D = c.D;
-        var f = function (n) { return (+n).toFixed(1); };
-        var $ = function (s) { return document.getElementById(id + "-" + s); };
+        var C = c.C, ink = C.line, E = c.emblem, V = c.V;
+        var f = function (n) { return n.toFixed(1); };
+        var clamp = function (u) { return Math.min(1, Math.max(0, u)); };
+        var sm = function (u) { u = clamp(u); return u * u * (3 - 2 * u); };
 
-        // ── Soft mustard rays behind SACRED ("Sacred" + 0.15, sparkle) ─────
-        // flat wedges, long and short in turn, mustard on the navy wall (the office's sunburst in miniature)
-        var sw = c.word("SACRED").box, rx = sw.x + sw.w / 2, ryc = sw.y + sw.h / 2, RR = sw.w * (V ? 0.62 : 0.6), rays = "";
-        for (var k = 0; k < 18; k++) {
-          var a0 = (k / 18) * Math.PI * 2, a1 = a0 + Math.PI / 24, am = (a0 + a1) / 2, r1 = RR * (k % 2 ? 0.72 : 1);
-          rays += '<path d="M' + f(0.3 * RR * Math.cos(am)) + "," + f(0.3 * RR * Math.sin(am)) + " L" + f(r1 * Math.cos(a0)) + "," + f(r1 * Math.sin(a0)) + " L" + f(r1 * Math.cos(a1)) + "," + f(r1 * Math.sin(a1)) + ' Z" fill="' + C.yellow + '"/>';
-        }
-        var back = document.createElement("div");
-        back.style.cssText = "position:absolute;inset:0;";
-        back.innerHTML = KIT.svg(W, H, '<g transform="translate(' + f(rx) + "," + f(ryc) + ')"><g id="' + id + '-rays" opacity="0">' + rays + "</g></g>");
-        c.back.appendChild(back);
-        var tS = c.cue("Sacred");
-        gsap.set($("rays"), { svgOrigin: "0 0" });
-        tl.fromTo($("rays"), { opacity: 0, scale: 0.25, rotation: -20 }, { opacity: 0.5, scale: 1, rotation: 0, duration: 0.4, ease: "back.out(1.6)", immediateRender: false }, tS + 0.12);
-        tl.to($("rays"), { rotation: 14, duration: D - tS - 0.55, ease: "none" }, tS + 0.52);
+        // the kit's war-money electrons give way to the monks
+        [0, 1, 2].forEach(function (i) { document.getElementById(c.id + "-e" + i).style.display = "none"; });
 
-        // ── The procession and the upturned top hat ───────────────────────
-        // L: the floor line, the hat (center x, scale), the papers' scale, their spacing and marching speed.
-        var L = V ? { gy: 1400, hx: 830, hs: 1.5, bs: 1.4, sp: 150, v: 1000 } : { gy: 884, hx: 1330, hs: 1.4, bs: 1.4, sp: 150, v: 1100 };
-        var N = 6, hs = L.hs, bs = L.bs;
-        // A plain paper without its legs, and its two leg poses (stepping and standing), swapped as it marches.
-        var billFull = KIT.money("plain", 0), legsRe = /<path class="legs"[^>]*\/>/;
-        var body = billFull.replace(legsRe, "");
-        var edged = function (lg) { return lg.replace(/stroke="[^"]*"/, 'stroke="' + C.cream + '"').replace(/stroke-width="[^"]*"/, 'stroke-width="9"') + lg; };
-        var legA = edged(KIT.money("plain", 0).match(legsRe)[0]), legB = edged(KIT.money("plain", 1).match(legsRe)[0]);
-        // The monk hood: a rust cowl round the portrait (its face shows through), with a cream trim and a cord belt.
-        function hood(peak) {
-          return '<path d="M-25,19 C-31,-8 -20,' + (peak + 16) + " 0," + peak + " C20," + (peak + 16) + " 31,-8 25,19 C14,23 -14,23 -25,19 Z" +
-            ' M-14.5,1 a14.5,16.5 0 1 0 29,0 a14.5,16.5 0 1 0 -29,0 Z" fill="' + C.rust + '" fill-rule="evenodd" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
-            '<ellipse cx="0" cy="1" rx="15.5" ry="17.5" fill="none" stroke="' + C.cream + '" stroke-width="2"/>' +
-            '<path d="M-20,12 C-24,-6 -16,' + (peak + 22) + ' -2,' + (peak + 8) + '" fill="none" stroke="' + C.tan + '" stroke-width="2"/>' +
-            '<path d="M' + (peak < -60 ? "-3," + (peak + 10) + " L0," + (peak + 2) + " L3," + (peak + 10) : "0,0") + '" fill="none" stroke="' + C.yellow + '" stroke-width="2"/>' +
-            '<path d="M-47,15 H47" stroke="' + C.yellow + '" stroke-width="3"/><path d="M-22,15 l-3,13 M-22,15 l3,13" stroke="' + C.yellow + '" stroke-width="2.4" stroke-linecap="round"/>';
-        }
-        // The leader's arm, the chain and the censer (a little mustard burner with smoke), swinging from the hand.
-        var censer = '<path d="M47,4 L60,14 L68,2" fill="none" stroke="' + C.cream + '" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>' +
-          '<path d="M47,4 L60,14 L68,2" fill="none" stroke="' + ink + '" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>' +
-          '<circle cx="68" cy="2" r="4.5" fill="' + C.paper + '" stroke="' + ink + '" stroke-width="2.4"/>' +
-          '<g transform="translate(68,2)"><g id="' + id + '-swing"><path d="M0,0 V30" stroke="' + C.yellow + '" stroke-width="2.6" stroke-dasharray="3.5 2"/>' +
-          '<path d="M-10,30 L10,30 L8,44 L-8,44 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M-6,30 Q0,22 6,30" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>' +
-          '<circle cx="-3" cy="37" r="1.6" fill="' + ink + '"/><circle cx="3" cy="37" r="1.6" fill="' + ink + '"/></g></g>';
-        var smoke = "";
-        for (var s = 0; s < 4; s++) smoke += '<circle class="' + id + '-smoke" r="' + (5 + s * 1.5) + '" fill="#C9C2B5" stroke="' + ink + '" stroke-width="1.6" opacity="0"/>';
-        var bills = "";
-        for (var i = 0; i < N; i++) {
-          bills += '<g id="' + id + "-b" + i + '"><g transform="scale(' + bs + ')"><g id="' + id + "-la" + i + '">' + legA + '</g><g id="' + id + "-lb" + i + '" opacity="0">' + legB + "</g>" +
-            body + hood(i === 0 ? -68 : -54) + (i === 0 ? censer : "") + "</g></g>";
-        }
-        // The upturned top hat, in hat units, standing on its crown at (0, 0): the brim and its dark opening (back),
-        // the crown with a red band and the brim's front lip (front), so the papers drop in behind the lip.
-        var hatBack = '<path d="M-62,-132 L-60,0 L60,0 L62,-132 Z" fill="' + C.cream + '" stroke="' + C.cream + '" stroke-width="14" stroke-linejoin="round"/>' +
-          '<ellipse cx="0" cy="-134" rx="104" ry="23" fill="' + C.cream + '" stroke="' + C.cream + '" stroke-width="12"/>' +
-          '<ellipse cx="0" cy="-134" rx="104" ry="23" fill="#1A2238" stroke="' + ink + '" stroke-width="4"/><ellipse cx="0" cy="-136" rx="64" ry="13" fill="#05101F"/>';
-        var hatFront = '<path d="M-62,-132 L-60,0 L60,0 L62,-132 Z" fill="#1A2238" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>' +
-          '<path d="M-61,-112 L61,-112 L61,-92 L-61,-92 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="3"/>' +
-          '<path d="M54,-128 L52,-6" stroke="' + C.orange + '" stroke-width="3"/><path d="M-50,-80 L-49,-20" stroke="' + C.peri + '" stroke-width="3" opacity="0.6"/>' +
-          '<path d="M-104,-134 A104,23 0 0 0 104,-134 L64,-136 A64,13 0 0 1 -64,-136 Z" fill="#1A2238" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
-          '<path d="M60,-126 Q86,-122 98,-132" fill="none" stroke="' + C.orange + '" stroke-width="2.6"/>';
-        // The burp: a puff out of the opening, and an empty hood that pops out and floats back down onto the brim.
-        var puff = '<g id="' + id + '-puff" opacity="0">' + [[-34, -10, 26], [0, -30, 34], [36, -12, 24], [10, -62, 22]].map(function (p) {
-          return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="#E9E1CC" stroke="' + ink + '" stroke-width="3.4"/>';
-        }).join("") + "</g>";
-        var flyHood = '<g id="' + id + '-fh" opacity="0"><g id="' + id + '-fh-spin"><path d="M-25,19 C-31,-8 -20,-38 0,-54 C20,-38 31,-8 25,19 C14,23 -14,23 -25,19 Z M-14.5,1 a14.5,16.5 0 1 0 29,0 a14.5,16.5 0 1 0 -29,0 Z" fill="' + C.rust + '" fill-rule="evenodd" stroke="' + C.cream + '" stroke-width="2.6"/></g></g>';
-        var shadows = "";
-        for (var j = 0; j < N; j++) shadows += '<ellipse id="' + id + "-sh" + j + '" cx="0" cy="0" rx="' + f(42 * bs) + '" ry="' + f(7 * bs) + '" fill="#05101F" opacity="0"/>';
-        var hatAt = "translate(" + L.hx + "," + L.gy + ") scale(" + hs + ")";
-        var art = document.createElement("div");
-        art.style.cssText = "position:absolute;inset:0;";
-        art.innerHTML = KIT.svg(W, H,
-          '<ellipse cx="' + L.hx + '" cy="' + (L.gy + 2) + '" rx="' + f(80 * hs) + '" ry="' + f(10 * hs) + '" fill="#05101F" opacity="0.45"/>' + shadows +
-          '<g id="' + id + '-hat-b" transform="' + hatAt + '">' + hatBack + "</g>" +
-          '<g id="' + id + '-smokes">' + smoke + "</g>" + bills +
-          '<g id="' + id + '-hat-f" transform="' + hatAt + '">' + hatFront + "</g>" +
-          '<g transform="translate(' + L.hx + "," + f(L.gy - 136 * hs) + ") scale(" + hs + ')">' + puff + "</g>" +
-          '<g transform="translate(' + L.hx + "," + f(L.gy - 136 * hs) + ") scale(" + (bs * 0.95).toFixed(2) + ')">' + flyHood + "</g>");
-        c.art.appendChild(art);
-
-        // ── The motion, per frame ─────────────────────────────────────────
-        var tO = c.cue("Order"), x0 = -80, arrive = L.hx - 72 * hs, dive = 0.34, stride = 46 * bs;
-        var tBurp = c.after("Distribution."), hb = $("hat-b"), hf = $("hat-f"), swing = $("swing");
-        var els = [], smk = document.getElementsByClassName(id + "-smoke");
-        for (var e = 0; e < N; e++) els.push({ g: $("b" + e), la: $("la" + e), lb: $("lb" + e), sh: $("sh" + e) });
-        // when paper i reaches the hat, and when it drops past the lip (the hat gulps)
-        var tArr = function (i) { return tO + (arrive - x0 + i * L.sp) / L.v; };
-        var y0 = L.gy - 48 * bs, y1 = L.gy - 56 * hs, yPeak = L.gy - 136 * hs - 42 * bs, yc = 2 * yPeak - (y0 + y1) / 2;
-        function bump(t, at, len) { var u = (t - at) / len; return u > 0 && u < 1 ? Math.sin(Math.PI * u) : 0; }
-        KIT.onTime(tl, D, function (t) {
-          var gulp = 0;
-          els.forEach(function (b, i) {
-            var x = x0 + (t - tO) * L.v - i * L.sp, ta = tArr(i), on = t >= tO && x > -140, X, Y, rot = 0, step;
-            if (!on) { b.g.setAttribute("opacity", "0"); b.sh.setAttribute("opacity", "0"); return; }
-            if (t < ta) {
-              // marching: a stately bob, the legs swapping every half stride
-              step = Math.floor(x / (stride / 2));
-              X = x; Y = y0 - Math.abs(Math.sin((Math.PI * x) / stride)) * 7 * bs; rot = Math.sin((Math.PI * x) / stride) * 3;
-              b.la.setAttribute("opacity", step % 2 ? "0" : "1"); b.lb.setAttribute("opacity", step % 2 ? "1" : "0");
-              b.sh.setAttribute("cx", f(X)); b.sh.setAttribute("cy", f(L.gy + 2)); b.sh.setAttribute("opacity", "0.35");
-              b.g.setAttribute("opacity", "1");
-            } else if (t < ta + dive) {
-              // the dive: a hop up over the brim, head first into the opening, legs kicking
-              var p = (t - ta) / dive;
-              X = arrive + (L.hx - arrive) * p; Y = (1 - p) * (1 - p) * y0 + 2 * p * (1 - p) * yc + p * p * y1; rot = 105 * p * p;
-              step = Math.floor((t - ta) / 0.05);
-              b.la.setAttribute("opacity", step % 2 ? "0" : "1"); b.lb.setAttribute("opacity", step % 2 ? "1" : "0");
-              b.sh.setAttribute("opacity", "0"); b.g.setAttribute("opacity", "1");
-            } else { b.g.setAttribute("opacity", "0"); b.sh.setAttribute("opacity", "0"); return; }
-            b.g.setAttribute("transform", "translate(" + f(X) + "," + f(Y) + ") rotate(" + f(rot) + ")");
-            gulp = Math.max(gulp, bump(t, ta + dive * 0.7, 0.16));
-          });
-          // the hat gulps each one down, then burps: a squash, a hop, a squash on landing
-          var hop = bump(t, tBurp + 0.06, 0.34), sq = Math.max(gulp * 0.6, bump(t, tBurp - 0.02, 0.1), bump(t, tBurp + 0.4, 0.12));
-          var tr = "translate(" + L.hx + "," + f(L.gy - hop * 46) + ") scale(" + f(hs * (1 + 0.1 * sq)) + "," + f(hs * (1 - 0.12 * sq + 0.06 * hop)) + ")";
-          hb.setAttribute("transform", tr); hf.setAttribute("transform", tr);
-          // the censer swings on its chain and leaves a little trail of smoke
-          var th = Math.sin((t - tO) * 2 * Math.PI / 0.62) * 34;
-          swing.setAttribute("transform", "rotate(" + f(th) + ")");
-          var lead = x0 + (t - tO) * L.v;
-          Array.prototype.forEach.call(smk, function (el, k) {
-            var age = ((t - tO) * 2.2 + k * 0.25) % 1, alive = t > tO + 0.1 && t < tArr(0);
-            el.setAttribute("opacity", alive ? f(0.85 * (1 - age)) : "0");
-            el.setAttribute("cx", f(lead + (68 - 30 * age * 3) * bs));
-            el.setAttribute("cy", f(y0 + (40 - age * 70) * bs));
-          });
+        // ── Where things stand (canvas px): the DISTRIBUTION line, its baseline, the hat at its end.
+        var dw = c.word("DISTRIBUTION"), dis = dw.box, capTop = dis.y, base = dis.y + dis.h;
+        var hk = dis.h / (0.7 * 128); // the hat's scale: the sketch's hat stood by 128 px capitals
+        // Center the line and its hat together: slide the DISTRIBUTION line left by half the hat's width; lift the
+        // lines above it, so the procession has a clear lane along the tops of the letters.
+        var dx = (196 * hk) / 2, lift = V ? 70 : 80;
+        c.words.forEach(function (w) {
+          if (w.line === dw.line) { w.box.x -= dx; w.el.style.left = w.box.x.toFixed(1) + "px"; }
+          else if (w.line < dw.line) { w.box.y -= lift; w.el.style.top = (parseFloat(w.el.style.top) - lift).toFixed(1) + "px"; }
         });
-        // The burp: the puff pops out of the opening (pop) and an empty hood shoots up, spins and floats down onto the brim.
-        var pf = $("puff"), fh = $("fh"), fhs = $("fh-spin");
-        gsap.set(pf, { svgOrigin: "0 0" });
-        tl.fromTo(pf, { opacity: 0, scale: 0.2, y: 10 }, { opacity: 1, scale: 0.9, y: -12, duration: 0.16, ease: "back.out(2)", immediateRender: false }, tBurp);
-        tl.to(pf, { opacity: 0, scale: 1.25, y: -40, duration: 0.36, ease: "power1.in" }, tBurp + 0.2);
-        gsap.set(fhs, { svgOrigin: "0 0" });
-        tl.set(fh, { opacity: 1 }, tBurp + 0.04);
-        tl.fromTo(fh, { x: 0, y: 0 }, { x: 30, y: -78, duration: 0.2, ease: "power2.out", immediateRender: false }, tBurp + 0.04);
-        tl.to(fh, { keyframes: [{ x: -10, y: -54, duration: 0.17, ease: "sine.inOut" }, { x: 40, y: -32, duration: 0.15, ease: "sine.inOut" }, { x: 66, y: -14, duration: 0.13, ease: "power2.in" }] }, tBurp + 0.24);
-        tl.fromTo(fhs, { rotation: 0 }, { rotation: 380, duration: 0.36, ease: "power1.out", immediateRender: false }, tBurp + 0.04);
-        tl.to(fhs, { keyframes: [{ rotation: 344, duration: 0.15 }, { rotation: 376, duration: 0.13 }, { rotation: 368, duration: 0.1 }], ease: "sine.inOut" }, tBurp + 0.4);
+        // the small line's words spread out a little, since Fraunces at that size sets wider than its measured widths
+        c.words.forEach(function (w) {
+          if (w.line !== 0) return;
+          var mid = w.box.x + w.box.w / 2, nx = c.W / 2 + (mid - c.W / 2) * 1.07 - w.box.w / 2;
+          w.box.x = nx; w.el.style.left = nx.toFixed(1) + "px";
+        });
+        var hatX = dis.x + dis.w + 104 * hk, brimTop = base - 122 * hk, mouthY = base - 113 * hk;
+        var S = V ? 0.78 : 0.82; // the monks' scale
+
+        // ── A monk: a plain bill on its stick legs under a brown cowl; the censer on the second.
+        var HOOD = '<path d="M-56,12 L-54,-18 Q-46,-48 -10,-54 L2,-70 L10,-54 Q46,-46 56,-18 L58,12 L42,12 L40,-10 Q22,-27 0,-27 Q-22,-27 -40,-10 L-42,12 Z" fill="#6B4A2F" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path d="M-30,-36 Q0,-46 30,-36" fill="none" stroke="#8C6440" stroke-width="3"/>';
+        var CENSER = '<g class="censer"><path d="M46,8 L62,54" stroke="' + C.yellow + '" stroke-width="3.4"/>' +
+          '<path d="M48,54 h28 l-4,20 h-20 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="round"/>' +
+          '<path d="M54,54 q8,-11 16,0" fill="none" stroke="' + ink + '" stroke-width="2.4"/></g>';
+        var monkSvg = function (i) {
+          return '<g id="' + c.id + "-m" + i + '"><g class="body">' + KIT.money("plain", 0) + HOOD + (i === 1 ? CENSER : "") + "</g></g>";
+        };
+        // the censer's smoke: four little puffs that rise and fade on a loop
+        var smoke = "";
+        for (var p = 0; p < 4; p++) smoke += '<circle class="puff" r="7" fill="' + C.cream + '" opacity="0"/>';
+
+        // ── The upturned top hat (hat units, its crown on the baseline at (0, 0)), with a cream outline for the navy.
+        var hatBody = '<path d="M-52,0 H52 L56,-104 H92 L84,-122 H-84 L-92,-104 H-56 Z" fill="none" stroke="' + C.cream + '" stroke-width="12" stroke-linejoin="round"/>' +
+          '<path d="M-52,0 H52 L56,-104 H-56 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<rect x="-54" y="-34" width="108" height="15" fill="' + C.war + '"/>' +
+          '<path d="M-92,-104 H92 L84,-122 H-84 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M-60,-113 H60" stroke="#0B1220" stroke-width="10" stroke-linecap="round"/>';
+        // the burp: three cream puffs over the mouth
+        var burp = '<g id="' + c.id + '-burp" opacity="0"><circle cx="-26" cy="-150" r="26" fill="' + C.cream + '"/><circle cx="12" cy="-170" r="32" fill="' + C.cream + '"/><circle cx="40" cy="-146" r="22" fill="' + C.cream + '"/></g>';
+        // the empty cowl that floats down onto the brim
+        var cowl = '<g id="' + c.id + '-cowl" opacity="0"><g transform="scale(' + S + ')">' + HOOD + "</g></g>";
+
+        // Nothing walks below the hat's crown: the monks are clipped out of the box under the hat's mouth.
+        var clipId = c.id + "-clip", hx0 = hatX - 60 * hk, hx1 = hatX + 60 * hk;
+        var clip = '<defs><clipPath id="' + clipId + '"><path clip-rule="evenodd" d="M-200,-200 H' + (c.W + 200) + " V" + (c.H + 200) + " H-200 Z M" + f(hx0) + "," + f(mouthY) +
+          " H" + f(hx1) + " V" + f(base + 400) + " H" + f(hx0) + ' Z"/></clipPath></defs>';
+
+        c.art.innerHTML = KIT.svg(c.W, c.H, clip + '<g clip-path="url(#' + clipId + ')">' + monkSvg(2) + monkSvg(1) + monkSvg(0) + smoke + "</g>" +
+          '<g transform="translate(' + f(hatX) + "," + f(base) + ')"><g id="' + c.id + '-hat"><g transform="scale(' + hk.toFixed(3) + ')">' + hatBody + burp + "</g></g></g>" + cowl);
+        var monks = [0, 1, 2].map(function (i) {
+          var el = document.getElementById(c.id + "-m" + i);
+          return { el: el, legs: el.querySelector(".legs"), censer: el.querySelector(".censer") };
+        });
+        var puffs = c.art.querySelectorAll(".puff"), hatEl = document.getElementById(c.id + "-hat");
+        var burpEl = document.getElementById(c.id + "-burp"), cowlEl = document.getElementById(c.id + "-cowl");
+
+        // ── Timing: they leave their orbits in order from "Order", hop down onto DISTRIBUTION, walk to the hat's lip
+        // and dive, the last one in just before the burp (after "Distribution.").
+        var TILT = [0, 60, -60];
+        var tGo = c.cue("Order"), tBurp = c.after("Distribution."), HOP = 0.5, DIVE = 0.42;
+        var leave = [tGo, tGo + 0.3, tGo + 0.6];
+        var landX = dis.x + dis.w * (V ? 0.36 : 0.5), lipX = hatX - 96 * hk - 34 * S;
+        var lastIn = tBurp - 0.06, v = (lipX - landX) / (lastIn - DIVE - (leave[2] + HOP));
+        var feet = function (x) { return [x, capTop - 46 * S]; }; // a monk's center when its feet are on the capitals
+        function orbit(i, t) {
+          var a = (TILT[i] * Math.PI) / 180, th = i * 2.1 + t * 2.4, ex = E.rx * Math.cos(th), ey = E.ry * Math.sin(th);
+          return [E.at[0] + ex * Math.cos(a) - ey * Math.sin(a), E.at[1] + ex * Math.sin(a) + ey * Math.cos(a) - 6];
+        }
+        function legs(m, ph) {
+          var l = Math.floor(ph) % 2;
+          m.legs.setAttribute("d", "M-16,24 l" + (-6 + l * 10) + ",22 h-8 M16,24 l" + (6 - l * 10) + ",22 h8");
+        }
+        KIT.onTime(c.tl, c.D, function (t) {
+          monks.forEach(function (m, i) {
+            var x, y, s = S, r = 0, op = 1, tLand = leave[i] + HOP, tDive = tLand + (lipX - landX) / v;
+            if (t < leave[i]) {
+              var o = orbit(i, t);
+              x = o[0]; y = o[1]; s = E.k * 1.15;
+              legs(m, t * 10 + i);
+            } else if (t < tLand) {
+              // the hop: an arc from the orbit down onto the capitals, growing to full size
+              var o0 = orbit(i, leave[i]), u = sm((t - leave[i]) / HOP), p1 = feet(landX), cx = (o0[0] + p1[0]) / 2, cy = Math.min(o0[1], p1[1]) - 150;
+              x = (1 - u) * (1 - u) * o0[0] + 2 * u * (1 - u) * cx + u * u * p1[0];
+              y = (1 - u) * (1 - u) * o0[1] + 2 * u * (1 - u) * cy + u * u * p1[1];
+              s = E.k * 1.15 + (S - E.k * 1.15) * u;
+              legs(m, 0);
+            } else if (t < tDive) {
+              // the procession: slow, even steps along the tops of the letters, a solemn bob
+              var ph = (t - tLand) * 5;
+              x = landX + v * (t - tLand); y = feet(x)[1] - Math.abs(Math.sin(ph * Math.PI)) * 4;
+              legs(m, ph);
+            } else if (t < tDive + DIVE) {
+              // the dive: up over the brim, turning headfirst, and down into the hat
+              var w = (t - tDive) / DIVE, a = sm(w / 0.6), b = clamp((w - 0.6) / 0.4);
+              var p0 = feet(lipX), top = [hatX, brimTop - 70 * S];
+              x = p0[0] + (top[0] - p0[0]) * a; y = p0[1] + (top[1] - p0[1]) * a - Math.sin(Math.PI * a) * 50 + b * b * 150 * hk;
+              r = 180 * sm(w / 0.75);
+              legs(m, 1);
+            } else { x = hatX; y = base; op = 0; }
+            m.el.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") rotate(" + r.toFixed(1) + ") scale(" + s.toFixed(3) + ")");
+            m.el.setAttribute("opacity", op);
+            if (m.censer) {
+              // the censer swings on its chain from the bill's front corner
+              m.censer.setAttribute("transform", "rotate(" + (Math.sin(t * 7) * 24).toFixed(1) + " 46 8)");
+              // and puffs: the smoke rises from wherever the censer is, in canvas px
+              var sw = (Math.sin(t * 7) * 24 * Math.PI) / 180, cxp = 46 + (62 - 46) * Math.cos(sw) - (54 - 8) * Math.sin(sw), cyp = 8 + (62 - 46) * Math.sin(sw) + (54 - 8) * Math.cos(sw);
+              var rr = (r * Math.PI) / 180, gx = x + s * (cxp * Math.cos(rr) - cyp * Math.sin(rr)), gy = y + s * (cxp * Math.sin(rr) + cyp * Math.cos(rr));
+              Array.prototype.forEach.call(puffs, function (pf, k) {
+                var age = (t * 1.6 + k / 4) % 1;
+                pf.setAttribute("cx", f(gx + Math.sin((t + k) * 5) * 6 - age * 18));
+                pf.setAttribute("cy", f(gy - 10 - age * 60));
+                pf.setAttribute("r", f(5 + age * 9));
+                pf.setAttribute("opacity", (op * 0.75 * (1 - age)).toFixed(2));
+              });
+            }
+          });
+
+          // ── The burp: the hat bulges, a cream puff rolls out of its mouth, and an empty cowl pops up and drifts
+          // down onto the left of the brim.
+          var bu = t - tBurp, sx = 1, sy = 1;
+          if (bu > 0 && bu < 0.4) { var e = Math.sin((bu / 0.4) * Math.PI) * Math.exp(-bu * 3); sx = 1 - 0.1 * e; sy = 1 + 0.2 * e; }
+          hatEl.setAttribute("transform", "scale(" + sx.toFixed(3) + "," + sy.toFixed(3) + ")");
+          var pu = clamp(bu / 0.5);
+          burpEl.setAttribute("opacity", bu > 0 ? (0.95 * (1 - pu)).toFixed(2) : 0);
+          burpEl.setAttribute("transform", "translate(0," + f(-40 * pu) + ") scale(" + (0.5 + pu * 0.8).toFixed(2) + ")");
+          if (bu > 0) {
+            var up = sm(bu / 0.18), dn = sm((bu - 0.18) / 0.4);
+            var x0 = hatX, y0 = mouthY, ytop = mouthY - 120 * hk, xEnd = hatX - 78 * hk, yEnd = brimTop - 14 * S;
+            var cxw = x0 + (xEnd - x0) * dn + Math.sin(dn * Math.PI * 2) * 26 * (1 - dn);
+            var cyw = bu < 0.18 ? y0 + (ytop - y0) * up : ytop + (yEnd - ytop) * dn;
+            var rot = bu < 0.18 ? 20 * up : 20 - 44 * dn + Math.sin(dn * Math.PI * 3) * 14 * (1 - dn);
+            cowlEl.setAttribute("transform", "translate(" + f(cxw) + "," + f(cyw) + ") rotate(" + rot.toFixed(1) + ")");
+            cowlEl.setAttribute("opacity", 1);
+          } else cowlEl.setAttribute("opacity", 0);
+        });
       },
     });
   </script>

@@ -2,7 +2,7 @@
 format: 1920x1080
 duration: 2:15.6
 message: "Papers move politics in a fixed order (rich humans, loud humans, lobbyists, politicians' friends), and the treaty pays everyone back from $27.2 billion a year, 80% of it for clinical trials."
-arc: Title card, hooded papers file into a top hat → Wishonia's pull-down chart of the money double helix unrolls out of the studio → Step 1, a billion papers from a fat cat who ticks the heart on the Reaper's clipboard → 2,800 fat cats, one prefers living → Step 2, loud humans blast your thing → Step 3, the long way to the Politician's pocket, stamped LEGAL → Step 4, the Super PAC swallows a river → the $650 million budget flattens the Lobbyist → Step 5, the treaty flips $27.2 billion to medicine money and splits it 80/10/10, and forever outlasts the Rich Human until the lab brings him back → the Reaper snaps his pencil
+arc: Title card, hooded papers file into a top hat → Wishonia's pull-down chart walks the papers round its ring of five → Step 1, a billion papers from a fat cat who ticks the heart on the Reaper's clipboard → 2,800 fat cats, one prefers living → Step 2, loud humans blast your thing → Step 3, the long way to the Politician's pocket, stamped LEGAL → Step 4, the Super PAC swallows a river → the $650 million budget flattens the Lobbyist → Step 5, the treaty flips $27.2 billion to medicine money and splits it 80/10/10, and forever outlasts the fat cat until the lab brings him back → the Reaper snaps his pencil
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 5, "The Sacred Order of Paper Distribution"
@@ -12,236 +12,255 @@ version: v3
 
 # Part 5 storyboard: "The Sacred Order of Paper Distribution"
 
-Times are MP3 times. They come from each scene's cue word in `../../word-timings.json`, so do not edit them by hand; if the audio changes, rebuild the timings and the scenes follow. Each scene runs until the next one starts. Inside a scene, every move starts on the quoted word.
-
-Scenes are named, not numbered. Use the name in feedback ("loved-ones: make the form smaller"). The number in each heading is only the order.
-
-Look, characters and rules: `../../cartoon-style-bible.md`. This part is in the 1950s atomic-age film look: Layer A is Wishonia at her lectern on the studio set (`KIT.studio`), Layer B is an illustrated plate the camera travels over (`KIT.camera`), and the period film runs over every shot. The reference for every kind of shot is Part 2 (`../compositions/scenes/part-02/`). Money is money green; its seal says what it buys (a missile for war, a cross for medicine), and Steps 1 to 4 use plain bills with no seal.
-
-**Spine.** The stream of plain papers. It leaves the Rich Human's hill in Step 1, and each of the next three steps opens on its own plate with the same single file of plain bills walking in from the left edge on squeaky feet, to that step's humans. In Step 5 the money comes home: the treaty's war money flips to medicine money in the color-flip funnel and walks along one long plate, past the lab and the bank, back up the same hill from Step 1, under a neon infinity sign.
-
-**Callbacks.** From Part 4 (billionaire-pdf): the fat cat who burned the PDF is the Rich Human on the hill, in his big chair, the UNREALISTIC sticker still on his forehead. From Part 2 (money-loop): the war factory with its grinning missile chimneys is where the treaty's money comes from, and the papers walk on the same stick legs. From Part 1 (loved-ones): the Grim Reaper. Inside the part: the title card's papers dive into an upturned top hat, and in Step 5 the Rich Human holds out his own top hat the same way, as a collection plate.
-
-**Set up here.** The "I PREFER LIVING" button stays on the Rich Human's left lapel (Part 17 uses it). The LEGAL stamp mark stays on the Politician's forehead for the rest of the part. The Reaper's tally clipboard (navy marks in fives, a heart box and a skull box at the top) is his running count in later parts (Part 17). The Super PAC comes back in Parts 17, 20 and 23, drawn from this description (not from the old-look scene file): a rust canvas backpack, taller than wide, with a darker rust top flap that opens like a mouth; two navy straps that work as its arms (fists on its hips in the hero pose); a front pocket with a cream patch, an orange inner rule and "SUPER PAC" in navy Oswald capitals, sewn over the word "BRIBERY" painted in cream on the unfaded canvas underneath; and a war-red cape tied at its top. No face and no mask. The exact drawing is `superPac()` in this part's sketch module (step-4-super-pac). The $27.2 billion medicine stream and its tag flow into the lab again in Part 6 (redirect-math).
-
-**Held frame.** None: this part states no death toll.
-
-**Transitions.** The title card comes up from black and goes down to black. sacred-scroll irises in on Wishonia's face. Every scene after it cuts in, except 2800-top-hats, which is the same plate as step-1-dice-in-a-suit with no seam (the camera keeps traveling). works-out irises out on Wishonia's face; Part 6 opens on its title card.
-
-**Bans for this part.**
-- No step cards: the narrator reads each heading while the stream of papers walks in.
-- Steps 1 to 4 use plain bills (`KIT.money("plain")`); war seals and medicine seals start with the treaty in Step 5.
-- The bowler is YOU's mark in this film: the dice businessman wears a homburg, and the passer-by blown out of his shoes in step-2-loud-humans wears no hat.
-- Draw each framing large: one station fills the frame, with the ground and the cast big, except where the Moves say the camera pulls back.
-
-## Changes from v2
-
-- The office, its wall screen and Wishonia's corner are gone. Wishonia is on screen only at her lectern: the opening (sacred-scroll), the $650 million aside (lobbying-budget, new) and the ending (works-out, new: the Reaper snaps his pencil and the film irises out).
-- The step cards are gone. Each step opens on its own plate with the stream of papers walking in while the narrator reads the heading. The pull-down scroll with the five steps written on it becomes a classroom chart of a money double helix that unrolls out of the frame.
-- Labels that explained the picture are cut and their jokes restaged: the dotted stack without LATER; the two-box form as a heart box and a skull box on the Reaper's own clipboard; the washing machine in campaign bunting and a straw boater instead of CAMPAIGN; a patient clicking his heels instead of THE POINT and its arrow; "2,800" stamped in the sky instead of the counter lines; a pallet of money that flattens the Lobbyist instead of the $650 million label.
-- The title card is the period card: its atom's electron papers wear monk hoods and file into a top hat.
-- The bowler is YOU's mark across the film, so the dice businessman wears a homburg and the passer-by in step-2-loud-humans no hat.
-- The dice in a suit are two dice stacked inside one pinstripe suit. Step 5 is one long plate the money walks along, from the war factory to the hill, with the neon infinity lit from "(Forever)" and the Reaper's tally running.
+- **Source:** `index-manual.qmd`, "The Sacred Order of Paper Distribution". It links no `knowledge/` pages; its numbers are variables from `knowledge/appendix/parameters-and-calculations.qmd`.
+- **The numbers:**
+  - From the text: 80 years of observation (1945 to now).
+  - `treaty_campaign_total_cost`: $1 billion, the "at least one billion" from rich humans.
+  - `chain_global_billionaire_count`: 2,781, which the narrator rounds to "approximately two thousand eight hundred"; the chart is a grid of 2,800 top hats.
+  - `treaty_campaign_budget_lobbying`: $650 million.
+  - `treaty_annual_funding`: $27.2 billion a year (1% of `global_military_spending_annual_2024`, $2.72 trillion).
+  - The split of it: `dih_treasury_medical_research_pct` 80%, which is `dih_treasury_to_medical_research_annual` $21.8 billion; `iab_political_incentive_funding_pct` 10%, which is `iab_political_incentive_funding_annual` $2.72 billion; `victory_bond_funding_pct` 10%, which is `victory_bond_annual_payout` $2.72 billion. The narrator says only the percentages, so the pie shows 80%, 10% and 10%.
+  - Not a variable, so drawn and never printed: a normal PAC can take only a small, fixed amount from each donor (the $5,000 a year federal limit), drawn as five bills.
+- **What the viewer must leave with:** papers reach politics in a fixed order (rich humans, loud humans, lobbyists, politicians' friends), and the treaty pays everyone back out of $27.2 billion a year, 80% of it for clinical trials, which is also what keeps the rich humans alive to collect.
+- **Plates:**
+  - `the-hill`: the fat cat's hill of plain bills with his chair on top; it pulls back into a pictogram of 2,800 top hats (step-1-dice-in-a-suit, 2800-top-hats).
+  - `the-internet`: four Loud Humans at laptops on a plain field.
+  - `the-laundry`: a short route from the Lobbyist's bush through a campaign wash-tub to the Politician's pocket.
+  - `the-rally`: a rally ground with bunting, a podium and two backpacks.
+  - `the-payout`: one long field from the war factory, through the seal-flip funnel and a pie chart, to the lab, the bank and the hill.
+  - Host scenes (sacred-scroll, lobbying-budget, works-out): Wishonia at her console on the observation deck.
+- **Cast:** existing: `politician`, `scientist`, `laptop`, `reaper` (`assets/art/reaper/`: `body`, `clipboard` with tally boxes, `face-grin`, `face-sulk`, `arm-open`). From Parts 1 to 4: `fat-cat`, `swivel-chair`, `bill-war`, `bill-med`, `factory`, `funnel`, `patient`, `hospital`, `calendar`. New: `bill-plain`, `monk-hood`, `top-hat`, `pull-down-chart`, `money-hill`, `money-bundle`, `dotted-stack`, `dice-suit`, `spotlight`, `living-button`, `loud-human`, `speech-bubbles`, `pill-bottle`, `lying-pie`, `lobbyist`, `bush`, `briefcase`, `illegal-sign`, `wash-tub`, `pac`, `super-pac`, `campaign-poster`, `podium`, `pallet`, `treaty-scroll`, `quill`, `capitol`, `paper-plane`, `pie-chart`, `lab`, `bank`, `yes-button`, `ribbon`, `neon-infinity`, `beard`, `fat-cat-skeleton`, `pencil`.
+- **Callbacks:**
+  - Part 4 (billionaire-pdf): the fat cat on the hill is the one who burned the PDF, the UNREALISTIC sticker still on his forehead.
+  - Part 1 (loved-ones): the Grim Reaper.
+  - Part 2 (money-loop): the factory with the missile chimneys is where the treaty's money comes from, on the same stick legs.
+  - Part 3 (year-one-to-twenty): the seal-flip funnel.
+- **New art:**
+  - the plain bill (green, no seal, stick legs), and a tiny navy monk hood and brass censer for the title card
+  - an upturned top hat
+  - a classroom pull-down chart on a wooden roller with a pull ring
+  - a hill of plain bills on a green mound; a bundle as big as a bus with a paper band; a big stack drawn in dotted lines
+  - a businessman whose head and body are two white dice stacked inside a pinstripe suit and homburg, the dice loose, the suit empty
+  - the Reaper's clipboard with a heart box and a skull box and tally marks; his pencil, whole and snapped
+  - a tiny fat cat in a top hat for the grid (one drawing, repeated 2,800 times), a skeleton one, a sleeping one; an "I PREFER LIVING" lapel button
+  - four Loud Humans (megaphone heads: a barrel, a beanpole, an hourglass, a refrigerator box) at chunky laptops; scribbled speech bubbles and neat ones with a pill bottle; a passer-by and his empty, smoking shoes
+  - a pie chart on stick legs in sunglasses, its three slices 60%, 60%, 60%
+  - the Lobbyist (fedora, domino mask, popped collar, gloves) with a briefcase; a bush; an "ILLEGAL" sign on a rope; a wash-tub with a mangle, hung with campaign bunting and a straw boater; a crisp bill and the same bill muddy
+  - a small tan backpack with a "PAC" patch; the Super PAC (a rust canvas backpack with a red cape and a "SUPER PAC" patch sewn over the word "BRIBERY"); campaign posters of the Politician's grin; a podium; a gloved hand
+  - a wooden pallet stacked with bundles, a shipping tag
+  - a capitol with steps and a signing table, a treaty scroll, a giant quill, a paper plane
+  - a pie chart on an easel; a lab; a little bank with a big YES button; a ribbon; a neon infinity sign
+  - the fat cat's long white beard, and his skeleton with top hat, monocle and beard
+- **Kit additions:**
+  - `walk` in single file along a path, as in Part 1.
+  - `grid`: a pictogram of many copies of one cut-out in rows, which the camera can pull back from.
+  - `spotlight`: the plate goes dark except a moving circle of light.
+  - `pie`: a pie chart whose slices light up one at a time and send bills off along paths.
+  - `flip`, as in Part 3; `xray`, also played in reverse.
+  - Host props for `KIT.studio`: the pull-down chart beside the console, the pallet and the flattened Lobbyist, the Reaper beside the console with his clipboard and pencil.
 
 ## Scene 1 · sacred-order-title
 
 - id: sacred-order-title
 - act: Title
 - transition_in: cut (up from black)
-- key: after "Distribution.": the hooded papers in single file along the top of DISTRIBUTION, the first one diving into the upturned top hat that stands at the end of the line like a full stop, the atom's orbits empty
 - cue: "The Sacred Order of Paper"
 - time: 09:07.0 to 09:10.7 (3.8 s)
 - voiceover: "The Sacred Order of Paper Distribution."
 - layer: A, title card
-- scene: The period title card (`KIT.titleScene`, look "atomic"): the heading in cream on plain navy under the film's emblem. The atom's electrons are plain papers in tiny navy monk hoods: the Sacred Order. An upturned top hat stands at the end of the last line.
-- props: title-card, plain-paper, monk-hood, censer, top-hat
 - status: planned
 
-Moves: the card comes up from black with the whole heading on it. 16:9: `lines: [{ words: ["THE", "SACRED", "ORDER", "OF"], style: "small" }, ["PAPER", "DISTRIBUTION"]]`. 9:16: `linesTall: [{ words: ["THE", "SACRED", "ORDER", "OF"], style: "small" }, ["PAPER"], ["DISTRIBUTION"]]`. The three electrons running round the atom are plain papers (no seal) in tiny navy monk hoods, the leader swinging a little brass censer on a chain. An upturned top hat stands on the baseline at the end of DISTRIBUTION, like a full stop. "Distribution." → the papers step off their orbits one after another and walk in solemn single file down onto the heading and along the tops of the letters to the hat, the censer puffing, and dive into it one at a time. after "Distribution." → the hat burps a puff of smoke and one empty hood floats down onto its brim.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "The Sacred Order of Paper Distribution." | Where the papers go. | The period card. The emblem's three electrons are plain bills in tiny monk hoods, the leader swinging a censer. An upturned top hat stands at the end of DISTRIBUTION like a full stop. On "Distribution." the bills step off their orbits and file solemnly along the tops of the letters into the hat, one at a time. | After "Distribution." the hat burps a puff of smoke, and one empty hood floats down onto its brim. |
 
-Sound: a projector whirr on "Sacred"; a pop as the hat burps.
-
-On screen: "THE SACRED ORDER OF PAPER DISTRIBUTION". Why: the narrator reads the heading, and the procession shows where the papers end up before anyone says it.
+Sound: the card's whirr on "Sacred"; a pop as the hat burps.
 
 ## Scene 2 · sacred-scroll
 
 - id: sacred-scroll
 - act: The five steps
 - transition_in: iris in (on Wishonia's face)
-- key: after "precise": the pull-down chart unrolled from its roller at the top of the frame down out of the bottom, the money double helix running its whole length, Wishonia pointing at it
 - cue: "After eighty years of observation"
 - time: 09:10.7 to 09:19.3 (8.6 s)
 - voiceover: "After eighty years of observation, I've decoded the paper-giving sequence. This manual will teach you the precise order: Step one:"
 - layer: A, host
-- scene: Wishonia at her lectern (`KIT.studio`). A 1950s classroom pull-down chart drops on the free wall right of the lectern: the paper-giving sequence, drawn as a DNA double helix whose rungs are plain green bills, and it is much longer than the room.
 - wishonia: big, happy-smile + body-presenting; lookright-smile + body-point-right on "decoded"; smirk-smile + body-counting on "Step"
-- props: studio, lectern, pull-down-chart, plain-paper
 - status: planned
 
-Moves: "After" → the iris opens on her face, and the camera's slow push in starts. "decoded" → with a clatter, a pull-down chart drops from the top of the frame on the wall to her right: a wooden roller on two brackets, a cream chart with a navy border, a pull ring swinging on its cord. On it, one picture: a double helix, two navy strands twisting down the chart, every rung a plain green bill. She points at it. "precise" → the chart keeps unrolling on its own: the helix goes on and on, down past the chair rail and out of the bottom of the frame (in 9:16 it reaches the floor, and the bottom roll trundles off across it and out of the right edge). "order:" (1.0 s in; the word is long) → it snaps back up with a slide whistle: the helix whips up into the roller, which spins so hard that the pull ring wraps round it, clack-clack-clack. "Step" → Wishonia raises one finger (counting body); behind her the roller is still turning slowly, ticking.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "After eighty years of observation," | 1945 to now. | The iris opens on Wishonia at her console, Earth in the glass. | |
+| "I've decoded the paper-giving sequence." | Papers move in a fixed order. | A pull-down chart clatters down beside the console: five engraved portraits in a ring, the fat cat, a megaphone head, a masked lobbyist, a caped backpack, and a politician, with little bills walking the arrows from each to the next and back round to the fat cat. She points at it. | |
+| "This manual will teach you the precise order:" | | The bills on the chart walk faster. On "order:" the chart snaps back up into its roller with a slide whistle, and the pull ring wraps round it, clack-clack-clack. | |
+| "Step one:" | | She raises one finger; the roller is still turning slowly, ticking. | |
 
-Sound: a whoosh as the chart drops on "decoded"; a whirr as it runs away on "precise"; a rising slide whistle as it snaps back (on "order:", 1.0 s in).
-
-On screen: the helix of bills; no words on the chart. No: no list of the five steps (the narrator reads each one when it comes). Why: the map of the part as one joke: the precise order is longer than the room.
+Sound: a whoosh as the chart drops on "decoded"; a rising slide whistle as it snaps up on "order:".
 
 ## Scene 3 · step-1-dice-in-a-suit
 
 - id: step-1-dice-in-a-suit
 - act: Step 1
 - transition_in: cut
-- key: on "but": the two dice landed on snake eyes in the dust at the foot of the hill, their empty pinstripe suit and homburg in a heap beside them, the Rich Human above on his hill with dollar-sign eyes, reaching for the dotted stack
 - cue: "Get Many Papers from Rich"
 - time: 09:19.3 to 09:40.8 (21.5 s)
 - voiceover: "Get Many Papers from Rich Humans You convince rich humans to give you papers (at least one billion to be exact) by promising them even more papers later. This is called "investment," which is gambling but wearing a suit. You really only need one human with a billion papers who prefers not dying of horrible diseases to dying of horrible diseases."
 - layer: B, plate the-hill
-- scene: The plate: a plain tan field under a cream sky. In the middle stands the Rich Human's hill, a dome of plain bills packed in rows on a dark green mound, with his big navy leather swivel chair at the top. In front of the hill, a strip of bare ground runs across the plate. The Grim Reaper waits out of sight behind the hill. Far behind it (for 2800-top-hats), row after row of small hills run to the horizon, too small to read until the camera pulls back.
-- props: plain-paper, money-hill, swivel-chair, rich-human, unrealistic-sticker, money-bundle, dotted-stack, dice-in-a-suit, briefcase, reaper, tally-clipboard, pencil, tick
 - status: planned
 
-Moves: "Get Many Papers" → framing: the whole hill, the chair at the top with its back to us, one puff of cigar smoke rising over it. "Rich" → the chair swivels round slowly, like a villain's: the Rich Human (the fat cat: top hat, monocle, cigar, gold watch chain, the UNREALISTIC sticker from Part 4 still on his forehead), stroking the stack of cash in his lap like a cat. "convince" → the camera pushes in on him. "papers" (second) → he peels one plain paper off his stack and holds it out at arm's length between two fingers. "one billion" → his face falls: the whole front of the hill slides off toward the camera as one bundle as big as a bus, a paper band round it stamped "1,000,000,000", and the camera pulls back to fit it. "exact)" → the paper he was holding out hops onto the top of the bundle, and the band clicks over to "1,000,000,001". "later." → over the hill a far bigger stack floats up, drawn in dotted lines like a thought. after "later." → his eyes turn into dollar signs, and he stands up on his chair reaching for it; it bobs just out of reach. "investment," → framing: low, on the bare ground in front of the hill: a businessman in a pinstripe suit and homburg strolls in swinging a briefcase; his head and his body are two white dice stacked inside the suit. "gambling" → he trips on nothing: the dice tumble out and roll across the ground, clattering, and the empty suit and homburg drop in a heap. "but" → the dice stop: snake eyes. "suit." → they hop back into the suit, stack up, put the homburg on, straighten the tie and stroll on as if nothing happened. "one human" → framing: back on the Rich Human, who sits back down. "not dying" → the Grim Reaper rises from behind the hill at his shoulder, his tally clipboard under his arm, its page covered in navy tally marks in fives. "horrible" (first) → he turns the clipboard round to the Rich Human: two empty boxes at the top, one by a little heart and one by a little skull. "to" (the long one) → the camera pushes in on the clipboard. "dying" (second) → the Reaper helpfully holds his pencil out at the skull box. "diseases." (last) → the Rich Human snatches the pencil and ticks the heart. after "diseases." → the Reaper looks at the tick, sulks, and starts to sink back behind the hill.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Get Many Papers from Rich Humans" | | A hill of plain bills; on top, a big swivel chair with its back to us, a puff of cigar smoke rising over it. On "Rich" it swivels round slowly, like a villain's: the fat cat, the UNREALISTIC sticker still on his forehead, stroking the stack of cash in his lap like a cat. | |
+| "You convince rich humans to give you papers" | | He peels one bill off his stack and holds it out at arm's length between two fingers. | |
+| "(at least one billion to be exact)" | $1 billion. | His face falls: the whole front of the hill slides off toward us as one bundle as big as a bus, its band stamped "$1,000,000,000". The bill he held out hops on top, and the band clicks over to "$1,000,000,001". | To be exact. |
+| "by promising them even more papers later." | Investors get back more. | Over the hill a far bigger stack floats up in dotted lines, like a thought. After "later." his eyes turn to dollar signs and he stands on his chair reaching for it; it bobs just out of reach. | |
+| "This is called "investment," which is gambling but wearing a suit." | Investing is betting in a suit. | Low, at the foot of the hill: a businessman strolls in swinging a briefcase, his head and body two white dice stacked inside a pinstripe suit and homburg. On "gambling" he trips on nothing: the dice tumble out and roll, clattering, and the empty suit drops in a heap. On "but" they stop: snake eyes. On "suit." they hop back in, stack up, put the homburg on and stroll on. | |
+| "You really only need one human with a billion papers" | One yes is enough. | Back on the fat cat, who sits back down. | |
+| "who prefers not dying of horrible diseases to dying of horrible diseases." | The choice is obvious. | The Grim Reaper rises from behind the hill at his shoulder and turns his clipboard round to him: two empty boxes, one by a heart and one by a skull. On the second "dying" the Reaper holds his pencil out at the skull box. On the last "diseases." the fat cat snatches the pencil and ticks the heart. | After it, the Reaper looks at the tick, sulks, and sinks back behind the hill. |
 
-Sound: a chair squeak as it swivels on "Rich"; a falling slide whistle as the bundle slides on "billion"; a pop on "exact)"; a cash-register ding as his eyes ring up after "later."; a clatter (typewriter) as the dice roll on "gambling"; a thunk on snake eyes ("but"); a whoosh as the Reaper rises on "not"; a marker scratch for the tick on the last "diseases.".
-
-On screen: "1,000,000,000" then "1,000,000,001" (the band) / "UNREALISTIC" (the sticker) / the heart and the skull on the clipboard. No: no words on the dotted stack or the clipboard. Why: Step 1 needs one rich human to pick the obvious box, and the Reaper shows what the other box is.
+Sound: a chair squeak on "Rich"; a falling slide whistle as the bundle slides on "billion"; a pop on "exact)"; a cash-register ding as his eyes ring up after "later."; a clatter as the dice roll on "gambling"; a thunk on snake eyes on "but"; a whoosh as the Reaper rises on "not"; a pencil scratch for the tick on the last "diseases.".
 
 ## Scene 4 · 2800-top-hats
 
 - id: 2800-top-hats
 - act: Step 1
 - transition_in: same plate (no seam)
-- key: after "living.": the spotlight on our Rich Human in his chair, his top hat lit, the new "I PREFER LIVING" button on his lapel, the dim field of little hills behind him and "2,800" in the sky
 - cue: "There are approximately two thousand"
 - time: 09:40.8 to 09:48.5 (7.6 s)
 - voiceover: "There are approximately two thousand eight hundred of these humans on your planet. Statistically, at least one of them prefers living."
 - layer: B, plate the-hill
-- scene: The same plate. The camera pulls back until the hill is one of a field of little hills of papers to the horizon, a tiny fat cat in a top hat on every one; a spotlight picks out three of them.
-- props: money-hill, rich-human, top-hat, skeleton, reaper, tally-clipboard, spotlight, preference-button
 - status: planned
 
-Moves: "There" → the first frame is step-1-dice-in-a-suit's last: the heart ticked, the Reaper sinking behind the hill. "two thousand eight hundred" → the camera pulls back and up, fast: our hill shrinks into the front row of a field of little hills of plain bills running to the horizon, a tiny fat cat in a top hat sitting on each. "planet." → "2,800" stamps into the sky over the field. "Statistically," → the light drops to dusk, and a spotlight clunks on from above and sweeps the field; it stops on a hill whose fat cat is a grinning skeleton (top hat, monocle and cigar still on, still hugging his cash), the Reaper leaning on him, adding a tally mark. "least" → it jumps to a fat cat asleep face down on his money, snoring. "one" → it swings back to the front row, to our hill, and the camera pushes in after it. "living." → it lands on our Rich Human: his top hat lights up, and he waves the Reaper's pencil. after "living." → a button pops onto his left lapel, over his chest light: "I PREFER LIVING".
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "There are approximately two thousand eight hundred of these humans on your planet." | About 2,800 billionaires. | The camera pulls back and up, fast: our hill shrinks into one square of a pictogram, a grid of 2,800 tiny fat cats in top hats, 56 across and 50 down. On "planet." "2,800" stamps over it. | |
+| "Statistically, at least one of them prefers living." | The plan needs 1 in 2,800. | The grid goes dark and a spotlight sweeps it. It stops on a fat cat who is already a skeleton, top hat and cigar still on, the Reaper adding a tally mark; then on one asleep face down on his money; then it swings back to ours, and the camera pushes in after it. On "living." his top hat lights up. | After "living." a button pops onto his lapel: "I PREFER LIVING". |
 
-Sound: a rising slide whistle as the camera pulls back on "two"; a stamp as "2,800" lands on "planet."; a switch as the spotlight comes on ("Statistically,"); a pop for the button after "living.".
-
-On screen: "2,800" / "I PREFER LIVING" (the button). Why: the odds: the plan needs one yes out of 2,800, and the three stops are the three kinds.
+Sound: a rising slide whistle on the pull-back; a stamp thunk on "planet."; a spotlight clunk on "Statistically,"; a snore on "least"; a pop for the button after "living.".
 
 ## Scene 5 · step-2-loud-humans
 
 - id: step-2-loud-humans
 - act: Step 2
 - transition_in: cut
-- key: on "thing": all four megaphones turned to the camera mid-blast, shock rings round each bell, every speech bubble above them the same neat bubble with a pill bottle in it
 - cue: "Step two: Give Some"
 - time: 09:48.5 to 10:04.3 (15.8 s)
 - voiceover: "Step two: Give Some of the Papers to Loud Humans Some humans are very loud on the internet. If you give them papers, they become loud about your thing instead of other things. This is called "marketing" which is lying but with graphics."
 - layer: B, plate the-internet
-- scene: The plate: a plain field with a row of four chunky laptops on little stands, a Loud Human (a megaphone for a head) at each: a barrel, a beanpole, an hourglass and a refrigerator box. The air over their heads is full of speech bubbles. The stream of plain papers comes in from the left.
-- props: plain-paper, loud-human, laptop, speech-bubble, pill-bottle, human, shoes, pie-chart, sunglasses
 - status: planned
 
-Moves: "Step two" → framing: the left end of the plate: the stream of plain papers from the hill walks in from the left edge in single file. "Loud Humans" → the camera travels right with them and finds the four Loud Humans hunched over their laptops. "loud" (second) → they whip round and shout at each other; scribbled speech bubbles fly between the megaphones (a cat, a sandwich, an angry squiggle). "internet." → the bubbles pile up overhead and tangle into one knot. "papers," (second) → the papers reach them and one hops into each megaphone; each megaphone bulges and gulps it down. "your" → every megaphone swings round to the camera. "thing" → they all blast at once: shock rings, the frame shakes, the scribbles are knocked out of the bubbles, and the bubbles snap into one neat row, each holding the same pill bottle. "other things." → the old scribbles blow off the left edge like leaves, and an everyday human walking past, bareheaded, is blown clean out of his shoes and out of the frame; the shoes stay, smoking. "marketing" → the camera pulls back as a pie chart on stick legs, wearing sunglasses, struts in along the front. "lying" → its three slices read 60%, 60% and 60%. after "graphics." → it lowers its sunglasses at the camera and winks; a sparkle on the lens.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Step two: Give Some of the Papers to Loud Humans" | | A single file of plain bills from the hill walks in from the left, and the camera travels with it to four Loud Humans hunched over laptops. | |
+| "Some humans are very loud on the internet." | | They whip round and shout at each other; scribbled speech bubbles fly between the megaphones (a cat, a sandwich, an angry squiggle) and tangle overhead in one knot. | |
+| "If you give them papers," | Pay them. | One bill hops into each megaphone; each gulps it down. | |
+| "they become loud about your thing instead of other things." | Paid loudness points where you want. | Every megaphone swings round to the camera and blasts at once: the scribbles are knocked out of the bubbles, and the bubbles snap into one neat row, each holding the same pill bottle. On "things." the old scribbles blow off the left edge like leaves. | A passer-by is blown clean out of his shoes and out of the frame; the shoes stay, smoking. |
+| "This is called "marketing" which is lying but with graphics." | Marketing lies with charts. | A pie chart on stick legs struts in along the front in sunglasses; on "lying" its three slices read 60%, 60%, 60%. | After "graphics." it lowers its sunglasses at the camera and winks. |
 
-Sound: a scribble scratch as the bubbles fly (on the second "loud"); pops as the papers go in ("papers,"); a boom for the blast ("thing"); a boing as the human leaves his shoes ("things."); a sparkle on the wink (after "graphics.").
-
-On screen: "60%" "60%" "60%" (the slices); "Rx" on the pill bottles. No: nothing but scribbles on the laptops. Why: Step 2 buys attention, and the chart shows what the attention is made of.
+Sound: a scribble scratch on the second "loud"; a gulp per bill on "papers,"; a boom for the blast on "thing"; a boing as the man leaves his shoes on "things."; a sparkle on the wink.
 
 ## Scene 6 · step-3-lobbyist-funnels
 
 - id: step-3-lobbyist-funnels
 - act: Step 3
 - transition_in: cut
-- key: on "legal.": the LEGAL stamp lifting off the Politician's forehead, the paper back in his breast pocket, his grin unbothered, the washing machine in its campaign bunting behind him
 - cue: "Step three: Give Some"
 - time: 10:04.3 to 10:24.5 (20.2 s)
 - voiceover: "Step three: Give Some of the Papers to the Humans Who Give Papers to Politicians Politicians don't take papers directly (that's "illegal"). Instead, you give papers to people called "lobbyists." The lobbyists give papers to "campaigns." The campaigns give papers to politicians. It's like money laundering but backwards and legal."
 - layer: B, plate the-laundry
-- scene: The plate: a plain field and a short route. On the right, the Politician stands with his breast pocket open. On the left, a bush the Lobbyist hides behind. Between them a conveyor runs from the Lobbyist's spot to a 1950s washing machine draped in campaign bunting, with a straw boater on top, its spout aimed at the Politician's pocket.
-- props: plain-paper, politician, lobbyist, briefcase, funnel, bush, sign, rope, conveyor, washing-machine, bunting, boater, stamp, stamp-mark
 - status: planned
 
-Moves: "Step three" → framing: the stream of plain papers walks in from the left. "Humans" (first) → the Lobbyist (fedora low, domino mask, popped collar, gloves) peeks over the bush. "Politicians" (first) → the camera travels right to the Politician (lantern jaw, toothy grin, wide tie, flag pin), who flashes his grin with a glint. "take" → the lead paper walks up to him and holds itself up to be taken. "directly" → he jumps back with both palms up, horrified, still grinning. "illegal" → a sign "ILLEGAL" drops from above on a rope and flattens the paper. "Instead," → the paper peels itself off the ground, springs back into shape and turns away. "lobbyists." (first) → the camera pulls back: the Lobbyist tiptoes out from the bush and clicks his briefcase open; it has a funnel on top. "lobbyists" (second) → the paper hops into the funnel; the Lobbyist tiptoes to the conveyor and tips it out. "campaigns." (first) → it rides the conveyor into the washing machine, whose porthole sloshes. "politicians." (last) → the machine spits it straight into the Politician's breast pocket. after "politicians." → he looks away, whistling. "laundering" → the washing machine starts to spin, hopping on its feet. "backwards" → the whole route runs in rewind at speed: the paper flies back out of the pocket, back through the machine, back along the conveyor, out of the briefcase and back in front of the Politician, and the ILLEGAL sign rises back up its rope. "and" → it all runs forward again at triple speed, and the paper lands back in his pocket. "legal." → the camera pushes in on his face, and a rubber stamp slams "LEGAL" onto his forehead; he keeps grinning. The mark stays on him for the rest of the part.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Step three: Give Some of the Papers to the Humans Who Give Papers to Politicians" | | The file of plain bills walks in from the left. The Lobbyist peeks over a bush; at the right, the Politician flashes his grin. | |
+| "Politicians don't take papers directly (that's "illegal")." | Handing it over directly is a crime. | The lead bill walks up to the Politician and holds itself up to be taken; he jumps back, palms up, still grinning. On "illegal" a sign, "ILLEGAL", drops on a rope and flattens the bill. | |
+| "Instead, you give papers to people called "lobbyists."" | So it goes through a lobbyist. | The bill peels itself off the ground and walks to the Lobbyist, who clicks his briefcase open; it hops in. | |
+| "The lobbyists give papers to "campaigns."" | Then a campaign. | He tiptoes to a wash-tub hung with campaign bunting and a straw boater and tips the bill in. | |
+| "The campaigns give papers to politicians." | Then the politician. | The tub's mangle spits it straight into the Politician's breast pocket. | After "politicians." he looks away, whistling. The same bill reached the same pocket. |
+| "It's like money laundering but backwards and legal." | Laundering cleans dirty money; this route dirties clean money, legally. | Close on the tub as the next bill goes in: it went in crisp, and on "backwards" the mangle wrings it out muddy and dripping. On "legal." a rubber stamp slams "LEGAL" across it and across the Politician's forehead in one thump. | He keeps grinning. The mark stays on him for the rest of the part. |
 
-Sound: a splat as the sign lands ("illegal"); a click as the briefcase opens ("lobbyists.", first); a cash-register ding into the pocket ("politicians.", last); a whistle after it; a whirr as the machine spins ("laundering"); a rising slide whistle for the rewind ("backwards"); a rubber-stamp thunk ("legal.").
-
-On screen: "ILLEGAL" / "LEGAL". No: no word on the washing machine (the bunting and the boater make it the campaign). Why: the same paper reaches the same pocket; only the route makes it legal.
+Sound: a splat as the sign lands on "illegal"; a click as the briefcase opens on "lobbyists."; a splash on "campaigns."; a cash-register ding into the pocket on "politicians." and a whistle after it; a mangle squeak on "laundering"; a squelch on "backwards"; a stamp thunk on "legal.".
 
 ## Scene 7 · step-4-super-pac
 
 - id: step-4-super-pac
 - act: Step 4
 - transition_in: cut
-- key: on "else.": the Lobbyist's glove patting the SUPER PAC patch back down over BRIBERY, the river of papers pouring into the caped backpack, the burst little PAC flat beside it
 - cue: "Step four: Give Some"
 - time: 10:24.5 to 10:42.4 (18.0 s)
 - voiceover: "Step four: Give Some of the Papers to the Politicians' Friends Politicians have friends called "Super PACs" which are like normal PACs but super. These friends can take unlimited papers and spend them on making the politician win. This isn't bribery because you called it something else."
 - layer: B, plate the-rally
-- scene: The plate: a campaign rally ground strung with bunting. In front, a humble tan backpack with a cream "PAC" patch sits on the grass. Behind it, a plain podium where the Politician (LEGAL on his forehead) waves. The stream of plain papers comes in from the left.
-- props: plain-paper, backpack, super-pac, cape, politician, stamp-mark, podium, poster, lobbyist, glove
 - status: planned
 
-Moves: "Step four" → framing: the rally ground: the stream of papers walks in from the left to the little tan backpack, which gulps three of them and is full. "Politicians'" → the Politician waves from his podium at the back. "Friends" → the little PAC waves a strap back. "Super" → a rust canvas backpack with a war-red cape swoops down from the sky and lands beside it in a hero pose: navy straps, a cream patch "SUPER PAC". "normal" → the little PAC looks up at it. "super." (last) → its cape flaps; a sparkle. "unlimited" → the stream arrives as a river of plain papers from the left and pours into the Super PAC's open top, which never fills; a few spill into the little PAC. "papers" (second) → the little PAC bursts at the seams (five papers was its limit) and lies flat. "win." → the Super PAC fires campaign posters like a machine gun, each one the Politician's grin with LEGAL on its forehead and no name; they plaster the bunting and stack up under his podium, raising him up and up, and the camera tilts up with him. after "win." → his head bonks the top of the frame; stars circle it. "bribery" → the camera comes back down to the Super PAC's patch, which lifts at one corner: underneath, the old word "BRIBERY". "else." → the Lobbyist's gloved hand reaches in from the edge of the frame and pats it back down.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Step four: Give Some of the Papers to the Politicians' Friends" | | A rally ground strung with bunting. The Politician, LEGAL on his forehead, waves from a podium at the back. The file of bills walks in to a small tan backpack with a "PAC" patch; it gulps five, and its flap won't close. | Five is its limit. |
+| "Politicians have friends called "Super PACs"" | | A rust backpack with a red cape swoops down from the sky and lands beside it in a hero pose: "SUPER PAC". | |
+| "which are like normal PACs but super." | | The little PAC looks up at it. On "super." the cape flaps; a sparkle. | |
+| "These friends can take unlimited papers" | A Super PAC has no limit. | A river of bills pours in from the left into the Super PAC's open top, which never fills. A few spill into the little PAC, which bursts at the seams and lies flat. | |
+| "and spend them on making the politician win." | The money buys his win. | The Super PAC fires campaign posters of the Politician's grin like a machine gun; they plaster the bunting and stack up under his podium, raising him up and up, the camera tilting with him. | After "win." his head bonks the top of the frame; stars circle it. |
+| "This isn't bribery because you called it something else." | It is a bribe with a new name. | The camera comes back down to the Super PAC's patch, which lifts at one corner: underneath, painted on the canvas, "BRIBERY". On "else." the Lobbyist's gloved hand reaches in from the edge and pats it back down. | |
 
-Sound: a whoosh as the Super PAC swoops in ("Super"); a sparkle on the hero pose ("super."); a pop as the little PAC bursts ("papers", second); a rising slide whistle as the podium rises ("win."); a thunk on the bonk (after "win."); a scratch as the patch lifts ("bribery"); soft pats as the glove smooths it ("else.").
-
-On screen: "PAC" / "SUPER PAC" / "BRIBERY" (under the patch). No: no names on the posters. Why: Super PACs take unlimited papers, and the next shot budgets for them.
+Sound: a gulp per bill on "Give"; a whoosh as the Super PAC swoops in on "Super"; a sparkle on "super."; a rushing river on "unlimited"; a pop as the little PAC bursts; machine-gun pops and a rising slide whistle on "win."; a thunk on the bonk; a scratch as the patch lifts on "bribery"; soft pats on "else.".
 
 ## Scene 8 · lobbying-budget
 
 - id: lobbying-budget
 - act: Step 4
 - transition_in: cut
-- key: after "million": the pallet of paper bundles on the floor beside the lectern with the Lobbyist flattened under it (his fedora and one glove sticking out), its tag reading "$650,000,000", Wishonia mid-aside, not looking
 - cue: "(This is part of the"
 - time: 10:42.4 to 10:49.0 (6.6 s)
 - voiceover: "(This is part of the six hundred and fifty million dollar lobbying budget.). Step five:"
 - layer: A, host
-- scene: Wishonia at her lectern tells the camera the aside. The Lobbyist from the rally tiptoes into the studio with his briefcase open, and the budget lands on him.
 - wishonia: big, smirk-smile + body-hand-chest; happy-smile + body-counting on "Step"
-- props: studio, lectern, lobbyist, briefcase, pallet, plain-paper, price-tag
 - status: planned
 
-Moves: "(This" → the camera holds close on her: she leans into the aside, hand on her chest. "part" → at the right of the studio, the Lobbyist tiptoes in from the edge with his briefcase held open, hopeful. "six hundred and fifty million" → a wooden pallet stacked with bundles of plain papers drops from the top of the frame onto him: thunk. He is flattened under it, only his fedora and one glove sticking out; a shipping tag on the pallet swings: "$650,000,000". "budget.)." → the glove gives a thumbs-up. "Step" → Wishonia raises one finger (counting body) without looking at him.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "(This is part of the six hundred and fifty million dollar lobbying budget.)." | $650 million for lobbying. | Wishonia leans into the aside, hand on her chest. On "part" the Lobbyist tiptoes in beside the console with his briefcase held open, hopeful. On "six hundred and fifty million" a wooden pallet stacked with bundles drops on him: only his fedora and one glove stick out, and the pallet's shipping tag swings: "$650,000,000". | On "budget.)." the glove gives a thumbs-up. |
+| "Step five:" | | She raises one finger without looking at him. | |
 
-Sound: a falling slide whistle as the pallet drops (on "six"); a thunk as it lands (on "million"); a squeak for the thumbs-up (on "budget.).").
-
-On screen: "$650,000,000" (the tag). Why: the plan budgets for the friends, and they are glad to be crushed by it.
+Sound: a falling slide whistle on "six"; a thunk on "million"; a squeak for the thumbs-up.
 
 ## Scene 9 · step-5-treaty-split
 
 - id: step-5-treaty-split
 - act: Step 5
 - transition_in: cut
-- key: on "diseases.": the Rich Human a grinning skeleton on his hill (top hat, monocle and long white beard still on), medicine papers still climbing into his arms under the neon infinity sign, the Reaper behind him scribbling tallies, the scientist charging up the hill in a streak of dust with her bubbling flask
 - cue: "Give Papers You Get Back"
 - time: 10:49.0 to 11:20.5 (31.5 s)
 - voiceover: "Give Papers You Get Back From The Government Back to the Rich Humans (Forever) Your treaty passes, redirecting twenty-seven point two billion dollars in papers annually. Eighty percent funds clinical trials (the point). Ten percent goes to a fund that rewards politicians who voted yes. Ten percent goes back to the rich humans as returns, forever. This is a good deal because forever is a long time. Unless you die from preventable diseases. Which you're fixing,"
 - layer: B, plate the-payout
-- scene: The plate: one long plain field, a path running along it from left to right. From left to right: the war factory (its grinning missile chimneys), the color-flip funnel, the lab with the hospital beside it, the capitol with a signing table on its steps, a small bank with a big YES button by its door, and at the right end the Rich Human's hill from Step 1, his chair at the top, a desk calendar on a stump beside it. The money walks left to right, home to the hill.
-- props: money-hill, swivel-chair, rich-human, preference-button, top-hat, neon-infinity, capitol, politician, stamp-mark, treaty-scroll, quill, stamp, factory, war-paper, price-tag, color-flip-funnel, med-paper, lab, scientist, flask, hospital, patient, bank, yes-button, ribbon, calendar, reaper, tally-clipboard, skeleton, beard
 - status: planned
 
-Moves: "Give Papers" → framing: the hill at the right end of the plate: the Rich Human (button on) takes off his top hat and holds it out upside down, like a collection plate. "Rich Humans" → he shakes it, expectantly. "(Forever)" → over the hill a neon infinity sign flickers on and buzzes; it stays lit for the rest of the scene. "treaty" → the camera travels left to the capitol steps: the Politician (LEGAL on his forehead) signs a treaty scroll with a giant quill and a huge flourish. "passes," → a stamp slams "PASSED" on it. "redirecting" → the treaty folds itself into a paper plane and flies off left; the camera chases it across the plate to the war factory, where it slaps onto the door. The door rolls up, and a river of war money (green bills, missile seals) marches out and climbs into the color-flip funnel, a price tag on the leading bill: "$27.2 billion / year". "dollars" → out of the spout come the same bills with cross seals, each seal flipping with a sparkle. "Eighty percent" → the camera travels right with them: most of the medicine papers march into the lab; the scientist catches them, and her flask bubbles over. "point)." → the hospital doors swing open and a patient in a gown walks out; his chest light flips from red to teal, and he clicks his heels in the air. "Ten percent" (first) → the camera travels on: a tenth of the papers peel off into the bank. "voted yes." → the Politician, who has run over from the signing, slaps the big YES button. after "yes." → the bank pins a ribbon on his chest and dumps a shower of medicine papers on his head; his grin grows more teeth. "Ten percent" (second) → the camera travels on to the hill: the last tenth climbs up it into the Rich Human's hat and arms. "returns," → his eyes turn into dollar signs. "forever." → the neon infinity glows brighter, and the papers keep climbing. "forever" (third) → the calendar by the hill sheds its pages in a blizzard. "long time." → his walrus mustache grows into a long white beard that pours down the hill. before "Unless" → the Grim Reaper rises behind the hill, scribbling tally marks as fast as he can, and taps the Rich Human on the shoulder; his chest light blinks red. "die" → he x-rays into a grinning skeleton (top hat, monocle and beard still on), still catching his returns. "preventable" → the Reaper adds one more mark. "diseases." → the scientist sprints in from the left edge in a streak of dust, all the way from the lab, and charges up the hill with her bubbling flask. "fixing," → she dumps the flask over the skeleton, which flickers back into the Rich Human (the x-ray in reverse), beard and all; his chest light turns teal.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "Give Papers You Get Back From The Government Back to the Rich Humans (Forever)" | | At the right end of the plate, the fat cat on his hill (button on) takes off his top hat and holds it out upside down, like a collection plate. On "(Forever)" a neon infinity sign flickers on over the hill and stays lit. | |
+| "Your treaty passes," | | The camera travels left to a capitol: the Politician signs a treaty scroll with a giant quill and a huge flourish; "PASSED" stamps on it. | |
+| "redirecting twenty-seven point two billion dollars in papers annually." | $27.2 billion a year moves from war. | The treaty folds itself into a paper plane and flies left to the factory with the missile chimneys, slapping onto its door. The door rolls up; war bills march out into the seal-flip funnel and come out with cross seals, each flipping with a sparkle, and pour into a pie chart on an easel: "$27.2 BILLION A YEAR". | |
+| "Eighty percent funds clinical trials (the point)." | 80% to trials. | The 80% slice lights up; its bills march out into the lab, where the Scientist catches them and her flask bubbles over. On "point)." a patient walks out of the hospital beside it: his chest light flips from red to teal, and he clicks his heels. | |
+| "Ten percent goes to a fund that rewards politicians who voted yes." | 10% to politicians who vote yes. | A 10% slice lights up and walks into a little bank with a big YES button by its door. On "yes." the Politician runs over and slaps the button; the bank pins a ribbon on him and showers him with bills. | His grin grows more teeth. |
+| "Ten percent goes back to the rich humans as returns, forever." | 10% to the investors, every year. | The last 10% slice walks up the hill into the fat cat's hat; his eyes turn to dollar signs, and on "forever." the neon glows brighter. | |
+| "This is a good deal because forever is a long time." | | A desk calendar by his chair sheds its pages in a blizzard; the bills keep climbing into the hat; his walrus mustache grows into a long white beard that pours down the hill. | |
+| "Unless you die from preventable diseases." | | The Grim Reaper rises behind the hill and taps his shoulder; his chest light blinks red. On "die" he x-rays into a grinning skeleton, top hat, monocle and beard still on, still catching his returns. On "preventable" the Reaper adds a tally mark. | The bills keep climbing into a skeleton's hat. |
+| "Which you're fixing," | The 80% is what keeps him alive. | The Scientist sprints in from the lab in a streak of dust and dumps her flask over the skeleton, which flickers back into the fat cat, beard and all; his chest light turns teal. | |
 
-Sound: a switch as the neon comes on ("(Forever)"); a rubber-stamp thunk on "passes,"; a hum from the funnel ("redirecting"); a sparkle as the seals flip ("dollars"); a ding as the patient clicks his heels ("point)."); a click for the YES button ("yes."); a cash-register ding for the ribbon and the shower (after "yes."); a whoosh for the calendar blizzard (third "forever"); a falling slide whistle as the beard pours down ("long"); a zap for the x-ray ("die"); a splat for the flask ("fixing,") and a zap as the x-ray reverses, 0.2 s after.
-
-On screen: "PASSED" / "$27.2 billion / year" (the tag) / "YES" (the button) / the neon infinity (drawn, not a font glyph). No: the medicine comes out of the lab the papers just funded, never off a shelf where it was waiting. Why: the payoff that makes Steps 1 to 4 worth paying for, the seal flip at full size, and "unless you die" shown before the lab takes the Rich Human back.
+Sound: a neon buzz on "(Forever)"; a stamp thunk on "passes,"; a hum from the funnel and a sparkle per flip on "redirecting"; a ding as the patient clicks his heels on "point)."; a click for the YES button and a cash-register ding for the shower on "yes."; a whoosh for the calendar on the third "forever"; a falling slide whistle as the beard pours down on "long"; an x-ray zap on "die"; a pencil scratch on "preventable"; a splash on "fixing," and a reverse zap just after.
 
 ## Scene 10 · works-out
 
 - id: works-out
 - act: Step 5
 - transition_in: cut
-- key: on "out.": the Reaper at the right of the studio with his pencil snapped in two over his clipboard, Wishonia smirking at the camera
 - cue: "so it works out."
 - time: 11:20.5 to 11:22.6 (2.1 s)
 - voiceover: "so it works out."
 - layer: A, host
-- scene: Wishonia at her lectern. The Grim Reaper, clipboard in hand, has followed the story into the studio and stands on the right.
 - wishonia: big, smirk-smile + body-open-palms; sideeye-closed + body-idle on "out."
-- props: studio, lectern, reaper, tally-clipboard, pencil
 - status: planned
 
-Moves: "so" → cut to the studio: Wishonia, and at the right of the studio the Grim Reaper, his clipboard up and his pencil ready. "works" → he looks down at the clipboard. "out." → his pencil snaps in half. after "out." → he looks at the camera, Wishonia side-eyes it, and the film irises out on her face, swallowing the Reaper first.
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "so it works out." | It works for everyone but Death. | Wishonia at the console; beside it the Grim Reaper, clipboard up, pencil ready. On "works" he looks down at the clipboard. On "out." his pencil snaps in half. | After "out." he looks at the camera, Wishonia side-eyes it, and the iris closes on her face, swallowing the Reaper first. |
 
-Sound: a snip as the pencil snaps ("out.").
-
-On screen: nothing new. Why: the ending: the plan works out for everyone but him.
+Sound: a snap on "out.".

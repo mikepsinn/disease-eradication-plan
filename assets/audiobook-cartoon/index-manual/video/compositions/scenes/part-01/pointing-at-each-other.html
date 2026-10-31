@@ -1,0 +1,347 @@
+<template id="pointing-at-each-other-template">
+  <!-- pointing-at-each-other · Layer B, plate atom-globe (storyboards/part-01-opening.md): the same globe as
+       split-the-atom (its drawing code and VIEW table are copied here: change both), starting on split-the-atom's last
+       frame: the two men on top of the globe, grinning, each holding up his glowing half, the city lights on.
+       "when": the city lights go out one by one, the grins drop; "realized": each holds his half out at eye level and
+       stares at it, wide-eyed, then lowers it and narrows his eyes at the other; "pointing": they aim the halves at each other across the top of the
+       globe; "each": they fire, two streaks arcing over the top; "other!": they meet at the top: a white flash, the
+       frame shakes, a mushroom cloud rises off the top of the globe; "That's": the cloud thins away on both men charred
+       black and smoking, still aiming, hair up, eyes white, the top of the globe and both flags scorched black;
+       "kind": a little puff of smoke rises off the globe; "like": both blink. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #EFE3C4; }
+    #pointing-at-each-other-weave, #pointing-at-each-other-shake, #pointing-at-each-other-plate, #pointing-at-each-other-film { position: absolute; inset: 0; }
+    #pointing-at-each-other-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="pointing-at-each-other" data-width="1920" data-height="1080" data-start="0" data-duration="5.4">
+    <div id="pointing-at-each-other-weave">
+      <div id="pointing-at-each-other-shake"><div id="pointing-at-each-other-plate"></div></div>
+      <div id="pointing-at-each-other-flash"></div>
+    </div>
+    <div id="pointing-at-each-other-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "pointing-at-each-other";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, smooth = KIT.smooth;
+      var f = function (n) { return n.toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 143);
+
+      // ═══ ATOM-GLOBE plate (the same code is in split-the-atom.html: change both) ═══
+      // In plate units. The horizon is at y 700; the pedestal and the globe's base stand on y 920 (FEET). The atom
+      // station is at x 300..1300; DX further right, a 1950s classroom globe with two little men standing on top of it.
+      var SKY = "#EFE3C4", GROUND = "#C8B07B", EDGE = "#B09363", BRASS = "#C99A3E", CITY_LIT = "#FFD66E";
+      var HZ = 700, FEET = 920, DX = 1800;
+      var AT = [960, 410], AR = 105, NUC = 40;
+      var SCI_X = V ? 610 : 470, SCI_K = 2.4;
+      var KNOT = [AT[0] + 95, AT[1] - 10], HALF_K = 0.75, HELD_K = 0.42;
+      // The globe: radius GR round GC, cradled in a brass half-ring on a post and a round base. The men stand straight
+      // out from it MAN_A degrees either side of the top, each half the radius tall; their flags are planted at FLAG_A.
+      var GR = 300, GC = [DX + 960, FEET - 130 - GR], MAN_A = 38, MAN_K = GR / 200, FLAG_A = 66, FLAG_K = 0.66;
+      // The camera's views: [plate x, plate y, scale]. split-the-atom ends on "globe", where pointing-at-each-other starts.
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { atom: [1010, 430, 1.75], sky: [990, 330, 1.2], stage: [900, 560, 1.25], tag: [1180, 490, 3.3], sci: [830, 640, 1.4],
+            globe: [GC[0], 500, 1.1], top: [GC[0], 290, 1.2], boom: [GC[0], 190, 1.12], char: [GC[0], 280, 1.22] }
+        : { atom: [1010, 440, 1.55], sky: [980, 390, 1.1], stage: [780, 580, 1.05], tag: [1180, 490, 2.6], sci: [660, 515, 1.25],
+            globe: [GC[0], 420, 1.04], top: [GC[0], 250, 1.45], boom: [GC[0], 170, 1.2], char: [GC[0], 255, 1.5] };
+
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var burn = KIT.burn;
+
+      function field() {
+        return '<rect x="-3000" y="-3000" width="9000" height="' + (3000 + HZ) + '" fill="' + SKY + '"/>' +
+          '<rect x="-3000" y="' + HZ + '" width="9000" height="4000" fill="' + GROUND + '"/>' +
+          '<path d="M-3000,' + HZ + ' H6000" stroke="' + EDGE + '" stroke-width="4"/>';
+      }
+      // The fluted pedestal and the red velvet cushion with gold tassels, the cushion's top at about y 508.
+      function pedestal() {
+        var col = '<rect x="860" y="596" width="200" height="294" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5"/>' +
+          [895, 940, 985, 1030].map(function (x) { return '<path d="M' + x + ',606 V880" stroke="#D8CCAE" stroke-width="6"/>'; }).join("") +
+          '<rect x="830" y="560" width="260" height="36" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="830" y="890" width="260" height="30" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5"/>';
+        var tassel = function (x, d) { return '<path d="M' + x + ',560 l' + 4 * d + ',22 l' + -8 * d + ',2 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.5" stroke-linejoin="round"/><circle cx="' + x + '" cy="561" r="5" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.5"/>'; };
+        var cushion = '<path d="M818,562 Q826,510 960,506 Q1094,510 1102,562 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M850,540 Q900,522 960,520" fill="none" stroke="#E06A50" stroke-width="5" stroke-linecap="round"/>' + tassel(822, -1) + tassel(1098, 1);
+        return col + cushion;
+      }
+      // The atom (the film's emblem) around (0, 0): a soft glow, three orbits, a big orange nucleus, three electrons.
+      function nucleus(r) {
+        return '<circle r="' + r + '" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="5"/><circle cx="-12" cy="-13" r="' + f(r * 0.3) + '" fill="' + C.yellow + '"/>';
+      }
+      function atomWhole() {
+        var e = [0, 1, 2].map(function (i) { return '<circle class="atom-e" r="9" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3"/>'; }).join("");
+        return '<circle class="atom-glow" r="128" fill="' + C.yellow + '" opacity="0.28"/><circle class="atom-glow2" r="92" fill="' + C.yellow + '" opacity="0.3"/>' +
+          KIT.atom(0, 0, AR, ink) + nucleus(NUC) + e;
+      }
+      // A half of the atom (side -1 keeps x < 0, +1 keeps x > 0): half the glow, half the orbits, half the nucleus,
+      // and its glowing cut face along x 0. Its .half-glow (off at first) is the free energy.
+      function half(side) {
+        var cid = ID + "-clip" + (side < 0 ? "L" : "R"), clip = side < 0 ? "M-200,-200 H0 V200 H-200 Z" : "M0,-200 H200 V200 H0 Z";
+        return '<circle class="half-glow" r="170" fill="' + CITY_LIT + '" opacity="0"/><circle class="half-glow" r="120" fill="' + CITY_LIT + '" opacity="0"/>' +
+          '<clipPath id="' + cid + '"><path d="' + clip + '"/></clipPath><g clip-path="url(#' + cid + ')">' +
+          '<circle r="128" fill="' + C.yellow + '" opacity="0.3"/>' + KIT.atom(0, 0, AR, ink) + nucleus(NUC) + "</g>" +
+          '<path d="M0,-' + (NUC + 2) + " V" + (NUC + 2) + '" stroke="' + C.yellow + '" stroke-width="10" stroke-linecap="round"/>' +
+          '<path d="M0,-' + (NUC - 8) + " V" + (NUC - 8) + '" stroke="#FFF6D8" stroke-width="4" stroke-linecap="round"/>';
+      }
+      // The giant shears, pivot at (0, 0), pointing +x, blades `len` long; two pieces (a blade and the ring on the
+      // other side) that open by turning about the pivot.
+      function shears(len) {
+        var piece = function (s, fill) {
+          return '<g class="shear-' + (s < 0 ? "a" : "b") + '"><path d="M-14,' + 7 * s + " L" + len + "," + 1 * s + " L" + (len - 46) + "," + -9 * s + " L-14," + -6 * s + ' Z" fill="' + fill + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+            '<path d="M' + (len - 60) + "," + -4 * s + " L" + 40 + "," + -2 * s + '" stroke="#FFFFFF" stroke-width="3" opacity="0.7"/>' +
+            '<path d="M-8,' + -3 * s + " L-58," + -16 * s + '" stroke="' + C.slate + '" stroke-width="10" stroke-linecap="round"/>' +
+            '<circle cx="-80" cy="' + -20 * s + '" r="24" fill="none" stroke="' + ink + '" stroke-width="15"/><circle cx="-80" cy="' + -20 * s + '" r="24" fill="none" stroke="' + C.war + '" stroke-width="9"/></g>';
+        };
+        return piece(-1, "#C9CED6") + piece(1, "#AEB6C2") + '<circle r="8" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3"/>';
+      }
+
+      // ── The globe ──
+      // A point `up` above the globe's surface, `deg` degrees clockwise from its top.
+      function surf(deg, up) { var r = (deg * Math.PI) / 180, d = GR + (up || 0); return [GC[0] + d * Math.sin(r), GC[1] - d * Math.cos(r)]; }
+      // The classroom globe (KIT.props.earthGlobe) in a brass half-ring from side to side, on a post and a round base.
+      function globe() {
+        var cx = GC[0], cy = GC[1], rr = GR + 24, bot = cy + rr;
+        var ringD = "M" + f(cx - rr) + "," + f(cy) + " A" + rr + "," + rr + " 0 0 0 " + f(cx + rr) + "," + f(cy);
+        var base = '<path d="M' + (cx - 150) + "," + FEET + " Q" + (cx - 140) + "," + (FEET - 74) + " " + cx + "," + (FEET - 76) + " Q" + (cx + 140) + "," + (FEET - 74) + " " + (cx + 150) + "," + FEET + ' Z" fill="' + BRASS + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="round"/>' +
+          '<path d="M' + (cx - 104) + "," + (FEET - 38) + " Q" + (cx - 64) + "," + (FEET - 62) + " " + (cx - 14) + "," + (FEET - 64) + '" fill="none" stroke="' + C.yellow + '" stroke-width="7" stroke-linecap="round"/>' +
+          '<rect x="' + (cx - 166) + '" y="' + (FEET - 12) + '" width="332" height="16" rx="5" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="4"/>';
+        var post = '<rect x="' + (cx - 13) + '" y="' + f(bot - 6) + '" width="26" height="' + f(FEET - 70 - bot + 6) + '" fill="' + BRASS + '" stroke="' + ink + '" stroke-width="4"/>';
+        var ring = '<path d="' + ringD + '" fill="none" stroke="' + ink + '" stroke-width="24"/><path d="' + ringD + '" fill="none" stroke="' + BRASS + '" stroke-width="14"/>';
+        var knob = function (s) { return '<circle cx="' + f(cx + s * rr) + '" cy="' + f(cy) + '" r="15" fill="' + BRASS + '" stroke="' + ink + '" stroke-width="4"/><circle cx="' + f(cx + s * rr) + '" cy="' + f(cy) + '" r="5" fill="' + ink + '"/>'; };
+        return base + post + ring + at(cx, cy + GR, 1, KIT.props.earthGlobe({ r: GR })) + knob(-1) + knob(1);
+      }
+      // The city lights, on the globe's land (in KIT.props.earthGlobe's continent units, 110 to the radius), in the
+      // order they come on; each a .city group, hidden at first.
+      var CITY = [[-35, -64], [52, -62], [-55, -50], [62, 30], [-14, -66], [-24, -38], [46, 50], [-48, -26], [58, -49], [72, 48], [-62, -12], [-8, -14], [40, 24], [-36, 10], [58, 64]];
+      function cities() {
+        return CITY.map(function (c) {
+          var p = [GC[0] + (c[0] * GR) / 110, GC[1] + (c[1] * GR) / 110];
+          return '<g class="city" opacity="0" transform="translate(' + f(p[0]) + "," + f(p[1]) + ')"><circle class="city-glow" r="34" fill="' + CITY_LIT + '" opacity="0.5"/>' +
+            '<circle r="13" fill="' + CITY_LIT + '" stroke="' + ink + '" stroke-width="2.6"/><circle cx="-2.5" cy="-2.5" r="4.5" fill="#FFFBEF"/></g>';
+        }).join("");
+      }
+      // The flags, the pole's foot at (0, 0) and the cloth to its right: the US (side -1) and the USSR (+1).
+      function flag(side) {
+        var x = 0, top = -210, w = 112, h = 74, fx = x + 5, us = side < 0, cloth = "";
+        if (us) {
+          for (var s = 0; s < 7; s++) cloth += '<rect x="' + fx + '" y="' + f(top + (s * h) / 7) + '" width="' + w + '" height="' + f(h / 7 + 0.5) + '" fill="' + (s % 2 ? C.cream : C.war) + '"/>';
+          cloth += '<rect x="' + fx + '" y="' + top + '" width="48" height="' + f((h * 4) / 7) + '" fill="' + C.navy + '"/>';
+          for (var r = 0; r < 3; r++) for (var c = 0; c < 4; c++) cloth += '<circle cx="' + (fx + 7 + c * 11) + '" cy="' + f(top + 7 + r * 13) + '" r="2.6" fill="' + C.cream + '"/>';
+        } else {
+          // the Soviet flag: the hammer and sickle under a small star, top left
+          var hx = fx + 24, hy = top + 30, gold = C.yellow;
+          cloth += '<rect x="' + fx + '" y="' + top + '" width="' + w + '" height="' + h + '" fill="' + C.war + '"/>' + KIT.star(hx + 2, top + 9, 6, gold, 5) +
+            '<path d="M' + (hx - 9) + "," + (hy - 6) + " A11,11 0 1 0 " + (hx + 6) + "," + (hy - 12) + '" fill="none" stroke="' + gold + '" stroke-width="3.6" stroke-linecap="round"/>' +
+            '<path d="M' + (hx - 7) + "," + (hy + 9) + " L" + (hx + 6) + "," + (hy - 4) + '" stroke="' + gold + '" stroke-width="3.6" stroke-linecap="round"/>' +
+            '<path d="M' + (hx + 2) + "," + (hy - 9) + " L" + (hx + 11) + "," + hy + '" stroke="' + gold + '" stroke-width="5.5" stroke-linecap="butt"/>';
+        }
+        return '<rect x="' + (x - 4) + '" y="' + (top - 8) + '" width="8" height="' + (-top + 8) + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.5"/>' +
+          '<circle cx="' + x + '" cy="' + (top - 10) + '" r="7" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2.5"/>' +
+          '<g>' + cloth + '<rect x="' + fx + '" y="' + top + '" width="' + w + '" height="' + h + '" fill="none" stroke="' + ink + '" stroke-width="3"/></g>';
+      }
+      // A flag planted in the globe at FLAG_A on its side, standing straight out, its cloth toward the top.
+      function flagAt(side, draw) {
+        var p = surf(side * FLAG_A);
+        return '<g transform="translate(' + f(p[0]) + "," + f(p[1]) + ") rotate(" + side * FLAG_A + ") scale(" + (side > 0 ? -FLAG_K : FLAG_K) + "," + FLAG_K + ')">' + (draw || flag)(side) + "</g>";
+      }
+
+      // ── The two men: the powers that got the bomb, the US on the left (0) and the USSR on the right (1).
+      var NB = [
+        { tone: 1, outfit: "shirt", color: 2, hair: 0, seed: 21, hat: "uncleSam" },
+        { tone: 0, outfit: "shirt", color: 1, hair: 0, seed: 22, hat: "ushanka" },
+      ];
+      // Each holds his half up in front of him in his near hand (A's .arm-r, B's .arm-l), toward the other.
+      var HOLD_ARMS = [[[-10, -4], [100, 140]], [[-100, -140], [10, 4]]], HOLD_HAND = [1, 0];
+      // An actor: one drawing per pose, one shown at a time, in a group placed by the update.
+      function actor(name, base, poses, k) {
+        var g = "", rig = {};
+        Object.keys(poses).forEach(function (n) {
+          var o = copy(base, poses[n]);
+          rig[n] = KIT.rig(o);
+          g += '<g class="pose" data-pose="' + n + '" opacity="0">' + KIT.person(o) + "</g>";
+        });
+        return { name: name, k: k, rig: rig, svg: '<g id="' + ID + "-" + name + '"><g transform="scale(' + k + ')">' + g + "</g></g>" };
+      }
+      // Man i stands MAN_A degrees left (0) or right (1) of the top, turned to stand straight out from the globe.
+      function manRot(i) { return i ? MAN_A : -MAN_A; }
+      function placeMan(a, i, pose) {
+        Object.keys(a.els).forEach(function (n) { a.els[n].setAttribute("opacity", n === pose ? 1 : 0); });
+        var p = surf(manRot(i));
+        document.getElementById(ID + "-" + a.name).setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + manRot(i) + ") translate(0," + f(-100 * a.k) + ")");
+      }
+      // A point of man i, in his own units, in plate units.
+      function manPt(a, i, pt) {
+        var p = surf(manRot(i)), r = (manRot(i) * Math.PI) / 180, x = a.k * pt[0], y = a.k * (pt[1] - 100);
+        return [p[0] + x * Math.cos(r) - y * Math.sin(r), p[1] + x * Math.sin(r) + y * Math.cos(r)];
+      }
+      // Where man i's half sits when he holds it up in pose `pose`: just past his hand, along the arm.
+      function heldAt(a, i, pose) {
+        var R = a.rig[pose], j = HOLD_HAND[i], h = R.hand[j], s = R.shoulder[j], dx = h[0] - s[0], dy = h[1] - s[1], d = Math.hypot(dx, dy) || 1;
+        return manPt(a, i, [h[0] + (dx / d) * 18, h[1] + (dy / d) * 18]);
+      }
+      // ═══ end of the shared plate ═══
+
+      // ── The cast: the men as split-the-atom left them (grinning, halves up), then wary, aiming, charred.
+      // Aiming, both hands reach toward the other, a little above level, so the shot arcs over the top of the globe.
+      var AIM_ARMS = [[[56, 66], [50, 62]], [[-50, -62], [-56, -66]]];
+      // Stared at, the half is held out at arm's length at eye level.
+      var NOSE_ARMS = [[[-10, -4], [84, 100]], [[-84, -100], [10, 4]]];
+      var MAN_POSE = [0, 1].map(function (i) {
+        var look = i ? "left" : "right";
+        return {
+          grin: { look: look, mood: "grin", arms: HOLD_ARMS[i] }, flat: { look: look, mood: "flat", arms: HOLD_ARMS[i] },
+          stare: { look: look, mood: "eager", arms: NOSE_ARMS[i] }, sus: { look: look, mood: "cross", arms: HOLD_ARMS[i] },
+          aim: { look: look, mood: "cross", arms: AIM_ARMS[i] }, char: { look: look, charred: true, arms: AIM_ARMS[i] },
+        };
+      });
+      var men = [0, 1].map(function (i) { return actor("man" + i, NB[i], MAN_POSE[i], MAN_K); });
+
+      // ── Assemble the plate: the globe, and over it (hidden until the blast) the scorch on its top and the burnt flags.
+      var MEET = [GC[0], GC[1] - GR - 44];
+      var gr = KIT.rng(143), scorch = "";
+      for (var j = 0; j < 26; j++) {
+        var sa = (j / 26) * Math.PI * 2, sr = GR * (0.6 + 0.16 * gr());
+        scorch += (j ? " L" : "M") + f(GC[0] + sr * Math.cos(sa)) + "," + f(GC[1] - GR + 30 + sr * Math.sin(sa));
+      }
+      var burnt = '<g id="' + ID + '-burnt" opacity="0"><clipPath id="' + ID + '-scorch"><path d="' + scorch + ' Z"/></clipPath>' +
+        '<g clip-path="url(#' + ID + '-scorch)">' + at(GC[0], GC[1] + GR, 1, burn(KIT.props.earthGlobe({ r: GR }))) + "</g>" +
+        flagAt(-1, function (s) { return burn(flag(s)); }) + flagAt(1, function (s) { return burn(flag(s)); }) + "</g>";
+      var streaks = [0, 1].map(function (i) {
+        return '<g id="' + ID + "-streak" + i + '" opacity="0"><path class="streak-ink" d="" fill="none" stroke="' + ink + '" stroke-width="18" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1"/>' +
+          '<path class="streak-fire" d="" fill="none" stroke="' + CITY_LIT + '" stroke-width="9" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1"/></g>';
+      }).join("");
+      var halves = [-1, 1].map(function (s) { return '<g id="' + ID + "-half" + (s < 0 ? "L" : "R") + '">' + half(s) + "</g>"; }).join("");
+      var NK = 0.62, nuke = at(GC[0], GC[1] - GR + 34, NK, KIT.nuke(), ' id="' + ID + '-nuke"');
+      var puff = '<g id="' + ID + '-puff" opacity="0">' + [[-26, 0, 24], [0, -14, 30], [26, 0, 24], [0, 10, 22]].map(function (c) {
+        return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + c[2] + '" fill="#8C8782" stroke="' + ink + '" stroke-width="4"/>';
+      }).join("") + [[-26, 0, 24], [0, -14, 30], [26, 0, 24], [0, 10, 22]].map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="' + (c[2] - 3) + '" fill="#A9A49D"/>'; }).join("") + "</g>";
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + SKY + '"/>' +
+        '<g id="' + ID + '-cam">' + field() + globe() + '<g id="' + ID + '-cities">' + cities() + "</g>" + '<g id="' + ID + '-flags">' + flagAt(-1) + flagAt(1) + "</g>" + burnt +
+        streaks + men[0].svg + men[1].svg + halves + nuke + puff + "</g>");
+
+      var el = q, cam = el("cam");
+      var poseEls = function (a) { var m = {}; Array.prototype.forEach.call(el(a.name).querySelectorAll(".pose"), function (p) { m[p.getAttribute("data-pose")] = p; }); return m; };
+      men.forEach(function (a) { a.els = poseEls(a); });
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var lerp = function (a, b, u) { return a + (b - a) * u; };
+
+      // ── Cues ──
+      var tWhen = cue("when"), tRealized = cue("realized"), tPointing = cue("pointing"), tEach = cue("each"), tOther = cue("other!");
+      var tThats = cue("That's"), tKind = cue("kind"), tLike = cue("like");
+      var tFlat = tWhen + 0.3, tSus = tRealized + 0.75, tFly = [tEach, tEach + 0.02], FLY = 0.2;
+      var tBoom = tOther + 0.04, tChar = tBoom + 0.05, BLINKS = [tChar + 0.85, tLike];
+
+      function manPose(t) { return t < tFlat ? "grin" : t < tRealized ? "flat" : t < tSus ? "stare" : t < tPointing ? "sus" : t < tChar ? "aim" : "char"; }
+      // Where man i holds his half at the aim: just past the midpoint of his hands, toward the meeting point.
+      function aimAt(i) {
+        var a = men[i], R = a.rig.aim, h0 = manPt(a, i, R.hand[0]), h1 = manPt(a, i, R.hand[1]), m = [(h0[0] + h1[0]) / 2, (h0[1] + h1[1]) / 2];
+        var dx = MEET[0] - m[0], dy = MEET[1] - m[1], d = Math.hypot(dx, dy);
+        return { x: m[0] + (dx / d) * 34, y: m[1] + (dy / d) * 34, r: (Math.atan2(dy, dx) * 180) / Math.PI - (i ? 180 : 0) };
+      }
+      // The shot's path: an arc from the aim over to the meeting point above the top of the globe.
+      var SHOT = [0, 1].map(function (i) {
+        var p0 = aimAt(i), p1 = [MEET[0] + (i ? 16 : -16), MEET[1]], c = [(p0.x + p1[0]) / 2, Math.min(p0.y, p1[1]) - 70];
+        return { p0: p0, p1: p1, c: c, d: "M" + f(p0.x) + "," + f(p0.y) + " Q" + f(c[0]) + "," + f(c[1]) + " " + f(p1[0]) + "," + f(p1[1]) };
+      });
+      var qb = function (s, u) { var m = 1 - u; return [m * m * s.p0.x + 2 * m * u * s.c[0] + u * u * s.p1[0], m * m * s.p0.y + 2 * m * u * s.c[1] + u * u * s.p1[1]]; };
+      function halfAt(i, t) {
+        var hr = manRot(i);
+        // held in the hand of each pose (the arms swap with the drawings); stared at, it is a little bigger
+        if (t < tPointing) { var p = heldAt(men[i], i, manPose(t)); return { x: p[0], y: p[1], r: hr, k: HELD_K * (manPose(t) === "stare" ? 1.15 : 1) }; }
+        var ap = aimAt(i), hp0 = heldAt(men[i], i, "sus");
+        if (t < tFly[i]) {
+          var u = smooth((t - tPointing) / 0.28);
+          return { x: lerp(hp0[0], ap.x, u), y: lerp(hp0[1], ap.y, u), r: lerp(hr, ap.r, u), k: HELD_K };
+        }
+        var fu = Math.min(1, (t - tFly[i]) / FLY), q2 = qb(SHOT[i], fu * fu);
+        return { x: q2[0], y: q2[1], r: ap.r, k: HELD_K * (1 - 0.25 * fu) };
+      }
+
+      // ── The camera: from split-the-atom's last frame, closer on the top and the men; wider for the cloud; in on the char.
+      var KEYS = [[0, "globe", 1.03], [tRealized - 0.1, "globe", 1.04], [tRealized + 0.45, "top", 1], [tPointing - 0.1, "top", 1.02], [tPointing + 0.25, "top", 1.05],
+        [tBoom - 0.03, "top", 1.06], [tBoom + 0.02, "boom", 1], [tThats - 0.35, "boom", 1.02], [tThats + 0.15, "char", 1], [D, "char", 1.02]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+
+      var halfEls = [el("halfL"), el("halfR")], halfGlow = halfEls.map(function (h) { return h.querySelectorAll(".half-glow"); });
+      var cityEls = Array.prototype.slice.call(el("cities").querySelectorAll(".city"));
+      var streakEls = [0, 1].map(function (i) { var g = el("streak" + i); return { g: g, p: g.querySelectorAll("path") }; });
+      SHOT.forEach(function (s, i) { Array.prototype.forEach.call(streakEls[i].p, function (p) { p.setAttribute("d", s.d); }); });
+      var puffEl = el("puff");
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+        var burnt = t >= tChar;
+
+        // "when": the city lights go out one after another (as they came on in split-the-atom)
+        cityEls.forEach(function (c, i) {
+          var on = t < tWhen + 0.04 + i * 0.04;
+          c.setAttribute("opacity", on ? 1 : 0);
+          c.querySelector(".city-glow").setAttribute("opacity", (0.5 + 0.15 * Math.sin(t * 9 + i * 1.7)).toFixed(2));
+        });
+        show(el("flags"), !burnt); show(el("burnt"), burnt);
+
+        // the men, and their halves: held up, stared at, aimed, fired; gone in the blast
+        var pose = manPose(t);
+        men.forEach(function (a, i) {
+          placeMan(a, i, pose);
+          if (pose === "aim" && t > tFly[i]) {
+            // the recoil as they fire: a kick back, away from the other
+            var rc = Math.exp(-(t - tFly[i]) * 10) * Math.min(1, (t - tFly[i]) / 0.03), p = surf(manRot(i));
+            el(a.name).setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + f(manRot(i) + (i ? 7 : -7) * rc) + ") translate(0," + f(-100 * a.k) + ")");
+          }
+          var pg = a.els[pose], eyes = pg.querySelector(".char-eyes");
+          if (eyes) {
+            var bl = BLINKS.some(function (b) { return t > b + i * 0.05 && t < b + i * 0.05 + 0.11; });
+            eyes.setAttribute("transform", bl ? "translate(0,-4) scale(1,0.12) translate(0,4)" : "");
+          }
+          var smoke = pg.querySelector(".smoke");
+          if (smoke) smoke.setAttribute("transform", "translate(0," + f(-Math.abs(Math.sin(t * 3 + i)) * 5) + ")");
+
+          var hp = halfAt(i, t);
+          show(halfEls[i], t < tBoom);
+          halfEls[i].setAttribute("transform", "translate(" + f(hp.x) + "," + f(hp.y) + ") rotate(" + f(hp.r) + ") scale(" + hp.k.toFixed(3) + ")");
+          halfGlow[i][0].setAttribute("opacity", (0.3 + 0.08 * Math.sin(t * 8 + i)).toFixed(3));
+          halfGlow[i][1].setAttribute("opacity", (0.45 + 0.1 * Math.sin(t * 8 + i + 1)).toFixed(3));
+
+          // "each": the streaks draw out behind the halves, and go in the flash
+          var su = Math.min(1, Math.max(0, (t - tFly[i]) / FLY));
+          show(streakEls[i].g, t >= tFly[i] && t < tBoom + 0.12);
+          Array.prototype.forEach.call(streakEls[i].p, function (p) { p.setAttribute("stroke-dasharray", (su * su).toFixed(3) + " 1"); });
+        });
+
+        // "kind": a little puff of smoke rises off the scorched top
+        var pu = (t - tKind) / 0.9;
+        if (pu > 0 && pu < 1) {
+          puffEl.setAttribute("opacity", (pu < 0.7 ? 1 : (1 - pu) / 0.3).toFixed(2));
+          puffEl.setAttribute("transform", "translate(" + f(GC[0] + 10 * Math.sin(pu * 5)) + "," + f(GC[1] - GR - 20 - 150 * Math.sqrt(pu)) + ") scale(" + (0.5 + 0.7 * pu).toFixed(3) + ")");
+        } else puffEl.setAttribute("opacity", 0);
+      });
+
+      // ── "other!": a white flash, a shake and the mushroom cloud off the top of the globe; it thins away on "That's".
+      // (its own flash, shorter than KIT.boom's, so the cloud is seen climbing off the globe)
+      KIT.boom(tl, el("nuke"), tBoom, { shake: q("shake") });
+      tl.fromTo(q("flash"), { opacity: 0 }, { opacity: 1, duration: 0.04 }, tBoom).to(q("flash"), { opacity: 0, duration: 0.42, ease: "power1.out" }, tBoom + 0.07);
+      tl.fromTo(el("nuke"), { opacity: 1 }, { opacity: 0, duration: 0.55, ease: "power1.in", immediateRender: false }, tThats - 0.4);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

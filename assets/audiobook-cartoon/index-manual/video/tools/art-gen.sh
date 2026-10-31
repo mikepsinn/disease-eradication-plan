@@ -12,9 +12,16 @@ set -euo pipefail
 out="$1"; what="$2"; shift 2
 refs=()
 for r in "$@"; do refs+=(-i "$r"); done
-style="Keep any character in the attached images exactly (the same face, clothes, colors and line weight). Draw in the cartoon's flat 1950s print look: bold navy outlines, halftone texture, the navy, orange, cream, rust, tan and mustard palette, no gradients, no 3D."
+# ART_STYLE replaces the look (the default is the film's flat 1950s print look).
+style="Keep any character in the attached images exactly (the same face, clothes, colors and line weight). ${ART_STYLE:-Draw in the flat 1950s print look of the cartoon: bold navy outlines, halftone texture, the navy, orange, cream, rust, tan and mustard palette, no gradients, no 3D.}"
 log="${out%.*}.log"
-printf '%s\n' "Use your image generation tool to make one wide image (1536x1024). $style The image: $what Every piece on one flat solid magenta (#FF00FF) background, with wide magenta gaps so no two pieces touch, no shadows, no scenery, no text, no labels. Do not create or edit any files. Reply with the image only." |
+# ART_PLATE=1 makes a full-frame background instead of a sheet of pieces on magenta.
+if [ -n "${ART_PLATE:-}" ]; then
+  layout="It fills the whole frame edge to edge, with no border, no text and no labels."
+else
+  layout="Every piece on one flat solid magenta (#FF00FF) background, with wide magenta gaps so no two pieces touch, no shadows, no scenery, no text, no labels."
+fi
+printf '%s\n' "Use your image generation tool to make one wide image (1536x1024). $style The image: $what $layout Do not create or edit any files. Reply with the image only." |
   timeout 600 codex exec --skip-git-repo-check -s read-only -C "$(dirname "$out")" ${refs[@]+"${refs[@]}"} - > "$log" 2>&1
 sid=$(grep -o "session id: .*" "$log" | cut -d' ' -f3)
 png=$(ls -t "$HOME/.codex/generated_images/$sid"/*.png 2>/dev/null | head -1 || true)

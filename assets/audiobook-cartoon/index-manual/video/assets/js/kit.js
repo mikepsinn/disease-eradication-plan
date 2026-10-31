@@ -459,7 +459,7 @@
   function cornerOpts(scene) {
     return V ? { scene: scene, x: 770, y: 70, w: 240, corner: "saucer" } : { scene: scene, x: 1626, y: 693, w: 274, corner: "stand" };
   }
-  // Scene transitions (cartoon-script rule: Layer B is the footage on the office wall screen).
+  // Scene transitions (the old office look: Layer B is the footage on the office wall screen).
   // cam: a wrapper around the whole scene; at: the wall screen's center in this layout.
   // The zoom between an office scene and the Earth footage on its wall screen. screen: the wall screen
   // box [x, y, w, h] (default OFFICE.screen). One fixed point `at` maps the whole frame onto the screen's
@@ -546,7 +546,7 @@
   // stereotype tell, sharp polygons with thin navy lines, and print shading (orange edges on navy, halftone
   // dots on light cloth). Drawn around (0,0), feet at y 100.
   // o: { tone 0..3, outfit "shirt"|"dress"|"suit"|"labcoat"|"scrubs"|"overalls", color 0..3 (or colorHex),
-  //      hair 0 short | 1 woman | 2 bald, hat "top"|"bowler"|"fedora"|"hard"|"curlers", tie "wide", tieColor,
+  //      hair 0 short | 1 woman | 2 bald, hat "top"|"bowler"|"fedora"|"hard"|"curlers"|"uncleSam" (the US)|"ushanka" (the USSR), tie "wide", tieColor,
   //      stache, cigar, glasses, mask, gloves, prop "monocle"|"megaphone"|"briefcase"|"poster"|"clipboard",
   //      hold (a prop between both hands) / holdL / holdR: "cash"|"bill"|"moneybag"|"briefcase"|"poster"|
   //      "clipboard"|"flask"|"cup"|"missile"|"magnifier", tall, light "red"|"teal",
@@ -605,7 +605,28 @@
         '<rect x="' + x0.toFixed(1) + '" y="-240" width="200" height="400" fill="url(#' + id + 'd)" opacity="' + (op || 0.3) + '" clip-path="url(#' + id + 'c)"/>';
     }
     function hatSvg(kind, cx, hatTop) {
+      // a five-point star at (x, y), r to its points
+      function star5(x, y, r, col) {
+        var pts = [];
+        for (var i = 0; i < 10; i++) {
+          var a = (Math.PI * i) / 5 - Math.PI / 2, rr = i % 2 ? r * 0.42 : r;
+          pts.push((x + rr * Math.cos(a)).toFixed(1) + "," + (y + rr * Math.sin(a)).toFixed(1));
+        }
+        return '<polygon points="' + pts.join(" ") + '" fill="' + col + '"/>';
+      }
+      var FUR = "#5A4632", FUR2 = "#8A6A48";
+      function earFlap(s) { return '<path d="M' + (cx + s * 13) + "," + (hatTop - 2) + " L" + (cx + s * 22) + "," + (hatTop - 2) + " L" + (cx + s * 21) + "," + (hatTop + 24) + " L" + (cx + s * 14) + "," + (hatTop + 27) + ' Z" fill="' + FUR + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>'; }
       return {
+        // the cartoon Uncle Sam's: a tall white top hat with red stripes and a blue band of white stars (the US)
+        uncleSam: '<rect x="' + (cx - 15) + '" y="' + (hatTop - 44) + '" width="30" height="44" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4"/>' +
+          [-8, 0, 8].map(function (dx) { return '<rect x="' + (cx + dx - 2.5) + '" y="' + (hatTop - 43) + '" width="5" height="30" fill="' + C.war + '"/>'; }).join("") +
+          '<rect x="' + (cx - 15) + '" y="' + (hatTop - 14) + '" width="30" height="10" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="2"/>' +
+          [-8, 0, 8].map(function (dx) { return star5(cx + dx, hatTop - 9, 3.4, C.cream); }).join("") +
+          '<path d="M' + (cx - 27) + "," + (hatTop + 2) + " L" + (cx - 23) + "," + (hatTop - 4) + " H" + (cx + 23) + " L" + (cx + 27) + "," + (hatTop + 2) + ' Z" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="2"/>',
+        // a Soviet fur hat: the ear flaps down, the front turned up with a red star (the USSR)
+        ushanka: earFlap(-1) + earFlap(1) +
+          '<path d="M' + (cx - 19) + "," + (hatTop + 2) + " L" + (cx - 17) + "," + (hatTop - 18) + " Q" + cx + "," + (hatTop - 27) + " " + (cx + 17) + "," + (hatTop - 18) + " L" + (cx + 19) + "," + (hatTop + 2) + ' Z" fill="' + FUR + '" stroke="' + ink + '" stroke-width="2.4"/>' +
+          '<rect x="' + (cx - 21) + '" y="' + (hatTop - 13) + '" width="42" height="14" rx="5" fill="' + FUR2 + '" stroke="' + ink + '" stroke-width="2.4"/>' + star5(cx, hatTop - 6, 5.5, C.war),
         top: '<rect x="' + (cx - 15) + '" y="' + (hatTop - 36) + '" width="30" height="36" fill="' + ink + '"/><rect x="' + (cx - 15) + '" y="' + (hatTop - 11) + '" width="30" height="6" fill="' + C.orange + '"/><path d="M' + (cx - 27) + "," + (hatTop + 2) + " L" + (cx - 23) + "," + (hatTop - 4) + " H" + (cx + 23) + " L" + (cx + 27) + "," + (hatTop + 2) + ' Z" fill="' + ink + '"/>',
         bowler: '<path d="M' + (cx - 17) + "," + (hatTop + 1) + " L" + (cx - 13) + "," + (hatTop - 16) + " L" + cx + "," + (hatTop - 21) + " L" + (cx + 13) + "," + (hatTop - 16) + " L" + (cx + 17) + "," + (hatTop + 1) + ' Z" fill="' + ink + '"/><path d="M' + (cx - 28) + "," + (hatTop + 4) + " L" + (cx - 22) + "," + (hatTop - 1) + " H" + (cx + 22) + " L" + (cx + 28) + "," + (hatTop + 4) + ' Z" fill="' + ink + '"/>',
         // pulled low over the eyes, the brim tipped down in front

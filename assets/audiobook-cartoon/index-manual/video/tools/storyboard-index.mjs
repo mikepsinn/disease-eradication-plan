@@ -1,5 +1,4 @@
-// Write storyboards/README.md: every part with its times and scene count, the props and gags
-// that recur across the episode (build them once in assets/js/kit.js), the vertical shorts, and
+// Write storyboards/README.md: every part with its times and scene count, the vertical shorts, and
 // any scene name used twice (scene names must be unique across the episode).
 //
 //   node tools/storyboard-index.mjs
@@ -53,18 +52,6 @@ const names = new Map();
 for (const s of scenes) names.set(s.id, [...(names.get(s.id) || []), s.part]);
 const dupes = [...names].filter(([, ps]) => ps.length > 1);
 
-const props = new Map();
-for (const s of scenes) {
-  for (const prop of (s.props || "").split(",").map((x) => x.trim()).filter(Boolean)) {
-    if (!props.has(prop)) props.set(prop, { scenes: 0, parts: new Set() });
-    const e = props.get(prop);
-    e.scenes++;
-    e.parts.add(s.part);
-  }
-}
-const recurring = [...props].filter(([, e]) => e.scenes > 1).sort((a, b) => b[1].scenes - a[1].scenes);
-const oneOff = [...props].filter(([, e]) => e.scenes === 1).map(([n]) => n).sort();
-
 const shortsPath = join(BOARDS, "shorts.json");
 const shorts = existsSync(shortsPath) ? JSON.parse(readFileSync(shortsPath, "utf8")) : [];
 const shortRows = shorts.map((sh) => {
@@ -92,15 +79,6 @@ Self-contained segments to cut as 9:16 shorts, each with a hook in its first sec
 
 ${shortRows.length ? `| Short | Part | Scenes | Time | Why |\n|---|---|---|---|---|\n${shortRows.join("\n")}` : "None picked yet."}
 
-## Recurring props and gags
-
-Build each of these once in \`assets/js/kit.js\`, most-used first.
-
-| Prop | Scenes | Parts |
-|---|---|---|
-${recurring.map(([n, e]) => `| ${n} | ${e.scenes} | ${[...e.parts].join(", ")} |`).join("\n")}
-
-Used once: ${oneOff.join(", ") || "none"}.
 `;
 writeFileSync(join(BOARDS, "README.md"), out);
-console.log(`README.md: ${parts.length} parts, ${scenes.length} scenes, ${recurring.length} recurring props, ${shorts.length} shorts${dupes.length ? `, ${dupes.length} duplicate names` : ""}`);
+console.log(`README.md: ${parts.length} parts, ${scenes.length} scenes, ${shorts.length} shorts${dupes.length ? `, ${dupes.length} duplicate names` : ""}`);

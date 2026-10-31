@@ -1,329 +1,352 @@
 <template id="nations-foam-bats-template">
-  <!-- nations-foam-bats · Layer B (storyboards/part-03-gradual-irrationality-reduction.md): zoom into the wall screen. Two
-       plain islands across a strait, a capitol and a Politician with an orange foam bat on each. "hitting" → the left one
-       bonks the right one (the head squashes and springs back; a tiny mushroom cloud pops by his capitol); "each" → the
-       right one bonks back; "ten" → the calendar's pages rip off in a blur, the bonks speed up, the hair goes white, the
-       beards grow down to the shoes, the capitols crumble into smoking craters; "years" → both x-ray into grinning
-       skeletons, still swinging; "because" → they freeze mid-swing; "last." → they point at each other: "HE HIT ME LAST"
-       over both skulls; a beat later they bonk each other at the same moment and get right back to it. -->
+  <!-- nations-foam-bats · style "atomic" (cartoon-style-bible.md), plate the-strait (storyboards/part-03-gradual-irrationality-reduction.md,
+       scene 3). One plate: a calm sea under a pale sky; far, up and right, two small sand islands face each other over a
+       narrow strait, each with a domed capitol and a Politician (red tie on the left, blue tie on the right) holding an
+       orange foam bat long enough to reach the other island; a tear-off calendar ("YEAR") on a post in the strait; near,
+       down and left, a cutaway 1950s house with its playroom (toddlers-take-nap). The camera stays on the islands here:
+       "Your": both islands, bats on shoulders, then a push in; "hitting": the left one bonks the right one, whose head
+       squashes and springs back, and a tiny mushroom cloud pops behind the right capitol; "each other": the bonk back
+       and a tiny cloud on the left; "ten thousand": the bonks blur, the calendar's pages fly off in a blizzard while its
+       number races up, hair goes white, beards grow to the shoes, the capitols crumble into smoking craters under a
+       crowd of tiny clouds; "years": both x-ray into grinning skeletons (ties and beards on), still swinging; "because":
+       a freeze mid-swing, the calendar on 10,000, a push in; "last.": each points a bony finger at the other; after
+       "last.": they bonk each other at the same moment and get right back to it. toddlers-take-nap starts on this
+       scene's last frame and copies the plate's drawing code. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
-    #nations-foam-bats-cam, #nations-foam-bats-bg, #nations-foam-bats-art, #nations-foam-bats-pip, #nations-foam-bats-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #8FA2A6; }
+    #nations-foam-bats-weave, #nations-foam-bats-shake, #nations-foam-bats-plate, #nations-foam-bats-film { position: absolute; inset: 0; }
+    #nations-foam-bats-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
   </style>
   <div id="root" data-composition-id="nations-foam-bats" data-width="1920" data-height="1080" data-start="0" data-duration="6.18">
-    <div id="nations-foam-bats-cam">
-      <div id="nations-foam-bats-bg"></div>
-      <div id="nations-foam-bats-art"></div>
-      <div id="nations-foam-bats-pip"></div>
+    <div id="nations-foam-bats-weave">
+      <div id="nations-foam-bats-shake"><div id="nations-foam-bats-plate"></div></div>
+      <div id="nations-foam-bats-flash"></div>
     </div>
-    <div id="nations-foam-bats-grain"></div>
+    <div id="nations-foam-bats-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
   <script src="assets/js/props/places.js"></script>
   <script src="assets/js/props/objects-a.js"></script>
   <script>
     (function () {
+      window.__timelines = window.__timelines || {};
       var ID = "nations-foam-bats";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
+      var sc = KIT.scene(ID), D = sc.duration, T0 = sc.start;
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-
-      // ── The two nations: the same drawing in wishonia-war-timeline (its wall screen after "enjoyed."), nations-foam-bats
-      //    (the scene) and toddlers-take-nap (its skeleton panel from "refused"). Keep the three copies the same. ──
-      // Two plain islands across a strait (no flags, no country outlines), a little capitol on each, a Politician on each
-      // with a raised orange foam bat (left: tone 1, red tie; right: tone 3, blue tie), a tear-off calendar on a post in the
-      // strait, six tiny mushroom clouds (hidden), and what the years do to it all: white hair, beards down to the shoes,
-      // grinning skeletons (with the wide tie put back on), smoking craters, "YEAR 10,000", two "HE HIT ME LAST" bubbles.
-      // nationsLayout(tall): the layout for a 9:16 (tall) or 16:9 frame. nationsArt(pid, L, state): { svg, geo }; every id
-      // is pid + "-" + name. state "first" (alive, bats up, capitols, YEAR 1) or "last" (skeletons with beards, craters,
-      // YEAR 10,000). Bat arms: #pid-A-alive .arm-r, #pid-A-bones .arm-r, #pid-A-bat, #pid-A-bbat (B: .arm-l); they all turn
-      // about geo.A.sh (B: geo.B.sh) by geo.hit degrees (B: -geo.hit) to bonk the other's head, or by geo.poke to jab
-      // the other one in the chest. The free arms (A: .arm-l, B: .arm-r) turn about geo.A.back (B: geo.B.back).
-      // The person groups sit at (geo.XA or geo.XB, geo.Y0), scaled geo.s.
-      function nationsLayout(tall) {
-        return tall
-          ? { W: 1080, H: 1920, s: 2.1, mid: 540, feet: 1185, isles: [[46, 424, 1191], [656, 1034, 1191]], sea: [1184, 1874],
-              caps: [[132, 0.36], [948, 0.36]], cal: { x: 540, foot: 1440, post: 70, k: 1.38 }, bub: [[205, 640], [875, 640]], bubFs: 38,
-              clouds: [[255, 1191], [835, 1191], [80, 1191], [1000, 1191], [180, 1191], [900, 1191]] }
-          : { W: 1920, H: 1080, s: 1.9, mid: 860, feet: 790, isles: [[96, 728, 796], [992, 1590, 796]], sea: [788, 1034],
-              caps: [[330, 0.5], [1390, 0.5]], cal: { x: 860, foot: 950, post: 84, k: 1.5 }, bub: [[400, 300], [1320, 300]], bubFs: 46,
-              clouds: [[1222, 796], [498, 796], [1530, 796], [176, 796], [1330, 796], [392, 796]] };
-      }
-      function nationsArt(pid, L, state) {
-        var ink = C.line, last = state === "last", s = L.s, HAIR = "#112846", WHITE_HAIR = "#ECE7DA";
-        function P(x, y) { return x.toFixed(1) + "," + y.toFixed(1); }
-        function polyD(pts) { return "M" + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + " Z"; }
-        function solid(pts, col, w) {
-          return '<path d="' + polyD(pts) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 4.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + polyD(pts) + '" fill="' + col + '"/>';
-        }
-        function line(d, col, w) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"/>'; }
-        function hide(on) { return on ? ' opacity="0"' : ""; }
-        var defs = KIT.paperDefs(pid + "-n");
-        // The sea and the two islands.
-        var sea = '<rect x="46" y="' + L.sea[0] + '" width="' + (L.W - 92) + '" height="' + (L.sea[1] - L.sea[0]) + '" fill="' + C.cyan + '"/>' +
-          '<rect x="46" y="' + L.sea[0] + '" width="' + (L.W - 92) + '" height="' + (L.sea[1] - L.sea[0]) + '" fill="url(#' + pid + '-n-hteal)" opacity="0.25"/>' +
-          '<path d="M46,' + L.sea[0] + " H" + (L.W - 46) + '" stroke="' + ink + '" stroke-width="4"/>';
-        var rw = KIT.rng(L.W + 7);
-        for (var k = 0; k < 16; k++) {
-          var wx = 80 + rw() * (L.W - 220), wy = L.sea[0] + 40 + rw() * (L.sea[1] - L.sea[0] - 80);
-          sea += line("M" + P(wx, wy) + " q12,-9 24,0 q12,9 24,0", ink, 2.4);
-        }
-        var isles = L.isles.map(function (is) {
-          var x0 = is[0], x1 = is[1], t = is[2];
-          var pts = [[x0, t + 16], [x0 + 26, t], [x1 - 30, t - 2], [x1, t + 14], [x1 - 16, t + 74], [x0 + 20, t + 80]];
-          return solid(pts, C.tan) + '<path d="' + polyD(pts) + '" fill="url(#' + pid + '-n-hatch)" opacity="0.18"/>' +
-            line("M" + P(x0 + 30, t + 3) + " L" + P(x1 - 34, t + 1), C.orange, 3) + line("M" + P(x0 + 22, t + 64) + " L" + P(x1 - 20, t + 58), ink, 1.6);
-        }).join("");
-        // The capitols, and the smoking craters they turn into.
-        var caps = L.caps.map(function (c, i) {
-          var t = L.isles[i][2], w = 449 * c[1];
-          var rim = [[-w * 0.5, 4], [-w * 0.42, -14], [-w * 0.3, -6], [-w * 0.2, -24], [-w * 0.06, -12], [w * 0.06, -28], [w * 0.2, -10], [w * 0.3, -22], [w * 0.42, -8], [w * 0.5, 4]];
-          var wisps = [-0.24, 0.02, 0.26].map(function (f, j) {
-            return '<g transform="translate(' + P(c[0] + f * w, t - 20) + ')"><g class="' + pid + '-wisp" data-i="' + (i * 3 + j) + '">' +
-              line("M0,0 q-10,-14 0,-28 q10,-14 0,-28 q-10,-14 0,-28", "#8C8782", 7) + "</g></g>";
-          }).join("");
-          return '<g id="' + pid + "-cap-" + i + '"' + hide(last) + '><g transform="translate(' + c[0] + "," + t + ") scale(" + c[1] + ')"><g id="' + pid + "-capb-" + i + '">' + KIT.props.capitol({}) + "</g></g></g>" +
-            '<g id="' + pid + "-crater-" + i + '"' + hide(!last) + '><g transform="translate(' + c[0] + "," + t + ')">' +
-            solid(rim, C.rust, 4) + '<path d="M' + P(-w * 0.34, 0) + " Q0," + (-w * 0.12).toFixed(1) + " " + P(w * 0.34, 0) + " Q0," + (w * 0.05).toFixed(1) + " " + P(-w * 0.34, 0) + ' Z" fill="#2A221C" stroke="' + ink + '" stroke-width="3"/>' +
-            solid([[-w * 0.16, -18], [-w * 0.1, -34], [-w * 0.02, -22]], C.cream, 3) + solid([[w * 0.12, -14], [w * 0.2, -30], [w * 0.26, -12]], C.cream, 3) + "</g>" + wisps + "</g>";
-        }).join("");
-        // The calendar on its post: pages 1, 10, 100 ... 8,500 tear off; YEAR 10,000 is under them.
-        var CL = L.cal, labels = ["1", "10", "100", "600", "1,500", "3,000", "6,000", "8,500", "10,000"];
-        var cal = KIT.props.calendar({ month: "YEAR", day: 1, pages: 8 }).replace(/(<g class="cal-page(?:-under)?" data-day=")(\d+)("[\s\S]*?font-size=")(\d+)(" fill="#112845">)(\d+)(<\/text>)/g, function (m, a, d, b, fs, c2, d2, e) {
-          var lab = labels[+d - 1], size = lab.length <= 2 ? 44 : lab.length <= 3 ? 34 : lab.length <= 5 ? 23 : 20;
-          return a + d + b + size + c2 + lab + e;
-        });
-        if (last) cal = cal.replace(/<g class="cal-page" /g, '<g class="cal-page" opacity="0" ');
-        var calTop = CL.foot - CL.post;
-        var calSvg = '<ellipse cx="' + CL.x + '" cy="' + CL.foot + '" rx="30" ry="8" fill="none" stroke="' + ink + '" stroke-width="3"/>' +
-          solid([[CL.x - 7, CL.foot], [CL.x - 7, calTop], [CL.x + 7, calTop], [CL.x + 7, CL.foot]], C.rust, 3.4) +
-          '<g transform="translate(' + CL.x + "," + calTop + ") scale(" + CL.k + ')"><g id="' + pid + '-cal">' + cal + "</g></g>";
-        // The Politicians: A on the left (looking right), B on the right (looking left), each with a foam bat in the front
-        // hand. The geometry puts B where A's bat, turned by `hit` degrees about A's shoulder, lands on B's head (and back).
-        var PA = KIT.castOpts("politician", { tone: 1, look: "right", tieColor: C.war, hairColor: HAIR, arms: [[-14, 16], [150, 200]] });
-        var PB = KIT.castOpts("politician", { tone: 3, look: "left", tieColor: C.peri, hairColor: HAIR, arms: [[-150, -200], [14, -16]] });
-        var RA = KIT.rig(PA), RB = KIT.rig(PB), BAT = 150, deg = 180 / Math.PI;
-        function batGeo(R, i, arm) {
-          var sh = R.shoulder[i], a1 = arm[0] / deg, el = [sh[0] + R.armLength * Math.sin(a1), sh[1] + R.armLength * Math.cos(a1)], hd = R.hand[i];
-          var dx = hd[0] - el[0], dy = hd[1] - el[1], d = Math.sqrt(dx * dx + dy * dy), u = [dx / d, dy / d];
-          return { sh: sh, hand: hd, u: u, head: [hd[0] + u[0] * (BAT - 14), hd[1] + u[1] * (BAT - 14)] };
-        }
-        var gA = batGeo(RA, 1, PA.arms[1]), gB = batGeo(RB, 0, PB.arms[0]);
-        var r = Math.sqrt(Math.pow(gA.head[0] - gA.sh[0], 2) + Math.pow(gA.head[1] - gA.sh[1], 2));
-        var tgt = [RB.top[0] + 3, RB.top[1] - 9], dy = tgt[1] - gA.sh[1], dx = Math.sqrt(r * r - dy * dy);
-        var gap = dx + gA.sh[0] - tgt[0], hit = (Math.atan2(dy, dx) - Math.atan2(gA.head[1] - gA.sh[1], gA.head[0] - gA.sh[0])) * deg;
-        var XA = L.mid - (gap * s) / 2, XB = L.mid + (gap * s) / 2, Y0 = L.feet - 100 * s;
-        // the poke: the bat turned to jab the other one instead (A at B's face, B at A's belly, so the bats cross)
-        var aim = function (x, y) { return (Math.atan2(y - gA.sh[1], gap + x - gA.sh[0]) - Math.atan2(gA.head[1] - gA.sh[1], gA.head[0] - gA.sh[0])) * deg; };
-        var pokeA = aim(-10, -62), pokeB = aim(-8, -8);
-        function bat(g, id) {
-          var a = Math.atan2(g.u[1], g.u[0]) * deg, len = BAT;
-          var body = [[18, -5], [len - 30, -17], [len - 7, -19], [len, -12], [len, 12], [len - 7, 19], [len - 30, 17], [18, 5]];
-          var grip = [[-5, -3.8], [20, -4.8], [20, 4.8], [-5, 3.8]];
-          return '<g id="' + id + '"><g transform="translate(' + P(g.hand[0], g.hand[1]) + ") rotate(" + a.toFixed(2) + ')">' +
-            solid(body, C.orange, 3.6) + line("M28,-7 L" + (len - 22) + ",-13", C.cream, 3) + line("M" + (len - 5) + ",-12 V12", C.rust, 2.4) + line("M" + (len - 34) + ",7 L" + (len - 12) + ",8", C.rust, 1.6) +
-            solid(grip, C.yellow, 3) + line("M3,-4.2 V4.2 M10,-4.5 V4.5", ink, 1.4) + solid([[-9, -5], [-4, -5], [-4, 5], [-9, 5]], C.rust, 2.6) + "</g></g>";
-        }
-        // a beard down to the shoes (face units: the face looks +x; the shoes are at person y 100)
-        function beard(R, id, col) {
-          var toe = (100 - R.hy) / R.hs - 4;
-          return '<g class="' + pid + '-beard" id="' + id + '"' + hide(!last) + '>' + solid([[-8, 18], [2, 26], [12, 29], [20, 23], [22, 46], [16, 64], [19, 84], [12, 104], [14, 124], [8, toe], [4, toe - 14], [0, toe - 3], [-3, 122], [-7, 102], [-4, 82], [-9, 62], [-7, 46]], col, 2.6) +
-            line("M6,40 L8,70 L5,96 M13,46 L12,76 L9,120 M0,44 L-1,66 L1,90 M4,104 L5,134", "#A9A49B", 1.5) + "</g>";
-        }
-        function tie(R) {
-          var T = R.shoulder[0][1] - 3;
-          return solid([[-3, T + 1], [3, T + 1], [12, T + 20], [0, T + 30], [-12, T + 20]], C.war, 2.4);
-        }
-        function pol(name, o, R, g, X) {
-          var alive = KIT.person(o).replace('fill="' + HAIR + '"', 'class="' + pid + '-hair" fill="' + (last ? WHITE_HAIR : ink) + '"').replace("<!--face-end-->", beard(R, pid + "-" + name + "-beard", "#F4F1EA") + "<!--face-end-->");
-          var bones = KIT.person(Object.assign({}, o, { skeleton: true })).replace("<!--face-end-->", beard(R, pid + "-" + name + "-bbeard", "#FBF8F0").replace(' opacity="0"', "") + "<!--face-end-->");
-          var tieSvg = tie(R).replace(/#C8452E/g, o.tieColor);
-          return '<g transform="translate(' + P(X, Y0) + ") scale(" + s + ')"><g id="' + pid + "-" + name + '">' +
-            '<g id="' + pid + "-" + name + '-alive"' + hide(last) + ">" + alive + bat(g, pid + "-" + name + "-bat") + "</g>" +
-            '<g id="' + pid + "-" + name + '-bones"' + hide(!last) + ">" + bones + tieSvg + bat(g, pid + "-" + name + "-bbat") + "</g></g></g>";
-        }
-        var pols = pol("A", PA, RA, gA, XA) + pol("B", PB, RB, gB, XB);
-        // Six tiny mushroom clouds, hidden until they go off.
-        var clouds = L.clouds.map(function (c, i) {
-          return '<g transform="translate(' + c[0] + "," + c[1] + ') scale(0.2)"><g id="' + pid + "-cl-" + i + '" opacity="0">' + KIT.nuke() + "</g></g>";
-        }).join("");
-        // The two bubbles, hidden: tails to the skulls.
-        function bubble(i, X, R) {
-          var b = L.bub[i], fs = L.bubFs, w = fs * 7.1, h = fs * 1.75, x0 = b[0] - w / 2, y0 = b[1] - h / 2, c = 9;
-          var hx = X + R.top[0] * s, hy = Y0 + R.top[1] * s - 14, tb = b[0] + (i ? -w * 0.28 : w * 0.28);
-          var pts = [[x0 + c, y0], [x0 + w - c, y0], [x0 + w, y0 + c], [x0 + w, y0 + h - c], [x0 + w - c, y0 + h]].concat(
-            i ? [[tb + 16, y0 + h], [hx, hy], [tb - 16, y0 + h]] : [[tb + 16, y0 + h], [hx, hy], [tb - 16, y0 + h]],
-            [[x0 + c, y0 + h], [x0, y0 + h - c], [x0, y0 + c]]);
-          return '<g id="' + pid + "-bub-" + i + '" opacity="0">' + solid(pts, "#FBF6E6", 5) +
-            '<text x="' + b[0] + '" y="' + (b[1] + fs * 0.36).toFixed(1) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs + '" letter-spacing="1" fill="' + ink + '">HE HIT ME LAST</text></g>';
-        }
-        var bubs = bubble(0, XA, RA) + bubble(1, XB, RB);
-        return {
-          svg: defs + sea + isles + caps + calSvg + pols + clouds + bubs,
-          geo: { s: s, feet: L.feet, Y0: Y0, XA: XA, XB: XB, hit: hit, pokeA: pokeA, pokeB: pokeB, RA: RA, RB: RB, A: { sh: gA.sh, head: gA.head, back: RA.shoulder[0], neck: RA.neck }, B: { sh: gB.sh, head: gB.head, back: RB.shoulder[1], neck: RB.neck },
-            beardPivot: "2 18", cal: CL, caps: L.caps, clouds: L.clouds },
-        };
-      }
-      // ── end of the nations drawing ──
-
-      // ── The scene ──
-      var L = nationsLayout(V), N = nationsArt(ID, L, "first"), G = N.geo;
-      // a star burst for each bonk, on the bonked head
-      var burst = function (name, R, X) {
-        var x = X + R.top[0] * G.s, y = G.Y0 + R.top[1] * G.s - 10;
-        return '<g transform="translate(' + x.toFixed(1) + "," + y.toFixed(1) + ')"><g id="' + ID + "-burst-" + name + '" opacity="0">' +
-          KIT.star(0, 0, 46, C.line, 8) + KIT.star(0, 0, 38, C.yellow, 8) + KIT.star(0, 0, 16, "#FFFFFF", 4) + "</g></g>";
-      };
-      q("bg").innerHTML = KIT.paper(ID);
-      q("art").innerHTML = KIT.svg(W, H, N.svg + burst("B", G.RB, G.XB) + burst("A", G.RA, G.XA));
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      KIT.enter(tl, q("cam"), "zoom into the wall screen", KIT.OFFICE.screen);
 
-      var $ = function (sel) { return document.querySelector(sel); };
-      var front = { A: ".arm-r", B: ".arm-l" };
-      var arms = {}, heads = {};
-      ["A", "B"].forEach(function (w) {
-        arms[w] = [$("#" + ID + "-" + w + "-alive " + front[w]), q(w + "-bat"), $("#" + ID + "-" + w + "-bones " + front[w]), q(w + "-bbat")];
-        heads[w] = [$("#" + ID + "-" + w + "-alive .head"), $("#" + ID + "-" + w + "-bones .head")];
-        gsap.set(arms[w], { svgOrigin: G[w].sh.join(" ") });
-        gsap.set(heads[w], { svgOrigin: G[w].neck.join(" ") });
-      });
-      var sign = { A: 1, B: -1 }, other = { A: "B", B: "A" };
-      // A bonk: wind up, strike so the bat lands on the other head at tHit (the boing), recoil. The other head squashes
-      // flat and springs back, and a star bursts on it.
-      function bonk(w, tHit, wind, recoil) {
-        var k = sign[w], up = wind === undefined ? 0.2 : wind;
-        tl.to(arms[w], { rotation: -16 * k, duration: up, ease: "power1.out" }, tHit - up - 0.09);
-        tl.to(arms[w], { rotation: G.hit * k, duration: 0.09, ease: "power2.in" }, tHit - 0.09);
-        if (recoil !== false) tl.to(arms[w], { rotation: 0, duration: 0.26, ease: "back.out(1.6)" }, tHit + 0.04);
-        squash(other[w], tHit);
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 303);
+
+      // ════ The plate the-strait: the same code in nations-foam-bats.html and toddlers-take-nap.html (change both) ════
+      // Plate units. The sea runs from the horizon (y -780) down; the islands' ground is at y -466, the politicians stand
+      // on it at x 40 (left, facing right) and 380 (right, the same drawing mirrored), drawn at FK. The house's
+      // playroom floor is at y 150 between x -1250 and -300, its toddlers drawn at NK (twice FK: near, so bigger).
+      var SKY = "#E9DEC2", SEA = "#8FA2A6", SEA2 = "#A9B9B6", SAND = "#D9C08B", GRASS = "#9CA46B", WHITE = "#FBF6E6";
+      var HORIZON = -780, GI = -466, FK = 0.8, NK = 1.6, XA = 40, XB = 380, CAPX = [-180, 600], CAPK = 0.4, CALX = 210, CALY = -418;
+      var HX0 = -1250, HX1 = -300, HTOP = -350, FLOOR = 150, PEAK = -610, HMID = (HX0 + HX1) / 2;
+      var TXA = -900, TXB = -650, TFEET = 146, PILLOW0 = [-605, -158];
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var rad = function (d) { return (d * Math.PI) / 180; };
+      var deg = function (r) { return (r * 180) / Math.PI; };
+      // The nations' orange foam bat: its grip at (0, 0), pointing +x, len long, w thick (person units).
+      function bat(len, w) {
+        return '<path d="M0,' + -4 * w + " L" + f(len * 0.28) + "," + -6 * w + " L" + f(len) + "," + -16 * w + " Q" + f(len + 12 * w) + ",0 " + f(len) + "," + 16 * w + " L" + f(len * 0.28) + "," + 6 * w + " L0," + 4 * w + ' Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="' + 3 * w + '" stroke-linejoin="round"/>' +
+          '<path d="M' + f(len * 0.34) + "," + -4 * w + " L" + f(len * 0.94) + "," + -11 * w + '" stroke="#F6C98A" stroke-width="' + 3 * w + '" stroke-linecap="round"/>' +
+          '<rect x="' + -16 * w + '" y="' + -5 * w + '" width="' + 18 * w + '" height="' + 10 * w + '" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="' + 2.4 * w + '"/>';
       }
-      function squash(o, t) {
-        tl.fromTo(heads[o], { scaleY: 1, scaleX: 1 }, { scaleY: 0.42, scaleX: 1.4, duration: 0.05, ease: "power2.out", immediateRender: false }, t);
-        tl.to(heads[o], { scaleY: 1, scaleX: 1, duration: 0.36, ease: "elastic.out(1.1,0.32)" }, t + 0.05);
-        var b = q("burst-" + o);
-        tl.fromTo(b, { opacity: 1, scale: 0.3, rotation: 0, svgOrigin: "0 0" }, { opacity: 1, scale: 1, rotation: 20, svgOrigin: "0 0", duration: 0.1, ease: "back.out(2)", immediateRender: false }, t);
-        tl.to(b, { opacity: 0, duration: 0.08 }, t + 0.16);
+      // A long white beard hanging from y0 (person units) down to the shoes, centered on bx; .beard grows from y0.
+      function beard(bx, y0) {
+        var low = 96, mid = (y0 + low) / 2;
+        return '<g class="beard" data-y0="' + y0 + '"><path d="M' + (bx - 7) + "," + y0 + " L" + (bx + 7) + "," + y0 + " L" + (bx + 6) + "," + (y0 + 24) + " L" + (bx + 8) + "," + (y0 + 40) + " L" + (bx + 4) + "," + f(mid + 10) + " L" + (bx + 6) + "," + (low - 18) + " L" + (bx + 1) + "," + low +
+          " L" + (bx - 2) + "," + (low - 22) + " L" + (bx - 6) + "," + f(mid) + " L" + (bx - 4) + "," + (y0 + 30) + " L" + (bx - 8) + "," + (y0 + 14) + ' Z" fill="#E4E1D8" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"/>' +
+          '<path d="M' + (bx - 1) + "," + (y0 + 6) + " L" + bx + "," + (y0 + 40) + " M" + (bx + 2) + "," + (y0 + 10) + " L" + (bx + 3) + "," + (y0 + 52) + '" stroke="#A9A496" stroke-width="1.2"/></g>';
       }
-      // a tiny mushroom cloud at shore spot k
-      function puff(k, t) {
-        var c = q("cl-" + k);
-        tl.set(c, { opacity: 1 }, t);
-        KIT.boom(tl, c, t);
-        tl.to(c, { opacity: 0, duration: 0.35, ease: "power1.in" }, t + 0.85);
+      // A smoke wisp rising from (x, y), in plate units; .wisp drifts in the update.
+      function wisp(x, y, k) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"><path class="wisp" d="M0,0 q-12,-22 0,-44 q12,-22 0,-44 q-12,-22 0,-44" fill="none" stroke="#8C8782" stroke-width="7" stroke-linecap="round" opacity="0.85"/></g>'; }
+      // A sand island: its top from x0 to x1 at the ground, the front face sloping out to the waterline.
+      function island(x0, x1) {
+        return '<path d="M' + (x0 - 36) + ",-394 L" + x0 + "," + GI + " L" + (x0 + 30) + "," + (GI - 14) + " H" + (x1 - 30) + " L" + x1 + "," + GI + " L" + (x1 + 36) + ',-394 Z" fill="' + SAND + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x0 + 8) + "," + (GI - 2) + " L" + (x0 + 32) + "," + (GI - 12) + " H" + (x1 - 32) + " L" + (x1 - 8) + "," + (GI - 2) + ' Z" fill="' + GRASS + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>' +
+          '<path d="M' + (x0 - 50) + ",-390 Q" + (x0 + x1) / 2 + ",-374 " + (x1 + 50) + ',-390" fill="none" stroke="' + SEA2 + '" stroke-width="6" stroke-linecap="round"/>';
       }
 
-      var tHit = cue("hitting"), tEach = cue("each"), tTen = cue("ten"), tThou = cue("thousand"), tYears = cue("years"), tBec = cue("because"), tLast = cue("last."), tAfter = KIT.after(ID, "last.");
-      // "hitting": the left one bonks the right one (the boing), a tiny cloud pops by the right capitol (the pop)
-      bonk("A", tHit, 0.24);
-      puff(0, tHit + 0.15);
-      // "each other": the right one bonks back; a tiny cloud on the left island
-      bonk("B", tEach, 0.18);
-      puff(1, tEach + 0.15);
-      // "ten thousand": faster and faster (boings on "thousand")
-      bonk("A", tThou, 0.16);
-      bonk("B", tThou + 0.2, 0.08);
-      bonk("A", tThou + 0.38, 0.06);
-      bonk("B", tYears - 0.04, 0.05);
-      puff(2, tThou + 0.15); puff(3, tThou + 0.35); puff(4, tThou + 0.52);
-      // "years": both x-ray into skeletons (the zap), and keep swinging
-      KIT.xray(tl, q("A-alive"), q("A-bones"), tYears);
-      KIT.xray(tl, q("B-alive"), q("B-bones"), tYears);
-      bonk("A", tYears + 0.3, 0.1);
-      bonk("B", tYears + 0.55, 0.1);
-      puff(5, tYears + 0.1);
-      // "because": both freeze mid-swing (the record scratch): the left one halfway down, the right one wound up
-      tl.to(arms.A, { rotation: G.hit * 0.5, duration: 0.12, ease: "power2.in" }, tBec - 0.12);
-      tl.to(arms.B, { rotation: 0, duration: 0.12, ease: "power1.out" }, tBec - 0.12);
-      tl.fromTo([q("A"), q("B")], { x: 0 }, { x: 3, duration: 0.03, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, tBec);
+      // The cast. A Politician: young, old (white hair, a beard that grows) and his skeleton (tie and beard on the bones).
+      // Arms hang ([[-8,-4],[8,4]]); the bat is in his left hand: the arm turns about its shoulder and the bat is a lever
+      // from the hand (setSwing). The right one is the same drawing, mirrored.
+      var POLS = [{ x: XA, tie: C.war, tone: 1 }, { x: XB, tie: C.peri, tone: 3 }];
+      POLS.forEach(function (p) {
+        p.o = KIT.castOpts("politician", { look: "right", arms: [[-8, -4], [8, 4]], tieColor: p.tie, tone: p.tone });
+        p.R = KIT.rig(p.o);
+      });
+      var RP = POLS[0].R;
+      // Lever geometry (person units, facing right): from the left shoulder through the hand, then the bat. The hit
+      // points the lever at the other one's crown; the bat is as long as that takes.
+      function lever(R, dist) {
+        var S = R.shoulder[0], h0 = R.hand[0], l0 = Math.hypot(h0[0] - S[0], h0[1] - S[1]);
+        var T = [dist - R.head[0], R.head[1] - 14 * R.hs], hit = deg(Math.atan2(T[1] - S[1], T[0] - S[0]));
+        var S2 = R.shoulder[1], h2 = R.hand[1];
+        return { S: S, l0: l0, phi0: deg(Math.atan2(h0[1] - S[1], h0[0] - S[0])), hit: hit, len: Math.hypot(T[0] - S[0], T[1] - S[1]) - l0 + 4,
+          S2: S2, phi2: deg(Math.atan2(h2[1] - S2[1], h2[0] - S2[0])), point: deg(Math.atan2(T[1] + 20 - S2[1], T[0] - S2[0])) };
+      }
+      var LP = lever(RP, (XB - XA) / FK);
+      // Poses: [arm angle, bat angle] in SVG degrees. Rest: the bat over the shoulder; windup: overhead and back.
+      var REST = [40, -135], WIND = [-100, -165], HIT = [LP.hit, LP.hit];
+      function polDrawing(p, kind) {
+        var R = p.R;
+        if (kind === "young") return KIT.person(p.o);
+        if (kind === "old") return KIT.person(copy(p.o, { hairColor: "#EEEAE0" })) + beard(8, R.hy + 26 * R.hs);
+        var o = copy(p.o, { skeleton: true }), T = R.shoulder[0][1] - 4;
+        var tie = '<path d="M-3,' + T + " L3," + T + " L12," + (T + 34) + " L0," + (T + 44) + " L-12," + (T + 34) + ' Z" fill="' + p.tie + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>';
+        return KIT.person(o).replace('<g class="head">', tie + beard(5, R.hy + 20 * R.hs) + '<g class="head">');
+      }
+      function polSvg(p, i) {
+        var batSvg = bat(LP.len, 1.7);
+        return '<g id="' + ID + "-pol" + i + '" transform="translate(' + f(p.x) + "," + f(GI - 100 * FK) + ") scale(" + (i ? -FK : FK) + "," + FK + ')">' +
+          '<g class="alive"><g class="v-young">' + polDrawing(p, "young") + '</g><g class="v-old" opacity="0">' + polDrawing(p, "old") + "</g></g>" +
+          '<g class="bones">' + polDrawing(p, "bones") + "</g>" +
+          '<g class="ghost" opacity="0">' + batSvg + '</g><g class="ghost" opacity="0">' + batSvg + "</g>" +
+          '<g class="lever">' + batSvg + "</g></g>";
+      }
+      // A toddler (an everyday human with a big head and short legs): awake (scowling), yawning (eyes squeezed shut,
+      // mouth wider than the head) and asleep (lids shut), the bat a lever from the left hand as for the politicians.
+      var TB = { hs: 1.35, legs: 0.55, th: 0.62, tw: 0.8, neck: 0.2 };
+      var TODS = [{ x: TXA, o: { tone: 1, outfit: "overalls", color: 1, look: "right", mood: "cross", arms: [[-8, -4], [8, 4]], build: TB } },
+        { x: TXB, o: { tone: 2, outfit: "dress", hair: 1, color: 3, look: "right", mood: "cross", arms: [[-8, -4], [8, 4]], build: TB } }];
+      TODS.forEach(function (t) { t.R = KIT.rig(t.o); });
+      var LT = lever(TODS[0].R, (TXB - TXA) / NK);
+      function eyesTo(markup, mk) { var i = 0; return markup.replace(/<g class="eye">[\s\S]*?<\/g>/g, function () { return mk([-2.5, 10.8][i++ % 2]); }); }
+      function todDrawing(t, kind) {
+        if (kind === "awake") return KIT.person(t.o);
+        if (kind === "asleep") return eyesTo(KIT.person(copy(t.o, { mood: "smile" })), function (x) { return '<path d="M' + (x - 5) + ",-4 Q" + x + ",-0.5 " + (x + 5) + ',-4" fill="none" stroke="' + ink + '" stroke-width="2"/>'; });
+        var m = eyesTo(KIT.person(t.o), function (x) { return '<path d="M' + (x - 5) + ",-7 L" + (x + 4) + ",-4 L" + (x - 5) + ',-1" fill="none" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>'; });
+        return m.replace(/<path class="mouth"[^>]*\/>/, '<path class="mouth" d="M-4,6 Q6,-2 18,6 Q24,22 12,34 Q2,40 -6,30 Q-12,18 -4,6 Z" fill="#5A1F1A" stroke="' + ink + '" stroke-width="2.2"/><path d="M0,28 Q6,22 12,29 Q6,34 0,28 Z" fill="#D9715C"/>');
+      }
+      function todSvg(t, i) {
+        var batSvg = bat(LT.len, 1.4);
+        return '<g id="' + ID + "-tod" + i + '" transform="translate(' + f(t.x) + "," + f(TFEET - 100 * NK) + ") scale(" + (i ? -NK : NK) + "," + NK + ')"><g class="tbody">' +
+          '<g class="v-awake">' + todDrawing(t, "awake") + '</g><g class="v-yawn" opacity="0">' + todDrawing(t, "yawn") + '</g><g class="v-asleep" opacity="0">' + todDrawing(t, "asleep") + "</g>" +
+          '<g class="lever">' + batSvg + "</g></g></g>";
+      }
+      // The winged pillow, in plate units around (0, 0): about 116 x 46, a wing on each end (.wing-l, .wing-r flap).
+      function pillow() {
+        var wing = function (s) { return '<g class="wing-' + (s < 0 ? "l" : "r") + '" opacity="0"><path d="M' + 50 * s + ",-6 C" + 70 * s + ",-40 " + 96 * s + ",-46 " + 104 * s + ",-38 C" + 92 * s + ",-30 " + 96 * s + ",-22 " + 86 * s + ",-18 C" + 80 * s + ",-10 " + 66 * s + ",-4 " + 50 * s + ',4 Z" fill="#FFFFFF" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="round"/>' +
+          '<path d="M' + 62 * s + ",-14 L" + 84 * s + ",-30 M" + 60 * s + ",-6 L" + 82 * s + ',-18" stroke="#C9C2B5" stroke-width="2.2"/></g>'; };
+        return wing(-1) + wing(1) + '<path d="M-58,-14 Q-62,-24 -48,-23 Q0,-30 48,-23 Q62,-24 58,-14 Q64,4 58,18 Q62,26 48,25 Q0,30 -48,25 Q-62,26 -58,18 Q-64,4 -58,-14 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path d="M-38,-10 Q0,-4 38,-10 M-30,14 Q0,8 30,14" fill="none" stroke="#DCD3BC" stroke-width="3" stroke-linecap="round"/>';
+      }
+      // The cutaway house: rust gable roof, wallpapered back wall with a window onto the sea, cut wall sections, the
+      // floor slab, a round orange rug and toy blocks.
+      function house() {
+        var wp = '<defs><pattern id="' + ID + '-wp" width="60" height="60" patternUnits="userSpaceOnUse" x="' + HX0 + '" y="' + HTOP + '"><rect width="60" height="60" fill="#EFE3C4"/><path d="M30,8 L38,30 L30,52 L22,30 Z" fill="none" stroke="#E3C88F" stroke-width="3"/></pattern></defs>';
+        var blocks = [[HX0 + 60, FLOOR - 15, C.war], [HX0 + 92, FLOOR - 15, C.med], [HX0 + 76, FLOOR - 45, C.yellow], [HX0 + 124, FLOOR - 15, C.peri]].map(function (b) {
+          return '<rect x="' + (b[0] - 15) + '" y="' + (b[1] - 15) + '" width="30" height="30" fill="' + b[2] + '" stroke="' + ink + '" stroke-width="3"/>'; }).join("");
+        return wp + '<path d="M' + (HX0 - 70) + "," + HTOP + " L" + HMID + "," + PEAK + " L" + (HX1 + 70) + "," + HTOP + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5" stroke-linejoin="miter"/>' +
+          '<path d="M' + (HX0 + 10) + "," + (HTOP - 16) + " L" + HMID + "," + (PEAK + 22) + " L" + (HX1 - 10) + "," + (HTOP - 16) + '" fill="none" stroke="#B5684A" stroke-width="5"/>' +
+          '<rect x="' + (HX0 + 20) + '" y="' + HTOP + '" width="' + (HX1 - HX0 - 40) + '" height="' + (FLOOR - HTOP) + '" fill="url(#' + ID + '-wp)" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="-700" y="-280" width="190" height="140" fill="' + SEA2 + '" stroke="' + ink + '" stroke-width="5"/><path d="M-605,-280 V-140 M-700,-210 H-510" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="-722" y="-140" width="234" height="14" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + HX0 + '" y="' + HTOP + '" width="24" height="' + (FLOOR - HTOP + 10) + '" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + (HX1 - 24) + '" y="' + HTOP + '" width="24" height="' + (FLOOR - HTOP + 10) + '" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + (HX0 - 14) + '" y="' + FLOOR + '" width="' + (HX1 - HX0 + 28) + '" height="40" fill="#A8794E" stroke="' + ink + '" stroke-width="5"/>' +
+          '<ellipse cx="' + (HMID + 10) + '" cy="' + (FLOOR - 6) + '" rx="340" ry="24" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="4"/><ellipse cx="' + (HMID + 10) + '" cy="' + (FLOOR - 6) + '" rx="290" ry="15" fill="none" stroke="' + C.cream + '" stroke-width="4"/>' + blocks;
+      }
+      // The whole plate. Element ids: cap0/1 and crater0/1 (each capitol, whole and burnt flat), nk0..nk7 (the tiny
+      // clouds), bign (the big cloud), cal (the calendar), pg0..pg13 (its flying pages), pol0/1, tod0/1, pillow, z0..z5.
+      var NKS = [[CAPX[1] - 30, 0.2], [CAPX[0] + 30, 0.2], [CAPX[1] - 60, 0.13], [CAPX[0] + 50, 0.13], [CAPX[1] + 110, 0.15], [CAPX[0] - 110, 0.15], [CAPX[1] - 10, 0.12], [CAPX[0] + 5, 0.12]];
+      function plateSvg() {
+        var waves = "", r = KIT.rng(77);
+        for (var i = 0; i < 70; i++) { var wx = -2400 + r() * 4200, wy = HORIZON + 40 + r() * 1150; waves += '<path d="M' + f(wx) + "," + f(wy) + ' q14,-8 28,0 q14,8 28,0" fill="none" stroke="' + SEA2 + '" stroke-width="4" stroke-linecap="round"/>'; }
+        var bg = '<rect x="-4000" y="-4000" width="8000" height="' + (4000 + HORIZON) + '" fill="' + SKY + '"/><rect x="-4000" y="' + HORIZON + '" width="8000" height="8000" fill="' + SEA + '"/>' +
+          '<path d="M-4000,' + HORIZON + ' H4000" stroke="' + ink + '" stroke-width="3"/>' + waves;
+        var nks = NKS.map(function (n, i) { return '<g id="' + ID + "-nk" + i + '" opacity="0" transform="translate(' + f(n[0]) + "," + f(GI - 8) + ") scale(" + n[1] + ')">' + KIT.nuke() + "</g>"; }).join("");
+        var bign = '<g id="' + ID + '-bign" opacity="0" transform="translate(' + CALX + "," + (GI - 6) + ') scale(0.45)">' + KIT.nuke() + "</g>";
+        var caps = CAPX.map(function (x, i) {
+          var whole = '<g id="' + ID + "-cap" + i + '" transform="translate(' + x + "," + (GI - 6) + ') scale(' + CAPK + ')">' + KIT.props.capitol() + "</g>";
+          var crater = '<g id="' + ID + "-crater" + i + '" opacity="0"><ellipse cx="' + x + '" cy="' + (GI - 8) + '" rx="96" ry="9" fill="#3B3229" stroke="' + ink + '" stroke-width="3"/>' +
+            '<g transform="translate(' + x + "," + (GI - 6) + ') scale(' + CAPK * 1.06 + "," + CAPK * 0.2 + ')">' + KIT.burn(KIT.props.capitol()) + "</g>" +
+            [-50, 0, 50].map(function (dx) { return wisp(x + dx, GI - 20, 0.8); }).join("") + "</g>";
+          return whole + crater;
+        }).join("");
+        var calSvg = '<rect x="' + (CALX - 6) + '" y="' + (CALY - 4) + '" width="12" height="60" fill="#7A5634" stroke="' + ink + '" stroke-width="3"/>' +
+          '<g id="' + ID + '-cal" transform="translate(' + CALX + "," + CALY + ')">' + KIT.props.calendar({ month: "YEAR", day: "1" }) + "</g>";
+        var pages = "";
+        for (var j = 0; j < 14; j++) pages += '<g id="' + ID + "-pg" + j + '" opacity="0"><path d="M-40,-41 H40 V41 H-40 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="3.6"/><path d="M-40,-41 H40 V-22 H-40 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="3.6"/></g>';
+        var shore = '<path d="M-4000,80 Q-1800,0 -900,50 Q-200,95 700,70 Q1600,50 4000,100 V4000 H-4000 Z" fill="' + SAND + '" stroke="' + ink + '" stroke-width="5"/>';
+        var zs = [0, 1, 2, 3, 4, 5].map(function (i) { return '<g id="' + ID + "-z" + i + '" opacity="0"><path d="M-9,-27 H9 L-9,-2 H9" fill="none" stroke="' + C.navy + '" stroke-width="5.5" stroke-linejoin="miter" stroke-linecap="square"/></g>'; }).join("");
+        return bg + island(-330, 150) + island(270, 750) + nks + bign + caps + calSvg + POLS.map(polSvg).join("") +
+          shore + house() + '<g id="' + ID + '-pillow" transform="translate(' + PILLOW0[0] + "," + PILLOW0[1] + ')"><g class="pil">' + pillow() + "</g></g>" + TODS.map(todSvg).join("") + zs + pages;
+      }
+      // Posing (every frame). A pose is [arm angle, bat angle] in SVG degrees; the arm turns about its shoulder from
+      // where it hangs, and the bat sits on the hand at its own angle.
+      function setSwing(g, L, pose) {
+        var ra = pose[0] - L.phi0, hx = L.S[0] + L.l0 * Math.cos(rad(pose[0])), hy = L.S[1] + L.l0 * Math.sin(rad(pose[0]));
+        Array.prototype.forEach.call(g.querySelectorAll(".arm-l"), function (a) { a.setAttribute("transform", "rotate(" + f(ra) + " " + f(L.S[0]) + " " + f(L.S[1]) + ")"); });
+        g.querySelector(".lever").setAttribute("transform", "translate(" + f(hx) + "," + f(hy) + ") rotate(" + f(pose[1]) + ")");
+      }
+      function ghost(g, L, pose, i, op) {
+        var gh = g.querySelectorAll(".ghost")[i], hx = L.S[0] + L.l0 * Math.cos(rad(pose[0])), hy = L.S[1] + L.l0 * Math.sin(rad(pose[0]));
+        gh.setAttribute("opacity", op.toFixed(2));
+        gh.setAttribute("transform", "translate(" + f(hx) + "," + f(hy) + ") rotate(" + f(pose[1]) + ")");
+      }
+      function setPoint(g, L, u) {
+        Array.prototype.forEach.call(g.querySelectorAll(".bones .arm-r"), function (a) { a.setAttribute("transform", "rotate(" + f((L.point - L.phi2) * u) + " " + f(L.S2[0]) + " " + f(L.S2[1]) + ")"); });
+      }
+      // squash a head flat about its neck: k 0 is round, 1 is flat
+      function setSquash(g, R, k) {
+        var sx = 1 + 0.45 * k, sy = 1 - 0.6 * k, n = R.neck;
+        Array.prototype.forEach.call(g.querySelectorAll(".head"), function (h) { h.setAttribute("transform", k ? "translate(" + f(n[0]) + "," + f(n[1]) + ") scale(" + sx.toFixed(3) + "," + sy.toFixed(3) + ") translate(" + f(-n[0]) + "," + f(-n[1]) + ")" : ""); });
+      }
+      var mixP = function (a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; };
+      // One bonk landing at time h: wind up over w seconds, strike in the last 0.09, hold the contact, swing back.
+      function bonkPose(t, h, w, rest, hit) {
+        rest = rest || REST; hit = hit || HIT;
+        var a = t - (h - w);
+        if (a < 0 || t > h + 0.42) return null;
+        if (t < h - 0.09) return mixP(rest, WIND, KIT.smooth(a / (w - 0.09)));
+        if (t < h) { var u = (t - (h - 0.09)) / 0.09; return mixP(WIND, hit, u * u); }
+        if (t < h + 0.06) return hit;
+        return mixP(hit, rest, KIT.smooth((t - h - 0.06) / 0.36));
+      }
+      // The squash a head takes from a bonk that lands at h: flat at once, then a springy rebound.
+      function squashAt(t, h) { var d = t - h; return d < 0 || d > 0.6 ? 0 : Math.max(-0.25, Math.exp(-d * 7) * Math.cos(d * 26)); }
+      // After the double bonk the skeletons keep at it for good: the same rhythm in both scenes, in part time.
+      var LOOP0 = KIT.scene("nations-foam-bats").start + KIT.after("nations-foam-bats", "last."), LOOPP = 1.0;
+      function loopHits(first, a, b) { var out = []; for (var h = LOOP0 + first; h < T0 + b + 1; h += LOOPP) if (h > T0 + a - 1) out.push(h - T0); return out; }
+      // the craters' smoke (and any other .wisp), drifting up in part time so it carries across the seam
+      function drift(root, t) {
+        Array.prototype.forEach.call(root.querySelectorAll(".wisp"), function (w, j) {
+          var tt = T0 + t, ph = (tt * 0.9 + j * 0.37) % 1;
+          w.setAttribute("transform", "translate(" + f(Math.sin(tt * 2 + j) * 6) + "," + f(-ph * 30) + ")");
+          w.setAttribute("opacity", (0.85 * Math.sin(Math.PI * ph)).toFixed(2));
+        });
+      }
+      // ════ end of the plate ════
 
-      // "ten": the calendar's pages rip off in a blur (the whirr), 1 to 10,000
-      var pages = Array.prototype.slice.call(document.querySelectorAll("#" + ID + "-cal .cal-page")).reverse();
-      var rp = KIT.rng(317);
-      gsap.set(pages, { svgOrigin: "0 -98" });
-      pages.forEach(function (p, i) {
-        var t = tTen + 0.04 + i * ((tYears - tTen - 0.12) / pages.length), side = i % 2 ? -1 : 1;
-        tl.fromTo(p, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: side * (50 + rp() * 50), y: -90 - rp() * 60, rotation: side * (50 + rp() * 70), opacity: 0, duration: 0.24, ease: "power2.in" }, t);
-      });
-      // the hair goes white; the beards grow down to the shoes
-      tl.to("." + ID + "-hair", { attr: { fill: "#ECE7DA" }, duration: tYears - tTen - 0.1, ease: "none" }, tTen);
-      var beards = [q("A-beard"), q("B-beard")];
-      gsap.set(beards, { svgOrigin: G.beardPivot });
-      tl.fromTo(beards, { opacity: 0 }, { opacity: 1, duration: 0.05 }, tTen + 0.1);
-      tl.fromTo(beards, { scaleY: 0.04, scaleX: 0.5 }, { scaleY: 1, scaleX: 1, duration: tYears - tTen - 0.15, ease: "power1.in" }, tTen + 0.1);
-      // the capitols lose their domes, then crumble into smoking craters
-      [0, 1].forEach(function (i) {
-        var dome = document.querySelector("#" + ID + "-capb-" + i + " .capitol-dome"), cap = q("capb-" + i), cr = q("crater-" + i);
-        var t0 = tThou + 0.15 + i * 0.2;
-        gsap.set(dome, { svgOrigin: "0 -258" });
-        tl.fromTo(dome, { x: 0, y: 0, rotation: 0, opacity: 1 }, { x: (i ? 1 : -1) * 120, y: -260, rotation: (i ? 1 : -1) * 160, opacity: 0, duration: 0.45, ease: "power1.out" }, t0);
-        gsap.set(cap, { svgOrigin: "0 0" });
-        tl.fromTo(cap, { scaleY: 1, scaleX: 1, opacity: 1 }, { scaleY: 0.08, scaleX: 1.12, duration: 0.22, ease: "power2.in" }, t0 + 0.3);
-        tl.to(cap, { opacity: 0, duration: 0.04 }, t0 + 0.5);
-        tl.fromTo(cr, { opacity: 0 }, { opacity: 1, duration: 0.05 }, t0 + 0.46);
-      });
-      var wisps = document.querySelectorAll("#" + ID + "-art ." + ID + "-wisp");
-      gsap.set(wisps, { svgOrigin: "0 0" });
-      Array.prototype.forEach.call(wisps, function (wp, i) {
-        var t0 = tThou + 0.7 + (i % 3) * 0.08;
-        tl.fromTo(wp, { scaleY: 0.7, rotation: -8, opacity: 0.7 }, { scaleY: 1.15, rotation: 8, opacity: 1, duration: 0.3, repeat: Math.floor((D - t0) / 0.3) - 1, yoyo: true, ease: "sine.inOut" }, t0);
-      });
+      q("plate").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-cam">' + plateSvg() + "</g>");
+      var cam = q("cam"), pol = [q("pol0"), q("pol1")], cal = q("cal");
+      var calNums = cal.querySelectorAll('text[font-weight="900"]');
+      // the calendar prints every page twice (the page over its under-print), so their numbers overlap on purpose
+      Array.prototype.forEach.call(cal.querySelectorAll("text"), function (tx) { tx.setAttribute("data-layout-allow-overlap", ""); });
+      var pages = []; for (var pi = 0; pi < 14; pi++) pages.push(q("pg" + pi));
 
-      // "last.": bats still up, both skeletons point a bony finger at each other (the free arm swings up level), lean
-      // in, and a bubble pops over each (the pop)
-      // The free arm is too short to reach past the ribs, so a bony finger shoots out of the hand, cartoon-long, and the
-      // two fingers nearly meet over the strait.
-      var pointer = { A: $("#" + ID + "-A-bones .arm-l"), B: $("#" + ID + "-B-bones .arm-r") }, finger = {};
-      [["A", G.RA, 0, [-14, 16]], ["B", G.RB, 1, [14, -16]]].forEach(function (f) {
-        var R = f[1], sh = R.shoulder[f[2]], a1 = f[3][0] / (180 / Math.PI), el = [sh[0] + R.armLength * Math.sin(a1), sh[1] + R.armLength * Math.cos(a1)], hd = R.handLocal[f[2]];
-        var dx = hd[0] - el[0], dy = hd[1] - el[1], d = Math.sqrt(dx * dx + dy * dy), u = [dx / d, dy / d], n = [-u[1], u[0]], len = 66;
-        var tip = [hd[0] + u[0] * len, hd[1] + u[1] * len], knuck = [hd[0] + u[0] * 6, hd[1] + u[1] * 6];
-        var pt = function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); };
-        var dd = "M" + pt(knuck) + " L" + pt([tip[0] - u[0] * 8, tip[1] - u[1] * 8]);
-        var nail = "M" + pt([tip[0] - u[0] * 9 + n[0] * 3.4, tip[1] - u[1] * 9 + n[1] * 3.4]) + " L" + pt(tip) + " L" + pt([tip[0] - u[0] * 9 - n[0] * 3.4, tip[1] - u[1] * 9 - n[1] * 3.4]) + " Z";
-        var joints = [0.33, 0.66].map(function (k) { var p = [knuck[0] + (tip[0] - knuck[0]) * k, knuck[1] + (tip[1] - knuck[1]) * k]; return '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="2.6" fill="#F1EAD6" stroke="' + C.line + '" stroke-width="1.6"/>'; }).join("");
-        pointer[f[0]].insertAdjacentHTML("beforeend", '<g class="' + ID + '-finger">' +
-          '<path d="' + dd + '" stroke="' + C.line + '" stroke-width="6.2" stroke-linecap="square"/><path d="' + dd + '" stroke="#F1EAD6" stroke-width="2.8" stroke-linecap="square"/>' +
-          '<path d="' + nail + '" fill="#F1EAD6" stroke="' + C.line + '" stroke-width="1.8" stroke-linejoin="miter"/>' + joints + "</g>");
-        finger[f[0]] = pointer[f[0]].querySelector("." + ID + "-finger");
-        gsap.set(finger[f[0]], { svgOrigin: pt(knuck).replace(",", " "), scale: 0 });
+      // ── Cues ──
+      var tHit = cue("hitting") + 0.03, tEach = cue("each") + 0.04, tTen = cue("ten"), tYears = cue("years"), tBecause = cue("because"), tLast = cue("last.");
+      var tDouble = KIT.after(ID, "last."), tWhite = tTen + 0.5, tCrumble = cue("thousand") + 0.3, tCal1 = tYears + 0.45;
+
+      // ── The camera: both islands for the establishing beat, a push in for the duel, and a push in at the freeze.
+      var VIEW = V
+        ? { islands: [CALX, -660, 1.15], pair: [CALX, -650, 1.34], duel: [CALX, -700, 1.85], close: [CALX, -715, 2.3] }
+        : { islands: [CALX, -585, 1.5], duel: [CALX, -585, 2.15], close: [CALX, -590, 2.6] };
+      // (9:16 is too narrow for the capitols in the duel framing, so it holds a looser pair, the tiny clouds in view, until the blur)
+      var KEYS = V
+        ? [[0, "islands", 1], [0.5, "islands", 1.03], [0.85, "pair", 1], [tTen - 0.35, "pair", 1.03], [tTen + 0.1, "duel", 1], [tBecause, "duel", 1.04], [tBecause + 0.3, "close", 1], [D, "close", 1.04]]
+        : [[0, "islands", 1], [0.5, "islands", 1.03], [0.85, "duel", 1], [tBecause, "duel", 1.04], [tBecause + 0.3, "close", 1], [D, "close", 1.04]];
+      var camera = KIT.camera(VIEW, KEYS);
+
+      // ── The tiny clouds: one behind each capitol on the first two bonks, then a crowd during the blur.
+      var NK_T = [tHit + 0.12, tEach + 0.12, tTen + 0.15, tTen + 0.3, tTen + 0.45, tTen + 0.6, tTen + 0.75, tTen + 0.9];
+      NK_T.forEach(function (tn, i) {
+        var e = q("nk" + i);
+        tl.set(e, { opacity: 1 }, tn);
+        KIT.boom(tl, e, tn);
+        tl.to(e, { opacity: 0, duration: 0.5, ease: "power1.in" }, tn + (i < 2 ? 1.0 : 0.7));
       });
-      gsap.set(pointer.A, { svgOrigin: G.A.back.join(" ") });
-      gsap.set(pointer.B, { svgOrigin: G.B.back.join(" ") });
-      tl.fromTo(pointer.A, { rotation: 0 }, { rotation: -88, duration: 0.16, ease: "back.out(2.2)", immediateRender: false }, tLast - 0.06);
-      tl.fromTo(pointer.B, { rotation: 0 }, { rotation: 88, duration: 0.16, ease: "back.out(2.2)", immediateRender: false }, tLast - 0.06);
-      tl.fromTo([finger.A, finger.B], { scale: 0 }, { scale: 1, duration: 0.2, ease: "back.out(2.6)", immediateRender: false }, tLast + 0.02);
-      // a jab of the finger on the "pop", twice, like an argument
-      tl.to(pointer.A, { rotation: -82, duration: 0.07, repeat: 3, yoyo: true, ease: "power1.inOut" }, tLast + 0.22);
-      tl.to(pointer.B, { rotation: 82, duration: 0.07, repeat: 3, yoyo: true, ease: "power1.inOut" }, tLast + 0.26);
-      tl.to([finger.A, finger.B], { scale: 0, duration: 0.1, ease: "power2.in" }, tAfter - 0.32);
-      tl.to([pointer.A, pointer.B], { rotation: 0, duration: 0.14, ease: "power2.in" }, tAfter - 0.3);
-      [0, 1].forEach(function (i) {
-        var b = q("bub-" + i), bx = L.bub[i];
-        tl.fromTo(b, { opacity: 0, scale: 0.2, svgOrigin: bx[0] + " " + bx[1] }, { opacity: 1, scale: 1, svgOrigin: bx[0] + " " + bx[1], duration: 0.2, ease: "back.out(2.4)" }, tLast + i * 0.04);
-        // the bubbles stay up through the double bonk (each has just hit the other last, again) and jolt with it
-        tl.fromTo(b, { y: 0 }, { y: -12, duration: 0.06, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, tAfter);
+      // ── "years": both x-ray into skeletons.
+      pol.forEach(function (g) { KIT.xray(tl, g.querySelector(".alive"), g.querySelector(".bones"), tYears); });
+
+      // A's and B's bonks before the blur, and the loop after the double bonk.
+      var HITS = [[tHit], [tEach]];
+      var LOOPH = [loopHits(0.8, 0, D), loopHits(1.3, 0, D)];
+      var BLUR = 0.18;
+      function blurS(i, t) { var ph = (t - tTen) / BLUR + (i ? 0.5 : 0); return 0.5 - 0.5 * Math.cos(2 * Math.PI * ph); }
+      var FREEZE = [0.94, 0.04];
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+
+        // the politicians
+        var sq = [0, 0];
+        pol.forEach(function (g, i) {
+          var pose = REST, pointU = 0, gh = [0, 0];
+          if (t < tTen) {
+            HITS[i].forEach(function (h) { pose = bonkPose(t, h, 0.32) || pose; });
+          } else if (t < tBecause) {
+            var s = blurS(i, t), ramp = KIT.smooth((t - tTen) / 0.15);
+            pose = mixP(REST, mixP(WIND, HIT, s), ramp);
+            gh = [mixP(WIND, HIT, blurS(i, t - BLUR * 0.22)), mixP(WIND, HIT, blurS(i, t - BLUR * 0.44))];
+            ghost(g, LP, gh[0], 0, 0.42 * ramp); ghost(g, LP, gh[1], 1, 0.24 * ramp);
+            if (s > 0.8) sq[1 - i] = Math.max(sq[1 - i], (s - 0.8) / 0.2 * 0.9);
+          } else if (t < tLast) {
+            pose = mixP(WIND, HIT, FREEZE[i]);
+          } else if (t < tDouble - 0.32) {
+            var u = KIT.smooth((t - tLast) / 0.18);
+            pose = mixP(mixP(WIND, HIT, FREEZE[i]), REST, u);
+            pointU = u * (1 - KIT.smooth((t - (tDouble - 0.45)) / 0.12));
+          } else {
+            pose = bonkPose(t, tDouble, 0.32) || REST;
+            LOOPH[i].forEach(function (h) { pose = bonkPose(t, h, 0.32) || pose; });
+          }
+          if (t < tTen || t >= tBecause) { g.querySelectorAll(".ghost").forEach(function (e) { e.setAttribute("opacity", 0); }); }
+          setSwing(g, LP, pose);
+          setPoint(g, LP, pointU);
+          // the hair goes white and the beard grows during the blur
+          var old = t >= tWhite;
+          g.querySelector(".v-young").setAttribute("opacity", old ? 0 : 1);
+          g.querySelector(".v-old").setAttribute("opacity", old ? 1 : 0);
+          var grow = KIT.smooth((t - tTen - 0.2) / 0.9);
+          Array.prototype.forEach.call(g.querySelectorAll(".beard"), function (b) {
+            var y0 = +b.getAttribute("data-y0");
+            b.setAttribute("transform", "translate(0," + f(y0) + ") scale(1," + Math.max(0.001, grow).toFixed(3) + ") translate(0," + f(-y0) + ")");
+          });
+        });
+        // the heads squash on each bonk (B's head when A lands one, and the other way round)
+        [0, 1].forEach(function (i) {
+          var k = sq[i];
+          HITS[1 - i].concat(LOOPH[1 - i], [tDouble]).forEach(function (h) { var s2 = squashAt(t, h); if (Math.abs(s2) > Math.abs(k)) k = s2; });
+          if (t >= tBecause && t < tLast) k = 0;
+          setSquash(pol[i], POLS[i].R, k);
+        });
+
+        // the calendar: its number races up during the blur and stops on 10,000
+        var cu = KIT.smooth((t - tTen) / (tCal1 - tTen)), n = t < tTen ? 1 : Math.max(1, Math.round(10000 * Math.pow(cu, 2.2)));
+        if (cu >= 1) n = 10000;
+        var str = n.toLocaleString("en-US");
+        Array.prototype.forEach.call(calNums, function (tx) {
+          tx.textContent = str;
+          if (KIT.textWidth(str, 32, "Fraunces") > 62) { tx.setAttribute("font-size", "30"); tx.setAttribute("textLength", "62"); tx.setAttribute("lengthAdjust", "spacingAndGlyphs"); }
+          else { tx.setAttribute("font-size", str.length > 2 ? "32" : "44"); tx.removeAttribute("textLength"); }
+        });
+        // its torn pages fly off in a blizzard
+        pages.forEach(function (pg, j) {
+          var born = tTen + 0.05 + j * ((tCal1 - tTen - 0.1) / 14), age = t - born, life = 0.75;
+          if (age < 0 || age > life) { pg.setAttribute("opacity", 0); return; }
+          var r = KIT.rng(j * 31 + 7), dx = (r() < 0.5 ? -1 : 1) * (120 + r() * 260), u = age / life;
+          var x = CALX + dx * u, y = CALY - 60 - (420 + r() * 200) * u + 260 * u * u, rot = (r() - 0.5) * 900 * u;
+          pg.setAttribute("opacity", (1 - u * u).toFixed(2));
+          pg.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") rotate(" + f(rot) + ") scale(" + (0.9 - 0.3 * u).toFixed(2) + ")");
+        });
+
+        // the capitols crumble into smoking craters
+        [0, 1].forEach(function (i) {
+          var cg = q("cap" + i), cr = q("crater" + i), cu2 = (t - tCrumble) / 0.22;
+          cg.setAttribute("opacity", cu2 < 1 ? 1 : 0);
+          var sy = cu2 <= 0 ? 1 : Math.max(0.2, 1 - 0.8 * cu2);
+          cg.setAttribute("transform", "translate(" + CAPX[i] + "," + (GI - 6) + ") scale(" + CAPK + "," + (CAPK * sy).toFixed(3) + ")");
+          cr.setAttribute("opacity", cu2 >= 1 ? 1 : 0);
+        });
+        drift(cam, t);
       });
-      // a beat after "last.": they bonk each other at the same moment (the boing), and get right back to it
-      tl.to(arms.A, { rotation: -16, duration: 0.16, ease: "power2.out" }, tAfter - 0.26);
-      tl.to(arms.B, { rotation: 16, duration: 0.16, ease: "power2.out" }, tAfter - 0.26);
-      tl.to(arms.A, { rotation: G.hit, duration: 0.08, ease: "power2.in" }, tAfter - 0.08);
-      tl.to(arms.B, { rotation: -G.hit, duration: 0.08, ease: "power2.in" }, tAfter - 0.08);
-      squash("A", tAfter); squash("B", tAfter);
-      tl.to(arms.A, { rotation: 0, duration: 0.2, ease: "back.out(1.6)" }, tAfter + 0.05);
-      tl.to(arms.B, { rotation: 0, duration: 0.2, ease: "back.out(1.6)" }, tAfter + 0.05);
-      tl.to(arms.A, { rotation: -16, duration: 0.14, ease: "power1.out" }, tAfter + 0.27);
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;
     })();

@@ -1,418 +1,326 @@
 <template id="papers-with-presidents-template">
-  <!-- papers-with-presidents · Layer B (storyboards/part-01-opening.md): a bored crowd stands still; one plain paper
-       walks in on stick legs and its president winks from a close-up; every head snaps to it on "money," but one,
-       and the crowd follows it off in a conga line, around the planet and back in from the left, where the paper
-       flattens the human left behind and the whole line walks over him; he peels himself off the floor and limps
-       after them. On "pretends hard enough." they squeeze their eyes shut, the paper glows, and the front human
-       pretends so hard her head pops off and lands back upside down. -->
+  <!-- papers-with-presidents · Layer B, plate town-square (storyboards/part-01-opening.md): paving stones, a plain
+       facade with dark windows, a lamppost and a bench. "However,": the camera travels slowly along a crowd of bored
+       humans standing about; one yawns and stretches, one studies a thread on his sleeve. "fascinating": a fly lands
+       on somebody's nose; nobody moves. "paper": one plain paper walks in from the right on its stick legs.
+       "presidents": the camera pushes in on its oval portrait, who winks on "them.". "money,": back out, and every
+       head snaps toward it but one: a bored human at the far left keeps staring at the ground. After "money," the
+       crowd follows the paper off right in a conga line and he looks up, too late. "value": the line comes back
+       round from the left behind him and the paper walks straight over him, flattening him like a pancake (only his
+       eyes blink), and the whole line walks over him. "everyone": he peels up, springs back a little shorter, stars
+       circling, and limps to the back of the line. "pretends": the line squeezes its eyes shut and trembles, and the
+       paper glows. "hard": the woman at the front pretends so hard her head pops off and spins up. "enough.": the
+       paper sparkles; after it, the head lands back on upside down, eyes still shut. -->
   <style>
-    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
-    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
-    #papers-with-presidents-cam, #papers-with-presidents-bg, #papers-with-presidents-art, #papers-with-presidents-pip, #papers-with-presidents-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C9B58A; }
+    #papers-with-presidents-weave, #papers-with-presidents-plate, #papers-with-presidents-film { position: absolute; inset: 0; }
   </style>
   <div id="root" data-composition-id="papers-with-presidents" data-width="1920" data-height="1080" data-start="0" data-duration="17.78">
-    <div id="papers-with-presidents-cam">
-      <div id="papers-with-presidents-bg"></div>
-      <div id="papers-with-presidents-art"></div>
-      <div id="papers-with-presidents-pip"></div>
-      <div id="papers-with-presidents-grain"></div>
+    <div id="papers-with-presidents-weave">
+      <div id="papers-with-presidents-plate"></div>
     </div>
+    <div id="papers-with-presidents-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
   <script>
     (function () {
+      window.__timelines = window.__timelines || {};
       var ID = "papers-with-presidents";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
+      var sc = KIT.scene(ID), D = sc.duration;
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-      var INK = C.line, CARD = "#FBF5E4", BILL = C.money;
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth;
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var tl = gsap.timeline({ paused: true });
 
-      // Layout for each canvas shape. crowd: each conga human's feet; s: their scale; bs: the paper's scale; feet:
-      // the conga line's ground; stop/end: where the paper stands after walking in, and at the end; m: how far off
-      // screen the line wraps around; callout: [x, y, r] of the portrait close-up; banner: [x, y, w, h].
-      // The slow human stands on the conga ground at the far left, where the returning paper hits him on the splat
-      // (his x is worked out from that); the line ends to his right with room for his limp. 9:16's longer
-      // wrap (m) brings its paper back at the same moment as 16:9's, so one splat sound fits both.
-      var L = V
-        ? { s: 1.15, bs: 1.7, feet: 1320, stop: 860, end: 905, m: 193,
-            crowd: [[170, 1090], [325, 1090], [480, 1090], [250, 1205], [405, 1205], [325, 1320]],
-            callout: [860, 990, 150], banner: [60, 600, 960, 220] }
-        : { s: 1.5, bs: 2.4, feet: 845, stop: 1250, end: 1420, m: 150,
-            crowd: [[260, 640], [425, 640], [590, 640], [340, 750], [505, 750], [670, 750], [260, 860], [425, 860]],
-            callout: [1250, 400, 165], banner: [470, 62, 1320, 180] };
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 83);
 
-      q("bg").innerHTML = KIT.paper(ID);
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      // ── The plate, in plate units: the crowd's feet on y 0; the paving runs back to y -400, where the facade stands
+      // (its windows from y -690 to -530) under a strip of sky. People are KIT.person at scale K (feet at person y 100).
+      var K = 1.85, PAVE = "#C9B58A", JOINT = "#B79F72", FACADE = "#E6D7B4", SKY = "#D6C49A", EDGE = "#B09363";
+      var XB = 170, X0 = 380, GAP = 130, P0 = 1550, XL = -220, XR = 2140, LOOP = XR - XL, BILLK = 2;
+      var A = V ? [540, 740] : [960, 540];
+      var VIEW = V
+        ? { pan0: [330, -300, 1.9], pan1: [1400, -300, 1.9], face: [P0, -96, 7.0], wide: [430, -350, 1.6], front: [1460, -350, 1.6] }
+        : { pan0: [560, -205, 1.25], pan1: [1300, -205, 1.25], face: [P0, -96, 9.0], wide: [960, -230, 1.0], front: [1100, -230, 1.15] };
 
-      // The president on every paper (style bible section 3): a generic, unnamed old man in a powdered wig, in an
-      // oval, drawn around (0,0), 52 x 60. Parts: .pwp-eye-r (open) and .pwp-wink (closed), for the wink.
-      function president(clip) {
-        var face = "#FBF6E6", sw = 1.6;
-        var curl = function (x, y) {
-          return '<circle cx="' + x + '" cy="' + y + '" r="3.9" fill="' + face + '" stroke="' + INK + '" stroke-width="' + sw + '"/>' +
-            '<path d="M' + (x - 1.6) + "," + y + ' a1.6,1.6 0 1 1 3.2,0" fill="none" stroke="' + INK + '" stroke-width="1"/>';
-        };
-        return '<defs><clipPath id="' + clip + '"><ellipse rx="25" ry="29"/></clipPath></defs>' +
-          '<ellipse rx="26" ry="30" fill="' + face + '" stroke="' + INK + '" stroke-width="2.4"/>' +
-          '<g clip-path="url(#' + clip + ')"><ellipse rx="26" ry="30" fill="url(#' + ID + '-fine)" opacity="0.22"/>' +
-          '<path d="M-5,3 V13 H5 V3 Z" fill="' + face + '"/>' +
-          '<path d="M-32,34 L-29,22 Q-21,12 -8,11 L0,20 L8,11 Q21,12 29,22 L32,34 Z" fill="url(#' + ID + '-cross)" stroke="' + INK + '" stroke-width="' + sw + '" stroke-linejoin="round"/>' +
-          '<path d="M-6,10.5 L0,25 L6,10.5 Q3,13.5 0,12.5 Q-3,13.5 -6,10.5 Z" fill="' + face + '" stroke="' + INK + '" stroke-width="1.3" stroke-linejoin="round"/></g>' +
-          '<circle cx="0" cy="-3" r="10.5" fill="' + face + '" stroke="' + INK + '" stroke-width="' + sw + '"/>' +
-          '<path d="M-11.5,-5 C-13,-20 13,-20 11.5,-5 C8,-12.5 -8,-12.5 -11.5,-5 Z" fill="' + face + '" stroke="' + INK + '" stroke-width="' + sw + '" stroke-linejoin="round"/>' +
-          '<path d="M-6,-14 q2,-2 4,0 M2,-14.5 q2,-2 4,0" fill="none" stroke="' + INK + '" stroke-width="0.9"/>' +
-          curl(-12.5, -3.5) + curl(-13, 4) + curl(12.5, -3.5) + curl(13, 4) +
-          '<path d="M-6.2,-7.6 q2.2,-1.6 4.4,0 M1.8,-7.6 q2.2,-1.6 4.4,0" fill="none" stroke="' + INK + '" stroke-width="1.2" stroke-linecap="round"/>' +
-          '<circle cx="-4" cy="-4.6" r="1.6" fill="' + INK + '"/><circle class="pwp-eye-r" cx="4" cy="-4.6" r="1.6" fill="' + INK + '"/>' +
-          '<path class="pwp-wink" d="M1.6,-4.2 q2.4,-2.6 4.8,0" fill="none" stroke="' + INK + '" stroke-width="1.5" stroke-linecap="round" opacity="0"/>' +
-          '<path d="M0.4,-3.6 q2,3.6 -1,4.6" fill="none" stroke="' + INK + '" stroke-width="1.1" stroke-linecap="round"/>' +
-          '<path d="M-3.4,3 q3.4,2.6 6.8,0" fill="none" stroke="' + INK + '" stroke-width="1.3" stroke-linecap="round"/>';
-      }
-      // A plain paper (no war red, no medicine teal yet) on stick legs, around (0,0), 96 x 50, feet at y 46,
-      // with a glow behind it and sparkles for the end. Parts: .pwp-bill-leg-l/-r (hips (-18,24), (18,24)),
-      // .pwp-bill-face, .pwp-glow, .pwp-spark.
-      function bill() {
-        var leg = function (k, cls) {
-          return '<g class="' + cls + '"><path d="M' + 18 * k + ",24 L" + 20 * k + ',43" fill="none" stroke="' + INK + '" stroke-width="4.5" stroke-linecap="round"/>' +
-            '<ellipse cx="' + 21 * k + '" cy="45" rx="7" ry="3.6" fill="' + INK + '"/></g>';
-        };
-        var rays = "";
-        for (var i = 0; i < 12; i++) {
-          var a = (i * Math.PI) / 6;
-          rays += '<path d="M' + (56 * Math.cos(a)).toFixed(1) + "," + (56 * Math.sin(a)).toFixed(1) + " L" + (72 * Math.cos(a)).toFixed(1) + "," + (72 * Math.sin(a)).toFixed(1) + '"/>';
-        }
-        var sparks = [[-30, -58, 11, C.orange], [52, -52, 14, C.yellow], [76, -14, 10, C.orange], [14, -70, 9, C.yellow], [64, 32, 8, C.yellow]].map(function (s) {
-          return '<g transform="translate(' + s[0] + "," + s[1] + ')"><g class="pwp-spark">' + KIT.star(0, 0, s[2], s[3]) + "</g></g>";
-        }).join("");
-        return '<g class="pwp-glow" opacity="0"><circle r="66" fill="' + C.yellow + '" opacity="0.25"/><circle r="50" fill="' + C.yellow + '" opacity="0.4"/>' +
-          '<g stroke="' + C.yellow + '" stroke-width="5" stroke-linecap="round">' + rays + "</g></g>" +
-          '<ellipse cx="0" cy="47" rx="34" ry="5" fill="url(#' + ID + '-fine)" opacity="0.7"/>' +
-          leg(-1, "pwp-bill-leg-l") + leg(1, "pwp-bill-leg-r") +
-          '<rect class="pwp-bill-face" x="-48" y="-25" width="96" height="50" rx="4" fill="' + BILL + '" stroke="' + INK + '" stroke-width="4"/>' +
-          '<rect x="-41" y="-18" width="82" height="36" rx="2" fill="none" stroke="' + INK + '" stroke-width="1.6" opacity="0.6"/>' +
-          '<circle cx="-32" cy="0" r="6" fill="none" stroke="' + INK + '" stroke-width="1.8" opacity="0.7"/><circle cx="32" cy="0" r="6" fill="none" stroke="' + INK + '" stroke-width="1.8" opacity="0.7"/>' +
-          '<g transform="scale(0.5)">' + president(ID + "-clip-bill") + "</g>" + sparks;
-      }
-
-      // The crowd: varied clothes, hats and tones. Each human has four drawings, swapped on the words:
-      // bored (facing out), looking at the paper, in the conga line, and squeezing its eyes shut.
-      var LOOKS = [
-        { tone: 1, outfit: "shirt", color: 1, hair: 0 }, { tone: 2, outfit: "dress", color: 0, hair: 1 },
-        { tone: 3, outfit: "suit", hair: 2 }, { tone: 0, outfit: "shirt", color: 2, hat: "bowler" },
-        { tone: 2, outfit: "overalls", color: 3, hair: 0 }, { tone: 1, outfit: "dress", color: 3, hair: 1, hat: "curlers" },
-        { tone: 0, outfit: "labcoat", hair: 0 }, { tone: 3, outfit: "shirt", color: 0, hair: 1 },
-        { tone: 2, outfit: "suit", hair: 0, stache: true }, { tone: 1, outfit: "scrubs", hair: 2 },
+      // The crowd (sketch 13's CROWD, and a ninth human, the woman at the front of the line), left to right; rank k
+      // is each one's place behind the paper in the conga line (1 = first). The bored human stands apart at the far
+      // left (he is the flattened official of Part 12: keep his options).
+      var CROWD = [
+        { tone: 0, outfit: "suit", color: 0, seed: 1 },
+        { tone: 2, outfit: "dress", color: 1, hair: 1, seed: 2 },
+        { tone: 1, outfit: "shirt", color: 3, seed: 3 },
+        { tone: 3, outfit: "overalls", color: 2, seed: 4 },
+        { tone: 0, outfit: "dress", color: 2, hair: 1, seed: 5 },
+        { tone: 2, outfit: "suit", color: 3, seed: 6 },
+        { tone: 1, outfit: "shirt", color: 1, hair: 2, seed: 7 },
+        { tone: 3, outfit: "dress", color: 0, hair: 1, seed: 8 },
+        { tone: 1, outfit: "dress", color: 3, hair: 1, seed: 10 },
       ];
+      var N = CROWD.length, BORED = { tone: 2, outfit: "shirt", color: 0, seed: 9 };
+      var YAWN = 4, THREAD = 6, FLY = 2, FRONT = N - 1;
       var ARMS = [[35, 70], [75, 95]]; // the right hand reaches the shoulder of the human in front
-      function mix(a, b) {
-        var o = {}, k;
-        for (k in a) o[k] = a[k];
-        for (k in b) o[k] = b[k];
-        return o;
-      }
-      // Eyes squeezed shut: drop person()'s two .eye groups for > < (in the face's own units, where the eyes sit at
-      // x -2.5 and 10.8, y -4), so they go with the head if it pops off.
+
+      // Eyes squeezed shut: drop person()'s two .eye groups for > < (in the face's own units), so they go with the head.
       function squint(svg) {
         var n = 0;
         var out = svg.replace(/<g class="eye">[\s\S]*?<\/g>/g, function () { n++; return ""; });
         if (n !== 2) throw new Error("squint: expected 2 eyes, found " + n);
         var e = function (x, k) { return "M" + (x - 4.5 * k) + ",-7.5 l" + 4.5 * k + ",3.5 l" + -4.5 * k + ",3.5"; };
-        return out.replace("<!--face-end-->", '<path d="' + e(-2.5, 1) + " " + e(10.8, -1) + '" fill="none" stroke="' + INK + '" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><!--face-end-->');
+        return out.replace("<!--face-end-->", '<path d="' + e(-2.5, 1) + " " + e(10.8, -1) + '" fill="none" stroke="' + ink + '" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><!--face-end-->');
       }
-      // The slow human: bored, then looking right (too late), surprised (the drawing that gets flattened), limping
-      // after the line (sad, arms out) and squeezing his eyes shut at the back of it. #<id>-slow is placed every
-      // frame; inside it, -peel (the peel and the limp tilt), -sq (the squash) and -j (sag and tremble).
-      var SLOW = { tone: 2, outfit: "overalls", color: 1, hair: 2 };
-      var puffs = [-1, 1].map(function (k) {
-        return '<circle class="pwp-puff" cx="' + k * 52 + '" cy="90" r="15" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3"/>';
+      // A person's drawings, stacked (one shown at a time), standing with the feet on (0, 0) of the group, in an
+      // inner .sq group that squashes about the feet.
+      function stack(id, poses) {
+        var g = "";
+        Object.keys(poses).forEach(function (n, i) { g += '<g class="pose" data-pose="' + n + '"' + (i ? ' opacity="0"' : "") + ">" + poses[n] + "</g>"; });
+        return '<g id="' + ID + "-" + id + '"><g class="sq"><g transform="scale(' + K + ') translate(0,-100)">' + g + "</g></g></g>";
+      }
+      var crowdOpts = CROWD.map(function (o, i) {
+        return {
+          bored: copy(o, { mood: "flat" }),
+          yawn: copy(o, { mood: "eager", arms: [[-150, -172], [150, 172]] }),
+          thread: copy(o, { mood: "flat", arms: [[20, 10], [70, 150]] }),
+          look: copy(o, { mood: "eager", look: "right" }),
+          conga: copy(o, { mood: "eager", look: "right", arms: ARMS }),
+          strain: copy(o, { mood: "flat", brows: true, look: "right", arms: ARMS }),
+        };
+      });
+      var crowdSvg = CROWD.map(function (o, i) {
+        var O = crowdOpts[i], poses = { bored: KIT.person(O.bored), look: KIT.person(O.look), conga: KIT.person(O.conga), strain: squint(KIT.person(O.strain)) };
+        if (i === YAWN) poses.yawn = KIT.person(O.yawn);
+        if (i === THREAD) {
+          var R = KIT.rig(O.thread), h = R.hand[1];
+          poses.thread = KIT.person(O.thread) + '<path class="thread" d="M' + f(h[0] + 2) + "," + f(h[1] - 2) + " q8,-6 14,-2 q6,4 12,-3" + '" fill="none" stroke="' + C.war + '" stroke-width="1.6" stroke-linecap="round"/>';
+        }
+        return stack("p" + i, poses);
       }).join("");
-      // while he is flat, his eyes stay round on top of the pancake and blink
-      var flatEyes = '<g class="pwp-flat-eyes" opacity="0">' + [-9, 9].map(function (x) {
-        return '<circle cx="' + x + '" cy="0" r="6.5" fill="#FFF" stroke="' + INK + '" stroke-width="2.2"/><circle cx="' + (x - 2) + '" cy="0.5" r="2.6" fill="' + INK + '"/>';
+      // the bored human: bored (staring at the ground), looking up too late, surprised (the drawing that gets
+      // flattened), limping after the line, and squeezing his eyes shut at the back of it
+      var BO = {
+        bored: copy(BORED, { mood: "flat", look: "left" }),
+        late: copy(BORED, { mood: "flat", look: "right", arms: [[20, 10], [60, 120]] }),
+        flat: copy(BORED, { mood: "eager", look: "left", arms: [[-150, -165], [150, 165]] }),
+        limp: copy(BORED, { mood: "sad", look: "right", arms: ARMS }),
+        strain: copy(BORED, { mood: "flat", brows: true, look: "right", arms: ARMS }),
+      };
+      var boredSvg = stack("bored", { bored: KIT.person(BO.bored), late: KIT.person(BO.late), flat: KIT.person(BO.flat), limp: KIT.person(BO.limp), strain: squint(KIT.person(BO.strain)) });
+      var RB = KIT.rig(BO.bored), RL = KIT.rig(BO.limp);
+      // his eyes on top of the pancake, and the stars that circle his head once he is up
+      var flatEyes = '<g id="' + ID + '-flat-eyes" opacity="0">' + [-14, 14].map(function (x) {
+        return '<g transform="translate(' + x + ',0)"><g class="lid"><circle r="11" fill="#FFFFFF" stroke="' + ink + '" stroke-width="3"/><circle cx="-3" cy="1" r="4.2" fill="' + ink + '"/></g></g>';
       }).join("") + "</g>";
-      var dizzy = [0, 1, 2].map(function (i) { return '<g class="pwp-dizzy" opacity="0">' + KIT.star(0, 0, 9, i % 2 ? C.orange : C.yellow) + "</g>"; }).join("");
-      var slow = '<g id="' + ID + '-slow"><ellipse cx="0" cy="101" rx="30" ry="6" fill="url(#' + ID + '-fine)" opacity="0.7"/>' +
-        '<g id="' + ID + '-slow-peel"><g id="' + ID + '-slow-sq"><g id="' + ID + '-slow-j">' +
-        '<g class="pwp-bored">' + KIT.person(mix(SLOW, { mood: "flat" })) + "</g>" +
-        '<g class="pwp-late" opacity="0">' + KIT.person(mix(SLOW, { mood: "flat", look: "right" })) + "</g>" +
-        '<g class="pwp-flat" opacity="0">' + KIT.person(mix(SLOW, { mood: "eager", look: "left", arms: [[-150, -165], [150, 165]] })) + "</g>" +
-        '<g class="pwp-limp" opacity="0">' + KIT.person(mix(SLOW, { mood: "sad", look: "right", arms: ARMS })) + "</g>" +
-        '<g class="pwp-strain" opacity="0">' + squint(KIT.person(mix(SLOW, { mood: "flat", brows: true, look: "right", arms: ARMS }))) + "</g>" +
-        "</g></g>" + flatEyes + dizzy + "</g>" + puffs + "</g>";
-      var crowd = L.crowd.map(function (c, i) {
-        var o = LOOKS[i];
-        return '<g id="' + ID + "-h" + i + '"><ellipse cx="0" cy="101" rx="30" ry="6" fill="url(#' + ID + '-fine)" opacity="0.7"/><g id="' + ID + "-h" + i + '-j">' +
-          '<g class="pwp-bored">' + KIT.person(mix(o, { mood: "flat" })) + "</g>" +
-          '<g class="pwp-look" opacity="0">' + KIT.person(mix(o, { mood: "eager", look: "right" })) + "</g>" +
-          '<g class="pwp-conga" opacity="0">' + KIT.person(mix(o, { mood: "eager", look: "right", arms: ARMS })) + "</g>" +
-          '<g class="pwp-strain" opacity="0">' + squint(KIT.person(mix(o, { mood: "flat", brows: true, look: "right", arms: ARMS }))) + "</g>" +
-          '<g transform="translate(2,-40)"><g class="pwp-burst" opacity="0">' + KIT.star(0, 0, 26, C.yellow) + KIT.star(0, 0, 13, "#FFF") + "</g></g>" +
-          "</g></g>";
+      var stars = [0, 1, 2].map(function (i) { return '<g class="star" opacity="0">' + KIT.star(0, 0, 16, i % 2 ? C.orange : C.yellow) + "</g>"; }).join("");
+      var starsSvg = '<g id="' + ID + '-stars">' + stars + "</g>";
+
+      // ── The paper: KIT.money (plain) with a face on its portrait, which winks, and a glow and sparkles behind it.
+      var face = '<g class="portrait-face"><circle class="eye-l" cx="-1.9" cy="-2.6" r="0.75" fill="' + ink + '"/><g class="eye-r"><circle cx="1.9" cy="-2.6" r="0.75" fill="' + ink + '"/></g>' +
+        '<path class="wink" d="M0.8,-2.6 q1.1,-1 2.2,0" fill="none" stroke="' + ink + '" stroke-width="0.6" stroke-linecap="round" opacity="0"/>' +
+        '<path d="M-1.6,0.4 q1.6,1.3 3.2,0" fill="none" stroke="' + ink + '" stroke-width="0.6" stroke-linecap="round"/></g>';
+      var rays = "";
+      for (var r = 0; r < 12; r++) { var a = (r * Math.PI) / 6; rays += '<path d="M' + f(Math.cos(a) * 64) + "," + f(Math.sin(a) * 46) + " L" + f(Math.cos(a) * 92) + "," + f(Math.sin(a) * 68) + '"/>'; }
+      var glow = '<g id="' + ID + '-glow" opacity="0"><ellipse rx="86" ry="62" fill="' + C.yellow + '" opacity="0.45"/><ellipse rx="64" ry="44" fill="#FFF3C4" opacity="0.6"/>' +
+        '<g stroke="' + C.yellow + '" stroke-width="5" stroke-linecap="round">' + rays + "</g></g>";
+      var sparkles = [[-62, -40, 12], [58, -34, 15], [70, 22, 10], [-54, 30, 11], [0, -58, 13]].map(function (s, i) {
+        return '<g class="spark" opacity="0" transform="translate(' + s[0] + "," + s[1] + ')">' + KIT.star(0, 0, s[2], i % 2 ? C.cream : C.yellow) + "</g>";
       }).join("");
+      var billSvg = '<g id="' + ID + '-bill" opacity="0"><g transform="scale(' + BILLK + ')">' + glow + KIT.money("plain", 0.5).replace("</g>", "") + face + "</g>" + sparkles + "</g></g>";
+      function setLegs(el, l) { el.querySelector(".legs").setAttribute("d", "M-16,24 l" + (-6 + l * 10) + ",22 h-8 M16,24 l" + (6 - l * 10) + ",22 h8"); }
 
-      // The close-up: a ring on the paper's portrait, a cone, and a big circle with the president in it.
-      var CO = L.callout, px = L.stop, py = L.feet - 48 * L.bs, ring = 15 * L.bs + 8;
-      var callout = '<g id="' + ID + '-callout">' +
-        '<path d="M' + (px - ring) + "," + py + " L" + (CO[0] - CO[2]) + "," + CO[1] + " M" + (px + ring) + "," + py + " L" + (CO[0] + CO[2]) + "," + CO[1] + '" stroke="' + INK + '" stroke-width="3" stroke-dasharray="10 7"/>' +
-        '<circle cx="' + px + '" cy="' + py + '" r="' + ring + '" fill="none" stroke="' + INK + '" stroke-width="4"/>' +
-        '<circle cx="' + (CO[0] + 10) + '" cy="' + (CO[1] + 12) + '" r="' + CO[2] + '" fill="' + C.ink + '" opacity="0.85"/>' +
-        '<circle cx="' + CO[0] + '" cy="' + CO[1] + '" r="' + CO[2] + '" fill="' + CARD + '" stroke="' + INK + '" stroke-width="6"/>' +
-        '<circle cx="' + CO[0] + '" cy="' + CO[1] + '" r="' + (CO[2] - 12) + '" fill="none" stroke="' + C.orange + '" stroke-width="2.5"/>' +
-        '<g transform="translate(' + CO[0] + "," + CO[1] + ") scale(" + ((CO[2] * 0.82) / 30).toFixed(3) + ')">' + president(ID + "-clip-big") + "</g></g>";
+      // ── The fly: a black body and two wings that buzz, in plate units around (0, 0).
+      var flySvg = '<g id="' + ID + '-fly" opacity="0"><g class="wings"><ellipse cx="-4" cy="-7" rx="6" ry="3.6" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.4" opacity="0.85" transform="rotate(-30 -4 -7)"/>' +
+        '<ellipse cx="4" cy="-7" rx="6" ry="3.6" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.4" opacity="0.85" transform="rotate(30 4 -7)"/></g>' +
+        '<ellipse cx="0" cy="0" rx="6.5" ry="4.6" fill="#1B1714"/><circle cx="6" cy="-1" r="3" fill="#7A1F1F"/></g>';
 
-      // The banner: "MONEY: pretend value that becomes real value if everyone pretends hard enough".
-      var B = L.banner, nt = 36;
-      var ribbon = function (dx, dy, fill, extra) {
-        return '<path d="M' + (B[0] + dx) + "," + (B[1] + dy) + " H" + (B[0] + B[2] + dx) + " l" + -nt + "," + B[3] / 2 + " l" + nt + "," + B[3] / 2 + " H" + (B[0] + dx) + " l" + nt + "," + -B[3] / 2 + ' Z" fill="' + fill + '" ' + (extra || "") + "/>";
-      };
-      var def = function (id, x, y, size, anchor, text) {
-        return '<text id="' + ID + "-" + id + '" x="' + x + '" y="' + y + '" text-anchor="' + anchor + '" font-family="Inter" font-weight="600" font-size="' + size + '" fill="' + INK + '">' + text + "</text>";
-      };
-      var T1 = "pretend value that becomes real value", T2 = "if everyone pretends hard enough";
-      var words = V
-        ? '<text x="540" y="' + (B[1] + 82) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="64" letter-spacing="3" fill="' + INK + '">MONEY:</text>' +
-          def("def1", 540, B[1] + 140, 36, "middle", T1) + def("def2", 540, B[1] + 190, 36, "middle", T2)
-        : '<text x="' + (B[0] + nt + 40) + '" y="' + (B[1] + B[3] / 2 + 25) + '" font-family="Oswald" font-weight="600" font-size="72" letter-spacing="3" fill="' + INK + '">MONEY:</text>' +
-          def("def1", B[0] + 345, B[1] + B[3] / 2 - 8, 42, "start", T1) + def("def2", B[0] + 345, B[1] + B[3] / 2 + 46, 42, "start", T2);
-      var banner = '<g id="' + ID + '-banner">' + ribbon(10, 10, C.ink, 'opacity="0.85"') + ribbon(0, 0, CARD, 'stroke="' + INK + '" stroke-width="5" stroke-linejoin="round"') +
-        '<rect x="' + (B[0] + nt + 14) + '" y="' + (B[1] + 12) + '" width="' + (B[2] - 2 * nt - 28) + '" height="' + (B[3] - 24) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' + words + "</g>";
-
-      // The paper is drawn under the crowd, so the front human's hand rests on it and its glow stays behind them;
-      // the slow human under both, so the line walks over him.
-      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + slow + '<g id="' + ID + '-bill">' + bill() + "</g>" + crowd + callout + banner);
-
-
-      var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      KIT.enter(tl, q("cam"), "slide left");
-
-      var T = {
-        only: cue("only"), walk: cue("paper"), call: cue("presidents"), wink: cue("them."), money: cue("money,"),
-        conga: KIT.after(ID, "money,"), pretend: cue("pretend"), ifw: cue("if"), hard: cue("pretends"), enough: cue("enough."),
-        // the slow human looks up long after the line has gone, is flattened by the returning paper (splat), peels
-        // himself up (boing, just after "everyone"), limps to the back of the line and joins it
-        late: KIT.after(ID, "money,") + 0.55, splat: cue("value") + 0.16, peel: cue("everyone") - 0.15, pop: cue("everyone") + 0.1,
-        // the front human pretends so hard his head pops off on "hard" (pop); it lands upside down after "enough." (thunk)
-        head: cue("hard"), land: KIT.after(ID, "enough."),
-      };
-      T.limp0 = T.pop + 0.15; T.limp1 = T.limp0 + 0.66;
-      var WALK = 0.7;
-
-      // Where everyone stands, every frame. The paper walks in and stops; after "money," it leads the line off the
-      // right edge, and the line comes back in on the left (around the planet), stopping on "pretends".
-      var P = W + 2 * L.m, S = L.end - L.stop + P;
-      var gap0 = 48 * L.bs + 68 * L.s - 10, gap = 80 * L.s;
-      var A = 0.12, Bd = 0.2, VMAX = 1 / (1 - A / 2 - Bd / 2);
-      function wrap(x) { return (((x + L.m) % P) + P) % P - L.m; }
-      function clamp(x) { return Math.max(0, Math.min(1, x)); }
-      function smooth(x) { x = clamp(x); return x * x * (3 - 2 * x); }
-      // distance along the line (0..1): speed up, run, slow down
-      function trap(p) {
-        p = clamp(p);
-        if (p < A) return (VMAX * p * p) / (2 * A);
-        if (p <= 1 - Bd) return VMAX * (A / 2 + p - A);
-        return 1 - (VMAX * (1 - p) * (1 - p)) / (2 * Bd);
+      // ── The square: the facade with dark windows, the paving, a lamppost and a bench.
+      var setting = '<rect x="-3000" y="-3000" width="7000" height="2240" fill="' + SKY + '"/>' +
+        '<rect x="-3000" y="-760" width="7000" height="360" fill="' + FACADE + '"/><path d="M-3000,-760 H4000" stroke="' + ink + '" stroke-width="4"/>';
+      for (var wx = -1000; wx < 3200; wx += 240) setting += '<rect x="' + (wx + 80) + '" y="-690" width="110" height="160" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/><rect x="' + (wx + 70) + '" y="-530" width="130" height="14" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/>';
+      setting += '<rect x="-3000" y="-400" width="7000" height="3400" fill="' + PAVE + '"/><path d="M-3000,-400 H4000" stroke="' + EDGE + '" stroke-width="4"/>';
+      for (var py = -360, row = 0; py < 600; py += 70, row++) {
+        setting += '<path d="M-3000,' + py + ' H4000" stroke="' + JOINT + '" stroke-width="3"/>';
+        for (var px = row % 2 ? -1060 : -1000; px < 3200; px += 120) setting += '<path d="M' + px + "," + py + ' v70" stroke="' + JOINT + '" stroke-width="3"/>';
       }
-      function speed(p) { return p <= 0 || p >= 1 ? 0 : p < A ? p / A : p > 1 - Bd ? (1 - p) / Bd : 1; }
-      function bounce(dist, stride, amp) { return -Math.abs(Math.sin((dist / stride) * Math.PI)) * amp; }
-      // the rightmost humans take the front of the line
-      var slot = [];
-      L.crowd.map(function (c, i) { return i; })
-        .sort(function (a, b) { return L.crowd[b][0] - L.crowd[a][0] || L.crowd[b][1] - L.crowd[a][1]; })
-        .forEach(function (i, j) { slot[i] = j; });
-      var billG = q("bill");
-      var humans = L.crowd.map(function (c, i) { return q("h" + i); });
-      function billAt(t) {
-        var bx = L.stop, bob = 0, pc = (t - T.conga) / (T.hard - T.conga), dist = 0, v = 0;
-        if (t < T.walk) bx = W + 300;
-        else if (t < T.walk + WALK) {
-          var pw = (t - T.walk) / WALK, from = W + 50 * L.bs;
-          bx = from + (L.stop - from) * (1 - (1 - pw) * (1 - pw));
-          bob = bounce(from - bx, 46 * L.bs, 6) * (1 - pw);
-        } else if (t >= T.conga) {
-          dist = S * trap(pc);
-          v = speed(pc);
-          bx = wrap(L.stop + dist);
-          bob = bounce(dist, 46 * L.bs, 6) * v;
-        }
-        return { x: bx, bob: bob, dist: dist, v: v };
+      // the bench, back by the facade, and the lamppost
+      var bench = '<g transform="translate(1880,-300)"><rect x="-110" y="-70" width="220" height="16" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/><rect x="-110" y="-46" width="220" height="16" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<rect x="-120" y="-22" width="240" height="16" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/><path d="M-96,-6 V30 M96,-6 V30 M-96,-70 V-6 M96,-70 V-6" stroke="' + ink + '" stroke-width="7"/></g>';
+      var lamp = '<path d="M1720,0 V-580" stroke="' + ink + '" stroke-width="12"/><path d="M1690,0 h60" stroke="' + ink + '" stroke-width="14"/>' +
+        '<path d="M1685,-580 L1700,-630 H1740 L1755,-580 Z" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="4"/>';
+      q("plate").innerHTML = KIT.svg(W, H, '<rect width="' + W + '" height="' + H + '" fill="' + PAVE + '"/><g id="' + ID + '-cam">' + setting + bench + lamp +
+        boredSvg + flatEyes + starsSvg + crowdSvg + billSvg + flySvg + "</g>");
+
+      var cam = q("cam"), bill = q("bill"), glowEl = q("glow"), fly = q("fly"), boredEl = q("bored"), flatEl = q("flat-eyes");
+      var people = CROWD.map(function (o, i) { return q("p" + i); });
+      var poses = function (g) { return Array.prototype.slice.call(g.querySelectorAll(".pose")); };
+      var crowdPoses = people.map(poses), boredPoses = poses(boredEl);
+      var sparkEls = Array.prototype.slice.call(bill.querySelectorAll(".spark")), starEls = Array.prototype.slice.call(q("stars").querySelectorAll(".star"));
+      var lids = Array.prototype.slice.call(flatEl.querySelectorAll(".lid"));
+      var eyeR = bill.querySelector(".eye-r"), wink = bill.querySelector(".wink");
+      var rigs = crowdOpts.map(function (O) { var r = {}; Object.keys(O).forEach(function (n) { r[n] = KIT.rig(O[n]); }); return r; });
+      var rigsB = {}; Object.keys(BO).forEach(function (n) { rigsB[n] = KIT.rig(BO[n]); });
+      // the front woman's head pops off her straining drawing
+      var frontHead = crowdPoses[FRONT].filter(function (p) { return p.getAttribute("data-pose") === "strain"; })[0].querySelector(".head");
+      var RF = rigs[FRONT].strain;
+
+      // ── Cues ──
+      var tFasc = cue("fascinating"), tPaper = cue("paper"), tPres = cue("presidents"), tThem = cue("them."), tMoney = cue("money,");
+      var tConga = KIT.after(ID, "money,"), tLate = tConga + 0.6, tSplat = cue("value") + 0.16, tPeel = cue("everyone") + 0.1;
+      var tPret = cue("pretends"), tHard = cue("hard"), tEnough = cue("enough."), tLand = KIT.after(ID, "enough.");
+      var tYawn = 3.3, tThread = 5.2, tIn1 = tPaper + 0.75;
+      // the line's distance travelled: from the paper's spot round the loop to the bored human by the splat, then on
+      // until the last of the line is past him (easing in from standing, and out at the stop)
+      var DS = (XR - P0) + (XB - XL), DE = DS + (400 + N * GAP - XB), T2 = ((DE - DS) * (tSplat - tConga)) / DS;
+      var tStop = tSplat + T2;
+      function dist(t) {
+        if (t <= tConga) return 0;
+        if (t < tSplat) { var u = (t - tConga) / (tSplat - tConga); return DS * (u * u + u) / 2; }
+        if (t < tStop) { var w = (t - tSplat) / (tStop - tSplat); return DS + (DE - DS) * (3 * w - w * w * w) / 2; }
+        return DE;
       }
-      // The slow human stands where the returning paper's front edge meets his back on the splat, and joins one
-      // place behind the last human of the stopped line.
-      var SX = billAt(T.splat).x + 48 * L.bs + 24 * L.s, JX = L.end - gap0 - L.crowd.length * gap;
-      var slowG = q("slow"), slowPeel = q("slow-peel"), slowSq = q("slow-sq"), dizzy = slowG.querySelectorAll(".pwp-dizzy"), flatEyes = slowG.querySelector(".pwp-flat-eyes");
-      // where he is, how squashed, and how tilted, at time t; march: the x of everyone walking on the ground
-      function slowAt(t, march) {
-        var x = SX, y = 0, sx = 1, sy = 1, rot = 0, rx = 0;
-        if (t >= T.splat && t < T.pop) {
-          var e = Math.exp(-14 * (t - T.splat));
-          sy = 0.15 - 0.07 * e; sx = 1.4 + 0.15 * e;
-          // flattened again under every foot that walks over him
-          if (march.some(function (m) { return Math.abs(m - SX) < 40 * L.s; })) sy *= 0.6;
-          // he peels up from the floor like a sticker, his right end first
-          if (t >= T.peel) { rot = -32 * smooth((t - T.peel) / (T.pop - T.peel)); rx = -42 * sx; }
-        } else if (t >= T.pop) {
-          // he springs back up, but never quite to his full height
-          var d = Math.exp(-5 * (t - T.pop)) * Math.cos(17 * (t - T.pop));
-          sy = 0.9 - 0.75 * d; sx = 1.06 + 0.34 * d;
-          if (t < T.pop + 0.12) { rot = -32 * (1 - (t - T.pop) / 0.12); rx = -63; }
-          if (t >= T.limp0) {
-            // three hobbling steps: a deep dip and a lurch on the bad leg, a little hop on the good one
-            var pl = clamp((t - T.limp0) / (T.limp1 - T.limp0)), ph = Math.min(pl * 3, 2.999), n = Math.floor(ph), f = Math.sin((ph - n) * Math.PI);
-            x = SX + (JX - SX) * pl;
-            if (pl < 1) { y = f * (n % 2 ? -5 : 9); rot = f * (n % 2 ? -3 : 8); }
-          }
-        }
-        return { x: x, y: y, sx: sx, sy: sy, rot: rot, rx: rx };
+      var wrap = function (x) { return XL + ((((x - XL) % LOOP) + LOOP) % LOOP); };
+
+      // ── The camera
+      var KEYS = [[0, "pan0", 1], [tPaper - 0.3, "pan1", 1], [tPres - 0.12, "pan1", 1.02], [tPres + 0.3, "face", 1], [tMoney - 0.85, "face", 1.06],
+        [tMoney - 0.05, "wide", 1], [tPret, "wide", 1.02], [tHard - 0.05, "front", 1], [D, "front", 1.04]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      function pick(list, name) { list.forEach(function (p) { show(p, p.getAttribute("data-pose") === name); }); }
+      function legs(g, name, R, ph) {
+        var pg = g.filter(function (p) { return p.getAttribute("data-pose") === name; })[0];
+        Array.prototype.forEach.call(pg.querySelectorAll(".leg-l, .leg-r"), function (lg, j) {
+          lg.setAttribute("transform", "rotate(" + f(ph * (j ? -1 : 1)) + " " + f(R.hip[j][0]) + " " + f(R.hip[j][1]) + ")");
+        });
       }
+
       KIT.onTime(tl, D, function (t) {
-        var bill = billAt(t), dist = bill.dist, v = bill.v, march = [bill.x];
-        billG.setAttribute("transform", "translate(" + bill.x.toFixed(1) + "," + (py + bill.bob * L.bs).toFixed(1) + ") scale(" + L.bs + ")");
-        humans.forEach(function (g, i) {
-          var c = L.crowd[i], j = slot[i];
-          var k = t < T.conga ? 0 : smooth((t - T.conga - j * 0.04) / 0.6);
-          var tx = wrap(L.stop + dist - gap0 - j * gap);
-          var x = c[0] + (tx - c[0]) * k, y = c[1] + (L.feet - c[1]) * k;
-          var b = bounce(dist + j * 37, 70 * L.s, 6) * v * k;
-          if (k === 1) march.push(x);
-          g.setAttribute("transform", "translate(" + x.toFixed(1) + "," + (y - 100 * L.s + b * L.s).toFixed(1) + ") scale(" + L.s + ")");
+        camera.place(cam, camera.at(t));
+        var d = dist(t), walking = t > tConga && t < tStop, ph = walking ? Math.sin((t - tConga) * 13) * 22 : 0;
+
+        // the paper: walks in on "paper", waits (bobbing), then leads the line round the loop
+        var bx, by = -48 * BILLK, legL = 0.5;
+        if (t < tPaper) bx = null;
+        else if (t < tIn1) { var u = (t - tPaper) / (tIn1 - tPaper); bx = 2120 + (P0 - 2120) * (1 - (1 - u) * (1 - u)); legL = Math.floor(t * 9) % 2; by -= Math.abs(Math.sin(t * 18)) * 8; }
+        else { bx = wrap(P0 + d); if (walking) { legL = Math.floor(t * 9) % 2; by -= Math.abs(Math.sin(t * 18)) * 8; } }
+        if (bx !== null && walking && Math.abs(bx - XB) < 70 && t > tSplat - 0.15) by -= 24; // walking over him
+        show(bill, bx !== null);
+        if (bx !== null) { bill.setAttribute("transform", "translate(" + f(bx) + "," + f(by) + ")"); setLegs(bill, legL); }
+        // the wink on "them."
+        var wk = t >= tThem && t < tThem + 0.45;
+        show(eyeR, !wk); show(wink, wk);
+        // the glow (from "pretends", brighter on "hard") and the sparkles on "enough."
+        var gl = t < tPret ? 0 : t < tHard ? 0.5 * smooth((t - tPret) / 0.3) : 0.5 + 0.5 * smooth((t - tHard) / 0.2);
+        glowEl.setAttribute("opacity", gl.toFixed(2));
+        glowEl.setAttribute("transform", "scale(" + (0.9 + 0.1 * Math.sin(t * 20) * (gl > 0 ? 1 : 0) + 0.25 * gl).toFixed(3) + ")");
+        sparkEls.forEach(function (s, i) {
+          var a = t - tEnough - i * 0.06, on = a > 0 && a < 0.9;
+          s.setAttribute("opacity", on ? (a < 0.15 ? a / 0.15 : 1 - (a - 0.15) / 0.75).toFixed(2) : 0);
+          var base = s.getAttribute("transform").replace(/ scale\([^)]*\)/, "");
+          s.setAttribute("transform", base + " scale(" + (on ? 0.4 + 1.2 * Math.min(1, a / 0.2) : 0.4).toFixed(2) + ")");
         });
-        var o = slowAt(t, march);
-        slowG.setAttribute("transform", "translate(" + o.x.toFixed(1) + "," + (L.feet - 100 * L.s + o.y).toFixed(1) + ") scale(" + L.s + ")");
-        slowPeel.setAttribute("transform", "rotate(" + o.rot.toFixed(2) + "," + o.rx.toFixed(1) + ",100)");
-        slowSq.setAttribute("transform", "translate(0,100) scale(" + o.sx.toFixed(3) + "," + o.sy.toFixed(3) + ") translate(0,-100)");
-        // the eyes ride on the flattened head (his flat drawing looks left, head at (-2, -56)), blinking twice
-        var flat = t >= T.splat && t < T.pop, since = t - T.splat;
-        var blink = (since > 0.55 && since < 0.65) || (since > 1.35 && since < 1.45) ? 0.1 : 1;
-        flatEyes.setAttribute("opacity", flat ? "1" : "0");
-        flatEyes.setAttribute("transform", "translate(" + (-2 * o.sx).toFixed(1) + "," + (100 - 156 * o.sy - 2).toFixed(1) + ") scale(1," + blink + ")");
-        // dizzy stars circle his head from the pop until a moment after he joins the line
-        var on = t >= T.pop + 0.1 && t < T.limp1 + 0.5, hy = 100 - 156 * o.sy - 36;
-        Array.prototype.forEach.call(dizzy, function (st, i) {
-          var a = (t - T.pop) * 9 + (i * 2 * Math.PI) / 3;
-          st.setAttribute("opacity", on ? "1" : "0");
-          st.setAttribute("transform", "translate(" + (30 * Math.cos(a)).toFixed(1) + "," + (hy + 9 * Math.sin(a)).toFixed(1) + ")");
+
+        // the crowd
+        people.forEach(function (g, i) {
+          var rank = N - i, x, y = 0, pose;
+          if (t < tMoney) pose = i === YAWN && t > tYawn && t < tYawn + 1.1 ? "yawn" : i === THREAD && t > tThread && t < tThread + 2.2 ? "thread" : "bored";
+          else if (t < tConga) pose = "look";
+          else if (t < tPret) pose = "conga";
+          else pose = "strain";
+          if (t < tConga) x = X0 + i * GAP;
+          else {
+            x = wrap(P0 + d - rank * GAP);
+            if (walking) y = -Math.abs(Math.sin((t - tConga) * 13 + i)) * 7;
+            if (walking && Math.abs(x - XB) < 50 && t > tSplat) y -= 22; // stepping over him
+          }
+          if (pose === "strain") { x += Math.sin(t * 60 + i * 1.7) * 2.2; y += Math.sin(t * 47 + i) * 1.2; }
+          g.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ")");
+          pick(crowdPoses[i], pose);
+          if (pose === "conga") legs(crowdPoses[i], "conga", rigs[i].conga, ph * (i % 2 ? 1 : -1));
+          // the thread-picker bows his head to his sleeve
+          if (pose === "thread") {
+            var th = crowdPoses[i].filter(function (p) { return p.getAttribute("data-pose") === "thread"; })[0].querySelector(".head"), R = rigs[i].thread;
+            th.setAttribute("transform", "rotate(" + f(16 * smooth((t - tThread) / 0.3)) + " " + f(R.neck[0]) + " " + f(R.neck[1]) + ")");
+          }
         });
-      });
 
-      // Pivots are set once: an svgOrigin inside a fromTo's end values shifts the element (GSAP smoothOrigin).
-      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
-      // Walking legs: swing out, swing back and forth n times, and come back to standing.
-      function swing(el, amp, t0, dur, n) {
-        var e = 0.08;
-        tl.to(el, { rotation: amp, duration: e, ease: "sine.out" }, t0);
-        tl.to(el, { rotation: -amp, duration: (dur - 2 * e) / n, repeat: n - 1, yoyo: true, ease: "sine.inOut" }, t0 + e);
-        tl.to(el, { rotation: 0, duration: e, ease: "sine.in" }, t0 + dur - e);
-      }
-      var steps = Math.round((T.hard - T.conga) / 0.2);
+        // the fly: buzzes in on "fascinating" and lands on a nose; it buzzes off when the heads snap round
+        var Rf = rigs[FLY].bored, nose = [X0 + FLY * GAP + K * (Rf.head[0] + Rf.hs * 22), -K * (100 - Rf.head[1] - Rf.hs * 2)];
+        var fa = (t - tFasc) / 0.75, fb = t - tMoney;
+        if (t < tFasc || fb > 0.8) show(fly, 0);
+        else {
+          var fx, fy;
+          if (fa < 1) { fx = nose[0] + 260 * (1 - fa) + Math.sin(fa * 18) * 30 * (1 - fa); fy = nose[1] - 220 * (1 - fa) + Math.cos(fa * 14) * 26 * (1 - fa); }
+          else if (fb < 0) { fx = nose[0]; fy = nose[1] - 6; }
+          else { fx = nose[0] - fb * 500; fy = nose[1] - 6 - fb * 420 + Math.sin(fb * 30) * 20; }
+          show(fly, 1);
+          var buzz = fa < 1 || fb > 0;
+          fly.setAttribute("transform", "translate(" + f(fx) + "," + f(fy) + ") scale(" + (buzz ? 3.0 : 2.8) + ")");
+          fly.querySelector(".wings").setAttribute("opacity", buzz ? (Math.floor(t * 30) % 2 ? 1 : 0.4) : 1);
+        }
 
-      // "paper": the paper walks in on squeaky stick legs.
-      var legL = billG.querySelector(".pwp-bill-leg-l"), legR = billG.querySelector(".pwp-bill-leg-r");
-      pivot(legL, "-18 24"); pivot(legR, "18 24");
-      swing(legL, 24, T.walk, WALK, 6); swing(legR, -24, T.walk, WALK, 6);
-      // "presidents": the close-up of its portrait, who winks on "them."
-      var co = q("callout");
-      pivot(co, px + " " + py);
-      tl.fromTo(co, { scale: 0.1, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.6)" }, T.call);
-      tl.to(co, { scale: 0.1, opacity: 0, duration: 0.2, ease: "power2.in" }, T.call + 1.3);
-      document.querySelectorAll("#" + ID + "-art .pwp-eye-r").forEach(function (e) { tl.set(e, { opacity: 0 }, T.wink); tl.set(e, { opacity: 1 }, T.wink + 0.4); });
-      document.querySelectorAll("#" + ID + "-art .pwp-wink").forEach(function (e) { tl.set(e, { opacity: 1 }, T.wink); tl.set(e, { opacity: 0 }, T.wink + 0.4); });
+        // the bored human
+        var bxp = XB, sx = 1, sy = 1, bp = "bored", tilt = 0;
+        if (t >= tLate) bp = "late";
+        if (t >= tSplat - 0.06) bp = "flat";
+        if (t >= tSplat && t < tPeel) {
+          // flat as a pancake; every foot that walks over him flattens him again
+          sy = 0.07; sx = 1.55;
+          var near = people.some(function (g, i) { var x = wrap(P0 + dist(t) - (N - i) * GAP); return Math.abs(x - XB) < 45 && t < tStop; });
+          if (near) { sy = 0.05; sx = 1.7; }
+        } else if (t >= tPeel) {
+          // he peels up, springs back a little shorter, then limps to the back of the line
+          var pa = t - tPeel;
+          bp = t < tPret ? "limp" : "strain";
+          sy = pa < 0.18 ? 0.07 + (1.0 - 0.07) * (pa / 0.18) : 0.86 + 0.14 * Math.exp(-(pa - 0.18) * 7) * Math.cos((pa - 0.18) * 22);
+          sx = pa < 0.18 ? 1.55 - 0.55 * (pa / 0.18) : 1 + (0.86 - sy) * 0.6;
+          var lu = smooth((pa - 0.2) / 0.5);
+          bxp = XB + (400 - GAP - XB) * lu;
+          if (pa > 0.2 && pa < 0.7) tilt = Math.sin((pa - 0.2) * 22) * 7;
+        }
+        if (t >= tSplat - 0.06 && t < tSplat) { sy = 1 - (1 - 0.07) * ((t - tSplat + 0.06) / 0.06); sx = 1 + 0.55 * ((t - tSplat + 0.06) / 0.06); }
+        boredEl.setAttribute("transform", "translate(" + f(bxp) + ",0) rotate(" + f(tilt) + ")");
+        boredEl.querySelector(".sq").setAttribute("transform", "scale(" + sx.toFixed(3) + "," + sy.toFixed(3) + ")");
+        pick(boredPoses, bp);
+        // he stares at the ground: his head bowed
+        var bh = boredPoses[0].querySelector(".head");
+        bh.setAttribute("transform", "rotate(-14 " + f(RB.neck[0]) + " " + f(RB.neck[1]) + ")");
+        if (bp === "strain") { boredEl.setAttribute("transform", "translate(" + f(bxp + Math.sin(t * 60) * 2.2) + ",0)"); }
+        // his eyes on the pancake, blinking
+        var flat = t >= tSplat && t < tPeel;
+        show(flatEl, flat);
+        if (flat) {
+          flatEl.setAttribute("transform", "translate(" + f(XB) + "," + f(-K * 100 * sy - 6) + ")");
+          var since = t - tSplat, bl = [0.5, 0.75, 1.6, 2.2].some(function (b) { return since > b && since < b + 0.1; });
+          lids.forEach(function (l) { l.setAttribute("transform", bl ? "scale(1,0.12)" : ""); });
+        }
+        // stars circle his head once he is up
+        var up = t >= tPeel + 0.18;
+        var headY = -K * (100 - RL.head[1]) * sy - 40;
+        starEls.forEach(function (s, i) {
+          show(s, up);
+          if (!up) return;
+          var a = (t - tPeel) * 7 + (i * 2 * Math.PI) / 3;
+          s.setAttribute("transform", "translate(" + f(bxp + Math.cos(a) * 70) + "," + f(headY + Math.sin(a) * 14) + ") scale(" + (1.9 + 0.5 * Math.sin(a)).toFixed(2) + ")");
+        });
 
-      var rnd = KIT.rng(11);
-      humans.forEach(function (g, i) {
-        var jg = q("h" + i + "-j"), j = slot[i];
-        var bored = g.querySelector(".pwp-bored"), look = g.querySelector(".pwp-look"), conga = g.querySelector(".pwp-conga"), strain = g.querySelector(".pwp-strain");
-        var head = bored.querySelector(".head"), cl = conga.querySelector(".leg-l"), cr = conga.querySelector(".leg-r");
-        var rg = KIT.rig(mix(LOOKS[i], { look: "right", arms: ARMS }));
-        pivot(jg, "0 100"); pivot(head, KIT.rig(LOOKS[i]).neck.join(" ")); pivot(cl, rg.hip[0].join(" ")); pivot(cr, rg.hip[1].join(" "));
-        // "only": everyone sags, heads drooping, and holds still
-        var droop = (rnd() < 0.5 ? -1 : 1) * (9 + rnd() * 6);
-        tl.fromTo(head, { rotation: 0 }, { rotation: droop, duration: 0.5, ease: "power2.inOut" }, T.only + i * 0.015);
-        tl.fromTo(jg, { scaleY: 1 }, { scaleY: 0.93, duration: 0.5, ease: "power2.inOut" }, T.only + i * 0.015);
-        // "money,": every head snaps to the paper (whoosh), with a lean toward it
-        tl.set(bored, { opacity: 0 }, T.money);
-        tl.set(look, { opacity: 1 }, T.money);
-        tl.to(jg, { scaleY: 1, rotation: 7, duration: 0.07, ease: "power2.out" }, T.money);
-        tl.to(jg, { rotation: 0, duration: 0.3, ease: "back.out(3)" }, T.money + 0.07);
-        // after "money,": hands on shoulders, and off they go
-        tl.set(look, { opacity: 0 }, T.conga);
-        tl.set(conga, { opacity: 1 }, T.conga);
-        swing(cl, 18, T.conga, T.hard - T.conga, steps); swing(cr, -18, T.conga, T.hard - T.conga, steps);
-        // "pretends": eyes squeezed shut, front of the line first, trembling with effort to the end
-        var ts = T.hard + j * 0.03;
-        tl.set(conga, { opacity: 0 }, ts);
-        tl.set(strain, { opacity: 1 }, ts);
-        tl.to(jg, { x: 1.6, duration: 0.05, repeat: Math.floor((D - ts) / 0.05) - 1, yoyo: true, ease: "none" }, ts);
-      });
-      // the paper leads the conga
-      swing(legL, 24, T.conga, T.hard - T.conga, steps); swing(legR, -24, T.conga, T.hard - T.conga, steps);
-
-      // The slow human. "only": he sags with everyone. "money,": every head snaps to the paper but his; he lifts
-      // his head and looks right long after the line has gone.
-      var sj = q("slow-j"), sv = function (c) { return slowG.querySelector(".pwp-" + c); };
-      var sBored = sv("bored"), sLate = sv("late"), sFlat = sv("flat"), sLimp = sv("limp"), sStrain = sv("strain"), sHead = sBored.querySelector(".head");
-      pivot(sj, "0 100"); pivot(sHead, KIT.rig(SLOW).neck.join(" "));
-      tl.fromTo(sHead, { rotation: 0 }, { rotation: 13, duration: 0.5, ease: "power2.inOut" }, T.only);
-      tl.fromTo(sj, { scaleY: 1 }, { scaleY: 0.93, duration: 0.5, ease: "power2.inOut" }, T.only);
-      tl.to(sHead, { rotation: 0, duration: 0.45, ease: "sine.inOut" }, T.late);
-      tl.to(sj, { scaleY: 1, duration: 0.45, ease: "sine.inOut" }, T.late);
-      tl.set(sBored, { opacity: 0 }, T.late + 0.45);
-      tl.set(sLate, { opacity: 1 }, T.late + 0.45);
-      // splat: the paper comes back around from the left, behind him, and the whole line walks over him
-      tl.set(sLate, { opacity: 0 }, T.splat);
-      tl.set(sFlat, { opacity: 1 }, T.splat);
-      slowG.querySelectorAll(".pwp-puff").forEach(function (c, i) {
-        pivot(c, c.getAttribute("cx") + " 90");
-        tl.fromTo(c, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 0.5, duration: 0.02 }, T.splat);
-        tl.to(c, { opacity: 0, scale: 1.6, x: (i ? 1 : -1) * 30, duration: 0.45, ease: "power2.out" }, T.splat + 0.02);
-      });
-      // he pops back up just after "everyone" (boing) and limps after the line, the good leg swinging, the bad one stiff
-      tl.set(sFlat, { opacity: 0 }, T.pop);
-      tl.set(sLimp, { opacity: 1 }, T.pop);
-      var sLeg = sLimp.querySelector(".leg-r");
-      pivot(sLeg, KIT.rig(mix(SLOW, { look: "right" })).hip[1].join(" "));
-      swing(sLeg, -22, T.limp0, T.limp1 - T.limp0, 3);
-      // at the back of the line: eyes shut, trembling with the rest
-      tl.set(sLimp, { opacity: 0 }, T.limp1 + 0.05);
-      tl.set(sStrain, { opacity: 1 }, T.limp1 + 0.05);
-      tl.to(sj, { x: 1.6, duration: 0.05, repeat: Math.floor((D - T.limp1 - 0.05) / 0.05) - 1, yoyo: true, ease: "none" }, T.limp1 + 0.05);
-
-      // "hard": the front human pretends so hard his head pops off (pop), spins up, and lands back upside down a
-      // beat after "enough." (thunk), still squeezing its eyes shut.
-      var front = humans[slot.indexOf(0)], fHead = front.querySelector(".pwp-strain .head"), burst = front.querySelector(".pwp-burst");
-      var mid = (T.head + T.land) / 2;
-      pivot(fHead, KIT.rig(mix(LOOKS[slot.indexOf(0)], { look: "right" })).head.join(" ")); pivot(burst, "0 0");
-      tl.fromTo(fHead, { y: 0, rotation: 0 }, { y: -185, rotation: 540, duration: mid - T.head, ease: "power2.out" }, T.head);
-      tl.to(fHead, { y: 0, rotation: 900, duration: T.land - mid, ease: "power2.in" }, mid);
-      tl.to(fHead, { y: -14, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out" }, T.land);
-      tl.fromTo(burst, { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1.3, duration: 0.08, ease: "power2.out" }, T.head);
-      tl.to(burst, { opacity: 0, scale: 1.7, duration: 0.18, ease: "power1.in" }, T.head + 0.08);
-
-      // The banner hangs on "money,"; its definition comes in on "pretend" and "if".
-      tl.fromTo(q("banner"), { opacity: 0, y: -50 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(1.7)" }, T.money + 0.12);
-      tl.fromTo(q("def1"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, T.pretend);
-      tl.fromTo(q("def2"), { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, T.ifw);
-
-      // "pretends hard enough.": the paper glows brighter the harder they pretend, jumps when the head pops off,
-      // and flares with sparkles on "enough."
-      var glow = billG.querySelector(".pwp-glow");
-      pivot(glow, "0 0");
-      tl.fromTo(glow, { opacity: 0, scale: 0.7 }, { opacity: 0.35, scale: 0.85, duration: T.head - T.hard, ease: "power1.in" }, T.hard);
-      tl.to(glow, { opacity: 0.8, scale: 1.08, duration: 0.08, ease: "power2.out" }, T.head);
-      tl.to(glow, { opacity: 1, scale: 1.22, duration: 0.12, ease: "power2.out" }, T.enough);
-      tl.to(glow, { scale: 1.1, duration: 0.5, ease: "power2.inOut" }, T.enough + 0.12);
-      tl.to(billG.querySelector(".pwp-bill-face"), { attr: { fill: "#FFF9E8" }, duration: 0.25 }, T.enough);
-      billG.querySelectorAll(".pwp-spark").forEach(function (s, i) {
-        pivot(s, "0 0");
-        tl.fromTo(s, { scale: 0, rotation: -40 }, { scale: 1, rotation: 0, duration: 0.25, ease: "back.out(3)" }, T.enough + i * 0.05);
-        tl.to(s, { scale: 0.7, duration: 0.2, repeat: 3, yoyo: true, ease: "sine.inOut" }, T.enough + 0.3 + i * 0.05);
+        // "hard": the front woman's head pops off and spins up; after "enough." it lands back on upside down
+        var hx = RF.head[0], hy = RF.head[1];
+        if (t < tHard) frontHead.setAttribute("transform", "");
+        else if (t < tLand) {
+          var hu = (t - tHard) / (tLand - tHard), lift = 4 * 95 * hu * (1 - hu) + 6, spin = 720 * hu + 180 * smooth(hu);
+          frontHead.setAttribute("transform", "translate(0," + f(-lift) + ") rotate(" + f(spin) + " " + f(hx) + " " + f(hy) + ")");
+        } else {
+          var la = t - tLand, bounce = la < 0.2 ? -6 * Math.sin((Math.PI * la) / 0.2) : 0;
+          frontHead.setAttribute("transform", "translate(0," + f(bounce - 3) + ") rotate(180 " + f(hx) + " " + f(hy) + ")");
+        }
       });
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;

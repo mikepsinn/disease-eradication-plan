@@ -1,223 +1,287 @@
 <template id="604-papers-template">
-  <!-- 604-papers · Layer B (storyboards/part-01-opening.md): the 604 bar. On "six" the red stack shoots past the top of
-       the frame and the camera rides it up until an airplane swerves around it ("four"); on "one" the camera drops back
-       to the one teal paper, which waves; then "604 : 1" and the labels land and the teal paper looks up. One red
-       paper slides off the top of the stack, drifts down and flattens it (splat); its little arm waves weakly. -->
-  <!-- The scene id starts with a digit, which is not a valid CSS #id selector: every element is reached by reference
-       (q()) and styled inline, never by "#604-papers-..." selectors. -->
+  <!-- 604-papers · style "atomic" (cartoon-style-bible.md): the 604 bar, ONE plate (a plain field under an open sky,
+       tall enough to tilt far up) with the camera moving over it. "In": one medicine paper (cross seal) stands alone on
+       the field, small and cheerful, hopping on the spot. "six hundred and four": war papers (missile seals) march in
+       from the left and hop up onto each other, faster and faster, and the camera tilts up with the growing stack, up
+       past the clouds. "weapons": a little propeller airplane has to swerve over the top of the stack, which wobbles.
+       "for every": the camera falls all the way back down; "one paper": it lands (a bump) on the medicine paper,
+       which waves up at us, and "604 : 1" stamps into the sky. "testing": the medicine paper leans back and looks up
+       at the stack. "medicines": a war paper comes drifting down from far above, rocking like a leaf; after "work."
+       it drops like an anvil and flattens the medicine paper. It stands on it; the medicine paper's little arm pokes
+       out from under and waves weakly. The part ends on that frame. -->
+  <!-- The scene id starts with a digit, which is not a valid CSS #id selector: every element is reached with
+       getElementById (q()), never by a "#604-papers-..." selector. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
-    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
   </style>
-  <div id="root" data-composition-id="604-papers" data-width="1920" data-height="1080" data-start="0" data-duration="9.856">
-    <div id="604-papers-cam" style="position: absolute; inset: 0;">
-      <div id="604-papers-bg" style="position: absolute; inset: 0;"></div>
-      <div id="604-papers-view" style="position: absolute; overflow: hidden;"><div id="604-papers-world" style="position: absolute;"></div></div>
-      <div id="604-papers-type" style="position: absolute; inset: 0;"></div>
-      <div id="604-papers-pip" style="position: absolute; inset: 0;"></div>
-      <div id="604-papers-grain" style="position: absolute; inset: 0;"></div>
+  <div id="root" data-composition-id="604-papers" data-width="1920" data-height="1080" data-start="0" data-duration="9.86">
+    <div id="604-papers-weave" style="position: absolute; inset: 0;">
+      <div id="604-papers-plate" style="position: absolute; inset: 0;"></div>
+      <div id="604-papers-num" style="position: absolute; inset: 0;"></div>
     </div>
+    <div id="604-papers-film" style="position: absolute; inset: 0;"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
   <script>
     (function () {
+      window.__timelines = window.__timelines || {};
       var ID = "604-papers";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
+      var sc = KIT.scene(ID), D = sc.duration;
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-
-      // Per canvas shape: ground y, the stack (center x, width, full height: a whole number of 24 px bills), the teal
-      // paper (x, scale), where the stack's top sits on screen when the camera is up, the ratio, the labels and the cloud lanes.
-      var L = V
-        ? { G: 1290, sx: 330, sw: 200, sh: 24 * 150, tx: 740, ts: 1.7, topAt: 760, big: [740, 880, 150],
-            weapons: [330, 1366, 52], testing: [["TESTING WHICH", 740, 1352], ["MEDICINES WORK", 740, 1400]], tsize: 40,
-            lanes: [[90, 170], [540, 960]] }
-        : { G: 790, sx: 800, sw: 200, sh: 24 * 142, tx: 1200, ts: 1.7, topAt: 420, big: [1310, 520, 170],
-            weapons: [800, 864, 52], testing: [["TESTING WHICH MEDICINES WORK", 1200, 860]], tsize: 36,
-            lanes: [[160, 560], [1040, 1520]] };
-      var TOP = L.sh + 500;                  // sky drawn above the ground
-      var top = L.G - L.sh;                  // world y of the stack's top once it has risen
-      var H0 = 72;                           // the stack before "six": three papers
-      var CAM = L.topAt - top;               // camera tilt (the world moves down by this much)
-
-      q("bg").innerHTML = KIT.paper(ID);
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-      // The camera window: the paper's inner frame. The world inside it is the frame plus TOP px of sky above.
-      q("view").style.cssText = "position:absolute;overflow:hidden;left:46px;top:46px;width:" + (W - 92) + "px;height:" + (H - 92) + "px;";
-      q("world").style.cssText = "position:absolute;left:-46px;top:" + (-46 - TOP) + "px;width:" + W + "px;height:" + (H + TOP) + "px;";
-
-      var rnd = KIT.rng(604);
-      function cloud(x, y, s) {
-        return '<g transform="translate(' + x.toFixed(0) + "," + y.toFixed(0) + ") scale(" + s.toFixed(2) + ')">' +
-          '<path d="M-70,20 C-98,20 -98,-14 -64,-10 C-60,-44 -12,-50 -2,-22 C12,-48 58,-42 54,-8 C84,-10 88,20 62,20 Z" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="4.5" stroke-linejoin="round"/>' +
-          '<path d="M-58,12 H48" stroke="' + C.line + '" stroke-width="2" opacity="0.35"/></g>';
-      }
-      function bird(x, y) {
-        return '<path d="M' + (x - 14) + "," + y + " q7,-9 14,0 q7,-9 14,0" + '" fill="none" stroke="' + C.line + '" stroke-width="3.5" stroke-linecap="round"/>';
-      }
-      // Clouds and birds stream past during the climb; two clouds and some stars wait at the top.
-      var sky = "";
-      [0.1, 0.17, 0.26, 0.34, 0.43, 0.51, 0.6, 0.68, 0.77, 0.85].forEach(function (a, i) {
-        var lane = L.lanes[i % 2];
-        sky += cloud(lane[0] + rnd() * (lane[1] - lane[0]), L.G - a * L.sh, 0.8 + rnd() * 0.5);
-      });
-      [0.3, 0.5, 0.66].forEach(function (a, i) {
-        var bx = L.lanes[(i + 1) % 2][0] + rnd() * (L.lanes[(i + 1) % 2][1] - L.lanes[(i + 1) % 2][0]);
-        sky += bird(bx, L.G - a * L.sh) + bird(bx + 40, L.G - a * L.sh + 18) + bird(bx + 18, L.G - a * L.sh - 22);
-      });
-      sky += cloud(L.lanes[0][0] + 40, top + (V ? 330 : 150), 1.1) + cloud(L.lanes[1][1] - 80, top + (V ? 250 : 120), 1.25);
-      sky += KIT.star(L.lanes[1][0] + 60, top - (V ? 330 : 280), 18, C.orange) + KIT.star(L.lanes[0][1] - 40, top - (V ? 200 : 300), 12, C.yellow) +
-        KIT.star(L.lanes[1][1] - 160, top - (V ? 120 : 330), 10, C.yellow);
-
-      // The stack: thin bills seen edge-on, each nudged a little so it reads as a pile of paper, not a bar.
-      var x0 = L.sx - L.sw / 2, bills = "";
-      for (var y = L.G - 12; y >= top - 0.5; y -= 12) {
-        var j = Math.round((rnd() - 0.5) * 9), wj = Math.round((rnd() - 0.5) * 6);
-        bills += '<rect x="' + (x0 + j) + '" y="' + y + '" width="' + (L.sw + wj) + '" height="12" rx="2" fill="' + C.money + '" stroke="' + C.line + '" stroke-width="2"/>' +
-          '<path d="M' + (x0 + j + 8) + "," + (y + 4) + " H" + (x0 + j + L.sw + wj - 8) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>';
-      }
-      bills += '<rect x="' + (x0 - 6) + '" y="' + top + '" width="' + (L.sw + 12) + '" height="' + L.sh + '" fill="url(#' + ID + '-hatch)" opacity="0.12"/>';
-      var bs = 2.08;
-      var topBill = '<g transform="translate(' + L.sx + "," + (top - 48 * bs) + ") scale(" + bs + ')"><g id="' + ID + '-topbill">' + KIT.money("war", 0.5) + "</g></g>";
-      var stack = '<defs><clipPath id="' + ID + '-above"><rect x="0" y="' + (-TOP) + '" width="' + W + '" height="' + (TOP + L.G) + '"/></clipPath></defs>' +
-        '<g clip-path="url(#' + ID + '-above)"><g id="' + ID + '-sway"><g id="' + ID + '-rise">' + bills + topBill + "</g></g></g>";
-
-      // The one teal paper, with eyes (the portrait's) and a stick arm for waving.
-      var eyes = '<circle cx="-5" cy="-3" r="4.4" fill="#FFF" stroke="' + C.line + '" stroke-width="1.5"/><circle cx="5" cy="-3" r="4.4" fill="#FFF" stroke="' + C.line + '" stroke-width="1.5"/>' +
-        '<g id="' + ID + '-pupils"><circle cx="-5" cy="-3" r="2.3" fill="' + C.line + '"/><circle cx="5" cy="-3" r="2.3" fill="' + C.line + '"/></g>';
-      var waveArm = '<g id="' + ID + '-wave"><path d="M46,-8 L62,-28 L66,-50" fill="none" stroke="' + C.line + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '<circle cx="66" cy="-50" r="5.5" fill="' + C.paper + '" stroke="' + C.line + '" stroke-width="3"/></g>';
-      var teal = '<g transform="translate(' + L.tx + "," + (L.G - 48 * L.ts) + ") scale(" + L.ts + ')"><g id="' + ID + '-teal">' +
-        KIT.money("med", 0.5) + eyes + waveArm + "</g></g>";
-
-      var ground = '<path d="M60,' + L.G + " H" + (W - 60) + '" stroke="' + C.line + '" stroke-width="5"/>' +
-        [0.08, 0.22, 0.4, 0.7, 0.86].map(function (f) {
-          var gx = 60 + f * (W - 120);
-          return '<path d="M' + gx + "," + L.G + " l-6,-14 M" + (gx + 6) + "," + L.G + " l2,-18 M" + (gx + 12) + "," + L.G + ' l8,-12" stroke="' + C.line + '" stroke-width="3" stroke-linecap="round"/>';
-        }).join("");
-
-      // The airplane, drawn around (0, 0) facing right.
-      var plane = '<g id="' + ID + '-plane"><g id="' + ID + '-plane-rot"><g transform="scale(1.35)">' +
-        '<path d="M-112,-12 h-46 M-104,8 h-34 M-96,26 h-22" stroke="' + C.line + '" stroke-width="4" stroke-linecap="round" opacity="0.55"/>' +
-        '<path d="M-66,-4 L-86,-46 L-60,-46 L-38,-10 Z" fill="' + C.orange + '" stroke="' + C.line + '" stroke-width="4" stroke-linejoin="round"/>' +
-        '<path d="M-80,-4 Q-44,-24 28,-22 Q72,-20 80,0 Q72,18 28,18 L-58,12 Q-82,8 -80,-4 Z" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="4.5" stroke-linejoin="round"/>' +
-        '<path d="M-66,4 H72" stroke="' + C.orange + '" stroke-width="6"/>' +
-        [-26, -6, 14].map(function (wx) { return '<circle cx="' + wx + '" cy="-8" r="5" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2.5"/>'; }).join("") +
-        '<path d="M40,-20 Q56,-34 66,-12" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="3"/>' +
-        '<ellipse cx="-8" cy="8" rx="36" ry="9" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="4"/>' +
-        '<circle cx="80" cy="0" r="6" fill="' + C.line + '"/><ellipse id="' + ID + '-prop" cx="86" cy="0" rx="4" ry="28" fill="' + C.line + '" opacity="0.75"/></g></g></g>';
-
-      // The button: one red paper slides off the top of the stack, drifts down and lands on the teal paper. Drawn
-      // in world units, which equal frame units once the camera is back down. RS: its scale; it stands on the
-      // flattened teal paper (PAN px tall) with its feet. The teal paper's arm then pokes out from under it.
-      var RS = 2, PAN = 28, landY = L.G - PAN - 48 * RS;
-      var redDrop = '<g id="' + ID + '-drop" opacity="0"><g transform="scale(' + RS + ')"><g id="' + ID + '-drop-sq">' + KIT.money("war", 0.5) + "</g></g></g>";
-      var weakArm = '<g transform="translate(' + (L.tx + 90) + "," + (L.G - 12) + ") scale(" + L.ts + ')"><g id="' + ID + '-weak" opacity="0">' +
-        '<path d="M0,0 L14,-18 L18,-40" fill="none" stroke="' + C.line + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
-        '<circle cx="18" cy="-40" r="5.5" fill="' + C.paper + '" stroke="' + C.line + '" stroke-width="3"/></g></g>';
-      var splatLines = '<g id="' + ID + '-splat" opacity="0">' + [[-1, -14], [-1, -40], [1, -14], [1, -40]].map(function (s) {
-        var x = L.tx + s[0] * 128, y = L.G + s[1];
-        return '<path d="M' + x + "," + y + " l" + s[0] * 34 + "," + (s[1] < -20 ? -18 : -2) + '" stroke="' + C.line + '" stroke-width="5" stroke-linecap="round"/>';
-      }).join("") + "</g>";
-
-      q("world").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + (H + TOP) + '" viewBox="0 ' + (-TOP) + " " + W + " " + (H + TOP) + '">' +
-        KIT.paperDefs(ID) + sky + ground + stack + teal + weakArm + redDrop + splatLines + plane + "</svg>";
-
-      // The ratio and the labels, fixed to the frame (they arrive when the camera is back down).
-      var b = L.big;
-      var big = function (dx, dy, extra) {
-        return '<text x="' + (b[0] + dx) + '" y="' + (b[1] + dy) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + b[2] + '" ' + extra + ">604 : 1</text>";
-      };
-      var label = function (x, y, size, text, fill) {
-        return '<text x="' + x + '" y="' + y + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" letter-spacing="' + (size * 0.04).toFixed(1) + '" fill="' + fill + '">' + text + "</text>";
-      };
-      q("type").innerHTML = KIT.svg(W, H,
-        '<g id="' + ID + '-big">' + big(b[2] * 0.05, b[2] * 0.07, 'fill="' + C.ink + '"') + big(0, 0, 'fill="' + C.ink + '" stroke="' + C.cream + '" stroke-width="' + (b[2] * 0.09).toFixed(1) + '" stroke-linejoin="round" style="paint-order:stroke"') + "</g>" +
-        '<g id="' + ID + '-lab-w">' + label(L.weapons[0], L.weapons[1], L.weapons[2], "WEAPONS", C.war) + "</g>" +
-        '<g id="' + ID + '-lab-t">' + L.testing.map(function (t) { return label(t[1], t[2], L.tsize, t[0], "#1D6E67"); }).join("") + "</g>");
-
-
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var smooth = KIT.smooth;
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      KIT.enter(tl, q("cam"), "slide left");
 
-      var six = cue("six"), four = cue("four"), one = cue("one");
-      var world = q("world");
-      // "six": the stack shoots up past the top of the frame (rising whistle), and the camera tilts up after it.
-      tl.fromTo(q("rise"), { y: L.sh - H0 }, { y: 0, duration: 0.86, ease: "power2.out" }, six);
-      tl.fromTo(world, { y: 0 }, { y: CAM, duration: 0.78, ease: "power2.inOut" }, six + 0.16);
-      // "four": an airplane cruising at the top paper's height has to hop over it (whoosh); the top paper ducks.
-      var py = top - 48 * bs, pl = q("plane"), pr = q("plane-rot");
-      tl.fromTo(pl, { x: -260, y: py }, { x: L.sx - 330, y: py, duration: 0.3, ease: "none" }, four - 0.22);
-      tl.to(pl, { x: L.sx - 110, y: py - 150, duration: 0.2, ease: "power1.out" }, four + 0.08);
-      tl.to(pl, { x: L.sx + 130, y: py - 160, duration: 0.2, ease: "none" }, four + 0.28);
-      tl.to(pl, { x: L.sx + 380, y: py - 40, duration: 0.24, ease: "power1.in" }, four + 0.48);
-      tl.to(pl, { x: W + 260, y: py - 70, duration: 0.8, ease: "none" }, four + 0.72);
-      tl.fromTo(pr, { rotation: 0, svgOrigin: "0 0" }, { rotation: -32, svgOrigin: "0 0", duration: 0.14, ease: "power2.out" }, four + 0.08);
-      tl.to(pr, { rotation: 0, svgOrigin: "0 0", duration: 0.2 }, four + 0.24);
-      tl.to(pr, { rotation: 24, svgOrigin: "0 0", duration: 0.16 }, four + 0.46);
-      tl.to(pr, { rotation: -6, svgOrigin: "0 0", duration: 0.24 }, four + 0.66);
-      tl.to(pr, { rotation: 0, svgOrigin: "0 0", duration: 0.3 }, four + 0.9);
-      tl.fromTo(q("prop"), { scaleY: 1, transformOrigin: "50% 50%" }, { scaleY: 0.15, transformOrigin: "50% 50%", duration: 0.05, repeat: 39, yoyo: true, ease: "none" }, four - 0.22);
-      tl.to(q("topbill"), { scaleY: 0.7, scaleX: 1.1, svgOrigin: "0 46", duration: 0.09, yoyo: true, repeat: 1, ease: "power2.out" }, four + 0.2);
-      // the near miss sets the stack creaking
-      var so = L.sx + " " + L.G;
-      [[-0.7, 0.35], [0.5, 0.45], [-0.3, 0.45], [0.12, 0.4], [0, 0.4]].reduce(function (t, k) {
-        tl.to(q("sway"), { rotation: k[0], svgOrigin: so, duration: k[1], ease: "sine.inOut" }, t);
-        return t + k[1];
-      }, four + 0.35);
-      // "one": the camera drops all the way back down (falling whistle) and lands with a bump.
-      tl.to(world, { y: 0, duration: 0.62, ease: "power2.in" }, one);
-      tl.to(world, { y: -26, duration: 0.07, ease: "power1.out" }, one + 0.62);
-      tl.to(world, { y: 0, duration: 0.3, ease: "power2.out" }, one + 0.69);
-      // the one teal paper raises its arm and waves
-      var wave = q("wave");
-      tl.fromTo(wave, { rotation: 150, svgOrigin: "46 -8" }, { rotation: -16, svgOrigin: "46 -8", duration: 0.16, ease: "back.out(2)" }, one + 0.78);
-      tl.to(wave, { rotation: 20, svgOrigin: "46 -8", duration: 0.18, repeat: 5, yoyo: true, ease: "sine.inOut" }, one + 0.94);
-      tl.to(wave, { rotation: 150, svgOrigin: "46 -8", duration: 0.22, ease: "power2.in" }, one + 2.1);
-      // after "work.": "604 : 1" and the labels land; a beat later the teal paper leans back and looks up
-      var lab = KIT.cueEnd(ID, "work."), look = KIT.after(ID, "work.");
-      tl.fromTo(q("big"), { opacity: 0, scale: 2.2, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.24, ease: "back.out(2)" }, lab);
-      tl.fromTo(q("lab-w"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.22, ease: "power2.out" }, lab + 0.1);
-      tl.fromTo(q("lab-t"), { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.22, ease: "power2.out" }, lab + 0.18);
-      var teal = q("teal");
-      gsap.set(teal, { svgOrigin: "0 46" });
-      tl.to(teal, { rotation: -15, duration: 0.3, ease: "back.out(2)" }, look);
-      tl.to(q("pupils"), { x: -1.6, y: -2, duration: 0.12 }, look);
-      // then one red paper slides off the top of the stack and drifts down, rocking like a leaf, until it drops
-      // like an anvil and flattens the teal paper (splat). Its little arm pokes out and waves, weakly (squeak).
-      var dr = q("drop"), sq = q("drop-sq"), sx = L.sx + L.sw / 2;
-      var path = V
-        ? [[sx + 40, -110, 14], [sx + 180, 200, -20], [sx + 90, 420, 16]]
-        : [[sx + 70, -110, 14], [sx + 240, 130, -20], [sx + 160, 300, 16]];
-      gsap.set(dr, { svgOrigin: "0 0" });
-      gsap.set(sq, { svgOrigin: "0 48" });
-      var t0 = look + 0.05, hit = look + 0.6;
-      tl.set(dr, { opacity: 1 }, t0);
-      tl.fromTo(dr, { x: path[0][0], y: path[0][1], rotation: path[0][2] }, { x: path[1][0], y: path[1][1], rotation: path[1][2], duration: 0.22, ease: "sine.inOut", immediateRender: false }, t0);
-      tl.to(dr, { x: path[2][0], y: path[2][1], rotation: path[2][2], duration: 0.2, ease: "sine.inOut" }, t0 + 0.22);
-      tl.to(dr, { x: L.tx, y: landY, rotation: 0, duration: hit - (t0 + 0.42), ease: "power3.in" }, t0 + 0.42);
-      tl.to(teal, { rotation: 0, scaleY: 0.2, scaleX: 1.3, duration: 0.05, ease: "power2.out" }, hit - 0.04);
-      tl.set(q("wave"), { opacity: 0 }, hit);
-      tl.fromTo(sq, { scaleY: 1, scaleX: 1 }, { scaleY: 0.74, scaleX: 1.16, duration: 0.06, ease: "power2.out", immediateRender: false }, hit);
-      tl.to(sq, { scaleY: 1, scaleX: 1, duration: 0.24, ease: "back.out(3)" }, hit + 0.06);
-      tl.set(q("splat"), { opacity: 1 }, hit);
-      tl.set(q("splat"), { opacity: 0 }, hit + 0.26);
-      var weak = q("weak");
-      gsap.set(weak, { svgOrigin: "0 0" });
-      tl.set(weak, { opacity: 1 }, hit + 0.1);
-      tl.fromTo(weak, { rotation: 70, scaleY: 0.3 }, { rotation: -10, scaleY: 1, duration: 0.14, ease: "power2.out", immediateRender: false }, hit + 0.1);
-      [[12, 0.12], [-4, 0.12], [6, 0.14]].reduce(function (t, k) {
-        tl.to(weak, { rotation: k[0], duration: k[1], ease: "sine.inOut" }, t);
-        return t + k[1];
-      }, hit + 0.24);
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 61);
+
+      // ── The plate, in plate units: the ground line on y 0, the sky above it. The stack stands on x SX; the one
+      // medicine paper on x MX. Every paper is KIT.money at scale BK (96 x 50, legs to y 48 in its own units).
+      var BK = 2.2, SX = -180, MX = 240, STEP = 30 * BK, N = 56;
+      var SKY = "#EFE3C4", GROUND = "#C8B07B", EDGE = "#B09363";
+      var slotY = function (i) { return -25 * BK - i * STEP; };
+      var TOPY = slotY(N - 1) - 25 * BK;                       // the top edge of the finished stack
+      var A = V ? [540, 740] : [960, 540];
+      // the camera's views: "open" on the medicine paper alone, with the empty field to its left where the stack will
+      // rise; "foot" the stack's foot, the medicine paper and the sky over it (ground near y 880 in 16:9, 1380 in 9:16)
+      var VIEW = V
+        ? { open: [-20, -470, 1.35], foot: [60, -490, 1.3] }
+        : { open: [40, -230, 1.5], foot: [80, -320, 1.0] };
+      // while the stack climbs, the camera follows its top: CL.x (plate x), CL.off (how far below the top it looks),
+      // CL.s (scale)
+      var CL = V ? { x: SX + 200, off: 140, s: 1.0 } : { x: SX + 380, off: 150, s: 0.8 };
+
+      // ── Cues
+      var tSix = cue("six"), tWeapons = cue("weapons"), tFor = cue("for"), tOne = cue("one"), tPaper = cue("paper");
+      var tTesting = cue("testing"), tMed = cue("medicines"), tHit = KIT.after(ID, "work.");
+      var T0 = tSix + 0.3, TB = 4.1 - T0;                      // the stack builds from T0 to 4.1 s, faster and faster
+      var landT = function (i) { return T0 + TB * Math.sqrt((i + 1) / N); };
+      var tLand = tOne - 0.02;                                // the camera's fall ends on "one"
+      var tWave = tLand + 0.12;
+
+      // ── Drawings ──
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      function cloud(x, y, s) {
+        return at(x, y, s, '<path d="M-120,30 Q-120,-20 -70,-20 Q-50,-70 0,-60 Q40,-90 80,-50 Q130,-50 130,0 Q150,30 110,40 H-100 Q-130,40 -120,30 Z" fill="#FBF6E6" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path d="M-80,24 Q-40,30 0,24" fill="none" stroke="' + ink + '" stroke-width="2.5" stroke-linecap="round" opacity="0.35"/>');
+      }
+      // A 1950s propeller airplane around (0, 0), facing right (it is mirrored to fly left); .prop is the propeller blur.
+      function plane() {
+        return '<g transform="scale(1.6)">' +
+          '<path d="M-66,-4 L-86,-46 L-60,-46 L-38,-10 Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path d="M-80,-4 Q-44,-24 28,-22 Q72,-20 80,0 Q72,18 28,18 L-58,12 Q-82,8 -80,-4 Z" fill="#FBF6E6" stroke="' + ink + '" stroke-width="4.5" stroke-linejoin="round"/>' +
+          '<path d="M-66,4 H72" stroke="' + C.orange + '" stroke-width="6"/>' +
+          [-26, -6, 14].map(function (wx) { return '<circle cx="' + wx + '" cy="-8" r="5" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.5"/>'; }).join("") +
+          '<path d="M40,-20 Q56,-34 66,-12" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<path d="M-30,6 L-6,40 L16,40 L4,6 Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<circle cx="80" cy="0" r="6" fill="' + ink + '"/><ellipse class="prop" cx="86" cy="0" rx="4" ry="28" fill="' + ink + '" opacity="0.7"/></g>';
+      }
+      // A paper whose legs we move: a group positioned by the update, holding the bill at scale BK.
+      function walker(id, kind, extra) { return '<g id="' + ID + "-" + id + '" opacity="0"><g class="body"><g transform="scale(' + BK + ')">' + KIT.money(kind, 0) + (extra || "") + "</g></g></g>"; }
+      function setLegs(el, l) { el.querySelector(".legs").setAttribute("d", "M-16,24 l" + (-6 + l * 10) + ",22 h-8 M16,24 l" + (6 - l * 10) + ",22 h8"); }
+      // The medicine paper's face, over the portrait (bill units): eyes that look about and a smile; and its little arm.
+      var face = '<ellipse cx="0" cy="0" rx="13" ry="15" fill="' + C.paper + '" stroke="' + C.moneyDark + '" stroke-width="2"/>' +
+        '<g class="eyes"><ellipse cx="-5" cy="-4" rx="4.4" ry="5" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.6"/><ellipse cx="5" cy="-4" rx="4.4" ry="5" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1.6"/>' +
+        '<g class="pupils"><circle cx="-5" cy="-4" r="2.3" fill="' + ink + '"/><circle cx="5" cy="-4" r="2.3" fill="' + ink + '"/></g></g>' +
+        '<path class="smile" d="M-6,6 Q0,12 6,6" fill="none" stroke="' + ink + '" stroke-width="2" stroke-linecap="round"/>' +
+        '<path class="oh" d="M-3,8 a3,3.6 0 1,0 6,0 a3,3.6 0 1,0 -6,0" fill="' + ink + '" opacity="0"/>';
+      var waveArm = '<g class="arm"><path d="M46,-6 L62,-26 L66,-48" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '<circle cx="66" cy="-50" r="5.5" fill="' + C.paper + '" stroke="' + ink + '" stroke-width="3"/></g>';
+
+      // ── Assemble the plate ──
+      var R = KIT.rng(604);
+      var JIT = []; for (var j = 0; j < N; j++) JIT.push((R() - 0.5) * 12 * BK);
+      // clouds up the column, either side of the stack, and two near its top
+      var sky = '<rect x="-6000" y="-9000" width="12000" height="9000" fill="' + SKY + '"/>' +
+        '<rect x="-6000" y="0" width="12000" height="3000" fill="' + GROUND + '"/><path d="M-6000,0 H6000" stroke="' + EDGE + '" stroke-width="4"/>';
+      [[-760, -760, 1], [520, -1150, 0.9], [-640, -1640, 1.1], [760, -2050, 1], [-820, -2500, 0.9], [420, -2900, 1.15], [-560, -3360, 1], [700, -3580, 0.85]].forEach(function (c) {
+        sky += cloud(c[0] + (V ? (c[0] < 0 ? 300 : -160) : 0), c[1], c[2] * (V ? 1.05 : 1.2));
+      });
+      var stack = '<g id="' + ID + '-stack">' + JIT.map(function (jx, i) { return walker("w" + i, "war"); }).join("") + "</g>";
+      var med = '<g transform="translate(' + MX + "," + f(-48 * BK) + ')"><g id="' + ID + '-med"><g transform="scale(' + BK + ')"><g id="' + ID + '-medb">' +
+        KIT.money("med", 0.5) + face + waveArm + "</g></g></g></g>";
+      // the weak little arm that pokes out from under the flattened paper (plate units, standing on its root)
+      var weak = '<g transform="translate(' + f(MX + 48 * BK * 1.15 - 10) + ',-10)"><g id="' + ID + '-weak" opacity="0"><g transform="scale(' + (BK * 1.3) + ')">' +
+        '<path d="M0,0 L12,-12 L14,-30" fill="none" stroke="' + ink + '" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
+        '<circle cx="14" cy="-32" r="5.5" fill="' + C.paper + '" stroke="' + ink + '" stroke-width="3"/></g></g></g>';
+      var splat = '<g id="' + ID + '-splat" opacity="0">' + [[-1, -10, -2], [-1, -50, -26], [1, -10, -2], [1, -50, -26]].map(function (s) {
+        var x = MX + s[0] * (48 * BK * 1.15 + 20);
+        return '<path d="M' + f(x) + "," + s[1] + " l" + s[0] * 60 + "," + s[2] + '" stroke="' + ink + '" stroke-width="7" stroke-linecap="round"/>';
+      }).join("") + "</g>";
+      var drop = walker("drop", "war");
+      var planeSvg = '<g id="' + ID + '-plane"><g transform="scale(-1,1)">' + plane() + "</g></g>";
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + SKY + '"/>' +
+        '<g id="' + ID + '-cam">' + sky + stack + med + weak + splat + drop + planeSvg + "</g>");
+
+      // ── The number, in the sky, on screen (it does not move with the camera): Fraunces Black, navy, a cream
+      // outline and an ink drop shadow, sized to fit beside the stack.
+      var NUM = "604 : 1", NB = V ? { x: 690, y: 500, w: 520, size: 160 } : { x: 1400, y: 390, w: 700, size: 200 };
+      var ns = KIT.fitText(NUM, NB.size, NB.w, "Fraunces", 900);
+      var bigText = function (dx, dy, extra) { return '<text data-layout-allow-overlap x="' + f(NB.x + dx) + '" y="' + f(NB.y + dy) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + f(ns) + '" ' + extra + ">" + NUM + "</text>"; };
+      q("num").innerHTML = KIT.svg(W, H, '<g id="' + ID + '-n" opacity="0" data-layout-allow-overlap>' + bigText(ns * 0.05, ns * 0.07, 'fill="' + ink + '"') +
+        bigText(0, 0, 'fill="' + C.navy + '" stroke="' + C.cream + '" stroke-width="' + f(ns * 0.09) + '" stroke-linejoin="round" style="paint-order:stroke"') + "</g>");
+
+      var cam = q("cam"), stackEl = q("stack"), medEl = q("med"), medB = q("medb"), weakEl = q("weak"), splatEl = q("splat"), dropEl = q("drop"), planeEl = q("plane");
+      var bills = JIT.map(function (jx, i) { return q("w" + i); });
+      var pupils = medB.querySelector(".pupils"), eyes = medB.querySelector(".eyes"), armEl = medB.querySelector(".arm");
+      var smile = medB.querySelector(".smile"), oh = medB.querySelector(".oh"), medLegs = medB.querySelector(".legs"), propEl = planeEl.querySelector(".prop");
+      var dropBody = dropEl.querySelector(".body");
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var legsOn = function (t, hz) { return Math.floor(t * hz) % 2; };
+
+      // ── The papers: each marches in from the left along the ground, then hops onto the top of the stack
+      var LAUNCH = SX - 200, START = SX - 1300, JUMP = 0.34;
+      var plan = bills.map(function (b, i) {
+        var tl0 = landT(i), v = 800 + 1500 * (i / N), j0 = tl0 - JUMP;
+        return { land: tl0, jump: j0, march: j0 - (LAUNCH - START) / v, v: v };
+      });
+      // how far up the stack has got (a smooth count, for the camera)
+      var stackTop = function (t) {
+        var u = Math.max(0, Math.min(1, (t - T0) / TB)), n = N * u * u;
+        return -n * STEP - 25 * BK;
+      };
+
+      // ── The airplane: it flies left at the height of the top paper and swerves up over the stack (KIT.after the
+      // near miss, the stack wobbles)
+      var PY = TOPY + 30, tPass = tWeapons + 0.16, PV = V ? 1500 : 1900;
+      var planeAt = function (t) {
+        var x = SX - (t - tPass) * PV, u = (x - SX) / (V ? 230 : 280), bump = Math.exp(-u * u);
+        var slope = -2 * u * bump / (V ? 230 : 280);       // d(bump)/dx
+        return { x: x, y: PY - 300 * bump, rot: Math.atan2(-300 * slope * PV, PV) * 180 / Math.PI };
+      };
+
+      // ── The camera: open on the medicine paper; follow the stack's top up; fall back down on "for"; land on "one"
+      // with a bump; then hold on the foot, drifting in a little.
+      var KEYS = [[0, "open", 1], [T0, "open", 1.03], [tLand, "foot", 1], [tHit - 0.1, "foot", 1.04], [D, "foot", 1.05]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+      var lerp = function (a, b, u) { return a + (b - a) * u; };
+      var climbAt = function (t) {
+        var o = VIEW.open, top = stackTop(t), h = -top;
+        var w = smooth((h - 300) / 1000), w2 = smooth((h - 250) / 700);
+        return { x: lerp(o[0], CL.x, w), y: lerp(o[1], Math.min(o[1], top + CL.off), w2), s: Math.exp(lerp(Math.log(o[2] * 1.03), Math.log(CL.s), w)) };
+      };
+      function camAt(t) {
+        if (t >= T0 && t < tFor) {
+          var c = climbAt(t);
+          // a slow settle once the stack is done, and a jolt as the plane goes by
+          c.y -= 20 * smooth((t - 4.1) / 0.6);
+          return c;
+        }
+        if (t >= tFor && t < tLand) {
+          var a = climbAt(tFor), b = VIEW.foot, u = (t - tFor) / (tLand - tFor), e = u * u * (0.4 + 0.6 * u);
+          a.y -= 20 * smooth((tFor - 4.1) / 0.6);
+          return { x: lerp(a.x, b[0], e), y: lerp(a.y, b[1], e), s: Math.exp(lerp(Math.log(a.s), Math.log(b[2]), smooth(u))) };
+        }
+        var k = camera.at(t);
+        if (t >= tLand) { var dt = t - tLand; k.y += 34 * Math.exp(-dt * 9) * Math.sin(dt * 30) / k.s; }
+        if (t >= tHit) { var dh = t - tHit; k.y += 16 * Math.exp(-dh * 14) * Math.sin(dh * 60) / k.s; }
+        return k;
+      }
+
+      // the falling paper: in from above the frame on "medicines", rocking like a leaf; it hangs a moment, then drops
+      var FOOT_TOP = VIEW.foot[1] - A[1] / VIEW.foot[2];         // the plate y at the top of the frame in the foot view
+      var L0 = tMed - 0.05, L1 = tHit - 0.16, L2 = tHit - 0.1, LY0 = FOOT_TOP - 130, LY1 = V ? -560 : -420;
+      var LANDY = -17 * BK - 48 * BK, LANDX = MX + 6;
+      function dropAt(t) {
+        if (t < L1) {
+          var u = (t - L0) / (L1 - L0), ph = u * 2.3 * Math.PI;
+          return { x: MX - 70 + 120 * Math.sin(ph), y: lerp(LY0, LY1, u) - 30 * Math.abs(Math.cos(ph)), rot: 26 * Math.cos(ph), sy: 1 };
+        }
+        var p = { x: MX - 70 + 120 * Math.sin(2.3 * Math.PI), y: LY1, rot: 26 * Math.cos(2.3 * Math.PI) };
+        if (t < L2) return { x: p.x, y: p.y - 6 * Math.sin((t - L1) / (L2 - L1) * Math.PI), rot: p.rot * 0.5, sy: 1 };
+        var v = Math.min(1, (t - L2) / (tHit - L2));
+        if (t < tHit) return { x: lerp(p.x, LANDX, v), y: lerp(p.y, LANDY, v * v), rot: lerp(p.rot * 0.5, 0, v), sy: 1.12 };
+        var dh = t - tHit, sq = dh < 0.06 ? 0.72 : 1 - 0.28 * Math.exp(-(dh - 0.06) * 12) * Math.cos((dh - 0.06) * 30);
+        return { x: LANDX, y: LANDY, rot: 0, sy: sq };
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camAt(t));
+
+        // the war papers: marching in, hopping up, then stacked (legs tucked away)
+        bills.forEach(function (b, i) {
+          var p = plan[i], x, y, rot = 0;
+          if (t < p.march) { show(b, 0); return; }
+          show(b, 1);
+          var legs = b.querySelector(".legs");
+          if (t < p.jump) {
+            x = START + p.v * (t - p.march); y = -48 * BK - Math.abs(Math.sin((t + i) * 13)) * 12;
+            setLegs(b, legsOn(t + i * 0.07, 10)); legs.setAttribute("opacity", 1);
+          } else if (t < p.land) {
+            var u = (t - p.jump) / JUMP, sy = slotY(i);
+            x = lerp(LAUNCH, SX + JIT[i], 1 - Math.pow(1 - u, 4)); y = lerp(-48 * BK, sy, 1 - (1 - u) * (1 - u)) - Math.sin(Math.PI * u) * 40; rot = -14 * Math.sin(Math.PI * u) * (1 - u);
+            setLegs(b, 0.5); legs.setAttribute("opacity", 1);
+          } else { x = SX + JIT[i]; y = slotY(i); legs.setAttribute("opacity", 0); }
+          b.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") rotate(" + f(rot) + ")");
+        });
+
+        // the near miss sets the stack wobbling, from its foot
+        var ws = t - tPass, sway = ws > 0 ? 1.1 * Math.exp(-ws * 2.2) * Math.sin(ws * 7) : 0;
+        stackEl.setAttribute("transform", sway ? "rotate(" + sway.toFixed(3) + " " + SX + " 0)" : "");
+
+        // the airplane
+        var pp = planeAt(t), pOn = t > tPass - 1.1 && t < tPass + 1.3;
+        show(planeEl, pOn);
+        if (pOn) {
+          planeEl.setAttribute("transform", "translate(" + f(pp.x) + "," + f(pp.y) + ") rotate(" + f(pp.rot) + ")");
+          propEl.setAttribute("ry", legsOn(t, 30) ? 28 : 8);
+        }
+
+        // the medicine paper: hops on the spot, cheerful; watches the papers march in; waves up at us when the
+        // camera lands; leans back to look up at the stack on "testing"; looks up at the falling paper; flattened
+        var flat = t >= tHit, lean = 0, bob = 0, px = 0, py = 0, armA = 150;
+        if (t < 1.7) { bob = -Math.abs(Math.sin(t * 6.5)) * 14; px = 0; py = 0.5; }
+        else if (t < tLand) { px = -2.2; py = 0; }
+        if (t >= tLand && t < tTesting) { px = 0; py = -1.6; }
+        if (t >= tWave && t < tTesting) {
+          var wu = t - tWave;
+          armA = wu < 0.15 ? lerp(150, -10, wu / 0.15) : 4 + 22 * Math.sin((wu - 0.15) * 12);
+          bob = -Math.abs(Math.sin(wu * 7)) * 8;
+        }
+        if (t >= tTesting && !flat) {
+          lean = 14 * smooth((t - tTesting) / 0.3); px = -2; py = -2.3; armA = lerp(armA, 150, smooth((t - tTesting) / 0.2));
+        }
+        if (t >= L0 && !flat) { var dp = dropAt(t); px = Math.max(-2.2, Math.min(2.2, (dp.x - MX) / 60)); py = -2.3; }
+        var scared = t >= L1 && !flat;
+        eyes.setAttribute("transform", scared ? "translate(0,-4) scale(1.25) translate(0,4)" : "");
+        show(smile, !scared); show(oh, scared);
+        pupils.setAttribute("transform", "translate(" + px.toFixed(2) + "," + py.toFixed(2) + ")");
+        armEl.setAttribute("transform", "rotate(" + f(armA) + " 46 -6)");
+        show(armEl, !flat && t >= tWave && t < tTesting + 0.2);
+        medLegs.setAttribute("opacity", flat ? 0 : 1);
+        medEl.setAttribute("transform", flat
+          ? "translate(0," + f(48 * BK) + ") scale(1.15,0.34) translate(0," + f(-25 * BK) + ")"
+          : "translate(0," + f(bob) + ") rotate(" + f(lean) + " 0 " + f(48 * BK) + ")");
+
+        // the falling paper
+        show(dropEl, t >= L0);
+        if (t >= L0) {
+          var d = dropAt(t);
+          dropEl.setAttribute("transform", "translate(" + f(d.x) + "," + f(d.y) + ") rotate(" + f(d.rot) + ")");
+          dropBody.setAttribute("transform", "translate(0," + f(48 * BK) + ") scale(" + (2 - d.sy).toFixed(3) + "," + d.sy.toFixed(3) + ") translate(0," + f(-48 * BK) + ")");
+          setLegs(dropEl, t < tHit ? 0.5 + 0.5 * Math.sin(t * 9) : 0.5);
+        }
+
+        // the splat, and the weak little arm under the paper
+        show(splatEl, t >= tHit && t < tHit + 0.22);
+        var wk = t - tHit - 0.24;
+        show(weakEl, wk > 0);
+        if (wk > 0) {
+          var rise = smooth(wk / 0.2), wav = wk > 0.2 ? 14 * Math.sin((wk - 0.2) * 5.5) : 0;
+          weakEl.setAttribute("transform", "rotate(" + f(70 * (1 - rise) + wav) + ") scale(1," + (0.3 + 0.7 * rise).toFixed(3) + ")");
+        }
+      });
+
+      // ── "paper": 604 : 1 stamps into the sky
+      var n = q("n"), org = f(NB.x) + " " + f(NB.y - ns * 0.35);
+      tl.fromTo(n, { opacity: 0, scale: 1.3, svgOrigin: org }, { opacity: 1, scale: 1, svgOrigin: org, duration: 0.14, ease: "power3.in" }, tPaper);
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;
     })();

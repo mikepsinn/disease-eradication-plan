@@ -1,0 +1,291 @@
+<template id="host-closes-template">
+  <!-- host-closes · style "atomic" (cartoon-style-bible.md): back on the host's set, with the plain tan dog from the
+       kitchen as the guest. On "until" it trots in from the right, nose high, a red paint chip (the war seal's cream
+       missile on it) already balanced on the end of its nose like a treat in a dog trick, and sits beside the
+       lectern facing her, chest out. "paint": the chip teeters; the dog freezes and steadies it. "ever": it turns to
+       us and crosses its eyes at the chip. "option.": it flicks the chip off its nose with a snort, turns its nose up
+       and shuts its eyes; the chip tumbles away up and out; Wishonia side-eyes it. The film irises out on her face. -->
+  <style>
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+    #host-closes-weave, #host-closes-cam, #host-closes-wall, #host-closes-wish, #host-closes-front, #host-closes-iris, #host-closes-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="host-closes" data-width="1920" data-height="1080" data-start="0" data-duration="3.94">
+    <div id="host-closes-weave">
+      <div id="host-closes-cam">
+        <div id="host-closes-wall"></div>
+        <div id="host-closes-wish"></div>
+        <div id="host-closes-front"></div>
+      </div>
+      <div id="host-closes-iris"></div>
+    </div>
+    <div id="host-closes-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "host-closes";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return (+n).toFixed(1); }, f1 = f;
+      var tl = gsap.timeline({ paused: true });
+      var smooth = KIT.smooth, clamp = function (u) { return Math.min(1, Math.max(0, u)); };
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 67);
+
+      // ── The plain dog (copied from dog-calculus, with a trot added) ──────────────
+      // An angular 1950s mutt drawn like the humans: tan fur, a cream chest and muzzle with halftone dots, a rust
+      // saddle, pointed ears, a stub tail, a navy collar with a mustard tag, thin navy miter outlines. Not the
+      // Democracy Dog (no paper tail). Drawn facing right, standing on y 0, in person units (a person is 180 tall):
+      // about 130 tall sitting and 168 standing on its hind legs (to the ear tips).
+      // o: { pose "sit" | "stand" (on its hind legs, front paws up) | "sniff" (front low, nose to the floor),
+      //      head "side" | "front", mood "eager" | "flat" (half lids) | "down" (eyes on the floor) | "smug" (eyes shut),
+      //      look [dx, dy] (pupils), tilt (turns the head, degrees), chalk (a stick of chalk in its mouth), droop (the
+      //      chalk hangs), fire (flames on the ear tips), steam (puffs at the ear tips) }
+      // Parts: .dog-head (data-pivot: the neck), .dog-ear (data-pivot: its base), .dog-tail (its root), .dog-upper
+      // (stand: everything above the hips, data-pivot: the hip), .dog-fire, .dog-steam (.dog-puff), .eye, .pupil.
+      // DOG.point(o, p) maps a point in the head's units (DOG.CHALK, DOG.TIPS) to the dog's units.
+      var DOG = (function () {
+        var WHITE = "#FFFFFF", FUR = C.tan, FAR = C.rust, CREAM = C.cream, HS = 1.22, uid = 0;
+        function Pt(x, y) { return (+x).toFixed(1) + "," + (+y).toFixed(1); }
+        function polyD(pts) { return "M" + pts.map(function (p) { return Pt(p[0], p[1]); }).join(" L") + " Z"; }
+        function solid(list, col, w) {
+          w = w || 4.4;
+          return list.map(function (pts) { return '<path d="' + polyD(pts) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
+            list.map(function (pts) { return '<path d="' + polyD(pts) + '" fill="' + col + '"/>'; }).join("");
+        }
+        function line(d, col, w) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"/>'; }
+        function pivot(p) { return ' data-pivot="' + f1(p[0]) + " " + f1(p[1]) + '"'; }
+        // print shading: halftone dots over a light shape
+        function dots(pts, op) {
+          var id = "dogdot-" + ID + "-" + ++uid, xs = pts.map(function (p) { return p[0]; }), ys = pts.map(function (p) { return p[1]; });
+          var x0 = Math.min.apply(null, xs), y0 = Math.min.apply(null, ys), x1 = Math.max.apply(null, xs), y1 = Math.max.apply(null, ys);
+          return '<defs><pattern id="' + id + 'd" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + ink + '"/></pattern>' +
+            '<clipPath id="' + id + 'c"><path d="' + polyD(pts) + '"/></clipPath></defs>' +
+            '<rect x="' + f1(x0) + '" y="' + f1(y0) + '" width="' + f1(x1 - x0) + '" height="' + f1(y1 - y0) + '" fill="url(#' + id + 'd)" opacity="' + (op || 0.26) + '" clip-path="url(#' + id + 'c)"/>';
+        }
+        function seg(x, y, a, len) {
+          var r1 = (a[0] * Math.PI) / 180, r2 = (a[1] * Math.PI) / 180, ex = x + len * Math.sin(r1), ey = y + len * Math.cos(r1);
+          return { x: x, y: y, ex: ex, ey: ey, hx: ex + len * Math.sin(r2), hy: ey + len * Math.cos(r2) };
+        }
+        function nrm(ax, ay, bx, by) { var dx = bx - ax, dy = by - ay, l = Math.sqrt(dx * dx + dy * dy) || 1; return [-dy / l, dx / l]; }
+        // a two-segment leg as one tapered polygon with a sharp joint, and a paw at its end
+        function leg(s, w0, w1, w2) {
+          var nA = nrm(s.x, s.y, s.ex, s.ey), nB = nrm(s.ex, s.ey, s.hx, s.hy), sx = nA[0] + nB[0], sy = nA[1] + nB[1], qq = sx * sx + sy * sy;
+          function side(k) {
+            var mid = qq > 0.6 ? [[s.ex + (k * sx * w1) / qq, s.ey + (k * sy * w1) / qq]] : [[s.ex + (k * nA[0] * w1) / 2, s.ey + (k * nA[1] * w1) / 2], [s.ex + (k * nB[0] * w1) / 2, s.ey + (k * nB[1] * w1) / 2]];
+            return [[s.x + (k * nA[0] * w0) / 2, s.y + (k * nA[1] * w0) / 2]].concat(mid, [[s.hx + (k * nB[0] * w2) / 2, s.hy + (k * nB[1] * w2) / 2]]);
+          }
+          return side(1).concat(side(-1).reverse());
+        }
+        function paw(x, y) { return [[x - 4, y - 4], [x + 5, y - 5], [x + 8, y + 1], [x + 4, y + 6], [x - 3, y + 4]]; }
+        var POSE = {
+          sit: { head: [27, -84], neck: [18, -68], tail: [-40, -6], collar: [[12, -74], [31, -69], [31, -61], [12, -66]], tag: [24, -57] },
+          stand: { head: [15, -121], neck: [6, -104], tail: [-19, -48], hip: [-6, -50], collar: [[-8, -104], [15, -102], [15, -94], [-8, -96]], tag: [8, -90] },
+          trot: { head: [46, -90], neck: [36, -72], tail: [-44, -52], collar: [[30, -76], [44, -82], [47, -74], [33, -67]], tag: [40, -66] },
+          sniff: { head: [64, -26], neck: [46, -38], tail: [-40, -6], tilt: 30, collar: [[36, -44], [50, -36], [45, -29], [31, -37]], tag: [41, -27] },
+        };
+        var CHALK = [46, 7.5], CHALK_FRONT = [22, 13.8];
+        var TIPS = { side: [[-7, -38], [10, -33]], front: [[-20, -38], [20, -38]] };
+        function eye(x, y, o, fur) {
+          var mood = o.mood || "eager", rx = 4.8, ry = 3.6, lk = o.look || [0, 0];
+          if (mood === "smug") return '<g class="eye">' + line("M" + Pt(x - rx, y - 0.5) + " Q" + Pt(x, y + 3) + " " + Pt(x + rx, y - 0.5), ink, 2.2) + "</g>";
+          var al = "M" + Pt(x - rx, y) + " Q" + Pt(x, y - ry * 1.6) + " " + Pt(x + rx, y - 0.3) + " Q" + Pt(x, y + ry * 1.15) + " " + Pt(x - rx, y) + " Z";
+          var py = mood === "down" ? 1.3 : 0;
+          var out = '<path d="' + al + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="1.2"/>' +
+            '<circle class="pupil" cx="' + f1(x + lk[0]) + '" cy="' + f1(y - 0.5 + lk[1] + py) + '" r="' + (mood === "eager" ? 1.6 : 1.9) + '" fill="' + ink + '"/>';
+          if (mood === "flat" || mood === "down") {
+            out += '<path d="M' + Pt(x - rx - 0.7, y - 0.6) + " Q" + Pt(x, y - ry * 1.95) + " " + Pt(x + rx + 0.7, y - 1) + ' Z" fill="' + fur + '"/>' + line("M" + Pt(x - rx - 0.7, y - 0.6) + " L" + Pt(x + rx + 0.7, y - 1), ink, 2.2);
+          } else {
+            out += line("M" + Pt(x - rx - 0.7, y + 0.3) + " Q" + Pt(x, y - ry * 1.95) + " " + Pt(x + rx + 0.7, y - 0.6), ink, 1.9);
+          }
+          return '<g class="eye">' + out + "</g>";
+        }
+        function flamesAt(tips) {
+          return '<g class="dog-fire">' + tips.map(function (t) { return KIT.flames(f1(t[0]), f1(t[1] + 6), 0.34); }).join("") + "</g>";
+        }
+        function steamAt(tips) {
+          return '<g class="dog-steam" opacity="0">' + tips.map(function (t) {
+            return [0, 1, 2].map(function (i) {
+              return '<g transform="translate(' + Pt(t[0] + (i - 1) * 3, t[1] - 4) + ')"><g class="dog-puff"><circle r="' + (6 - i) + '" fill="' + CREAM + '" stroke="' + ink + '" stroke-width="1.6"/></g></g>';
+            }).join("") + line("M" + Pt(t[0] - 6, t[1] - 12) + " l-5,-7 M" + Pt(t[0] + 6, t[1] - 12) + " l5,-7", ink, 1.6);
+          }).join("") + "</g>";
+        }
+        function ear(pts, inner, base, col) {
+          return '<g class="dog-ear"' + pivot(base) + ">" + solid([pts], col) + (inner ? solid([inner], FAR, 1.6) : "") + "</g>";
+        }
+        // side view: a blocky skull, a square muzzle and a big black nose
+        function headSide(o) {
+          var skull = [[2, -15], [-9, -15], [-16, -6], [-17, 6], [-11, 14], [2, 15], [18, 15], [33, 13], [34, 1], [30, -5], [12, -10]];
+          var jaw = [[33, 6], [18, 6], [4, 3], [-4, 12], [2, 15], [18, 15], [33, 13]];
+          var chalk = o.chalk ? solid([[[46, 5.5], [31, 6.5], [31, 10], [46, 9.5]]], WHITE, 1.8) : "";
+          return ear([[3, -14], [10, -33], [13, -10]], null, [8, -12], FAR) +
+            solid([skull], FUR) + dots([[18, -9], [34, 1], [33, 6], [18, 6], [8, 13]], 0.22) + solid([jaw], CREAM, 3.2) + dots(jaw, 0.22) +
+            solid([[[38, -3], [30, -6], [27, 0], [31, 5], [38, 3]]], ink, 1.6) + line("M33,9 L17,10 L13,8", ink, 1.8) +
+            eye(8, -4, o, FUR) + line("M2,-10.5 L14,-11.5", ink, 2.2) + chalk +
+            ear([[-14, -10], [-7, -38], [1, -14]], [[-10, -12], [-7, -30], [-3, -14]], [-6, -12], FUR) +
+            (o.steam ? steamAt(TIPS.side) : "") + (o.fire ? flamesAt(TIPS.side) : "");
+        }
+        function headFront(o) {
+          var L = [[-17, -9], [-20, -38], [-6, -16]], Li = [[-15, -12], [-17, -31], [-9, -16]];
+          var flip = function (pts) { return pts.map(function (p) { return [-p[0], p[1]]; }); };
+          var skull = [[-16, -12], [-7, -17], [7, -17], [16, -12], [18, 2], [12, 15], [-12, 15], [-18, 2]];
+          var muzzle = [[-11, 0], [11, 0], [13, 9], [7, 17], [-7, 17], [-13, 9]];
+          var chalk = !o.chalk ? "" : o.droop ? solid([[[3, 11], [16, 24], [13, 26.5], [1, 14]]], WHITE, 1.8) : solid([[[3, 10.5], [22, 12], [22, 15.5], [3, 14]]], WHITE, 1.8);
+          return ear(L, Li, [-11, -12], FUR) + ear(flip(L), flip(Li), [11, -12], FUR) +
+            solid([skull], FUR) + dots([[4, -17], [16, -12], [18, 2], [12, 15], [4, 15]], 0.22) + solid([muzzle], CREAM, 3.2) + dots(muzzle, 0.2) +
+            solid([[[-6, -1], [6, -1], [4, 5], [-4, 5]]], ink, 1.6) + line("M0,5 V9 M-7,10 Q-3.5,14 0,9 Q3.5,14 7,10", ink, 1.8) +
+            eye(-7.5, -5, o, FUR) + eye(7.5, -5, o, FUR) + line("M-13,-11.5 L-3,-10.5 M3,-10.5 L13,-11.5", ink, 2.2) + chalk +
+            (o.steam ? steamAt(TIPS.front) : "") + (o.fire ? flamesAt(TIPS.front) : "");
+        }
+        function headAt(o, pose) {
+          var h = POSE[pose].head, t = (POSE[pose].tilt || 0) + (o.tilt || 0);
+          return '<g class="dog-head"' + pivot(POSE[pose].neck) + '><g transform="translate(' + Pt(h[0], h[1]) + ") rotate(" + t + ") scale(" + HS + ')">' + (o.head === "front" ? headFront(o) : headSide(o)) + "</g></g>";
+        }
+        function collar(pose) {
+          var c = POSE[pose];
+          return solid([c.collar], C.navy, 3) + '<circle cx="' + c.tag[0] + '" cy="' + c.tag[1] + '" r="4" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>';
+        }
+        function tail(pts, root) { return '<g class="dog-tail"' + pivot(root) + ">" + solid([pts], FUR) + "</g>"; }
+        function draw(o) {
+          o = o || {};
+          var pose = o.pose || "sit", out;
+          if (pose === "trot") {
+            // trotting on all fours, head up: o.step (-1..1) swings the legs, front and back in opposite phase
+            var st = o.step || 0, legAt = function (x, a, b2) { var s0 = seg(x, -38, [a, b2], 19); return [leg(s0, 10, 9, 7), paw(s0.hx, s0.hy)]; };
+            var torso = [[-42, -58], [-20, -66], [10, -68], [32, -64], [44, -54], [40, -40], [20, -32], [-10, -32], [-36, -36], [-46, -46]];
+            var chestT = [[44, -54], [40, -40], [30, -36], [32, -52]];
+            out = solid(legAt(30, 22 * st, 22 * st - 14), FAR, 3.6) + solid(legAt(-30, -22 * st, -22 * st + 18), FAR, 3.6) +
+              tail([[-44, -52], [-62, -70], [-57, -74], [-41, -58]], POSE.trot.tail) +
+              solid([torso], FUR) + dots([[-20, -66], [10, -68], [32, -64], [40, -40], [-10, -32]], 0.2) +
+              solid([[[-14, -66], [8, -68], [4, -56], [-16, -54]]], FAR, 2.4) +
+              solid([[[26, -60], [36, -86], [52, -90], [46, -60], [38, -46]]], FUR) + solid([chestT], CREAM, 3.2) + dots(chestT, 0.24) +
+              collar(pose) + headAt(o, pose) +
+              solid(legAt(38, -22 * st, -22 * st - 14), FUR, 3.6) + solid(legAt(-22, 22 * st, 22 * st + 18), FUR, 3.6);
+          } else if (pose === "stand") {
+            var farArm = seg(6, -92, [50, 150], 13), nearArm = seg(10, -90, [58, 160], 14);
+            var torso = [[12, -48], [-18, -52], [-20, -80], [-14, -102], [2, -110], [14, -100], [16, -72]];
+            var chest = [[14, -100], [6, -108], [0, -100], [2, -76], [10, -62], [16, -72]];
+            out = solid([[[-14, 0], [8, 0], [8, -4], [-10, -5]]], FAR, 3.6) + tail([[-18, -50], [-34, -60], [-37, -53], [-21, -44]], POSE.stand.tail) +
+              solid([[[-16, -56], [4, -54], [10, -40], [6, -26], [-2, -14], [2, -6], [22, -5], [22, 0], [-8, 0], [-12, -10], [-10, -20], [-18, -30], [-22, -44]]], FUR) +
+              line("M-2,-14 L4,-30 L-4,-46", ink, 1.8) +
+              '<g class="dog-upper"' + pivot(POSE.stand.hip) + ">" + solid([leg(farArm, 9, 8, 7), paw(farArm.hx, farArm.hy)], FAR, 3.6) +
+              solid([torso], FUR) + dots([[-4, -104], [2, -110], [14, -100], [16, -72], [12, -48], [-4, -50]], 0.22) + solid([chest], CREAM, 3.2) + dots(chest, 0.24) +
+              solid([[[-16, -62], [-19, -82], [-12, -96], [-6, -78]]], FAR, 2.4) + collar(pose) + headAt(o, pose) +
+              solid([leg(nearArm, 10, 9, 8), paw(nearArm.hx, nearArm.hy)], FUR, 3.6) + "</g>";
+          } else {
+            var sniff = pose === "sniff";
+            var body = sniff ? [[-40, -30], [-44, -14], [-40, -2], [-24, 0], [2, -2], [22, -10], [38, -16], [46, -28], [38, -40], [16, -50], [-6, -58], [-26, -48]]
+              : [[28, -58], [22, -72], [8, -76], [-6, -64], [-24, -48], [-38, -30], [-44, -14], [-40, -2], [-24, 0], [2, -2], [14, -20], [26, -34]];
+            var chest = sniff ? [[46, -28], [40, -16], [32, -14], [34, -28], [40, -36]] : [[28, -56], [20, -66], [12, -60], [14, -40], [22, -34], [27, -42]];
+            var farLeg = sniff ? [[30, -30], [38, -31], [48, -6], [56, -2], [56, 0], [40, 0], [40, -4]] : [[8, -40], [17, -40], [16, -5], [20, 0], [4, 0], [6, -5]];
+            var nearLeg = sniff ? [[36, -28], [44, -28], [54, -6], [62, -2], [62, 0], [46, 0], [46, -4]] : [[16, -42], [26, -42], [26, -6], [30, 0], [12, 0], [15, -6]];
+            var saddle = sniff ? [[-4, -56], [-18, -50], [-24, -40], [-10, -42], [2, -50]] : [[-2, -64], [-18, -54], [-26, -44], [-12, -44], [2, -56]];
+            out = solid([farLeg], FAR, 3.6) + tail([[-38, -6], [-54, -20], [-58, -14], [-44, 0]], POSE.sit.tail) +
+              solid([body], FUR) + dots(sniff ? [[-6, -58], [16, -50], [38, -40], [22, -10], [2, -2], [-10, -20]] : [[8, -76], [22, -72], [28, -58], [26, -34], [14, -20], [2, -2], [-6, -30]], 0.2) +
+              line("M-6,-2 L-12,-28 L-30,-38", ink, 1.8) + solid([[[-8, 0], [12, 0], [12, -5], [-2, -8], [-8, -4]]], FUR, 3.6) +
+              solid([saddle], FAR, 2.4) + solid([chest], CREAM, 3.2) + dots(chest, 0.24) + collar(pose) + headAt(o, pose) + solid([nearLeg], FUR, 3.6);
+          }
+          return '<g class="plain-dog">' + out + "</g>";
+        }
+        function point(o, p) {
+          var ps = POSE[o.pose || "sit"], t = (((ps.tilt || 0) + (o.tilt || 0)) * Math.PI) / 180, x = p[0] * HS, y = p[1] * HS;
+          return [ps.head[0] + x * Math.cos(t) - y * Math.sin(t), ps.head[1] + x * Math.sin(t) + y * Math.cos(t)];
+        }
+        return { draw: draw, point: point, POSE: POSE, CHALK: CHALK, CHALK_FRONT: CHALK_FRONT, TIPS: TIPS, HS: HS };
+      })();
+
+      // ── The host's set (KIT.STUDIO); the dog sits on the free wall right of the lectern, facing her (mirrored).
+      // DOG_AT: where it sits (x, feet y) and its scale.
+      var S = KIT.STUDIO, DOG_AT = V ? [862, 1405, 2.6] : [1330, 1068, 3.2], k = DOG_AT[2];
+
+      // the red paint chip with the war seal's little cream missile, around (0, 0), about 26 wide
+      function chip() {
+        return '<path d="M-12,-7 L6,-10 L13,-2 L9,8 L-8,9 L-13,1 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M-5,3 L4,-4 l2,2 Z" fill="' + C.cream + '" stroke="' + C.cream + '" stroke-width="2.4" stroke-linejoin="round"/>';
+      }
+      // The dog's drawings, one shown at a time: trotting (two steps), sitting proud (side head, nose level), the
+      // teeter (eyes on the chip), cross-eyed at us (front head), and nose up with its eyes shut.
+      var DRAW = {
+        trotA: { pose: "trot", head: "side", mood: "eager", step: 1, tilt: -8 },
+        trotB: { pose: "trot", head: "side", mood: "eager", step: -1, tilt: -8 },
+        sit: { pose: "sit", head: "side", mood: "eager", tilt: -10 },
+        teeter: { pose: "sit", head: "side", mood: "flat", tilt: -10, look: [2.6, -1.6] },
+        cross: { pose: "sit", head: "front", mood: "eager" },
+        snub: { pose: "sit", head: "side", mood: "smug", tilt: -28 },
+      };
+      var dogSvg = Object.keys(DRAW).map(function (n, i) { return '<g id="' + ID + "-d-" + n + '" opacity="' + (i ? 0 : 1) + '">' + DOG.draw(DRAW[n]) + "</g>"; }).join("");
+      // where the chip rests in the head's own units: on the top of the snout (side head), or on the bridge of the
+      // nose between the eyes (front head)
+      var REST_SIDE = [31, -12], REST_FRONT = [0, 5];
+      var CHIP_K = 0.62;
+      var front = '<g id="' + ID + '-dog"><g id="' + ID + '-dog-in">' + dogSvg + "</g></g>" +
+        '<g id="' + ID + '-chip"><g id="' + ID + '-chip-in">' + chip() + "</g></g>" +
+        '<g id="' + ID + '-puff" opacity="0">' + [[0, 0, 9], [-16, -8, 7], [-28, -20, 5]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>'; }).join("") + "</g>" ;
+      KIT.studio(tl, ID, { cam: q("cam"), wall: q("wall"), wish: q("wish"), front: q("front") }, { front: front, push: [1.0, 1.05] });
+      var dogEl = q("dog"), dogIn = q("dog-in"), chipEl = q("chip"), chipIn = q("chip-in"), puffEl = q("puff");
+      var shown = function (n) { Object.keys(DRAW).forEach(function (m) { q("d-" + m).setAttribute("opacity", m === n ? 1 : 0); }); };
+      var crossPupils = Array.prototype.slice.call(q("d-cross").querySelectorAll(".pupil"));
+      var tails = Array.prototype.slice.call(dogEl.querySelectorAll(".dog-tail"));
+
+      // ── Cues ──
+      var tUntil = cue("until"), tPaint = cue("paint"), tEver = cue("ever"), tOpt = cue("option."), tEnd = KIT.cueEnd(ID, "option.");
+      var IN0 = tUntil, IN1 = tUntil + 0.95, SIT = IN1 + 0.08, X0 = W + 220;
+      var tFlick = tOpt + 0.06;
+
+      // a point in the head's units to the canvas, for a drawing (the dog is mirrored to face her)
+      var toCanvas = function (o, p, x, y) { var d = DOG.point(o, p); return [x - k * d[0], y + k * d[1]]; };
+
+      KIT.onTime(tl, D, function (t) {
+        // where the dog is: trotting in with a bob, then sitting with a little settle
+        var u = clamp((t - IN0) / (IN1 - IN0)), x = X0 + (DOG_AT[0] - X0) * (1 - (1 - u) * (1 - u) * (1 - u)), y = DOG_AT[1];
+        var trot = t < IN1, ph = (t - IN0) * 13, bob = 0;
+        if (trot) bob = -Math.abs(Math.sin(ph)) * 7 * k;
+        else if (t < SIT + 0.25) bob = Math.sin(clamp((t - IN1) / 0.25) * Math.PI) * 4 * k;
+        var name = trot ? (Math.floor(ph / Math.PI) % 2 ? "trotB" : "trotA") : t < tPaint ? "sit" : t < tEver ? "teeter" : t < tOpt ? "cross" : "snub";
+        shown(name);
+        dogEl.setAttribute("transform", "translate(" + f(x) + "," + f(y + bob) + ") scale(" + (-k) + "," + k + ")");
+        tails.forEach(function (tg) { tg.setAttribute("transform", "rotate(" + f(t > tOpt ? 0 : Math.sin(t * 22) * 16) + " " + tg.getAttribute("data-pivot") + ")"); });
+        // the teeter: the chip rocks on its nose, and the dog steadies it, its head following the other way
+        var wob = 0;
+        if (t > tPaint && t < tEver) { var w = t - tPaint; wob = Math.sin(w * 15) * 20 * Math.exp(-w * 2.2); }
+        var hd = q("d-teeter").querySelector(".dog-head");
+        hd.setAttribute("transform", "rotate(" + f(-wob * 0.35) + " " + hd.getAttribute("data-pivot") + ")");
+        // cross-eyed at the chip on the bridge of its nose
+        crossPupils.forEach(function (p, i) { p.setAttribute("transform", "translate(" + (i ? -2.4 : 2.4) + ",1.4)"); });
+
+        // the chip: on its nose until the flick, then up and away, tumbling
+        var o = DRAW[name], cx, cy, r = -8;
+        if (t < tFlick) {
+          var rest = o.head === "front" ? REST_FRONT : REST_SIDE, p0 = toCanvas(o, rest, x, y + bob);
+          if (name === "teeter") p0 = toCanvas({ pose: "sit", tilt: o.tilt - wob * 0.35 }, REST_SIDE, x, y + bob);
+          cx = p0[0]; cy = p0[1]; r = (o.head === "front" ? 0 : 10) + wob + (trot ? Math.sin(ph * 2) * 8 : 0);
+          // the chip bounces a little behind the dog while it trots
+          if (trot) cy -= Math.abs(Math.cos(ph)) * 3 * k;
+        } else {
+          var a = toCanvas(DRAW.snub, REST_SIDE, x, y), fu = t - tFlick;
+          cx = a[0] - 160 * fu; cy = a[1] - 1500 * fu + 900 * fu * fu;
+          r = 10 + fu * 900;
+        }
+        chipEl.setAttribute("transform", "translate(" + f(cx) + "," + f(cy) + ")");
+        chipIn.setAttribute("transform", "rotate(" + f(r) + ") scale(" + (CHIP_K * k * 1.22 * (name === "cross" ? 0.72 : 1)).toFixed(3) + ")");
+        // the snort: a puff at its nostril as it flicks the chip off
+        var pu = t - tOpt;
+        puffEl.setAttribute("opacity", pu > 0 && pu < 0.6 ? f(1 - pu / 0.6) : 0);
+        if (pu > 0) { var nz = toCanvas(DRAW.snub, [40, 2], x, y); puffEl.setAttribute("transform", "translate(" + f(nz[0] - 6 - pu * 50) + "," + f(nz[1] + 4 - pu * 30) + ") scale(" + f(k * (0.6 + pu)) + ")"); }
+      });
+
+      // ── The iris closes on her face after "option.", and the part ends on black.
+      KIT.iris(tl, ID, q("iris"), S.face, "out", tEnd + 0.06, D - 0.06);
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

@@ -1,386 +1,363 @@
 <template id="billionaire-pdf-template">
-  <!-- billionaire-pdf · Layer B (storyboards/part-04-institutionalize.md): the rust rock thrown at the end of
-       centrifuge-vs-rocks flies in from the left and clangs off a STOP sign, denting it. An UNREALISTIC sticker slaps
-       onto the sign; a rubber stamp hovers in and slams PHYSICALLY POSSIBLE onto the post, with a teal tick. On
-       "isn't" the sticker peels off and flutters right, and the camera follows it to the Rich Human in a huge leather
-       chair at a huge desk (an overflowing TO READ tray beside him), dialing his phone while a one-page PDF slides up.
-       He lifts it between two fingers (his monocle pops out and swings on its chain), rolls it up and lights it off
-       his cigar; the sticker lands on his forehead, and he puffs the burning PDF like a second cigar and blows a smoke
-       ring. Part 5 picks up this Rich Human, sticker and all. -->
+  <!-- billionaire-pdf · style "atomic" (cartoon-style-bible.md), Layer A: the host's set (as host-closes), the mug,
+       the Earth case file and a one-page PDF lying on her lectern, and a STOP sign on a post on the free wall. "But":
+       the rust rock thrown at the end of centrifuge-vs-rocks (the same drawing, moss and all) flies in from the left
+       edge, clangs off the sign and dents it; the sign wobbles. "unrealistic": an UNREALISTIC sticker slaps onto the
+       sign. "physically": the dent pops back out. "isn't": the sticker peels off and flutters up out of shot.
+       "Getting": the Rich Human rolls in from the right in a navy swivel chair, scrolling his phone, and knocks the
+       sign over against the wall; the PDF slides along the lectern to him. "read": he takes it between two fingers
+       and his monocle pops out. "P.D.F.": he rolls it into a tube and lights it off his cigar. "is.": the sticker
+       flutters down onto his forehead. After "is.": he puffs the burning PDF like a second cigar and blows a smoke
+       ring, Wishonia side-eyes the camera, and the iris closes on her face. Part 5 picks up this Rich Human, his
+       chair and his sticker. -->
   <style>
-    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
-    #billionaire-pdf-cam, #billionaire-pdf-bg, #billionaire-pdf-air, #billionaire-pdf-pip, #billionaire-pdf-throw, #billionaire-pdf-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+    #billionaire-pdf-weave, #billionaire-pdf-cam, #billionaire-pdf-wall, #billionaire-pdf-wish, #billionaire-pdf-front, #billionaire-pdf-iris, #billionaire-pdf-film { position: absolute; inset: 0; }
   </style>
   <div id="root" data-composition-id="billionaire-pdf" data-width="1920" data-height="1080" data-start="0" data-duration="12.26">
-    <div id="billionaire-pdf-cam">
-      <div id="billionaire-pdf-bg"></div>
-      <!-- the camera: the world pans left inside the paper's border (the view), then pushes in on the Rich Human (the zoom) -->
-      <div id="billionaire-pdf-view" style="position: absolute; overflow: hidden;"><div id="billionaire-pdf-zoom" style="position: absolute;"><div id="billionaire-pdf-world" style="position: absolute;"></div></div></div>
-      <!-- the sticker in the air, in screen pixels (it flies with the camera) -->
-      <div id="billionaire-pdf-air"></div>
-      <div id="billionaire-pdf-pip"></div>
+    <div id="billionaire-pdf-weave">
+      <div id="billionaire-pdf-cam">
+        <div id="billionaire-pdf-wall"></div>
+        <div id="billionaire-pdf-wish"></div>
+        <div id="billionaire-pdf-front"></div>
+      </div>
+      <div id="billionaire-pdf-iris"></div>
     </div>
-    <!-- the rock flying in, in screen pixels, outside the sliding camera (it comes from the last scene) -->
-    <div id="billionaire-pdf-throw"></div>
-    <div id="billionaire-pdf-grain"></div>
+    <div id="billionaire-pdf-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
-  <script src="assets/js/props/objects-a.js"></script>
-  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/film.js"></script>
   <script>
     (function () {
+      window.__timelines = window.__timelines || {};
       var ID = "billionaire-pdf";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
+      var sc = KIT.scene(ID), D = sc.duration;
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var after = function (w, n) { return KIT.after(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, INK = C.line, WHITE = "#FBF6E6", TEAL = "#1F6E68";
-      var P = function (s) { return ID + "-" + s; };
-      var g = function (s) { return "#" + P(s); };
+      var cueEnd = function (w, n) { return KIT.cueEnd(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, WHITE = "#FBF6E6";
       var f = function (n) { return (+n).toFixed(1); };
+      var smooth = KIT.smooth, clamp = function (u) { return Math.min(1, Math.max(0, u)); };
+      var back = function (u, c) { u = clamp(u); c = c || 2.2; return 1 + (c + 1) * Math.pow(u - 1, 3) + c * Math.pow(u - 1, 2); };
+      var tl = gsap.timeline({ paused: true });
 
-      // ── Layout, per canvas shape ──
-      // fy: the floor. dx: how far the camera pans. sign: the STOP sign's post x, the octagon's center y and radius;
-      // stop: the word's size. sticker: its center on the sign [x, y], width, height, letter size, and its scale when it
-      // lands on the forehead. plate: the blank plate under the sign that gets stamped [center x, y, w, h]; tick: the
-      // teal tick beside it [x, y, size]. hit: where the rock dents
-      // the sign; rockFrom: where it flies in from (screen); rest: where it ends up at the post's foot; rk: its scale.
-      // rich: the Rich Human's center x, scale and head y, all in screen pixels after the pan; hover: where the
-      // sticker hangs in the air before it drops onto him (x from his forehead, y). tray: the TO READ tray's x (after the pan).
-      // zoom: how far the camera pushes in on his head once it lands on him.
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 1207);
+
+      // ── The set (KIT.STUDIO) and where the guests stand, for each shape. FLOOR: the guests' feet. SIGN: the post's
+      // foot x, the post's height to the sign's middle, the octagon's radius. CHAIR: where the chair stops, its scale,
+      // and the Rich Human's scale. PDF0: where the page lies on the lectern.
+      var S = KIT.STUDIO, LT = S.top, LEND = S.lect[0] + S.lect[1] / 2 + 18;
       var L = V
-        ? { fy: 1400, dx: 1150, sign: [500, 760, 232], stop: 172, sticker: [500, 888, 330, 80, 50, 0.5], plate: [500, 1180, 320, 134], tick: [684, 1128, 74], stampK: 2.3,
-            hit: [286, 718], rockFrom: [-150, 470], rest: 360, rk: 0.95, rich: [560, 3.5, 990], hover: [-250, 660], tray: 162, deskL: 80, deskR: 1000, zoom: 1.75 }
-        : { fy: 830, dx: 1600, sign: [820, 335, 205], stop: 154, sticker: [820, 454, 310, 74, 47, 0.48], plate: [820, 692, 310, 130], tick: [1000, 642, 72], stampK: 2.35,
-            hit: [650, 305], rockFrom: [-150, 120], rest: 640, rk: 1.05, rich: [1150, 3.4, 380], hover: [-330, 230], tray: 520, deskL: 380, deskR: 1500, zoom: 1.5 };
-      var FY = L.fy, DX = L.dx, SX = L.sign[0], SY = L.sign[1], SR = L.sign[2];
+        ? { floor: 1576, sign: [905, 620, 135], chair: [880, 0.9, 3.4], rockK: 1.4, pdfK: 1.1, pdf0: 470, from: W + 260, peak: 300 }
+        : { floor: 1066, sign: [1690, 540, 150], chair: [1440, 1.0, 3.2], rockK: 1.5, pdfK: 1.0, pdf0: 820, from: W + 300, peak: 30 };
 
-      q("bg").innerHTML = KIT.paper(ID);
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-      q("view").style.cssText = "position:absolute;overflow:hidden;left:46px;top:46px;width:" + (W - 92) + "px;height:" + (H - 92) + "px;";
-      q("zoom").style.cssText = "position:absolute;left:-46px;top:-46px;width:" + W + "px;height:" + H + "px;transform-origin:0 0;";
-      q("world").style.cssText = "position:absolute;left:0;top:0;width:" + (W + DX) + "px;height:" + H + "px;";
-
-      // ── Drawing helpers ──
+      // ── Drawing helpers (the kit's way: a navy pass under each fill)
       function pd(pts) { return "M" + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + " Z"; }
       function solid(d, col, w) {
-        return '<path d="' + d + '" fill="' + INK + '" stroke="' + INK + '" stroke-width="' + (w || 4.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + d + '" fill="' + col + '"/>';
+        return '<path d="' + d + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 4.4) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + d + '" fill="' + col + '"/>';
       }
-      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || INK) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="round"' + (extra || "") + "/>"; }
-      function txt(x, y, s, size, col, extra) { return '<text x="' + f(x) + '" y="' + f(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + col + '"' + (extra || "") + ">" + s + "</text>"; }
-      function ik(S, T, len, bend) {
-        var dx = T[0] - S[0], dy = T[1] - S[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len * 0.995);
+      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linecap="round" stroke-linejoin="round"' + (extra || "") + "/>"; }
+      function copy(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      // Two-link arm angles (the kit's convention: angle a points along (sin a, cos a)) that put the hand at T.
+      function ik(Sh, T, len, bend) {
+        var dx = T[0] - Sh[0], dy = T[1] - Sh[1], d = Math.min(Math.sqrt(dx * dx + dy * dy), 2 * len * 0.995);
         var th = Math.atan2(dx, dy), ph = Math.acos(d / (2 * len));
         return [((th + bend * ph) * 180) / Math.PI, ((th - bend * ph) * 180) / Math.PI];
       }
-      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
-      function octagon(cx, cy, r) { var p = []; for (var k = 0; k < 8; k++) { var a = ((22.5 + 45 * k) * Math.PI) / 180; p.push([cx + r * Math.cos(a), cy + r * Math.sin(a)]); } return p; }
 
-      // ── THE RUST ROCK (the same code as centrifuge-vs-rocks, which throws it): 124 wide, 78 tall, standing on y 0 ──
+      // ── Her lectern props (as less-crazy-goal): the case file lying on the reading top, and the mug.
+      function mug(x, y, s) {
+        return '<g transform="translate(' + x + "," + y + ") scale(" + s + ')"><path d="M18,-44 q16,0 16,14 q0,14 -16,14" fill="none" stroke="' + ink + '" stroke-width="7"/><path d="M18,-44 q16,0 16,14 q0,14 -16,14" fill="none" stroke="' + C.cream + '" stroke-width="3"/>' +
+          '<path d="M-20,-54 H22 L18,0 H-16 Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/><path d="M-19,-44 H21" stroke="' + C.cream + '" stroke-width="5"/>' +
+          '<path d="M-6,-62 q-6,-10 0,-18 q6,-8 0,-18 M8,-62 q-6,-10 0,-18" fill="none" stroke="' + C.cream + '" stroke-width="3" opacity="0.8"/></g>';
+      }
+      function caseFile(x, y, s) {
+        return '<g transform="translate(' + x + "," + y + ") scale(" + s + ')"><path d="M-92,0 L-84,-16 H76 L88,0 Z" fill="#D9B46A" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>' +
+          '<path d="M-62,-16 L-58,-24 H-22 L-18,-16 Z" fill="#D9B46A" stroke="' + ink + '" stroke-width="3"/><path d="M-70,-8 H40" stroke="' + ink + '" stroke-width="2" opacity="0.6"/></g>';
+      }
+      var props = V ? caseFile(300, 1110, 1.15) + mug(560, 1108, 1.2) : caseFile(640, 800, 1) + mug(920, 798, 1);
+
+      // ── The rust rock: the same drawing as centrifuge-vs-rocks (a faceted boulder 124 wide, 78 tall, its moss cap),
+      // here around its middle.
       var ROCK = { body: [[-62, 0], [-64, -24], [-50, -56], [-20, -76], [20, -78], [50, -62], [63, -32], [58, 0]],
         top: [[-50, -56], [-20, -76], [20, -78], [50, -62], [18, -52], [-22, -50]],
         side: [[50, -62], [63, -32], [58, 0], [30, 0], [34, -32], [18, -52]] };
-      function rock(col, lit, shade, cid) {
-        return '<defs><clipPath id="' + cid + '"><path d="' + pd(ROCK.body) + '"/></clipPath></defs>' + solid(pd(ROCK.body), col) +
-          '<path d="' + pd(ROCK.top) + '" fill="' + lit + '"/><path d="' + pd(ROCK.side) + '" fill="' + shade + '"/>' +
-          '<rect x="-10" y="-80" width="80" height="82" fill="url(#' + P("cross") + ')" opacity="0.2" clip-path="url(#' + cid + ')"/>' +
-          line("M-22,-50 L-30,-28 L-18,-12 M18,-52 L34,-32", INK, 2.2) + line("M-42,-38 L-36,-30", INK, 1.8) +
-          '<path d="' + pd(ROCK.body) + '" fill="none" stroke="' + INK + '" stroke-width="4.4" stroke-linejoin="miter"/>';
+      function rock(col, lit, shade) {
+        return solid(pd(ROCK.body), col) + '<path d="' + pd(ROCK.top) + '" fill="' + lit + '"/><path d="' + pd(ROCK.side) + '" fill="' + shade + '"/>' +
+          line("M-22,-50 L-30,-28 L-18,-12 M18,-52 L34,-32", ink, 2.2) + line("M-42,-38 L-36,-30", ink, 1.8) +
+          '<path d="' + pd(ROCK.body) + '" fill="none" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/>';
       }
-      // its moss from the thousands of years (centrifuge-vs-rocks grew it)
       function moss() {
         var cap = [[-48, -58], [-22, -78], [20, -80], [52, -64], [40, -54], [24, -60], [6, -54], [-14, -60], [-30, -52]];
-        return solid(pd(cap), "#7E9A48", 3) + '<path d="' + pd(cap) + '" fill="url(#' + P("hatch") + ')" opacity="0.25"/>';
+        return solid(pd(cap), "#7E9A48", 3) + [[-34, -52], [-6, -50], [30, -54]].map(function (p) { return '<path d="M' + p[0] + "," + p[1] + ' l3,9 l3,-8" fill="#7E9A48" stroke="' + ink + '" stroke-width="2"/>'; }).join("");
       }
-      var RUST = [C.rust, C.tan, "#6A3420"];
-      var rockArt = rock(RUST[0], RUST[1], RUST[2], P("clip-rock-a")) + moss();
+      var rockSvg = '<g id="' + ID + '-rock" opacity="0"><g transform="scale(' + L.rockK + ')"><g id="' + ID + '-rock-spin"><g transform="translate(0,39)">' + rock(C.rust, C.tan, "#6A3420") + moss() + "</g></g></g></g>";
 
-      // ── The STOP sign: a red octagon with a cream rim on a slate post, the dent and the UNREALISTIC sticker ──
-      var ST = L.sticker;
-      function sticker(cid) {
-        var w = ST[2], h = ST[3];
-        return '<rect x="' + (-w / 2 + 6) + '" y="' + (-h / 2 + 7) + '" width="' + w + '" height="' + h + '" rx="6" fill="' + INK + '" opacity="0.35"/>' +
-          '<rect x="' + -w / 2 + '" y="' + -h / 2 + '" width="' + w + '" height="' + h + '" rx="6" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="4"/>' +
-          '<rect x="' + (-w / 2 + 7) + '" y="' + (-h / 2 + 7) + '" width="' + (w - 14) + '" height="' + (h - 14) + '" rx="3" fill="none" stroke="' + C.war + '" stroke-width="3"/>' +
-          txt(-4, ST[4] * 0.36, "UNREALISTIC", ST[4], C.war, ' letter-spacing="1.5"') +
-          '<path d="M' + (w / 2 - 15) + "," + (-h / 2) + " L" + w / 2 + "," + (-h / 2 + 13) + " L" + (w / 2 - 15) + "," + (-h / 2 + 13) + ' Z" fill="#E4DCC2" stroke="' + INK + '" stroke-width="2.4" stroke-linejoin="round"/>';
+      // ── The STOP sign: an octagon on a post, its foot at (0, 0) of its group; the post's top at the octagon's middle.
+      // The dent (a dark hollow where the rock hit, up and left of the middle) and a few impact strokes.
+      var SR = L.sign[2], SH = L.sign[1];
+      var octa = [];
+      for (var oi = 0; oi < 8; oi++) { var oa = Math.PI / 8 + (oi * Math.PI) / 4; octa.push([SR * Math.cos(oa), -SH + SR * Math.sin(oa)]); }
+      var octIn = octa.map(function (p) { return [p[0] * 0.88, -SH + (p[1] + SH) * 0.88]; });
+      var stopFs = KIT.fitText("STOP", SR * 0.78, SR * 1.36, "Oswald", 600, 2);
+      var DENT = [-SR * 0.42, -SH - SR * 0.3];
+      var signSvg = '<g id="' + ID + '-sign"><g id="' + ID + '-sign-tip">' +
+        line("M0,0 V" + -SH, ink, 18) + line("M0,0 V" + -SH, "#9AA0AE", 10) + line("M-3,0 V" + -SH, "#C9CBD0", 3) +
+        solid(pd(octa), C.war, 6) + '<path d="' + pd(octIn) + '" fill="none" stroke="' + C.cream + '" stroke-width="' + f(SR * 0.05) + '"/>' +
+        '<text x="0" y="' + f(-SH + stopFs * 0.36) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + f(stopFs) + '" letter-spacing="2" fill="' + C.cream + '">STOP</text>' +
+        '<g transform="translate(' + f(DENT[0]) + "," + f(DENT[1]) + ')"><g id="' + ID + '-dent">' +
+        '<path d="M-' + f(SR * 0.26) + ",0 L-" + f(SR * 0.12) + ",-" + f(SR * 0.22) + " L" + f(SR * 0.16) + ",-" + f(SR * 0.2) + " L" + f(SR * 0.27) + "," + f(SR * 0.04) + " L" + f(SR * 0.1) + "," + f(SR * 0.24) + " L-" + f(SR * 0.18) + "," + f(SR * 0.2) + ' Z" fill="#8E2A1E" stroke="' + ink + '" stroke-width="3"/>' +
+        line("M-" + f(SR * 0.14) + "," + f(SR * 0.12) + " L" + f(SR * 0.04) + ",-" + f(SR * 0.06) + " M" + f(SR * 0.06) + "," + f(SR * 0.16) + " L" + f(SR * 0.14) + ",-" + f(SR * 0.02), ink, 2.2) + "</g></g>" +
+        '<g id="' + ID + '-bang" opacity="0">' + [0, 1, 2, 3, 4].map(function (i) { var a = (i - 2) * 0.5 + Math.PI; return line("M" + f(DENT[0] + Math.cos(a) * SR * 0.4) + "," + f(DENT[1] + Math.sin(a) * SR * 0.4) + " L" + f(DENT[0] + Math.cos(a) * SR * 0.75) + "," + f(DENT[1] + Math.sin(a) * SR * 0.75), ink, 5); }).join("") + "</g>" +
+        "</g></g>";
+
+      // ── The UNREALISTIC sticker: a cream label sized to its word, red Oswald, around (0, 0).
+      var STK = { fs: SR * 0.36, sp: 1.5 };
+      STK.w = KIT.textWidth("UNREALISTIC", STK.fs, "Oswald", 600, STK.sp) + STK.fs * 1.1;
+      STK.h = STK.fs * 1.6;
+      function sticker() {
+        var w = STK.w, h = STK.h;
+        return '<path d="M' + f(-w / 2) + "," + f(-h / 2) + " H" + f(w / 2) + " V" + f(h / 2 - 9) + " L" + f(w / 2 - 9) + "," + f(h / 2) + " H" + f(-w / 2) + ' Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>' +
+          '<path d="M' + f(w / 2) + "," + f(h / 2 - 9) + " L" + f(w / 2 - 11) + "," + f(h / 2 - 11) + " L" + f(w / 2 - 9) + "," + f(h / 2) + ' Z" fill="#D8CFB4" stroke="' + ink + '" stroke-width="2"/>' +
+          '<text x="0" y="' + f(STK.fs * 0.36) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + f(STK.fs) + '" letter-spacing="' + STK.sp + '" fill="' + C.war + '">UNREALISTIC</text>';
       }
-      function signArt() {
-        var post = solid(pd([[SX - 11, SY + SR * 0.9], [SX + 11, SY + SR * 0.9], [SX + 11, FY], [SX - 11, FY]]), C.peri, 3.6) + line("M" + (SX + 6) + "," + (SY + SR) + " V" + (FY - 6), C.cream, 2.4, ' opacity="0.6"') +
-          solid(pd([[SX - 38, FY], [SX + 38, FY], [SX + 30, FY - 12], [SX - 30, FY - 12]]), C.slate, 3);
-        var bolts = [[SX, SY - SR * 0.72], [SX, SY + SR * 0.72]].map(function (b) { return '<circle cx="' + b[0] + '" cy="' + f(b[1]) + '" r="6" fill="#C9C2B5" stroke="' + INK + '" stroke-width="2.4"/>'; }).join("");
-        var face = solid(pd(octagon(SX, SY, SR)), C.cream, 5) + '<path d="' + pd(octagon(SX, SY, SR - 12)) + '" fill="' + C.war + '"/>' +
-          '<path d="' + pd(octagon(SX, SY, SR - 12)) + '" fill="url(#' + P("hred") + ')" opacity="0.35"/>' + bolts +
-          txt(SX, SY + L.stop * 0.36 - SR * 0.08, "STOP", L.stop, C.cream, ' letter-spacing="6"');
-        // the dent where the rock hit: a crumple of creases
-        var hx = L.hit[0], hy = L.hit[1], crumple = [];
-        for (var k = 0; k < 10; k++) { var a = (k * Math.PI) / 5, r = k % 2 ? 14 : 30; crumple.push([r * Math.cos(a) * 0.8, r * Math.sin(a)]); }
-        var dent = '<g transform="translate(' + hx + "," + hy + ')"><g id="' + P("dent") + '"><path d="' + pd(crumple) + '" fill="#8E2E1E" stroke="' + INK + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
-          line("M-4,-12 L8,0 L-2,14 M8,0 L26,-4 M-12,4 L4,6", INK, 2.2) + '<path d="M-14,-20 L-6,-6" stroke="' + C.cream + '" stroke-width="2.4" opacity="0.7"/></g></g>';
-        var stars = [[-40, -38, 16, C.yellow], [-48, 24, 12, C.orange], [-20, -62, 10, C.yellow]].map(function (s, i) {
-          return '<g transform="translate(' + (hx + s[0]) + "," + (hy + s[1]) + ')"><g class="hit-star" opacity="0">' + KIT.star(0, 0, s[2], s[3]) + "</g></g>";
-        }).join("");
-        var stk = '<g transform="translate(' + ST[0] + "," + ST[1] + ') rotate(-8)"><g id="' + P("sticker-on") + '" opacity="0">' + sticker() + "</g></g>";
-        return '<g id="' + P("sign") + '">' + post + face + dent + stk + "</g>" + stars;
+      var stickerSvg = '<g id="' + ID + '-sticker" opacity="0"><g id="' + ID + '-sticker-in">' + sticker() + "</g></g>";
+
+      // ── The one-page PDF (pdf units: 84 wide, 108 tall, around its middle): a page with a turned corner, PDF in red
+      // Oswald and a few lines of type nobody will read; flat (lying on the lectern) and rolled into a tube.
+      var PW = 84, PH = 108;
+      var pdfFs = KIT.fitText("PDF", 30, PW - 34, "Oswald", 600, 1.5);
+      var page = '<path d="M-42,-54 H24 L42,-36 V54 H-42 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="3.6" stroke-linejoin="miter"/><path d="M24,-54 V-36 H42" fill="#D8CFB4" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
+        '<text x="-4" y="' + f(-24 + pdfFs * 0.36) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + f(pdfFs) + '" letter-spacing="1.5" fill="' + C.war + '">PDF</text>' +
+        [2, 14, 26, 38].map(function (y, i) { return line("M-30," + y + " H" + (i === 3 ? 6 : 30), ink, 2.4, ' opacity="0.45"'); }).join("");
+      var flat = '<path d="M-46,0 L-30,-12 H48 L34,0 Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="miter"/>' + line("M-26,-6 H24", C.war, 2.6);
+      // the tube: rolled about its long axis, held along y; its ends at y -54 and +54 (the far end, which burns, at -54)
+      var tube = '<rect x="-9" y="-54" width="18" height="108" rx="3" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="3.4"/>' +
+        line("M-9,-30 L9,-24 M-9,0 L9,6 M-9,30 L9,36", ink, 1.8, ' opacity="0.5"') + '<ellipse cx="0" cy="54" rx="9" ry="3.4" fill="#D8CFB4" stroke="' + ink + '" stroke-width="2"/>' +
+        '<g id="' + ID + '-char" opacity="0"><rect x="-9" y="-54" width="18" height="16" fill="#3B2A22"/><path d="M-9,-38 l4,4 l4,-5 l4,5 l5,-4" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/></g>';
+      var pdfSvg = '<g id="' + ID + '-pdf"><g transform="scale(' + L.pdfK + ')"><g id="' + ID + '-pdf-in">' +
+        '<g class="pdf-flat">' + flat + '</g><g class="pdf-page" opacity="0">' + page + '</g><g class="pdf-tube" opacity="0">' + tube + "</g></g>" +
+        '<g id="' + ID + '-fire" transform="translate(0,-56)" opacity="0">' + KIT.flames(0, 0, 0.36) + "</g></g></g>";
+
+      // ── The navy swivel chair (chair units: its casters on y 0, the seat's top at y -272, 320 wide): a tufted
+      // leather back drawn behind him, the seat cushion in front of his stub legs, a gas post and a five-star base.
+      function chairBack() {
+        var bk = [[-138, -262], [138, -262], [128, -600], [98, -640], [-98, -640], [-128, -600]], tufts = "";
+        for (var r = 0; r < 3; r++) for (var c = 0; c < 4 - (r % 2); c++) tufts += '<circle cx="' + (-84 + c * 56 + (r % 2) * 28) + '" cy="' + (-560 + r * 92) + '" r="6" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.4"/>';
+        return solid(pd(bk), C.navy, 6) + line("M122,-270 L114,-594 L92,-628", C.orange, 5) + tufts +
+          line("M-84,-560 L-28,-468 L28,-560 L84,-468 M-56,-468 L0,-376 L56,-468", "#1A2238", 2.4);
+      }
+      function chairFront() {
+        var seat = [[-168, -228], [168, -228], [158, -280], [-158, -280]];
+        var legs = [-150, -76, 0, 76, 150].map(function (x) { return line("M0,-56 L" + x + ",-24", ink, 22) + line("M0,-56 L" + x + ",-24", C.slate, 12); }).join("");
+        var wheels = [-150, -76, 0, 76, 150].map(function (x) { return '<g transform="translate(' + x + ',-13)"><g class="caster"><circle r="14" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' + line("M-8,0 H8", C.peri, 3) + "</g></g>"; }).join("");
+        return solid(pd([[-14, -228], [14, -228], [14, -56], [-14, -56]]), "#9AA0AE", 4) + line("M8,-224 V-60", C.cream, 3, ' opacity="0.6"') + legs + wheels +
+          solid(pd(seat), C.navy, 6) + line("M-150,-274 H150", C.orange, 4) +
+          solid(pd([[-176, -300], [-150, -300], [-146, -236], [-172, -236]]), C.slate, 4) + solid(pd([[150, -300], [176, -300], [172, -236], [146, -236]]), C.slate, 4);
       }
 
-      // ── The stamp: KIT.props.stamp slams PHYSICALLY POSSIBLE (KIT.props.stampMark) onto the post, and a teal tick ──
-      var PL = L.plate, MK = [PL[0], PL[1] + 60], SK = L.stampK;
-      function stampArt() {
-        var mark = KIT.props.stampMark({ text: "PHYSICALLY\nPOSSIBLE", color: TEAL, fontSize: 34, angle: -6 });
-        var x = PL[0] - PL[2] / 2, y = PL[1] - PL[3] / 2;
-        var plate = '<rect x="' + (x + 7) + '" y="' + (y + 8) + '" width="' + PL[2] + '" height="' + PL[3] + '" rx="4" fill="' + INK + '" opacity="0.3"/>' +
-          '<rect x="' + x + '" y="' + y + '" width="' + PL[2] + '" height="' + PL[3] + '" rx="4" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="5"/>' +
-          '<rect x="' + (x + 9) + '" y="' + (y + 9) + '" width="' + (PL[2] - 18) + '" height="' + (PL[3] - 18) + '" rx="2" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
-          [x + 20, x + PL[2] - 20].map(function (bx) { return '<circle cx="' + bx + '" cy="' + PL[1] + '" r="5" fill="#C9C2B5" stroke="' + INK + '" stroke-width="2"/>'; }).join("");
-        return plate + '<g transform="translate(' + MK[0] + "," + MK[1] + ')"><g id="' + P("mark") + '" opacity="0">' + mark + "</g></g>" +
-          '<g id="' + P("tick") + '">' + KIT.tick(L.tick[0], L.tick[1], L.tick[2], C.med) + "</g>" +
-          '<g transform="translate(' + MK[0] + "," + (MK[1] - 4) + ") scale(" + SK + ')"><g id="' + P("stamp") + '">' + KIT.props.stamp({ text: "POSSIBLE", color: TEAL }) + "</g></g>";
-      }
-
-      // ── The office (drawn at screen x after the pan, shifted by DX into the world) ──
-      var RX = L.rich[0], RS = L.rich[1];
-      var RICH = KIT.castOpts("richHuman", { look: "left", prop: null, arms: [[-20, -60], [20, 60]] });
-      var r0 = KIT.rig(RICH), TY = L.rich[2] - RS * r0.head[1];
-      var sxp = function (p) { return [RX + RS * p[0], TY + RS * p[1]]; };
-      var DESK = TY + RS * 48, NEAR = DESK + (V ? 36 : 40); // the desk top's far and near edges
-      // Poses: A dialing (left hand on the desk, right on the phone's dial), B the PDF up between two fingers, C the
-      // rolled PDF held to the cigar, D the rolled PDF in his mouth.
-      var PK = RS * 0.72, PHONE = [RX + RS * 54, DESK + 22]; // the phone's foot, screen
-      var dialP = [(PHONE[0] - RX) / RS, (PHONE[1] - 10.8 * PK - TY) / RS];
-      var armR = ik(r0.shoulder[1], [dialP[0] - 4, dialP[1] - 9], r0.armLength, -1);
-      var armRest = ik(r0.shoulder[0], [-46, 42], r0.armLength, 1);
-      var CIG = [-29.6, -7.9]; // his cigar's tip (person units, facing left)
-      var POSE = {
-        A: { mood: "smug", arms: [armRest, armR] },
-        B: { mood: "eager", arms: [ik(r0.shoulder[0], [-64, -10], r0.armLength, -1), armR] },
-        C: { mood: "smug", arms: [ik(r0.shoulder[0], [-50, 22], r0.armLength, 1), [10, 20]] },
-        D: { mood: "smug", arms: [ik(r0.shoulder[0], [-36, 8], r0.armLength, 1), [10, 20]] },
+      // ── The Rich Human (KIT.cast "richHuman"), facing her (left). His drawings, one shown at a time: scrolling his
+      // phone, taking the page (monocle gone), lighting the tube off his cigar, and puffing it. His phone stays in his
+      // back hand. The sticker's resting place is on his forehead, at <!--head-end-->, shown when it lands.
+      var RH = KIT.castOpts("richHuman", { look: "left", arms: [[20, 10], [-20, -10]] });
+      var r0 = KIT.rig(RH), hs = r0.hs, SHL = r0.shoulder[0], SHR = r0.shoulder[1], ALEN = r0.armLength;
+      var MOUTH = r0.mouth, TIP = [r0.head[0] - 34.5 * hs, MOUTH[1] - 2.6 * hs];
+      var K = L.chair[2], KC = L.chair[1];
+      var tubeLen = (PH * L.pdfK) / K, chest = [0, SHL[1] + 10];
+      var LIGHT_A = 32 * Math.PI / 180;
+      var lightHand = [TIP[0] - Math.sin(LIGHT_A) * tubeLen * 0.85, TIP[1] + Math.cos(LIGHT_A) * tubeLen * 0.85];
+      var puffHand = [MOUTH[0] - tubeLen * 0.62, MOUTH[1] + 2 * hs];
+      var POSES = {
+        scroll: { mood: "smug", arms: [ik(SHL, [chest[0] - 3, chest[1]], ALEN, -1), ik(SHR, [chest[0] + 3, chest[1] + 2], ALEN, 1)] },
+        take: { mood: "flat", prop: null, arms: [ik(SHL, [SHL[0] - ALEN * 1.9, SHL[1] - 8], ALEN, -1), ik(SHR, [chest[0] + 4, chest[1] + 2], ALEN, 1)] },
+        light: { mood: "smug", prop: null, arms: [ik(SHL, lightHand, ALEN, -1), ik(SHR, [SHR[0] + 4, SHR[1] + ALEN * 1.6], ALEN, 1)] },
+        puff: { mood: "smug", prop: null, arms: [ik(SHL, puffHand, ALEN, -1), ik(SHR, [SHR[0] + 4, SHR[1] + ALEN * 1.6], ALEN, 1)] },
       };
-      function seg(S, a, len) { return [S[0] + len * Math.sin((a * Math.PI) / 180), S[1] + len * Math.cos((a * Math.PI) / 180)]; }
-      // the point a little past the wrist, along the forearm (where the fingers pinch)
-      function pinch(name, k) {
-        var o = POSE[name], el = seg(r0.shoulder[0], o.arms[0][0], r0.armLength), wr = seg(el, o.arms[0][1], r0.armLength);
-        var dx = wr[0] - el[0], dy = wr[1] - el[1], n = Math.sqrt(dx * dx + dy * dy);
-        return [wr[0] + (dx / n) * k, wr[1] + (dy / n) * k];
+      var rigs = {}, FH = [r0.head[0] - 3 * hs, r0.head[1] - 16 * hs], FHK = 0.55 / K * 1.0;
+      function phone(h) {
+        return '<g transform="translate(' + f(h[0]) + "," + f(h[1] - 4) + ') rotate(-14)"><rect x="-5" y="-9" width="10" height="17" rx="1.6" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="1.8"/>' +
+          '<rect x="-3.4" y="-7.2" width="6.8" height="11.6" fill="#BFD8D2"/><g class="scroll-lines">' + line("M-2.4,-5 H2.4 M-2.4,-2 H1.4 M-2.4,1 H2.4 M-2.4,4 H0.6", ink, 0.9, ' opacity="0.6"') + "</g></g>";
       }
-      // A one-page PDF, w by h, its top left at (0,0): a folded corner, PDF in red, lines of text nobody will read.
-      function page(w, h) {
-        var c = w * 0.26, rows = "";
-        for (var i = 0; i < 6; i++) rows += "M" + f(w * 0.14) + "," + f(h * (0.46 + i * 0.08)) + " H" + f(w * (i % 3 === 2 ? 0.6 : 0.86)) + " ";
-        return solid(pd([[0, 0], [w - c, 0], [w, c], [w, h], [0, h]]), WHITE, Math.max(1.6, w * 0.06)) +
-          '<path d="' + pd([[w - c, 0], [w - c, c], [w, c]]) + '" fill="#E4DCC2" stroke="' + INK + '" stroke-width="' + f(Math.max(1.2, w * 0.04)) + '" stroke-linejoin="round"/>' +
-          '<text x="' + f(w * 0.12) + '" y="' + f(h * 0.33) + '" font-family="Oswald" font-weight="600" font-size="' + f(h * 0.25) + '" fill="' + C.war + '">PDF</text>' +
-          '<path d="' + rows + '" stroke="' + INK + '" stroke-width="' + f(Math.max(0.8, w * 0.035)) + '" opacity="0.45"/>';
-      }
-      // The rolled-up PDF from a to b (person units), 7 thick; b burns.
-      function tube(a, b, id) {
-        var dx = b[0] - a[0], dy = b[1] - a[1], len = Math.sqrt(dx * dx + dy * dy), ang = (Math.atan2(dy, dx) * 180) / Math.PI;
-        return '<g transform="translate(' + f(a[0]) + "," + f(a[1]) + ") rotate(" + f(ang) + ')">' + solid(pd([[0, -3.6], [len, -3.6], [len, 3.6], [0, 3.6]]), WHITE, 2.2) +
-          '<path d="M' + f(len * 0.3) + ",-3.6 L" + f(len * 0.42) + ",3.6 M" + f(len * 0.62) + ",-3.6 L" + f(len * 0.74) + ',3.6" stroke="' + INK + '" stroke-width="1" opacity="0.5"/>' +
-          '<rect x="' + f(len * 0.12) + '" y="-3.6" width="' + f(len * 0.12) + '" height="7.2" fill="' + C.war + '" opacity="0.85"/>' +
-          '<ellipse cx="' + f(len) + '" cy="0" rx="1.6" ry="3.6" fill="#2A221C" stroke="' + INK + '" stroke-width="1.2"/></g>' +
-          '<g class="pdf-fire" id="' + P(id) + '">' + KIT.flames(b[0], b[1] + 1, 0.15) + "</g>";
-      }
-      function richArt() {
-        var out = "";
-        ["A", "B", "C", "D"].forEach(function (k) {
-          var held = "";
-          if (k === "B") { var pp = pinch("B", 9); held = '<g transform="translate(' + f(pp[0] - 12) + "," + f(pp[1] - 2) + ') rotate(4)">' + page(24, 31) + "</g>"; }
-          if (k === "C") held = tube([pinch("C", 4)[0] - 2, pinch("C", 4)[1] + 6], [CIG[0] - 1, CIG[1] - 2], "fire-c");
-          if (k === "D") held = tube([r0.mouth[0] + 2, r0.mouth[1] + 1], [r0.mouth[0] - 30, r0.mouth[1] + 9], "fire-d");
-          // C's and D's tube is drawn over the hand that holds it; B's page hangs from his fingers
-          out += '<g id="' + P("rich-" + k) + '"' + (k === "A" ? "" : ' opacity="0"') + ">" + KIT.person(mix(RICH, POSE[k])) + held + "</g>";
-        });
-        // the monocle on its chain, popping out of the far eye and swinging below its anchor on his vest
-        var eye = [r0.head[0] - 0.8 * 10.8, r0.head[1] + 0.8 * -4], anchor = [eye[0] - 3, 10];
-        var mono = '<g id="' + P("mono") + '">' + line("M" + f(anchor[0]) + "," + f(anchor[1]) + " Q" + f(anchor[0] - 6) + "," + f((anchor[1] + eye[1]) / 2) + " " + f(eye[0] - 3) + "," + f(eye[1] + 4), C.yellow, 1.3) +
-          '<circle cx="' + f(eye[0]) + '" cy="' + f(eye[1]) + '" r="5.2" fill="#FFFFFF" fill-opacity="0.25" stroke="' + INK + '" stroke-width="3.6"/><circle cx="' + f(eye[0]) + '" cy="' + f(eye[1]) + '" r="5.2" fill="none" stroke="' + C.yellow + '" stroke-width="2"/></g>';
-        var ring = '<g transform="translate(' + f(r0.mouth[0] - 4) + "," + f(r0.mouth[1] - 4) + ')"><g id="' + P("ring") + '" opacity="0"><ellipse rx="7" ry="4.5" fill="none" stroke="' + INK + '" stroke-width="3.2"/><ellipse rx="7" ry="4.5" fill="none" stroke="#D8D2C8" stroke-width="1.6"/></g></g>';
-        var flare = '<g transform="translate(' + f(CIG[0] - 1) + "," + f(CIG[1] - 3) + ')"><g id="' + P("flare") + '" opacity="0">' + KIT.star(0, 0, 13, C.yellow) + KIT.star(0, 0, 6, "#FFFFFF") + "</g></g>";
-        var popStar = '<g transform="translate(' + f(eye[0]) + "," + f(eye[1]) + ')"><g id="' + P("mono-pop") + '" opacity="0">' + KIT.star(0, 0, 12, C.orange) + "</g></g>";
-        return '<g transform="translate(' + f(RX + DX) + "," + f(TY) + ") scale(" + RS + ')">' + out + mono + popStar + flare + ring + "</g>";
-      }
-      var MONO = { anchor: null };
-      function officeArt() {
-        var x0 = L.deskL + DX, x1 = L.deskR + DX, out = "";
-        // the huge leather chair: an oxblood back towering over him, button-tufted, with rolled arms
-        var cw = RS * (V ? 124 : 132), cx = RX + DX, top = TY - RS * 100, bot = DESK + 4, ox = "#6E2A1E";
-        var back = [[cx - cw / 2, bot], [cx - cw / 2 - 8, top + 50], [cx - cw / 2 + 24, top], [cx + cw / 2 - 24, top], [cx + cw / 2 + 8, top + 50], [cx + cw / 2, bot]];
-        out += solid(pd(back), ox, 5) + '<path d="' + pd(back) + '" fill="url(#' + P("hred") + ')" opacity="0.3"/>' + line("M" + f(cx + cw / 2 - 2) + "," + f(top + 54) + " V" + f(bot - 10), C.orange, 2.4, ' opacity="0.8"');
-        for (var r = 0; r < 4; r++) for (var c = 0; c < 4; c++) {
-          var bx = cx - cw * 0.33 + c * cw * 0.22 + (r % 2 ? cw * 0.11 : 0), by = top + 50 + r * (bot - top - 90) / 3.5;
-          if (bx > cx + cw * 0.4) continue;
-          out += '<circle cx="' + f(bx) + '" cy="' + f(by) + '" r="5" fill="#4A1A12" stroke="' + INK + '" stroke-width="2"/>' + line("M" + f(bx - 16) + "," + f(by - 12) + " L" + f(bx) + "," + f(by) + " L" + f(bx + 16) + "," + f(by - 12), "#4A1A12", 1.6);
+      var manSvg = Object.keys(POSES).map(function (n) {
+        var o = copy(RH, POSES[n]);
+        rigs[n] = KIT.rig(o);
+        var body = KIT.person(o);
+        if (n === "light" || n === "puff") {
+          body = body.replace("<!--head-end-->", '<g class="fh-sticker" opacity="0" transform="translate(' + f(FH[0]) + "," + f(FH[1]) + ") rotate(-9) scale(" + FHK.toFixed(4) + ')">' + sticker() + "</g><!--head-end-->");
         }
-        [-1, 1].forEach(function (s) {
-          var ax = cx + s * (cw / 2 + 4), arm = [[ax - 30, bot], [ax - 34, DESK - RS * 20], [ax, DESK - RS * 26], [ax + 34, DESK - RS * 20], [ax + 30, bot]];
-          out += solid(pd(arm), ox, 4) + '<ellipse cx="' + f(ax) + '" cy="' + f(DESK - RS * 22) + '" rx="22" ry="9" fill="#8A3A28" stroke="' + INK + '" stroke-width="3"/>';
-        });
-        out += richArt();
-        // the desk: a mahogany top in perspective and a paneled front with brass handles (the front runs off the bottom)
-        var top2 = [[x0 + 30, DESK], [x1 - 30, DESK], [x1, NEAR], [x0, NEAR]], front = [[x0, NEAR], [x1, NEAR], [x1, H + 60], [x0, H + 60]];
-        out += solid(pd(top2), "#9A5634", 4) + '<path d="' + pd(top2) + '" fill="url(#' + P("fine") + ')" opacity="0.18"/>' + line("M" + (x0 + 40) + "," + (DESK + 8) + " H" + (x1 - 120), C.tan, 2.4, ' opacity="0.7"');
-        out += solid(pd(front), C.rust, 4.4) + line("M" + (x1 - 8) + "," + (NEAR + 6) + " V" + (H + 40), C.orange, 2.6);
-        var pw = (x1 - x0 - 80) / 3;
-        for (var k = 0; k < 3; k++) {
-          var px = x0 + 40 + k * pw;
-          out += '<rect x="' + f(px + 10) + '" y="' + f(NEAR + 26) + '" width="' + f(pw - 20) + '" height="' + (V ? 300 : 230) + '" fill="none" stroke="' + INK + '" stroke-width="3" opacity="0.7"/>' +
-            '<rect x="' + f(px + pw / 2 - 26) + '" y="' + f(NEAR + 52) + '" width="52" height="12" rx="5" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="2.6"/>';
-        }
-        // the TO READ tray: a teetering stack of unread pages under a cobweb
-        var tx = L.tray + DX, ty = DESK + 22, stack = "", hgt = V ? 230 : 250;
-        for (var i = 0; i < Math.round(hgt / 9); i++) stack += '<rect x="' + f(tx - 52 + ((i * 7) % 11) - 5) + '" y="' + f(ty - 14 - i * 9) + '" width="104" height="9" fill="' + (i % 4 ? WHITE : "#E9E1C9") + '" stroke="' + INK + '" stroke-width="2"/>';
-        var web = "M" + f(tx + 50) + "," + f(ty - hgt - 6) + " L" + f(tx + 100) + "," + f(ty - hgt + 50) + " M" + f(tx + 50) + "," + f(ty - hgt + 24) + " Q" + f(tx + 66) + "," + f(ty - hgt + 22) + " " + f(tx + 76) + "," + f(ty - hgt + 12) +
-          " M" + f(tx + 52) + "," + f(ty - hgt + 44) + " Q" + f(tx + 80) + "," + f(ty - hgt + 40) + " " + f(tx + 90) + "," + f(ty - hgt + 30) + " M" + f(tx + 75) + "," + f(ty - hgt + 22) + " L" + f(tx + 50) + "," + f(ty - hgt + 50);
-        out += stack + solid(pd([[tx - 66, ty], [tx + 66, ty], [tx + 60, ty - 16], [tx - 60, ty - 16]]), C.slate, 3) +
-          txt(tx, ty - 3, "TO READ", 14, C.cream, ' letter-spacing="1.5"') + line(web, INK, 1.4, ' opacity="0.6"');
-        // the phone on the desk (its dial spins as he dials)
-        out += '<g transform="translate(' + f(PHONE[0] + DX) + "," + f(PHONE[1]) + ") scale(" + f(PK) + ')"><g id="' + P("phone") + '">' + KIT.props.phone({ color: C.slate }) + "</g></g>";
-        return out;
+        return '<g class="rh-pose" data-p="' + n + '" opacity="' + (n === "scroll" ? 1 : 0) + '">' + body + phone(rigs[n].hand[1]) + "</g>";
+      }).join("");
+      // the monocle that pops out on "read": a gold ring on a chain pinned to his lapel
+      var EYE = r0.eyes, PIN = [-10, SHL[1] + 22];
+      var monoSvg = '<g id="' + ID + '-mono" opacity="0"><path id="' + ID + '-chain" d="" fill="none" stroke="' + C.yellow + '" stroke-width="1.6"/><g id="' + ID + '-ring"><circle r="6.4" fill="#FFFFFF" fill-opacity="0.25" stroke="' + ink + '" stroke-width="4.2"/><circle r="6.4" fill="none" stroke="' + C.yellow + '" stroke-width="2.4"/></g></g>';
+      // the smoke ring he blows, in his units
+      var ringSvg = '<g id="' + ID + '-smoke" opacity="0"><ellipse rx="14" ry="8" fill="none" stroke="' + ink + '" stroke-width="7"/><ellipse rx="14" ry="8" fill="none" stroke="#D8D3CA" stroke-width="4"/></g>';
+      var FEETY = L.floor - 272 * KC, MANY = FEETY - 100 * K;
+      var guest = '<g id="' + ID + '-guest"><g transform="scale(' + KC + ')">' + chairBack() + "</g>" +
+        '<g transform="translate(0,' + f(-272 * KC - 100 * K) + ") scale(" + K + ')">' + manSvg + monoSvg + ringSvg + "</g>" +
+        '<g transform="scale(' + KC + ')">' + chairFront() + "</g></g>";
+
+      // ── The set, Wishonia and the slow push; in front: her props, the sign, the guest, the page, the rock, the sticker
+      var front = props + '<g id="' + ID + '-sign-at">' + signSvg + "</g>" + guest + pdfSvg + rockSvg + stickerSvg;
+      KIT.studio(tl, ID, { cam: q("cam"), wall: q("wall"), wish: q("wish"), front: q("front") }, { front: front, push: [1.0, 1.05] });
+
+      // ── Elements
+      var signAt = q("sign-at"), signTip = q("sign-tip"), dent = q("dent"), bang = q("bang");
+      var rockEl = q("rock"), rockSpin = q("rock-spin"), stk = q("sticker"), stkIn = q("sticker-in");
+      var guestEl = q("guest"), poses = Array.prototype.slice.call(guestEl.querySelectorAll(".rh-pose"));
+      var casters = Array.prototype.slice.call(guestEl.querySelectorAll(".caster")), scrolls = Array.prototype.slice.call(guestEl.querySelectorAll(".scroll-lines"));
+      var fhSt = Array.prototype.slice.call(guestEl.querySelectorAll(".fh-sticker"));
+      var mono = q("mono"), chain = q("chain"), ring = q("ring"), smoke = q("smoke");
+      var pdfEl = q("pdf"), pdfIn = q("pdf-in"), pFlat = pdfEl.querySelector(".pdf-flat"), pPage = pdfEl.querySelector(".pdf-page"), pTube = pdfEl.querySelector(".pdf-tube");
+      var fire = q("fire"), charEl = q("char");
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+
+      // ── Cues
+      var tUnr = cue("unrealistic"), tPhys = cue("physically"), tIsnt = cue("isn't"), tGet = cue("Getting"), tBill = cue("billionaire");
+      var tRead = cue("read"), tPDF = cue("P.D.F."), tIs = cue("is.", 3), tAfter = KIT.after(ID, "is.", 3);
+      var tHit = 0.35, tKnock = tGet + 0.3, tRoll = tRead + 0.1, tLit = tPDF, tLand = tIs + 0.02;
+      var tPuff = cueEnd("is.", 3) + 0.05, tRing = tAfter - 0.08, tIris = tAfter + 0.12;
+
+      // where the sign stands, and where the chair is when it clips the post
+      var SX = L.sign[0], CX = L.chair[0], XHIT = SX + 172 * KC;
+      function chairX(t) {
+        if (t < tGet) return L.from;
+        if (t < tKnock) return L.from + (XHIT - L.from) * ((t - tGet) / (tKnock - tGet));
+        var u = clamp((t - tKnock) / 0.55);
+        return XHIT + (CX - XHIT) * (1 - Math.pow(1 - u, 3));
       }
-      // the PDF that slides across the desk to him (world; it stops by his left hand)
-      var PDFW = V ? 64 : 70, PDFH = V ? 82 : 90, PDF_AT = [RX + RS * -66 - PDFW / 2 + DX, DESK + 4];
-      var deskPdf = '<g transform="translate(' + f(PDF_AT[0]) + "," + f(PDF_AT[1]) + ')"><g id="' + P("pdf") + '" opacity="0"><g transform="rotate(-6)">' + page(PDFW, PDFH * 0.5) + "</g></g></g>";
+      // screen point of a point in his units
+      var manAt = function (x, p) { return [x + K * p[0], MANY + K * p[1]]; };
+      var hitAt = [SX + DENT[0] - SR * 0.2, L.floor + DENT[1]];
+      var rockFrom = [-160, L.peak + 160];
 
-      // ── Assemble ──
-      var floor = '<path d="M0,' + FY + " H" + (DX + W * 0.75) + '" stroke="' + INK + '" stroke-width="5"/><rect x="0" y="' + (FY + 3) + '" width="' + (DX + W * 0.75) + '" height="' + (H - FY) + '" fill="url(#' + P("fine") + ')" opacity="0.12"/>';
-      var restRock = '<g transform="translate(' + L.rest + "," + FY + ") scale(" + L.rk + ')"><g id="' + P("rock-rest") + '" opacity="0">' + rockArt + "</g></g>";
-      q("world").innerHTML = KIT.svg(W + DX, H, KIT.paperDefs(ID) + floor + signArt() + restRock + stampArt() + officeArt() + deskPdf);
-      // the sticker in the air: its transform is set every frame (the runtime loop)
-      q("air").innerHTML = KIT.svg(W, H, '<g id="' + P("sticker-fly") + '" opacity="0">' + sticker() + "</g>");
-      // the rock flying in: centered on its group's origin, in screen pixels
-      q("throw").innerHTML = KIT.svg(W, H, '<g id="' + P("rock-fly") + '" opacity="0"><g id="' + P("rock-spin") + '"><g transform="scale(' + L.rk + ') translate(0,39)">' +
-        rock(RUST[0], RUST[1], RUST[2], P("clip-rock-b")) + moss() + "</g></g></g>");
-
-      // ── Timeline ──
-      var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      KIT.enter(tl, q("cam"), "slide left");
-      var show = function (el, t) { tl.set(el, { opacity: 1 }, t); };
-      var hide = function (el, t) { tl.set(el, { opacity: 0 }, t); };
-      var all = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
-      var eye = [r0.head[0] - 0.8 * 10.8, r0.head[1] + 0.8 * -4], anchor = [eye[0] - 3, 10];
-      [[g("sign"), SX + " " + FY], [g("dent"), "0 0"], [g("sticker-on"), "0 0"], [g("rock-spin"), "0 0"], [g("mark"), "0 -55"], [g("stamp"), "0 0"],
-        [g("mono"), anchor.join(" ")], [g("mono-pop"), "0 0"], [g("flare"), "0 0"], [g("ring"), "0 0"], [g("pdf"), "0 0"]].forEach(function (o) { gsap.set(o[0], { svgOrigin: o[1] }); });
-      all(g("sign") + " ~ g .hit-star").forEach(function (el) { gsap.set(el, { svgOrigin: "0 0" }); });
-
-      // "But": the rust rock (thrown off the last scene's right edge) flies in from the left while the paper slides in,
-      // and clangs off the sign (+0.35): a dent and stars; the sign wobbles about its foot (+0.5, the boing).
-      var tB = cue("But"), tHit = tB + 0.35;
-      var camAt = function (t) { return W * Math.pow(Math.max(0, 1 - t / 0.5), 3); }; // KIT.enter's slide (power3.out over 0.5 s)
-      var rr = 60 * L.rk, hitC = [L.hit[0] - rr + camAt(tHit), L.hit[1]], restC = [L.rest, FY - 39 * L.rk];
-      tl.fromTo(g("rock-fly"), { opacity: 1, x: L.rockFrom[0], y: L.rockFrom[1] }, { x: hitC[0], duration: tHit - 0.12, ease: "none", immediateRender: false }, 0.12);
-      tl.fromTo(g("rock-fly"), { y: L.rockFrom[1] }, { y: hitC[1], duration: tHit - 0.12, ease: "sine.in", immediateRender: false }, 0.12);
-      tl.fromTo(g("rock-spin"), { rotation: -200 }, { rotation: 0, duration: tHit - 0.12, ease: "none" }, 0.12);
-      // the bounce back: up, then down to the post's foot, a small hop, and it lies there (the world's copy takes over)
-      tl.to(g("rock-fly"), { x: restC[0], duration: 0.62, ease: "power1.out" }, tHit);
-      tl.to(g("rock-fly"), { keyframes: [{ y: hitC[1] - 90, duration: 0.18, ease: "power2.out" }, { y: restC[1], duration: 0.34, ease: "power2.in" }, { y: restC[1] - 26, duration: 0.1, ease: "power2.out" }, { y: restC[1], duration: 0.1, ease: "power2.in" }] }, tHit);
-      tl.to(g("rock-spin"), { rotation: -360, duration: 0.72, ease: "power1.out" }, tHit);
-      hide(g("rock-fly"), tHit + 0.76); show(g("rock-rest"), tHit + 0.76);
-      tl.fromTo(g("dent"), { scale: 0 }, { scale: 1, duration: 0.07, ease: "power3.out" }, tHit);
-      all(".hit-star").forEach(function (el, i) {
-        tl.fromTo(el, { opacity: 1, scale: 0.3, rotation: 0 }, { scale: 1.3, rotation: 40, duration: 0.18, ease: "power2.out", immediateRender: false }, tHit + i * 0.03);
-        tl.to(el, { opacity: 0, duration: 0.12 }, tHit + 0.2 + i * 0.03);
-      });
-      tl.to(g("sign"), { keyframes: [{ rotation: 7, duration: 0.12, ease: "power2.out" }, { rotation: -5, duration: 0.2, ease: "sine.inOut" }, { rotation: 3, duration: 0.18, ease: "sine.inOut" },
-        { rotation: -1.5, duration: 0.16, ease: "sine.inOut" }, { rotation: 0, duration: 0.14, ease: "sine.inOut" }] }, tHit + 0.03);
-      // "stop": the UNREALISTIC sticker slaps on (the splat), while the sign still wobbles.
-      var tS1 = cue("stop", 1);
-      tl.fromTo(g("sticker-on"), { opacity: 0, scale: 1.7 }, { opacity: 1, scale: 1, duration: 0.09, ease: "power3.in" }, tS1 - 0.07);
-      tl.to(g("sticker-on"), { scaleY: 0.86, scaleX: 1.06, duration: 0.06, yoyo: true, repeat: 1 }, tS1 + 0.02);
-      // "Improvement": a rubber stamp drops into view over the post and takes aim; "physically": it slams down (the
-      // stamp) and lifts off the mark; "possible.": the teal tick draws on.
-      var tI = cue("Improvement"), tPh = cue("physically"), tPo = cue("possible.");
-      // (it hovers beside the sign, clear of the sticker, then swoops onto the plate)
-      var HV = V ? [290, -150] : [330, -230];
-      tl.fromTo(g("stamp"), { x: HV[0] / SK, y: -(MK[1] + 300) / SK, rotation: -12 }, { y: HV[1] / SK, rotation: 8, duration: 0.4, ease: "back.out(1.4)" }, tI);
-      tl.to(g("stamp"), { x: (HV[0] - 24) / SK, rotation: -6, duration: 0.2, yoyo: true, repeat: 1, ease: "sine.inOut" }, tI + 0.4);
-      tl.to(g("stamp"), { x: 0, y: 0, rotation: 0, duration: 0.1, ease: "power4.in" }, tPh - 0.1);
-      tl.to(g("stamp"), { scaleY: 0.9, duration: 0.05, yoyo: true, repeat: 1 }, tPh);
-      tl.fromTo(g("mark"), { opacity: 0 }, { opacity: 1, duration: 0.01 }, tPh);
-      tl.to(g("stamp"), { y: -(MK[1] + 400) / SK, x: 60 / SK, rotation: 14, duration: 0.45, ease: "power2.in" }, tPh + 0.22);
-      KIT.drawTick(tl, document.querySelector(g("tick") + " .tick"), tPo);
-
-      // "Stop" (second): the sticker's corner lifts; "isn't": it peels off (the whoosh) and flutters right, and the
-      // camera pans after it, landing on the Rich Human on "billionaire".
-      var tS2 = cue("Stop", 2), tIs = cue("isn't"), tBil = cue("billionaire");
-      tl.to(g("sticker-on"), { rotation: -7, duration: 0.12, yoyo: true, repeat: 3, ease: "sine.inOut" }, tS2);
-      hide(g("sticker-on"), tIs); show(g("sticker-fly"), tIs);
-      var pan0 = tIs + 0.12;
-      tl.fromTo(q("world"), { x: 0 }, { x: -DX, duration: tBil - pan0, ease: "power2.inOut" }, pan0);
-      // He dials his phone the whole time, one finger in the dial (the dial winds round and springs back).
-      var dial = document.querySelector(g("phone") + " .phone-dial"), armA = document.querySelector(g("rich-A") + " .arm-r");
-      gsap.set(dial, { svgOrigin: "0 -10.8" });
-      gsap.set(armA, { svgOrigin: r0.shoulder[1].join(" ") });
-      var tRead = cue("read");
-      for (var d0 = pan0; d0 + 0.5 <= tRead; d0 += 0.5) {
-        tl.to(dial, { rotation: 75, duration: 0.24, ease: "sine.inOut" }, d0);
-        tl.to(armA, { rotation: 7, duration: 0.24, ease: "sine.inOut" }, d0);
-        tl.to(dial, { rotation: 0, duration: 0.22, ease: "power1.out" }, d0 + 0.26);
-        tl.to(armA, { rotation: 0, duration: 0.22, ease: "power1.out" }, d0 + 0.26);
-      }
-      // +0.3 after "billionaire": a one-page PDF slides across the desk to him (the whoosh).
-      var tSl = tBil + 0.3, slide = PDF_AT[0] - (L.deskL + DX) - 20;
-      tl.fromTo(g("pdf"), { opacity: 1, x: -slide, rotation: -40 }, { x: 0, rotation: 0, duration: tRead - tSl - 0.08, ease: "power3.out", immediateRender: false }, tSl);
-      // "read": he lifts it between two fingers, eyes wide; the monocle pops out (the pop) and swings on its chain.
-      hide(g("pdf"), tRead); hide(g("rich-A"), tRead); show(g("rich-B"), tRead);
-      tl.fromTo(g("mono-pop"), { opacity: 1, scale: 0.3 }, { scale: 1.4, duration: 0.15, ease: "power2.out", immediateRender: false }, tRead);
-      tl.to(g("mono-pop"), { opacity: 0, duration: 0.1 }, tRead + 0.15);
-      tl.to(g("mono"), { keyframes: [{ rotation: -150, duration: 0.24, ease: "power2.in" }, { rotation: -205, duration: 0.2, ease: "sine.out" }, { rotation: -168, duration: 0.24, ease: "sine.inOut" },
-        { rotation: -190, duration: 0.24, ease: "sine.inOut" }, { rotation: -176, duration: 0.24, ease: "sine.inOut" }, { rotation: -183, duration: 0.24, ease: "sine.inOut" }, { rotation: -180, duration: 0.2, ease: "sine.inOut" }] }, tRead);
-      // "P.D.F.": he rolls it into a tube and lights it off his cigar (a flare, then the fire).
-      var tPdf = cue("P.D.F.");
-      hide(g("rich-B"), tPdf); show(g("rich-C"), tPdf);
-      tl.fromTo(g("flare"), { opacity: 1, scale: 0.2 }, { scale: 1.5, duration: 0.16, ease: "power2.out", immediateRender: false }, tPdf + 0.04);
-      tl.to(g("flare"), { opacity: 0, duration: 0.12 }, tPdf + 0.2);
-      tl.fromTo(g("fire-c"), { scale: 0, svgOrigin: f(CIG[0] - 1) + " " + f(CIG[1] - 1) }, { scale: 1, svgOrigin: f(CIG[0] - 1) + " " + f(CIG[1] - 1), duration: 0.2, ease: "back.out(2)" }, tPdf + 0.08);
-      KIT.flicker(tl, q("fire-c"), tPdf + 0.1, D - 0.2);
-      KIT.flicker(tl, q("fire-d"), tPdf + 0.1, D - 0.2);
-      // "is." (last): the sticker lands on his forehead (the splat, in the runtime loop); a beat after, he puffs the
-      // burning PDF like a second cigar and blows a smoke ring (the huff). The part ends on this frame.
-      var tLand = cue("is.", 3), tPuff = after("is.", 3);
-      hide(g("rich-C"), tPuff); show(g("rich-D"), tPuff);
-      tl.fromTo(g("ring"), { opacity: 1, scale: 0.6, x: 0, y: 0 }, { scale: 2.1, x: -40, y: -46, duration: D - tPuff - 0.1, ease: "power1.out", immediateRender: false }, tPuff + 0.05);
-      tl.to(g("ring"), { opacity: 0.5, duration: D - tPuff - 0.2, ease: "power1.in" }, tPuff + 0.15);
-
-      // ── The runtime loop: the camera's push-in and the sticker's flight are functions of time ──
-      var fly = q("sticker-fly"), S0 = [ST[0], ST[1]], zoomEl = q("zoom");
-      var FH = [RX + RS * (r0.head[0] - 0.8 * 3), TY + RS * (r0.head[1] + 0.8 * -19)]; // his forehead, screen
-      var HOV = [FH[0] + L.hover[0], L.hover[1]], tDrop = tLand - 0.3;
-      var ease = function (u) { return u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2; };
-      // The push-in: from just before "read" until a beat after the sticker lands, about his head (which stays put).
-      var ZC = [RX + RS * r0.head[0], TY + RS * r0.head[1]], tZ0 = tRead - 0.3, tZ1 = tLand + 0.3;
-      var zoomAt = function (t) { return 1 + (L.zoom - 1) * ease(Math.max(0, Math.min(1, (t - tZ0) / (tZ1 - tZ0)))); };
       KIT.onTime(tl, D, function (t) {
-        var z = zoomAt(t);
-        zoomEl.style.transform = z === 1 ? "" : "translate(" + f(ZC[0] * (1 - z)) + "px," + f(ZC[1] * (1 - z)) + "px) scale(" + z.toFixed(4) + ")";
-        if (t < tIs) return;
-        var x, y, r, s, sy;
-        if (t < tDrop) {
-          var u = (t - tIs) / (tDrop - tIs), e = ease(u), damp = 1 - u * 0.5;
-          x = S0[0] + (HOV[0] - S0[0]) * e + 70 * damp * Math.sin(u * Math.PI * 5);
-          y = S0[1] + (HOV[1] - S0[1]) * Math.min(1, e * 1.25) + 26 * damp * Math.sin(u * Math.PI * 10 + 0.6);
-          r = -8 + 26 * damp * Math.sin(u * Math.PI * 5 + 0.9);
-          s = 1 + (ST[5] - 1) * Math.min(1, u * 1.4); sy = s;
-        } else if (t < tLand) {
-          var v = (t - tDrop) / (tLand - tDrop), endX = HOV[0] + 70 * 0.5 * Math.sin(Math.PI * 5), endR = -8 + 26 * 0.5 * Math.sin(Math.PI * 5 + 0.9);
-          x = endX + (FH[0] - endX) * v; y = HOV[1] + (FH[1] - HOV[1]) * v * v; r = endR + (-7 - endR) * v; s = ST[5]; sy = s;
-        } else {
-          var w = Math.min(1, (t - tLand) / 0.16);
-          x = FH[0]; y = FH[1]; r = -7; s = ST[5] * (1 + 0.1 * Math.sin(w * Math.PI)); sy = ST[5] * (1 - 0.2 * Math.sin(w * Math.PI));
+        // ── the rock: flies in over her head, clangs off the sign, bounces back and drops out of shot
+        var rk = null, rot = 0;
+        if (t < tHit) {
+          var u = clamp(t / tHit);
+          rk = [rockFrom[0] + (hitAt[0] - rockFrom[0]) * u, (1 - u) * (1 - u) * rockFrom[1] + 2 * u * (1 - u) * L.peak + u * u * hitAt[1]];
+          rot = 900 * u;
+        } else if (t < tHit + 0.9) {
+          var b = t - tHit;
+          rk = [hitAt[0] - 520 * b, hitAt[1] - 380 * b + 0.5 * 3200 * b * b];
+          rot = 900 - 500 * b;
         }
-        // the sticker flies in the zoomed picture too
-        x = ZC[0] + z * (x - ZC[0]); y = ZC[1] + z * (y - ZC[1]); s *= z; sy *= z;
-        fly.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") rotate(" + f(r) + ") scale(" + s.toFixed(3) + "," + sy.toFixed(3) + ")");
+        show(rockEl, rk && rk[1] < H + 200);
+        if (rk) { rockEl.setAttribute("transform", "translate(" + f(rk[0]) + "," + f(rk[1]) + ")"); rockSpin.setAttribute("transform", "rotate(" + f(rot) + ")"); }
+
+        // ── the sign: wobbles from the hit; the dent appears on the hit and pops out on "physically" (overshooting)
+        var wob = t > tHit ? Math.sin((t - tHit) * 22) * 7 * Math.exp(-(t - tHit) * 3.2) : 0;
+        var dk = t < tHit ? 0 : t < tPhys ? 1 : Math.max(0, 1 - back((t - tPhys) / 0.3, 3));
+        dent.setAttribute("transform", "scale(" + Math.max(0, dk).toFixed(3) + ")");
+        var bu = (t - tHit) / 0.22;
+        show(bang, bu > 0 && bu < 1);
+        // knocked over by the chair on "Getting": its foot kicked left, it topples back against the wall
+        var sx = SX, lean = wob;
+        if (t > tKnock) {
+          var ku = clamp((t - tKnock) / 0.32), fall = V ? 84 : 22;
+          sx = SX - 40 * smooth(ku);
+          lean = fall * ku * ku + (ku >= 1 ? Math.sin((t - tKnock - 0.32) * 26) * 3 * Math.exp(-(t - tKnock - 0.32) * 7) : 0);
+        }
+        signAt.setAttribute("transform", "translate(" + f(sx) + "," + L.floor + ")");
+        signTip.setAttribute("transform", "rotate(" + f(lean) + ")");
+
+        // ── the sticker: slaps onto the sign on "unrealistic", peels off on "isn't" and flutters up out of shot,
+        // then flutters back down onto his forehead on "is."
+        var signC = [SX + Math.sin((lean * Math.PI) / 180) * SH, L.floor - Math.cos((lean * Math.PI) / 180) * SH];
+        var st = null, sr = -8, ss = 1;
+        if (t >= tUnr && t < tIsnt) {
+          var su = clamp((t - tUnr) / 0.12);
+          st = [signC[0], signC[1] + 6]; sr = -8 + lean; ss = 1.7 - 0.7 * su;
+          if (su >= 1 && t < tUnr + 0.2) ss = 1 + 0.06 * Math.sin((t - tUnr - 0.12) * 40);
+        } else if (t >= tIsnt && t < tIsnt + 1.3) {
+          var pu = (t - tIsnt) / 1.3, peel = clamp((t - tIsnt) / 0.22);
+          st = [signC[0] + 140 * pu + Math.sin(pu * 9) * 50, signC[1] + 6 - (signC[1] + 300) * pu * pu - 40 * peel];
+          sr = -8 - 30 * peel + Math.sin(pu * 11) * 26; ss = 1;
+        }
+        var fhScreen = null;
+        if (t >= tLand - 0.75) {
+          var gx = chairX(t), land = manAt(gx, FH), lk = FHK * K;
+          var fu = clamp((t - (tLand - 0.75)) / 0.75);
+          if (fu < 1) {
+            st = [land[0] + Math.sin(fu * 10) * 70 * (1 - fu), -120 + (land[1] + 120) * (1 - (1 - fu) * (1 - fu))];
+            sr = -9 + Math.sin(fu * 12) * 30 * (1 - fu); ss = 1 + (lk - 1) * fu;
+          } else fhScreen = land;
+        }
+        show(stk, !!st);
+        if (st) { stk.setAttribute("transform", "translate(" + f(st[0]) + "," + f(st[1]) + ")"); stkIn.setAttribute("transform", "rotate(" + f(sr) + ") scale(" + ss.toFixed(3) + ")"); }
+        fhSt.forEach(function (e) { show(e, !!fhScreen); });
+
+        // ── the Rich Human rolls in on "Getting", scrolling; the casters spin
+        var cx = chairX(t);
+        guestEl.setAttribute("transform", "translate(" + f(cx) + "," + L.floor + ")");
+        show(guestEl, t >= tGet - 0.02);
+        casters.forEach(function (c) { c.setAttribute("transform", "rotate(" + f(-(cx - CX) * 1.4) + ")"); });
+        scrolls.forEach(function (s) { s.setAttribute("transform", "translate(0," + f(-((t * 9) % 3)) + ")"); });
+        var p = t < tRead ? "scroll" : t < tLit - 0.06 ? "take" : t < tPuff ? "light" : "puff";
+        poses.forEach(function (g) { show(g, g.getAttribute("data-p") === p); });
+
+        // ── the monocle pops out on "read" and dangles from his lapel on its chain, swinging
+        var mu = t - tRead;
+        show(mono, mu > 0);
+        if (mu > 0) {
+          var mp;
+          if (mu < 0.3) { var a = mu / 0.3; mp = [EYE[0] - 10 * a, EYE[1] - 26 * Math.sin(Math.PI * a) + (PIN[1] + 24 - EYE[1]) * a * a]; }
+          else { var sw = Math.sin((mu - 0.3) * 9) * 0.5 * Math.exp(-(mu - 0.3) * 1.6); mp = [PIN[0] + Math.sin(sw) * 24, PIN[1] + Math.cos(sw) * 24]; }
+          ring.setAttribute("transform", "translate(" + f(mp[0]) + "," + f(mp[1]) + ")");
+          chain.setAttribute("d", "M" + f(PIN[0]) + "," + f(PIN[1]) + " L" + f(mp[0]) + "," + f(mp[1] - 6.4));
+        }
+
+        // ── the page: lies on the lectern; on "billionaire" it slides along the top and off the end into his fingers
+        // on "read"; rolled into a tube, lit off his cigar on "P.D.F.", then puffed like a second cigar
+        var pp, prot = 0, mode = "flat";
+        var lieY = LT + 6, s0 = tBill, s1 = tRead - 0.12;
+        if (t < s0) pp = [L.pdf0, lieY];
+        else if (t < s1) { var vu = smooth((t - s0) / (s1 - s0)); pp = [L.pdf0 + (LEND - L.pdf0) * vu, lieY]; }
+        else {
+          var hand = function (n) { var h = rigs[n].hand[0]; return manAt(cx, h); };
+          if (t < tRead + 0.05) {
+            var hu = clamp((t - s1) / (tRead + 0.05 - s1)), hh = hand("take");
+            pp = [LEND + (hh[0] - LEND) * hu, lieY + (hh[1] + 50 * L.pdfK - lieY) * hu - Math.sin(Math.PI * hu) * 60]; mode = hu < 0.4 ? "flat" : "page"; prot = -20 * (1 - hu);
+          } else if (t < tRoll) { var h1 = hand("take"); pp = [h1[0], h1[1] + 50 * L.pdfK]; mode = "page"; prot = Math.sin((t - tRead) * 30) * 4; }
+          else if (p === "take") { var h2 = hand("take"); pp = [h2[0], h2[1] + 50 * L.pdfK]; mode = "roll"; }
+          else if (p === "light") {
+            // the tube runs from his hand up to the cigar's tip, its far end in the ember
+            var tip = manAt(cx, TIP), lh = hand("light"), ang = Math.atan2(tip[0] - lh[0], -(tip[1] - lh[1]));
+            pp = [(tip[0] + lh[0]) / 2 + Math.sin(ang) * 6, (tip[1] + lh[1]) / 2 - Math.cos(ang) * 6]; prot = (ang * 180) / Math.PI; mode = "tube";
+          } else {
+            // in his mouth beside the cigar, pointing at her, burning end out
+            var mo = manAt(cx, MOUTH), puffIn = smooth((t - tPuff) / 0.15) * 0;
+            pp = [mo[0] - (PH * L.pdfK) / 2 + 6, mo[1] + 9 * K * hs + puffIn]; prot = -84; mode = "tube";
+          }
+        }
+        pdfEl.setAttribute("transform", "translate(" + f(pp[0]) + "," + f(pp[1]) + ")");
+        var rollK = mode === "roll" ? 1 - 0.8 * clamp((t - tRoll) / (tLit - 0.06 - tRoll)) : 1;
+        pdfIn.setAttribute("transform", "rotate(" + f(prot) + ") scale(" + rollK.toFixed(3) + ",1)");
+        show(pFlat, mode === "flat"); show(pPage, mode === "page" || mode === "roll"); show(pTube, mode === "tube");
+        // the fire: lights on "P.D.F." at the far end; it chars as it burns
+        var lit = mode === "tube" && t >= tLit;
+        fire.setAttribute("opacity", lit ? 1 : 0);
+        fire.setAttribute("transform", "rotate(" + f(prot) + ") translate(0,-56) rotate(" + f(-prot) + ") scale(" + (lit ? back((t - tLit) / 0.2, 1.6) : 0).toFixed(3) + ")");
+        show(charEl, lit);
+
+        // ── the smoke ring: after "is." it leaves his lips, swells and drifts up
+        var ru = (t - tRing) / 0.9;
+        show(smoke, ru > 0 && ru < 1);
+        if (ru > 0 && ru < 1) {
+          smoke.setAttribute("opacity", (1 - smooth((ru - 0.6) / 0.4)).toFixed(2));
+          smoke.setAttribute("transform", "translate(" + f(MOUTH[0] - tubeLen - 10 - 30 * ru) + "," + f(MOUTH[1] - 14 - 60 * ru) + ") scale(" + (0.6 + 1.4 * smooth(ru)).toFixed(3) + ")");
+        }
       });
+      KIT.flicker(tl, fire, tLit, D - 0.3);
+
+      // ── The iris closes on her face after the smoke ring is blown, and the part ends on black.
+      KIT.iris(tl, ID, q("iris"), S.face, "out", tIris, D - 0.06);
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;
     })();

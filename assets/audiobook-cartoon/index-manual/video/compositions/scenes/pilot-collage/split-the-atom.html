@@ -1,0 +1,55 @@
+<template id="split-the-atom-template">
+  <!-- split-the-atom · collage (KIT.collage, video/README.md "Writing a collage scene"). The atom bobs on the paper;
+       "nineteen": 1945 stamps in; "split": the atom shivers; "Atom": a hang-tag pops on, ATOMOS; "unable": UNABLE
+       TO BE CUT is stamped on it; "naturally,": the Scientist slides in, shears open round the atom; "cut": SNIP, the
+       atom flies apart, the tag drops; "human": he bows; "assumed": he slides out, the halves glide together;
+       "unlimited": a sunburst; "free": FREE ENERGY! pointing-at-each-other starts on this end state. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="split-the-atom" data-width="1920" data-height="1080" data-start="0" data-duration="17.9">
+    <div id="split-the-atom-weave"></div>
+    <div id="split-the-atom-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    KIT.collage({
+      id: "split-the-atom", seed: 311,
+      cast: {
+        atom: { art: "atom", x: 960, y: 300, scale: 0.8, cut: "lr" },
+        // the gap between his open blades (art 236, 130) sits on the atom; he bows at the waist, the blade hinges on the pivot
+        sci: { art: "scientist", x: 960, y: 300, anchor: [236, 130], scale: 1.25, pivot: [160, 753], pieces: {
+          legs: { clip: [[0, 430], [319, 430], [319, 753], [0, 753]] },
+          top: { clip: [[0, 0], [248, 0], [212, 250], [212, 262], [319, 262], [319, 430], [0, 430]], pivot: [130, 430], pieces: {
+            blade: { clip: [[212, 262], [212, 250], [248, 0], [319, 0], [319, 262]], pivot: [212, 250] } } } } },
+      },
+      beats: [
+        { at: 0, do: "bob", who: "atom", y: 7, r: 3, until: "naturally," },
+        { on: "nineteen", do: "banner", id: "year", text: "1945", y: 669, size: 230, pad: 80, lineHeight: 0.95, spacing: 2, color: "ink", tilt: -3 },
+        { on: "split", do: "shiver", who: "atom" },
+        { on: "Atom", n: 2, offset: -0.2, do: "drop", who: "year", dist: 900, spin: -22, dur: 0.5 },
+        { on: "Atom", n: 2, do: "tag", who: "atom", text: "ATOMOS", x: 1465, y: 330, knot: [304, 245], under: "sci" },
+        { on: "unable", do: "stamp", who: "tag", text: "UNABLE TO BE CUT" },
+        { on: "naturally,", do: "slideIn", who: "sci", from: "left", over: 26, tilt: 4 },
+        { on: "cut", n: 2, offset: 0.06, do: "hinge", who: "sci.blade", angle: -24, hold: 0.5 },
+        { on: "cut", n: 2, offset: 0.06, do: "split", who: "atom", gap: 300, spin: 14 },
+        { on: "cut", n: 2, offset: 0.14, do: "drop", who: "tag", drift: 40, spin: 34 },
+        { on: "cut", n: 2, offset: 0.46, do: "bob", who: ["atom.L", "atom.R"], y: 6, r: 2 },
+        { on: "human", do: "bow", who: "sci.top" },
+        { on: "assumed", do: "slideOut", who: "sci", to: "left" },
+        { on: "assumed", offset: 0.08, do: "move", who: "atom.L", to: [865, 430], dur: 0.5, ease: "smooth" },
+        { on: "assumed", offset: 0.08, do: "move", who: "atom.R", to: [1055, 430], dur: 0.5, ease: "smooth" },
+        { on: "unlock", do: "hop", who: ["atom.L", "atom.R"] },
+        { on: "unlimited", do: "sunburst", x: 960, y: 430 },
+        { on: "free", offset: 0.08, do: "banner", text: "FREE ENERGY!", y: 783 },
+      ],
+    });
+  </script>
+</template>

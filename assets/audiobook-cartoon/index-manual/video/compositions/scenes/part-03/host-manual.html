@@ -1,0 +1,206 @@
+<template id="host-manual-template">
+  <!-- host-manual · Layer A (storyboards/part-03-gradual-irrationality-reduction.md, scene 6): the host's set (KIT.studio),
+       a plain cut in. On the lectern top: Wishonia's old dusty copy of the manual at the left end (from host-opens) and
+       the new one, gleaming orange, at the right end. "manual": a sparkle runs across the new cover. "bribe": the cover
+       swings open and a fat green medicine bill boings up out of the pages on a zigzag spring, like a jack-in-the-box,
+       overshoots and keeps wobbling to the cut. "gradually:": the snail from the title card hauls itself up over the
+       lectern's left edge and creeps along the top, about a finger's width by the end; her lookright head watches it. -->
+  <style>
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+    #host-manual-weave, #host-manual-cam, #host-manual-wall, #host-manual-wish, #host-manual-front, #host-manual-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="host-manual" data-width="1920" data-height="1080" data-start="0" data-duration="7.04">
+    <div id="host-manual-weave">
+      <div id="host-manual-cam">
+        <div id="host-manual-wall"></div>
+        <div id="host-manual-wish"></div>
+        <div id="host-manual-front"></div>
+      </div>
+    </div>
+    <div id="host-manual-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "host-manual";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return (+n).toFixed(1); };
+      var smooth = KIT.smooth;
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 71);
+
+      // ── Where things stand on the lectern top (canvas px): the old book, the new book (x, feet y, scale), the
+      // spring's lean (book units: how far right the bill sits from the pages, so it stays beside her head), the
+      // bill's height when it settles (book units), and the snail's last spot (x, foot y, scale) and the lectern top.
+      var S0 = KIT.STUDIO, TOP = S0.top;
+      var L = V
+        ? { old: [262, TOP, 1.25], neu: [566, TOP, 1.35], lean: 135, rise: 70, snail: [186, TOP, 2.1], creep: 14 }
+        : { old: [650, TOP, 1.1], neu: [968, TOP, 1.2], lean: 50, rise: 78, snail: [560, TOP, 1.9], creep: 12 };
+
+      // ── The old dusty copy (host-opens): the manual recolored tan, with a cobweb over its top corner.
+      function oldBookShut() {
+        return KIT.props.manual().replace(new RegExp(C.orange, "gi"), "#B99A70").replace(/#FBF6E6/gi, "#E6DABC") +
+          '<path d="M40,-118 L14,-118 M40,-118 L40,-92 M40,-118 L20,-98 M28,-118 Q32,-108 40,-104 M18,-118 Q26,-102 40,-96" fill="none" stroke="#FFFFFF" stroke-width="1.6" opacity="0.9"/>' +
+          [[-30, -6], [-12, -3], [8, -5], [26, -2]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="1.8" fill="#8E7652"/>'; }).join("");
+      }
+
+      // ── The new manual: the prop, its cover swinging open about the spine edge. The cover (.manual-cover) folds
+      // flat (scaleX 1 -> 0 about x -42), then the plain inside board unfolds to the left (scaleX 0 -> 1), so the title is
+      // never shown mirrored. The pages' lines, the spring and the bill sit on the open pages.
+      var inside = '<g class="nm-inside"><path d="M-42,0 L-108,-10 L-108,-128 L-42,-118 Z" fill="#C97A30" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+        '<path d="M-48,-8 L-102,-16 V-120 L-48,-112" fill="none" stroke="' + C.cream + '" stroke-width="1.4" opacity="0.6"/></g>';
+      var lines = "";
+      for (var ly = -104; ly < -14; ly += 10) lines += '<path d="M-34,' + ly + ' H30" stroke="#B9B3A3" stroke-width="2"/>';
+      // the gleam: a white band, clipped to the cover, that runs across it on "manual"
+      var gleam = '<defs><clipPath id="' + ID + '-gl"><rect x="-42" y="-118" width="84" height="118"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-gl)"><path class="nm-gleam" d="M-20,-150 L4,-150 L-36,40 L-60,40 Z" fill="#FFFFFF" opacity="0"/></g>';
+      var book = KIT.props.manual().replace('<g class="manual-cover">', lines + '<g class="manual-cover">');
+      // the gleam goes inside the cover so it folds away with it
+      book = book.replace(/<\/g><\/g>$/, gleam + "</g></g>");
+      // the bill on its spring: the spring's path is rebuilt every frame; the bill is a medicine paper, legs hidden
+      var billSvg = KIT.money("med", 0).replace('class="legs"', 'class="legs" opacity="0"');
+      var spring = '<path class="nm-spring" d="" fill="none" stroke="' + ink + '" stroke-width="7" stroke-linejoin="miter" stroke-linecap="round"/>' +
+        '<path class="nm-spring2" d="" fill="none" stroke="' + C.cream + '" stroke-width="3" stroke-linejoin="miter" stroke-linecap="round"/>';
+      var newBook = '<g id="' + ID + '-new" transform="translate(' + L.neu[0] + "," + L.neu[1] + ") scale(" + L.neu[2] + ')">' + inside + book + spring +
+        '<g class="nm-bill" opacity="0">' + billSvg + "</g>" +
+        // the boing lines either side of the bill
+        '<g class="nm-boing" opacity="0"><path d="M-72,-30 q-12,22 0,44 M72,-30 q12,22 0,44" fill="none" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"/></g></g>';
+      // two twinkles that pop on the cover's corner as the gleam passes
+      function twinkle(r) {
+        return '<path d="M0,' + -r + " L" + f(r * 0.25) + "," + f(-r * 0.25) + " L" + r + ",0 L" + f(r * 0.25) + "," + f(r * 0.25) + " L0," + r + " L" + f(-r * 0.25) + "," + f(r * 0.25) + " L" + -r + ",0 L" + f(-r * 0.25) + "," + f(-r * 0.25) + ' Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>';
+      }
+      var tw = [[52, -112, 18], [70, -64, 11], [-30, -128, 13]];
+      var twinkles = tw.map(function (p, i) {
+        return '<g transform="translate(' + f(L.neu[0] + p[0] * L.neu[2]) + "," + f(L.neu[1] + p[1] * L.neu[2]) + ')"><g id="' + ID + "-tw" + i + '" opacity="0">' + twinkle(p[2]) + "</g></g>";
+      }).join("");
+
+      // ── The snail from the title card (irrationality-reduction-title.html): about 70 long, drawn round the middle
+      // of its foot, facing +x. Its body stretches and its shell rocks as it creeps.
+      function snail(pid) {
+        var P = function (x, y) { return x.toFixed(1) + "," + y.toFixed(1); };
+        var polyD = function (pts) { return "M" + pts.map(function (p) { return P(p[0], p[1]); }).join(" L") + " Z"; };
+        var solid = function (pts, col, w) { return '<path d="' + polyD(pts) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 3.2) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + polyD(pts) + '" fill="' + col + '"/>'; };
+        var body = [[-32, 0], [-29, -4], [-9, -7], [13, -8], [20, -12], [23, -21], [28, -26], [35, -26], [39, -20], [38, -11], [41, -3], [39, 0]];
+        var shell = [], sp = [], i;
+        for (i = 0; i < 12; i++) { var a = (i / 12) * Math.PI * 2; shell.push([-5 + 20 * Math.cos(a), -25 + 19 * Math.sin(a)]); }
+        for (i = 0; i <= 26; i++) { var t = i / 26, b = Math.PI * 0.15 + t * Math.PI * 3.7, r = 16 * (1 - t) + 1.8; sp.push([-5 + r * Math.cos(b), -25 + r * 0.95 * Math.sin(b)]); }
+        var stalk = function (k, x0, y0, x1, y1) {
+          var dx = x1 - x0, dy = y1 - y0, Ln = Math.sqrt(dx * dx + dy * dy), nx = -dy / Ln, ny = dx / Ln;
+          var qd = [[x0 + nx * 2.4, y0 + ny * 2.4], [x1 + nx * 1.3, y1 + ny * 1.3], [x1 - nx * 1.3, y1 - ny * 1.3], [x0 - nx * 2.4, y0 - ny * 2.4]];
+          return '<g class="sn-stalk" data-x="' + x0 + '" data-y="' + y0 + '">' + solid(qd, C.cream, 2.6) +
+            '<circle cx="' + x1 + '" cy="' + y1 + '" r="4.4" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.2"/><circle cx="' + (x1 + 1.2) + '" cy="' + y1 + '" r="1.9" fill="' + ink + '"/></g>';
+        };
+        var dotsId = pid + "-hd";
+        return '<defs><pattern id="' + dotsId + '" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + ink + '"/></pattern></defs>' +
+          stalk(0, 29, -25, 25, -45) +
+          '<g class="sn-body">' + solid(body, C.cream) + '<path d="' + polyD(body) + '" fill="url(#' + dotsId + ')" opacity="0.25"/>' +
+          '<path d="M33,-15 L39,-14" fill="none" stroke="' + ink + '" stroke-width="1.8" stroke-linecap="round"/>' +
+          '<path d="M-24,-3 L-14,-4 M2,-5 L10,-5.5" fill="none" stroke="' + ink + '" stroke-width="1.3" opacity="0.55"/></g>' +
+          '<g class="sn-shell">' + solid(shell, C.yellow) +
+          '<path d="M' + P(sp[0][0], sp[0][1]) + sp.slice(1).map(function (p) { return " L" + P(p[0], p[1]); }).join("") + '" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M5,-10 L12,-17 L14,-27" fill="none" stroke="' + C.orange + '" stroke-width="2.4" stroke-linejoin="miter"/></g>' +
+          stalk(1, 34, -24, 40, -44);
+      }
+      // The snail rises from behind the lectern top, so it is clipped to the space above the top line.
+      var snailSvg = '<defs><clipPath id="' + ID + '-above"><rect x="-200" y="-400" width="' + (W + 400) + '" height="' + (TOP + 402) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-above)"><g id="' + ID + '-snail"><g transform="scale(' + L.snail[2] + ')">' + snail(ID + "-sn") + "</g></g></g>";
+
+      var front = '<g transform="translate(' + L.old[0] + "," + L.old[1] + ") scale(" + L.old[2] + ')">' + oldBookShut() + "</g>" + newBook + twinkles + snailSvg;
+      var set = KIT.studio(tl, ID, { cam: q("cam"), wall: q("wall"), wish: q("wish"), front: q("front") }, { front: front, push: [1, 1.06] });
+      // the covers set their four title lines tight, so their boxes overlap: layering by design, not a collision
+      Array.prototype.forEach.call(q("front").querySelectorAll(".manual-cover text"), function (tx) { tx.setAttribute("data-layout-allow-overlap", ""); });
+
+      var fr = q("new");
+      var cover = fr.querySelector(".manual-cover"), insideEl = fr.querySelector(".nm-inside"), gleamEl = fr.querySelector(".nm-gleam");
+      var springEl = fr.querySelector(".nm-spring"), spring2 = fr.querySelector(".nm-spring2"), billEl = fr.querySelector(".nm-bill"), boing = fr.querySelector(".nm-boing");
+      var snailEl = q("snail"), snBody = snailEl.querySelector(".sn-body"), snShell = snailEl.querySelector(".sn-shell"), stalks = snailEl.querySelectorAll(".sn-stalk");
+      var twEls = tw.map(function (p, i) { return q("tw" + i); });
+
+      // ── Cues
+      var tManual = cue("manual"), tBribe = cue("bribe"), tGrad = cue("gradually:");
+      var tOpen = tBribe, tPop = tBribe + 0.08;
+      var clamp = function (u) { return Math.min(1, Math.max(0, u)); };
+
+      KIT.onTime(tl, D, function (t) {
+        // "manual": the gleam runs across the cover, the twinkles pop one after another
+        var gu = clamp((t - tManual) / 0.5);
+        gleamEl.setAttribute("opacity", gu > 0 && gu < 1 ? 0.75 : 0);
+        gleamEl.setAttribute("transform", "translate(" + f(-50 + 150 * gu) + ",0)");
+        twEls.forEach(function (e, i) {
+          var u = clamp((t - tManual - 0.12 - i * 0.12) / 0.42), s = Math.sin(Math.PI * u);
+          e.setAttribute("opacity", u > 0 && u < 1 ? 1 : 0);
+          e.setAttribute("transform", "scale(" + s.toFixed(3) + ") rotate(" + f(u * 90) + ")");
+        });
+
+        // "bribe": the cover folds flat against the spine edge, then the plain inside unfolds to the left
+        var cu = clamp((t - tOpen) / 0.16), open = cu >= 1;
+        var cs = cu < 0.5 ? 1 - smooth(cu / 0.5) : 0, isx = cu < 0.5 ? 0 : smooth((cu - 0.5) / 0.5);
+        cover.setAttribute("transform", "translate(-42,0) scale(" + Math.max(0.001, cs).toFixed(3) + ",1) translate(42,0)");
+        cover.setAttribute("opacity", cs > 0.01 ? 1 : 0);
+        insideEl.setAttribute("transform", "translate(-42,0) scale(" + Math.max(0.001, isx).toFixed(3) + ",1) translate(42,0)");
+        insideEl.setAttribute("opacity", isx > 0.01 ? 1 : 0);
+
+        // the bill boings up on its spring: an overshooting rise, then a wobble that dies down but never stops
+        var pu = (t - tPop);
+        var h = 0, sway = 0, rot = 0;
+        if (pu > 0) {
+          var rise = 1 - Math.exp(-pu * 5.5) * Math.cos(pu * 15);         // overshoots, then rings
+          var ring = 0.22 + 0.78 * Math.exp(-pu * 1.6);                      // the ringing settles to a steady wobble
+          h = L.rise * (1 + (rise - 1) * 1) + Math.sin(pu * 11) * 6 * (1 - ring) ;
+          sway = Math.sin(pu * 7.3) * 14 * ring + Math.sin(pu * 4.1) * 4;
+          if (sway < 0) sway *= 0.35;                                         // it swings wide away from her face, not into it
+          rot = Math.sin(pu * 7.3 + 0.6) * 16 * ring + Math.sin(pu * 4.1) * 4;
+          h = Math.max(0, h);
+        }
+        var base = [0, -110], tip = [L.lean + sway, -110 - h];
+        // the spring: a zigzag from the pages to the bill's bottom, its coils spreading as it stretches
+        var n = 9, pts = [base];
+        for (var i = 1; i < n; i++) {
+          var u = i / n, x = base[0] + (tip[0] - base[0]) * u, y = base[1] + (tip[1] - base[1]) * u;
+          pts.push([x + (i % 2 ? 11 : -11), y]);
+        }
+        pts.push(tip);
+        var d = "M" + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L");
+        var shown = pu > 0;
+        springEl.setAttribute("d", shown ? d : ""); spring2.setAttribute("d", shown ? d : "");
+        billEl.setAttribute("opacity", shown ? 1 : 0);
+        billEl.setAttribute("transform", "translate(" + f(tip[0]) + "," + f(tip[1] - 22) + ") rotate(" + f(rot) + ") scale(1.2)");
+        var bu = clamp(pu / 0.5);
+        boing.setAttribute("opacity", pu > 0.05 && pu < 0.6 ? 1 : 0);
+        boing.setAttribute("transform", "translate(" + f(tip[0]) + "," + f(tip[1] - 22) + ") scale(" + (1 + 0.3 * bu).toFixed(3) + ")");
+
+        // "gradually:": the snail rises from behind the lectern top at its left end (eye stalks first), tips
+        // forward onto the top, and creeps right, stretching and bunching
+        var sx = L.snail[0], sy = L.snail[1], k = L.snail[2];
+        var a1 = clamp((t - tGrad) / 0.75), a2 = clamp((t - tGrad - 0.75) / 0.3), a3 = clamp((t - tGrad - 1.05) / Math.max(0.1, D - tGrad - 1.05));
+        // up from behind the top (eye stalks first), leaning back as it hauls, then a lurch forward onto the top
+        var py = sy + 75 * k * (1 - smooth(a1)), px = sx, ang = a2 > 0 ? 9 * Math.sin(Math.PI * a2) : -6 * smooth(a1);
+        px += L.creep * a3;
+        snailEl.setAttribute("transform", "translate(" + f(px) + "," + f(py) + ") rotate(" + f(ang) + " " + f(30 * k) + ",0)");
+        snailEl.setAttribute("opacity", t >= tGrad ? 1 : 0);
+        // the creep: the body stretches and bunches, the shell rocks, the eye stalks wave
+        var ph = Math.max(0, t - tGrad) * 5;
+        snBody.setAttribute("transform", "translate(-32,0) scale(" + (1 + 0.06 * Math.sin(ph)).toFixed(3) + ",1) translate(32,0)");
+        snShell.setAttribute("transform", "rotate(" + f(4 * Math.sin(ph + 1)) + " -5 -6)");
+        Array.prototype.forEach.call(stalks, function (s, i) {
+          s.setAttribute("transform", "rotate(" + f(8 * Math.sin(ph * 0.8 + i * 1.7)) + " " + s.getAttribute("data-x") + " " + s.getAttribute("data-y") + ")");
+        });
+      });
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

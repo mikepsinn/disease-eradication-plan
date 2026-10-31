@@ -1,0 +1,256 @@
+<template id="host-opens-template">
+  <!-- host-opens · style "atomic" (cartoon-style-bible.md): the host's set. The iris opens close on Wishonia's face;
+       her own copy of the manual stands on the right end of the lectern, faded to tan, dusty, cobwebbed and chewed. On
+       "exact" it wobbles and puffs dust; on "ago." its cover creaks open by itself and a moth flutters out and up out of
+       the frame. On "Before" a red fold-out drops out of the back of the book, a tiny grinning antenna skull (one of her
+       ancestors) on each panel; the camera pulls back; on "twelve thousand" it unfolds panel by panel down the side of
+       the lectern and off the bottom of the frame, and from "which" it keeps coming, piling up in zigzag folds beside
+       the lectern until the heap reaches the lectern top. She shrugs on "nobody"; on "enjoyed." the whole strip zips back
+       into the book like a tape measure, the last skull pops up over the pages to wave bye-bye, the book slams shut on
+       it and hops, and one last wisp of dust curls up (storyboards/part-03-gradual-irrationality-reduction.md). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+    #host-opens-weave, #host-opens-zoom, #host-opens-cam, #host-opens-wall, #host-opens-wish, #host-opens-front, #host-opens-iris, #host-opens-film { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="host-opens" data-width="1920" data-height="1080" data-start="0" data-duration="15.38">
+    <div id="host-opens-weave">
+      <div id="host-opens-zoom">
+        <div id="host-opens-cam">
+          <div id="host-opens-wall"></div>
+          <div id="host-opens-wish"></div>
+          <div id="host-opens-front"></div>
+        </div>
+      </div>
+      <div id="host-opens-iris"></div>
+    </div>
+    <div id="host-opens-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      window.__timelines = window.__timelines || {};
+      var ID = "host-opens";
+      var sc = KIT.scene(ID), D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return (+n).toFixed(1); };
+      var tl = gsap.timeline({ paused: true });
+
+      // ── Wishonia's old manual (host-manual stands it next to the new one: copy this function there) ──
+      // KIT.props.manual aged: the orange cover faded to dusty tan, the white pages yellowed, ruled lines and dust
+      // specks on the pages under the cover, the top right corner chewed, a cobweb across the top left corner (over the
+      // spine, so it stays when the cover opens). Standing on (0, 0) in the prop's units (98 wide, 124 tall).
+      // Parts: .manual-cover (swing it open about (-42, -59): scaleX 1 -> -1 as the prop says, or part way, as here) and, inside it,
+      // .old-inside (the plain tan inside of the cover, opacity 0: show it while the cover is open).
+      var OLD_TAN = "#B99A70", OLD_PAGE = "#E6DABC", OLD_DARK = "#8E7652";
+      function oldBook() {
+        var html = KIT.props.manual()
+          .replace(new RegExp(C.orange, "gi"), OLD_TAN).replace(/#FBF6E6/gi, OLD_PAGE)
+          // the chewed corner: tooth marks bitten out of the cover's and the pages' top right corners
+          .split("M-42.0,-118.0 L42.0,-118.0 L42.0,0.0 L-42.0,0.0 Z").join("M-42,-118 L20,-118 L23,-113 L27,-116 L30,-110 L34,-112 L36,-105 L42,-103 L42,0 L-42,0 Z")
+          .split("M-42.0,-117.0 L40.0,-117.0 L40.0,0.0 L-42.0,0.0 Z").join("M-42,-117 L18,-117 L21,-112 L25,-115 L28,-109 L32,-111 L34,-104 L40,-102 L40,0 L-42,0 Z");
+        var lines = "";
+        for (var y = -100; y < -12; y += 9) lines += '<path d="M-34,' + y + " H" + (y > -40 ? 18 : 28) + '" stroke="#9C8A68" stroke-width="2"/>';
+        var specks = [[-20, -60], [6, -84], [22, -40], [-30, -92], [12, -20]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.2" fill="' + OLD_DARK + '"/>'; }).join("");
+        html = html.replace('<g class="manual-cover">', lines + specks + '<g class="manual-cover">');
+        // the inside of the cover (plain tan, a darker frame rule), last in the cover group
+        var inside = '<g class="old-inside" opacity="0"><path d="M-42,-118 L20,-118 L23,-113 L27,-116 L30,-110 L34,-112 L36,-105 L42,-103 L42,0 L-42,0 Z" fill="' + OLD_TAN + '" stroke="' + ink + '" stroke-width="4.4" stroke-linejoin="miter"/>' +
+          '<path d="M-36,-8 H36 M-36,-110 H14" stroke="' + OLD_DARK + '" stroke-width="2"/></g>';
+        html = html.slice(0, -8) + inside + "</g></g>";
+        var web = '<path d="M-56,-124 L-30,-124 M-56,-124 L-56,-100 M-56,-124 L-36,-104 M-44,-124 Q-46,-114 -56,-112 M-34,-124 Q-38,-106 -56,-104 M-50,-124 Q-50,-119 -56,-118" fill="none" stroke="#FFFFFF" stroke-width="1.6" opacity="0.9"/>';
+        return html + web;
+      }
+      // A tiny grinning skull with two antennae and ball tips (Wishonia's ancestors), about 28 wide, around (0, 0).
+      function aSkull(x, y, s, extra) {
+        var bone = "#F1EAD6", blue = "#86B9D6";
+        return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + s + ')">' +
+          '<path d="M-5,-12 L-10,-25 M5,-12 L10,-25" stroke="' + ink + '" stroke-width="2.6"/><path d="M-5,-12 L-10,-25 M5,-12 L10,-25" stroke="' + blue + '" stroke-width="1.2"/>' +
+          '<circle cx="-10.5" cy="-27" r="3.4" fill="' + blue + '" stroke="' + ink + '" stroke-width="1.6"/><circle cx="10.5" cy="-27" r="3.4" fill="' + blue + '" stroke="' + ink + '" stroke-width="1.6"/>' +
+          '<path d="M-12,-3 L-9,-12 L0,-15 L9,-12 L12,-3 L10,4 L5,7 L5,13 L-5,13 L-5,7 L-10,4 Z" fill="' + bone + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>' +
+          '<path d="M-8,-5 L-2,-6 L-2.6,0.5 L-7.4,0 Z M8,-5 L2,-6 L2.6,0.5 L7.4,0 Z M-1.5,5 L0,2 L1.5,5 Z" fill="' + ink + '"/>' +
+          '<path d="M-6,9 Q0,12 6,9 M-3,8 V12 M0,8.6 V12.6 M3,8 V12" fill="none" stroke="' + ink + '" stroke-width="1.3"/>' + (extra || "") + "</g>";
+      }
+      // The moth from Part 1's empty wallet and Part 2's empty press tray: open or shut wings (they flap), around (0, 0).
+      function moth(open) {
+        var w = open ? '<path d="M0,-2 L-26,-16 L-22,6 Z M0,-2 L26,-16 L22,6 Z" fill="#B9AE98" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M0,2 L-14,14 L-4,6 Z M0,2 L14,14 L4,6 Z" fill="#9C907A" stroke="' + ink + '" stroke-width="2" stroke-linejoin="round"/>'
+          : '<path d="M0,-2 L-8,-24 L-3,2 Z M0,-2 L8,-24 L3,2 Z" fill="#B9AE98" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>';
+        return '<g class="moth-' + (open ? "open" : "shut") + '">' + w + '<ellipse cx="0" cy="2" rx="4" ry="11" fill="#6B5B45" stroke="' + ink + '" stroke-width="2"/><path d="M-1,-8 q-6,-10 -12,-10 M1,-8 q6,-10 12,-10" fill="none" stroke="' + ink + '" stroke-width="1.6"/></g>';
+      }
+
+      // ── Where things stand (canvas px): the book on the right end of the lectern top, the fold-out's column hanging
+      // from its back down past the lectern to the floor, and the heap on the free wall to the right.
+      var S = KIT.STUDIO;
+      var L = V
+        ? { bx: 616, k: 1.3, colX: 658, floor: 1580, hl: 736, hr: 1004, base: 1586, zoom: 1.15, push: 1.04 }
+        : { bx: 1004, k: 1.35, colX: 1046, floor: 1080, hl: 1124, hr: 1500, base: 1086, zoom: 1.2, push: 1.05 };
+      var by = S.top, colTop = by - 4, PW = 56, PH = 62;
+      var NP = Math.ceil((L.floor - colTop) / PH);          // panels hanging from the book to the floor
+      var STEP = 34, BAND = 30, NB = Math.round((L.base - by) / STEP); // the heap's bands, up to the lectern top
+
+      // the fold-out column: panels -3..NP-1 (the negative ones wait inside the book for the strip to feed down)
+      function panel(i) {
+        var y = colTop + i * PH, odd = ((i % 2) + 2) % 2, a = odd ? 10 : 0, b = odd ? 0 : 10, x = L.colX;
+        return '<g id="' + ID + "-p" + (i + 3) + '"><path d="M' + (x + a) + "," + y + " H" + (x + PW + a) + " L" + (x + PW + b) + "," + (y + PH) + " H" + (x + b) + ' Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="3.6" stroke-linejoin="miter"/>' +
+          aSkull(x + 33, y + 40, 1.15) + "</g>";
+      }
+      var col = "";
+      for (var i = -3; i < NP; i++) col += panel(i);
+      var colSvg = '<defs><clipPath id="' + ID + '-colclip"><rect x="' + (L.colX - 20) + '" y="' + colTop + '" width="' + (PW + 50) + '" height="' + (L.floor - colTop + 30) + '"/></clipPath></defs>' +
+        '<g clip-path="url(#' + ID + '-colclip)"><g id="' + ID + '-col">' + col + "</g></g>";
+
+      // the heap: bands of the strip lying folded back and forth, a darker loop at each turn (copied from the sketch)
+      var bands = [], heapSvg = "", loopSvg = "";
+      for (var j = 0; j < NB; j++) {
+        var y = L.base - (j + 1) * STEP, l = L.hl + ((j * 13) % 29), r = L.hr - ((j * 17) % 37), sk = "";
+        for (var x = l + 42; x < r - 24; x += 74) sk += aSkull(x, y + 20, 0.95);
+        bands.push({ y: y, l: l, r: r });
+        heapSvg += '<g id="' + ID + "-bz" + j + '"><g id="' + ID + "-b" + j + '"><path d="M' + l + "," + y + " H" + r + " V" + (y + BAND) + " H" + l + ' Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="3.6"/>' + sk + "</g></g>";
+      }
+      for (j = 0; j < NB - 1; j++) {
+        var b0 = bands[j], b1 = bands[j + 1], right = j % 2 === 0, lx = right ? Math.min(b0.r, b1.r) : Math.max(b0.l, b1.l), d = right ? 1 : -1, yy = b0.y;
+        loopSvg += '<path id="' + ID + "-l" + j + '" opacity="0" d="M' + lx + "," + (yy + BAND) + " C" + (lx + d * 46) + "," + (yy + BAND) + " " + (lx + d * 46) + "," + (yy - STEP) + " " + lx + "," + (yy - STEP) +
+          " L" + lx + "," + (yy - STEP + BAND) + " C" + (lx + d * 22) + "," + (yy - STEP + BAND) + " " + (lx + d * 22) + "," + yy + " " + lx + "," + yy + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="round"/>';
+      }
+
+      // the last skull, peeking up over the pages (book units, behind the pages), with a bony arm to wave bye-bye
+      var arm = '<g id="' + ID + '-arm"><path d="M9,3 L20,-10" stroke="' + ink + '" stroke-width="4.4" stroke-linecap="round"/><path d="M9,3 L20,-10" stroke="#F1EAD6" stroke-width="2.2" stroke-linecap="round"/>' +
+        '<path d="M20,-10 L19,-18 M20,-10 L24,-17 M20,-10 L27,-12" stroke="' + ink + '" stroke-width="3.2" stroke-linecap="round"/><path d="M20,-10 L19,-18 M20,-10 L24,-17 M20,-10 L27,-12" stroke="#F1EAD6" stroke-width="1.4" stroke-linecap="round"/></g>';
+      var peek = '<g id="' + ID + '-peek">' + aSkull(-2, -96, 0.95, arm) + "</g>";
+
+      // the book: a fixed position, then the hop, then the wobble (each its own group, so no tween fights a transform)
+      var book = '<g transform="translate(' + L.bx + "," + by + ") scale(" + L.k + ')"><g id="' + ID + '-hop"><g id="' + ID + '-wob">' + peek + oldBook() + "</g></g></g>";
+
+      // dust: a puff off the book's top on "exact" (balls), specks that settle on "four", the slam's puff, the last wisp
+      var top = [L.bx + 6 * L.k, by - 122 * L.k], rg = KIT.rng(37), dust = "", DUST = "#D8C9A6";
+      var PUFF = [];
+      for (i = 0; i < 7; i++) { PUFF.push({ x: top[0] + (rg() - 0.5) * 90, y: top[1] + (rg() - 0.6) * 30, r: 9 + rg() * 9, dx: 30 + rg() * 70, dy: -10 - rg() * 30 }); }
+      PUFF.forEach(function (p, i) { dust += '<circle id="' + ID + "-d" + i + '" cx="' + f(p.x) + '" cy="' + f(p.y) + '" r="' + f(p.r) + '" fill="' + DUST + '" stroke="' + ink + '" stroke-width="2" opacity="0"/>'; });
+      var SPECK = [];
+      for (i = 0; i < 9; i++) SPECK.push({ x: top[0] - 60 + rg() * 150, y: top[1] - 40 + rg() * 40, fall: 60 + rg() * 90, r: 2 + rg() * 2.2 });
+      SPECK.forEach(function (p, i) { dust += '<circle id="' + ID + "-s" + i + '" cx="' + f(p.x) + '" cy="' + f(p.y) + '" r="' + f(p.r) + '" fill="' + OLD_DARK + '" opacity="0"/>'; });
+      var SLAM = [];
+      for (i = 0; i < 6; i++) SLAM.push({ x: L.bx + (i < 3 ? -70 : 70) * L.k * 0.8 + (rg() - 0.5) * 20, y: by - 8 - rg() * 14, r: 8 + rg() * 7, dx: (i < 3 ? -1 : 1) * (30 + rg() * 40) });
+      SLAM.forEach(function (p, i) { dust += '<circle id="' + ID + "-x" + i + '" cx="' + f(p.x) + '" cy="' + f(p.y) + '" r="' + f(p.r) + '" fill="' + DUST + '" stroke="' + ink + '" stroke-width="2" opacity="0"/>'; });
+      dust += '<path id="' + ID + '-wisp" d="M' + f(top[0]) + "," + f(top[1] - 6) + ' c-10,-12 10,-22 0,-34 c-10,-12 10,-22 0,-34" fill="none" stroke="' + DUST + '" stroke-width="7" stroke-linecap="round" opacity="0"/>';
+
+      var mothSvg = '<g id="' + ID + '-moth" opacity="0">' + moth(true) + moth(false) + "</g>";
+
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 307);
+
+      // ── The host's set (KIT.studio), with the book, the fold-out, the heap, the moth and the dust in front.
+      // Its own push is off: the zoom group above it frames the shot instead (close on her face, then back for the heap).
+      var set = KIT.studio(tl, ID, { cam: q("cam"), wall: q("wall"), wish: q("wish"), front: q("front") },
+        { push: [1, 1], front: heapSvg + loopSvg + colSvg + book + mothSvg + dust });
+      // the cover sets its four title lines tight, so their boxes overlap: layering by design, not a collision
+      Array.prototype.forEach.call(q("front").querySelectorAll(".manual-cover text"), function (tx) { tx.setAttribute("data-layout-allow-overlap", ""); });
+
+      // ── The iris opens on her face at the head of the shot.
+      KIT.iris(tl, ID, q("iris"), S.face, "in", 0.04, 0.74);
+
+      var g = function (s) { return document.getElementById(ID + "-" + s); };
+      var front = q("front"), cover = front.querySelector(".manual-cover"), inside = front.querySelector(".old-inside");
+      var tExact = cue("exact"), tFour = cue("four"), tAgo = cue("ago."), tBefore = cue("Before"), tTwelve = cue("twelve");
+      var tWhich = cue("which"), tTime = cue("time"), tNobody = cue("nobody"), tZip = cue("enjoyed."), tSlam = tZip + 0.35, tWisp = KIT.after(ID, "enjoyed.");
+
+      // ── The framing: close on her face with the book beside her chin, a slow creep in; back to the whole set as the
+      // fold-out drops (so it can run off the bottom and heap up); a small push in on her shrug.
+      var zoom = q("zoom"), origin = S.face[0] + "px " + S.face[1] + "px";
+      tl.fromTo(zoom, { scale: L.zoom, transformOrigin: origin }, { scale: L.zoom * 1.03, transformOrigin: origin, duration: tBefore, ease: "none" }, 0);
+      tl.to(zoom, { scale: 1, duration: 1.3, ease: "sine.inOut" }, tBefore + 0.1);
+      tl.to(zoom, { scale: L.push, duration: 0.7, ease: "sine.inOut" }, tNobody - 0.1);
+
+      // ── "exact": the book wobbles and a puff of dust rolls off it; "four": the dust settles (the converter's bell
+      // dings offstage, sound only).
+      gsap.set(g("wob"), { svgOrigin: "0 0" });
+      tl.to(g("wob"), { keyframes: [{ rotation: -5, duration: 0.08 }, { rotation: 4, duration: 0.1 }, { rotation: -3, duration: 0.1 }, { rotation: 1.5, duration: 0.1 }, { rotation: 0, duration: 0.12 }] }, tExact);
+      PUFF.forEach(function (p, i) {
+        tl.fromTo(g("d" + i), { attr: { r: p.r * 0.4, cx: p.x, cy: p.y }, opacity: 0.95 }, { attr: { r: p.r * 1.7, cx: p.x + p.dx, cy: p.y + p.dy }, opacity: 0, duration: 0.9 + i * 0.05, ease: "power2.out", immediateRender: false }, tExact + 0.06 + i * 0.03);
+      });
+      SPECK.forEach(function (p, i) {
+        tl.fromTo(g("s" + i), { opacity: 0, attr: { cy: p.y } }, { opacity: 0.9, duration: 0.2 }, tExact + 0.2);
+        tl.fromTo(g("s" + i), { attr: { cx: p.x, cy: p.y } }, { attr: { cx: p.x + Math.sin(i) * 14, cy: p.y + p.fall }, duration: 1.4, ease: "sine.inOut", immediateRender: false }, tFour - 0.2 + i * 0.04);
+        tl.to(g("s" + i), { opacity: 0, duration: 0.4 }, tFour + 1.0 + i * 0.04);
+      });
+
+      // ── "ago.": the cover creaks open by itself (its plain tan inside shows past halfway)...
+      gsap.set(cover, { svgOrigin: "-42 -59" });
+      // it swings to scaleX -0.62, an open cover seen at an angle, which keeps it clear of her chin; the inside shows
+      // from the moment it passes edge-on (the sine ease crosses zero at 0.575 of the swing)
+      var OPEN = -0.62;
+      tl.fromTo(cover, { scaleX: 1 }, { scaleX: OPEN, duration: 0.6, ease: "sine.inOut", immediateRender: false }, tAgo);
+      tl.set(inside, { opacity: 1 }, tAgo + 0.6 * 0.575);
+      // ...and a moth flutters out of the pages and flaps slowly up out of the frame.
+      var mothEl = g("moth"), mOpen = mothEl.querySelector(".moth-open"), mShut = mothEl.querySelector(".moth-shut");
+      var m0 = tAgo + 0.4, mDur = 2.6, mx0 = L.bx - 4 * L.k, my0 = by - 70 * L.k, rise = V ? 1250 : 900;
+      KIT.onTime(tl, D, function (t) {
+        var mu = (t - m0) / mDur;
+        if (mu <= 0 || mu >= 1) { mothEl.setAttribute("opacity", 0); return; }
+        var mx = mx0 + Math.sin(mu * 9) * 30 + mu * (V ? 120 : 260), my = my0 - mu * rise - Math.sin(mu * 14) * 16;
+        mothEl.setAttribute("opacity", 1);
+        mothEl.setAttribute("transform", "translate(" + f(mx) + "," + f(my) + ") scale(" + (1.5 + mu * 0.3).toFixed(2) + ")");
+        var open = Math.floor(t * 12) % 2 === 0;
+        mOpen.setAttribute("opacity", open ? 1 : 0); mShut.setAttribute("opacity", open ? 0 : 1);
+      });
+
+      // ── The fold-out. "Before": its first panel drops out of the back of the book. "twelve": the rest flap down one
+      // by one (the typewriter), down the side of the lectern and off the bottom of the frame.
+      var pan = function (i) { return g("p" + (i + 3)); };
+      tl.fromTo(pan(0), { y: -PH }, { y: 0, duration: 0.45, ease: "bounce.out" }, tBefore);
+      for (i = 1; i < NP; i++) {
+        gsap.set(pan(i), { svgOrigin: L.colX + 30 + " " + (colTop + i * PH) });
+        tl.fromTo(pan(i), { scaleY: 0 }, { scaleY: 1, duration: 0.14, ease: "back.out(2)" }, tTwelve + (i - 1) * 0.12);
+      }
+      // "which" to "time": it keeps coming. The column feeds down out of the book while the bands pile up beside the
+      // lectern, each laid from the turn it starts at, the loop at its turn showing as the next band starts.
+      var tFeed0 = tWhich, tFeed1 = tTime + 0.25, lay = (tFeed1 - tFeed0 - 0.18) / (NB - 1);
+      bands.forEach(function (b, j) {
+        var el = g("b" + j), tj = tFeed0 + j * lay;
+        gsap.set(el, { svgOrigin: (j % 2 === 0 ? b.l : b.r) + " " + (b.y + BAND / 2) });
+        tl.fromTo(el, { scaleX: 0 }, { scaleX: 1, duration: 0.18, ease: "power2.out" }, tj);
+        if (j > 0) tl.set(g("l" + (j - 1)), { opacity: 1 }, tj);
+      });
+      // "enjoyed.": the whole strip zips back into the book like a tape measure: the bands from the top down, then
+      // the column up into the book. The last skull pops up over the pages and waves; the cover slams shut on it.
+      for (j = NB - 1; j >= 0; j--) {
+        var tc = tZip + (NB - 1 - j) * (0.12 / NB);
+        // (the outer group, which shrinks toward the column, so every band is sucked in that way)
+        gsap.set(g("bz" + j), { svgOrigin: L.hl + " " + (bands[j].y + BAND / 2) });
+        tl.fromTo(g("bz" + j), { scaleX: 1 }, { scaleX: 0, duration: 0.06, ease: "power2.in", immediateRender: false }, tc);
+        if (j > 0) tl.set(g("l" + (j - 1)), { opacity: 0 }, tc);
+      }
+      var colEl = g("col"), feedV = PH / 0.16, zip0 = tZip + 0.06, zip1 = tZip + 0.18;
+      var feedOff = function (t) { return t < tFeed0 ? 0 : (feedV * (Math.min(t, tFeed1) - tFeed0)) % (2 * PH); };
+      KIT.onTime(tl, D, function (t) {
+        var off = feedOff(t);
+        if (t > zip0) off -= ((Math.min(t, zip1) - zip0) / (zip1 - zip0)) * ((NP + 1) * PH + 2 * PH);
+        colEl.setAttribute("transform", "translate(0," + f(off) + ")");
+      });
+      gsap.set(g("arm"), { svgOrigin: "9 3" });
+      tl.fromTo(g("peek"), { y: 0 }, { y: -44, duration: 0.06, ease: "back.out(2)" }, tZip + 0.14);
+      tl.fromTo(g("arm"), { rotation: 0 }, { rotation: -40, duration: 0.03, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, tZip + 0.18);
+      tl.to(g("peek"), { y: 0, duration: 0.04, ease: "power2.in" }, tSlam - 0.06);
+      // the slam: the cover swings shut, the book hops, dust squirts out both sides
+      tl.fromTo(cover, { scaleX: OPEN }, { scaleX: 1, duration: 0.08, ease: "none", immediateRender: false }, tSlam - 0.08);
+      tl.set(inside, { opacity: 0 }, tSlam - 0.08 + 0.08 * (-OPEN / (1 - OPEN)));
+      tl.to(g("hop"), { keyframes: [{ y: -18, rotation: 0, duration: 0.1, ease: "power2.out" }, { y: 0, duration: 0.24, ease: "bounce.out" }] }, tSlam);
+      SLAM.forEach(function (p, i) {
+        tl.fromTo(g("x" + i), { attr: { r: p.r * 0.4, cx: p.x, cy: p.y }, opacity: 0.95 }, { attr: { r: p.r * 1.5, cx: p.x + p.dx, cy: p.y - 10 }, opacity: 0, duration: 0.55, ease: "power2.out", immediateRender: false }, tSlam + 0.01);
+      });
+      // after "enjoyed.": one last wisp of dust curls up off the book
+      tl.fromTo(g("wisp"), { opacity: 0, y: 0 }, { opacity: 0.85, y: -10, duration: 0.25, ease: "power1.out" }, tWisp);
+      tl.to(g("wisp"), { opacity: 0, y: -36, duration: Math.min(0.4, D - tWisp - 0.3), ease: "power1.in" }, tWisp + 0.25);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

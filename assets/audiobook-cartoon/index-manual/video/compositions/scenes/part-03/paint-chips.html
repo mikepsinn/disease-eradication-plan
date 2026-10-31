@@ -1,64 +1,68 @@
 <template id="paint-chips-template">
-  <!-- paint-chips · Layer B (storyboards/part-03-gradual-irrationality-reduction.md): a 1950s kitchen with a wall
-       painted murder-money red and chipped bare in patches. The baby (the slider's Year 1 baby, plus a curl and a bib)
-       crunches a red paint chip (the war seal's white missile on it) and grins; the dog from dog-calculus sits under
-       the high chair, which it learned to do. On "all" the mother grabs the whole bowl and holds it up and away, her
-       other hand out flat at the baby; on "cry." two jets of
-       tears shoot out sideways like fire hoses, blow her hair straight back, splat the wall and crack the window, and
-       the dog's ears flap. She slams the bowl back: the crying stops at once. Then she flips the chips into teal peas
-       (the medicine seal's white cross) one at a time, the baby eats one without noticing, then faster and faster while
-       the clock spins. On "forget" a thought bubble with one red chip fades away. On "ever" one chip is left on the
-       tray; the baby eyes it, flicks it off on "option.", and it lands in front of the dog, which sniffs it, pushes it
-       away with its nose, then sits back up, turned away, nose in the air. The part ends on that frame
-       (paintChipsFinal() draws it for Part 4's zoom-out). -->
+  <!-- paint-chips · style "atomic" (cartoon-style-bible.md): plate the-kitchen, one 1950s kitchen drawn once and
+       framed by the camera. The wall behind the high chair is painted war red and bitten bare in patches; a window, a
+       navy and cream checkered floor; the plain tan dog from dog-calculus sits tidily under the chair. "It's": the
+       baby crunches a red paint chip (the war seal's cream missile on it) and grins, the mother beams; the camera
+       pushes in for the crunch on "chips." (crumbs fly). "take": she picks up the bowl; "all": she whips it up out of
+       reach, her other hand out flat. "cry.": the camera pulls back; the baby wails and two jets of tears shoot out
+       sideways like fire hoses: the left one splats the wall, the right one hits her in the face, blows her hair
+       straight back and sprays on into the window, which cracks; the dog's ears flap. After "cry." she slams the bowl
+       back on the tray: the crying stops at once and the baby beams and crunches. "gradually": the camera pushes in
+       on the bowl and she swaps one red chip for one teal pea (the medicine seal's cream cross), "replace" another,
+       "chips" another, faster, "food" a blur: the bowl is all peas and the baby eats them happily. No money here: the
+       chips and peas are paint and food. -->
   <style>
-    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
-    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
-    #paint-chips-cam, #paint-chips-bg, #paint-chips-art, #paint-chips-pip, #paint-chips-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8452E; }
+    #paint-chips-weave, #paint-chips-shake, #paint-chips-plate, #paint-chips-film { position: absolute; inset: 0; }
   </style>
-  <div id="root" data-composition-id="paint-chips" data-width="1920" data-height="1080" data-start="0" data-duration="13.86">
-    <div id="paint-chips-cam">
-      <div id="paint-chips-bg"></div>
-      <div id="paint-chips-art"></div>
-      <div id="paint-chips-pip"></div>
+  <div id="root" data-composition-id="paint-chips" data-width="1920" data-height="1080" data-start="0" data-duration="9.92">
+    <div id="paint-chips-weave">
+      <div id="paint-chips-shake"><div id="paint-chips-plate"></div></div>
     </div>
-    <div id="paint-chips-grain"></div>
+    <div id="paint-chips-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
   <script>
     (function () {
+      window.__timelines = window.__timelines || {};
       var ID = "paint-chips";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
+      var sc = KIT.scene(ID), D = sc.duration;
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
       var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
-      var P = function (s) { return ID + "-" + s; };
-      var f1 = function (n) { return (+n).toFixed(1); };
-      function at(x, y, k, inner, id) {
-        return '<g transform="translate(' + f1(x) + "," + f1(y) + ") scale(" + k + ')">' + (id ? '<g id="' + P(id) + '">' + inner + "</g>" : inner) + "</g>";
+      var f = function (n) { return (+n).toFixed(1); }, f1 = f;
+      var tl = gsap.timeline({ paused: true });
+      var smooth = KIT.smooth;
+      var clamp = function (u) { return Math.min(1, Math.max(0, u)); };
+      var lerp = function (a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; };
+      var arc = function (a, b, u, h) { var p = lerp(a, b, u); p[1] -= Math.sin(Math.PI * u) * h; return p; };
+      var rot = function (p, o, deg) { var r = (deg * Math.PI) / 180, dx = p[0] - o[0], dy = p[1] - o[1]; return [o[0] + dx * Math.cos(r) - dy * Math.sin(r), o[1] + dx * Math.sin(r) + dy * Math.cos(r)]; };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var show = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      // no glasses on these two (a person's stable build can give them a pair), and no bald fringe on the baby
+      function bare(m) {
+        return m.replace(/<path d="M-10,-10 H5 L4,0 H-9 Z M6\.5,-10[^>]*\/>/, "").replace(/<path d="M5,-7 H6\.5 M-10,-7 L-17,-5"[^>]*\/>/, "")
+          .replace(/<path d="M-10,-10 L-13,-13 M16,-9\.5 L19,-13"[^>]*\/>/, "").replace(/<path d="M-16\.0,3\.0 L-18\.0,-6\.0[^>]*\/>/, "");
       }
-      function rot(p, o, deg) {
-        var r = (deg * Math.PI) / 180, dx = p[0] - o[0], dy = p[1] - o[1];
-        return [o[0] + dx * Math.cos(r) - dy * Math.sin(r), o[1] + dx * Math.sin(r) + dy * Math.cos(r)];
+      function pd(pts) { return "M" + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + " Z"; }
+      function solid(pts, col, w) {
+        return '<path d="' + pd(pts) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 5) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + pd(pts) + '" fill="' + col + '"/>';
       }
-      // Two-segment arm angles (degrees, 0 = down) from shoulder sh reaching t; the elbow bends down.
+      // a two-segment arm reaching from shoulder sh to point t (segments of length len): [upper, forearm] angles
       function ik(sh, t, len) {
         var dx = t[0] - sh[0], dy = t[1] - sh[1], d = Math.min(Math.hypot(dx, dy), 2 * len * 0.98);
         var a = (Math.atan2(dx, dy) * 180) / Math.PI, b = (Math.acos(d / (2 * len)) * 180) / Math.PI;
         return [a - b, a + b];
       }
-      function pd(pts) { return "M" + pts.map(function (p) { return f1(p[0]) + "," + f1(p[1]); }).join(" L") + " Z"; }
-      function solid(pts, col, w) {
-        return '<path d="' + pd(pts) + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="' + (w || 5) + '" stroke-linejoin="miter" stroke-miterlimit="8"/><path d="' + pd(pts) + '" fill="' + col + '"/>';
-      }
 
-      // ── The plain dog (dog-calculus and paint-chips share this block: change both copies) ──────────────
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 83);
+
+      // ── The plain dog (copied from dog-calculus; host-closes has the same block) ──────────────
       // An angular 1950s mutt drawn like the humans: tan fur, a cream chest and muzzle with halftone dots, a rust
       // saddle, pointed ears, a stub tail, a navy collar with a mustard tag, thin navy miter outlines. Not the
       // Democracy Dog (no paper tail). Drawn facing right, standing on y 0, in person units (a person is 180 tall):
@@ -206,458 +210,385 @@
         }
         return { draw: draw, point: point, POSE: POSE, CHALK: CHALK, CHALK_FRONT: CHALK_FRONT, TIPS: TIPS, HS: HS };
       })();
-      // Burn a drawing (as KIT's charred people are burnt): every color but the ink and pure white turns a dark
-      // brown of the same lightness, so only the eyes and the chalk stay white.
-      function burn(markup) {
-        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
-          var u = col.toUpperCase();
-          if (u === ink.toUpperCase() || u === "#FFFFFF") return m;
-          var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
-          return a + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
-        });
-      }
 
+      // ── The plate, in plate units (the sketch's 1920 x 1080 frame): the wall to the floor line at y 770, the high
+      // chair at x 860, the mother at x 1090, the dog under the chair. The wall and the floor run far past the frame
+      // so every view is filled.
+      var FLOOR = 770, TEAR = "#CFE6EE", PLASTER = "#E8DABA", WOOD = "#B48A5E", WOOD2 = "#8C6440", WHITE = "#FFFFFF";
+      var SPLAT = [V ? 500 : 470, 432], CRACK = [1238, 398];
 
-      // ── Layout for each canvas shape ──
-      // floor: the floor line; rail: where the red wall meets the tiles; s: the mother (the baby is 0.62 of her, the
-      // dog ds; k scales the furniture); mom, chair, dog: their x; win: the window [x, y, w, h]; clock: [x, y, r];
-      // lamp: the pendant lamp [x, y of the shade]; splat: where the left jet hits the wall; chips: where the paint is
-      // bitten off the wall [x, y, r]; bubble: the thought bubble [x, y]; bowl, lone: the bowl's and the lone chip's
-      // x on the tray, from the chair.
-      var L = V
-        ? { floor: 1420, rail: 1200, s: 3.3, ds: 2.15, mom: 395, chair: 650, dog: 600, win: [796, 742, 204, 330], clock: [250, 470, 104], lamp: [650, 520], splat: [122, 1012],
-            chips: [[505, 842, 28], [906, 1146, 22], [176, 1150, 22], [470, 650, 22]], bubble: [590, 735], bowl: -104, lone: 84 }
-        : { floor: 880, rail: 660, s: 3.3, ds: 2.15, mom: 690, chair: 960, dog: 912, win: [1262, 236, 300, 344], clock: [320, 200, 84], lamp: [960, 175], splat: [404, 470],
-            chips: [[812, 300, 30], [1150, 470, 27], [1178, 598, 20], [216, 520, 26]], bubble: [1112, 300], bowl: -104, lone: 84 };
-      var s = L.s, k = s / 2.8, sb = s * 0.62, ds = L.ds;
-      var seatY = L.floor - 265 * k, trayY = seatY - 28 * k, momY = L.floor - 100 * s;
-      var CH = L.chair, bowlX = CH + L.bowl * k, loneX = CH + L.lone * k;
-      var WHITE = "#FBF6E6", TEAR = "#A9D6D8";
-
-      q("bg").innerHTML = KIT.paper(ID);
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-
-      // ── The chips and the peas: a red shard with the war seal's white missile; a teal ball with the medicine cross ──
-      function chip(x, y, kk, r, bitten) {
-        var pts = bitten ? [[-15, -10], [-3, -13], [0, -8], [5, -10], [8, -5], [13, -4], [13, 9], [-3, 12], [-14, 6]]
-          : [[-15, -10], [4, -14], [16, -6], [13, 9], [-3, 12], [-14, 6]];
-        return '<g transform="translate(' + f1(x) + "," + f1(y) + ") rotate(" + (r || 0) + ") scale(" + (kk || 1) + ')">' + solid(pts, C.war, 4) +
-          '<path d="M-4.6,3 L3,-4.6 l1.8,1.8 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.4" stroke-linejoin="round"/></g>';
+      // a red paint chip with the war seal's little cream missile (or a teal pea with the medicine seal's cross),
+      // around (0, 0), about 26 wide (the sketch's chip and pea)
+      function chip(r) {
+        return '<g transform="rotate(' + (r || 0) + ')"><path d="M-12,-7 L6,-10 L13,-2 L9,8 L-8,9 L-13,1 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' +
+          '<path d="M-5,3 L4,-4 l2,2 Z" fill="' + C.cream + '" stroke="' + C.cream + '" stroke-width="2.4" stroke-linejoin="round"/></g>';
       }
-      function pea(x, y, r) { return KIT.moneySeal("med", Math.round(x * 10) / 10, Math.round(y * 10) / 10, r || 12).replace('stroke-width="2"', 'stroke-width="3"'); }
-
-      // ── The kitchen: a wall painted murder-money red with chunks bitten out of the paint; tiles below the rail ──
-      // A chipped patch where the paint came off (the bowl's chips are these pieces): bare cream plaster in a jagged,
-      // hard-cornered hole, the paint's cut edge shaded along its top, hairline cracks running out into the red, and
-      // one flake of paint still hanging off its lower edge.
-      function bitten(x, y, r, seed) {
-        var rr = KIT.rng(seed || 5), n = 9, pts = [];
-        for (var i = 0; i < n; i++) {
-          var a = (i / n) * Math.PI * 2 + (rr() - 0.5) * 0.45, d = r * (i % 2 ? 0.5 + rr() * 0.18 : 0.88 + rr() * 0.22);
-          pts.push([x + d * Math.cos(a), y + d * Math.sin(a) * 0.78]);
-        }
-        var cracks = [0, 4, 6].map(function (i) {
-          var p = pts[i], dx = p[0] - x, dy = p[1] - y, l = Math.hypot(dx, dy) || 1, ux = dx / l, uy = dy / l;
-          return "M" + f1(p[0]) + "," + f1(p[1]) + " L" + f1(p[0] + ux * r * 0.32 - uy * 5) + "," + f1(p[1] + uy * r * 0.32 + ux * 5) + " L" + f1(p[0] + ux * r * 0.55) + "," + f1(p[1] + uy * r * 0.55);
-        }).join(" ");
-        // the cut edge of the paint: a darker band just inside the top of the hole
-        var top = pts.slice(5).concat([pts[0]]), band = top.concat(top.slice().reverse().map(function (p) { return [p[0] + (x - p[0]) * 0.16, p[1] + (y - p[1]) * 0.3 + 3]; }));
-        var b = pts[2], c = pts[3], flake = [[b[0], b[1]], [c[0], c[1]], [(b[0] + c[0]) / 2 - 4, (b[1] + c[1]) / 2 + r * 0.42]];
-        return '<path d="' + pd(pts) + '" fill="' + C.cream + '"/>' + '<path d="' + pd(pts) + '" fill="url(#' + P("fine") + ')" opacity="0.28"/>' +
-          '<path d="' + pd(band) + '" fill="' + C.tan + '" opacity="0.55"/>' +
-          '<path d="' + pd(pts) + '" fill="none" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>' +
-          '<path d="' + cracks + '" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="miter"/>' + solid(flake, C.war, 3.6) +
-          '<path d="M' + f1(flake[0][0] + (flake[2][0] - flake[0][0]) * 0.3) + "," + f1(flake[0][1] + (flake[2][1] - flake[0][1]) * 0.3) + " L" + f1(flake[1][0] + (flake[2][0] - flake[1][0]) * 0.3) + "," + f1(flake[1][1] + (flake[2][1] - flake[1][1]) * 0.3) + '" stroke="' + C.cream + '" stroke-width="2" opacity="0.6"/>';
+      function pea() {
+        return '<circle r="9" fill="' + C.med + '" stroke="' + ink + '" stroke-width="2.4"/><path d="M0,-5 V5 M-5,0 H5" stroke="' + C.cream + '" stroke-width="2.4" stroke-linecap="round"/>';
       }
-      function room() {
-        var x0 = 46, x1 = W - 46, y0 = 46, y1 = H - 46, tiles = "", floor = "", t = 46;
-        for (var x = x0; x < x1; x += t) tiles += '<path d="M' + x + "," + L.rail + " V" + L.floor + '" stroke="' + ink + '" stroke-width="1.6" opacity="0.3"/>';
-        for (var y = L.rail + t; y < L.floor; y += t) tiles += '<path d="M' + x0 + "," + y + " H" + x1 + '" stroke="' + ink + '" stroke-width="1.6" opacity="0.3"/>';
-        var sq = 64, row = 0;
-        for (var fy = L.floor; fy < y1; fy += sq, row++) for (var fx = x0, col = 0; fx < x1; fx += sq, col++) {
-          if ((row + col) % 2) floor += '<rect x="' + fx + '" y="' + fy + '" width="' + Math.min(sq, x1 - fx) + '" height="' + Math.min(sq, y1 - fy) + '" fill="' + C.peri + '" opacity="0.26"/>';
-        }
-        return '<rect x="' + x0 + '" y="' + y0 + '" width="' + (x1 - x0) + '" height="' + (L.rail - y0) + '" fill="' + C.war + '"/>' +
-          '<rect x="' + x0 + '" y="' + y0 + '" width="' + (x1 - x0) + '" height="' + (L.rail - y0) + '" fill="url(#' + P("hred") + ')" opacity="0.35"/>' +
-          '<rect x="' + x0 + '" y="' + L.rail + '" width="' + (x1 - x0) + '" height="' + (L.floor - L.rail) + '" fill="' + WHITE + '"/>' + tiles +
-          '<rect x="' + x0 + '" y="' + (L.rail - 8) + '" width="' + (x1 - x0) + '" height="16" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="4"/>' +
-          '<rect x="' + x0 + '" y="' + L.floor + '" width="' + (x1 - x0) + '" height="' + (y1 - L.floor) + '" fill="' + WHITE + '"/>' + floor +
-          '<path d="M' + x0 + "," + L.floor + " H" + x1 + '" stroke="' + ink + '" stroke-width="5"/>' +
-          L.chips.map(function (b, i) { return bitten(b[0], b[1], b[2] * 1.75, 11 + i * 7); }).join("");
+      // a patch of bare plaster bitten out of the paint: its edge a ring of little bites
+      function bite(x, y, r) {
+        var n = 11, pts = [];
+        for (var i = 0; i < n; i++) { var a = (i / n) * Math.PI * 2 + 0.3, rr = r * (0.82 + (0.18 * ((i * 7) % 3)) / 2); pts.push([x + rr * Math.cos(a), y + rr * 0.85 * Math.sin(a)]); }
+        var d = "M" + f(pts[0][0]) + "," + f(pts[0][1]);
+        for (var j = 1; j <= n; j++) { var p = pts[j % n]; d += " A" + f(r * 0.3) + "," + f(r * 0.3) + " 0 0,0 " + f(p[0]) + "," + f(p[1]); }
+        return '<path d="' + d + ' Z" fill="' + PLASTER + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="round"/>';
       }
-      // the 1950s pendant lamp over the high chair: a cord from the ceiling, a cone shade; it swings in the gale
-      // (#<id>-lamp, pivot: the ceiling)
-      var LP = L.lamp;
-      function lamp(live) {
-        var x = LP[0], y = LP[1];
-        var g0 = '<path d="M' + x + ",46 V" + y + '" stroke="' + ink + '" stroke-width="4"/>' +
-          solid([[x - 8, y], [x + 8, y], [x + 10, y + 14], [x - 10, y + 14]], C.slate, 3) +
-          solid([[x - 12, y + 12], [x + 12, y + 12], [x + 62, y + 70], [x - 62, y + 70]], C.yellow, 4.4) +
-          '<path d="M' + (x - 44) + "," + (y + 50) + " H" + (x + 44) + '" stroke="' + C.orange + '" stroke-width="6"/>' +
-          '<path d="M' + (x - 26) + "," + (y + 70) + " A26,18 0 0 0 " + (x + 26) + "," + (y + 70) + ' Z" fill="#FFFFFF" stroke="' + ink + '" stroke-width="3.4"/>';
-        return live ? '<g id="' + P("lamp") + '">' + g0 + "</g>" : g0;
-      }
-      // the window: a cream frame, four panes of sky, cafe curtains; its crack (and the tear splat) drawn separately
-      var WN = L.win, hit = [WN[0] + WN[2] * 0.26, 0];
+      var BITES = [[600, 330, 70], [760, 250, 52], [990, 300, 60], [520, 540, 48], [690, 450, 36], [700, 110, 44], [930, 120, 36], [390, 250, 40]];
+      // the window over the mother's shoulder: a cream frame, four panes of pale sky, a sill
+      var WIN = [1180, 150, 290, 290];
       function windowSvg() {
-        var x = WN[0], y = WN[1], w = WN[2], h = WN[3], m = 18;
-        var panes = [[x + m, y + m], [x + w / 2 + 5, y + m], [x + m, y + h / 2 + 5], [x + w / 2 + 5, y + h / 2 + 5]].map(function (p) {
-          return '<rect x="' + p[0] + '" y="' + p[1] + '" width="' + (w / 2 - m - 5) + '" height="' + (h / 2 - m - 5) + '" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="3"/>' +
-            '<path d="M' + (p[0] + 12) + "," + (p[1] + h / 2 - m - 22) + " l" + (w / 4 - 30) + "," + -(h / 4 - 20) + '" stroke="#FFFFFF" stroke-width="5" opacity="0.6" stroke-linecap="round"/>';
-        }).join("");
-        var curtain = function (cx, dir) {
-          var cw = w * 0.34, pts = [[cx, y - 6], [cx + dir * cw, y - 6], [cx + dir * cw * 0.7, y + h * 0.42], [cx, y + h * 0.5]];
-          return solid(pts, WHITE, 4) + '<path d="' + pd(pts) + '" fill="url(#' + P("cross") + ')" opacity="0.18"/>' +
-            '<path d="M' + f1(cx + dir * cw * 0.7) + "," + f1(y + h * 0.42) + " L" + cx + "," + f1(y + h * 0.5) + '" stroke="' + C.orange + '" stroke-width="7"/>';
-        };
-        return '<rect x="' + (x + 10) + '" y="' + (y + 12) + '" width="' + w + '" height="' + h + '" fill="' + C.ink + '" opacity="0.6"/>' +
-          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="5"/>' + panes +
-          '<rect x="' + (x - 14) + '" y="' + (y + h - 4) + '" width="' + (w + 28) + '" height="16" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>' +
-          '<path d="M' + (x - 22) + "," + (y - 10) + " H" + (x + w + 22) + '" stroke="' + ink + '" stroke-width="6" stroke-linecap="round"/>' +
-          curtain(x - 4, 1) + curtain(x + w + 4, -1);
+        var x = WIN[0], y = WIN[1], w = WIN[2], h = WIN[3];
+        return '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="6"/>' +
+          '<rect x="' + (x + 22) + '" y="' + (y + 22) + '" width="' + (w - 44) + '" height="' + (h - 44) + '" fill="#BCCFD0" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M' + (x + w / 2) + "," + (y + 22) + " V" + (y + h - 22) + " M" + (x + 22) + "," + (y + h / 2) + " H" + (x + w - 22) + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<path d="M' + (x + 44) + "," + (y + h / 2 - 30) + " l40,-60 M" + (x + w / 2 + 24) + "," + (y + h / 2 - 30) + ' l40,-60" stroke="#FFFFFF" stroke-width="5" opacity="0.6" stroke-linecap="round"/>' +
+          '<rect x="' + (x - 16) + '" y="' + (y + h - 4) + '" width="' + (w + 32) + '" height="16" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="4"/>';
       }
-      // the crack where the right jet hits the window, and the splat where the left jet hits the wall
+      // the crack where the spray hits the window, and the splat where the left jet hits the wall
       function crackSvg(p) {
         var out = "";
-        [[-70, -40], [-30, -78], [40, -64], [72, -10], [52, 50], [-20, 66], [-74, 30]].forEach(function (d, i) {
+        [[-62, -40], [-26, -70], [36, -58], [66, -10], [48, 30], [-56, 26]].forEach(function (d, i) {
           var mx = p[0] + d[0] * 0.5 + (i % 2 ? 8 : -8), my = p[1] + d[1] * 0.5 + (i % 2 ? -6 : 6);
-          out += "M" + f1(p[0]) + "," + f1(p[1]) + " L" + f1(mx) + "," + f1(my) + " L" + f1(p[0] + d[0]) + "," + f1(p[1] + d[1]) + " ";
+          out += "M" + f(p[0]) + "," + f(p[1]) + " L" + f(mx) + "," + f(my) + " L" + f(p[0] + d[0]) + "," + f(p[1] + d[1]) + " ";
         });
         return '<path d="' + out + '" fill="none" stroke="' + ink + '" stroke-width="3.4" stroke-linejoin="miter"/>' +
-          '<path d="M' + f1(p[0] - 34) + "," + f1(p[1] - 20) + " L" + f1(p[0] + 28) + "," + f1(p[1] - 26) + " L" + f1(p[0] + 36) + "," + f1(p[1] + 22) + " L" + f1(p[0] - 26) + "," + f1(p[1] + 30) + ' Z" fill="none" stroke="' + ink + '" stroke-width="2.4"/>';
+          '<path d="M' + f(p[0] - 26) + "," + f(p[1] - 16) + " L" + f(p[0] + 22) + "," + f(p[1] - 20) + " L" + f(p[0] + 28) + "," + f(p[1] + 16) + " L" + f(p[0] - 20) + "," + f(p[1] + 22) + ' Z" fill="none" stroke="' + ink + '" stroke-width="2.4"/>';
       }
-      function splatSvg(p, kk) {
-        var pts = [], n = 14, rr = KIT.rng(77);
-        for (var i = 0; i < n; i++) { var a = (i / n) * Math.PI * 2, r = (i % 2 ? 26 : 46 + rr() * 22) * kk; pts.push([p[0] + r * Math.cos(a), p[1] + r * Math.sin(a)]); }
-        return solid(pts, TEAR, 4) + [[-8, 52, 46], [14, 60, 30], [30, 44, 24]].map(function (d) {
-          return '<path d="M' + f1(p[0] + d[0] * kk) + "," + f1(p[1] + d[1] * kk * 0.6) + " v" + f1(d[2] * kk) + '" stroke="' + ink + '" stroke-width="' + f1(12 * kk) + '" stroke-linecap="round"/><path d="M' + f1(p[0] + d[0] * kk) + "," + f1(p[1] + d[1] * kk * 0.6) + " v" + f1(d[2] * kk) + '" stroke="' + TEAR + '" stroke-width="' + f1(7 * kk) + '" stroke-linecap="round"/>';
+      function splatSvg(p) {
+        var pts = [], n = 16, rr = KIT.rng(77);
+        for (var i = 0; i < n; i++) { var a = (i / n) * Math.PI * 2, r = i % 2 ? 26 : 54 + rr() * 26; pts.push([p[0] + r * Math.cos(a), p[1] + r * Math.sin(a)]); }
+        var drips = [[-14, 30, 70], [10, 34, 48], [28, 26, 34]].map(function (d) {
+          return '<path d="M' + f(p[0] + d[0]) + "," + f(p[1] + d[1]) + " v" + d[2] + '" stroke="' + ink + '" stroke-width="13" stroke-linecap="round"/><path d="M' + f(p[0] + d[0]) + "," + f(p[1] + d[1]) + " v" + d[2] + '" stroke="' + TEAR + '" stroke-width="8" stroke-linecap="round"/>';
         }).join("");
+        return drips + solid(pts, TEAR, 4) + '<path d="M' + f(p[0] - 20) + "," + f(p[1] - 14) + " l18,-10" + '" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>';
       }
-      // a 1950s starburst wall clock; its hands are #<id>-hh and #<id>-mh (pivot: the center)
-      var CK = L.clock;
-      function clock(live) {
-        var x = CK[0], y = CK[1], r = CK[2], rays = "";
-        for (var i = 0; i < 12; i++) {
-          var a = (i * Math.PI) / 6, l = i % 3 ? r * 1.25 : r * 1.55, c = Math.cos(a), sn = Math.sin(a);
-          rays += solid([[x + c * r * 0.6 - sn * 7, y + sn * r * 0.6 + c * 7], [x + c * l, y + sn * l], [x + c * r * 0.6 + sn * 7, y + sn * r * 0.6 - c * 7]], i % 3 ? C.yellow : C.orange, 3.6);
-        }
-        var hand = function (len, w, deg, id) {
-          var g0 = '<path d="M' + x + "," + y + " L" + f1(x) + "," + f1(y - len) + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linecap="round"/>';
-          return '<g transform="rotate(' + deg + " " + x + " " + y + ')">' + (live ? '<g id="' + P(id) + '">' + g0 + "</g>" : g0) + "</g>";
-        };
-        var ticks = "";
-        for (var t = 0; t < 12; t++) { var ta = (t * Math.PI) / 6; ticks += '<path d="M' + f1(x + Math.cos(ta) * r * 0.42) + "," + f1(y + Math.sin(ta) * r * 0.42) + " L" + f1(x + Math.cos(ta) * r * 0.5) + "," + f1(y + Math.sin(ta) * r * 0.5) + '" stroke="' + ink + '" stroke-width="3"/>'; }
-        return rays + '<circle cx="' + x + '" cy="' + y + '" r="' + r * 0.6 + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="5"/>' + ticks +
-          hand(r * 0.3, 6, live ? 300 : 30, "hh") + hand(r * 0.46, 4, 60, "mh") + '<circle cx="' + x + '" cy="' + y + '" r="5" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2"/>';
-      }
-
-      // ── The high chair: tan wood, a spindle back, splayed legs, a footrest and a cream tray with an orange rim ──
+      // the high chair: splayed wooden legs with a footrest, a tall back panel with spindles, a seat
+      var CH = 860, SEAT = 612, TRAY = 604;
       function chairBack() {
-        var x = CH, top = seatY - 200 * k, X = function (d) { return f1(x + d * k); }, Y = function (d) { return f1(top + d * k); };
-        return solid([[x - 72 * k, seatY], [x - 72 * k, top + 30 * k], [x - 52 * k, top + 6 * k], [x, top - 6 * k], [x + 52 * k, top + 6 * k], [x + 72 * k, top + 30 * k], [x + 72 * k, seatY]], C.tan, 5) +
-          '<path d="M' + X(-72) + "," + Y(30) + " L" + X(-52) + "," + Y(6) + " L" + x + "," + Y(-6) + " L" + X(52) + "," + Y(6) + " L" + X(72) + "," + Y(30) + '" fill="none" stroke="' + C.rust + '" stroke-width="5" opacity="0.6"/>' +
-          [-34, 0, 34].map(function (dx) { return '<path d="M' + X(dx) + "," + Y(40) + " V" + f1(seatY - 10) + '" stroke="' + C.rust + '" stroke-width="7" opacity="0.5"/>'; }).join("");
+        return solid([[CH - 92, SEAT], [CH - 92, 440], [CH - 70, 408], [CH, 394], [CH + 70, 408], [CH + 92, 440], [CH + 92, SEAT]], WOOD, 5) +
+          [-46, 0, 46].map(function (dx) { return '<path d="M' + (CH + dx) + ",440 V" + (SEAT - 14) + '" stroke="' + WOOD2 + '" stroke-width="8" opacity="0.7"/>'; }).join("") +
+          '<path d="M' + (CH - 78) + ",440 L" + (CH - 60) + ",418 L" + CH + ",406 L" + (CH + 60) + ",418 L" + (CH + 78) + ',440" fill="none" stroke="' + WOOD2 + '" stroke-width="5" opacity="0.7"/>';
       }
       function chairLegs() {
-        var x = CH, y0 = seatY + 10 * k, F = L.floor;
-        var legPts = function (a, b, w) { return [[x + (a - w) * k, y0], [x + (a + w) * k, y0], [x + (b + w) * k, F], [x + (b - w) * k, F]]; };
-        return solid(legPts(-44, -104, 8), C.rust, 4) + solid(legPts(44, 104, 8), C.rust, 4) +
-          solid(legPts(-66, -150, 10), C.tan, 5) + solid(legPts(66, 150, 10), C.tan, 5) +
-          solid([[x - 128 * k, F - 128 * k], [x + 128 * k, F - 128 * k], [x + 128 * k, F - 114 * k], [x - 128 * k, F - 114 * k]], C.tan, 4);
+        var leg = function (a, b, w, col) { return solid([[CH + a - w, SEAT + 6], [CH + a + w, SEAT + 6], [CH + b + w, 902], [CH + b - w, 902]], col, 4.4); };
+        return leg(-40, -90, 7, WOOD2) + leg(40, 90, 7, WOOD2) + leg(-70, -132, 9, WOOD) + leg(70, 132, 9, WOOD) +
+          solid([[CH - 112, 800], [CH + 112, 800], [CH + 112, 812], [CH - 112, 812]], WOOD, 4) +
+          solid([[CH - 96, SEAT - 6], [CH + 96, SEAT - 6], [CH + 92, SEAT + 12], [CH - 92, SEAT + 12]], WOOD, 5);
       }
-      function seat() { return solid([[CH - 82 * k, seatY - 2], [CH + 82 * k, seatY - 2], [CH + 78 * k, seatY + 14 * k], [CH - 78 * k, seatY + 14 * k]], C.tan, 5); }
-      function tray() {
-        var x = CH, y = trayY;
-        return solid([[x - 160 * k, y], [x + 140 * k, y], [x + 132 * k, y + 18 * k], [x - 152 * k, y + 18 * k]], WHITE, 5) +
-          '<path d="M' + f1(x - 156 * k) + "," + f1(y + 9 * k) + " H" + f1(x + 136 * k) + '" stroke="' + C.orange + '" stroke-width="5"/>' +
-          '<path d="M' + f1(x - 132 * k) + "," + f1(y + 18 * k) + " L" + f1(x - 74 * k) + "," + f1(seatY + 4) + " M" + f1(x + 132 * k) + "," + f1(y + 18 * k) + " L" + f1(x + 74 * k) + "," + f1(seatY + 4) + '" stroke="' + ink + '" stroke-width="5"/>';
+      function trayFront() {
+        return solid([[730, TRAY], [1016, TRAY], [1010, TRAY + 22], [736, TRAY + 22]], "#C79A66", 5) +
+          '<path d="M734,' + (TRAY + 11) + ' H1013" stroke="' + C.orange + '" stroke-width="5"/>';
       }
-
-      // ── The baby (the slider's Year 1 baby: bald, a white diaper) and the mother, as everyday humans ──
-      var BASE = { tone: 1, color: 0, seed: 3 };
-      var BABY_BUILD = { hs: 1.5, legs: 0.38, th: 0.5, tw: 0.95, neck: 0, armL: 0.6, feet: 0.8, hand: 0.9 };
-      var BA = { hold: [[-70, 60], [150, -100]], tray: [[-70, 60], [70, -60]], wail: [[-160, -170], [160, 170]], flick: [[-70, 60], [80, 75]], smug: [[40, 120], [-40, -120]] };
-      function babyOpts(arms, mood) { return { tone: BASE.tone, color: BASE.color, seed: BASE.seed, kind: "shirt", hairStyle: "bald", head: "plain", mood: mood, arms: BA[arms], build: BABY_BUILD }; }
-      var RB = KIT.rig(babyOpts("hold", "smile")), by = seatY - RB.hipY * sb;
-      var diaper = solid([[-16, 63], [16, 63], [18, 74], [8, 82], [-8, 82], [-18, 74]], WHITE, 3) + '<path d="M-9,70 h7" stroke="' + C.orange + '" stroke-width="2.4"/>';
-      // eyes squeezed shut (> <, in the face's own units) and, when wailing, a mouth wider than the face
-      function squint(m) {
-        var e = function (x, k) { return "M" + (x - 4.5 * k) + ",-7.5 l" + 4.5 * k + ",3.5 l" + -4.5 * k + ",3.5"; };
-        return m.replace(/<g class="eye">[\s\S]*?<\/g>/g, "").replace("<!--face-end-->", '<path d="' + e(-2.5, 1) + " " + e(10.8, -1) + '" fill="none" stroke="' + ink + '" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><!--face-end-->');
-      }
-      function wail(m) {
-        return squint(m).replace(/<path class="mouth"[^>]*\/>/, "").replace("<!--face-end-->",
-          '<path d="M-3,6 L19,5 L15,24 L1,25 Z" fill="' + ink + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/><path d="M4,25 L13,24 L11,19 L6,19 Z" fill="' + C.war + '"/>' +
-          '<path d="M-1,6 L17,5.4 L16.3,8.5 L-0.4,9 Z" fill="#FFFFFF"/><!--face-end-->');
-      }
-      // What makes the slider's baby read as a baby at the high chair: one curl of hair on top (in place of the bald
-      // fringe), light brows, a pink cheek, and a bib with a red paint smear (person units, under the chin).
-      var BIB = (function () {
-        var n = RB.neck, x = n[0], y = n[1] + 5;
-        return solid([[x - 13, y], [x + 13, y], [x + 15, y + 13], [x + 8, y + 21], [x - 8, y + 21], [x - 15, y + 13]], WHITE, 2.4) +
-          '<path d="M' + (x - 11) + "," + (y + 3) + " H" + (x + 11) + '" stroke="' + C.orange + '" stroke-width="2.4"/>' +
-          '<path d="M' + (x + 1) + "," + (y + 9) + " l6,-2 l2,4 l-3,4 l-6,-1 Z" + '" fill="' + C.war + '"/>';
-      })();
-      var CURL = '<path d="M1,-21 C-3,-27 0,-33 6,-33 C11,-33 12,-27 8,-25 C5,-24 4,-27 6,-28" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>' +
-        '<circle cx="9" cy="10" r="3.2" fill="' + C.orange + '" opacity="0.35"/>';
-      function babyfy(m) {
-        return m.replace(/(class="brows"[^>]*stroke-width=")2\.6/, "$11.3").replace(/<path d="M-16\.0,3\.0 L-18\.0,-6\.0[^>]*\/>/, "")
-          .replace("<!--face-end-->", CURL + "<!--face-end-->").replace('<g class="head">', BIB + '<g class="head">');
-      }
-      function baby(arms, mood, face) {
-        var m = KIT.person(babyOpts(arms, mood === "wail" ? "flat" : mood));
-        if (mood === "wail") m = wail(m);
-        return babyfy(m).replace('<g transform="rotate(', diaper + '<g transform="rotate(');
-      }
-      function babyHand(arms, i) { return KIT.rig(babyOpts(arms, "smile")).handLocal[i]; }
-      var MOM = { tone: 1, hair: 1, outfit: "dress", color: 3, seed: 7, look: "right" };
-      function momOpts(arms, mood) { var o = {}, k; for (k in MOM) o[k] = MOM[k]; o.arms = arms; o.mood = mood; return o; }
-      var RM = KIT.rig(momOpts([[0, 0], [0, 0]], "smile"));
-      // her reach: the right hand into the bowl on the tray
-      var bowlTop = [(bowlX + 8 - L.mom) / s, (trayY - 40 - momY) / s];
-      // up: the bowl held high in her far hand, away from the baby, her near hand out flat at it ("no")
-      var MA = { clasp: [[28, 160], [-28, -160]], up: [[-150, -175], [80, 120]], reach: [[-40, 40], ik(RM.shoulder[1], bowlTop, RM.armLength)] };
-      // hair blown straight back: streamers off the back of the head (face units)
-      var blown = '<path d="M-12,-22 L-62,-34 L-48,-22 L-74,-16 L-52,-8 L-66,0 L-14,-2 Z" fill="' + ink + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/>' +
-        '<path d="M-78,-30 h-10 M-80,-14 h-12 M-74,2 h-9" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>';
-      function mom(arms, mood, hit) {
-        var m = KIT.person(momOpts(MA[arms], mood));
-        return hit ? squint(m).replace("<!--face-end-->", blown + "<!--face-end-->") : m;
-      }
-
-      // ── The bowl: cream with an orange band; seven slots, each a chip that flips into a pea ──
-      var SLOTS = [[-28, -70, 15], [2, -74, -12], [28, -68, 8], [-42, -50, -20], [-15, -55, 10], [14, -55, -8], [41, -50, 22]];
-      function bowl(live, peas) {
+      // the bowl: cream with an orange band, standing on (0, 0); seven items heaped in it, each a chip that turns
+      // into a pea. In bowl units (BK plate units each).
+      var BK = 0.85, SLOTS = [[-28, -70, 15], [2, -76, -12], [28, -68, 8], [-42, -52, -20], [-14, -56, 10], [14, -56, -8], [42, -52, 22]];
+      function bowlSvg() {
         var back = solid([[-64, -46], [64, -46], [58, -38], [-58, -38]], C.slate, 4);
         var items = SLOTS.map(function (sl, i) {
-          if (!live) return peas ? pea(sl[0], sl[1], 13) : chip(sl[0], sl[1], 1, sl[2]);
-          return '<g transform="translate(' + sl[0] + "," + sl[1] + ')"><g id="' + P("chip-" + i) + '">' + chip(0, 0, 1, sl[2]) + '</g><g id="' + P("pea-" + i) + '" opacity="0">' + pea(0, 0, 13) + "</g></g>";
+          return '<g transform="translate(' + sl[0] + "," + sl[1] + ') scale(1.3)"><g id="' + ID + "-chip" + i + '">' + chip(sl[2]) + '</g><g id="' + ID + "-pea" + i + '" opacity="0">' + pea() + "</g></g>";
         }).join("");
         var front = [[-66, -46], [66, -46], [54, -8], [40, 0], [-40, 0], [-54, -8]];
-        return back + items + solid(front, WHITE, 5) + '<path d="' + pd([[-63, -36], [63, -36], [60, -27], [-60, -27]]) + '" fill="' + C.orange + '"/>' +
-          '<path d="' + pd(front) + '" fill="url(#' + P("fine") + ')" opacity="0.18"/>';
+        return back + items + solid(front, C.cream, 5) + '<path d="' + pd([[-63, -36], [63, -36], [60, -27], [-60, -27]]) + '" fill="' + C.orange + '"/>';
       }
 
-      // ── The final frame, for Part 4's zoom-out (KIT.zoomView(...).mini): the kitchen as the part ends ──
-      var chipEnd = [0, 0];   // set below, once the dog's nose is known
-      // the dog's last pose: sitting tidily again, turned away from the chip, nose in the air, eyes shut
-      function dogFinal() { return '<g transform="translate(16,0) scale(-1,1)">' + DOG.draw({ pose: "sit", head: "side", mood: "smug", tilt: -10 }) + "</g>"; }
-      function paintChipsFinal() {
-        return KIT.paperDefs(ID) + room() + clock(false) + windowSvg() + lamp(false) + crackSvg(hit) + splatSvg(L.splat, 1) + chairBack() + chairLegs() + seat() +
-          at(CH, by, sb, baby("smug", "smug")) + tray() + at(L.mom, momY, s, mom("clasp", "smile")) + at(bowlX, trayY, k, bowl(false, true)) +
-          at(L.dog, L.floor, ds, dogFinal()) + chip(chipEnd[0], chipEnd[1], k * 1.25, 50, true);
-      }
-
-      // ── Live art ──
-      // the dog: sitting tidily, looking up at the baby; then sniffing the chip; then nose in the air
-      var dogSit = DOG.draw({ pose: "sit", head: "side", mood: "eager", tilt: -24 });
-      var dogSniff = DOG.draw({ pose: "sniff", head: "side", mood: "down" });
-      var nose = DOG.point({ pose: "sniff" }, [37, 1]);
-      var landAt = [L.dog + ds * nose[0] + 26, L.floor - 12];
-      chipEnd = [landAt[0] + 74, landAt[1]];
-      hit[1] = by + sb * 7.3 - 6;
-
-      // where the baby's eyes are, and the mother's face (for the jets)
-      var eyeL = [CH + sb * -13, by + sb * 7.3], eyeR = [CH + sb * 23, by + sb * 7.3];
-      // her face once the jets have blown her back (the lean at the hit, -9 degrees about her feet)
-      var faceL = rot([RM.eyes[0] - 2, RM.eyes[1] + 4], [0, 100], -9), face = [L.mom + s * faceL[0], momY + s * faceL[1]];
-      function jet(a, b, w0, w1, id) {
-        var dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy), n = [-dy / l, dx / l], pts = [];
-        for (var i = 0; i <= 12; i++) { var u = i / 12, w = w0 + (w1 - w0) * u, wob = Math.sin(u * 9) * 3; pts.push([a[0] + dx * u + n[0] * (w + wob), a[1] + dy * u + n[1] * (w + wob)]); }
-        for (var j = 12; j >= 0; j--) { var v = j / 12, w2 = w0 + (w1 - w0) * v, wob2 = Math.sin(v * 9 + 1) * 3; pts.push([a[0] + dx * v - n[0] * (w2 + wob2), a[1] + dy * v - n[1] * (w2 + wob2)]); }
-        return '<g id="' + P(id) + '" opacity="0">' + solid(pts, TEAR, 5) +
-          '<path d="M' + f1(a[0] + dx * 0.08) + "," + f1(a[1] + dy * 0.08 - 3) + " L" + f1(a[0] + dx * 0.9) + "," + f1(a[1] + dy * 0.9 - 3) + '" stroke="#FFFFFF" stroke-width="4" opacity="0.7" stroke-linecap="round"/></g>';
-      }
-      var jets = jet(eyeL, face, 9, 20, "jet-l") + jet(eyeR, [WN[0] + WN[2] * 0.26, hit[1]], 9, 22, "jet-r");
-      // the spray off her face, on to the wall behind her
-      var sprayPts = [[face[0] - 30, face[1] - 26], [face[0] - 34, face[1]], [face[0] - 28, face[1] + 24]];
-      var spray = '<g id="' + P("spray") + '" opacity="0">' + sprayPts.map(function (p, i) {
-        return '<path d="M' + f1(p[0]) + "," + f1(p[1]) + " L" + f1(L.splat[0] + 20) + "," + f1(L.splat[1] + (i - 1) * 22) + '" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
-          '<path d="M' + f1(p[0]) + "," + f1(p[1]) + " L" + f1(L.splat[0] + 20) + "," + f1(L.splat[1] + (i - 1) * 22) + '" stroke="' + TEAR + '" stroke-width="5" stroke-linecap="round"/>';
-      }).join("") + [[24, -30, 9], [30, 6, 7], [18, 34, 8], [-6, -44, 6]].map(function (d) {
-        return '<circle cx="' + f1(face[0] + d[0]) + '" cy="' + f1(face[1] + d[1]) + '" r="' + d[2] + '" fill="' + TEAR + '" stroke="' + ink + '" stroke-width="2.6"/>';
-      }).join("") + "</g>";
-
-      // the baby's drawings, swapped on the words
-      var BABY = [["hold", "hold", "eager"], ["crunch", "hold", "grin"], ["tray", "tray", "smile"], ["pout", "tray", "sad"], ["wail", "wail", "wail"], ["beam", "tray", "grin"],
-        ["eat", "hold", "smile"], ["cross", "tray", "cross"], ["flick", "flick", "smug"], ["smug", "smug", "smug"]];
-      var babies = BABY.map(function (b, i) { return '<g id="' + P("b-" + b[0]) + '"' + (i ? ' opacity="0"' : "") + ">" + baby(b[1], b[2]) + "</g>"; }).join("");
-      var MOMS = [["clasp", "clasp", "smile"], ["up", "up", "smug"], ["hit", "up", "worried", true], ["reach", "reach", "eager"], ["watch", "reach", "worried"], ["beam", "clasp", "smile"]];
-      var moms = MOMS.map(function (m, i) { return '<g id="' + P("m-" + m[0]) + '"' + (i ? ' opacity="0"' : "") + ">" + mom(m[1], m[2], m[3]) + "</g>"; }).join("");
-      // the held chip (the lone chip, later on the tray) and the pea the baby eats
-      var hHold = babyHand("hold", 1), heldAt = [CH + sb * (hHold[0] + 2), by + sb * (hHold[1] - 4)];
-      var trayAt = [loneX, trayY - 12 * k];
-      var lone = '<g id="' + P("lone") + '"><g transform="scale(' + f1(k * 1.25) + ')"><g id="' + P("lone-rot") + '"><g id="' + P("lone-a") + '">' + chip(0, 0, 1, -20) + '</g><g id="' + P("lone-b") + '" opacity="0">' + chip(0, 0, 1, -20, true) + "</g></g></g></g>";
-      var peaHand = '<g id="' + P("pea-hand") + '" opacity="0">' + pea(heldAt[0], heldAt[1], 13 * k) + "</g>";
-      var crumbs = '<g id="' + P("crumbs") + '" opacity="0">' + [[-16, -8], [14, -14], [20, 6], [-10, 12]].map(function (d) {
-        return '<rect x="' + f1(heldAt[0] + d[0]) + '" y="' + f1(heldAt[1] + d[1]) + '" width="6" height="6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.6" transform="rotate(' + d[0] * 2 + " " + f1(heldAt[0] + d[0]) + " " + f1(heldAt[1] + d[1]) + ')"/>';
-      }).join("") + "</g>";
-      // the thought bubble: one red chip that fades away
-      var BU = L.bubble, headTop = [CH + sb * 4, by + sb * -21];
-      var bubble = '<g id="' + P("bubble") + '" opacity="0">' + [[0.25, 7], [0.5, 11], [0.75, 15]].map(function (t) {
-        return '<circle cx="' + f1(headTop[0] + (BU[0] - headTop[0]) * t[0]) + '" cy="' + f1(headTop[1] + (BU[1] + 70 - headTop[1]) * t[0]) + '" r="' + t[1] + '" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="4"/>';
-      }).join("") + (function () {
-        var cs = [[-60, 10, 44], [-20, -26, 52], [36, -20, 48], [62, 18, 40], [10, 34, 46], [-40, 40, 34]];
-        return cs.map(function (c) { return '<circle cx="' + (BU[0] + c[0]) + '" cy="' + (BU[1] + c[1]) + '" r="' + c[2] + '" fill="' + ink + '" stroke="' + ink + '" stroke-width="10"/>'; }).join("") +
-          cs.map(function (c) { return '<circle cx="' + (BU[0] + c[0]) + '" cy="' + (BU[1] + c[1]) + '" r="' + c[2] + '" fill="' + WHITE + '"/>'; }).join("");
-      })() + '<g id="' + P("bub-chip") + '">' + chip(BU[0], BU[1] + 4, 2.4, -14) + "</g></g>";
-      var dog = at(L.dog, L.floor, ds, '<g id="' + P("dog-sit") + '">' + dogSit + '</g><g id="' + P("dog-sniff") + '" opacity="0">' + dogSniff + '</g><g id="' + P("dog-snub") + '" opacity="0">' + dogFinal() + "</g>", "dog-move");
-
-      var noseS = [L.dog + ds * nose[0], L.floor + ds * nose[1]];
-      var sniffs = [0, 1, 2].map(function (i) {
-        var x = noseS[0] + 14 + i * 12, y = noseS[1] - 30 - i * 8;
-        return '<path id="' + P("sniff-" + i) + '" opacity="0" d="M' + f1(x) + "," + f1(y + 10) + " q6,-6 0,-12 M" + f1(x + 10) + "," + f1(y + 12) + " q6,-6 0,-12" + '" fill="none" stroke="' + ink + '" stroke-width="3.4" stroke-linecap="round"/>';
-      }).join("");
-      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + room() + clock(true) + windowSvg() + lamp(true) +
-        '<g id="' + P("crack") + '" opacity="0">' + crackSvg(hit) + '</g><g id="' + P("splat") + '" opacity="0">' + splatSvg(L.splat, 1) + "</g>" +
-        chairBack() + chairLegs() + seat() + at(CH, by, sb, babies, "baby") + tray() + crumbs +
-        at(L.mom, momY, s, '<g id="' + P("mom-lean") + '">' + moms + "</g>", "mom-move") +
-        '<g id="' + P("bowl") + '"><g transform="scale(' + k + ')">' + bowl(true) + "</g></g>" + dog + sniffs + lone + peaHand + jets + spray + bubble);
-
-
-      var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      KIT.enter(tl, q("cam"), "slide left");
-      var reps = function (dur, d) { return Math.max(1, Math.floor(dur / d) - 1); };
-      // an odd number of repeats, so a yoyo ends where it started
-      var rest = function (dur, d) { var r = reps(dur, d); return r % 2 ? r : Math.max(1, r - 1); };
-      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, t); };
-      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
-      // swap the baby's (or the mother's) drawing at t
-      var bNow = "hold", mNow = "clasp";
-      function babyTo(name, t) { hide(q("b-" + bNow), t); show(q("b-" + name), t); bNow = name; }
-      function momTo(name, t) { hide(q("m-" + mNow), t); show(q("m-" + name), t); mNow = name; }
-      var art = q("art");
-      Array.prototype.forEach.call(art.querySelectorAll("[data-pivot]"), function (el) { gsap.set(el, { svgOrigin: el.getAttribute("data-pivot") }); });
-      var babyHeads = q("baby").querySelectorAll(".head"), neck = RB.neck.join(" ");
-      gsap.set(babyHeads, { svgOrigin: neck });
-      var momArmsR = q("mom-move").querySelectorAll("#" + P("m-reach") + " .arm-r, #" + P("m-watch") + " .arm-r");
-      gsap.set(momArmsR, { svgOrigin: RM.shoulder[1].join(" ") });
-      gsap.set(q("mom-lean"), { svgOrigin: "0 100" });
-      // origins set once, before anything moves (the bowl, its chips and peas, the lone chip, the snubbing dog's feet)
-      gsap.set([q("bowl"), q("lone-rot"), q("dog-snub")].concat(SLOTS.map(function (sl, i) { return q("chip-" + i); }), SLOTS.map(function (sl, i) { return q("pea-" + i); })), { svgOrigin: "0 0" });
-      function chew(t0, t1) { tl.fromTo(babyHeads, { rotation: 0 }, { rotation: -5, duration: 0.12, repeat: rest(t1 - t0, 0.12), yoyo: true, ease: "sine.inOut", immediateRender: false }, t0); }
-
-      var T = {
-        paint: cue("paint"), chips: KIT.cueEnd(ID, "chips."), all: cue("all"), once: cue("once."), cry: cue("cry."), back: KIT.after(ID, "cry."),
-        grad: cue("gradually"), repl: cue("replace"), paint2: cue("paint", 3), food: cue("food"), forget: cue("forget"), ever: cue("ever"),
-        option: cue("option."), land: KIT.after(ID, "option."),
+      // ── The baby: an everyday human (bald, one curl, a white bib), sitting in the chair facing the mother ──
+      var BABY = { tone: 0, outfit: "shirt", color: 3, hair: 2, head: "plain", look: "right", build: { hs: 1.6, legs: 0.5, th: 0.6, tw: 0.9, neck: 0.1, nose: 0.35, chin: 0.8 } };
+      var RB = KIT.rig(copy(BABY, { mood: "grin" })), BKS = 2.5, BX = CH, BY = SEAT - RB.hipY * BKS;
+      var toBaby = function (p) { return [(p[0] - BX) / BKS, (p[1] - BY) / BKS]; };
+      var fromBaby = function (p) { return [BX + p[0] * BKS, BY + p[1] * BKS]; };
+      var BOWL0 = [962, TRAY];
+      var BOWL_TOP = [BOWL0[0] - 14, BOWL0[1] - 48];
+      var babyArm = function (target) { return ik(RB.shoulder[1], toBaby(target), RB.armLength); };
+      var MOUTH = fromBaby(RB.mouth);
+      // grin (before the bowl goes up) or smile (after it comes back) x mouth (a bite at its lips), reach (into the
+      // bowl), rest (a hand on the tray); then the pout and the wail
+      var AT_MOUTH = babyArm([MOUTH[0] + 8, MOUTH[1] + 4]), IN_BOWL = babyArm(BOWL_TOP), ON_TRAY = babyArm([BX + 70, TRAY - 4]), BACK = [34, 100];
+      var BPOSE = {
+        mouthG: { mood: "grin", arms: [BACK, AT_MOUTH] }, reachG: { mood: "grin", arms: [BACK, IN_BOWL] }, restG: { mood: "grin", arms: [BACK, ON_TRAY] },
+        mouthS: { mood: "smile", arms: [BACK, AT_MOUTH] }, reachS: { mood: "smile", arms: [BACK, IN_BOWL] }, restS: { mood: "smile", arms: [BACK, ON_TRAY] },
+        pout: { mood: "sad", arms: [[-150, -170], [150, 168]] },
+        wail: { mood: "flat", arms: [[-160, -200], [160, 200]], wail: true },
       };
-      T.hit = T.cry + 0.25;
-      var bowlRest = [bowlX, trayY];
-      gsap.set(q("bowl"), { x: bowlRest[0], y: bowlRest[1] });
-      gsap.set(q("lone"), { x: heldAt[0], y: heldAt[1] });
+      // squeezed-shut eyes (><) and a mouth wider than the face, in the face's own units
+      function squeeze(m) {
+        return m.replace(/<g class="eye">[\s\S]*?<\/g>/g, "").replace("<!--face-end-->", [-2.5, 10.8].map(function (x) {
+          return '<path d="M' + (x - 5) + ",-7 L" + (x + 4) + ",-4 L" + (x - 5) + ',-1" fill="none" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/>';
+        }).join("") + "<!--face-end-->");
+      }
+      function wailMouth(m) {
+        return m.replace(/<path class="mouth"[^>]*\/>/, "").replace("<!--face-end-->",
+          '<path d="M-6,6 L20,4 L17,30 Q6,36 -4,28 Z" fill="#3A1E1A" stroke="' + ink + '" stroke-width="2" stroke-linejoin="miter"/>' +
+          '<path d="M-1,24 Q6,18 15,23 L14,28 Q6,33 -1,27 Z" fill="#D9707A"/><!--face-end-->');
+      }
+      var curl = '<path d="M' + f(RB.top[0] - 2) + "," + f(RB.top[1] + 4) + ' q-2,-12 8,-12 q8,1 5,8 q-3,5 -7,1" fill="none" stroke="' + ink + '" stroke-width="2.4" stroke-linecap="round"/>';
+      var sh = RB.shoulder[0][1];
+      var bib = '<path d="M-14,' + f(sh - 4) + " H14 L12," + f(sh + 18) + " Q0," + f(sh + 28) + " -12," + f(sh + 18) + ' Z" fill="' + WHITE + '" stroke="' + ink + '" stroke-width="2"/>' +
+        '<path d="M2,' + f(sh + 8) + ' l6,-2 l2,4 l-3,4 l-6,-1 Z" fill="' + C.war + '"/>';
+      var babySvg = "", bRig = {};
+      Object.keys(BPOSE).forEach(function (n) {
+        var o = copy(BABY, BPOSE[n]);
+        bRig[n] = KIT.rig(o);
+        var m = bare(KIT.person(o)).replace('<g class="head">', bib + '<g class="head">').replace("<!--head-end-->", curl + "<!--head-end-->");
+        if (o.wail) m = wailMouth(squeeze(m));
+        babySvg += '<g id="' + ID + "-b-" + n + '" opacity="' + (n === "mouthG" ? 1 : 0) + '">' + m + "</g>";
+      });
 
-      // The tail wags (finite).
-      tl.fromTo(q("dog-sit").querySelector(".dog-tail"), { rotation: -12 }, { rotation: 16, duration: 0.24, repeat: reps(T.option, 0.24), yoyo: true, ease: "sine.inOut" }, 0);
-      // "paint" (first): the baby crunches its chip (the snip) and grins; crumbs fly
-      tl.to(babyHeads, { rotation: 8, duration: 0.08, yoyo: true, repeat: 1, ease: "power2.out" }, T.paint - 0.08);
-      hide(q("lone-a"), T.paint); show(q("lone-b"), T.paint);
-      tl.fromTo(q("crumbs"), { opacity: 1, y: 0 }, { opacity: 0, y: 40, duration: 0.45, ease: "power1.in", immediateRender: false }, T.paint);
-      babyTo("crunch", T.paint + 0.05);
-      chew(T.paint + 0.15, T.chips + 0.4);
-      // it sets the rest of the chip down on the tray, beaming
-      tl.to(q("lone"), { x: trayAt[0], y: trayAt[1], duration: 0.3, ease: "power2.inOut" }, T.chips + 0.3);
-      babyTo("tray", T.chips + 0.45);
-      // "all": the mother grabs the whole bowl and holds it up out of reach (the whoosh)
-      momTo("up", T.all);
-      // the bowl sits in her raised far hand (person units: its bottom just above the hand)
-      var upHand = KIT.rig(momOpts(MA.up, "smug")).hand[0], upAt = [upHand[0] - 6, upHand[1] - 3];
-      var up = [L.mom + s * upAt[0], momY + s * upAt[1]];
-      // she leans away from the baby with it
-      var upAway = rot(upAt, [0, 100], -4);
-      tl.to(q("mom-lean"), { rotation: -4, duration: 0.22, ease: "power3.out" }, T.all);
-      tl.to(q("bowl"), { x: L.mom + s * upAway[0], y: momY + s * upAway[1], duration: 0.22, ease: "power3.out" }, T.all);
-      // the baby watches it go, lip out
-      babyTo("pout", T.all + 0.3);
-      // "cry.": the wail (the yelp): two jets of tears shoot out sideways like fire hoses
-      babyTo("wail", T.cry);
-      [["jet-l", eyeL], ["jet-r", eyeR]].forEach(function (j) {
-        tl.fromTo(q(j[0]), { opacity: 1, scaleX: 0, scaleY: 0.6, svgOrigin: f1(j[1][0]) + " " + f1(j[1][1]) }, { scaleX: 1, scaleY: 1, svgOrigin: f1(j[1][0]) + " " + f1(j[1][1]), duration: 0.22, ease: "power2.out", immediateRender: false }, T.cry + 0.02);
-        tl.to(q(j[0]), { scaleY: 0.82, duration: 0.07, repeat: reps(T.back - T.hit, 0.07), yoyo: true, ease: "none" }, T.hit);
-        hide(q(j[0]), T.back);
+      // ── The mother: an everyday human in a dress and a cream apron, facing the baby ──
+      var MOM = { tone: 0, outfit: "dress", hair: 1, color: 2, look: "left", build: { hs: 0.95, legs: 1.02 } };
+      var RM = KIT.rig(copy(MOM, { mood: "smile" })), MK = 2.45, MX = 1090, MF = 902, MY = MF - 100 * MK;
+      var toMom = function (p) { return [(p[0] - MX) / MK, (p[1] - MY) / MK]; };
+      var momArm = function (target) { return ik(RM.shoulder[0], toMom(target), RM.armLength); };
+      var HOLD = [1012, 560], PRESS = [BOWL0[0] + 22, BOWL0[1] - 52], HOVER = [BOWL0[0] + 34, BOWL0[1] - 84], DIP = [BOWL0[0] + 12, BOWL0[1] - 62];
+      var MPOSE = {
+        beam: { mood: "smile", arms: [[28, 140], [-28, -140]] },
+        grab: { mood: "flat", arms: [momArm([BOWL0[0] + 40, BOWL0[1] - 40]), [-10, -4]] },
+        hold: { mood: "smug", arms: [momArm(HOLD), [-10, -4]] },
+        up: { mood: "smug", arms: [[-84, -168], [174, 184]] },
+        hit: { mood: "worried", arms: [[-84, -168], [174, 184]], hit: true },
+        press: { mood: "cross", arms: [momArm(PRESS), [-10, -4]] },
+        hover: { mood: "worried", arms: [momArm(HOVER), [-10, -4]] },
+        dip: { mood: "worried", arms: [momArm(DIP), [-10, -4]] },
+        done: { mood: "smile", arms: [momArm(HOVER), [-10, -4]] },
+      };
+      // the apron: a cream bib and skirt over the dress, tied at the waist (person units)
+      var apron = solid([[-13, -30], [13, -30], [11, -6], [24, 52], [-24, 52], [-11, -6]], C.cream, 3.4) +
+        '<path d="M-11,-6 H11" stroke="' + C.orange + '" stroke-width="3"/><path d="M-16,28 H16" stroke="' + C.orange + '" stroke-width="2" opacity="0.7"/>';
+      // hair blown straight back off the back of her head, with speed streaks (face units, facing +x)
+      var blown = '<path d="M-12,-22 L-62,-34 L-48,-22 L-74,-16 L-52,-8 L-66,0 L-14,-2 Z" fill="' + ink + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/>' +
+        '<path d="M-80,-30 h-14 M-82,-14 h-16 M-76,2 h-12" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"/>';
+      var momSvg = "", mRig = {};
+      Object.keys(MPOSE).forEach(function (n) {
+        var o = copy(MOM, MPOSE[n]);
+        mRig[n] = KIT.rig(o);
+        var m = bare(KIT.person(o)).replace('<g class="head">', apron + '<g class="head">');
+        if (o.hit) m = squeeze(m).replace("<!--face-end-->", blown + "<!--face-end-->");
+        momSvg += '<g id="' + ID + "-m-" + n + '" opacity="' + (n === "beam" ? 1 : 0) + '">' + m + "</g>";
       });
-      gsap.set([q("jet-l"), q("jet-r")], { opacity: 0 });
-      // they hit (the splat): her hair blows straight back, she leans back with the bowl; the wall splats; the window cracks
-      momTo("hit", T.hit);
-      tl.to(q("mom-lean"), { rotation: -9, duration: 0.14, ease: "power2.out" }, T.hit);
-      var upLean = rot(upAt, [0, 100], -9);
-      tl.to(q("bowl"), { x: L.mom + s * upLean[0], y: momY + s * upLean[1], duration: 0.14, ease: "power2.out" }, T.hit);
-      tl.fromTo(q("spray"), { opacity: 1 }, { opacity: 1, duration: 0.01, immediateRender: false }, T.hit);
-      hide(q("spray"), T.back);
-      gsap.set(q("spray"), { opacity: 0 });
-      tl.fromTo(q("splat"), { opacity: 1, scale: 0.4, svgOrigin: L.splat.join(" ") }, { scale: 1, svgOrigin: L.splat.join(" "), duration: 0.14, ease: "back.out(3)", immediateRender: false }, T.hit + 0.08);
-      gsap.set(q("splat"), { opacity: 0 });
-      show(q("crack"), T.hit);
-      tl.fromTo(q("crack"), { scale: 0.3, svgOrigin: hit.join(" ") }, { scale: 1, svgOrigin: hit.join(" "), duration: 0.08, ease: "power3.out", immediateRender: false }, T.hit);
-      // the dog's ears flap in the gale
-      tl.fromTo(q("dog-sit").querySelectorAll(".dog-ear"), { rotation: 0 }, { rotation: -28, duration: 0.06, repeat: rest(T.back - T.cry, 0.06), yoyo: true, ease: "none", immediateRender: false }, T.cry);
-      // the lamp swings in the gale
-      tl.fromTo(q("lamp"), { rotation: 0 }, { rotation: 7, duration: 0.11, repeat: rest(T.back - T.hit + 0.6, 0.11), yoyo: true, ease: "sine.inOut", svgOrigin: LP[0] + " 46", immediateRender: false }, T.hit);
-      // after "cry.": she slams the bowl back (the thunk) and the crying stops at once; the baby beams and crunches
-      tl.to(q("bowl"), { x: bowlRest[0], y: bowlRest[1], duration: 0.15, ease: "power3.in" }, T.back - 0.15);
-      tl.to(q("mom-lean"), { rotation: 0, duration: 0.15, ease: "power2.in" }, T.back - 0.15);
-      momTo("reach", T.back - 0.07);
-      tl.fromTo(q("bowl"), { scaleY: 1 }, { scaleY: 0.86, scaleX: 1.08, duration: 0.05, yoyo: true, repeat: 1, ease: "power2.out", immediateRender: false }, T.back);
-      babyTo("beam", T.back);
-      chew(T.back + 0.08, T.grad - 0.1);
-      // the swaps: each chip flips into a pea (the pops), her hand dabbing into the bowl
-      var flipAt = [T.grad, T.repl, T.food, T.food + 0.12, T.food + 0.22, T.food + 0.3, T.food + 0.36];
+      var momHand = function (n, i) { var h = mRig[n].hand[i]; return [MX + h[0] * MK, MY + h[1] * MK]; };
+
+      // ── The dog: sitting tidily under the high chair, facing us ──
+      var DOGAT = [872, 902], DK = 2.0;
+      var dogSvg = DOG.draw({ pose: "sit", head: "front", mood: "flat" });
+
+      // ── Assemble the plate ──
+      var WALL_X0 = -1400, WALL_X1 = 3400;
+      var defs = '<defs><pattern id="' + ID + '-floor" width="160" height="132" patternUnits="userSpaceOnUse" x="0" y="' + FLOOR + '">' +
+        '<rect width="160" height="132" fill="' + C.cream + '"/><rect width="80" height="66" fill="' + C.navy + '"/><rect x="80" y="66" width="80" height="66" fill="' + C.navy + '"/></pattern></defs>';
+      var room = '<rect x="' + WALL_X0 + '" y="-2400" width="' + (WALL_X1 - WALL_X0) + '" height="' + (2400 + FLOOR) + '" fill="' + C.war + '"/>' +
+        BITES.map(function (b) { return bite(b[0], b[1], b[2]); }).join("") +
+        '<g id="' + ID + '-splat" opacity="0">' + splatSvg(SPLAT) + "</g>" + windowSvg() + '<g id="' + ID + '-crack" opacity="0">' + crackSvg(CRACK) + "</g>" +
+        '<rect x="' + WALL_X0 + '" y="' + FLOOR + '" width="' + (WALL_X1 - WALL_X0) + '" height="2400" fill="url(#' + ID + '-floor)"/>' +
+        '<rect x="' + WALL_X0 + '" y="' + (FLOOR - 14) + '" width="' + (WALL_X1 - WALL_X0) + '" height="14" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="4"/>';
+      var at = function (x, y, k, inner, id) { return '<g' + (id ? ' id="' + ID + "-" + id + '"' : "") + ' transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')">' + inner + "</g>"; };
+      var dogG = '<g transform="translate(' + DOGAT[0] + "," + DOGAT[1] + ') scale(' + DK + ')"><g id="' + ID + '-dog">' + dogSvg + "</g></g>";
+      var held = '<g id="' + ID + '-held" opacity="0"><g transform="scale(1.25)"><g class="held-chip">' + chip(-20) + '</g><g class="held-pea" opacity="0">' + pea() + "</g></g></g>";
+      var momHeld = '<g id="' + ID + '-momheld" opacity="0"><g transform="scale(1.25)">' + chip(30) + "</g></g>";
+      var crumbs = [0, 1, 2, 3, 4].map(function (i) { return '<g id="' + ID + "-crumb" + i + '" opacity="0"><g transform="scale(' + (0.45 + 0.08 * (i % 3)) + ')">' + chip(i * 50) + "</g></g>"; }).join("");
+      var jets = '<path id="' + ID + '-jetl" d="" fill="' + TEAR + '" stroke="' + ink + '" stroke-width="3.6" stroke-linejoin="round"/>' +
+        '<path id="' + ID + '-jetr" d="" fill="' + TEAR + '" stroke="' + ink + '" stroke-width="3.6" stroke-linejoin="round"/>' +
+        '<path id="' + ID + '-shinel" d="" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.85"/>' +
+        '<path id="' + ID + '-shiner" d="" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" opacity="0.85"/>';
+      var spray = '<g id="' + ID + '-spray" opacity="0"></g>';
+      var whoosh = '<g id="' + ID + '-whoosh" opacity="0"><path d="M1040,600 Q1010,520 1080,450 M1068,612 Q1040,530 1110,462" fill="none" stroke="' + ink + '" stroke-width="4" stroke-linecap="round"/></g>';
+      var blur = '<g id="' + ID + '-blur" opacity="0"><path d="M' + f(HOVER[0] + 60) + "," + f(HOVER[1] - 10) + " l26,-8 M" + f(HOVER[0] + 64) + "," + f(HOVER[1] + 14) + " l30,0 M" + f(HOVER[0] + 60) + "," + f(HOVER[1] + 38) + ' l26,8" stroke="' + ink + '" stroke-width="4" stroke-linecap="round"/></g>';
+      q("plate").innerHTML = KIT.svg(W, H, defs + '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + C.war + '"/>' +
+        '<g id="' + ID + '-cam">' + room + chairLegs() + chairBack() + dogG +
+        '<g id="' + ID + '-baby" transform="translate(' + f(BX) + "," + f(BY) + ') scale(' + BKS + ')">' + babySvg + "</g>" + trayFront() + held +
+        '<g id="' + ID + '-mom">' + at(MX, MY, MK, momSvg) + momHeld + "</g>" +
+        '<g id="' + ID + '-bowl"><g id="' + ID + '-bowl-in"><g transform="scale(' + BK + ')">' + bowlSvg() + "</g></g></g>" +
+        crumbs + whoosh + blur + jets + spray + "</g>");
+
+      var cam = q("cam"), bowlEl = q("bowl"), bowlIn = q("bowl-in"), heldEl = q("held"), momEl = q("mom"), momHeldEl = q("momheld");
+      var heldChip = heldEl.querySelector(".held-chip"), heldPea = heldEl.querySelector(".held-pea");
+      var dogEars = Array.prototype.slice.call(q("dog").querySelectorAll(".dog-ear"));
+      var dogTail = q("dog").querySelector(".dog-tail");
+
+      // ── Cues ──
+      var T = {
+        baby: cue("baby"), chips: cue("chips."), take: cue("take"), all: cue("all"), cry: cue("cry."), slam: KIT.after(ID, "cry."),
+        grad: cue("gradually"), repl: cue("replace"), chips3: cue("chips", 3), food: cue("food"),
+      };
+      T.hit = T.cry + 0.12; T.splat = T.cry + 0.3;
+      // the baby's bites: [crunch time, "chip" | "pea"]; it reaches into the bowl, then crunches at its mouth
+      var BITES_T = [[0.12, "chip"], [T.chips, "chip"], [T.slam + 0.3, "chip"], [T.repl + 0.4, "pea"], [T.chips3 + 0.18, "pea"], [T.food + 0.3, "pea"]];
+      // the swaps: one chip turns into a pea at each time (the slot order is mixed)
+      var SWAPS = [T.grad, T.repl, T.chips3, T.food, T.food + 0.09, T.food + 0.17, T.food + 0.24];
       var ORDER = [4, 1, 6, 0, 3, 5, 2];
-      flipAt.forEach(function (t, k) {
-        var i = ORDER[k], d = k < 2 ? 0.08 : 0.04;
-        tl.to(q("chip-" + i), { scaleX: 0, duration: d, ease: "power2.in" }, t);
-        tl.fromTo(q("pea-" + i), { opacity: 1, scaleX: 0, scaleY: 1.35 }, { scaleX: 1.35, scaleY: 1.35, duration: d, ease: "power2.out", immediateRender: false }, t + d);
-        tl.to(q("pea-" + i), { scaleX: 1, scaleY: 1, duration: 0.12, ease: "back.out(3)" }, t + 2 * d);
-        tl.to(momArmsR, { rotation: 7, duration: d, yoyo: true, repeat: 1, ease: "power2.out" }, t - d);
+
+      // ── The camera: views [plate x, plate y, scale] for each shape, and keys [time, view, extra scale] ──
+      var VIEW = V
+        ? { med: [960, 640, 1.9], baby: [905, 500, 2.4], cry: [850, 560, 1.3], bowl: [950, 520, 2.9], end: [935, 600, 2.1] }
+        : { med: [930, 560, 1.65], baby: [900, 500, 2.5], cry: [860, 520, 1.45], bowl: [945, 520, 3.0], end: [930, 530, 2.25] };
+      var KEYS = [[0, "med", 1], [T.baby - 0.1, "med", 1.03], [T.baby + 0.35, "baby", 1], [T.take - 0.45, "baby", 1.04], [T.take - 0.05, "med", 1],
+        [T.cry - 0.12, "med", 1.03], [T.cry + 0.12, "cry", 1], [T.slam + 0.25, "cry", 1.02], [T.grad - 0.1, "bowl", 1], [T.food - 0.05, "bowl", 1.05], [T.food + 0.3, "end", 1], [D, "end", 1.02]];
+      var camera = KIT.camera(VIEW, KEYS);
+
+      // ── Where things are ──
+      // the bowl: on the tray; grabbed on "take" and lifted to her chest; whipped up overhead on "all"; slammed back
+      // after "cry."
+      var LEAN_UP = 5, LEAN_HIT = 10, FEET = [MX, MF];
+      function leanAt(t) {
+        if (t < T.all || t >= T.slam) return 0;
+        var a = LEAN_UP * smooth((t - T.all) / 0.2);
+        if (t > T.hit) a += (LEAN_HIT - LEAN_UP) * smooth((t - T.hit) / 0.12);
+        if (t > T.slam - 0.15) a *= 1 - smooth((t - T.slam + 0.15) / 0.15);
+        return a;
+      }
+      var upAt = function (t) { var h = momHand("up", 1); return rot([h[0] - 2, h[1] - 6], FEET, leanAt(t)); };
+      function bowlAt(t) {
+        var grab = T.take + 0.12, lift = grab + 0.22;
+        if (t < grab) return BOWL0;
+        if (t < lift) return lerp(BOWL0, [HOLD[0] - 4, HOLD[1] + 22], smooth((t - grab) / 0.22));
+        if (t < T.all) return [HOLD[0] - 4, HOLD[1] + 22];
+        if (t < T.all + 0.18) return arc([HOLD[0] - 4, HOLD[1] + 22], upAt(t), smooth((t - T.all) / 0.18), 40);
+        if (t < T.slam - 0.13) return upAt(t);
+        if (t < T.slam) { var u = (t - T.slam + 0.13) / 0.13; return arc(upAt(T.slam - 0.13), BOWL0, u * u, 30); }
+        return BOWL0;
+      }
+      function momPose(t) {
+        if (t < T.take - 0.05) return "beam";
+        if (t < T.take + 0.12) return "grab";
+        if (t < T.all) return "hold";
+        if (t < T.hit) return "up";
+        if (t < T.slam - 0.13) return "hit";
+        if (t < T.slam + 0.25) return "press";
+        if (t >= SWAPS[SWAPS.length - 1] + 0.12) return "done";
+        // swapping: the hand dips into the bowl for each swap, and hovers above it in between
+        for (var i = 0; i < SWAPS.length; i++) { var d = i < 3 ? 0.12 : 0.04; if (t > SWAPS[i] - d && t < SWAPS[i] + d) return "dip"; }
+        return "hover";
+      }
+      function babyPose(t) {
+        if (t >= T.all && t < T.cry) return "pout";
+        if (t >= T.cry && t < T.slam) return "wail";
+        var g = t < T.slam ? "G" : "S";
+        if (t >= T.take && t < T.all) return "reach" + g;
+        for (var i = 0; i < BITES_T.length; i++) {
+          var b = BITES_T[i][0];
+          if (t > b - 0.75 && t < b - 0.42) return "reach" + g;
+          if (t >= b - 0.42 && t < b + 0.4) return "mouth" + g;
+        }
+        return "rest" + g;
+      }
+      // the item in the baby's hand: picked up at the bowl, carried to the mouth, gone at the crunch
+      function heldAt(t) {
+        for (var i = 0; i < BITES_T.length; i++) {
+          var b = BITES_T[i][0];
+          if (t > b - 0.62 && t < b) {
+            var h0 = BOWL_TOP, R = bRig.mouthG, h1 = fromBaby(R.hand[1]);
+            var u = smooth((t - (b - 0.42)) / 0.28);
+            return { p: t < b - 0.42 ? h0 : lerp(h0, [h1[0] + 4, h1[1] - 6], u), kind: BITES_T[i][1] };
+          }
+        }
+        return null;
+      }
+      var lastBite = function (t) { var b = null; BITES_T.forEach(function (x) { if (t >= x[0]) b = x; }); return b; };
+      // the tear jets: tapered hoses from the eyes, wobbling; u: how far out they have shot (0..1)
+      var EYE = fromBaby(RB.eyes), EYE_L = [EYE[0] - 30, EYE[1] + 4], EYE_R = [EYE[0] + 14, EYE[1] + 4];
+      function jetPath(a, b, u, ph, w0, w1, sag) {
+        var e = lerp(a, b, u), dx = e[0] - a[0], dy = e[1] - a[1], l = Math.hypot(dx, dy) || 1, n = [-dy / l, dx / l], up = [], dn = [];
+        for (var i = 0; i <= 14; i++) {
+          var v = i / 14, w = (w0 + (w1 - w0) * v) * (0.85 + 0.15 * Math.sin(v * 11 - ph)), s = -Math.sin(Math.PI * v) * sag * u;
+          var c = [a[0] + dx * v, a[1] + dy * v + s];
+          up.push([c[0] + n[0] * w, c[1] + n[1] * w]); dn.unshift([c[0] - n[0] * w, c[1] - n[1] * w]);
+        }
+        var sh2 = "M" + f(a[0] + dx * 0.1) + "," + f(a[1] + dy * 0.1 - w0 * 0.3) + " Q" + f(a[0] + dx * 0.5) + "," + f(a[1] + dy * 0.5 - sag * u - w1 * 0.3) + " " + f(a[0] + dx * 0.88) + "," + f(a[1] + dy * 0.88 - w1 * 0.4);
+        return { d: pd(up.concat(dn)), shine: sh2 };
+      }
+      var jetL = q("jetl"), jetR = q("jetr"), shineL = q("shinel"), shineR = q("shiner"), sprayEl = q("spray");
+      // the spray off her face: droplets and streaks on to the window (redrawn each frame)
+      function sprayAt(t, face) {
+        var out = "", r = KIT.rng(5 + Math.floor(t * 24));
+        for (var i = 0; i < 6; i++) {
+          var a = -0.5 + r() * 1.0, d = 30 + r() * 90, x = face[0] + 22 + Math.cos(a) * d, y = face[1] - 10 + Math.sin(a) * d;
+          out += '<circle cx="' + f(x) + '" cy="' + f(y) + '" r="' + f(5 + r() * 6) + '" fill="' + TEAR + '" stroke="' + ink + '" stroke-width="2.4"/>';
+        }
+        [[-30, -40], [0, 0], [26, 40]].forEach(function (d) {
+          out += '<path d="M' + f(face[0] + 30) + "," + f(face[1] + d[0] * 0.4) + " L" + f(CRACK[0] + d[1] * 0.6) + "," + f(CRACK[1] + d[0] * 0.5) + '" stroke="' + TEAR + '" stroke-width="6" stroke-linecap="round" stroke-dasharray="18 14" stroke-dashoffset="' + f(-t * 400) + '"/>';
+        });
+        return out;
+      }
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+
+        // the baby
+        var bp = babyPose(t);
+        Object.keys(BPOSE).forEach(function (n) { show(q("b-" + n), n === bp); });
+        // chewing (after each crunch) and a little crunch jolt
+        var lb = lastBite(t), chew = 0;
+        if (lb && t - lb[0] < 0.55 && bp !== "wail" && bp !== "pout") chew = Math.sin((t - lb[0]) * 40) * 5 * (1 - (t - lb[0]) / 0.55);
+        if (bp === "wail") chew = Math.sin(t * 46) * 3;
+        var bh = q("b-" + bp).querySelector(".head");
+        bh.setAttribute("transform", "rotate(" + f(chew) + " " + f(RB.neck[0]) + " " + f(RB.neck[1]) + ")");
+        // the baby bounces as it wails
+        q("baby").setAttribute("transform", "translate(" + f(BX) + "," + f(BY - (bp === "wail" ? Math.abs(Math.sin(t * 23)) * 5 : 0)) + ") scale(" + BKS + ")");
+        var hh = heldAt(t);
+        show(heldEl, !!hh && bp !== "wail" && bp !== "pout");
+        if (hh) {
+          heldEl.setAttribute("transform", "translate(" + f(hh.p[0]) + "," + f(hh.p[1]) + ")");
+          show(heldChip, hh.kind === "chip"); show(heldPea, hh.kind === "pea");
+        }
+        // crumbs fly off each chip the baby crunches
+        var cb = null; BITES_T.forEach(function (x) { if (x[1] === "chip" && t >= x[0] && t < x[0] + 0.6) cb = x; });
+        for (var i = 0; i < 5; i++) {
+          var ce = q("crumb" + i);
+          if (!cb) { show(ce, 0); continue; }
+          var age = t - cb[0], ang = -2.6 + i * 0.55, sp = 220 + i * 40;
+          show(ce, 1);
+          ce.setAttribute("transform", "translate(" + f(MOUTH[0] + 10 + Math.cos(ang) * sp * age) + "," + f(MOUTH[1] + 4 + Math.sin(ang) * sp * age + 900 * age * age) + ") rotate(" + f(age * 700 * (i % 2 ? 1 : -1)) + ")");
+        }
+
+        // the mother
+        var mp = momPose(t);
+        Object.keys(MPOSE).forEach(function (n) { show(q("m-" + n), n === mp); });
+        momEl.setAttribute("transform", "rotate(" + f(leanAt(t)) + " " + FEET[0] + " " + FEET[1] + ")");
+        // the chip she takes out of the bowl at each swap, in her hand for a moment
+        var mh = null; SWAPS.forEach(function (s, i) { if (t >= s && t < s + (i < 3 ? 0.3 : 0.1)) mh = s; });
+        show(momHeldEl, !!mh && mp === "hover");
+        if (mh && mp === "hover") { var hp = momHand("hover", 0); momHeldEl.setAttribute("transform", "translate(" + f(hp[0] - 4) + "," + f(hp[1] - 8) + ")"); }
+        show(q("blur"), t > T.food - 0.05 && t < SWAPS[SWAPS.length - 1] + 0.1);
+        show(q("whoosh"), t > T.all && t < T.all + 0.25);
+
+        // the bowl, and its squash when it is slammed down
+        var bp2 = bowlAt(t), sq = t > T.slam && t < T.slam + 0.2 ? Math.sin(((t - T.slam) / 0.2) * Math.PI) * 0.16 : 0;
+        bowlEl.setAttribute("transform", "translate(" + f(bp2[0]) + "," + f(bp2[1]) + ")");
+        bowlIn.setAttribute("transform", "scale(" + (1 + sq).toFixed(3) + "," + (1 - sq).toFixed(3) + ")");
+        // the swaps: each chip flips edge-on and comes back a pea
+        ORDER.forEach(function (slot, k) {
+          var s = SWAPS[k], d = k < 3 ? 0.08 : 0.04, c = q("chip" + slot), p = q("pea" + slot);
+          if (t < s) { show(c, 1); show(p, 0); c.removeAttribute("transform"); return; }
+          if (t < s + d) { show(c, 1); show(p, 0); c.setAttribute("transform", "scale(" + (1 - (t - s) / d).toFixed(3) + ",1)"); return; }
+          show(c, 0); show(p, 1);
+          var u = clamp((t - s - d) / 0.16), pop = u < 1 ? 1 + Math.sin(u * Math.PI) * 0.4 : 1;
+          p.setAttribute("transform", "scale(" + pop.toFixed(3) + ")");
+        });
+
+        // the tear jets: out on "cry.", stopped dead when the bowl comes back
+        var face = (function () { var e = mRig.hit.eyes; return rot([MX + e[0] * MK, MY + e[1] * MK], FEET, leanAt(t)); })();
+        if (t > T.cry && t < T.slam) {
+          var u2 = smooth((t - T.cry) / 0.16), u3 = smooth((t - T.cry) / 0.32), ph = t * 30;
+          var L = jetPath(EYE_L, [SPLAT[0] + 30, SPLAT[1]], u3, ph, 7, 26, 40), R2 = jetPath(EYE_R, [face[0] + 18, face[1] + 2], u2, ph + 1, 7, 24, 26);
+          jetL.setAttribute("d", L.d); jetR.setAttribute("d", R2.d); shineL.setAttribute("d", L.shine); shineR.setAttribute("d", R2.shine);
+        } else { jetL.setAttribute("d", ""); jetR.setAttribute("d", ""); shineL.setAttribute("d", ""); shineR.setAttribute("d", ""); }
+        var spraying = t > T.hit && t < T.slam;
+        show(sprayEl, spraying);
+        if (spraying) sprayEl.innerHTML = sprayAt(t, face);
+        // the splat on the wall and the crack in the window stay
+        var sp2 = q("splat"), cr = q("crack");
+        show(sp2, t >= T.splat); show(cr, t >= T.splat);
+        var su = clamp((t - T.splat) / 0.14), ss = t >= T.splat ? 0.4 + 0.6 * (1 + 2.2 * Math.pow(su - 1, 3) + 1.2 * Math.pow(su - 1, 2)) : 1;
+        sp2.setAttribute("transform", "translate(" + f(SPLAT[0]) + "," + f(SPLAT[1]) + ") scale(" + ss.toFixed(3) + ") translate(" + f(-SPLAT[0]) + "," + f(-SPLAT[1]) + ")");
+        // the dog's ears flap in the spray; its tail sweeps the floor now and then
+        var flap = t > T.cry && t < T.slam ? Math.sin(t * 60) * 26 : 0;
+        dogEars.forEach(function (e, i) { var pv = e.getAttribute("data-pivot"); e.setAttribute("transform", "rotate(" + f(i ? -flap : flap) + " " + pv + ")"); });
+        dogTail.setAttribute("transform", "rotate(" + f(t > T.slam ? Math.sin(t * 14) * 14 : Math.sin(t * 5) * 6) + " " + dogTail.getAttribute("data-pivot") + ")");
       });
-      // between the swaps the baby takes a pea without noticing and chews happily; she holds her breath
-      momTo("watch", T.paint2 - 0.1);
-      babyTo("eat", T.paint2);
-      show(q("pea-hand"), T.paint2); hide(q("pea-hand"), T.paint2 + 0.3);
-      chew(T.paint2 + 0.3, T.food - 0.1);
-      babyTo("beam", T.paint2 + 0.45);
-      momTo("reach", T.food - 0.25);
-      // "food": faster and faster, a blur; the clock's hands spin
-      tl.to(q("mh"), { rotation: 1080, duration: 1.0, ease: "power2.in", svgOrigin: CK[0] + " " + CK[1] }, T.food - 0.2);
-      tl.to(q("hh"), { rotation: 90, duration: 1.0, ease: "power2.in", svgOrigin: CK[0] + " " + CK[1] }, T.food - 0.2);
-      // "forget": the bowl is all peas, she beams; the baby eats one, and a thought bubble with one red chip fades away (the whoosh)
-      momTo("beam", T.forget - 0.3);
-      babyTo("eat", T.forget);
-      show(q("pea-hand"), T.forget); hide(q("pea-hand"), T.forget + 0.3);
-      chew(T.forget + 0.3, T.ever - 0.15);
-      tl.fromTo(q("bubble"), { opacity: 1, scale: 0, svgOrigin: f1(BU[0]) + " " + f1(BU[1] + 60) }, { scale: 1, svgOrigin: f1(BU[0]) + " " + f1(BU[1] + 60), duration: 0.25, ease: "back.out(2)", immediateRender: false }, T.forget);
-      gsap.set(q("bubble"), { opacity: 0 });
-      tl.to(q("bub-chip"), { opacity: 0, duration: 0.6, ease: "power1.in" }, T.forget + 0.45);
-      tl.to(q("bubble"), { scale: 0, duration: 0.18, ease: "back.in(2)", svgOrigin: f1(BU[0]) + " " + f1(BU[1] + 60) }, T.ever - 0.35);
-      // "ever": one red chip is left on the tray; the baby eyes it, brows down
-      babyTo("cross", T.ever);
-      tl.to(q("b-cross").querySelectorAll(".pupil"), { x: 1.5, y: 2.2, duration: 0.12 }, T.ever + 0.05);
-      // "option.": it flicks it off with one finger (the click); the chip sails off the tray and lands in front of the dog
-      babyTo("flick", T.option - 0.06);
-      var top = [trayAt[0] + 80 * k, trayY - 130 * k];
-      tl.to(q("lone"), { x: top[0], duration: 0.28, ease: "none" }, T.option);
-      tl.to(q("lone"), { y: top[1], duration: 0.28, ease: "power2.out" }, T.option);
-      tl.to(q("lone"), { x: landAt[0], duration: T.land - 0.05 - T.option - 0.28, ease: "none" }, T.option + 0.28);
-      tl.to(q("lone"), { y: landAt[1], duration: T.land - 0.05 - T.option - 0.28, ease: "power2.in" }, T.option + 0.28);
-      tl.fromTo(q("lone-rot"), { rotation: 0 }, { rotation: 400, duration: T.land - 0.05 - T.option, ease: "none" }, T.option);
-      babyTo("smug", T.option + 0.35);
-      // after "option.": the dog leans down and sniffs it (the huff), then pushes it away with its nose (the woof) and turns its nose up
-      hide(q("dog-sit"), T.land - 0.05); show(q("dog-sniff"), T.land - 0.05);
-      var sniffHead = q("dog-sniff").querySelector(".dog-head");
-      tl.fromTo(sniffHead, { rotation: 0 }, { rotation: -4, duration: 0.07, repeat: 3, yoyo: true, ease: "sine.inOut", immediateRender: false }, T.land);
-      var push = T.land + 0.45;
-      tl.to(sniffHead, { rotation: 7, duration: 0.07, ease: "power2.out" }, push);
-      tl.to(q("lone"), { x: chipEnd[0], duration: 0.22, ease: "power2.out" }, push + 0.03);
-      tl.to(q("lone-rot"), { rotation: 430, duration: 0.22, ease: "power2.out" }, push + 0.03);
-      // and it sits back up, nose in the air (a little bounce as it lands)
-      hide(q("dog-sniff"), push + 0.14); show(q("dog-snub"), push + 0.14);
-      tl.fromTo(q("dog-snub"), { scaleY: 0.86, scaleX: 1.08 }, { scaleY: 1, scaleX: 1, duration: 0.16, ease: "back.out(3)", immediateRender: false }, push + 0.14);
-      // the sniffs: three little marks off its nose, one after another (the huff)
-      [0, 1, 2].forEach(function (i) { show(q("sniff-" + i), T.land + i * 0.12); hide(q("sniff-" + i), T.land + i * 0.12 + 0.16); });
+
+      // ── The slam: a little shake as the bowl hits the tray.
+      tl.fromTo(q("shake"), { x: 0, y: 0 }, { keyframes: [{ x: -5, y: 4, duration: 0.04 }, { x: 4, y: -3, duration: 0.04 }, { x: -2, y: 1, duration: 0.04 }, { x: 0, y: 0, duration: 0.04 }], immediateRender: false }, T.slam);
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;
-      window.paintChipsFinal = paintChipsFinal;
     })();
   </script>
 </template>

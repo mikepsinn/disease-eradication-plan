@@ -4,8 +4,8 @@
 //   KIT.film(tl, id, weave, over, seed)       the period film. weave: the element that holds the whole picture (it
 //                                             gets the gate weave); over: an empty full-frame element above it.
 //   KIT.STUDIO                                the studio set's positions for this canvas shape
-//   KIT.studio(tl, id, els, o)                a whole host shot (Layer A): the set, Wishonia, the lectern, the push
-//   KIT.studioWall(), KIT.lectern(), KIT.atom(x, y, r, color)   the set's drawings, for scenes that need them alone
+//   KIT.studio(tl, id, els, o)                a whole host shot (Layer A): the set, Wishonia, the desk, the push
+//   KIT.studioWall(), KIT.console(), KIT.atom(x, y, r, color)   the set's drawings, for scenes that need them alone
 //   KIT.iris(tl, id, el, at, mode, t0, t1)    the iris in or out on a point
 //   KIT.camera(views, keys, anchor)           a keyed camera over one plate (Layer B)
 //   KIT.smooth(u), KIT.mix(a, b, u), KIT.burn(markup)   smoothstep, a color between two, a drawing charred
@@ -70,24 +70,28 @@
   }
 
   // ── The host's set (Layer A) ──
-  // A plain mustard studio wall with a spotlight pool, a rust chair rail over a tan dado, a slate floor (9:16), and a
-  // navy lectern with the film's atom on its front. Positions in canvas px:
+  // Her observation deck (studioWall below) and Wishonia's
+  // console (her desk). Positions in canvas px:
   //   wish  Wishonia's rig (KIT.mountWishonia x, y, w)   face  her face: the iris center and the push's origin
-  //   lect  [center x, reading-top width, plinth width]  top   the reading top's y
+  //   lect  [her center x, her reach on the desk, unused]  top   the desk top.s y
   //   rail  the chair rail's y   floor  the floor's y (H: no floor in shot)   pool  [cx, cy, rx, ry] of the spotlight
-  //   right the free wall right of the lectern, [x0, x1], for a guest or a prop
+  //   right the free wall right of the desk, [x0, x1], for a guest or a prop
   var STUDIO = V
-    ? { wish: { x: 110, y: 400, w: 600 }, rail: 1180, top: 1100, lect: [410, 470, 330], floor: 1580, pool: [410, 760, 460, 520], face: [410, 690], right: [700, 1040] }
+    ? { wish: { x: 110, y: 400, w: 600 }, rail: 1180, top: 1100, lect: [410, 470, 330], floor: 1920, pool: [410, 760, 460, 520], face: [410, 690], right: [700, 1040] }
     : { wish: { x: 480, y: 130, w: 560 }, rail: 700, top: 790, lect: [760, 440, 300], floor: 1080, pool: [760, 420, 450, 420], face: [760, 390], right: [1100, 1880] };
-  var WALL = "#E3C88F", POOL = "#EDD9A6", POOL2 = "#F3E5BE", LOW = "#B98C5A";
+  // The wall is her observation deck: generated art after the book cover (assets/art/deck/deck.webp, 1536 x 1024,
+  // cover-fit to the frame), a glass wall onto deep space. Earth hangs in it at STUDIO.earth ([cx, cy, r], clear of
+  // her head, for gags that happen on Earth: earth.webp is 667 x 651). A warm glow behind her keeps her black hair
+  // off the navy (the same gradient id in every host scene, so a duplicate resolves to the same thing).
+  var POOL = "#EDD9A6", POOL2 = "#F3E5BE";
+  STUDIO.earth = V ? [850, 250, 150] : [1530, 330, 200];
   function studioWall() {
-    var S = STUDIO, p = S.pool;
-    return '<rect width="' + W + '" height="' + H + '" fill="' + WALL + '"/>' +
-      '<g class="pool"><ellipse cx="' + p[0] + '" cy="' + p[1] + '" rx="' + p[2] + '" ry="' + p[3] + '" fill="' + POOL + '"/>' +
-      '<ellipse cx="' + p[0] + '" cy="' + (p[1] - p[3] * 0.08) + '" rx="' + p[2] * 0.68 + '" ry="' + p[3] * 0.68 + '" fill="' + POOL2 + '"/></g>' +
-      '<rect y="' + S.rail + '" width="' + W + '" height="' + (H - S.rail) + '" fill="' + LOW + '"/>' +
-      '<rect y="' + (S.rail - 6) + '" width="' + W + '" height="12" fill="' + C.rust + '"/>' +
-      (S.floor < H ? '<rect y="' + S.floor + '" width="' + W + '" height="' + (H - S.floor) + '" fill="' + C.slate + '"/>' : "");
+    var S = STUDIO, p = S.pool, e = S.earth;
+    return '<image href="assets/art/deck/deck.webp" width="' + W + '" height="' + H + '" preserveAspectRatio="xMidYMid slice"/>' +
+      '<image class="earth" href="assets/art/deck/earth.webp" x="' + f(e[0] - e[2]) + '" y="' + f(e[1] - e[2] * 651 / 667) + '" width="' + f(2 * e[2]) + '" height="' + f(2 * e[2] * 651 / 667) + '"/>' +
+      '<defs><radialGradient id="studio-glow"><stop offset="0" stop-color="' + POOL2 + '" stop-opacity="0.75"/>' +
+      '<stop offset="0.55" stop-color="' + POOL + '" stop-opacity="0.35"/><stop offset="1" stop-color="' + POOL + '" stop-opacity="0"/></radialGradient></defs>' +
+      '<g class="pool"><ellipse cx="' + p[0] + '" cy="' + p[1] + '" rx="' + p[2] * 1.15 + '" ry="' + p[3] * 1.15 + '" fill="url(#studio-glow)"/></g>';
   }
   // The film's emblem: three orbits and an orange nucleus.
   function atom(x, y, r, col) {
@@ -95,18 +99,23 @@
       return '<ellipse cx="' + x + '" cy="' + y + '" rx="' + r + '" ry="' + r * 0.31 + '" fill="none" stroke="' + col + '" stroke-width="' + f(r * 0.05) + '" transform="rotate(' + a + " " + x + " " + y + ')"/>';
     }).join("") + '<circle cx="' + x + '" cy="' + y + '" r="' + f(r * 0.15) + '" fill="' + C.orange + '" stroke="' + col + '" stroke-width="' + f(r * 0.04) + '"/>';
   }
-  // The lectern: a slanted reading top, a front panel that narrows to a plinth, the atom on the panel.
-  function lectern() {
-    var S = STUDIO, cx = S.lect[0], hw = S.lect[1] / 2, top = S.top, bot = S.floor, pw = S.lect[2] / 2;
-    var lid = '<path d="M' + (cx - hw - 24) + "," + (top + 34) + " L" + (cx - hw) + "," + top + " H" + (cx + hw) + " L" + (cx + hw + 24) + "," + (top + 34) + ' Z" fill="' + C.slate + '" stroke="' + C.ink + '" stroke-width="5" stroke-linejoin="round"/>';
-    var panel = '<path d="M' + (cx - hw - 6) + "," + (top + 34) + " H" + (cx + hw + 6) + " L" + (cx + pw) + "," + (bot - 40) + " H" + (cx - pw) + ' Z" fill="' + C.navy + '" stroke="' + C.ink + '" stroke-width="5" stroke-linejoin="round"/>' +
-      '<path d="M' + (cx + hw - 2) + "," + (top + 40) + " L" + (cx + pw - 6) + "," + (bot - 46) + '" stroke="' + C.orange + '" stroke-width="4"/>';
-    var plinth = '<rect x="' + (cx - pw - 30) + '" y="' + (bot - 40) + '" width="' + (2 * pw + 60) + '" height="40" fill="' + C.slate + '" stroke="' + C.ink + '" stroke-width="5"/>';
-    var ey = top + 34 + (bot - 40 - top - 34) * (V ? 0.3 : 0.38);
-    return lid + panel + plinth + atom(cx, ey, V ? 120 : 92, C.cream);
+  // Her console, as in the theme song: generated art (assets/art/console/console.webp, 1480 x 428; its sheet and the
+  // theme song frame it copies are in sheets/). It runs off the left edge and stops just short of the free wall
+  // (S.right); its cream ledge sits at S.top, so the case file and mug stand on it. Under it, the keys, two dials, a
+  // readout and the big red button (STUDIO.button: [cx, cy, r], for the scene that presses it). (K.lectern is its
+  // old name; K.desk is the old office desk in kit.js.)
+  var CON = (function () {
+    // 9:16: drawn larger, so its base stands on the deck's floor line (y 1575 there) instead of floating above it.
+    var S = STUDIO, x1 = S.right[0] - 20, s = V ? 1.2 : (x1 + 260) / 1480, x0 = x1 - 1480 * s;
+    return { x0: x0, x1: x1, s: s, y: S.top - 20 * s, h: 428 * s };
+  })();
+  STUDIO.button = [CON.x0 + 1317 * CON.s, CON.y + 113 * CON.s, 42 * CON.s];
+  function desk() {
+    var c = CON;
+    return '<image href="assets/art/console/console.webp" x="' + f(c.x0) + '" y="' + f(c.y) + '" width="' + f(1480 * c.s) + '" height="' + f(c.h) + '"/>';
   }
   // A host shot. els: { cam, wall, wish, front } (full-frame elements; cam holds the other three). Draws the wall,
-  // mounts Wishonia (her states come from the part file), draws the lectern and o.front (more markup in front of
+  // mounts Wishonia (her states come from the part file), draws the desk and o.front (more markup in front of
   // her, in canvas px) and pushes the camera slowly in on her face, from o.push[0] to o.push[1] (default 1 → 1.07).
   // Returns { S: KIT.STUDIO, pool: the spotlight pool's <g> }.
   function studio(tl, id, els, o) {
@@ -114,7 +123,7 @@
     var D = K.scene(id).duration, S = STUDIO;
     els.wall.innerHTML = K.svg(W, H, studioWall());
     K.mountWishonia(tl, els.wish, { scene: id, x: S.wish.x, y: S.wish.y, w: S.wish.w });
-    els.front.innerHTML = K.svg(W, H, lectern() + (o.front || ""));
+    els.front.innerHTML = K.svg(W, H, desk() + (o.front || ""));
     var push = o.push || [1, 1.07], origin = S.face[0] + "px " + S.face[1] + "px";
     tl.fromTo(els.cam, { scale: push[0], transformOrigin: origin }, { scale: push[1], transformOrigin: origin, duration: D, ease: "sine.inOut" }, 0);
     return { S: S, pool: els.wall.querySelector(".pool") };
@@ -164,7 +173,8 @@
   K.STUDIO = STUDIO;
   K.studio = studio;
   K.studioWall = studioWall;
-  K.lectern = lectern;
+  K.console = desk;
+  K.lectern = desk;
   K.atom = atom;
   K.iris = iris;
   K.camera = camera;

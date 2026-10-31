@@ -1,865 +1,850 @@
 <template id="war-supply-chain-template">
-  <!-- war-supply-chain · Layer B (storyboards/part-04-institutionalize.md): the same padded cell, no seam. The patient turns
-       to the blank wall, swings his pencil round in a big circle and a paper-doll chain of tiny humans holding hands becomes
-       the rim of a Ferris wheel; they lift their joined hands. On each step of the narration a gondola hangs from the rim and
-       lights up (red glow, colors, a two-frame loop): a miner, a furnace pouring alloy, the missile-chimney factory feeding
-       the Weapons Maker, a salute (one with the wrong hand), soup and then uniforms, a ship, a plane and a truck taking
-       missiles to a village that waves hello and goes up in a mushroom cloud (the charred villagers keep waving), the Loud
-       Human's THEY DESERVE IT poster, the vote. "pay": war bills pour out of the ballot box and run the rim back to the mine,
-       whose miner swings faster; the calendar tears off a year; on "forever." the last arrow closes the loop and the wheel
-       turns, shedding years in a blizzard. On "largest" the Orderly's head comes through the door window on its long neck,
-       jaw dropped, and a first-place rosette pins itself to the hub: LARGEST COORDINATED EFFORT. -->
+  <!-- war-supply-chain · Layer B, plate padded-cell (storyboards/part-04-institutionalize.md, scene 9), in the film look
+       of Part 2; no seam from orderly-door-slot. "War": the patient turns to the blank wall and hops over. "millions":
+       he windmills his crayon and a crayon circle goes round, a paper-doll chain of tiny humans holding hands: the rim
+       of a wheel; spokes and eight crayon gondolas follow. "together": the dolls come alive in color and lift their
+       joined hands. Then the camera travels round the rim, one gondola per phrase, each wiping from crayon into the
+       film's colors as it is read: "mine" a miner (ore pops on each strike), "refine" a furnace pouring alloy into
+       ingots, "factories" the missile-chimney factory whose door rolls up on "weapons," so missiles ride a conveyor
+       into the Weapons Maker's arms, "train" a salute (one recruit uses the wrong hand, glances, then salutes with
+       both), "feed" soup flung into bowls and "clothe" uniforms dropping on, "ships" / "planes" / "trucks" carrying
+       missiles to a village hanging a WELCOME banner; after "are," the flash, the cloud and the villagers charred on
+       their ladders holding the two burnt ends. "convince" the Loud Human and the THEY DESERVE IT poster, the crowd
+       cheering on "deserve"; "vote" ballots into the box beside the Politician, "pay" war bills out of its bottom,
+       running the rim back to the mine (the miner swings faster). "annually," the crayon calendar tears off a page
+       and the bills run a lap; "forever." the camera pulls back to the whole wheel, which starts turning, gondolas
+       swinging, pages shedding. "largest": the Orderly's head pushes out through the door window, jaw dropped; after
+       it the 1ST rosette pins itself to the hub. The plate and the wheel are copied in chain-goes-dark. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
-    #war-supply-chain-cam, #war-supply-chain-view, #war-supply-chain-art, #war-supply-chain-pip, #war-supply-chain-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #EFE4C6; }
+    #war-supply-chain-weave, #war-supply-chain-shake, #war-supply-chain-plate, #war-supply-chain-film { position: absolute; inset: 0; }
+    #war-supply-chain-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
   </style>
   <div id="root" data-composition-id="war-supply-chain" data-width="1920" data-height="1080" data-start="0" data-duration="34.94">
-    <div id="war-supply-chain-cam">
-      <!-- the camera: starts on orderly-door-slot's last shot (the wall doodles), pulls back on "War", follows the gondolas
-           box to box from "mine" to "vote", and pulls back to the whole wheel on "pay" -->
-      <div id="war-supply-chain-view"><div id="war-supply-chain-art"></div></div>
-      <div id="war-supply-chain-pip"></div>
+    <div id="war-supply-chain-weave">
+      <div id="war-supply-chain-shake"><div id="war-supply-chain-plate"></div></div>
+      <div id="war-supply-chain-flash"></div>
     </div>
-    <div id="war-supply-chain-grain"></div>
+    <div id="war-supply-chain-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
-  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/film.js"></script>
   <script src="assets/js/props/objects-a.js"></script>
   <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/props/places.js"></script>
   <script>
     (function () {
+      window.__timelines = window.__timelines || {};
       var ID = "war-supply-chain";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
+      var sc = KIT.scene(ID), D = sc.duration;
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-      var P = function (s) { return ID + "-" + s; };
-      var g = function (s) { return "#" + P(s); };
-      var f = function (n) { return (+n).toFixed(1); };
-
-      // ════ THE PADDED CELL (the same code in orderly-door-slot, war-supply-chain and chain-goes-dark: change all three) ════
-      // s: the people's and the door's scale; feet: where the patient and the cup stand; wall: the wall/floor line (the door
-      // stands on it); door: the door's center x; hatch: [x, y, w] of the hatch in the top of the wall; doodle: [x, y, k] of
-      // the wall doodles (drawn in a 380 x 390 box); land: where the patient drops in; end: where orderly-door-slot leaves
-      // him; home: where he stands to draw the war wheel; arm: the Orderly's arm from the slot along the floor to the
-      // patient's feet. The war wheel (war-supply-chain, chain-goes-dark): hub, r (the rim's radius), gk (the gondolas'
-      // scale); cal: [x, base y, scale, which way its pages fly] of the wall calendar; sw: [x, y, scale, which way the
-      // patient faces to flick it, where his feet stand] of the light switch; hout: where the Orderly's head ends up on
-      // "largest" (door units from the window); cupTo: where the patient swats the pill cup to. The camera (shots are
-      // [art x, art y at the frame's top left, scale]): shotDoor, close on the door and the patient; shotDoodle, up on the
-      // wall doodles (orderly-door-slot ends on it, war-supply-chain starts on it; in 9:16 the whole wall, so he never
-      // stands in the captions); boxZ and boxAt: each gondola's close-up (its scale, and the frame point its middle goes to).
-      var L = V
-        ? { s: 1.9, feet: 1440, wall: 1402, door: 165, hatch: [560, 50, 160], doodle: [70, 100, 1.15], land: 650, end: 350, home: 380,
-            hub: [620, 760], r: 280, gk: 0.88, cal: [120, 720, 1.1, -1], sw: [545, 1292, 1.25, 1, 380], hout: [-10, -150], cupTo: 268,
-            shotDoor: [0, 568, 1.42], shotDoodle: [0, 0, 1], boxZ: 1.55, boxAt: [540, 900],
-            arm: "M165,1263 C190,1295 160,1360 210,1410 C262,1466 330,1392 395,1430 C460,1468 520,1404 590,1444" }
-        : { s: 2.5, feet: 880, wall: 842, door: 205, hatch: [900, 46, 160], doodle: [370, 50, 1.05], land: 985, end: 690, home: 740,
-            hub: [1225, 430], r: 290, gk: 1, cal: [1540, 215, 1.2, 1], sw: [515, 682, 1.3, -1, 620], hout: [130, 32], cupTo: 430,
-            shotDoor: [0, 249, 1.3], shotDoodle: [100, 44, 1.6], boxZ: 1.9, boxAt: [900, 500],
-            arm: "M205,659 C232,690 200,770 258,840 C330,920 420,836 520,872 C620,908 700,846 800,880 C850,898 890,890 935,890" };
-      var S = L.s, PAPER = C.paper, WHITE = "#FBF6E6", SKIN2 = "#A87B57";
-
-      function at(x, y, k, inner) { return '<g transform="translate(' + f(x) + "," + f(y) + ")" + (k === 1 ? "" : " scale(" + k + ")") + '">' + inner + "</g>"; }
-      // A person's (0,0) for feet on the ground at (x, y), at scale k.
-      function stand(x, y, k, inner) { return at(x, y - 100 * k, k, inner); }
-      // A drawing on the padded wall in pencil: every color but the navy line turns to paper (text and outlines stay navy).
-      function pencilify(m) {
-        var ink = C.line.toUpperCase(), ink2 = C.ink.toUpperCase();
-        return m.replace(/fill="url\([^)]*\)"/g, 'fill="none"').replace(/(fill|stroke)="(#[0-9A-Fa-f]{3,6})"/g, function (all, a, col) {
-          var u = col.toUpperCase();
-          if (u === ink || u === ink2) return all;
-          return a === "fill" ? 'fill="' + PAPER + '"' : 'stroke="' + C.line + '"';
-        }).replace(/<text([^>]*)fill="[^"]*"/g, '<text$1fill="' + C.line + '"');
-      }
-      // The quilted wall: cream diamond tufts (110 across) with halftone shading and navy buttons; the padded floor below
-      // with seams running to the camera; a padded skirting roll; the hatch; the paper border on top (drawn by frame()).
-      function cell() {
-        var T = V ? 104 : 110, h = T / 2, dots = P("qdots");
-        var defs = "<defs>" +
-          '<pattern id="' + dots + '" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><circle cx="2.5" cy="2.5" r="1.15" fill="' + C.line + '"/></pattern>' +
-          '<pattern id="' + P("quilt") + '" width="' + T + '" height="' + T + '" patternUnits="userSpaceOnUse" x="' + (L.door % T) + '" y="0">' +
-          '<rect width="' + T + '" height="' + T + '" fill="' + C.cream + '"/>' +
-          '<path d="M' + h + "," + h + " L" + T + "," + h + " L" + h + "," + T + ' Z M0,0 L' + h + ",0 L0," + h + ' Z" fill="url(#' + dots + ')" opacity="0.2"/>' +
-          '<path d="M0,' + h + " L" + h + ",0 L" + T + "," + h + " L" + h + "," + T + ' Z" fill="none" stroke="' + C.line + '" stroke-width="1.8" opacity="0.5"/>' +
-          [[h, 0], [T, h], [h, T], [0, h]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="4.2" fill="' + C.line + '"/>'; }).join("") +
-          "</pattern></defs>";
-        var y0 = L.wall, floor = '<rect x="0" y="' + y0 + '" width="' + W + '" height="' + (H - y0) + '" fill="' + C.cream + '"/>' +
-          '<rect x="0" y="' + y0 + '" width="' + W + '" height="' + (H - y0) + '" fill="url(#' + dots + ')" opacity="0.16"/>';
-        var vx = W / 2, vy = y0 - (V ? 900 : 700), seams = "";
-        for (var i = -14; i <= 14; i++) {
-          var xb = vx + i * (V ? 190 : 230), xt = vx + (xb - vx) * ((y0 - vy) / (H + 400 - vy));
-          seams += "M" + f(xt) + "," + y0 + " L" + f(xb + (xb - vx) * 0.6) + "," + (H + 400) + " ";
-        }
-        for (var k = 1; k <= 5; k++) { var yy = y0 + (H - y0) * Math.pow(k / 5.5, 1.6); seams += "M0," + f(yy) + " H" + W + " "; }
-        floor += '<path d="' + seams + '" stroke="' + C.line + '" stroke-width="1.6" opacity="0.32" fill="none"/>';
-        // the skirting roll where the padded wall meets the padded floor
-        floor += '<rect x="0" y="' + (y0 - 14) + '" width="' + W + '" height="18" fill="' + WHITE + '" stroke="' + C.line + '" stroke-width="3"/>' +
-          '<rect x="0" y="' + (y0 - 4) + '" width="' + W + '" height="8" fill="url(#' + dots + ')" opacity="0.3"/>';
-        return defs + '<rect width="' + W + '" height="' + y0 + '" fill="url(#' + P("quilt") + ')"/>' + floor;
-      }
-      // The hatch in the top of the wall: a dark square chute with a steel flap hinged on its top edge (.flap: swing it up
-      // with scaleY about its top).
-      function hatch() {
-        var x = L.hatch[0], y = L.hatch[1], w = L.hatch[2], hh = w * 0.5;
-        return '<rect x="' + (x - 10) + '" y="' + y + '" width="' + (w + 20) + '" height="' + (hh + 12) + '" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="4"/>' +
-          '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + hh + '" fill="' + C.deep + '"/>' +
-          '<g id="' + P("flap") + '"><rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + hh + '" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="3"/>' +
-          '<path d="M' + (x + 10) + "," + (y + hh * 0.35) + " H" + (x + w - 10) + " M" + (x + 10) + "," + (y + hh * 0.65) + " H" + (x + w - 10) + '" stroke="' + C.orange + '" stroke-width="2"/></g>';
-      }
-      // The paper border of every Layer B frame (KIT.paper's double rule), over the cell's edges.
-      function frame() {
-        return '<path d="M0,0 H' + W + " V" + H + " H0 Z M30,30 V" + (H - 30) + " H" + (W - 30) + ' V30 Z" fill="' + C.paper + '" fill-rule="evenodd"/>' +
-          '<rect x="30" y="30" width="' + (W - 60) + '" height="' + (H - 60) + '" fill="none" stroke="' + C.line + '" stroke-width="5"/>' +
-          '<rect x="44" y="44" width="' + (W - 88) + '" height="' + (H - 88) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>';
-      }
-      // The camera on the art's HTML wrapper. shotOn: the shot that puts the art point (x, y) at the frame point (fx, fy) at
-      // scale s, kept inside the art. camera(tl, view, first): starts on `first` and returns cam(t, dur, shot, ease), which
-      // eases from the last shot to the next.
-      function shotOn(x, y, s, fx, fy) {
-        return [Math.min(Math.max(x - fx / s, 0), W - W / s), Math.min(Math.max(y - fy / s, 0), H - H / s), s];
-      }
-      function camera(tl, view, first) {
-        var cur = first, css = function (s) { return { x: -s[0] * s[2], y: -s[1] * s[2], scale: s[2] }; };
-        gsap.set(view, { transformOrigin: "0px 0px" });
-        gsap.set(view, css(first));
-        return function (t, dur, shot, ease) {
-          var to = css(shot); to.duration = dur; to.ease = ease || "power2.inOut"; to.immediateRender = false;
-          tl.fromTo(view, css(cur), to, t);
-          cur = shot;
-        };
-      }
-
-      // The steel door (KIT.props.door, its leaf in steel, with the slot), and over its leaf the wired window the Orderly
-      // looks through: the dark corridor, his head on its long neck (#head-lift moves it up and down), the glass and its
-      // wire mesh (#glass). Door units: the doorway is x -48..48, y -202..0; the window is x -22..22, y -186..-122.
-      var WIN = [-28, -192, 56, 80], SLOT = [0, -73];
-      var OHO = KIT.castOpts("orderly", { look: "right" }), OHR = KIT.rig(OHO);
-      function headOf(o) { return KIT.person(o).match(/<g class="head">[\s\S]*?<!--head-end--><\/g>/)[0]; }
-      // the Orderly's head with its center at (0,0) and his neck running far down from it
-      function orderlyHead(o, neckLen) {
-        return '<path d="M-4,8 L-5,' + neckLen + " L5," + neckLen + ' L5,8 Z" fill="' + SKIN2 + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
-          '<g transform="translate(' + f(-OHR.head[0]) + "," + f(-OHR.head[1]) + ')">' + headOf(o) + "</g>";
-      }
-      function door() {
-        var d = KIT.props.door({ color: C.peri, slot: true });
-        var wx = WIN[0], wy = WIN[1], ww = WIN[2], wh = WIN[3], mesh = "";
-        for (var i = -4; i <= 8; i++) mesh += "M" + (wx + i * 11) + "," + wy + " l" + wh * 0.6 + "," + wh + " M" + (wx + ww - i * 11) + "," + wy + " l" + -wh * 0.6 + "," + wh + " ";
-        var win = '<g id="' + P("win") + '"><rect x="' + (wx - 5) + '" y="' + (wy - 5) + '" width="' + (ww + 10) + '" height="' + (wh + 10) + '" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="3"/>' +
-          '<defs><clipPath id="' + P("winclip") + '"><rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '"/></clipPath></defs>' +
-          '<rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="' + C.deep + '"/>' +
-          '<g clip-path="url(#' + P("winclip") + ')"><g transform="translate(0,' + (wy + wh) + ')"><g id="' + P("head-lift") + '"><g id="' + P("head-win") + '">' + orderlyHead(OHO, 160) + "</g></g></g></g>" +
-          '<g id="' + P("glass") + '"><rect x="' + wx + '" y="' + wy + '" width="' + ww + '" height="' + wh + '" fill="' + C.cyan + '" opacity="0.22"/>' +
-          '<g clip-path="url(#' + P("winclip") + ')"><path d="' + mesh + '" stroke="' + C.line + '" stroke-width="0.9" opacity="0.55" fill="none"/></g>' +
-          '<path d="M' + (wx + 6) + "," + (wy + wh - 10) + " L" + (wx + 16) + "," + (wy + 8) + '" stroke="#FFFFFF" stroke-width="3" opacity="0.6"/></g></g>';
-        // the slot's flap (over the prop's dark slit), hinged on its top edge
-        var flap = '<g id="' + P("slotflap") + '"><rect x="-21" y="-76" width="42" height="7" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2"/></g>';
-        return { door: d, win: win, flap: flap };
-      }
-
-      // ── The patient (the same human all part long), in his straitjacket, drawn facing right (flip the whole group to face
-      // left). jacket: both arms crossed in the long canvas sleeves. free: the right arm out, holding a fat pencil (.pat-arm,
-      // pivot the shoulder), its empty sleeve hanging (.pat-sleeve, pivot the shoulder).
-      var PO = { tone: 1, outfit: "shirt", color: 3, look: "right" }, PR = KIT.rig(PO);
-      var ARMS_FREE = [[10, 100], [115, 140]], PRF = KIT.rig({ tone: 1, outfit: "shirt", color: 3, look: "right", arms: ARMS_FREE });
-      var SHR = PRF.shoulder[1], HAND = PRF.hand[1];
-      // the pencil: KIT.pencil (tip at 0,0, the eraser up and to the right) turned to point along the forearm, held 42% along
-      var PS = 0.42, PROT = 130 + 26.3, GRIP = [66, -33];
-      var TIP = (function () { var r = (PROT * Math.PI) / 180, x = -GRIP[0], y = -GRIP[1]; return [HAND[0] + PS * (x * Math.cos(r) - y * Math.sin(r)), HAND[1] + PS * (x * Math.sin(r) + y * Math.cos(r))]; })();
-      function strip(m) { return m.replace(/<g class="arm-l">[\s\S]*?<\/g><\/g>/, "").replace(/<g class="arm-r">[\s\S]*?<\/g><\/g>/, ""); }
-      function poly(pts, fill, sw) { return '<path d="M' + pts.map(function (p) { return f(p[0]) + "," + f(p[1]); }).join(" L") + ' Z" fill="' + fill + '" stroke="' + C.line + '" stroke-width="' + (sw || 2.6) + '" stroke-linejoin="miter"/>'; }
-      var JD = P("jdots");
-      function jacketBody() {
-        var body = [[-24, -25.5], [-19, -30], [-6, -31], [0, -23], [6, -31], [19, -30], [24, -25.5], [19, 4], [16.5, 30], [-16.5, 30], [-19, 4]];
-        return '<defs><pattern id="' + JD + '" width="3.6" height="3.6" patternUnits="userSpaceOnUse"><circle cx="1.8" cy="1.8" r="1" fill="' + C.line + '"/></pattern>' +
-          '<clipPath id="' + P("jclip") + '"><path d="M' + body.map(function (p) { return p.join(","); }).join(" L") + ' Z"/></clipPath></defs>' +
-          poly(body, WHITE, 3) + '<rect x="8" y="-32" width="20" height="64" fill="url(#' + JD + ')" opacity="0.3" clip-path="url(#' + P("jclip") + ')"/>' +
-          '<path d="M-6,-31 L0,-23 L6,-31" fill="none" stroke="' + C.line + '" stroke-width="2"/>';
-      }
-      // one crossed sleeve: down the left side from the shoulder, then across the chest, its end strapped round the back
-      var SLEEVE = [[-24.5, -27], [-11, -25], [-12.5, -9], [23, -14], [31, -10], [31, -1], [-19, 6], [-27, 2]];
-      function sleeveL() { return poly(SLEEVE, WHITE, 2.8) + '<path d="M28,-12 L33,-11 L33,-1 L28,-1" fill="' + C.line + '"/>' + '<rect x="-27" y="-6" width="9" height="3" fill="' + C.line + '"/>'; }
-      function sleeveR() { return poly(SLEEVE.map(function (p) { return [-p[0], p[1] + 8]; }), WHITE, 2.8) + '<path d="M-28,-4 L-33,-3 L-33,7 L-28,7" fill="' + C.line + '"/>'; }
-      function straps() {
-        return [-15, 15].map(function (y) {
-          return '<rect x="-23" y="' + (y - 2.5) + '" width="46" height="5" fill="' + C.line + '"/><rect x="7" y="' + (y - 4) + '" width="7" height="8" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.6"/>';
-        }).join("");
-      }
-      // the empty right sleeve, hanging long from the shoulder, its strap and buckle dangling
-      var EMPTY = [[10.5, -27], [24.5, -28], [26.5, 2], [25, 34], [17, 46], [12.5, 40], [13.5, 4]];
-      function emptySleeve() {
-        return '<g class="pat-sleeve">' + poly(EMPTY, WHITE, 2.8) + '<path d="M14,40 L12,58" stroke="' + C.line + '" stroke-width="3.5"/><rect x="9" y="55" width="6" height="7" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.4"/></g>';
-      }
-      function pencilIn() {
-        return '<g class="pat-pencil" transform="translate(' + f(HAND[0]) + "," + f(HAND[1]) + ") rotate(" + PROT.toFixed(1) + ") scale(" + PS + ") translate(" + -GRIP[0] + "," + -GRIP[1] + ')">' + KIT.pencil() + "</g>";
-      }
-      function patient(kind, mood) {
-        var o = { tone: 1, outfit: "shirt", color: 3, look: "right", mood: mood || "flat" };
-        var base = strip(KIT.person(o));
-        // the base person ends with its arms and "</g></g>": put the jacket over the body, before the end
-        var end = base.lastIndexOf("</g></g>");
-        if (kind === "jacket") return base.slice(0, end) + jacketBody() + sleeveL() + sleeveR() + straps() + base.slice(end);
-        var arm = KIT.person({ tone: 1, outfit: "shirt", color: 3, look: "right", arms: ARMS_FREE }).match(/<g class="arm-r">[\s\S]*?<\/g><\/g>/)[0];
-        arm = arm.replace('<g class="arm-r">', '<g class="pat-arm">' + '<g class="pat-pencil-pop">').replace(/<\/g>$/, "</g>" + pencilIn() + "</g>");
-        return base.slice(0, end) + jacketBody() + sleeveL() + straps() + emptySleeve() + arm + base.slice(end);
-      }
-
-      // ── The doodles on the wall (orderly-door-slot draws them; war-supply-chain and chain-goes-dark show them finished) ──
-      // In a 380 x 390 box: the little human and the toolbox he trips over, the tools, the lopsided birdhouse they become,
-      // BUILT BY ACCIDENT, the aircraft carrier, the bomb and the big red X.
-      var DG = 205; // the doodles' ground line
-      var LH = { tone: 0, outfit: "shirt", color: 1, hair: 0, plain: true, look: "right" }, LK = 0.6;
-      function littleHuman(extra) { var o = {}, k; for (k in LH) o[k] = LH[k]; for (k in extra || {}) o[k] = extra[k]; return pencilify(KIT.person(o)); }
-      function toolbox() {
-        return poly([[62, DG - 30], [128, DG - 30], [128, DG], [62, DG]], PAPER, 3) + '<path d="M62,' + (DG - 18) + " H128 M85," + (DG - 30) + " V" + (DG - 40) + " H105 V" + (DG - 30) + '" fill="none" stroke="' + C.line + '" stroke-width="3"/>';
-      }
-      var TOOLS = [
-        // hammer, saw, wrench, three planks, nails: [drawing, x, y (start, in the box), fly-to dx, dy, spin]
-        ['<path d="M-3,-22 V20" stroke="' + C.line + '" stroke-width="4"/>' + poly([[-12, -28], [12, -28], [12, -18], [-12, -18]], PAPER, 2.6), 78, DG - 40, -40, -110, 300],
-        [poly([[-26, -6], [20, -10], [22, 2], [-26, 6]], PAPER, 2.4) + '<path d="M-24,6 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4 l3,4 l3,-4" fill="none" stroke="' + C.line + '" stroke-width="1.4"/>', 112, DG - 42, 60, -130, -260],
-        ['<path d="M-18,0 H14" stroke="' + C.line + '" stroke-width="4"/><path d="M14,-6 l8,0 l4,6 l-4,6 l-8,0" fill="none" stroke="' + C.line + '" stroke-width="3"/>', 96, DG - 36, 10, -150, 400],
-        [poly([[-30, -4], [30, -4], [30, 4], [-30, 4]], PAPER, 2.4), 95, DG - 30, -80, -90, 200],
-        [poly([[-26, -4], [26, -4], [26, 4], [-26, 4]], PAPER, 2.4), 95, DG - 30, 90, -80, -220],
-        [poly([[-22, -4], [22, -4], [22, 4], [-22, 4]], PAPER, 2.4), 95, DG - 30, -10, -170, 160],
-        ['<path d="M-6,-6 V6 M0,-8 V6 M6,-6 V6 M-9,-6 H-3 M-3,-8 H3 M3,-6 H9" stroke="' + C.line + '" stroke-width="2"/>', 100, DG - 34, 40, -70, 120],
-      ];
-      // The birdhouse, standing on the ground line at x 100: a post, a lopsided box, a crooked roof, the hole and a perch,
-      // one nail sticking out. Three pieces (post, box, roof) that bang into place.
-      var BH = [
-        '<path d="M97,' + (DG - 52) + " L96," + DG + " M104," + (DG - 52) + " L105," + DG + '" stroke="' + C.line + '" stroke-width="3"/><path d="M80,' + DG + ' H122" stroke="' + C.line + '" stroke-width="3"/>',
-        poly([[58, DG - 52], [142, DG - 46], [139, DG - 112], [61, DG - 116]], PAPER, 3) + '<circle cx="100" cy="' + (DG - 84) + '" r="13" fill="' + C.line + '"/>' +
-          '<path d="M100,' + (DG - 62) + " l28,3 M62," + (DG - 70) + " l76,4 M61," + (DG - 96) + ' l78,3" stroke="' + C.line + '" stroke-width="1.6" opacity="0.6"/><path d="M138,' + (DG - 100) + ' l14,-6" stroke="' + C.line + '" stroke-width="2.4"/>',
-        poly([[48, DG - 108], [104, DG - 160], [154, DG - 104], [142, DG - 100], [104, DG - 142], [60, DG - 104]], PAPER, 3),
-      ];
-      function carrier() {
-        return poly([[18, 312], [262, 312], [244, 348], [44, 348]], PAPER, 3) + poly([[6, 300], [270, 300], [262, 312], [18, 312]], PAPER, 3) +
-          poly([[196, 300], [196, 262], [222, 262], [226, 278], [214, 278], [214, 300]], PAPER, 3) + '<path d="M210,262 V246 M202,250 H218" stroke="' + C.line + '" stroke-width="2.4"/>' +
-          [[60, 296], [118, 296]].map(function (p) { return '<path d="M' + p[0] + "," + p[1] + " h30 m-16,-6 l-6,12 m16,-9 l6,6" + '" fill="none" stroke="' + C.line + '" stroke-width="2.4"/>'; }).join("") +
-          '<path d="M40,328 H230 M60,337 H220" stroke="' + C.line + '" stroke-width="1.4" opacity="0.5"/>' +
-          '<path d="M0,360 q14,-8 28,0 t28,0 t28,0 t28,0 t28,0 t28,0 t28,0 t28,0 t28,0 t28,0" fill="none" stroke="' + C.line + '" stroke-width="2"/>';
-      }
-
-      var dl = L.doodle;
-      var D_X = dl[0], D_Y = dl[1], D_K = dl[2];
-      // where a doodle point lands in the frame
-      function dpt(x, y) { return [D_X + D_K * x, D_Y + D_K * y]; }
-      var doodles = (function () {
-        var clip = function (id, x, y, w, h) { return '<clipPath id="' + P(id) + '"><rect id="' + P(id + "-r") + '" x="' + x + '" y="' + y + '" width="0" height="' + h + '" data-w="' + w + '"/></clipPath>'; };
-        var out = "<defs>" + clip("c-tb", -10, 100, 330, 120) + clip("c-txt", 0, 0, 380, 72) + clip("c-car", 0, 236, 240, 136) + clip("c-bomb", 238, 190, 150, 170) + "</defs>";
-        // the little human and the toolbox (drawn on "accidentally"): the human walks right, trips, sprawls, gets up
-        out += '<g clip-path="url(#' + P("c-tb") + ')"><path d="M-6,' + DG + ' H190" stroke="' + C.line + '" stroke-width="2.4"/><g id="' + P("tbox") + '">' + toolbox() + "</g>";
-        out += '<g id="' + P("lh-pos") + '"><g transform="translate(14,' + (DG - 100 * LK) + ") scale(" + LK + ')"><g id="' + P("lh") + '">' +
-          '<g id="' + P("lh-a") + '">' + littleHuman({ build: { legPose: [[-18, -18], [22, 10]] } }) + "</g>" +
-          '<g id="' + P("lh-b") + '" opacity="0">' + littleHuman({ build: { legPose: [[16, 6], [-14, -20]] } }) + "</g>" +
-          '<g id="' + P("lh-c") + '" opacity="0">' + littleHuman({ look: "left", arms: [[18, 8], [-18, -8]] }) + "</g>" +
-          '<g id="' + P("lh-d") + '" opacity="0">' + littleHuman({ look: "left", mood: "flat", arms: [[-24, -112], [24, 112]] }) + "</g>" +
-          "</g></g></g></g>";
-        // the flying tools
-        TOOLS.forEach(function (t, i) { out += '<g transform="translate(' + t[1] + "," + t[2] + ')"><g id="' + P("tool-" + i) + '" opacity="0">' + t[0] + "</g></g>"; });
-        // the birdhouse pieces and their bang marks
-        BH.forEach(function (b, i) { out += '<g id="' + P("bh-" + i) + '" opacity="0">' + b + "</g>"; });
-        [[60, DG - 130], [150, DG - 70], [70, DG - 40]].forEach(function (p, i) {
-          out += '<g transform="translate(' + p[0] + "," + p[1] + ')"><g id="' + P("bang-" + i) + '" opacity="0">' + KIT.star(0, 0, 16, C.line, 6) + KIT.star(0, 0, 8, PAPER, 6) + "</g></g>";
-        });
-        // BUILT BY ACCIDENT, hand lettered over it
-        out += '<g clip-path="url(#' + P("c-txt") + ')"><text x="12" y="52" transform="rotate(-3 160 40)" font-family="Oswald" font-weight="600" font-size="40" letter-spacing="1.5" fill="' + C.line + '">BUILT BY ACCIDENT</text>' +
-          '<path d="M14,62 Q160,52 300,58" fill="none" stroke="' + C.line + '" stroke-width="2.6"/></g>';
-        out += '<g clip-path="url(#' + P("c-car") + ')"><g transform="translate(0,54) scale(0.82)">' + carrier() + "</g></g>";
-        // the bomb, with a radiation sign on its ball so it reads as nuclear
-        var tre = "";
-        [-90, 30, 150].forEach(function (a) {
-          var pt = function (deg, r) { var t = (deg * Math.PI) / 180; return f(r * Math.cos(t)) + "," + f(r * Math.sin(t)); };
-          tre += "M" + pt(a - 30, 8) + " L" + pt(a - 30, 27) + " A27,27 0 0 1 " + pt(a + 30, 27) + " L" + pt(a + 30, 8) + " A8,8 0 0 0 " + pt(a - 30, 8) + " Z ";
-        });
-        tre = '<g transform="translate(-2,-40)"><path d="' + tre + '" fill="' + C.line + '"/><circle r="5" fill="' + C.line + '"/></g>';
-        out += '<g clip-path="url(#' + P("c-bomb") + ')">' + at(292, 352, 0.95, pencilify(KIT.props.bomb({})) + tre) + "</g>";
-        // the big red X (pathLength 1: draw it with the dash offset)
-        out += ['M-6,236 L384,380', 'M-6,380 L384,236'].map(function (d, i) {
-          return '<path id="' + P("x-" + i) + '" d="' + d + '" stroke="' + C.war + '" stroke-width="10" stroke-linecap="round" fill="none" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
-        }).join("");
-        return at(D_X, D_Y, D_K, out);
-      })();
-      // The doodles as orderly-door-slot leaves them (for the scenes that continue it): all drawn, the birdhouse built, the
-      // carrier and the bomb crossed out, the little human beside the birdhouse, shrugging.
-      function doodlesDone() {
-        var on = function (id, v) { document.getElementById(P(id)).setAttribute("opacity", v); };
-        ["c-tb", "c-txt", "c-car", "c-bomb"].forEach(function (c) { var r = document.getElementById(P(c + "-r")); r.setAttribute("width", r.getAttribute("data-w")); });
-        on("tbox", 0); on("lh-a", 0); on("lh-d", 1); BH.forEach(function (b, i) { on("bh-" + i, 1); });
-        document.getElementById(P("lh-pos")).setAttribute("transform", "translate(200,0)");
-        [0, 1].forEach(function (i) { document.getElementById(P("x-" + i)).setAttribute("stroke-dashoffset", 0); });
-      }
-      // ════ end of the shared cell code ════
-
-      // ════ THE WAR WHEEL (the same code in war-supply-chain and chain-goes-dark: change both) ════
-      // A Ferris wheel drawn on the padded wall: its rim is a paper-doll chain of 40 tiny humans holding hands (feet to the
-      // hub), with eight gondolas hanging from their hands. #ring turns about the hub (every frame, from the part time);
-      // each gondola's #gon-i-rot turns back so it hangs upright. Box i hangs at TH[i] degrees (screen angles, clockwise from
-      // 3 o'clock), so the chain runs clockwise from the mine at 9 o'clock.
-      var HUB = L.hub, R = L.r, GK = L.gk, NDOLL = 40;
-      var TH = [180, 225, 270, 315, 0, 45, 90, 135];
-      var WS = KIT.scene("war-supply-chain"), CG = KIT.scene("chain-goes-dark");
-      // part times of the chain's words (both scenes run the wheel from these)
-      var wc = function (w, n) { return WS.start + KIT.cue("war-supply-chain", w, n); };
-      var wa = function (w, n) { return WS.start + KIT.after("war-supply-chain", w, n); };
-      var T_LIT = ["mine", "refine", "factories", "train", "feed", "ships", "convince", "vote"].map(function (w) { return wc(w) + 0.32; });
-      var T_POP = wc("weapons,"), T_BOOM = wa("are,"), T_DESERVE = wc("deserve"), T_VOTE = wc("vote"), T_PAY = wc("pay"), T_ANN = wc("annually,");
-      var T_FOR = wc("forever."), T_STOP = CG.start + KIT.cue("chain-goes-dark", "NOT");
-      var T_FAST = T_PAY + 0.9; // the bills reach the mine: the miner swings faster
-      var SPIN = 34; // the wheel's turn, degrees a second (after a 0.8 s start)
-      function rimPt(deg, rr) { var a = (deg * Math.PI) / 180; return [HUB[0] + (rr || R) * Math.cos(a), HUB[1] + (rr || R) * Math.sin(a)]; }
-      function wheelAngle(T) { var u = T - T_FOR; return u <= 0 ? 0 : u < 0.8 ? (SPIN * u * u) / 1.6 : SPIN * 0.4 + SPIN * (u - 0.8); }
-      function stripIds(m) { return m.replace(new RegExp(' id="' + ID + '-[^"]*"', "g"), ""); }
-      function person(o, extra) { var r = {}, k; for (k in o) r[k] = o[k]; for (k in extra || {}) r[k] = extra[k]; return KIT.person(r); }
-      function rigOf(o, extra) { var r = {}, k; for (k in o) r[k] = o[k]; for (k in extra || {}) r[k] = extra[k]; return KIT.rig(r); }
-      // a person's point (person units) in the box, for a person stood at (x, ground) at scale k
-      function inBox(x, ground, k, p) { return [x + k * p[0], ground + k * (p[1] - 100)]; }
-      function frames(id, a, b) { return '<g id="' + P(id + "-A") + '">' + a + '</g><g id="' + P(id + "-B") + '" opacity="0">' + b + "</g>"; }
-      function bg(col, ground) {
-        return '<rect x="-92" y="26" width="184" height="132" fill="' + col + '"/>' + (ground ? '<rect x="-92" y="140" width="184" height="18" fill="' + ground + '"/><path d="M-92,140 H92" stroke="' + C.line + '" stroke-width="2"/>' : "");
-      }
-      var GND = 150; // where the gondola people stand
-      // a small war missile lying down (nose right), its middle at (0,0), ~34 long
-      function minimissile(k) {
-        return '<g transform="scale(' + (k || 1) + ')"><path d="M-17,-4.5 L9,-4.5 L17,0 L9,4.5 L-17,4.5 Z" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2"/><path d="M9,-4.5 L17,0 L9,4.5 Z" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="1.6"/>' +
-          '<path d="M-17,-4.5 L-23,-10 L-20,-4.5 Z M-17,4.5 L-23,10 L-20,4.5 Z" fill="' + C.line + '"/></g>';
-      }
-
-      // ── The eight gondolas' pictures (box units: inside x -92..92, y 26..158; people stand on y 150) ──
-      // 1, the mine: a miner in a hard hat swings his pickaxe at a rust rock face; ore pops out on each strike.
-      function pickaxe(h, d) {
-        var hc = [h[0] + 30 * d[0], h[1] + 30 * d[1]], p = [-d[1], d[0]], pt = function (a, b) { return f(hc[0] + a * p[0] + b * d[0]) + "," + f(hc[1] + a * p[1] + b * d[1]); };
-        return '<path d="M' + f(h[0] - 6 * d[0]) + "," + f(h[1] - 6 * d[1]) + " L" + f(hc[0]) + "," + f(hc[1]) + '" stroke="' + C.line + '" stroke-width="5" stroke-linecap="round"/><path d="M' + f(h[0] - 6 * d[0]) + "," + f(h[1] - 6 * d[1]) + " L" + f(hc[0]) + "," + f(hc[1]) + '" stroke="' + C.tan + '" stroke-width="2.4" stroke-linecap="round"/>' +
-          '<path d="M' + pt(13, -5) + " L" + pt(0, 3) + " L" + pt(-13, -5) + " L" + pt(0, -2) + ' Z" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="1.6" stroke-linejoin="miter"/>';
-      }
-      function boxMine() {
-        var MO = { tone: 2, outfit: "overalls", color: 1, hat: "hard", look: "right", plain: true }, k = 0.44, mx = -34;
-        var aA = [[200, 210], [190, 200]], aB = [[72, 66], [66, 60]];
-        var hA = inBox(mx, GND, k, rigOf(MO, { arms: aA }).hand[1]), hB = inBox(mx, GND, k, rigOf(MO, { arms: aB }).hand[1]);
-        var rock = '<path d="M24,150 L20,112 L36,84 L62,66 L92,70 L92,150 Z" fill="' + C.rust + '" stroke="' + C.line + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
-          '<path d="M36,84 L48,112 L20,112 M48,112 L70,104 L62,66 M70,104 L92,118 M48,112 L56,150" fill="none" stroke="' + C.tan + '" stroke-width="2"/>' +
-          [[44, 96], [74, 86], [62, 128], [82, 132]].map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="2.8" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1"/>'; }).join("");
-        var ore = [[20, 96, 4], [10, 82, 3.4], [28, 78, 3]].map(function (o) { return '<path d="M' + (o[0] - o[2]) + "," + o[1] + " L" + o[0] + "," + (o[1] - o[2]) + " L" + (o[0] + o[2]) + "," + o[1] + " L" + o[0] + "," + (o[1] + o[2]) + ' Z" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.4"/>'; }).join("") +
-          '<path d="M16,104 l-8,-6 M18,100 l-2,-10 M22,102 l8,-8" stroke="' + C.line + '" stroke-width="1.8"/>';
-        return bg(C.cream, C.tan) + rock +
-          frames("b0", stand(mx, GND, k, person(MO, { arms: aA })) + pickaxe(hA, [-0.62, -0.78]), stand(mx, GND, k, person(MO, { arms: aB })) + pickaxe(hB, [0.82, 0.57]) + ore);
-      }
-      // 2, refining: a brick furnace, a crucible on a chain tilting to pour glowing alloy into ingot moulds; sparks.
-      function boxFurnace() {
-        var furnace = '<rect x="-90" y="58" width="52" height="92" fill="' + C.rust + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
-          '<path d="M-90,74 H-38 M-90,90 H-38 M-90,106 H-38 M-90,122 H-38 M-90,138 H-38 M-72,58 V74 M-56,74 V90 M-72,90 V106 M-56,106 V122 M-72,122 V138" stroke="' + C.line + '" stroke-width="1.2" opacity="0.55"/>' +
-          '<path d="M-80,150 V112 Q-64,98 -48,112 V150 Z" fill="' + C.orange + '" stroke="' + C.line + '" stroke-width="2.4"/><path d="M-74,150 V118 Q-64,110 -54,118 V150 Z" fill="' + C.yellow + '"/>' +
-          '<rect x="-76" y="34" width="18" height="24" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2.4"/>';
-        var moulds = [[-6, 26], [30, 26], [62, 26]].map(function (m, i) {
-          return '<rect x="' + m[0] + '" y="136" width="' + m[1] + '" height="14" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2.2"/>' +
-            '<rect' + (i ? "" : ' id="' + P("b1-ing") + '"') + ' x="' + (m[0] + 3) + '" y="139" width="' + (m[1] - 6) + '" height="7" fill="' + (i ? C.orange : C.yellow) + '"/>';
-        }).join("");
-        var crucible = '<path d="M0,26 V52" stroke="' + C.line + '" stroke-width="2.4" stroke-dasharray="4 2"/><g id="' + P("b1-cru") + '"><path d="M-16,52 L16,52 L12,84 L-12,84 Z" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
-          '<rect x="-14" y="52" width="28" height="6" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="1.6"/></g>';
-        var stream = function (w) { return '<path d="M13,62 C' + (24 + w) + ",68 " + (16 - w) + ",104 " + 6 + ",140 L14,140 C" + (22 + w) + ",104 " + (30 - w) + ",70 16,58 Z" + '" fill="' + C.yellow + '" stroke="' + C.orange + '" stroke-width="2"/>'; };
-        var sparks = function (s) { return [[-4, 128], [22, 124], [12, 116]].map(function (p, i) { return KIT.star(p[0] + s * (i - 1) * 4, p[1] - s * 4, 5 - i, i % 2 ? C.yellow : "#FFFFFF"); }).join(""); };
-        return bg(C.slate, C.deep) + furnace + moulds + crucible + '<g id="' + P("b1-pour") + '" opacity="0">' + frames("b1", stream(0) + sparks(0), stream(4) + sparks(1)) + "</g>";
-      }
-      // 3, the factory: missile chimneys smoking, a conveyor out of its side door, a missile riding it and popping up into
-      // the arms of the Weapons Maker, who cradles each one.
-      function boxFactory() {
-        return bg(C.cream, C.tan) + at(-44, GND, 0.2, KIT.props.factory({ label: "" })) +
-          '<g id="' + P("b2-conv") + '">' + at(22, GND, 0.3, KIT.props.conveyor({ w: 200 })) + "</g>" +
-          '<g id="' + P("b2-mis") + '" opacity="0">' + KIT.props.missile({ size: 0.15, arms: "none" }) + "</g>" +
-          '<g transform="translate(70,' + GND + ')"><g id="' + P("b2-wm") + '">' + at(0, -100 * 0.42, 0.42, KIT.cast("weaponsMaker", { look: "left" })) + "</g></g>";
-      }
-      // 4, training: two rows of humans saluting in unison; the middle one in front salutes with the wrong hand.
-      var TRAIN = [[-50, 152, 0.4, { tone: 3, outfit: "shirt", color: 0 }], [8, 152, 0.4, { tone: 0, outfit: "overalls", color: 2, wrong: true }], [66, 152, 0.4, { tone: 2, outfit: "shirt", color: 1 }],
-        [-79, 124, 0.32, { tone: 1, outfit: "dress", color: 2, hair: 1 }], [-21, 124, 0.32, { tone: 2, outfit: "suit" }], [37, 124, 0.32, { tone: 0, outfit: "shirt", color: 3 }]];
-      function boxTrain() {
-        var a = "", b = "";
-        TRAIN.slice(3).concat(TRAIN.slice(0, 3)).forEach(function (t) {
-          var o = t[3], arms = o.wrong ? [[-135, 120], [-8, -4]] : [[8, 4], [135, -120]];
-          a += stand(t[0], t[1], t[2], person(o, { arms: arms, mood: "flat" }));
-          b += stand(t[0], t[1], t[2], person(o, { arms: [[8, 4], [-8, -4]], mood: "flat" }));
-        });
-        return bg(C.cream, C.tan) + frames("b3", a, b);
-      }
-      // 5, feed and clothe: a cook ladles soup from a pot into the bowls of three humans in a queue; on "clothe" uniforms
-      // drop onto them (khaki jackets and caps).
-      var QUEUE = [[-10, { tone: 1, outfit: "shirt", color: 1 }], [28, { tone: 3, outfit: "shirt", color: 0 }], [66, { tone: 0, outfit: "overalls", color: 3 }]];
-      function cap(m) { return m.replace("<!--face-end-->", '<path d="M-17,-13 L15,-19 L22,-12 L-15,-7 Z" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="1.8"/><!--face-end-->'); }
-      function boxFeed() {
-        var CO = { tone: 3, outfit: "labcoat", hair: 2, look: "right", plain: true }, ck = 0.38, cx = -76;
-        var lad = function (arms, d) {
-          var h = inBox(cx, GND, ck, rigOf(CO, { arms: arms }).hand[1]), e = [h[0] + 26 * d[0], h[1] + 26 * d[1]];
-          return stand(cx, GND, ck, person(CO, { arms: arms })) + '<path d="M' + f(h[0]) + "," + f(h[1]) + " L" + f(e[0]) + "," + f(e[1]) + '" stroke="' + C.line + '" stroke-width="3"/>' +
-            '<path d="M' + f(e[0] - 6) + "," + f(e[1]) + " Q" + f(e[0]) + "," + f(e[1] + 9) + " " + f(e[0] + 6) + "," + f(e[1]) + ' Z" fill="' + C.orange + '" stroke="' + C.line + '" stroke-width="1.8"/>';
-        };
-        var pot = '<path d="M-64,116 L-28,116 L-31,150 L-61,150 Z" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2.6"/><rect x="-66" y="112" width="40" height="6" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="2"/>' +
-          '<rect x="-62" y="117" width="32" height="5" fill="' + C.orange + '"/>';
-        var steam = function (s) { return '<path d="M' + (-54 + s * 3) + ",108 q-5,-7 0,-14 q5,-7 0,-14 M" + (-40 - s * 3) + ',106 q5,-7 0,-14" fill="none" stroke="' + C.peri + '" stroke-width="2.4" stroke-linecap="round"/>'; };
-        var line = function (uniform) {
-          return QUEUE.map(function (qq) {
-            var o = uniform ? { tone: qq[1].tone, kind: "box", colorHex: C.tan, hair: 0, plain: true } : qq[1];
-            var arms = [[-50, -96], [-14, -8]], h = inBox(qq[0], GND, 0.36, rigOf(o, { look: "left", arms: arms }).hand[0]);
-            var m = person(o, { look: "left", arms: arms, mood: "eager" });
-            return stand(qq[0], GND, 0.36, uniform ? cap(m) : m) + '<path d="M' + f(h[0] - 7) + "," + f(h[1] - 2) + " h14 l-3,6 h-8 Z" + '" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="1.6"/>';
-          }).join("");
-        };
-        var falling = QUEUE.map(function (qq, i) { return '<g id="' + P("b4-drop-" + i) + '" opacity="0"><path d="M' + (qq[0] - 10) + ",30 h20 l4,26 h-28 Z" + '" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="2"/></g>'; }).join("");
-        return bg(C.cream, C.tan) + frames("b4", lad([[60, 40], [-10, -6]], [0.25, 0.97]) + steam(0), lad([[95, 95], [-10, -6]], [0.97, 0.25]) + steam(1)) + pot +
-          '<g id="' + P("b4-plain") + '">' + line(false) + '</g><g id="' + P("b4-uni") + '" opacity="0">' + line(true) + "</g>" + falling;
-      }
-      // 6, transport: a ship, a plane and a truck, each loaded with missiles, roll up to a little village whose humans wave
-      // hello; the missiles go; a flash and a small mushroom cloud; the villagers stand charred and smoking, still waving.
-      var VILL = [[28, { tone: 1, outfit: "dress", color: 0, hair: 1 }], [80, { tone: 2, outfit: "shirt", color: 2 }]];
-      function ship() {
-        return '<path d="M-26,0 L26,0 L20,12 L-22,12 Z" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="2.2"/><rect x="-6" y="-12" width="14" height="12" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2"/><rect x="0" y="-20" width="4" height="8" fill="' + C.slate + '"/>';
-      }
-      function plane() {
-        return '<path d="M-24,-3 L18,-4 Q26,-2 24,2 L-22,4 Z" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2.2"/><path d="M-4,-2 L-10,-16 L-2,-16 L6,-2 Z M-4,2 L-12,14 L-4,14 L6,2 Z M-22,-2 L-28,-12 L-22,-12 L-16,-2 Z" fill="' + C.peri + '" stroke="' + C.line + '" stroke-width="1.8"/>' +
-          '<path d="M25,-7 V7" stroke="' + C.line + '" stroke-width="2.4"/>';
-      }
-      function truck() {
-        return '<rect x="-26" y="-12" width="34" height="12" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="2.2"/><path d="M8,-16 L20,-16 L26,-8 L26,0 L8,0 Z" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="2.2"/>' +
-          '<circle cx="-16" cy="2" r="5" fill="' + C.line + '"/><circle cx="16" cy="2" r="5" fill="' + C.line + '"/><circle cx="-16" cy="2" r="2" fill="' + C.cream + '"/><circle cx="16" cy="2" r="2" fill="' + C.cream + '"/>';
-      }
-      // [vehicle drawing, its lane y, where it stops (x), its missile's offset on it]
-      var VEH = [[ship, 136, -52, [0, -26]], [plane, 52, -30, [-2, 12]], [truck, 106, -42, [-9, -18]]];
-      function burn(markup) {
-        var ink = C.line.toUpperCase();
-        return markup.replace(/(fill|stroke)="(#[0-9A-Fa-f]{6})"/g, function (m, a, col) {
-          if (col.toUpperCase() === ink) return m;
-          var n = parseInt(col.slice(1), 16), l = (0.3 * (n >> 16) + 0.59 * ((n >> 8) & 255) + 0.11 * (n & 255)) / 255, v = Math.round(28 + l * 46);
-          return a + '="rgb(' + (v + 8) + "," + v + "," + Math.max(0, v - 6) + ')"';
-        });
-      }
-      function boxTransport() {
-        var land = '<rect x="-92" y="126" width="112" height="32" fill="' + C.peri + '"/><path d="M-92,132 q8,-4 16,0 t16,0 t16,0 t16,0 t16,0 t16,0 t16,0" fill="none" stroke="' + C.cream + '" stroke-width="1.6"/>' +
-          '<rect x="-92" y="104" width="112" height="9" fill="' + C.slate + '"/><path d="M-92,108.5 H20" stroke="' + C.yellow + '" stroke-width="1.4" stroke-dasharray="6 5"/>' +
-          '<path d="M20,104 L92,104 L92,158 L20,158 Z" fill="' + C.tan + '" stroke="' + C.line + '" stroke-width="2"/>';
-        var house = at(60, 128, 0.11, KIT.props.house({ variant: 1, smoke: false }));
-        var vill = function (charred) {
-          return VILL.map(function (v, i) {
-            var arms = function (up) { return [[-10, -4], up ? [150, 175] : [120, 140]]; }, o = function (up) { return person(v[1], { look: i ? "left" : "right", arms: arms(up), charred: charred, mood: "smile" }); };
-            return frames("b5-v" + (charred ? "c" : "a") + i, stand(v[0], GND, 0.27, o(true)), stand(v[0], GND, 0.27, o(false)));
-          }).join("");
-        };
-        var vehicles = VEH.map(function (v, i) {
-          return '<g transform="translate(0,' + v[1] + ')"><g id="' + P("b5-veh-" + i) + '">' + v[0]() + "</g></g>" +
-            '<g transform="translate(' + v[3][0] + "," + (v[1] + v[3][1]) + ')"><g id="' + P("b5-mis-" + i) + '">' + minimissile(0.8) + "</g></g>";
-        }).join("");
-        return '<g id="' + P("b5-shake") + '">' + '<rect x="-92" y="26" width="184" height="132" fill="' + C.cream + '"/>' + land +
-          '<g id="' + P("b5-house") + '">' + house + '</g><g id="' + P("b5-house-b") + '" opacity="0">' + burn(house) + "</g>" +
-          '<g id="' + P("b5-alive") + '">' + vill(false) + '</g><g id="' + P("b5-charred") + '" opacity="0">' + vill(true) + "</g>" +
-          vehicles + '<g transform="translate(58,128) scale(0.16)"><g id="' + P("b5-nuke") + '">' + KIT.nuke() + "</g></g>" +
-          '<rect id="' + P("b5-flash") + '" x="-92" y="26" width="184" height="132" fill="#FFFFFF" opacity="0"/></g>';
-      }
-      // 7, propaganda: the Loud Human shouts through his megaphone head at a little crowd, under a poster of the charred
-      // villagers drawn with horns and fangs: THEY DESERVE IT. On "deserve" the crowd cheers.
-      var CROWD = [[-84, { tone: 0, outfit: "shirt", color: 1 }], [-70, { tone: 2, outfit: "dress", color: 3, hair: 1 }], [-56, { tone: 3, outfit: "overalls", color: 0 }]];
-      function boxPropaganda() {
-        var devil = '<rect x="-2" y="32" width="90" height="50" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
-          [14, 42, 70].map(function (x, i) {
-            var y = 60 + (i % 2) * 2;
-            return '<path d="M' + (x - 8) + "," + (y - 9) + " Q" + (x - 14) + "," + (y - 16) + " " + (x - 9) + "," + (y - 26) + " Q" + (x - 8) + "," + (y - 16) + " " + (x - 3) + "," + (y - 11) + " Z M" + (x + 8) + "," + (y - 9) + " Q" + (x + 14) + "," + (y - 16) + " " + (x + 9) + "," + (y - 26) + " Q" + (x + 8) + "," + (y - 16) + " " + (x + 3) + "," + (y - 11) + ' Z" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="1.4"/>' +
-              '<path d="M' + (x - 9) + "," + (y - 10) + " L" + (x + 9) + "," + (y - 10) + " L" + (x + 10) + "," + (y + 4) + " L" + x + "," + (y + 10) + " L" + (x - 10) + "," + (y + 4) + ' Z" fill="#3B312A" stroke="' + C.line + '" stroke-width="1.6"/>' +
-              '<path d="M' + (x - 7) + "," + (y - 5) + " l5,2 l-5,1 Z M" + (x + 7) + "," + (y - 5) + " l-5,2 l5,1 Z" + '" fill="' + C.yellow + '"/>' +
-              '<path d="M' + (x - 6) + "," + (y + 2) + " H" + (x + 6) + '" stroke="' + C.war + '" stroke-width="1.6"/><path d="M' + (x - 5) + "," + (y + 2) + " l1.5,5 l1.5,-5 M" + (x + 2) + "," + (y + 2) + ' l1.5,5 l1.5,-5" fill="#FFFFFF" stroke="' + C.line + '" stroke-width="0.8"/>';
-          }).join("");
-        var sign = at(42, GND, 0.46, KIT.props.sign({ text: "THEY\nDESERVE IT", fontSize: 30, height: 58, color: C.war }));
-        var loud = '<g transform="translate(-14,' + GND + ') scale(-1,1)">' + at(0, -100 * 0.42, 0.42, KIT.cast("loudHuman", { arms: [[-20, -10], [60, 120]] })) + "</g>";
-        var shout = function (s) { return [0, 1, 2].map(function (i) { return '<path d="M' + (-48 - i * 6 - s * 3) + "," + (84 - i * 5) + " q-5," + (8 + i * 5) + " 0," + (16 + i * 10) + '" fill="none" stroke="' + C.war + '" stroke-width="2.4" stroke-linecap="round"/>'; }).join(""); };
-        var crowd = function (cheer) { return CROWD.map(function (c) { return stand(c[0], GND, 0.3, person(c[1], { look: "right", arms: cheer ? [[-160, -175], [160, 175]] : [[10, 4], [-10, -4]], mood: cheer ? "grin" : "flat" })); }).join(""); };
-        return bg(C.cream, C.tan) + devil + sign + loud + frames("b6", shout(0), shout(1)) + frames("b6c", crowd(false), crowd(true));
-      }
-      // 8, the vote: two voters drop ballots into the ballot box beside the grinning Politician; on "pay" his eyes turn to
-      // dollar signs and war bills burst out of the box.
-      function boxVote() {
-        var voters = [[-74, { tone: 1, outfit: "suit" }], [-46, { tone: 3, outfit: "dress", color: 1, hair: 1 }]].map(function (v) {
-          var o = { look: "right", arms: [[-10, -4], [80, 110]] }, h = inBox(v[0], GND, 0.34, rigOf(v[1], o).hand[1]);
-          return stand(v[0], GND, 0.34, person(v[1], o)) + '<rect x="' + f(h[0] - 4) + '" y="' + f(h[1] - 12) + '" width="10" height="13" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="1.4"/>';
-        }).join("");
-        var pol = function (greedy) { return stand(64, GND, 0.42, KIT.cast("politician", greedy ? { look: "left", mood: "greedy" } : { look: "left" })); };
-        var spill = [0, 1, 2].map(function (i) { return '<g transform="translate(' + (10 + i * 6) + ',138)"><g id="' + P("b7-bill-" + i) + '" opacity="0"><g transform="scale(0.3)">' + KIT.money("war", 0) + "</g></g></g>"; }).join("");
-        return bg(C.cream, C.tan) + voters + '<g id="' + P("b7-box") + '">' + at(6, GND, 0.75, KIT.props.ballotBox({ ballot: true })) + "</g>" +
-          '<g id="' + P("b7-pol") + '">' + pol(false) + '</g><g id="' + P("b7-pol-g") + '" opacity="0">' + pol(true) + "</g>" + spill;
-      }
-      var BOXES = [boxMine, boxFurnace, boxFactory, boxTrain, boxFeed, boxTransport, boxPropaganda, boxVote];
-
-      // ── The wheel's parts ──
-      // A paper doll (cut from paper: a round head, a dress, arms out to its neighbours' hands), in its own units: the
-      // joined hands at (±HW, 0) on the rim, the head outward (-y), the feet toward the hub (+y). up: hands lifted.
-      var HW = (Math.PI * R) / NDOLL;
-      function doll(up) {
-        var hy = up ? -15 : 0, k = R / 290;
-        return '<g transform="scale(' + f(k) + ')">' + '<path d="M-8,-6 L' + f(-HW / k) + "," + hy + " M8,-6 L" + f(HW / k) + "," + hy + '" stroke="' + C.line + '" stroke-width="6" stroke-linecap="round"/><path d="M-8,-6 L' + f(-HW / k) + "," + hy + " M8,-6 L" + f(HW / k) + "," + hy + '" stroke="#FBF6E6" stroke-width="2.6" stroke-linecap="round"/>' +
-          '<path d="M-6,-10 L6,-10 L12,12 L-12,12 Z" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2.2" stroke-linejoin="miter"/>' +
-          '<path d="M-5,12 L-6,24 L-1,24 L0,12 M5,12 L6,24 L1,24 L0,12" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2"/>' +
-          '<circle cx="0" cy="-18" r="7.5" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="2.2"/><circle cx="-2.5" cy="-19" r="1.1" fill="' + C.line + '"/><circle cx="2.5" cy="-19" r="1.1" fill="' + C.line + '"/>' +
-          '<path d="M-3,-15 q3,2.5 6,0" fill="none" stroke="' + C.line + '" stroke-width="1.2"/></g>';
-      }
-      var DOLL_A = doll(false), DOLL_B = doll(true);
-      // The gondola: a hanger and roof bar, the box, the red glow behind it once lit; its pencil picture (wiped on when it
-      // is drawn) and its lit picture, both clipped to the box.
-      function gondola(i) {
-        var lit = BOXES[i](), clip = P("gclip-" + i);
-        return '<g id="' + P("gon-" + i + "-rot") + '"><g id="' + P("gon-" + i + "-swing") + '"><g id="' + P("gon-" + i + "-pop") + '" opacity="0"><g transform="scale(' + GK + ')">' +
-          '<g id="' + P("gon-" + i + "-glow") + '" opacity="0"><rect x="-110" y="10" width="220" height="164" fill="' + C.war + '" opacity="0.2"/><rect x="-102" y="17" width="204" height="150" fill="' + C.war + '" opacity="0.35"/></g>' +
-          '<path d="M0,0 V18" stroke="' + C.line + '" stroke-width="4"/><circle cx="0" cy="0" r="5" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="2"/>' +
-          '<path d="M-64,16 L64,16 L72,24 L-72,24 Z" fill="' + C.slate + '" stroke="' + C.line + '" stroke-width="2.6"/>' +
-          '<rect x="-95" y="24" width="190" height="136" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="4"/>' +
-          '<defs><clipPath id="' + clip + '"><rect x="-92" y="27" width="184" height="130"/></clipPath><clipPath id="' + clip + 'w"><rect id="' + P("gon-" + i + "-wipe") + '" x="-92" y="27" width="0" height="130"/></clipPath></defs>' +
-          '<g clip-path="url(#' + clip + 'w)"><g id="' + P("gon-" + i + "-pen") + '">' + pencilify(stripIds(lit)) + "</g></g>" +
-          '<g clip-path="url(#' + clip + ')"><g id="' + P("gon-" + i + "-lit") + '" opacity="0">' + lit + "</g></g>" +
-          '<rect x="-95" y="24" width="190" height="136" fill="none" stroke="' + C.line + '" stroke-width="4"/>' +
-          "</g></g></g></g>";
-      }
-      // An arrow along the rim's inside from box i-1 to box i (pathLength 1: draw it with its dash offset).
-      function arrowSvg(i) {
-        var a0 = TH[(i + 7) % 8] + 9, a1 = a0 + 27, rr = R - 92, p0 = rimPt(a0, rr), p1 = rimPt(a1, rr), p2 = rimPt(a1 + 6, rr);
-        var tip = rimPt(a1 + 8, rr), back = function (s) { return rimPt(a1 + 1, rr + s * 9); };
-        return '<g id="' + P("arrow-" + i) + '"><path class="arrow-line" d="M' + f(p0[0]) + "," + f(p0[1]) + " A" + rr + "," + rr + " 0 0 1 " + f(p1[0]) + "," + f(p1[1]) + '" fill="none" stroke="' + C.line + '" stroke-width="4" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>' +
-          '<path class="arrow-head" d="M' + f(back(1)[0]) + "," + f(back(1)[1]) + " L" + f(tip[0]) + "," + f(tip[1]) + " L" + f(back(-1)[0]) + "," + f(back(-1)[1]) + ' Z" fill="' + C.line + '" opacity="0"/></g>';
-      }
-      // The war bills that run the rim (inside the ring, their feet on the dolls' feet): two leg frames each.
-      var NBILL = 7, BS = 0.42 * (R / 290), BILL_R = R - 24 * (R / 290) - 46 * BS;
-      function billSvg(i) { return '<g id="' + P("bill-" + i) + '" opacity="0"><g transform="scale(' + BS.toFixed(3) + ')"><g class="leg0">' + KIT.money("war", 0) + '</g><g class="leg1" opacity="0">' + KIT.money("war", 1) + "</g></g></g>"; }
-      // The A-frame stand, the spokes and the hub.
-      function stand_() {
-        var y0 = L.wall - 6, dx = R * 0.72;
-        return '<g id="' + P("stand") + '" opacity="0"><path d="M' + f(HUB[0]) + "," + f(HUB[1]) + " L" + f(HUB[0] - dx) + "," + y0 + " M" + f(HUB[0]) + "," + f(HUB[1]) + " L" + f(HUB[0] + dx) + "," + y0 + '" stroke="' + C.line + '" stroke-width="12" stroke-linecap="round"/>' +
-          '<path d="M' + f(HUB[0]) + "," + f(HUB[1]) + " L" + f(HUB[0] - dx) + "," + y0 + " M" + f(HUB[0]) + "," + f(HUB[1]) + " L" + f(HUB[0] + dx) + "," + y0 + '" stroke="#FBF6E6" stroke-width="6" stroke-linecap="round"/>' +
-          '<path d="M' + f(HUB[0] - dx * 0.55) + "," + f(HUB[1] + (y0 - HUB[1]) * 0.55) + " H" + f(HUB[0] + dx * 0.55) + '" stroke="' + C.line + '" stroke-width="4"/></g>';
-      }
-      function spokes() {
-        return '<g id="' + P("spokes") + '" opacity="0">' + TH.map(function (a) { var p = rimPt(a, R - 10); return '<path d="M' + f(HUB[0]) + "," + f(HUB[1]) + " L" + f(p[0]) + "," + f(p[1]) + '" stroke="' + C.line + '" stroke-width="3.4"/>'; }).join("") +
-          '<circle cx="' + f(HUB[0]) + '" cy="' + f(HUB[1]) + '" r="' + f(R * 0.42) + '" fill="none" stroke="' + C.line + '" stroke-width="2.4" stroke-dasharray="10 7"/></g>';
-      }
-      function hubCap() {
-        return '<g id="' + P("hubcap") + '" opacity="0"><circle cx="' + f(HUB[0]) + '" cy="' + f(HUB[1]) + '" r="' + f(R * 0.09) + '" fill="' + C.yellow + '" stroke="' + C.line + '" stroke-width="4"/>' +
-          '<circle cx="' + f(HUB[0]) + '" cy="' + f(HUB[1]) + '" r="' + f(R * 0.03) + '" fill="' + C.line + '"/></g>';
-      }
-      // The first-place rosette pinned on the hub: navy and orange ruffles, two ribbon tails, LARGEST COORDINATED EFFORT.
-      function rosette() {
-        var k = R / 290, ruff = function (r0, r1, n, col) {
-          var pts = [];
-          for (var i = 0; i < n * 2; i++) { var a = (i * Math.PI) / n, rr = i % 2 ? r0 : r1; pts.push(f(rr * Math.cos(a)) + "," + f(rr * Math.sin(a))); }
-          return '<polygon points="' + pts.join(" ") + '" fill="' + col + '" stroke="' + C.line + '" stroke-width="3" stroke-linejoin="miter"/>';
-        };
-        var tail = function (s, col) { return '<path d="M' + 30 * s + ",40 L" + 66 * s + ",190 L" + 44 * s + ",172 L" + 26 * s + ",196 L" + 4 * s + ',50 Z" fill="' + col + '" stroke="' + C.line + '" stroke-width="3" stroke-linejoin="miter"/>'; };
-        return '<g transform="translate(' + f(HUB[0]) + "," + f(HUB[1]) + ") scale(" + f(k) + ')"><g id="' + P("rosette") + '" opacity="0">' + tail(-1, C.orange) + tail(1, C.navy) +
-          ruff(118, 136, 26, C.navy) + ruff(100, 116, 22, C.orange) + '<circle r="96" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="4"/><circle r="86" fill="none" stroke="' + C.orange + '" stroke-width="2.4"/>' +
-          KIT.star(0, -66, 12, C.orange) +
-          '<text y="-24" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="31" letter-spacing="1.5" fill="' + C.line + '">LARGEST</text>' +
-          '<text y="12" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="27" letter-spacing="0.5" fill="' + C.line + '">COORDINATED</text>' +
-          '<text y="48" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="31" letter-spacing="1.5" fill="' + C.line + '">EFFORT</text>' +
-          KIT.star(0, 74, 9, C.orange) + "</g></g>";
-      }
-      // The wall calendar (KIT.props.calendar, a page a year) and its flying torn-off pages.
-      var YEAR0 = 1947, YEAR_END = 2026, NPAGE = 10;
-      function calendar() {
-        var c = L.cal, page = '<path d="M-40,-98 H40 V-16 H-40 Z" fill="#FBF6E6" stroke="' + C.line + '" stroke-width="3"/><path d="M-40,-98 H40 V-79 H-40 Z" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="3"/><path d="M-22,-50 H22 M-16,-36 H16" stroke="' + C.line + '" stroke-width="5"/>';
-        var fly = "";
-        for (var i = 0; i < NPAGE; i++) fly += '<g id="' + P("pg-" + i) + '" opacity="0"><g transform="translate(0,57)">' + page + "</g></g>";
-        return '<g transform="translate(' + c[0] + "," + c[1] + ") scale(" + c[2] + ')"><g id="' + P("cal") + '">' + KIT.props.calendar({ month: "YEAR", day: YEAR0, pages: 1 }) + "</g>" +
-          '<g transform="translate(0,-57)">' + fly + "</g></g>";
-      }
-      // The whole wheel. Returns [behind the patient, in front of everything but the patient].
-      function wheel() {
-        var ring = spokes();
-        for (var i = 0; i < 8; i++) ring += arrowSvg(i);
-        for (var d = 0; d < NDOLL; d++) {
-          var a = 180 + (d * 360) / NDOLL, p = rimPt(a);
-          ring += '<g transform="translate(' + f(p[0]) + "," + f(p[1]) + ") rotate(" + f(a + 90) + ')"><g class="doll-pop" id="' + P("doll-" + d) + '" opacity="0"><g class="doll-a">' + DOLL_A + '</g><g class="doll-b" opacity="0">' + DOLL_B + "</g></g></g>";
-        }
-        for (var j = 0; j < 8; j++) { var q2 = rimPt(TH[j]); ring += '<g transform="translate(' + f(q2[0]) + "," + f(q2[1]) + ')">' + gondola(j) + "</g>"; }
-        // (the bills run over the gondolas, so the money is seen going round)
-        for (var b = 0; b < NBILL; b++) ring += billSvg(b);
-        return stand_() + '<g id="' + P("ring") + '">' + ring + "</g>" + hubCap() + rosette() + calendar();
-      }
-
-      // ── Every frame (part time T): the wheel's turn, the gondolas hanging upright, the loops, the bills, the calendar ──
-      function loopFrame(id, on, T, period) { var a = document.getElementById(P(id + "-A")), b = document.getElementById(P(id + "-B")), k = on ? ((Math.floor(T / period) % 2) + 2) % 2 : 0; a.setAttribute("opacity", k ? 0 : 1); b.setAttribute("opacity", k ? 1 : 0); }
-      var WH = {};
-      function wheelInit() {
-        WH.ring = document.getElementById(P("ring"));
-        WH.rot = [0, 1, 2, 3, 4, 5, 6, 7].map(function (i) { return document.getElementById(P("gon-" + i + "-rot")); });
-        WH.bills = []; for (var b = 0; b < NBILL; b++) WH.bills.push(document.getElementById(P("bill-" + b)));
-        WH.belt = document.querySelector(g("b2-conv") + " .conveyor-belt");
-        WH.mis = document.getElementById(P("b2-mis")); WH.wm = document.getElementById(P("b2-wm"));
-        WH.ballot = document.querySelector(g("b7-box") + " .ballot-paper");
-        var days = document.querySelectorAll(g("cal") + " text");
-        WH.yearTop = days[days.length - 1]; WH.yearUnder = days[1];
-        WH.pages = []; for (var i = 0; i < NPAGE; i++) WH.pages.push(document.getElementById(P("pg-" + i)));
-        // when each torn page leaves: one on "annually,", then the blizzard from "forever." to the switch (one a year to 2026)
-        WH.tear = [T_ANN];
-        var n = YEAR_END - YEAR0 - 1, dt = (T_STOP - T_FOR - 0.1) / n;
-        for (var k = 1; k <= n; k++) WH.tear.push(T_FOR + 0.1 + (k - 1) * dt + dt * 0.999);
-        var r = KIT.rng(4407);
-        WH.fly = WH.tear.map(function () { return [L.cal[3] * (50 + r() * 110), -50 - r() * 50, (r() - 0.5) * 900, 0.6 + r() * 0.3]; });
-      }
-      function wheelAt(T) {
-        var ang = wheelAngle(T), sway = T > T_FOR ? 3.5 * Math.sin(((T - T_FOR) * 2 * Math.PI) / 1.7) * Math.min(1, (T - T_FOR) / 0.8) : 0;
-        WH.ring.setAttribute("transform", "rotate(" + ang.toFixed(2) + " " + HUB[0] + " " + HUB[1] + ")");
-        WH.rot.forEach(function (el, i) { el.setAttribute("transform", "rotate(" + (-ang + sway * (i % 2 ? 1 : -1)).toFixed(2) + ")"); });
-        // the loops (each a two-frame drawing)
-        // (the first strike lands on the clank, 0.35 s after "mine")
-        var m0 = wc("mine") + 0.35 - 0.24;
-        loopFrame("b0", T > T_LIT[0], T < T_FAST ? T - m0 : T_FAST - m0 + (T - T_FAST) * 2, 0.24);
-        loopFrame("b1", true, T, 0.12);
-        loopFrame("b3", T > T_LIT[3], T, 0.3);
-        loopFrame("b4", T > T_LIT[4], T, 0.34);
-        loopFrame("b6", T > T_LIT[6], T, 0.16);
-        loopFrame("b6c", T > T_DESERVE, T, 0.2);
-        [0, 1].forEach(function (i) { loopFrame("b5-va" + i, true, T + i * 0.1, 0.22); loopFrame("b5-vc" + i, true, T + i * 0.1, 0.22); });
-        var boomed = T > T_BOOM + 0.04;
-        document.getElementById(P("b5-alive")).setAttribute("opacity", boomed ? 0 : 1);
-        document.getElementById(P("b5-charred")).setAttribute("opacity", boomed ? 1 : 0);
-        // the factory: the belt runs; from "weapons," a missile pops off its end into the Weapons Maker's arms every 0.8 s
-        WH.belt.setAttribute("transform", "translate(" + f(((T * 40) % 22) - 22) + ",0)");
-        var base = T_POP - 0.6, u = T - base, ph = ((u % 0.8) + 0.8) % 0.8, mx, my, mo = u > 0 ? 1 : 0;
-        if (ph < 0.6) { mx = -2 + 54 * (ph / 0.6); my = 130; } else { var v = (ph - 0.6) / 0.2; mx = 52 + 10 * v; my = 130 - 34 * v + 30 * v * v; mo = mo && v < 0.9 ? 1 : 0; }
-        WH.mis.setAttribute("transform", "translate(" + f(mx) + "," + f(my) + ")");
-        WH.mis.setAttribute("opacity", mo);
-        WH.wm.setAttribute("transform", "rotate(" + (u > 0 ? 4 * Math.sin((u * 2 * Math.PI) / 0.8) : 0).toFixed(2) + ")");
-        // the vote: a ballot drops into the slot every 0.5 s
-        var bv = T > T_VOTE ? ((T - T_VOTE) % 0.5) / 0.5 : 0;
-        WH.ballot.setAttribute("transform", "translate(0," + f(T > T_VOTE ? -42 + 74 * bv : -42) + ")");
-        // the bills: out of the ballot box on "pay", along the rim to the mine, a lap on "annually,", laps from "forever."
-        var d = 0;
-        if (T > T_PAY) d = Math.min(1, (T - T_PAY) / 0.9) * 52;
-        if (T > T_ANN) { var la = Math.min(1, (T - T_ANN) / 0.95); d = 52 + 360 * (la < 0.5 ? 2 * la * la : 1 - Math.pow(-2 * la + 2, 2) / 2); }
-        if (T > T_FOR) d = 412 + 120 * (T - T_FOR);
-        var moving = T > T_PAY && (T < T_PAY + 0.9 || (T > T_ANN && T < T_ANN + 0.95) || T > T_FOR);
-        WH.bills.forEach(function (el, i) {
-          var di = d - i * 7.5, a = TH[7] + di;
-          if (T <= T_PAY || di < 0) { el.setAttribute("opacity", 0); return; }
-          var p = rimPt(a, BILL_R);
-          el.setAttribute("opacity", 1);
-          el.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + f(a - 90) + ")");
-          var leg = moving ? Math.floor(T / 0.09 + i) % 2 : 0;
-          el.querySelector(".leg0").setAttribute("opacity", leg ? 0 : 1); el.querySelector(".leg1").setAttribute("opacity", leg ? 1 : 0);
-        });
-        // the calendar: the year on top, the next under it; each torn page flies off and falls
-        var torn = 0;
-        WH.tear.forEach(function (t) { if (T >= t) torn++; });
-        WH.yearTop.textContent = YEAR0 + torn; WH.yearUnder.textContent = YEAR0 + torn + 1;
-        for (var s = 0; s < NPAGE; s++) WH.pages[s].setAttribute("opacity", 0);
-        WH.tear.forEach(function (t, n) {
-          var fl = WH.fly[n], dur = fl[3];
-          if (T < t || T > t + dur) return;
-          var e = (T - t) / dur, el = WH.pages[n % NPAGE];
-          el.setAttribute("opacity", 1 - e * e);
-          el.setAttribute("transform", "translate(" + f(fl[0] * e) + "," + f(fl[1] * e + 330 * e * e) + ") rotate(" + f(fl[2] * e) + ") scale(0.5)");
-        });
-      }
-      // The scene's last state, as war-supply-chain leaves it and chain-goes-dark starts (everything drawn and lit).
-      function wheelDone() {
-        var on = function (id, v) { document.getElementById(P(id)).setAttribute("opacity", v); };
-        ["stand", "spokes", "hubcap", "rosette"].forEach(function (id) { on(id, 1); });
-        for (var d = 0; d < NDOLL; d++) on("doll-" + d, 1);
-        document.querySelectorAll(g("ring") + " .doll-a").forEach(function (e) { e.setAttribute("opacity", 0); });
-        document.querySelectorAll(g("ring") + " .doll-b").forEach(function (e) { e.setAttribute("opacity", 1); });
-        for (var i = 0; i < 8; i++) {
-          on("gon-" + i + "-pop", 1); on("gon-" + i + "-glow", 1); on("gon-" + i + "-lit", 1);
-          document.getElementById(P("gon-" + i + "-wipe")).setAttribute("width", 184);
-          var ar = document.getElementById(P("arrow-" + i));
-          ar.querySelector(".arrow-line").setAttribute("stroke-dashoffset", 0); ar.querySelector(".arrow-head").setAttribute("opacity", 1);
-        }
-        on("b1-pour", 1); on("b4-plain", 0); on("b4-uni", 1); on("b5-house", 0); on("b5-house-b", 1); on("b7-pol", 0); on("b7-pol-g", 1);
-        document.getElementById(P("b1-cru")).setAttribute("transform", "rotate(40 0 52)");
-        document.getElementById(P("b5-nuke")).setAttribute("opacity", 0);
-        VEH.forEach(function (v, i) { document.getElementById(P("b5-veh-" + i)).setAttribute("transform", "translate(" + v[2] + ",0)"); on("b5-mis-" + i, 0); });
-      }
-      // ════ end of the war wheel code ════
-
-      // ── Assemble ──
-      var DR = door();
-      var doorAt = function (inner) { return at(L.door, L.wall, S, inner); };
-      // the Orderly's head pushed through the window on "largest": a long neck from the window and his jaw-dropped head
-      var OHJ = KIT.castOpts("orderly", { look: "right", mood: "eager" });
-      var winC = [0, WIN[1] + WIN[3] * 0.62];
-      var headOut = '<g id="' + P("hout") + '" opacity="0"><line id="' + P("neck-ink") + '" x1="' + winC[0] + '" y1="' + winC[1] + '" x2="' + winC[0] + '" y2="' + winC[1] + '" stroke="' + C.line + '" stroke-width="9.4" stroke-linecap="round"/>' +
-        '<line id="' + P("neck-skin") + '" x1="' + winC[0] + '" y1="' + winC[1] + '" x2="' + winC[0] + '" y2="' + winC[1] + '" stroke="' + SKIN2 + '" stroke-width="5" stroke-linecap="round"/>' +
-        '<g transform="translate(' + winC[0] + "," + winC[1] + ')"><g id="' + P("hout-pos") + '"><g transform="translate(' + f(-OHR.head[0]) + "," + f(-OHR.head[1]) + ')">' + headOf(OHJ) + "</g></g></g></g>";
-      var CUPK = S * 1.25;
-      var cupLayer = '<g transform="translate(' + L.arm.match(/(-?[\d.]+),(-?[\d.]+)$/).slice(1).join(",") + ')"><g transform="scale(' + CUPK + ')"><g id="' + P("cup") + '">' +
-        poly([[-15, -30], [15, -30], [11, 0], [-11, 0]], WHITE, 3) + '<path d="M-13,-21 H13 M-12,-12 H12" stroke="' + C.line + '" stroke-width="1.2" opacity="0.5"/>' +
-        '<g id="' + P("pill-r") + '"><rect x="-10" y="-38" width="12" height="7" rx="3.5" fill="' + C.war + '" stroke="' + C.line + '" stroke-width="2"/></g>' +
-        '<g id="' + P("pill-t") + '"><rect x="0" y="-39" width="12" height="7" rx="3.5" fill="' + C.med + '" stroke="' + C.line + '" stroke-width="2"/></g></g></g></g>';
-      var pat = '<g id="' + P("pat-move") + '"><g transform="translate(' + L.end + "," + (L.feet - 100 * S) + ") scale(" + S + ')">' +
-        '<g id="' + P("pat-flip") + '"><g id="' + P("pat-sq") + '"><g id="' + P("pat-free") + '">' + patient("free", "flat") + "</g></g></g></g></g>";
-      var WHL = wheel();
-      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + cell() + hatch() + doodles + doorAt(DR.door + DR.win + DR.flap + headOut) + WHL + cupLayer + pat + frame());
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-      doodlesDone();
-      wheelInit();
-
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, t); };
-      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
-      var el = function (s2) { return document.getElementById(P(s2)); };
-      var sleeve = document.querySelector(g("pat-free") + " .pat-sleeve"), parm = document.querySelector(g("pat-free") + " .pat-arm");
 
-      // ── Where orderly-door-slot left things ──
-      gsap.set(g("cup"), { x: (L.cupTo - +L.arm.match(/(-?[\d.]+),(-?[\d.]+)$/)[1]) / CUPK, y: 4, rotation: -455, svgOrigin: "0 0" });
-      gsap.set(g("pill-r"), { x: -60, y: 26 }); gsap.set(g("pill-t"), { x: -34, y: 30 });
-      gsap.set(g("head-lift"), { y: -28 });
-      gsap.set([g("pat-flip"), g("pat-sq")], { svgOrigin: "0 100" });
-      gsap.set(g("pat-flip"), { scaleX: -1 });
-      gsap.set(parm, { svgOrigin: f(SHR[0]) + " " + f(SHR[1]), rotation: 0 });
-      for (var gi = 0; gi < 8; gi++) { gsap.set(g("gon-" + gi + "-pop"), { svgOrigin: "0 0" }); gsap.set(g("gon-" + gi + "-swing"), { svgOrigin: "0 0" }); }
-      gsap.set(g("b1-cru"), { svgOrigin: "0 52" });
-      gsap.set(g("rosette"), { svgOrigin: "0 0" });
-      gsap.set(g("hout-pos"), { svgOrigin: "0 0" });
-      gsap.set(document.querySelectorAll(g("ring") + " .doll-pop"), { svgOrigin: "0 0" });
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 409);
 
-      // ── The patient: aims his pencil and bounces off the padded floor to reach the high gondolas ──
-      var HOME = L.home - L.end, cur = { x: 0, y: 0 }, armNow = 0;
-      function moveTo(t, dur, x, y, ease) { tl.fromTo(g("pat-move"), { x: cur.x, y: cur.y }, { x: x, y: y, duration: dur, ease: ease || "power2.inOut", immediateRender: false }, t); cur = { x: x, y: y }; }
-      function squash(t, k) { tl.fromTo(g("pat-sq"), { scaleX: 1, scaleY: 1 }, { scaleX: 1 + 0.25 * k, scaleY: 1 - 0.3 * k, duration: 0.06, ease: "power2.out", immediateRender: false }, t).to(g("pat-sq"), { scaleX: 1, scaleY: 1, duration: 0.22, ease: "back.out(3)" }, t + 0.06); }
-      function stretch(t) { tl.fromTo(g("pat-sq"), { scaleX: 1, scaleY: 1 }, { scaleX: 0.86, scaleY: 1.16, duration: 0.08, ease: "power2.out", immediateRender: false }, t).to(g("pat-sq"), { scaleX: 1, scaleY: 1, duration: 0.18, ease: "power2.out" }, t + 0.08); }
-      function armTo(t, dur, r, ease) { tl.fromTo(parm, { rotation: armNow }, { rotation: r, duration: dur, ease: ease || "power2.out", immediateRender: false }, t); armNow = r; }
-      function scribble(t, dur) { tl.fromTo(parm, { rotation: armNow }, { rotation: armNow + 7, duration: 0.07, yoyo: true, repeat: Math.max(1, 2 * Math.round(dur / 0.14) - 1), ease: "sine.inOut", immediateRender: false }, t); }
-      // the arm's rotation that points the pencil at (x, y), with the patient's feet at (fx, L.feet + fy) facing right
-      function aim(x, y, fy) {
-        var sx = L.home + S * SHR[0], sy = L.feet + fy + S * (SHR[1] - 100), tx = L.home + S * TIP[0], ty = L.feet + fy + S * (TIP[1] - 100);
-        return (Math.atan2(y - sy, x - sx) - Math.atan2(ty - sy, tx - sx)) * 180 / Math.PI;
+      // ════════════════════════════════════════════════════════════════════════════════════════════════════════════
+      // PLATE padded-cell: shared by orderly-door-slot, war-supply-chain and chain-goes-dark. Copy this whole block
+      // (down to "END PLATE padded-cell") and change all three files together (AGENTS.md, Continuity).
+      // Plate units: the floor line is y 0 (people stand on it at scale S, so KIT.person's feet at y 100 land on 0),
+      // the floor's padding runs toward the viewer below it, the ceiling's underside is y -1150.
+      //   the door: doorway x 0..300, top y -620 (frame 18 wider); window x 84..216, y -530..-410; slot x 75..225,
+      //     y -290..-260 with a flap hinged at its top
+      //   the ceiling hatch: x 1380..1620, its flap hinged at (1380, -1150)
+      //   the crayon drawings (y -380..-120, on the ground line y -148): the little human, the birdhouse (x 470..580)
+      //     and the toolbox (x 600..660); the carrier x 820..1300; the bomb x 1316..1504; the X spans 800..1520
+      //   x 1650 onward is blank wall: the switch goes at (1720, -400), the war wheel's hub at (2400, -580), rim 440
+      // ════════════════════════════════════════════════════════════════════════════════════════════════════════════
+      var S = 2.4, CEIL = -1150, DOOR = [0, 300, -620], WIN = [84, -530, 216, -410], SLOT = [75, -290, 225, -260], HATCH = [1380, 1620];
+      var GL = -148; // the crayon drawings' ground line
+      var PATIENT = { tone: 1, outfit: "shirt", color: 3 };
+      var CANVAS = "#E9DFC6", STRAP = "#B9935E", WINDOW_DARK = "#1D2338", SKIN_O = "#A87B57";
+      var FOLDED = [[52, 104], [-52, -104]], FREE_ARMS = [[-100, -100], [-52, -104]];
+      var f = function (n) { return (+n).toFixed(1); };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      // A person (or any person-unit drawing) standing with its feet on plate y gy.
+      var standAt = function (x, gy, inner, attrs) { return at(x, gy - 100 * S, S, inner, attrs); };
+      // A crayon line: two passes of a waxy round-capped stroke, slightly apart. pathLength 1, so setting
+      // stroke-dasharray "1 2" and stroke-dashoffset 1 → 0 on the group draws it on (crayonDraw).
+      function crayon(d, col, w, attrs) {
+        w = w || 7;
+        return "<g" + (attrs || "") + '><path d="' + d + '" pathLength="1" fill="none" stroke="' + col + '" stroke-width="' + w + '" stroke-linecap="round" stroke-linejoin="round" opacity="0.88"/>' +
+          '<path d="' + d + '" pathLength="1" transform="translate(1.6,1.2)" fill="none" stroke="' + col + '" stroke-width="' + f(w * 0.45) + '" stroke-linecap="round" stroke-linejoin="round" opacity="0.5"/></g>';
       }
-      function orderlyLooks(t, y) { tl.to(g("head-lift"), { y: y, duration: 0.3, ease: "sine.inOut" }, t + 0.1); }
-      var IDLE = -40;
-
-      // "War": he turns to the blank wall and steps right to it.
-      tl.to(g("pat-flip"), { scaleX: 1, duration: 0.16, ease: "power2.inOut" }, 0.02);
-      moveTo(0.1, 0.36, HOME, -40, "power2.out");
-      moveTo(0.46, 0.16, HOME, 0, "power2.in");
-      squash(0.62, 0.3);
-      armTo(0.2, 0.3, IDLE);
-      orderlyLooks(0.1, -22);
-      // The camera: from orderly-door-slot's last shot (up on the doodles) back to the whole wall as he turns to it.
-      var cam = camera(tl, q("view"), L.shotDoodle), WIDE = [0, 0, 1];
-      cam(0.05, 1.0, WIDE);
-
-      // "millions": one big swing of the pencil round a circle, and the paper-doll chain appears round the rim behind it;
-      // the stand, the spokes and the hub come with it. "together": they all lift their joined hands (the pop).
-      var tMil = cue("millions"), tTog = cue("together"), sweep = 1.5;
-      tl.fromTo(parm, { rotation: IDLE }, { rotation: IDLE + 360, duration: sweep, ease: "power1.inOut", immediateRender: false }, tMil);
-      for (var dd = 0; dd < NDOLL; dd++) {
-        var td = tMil + 0.05 + (sweep - 0.1) * (dd / NDOLL);
-        tl.fromTo(g("doll-" + dd), { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.14, ease: "back.out(2.5)", immediateRender: false }, td);
+      function crayonDraw(g, u) {
+        u = Math.max(0, Math.min(1, u));
+        g.setAttribute("opacity", u > 0 ? 1 : 0);
+        if (u >= 1) { g.removeAttribute("stroke-dasharray"); g.removeAttribute("stroke-dashoffset"); return; }
+        g.setAttribute("stroke-dasharray", "1 2"); g.setAttribute("stroke-dashoffset", (1 - u).toFixed(4));
       }
-      tl.fromTo([g("stand"), g("spokes"), g("hubcap")], { opacity: 0 }, { opacity: 1, duration: 0.3, immediateRender: false }, tMil + sweep - 0.2);
-      tl.set(document.querySelectorAll(g("ring") + " .doll-a"), { opacity: 0 }, tTog);
-      tl.set(document.querySelectorAll(g("ring") + " .doll-b"), { opacity: 1 }, tTog);
-      tl.fromTo(document.querySelectorAll(g("ring") + " .doll-pop"), { scale: 1.25 }, { scale: 1, duration: 0.3, ease: "back.out(3)", immediateRender: false }, tTog);
-      squash(tTog - 0.08, 0.3); moveTo(tTog, 0.16, HOME, -50, "power2.out"); moveTo(tTog + 0.16, 0.16, HOME, 0, "power2.in"); squash(tTog + 0.32, 0.3);
-
-      // Each gondola on its word: he springs up level with it, points the pencil and scribbles; the box hangs from the rim
-      // in pencil (the marker), then lights: the red glow, the colors, the loop; it swings a little.
-      // 9:16: the burned-in captions sit at y 1470 to 1700, so a close-up never leaves him standing in them while he waits
-      // on the floor between boxes: it shows the floor above the captions, or drops him (from the top of his hair) below
-      // them, whichever is nearer the box's own framing.
-      function offCaptions(s) {
-        if (!V) return s;
-        var z = s[2], top = L.feet - S * (100 - PR.top[1] + 10);
-        if ((L.feet - s[1]) * z <= 1450 || (top - s[1]) * z >= 1710) return s;
-        var ya = L.feet - 1450 / z, yb = top - 1710 / z, y = Math.abs(ya - s[1]) < Math.abs(yb - s[1]) ? ya : yb;
-        return [s[0], Math.min(Math.max(y, 0), H - H / z), z];
+      // The little crayon human, feet at (0, 0), h tall: "walk", "joy" (arms up, a smile) or "shrug".
+      function crayonGuy(h, col, pose) {
+        var hr = h * 0.13, hy = -h + hr, ny = hy + hr, hip = -h * 0.42, w = h * 0.045;
+        var head = "M" + f(-hr) + "," + f(hy) + " a" + f(hr) + "," + f(hr) + " 0 1,0 " + f(2 * hr) + ",0 a" + f(hr) + "," + f(hr) + " 0 1,0 " + f(-2 * hr) + ",0";
+        var legs = pose === "walk" ? "M" + f(-h * 0.22) + ",0 L0," + f(hip) + " L" + f(h * 0.24) + ",0" : "M" + f(-h * 0.18) + ",0 L0," + f(hip) + " L" + f(h * 0.18) + ",0";
+        var arms = pose === "shrug" ? "M" + f(-h * 0.28) + "," + f(ny + h * 0.02) + " L" + f(-h * 0.16) + "," + f(ny + h * 0.16) + " L0," + f(ny + h * 0.12) + " L" + f(h * 0.16) + "," + f(ny + h * 0.16) + " L" + f(h * 0.28) + "," + f(ny + h * 0.02)
+          : pose === "joy" ? "M" + f(-h * 0.26) + "," + f(ny - h * 0.16) + " L0," + f(ny + h * 0.1) + " L" + f(h * 0.26) + "," + f(ny - h * 0.16)
+          : "M" + f(-h * 0.2) + "," + f(ny + h * 0.3) + " L0," + f(ny + h * 0.1) + " L" + f(h * 0.24) + "," + f(ny + h * 0.24);
+        var smile = pose === "joy" ? " M" + f(-hr * 0.5) + "," + f(hy + hr * 0.25) + " q" + f(hr * 0.5) + "," + f(hr * 0.45) + " " + f(hr) + ",0" : pose === "shrug" ? " M" + f(-hr * 0.45) + "," + f(hy + hr * 0.35) + " h" + f(hr * 0.9) : "";
+        return crayon(head + " M0," + f(ny) + " L0," + f(hip) + " " + legs + " " + arms + smile, col, w);
       }
-      var BOXW = ["mine", "refine", "factories", "train", "feed", "ships", "convince", "vote"];
-      BOXW.forEach(function (w, i) {
-        var tc = cue(w), rp = rimPt(TH[i]), cx = rp[0], cy = rp[1] + 92 * GK;
-        // the camera follows the chain: in on this box as it is drawn (box 7 waits for box 6's boom)
-        cam(i === 6 ? KIT.after(ID, "are,") + 0.3 : tc - 0.5, 0.5, offCaptions(shotOn(cx, cy, L.boxZ, L.boxAt[0], L.boxAt[1])));
-        // how high to spring: the pencil tip level with the box's middle (never below the floor)
-        var fy = Math.min(-18, cy - (L.feet + S * (TIP[1] - 100)));
-        squash(tc - 0.36, 0.45); stretch(tc - 0.28);
-        moveTo(tc - 0.28, 0.26, HOME, fy, "power2.out");
-        armTo(tc - 0.28, 0.24, aim(cx, cy, fy));
-        scribble(tc, 0.3);
-        orderlyLooks(tc - 0.3, Math.max(-50, -22 + fy / (S * 8)));
-        moveTo(tc + 0.36, 0.24, HOME, 0, "power2.in");
-        squash(tc + 0.6, 0.45);
-        armTo(tc + 0.4, 0.3, IDLE, "power2.inOut");
-        // the gondola
-        tl.fromTo(g("gon-" + i + "-pop"), { opacity: 0, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.24, ease: "back.out(2)", immediateRender: false }, tc);
-        tl.fromTo(g("gon-" + i + "-wipe"), { attr: { width: 0 } }, { attr: { width: 184 }, duration: 0.26, ease: "none", immediateRender: false }, tc + 0.02);
-        var tLit = tc + 0.32;
-        show(g("gon-" + i + "-lit"), tLit); show(g("gon-" + i + "-glow"), tLit);
-        tl.fromTo(g("gon-" + i + "-glow"), { scale: 1.12, svgOrigin: "0 92" }, { scale: 1, svgOrigin: "0 92", duration: 0.3, ease: "power2.out", immediateRender: false }, tLit);
-        tl.fromTo(g("gon-" + i + "-swing"), { rotation: 0 }, { rotation: 7, duration: 0.18, ease: "sine.out", immediateRender: false }, tLit)
-          .to(g("gon-" + i + "-swing"), { rotation: -4, duration: 0.3, ease: "sine.inOut" }, tLit + 0.18)
-          .to(g("gon-" + i + "-swing"), { rotation: 0, duration: 0.3, ease: "sine.inOut" }, tLit + 0.48);
-        // the arrow from the last box to this one
-        if (i > 0) {
-          tl.fromTo(el("arrow-" + i).querySelector(".arrow-line"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power1.inOut", immediateRender: false }, tc + 0.05);
-          tl.fromTo(el("arrow-" + i).querySelector(".arrow-head"), { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, tc + 0.35);
+      // The patient in his straitjacket (person units): canvas over the mustard shirt, folded arms, two tan straps.
+      function jacketed(o) {
+        var p = copy(PATIENT, copy({ colorHex: CANVAS, arms: FOLDED }, o)), R = KIT.rig(p);
+        var sx = R.shoulder[1][0] + 4, y1 = R.shoulder[0][1] + 22, y2 = R.hipY - 12;
+        var strap = function (y) {
+          return '<path d="M' + f(-sx) + "," + f(y) + " L" + f(sx) + "," + f(y - 2) + " L" + f(sx) + "," + f(y + 7) + " L" + f(-sx) + "," + f(y + 9) + ' Z" fill="' + STRAP + '" stroke="' + ink + '" stroke-width="2.2"/>' +
+            '<rect x="' + f(sx * 0.35) + '" y="' + f(y - 1) + '" width="9" height="10" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="2"/>';
+        };
+        return KIT.person(p) + strap(y1) + strap(y2);
+      }
+      // The patient with his near arm (arm-l) out of the jacket: hide the jacket's .arm-l after inserting (patientFree
+      // returns markup; freeArm(g) does the DOM part). The bare arm is the mustard shirt's, holding a fat crayon.
+      var RFREE = KIT.rig(copy(PATIENT, { look: "left", arms: FREE_ARMS }));
+      var SH0 = RFREE.shoulder[0], HAND0 = RFREE.hand[0];
+      var CRAYON_ANG = (Math.atan2(HAND0[1] - (SH0[1] + 0), HAND0[0] - SH0[0]) * 180) / Math.PI;
+      function patientFree(o) {
+        var sleeve = '<g class="pt-sleeve"><path d="M' + f(SH0[0] - 6) + "," + f(SH0[1] + 1) + " q-9,20 0,42 l9,-1 q-6,-18 3,-38 Z" + '" fill="' + CANVAS + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="round"/></g>';
+        var crayonStick = '<g transform="translate(' + f(HAND0[0]) + "," + f(HAND0[1]) + ") rotate(" + f(CRAYON_ANG) + ')"><g class="pt-crayon">' +
+          '<rect x="-4" y="-5" width="20" height="10" rx="1" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="1.8"/><path d="M16,-5 L24,0 L16,5 Z" fill="' + C.navy + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="round"/>' +
+          '<rect x="2" y="-5" width="7" height="10" fill="' + C.cream + '" opacity="0.55"/></g></g>';
+        return '<g class="pt-jacket">' + jacketed(copy({ look: "left" }, o)) + "</g>" + sleeve +
+          '<g class="pt-arm"><g class="pt-armsrc">' + KIT.person(copy(PATIENT, { look: "left", arms: FREE_ARMS })) + "</g>" + crayonStick + "</g>";
+      }
+      function freeArm(g) {
+        g.querySelector(".pt-jacket .arm-l").setAttribute("opacity", 0);
+        var src = g.querySelector(".pt-armsrc"), arm = src.querySelector(".arm-l");
+        while (src.firstChild) src.removeChild(src.firstChild);
+        src.appendChild(arm);
+      }
+      // The Orderly behind the door (KIT.cast("orderly")), standing on the floor at x OX: the window shows his head.
+      // His neck stretches: move his .head up by ext person units and draw neck under it (orderlyNeck).
+      var OE = KIT.castOpts("orderly", { look: "right" }), RO = KIT.rig(OE), OX = 150 - RO.eyes[0] * S;
+      function orderlyNeck(g, ext) {
+        g.querySelector(".head").setAttribute("transform", "translate(0," + f(-ext) + ")");
+        var n = g.querySelector(".neck-ext"), y0 = RO.neck[1] - 3 - ext;
+        n.setAttribute("d", "M" + f(RO.neck[0] - 4.6) + "," + f(y0) + " H" + f(RO.neck[0] + 5.4) + " V" + f(RO.neck[1] + 2) + " H" + f(RO.neck[0] - 4.6) + " Z");
+        n.setAttribute("opacity", ext > 0.5 ? 1 : 0);
+      }
+      function orderly() {
+        return KIT.person(OE).replace('<g class="head">', '<path class="neck-ext" d="" fill="' + SKIN_O + '" stroke="' + ink + '" stroke-width="3.2" opacity="0"/><g class="head">');
+      }
+      // The wall, the floor and the shaft over the hatch (drawn first).
+      function cellBack() {
+        return "<defs>" +
+          '<pattern id="' + ID + '-quilt" width="96" height="96" patternUnits="userSpaceOnUse"><rect width="96" height="96" fill="#EFE4C6"/>' +
+          '<path d="M0,48 L48,0 L96,48 L48,96 Z" fill="none" stroke="#D5C397" stroke-width="3"/><circle cx="48" cy="0" r="5" fill="#C9B07E"/><circle cx="0" cy="48" r="5" fill="#C9B07E"/><circle cx="96" cy="48" r="5" fill="#C9B07E"/><circle cx="48" cy="96" r="5" fill="#C9B07E"/>' +
+          '<path d="M48,8 L88,48" stroke="#FFF8E6" stroke-width="3" opacity="0.7"/></pattern>' +
+          '<pattern id="' + ID + '-pad" width="120" height="40" patternUnits="userSpaceOnUse"><rect width="120" height="40" fill="#DCCB9E"/><path d="M0,20 H120 M60,0 V20 M0,20 V40" stroke="#C4AF7E" stroke-width="3"/></pattern>' +
+          '<clipPath id="' + ID + '-win"><rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + (WIN[2] - WIN[0]) + '" height="' + (WIN[3] - WIN[1]) + '"/></clipPath></defs>' +
+          '<rect x="-1200" y="-2000" width="5200" height="2000" fill="url(#' + ID + '-quilt)"/>' +
+          '<rect x="-1200" y="0" width="5200" height="1400" fill="url(#' + ID + '-pad)"/><rect x="-1200" y="-6" width="5200" height="10" fill="#B99D68"/>' +
+          '<rect x="' + HATCH[0] + '" y="-2000" width="' + (HATCH[1] - HATCH[0]) + '" height="' + (2000 + CEIL) + '" fill="' + WINDOW_DARK + '"/>';
+      }
+      // The ceiling (drawn over the patient, so he drops out of the shaft): a padded slab with a gap for the hatch, and
+      // the hatch's flap (class "hatch-flap", hinged at (HATCH[0], CEIL); rotate it about that point to open it).
+      function cellCeiling() {
+        var slab = function (x0, x1) {
+          return '<rect x="' + x0 + '" y="-2000" width="' + (x1 - x0) + '" height="' + (2000 + CEIL) + '" fill="#D8C596"/>' +
+            '<rect x="' + x0 + '" y="' + (CEIL - 16) + '" width="' + (x1 - x0) + '" height="16" fill="#B99D68"/>';
+        };
+        var seams = "";
+        for (var x = -1200; x < 4000; x += 120) if (x < HATCH[0] - 10 || x > HATCH[1] + 10) seams += "M" + x + "," + (CEIL - 16) + " V-2000 ";
+        return slab(-1200, HATCH[0]) + slab(HATCH[1], 4000) + '<path d="' + seams + '" stroke="#C4AF7E" stroke-width="3"/>' +
+          '<path d="M' + HATCH[0] + ',-2000 V' + CEIL + " M" + HATCH[1] + ",-2000 V" + CEIL + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<g class="hatch-flap"><rect x="' + HATCH[0] + '" y="' + (CEIL - 20) + '" width="' + (HATCH[1] - HATCH[0]) + '" height="20" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<circle cx="' + (HATCH[0] + 10) + '" cy="' + (CEIL - 10) + '" r="5" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2"/></g>';
+      }
+      // The steel door, its window (holding `inWindow`, clipped) and its slot (class "slot-flap", hinged at the top).
+      function cellDoor(inWindow) {
+        var x0 = DOOR[0], x1 = DOOR[1], top = DOOR[2], w = x1 - x0, ww = WIN[2] - WIN[0], wh = WIN[3] - WIN[1];
+        return '<rect x="' + (x0 - 18) + '" y="' + (top - 18) + '" width="' + (w + 36) + '" height="' + (18 - top) + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="' + x0 + '" y="' + top + '" width="' + w + '" height="' + -top + '" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<path d="M' + (x1 - 8) + "," + (top + 8) + " V-8" + '" stroke="' + C.orange + '" stroke-width="4"/>' +
+          [0.1, 0.9].map(function (u) { return '<circle cx="' + (x0 + w * u) + '" cy="' + f(top - top * 0.06) + '" r="5" fill="' + ink + '"/><circle cx="' + (x0 + w * u) + '" cy="' + f(top * 0.06) + '" r="5" fill="' + ink + '"/>'; }).join("") +
+          '<rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + ww + '" height="' + wh + '" fill="' + WINDOW_DARK + '"/>' +
+          '<g clip-path="url(#' + ID + '-win)">' + (inWindow || "") + "</g>" +
+          [1, 2, 3].map(function (i) { return '<path d="M' + f(WIN[0] + (ww * i) / 4) + "," + WIN[1] + " V" + WIN[3] + '" stroke="' + C.slate + '" stroke-width="6"/>'; }).join("") +
+          '<rect x="' + WIN[0] + '" y="' + WIN[1] + '" width="' + ww + '" height="' + wh + '" fill="none" stroke="' + ink + '" stroke-width="5"/>' +
+          '<rect x="' + SLOT[0] + '" y="' + SLOT[1] + '" width="' + (SLOT[2] - SLOT[0]) + '" height="' + (SLOT[3] - SLOT[1]) + '" fill="' + WINDOW_DARK + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<g class="slot-flap"><rect x="' + (SLOT[0] - 6) + '" y="' + (SLOT[1] - 4) + '" width="' + (SLOT[2] - SLOT[0] + 12) + '" height="' + (SLOT[3] - SLOT[1] + 8) + '" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<path d="M' + (SLOT[0] + 20) + "," + (SLOT[1] + 7) + " H" + (SLOT[2] - 20) + '" stroke="' + C.peri + '" stroke-width="3"/></g>';
+      }
+      // A paper pill cup with two pills (class "cup-pills"), standing on (0, 0), plate units.
+      function pillCup() {
+        return '<path d="M-24,-46 H24 L17,0 H-17 Z" fill="#FBF6E6" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+          '<path d="M-12,-44 L-9,-2 M0,-44 V-2 M12,-44 L9,-2" stroke="#D9CFB5" stroke-width="2.4"/>' +
+          '<g class="cup-pills"><circle cx="-7" cy="-50" r="8" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4"/><circle cx="8" cy="-52" r="8" fill="' + C.med + '" stroke="' + ink + '" stroke-width="2.4"/></g>' +
+          '<path d="M-25,-46 H25" stroke="' + ink + '" stroke-width="5" stroke-linecap="round"/>';
+      }
+      // The crayon drawings in their final state (the key frame of orderly-door-slot), as the next scenes see them.
+      var BIRD = { cx: 525, tilt: 5 };
+      // the birdhouse's pieces: [path around its own center, final center x, y, final rotation, color]
+      var BIRD_PIECES = [
+        ["M0,-26 V26", 525, GL - 26, 2, C.rust],                // the post
+        ["M-40,0 H40", 525, GL - 52, -3, C.rust],               // the floor
+        ["M0,-40 V40", 487, GL - 92, 4, C.rust],                // the left wall
+        ["M0,-40 V40", 565, GL - 94, -2, C.rust],               // the right wall
+        ["M-34,0 H34", 497, GL - 158, -40, C.rust],             // the roof, left
+        ["M-34,0 H34", 551, GL - 160, 44, C.rust],              // the roof, right
+        ["M-12,0 a12,12 0 1,0 24,0 a12,12 0 1,0 -24,0", 526, GL - 100, 0, C.rust], // the hole
+        ["M-60,0 H60", 520, GL - 134, -7, C.navy],              // the plank that landed askew across it
+      ];
+      var TOOLBOX = "M-30,0 h60 v-28 h-60 z M-15,-28 v-10 h30 v10", TOOLBOX_AT = [630, GL];
+      var CARRIER = "M820,-220 L860,-160 H1260 L1300,-220 Z M1040,-220 V-280 H1100 V-220 M1060,-280 V-310 M880,-228 l40,-10 l-6,12 M960,-230 l40,-10 l-6,12 M1150,-232 l40,-10 l-6,12";
+      var BOMB = "M1340,-220 a70,62 0 1,0 140,0 a70,62 0 1,0 -140,0 M1410,-282 V-316 M1400,-316 h20 M1420,-316 q20,-20 40,-6 M1352,-220 L1316,-250 M1468,-220 L1504,-250";
+      var XMARK = ["M800,-340 L1520,-120", "M1520,-340 L800,-120"];
+      var GUY_END = [740, GL]; // where the little human stands up, pleased, then shrugs
+      function drawingsDone() {
+        var bird = BIRD_PIECES.map(function (p) { return '<g transform="translate(' + p[1] + "," + p[2] + ") rotate(" + p[3] + ')">' + crayon(p[0], p[4], 7) + "</g>"; }).join("");
+        return '<g transform="translate(' + GUY_END[0] + "," + GUY_END[1] + ')">' + crayonGuy(120, C.navy, "shrug") + "</g>" + bird +
+          '<g transform="translate(' + TOOLBOX_AT[0] + "," + TOOLBOX_AT[1] + ')">' + crayon(TOOLBOX.replace("M-15,-28 v-10 h30 v10", "M-30,-28 l-18,-30"), C.navy, 5) + "</g>" +
+          crayon(CARRIER, C.navy, 7) + crayon(BOMB, C.navy, 7) + crayon(XMARK[0], C.war, 12) + crayon(XMARK[1], C.war, 12);
+      }
+      // END PLATE padded-cell ═════════════════════════════════════════════════════════════════════════════════════
+
+      // ════════════════════════════════════════════════════════════════════════════════════════════════════════════
+      // WHEEL war-wheel: shared by war-supply-chain and chain-goes-dark. Copy this whole block (down to "END WHEEL")
+      // and change both files together. The patient's crayon Ferris wheel on the blank wall, in plate units.
+      // Every state is a function of T, war-supply-chain's local time, so chain-goes-dark draws T = war's duration
+      // plus its own time, and holds T still from "NOT".
+      //   hub (2400, -580), rim 440: a crayon circle with 44 paper dolls standing on it (heads out), 8 spokes
+      //   8 gondolas hang from the rim at 0, 45 ... 315 degrees (clockwise from the right): 1 the miner, 2 the
+      //     furnace, 3 the factory, 4 the salute, 5 soup and uniforms, 6 the village, 7 the poster, 8 the ballot box.
+      //     A gondola is drawn in its own units (floor y 0, x -150..150, roof -232, hanger (0, -262)) at GS 0.5: its
+      //     box runs from 17 to 133 below its rim point, 160 wide. Crayon until its cue, then its colors wipe in.
+      //   the crayon calendar at (3000, -760); war bills run on the inside of the rim; the 1ST rosette on the hub
+      // ════════════════════════════════════════════════════════════════════════════════════════════════════════════
+      var WID = "war-supply-chain", HUB = [2400, -580], RIM = 440, GS = 0.5, NDOLL = 44, CAL = [3000, -760], CR = C.navy;
+      var GA = [0, 45, 90, 135, 180, 225, 270, 315];
+      var wc = function (w, n) { return KIT.cue(WID, w, n); };
+      var WT = {
+        millions: wc("millions"), together: wc("together"), mine: wc("mine"), refine: wc("refine"), alloys: wc("alloys,"),
+        factories: wc("factories"), weapons: wc("weapons,"), train: wc("train"), operate: wc("operate"), feed: wc("feed"),
+        clothe: wc("clothe"), ships: wc("ships"), planes: wc("planes"), trucks: wc("trucks"), areEnd: KIT.cueEnd(WID, "are,"),
+        boom: KIT.after(WID, "are,"), convince: wc("convince"), deserve: wc("deserve"), vote: wc("vote"), pay: wc("pay"),
+        annually: wc("annually,"), forever: wc("forever."), largest: wc("largest"), rosette: KIT.after(WID, "largest"),
+        D: KIT.scene(WID).duration,
+      };
+      var clamp01 = function (u) { return Math.max(0, Math.min(1, u)); };
+      var sm = function (u) { return KIT.smooth(u); };
+      var rad = function (d) { return (d * Math.PI) / 180; };
+      function rimPt(deg, r) { r = r === undefined ? RIM : r; return [HUB[0] + r * Math.cos(rad(deg)), HUB[1] + r * Math.sin(rad(deg))]; }
+      // A colored drawing as the patient's crayon line drawing: no fills, every line navy crayon.
+      function crayonize(m) {
+        return '<g opacity="0.82" stroke-linecap="round">' + m.replace(/fill="(?!none)[^"]*"/g, 'fill="none"').replace(/stroke="(?!none)[^"]*"/g, 'stroke="' + CR + '"') + "</g>";
+      }
+      var sw = function (e, on) { e.setAttribute("opacity", on ? 1 : 0); };
+      var tr = function (e, x, y, r, s) { e.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ")" + (r ? " rotate(" + f(r) + ")" : "") + (s !== undefined && s !== 1 ? " scale(" + s + ")" : "")); };
+      // a person in a gondola: feet on local y fy (default the floor), x, scale k
+      function gm(o, x, k, cls, hidden, fy) {
+        return '<g class="' + (cls || "") + '"' + (hidden ? ' opacity="0"' : "") + ' transform="translate(' + f(x) + "," + f((fy || 0) - 100 * k) + ") scale(" + k + ')">' + KIT.person(o) + "</g>";
+      }
+      var grp = function (cls, inner, hidden) { return '<g class="' + cls + '"' + (hidden ? ' opacity="0"' : "") + ">" + inner + "</g>"; };
+      // a small missile pointing right, 52 long, centered
+      function missileSm() {
+        return '<path d="M-22,-6 H10 L22,0 L10,6 H-22 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+          '<path d="M10,-6 L22,0 L10,6 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2"/>' +
+          '<path d="M-20,-6 L-30,-14 L-27,-6 Z M-20,6 L-30,14 L-27,6 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="2" stroke-linejoin="round"/>' +
+          '<circle cx="2" cy="-1.5" r="1.4" fill="' + ink + '"/><path d="M-3,2 q3,2.5 6,0" fill="none" stroke="' + ink + '" stroke-width="1.2"/>';
+      }
+      function cabin() {
+        return '<path d="M-150,-216 H150 L140,0 H-140 Z" fill="#FBF0D2" stroke="' + C.rust + '" stroke-width="7" stroke-linejoin="round"/>' +
+          '<path d="M0,-262 V-228" stroke="' + ink + '" stroke-width="7"/><circle cx="0" cy="-262" r="8" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<rect x="-162" y="-234" width="324" height="20" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="4"/>';
+      }
+      function cabinFloor() { return '<rect x="-146" y="-6" width="292" height="14" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>'; }
+      var Q = function (g, s) { return g.querySelector("." + s); };
+      var QA = function (g, s) { return Array.prototype.slice.call(g.querySelectorAll("." + s)); };
+
+      // ── Gondola 1: the miner. A pickaxe overhead (up) or struck into the ore (down); ore pops out on each strike.
+      var MINER = { tone: 3, outfit: "overalls", plain: true, hat: "hard", look: "right", mood: "cross" };
+      function pickaxe(arms) {
+        var R = KIT.rig(copy(MINER, { arms: arms })), h = [(R.hand[0][0] + R.hand[1][0]) / 2, (R.hand[0][1] + R.hand[1][1]) / 2];
+        var s = [(R.shoulder[0][0] + R.shoulder[1][0]) / 2, (R.shoulder[0][1] + R.shoulder[1][1]) / 2], dx = h[0] - s[0], dy = h[1] - s[1], L = Math.hypot(dx, dy), ux = dx / L, uy = dy / L;
+        var e = [h[0] + ux * 44, h[1] + uy * 44], nx = -uy, ny = ux, hd = "M" + f(h[0] - ux * 8) + "," + f(h[1] - uy * 8) + " L" + f(e[0]) + "," + f(e[1]);
+        var a = [e[0] + nx * 26 - ux * 7, e[1] + ny * 26 - uy * 7], b = [e[0] - nx * 26 - ux * 7, e[1] - ny * 26 - uy * 7], m = [e[0] + ux * 9, e[1] + uy * 9];
+        var head = "M" + f(a[0]) + "," + f(a[1]) + " Q" + f(m[0]) + "," + f(m[1]) + " " + f(b[0]) + "," + f(b[1]);
+        return '<path d="' + hd + '" stroke="' + ink + '" stroke-width="7" stroke-linecap="round"/><path d="' + hd + '" stroke="' + C.tan + '" stroke-width="3.4" stroke-linecap="round"/>' +
+          '<path d="' + head + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/><path d="' + head + '" fill="none" stroke="#A9A69C" stroke-width="5" stroke-linecap="round"/>';
+      }
+      var PICK_UP = [[170, 205], [178, 210]], PICK_DN = [[64, 92], [56, 88]];
+      var G1 = {
+        svg: function () {
+          var mk = function (arms, cls, hid) { return '<g class="' + cls + '"' + (hid ? ' opacity="0"' : "") + ' transform="translate(-52,' + f(-100 * 0.95) + ') scale(0.95)">' + KIT.person(copy(MINER, { arms: arms })) + pickaxe(arms) + "</g>"; };
+          var rock = '<g class="g1-rock"><path d="M28,0 L40,-58 L76,-96 L118,-84 L144,-34 L144,0 Z" fill="#8E8B84" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+            '<path d="M76,-96 L118,-84 L144,-34 L110,-40 Z" fill="#76736D"/>' +
+            [[60, -52], [96, -66], [118, -24], [76, -20]].map(function (p) { return '<path d="M' + p[0] + "," + (p[1] - 7) + " l7,7 l-7,7 l-7,-7 Z" + '" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2"/>'; }).join("") + "</g>";
+          var ore = [0, 1, 2, 3].map(function (i) { return '<g class="g1-ore" opacity="0"><path d="M0,-7 L7,0 L0,7 L-7,0 Z" fill="' + (i % 2 ? C.yellow : C.orange) + '" stroke="' + ink + '" stroke-width="2"/></g>'; }).join("");
+          return cabin() + rock + mk(PICK_DN, "g1-dn") + mk(PICK_UP, "g1-up", true) + ore + cabinFloor();
+        },
+        upd: function (g, T) {
+          var up = Q(g, "g1-up"), dn = Q(g, "g1-dn"), rock = Q(g, "g1-rock"), ores = QA(g, "g1-ore");
+          var s0 = WT.mine + 0.3, p1 = 0.55, FAST = WT.pay + 0.4 + 0.75, last = null;
+          var tf = s0 + Math.ceil((FAST - s0) / p1) * p1;
+          if (T >= s0) last = T < tf ? { t: s0 + Math.floor((T - s0) / p1) * p1, p: p1 } : { t: tf + Math.floor((T - tf) / 0.28) * 0.28, p: 0.28 };
+          var isUp = last ? T - last.t > 0.45 * last.p : T >= WT.mine + 0.03;
+          sw(up, isUp); sw(dn, !isUp);
+          var tau = last ? T - last.t : 9;
+          rock.setAttribute("transform", tau < 0.12 ? "translate(" + f(3 * Math.sin(tau * 120)) + ",0)" : "");
+          ores.forEach(function (o, i) {
+            var on = tau < 0.5;
+            sw(o, on);
+            if (on) tr(o, 52 + i * 14 + tau * (40 + i * 30), -44 - 230 * tau + 520 * tau * tau, tau * 600 * (i % 2 ? 1 : -1));
+          });
+        },
+      };
+
+      // ── Gondola 2: the furnace. The crucible tips and pours glowing alloy into three ingot molds.
+      var MOLDS = [42, 82, 122], CRU = [-14, -150];
+      var G2 = {
+        svg: function () {
+          var furn = '<path d="M-148,0 V-150 L-130,-176 H-72 L-54,-150 V0 Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+            '<rect x="-122" y="-212" width="28" height="40" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/>' +
+            '<path d="M-148,-120 H-54 M-148,-90 H-54 M-148,-150 H-54 M-120,-150 V-120 M-84,-120 V-90" stroke="#6E3922" stroke-width="2.4" fill="none"/>' +
+            '<path d="M-126,0 V-58 Q-101,-88 -76,-58 V0 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4"/>' +
+            '<g class="g2-glow"><path d="M-118,0 V-54 Q-101,-76 -84,-54 V0 Z" fill="' + C.orange + '"/><path d="M-110,0 V-44 Q-101,-58 -92,-44 V0 Z" fill="' + C.yellow + '"/></g>';
+          var chain = '<path d="M' + CRU[0] + ",-214 V" + (CRU[1] - 4) + '" stroke="' + ink + '" stroke-width="3" stroke-dasharray="6 4"/>';
+          var cru = '<g class="g2-cru"><path d="M' + (CRU[0] - 30) + "," + CRU[1] + " H" + (CRU[0] + 30) + " L" + (CRU[0] + 22) + "," + (CRU[1] + 46) + " H" + (CRU[0] - 22) + ' Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+            '<ellipse cx="' + CRU[0] + '" cy="' + (CRU[1] + 4) + '" rx="26" ry="6" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2"/></g>';
+          var stream = '<g class="g2-stream" opacity="0"><path class="g2-s1" d="" fill="none" stroke="' + C.orange + '" stroke-width="9" stroke-linecap="round"/><path class="g2-s2" d="" fill="none" stroke="' + C.yellow + '" stroke-width="3.5" stroke-linecap="round"/></g>';
+          var molds = MOLDS.map(function (x, i) {
+            return '<path d="M' + (x - 18) + ",-22 V0 H" + (x + 18) + " V-22" + '" fill="none" stroke="' + ink + '" stroke-width="4"/><rect x="' + (x - 18) + '" y="-4" width="36" height="4" fill="' + C.slate + '"/>' +
+              '<rect class="g2-ing" data-i="' + i + '" x="' + (x - 14) + '" y="-4" width="28" height="0" fill="' + C.orange + '"/>';
+          }).join("");
+          var sparks = [0, 1, 2].map(function () { return '<circle class="g2-spark" r="3" fill="' + C.yellow + '" opacity="0"/>'; }).join("");
+          return cabin() + furn + chain + molds + cru + stream + sparks + cabinFloor();
+        },
+        upd: function (g, T) {
+          var tip = 42 * sm((T - WT.refine) / 0.4), cru = Q(g, "g2-cru");
+          cru.setAttribute("transform", "rotate(" + f(tip) + " " + CRU[0] + " " + CRU[1] + ")");
+          var glow = Q(g, "g2-glow");
+          glow.setAttribute("opacity", T >= WT.refine ? (0.78 + 0.22 * Math.sin(T * 23)).toFixed(2) : 1);
+          var tp = WT.alloys - 0.04, which = Math.min(2, Math.floor(Math.max(0, T - tp) / 0.42)), pour = T >= tp;
+          sw(Q(g, "g2-stream"), pour);
+          var lip = [CRU[0] + 30 * Math.cos(rad(tip)), CRU[1] + 30 * Math.sin(rad(tip))];
+          if (pour) {
+            var mx = MOLDS[which] + (T - tp < 1.26 ? 0 : 3 * Math.sin(T * 9)), d = "M" + f(lip[0]) + "," + f(lip[1]) + " Q" + f(mx - 6) + "," + f(lip[1] - 4) + " " + f(mx) + ",-6";
+            Q(g, "g2-s1").setAttribute("d", d); Q(g, "g2-s2").setAttribute("d", d);
+          }
+          QA(g, "g2-ing").forEach(function (r, i) {
+            var u = clamp01((T - tp - i * 0.42) / 0.42), cool = clamp01((T - tp - i * 0.42 - 0.6) / 1.4);
+            r.setAttribute("height", f(18 * u)); r.setAttribute("y", f(-4 - 18 * u));
+            r.setAttribute("fill", KIT.mix(C.orange, "#B7B09C", i === 2 && T - tp > 1.26 ? 0 : cool));
+          });
+          QA(g, "g2-spark").forEach(function (s, i) {
+            var ph = ((T * 3.1 + i * 0.33) % 1), on = pour && T > tp;
+            sw(s, on);
+            if (on) { s.setAttribute("cx", f(MOLDS[which] + (i - 1) * 12 * ph * 2)); s.setAttribute("cy", f(-14 - 34 * ph + 40 * ph * ph)); }
+          });
+        },
+      };
+
+      // ── Gondola 3: the missile-chimney factory; on "weapons," its door rolls up and missiles ride the conveyor
+      // into the Weapons Maker's arms.
+      var FAC = [-74, 0.4], CONV = [38, 0.4, 270, 66], WMX = 116;
+      var G3 = {
+        svg: function () {
+          var fac = '<g transform="translate(' + FAC[0] + ",0) scale(" + FAC[1] + ')">' + KIT.props.factory({ label: "", smoke: true }) + "</g>";
+          var conv = '<g transform="translate(' + CONV[0] + ",0) scale(" + CONV[1] + ')">' + KIT.props.conveyor({ w: CONV[2], h: CONV[3] }) + "</g>";
+          var ms = [0, 1, 2, 3].map(function () { return '<g class="g3-m" opacity="0"><g transform="scale(0.8)">' + missileSm() + "</g></g>"; }).join("");
+          var wm = '<g transform="translate(' + WMX + ',0)"><g class="g3-wm"><g transform="translate(0,' + f(-100 * 0.64) + ') scale(0.64)">' + KIT.cast("weaponsMaker", { look: "left" }) + "</g></g></g>";
+          return cabin() + fac + conv + ms + wm + cabinFloor();
+        },
+        upd: function (g, T) {
+          var alive = T >= WT.factories;
+          QA(g, "factory-chimney").forEach(function (c, i) {
+            var a = alive ? 4 * Math.sin(T * 6 + i * 2) : 0;
+            c.setAttribute("transform", "rotate(" + f(a) + " " + c.dataset.ox + " " + c.dataset.oy + ")");
+          });
+          QA(g, "factory-puff").forEach(function (p, i) {
+            var s = alive ? 1 + 0.16 * Math.sin(T * 5 + i) : 1;
+            p.setAttribute("transform", "translate(" + p.dataset.ox + "," + p.dataset.oy + ") scale(" + s.toFixed(3) + ") translate(" + -p.dataset.ox + "," + -p.dataset.oy + ")");
+          });
+          var door = Q(g, "factory-door"), du = Math.max(0.002, 1 - sm((T - WT.weapons) / 0.15));
+          door.setAttribute("transform", "translate(0,-172) scale(1," + du.toFixed(3) + ") translate(0,172)");
+          var belt = Q(g, "conveyor-belt");
+          belt.setAttribute("transform", T > WT.weapons ? "translate(" + f(((T - WT.weapons) * 60) % 22) + ",0)" : "");
+          var x0 = FAC[0], x1 = CONV[0] + (CONV[2] / 2) * CONV[1] - 4, yb = -CONV[3] * CONV[1] - 4, rockT = -1;
+          QA(g, "g3-m").forEach(function (m, i) {
+            // missile n = i + 4k leaves the door at WT.weapons + 0.62 n and rides for 1.1 s
+            var n = Math.floor(Math.max(0, T - WT.weapons - i * 0.62) / 2.48) * 4 + i, t0 = WT.weapons + 0.08 + n * 0.62, u = (T - t0) / 1.1;
+            var on = T >= t0 && u < 1.18;
+            sw(m, on);
+            if (!on) return;
+            if (u < 1) tr(m, x0 + (x1 - x0) * u, yb, 0);
+            else { var v = (u - 1) / 0.18; tr(m, x1 + 14 * v, yb - 26 * Math.sin(Math.PI * v * 0.8), -40 * v, 1 - 0.6 * v); }
+            if (u > 1) rockT = Math.max(rockT, t0 + 1.1);
+          });
+          var lastIn = T >= WT.weapons + 1.18 ? WT.weapons + 0.08 + 1.1 + Math.floor((T - WT.weapons - 1.18) / 0.62) * 0.62 : -9, r = T - lastIn;
+          Q(g, "g3-wm").setAttribute("transform", r >= 0 && r < 0.45 ? "rotate(" + f(-6 * Math.sin((r / 0.45) * Math.PI * 2)) + " 0 0)" : "");
+        },
+      };
+
+      // ── Gondola 4: the salute. Four recruits at attention snap a salute; one uses the wrong hand, glances at his
+      // neighbor, and fixes it by saluting with both.
+      var RECRUITS = [
+        { tone: 0, outfit: "shirt", color: 1 }, { tone: 2, outfit: "dress", hair: 1, color: 0 }, { tone: 1, outfit: "overalls", color: 2 }, { tone: 3, outfit: "shirt", color: 3 },
+      ], RX = [-108, -36, 36, 108], ATT = [[8, 2], [-8, -2]], SAL_R = [155, 242], SAL_L = [-155, -242];
+      var G4 = {
+        svg: function () {
+          var out = cabin();
+          RECRUITS.forEach(function (r, i) {
+            var o = copy(r, { plain: true, mood: "flat" }), k = 0.78;
+            out += '<g class="g4-p" data-i="' + i + '">' +
+              gm(copy(o, { arms: ATT }), RX[i], k, "g4-att") +
+              gm(copy(o, { arms: i === 2 ? [SAL_L, ATT[1]] : [ATT[0], SAL_R] }), RX[i], k, "g4-sal", true) +
+              (i === 2 ? gm(copy(o, { arms: [SAL_L, ATT[1]], look: "left" }), RX[i], k, "g4-glance", true) + gm(copy(o, { arms: [SAL_L, SAL_R], mood: "smug" }), RX[i], k, "g4-both", true) : "") + "</g>";
+          });
+          return out + cabinFloor();
+        },
+        upd: function (g, T) {
+          var tS = WT.train + 0.35, tG = WT.operate, tB = WT.operate + 0.55;
+          QA(g, "g4-p").forEach(function (p, i) {
+            var st = T < tS ? "att" : i !== 2 ? "sal" : T < tG ? "sal" : T < tB ? "glance" : "both";
+            ["att", "sal", "glance", "both"].forEach(function (s) { var e = Q(p, "g4-" + s); if (e) sw(e, s === st); });
+            var b = T >= tS && T < tS + 0.12 ? -6 * Math.sin(((T - tS) / 0.12) * Math.PI) : 0;
+            p.setAttribute("transform", "translate(0," + f(b) + ")");
+          });
+        },
+      };
+
+      // ── Gondola 5: the soup pot flings soup into two bowls; on "clothe" uniforms drop onto the two humans.
+      var EATERS = [{ tone: 1, outfit: "shirt", color: 0 }, { tone: 3, outfit: "dress", hair: 1, color: 2 }], EX = [22, 98], EK = 0.72;
+      var EARMS = [[-62, -94], [-52, -90]], OLIVE = "#5C6A3E";
+      function capOn(m) {
+        return m.replace("<!--face-end-->", '<path d="M-16,-20 L-14,-30 L14,-27 L17,-19 Z" fill="' + OLIVE + '" stroke="' + ink + '" stroke-width="1.8" stroke-linejoin="miter"/><!--face-end-->');
+      }
+      function bowlAt(o, x) {
+        var R = KIT.rig(o), h = [(R.hand[0][0] + R.hand[1][0]) / 2, (R.hand[0][1] + R.hand[1][1]) / 2];
+        return [x + h[0] * EK, -100 * EK + h[1] * EK];
+      }
+      var BOWLS = EATERS.map(function (e, i) { return bowlAt(copy(e, { plain: true, look: "left", mood: "eager", arms: EARMS }), EX[i]); });
+      var G5 = {
+        svg: function () {
+          var pot = '<path d="M-136,0 L-128,-18 M-62,0 L-70,-18" stroke="' + ink + '" stroke-width="5"/>' +
+            '<g class="g5-fire"><path d="M-112,-12 q6,-18 12,0 q6,-22 12,0 q6,-16 12,0 Z" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="2"/></g>' +
+            '<path d="M-140,-96 H-58 L-66,-18 H-132 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="round"/>' +
+            '<ellipse cx="-99" cy="-96" rx="41" ry="8" fill="#C9893F" stroke="' + ink + '" stroke-width="3"/>' +
+            '<path d="M-140,-96 h-10 M-58,-96 h10" stroke="' + ink + '" stroke-width="6" stroke-linecap="round"/>' +
+            '<g class="g5-steam">' + [-120, -100, -80].map(function (x) { return '<path d="M' + x + ',-110 q-7,-12 0,-24 q7,-12 0,-24" fill="none" stroke="' + C.cream + '" stroke-width="4" stroke-linecap="round" stroke-opacity="0.9"/>'; }).join("") + "</g>";
+          // the ladle, pivoting on the pot's right rim (-62, -100)
+          var ladle = '<g class="g5-ladle"><path d="M-62,-100 L-104,-82" stroke="' + ink + '" stroke-width="7" stroke-linecap="round"/><path d="M-62,-100 L-104,-82" stroke="#A9A69C" stroke-width="3" stroke-linecap="round"/>' +
+            '<path d="M-118,-86 a13,11 0 0,0 26,0 Z" fill="#A9A69C" stroke="' + ink + '" stroke-width="3"/><path d="M-62,-100 L-44,-118" stroke="' + ink + '" stroke-width="7" stroke-linecap="round"/><path d="M-62,-100 L-44,-118" stroke="#A9A69C" stroke-width="3" stroke-linecap="round"/></g>';
+          var blob = '<g class="g5-blob" opacity="0"><ellipse rx="9" ry="6" fill="#C9893F" stroke="' + ink + '" stroke-width="2"/></g>';
+          var out = cabin() + pot + ladle;
+          EATERS.forEach(function (e, i) {
+            var civ = copy(e, { plain: true, look: "left", mood: "eager", arms: EARMS }), uni = copy(civ, { outfit: "suit", colorHex: OLIVE, mood: "flat" });
+            var b = bowlAt(civ, EX[i]), bowl = '<g transform="translate(' + f(b[0]) + "," + f(b[1] + 2) + ')"><ellipse class="g5-soup" cx="0" cy="-5" rx="11" ry="3" fill="#C9893F" opacity="0"/><path d="M-13,-5 Q-12,6 0,6 Q12,6 13,-5 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4"/></g>';
+            out += '<g class="g5-e" data-i="' + i + '">' + gm(civ, EX[i], EK, "g5-civ") +
+              '<g class="g5-uni" opacity="0"><g transform="translate(' + EX[i] + "," + f(-100 * EK) + ") scale(" + EK + ')">' + capOn(KIT.person(uni)) + "</g></g>" + bowl + "</g>";
+          });
+          return out + blob + cabinFloor();
+        },
+        upd: function (g, T) {
+          var alive = T >= WT.feed;
+          Q(g, "g5-steam").setAttribute("transform", alive ? "translate(0," + f(-((T * 14) % 8)) + ")" : "");
+          // ladle cycles every 0.9 s from "feed": dip, fling (rotate about the rim), back
+          var ph = alive ? ((T - WT.feed) % 0.9) / 0.9 : 0, cyc = alive ? Math.floor((T - WT.feed) / 0.9) : -1;
+          var ang = ph < 0.35 ? 120 * sm(ph / 0.35) : 120 * (1 - sm((ph - 0.35) / 0.4));
+          Q(g, "g5-ladle").setAttribute("transform", "rotate(" + f(ang) + " -62 -100)");
+          var blob = Q(g, "g5-blob"), tgt = cyc % 2, fly = alive && ph > 0.3 && ph < 0.62;
+          sw(blob, fly);
+          var eaters = QA(g, "g5-e");
+          if (fly) {
+            var bx = BOWLS[tgt], u = (ph - 0.3) / 0.32;
+            tr(blob, -70 + (+bx[0] + 70) * u, -150 + (+bx[1] - 8 + 150) * u - 70 * Math.sin(Math.PI * u), u * 300);
+          }
+          eaters.forEach(function (e, i) {
+            var served = alive && (T - WT.feed) > 0.9 * i + 0.56;
+            sw(Q(e, "g5-soup"), served);
+            var t0 = WT.clothe + 0.14 * i, u = clamp01((T - t0) / 0.24), uni = Q(e, "g5-uni");
+            sw(uni, T >= t0); sw(Q(e, "g5-civ"), u < 1);
+            uni.setAttribute("transform", "translate(0," + f(-240 * (1 - u) * (1 - u)) + ")");
+          });
+        },
+      };
+
+      // ── Gondola 6: a ship, a plane and a truck full of missiles head for a village hanging a WELCOME banner from
+      // two ladders; after "are," the missiles land: a flash, a mushroom cloud, the villagers charred on their
+      // ladders, each holding one end of a banner whose middle has burned away.
+      var LAD = [36, 134], VK = 0.5, VFY = -58, VILL = [{ tone: 0, outfit: "dress", hair: 1, color: 1, look: "right", arms: [[30, 12], [150, 166]] }, { tone: 2, outfit: "shirt", color: 3, look: "left", arms: [[-150, -166], [-30, -12]] }];
+      var vHand = VILL.map(function (o, i) { var R = KIT.rig(copy(o, { plain: true })), h = R.hand[i === 0 ? 1 : 0]; return [LAD[i] + h[0] * VK, VFY - 100 * VK + h[1] * VK]; });
+      var BAN = { x0: vHand[0][0], x1: vHand[1][0], y: (vHand[0][1] + vHand[1][1]) / 2 };
+      var SHIP = [-118, -96], TRUCK = [-40, -12], PLANE = [-124, -46, -170];
+      var MSLOT = [[SHIP, -18, -24], [SHIP, 14, -24], [TRUCK, -14, -30], [TRUCK, 6, -36], [PLANE, -8, 12], [PLANE, 16, 12]];
+      function ladder() {
+        return '<path d="M-10,0 V-124 M10,0 V-124" stroke="' + ink + '" stroke-width="6"/><path d="M-10,0 V-124 M10,0 V-124" stroke="' + C.tan + '" stroke-width="3"/>' +
+          [-16, -38, -60, -82, -104].map(function (y) { return '<path d="M-10,' + y + ' H10" stroke="' + ink + '" stroke-width="3.4"/>'; }).join("");
+      }
+      function banner(burnt) {
+        var w = BAN.x1 - BAN.x0, y = BAN.y - 2, h = 26;
+        if (!burnt) {
+          var size = KIT.fitText("WELCOME", 17, w - 16, "Oswald", 600);
+          return '<path d="M' + f(BAN.x0) + "," + f(y - h / 2) + " Q" + f(BAN.x0 + w / 2) + "," + f(y - h / 2 + 7) + " " + f(BAN.x1) + "," + f(y - h / 2) + " V" + f(y + h / 2) + " Q" + f(BAN.x0 + w / 2) + "," + f(y + h / 2 + 7) + " " + f(BAN.x0) + "," + f(y + h / 2) + ' Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.6"/>' +
+            '<text x="' + f(BAN.x0 + w / 2) + '" y="' + f(y + 4 + size * 0.36) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + f(size) + '" fill="' + C.war + '">WELCOME</text>';
         }
-      });
+        var stub = function (xa, xb, dir) {
+          var xe = xb, d = "M" + f(xa) + "," + f(y - h / 2) + " L" + f(xe) + "," + f(y - h / 2 + 2) + " l" + f(dir * 5) + ",5 l" + f(-dir * 6) + ",5 l" + f(dir * 5) + ",6 l" + f(-dir * 4) + ",6 L" + f(xa) + "," + f(y + h / 2) + " Z";
+          return '<path d="' + d + '" fill="#3A2F27" stroke="' + ink + '" stroke-width="2.4"/><path d="M' + f(xe) + "," + f(y - h / 2 + 2) + " l" + f(dir * 5) + ",5 l" + f(-dir * 6) + ",5 l" + f(dir * 5) + ",6" + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>';
+        };
+        return stub(BAN.x0, BAN.x0 + w * 0.26, 1) + stub(BAN.x1, BAN.x1 - w * 0.26, -1);
+      }
+      var G6 = {
+        svg: function () {
+          var water = '<rect x="-150" y="-16" width="92" height="16" fill="' + C.peri + '"/><path d="M-148,-10 q6,-4 12,0 t12,0 t12,0 t12,0 t12,0 t12,0 t12,0" fill="none" stroke="' + C.cream + '" stroke-width="2"/>';
+          var road = '<rect x="-58" y="-5" width="78" height="5" fill="' + C.slate + '"/>';
+          var ship = '<g class="g6-ship"><path d="M-40,-16 H42 L30,0 H-30 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3" stroke-linejoin="round"/><rect x="-6" y="-32" width="16" height="16" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="2.4"/><path d="M2,-32 V-44" stroke="' + ink + '" stroke-width="3"/></g>';
+          var truck = '<g class="g6-truck"><rect x="-30" y="-24" width="40" height="12" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="2.6"/><path d="M10,-12 V-32 H24 L30,-22 V-12 Z" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/><circle cx="-18" cy="-8" r="6" fill="' + ink + '"/><circle cx="20" cy="-8" r="6" fill="' + ink + '"/></g>';
+          var plane = '<g class="g6-plane"><path d="M-36,0 Q-30,-9 -10,-9 H24 Q40,-6 42,0 Q38,7 24,7 H-28 Z" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="2.6"/><path d="M-6,0 L-20,22 H-8 L12,0 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/><path d="M-30,-4 L-40,-20 H-30 L-20,-6 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.4" stroke-linejoin="round"/><circle cx="30" cy="-2" r="3" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="1.4"/></g>';
+          var mis = MSLOT.map(function () { return '<g class="g6-m"><g transform="scale(0.42)">' + missileSm() + "</g></g>"; }).join("");
+          var house = '<g transform="translate(86,0) scale(0.2)">' + KIT.props.house({ variant: 1, smoke: false }) + "</g>";
+          var lads = LAD.map(function (x) { return '<g transform="translate(' + x + ',0)">' + ladder() + "</g>"; }).join("");
+          var live = house + lads + VILL.map(function (o, i) { return '<g class="g6-v" data-i="' + i + '">' + gm(copy(o, { plain: true, mood: "smile" }), LAD[i], VK, "", false, VFY) + "</g>"; }).join("") + '<g class="g6-ban">' + banner(false) + "</g>";
+          var burnt = KIT.burn(house + lads) + VILL.map(function (o, i) { return gm(copy(o, { plain: true, charred: true }), LAD[i], VK, "g6-cv", false, VFY); }).join("") + banner(true);
+          var nuke = '<g class="g6-nuke" opacity="0"><g class="g6-nuke-s">' + KIT.nuke() + "</g></g>";
+          var flash = '<rect class="g6-flash" x="-160" y="-236" width="320" height="246" fill="#FFFBEF" opacity="0"/>';
+          return cabin() + water + road + grp("g6-live", live) + grp("g6-burnt", burnt, true) + ship + truck + plane + mis + nuke + flash + cabinFloor();
+        },
+        upd: function (g, T) {
+          var go = function (t0, a) { return a[0] + (a[1] - a[0]) * sm((T - t0) / Math.max(0.1, WT.areEnd - t0)); };
+          var pos = { ship: [go(WT.ships, SHIP), 0], truck: [go(WT.trucks, TRUCK), 0], plane: [go(WT.planes, PLANE), PLANE[2] + (T > WT.planes ? 3 * Math.sin(T * 7) : 0)] };
+          tr(Q(g, "g6-ship"), pos.ship[0], pos.ship[1] + (T > WT.ships ? 1.5 * Math.sin(T * 5) : 0), T > WT.ships ? 2 * Math.sin(T * 4) : 0);
+          tr(Q(g, "g6-truck"), pos.truck[0], pos.truck[1]);
+          tr(Q(g, "g6-plane"), pos.plane[0], pos.plane[1]);
+          var veh = [pos.ship, pos.ship, pos.truck, pos.truck, pos.plane, pos.plane], tgt = [86, -26];
+          QA(g, "g6-m").forEach(function (m, i) {
+            var s = MSLOT[i], home = [veh[i][0] + s[1], veh[i][1] + s[2]], l0 = WT.areEnd + i * 0.03, u = (T - l0) / (WT.boom - l0);
+            if (u < 0) { sw(m, 1); tr(m, home[0], home[1], 0); return; }
+            if (u >= 1) { sw(m, 0); return; }
+            sw(m, 1);
+            var x = home[0] + (tgt[0] + (i - 2.5) * 6 - home[0]) * u, y = home[1] + (tgt[1] - home[1]) * u - 70 * Math.sin(Math.PI * u);
+            tr(m, x, y, (Math.atan2((tgt[1] - home[1]) - 70 * Math.PI * Math.cos(Math.PI * u), tgt[0] - home[0]) * 180) / Math.PI);
+          });
+          var burnt = T >= WT.boom + 0.06;
+          sw(Q(g, "g6-live"), !burnt); sw(Q(g, "g6-burnt"), burnt);
+          QA(g, "g6-v").forEach(function (v, i) { v.setAttribute("transform", T > WT.ships ? "translate(0," + f(1.6 * Math.sin(T * 6 + i * 3)) + ")" : ""); });
+          var fl = T >= WT.boom ? Math.max(0, 1 - (T - WT.boom) / 0.4) : 0;
+          Q(g, "g6-flash").setAttribute("opacity", fl.toFixed(3));
+          var nk = Q(g, "g6-nuke"), nu = (T - WT.boom) / 0.5, fade = clamp01((T - WT.boom - 0.9) / 0.7);
+          nk.setAttribute("opacity", T >= WT.boom && fade < 1 ? (1 - fade).toFixed(3) : 0);
+          tr(nk, 86, 0, 0, (0.27 * (0.2 + 0.8 * sm(nu)) * (1 + 0.08 * fade)).toFixed(4));
+          QA(g, "smoke").forEach(function (s, i) { s.setAttribute("transform", "translate(0," + f(-((T * 10 + i * 3) % 6)) + ")"); });
+          QA(g, "char-eyes").forEach(function (e, i) {
+            var b = (T + i * 0.4) % 1.7 < 0.1;
+            e.setAttribute("transform", b ? "translate(0,-4) scale(1,0.15) translate(0,4)" : "");
+          });
+        },
+      };
 
-      // 2: "alloys," the crucible tips and the alloy pours (the sizzle).
-      var tAl = cue("alloys,");
-      tl.fromTo(g("b1-cru"), { rotation: 0 }, { rotation: 40, duration: 0.2, ease: "power2.out", immediateRender: false }, tAl - 0.15);
-      show(g("b1-pour"), tAl);
-      // 5: "clothe" the uniforms drop onto the queue.
-      var tCl = cue("clothe");
-      QUEUE.forEach(function (qq, i) { tl.fromTo(g("b4-drop-" + i), { opacity: 1, y: -10 }, { opacity: 1, y: 70, duration: 0.2, ease: "power2.in", immediateRender: false }, tCl + i * 0.05); hide(g("b4-drop-" + i), tCl + 0.22 + i * 0.05); });
-      hide(g("b4-plain"), tCl + 0.22); show(g("b4-uni"), tCl + 0.22);
-      // 6: "ships", "planes", "trucks" roll in with their missiles; "are," the missiles go; a beat after, the boom.
-      var VW = ["ships", "planes", "trucks"], tAre = cue("are,"), tBoom = KIT.after(ID, "are,");
-      VEH.forEach(function (v, i) {
-        var t0 = cue(VW[i]), arrive = tAre - 0.1;
-        tl.fromTo([g("b5-veh-" + i), g("b5-mis-" + i)], { x: -140 }, { x: v[2], duration: arrive - t0, ease: "power1.out", immediateRender: false }, t0);
-        tl.fromTo(g("b5-veh-" + i), { y: 0 }, { y: i === 1 ? -3 : -1.5, duration: 0.15, yoyo: true, repeat: Math.floor((arrive - t0) / 0.15) - 1, ease: "sine.inOut", immediateRender: false }, t0);
-        var mx0 = v[2] + v[3][0], my0 = v[1] + v[3][1];
-        tl.to(g("b5-mis-" + i), { x: 58 - v[3][0], y: 116 - my0, duration: tBoom - tAre - 0.05, ease: "power1.in" }, tAre + i * 0.03);
-        hide(g("b5-mis-" + i), tBoom);
-      });
-      KIT.boom(tl, el("b5-nuke"), tBoom, { flash: el("b5-flash"), shake: el("b5-shake") });
-      hide(g("b5-house"), tBoom + 0.04); show(g("b5-house-b"), tBoom + 0.04);
-      tl.to(g("b5-nuke"), { opacity: 0, duration: 0.6, ease: "power1.in" }, tBoom + 1.9);
-      squash(tBoom, 0.5);
-      // 8: "pay" the Politician's eyes go to dollar signs and war bills burst out of the ballot box (the cash register).
-      var tPay = cue("pay");
-      hide(g("b7-pol"), tPay); show(g("b7-pol-g"), tPay);
-      // the camera pulls back to the whole wheel as the bills run the rim back to the mine
-      cam(tPay + 0.25, 0.9, WIDE);
-      [0, 1, 2].forEach(function (i) {
-        tl.fromTo(g("b7-bill-" + i), { opacity: 1, x: 0, y: 0, rotation: 0 }, { opacity: 1, x: -20 - i * 14, y: -60 - i * 16, rotation: -40 + i * 30, duration: 0.35, ease: "power2.out", immediateRender: false }, tPay + i * 0.06);
-        hide(g("b7-bill-" + i), tPay + 0.4 + i * 0.06);
-      });
-      // "forever." he draws the last arrow, closing the loop (the wheel starts turning on its own, from wheelAt).
-      var tFor = cue("forever.");
-      tl.fromTo(el("arrow-0").querySelector(".arrow-line"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power1.inOut", immediateRender: false }, tFor - 0.2);
-      tl.fromTo(el("arrow-0").querySelector(".arrow-head"), { opacity: 0 }, { opacity: 1, duration: 0.01, immediateRender: false }, tFor + 0.1);
-      var arP = rimPt(157, R - 92);
-      armTo(tFor - 0.4, 0.2, aim(arP[0], arP[1], 0)); scribble(tFor - 0.2, 0.3); armTo(tFor + 0.3, 0.3, IDLE, "power2.inOut");
+      // ── Gondola 7: the Loud Human shouts at a crowd in front of a poster of the charred villagers drawn with horns
+      // and fangs, "THEY DESERVE IT"; on "deserve" the crowd nods and cheers.
+      var CROWD = [{ tone: 0, outfit: "suit", color: 1 }, { tone: 2, outfit: "dress", hair: 1, color: 3 }, { tone: 1, outfit: "shirt", color: 2 }], CXS = [34, 78, 122], CK = 0.6;
+      function poster() {
+        var x0 = -84, x1 = 84, y0 = -220, y1 = -122, w = x1 - x0, size = KIT.fitText("THEY DESERVE IT", 19, w - 20, "Oswald", 600);
+        var devil = function (o, x) {
+          var m = KIT.person(copy(o, { plain: true, charred: true }));
+          m = m.replace('<g class="char-eyes">', '<path d="M-10,-18 L-17,-38 L-3,-22 Z M6,-21 L11,-41 L15,-19 Z" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.6" stroke-linejoin="miter"/>' +
+            '<path d="M3,10 L5,17 L7,10 Z M9,10 L11,16 L13,10 Z" fill="#FFFFFF" stroke="' + ink + '" stroke-width="1"/><g class="char-eyes">');
+          return '<g transform="translate(' + x + "," + f(y1 - 26 - 100 * 0.3) + ') scale(0.3)">' + m + "</g>";
+        };
+        return '<rect x="' + x0 + '" y="' + y0 + '" width="' + w + '" height="' + (y1 - y0) + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="4"/>' +
+          '<rect x="' + (x0 + 6) + '" y="' + (y0 + 6) + '" width="' + (w - 12) + '" height="' + (y1 - y0 - 12) + '" fill="none" stroke="' + C.war + '" stroke-width="2.4"/>' +
+          devil(VILL[0], -26) + devil(VILL[1], 30) +
+          '<text x="0" y="' + f(y1 - 11) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + f(size) + '" fill="' + C.war + '">THEY DESERVE IT</text>';
+      }
+      var G7 = {
+        svg: function () {
+          var lh = KIT.castOpts("loudHuman", { look: "right" }), RL = KIT.rig(lh), mx = -112 + 0.8 * (RL.head[0] + 22), my = -80 + 0.8 * RL.head[1];
+          var arcs = '<g class="g7-arcs" transform="translate(' + f(mx) + "," + f(my) + ')">' + [10, 20, 30].map(function (r, i) { return '<path class="g7-arc" d="M' + r * 0.5 + "," + -r + " Q" + (r + 4) + ",0 " + r * 0.5 + "," + r + '" fill="none" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"/>'; }).join("") + "</g>";
+          var out = cabin() + poster() + '<g class="g7-lh">' + gm(lh, -112, 0.8) + "</g>" + arcs;
+          CROWD.forEach(function (c, i) {
+            var o = copy(c, { plain: true, look: "left", mood: "flat" });
+            out += '<g class="g7-c" data-i="' + i + '">' + gm(o, CXS[i], CK, "g7-calm") + gm(copy(o, { mood: "eager", arms: [[-160, -178], [160, 178]] }), CXS[i], CK, "g7-cheer", true) + "</g>";
+          });
+          return out + cabinFloor();
+        },
+        upd: function (g, T) {
+          var alive = T >= WT.convince;
+          Q(g, "g7-lh").setAttribute("transform", alive ? "translate(" + f(1.2 * Math.sin(T * 60)) + ",0)" : "");
+          QA(g, "g7-arc").forEach(function (a, i) { a.setAttribute("opacity", alive ? (((T * 4 + i * 0.33) % 1) < 0.6 ? 1 : 0) : 1); });
+          var tN = WT.deserve, tC = WT.deserve + 0.3;
+          QA(g, "g7-c").forEach(function (c, i) {
+            var cheer = T >= tC + i * 0.06;
+            sw(Q(c, "g7-calm"), !cheer); sw(Q(c, "g7-cheer"), cheer);
+            var nod = T >= tN && T < tC ? 5 * Math.sin(((T - tN) / 0.3) * Math.PI * 2) : 0, hop = cheer ? -Math.abs(Math.sin((T - tC) * 9 + i)) * 7 : 0;
+            c.setAttribute("transform", "translate(0," + f(hop + Math.abs(nod) * 0.6) + ")");
+          });
+        },
+      };
 
-      // "largest": the glass pops and the Orderly's head comes through the window on his long neck, jaw dropped (the
-      // squeak); half a second on, the rosette pins itself to the hub (the pop). The patient points his pencil at it.
-      var tLg = cue("largest"), outTo = L.hout, hk = 1.8;
-      hide(g("head-win"), tLg); show(g("hout"), tLg);
-      tl.to(g("glass"), { x: 30, y: -20, rotation: 30, opacity: 0, duration: 0.25, ease: "power2.out" }, tLg);
-      tl.fromTo(g("hout-pos"), { x: 0, y: 0, scale: 1 }, { x: outTo[0], y: outTo[1], scale: hk, duration: 0.35, ease: "back.out(1.4)", immediateRender: false }, tLg);
-      tl.fromTo([g("neck-ink"), g("neck-skin")], { attr: { x2: winC[0], y2: winC[1] } }, { attr: { x2: winC[0] + outTo[0], y2: winC[1] + outTo[1] + 10 }, duration: 0.35, ease: "back.out(1.4)", immediateRender: false }, tLg);
-      var tRos = tLg + 0.5;
-      tl.fromTo(g("rosette"), { opacity: 0, scale: 2.6, rotation: -40 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.22, ease: "power4.in", immediateRender: false }, tRos - 0.22);
-      tl.fromTo(g("rosette"), { scale: 1 }, { scale: 1.06, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, tRos);
-      armTo(tLg - 0.1, 0.3, aim(HUB[0], HUB[1], 0));
-      squash(tRos, 0.25);
+      // ── Gondola 8: the grinning Politician beside the ballot box; on "vote" ballots drop in, on "pay" the box's
+      // bottom pops open (the bills themselves run on the plate).
+      var BOX = [64, 1.4];
+      var G8 = {
+        svg: function () {
+          var box = '<g transform="translate(' + BOX[0] + ",0) scale(" + BOX[1] + ')">' + KIT.props.ballotBox({}) + "</g>";
+          var trap = '<g class="g8-trap" opacity="0"><rect x="' + (BOX[0] - 30) + '" y="-12" width="60" height="12" fill="' + ink + '"/><path d="M' + (BOX[0] - 30) + ",0 L" + (BOX[0] - 40) + ',14" stroke="' + C.tan + '" stroke-width="5"/></g>';
+          var ballots = [0, 1, 2].map(function () { return '<g class="g8-b" opacity="0"><rect x="-10" y="-14" width="20" height="28" fill="#FBF6E6" stroke="' + ink + '" stroke-width="2.2"/><path d="M-5,-4 l4,5 l7,-9" fill="none" stroke="' + C.navy + '" stroke-width="2.2"/></g>'; }).join("");
+          return cabin() + '<g class="g8-pol">' + gm(KIT.castOpts("politician", { look: "right" }), -76, 0.82) + "</g>" + box + trap + ballots + cabinFloor();
+        },
+        upd: function (g, T) {
+          var slot = [BOX[0] + 4 * 0.7 * BOX[1], -88 * 0.7 * BOX[1] + 2];
+          QA(g, "g8-b").forEach(function (b, i) {
+            var t0 = WT.vote + 0.05 + i * 0.22, u = (T - t0) / 0.3;
+            sw(b, u >= 0 && u < 1.35);
+            if (u >= 0 && u < 1.35) {
+              if (u < 1) tr(b, slot[0] + (1 - u) * (i - 1) * 30, -250 + (slot[1] - 4 + 250) * u * u, (1 - u) * 90 * (i % 2 ? 1 : -1));
+              else b.setAttribute("transform", "translate(" + f(slot[0]) + "," + f(slot[1] + 14 * (u - 1)) + ") scale(1," + Math.max(0.002, 1 - (u - 1) / 0.35).toFixed(3) + ")");
+            }
+          });
+          sw(Q(g, "g8-trap"), T >= WT.pay);
+          var pol = Q(g, "g8-pol"), bob = T >= WT.vote ? -Math.abs(Math.sin((T - WT.vote) * 5)) * 4 : 0;
+          pol.setAttribute("transform", "translate(0," + f(bob) + ")");
+        },
+      };
+      var GON = [G1, G2, G3, G4, G5, G6, G7, G8];
+      var GCUE = [WT.mine, WT.refine, WT.factories, WT.train, WT.feed, WT.ships, WT.convince, WT.vote];
 
-      // ── Every frame: the wheel (part time), and the empty sleeve flapping ──
+      // ── The paper dolls: arms out (as drawn) or lifted, in crayon or in color.
+      function doll(j, up, crayonLayer) {
+        var o = { tone: j % 4, outfit: ["shirt", "dress", "suit", "overalls"][j % 4], color: (j * 3) % 4, hair: j % 4 === 1 ? 1 : 0, seed: j, plain: true, mood: up ? "smile" : "flat", arms: up ? [[-122, -132], [122, 132]] : [[-88, -92], [88, 92]] };
+        var m = KIT.person(o);
+        return crayonLayer ? crayonize(m) : m;
+      }
+      var DOLL_A = function (j) { return 180 + (j * 360) / NDOLL; };
+      function dollRing(cls, up, crayonLayer, hidden) {
+        var out = "";
+        for (var j = 0; j < NDOLL; j++) {
+          var a = DOLL_A(j), p = rimPt(a);
+          out += '<g class="doll" data-j="' + j + '" transform="translate(' + f(p[0]) + "," + f(p[1]) + ") rotate(" + f(a + 90) + ') scale(0.4) translate(0,-100)">' + doll(j, up, crayonLayer) + "</g>";
+        }
+        return '<g class="' + cls + '"' + (hidden ? ' opacity="0"' : "") + ">" + out + "</g>";
+      }
+      // ── The rosette, the calendar and its pages.
+      function rosette() {
+        var sc = "";
+        for (var i = 0; i < 16; i++) { var a = (i / 16) * Math.PI * 2; sc += '<circle cx="' + f(Math.cos(a) * 58) + '" cy="' + f(Math.sin(a) * 58) + '" r="18" fill="' + C.med + '" stroke="' + ink + '" stroke-width="3.4"/>'; }
+        var size = KIT.fitText("1ST", 50, 84, "Fraunces", 900);
+        return '<path d="M-22,20 L-44,118 L-16,100 L0,128 L6,30 Z M22,20 L44,118 L16,100 L0,128 L-6,30 Z" fill="' + C.med + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>' + sc +
+          '<circle r="56" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5"/><circle r="47" fill="none" stroke="' + C.med + '" stroke-width="2.4"/>' +
+          '<text y="' + f(size * 0.36) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + f(size) + '" fill="' + C.navy + '">1ST</text>';
+      }
+      // a calendar page (paper, crayon lines), 100 x 136, pivot at its top middle (0, 0)
+      function calPage() {
+        var dots = "";
+        for (var r = 0; r < 4; r++) for (var c = 0; c < 5; c++) dots += "M" + (-38 + c * 19) + "," + (52 + r * 20) + " h9 ";
+        return '<rect x="-50" y="0" width="100" height="136" fill="#FBF6E6"/>' + crayon("M-50,0 H50 V136 H-50 Z M-50,32 H50", CR, 4) + crayon(dots, CR, 4) + crayon("M-30,16 H30", C.war, 6);
+      }
+      function calendarWall() {
+        return '<g id="' + ID + '-cal" opacity="0" transform="translate(' + CAL[0] + "," + CAL[1] + ')">' + crayon("M-62,-86 H62 V84 H-62 Z", C.navy, 6) + '<g transform="translate(0,-66)">' + calPage() + "</g>" +
+          crayon("M-30,-96 v26 M30,-96 v26 M-44,-74 H44", C.navy, 6) + "</g>";
+      }
+      var NPAGE = 72;
+      function pageAt(k, T) { // the k-th page torn off: { on, x, y, rot, sy }
+        var sp = k === 0 ? WT.annually : WT.forever + 0.11 * (k - 1);
+        if (T < sp) return { on: false };
+        var tau = T - sp, FD = 1.5, x0 = CAL[0], y0 = CAL[1] - 66, yl = 26 + (k % 4) * 12, xl = CAL[0] - 70 + ((k * 3) % 7) * 26 + 40 * Math.sin(5 * FD + k * 1.7);
+        if (k === 0 && tau < 0.25) return { on: true, x: x0, y: y0, rot: -50 * sm(tau / 0.25), sy: 1, peel: true };
+        if (k === 0) tau -= 0.25;
+        if (tau < FD) {
+          var u = tau / FD;
+          return { on: true, x: x0 + (xl - x0) * u + 40 * Math.sin(5 * tau + k * 1.7) * Math.sin(Math.PI * u), y: y0 + (yl - 40 - y0) * u, rot: 34 * Math.sin(6 * tau + k), sy: 1 };
+        }
+        return { on: true, x: xl, y: yl - 40 - Math.floor(k / 5) * 1.2, rot: ((k * 37) % 50) - 25, sy: 0.32 };
+      }
+      // the bills: k runs out of the ballot box at WT.pay + 0.25 k, drops to the rim at 330 degrees and runs round it
+      var NBILL = 7, BILL_R = RIM - 20;
+      function runF(T) { return 40 * Math.min(T, WT.annually) + 360 * clamp01((T - WT.annually) / (WT.forever - WT.annually)) + 150 * Math.max(0, T - WT.forever); }
+      function wheelRot(T) { var u = T - WT.forever; return u <= 0 ? 0 : u < 0.8 ? (18 * u * u) / 1.6 : 18 * (u - 0.4); }
+      function gonAnchor(i, T) { return rimPt(GA[i] + wheelRot(T)); }
+
+      // ── The wheel's markup (drawn after the cell's drawings, before the patient). Returns the string.
+      function wheelSvg() {
+        var spokes = GA.map(function (a) { var p = rimPt(a, RIM - 4); return crayon("M" + HUB[0] + "," + HUB[1] + " L" + f(p[0]) + "," + f(p[1]), C.rust, 6); }).join("");
+        var ring = "M" + f(HUB[0] - RIM) + "," + HUB[1] + " A" + RIM + "," + RIM + " 0 1,1 " + f(HUB[0] + RIM) + "," + HUB[1] + " A" + RIM + "," + RIM + " 0 1,1 " + f(HUB[0] - RIM) + "," + HUB[1];
+        var hubcap = crayon("M" + (HUB[0] - 34) + "," + HUB[1] + " a34,34 0 1,0 68,0 a34,34 0 1,0 -68,0 M" + (HUB[0] - 6) + "," + HUB[1] + " h12", C.rust, 7);
+        var gons = GON.map(function (G, i) {
+          var inner = G.svg();
+          return '<g id="' + ID + "-gon" + i + '" opacity="0"><g transform="scale(' + GS + ') translate(0,262)">' +
+            '<defs><clipPath id="' + ID + "-gclip" + i + '"><rect class="gon-wipe" x="-170" y="-290" width="0" height="320"/></clipPath></defs>' +
+            '<g class="gon-crayon">' + crayonize(inner) + "</g>" + '<g class="gon-color" clip-path="url(#' + ID + "-gclip" + i + ')">' + inner + "</g></g></g>";
+        }).join("");
+        var bills = "";
+        for (var k = 0; k < NBILL; k++) bills += '<g id="' + ID + "-bill" + k + '" opacity="0"><g class="leg0">' + KIT.money("war", 0) + '</g><g class="leg1" opacity="0">' + KIT.money("war", 1) + "</g></g>";
+        var pages = "";
+        for (var p = 0; p < NPAGE; p++) pages += '<g id="' + ID + "-page" + p + '" opacity="0">' + calPage() + "</g>";
+        return '<g id="' + ID + '-wheel"><g id="' + ID + '-rimg">' + '<g id="' + ID + '-spokes">' + spokes + "</g>" + crayon(ring, C.rust, 9, ' id="' + ID + '-ring"') +
+          dollRing("dolls-crayon", false, true) + dollRing("dolls-color", true, false, true) + dollRing("dolls-drained", true, true, true) + "</g>" +
+          '<g id="' + ID + '-hub">' + hubcap + "</g>" + gons + bills + '<g id="' + ID + '-ros" opacity="0"><g>' + rosette() + '</g><g opacity="0">' + crayonize(rosette()) + "</g></g></g>" + calendarWall() + pages;
+      }
+      // ── Set the wheel to war time T. drained: the light is off (every color back to crayon).
+      var WH = null;
+      function wheelInit() {
+        WH = { rimg: q("rimg"), ring: q("ring"), spokes: q("spokes"), hub: q("hub"), cal: q("cal"), ros: q("ros"), dc: q("wheel").querySelector(".dolls-crayon"), dcol: q("wheel").querySelector(".dolls-color"), ddr: q("wheel").querySelector(".dolls-drained"), gon: [], bills: [], pages: [] };
+        WH.dollsC = Array.prototype.slice.call(WH.dc.querySelectorAll(".doll"));
+        WH.spokeEls = Array.prototype.slice.call(WH.spokes.children);
+        for (var i = 0; i < 8; i++) { var g = q("gon" + i); WH.gon.push({ g: g, wipe: g.querySelector(".gon-wipe"), cr: g.querySelector(".gon-crayon"), col: g.querySelector(".gon-color") }); }
+        for (var k = 0; k < NBILL; k++) { var b = q("bill" + k); WH.bills.push({ g: b, l0: b.querySelector(".leg0"), l1: b.querySelector(".leg1") }); }
+        for (var p = 0; p < NPAGE; p++) WH.pages.push(q("page" + p));
+      }
+      var T_RIM0 = 0, T_RIM1 = 0; // set by the scene: when the rim's crayon line starts and ends
+      function wheelAt(T, drained) {
+        var rot = wheelRot(T);
+        WH.rimg.setAttribute("transform", rot ? "rotate(" + f(rot) + " " + HUB[0] + " " + HUB[1] + ")" : "");
+        var ru = (T - T_RIM0) / (T_RIM1 - T_RIM0);
+        crayonDraw(WH.ring, ru);
+        WH.dollsC.forEach(function (d, j) { sw(d, ru * NDOLL > j + 0.3); });
+        var alive = T >= WT.together;
+        sw(WH.dc, !alive); sw(WH.dcol, alive && !drained); sw(WH.ddr, alive && drained);
+        WH.spokeEls.forEach(function (s, i) { crayonDraw(s, (T - T_RIM1 - 0.05 - i * 0.04) / 0.3); });
+        crayonDraw(WH.hub.firstChild, (T - T_RIM1) / 0.25);
+        sw(WH.cal, T >= T_RIM1 + 1.2);
+        // the gondolas: crayon pops on after the spokes, color wipes in on the cue
+        var u0 = Math.max(0, T - WT.forever), swingRamp = clamp01(u0 / 0.8);
+        WH.gon.forEach(function (G, i) {
+          var a = gonAnchor(i, T), pop = clamp01((T - T_RIM1 - 0.35 - i * 0.1) / 0.18);
+          G.g.setAttribute("opacity", pop > 0 ? 1 : 0);
+          var swing = swingRamp * 7 * Math.sin(2.3 * u0 + i * 1.3);
+          G.g.setAttribute("transform", "translate(" + f(a[0]) + "," + f(a[1]) + ") rotate(" + f(swing) + ") scale(" + (0.6 + 0.4 * sm(pop)).toFixed(3) + ")");
+          var wu = drained ? 0 : sm((T - GCUE[i]) / 0.35);
+          G.wipe.setAttribute("width", f(340 * wu));
+          G.col.setAttribute("opacity", wu > 0 ? 1 : 0);
+          if (wu > 0) GON[i].upd(G.col, T);
+        });
+        // the bills
+        var E = (function () { var a = gonAnchor(7, Math.min(T, WT.forever)); return [a[0] + BOX[0] * GS, a[1] + 262 * GS - 6]; })();
+        WH.bills.forEach(function (B, k) {
+          var tk = WT.pay + 0.06 + 0.25 * k;
+          if (T < tk) { sw(B.g, 0); return; }
+          sw(B.g, 1);
+          var leg = Math.floor(T / 0.09) % 2;
+          sw(B.l0, leg === 0); sw(B.l1, leg === 1);
+          var tau = T - tk;
+          if (tau < 0.4) {
+            var L = rimPt(330, BILL_R), u = tau / 0.4;
+            B.g.setAttribute("transform", "translate(" + f(E[0] + (L[0] - E[0]) * u) + "," + f(E[1] + (L[1] - E[1]) * u - 60 * Math.sin(Math.PI * u)) + ") rotate(" + f(-120 * u) + ") scale(0.36)");
+            return;
+          }
+          var ang = 330 + runF(T) - runF(tk + 0.4) + rot, p = rimPt(ang, BILL_R);
+          B.g.setAttribute("transform", "translate(" + f(p[0]) + "," + f(p[1]) + ") rotate(" + f(ang - 90) + ") scale(0.36)");
+        });
+        // the rosette: flies down spinning and pins itself to the hub
+        var rr = WH.ros, r0 = WT.rosette - 0.3;
+        if (T < r0) sw(rr, 0);
+        else {
+          sw(rr, 1); sw(rr.firstChild, !drained); sw(rr.lastChild, drained);
+          var ru2 = clamp01((T - r0) / 0.3), land = T - WT.rosette, sq = land > 0 && land < 0.16 ? 1 - 0.18 * Math.sin((land / 0.16) * Math.PI) : 1;
+          rr.setAttribute("transform", "translate(" + HUB[0] + "," + f(HUB[1] - 900 * (1 - ru2) * (1 - ru2)) + ") rotate(" + f(-540 * (1 - ru2)) + ") scale(" + (1.12 * (2 - sq)).toFixed(3) + "," + (1.12 * sq).toFixed(3) + ")");
+        }
+        // the calendar's pages
+        WH.pages.forEach(function (pg, k) {
+          var s = pageAt(k, T);
+          sw(pg, s.on);
+          if (!s.on) return;
+          if (s.peel) pg.setAttribute("transform", "translate(" + f(s.x - 50) + "," + f(s.y) + ") rotate(" + f(s.rot) + ") translate(50,0)");
+          else pg.setAttribute("transform", "translate(" + f(s.x) + "," + f(s.y) + ") rotate(" + f(s.rot) + ") scale(0.8," + (0.8 * s.sy).toFixed(3) + ")");
+        });
+      }
+      // END WHEEL ═════════════════════════════════════════════════════════════════════════════════════════════════
+
+      // ── The cues are WT (the wheel block). The sounds (parts/part-04.json) land on: the marker on "millions", the
+      // pop on "together", the clank 0.3 s after "mine", the sizzle on "alloys,", the toaster on "weapons,", the
+      // airplane on "planes", the boom after "are,", the cash register on "pay", the scratch on "annually,", the
+      // whirr on "forever.", the squeak on "largest" and the pop after it.
+      var X5 = 1620, XP = 1690; // the patient: where orderly-door-slot left him, and where he stands to draw
+      T_RIM0 = WT.millions + 0.1; T_RIM1 = WT.millions + 1.15;
+
+      // ── The camera's views: [plate x, plate y, scale]. "final" is orderly-door-slot's last; one close view per
+      // gondola (its box is 160 x 116 plate units); "sheet" is the whole wheel (16:9: with the door; 9:16: the wheel,
+      // then a cut-away to the Orderly). chain-goes-dark starts on "sheet" (16:9) or "door2" (9:16).
+      var VIEW = V
+        ? { final: [1050, -560, 0.76], wheel: [2310, -620, 0.86], sheet: [2440, -600, 0.88], door2: [250, -470, 1.5] }
+        : { final: [840, -340, 1.0], wheel: [2330, -600, 0.85], sheet: [1540, -590, 0.6] };
+      GA.forEach(function (a, i) { var p = rimPt(a); VIEW["g" + (i + 1)] = [p[0], p[1] + 75, V ? 6.0 : 4.6]; });
+      var mid = function (a, b, s) { return [(VIEW[a][0] + VIEW[b][0]) / 2, (VIEW[a][1] + VIEW[b][1]) / 2, s]; };
+      VIEW.g67 = mid("g6", "g7", V ? 2.2 : 2.6);
+      VIEW.g81 = mid("g8", "g1", 2.8);
+      VIEW.g1cal = [(VIEW.g1[0] + CAL[0]) / 2 + 10, (VIEW.g1[1] + CAL[1]) / 2 + 6, V ? 2.8 : 2.6];
+      var KEYS = [[0, "final", 1], [0.2, "final", 1], [1.0, "wheel", 1], [WT.mine - 0.45, "wheel", 1.04]];
+      ["mine", "refine", "factories", "train", "feed", "ships"].forEach(function (w, i, a) {
+        KEYS.push([WT[w] - 0.05, "g" + (i + 1), 1]);
+        if (i < a.length - 1) KEYS.push([WT[a[i + 1]] - 0.45, "g" + (i + 1), 1.03]);
+      });
+      KEYS.push([WT.boom + 0.25, "g6", 1.04], [WT.convince + 0.75, "g67", 1], [WT.deserve - 0.5, "g7", 1], [WT.vote - 0.45, "g7", 1.03], [WT.vote - 0.05, "g8", 1],
+        [WT.pay + 0.35, "g8", 1.02], [WT.pay + 0.95, "g81", 1], [WT.annually - 0.3, "g1cal", 1], [WT.forever - 0.05, "g1cal", 1.03], [WT.forever + 0.75, "sheet", 1]);
+      if (V) KEYS.push([WT.rosette + 0.45, "sheet", 1.02], [WT.rosette + 0.85, "door2", 1], [D, "door2", 1.04]);
+      else KEYS.push([D, "sheet", 1.03]);
+      var camera = KIT.camera(VIEW, KEYS), smooth = KIT.smooth;
+
+      // ── The Orderly: as orderly-door-slot left him (eyes and chin in the window); on "largest" his head pushes out
+      // through the window on his long neck, jaw dropped.
+      var OEE = KIT.castOpts("orderly", { look: "right", mood: "eager" }), ROE = KIT.rig(OEE), WCEN = [150, -470], HEND = [330, -566];
+      var orderlySvg = '<g id="' + ID + '-ord">' + orderly() + "</g>";
+      var thru = '<g id="' + ID + '-thru" opacity="0"><defs><clipPath id="' + ID + '-hclip"><rect x="-40" y="' + f(ROE.top[1] - 26) + '" width="80" height="' + f(ROE.neck[1] + 3 - ROE.top[1] + 26) + '"/></clipPath></defs>' +
+        '<path class="nk-ink" d="" fill="none" stroke="' + ink + '" stroke-width="27" stroke-linecap="round"/><path class="nk-skin" d="" fill="none" stroke="' + SKIN_O + '" stroke-width="20" stroke-linecap="round"/>' +
+        '<g class="hd"><g clip-path="url(#' + ID + '-hclip)">' + KIT.person(OEE) + "</g></g></g>";
+      function headThrough(g, e) { // e: 0 (head in the window) .. 1 (out at HEND)
+        var N = [WCEN[0] + (HEND[0] - WCEN[0]) * e, WCEN[1] + (HEND[1] - WCEN[1]) * e], d = "M" + WCEN[0] + "," + WCEN[1] + " Q" + f(WCEN[0] + (N[0] - WCEN[0]) * 0.6) + "," + WCEN[1] + " " + f(N[0]) + "," + f(N[1]);
+        g.querySelector(".nk-ink").setAttribute("d", d); g.querySelector(".nk-skin").setAttribute("d", d);
+        g.querySelector(".hd").setAttribute("transform", "translate(" + f(N[0]) + "," + f(N[1]) + ") scale(" + S + ") translate(" + f(-ROE.neck[0]) + "," + f(-ROE.neck[1]) + ")");
+      }
+
+      // ── Assemble the plate: the cell, the old drawings, the wheel, the door, the patient, the cup, the ceiling.
+      var patSvg = '<g id="' + ID + '-pat"><g class="pt-free">' + patientFree({ mood: "flat" }) + "</g></g>";
+      var cupSvg = '<g transform="translate(1172,34)">' + pillCup() + "</g>";
+      var plate = cellBack() + drawingsDone() + wheelSvg() + cellDoor(orderlySvg) + thru + cupSvg + patSvg + cellCeiling();
+      q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="#EFE4C6"/><g id="' + ID + '-cam">' + plate + "</g>");
+      wheelInit();
+      var cam = q("cam"), pat = q("pat"), ord = q("ord"), thruG = q("thru"), flashEl = q("flash");
+      var ptFree = pat.querySelector(".pt-free");
+      freeArm(ptFree);
+      var freeArmG = ptFree.querySelector(".pt-arm"), sleeve = ptFree.querySelector(".pt-sleeve");
+      cam.querySelector(".hatch-flap").setAttribute("transform", "rotate(100 " + HATCH[0] + " " + CEIL + ")");
+      ord.setAttribute("transform", "translate(" + f(OX) + "," + f(60 - 100 * S) + ") scale(" + S + ")");
+      orderlyNeck(ord, 24);
+
+      var hop = function (t, t0, t1, x0, x1, h) { var u = clamp01((t - t0) / (t1 - t0)); return [x0 + (x1 - x0) * smooth(u), -h * 4 * u * (1 - u)]; };
+      // the free arm (degrees about his shoulder, his own facing): up as orderly-door-slot left it; windmills on
+      // "millions" while the rim goes round; scribbles the spokes and gondolas; rests; waves proudly from "forever."
+      function armAng(t) {
+        if (t < WT.millions) return 44 - 14 * smooth(t / 0.5);
+        if (t < T_RIM1) return 30 + 1080 * smooth((t - WT.millions) / (T_RIM1 - WT.millions));
+        if (t < T_RIM1 + 1.3) return 20 + 10 * Math.sin(t * 46);
+        if (t < WT.forever) return 20 - 90 * smooth((t - T_RIM1 - 1.3) / 0.4);
+        return -70 + 114 * smooth((t - WT.forever) / 0.35) + 6 * Math.sin((t - WT.forever) * 5);
+      }
+
       KIT.onTime(tl, D, function (t) {
-        var T = sc.start + t;
-        wheelAt(T);
-        sleeve.setAttribute("transform", "rotate(" + f(9 * Math.sin(T * 9) + 4) + " 17.5 -26)");
+        wheelAt(t, false);
+        // ── The patient turns to the blank wall and hops over to it, then draws.
+        var h1 = hop(t, 0.08, 0.38, X5, (X5 + XP) / 2, 50), h2 = hop(t, 0.38, 0.68, (X5 + XP) / 2, XP, 50), hh = t < 0.38 ? h1 : h2;
+        var flip = t < 0.06 ? 1 : -1;
+        pat.setAttribute("transform", "translate(" + f(hh[0]) + "," + f(hh[1] - 100 * S) + ") scale(" + f(S * flip) + "," + S + ")");
+        freeArmG.setAttribute("transform", "rotate(" + f(armAng(t)) + " " + f(SH0[0]) + " " + f(SH0[1]) + ")");
+        sleeve.setAttribute("transform", "rotate(" + f(6 * Math.sin(t * 5)) + " " + f(SH0[0]) + " " + f(SH0[1]) + ")");
+        // ── The Orderly's head, out through the window on "largest".
+        var hu = clamp01((t - WT.largest) / 0.28), he = 1 - Math.pow(1 - hu, 3);
+        sw(thruG, t >= WT.largest); sw(ord, t < WT.largest);
+        if (t >= WT.largest) headThrough(thruG, he + (hu >= 1 ? 0.03 * Math.sin((t - WT.largest - 0.28) * 14) * Math.exp(-(t - WT.largest - 0.28) * 3) : 0));
+        // ── The flash of the village's bomb (it is close on that gondola).
+        flashEl.style.opacity = t >= WT.boom ? (0.45 * Math.max(0, 1 - (t - WT.boom) / 0.3)).toFixed(3) : 0;
+        camera.place(cam, camera.at(t));
       });
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;
+      // The final frame (chain-goes-dark starts on it): wheelAt(D) (the wheel turning, every gondola in color, the
+      // bills running, the rosette on the hub, pages falling); the patient at x 1690 facing right (flipped), arm at
+      // armAng(D); the Orderly's head out of the window at HEND; the camera on VIEW.sheet x 1.03 (16:9) or
+      // VIEW.door2 x 1.04 (9:16).
     })();
   </script>
 </template>

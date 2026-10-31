@@ -1,97 +1,253 @@
 <template id="loved-ones-template">
-  <!-- loved-ones · Layer B (storyboards/part-01-opening.md): the Planet Eligibility Check form and a smiling family
-       portrait whose chest lights blink red; YES is ticked on "diseases?", then HOLD. -->
+  <!-- loved-ones · style "atomic" (cartoon-style-bible.md): one plate, a portrait sitting in a 1950s living room seen
+       straight on (diamond wallpaper, a fringed floor lamp, a mantel clock, a long rust sofa). An everyday family poses
+       for us, the camera: the father, the boy and the mother on the sofa, the grandfather standing behind its right end.
+       "Is": wide, lamp to clock. "loved": they lean in together and smile harder. "slowly": a slow push in on the faces.
+       "tortured": their chest lights blink red one by one, left to right; the smiles stay; a bead of sweat runs down
+       the father's temple. "brutally": the Grim Reaper rises up behind the sofa between the grandfather and the mother,
+       arms up, and brings a bony arm down round each of them. "murdered": he squeezes them all in tight for the picture,
+       and every smile goes stiff (pinprick pupils). "diseases?": everyone holds still. After "diseases?": the flash bulb.
+       Under the white the picture becomes a print, a white deckled border tilted on the dark, and as the white fades
+       the print develops: the same poses, the same grins, the family skeletons now (the grandfather's glasses on his
+       skull), the Reaper the only one who looks the same. HOLD to the cut on "waste". No x-ray (Part 2's the-toll has
+       it). The print hangs on the Weapons Maker's wall in Part 6; the living-room sitting stands on YOU's mantel in
+       Part 12. -->
   <style>
-    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
-    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
-    #loved-ones-cam, #loved-ones-bg, #loved-ones-art, #loved-ones-pip, #loved-ones-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #061D3E; }
+    #loved-ones-weave, #loved-ones-plate, #loved-ones-film { position: absolute; inset: 0; }
+    #loved-ones-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
   </style>
-  <div id="root" data-composition-id="loved-ones" data-width="1920" data-height="1080" data-start="0" data-duration="8.72">
-    <div id="loved-ones-cam">
-      <div id="loved-ones-bg"></div>
-      <div id="loved-ones-art"></div>
-      <div id="loved-ones-pip"></div>
-      <div id="loved-ones-grain"></div>
+  <div id="root" data-composition-id="loved-ones" data-width="1920" data-height="1080" data-start="0" data-duration="9.52">
+    <div id="loved-ones-weave">
+      <div id="loved-ones-plate"></div>
+      <div id="loved-ones-flash"></div>
     </div>
+    <div id="loved-ones-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
   <script>
     (function () {
+      window.__timelines = window.__timelines || {};
       var ID = "loved-ones";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
+      var sc = KIT.scene(ID), D = sc.duration;
       var q = function (s) { return document.getElementById(ID + "-" + s); };
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-
-      // The portrait (frame, picture, people) and the mantel, for each canvas shape. The form sits at KIT.FORM_AT.
-      var L = V
-        ? { frame: [160, 450, 760, 400], inner: [180, 470, 720, 360], people: { x: 300, dx: 160, y: 650, s: 1.75 },
-            mantel: [110, 850, 860, 40], base: [140, 890, 800, 60], reaper: [700, 767, 1.75] }
-        : { frame: [150, 270, 640, 400], inner: [170, 290, 600, 360], people: { x: 275, dx: 130, y: 430, s: 1.6 },
-            mantel: [100, 670, 740, 40], base: [130, 710, 680, 150], reaper: [600, 530, 1.6] };
-
-      q("bg").innerHTML = KIT.paper(ID);
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-
-      function rect(r, fill, extra) {
-        return '<rect x="' + r[0] + '" y="' + r[1] + '" width="' + r[2] + '" height="' + r[3] + '" fill="' + fill + '" ' + (extra || "") + "/>";
-      }
-      // Each family member is drawn twice in the same spot: alive (p) and as a skeleton (b), for the x-ray.
-      var looks = [{ outfit: "suit", hair: 0 }, { outfit: "dress", hair: 1, color: 0 }, { outfit: "shirt", hair: 0, color: 1 }, { outfit: "dress", hair: 1, color: 3 }];
-      var people = looks.map(function (o, i) {
-        o.tone = i; o.mood = "smile"; o.light = "off";
-        var b = { skeleton: true };
-        return '<g transform="translate(' + (L.people.x + i * L.people.dx) + "," + L.people.y + ") scale(" + L.people.s + ')">' +
-          '<g id="loved-ones-p' + i + '">' + KIT.person(o) + '</g><g id="loved-ones-b' + i + '" opacity="0">' + KIT.person(b) + "</g></g>";
-      }).join("");
-      // The Grim Reaper (the theme song's), rising behind the family, his skull between the last two heads.
-      var R = L.reaper;
-      var reaper = '<g transform="translate(' + R[0] + "," + R[1] + ") scale(" + R[2] + ')"><g id="loved-ones-reaper">' + KIT.reaper() + "</g></g>";
-      var portrait = '<g id="loved-ones-portrait">' + rect(L.frame, C.rust, 'stroke="' + C.ink + '" stroke-width="6"') +
-        '<defs><clipPath id="loved-ones-clip">' + rect(L.inner, "#fff") + "</clipPath></defs>" +
-        rect(L.inner, C.cream) + '<g clip-path="url(#loved-ones-clip)">' + rect(L.inner, "url(#loved-ones-fine)", 'opacity="0.35"') + reaper + people + "</g></g>";
-      var mantel = rect(L.mantel, C.tan, 'stroke="' + C.line + '" stroke-width="5"') + rect(L.base, "url(#loved-ones-hatch)", 'stroke="' + C.line + '" stroke-width="5"');
-
-      // The 1950s mail-in form, question 1 only.
-      var F = KIT.FORM_AT;
-      var form = KIT.form(ID, F.x, F.y, F.w, [{ lines: KIT.FORM_Q[0] }], { size: F.size });
-      var box = form.boxes[0];
-      // The pencil: tweened on the inner group, because GSAP would read the outer translate() as its x and y.
-      var pencil = '<g transform="translate(' + (box.x + 6) + "," + (box.y + 40) + ')"><g id="loved-ones-pencil">' + KIT.pencil() + "</g></g>";
-      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + portrait + mantel + '<g id="loved-ones-form">' + form.svg + "</g>" + pencil);
-
-
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var f = function (n) { return n.toFixed(1); };
+      var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+      var at = function (x, y, k, inner, attrs) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + k + ')"' + (attrs || "") + ">" + inner + "</g>"; };
+      var smooth = KIT.smooth;
       var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      KIT.enter(tl, q("cam"), "slide left");
 
-      var lines = document.querySelectorAll("#loved-ones-form .form-line");
-      tl.fromTo("#loved-ones-form", { x: 260, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, cue("Is"));
-      lines.forEach(function (el, i) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.25 }, cue("Is") + 0.35 + i * 0.55); });
-      tl.fromTo("#loved-ones-portrait", { opacity: 0, scale: 0.92, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.4, ease: "back.out(1.6)" }, cue("loved"));
-      // "tortured": the chest lights blink red, one by one, while the smiles stay
-      [0, 1, 2, 3].forEach(function (i) {
-        var light = document.querySelector("#loved-ones-p" + i + " .chest-light");
-        var t = cue("tortured") + i * 0.16;
-        tl.to(light, { attr: { fill: C.war }, duration: 0.05 }, t);
-        tl.fromTo(light, { opacity: 1 }, { opacity: 0.35, duration: 0.18, repeat: 3, yoyo: true, ease: "none" }, t + 0.05);
+      // ── Period film (KIT.film): outside the camera, so it stays put.
+      KIT.film(tl, ID, q("weave"), q("film"), 67);
+
+      // ── The plate, in plate units: the room of the sketch (1920 x 1100 is lamp to clock, the floor at y 940), with
+      // the wallpaper and the floor carried on far enough for the tall frame.
+      var FLOOR = 940, SEAT = 770, K = 2.8, PAPER = "#D9C08C", DARK = "#6E3A23";
+      var r = KIT.rng(7);
+      var room = '<rect x="-700" y="-1500" width="3320" height="' + (FLOOR + 1500) + '" fill="' + PAPER + '"/>';
+      var dia = "";
+      for (var y = -1470, row = 0; y < FLOOR - 40; y += 90, row++) for (var x = (row % 2 ? -640 : -685); x < 2620; x += 90) dia += "M" + x + "," + (y - 14) + " l12,14 l-12,14 l-12,-14 Z ";
+      room += '<path d="' + dia + '" fill="' + C.tan + '" opacity="0.55"/>';
+      room += '<rect x="-700" y="' + FLOOR + '" width="3320" height="1600" fill="' + C.slate + '"/><path d="M-700,' + FLOOR + ' H2620" stroke="' + ink + '" stroke-width="4"/>';
+      // a braided oval rug in front of the sofa
+      room += [[760, 96, C.rust], [700, 84, C.orange], [630, 72, C.tan], [550, 60, C.yellow], [460, 47, C.rust]].map(function (e) {
+        return '<ellipse cx="970" cy="1110" rx="' + e[0] + '" ry="' + e[1] + '" fill="' + e[2] + '" stroke="' + ink + '" stroke-width="4"/>';
+      }).join("");
+      // the fringed floor lamp (left) and the mantel clock on its shelf (right)
+      room += '<path d="M260,' + (FLOOR + 20) + ' V420" stroke="' + ink + '" stroke-width="8"/><path d="M220,' + (FLOOR + 20) + ' h80" stroke="' + ink + '" stroke-width="10"/>' +
+        '<path d="M180,420 L210,310 H310 L340,420 Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="5"/>' +
+        [0, 1, 2, 3, 4, 5, 6, 7, 8].map(function (i) { return '<path d="M' + (186 + i * 18) + ',420 v16" stroke="' + C.orange + '" stroke-width="4"/>'; }).join("");
+      room += '<rect x="1640" y="420" width="190" height="24" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="4"/><path d="M1680,420 V340 Q1735,290 1790,340 V420 Z" fill="' + C.tan + '" stroke="' + ink + '" stroke-width="4"/>' +
+        '<circle cx="1735" cy="365" r="26" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="3"/><path d="M1735,365 V348 M1735,365 h12" stroke="' + ink + '" stroke-width="3"/>';
+
+      // The 1950s sofa (as the sketch), drawn as its back (behind the sitters) and its front (in front of them).
+      function sofaBack(x0, x1, top) {
+        return '<path d="M' + (x0 + 30) + "," + (top + 30) + " Q" + (x0 + 30) + "," + top + " " + (x0 + 70) + "," + top + " H" + (x1 - 70) + " Q" + (x1 - 30) + "," + top + " " + (x1 - 30) + "," + (top + 30) + " V" + (top + 230) + " H" + (x0 + 30) + ' Z" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5"/>' +
+          [1, 2].map(function (i) { return '<path d="M' + f(x0 + 30 + ((x1 - x0 - 60) * i) / 3) + "," + (top + 24) + " V" + (top + 220) + '" stroke="' + DARK + '" stroke-width="4"/>'; }).join("") +
+          [0, 1, 2].map(function (i) { return '<circle cx="' + f(x0 + 30 + ((x1 - x0 - 60) * (i + 0.5)) / 3) + '" cy="' + (top + 90) + '" r="6" fill="' + DARK + '"/>'; }).join("");
+      }
+      function sofaFront(x0, x1, seat) {
+        var third = (x1 - x0 - 160) / 3;
+        var cush = function (a, b) { return '<rect x="' + f(a) + '" y="' + seat + '" width="' + f(b - a) + '" height="60" rx="14" fill="' + C.orange + '" stroke="' + ink + '" stroke-width="5"/>'; };
+        return cush(x0 + 80, x0 + 80 + third) + cush(x0 + 80 + third, x0 + 80 + 2 * third) + cush(x0 + 80 + 2 * third, x1 - 80) +
+          '<rect x="' + (x0 + 40) + '" y="' + (seat + 54) + '" width="' + (x1 - x0 - 80) + '" height="136" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5"/>' +
+          '<path d="M' + (x0 + 40) + "," + (seat + 150) + " H" + (x1 - 40) + '" stroke="' + DARK + '" stroke-width="3"/>' +
+          [x0, x1 - 90].map(function (ax) { return '<rect x="' + ax + '" y="' + (seat - 50) + '" width="90" height="240" rx="26" fill="' + C.rust + '" stroke="' + ink + '" stroke-width="5"/>'; }).join("") +
+          [x0 + 60, x1 - 60].map(function (lx) { return '<path d="M' + lx + "," + (seat + 190) + ' l-10,16 h14 l6,-16 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="3"/>'; }).join("");
+      }
+
+      // ── The family: everyday humans (the brief's options), each drawn smiling, grinning, stiff and as a skeleton.
+      // Sitting: the hips on the seat; the sofa's front hides the legs (and the clip cuts the feet off at the floor).
+      var SIT_ARMS = [[10, 30], [-10, -30]];
+      var FAM = [
+        { o: { tone: 1, outfit: "shirt", color: 1, hair: 0, seed: 11 }, x: 640, k: K, sit: true, lean: 6, dx: 10, sq: 14 },
+        { o: { tone: 1, outfit: "shirt", color: 0, hair: 0, seed: 5, hat: null, build: { hs: 1.18, legs: 0.8 } }, x: 870, k: 2.0, sit: true, lean: 0, dx: 0, sq: 16 },
+        { o: { tone: 1, outfit: "dress", color: 3, hair: 1, seed: 4 }, x: 1090, k: K, sit: true, lean: -5, dx: -8, sq: 20 },
+        { o: { tone: 1, outfit: "suit", color: 2, hair: 2, glasses: true, hat: null, seed: 8 }, x: 1390, k: K, sit: false, lean: -4, dx: -6, sq: -8 },
+      ];
+      // the grandfather's glasses, on his skull (the skeleton drawing leaves glasses off; this is their front view)
+      var SKULL_GLASSES = '<path d="M-15,-10 H-1.5 L-2.5,1 H-14 Z M1.5,-10 H15 L14,1 H2.5 Z" fill="#FFFFFF" fill-opacity="0.25" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="miter"/>' +
+        '<path d="M-1.5,-7 H1.5 M-15,-7 L-19,-5 M15,-7 L19,-5" stroke="' + ink + '" stroke-width="2.6" stroke-linecap="round"/>';
+      var POSES = ["smile", "grin", "stiff", "bones"];
+      FAM.forEach(function (m, i) {
+        var base = copy(m.o, m.sit ? { arms: SIT_ARMS } : { arms: [[14, 6], [-14, -6]] });
+        m.R = KIT.rig(base);
+        m.y = m.sit ? SEAT + 14 - m.k * m.R.hipY : FLOOR - 40 - 100 * m.k;
+        var draw = {
+          smile: KIT.person(copy(base, { mood: "smile" })),
+          grin: KIT.person(copy(base, { mood: "grin" })),
+          stiff: KIT.person(copy(base, { mood: "grin" })),
+          bones: KIT.person(copy(base, { skeleton: true })),
+        };
+        if (base.glasses) draw.bones = draw.bones.replace("<!--face-end-->", SKULL_GLASSES + "<!--face-end-->");
+        // Each drawing is split in two layers, the body and the head, so the Reaper's arms can go round their
+        // shoulders behind their heads (the head layer is drawn over the arms).
+        var HEAD = /<g class="head">[\s\S]*?<!--head-end--><\/g>/;
+        var layer = function (which) {
+          return '<g class="who" transform="translate(' + f(m.x) + "," + f(m.y) + ") scale(" + m.k + ')"><g class="lean">' +
+            POSES.map(function (p) {
+              var d = draw[p], h = HEAD.exec(d);
+              if (!h) throw new Error("loved-ones: no head in the " + p + " drawing");
+              return '<g class="pose" data-pose="' + p + '"' + (p === "smile" ? "" : ' opacity="0"') + ">" + (which === "head" ? h[0] : d.replace(HEAD, "")) + "</g>";
+            }).join("") +
+            (i === 0 && which === "head" ? '<g id="' + ID + '-sweat" opacity="0">' + '<path d="M0,-6 Q-4.5,2 0,5 Q4.5,2 0,-6 Z" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="1.3"/></g>' : "") +
+            "</g></g>";
+        };
+        m.body = '<g id="' + ID + "-b" + i + '">' + layer("body") + "</g>";
+        m.head = '<g id="' + ID + "-h" + i + '">' + layer("head") + "</g>";
       });
-      // "brutally": the Grim Reaper rises up behind them, grinning
-      tl.fromTo(q("reaper"), { y: 300 }, { y: 0, duration: 0.45, ease: "back.out(1.4)" }, cue("brutally"));
-      // "murdered": they x-ray into skeletons one by one, and the skulls keep smiling
-      [0, 1, 2, 3].forEach(function (i) { KIT.xray(tl, q("p" + i), q("b" + i), cue("murdered") + i * 0.16); });
-      // "diseases?": the pencil swoops in, ticks YES and leaves; then HOLD (nothing moves to the end)
-      var d = cue("diseases?");
-      tl.fromTo("#loved-ones-pencil", { opacity: 0, x: 300, y: 120 }, { opacity: 1, x: 0, y: 0, duration: 0.3, ease: "power2.out" }, d - 0.3);
-      KIT.drawTick(tl, "#loved-ones-tick-0 .tick", d);
-      tl.to("#loved-ones-pencil", { x: 40, y: -50, duration: 0.25, ease: "power2.inOut" }, d);
-      tl.to("#loved-ones-pencil", { x: 400, y: 160, opacity: 0, duration: 0.35, ease: "power2.in" }, d + 0.4);
+
+      // ── The Grim Reaper (KIT.reaper's puppet): his body behind the sofa's back, between the grandfather and the
+      // mother, rising out from behind it; his two bony arms in front of the family, round their shoulders.
+      var RP = [1235, 650, 2.5], RDOWN = 470;
+      var reaperBody = '<g id="' + ID + '-rb">' + '<g class="face-grin">' + KIT.reaper({ pose: "puppet", only: "body", face: "grin" }) + "</g>" +
+        '<g class="face-delight" opacity="0">' + KIT.reaper({ pose: "puppet", only: "body", face: "delight" }) + "</g></g>";
+      var reaperArms = '<g id="' + ID + '-ra" opacity="0">' + KIT.reaper({ pose: "puppet", only: "arms", arms: [0, 0] }) + "</g>";
+      var reaperRig = '<g transform="translate(' + RP[0] + "," + RP[1] + ") scale(" + RP[2] + ')">';
+
+      var defs = '<defs><clipPath id="' + ID + '-sit" clipPathUnits="userSpaceOnUse"><rect x="-700" y="-1500" width="3320" height="' + (1500 + FLOOR - 8) + '"/></clipPath>' +
+        '<clipPath id="' + ID + '-behind" clipPathUnits="userSpaceOnUse"><rect x="-700" y="-1500" width="3320" height="' + (1500 + 820) + '"/></clipPath></defs>';
+      var plate = defs + room +
+        '<g clip-path="url(#' + ID + '-behind)"><g id="' + ID + '-rise">' + reaperRig + reaperBody + "</g></g></g>" +
+        FAM[3].body + sofaBack(400, 1540, 600) +
+        '<g clip-path="url(#' + ID + '-sit)">' + FAM[0].body + FAM[1].body + FAM[2].body + "</g>" +
+        '<g id="' + ID + '-rise2">' + reaperRig + reaperArms + "</g></g>" +
+        FAM.map(function (m) { return m.head; }).join("") + sofaFront(400, 1540, SEAT);
+
+      // ── The print: on the dark of the cut, a white border with a deckled edge, tilted, holding the picture.
+      // PR: its picture box on screen [x0, y0, x1, y1], the border's width, and the box's center (the tilt's pivot).
+      var PR = V ? { box: [80, 360, 1000, 1240], m: 40 } : { box: [190, 98, 1730, 982], m: 40 };
+      PR.c = [(PR.box[0] + PR.box[2]) / 2, (PR.box[1] + PR.box[3]) / 2];
+      var e0 = [PR.box[0] - PR.m, PR.box[1] - PR.m, PR.box[2] + PR.m, PR.box[3] + PR.m], dr = KIT.rng(3), edge = "M" + e0[0] + "," + e0[1];
+      for (var ex = e0[0]; ex <= e0[2]; ex += 18) edge += " L" + Math.min(ex, e0[2]) + "," + (e0[1] + (dr() < 0.5 ? 0 : 5));
+      for (var ey = e0[1]; ey <= e0[3]; ey += 18) edge += " L" + (e0[2] - (dr() < 0.5 ? 0 : 5)) + "," + Math.min(ey, e0[3]);
+      for (ex = e0[2]; ex >= e0[0]; ex -= 18) edge += " L" + Math.max(ex, e0[0]) + "," + (e0[3] - (dr() < 0.5 ? 0 : 5));
+      for (ey = e0[3]; ey >= e0[1]; ey -= 18) edge += " L" + (e0[0] + (dr() < 0.5 ? 0 : 5)) + "," + Math.max(ey, e0[1]);
+      var TILT = "rotate(-2 " + PR.c[0] + " " + PR.c[1] + ")", PAPERW = "#FBF6E6";
+      var bw = PR.box[2] - PR.box[0], bh = PR.box[3] - PR.box[1];
+      q("plate").innerHTML = KIT.svg(W, H,
+        '<defs><clipPath id="' + ID + '-print"><rect x="' + PR.box[0] + '" y="' + PR.box[1] + '" width="' + bw + '" height="' + bh + '"/></clipPath></defs>' +
+        '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + C.deep + '"/>' +
+        '<g id="' + ID + '-tilt">' +
+        '<g id="' + ID + '-border" opacity="0"><path d="' + edge + ' Z" fill="#000" opacity="0.35" transform="translate(14,16)"/><path d="' + edge + ' Z" fill="' + PAPERW + '"/></g>' +
+        '<g id="' + ID + '-clip"><g id="' + ID + '-cam">' + plate + "</g>" +
+        '<rect id="' + ID + '-develop" x="' + PR.box[0] + '" y="' + PR.box[1] + '" width="' + bw + '" height="' + bh + '" fill="' + PAPERW + '" opacity="0"/></g></g>');
+
+      var cam = q("cam"), tilt = q("tilt"), clip = q("clip"), border = q("border"), develop = q("develop"), flash = q("flash");
+      var rise = q("rise"), rise2 = q("rise2"), ra = q("ra"), rb = q("rb");
+      var faceGrin = rb.querySelector(".face-grin"), faceDelight = rb.querySelector(".face-delight");
+      var armOpen = ra.querySelector(".reaper-arm-open").parentNode, armGrip = ra.querySelector(".reaper-arm-grip").parentNode, SH = KIT.REAPER.shoulder, HD = KIT.REAPER.hand;
+      // each arm's own angle from straight down (its hand from its shoulder), in degrees
+      var ARM0 = [0, 1].map(function (i) { return Math.atan2(HD[i][0] - SH[i][0], HD[i][1] - SH[i][1]) * 180 / Math.PI; });
+      var all = function (g, sel) { return Array.prototype.slice.call(g.querySelectorAll(sel)); };
+      var fam = FAM.map(function (m, i) {
+        var b = q("b" + i), h = q("h" + i);
+        return { leans: all(b, ".lean").concat(all(h, ".lean")), poses: all(b, ".pose").concat(all(h, ".pose")), lights: all(b, '.pose:not([data-pose="bones"]) .chest-light'),
+          pupils: all(h, '.pose[data-pose="stiff"] .pupil') };
+      });
+      // the stiff smile: the same grin, the eyes wide open with pinprick pupils, the brows up
+      var EYE_X = [-2.5, 10.8];
+      FAM.forEach(function (m, i) {
+        fam[i].pupils.forEach(function (p) { p.setAttribute("r", "0.9"); });
+        all(q("h" + i), '.pose[data-pose="stiff"] .eye').forEach(function (e, j) {
+          e.setAttribute("transform", "translate(" + EYE_X[j % 2] + ",-4) scale(1.15,1.9) translate(" + -EYE_X[j % 2] + ",4)");
+        });
+        all(q("h" + i), '.pose[data-pose="stiff"] .brows').forEach(function (b) { b.setAttribute("transform", "translate(0,-3)"); });
+      });
+      var sweat = q("sweat"), R0 = FAM[0].R, TEMPLE = [R0.head[0] - 11 * R0.hs, R0.head[1] - 13 * R0.hs];
+
+      // ── Cues
+      var tLoved = cue("loved"), tSlowly = cue("slowly"), tTort = cue("tortured"), tBrut = cue("brutally"), tMurd = cue("murdered");
+      var tDis = cue("diseases?"), tFlash = KIT.after(ID, "diseases?"), tPrint = tFlash + 0.06, tDev0 = tFlash + 0.12, tDev1 = tFlash + 0.62;
+
+      // ── The camera: wide (lamp to clock) on "Is", a slow push in on the faces from "slowly", held; under the
+      // flash it cuts to the print's view (the whole room, inside the print).
+      var VIEW = V
+        ? { wide: [1005, 560, 0.7], close: [1088, 480, 1.12], print: [970, 560, 0.8] }
+        : { wide: [1005, 560, 1.1], close: [1010, 470, 1.55], print: [960, 551, 0.802] };
+      VIEW.print = [VIEW.print[0], VIEW.print[1], VIEW.print[2]];
+      // (the print's view puts its picture box exactly on PR.box: the plate point VIEW.print sits on the anchor)
+      var A = [PR.c[0], PR.c[1]];
+      var KEYS = [[0, "wide", 1], [tSlowly, "wide", 1.015], [tSlowly + 2.4, "close", 1], [tPrint - 0.01, "close", 1.025], [tPrint, "print", 1], [D, "print", 1]];
+      var camera = KIT.camera(VIEW, KEYS, A);
+
+      KIT.onTime(tl, D, function (t) {
+        camera.place(cam, camera.at(t));
+        var printed = t >= tPrint;
+        tilt.setAttribute("transform", printed ? TILT : "");
+        if (printed) clip.setAttribute("clip-path", "url(#" + ID + "-print)"); else clip.removeAttribute("clip-path");
+        border.setAttribute("opacity", printed ? 1 : 0);
+        develop.setAttribute("opacity", printed ? (1 - smooth((t - tDev0) / (tDev1 - tDev0))).toFixed(3) : 0);
+
+        // the family: lean in on "loved", squeezed in on "murdered", still from "diseases?"
+        var lu = smooth((t - tLoved) / 0.35), su = smooth((t - tMurd) / 0.25);
+        FAM.forEach(function (m, i) {
+          var p = fam[i], hip = m.R.hipY;
+          var dx = m.dx * lu + m.sq * su * 0.6, rot = m.lean * lu + (m.sq > 0 ? 2 : -2) * su, lift = m.sit ? -3 * lu : 0;
+          m.dxNow = dx;
+          p.leans.forEach(function (g) { g.setAttribute("transform", "translate(" + f(dx) + "," + f(lift) + ") rotate(" + f(rot) + " 0 " + f(hip) + ")"); });
+          var pose = t >= tPrint ? "bones" : t >= tMurd + 0.05 ? "stiff" : t >= tLoved + 0.1 ? "grin" : "smile";
+          p.poses.forEach(function (g) { g.setAttribute("opacity", g.getAttribute("data-pose") === pose ? 1 : 0); });
+          // the chest lights: red, blinking, one by one from the left on "tortured"
+          var tl0 = tTort + i * 0.22, on = t >= tl0 && Math.floor((t - tl0) * 4) % 2 === 0;
+          p.lights.forEach(function (c) { c.setAttribute("fill", on ? C.war : "#E9E1CC"); c.setAttribute("r", on ? 7.5 : 4.5); });
+        });
+        // a bead of sweat runs down the father's temple
+        var wu = (t - tTort - 0.3) / 1.5;
+        if (wu > 0 && wu < 1 && t < tPrint) {
+          sweat.setAttribute("opacity", wu < 0.85 ? 1 : (1 - wu) / 0.15);
+          sweat.setAttribute("transform", "translate(" + f(TEMPLE[0] - 2 * wu) + "," + f(TEMPLE[1] + 26 * smooth(wu)) + ")");
+        } else sweat.setAttribute("opacity", 0);
+
+        // the Reaper: up from behind the sofa on "brutally", arms flung up, then down round them; the squeeze
+        var ru = smooth((t - tBrut) / 0.45), dy = RDOWN * (1 - ru);
+        rise.setAttribute("transform", "translate(0," + f(dy) + ")");
+        rise2.setAttribute("transform", "translate(0," + f(dy) + ")");
+        ra.setAttribute("opacity", t >= tBrut + 0.2 ? 1 : 0);
+        // each arm comes down round the far shoulder of the one beside him (the mother's left, the grandfather's
+        // right) and follows it as the squeeze pulls them in
+        var down = smooth((t - tBrut - 0.4) / 0.3);
+        var aim = function (side, m, which) {
+          var sh = [RP[0] + RP[2] * SH[side][0], RP[1] + dy + RP[2] * SH[side][1]];
+          var tg = [m.x + m.k * ((m.dxNow || 0) + m.R.shoulder[which][0]), m.y + m.k * m.R.shoulder[which][1]];
+          return ARM0[side] - Math.atan2(tg[0] - sh[0], tg[1] - sh[1]) * 180 / Math.PI;
+        };
+        var aL = 120 * (1 - down) + aim(0, FAM[2], 0) * down, aR = -120 * (1 - down) + aim(1, FAM[3], 1) * down;
+        armOpen.setAttribute("transform", "rotate(" + f(aL) + " " + SH[0][0] + " " + SH[0][1] + ")");
+        armGrip.setAttribute("transform", "rotate(" + f(aR) + " " + SH[1][0] + " " + SH[1][1] + ")");
+        var delight = t >= tMurd + 0.05;
+        faceGrin.setAttribute("opacity", delight ? 0 : 1); faceDelight.setAttribute("opacity", delight ? 1 : 0);
+      });
+
+      // the flash bulb, after "diseases?": full white at once, then it fades as the print develops
+      tl.fromTo(flash, { opacity: 0 }, { opacity: 1, duration: 0.04, ease: "none" }, tFlash);
+      tl.to(flash, { opacity: 0, duration: 0.4, ease: "power1.in" }, tFlash + 0.1);
       tl.set({}, {}, D);
       window.__timelines[ID] = tl;
     })();

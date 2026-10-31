@@ -1,0 +1,55 @@
+<template id="pointing-at-each-other-template">
+  <!-- pointing-at-each-other · collage (KIT.collage, video/README.md "Writing a collage scene"). Starts on
+       split-the-atom's end (the halves in the sunburst). "when": the sunburst shuts, Uncle Sam and the General slide
+       in pointing, the globe slides up; "realized": the halves hop onto their fingers; "pointing", "it": both jab;
+       "each": sparks; "other!": BOOM, the mushroom cloud pops out of the globe, both men are charred; "That's": they
+       blink; "kind": they fold into two heaps of ash and blink again. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="pointing-at-each-other" data-width="1920" data-height="1080" data-start="0" data-duration="5.4">
+    <div id="pointing-at-each-other-weave"></div>
+    <div id="pointing-at-each-other-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    KIT.collage({
+      id: "pointing-at-each-other", seed: 312,
+      cast: {
+        globe: { art: "globe", x: 960, y: 1000, anchor: "bottom", scale: 0.85 },
+        cloud: { art: "mushroom", x: 960, y: 830, anchor: "bottom", pivot: "bottom", scale: 1.2 },
+        sam: { art: "uncle-sam", x: 150, y: 1000, anchor: [0, 697], pivot: [116, 697], scale: 1.1, points: { tip: [341, 208] }, eyes: [[141, 124]], smoke: [160, 12] },
+        gen: { art: "general", x: 1340, y: 1000, anchor: [0, 679], pivot: [242, 679], scale: 1.15, faces: "left", points: { tip: [6, 188] }, eyes: [[219, 104]], smoke: [200, 14] },
+        halfL: { art: "atom", clip: "left", x: 865, y: 430, scale: 0.8 },
+        halfR: { art: "atom", clip: "right", x: 1055, y: 430, scale: 0.8 },
+      },
+      beats: [
+        { at: 0, do: "sunburst", x: 960, y: 430, enter: "none", angle: 342.4 },
+        { at: 0, do: "bob", who: ["halfL", "halfR"], y: 6, r: 0, until: "realized" },
+        { on: "when", do: "pop", who: "sunburst", out: true },
+        { on: "when", do: "slideIn", who: "sam", from: "left" },
+        { on: "when", do: "slideIn", who: "gen", from: "right" },
+        { on: "when", offset: 0.08, do: "slideIn", who: "globe", from: "bottom", over: 14 },
+        { on: "realized", do: "move", who: "halfL", to: "sam.tip", by: [22, 0], arc: 150, scale: 0.6 },
+        { on: "realized", do: "move", who: "halfR", to: "gen.tip", by: [-22, 0], arc: 150, scale: 0.6 },
+        { on: "pointing", do: "nudge", who: ["sam", "gen"], by: [42, 0] },
+        { on: "pointing", do: "glow", who: ["halfL", "halfR"] },
+        { on: "it", do: "nudge", who: ["sam", "gen"], by: [42, 0] },
+        { on: "each", do: "sparks", who: ["halfL", "halfR"] },
+        { on: "other!", offset: 0.04, do: "boom" },
+        { on: "other!", offset: 0.04, do: "hide", who: ["halfL", "halfR"] },
+        { on: "other!", offset: 0.12, do: "pop", who: "cloud", squash: true, swell: 0.06 },
+        { on: "other!", offset: 0.12, do: "char", who: ["sam", "gen", "globe"] },
+        { on: "That's", offset: 0.08, do: "blink", who: ["sam", "gen"] },
+        { on: "kind", offset: -0.15, do: "ash", who: ["sam", "gen"] },
+        { on: "kind", offset: 0.23, do: "blink", who: ["sam", "gen"] },
+      ],
+    });
+  </script>
+</template>

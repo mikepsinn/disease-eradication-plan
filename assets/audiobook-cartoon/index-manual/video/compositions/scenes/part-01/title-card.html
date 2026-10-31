@@ -1,88 +1,120 @@
 <template id="title-card-template">
-  <!-- title-card · Layer A title card (storyboards/part-01-opening.md): the title words slam in on the spoken words;
-       a busy human sprints past on "Busy"; the sun sinks a little after "Civilization". -->
+  <!-- title-card · the period title card (KIT.titleScene, look "atomic"): the book's title on the plain navy card
+       under the film's emblem, the heading words coming in on the spoken words. "(for": "(for Busy People)" slides in
+       under them. "Busy": a busy man in a suit and bowler sprints left to right along the bottom of the card, legs
+       scissoring, his forearm up in front of his face so he can read his wristwatch. "A": the subtitle pill.
+       "Step-by-Step": his skeleton, in the same bowler, strolls slowly back the other way, still checking the watch,
+       until the card goes to black. These options are YOU, the viewer, from Part 10 on. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
     @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
-    #title-card-cam, #title-card-bg, #title-card-sun, #title-card-art, #title-card-grain { position: absolute; inset: 0; }
-    #title-card-words { position: absolute; left: 0; right: 0; top: 230px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-    .title-card-line { display: flex; gap: 0.28em; font-size: 150px; }
-    #title-card-words .title-card-w { display: block; color: #F3ECD0; }
-    /* cream with a navy outline: it sits on the mustard sun */
-    #title-card-busy-people { font-family: "Oswald"; font-weight: 600; font-size: 64px; letter-spacing: 0.04em; color: #F3ECD0; margin-top: 6px;
-      text-shadow: 3px 3px 0 #0B1A33, -3px 3px 0 #0B1A33, 3px -3px 0 #0B1A33, -3px -3px 0 #0B1A33, 0 4px 0 #0B1A33, 0 -4px 0 #0B1A33, 4px 0 0 #0B1A33, -4px 0 0 #0B1A33; }
-    #title-card-sub { margin-top: 26px; padding: 14px 40px; border-radius: 999px; background: #061D3E; border: 4px solid #E5903B;
-      font-family: "Inter"; font-weight: 700; font-size: 42px; color: #F3ECD0; text-align: center; }
-    .tall #title-card-words { top: 300px; }
-    .tall .title-card-line { font-size: 128px; }
-    .tall #title-card-sub { font-size: 40px; max-width: 900px; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
   </style>
   <div id="root" data-composition-id="title-card" data-width="1920" data-height="1080" data-start="0" data-duration="8.52">
     <div id="title-card-cam">
       <div id="title-card-bg"></div>
-      <div id="title-card-sun"></div>
+      <div id="title-card-back"></div>
       <div id="title-card-words"></div>
       <div id="title-card-art"></div>
-      <div id="title-card-grain"></div>
     </div>
+    <div id="title-card-grain"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
   <script>
-    (function () {
-      var ID = "title-card";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
-      var q = function (s) { return document.getElementById(ID + "-" + s); };
-      var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-      if (V) document.getElementById(ID + "-cam").parentNode.classList.add("tall");
+    KIT.titleScene({
+      id: "title-card",
+      seed: 101,
+      lines: [["HOW", "TO", "END"], ["WAR", "AND", "DISEASE"], { words: ["(for", "Busy", "People)"], style: "label", cue: "(for" }],
+      linesTall: [["HOW", "TO", "END"], ["WAR", "AND"], ["DISEASE"], { words: ["(for", "Busy", "People)"], style: "label", cue: "(for" }],
+      spoken: ["How", "to", "End", "War", "and", "Disease"],
+      sub: { text: "A Step-by-Step Guide to Optimizing Your Terrible Civilization", cue: "A" },
+      // Three heading lines and a pill: the emblem shrinks up out of their way (the sketch's layout), so the
+      // heading and the pill sit high and the busy man has the bottom of the card to himself.
+      size: KIT.V ? 170 : 124,
+      cy: KIT.V ? 880 : 470,
+      minTop: KIT.V ? 700 : 300,
+      maxH: KIT.V ? 520 : 330,
+      // The busy man, then his skeleton (YOU, from Part 10 on).
+      gag: function (c) {
+        var C = c.C, W = c.W, V = c.V, D = c.D, f = function (n) { return n.toFixed(1); };
+        // the emblem, smaller and higher (the navy card behind it is the camera's own background)
+        var E = c.emblem, ES = V ? 0.8 : 0.58, EY = V ? 400 : 150;
+        c.cam.style.background = C.navy;
+        c.bg.style.transformOrigin = E.at[0] + "px " + E.at[1] + "px";
+        c.bg.style.transform = "translateY(" + (EY - E.at[1]) + "px) scale(" + ES + ")";
+        var copy = function (a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; };
+        var YOU = { tone: 2, outfit: "suit", hat: "bowler", mood: "eager" };
+        // running right: the right arm folded up in front of his face (the watch), the left arm pumping
+        var RUN = copy(YOU, { look: "right", arms: [[-40, -80], [70, 172]] });
+        // strolling left: the left arm (now the near one, in front) folded up to the watch, the right hanging
+        var BONES = copy(YOU, { skeleton: true, look: "left", arms: [[-70, -172], [8, 4]] });
+        var RR = KIT.rig(RUN), RB = KIT.rig(BONES);
+        var watch = function (h) {
+          return '<circle cx="' + f(h[0]) + '" cy="' + f(h[1] - 3) + '" r="6.5" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="2.4"/>' +
+            '<path d="M' + f(h[0]) + "," + f(h[1] - 3) + " v-4 M" + f(h[0]) + "," + f(h[1] - 3) + ' h3" stroke="' + C.line + '" stroke-width="1.4"/>';
+        };
+        // where he runs: under the pill, feet a little above the bottom (16:9: as high as the room allows)
+        // (the pill is one line in 16:9, two in 9:16)
+        var pillBottom = c.layout.pillTop + (V ? 140 : 90), headTop = RR.top[1] - 24;
+        var K = V ? 1.9 : 0.84, FEET = V ? Math.min(1880, pillBottom + 50 + K * (100 - headTop)) : 955;
+        // A cream rim round a drawing (the same drawing, every color cream and every line thicker, under it), so the
+        // navy suit and the bowler read on the navy card. Its ids are renamed, so the real drawing keeps its own.
+        // lines: false leaves out the stroked lines (a skeleton's bones are cream already; only its skull, feet and
+        // bowler get the rim).
+        var rim = function (m, lines) {
+          return '<g class="rim">' + m.replace(/<(path|rect|circle|ellipse|polygon)\b([^>]*?)(\/?)>/g, function (x, tag, a, sl) {
+            var none = /fill="none"/.test(a), sw = /stroke-width="([\d.]+)"/.exec(a);
+            if (none && !lines) return "";
+            a = a.replace(/\s(fill|stroke|stroke-width|stroke-linejoin|stroke-miterlimit|stroke-linecap|opacity|fill-opacity)="[^"]*"/g, "");
+            return "<" + tag + a + ' fill="' + (none ? "none" : C.cream) + '" stroke="' + C.cream + '" stroke-width="' + ((sw ? +sw[1] : 0) + 7) + '" stroke-linejoin="round" stroke-linecap="round"' + sl + ">";
+          }).replace(/id="([^"]+)"/g, 'id="rim-$1"').replace(/url\(#([^)]+)\)/g, "url(#rim-$1)") + "</g>";
+        };
+        var runArt = KIT.person(RUN) + watch(RR.hand[1]), boneArt = KIT.person(BONES) + watch(RB.hand[0]);
+        var runSvg = '<g id="title-card-run" opacity="0"><g transform="scale(' + K + ')"><g id="title-card-run-lean">' + rim(runArt, true) + runArt + "</g></g></g>";
+        var boneSvg = '<g id="title-card-bones" opacity="0"><g transform="scale(' + K + ')"><g id="title-card-bones-bob">' + rim(boneArt, false) + boneArt + "</g></g></g>";
+        var lines = '<g id="title-card-speed" opacity="0">' + [0, 1, 2].map(function (i) {
+          return '<path d="M0,' + f((-120 + i * 34) * K) + " H" + f(-(110 + i * 40) * K) + '" stroke="' + C.cream + '" stroke-width="' + f(5 * K / 1.05) + '" stroke-linecap="round" opacity="0.6"/>';
+        }).join("") + "</g>";
+        c.art.innerHTML = KIT.svg(W, c.H, lines + runSvg + boneSvg);
+        var run = document.getElementById("title-card-run"), lean = document.getElementById("title-card-run-lean");
+        var speed = document.getElementById("title-card-speed"), bones = document.getElementById("title-card-bones"), bob = document.getElementById("title-card-bones-bob");
+        // (each limb twice: the rim's and the drawing's)
+        var all = function (g, sel) { return Array.prototype.slice.call(g.querySelectorAll(sel)); };
+        var rl = [all(lean, ".leg-l"), all(lean, ".leg-r")], ra = all(lean, ".arm-l");
+        var bl = [all(bob, ".leg-l"), all(bob, ".leg-r")];
+        var turn = function (els, deg, p) { els.forEach(function (e) { e.setAttribute("transform", "rotate(" + f(deg) + " " + f(p[0]) + " " + f(p[1]) + ")"); }); };
+        lean.setAttribute("transform", "rotate(10 0 100)");
 
-      q("bg").innerHTML = KIT.office(-2000, 0, { noSun: true, noHalo: true });
-      q("sun").innerHTML = KIT.svg(W, H, '<g id="title-card-sun-g">' + KIT.sun(W / 2, KIT.horizon, 1.15) + "</g>");
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-
-      // The title, one span per spoken word, in the order they are said.
-      var lines = V ? [["HOW", "TO", "END"], ["WAR", "AND"], ["DISEASE"]] : [["HOW", "TO", "END"], ["WAR", "AND", "DISEASE"]];
-      var spoken = ["How", "to", "End", "War", "and", "Disease"];
-      var html = lines.map(function (line) {
-        return '<div class="title-card-line">' + line.map(function (w) { return '<span class="title-card-w kit-big" data-w="' + w + '">' + w + "</span>"; }).join("") + "</div>";
-      }).join("") + '<div id="title-card-busy-people">(for Busy People)</div><div id="title-card-sub">A Step-by-Step Guide to Optimizing Your Terrible Civilization</div>';
-      q("words").innerHTML = html;
-
-      // The busy human, sprinting along the bottom with an eye on a wristwatch; then his skeleton, in the
-      // same bowler, strolling back the other way and still checking the watch (busy people run out of time).
-      var RUN = { tone: 2, outfit: "suit", hat: "bowler" }, BONES = { tone: 2, outfit: "suit", hat: "bowler", skeleton: true, look: "left", arms: [[20, 10], [-70, -120]] };
-      var runner = KIT.person({ tone: 2, outfit: "suit", hat: "bowler", mood: "eager", look: "right", arms: [[-70, -120], [60, 40]] });
-      var bones = KIT.person(BONES), hips = KIT.rig(BONES).hip;
-      var gy = V ? 1300 : 930, gs = V ? 1.5 : 1.3;
-      q("art").innerHTML = KIT.svg(W, H, '<g id="title-card-runner" transform="translate(-200,' + gy + ") scale(" + gs + ')">' + runner + "</g>" +
-        '<g transform="translate(0,' + gy + ')"><g id="title-card-skel"><g transform="scale(' + gs + ')">' + bones + "</g></g></g>");
-
-      var tl = gsap.timeline({ paused: true });
-      var els = document.querySelectorAll("#title-card-words .title-card-w");
-      spoken.forEach(function (w, i) {
-        tl.fromTo(els[i], { opacity: 0, scale: 2.2 }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)" }, cue(w));
-      });
-      tl.fromTo("#title-card-busy-people", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, cue("Busy") - 0.1);
-      tl.fromTo("#title-card-runner", { x: -200 }, { x: W + 200, duration: 1.4, ease: "none" }, cue("Busy"));
-      // the skeleton strolls in from the right on "Step-by-Step", legs swinging, until the card ends
-      var stroll = cue("Step-by-Step"), skel = document.getElementById("title-card-skel");
-      tl.fromTo(skel, { x: W + 150 }, { x: W * 0.55, duration: D - stroll, ease: "none" }, stroll);
-      [[".leg-l", hips[0].join(" "), 14], [".leg-r", hips[1].join(" "), -14]].forEach(function (g) {
-        var leg = skel.querySelector(g[0]);
-        gsap.set(leg, { svgOrigin: g[1] });
-        tl.fromTo(leg, { rotation: g[2] }, { rotation: -g[2], duration: 0.4, repeat: Math.floor((D - stroll) / 0.4), yoyo: true, ease: "sine.inOut" }, stroll);
-      });
-      tl.fromTo("#title-card-sub", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, cue("Step-by-Step"));
-      // the sun sinks a little, as if embarrassed by "Terrible Civilization"
-      tl.to("#title-card-sun-g", { y: 40, duration: 0.8, ease: "power2.inOut" }, KIT.after(ID, "Civilization"));
-      tl.set({}, {}, D);
-      window.__timelines[ID] = tl;
-    })();
+        var tRun = c.cue("Busy"), RUN_T = 1.4, x0 = -140, x1 = W + 160;
+        var tWalk = c.cue("Step-by-Step"), bx0 = W + 130, bx1 = W * (V ? 0.42 : 0.5);
+        KIT.onTime(c.tl, D, function (t) {
+          // the sprint
+          var u = (t - tRun) / RUN_T;
+          if (u > 0 && u < 1) {
+            var x = x0 + (x1 - x0) * u, ph = Math.sin((t - tRun) * 26), hop = Math.abs(Math.cos((t - tRun) * 26)) * 6 * K;
+            run.setAttribute("opacity", 1);
+            run.setAttribute("transform", "translate(" + f(x) + "," + f(FEET - 100 * K - hop) + ")");
+            turn(rl[0], 38 * ph, RR.hip[0]); turn(rl[1], -38 * ph, RR.hip[1]); turn(ra, -34 * ph, RR.shoulder[0]);
+            speed.setAttribute("opacity", 1);
+            speed.setAttribute("transform", "translate(" + f(x - 30 * K) + "," + f(FEET) + ")");
+          } else { run.setAttribute("opacity", 0); speed.setAttribute("opacity", 0); }
+          // the stroll back, slow and steady, still checking the watch
+          var w = (t - tWalk) / (D - tWalk);
+          if (w > 0) {
+            var bx = bx0 + (bx1 - bx0) * w, s = Math.sin((t - tWalk) * 5.2);
+            bones.setAttribute("opacity", 1);
+            bones.setAttribute("transform", "translate(" + f(bx) + "," + f(FEET - 100 * K) + ")");
+            bob.setAttribute("transform", "translate(0," + f(-Math.abs(s) * 2.5) + ")");
+            turn(bl[0], 16 * s, RB.hip[0]); turn(bl[1], -16 * s, RB.hip[1]);
+          } else bones.setAttribute("opacity", 0);
+        });
+      },
+    });
   </script>
 </template>
