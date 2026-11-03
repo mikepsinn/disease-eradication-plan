@@ -1,0 +1,287 @@
+{
+  "id": "short-604-to-1",
+  "title": "Short: 604 to 1",
+  "storyboard": "storyboards/part-01-opening.md",
+  "audio": {
+    "start": 202.75,
+    "end": 258.4
+  },
+  "scenes": [
+    {
+      "id": "papers-with-presidents",
+      "file": "compositions/scenes/short-604-to-1/papers-with-presidents.html",
+      "cue": "However,",
+      "approx": 202.8,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "papers-with-presidents",
+      "cue": "discovery",
+      "sfx": "whoosh",
+      "volume": 0.15
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "discovery",
+      "offset": 0.25,
+      "sfx": "pat",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "when",
+      "offset": -0.1,
+      "sfx": "squeak",
+      "volume": 0.25
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "small",
+      "sfx": "scratch",
+      "volume": 0.35
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "paper",
+      "n": 1,
+      "sfx": "marker",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "presidents",
+      "sfx": "squeak",
+      "volume": 0.2
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "them.",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "money",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "pretend",
+      "sfx": "sizzle",
+      "volume": 0.35
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "becomes",
+      "sfx": "hum",
+      "volume": 0.35
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "hard",
+      "sfx": "pop",
+      "volume": 0.5
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "enough.",
+      "sfx": "sparkle",
+      "volume": 0.25
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "enough.",
+      "offset": 0.55,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "Without",
+      "sfx": "crickets",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "papers",
+      "n": 3,
+      "offset": 0.15,
+      "sfx": "zap",
+      "volume": 0.4
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "papers",
+      "n": 4,
+      "offset": 0.15,
+      "sfx": "zap",
+      "volume": 0.4
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "grows",
+      "sfx": "slide-up",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "free).",
+      "offset": 0.25,
+      "sfx": "zap",
+      "volume": 0.4
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "these",
+      "n": 3,
+      "offset": 0.25,
+      "sfx": "hammer",
+      "volume": 0.4
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "will:",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "Build",
+      "sfx": "hammer",
+      "volume": 0.35
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "bombs",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "love",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "giving",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "papers",
+      "n": 7,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "for",
+      "n": 2,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "this",
+      "n": 1,
+      "offset": 0.48,
+      "sfx": "boom",
+      "volume": 0.6
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "wars",
+      "sfx": "boom",
+      "volume": 0.5
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "makes",
+      "sfx": "boom",
+      "volume": 0.4
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "more",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "Destroy",
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "planet",
+      "sfx": "boom",
+      "volume": 0.4
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "profitable",
+      "sfx": "cash-register",
+      "volume": 0.45
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "spend",
+      "offset": -0.1,
+      "sfx": "slide-up",
+      "volume": 0.3
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "six",
+      "sfx": "whoosh",
+      "volume": 0.45
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "papers",
+      "n": 10,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "for",
+      "n": 3,
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "one",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "testing",
+      "offset": 0.15,
+      "sfx": "slide-down",
+      "volume": 0.15
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "work.",
+      "offset": 0.43,
+      "sfx": "splat",
+      "volume": 0.5
+    },
+    {
+      "scene": "papers-with-presidents",
+      "cue": "work.",
+      "offset": 1.1,
+      "sfx": "squeak",
+      "volume": 0.3
+    }
+  ]
+}

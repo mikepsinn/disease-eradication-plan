@@ -8,11 +8,11 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 
 | Name | What it is (poses, states) | Parts | Exists |
 |---|---|---|---|
-| `you` | YOU, the viewer: a busy Victorian clerk in a bowler with a pocket watch and a chest light. Standing, walking, running, reading (the manual, a newspaper, a book in a wingback armchair), asleep under the manual, juggling, flattened, cutaway torso with organs (Part 8), top hat and monocle (Parts 12, 13), bubble-wrapped (Part 21), with a telescoping paddle (Part 20). States: `you-skeleton` (same bowler), `you-charred` (black above the waist), `you-bone-legs` (skeleton legs under the coat). | 1, 8, 10, 12, 13, 14, 17, 19, 20, 21, 23, 24, 25, 26, 27 | no |
+| `you` | YOU, the viewer: a busy 1950s office worker in a tweed suit, thin red tie, grey fedora, round glasses and black moustache, with a pocket watch. Standing, walking, running, reading (the manual, a newspaper, a book in a wingback armchair), asleep under the manual, juggling, flattened, cutaway torso with organs (Part 8), top hat and monocle (Parts 12, 13), bubble-wrapped (Part 21), with a telescoping paddle (Part 20). States: `you-skeleton` (same fedora and glasses), `you-charred` (black above the waist), `you-bone-legs` (skeleton legs under the coat). | 1, 8, 10, 12, 13, 14, 17, 19, 20, 21, 23, 24, 25, 26, 27 | no |
 | `fat-cat` | The Rich Human, a robber baron: a navy egg on stub legs, jowls, top hat, monocle, walrus mustache, cigar, gold watch chain; dollar-sign eyes. In a swivel chair with a phone, on his money hill, waddling with a roll of price tags, running, in a hamster wheel, fainted flat, in the Lobbyist's mask. Pieces: long white beard, "I PREFER LIVING" button, mouse ears. A tiny copy for the 2,800 grid (awake, asleep, skeleton). State: `fat-cat-skeleton` (top hat, monocle, beard). | 1, 4, 5, 8, 9, 10, 13, 14, 15, 16, 17, 21, 22, 23, 25, 26 | no |
-| `weapons-maker` | A barrel-chested foundry worker, tiny head under a hard hat, Popeye forearms, cigar, cradling `baby-missile`. At a workbench hammering a bomb, reading the news in a necktie, coughing, dollar-sign eyes, charred. State: `weapons-maker-skeleton`. | 1, 2, 4, 6, 7, 11, 12, 13, 15, 17, 18, 19, 20, 21, 23, 24, 25, 26 | no |
-| `baby-missile` | His smiling baby missile in a bonnet. Flies off, claps, shakes its head, kissed; sharpened to a point with an eraser on its tail; the empty bonnet. | 2, 4, 6, 10, 11, 15, 17, 18, 19, 20, 21, 23, 24, 25, 26 | no |
-| `politician` | Lantern jaw, a grin full of teeth, slick hair, flag pin, a wide tie as its own piece (tinted red, blue or teal). New pieces: a bill slot and a ballot slot on his belly with EMPTY flags, a vending flap. Cranking, hosting, signing, charred, buried in ballots. | 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 17, 19, 20, 21, 22, 26 | yes |
+| `weapons-maker` | A burly, rich arms company executive in a charcoal chalk-stripe double-breasted suit, slicked-back hair, thick moustache, cigar, cradling a plain `missile` (no face, no bonnet). Hammering a bomb on an anvil in his good suit, reading the news, coughing, dollar-sign eyes, charred. State: `weapons-maker-skeleton`. | 1, 2, 4, 6, 7, 11, 12, 13, 15, 17, 18, 19, 20, 21, 23, 24, 25, 26 | no |
+| `missile-fly` | His plain missile, flying with a puff trail. Also kissed in `weapons-maker-kiss`. | 2, 4, 6, 10, 11, 15, 17, 18, 19, 20, 21, 23, 24, 25, 26 | no |
+| `politician` | A caricature: tall and stork-skinny, enormous horse teeth, lantern jaw, jug ears, slick hair, a wide grey double-breasted 1950s suit and a huge wide tie (recoloured red, blue or purple from one drawing). New pieces: a bill slot and a ballot slot on his belly with EMPTY flags, a vending flap. Cranking, hosting, signing, charred, buried in ballots. | 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 17, 19, 20, 21, 22, 26 | yes |
 | `politician-no` | The same Politician tinted, the one who votes no; charred and sooty. | 20, 23 | tint of `politician` |
 | `lobbyist` | A masked crook: fedora, domino mask, popped-collar trench coat, gloves, and `briefcase` (lid, empty BELIEFS slot, rolodex). Tiptoeing, peeking over a bush, on a fainting couch, flattened, with a gavel, as a skeleton. | 5, 15, 17, 19, 20, 21, 22, 23, 24 | no |
 | `scientist` | Lab coat, bun, big glasses, bubbling flask, clipboard. Pieces: a pith helmet (Part 9). On a rope with a wrench, bun on fire, greying and stooping into a skeleton. | 1, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15, 16, 17, 18, 21, 22, 24, 25, 27 | yes |
@@ -26,10 +26,10 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 | `bill-war` | A green banknote on stick legs with a generic oval portrait and a dark green missile seal as its own piece (it flips to the cross). Walking, waving, stacked, rolled into a missile. | 1, 2, 3, 4, 5, 6, 7, 10, 15, 17, 18, 19, 20, 21, 25, 26, 27 | no |
 | `bill-med` | The same banknote with a cross seal; also flattened with one arm out. | 1, 3, 5, 6, 10, 14, 15, 17, 18, 19, 20, 21, 22, 24, 25, 26, 27 | no |
 | `bill-plain` | The same banknote with no seal. Part 1's has George Washington in the oval with a hinged eyelid, and a blank version; muddy and crisp; a tiny monk hood (Part 5). | 1, 5, 7, 10, 21, 22, 24, 25 | no |
-| `patient` | A Victorian invalid with a chest light (red, then teal): a man in a dressing gown with a thermometer, and a woman in a striped scarf. In an iron bed, on a gurney, in a ward gown. State: `patient-skeleton`. | 1, 5, 11, 12, 14, 15, 16, 21, 22 | no |
+| `patient` | A gaunt 1950s patient: a balding man in a blue bathrobe and striped pyjamas with a thermometer. In an iron bed, on a gurney, in a ward gown. State: `patient-skeleton`. | 1, 5, 11, 12, 14, 15, 16, 21, 22 | no |
 | `leash-human` | A human walking a dog-sized germ on a leash; greys, grows a beard, becomes a skeleton still holding the leash. | 9, 14, 25 | no |
 | `citizen` | A sheet of a dozen everyday Victorian humans, men and women of every build, hats of many kinds, heads and arms hinged. The townsfolk (a baker, a sweeper, a fence painter; one flattened), voters, strangers, bidders, tiny players and pictogram figures. | 1, 6, 14, 18, 20, 23, 24, 26 | no |
-| `family` | A Victorian family of four on a horsehair sofa: father, mother, the boy, the grandfather in spectacles behind. Standing with loaves (Part 2 uses three of them), charred. State: `family-skeleton`. | 1, 2, 10, 12 | no |
+| `family` | A 1950s family: father in a cardigan, mother in a full-skirted dress, boy in a striped T-shirt. Standing with loaves, waving, charred. State: `family-skeleton`. | 1, 2, 10, 12 | no |
 | `caveman` | Two cavemen in pelts with burning branches; charred; one with moldy bread. | 1, 3, 10, 13 | no |
 | `hungry-man` | A thin, hungry man with an empty wallet and his pockets turned out. State: skeleton. | 1, 2, 4, 15 | no |
 | `democracy-dog` | A round dog with a DEMOCRACY collar tag chasing its tail; head, legs and a tail that swaps between `tail-war` (war bills knotted with skeletons) and `tail-pills`. | 1, 6 | no |
@@ -42,11 +42,12 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 | `engineer` | An engineer with a loupe and tweezers; turns into a masked crook with a laptop. | 4, 25 | no |
 | `friend-man` | YOU's friend, still holding his dinner fork. | 24, 26 | no |
 | `friend-woman` | YOU's friend in curlers; in a deckchair with a lemonade. | 24, 26, 27 | no |
-| `orphan` | Victorian orphans, a few poses; their parents come back as `parent`. | 17, 19 | no |
+| `orphan` | 1950s orphans in striped T-shirts and torn jeans, a few poses; their parents come back as `parent`. | 17, 19 | no |
 | `pram-woman` | A woman pushing a pram. | 15, 25 | no |
-| `robot` | A clockwork tin robot. Hunched over a laptop typing, splitting in two, hopping, elbowing (cybercrime); in its box on a shop shelf with pincers (the murder-bot); in an army helmet with a missile painted on its chest (the pro-war algorithm). | 10, 11, 25, 27 | no |
+| `robot` | A clockwork tin robot (files: `robot`, `robot-up`, `robot-elbow`, `robot-abacus`). Hunched over a laptop typing, splitting in two, hopping, elbowing (cybercrime); in its box on a shop shelf with pincers (the murder-bot); in an army helmet with a missile painted on its chest (the pro-war algorithm). | 10, 11, 25, 27 | yes |
+| `hacker` | A masked crook in a domino mask, flat cap and striped jumper with a laptop: hunched typing, arms up in triumph (cybercrime in the destructive-economy chain). Files: `hacker`, `hacker-up`. | 11 | yes |
 | `snail` | A straining snail wiping its brow; pushing a pen; rocketing off. | 3, 17 | no |
-| `moth` | A moth that flutters out of empty things. | 1, 2, 3, 4, 8, 10, 19 | no |
+| `moth` | A moth that flutters out of empty things. | 1, 2, 3, 4, 8, 10, 19 | yes |
 | `spider` | A spider on a thread; bearded (Part 14). State: `spider-skeleton`. | 1, 9, 14, 23 | no |
 | `skeleton` | A plain anatomy-plate skeleton, full size (sits up in a bed) and pictogram size. | 6, 7, 8, 9, 10, 12, 22, 24 | no |
 | `human-ages` | One human at six ages: baby, toddler, kid, schoolboy, grown man (eyes on springs), old man on a cane. | 3, 25 | no |
@@ -54,7 +55,7 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 | `uncle-sam` | Uncle Sam (with `uncle-sam-head`). | 1, 8, 10, 17 | yes |
 | `general` | The Stalin-like Soviet general (with `general-head`); two of them at a war map. | 1, 10 | yes |
 | `tattooed-arm` | A hairy forearm with a missile tattoo. | 2, 20 | no |
-| `gorbachev` | Mikhail Gorbachev, birthmark and all. | 11, 25 | no |
+| `gorbachev` | Mikhail Gorbachev, birthmark and all. | 11, 25 | yes |
 | `truman` | Harry Truman, round glasses and fedora; with giant scissors. | 15 | no |
 | `hitler` | Adolf Hitler, caricatured, his moustache a separate piece that droops and scuttles. | 8, 17 | no |
 | `eisenhower` | Dwight Eisenhower, bald dome, big grin, Ike jacket with five stars, at a 1961 podium. | 15, 17 | no |
@@ -84,7 +85,7 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 | `lab-bench` | A lab bench with a flask and a cobweb. | 1, 11, 13 | no |
 | `schoolhouse` | A square schoolhouse with a bell; its walls fall flat. | 1, 11 | no |
 | `house` | A little house, and the same house as rubble. | 2, 6, 10 | no |
-| `printing-press` | A Victorian flatbed printing press with a crank wheel and an empty paper tray. | 2, 10, 11, 17 | no |
+| `printing-press` | The Federal Reserve as a printing press: a columned marble building with an eagle, a crank wheel on its side and an empty paper tray. | 2, 10, 11, 17 | no |
 | `funnel` | The seal-flip funnel: war bills in at the top, medicine bills out of the spout, a window to watch the seal flip. | 3, 5, 11, 13, 15, 18, 25 | no |
 | `manual` | The manual: a fat bound book in the theme song's orange cover, closed, open, a single turning page; on a parachute. | 13, 22, 23, 25, 26, 27 | no |
 | `bond` | The engraved INCENTIVE ALIGNMENT BOND certificate. | 13, 17, 20, 23, 26 | no |
@@ -96,9 +97,9 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 | `cash-register` | A brass cash register with a till drawer and a flag. | 10, 12, 21, 23 | no |
 | `receipt` | A long till receipt. | 10, 12, 26 | no |
 | `chalkboard` | A chalkboard; one on legs. | 3, 8, 15 | no |
-| `crate` | A wooden crate stenciled "100", warhead noses poking out. | 1, 10, 13 | no |
+| `crate` | A wooden crate stenciled "100", plain brass warheads poking out. | 1, 10, 13 | no |
 | `warhead` | A plain 1950s warhead. | 1, 10, 11, 13 | no |
-| `missile` | A plain 1950s missile: on a leash, on a launch stand, shrugging its fins. | 7, 8, 10, 11, 12, 13, 17 | no |
+| `missile` | A plain 1950s missile: on a leash, on a launch stand, shrugging its fins. | 7, 8, 10, 11, 12, 13, 17 | yes |
 | `grumpy-missile` | A grumpy missile, arms crossed, scowling. | 1, 27 | no |
 | `bomb` | A round black bomb that swells; a little lit one in a medicine cup. | 1, 4, 7, 25 | no |
 | `oil-derrick` | An oil derrick, gushing bills. | 1, 8, 10 | no |
@@ -145,11 +146,11 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 | `letter` | A letter on cream paper. | 12, 22 | no |
 | `parachute` | A little cream parachute. | 21, 25 | no |
 | `prize-wheel` | A carnival prize wheel (a pie chart of odds). | 10, 14 | no |
-| `rosette` | A prize rosette. | 4, 11, 21, 26 | no |
+| `rosette` | A prize rosette. | 4, 11, 21, 26 | yes |
 | `scoreboard` | A ballpark Scoreboard with two number windows. | 23, 24 | no |
 | `signpost` | A signpost. | 11, 26 | no |
 | `spotlight` | A spotlight; a police spotlight. | 5, 18, 27 | no |
-| `tank` | A tank, and flattened. | 10, 11, 17 | no |
+| `tank` | A tank, and flattened. | 10, 11, 17 | yes |
 | `ticket` | A little paper ticket. | 18, 26 | no |
 | `typewriter` | A typewriter. | 21, 25 | no |
 | `wrench` | A big chrome wrench. | 4, 22 | no |
@@ -331,8 +332,8 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 
 | Name | What it is | Parts | Exists |
 |---|---|---|---|
-| `mainframe` | A room-sized Soviet mainframe with tape reels (or reuse `machine`). | 11 | no |
-| `pointing-hand` | A pointing hand, "YOU ARE HERE". | 11 | no |
+| `mainframe` | A room-sized Soviet mainframe with tape reels. | 11 | yes |
+| `pointing-hand` | A pointing hand, "YOU ARE HERE". | 11 | yes |
 | `toy-carrier` | A toy aircraft carrier. | 11 | no |
 | `vault-door` | A vault door. | 11 | no |
 | `wifi-pole` | A WiFi pole. | 11 | no |
@@ -548,7 +549,7 @@ Host props (the case file, the mug, the stamp, the Calculator, the Optimitron an
 | `pool` | The pool of medicine bills with a diving board. | 24 | no |
 | `point-chip` | A gold game token with a star. | 24 | no |
 | `point-holder` | Three engraved players in bathing costumes. | 24 | no |
-| `fat-cat-piggy`, `grandma-piggy`, `you-piggy` | Piggy banks: huge in a top hat and monocle; small in curlers; skinny in a bowler. | 24 | no |
+| `fat-cat-piggy`, `grandma-piggy`, `you-piggy` | Piggy banks: huge in a top hat and monocle; small in curlers; skinny in a fedora. | 24 | no |
 | `crate-man` | A businessman on an upturned crate, and his skeleton. | 24 | no |
 
 ### Part 25: Choose Your Own Adventure

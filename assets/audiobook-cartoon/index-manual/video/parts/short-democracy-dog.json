@@ -1,0 +1,218 @@
+{
+  "id": "short-democracy-dog",
+  "title": "Short: the Democracy Dog",
+  "storyboard": "storyboards/part-06-leaders-arent-the-problem.md",
+  "audio": {
+    "start": 804.1,
+    "end": 848.5
+  },
+  "scenes": [
+    {
+      "id": "red-blue-ties",
+      "file": "compositions/scenes/short-democracy-dog/red-blue-ties.html",
+      "cue": "There's",
+      "approx": 804.1,
+      "layer": "B"
+    },
+    {
+      "id": "better-loop-teal-tail",
+      "file": "compositions/scenes/short-democracy-dog/better-loop-teal-tail.html",
+      "cue": "and",
+      "approx": 844.95,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "and",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "reelected",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "it.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "red-blue-ties",
+      "cue": "voting",
+      "offset": 0.15,
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "way",
+      "offset": 0.1,
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "this.",
+      "n": 1,
+      "sfx": "woof",
+      "volume": 0.45
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "this.",
+      "n": 1,
+      "offset": 0.1,
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "red",
+      "offset": 0.33,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "blue",
+      "offset": 0.33,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "because",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "slaves",
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "to",
+      "n": 1,
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "wearing",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "colored",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "changing",
+      "offset": 0.05,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "wallpaper",
+      "offset": 0.05,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "burning",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "building.",
+      "offset": 0.1,
+      "sfx": "fire",
+      "volume": 0.5
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "politicians",
+      "sfx": "slide-down",
+      "volume": 0.3
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "clearly",
+      "sfx": "zap",
+      "volume": 0.45
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "out",
+      "n": 2,
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "builds",
+      "sfx": "slide-down",
+      "volume": 0.2
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "papers",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "OPPOSITE",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "thing.",
+      "sfx": "cash-register",
+      "volume": 0.45
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "dog",
+      "sfx": "woof",
+      "volume": 0.4
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "cured",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "red-blue-ties",
+      "cue": "diseases",
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "better-loop-teal-tail",
+      "cue": "reelected",
+      "sfx": "bell",
+      "volume": 0.4
+    }
+  ]
+}

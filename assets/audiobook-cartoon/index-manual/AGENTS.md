@@ -8,6 +8,9 @@ The cartoon of audiobook episode 1 is rendered with HyperFrames, one part at a t
 - Gags go all the way, as in the theme song: the bomb goes off, people are charred and blink, the dead become grinning skeletons.
 - Keep each framing minimal: one idea on a plain field, nothing the viewer has to work out.
 - Money is green, never red; its seal (a missile or a cross) says what it buys.
+- People are engraved cut-outs in 1950s clothes. Period dress only where the role is period: Fat Cat, Uncle Sam, Wilson, the Roman, the caveman, Kelsey. The Weapons Maker wears an executive's suit, and drug ads on TV are realistic.
+- Pictures follow the book's rules. Money never lands in a leader's or politician's hands (campaign funding is labelled), YOU offer the bonds rather than buy them, the government doesn't sell them, returns are PROJECTED, and medicine isn't shown sitting unbought (trials find treatments).
+- No chest lights. Nobody has one; existing cut-outs lose it when they are redrawn.
 - Use the numbers the narrator says (the audiobook's figures), not the website's.
 
 ## The process
@@ -35,6 +38,7 @@ The cartoon of audiobook episode 1 is rendered with HyperFrames, one part at a t
 **Scenes**
 - Determinism: no `Math.random` (use `KIT.rng`), no `Date`, no timers, finite repeats.
 - A scene id that starts with a digit (`604-papers`) is not a valid CSS selector: get its elements with `getElementById`.
+- Scene scripts run at the top level, so a `var top` (or `name`, `status`, `parent`) collides with the window's own and breaks the scene: pick another name. A cast member can't be called `shake`, `stage`, `flash` or `bolts` (KIT.collage's own elements).
 - Text fits its sign: size the sign to the words (`KIT.textWidth`) or the words to the sign (`KIT.fitText`). `scene-check` prints a TEXT OVERFLOW line for each text that runs off its sign.
 - To show a hidden element again, set `visibility: "inherit"`, never `"visible"`: a visible child shows through when the runtime hides its scene, so it ghosts over other scenes in the render.
 - No full-frame SVG filters for grain: in the render they paint through from scenes that are not on screen. Use `KIT.film`.
@@ -52,6 +56,6 @@ The cartoon of audiobook episode 1 is rendered with HyperFrames, one part at a t
 
 **Word timings.** The forced alignment sometimes squeezes words to zero length. Measure them with Whisper (faster-whisper small.en, starting the clip in a pause) and `ffmpeg -af silencedetect`, add the fix to `timing-fixes.json` and rerun `video/tools/word-timings.mjs`.
 
-**Generated art.** Every character, prop and backdrop is generated: `video/tools/art-gen.sh` makes a sheet with Codex (free; `ART_PLATE=1` for a full-frame backdrop), and `video/tools/art-cutout.py` cuts it into WebP pieces in `video/assets/art/<name>/`. Pass an existing sheet as the reference so the look matches, keep the sheets as references, use the names in `video/storyboards/ART.md`, and put words on the art in code.
+**Generated art.** Every character, prop and backdrop is generated: `video/tools/art-gen.sh` makes a sheet with Codex (free; `ART_PLATE=1` for a full-frame backdrop), and `video/tools/art-cutout.py` cuts it into WebP pieces in `video/assets/art/<name>/`. Purple is keyed out with the magenta, so draw a purple thing in another colour and recolour it. Pass an existing sheet as the reference so the look matches, keep the sheets as references, use the names in `video/storyboards/ART.md`, and put words on the art in code.
 
 **Several agents.** Agents write only their own scene files; one lead changes the kit, builds and renders.

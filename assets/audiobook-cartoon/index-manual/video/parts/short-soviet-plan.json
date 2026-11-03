@@ -13,109 +13,132 @@
       "cue": "At",
       "approx": 1271.5,
       "layer": "B"
-    },
-    {
-      "id": "no-plan",
-      "file": "compositions/scenes/short-soviet-plan/no-plan.html",
-      "cue": "You",
-      "approx": 1290.8,
-      "layer": "B"
     }
   ],
   "sounds": [
     {
       "scene": "25-percent-by-2033",
-      "cue": "twenty-five",
-      "sfx": "switch",
-      "volume": 0.4
+      "cue": "reaches",
+      "sfx": "typewriter",
+      "volume": 0.3
     },
     {
       "scene": "25-percent-by-2033",
-      "cue": "thirty-three.",
-      "sfx": "whirr",
+      "cue": "percent",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "G.D.P.",
+      "n": 1,
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "by",
+      "n": 1,
+      "sfx": "pop",
       "volume": 0.3
     },
     {
       "scene": "25-percent-by-2033",
       "cue": "thirty-three.",
-      "at": "after",
-      "sfx": "sizzle",
+      "offset": 0.15,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "Soviet",
+      "n": 1,
+      "offset": -0.2,
+      "sfx": "whoosh",
       "volume": 0.3
     },
     {
       "scene": "25-percent-by-2033",
-      "cue": "collapsed",
+      "cue": "Union",
+      "n": 1,
+      "offset": 0.35,
       "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "fifteen",
+      "sfx": "stamp",
       "volume": 0.45
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "worse",
+      "offset": 0.2,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "technology,",
+      "n": 1,
+      "offset": 0.4,
+      "sfx": "pop",
+      "volume": 0.3
     },
     {
       "scene": "25-percent-by-2033",
       "cue": "plan.",
+      "n": 1,
       "sfx": "thunk",
-      "volume": 0.45
+      "volume": 0.55
     },
     {
       "scene": "25-percent-by-2033",
       "cue": "terrible",
-      "sfx": "splat",
-      "volume": 0.4
+      "n": 1,
+      "sfx": "stamp",
+      "volume": 0.5
     },
     {
       "scene": "25-percent-by-2033",
       "cue": "one.",
-      "at": "after",
-      "sfx": "clank",
-      "volume": 0.4
+      "sfx": "boing",
+      "volume": 0.3
     },
     {
-      "scene": "no-plan",
-      "cue": "approaching",
-      "sfx": "tick",
-      "volume": 0.5
+      "scene": "25-percent-by-2033",
+      "cue": "You",
+      "offset": -0.1,
+      "sfx": "whoosh",
+      "volume": 0.35
     },
     {
-      "scene": "no-plan",
-      "cue": "approaching",
-      "offset": 0.35,
-      "sfx": "tick",
-      "volume": 0.5
-    },
-    {
-      "scene": "no-plan",
-      "cue": "technology,",
-      "sfx": "thunk",
-      "volume": 0.4
-    },
-    {
-      "scene": "no-plan",
+      "scene": "25-percent-by-2033",
       "cue": "faster-growing",
       "sfx": "slide-up",
       "volume": 0.35
     },
     {
-      "scene": "no-plan",
+      "scene": "25-percent-by-2033",
       "cue": "no",
+      "n": 1,
       "sfx": "boing",
       "volume": 0.4
     },
     {
-      "scene": "no-plan",
-      "cue": "beat",
-      "sfx": "pop",
-      "volume": 0.4
+      "scene": "25-percent-by-2033",
+      "cue": "The",
+      "n": 2,
+      "sfx": "whoosh",
+      "volume": 0.3
     },
     {
-      "scene": "no-plan",
+      "scene": "25-percent-by-2033",
       "cue": "lost.",
       "sfx": "slam",
-      "volume": 0.5
-    },
-    {
-      "scene": "no-plan",
-      "cue": "lost.",
-      "at": "after",
-      "sfx": "tick",
-      "volume": 0.5
+      "volume": 0.6
     }
   ]
 }

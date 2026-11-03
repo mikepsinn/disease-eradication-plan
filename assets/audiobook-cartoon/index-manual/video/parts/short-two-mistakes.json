@@ -1,0 +1,293 @@
+{
+  "id": "short-two-mistakes",
+  "title": "Short: two mistakes",
+  "storyboard": "storyboards/part-12-fda-unsafe-and-ineffective.md",
+  "audio": {
+    "start": 1456.3,
+    "end": 1505.0
+  },
+  "scenes": [
+    {
+      "id": "two-mistakes",
+      "file": "compositions/scenes/short-two-mistakes/two-mistakes.html",
+      "cue": "Your",
+      "approx": 1456.3,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "two-mistakes",
+      "cue": "approve",
+      "offset": 0.25,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "good",
+      "sfx": "click",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "terrified",
+      "sfx": "bell",
+      "volume": 0.6
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "terrified",
+      "offset": 0.1,
+      "sfx": "yelp",
+      "volume": 0.45
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "mistake",
+      "offset": 0.55,
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "ignores",
+      "offset": 0.2,
+      "sfx": "snip",
+      "volume": 0.45
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "second.",
+      "offset": 0.25,
+      "sfx": "pat",
+      "volume": 0.45
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "one",
+      "n": 2,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "three",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "three",
+      "offset": 0.28,
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "three",
+      "offset": 0.56,
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "thousand",
+      "offset": 0.2,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "die",
+      "offset": 0.08,
+      "sfx": "zap",
+      "volume": 0.5
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "waiting",
+      "offset": 0.2,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "locked",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "cabinet.",
+      "offset": -0.1,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "Thalidomide-scale",
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "Thalidomide-scale",
+      "offset": 0.02,
+      "sfx": "bell",
+      "volume": 0.45
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "Thalidomide-scale",
+      "offset": 0.1,
+      "sfx": "yelp",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "happens",
+      "sfx": "clank",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "happens",
+      "offset": 0.02,
+      "sfx": "bell",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "post-phase",
+      "sfx": "clank",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "post-phase",
+      "offset": 0.02,
+      "sfx": "bell",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "efficacy",
+      "sfx": "clank",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "efficacy",
+      "offset": 0.02,
+      "sfx": "bell",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "every",
+      "n": 2,
+      "sfx": "clank",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "every",
+      "n": 2,
+      "offset": 0.02,
+      "sfx": "bell",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "year",
+      "sfx": "clank",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "year",
+      "offset": 0.02,
+      "sfx": "bell",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "caught",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "anyway),",
+      "offset": 0.42,
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "from",
+      "n": 2,
+      "sfx": "thunk",
+      "volume": 0.2
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "delay",
+      "sfx": "thunk",
+      "volume": 0.2
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "still",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "one.",
+      "n": 6,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "system's",
+      "offset": 0.25,
+      "sfx": "stamp",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "main",
+      "sfx": "hum",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "main",
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "is",
+      "n": 2,
+      "sfx": "thunk",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "dead",
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-mistakes",
+      "cue": "patients.",
+      "offset": 0.85,
+      "sfx": "thunk",
+      "volume": 0.5
+    }
+  ]
+}

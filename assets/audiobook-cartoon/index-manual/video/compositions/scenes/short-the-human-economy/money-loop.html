@@ -1,0 +1,145 @@
+<template id="money-loop-template">
+  <!-- money-loop · collage (Part 2, scenes 3 and 4 as one plate). The bit: the economy is one machine for getting a loaf
+       of bread, and it stands on the dead. The camera rides one paper through it, close and big: the Politician pumps the
+       press (MONETARY POLICY), the bills walk into the Weapons Maker's hands, his missile flies to the house (BOOM),
+       the charred family is paid at the JOBS window and buys one loaf, and wheat grows by itself. "called": pull back to
+       the whole machine, THE ECONOMY, which runs another lap. "killed": the hill of bones rises under it; 310,000,000. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="money-loop" data-width="1920" data-height="1080" data-start="0" data-duration="26.624">
+    <div id="money-loop-weave"></div>
+    <div id="money-loop-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // The machine, left to right on the ground line G (plate px): press, Weapons Maker, house, JOBS window, farm stand.
+    var V = KIT.V, G = 1000;
+    var X = { pol: 300, press: 950, wm: 1950, house: 2650, fam: 3000, factory: 3750, stand: 4450, farmer: 4850 };
+    var TRAY = [X.press + 277 * 1.75, G - 117 * 1.75];               // the press's tray end (art 565, 320)
+    var HANDS = [X.wm, G - 368 * 1.3];                                // the Weapons Maker's hands (art 135, 234)
+    var WINDOW = [X.factory - 78, G - 139];                          // the pay window (art 100, 450)
+    // Close views fill the frame with one stop; 9:16 keeps the ground above the captions.
+    var cy = function (s) { return V ? G - 420 / s : 620; };
+    var views = V ? {
+      press: [760, cy(0.75), 0.75], wm: [1950, cy(0.95), 0.95], house: [2830, cy(0.95), 0.95], jobs: [3520, cy(0.95), 0.95],
+      farm: [4400, cy(0.82), 0.82], wide: [2750, 900, 0.186], toll: [2750, 1500, 0.15],
+    } : {
+      press: [760, 620, 1], wm: [1950, 620, 1], house: [2850, 620, 1], jobs: [3500, 620, 1], farm: [4500, 620, 1],
+      wide: [2750, 380, 0.33], toll: [2750, 1450, 0.19],
+    };
+    var famEyes = [[109, 36], [126, 38], [169, 63], [187, 66], [133, 167], [150, 167]];
+    var beats = [];
+    var add = function (b) { beats.push(b); };
+
+    // The press never stops: a pump every 0.6 s, the whole scene.
+    for (var t = 0.15; t < 26.3; t += 0.6) add({ at: t, do: "nudge", who: "pol", by: [0, 34] });
+    // Four bills shoot out of the empty tray, one a pump, and land in a queue.
+    ["b0", "b1", "b2", "b3"].forEach(function (b, i) {
+      add({ at: 0.2 + i * 0.6, do: "pop", who: b });
+      add({ at: 0.28 + i * 0.6, do: "move", who: b, to: [TRAY[0] + 120 + i * 125, G - 110], dur: 0.33, arc: 90 });
+      // "nothing-papers": they march into the Weapons Maker's hands and vanish there
+      add({ on: "nothing-papers", offset: i * 0.3, do: "move", who: b, to: HANDS, dur: 0.75, arc: 30 });
+      add({ on: "nothing-papers", offset: 0.75 + i * 0.3, do: "pop", who: b, out: true });
+    });
+
+    beats = beats.concat([
+      { on: "(called", do: "stamp", who: "press", text: "MONETARY POLICY", spot: [320, 72], size: 46, tilt: -3 },
+      { on: "give", n: 1, do: "camera", view: "wm", dur: 1.1 },
+      { on: "makers.", do: "swap", who: "wm", to: "wmPay" },
+      { on: "They", do: "swap", who: "wmPay", to: "wmKiss" },
+      // "destroy": the missile flies; the camera whips with it to the waving family
+      { on: "destroy", do: "swap", who: "wmKiss", to: "wmPay2" },
+      { on: "destroy", do: "pop", who: "missile" },
+      { on: "destroy", do: "move", who: "missile", to: [X.house, G - 380], dur: 0.38, arc: 120, turn: 20 },
+      { on: "destroy", do: "camera", view: "house", dur: 0.38 },
+      { on: "everything.", do: "hide", who: "missile" },
+      { on: "everything.", do: "boom", shake: 22, flash: 0.2 },
+      { on: "everything.", do: "pop", who: "m1" },
+      { on: "everything.", do: "swap", who: "house", to: "rubble" },
+      { on: "everything.", do: "char", who: "fam" },
+      { on: "everything.", offset: 0.9, do: "blink", who: "fam" },
+      { on: "everything.", offset: 1.4, do: "pop", who: "m1", out: true },
+      // "jobs": the charred family walks to the pay window; a tattooed arm hands out the bills
+      { on: "This", n: 1, do: "camera", view: "jobs", dur: 0.9 },
+      { on: "This", n: 1, do: "move", who: "fam", to: [3300, G - 329], dur: 1.0 },
+      { on: "This", n: 1, offset: 0.6, do: "banner", id: "jobs", text: "JOBS", x: WINDOW[0], y: WINDOW[1] - 290, size: 90, width: 320, pad: 50, color: "ink", tilt: -3 },
+      { on: "which", n: 1, do: "slideIn", who: "arm", from: "right", dist: 220, over: 10 },
+      { on: "papers.", n: 2, do: "pop", who: "c0" }, { on: "papers.", n: 2, offset: 0.15, do: "pop", who: "c1" }, { on: "papers.", n: 2, offset: 0.3, do: "pop", who: "c2" },
+      { on: "papers.", n: 2, offset: 0.6, do: "slideOut", who: "arm", to: "right", dist: 300 },
+      // "buy food": to the farm stand; three bills for one loaf, and the wheat grows on its own
+      { on: "People", n: 2, do: "camera", view: "farm", dur: 0.9 },
+      { on: "People", n: 2, do: "move", who: "fam", to: [3950, G - 329], dur: 1.0 },
+      { on: "People", n: 2, do: "move", who: ["c0", "c1", "c2"], by: [650, 0], dur: 1.0 },
+      { on: "buy", do: "move", who: "c0", to: [X.farmer + 90, G - 470], dur: 0.35, arc: 50 },
+      { on: "buy", offset: 0.12, do: "move", who: "c1", to: [X.farmer + 110, G - 450], dur: 0.35, arc: 50 },
+      { on: "buy", offset: 0.24, do: "move", who: "c2", to: [X.farmer + 130, G - 430], dur: 0.35, arc: 50 },
+      { on: "food", offset: 0.1, do: "pop", who: "loaf", squash: true },
+      { on: "food", offset: 0.3, do: "bob", who: "fam", y: 4, r: 1, speed: 3 },
+      { on: "grows", do: "pop", who: "w0", squash: true }, { on: "grows", offset: 0.25, do: "pop", who: "w1", squash: true },
+      { on: "for", n: 1, do: "pop", who: "w2", squash: true }, { on: "free).", do: "pop", who: "w3", squash: true },
+      // "This is called the economy": the whole machine at once, and it runs another lap, faster
+      { on: "called", n: 2, offset: -0.2, do: "camera", view: "wide", dur: 1.3 },
+      { on: "called", n: 2, offset: 0.6, do: "banner", id: "economy", text: "THE ECONOMY", x: 2750, y: V ? -700 : -250, size: V ? 520 : 400, width: V ? 5200 : 3400, pad: 160, color: "ink", tilt: -2 },
+      { on: "called", n: 2, offset: 0.5, do: "move", who: ["c0", "c1", "c2"], to: [TRAY[0] + 150, G + 70], dur: 2.4 },
+      { on: "called", n: 2, offset: 1.0, do: "swap", who: "rubble", to: "house2" },
+      { on: "called", n: 2, offset: 1.3, do: "swap", who: "wmPay2", to: "wmKiss2" },
+      { on: "called", n: 2, offset: 1.7, do: "swap", who: "wmKiss2", to: "wmPay3" },
+      { on: "called", n: 2, offset: 1.7, do: "pop", who: "missile2" },
+      { on: "called", n: 2, offset: 1.75, do: "move", who: "missile2", to: [X.house, G - 380], dur: 0.3, arc: 120, turn: 20 },
+      { on: "called", n: 2, offset: 2.05, do: "hide", who: "missile2" },
+      { on: "called", n: 2, offset: 2.05, do: "boom", shake: 12, flash: 0.12 },
+      { on: "called", n: 2, offset: 2.05, do: "pop", who: "m2" },
+      { on: "called", n: 2, offset: 2.05, do: "swap", who: "house2", to: "rubble2" },
+      { on: "called", n: 2, offset: 3.0, do: "pop", who: "m2", out: true },
+      // "killed": the hill of bones rises under the machine; 310,000,000
+      { on: "that", n: 2, do: "camera", view: "toll", dur: 1.4 },
+      { on: "that", n: 2, do: "slideIn", who: "hill", from: "bottom", dist: 2600, over: 40 },
+      { on: "killed", do: "shake", y: 6, frames: 3 },
+      { on: "million", do: "stamp", id: "toll", text: "310,000,000", x: 2750, y: 1850, size: V ? 950 : 900, width: 7000, tilt: -4 },
+    ]);
+
+    var bill = function (x, y) { return { art: "bill-war", x: x, y: y, scale: 0.85, hidden: true }; };
+    var cast = {
+      hill: { art: "bone-hill", x: 2750, y: G - 20, anchor: "top", scale: 9350 / KIT.collage.SIZES["bone-hill"][0], hidden: true },
+      pol: { art: "politician-crank", x: X.pol, y: G, anchor: "bottom", scale: 1.9 },
+      press: { art: "printing-press", x: X.press, y: G, anchor: "bottom", scale: 1.75 },
+      b0: bill(TRAY[0], TRAY[1]), b1: bill(TRAY[0], TRAY[1]), b2: bill(TRAY[0], TRAY[1]), b3: bill(TRAY[0], TRAY[1]),
+      wm: { art: "weapons-maker", x: X.wm, y: G, anchor: "bottom", scale: 1.3 },
+      wmPay: { art: "weapons-maker-pay", x: X.wm, y: G, anchor: "bottom", scale: 1.3, hidden: true },
+      wmKiss: { art: "weapons-maker-kiss", x: X.wm, y: G, anchor: "bottom", scale: 1.3, hidden: true },
+      wmPay2: { art: "weapons-maker-pay", x: X.wm, y: G, anchor: "bottom", scale: 1.3, hidden: true },
+      wmKiss2: { art: "weapons-maker-kiss", x: X.wm, y: G, anchor: "bottom", scale: 1.3, hidden: true },
+      wmPay3: { art: "weapons-maker-pay", x: X.wm, y: G, anchor: "bottom", scale: 1.3, hidden: true },
+      house: { art: "house", x: X.house, y: G, anchor: "bottom", scale: 1.6 },
+      rubble: { art: "rubble", x: X.house, y: G, anchor: "bottom", scale: 1.0, hidden: true },
+      house2: { art: "house", x: X.house, y: G, anchor: "bottom", scale: 1.6, hidden: true },
+      rubble2: { art: "rubble", x: X.house, y: G, anchor: "bottom", scale: 1.0, hidden: true },
+      factory: { art: "factory", x: X.factory, y: G, anchor: "bottom", scale: 1.4 },
+      arm: { art: "tattoo-arm", x: WINDOW[0] - 110, y: WINDOW[1] + 10, scale: 1.2, hidden: true },
+      stand: { art: "farm-stand", x: X.stand, y: G, anchor: "bottom", scale: 1.7 },
+      farmer: { art: "farmer", x: X.farmer, y: G, anchor: "bottom", scale: 1.6 },
+      w0: { art: "wheat", x: 5150, y: G, anchor: "bottom", pivot: "bottom", scale: 1.3, hidden: true },
+      w1: { art: "wheat", x: 5260, y: G, anchor: "bottom", pivot: "bottom", scale: 1.15, hidden: true },
+      w2: { art: "wheat", x: 5370, y: G, anchor: "bottom", pivot: "bottom", scale: 1.35, hidden: true },
+      w3: { art: "wheat", x: 5480, y: G, anchor: "bottom", pivot: "bottom", scale: 1.2, hidden: true },
+      fam: { art: "family-wave", x: X.fam, y: G - 329, scale: 1.5, eyes: famEyes, eyeSize: 22, smoke: [[100, 20], [190, 34]] },
+      loaf: { art: "loaf", x: 3825, y: G - 360, scale: 1.3, hidden: true },
+      c0: bill(3170, G - 760), c1: bill(3310, G - 790), c2: bill(3450, G - 760),
+      missile: { art: "missile-fly", x: HANDS[0] + 120, y: HANDS[1], scale: 1.3, hidden: true },
+      missile2: { art: "missile-fly", x: HANDS[0] + 120, y: HANDS[1], scale: 1.3, hidden: true },
+      m1: { art: "mushroom", x: X.house, y: G, anchor: "bottom", scale: 1.6, hidden: true },
+      m2: { art: "mushroom", x: X.house, y: G, anchor: "bottom", scale: 1.6, hidden: true },
+    };
+
+    KIT.collage({ id: "money-loop", seed: 231, plate: V ? [-4500, -5500, 10000, 8600] : [-2200, -1800, 7700, 4400], views: views, view: "press", cast: cast, beats: beats });
+  </script>
+</template>

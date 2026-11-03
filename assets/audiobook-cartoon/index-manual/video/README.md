@@ -68,7 +68,7 @@ Rendering Part 2 (147 s, 30 fps) took about 8 minutes on 4 CPU cores with no GPU
 
 ## Writing a collage scene
 
-A collage scene is a spec for `KIT.collage` (`assets/js/collage.js`): cut-outs from `assets/art/collage/` on aged paper, moving on twos (12 drawings a second) under the period film. Copy `compositions/scenes/pilot-collage/split-the-atom.html`, replace every `split-the-atom` with the scene id, and write the spec. Check it with `--data-only` and `tools/scene-check.mjs`.
+Each scene loads `assets/js/art-sizes.js` (every cut-out's size, written by `tools/art-sizes.py`, which `tools/art-cutout.py` runs) just before `assets/js/collage.js`. A collage scene is a spec for `KIT.collage` (`assets/js/collage.js`): cut-outs from `assets/art/collage/` on aged paper, moving on twos (12 drawings a second) under the period film. Copy `compositions/scenes/pilot-collage/split-the-atom.html`, replace every `split-the-atom` with the scene id, and write the spec. Check it with `--data-only` and `tools/scene-check.mjs`.
 
 ```js
 KIT.collage({
@@ -77,6 +77,10 @@ KIT.collage({
   beats: [{ on: "when", do: "slideIn", who: "sam", from: "left" }],
 });
 ```
+
+**Plate:** `plate: [x0, y0, x1, y1]` (canvas px) is the area the paper covers, and a `wash` or a flash with it; give it when the camera travels past the frame (default: the frame).
+
+**Host shots** (layer A) are collage specs too: `host: true` (or `{ push: [1, 1.07], iris: ["in", 0.04, 0.7] }`) draws Wishonia at her console on the observation deck (`KIT.studio`) with no paper, and the cast stands in front of the console. Her expressions come from the part file's `wishonia` list, as in `parts/part-02.json`. `KIT.STUDIO` gives the set's points in canvas px: `top` (the console's ledge), `button`, `earth` ([x, y, r] of Earth in the window), `face`. Give the root a dark background (`#0B0805`).
 
 **Cast** (z-order is the order written; a cut piece of `cut` sits in front of the whole cast). Positions are canvas px (1920 × 1080); points on a cut-out are art px (`KIT.collage.SIZES` has each art's size; add new art there).
 
@@ -90,8 +94,9 @@ KIT.collage({
 | `pieces` | `{ name: { clip, pivot, pieces } }`: the art drawn as hinged pieces (nest them); a piece is `"actor.name"` in beats |
 | `cut` | `"lr"` or `"tb"`: halves `actor.L`/`actor.R` (or `.T`/`.B`), hidden until `split` |
 | `points` | named art points, `{ tip: [341, 208] }`, for `move` (`to: "sam.tip"`) |
-| `eyes`, `smoke` | art points where white eyes and smoke appear when charred |
+| `eyes`, `smoke` | art points where white eyes and smoke appear when charred; `eyeSize` (30 px) |
 | `faces` | `"left"` if the cut-out faces left (`nudge` pushes the way it faces) |
+| `label` | words drawn on the art, moving with it: `{ text, at: [art x, art y], width (art px), size, tilt }` or a list of them |
 | `hidden` | start hidden (otherwise a cut-out whose first move is an entrance starts hidden) |
 
 **Beats** run in the order written, which is also the order their effects add up. Every beat has `do` and a time: `on` (a spoken word, as `KIT.cue` takes it; `n` for its n-th time in the scene) plus an optional `offset` in seconds, or `at` (scene seconds). `who` is a name or a list of names. One drawing is 1/12 s (0.083).
@@ -102,7 +107,7 @@ KIT.collage({
 | `slideOut` | accelerates off and hides; `to` (`"left"`), `dist`, `dur` (0.42) |
 | `hinge` | a piece swings on its pivot; `angle` (30°), `frames` (1), `hold` (s; then it swings back; leave out to stay open) |
 | `bow` | a stiff bow from the waist piece and back up; `angle` (27°), `hold` (0.62) |
-| `stamp` | `who` slams down from big with a jolt; `from` (2.3), `shake` (7). With `text`, a red rubber stamp: on the sign `who` (under its title) or free at `x`, `y`; `size` (56), `tilt` (-3°), `from` (1.9), `id` |
+| `stamp` | `who` slams down from big with a jolt; `from` (2.3), `shake` (7). With `text`, a red rubber stamp: on the sign `who` (under its title), on the cut-out `who` at `spot` (art px), or free at `x`, `y` (its text fitted to `width`, 1000 px); `size` (56), `tilt` (-3°), `from` (1.9), `id` |
 | `pop` | pops up from nothing with an overshoot; `squash: true` squashes and stretches as it pops, `swell` (grows by this much by the scene's end), `out: true` pops away and hides |
 | `swap` | `who` hides and `to` (another cast name) appears in its place with a squash |
 | `shiver` | shakes in place; `dur` (0.75), `amp` (8 px), `rot` (4°) |
@@ -123,6 +128,12 @@ KIT.collage({
 | `boom` | a white flash and a shake that dies away; `shake` (16), `flash` (0.25 s) |
 | `shake` | the frame jolts for `frames` (4); `x` or `y` (px) |
 | `show`, `hide` | at once |
+| `flatten` | squashes flat on its pivot in two drawings (give it `pivot: "bottom"`) |
+| `chart` | draws axes on the paper behind the cast: `chart` is `KIT.collage.axes({ box: [left, top, right, bottom], x: [min, max, tick], y: [min, max, tick], xLabels, yLabels, unit, title, subtitle, size })`, whose `pt(x, y)` gives the canvas px of a data point for the other beats; `enter` (a direction to slide in from; otherwise it is just there), `id` (`"chart"`) |
+| `rule` | a dashed line across the chart at value `y` that draws itself left to right; `chart`, `text` (its label, at the right end; `labelAt: "left"`, `below: true`), `from`, `to` (x values; the whole chart), `color` (`"red"` or `"ink"`), `size` (32), `dur` (0.5), `id` (`"rule"`) |
+| `chain` | copies of a cut-out appear one at a time, faster and faster, each popping out of the one before and hopping to its place, with an ink line through their feet: a line chart made of cut-outs. Places: `points` (canvas px), or `chart`, `f` (y of x) and `x: [from, to]` every `step` (0.5). `art` (a name or a list to cycle), `pose(i, n)` (the art for copy i), `scale`, or `height` (canvas px, every art the same height) with `sizes` (`{ tank: 0.6 }`, per-art multipliers), `anchor` (`"bottom"`), `until` (when the last appears; or `dur`, 2), `accel` (0.6; 1 is even), `jiggle` (2 px), `line: false`, `lineColor` (`"red"` or a colour), `lineWidth` (5), `join` (another chain: start from its last copy), `id` (`"chain"`; copies are `id.0`, `id.1`, ...) |
+| `bar` | a hatched bar on a chart at `x` (data) that grows from its last height to `to` over `dur` (0.6); the same `id` again grows or shrinks it; `chart`, `width` (80 px), `text` (a label riding its top), `size` (30), `fill` |
+| `wash` | a flat colour over the plate fading to `opacity` (1) over `dur` (0.8): `blend: "saturation"` (default) drains the colour out of what is under it, `"normal"` tints; `color` (`"#888"`), `above` (a cast name: it sits just above that one, so the cast written after it keeps its colour; default behind the cast); the same `id` again changes it |
 | `camera` | moves the camera to `view` over `dur` (0.6), with `views: { wide: [960, 540, 1], close: [x, y, scale] }` in the spec (and `view`, the first) |
 
 ## Adding the other parts

@@ -21,14 +21,14 @@ version: v3
   - `loop-road`: a loop road on aged paper with four stops: the printing press, the weapons factory, the family's house, the farm stand.
   - `headstone-field`: a line chart on aged paper, "WAR DEATHS SINCE 1900", its line a chain of headstones.
   - Host scenes (host-opens, host-closes): Wishonia at her console on the observation deck, Earth in the glass.
-- **Cast:** existing: `politician`, `mushroom`, `rubble`, `headstone`. From Part 1: `moth`, `weapons-maker`, `bill-war`, `wheat`, `hungry-man`. New: `printing-press`, `factory`, `baby-missile`, `family`, `family-skeleton`, `house`, `pay-window`, `farm-stand`, `farmer`, `loaf`, `price-tag`, `sandwich`.
+- **Cast:** existing: `politician`, `mushroom`, `rubble`, `headstone`. From Part 1: `moth`, `weapons-maker`, `bill-war`, `wheat`, `hungry-man`. New: `printing-press`, `factory`, `missile`, `family`, `family-skeleton`, `house`, `pay-window`, `farm-stand`, `farmer`, `loaf`, `price-tag`, `sandwich`.
 - **Callbacks:**
   - Part 1 (without-with-papers): the moth from the hungry man's empty wallet flutters out of the press's empty paper tray; the wheat that grows for free grows by the farm stand and gets a price tag; the hungry man is host-closes's guest.
   - Part 1 (without-with-papers): the Weapons Maker, charred by his own bomb, is the one at the factory door.
 - **New art:**
   - a Victorian flatbed printing press with a crank wheel and an empty paper tray
   - a brick factory whose three chimneys are grinning missiles, a door, and a pay window with a shutter; a hairy forearm with a missile tattoo
-  - the Weapons Maker's smiling baby missile, which can fly off
+  - the Weapons Maker's smiling missile, which can fly off
   - a little house, and the same house as rubble
   - the family of three (a father, a mother, a small kid), charred versions, and their skeletons, each holding a loaf
   - a farm stand with a striped awning and loaves, a farmer in a straw hat, a price tag on a string
@@ -84,22 +84,19 @@ Sound: a ta-da on "magnificent:".
 - cue: "You print papers from nothing"
 - time: 04:24.2 to 04:44.3 (20.1 s)
 - voiceover: "You print papers from nothing (called "monetary policy"). You give these nothing-papers to weapons makers. They make things that destroy everything. This creates "jobs" which give people papers. People use papers to buy food (which grows for free). This is called "the economy"."
-- layer: B, plate loop-road
+- layer: B, plate the-machine
+- bit: **The economy is one machine for getting a loaf of bread, and it stands on the dead.** The camera rides one paper through it, close and big: press, Weapons Maker, missile, house, pay window, bread. Then it pulls back to show the whole contraption as a loop, which runs again, faster. In the-toll the ground under it turns out to be a hill of bones.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "You print papers from nothing" | Money is printed, not found. | The printing press at the top left of the road; the Politician cranks it. Its paper tray is empty, and bills come out anyway, one per turn, and hop down onto the road. | |
-| "(called "monetary policy")." | | The camera pushes into the empty tray: a moth flutters up out of it. The Politician turns to us and grins, still cranking. | |
-| "You give these nothing-papers to weapons makers." | New money pays for weapons. | The bills march along the road into the factory with the missile chimneys. The Weapons Maker stands at its door cradling his baby missile; his eyes ring up dollar signs. | |
-| "They make things that destroy everything." | Weapons destroy. | He lets the missile go: it flies round the bend and comes down on the little house, where the family waves at it. BOOM: a mushroom cloud. The house is rubble; the family stands in front of it charred black, hair up, blinking. | |
-| "This creates "jobs"" | The work is making more weapons. | The family walks back up the road to the factory and gets on its line, building the next missile. | It is the missile with their address on it. |
-| "which give people papers." | | The pay window's shutter rolls up; a hairy forearm with a missile tattoo hands each of them a bill. | |
-| "People use papers to buy food" | | They march to the farm stand, hand up their bills, and get loaves back; they munch. | |
-| "(which grows for free)." | Food grows by itself. | Beside the stand, wheat shoots up by itself, stalk after stalk. After "free)." a price tag drops in on its string and lands on the middle stalk. | |
-| "This is called "the economy"." | It is a loop. | The camera pulls back, and back: the road is a loop. The farmer's bills walk on round the bend to the press, and the press's next batch heads off to the factory. After "economy". the factory's middle chimney lifts off on a flame, and the family looks up from their bread. | |
+| "You print papers from nothing (called "monetary policy")." | Money is printed, not found. | Close, filling the frame: the Politician pumps a huge press with MONETARY POLICY on its brass plate. A bill shoots out of the empty tray on each pump. | The tray is empty; the bills come anyway. |
+| "You give these nothing-papers to weapons makers." | New money pays for weapons. | The camera rides one bill right into the Weapons Maker's giant hands. | He stuffs it in his apron and grins. |
+| "They make things that destroy everything." | Weapons destroy. | His missile launches; the camera whips with it to a house where the family waves. BOOM: the house is a mushroom cloud, then rubble; the family is charred and blinks. | |
+| "This creates "jobs" which give people papers. People use papers to buy food (which grows for free)." | The survivors are paid to make more. | The charred family at the JOBS window: a tattooed arm hands each a bill. They hand the bills to the farmer for one loaf; wheat grows behind him on its own. | |
+| "This is called "the economy"." | It is a loop. | Pull back: the whole machine at once, THE ECONOMY over it. It runs another lap, faster: a new house pops up, another missile, another boom. | It rebuilds the house just to blow it up. |
 
-Sound: a press thump per turn from "print"; a moth flutter on "monetary"; a cash-register ding on "makers."; a slide whistle down as the missile drops on "destroy"; a boom on "everything."; a factory whistle on "jobs"; a pop per bill handed out on "papers."; munching on "food"; a slide whistle up as the wheat grows; a ding as the tag lands; a launch whoosh after "economy".
+Sound: a press thump per pump; a ding on "makers."; a whoosh and a boom on "destroy" and "everything."; a pop per bill; munching on "food"; a slide whistle up as the wheat grows; a second whoosh and boom in the lap.
 
 ## Scene 4 · the-toll
 
@@ -109,17 +106,15 @@ Sound: a press thump per turn from "print"; a moth flutter on "monetary"; a cash
 - cue: "One downside of this system"
 - time: 04:44.3 to 04:50.8 (6.6 s)
 - voiceover: "One downside of this system is that it has killed three hundred and ten million of you in your assorted wars."
-- layer: B, plate headstone-field
+- layer: B, plate the-machine (no seam)
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "One downside of this system" | | Close on the charred family at the right edge of the plate, munching their loaves. | |
-| "is that it has killed" | The loop kills. | They stop chewing and x-ray into skeletons, still holding their loaves; the plate drains to gray, all but the bread. | |
-| "three hundred and ten million of you" | 310 million since 1900. | The camera pulls back: they stand at the end of a line chart, "WAR DEATHS SINCE 1900", 1900 to 2025 along the bottom and 0 to 310 million up the side. The line is a chain of headstones that draws itself from 1900, jumping at 1914 to 1918, jumping higher at 1939 to 1945, climbing in smaller steps after. It reaches the family at 2025; "310,000,000" stamps at the top. | The family are the last three headstones on the line. |
-| "in your assorted wars." | | HOLD from after "million": nothing moves and nothing sounds until the cut on "On". | |
+| "One downside of this system is that it has killed" | The machine kills. | The camera pulls back further: the ground under the machine is the top of an enormous hill of bones. | The machine keeps running on top. |
+| "three hundred and ten million of you in your assorted wars." | 310 million since 1900. | 310,000,000 stamps over the hill. HOLD. | |
 
-Sound: an x-ray zap on "killed"; a tick per headstone, speeding up on the world wars; a thunk as the number stamps in on "million"; then silence.
+Sound: a low thud as the hill shows on "killed"; a stamp on "million"; then nothing but the machine ticking.
 
 ## Scene 5 · host-closes
 
@@ -135,10 +130,8 @@ Sound: an x-ray zap on "killed"; a tick per headstone, speeding up on the world 
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "On my planet," | | Wishonia at the console. On its ledge, a little paper cut-out of the money loop: press, factory, house, farm stand. | |
-| "we skip the mass murder step" | Leave out the weapons. | Scissors snip the factory and the house out of the loop; the ends are taped together, press straight to farm stand. The snipped piece drops off the ledge. | It goes off below the ledge with a tiny puff of smoke. |
-| "and just give people food directly," | Food goes straight to people. | The hungry man from Part 1, pockets turned out, walks in beside the console. A club sandwich pops onto her palm and hops into his hands. | |
-| "but that's probably" | | He turns it over looking for the price tag. There isn't one. He takes an enormous bite. | |
-| "too advanced for you." | | She side-eyes the camera; the film irises out on her face. | |
+| "On my planet, we skip the mass murder step" | Leave out the weapons. | The hungry man, big beside the console, holds out a bill toward the machine, expecting to go round. | She waves the bill away. |
+| "and just give people food directly," | Food goes straight to people. | A loaf hops from her palm straight into his hands. | |
+| "but that's probably too advanced for you." | | He looks for the price tag, finds none, and takes an enormous bite. She side-eyes the camera; iris out. | |
 
-Sound: two snips on "skip"; a tiny pop below the ledge after "step"; a sparkle as the sandwich appears on "give"; a munch on "probably".
+Sound: a sparkle as the loaf appears on "give"; a munch on "probably".

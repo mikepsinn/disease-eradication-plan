@@ -1,0 +1,240 @@
+<template id="two-mistakes-template">
+  <!-- two-mistakes · collage (Part 12, scenes 10 to 14 as one plate). The bit: a man at a desk with two alarms, a church
+       bell for approving a bad drug and a pea bulb for blocking a good one. The bell clangs and his skeleton jumps out of
+       the suit. The bulb blinks; he tapes it without looking and hangs his portrait over the tape. Behind him the dead
+       stack and keep stacking while he sips: the camera climbs the column past the clouds, 3,389 : 1, and falls back to
+       one bubble-wrapped man. Six Thalidomide plates land beside him; the bell rings and rings; Frances Kelsey rejects
+       them; the column has grown anyway. Payoff: pull back, the desk is on a conveyor at a factory gate, and headstones
+       roll out on "main product". -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="two-mistakes" data-width="1920" data-height="1080" data-start="0" data-duration="48.7">
+    <div id="two-mistakes-weave"></div>
+    <div id="two-mistakes-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "two-mistakes", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES, HALF = V ? 960 : 540;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The set on the ground line G, left to right: factory gate (off frame until the payoff), the man, the column of the
+    // dead behind the desk, the desk, the bell, the safe man and his plates.
+    var G = 1040;
+    var X = V ? { gate: -640, man: 420, col: 830, desk: 1000, bell: 1480, safe: 2230 } : { gate: -640, man: 420, col: 830, desk: 1080, bell: 1640, safe: 2350 };
+    var MK = 2, DK = 1.7, BK = 1.6, SAFEK = 1.6;
+    var TOPDESK = G - (350 - 160) * DK;                              // the desk's surface
+    var BULB = [X.desk + 10, TOPDESK], CAB = [X.desk - 190, TOPDESK];
+    // The column: every body the same height, standing on shoulders.
+    var H = 700, STEP = 560, N1 = 20, N = 40;
+    var bodyTop = function (i) { return G - STEP * i - H; };
+    var TOP1 = bodyTop(N1 - 1), TOP2 = bodyTop(N - 1);
+
+    var cy = function (s) { return V ? G - 440 / s : 500; };          // 16:9: the ground on the frame's bottom edge
+    var views = V ? {
+      man: [470, cy(1.2), 1.2], push: [430, cy(1.4), 1.4], bell: [X.bell, cy(1.1), 1.1], bulb: [BULB[0], TOPDESK - 40, 2.6],
+      home: [910, cy(0.62), 0.62], one: [X.safe, cy(1), 1], cabinet: [CAB[0] + 60, TOPDESK - 170, 1.9],
+      plates: [1310, cy(0.44), 0.44], top1: [X.col, TOP1 + 960, 0.5], top2: [X.col, TOP2 + 960, 0.5], wide: [340, cy(0.36), 0.36],
+    } : {
+      man: [600, 500, 1], push: [470, 470, 1.22], bell: [X.bell, 500, 1], bulb: [BULB[0], TOPDESK - 50, 3],
+      home: [960, 500, 1], one: [X.safe - 100, 500, 1], cabinet: [CAB[0] + 40, TOPDESK - 170, 2],
+      plates: [1400, 230, 0.65], top1: [X.col + 420, TOP1 + 340, 0.85], top2: [X.col + 420, TOP2 + 340, 0.85], wide: [850, 430, 0.46],
+    };
+    var frameTop = function (v) { return views[v][1] - HALF / views[v][2]; };
+
+    // The first climb: the column reveals itself just above the camera, so its top stays in frame as they rise.
+    var C0 = cue("three", 1) + 0.3, C1 = cue("waiting") + 0.5;
+    var smooth = function (u) { u = Math.max(0, Math.min(1, u)); return u * u * (3 - 2 * u); };
+    var camAt = function (t) {
+      var e = smooth((t - C0) / (C1 - C0)), a = views.home, b = views.top1;
+      return { y: a[1] + (b[1] - a[1]) * e, s: Math.exp(Math.log(a[2]) + (Math.log(b[2]) - Math.log(a[2])) * e) };
+    };
+    var showAt = function (i) {
+      var lo = C0 - 0.3, hi = C1, m;
+      for (var k = 0; k < 30; k++) { m = (lo + hi) / 2; var c = camAt(m); if (c.y - 0.34 * (2 * HALF / c.s) > bodyTop(i)) lo = m; else hi = m; }
+      return Math.max(hi, cue("three", 1) + 0.28 * Math.min(i, 3));
+    };
+    var DIE = cue("die") + 0.08, SICK = ["sick-1", "sick-2", "sick-3", "sick-4", "sick-5", "sick-6"];
+    var BONES = ["skeleton", "grandma-skeleton", "hungry-man-skeleton", "scientist-skeleton", "family-skeleton", "you-skeleton"];
+    var LATE = [cue("three", 3), cue("hundred", 2), cue("eighty-nine", 2), cue("to")];
+    var when = [];
+    for (var i = 0; i < N; i++) {
+      if (i < N1) when.push(showAt(i));
+      else if (i < N - 4) when.push(C1 + 0.15 + (cue("still") - 0.6 - C1 - 0.15) * Math.pow((i - N1) / (N - 5 - N1), 1.3));
+      else when.push(LATE[i - (N - 4)]);
+    }
+
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+    var person = function (art, i) { return { art: art, x: X.col + (i % 2 ? 22 : -22) * (i % 3 ? 1 : -1), y: G - STEP * i, anchor: "bottom", pivot: "bottom", scale: H / SZ[art][1], hidden: true }; };
+
+    // The payoff's set: hidden until the camera is up at the top of the column.
+    cast.works = { art: "fda-building", x: X.gate, y: G + 340, anchor: "bottom", scale: 3.5, hidden: true };
+    ["belt0", "belt1", "belt2", "belt3"].forEach(function (b, i) { cast[b] = { art: "conveyor", x: X.gate + i * 1130, y: G, anchor: [0, 25], scale: 3, hidden: true }; });
+    // Clouds behind the column.
+    [[-2600, 720], [-5400, -760], [-8200, 640], [-12000, -700], [-16000, 760], [-20000, -640]].forEach(function (c, i) {
+      cast["cl" + i] = { art: i % 2 ? "cloud" : "cloud-puff", x: X.col + c[1], y: c[0], scale: i % 2 ? 6 : 2.4 };
+    });
+    // The column.
+    for (i = 0; i < N; i++) {
+      if (when[i] < DIE) cast["s" + i] = person(SICK[i % 6], i);
+      cast["b" + i] = person(BONES[i % 6], i);
+      if (when[i] < DIE) {
+        add({ at: when[i], do: "pop", who: "s" + i, squash: true });
+        add({ at: DIE, do: "hide", who: "s" + i });
+        add({ at: DIE, do: "show", who: "b" + i });
+      } else {
+        add({ at: when[i], do: "pop", who: "b" + i, squash: true });
+        add({ at: when[i], do: "shake", frames: 2, y: 3 });   // felt at the desk, far below
+      }
+    }
+    // Clouds in front of it, a goose and an airship.
+    [[-3900, -640], [-6800, 700], [-9700, -620], [-13400, 640]].forEach(function (c, i) {
+      cast["cf" + i] = { art: i % 2 ? "cloud-puff" : "cloud", x: X.col + c[1], y: c[0], scale: i % 2 ? 2.6 : 6.5 };
+    });
+    cast.goose = { art: "goose", x: X.col - 620, y: TOP1 + 620, scale: 2.6 };
+    cast.airship = { art: "airship", x: X.col + 700, y: -18200, scale: 3 };
+
+    // The man's things.
+    cast.bell = { art: "fire-bell", x: X.bell, y: G, anchor: "bottom", pivot: "bottom", scale: BK, hidden: true };
+    cast.desk = { art: "desk", x: X.desk, y: G, anchor: "bottom", scale: DK };
+    cast.cabinet = { art: "approval-cabinet-full", x: CAB[0], y: CAB[1], anchor: "bottom", pivot: "bottom", scale: 0.74, hidden: true };
+    cast.bulb = { art: "pea-bulb", x: BULB[0], y: BULB[1], anchor: "bottom", scale: 0.6, hidden: true };
+    cast.leak = { art: "pea-bulb", x: BULB[0], y: BULB[1] - 150, scale: 0.6, hidden: true };
+    cast.tape = { art: "tape", x: BULB[0], y: BULB[1] - 34, scale: 0.55, hidden: true };
+    cast.arm = { art: "fda-official-arm", x: BULB[0] + 16, y: BULB[1] - 40, anchor: "right", scale: 0.85, hidden: true };
+    cast.portrait = { art: "employee-portrait", x: BULB[0], y: BULB[1] + 10, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true,
+      label: { text: "EMPLOYEE OF THE MONTH", at: [144, 343], width: 118, size: 11 } };
+    cast.arm2 = { art: "fda-official-arm", x: BULB[0] - 122, y: BULB[1] - 170, anchor: "right", scale: 0.85, hidden: true };
+    // The safe man and his plates.
+    var PK = 0.8, plates = [], py = G;
+    for (i = 0; i < 6; i++) {
+      var pa = i % 2 ? "weight-plate-bent" : "weight-plate", ph = SZ[pa][1] * PK;
+      cast["plate" + i] = { art: pa, x: X.safe, y: py, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true, label: { text: "THALIDOMIDE " + (1962 + i), at: [338, 86], width: 500, size: 62 } };
+      plates.push({ name: "plate" + i, h: ph - 3 });
+      py -= ph - 3;
+    }
+    cast.safe = { art: "bubble-man", x: X.safe, y: G, anchor: "bottom", pivot: "bottom", scale: SAFEK, hidden: true };
+    // The man himself: at rest, sipping, the empty suit, and the skeleton that leaves it.
+    var CW = SZ["fda-official-chair"], CR = X.man + CW[0] * MK / 2;
+    var SIPK = 441 * MK / 559;
+    cast.off = { art: "fda-official-chair", x: X.man, y: G, anchor: "bottom", pivot: "bottom", scale: MK };
+    cast.sip = { art: "fda-official-sip", x: CR, y: G, anchor: [SZ["fda-official-sip"][0] - 6, SZ["fda-official-sip"][1]], pivot: "bottom", scale: SIPK, hidden: true };
+    cast.suit = { art: "fda-official-suit", x: CR, y: G, anchor: [CW[0] - 6, SZ["fda-official-suit"][1]], pivot: "bottom", scale: MK, hidden: true };
+    var SKK = V ? 1.5 : 1.3, SKH = SZ["fda-official-skeleton"][1] * SKK, SKX = X.man + 20, HEADC = [X.man - 327 + 95 * MK + 20, G - 882 + 47 * MK + 100];
+    cast.skel = { art: "fda-official-skeleton", x: SKX, y: G - 700, anchor: "top", pivot: "top", scale: SKK, hidden: true };
+    cast.kelsey = { art: "frances-kelsey", x: X.safe - 304 * (PK / 0.9) - 90, y: G, anchor: "bottom", pivot: "bottom", scale: 1.65, hidden: true };
+    // Headstones on the belt, in front of everything.
+    ["st0", "st1", "st2", "st3"].forEach(function (n) { cast[n] = { art: "headstone", x: X.gate + 40, y: G, anchor: "bottom", pivot: "bottom", scale: 1.1, hidden: true }; });
+
+    // A plain cut: repeated `swap`s to one cut-out multiply its squash before they fire.
+    var cut = function (t, a, b) { add({ at: t, do: "hide", who: a }); add({ at: t, do: "show", who: b }); };
+    var sipFrom = function (t0, t1) { cut(t0, "off", "sip"); if (t1) cut(t1, "sip", "off"); };
+    var leap = function (t, view) {
+      var ft = frameTop(view);
+      add({ at: t - 0.3, do: "move", who: "skel", to: HEADC, dur: F, scale: 0.6 });
+      cut(t + 0.05, "off", "suit");
+      add({ at: t + 0.05, do: "show", who: "skel" });
+      add({ at: t + 0.05, do: "move", who: "skel", to: [SKX, ft + SKH / 2 - 10], dur: 0.35, arc: 140, scale: 1, ease: "smooth" });
+    };
+    var land = function (t) {
+      add({ at: t, do: "move", who: "skel", to: HEADC, dur: 0.3, arc: 80, scale: 0.6 });
+      add({ at: t + 0.32, do: "hide", who: "skel" });
+      cut(t + 0.32, "suit", "off");
+      add({ at: t + 0.55, do: "hop", who: "off", height: 12 });
+    };
+    var clang = function (t, big) {
+      add({ at: t, do: "shiver", who: "bell", dur: 0.7, amp: 7, rot: 9 });
+      add({ at: t, do: "boom", shake: big ? 14 : 8, flash: big ? 0.12 : 0.05 });
+    };
+
+    // The two alarms. He sips through all of it.
+    sipFrom(0.35, 1.5);
+    add({ on: "approve", do: "camera", view: "bell", dur: 0.3 });
+    add({ on: "approve", offset: 0.25, do: "stamp", who: "bell", from: 1.6, shake: 12 });
+    add({ on: "block", do: "camera", view: "bulb", dur: 0.4 });
+    add({ on: "good", do: "pop", who: "bulb" });
+    add({ on: "good", do: "glow", who: "bulb", size: 130, dur: 0.4 });
+    add({ at: cue("Two", 2) + 0.1, do: "hide", who: "bulb" }); add({ at: cue("Two", 2) + 0.25, do: "show", who: "bulb" });
+    add({ at: cue("error", 2), do: "hide", who: "bulb" }); add({ at: cue("error", 2) + 0.15, do: "show", who: "bulb" });
+    // Terrified of the first: the bell clangs and he jumps out of his skin.
+    add({ on: "F.D.A.", do: "camera", view: "home", dur: 0.7 });
+    clang(cue("terrified"), true);
+    leap(cue("terrified"), "home");
+    add({ at: cue("terrified") + 0.45, do: "shiver", who: "skel", dur: 0.75, amp: 4, rot: 3 });
+    land(cue("mistake") + 0.25);
+    // Ignores the second: tape and portrait, mid-sip, eyes shut.
+    add({ at: cue("completely") + 0.1, do: "hide", who: "bulb" }); add({ at: cue("completely") + 0.25, do: "show", who: "bulb" });
+    sipFrom(cue("ignores") - 0.4, cue("ratio:") + 0.75);
+    add({ at: cue("ignores") - 0.2, do: "slideIn", who: "arm", from: "left", dist: 300, over: 6 });
+    add({ on: "ignores", offset: 0.2, do: "stamp", who: "tape", from: 1.6, shake: 3 });
+    add({ on: "ignores", offset: 0.5, do: "slideOut", who: "arm", to: "left", dist: 620, dur: 0.25 });
+    add({ on: "second.", do: "slideIn", who: "portrait", from: "top", dist: 900, over: 12, tilt: 4 });
+    add({ on: "second.", offset: 0.45, do: "hide", who: ["bulb", "tape"] });
+    add({ on: "second.", offset: 0.45, do: "show", who: "leak" });
+    add({ on: "second.", offset: 0.45, do: "glow", who: "leak", size: 240, dur: 0.5 });
+    add({ on: "second.", offset: 0.1, do: "slideIn", who: "arm2", from: "left", dist: 260, over: 4 });
+    add({ on: "second.", offset: 0.6, do: "slideOut", who: "arm2", to: "left", dist: 620, dur: 0.25 });
+    // "I calculated the ratio": nothing happens; he is still sipping, closer.
+    add({ on: "I", do: "camera", view: "push", dur: 1.6 });
+    // One protected: the bubble-wrapped man, big, thumbs up.
+    add({ on: "for", do: "camera", view: "one", dur: 0.35 });
+    add({ on: "one", n: 2, do: "pop", who: "safe", squash: true });
+    add({ on: "drug", n: 3, do: "hop", who: "safe", height: 20 });
+    // 3,389: back to the desk as the first body lands, then up the column past the clouds.
+    add({ on: "three", offset: -0.45, do: "camera", view: "home", dur: 0.4 });
+    sipFrom(cue("three") + 0.1, cue("waiting") + 1);
+    add({ at: C0, do: "camera", view: "top1", dur: C1 - C0 });
+    add({ at: DIE, do: "boom", shake: 8, flash: 0.14 });
+    add({ at: C1 - 0.75, do: "shiver", who: "goose", dur: 0.3, amp: 6, rot: 8 });
+    add({ at: C1 - 0.5, do: "move", who: "goose", by: [-900, -500], dur: 0.8, turn: -14, ease: "smooth" });
+    add({ at: C1 - 0.3, do: "stamp", id: "ratio", text: "3,389 : 1", x: V ? X.col : X.col + 800, y: V ? TOP1 - 720 : TOP1 + 420, size: 300, width: V ? 1800 : 1100, tilt: -4 });
+    // "locked": all the way back down, to the cabinet on his desk.
+    add({ on: "locked", do: "camera", view: "cabinet", dur: 0.75 });
+    add({ on: "cabinet.", offset: -0.1, do: "pop", who: "cabinet", squash: true });
+    // Thalidomide: six plates land by the safe man, and each one rings the bell.
+    add({ on: "Even", do: "camera", view: "plates", dur: 0.6 });
+    sipFrom(cue("Even") + 0.05, cue("Thalidomide-scale") - 0.1);
+    var hits = [cue("Thalidomide-scale"), cue("happens"), cue("post-phase"), cue("efficacy"), cue("every", 2), cue("year")];
+    hits.forEach(function (t, j) {
+      add({ at: t - 0.13, do: "move", who: "safe", by: [0, -plates[j].h], dur: 0.18, arc: 110 });
+      add({ at: t, do: "stamp", who: plates[j].name, from: 1.5, shake: 0 });
+      clang(t, !j);
+    });
+    leap(hits[0], "plates");
+    add({ at: hits[0] + 0.45, do: "shiver", who: "skel", dur: cue("caught") - hits[0] - 0.2, amp: 4, rot: 3 });
+    // Caught anyway: Frances Kelsey, big, rejects the lot; he drops back in his suit.
+    add({ on: "even", n: 2, do: "slideIn", who: "kelsey", from: "bottom", dist: 1100, over: 18 });
+    add({ on: "caught", offset: -0.08, do: "nudge", who: "kelsey", by: [50, 0] });
+    add({ on: "caught", do: "stamp", id: "rejected", text: "REJECTED", x: X.safe, y: G - 400, size: 190, width: V ? 600 : 760, tilt: -9, shake: 6 });
+    land(cue("anyway") + 0.1);
+    add({ on: "deaths", do: "slideOut", who: "kelsey", to: "bottom", dist: 1100, dur: 0.35 });
+    // It made no difference: back to the sipping man, and up the column again, which has kept growing.
+    add({ on: "deaths", do: "camera", view: "home", dur: 0.7 });
+    sipFrom(cue("deaths") + 0.6, cue("still") - 0.1);
+    add({ on: "still", do: "camera", view: "top2", dur: cue("to") + 0.15 - cue("still") });
+    add({ on: "one", n: 6, do: "stamp", id: "ratio2", text: "3,389 : 1", x: V ? X.col : X.col + 800, y: V ? TOP2 - 330 : TOP2 + 420, size: 300, width: V ? 1800 : 1100, tilt: 3 });
+    // Payoff: down and out. The desk is on a conveyor at a factory gate; headstones roll out; he sips.
+    var FALL = cue("one", 6) + 0.75;
+    add({ at: FALL - 0.3, do: "show", who: ["works", "belt0", "belt1", "belt2", "belt3"] });
+    add({ at: FALL, do: "camera", view: "wide", dur: cue("main") - 0.05 - FALL });
+    add({ on: "system's", offset: 0.25, do: "banner", id: "system", text: "SAFETY SYSTEM", x: X.gate + (V ? 440 : 340), y: V ? -1500 : -560, size: 200, width: V ? 1600 : 1400, pad: 110, color: "ink", tilt: -2 });
+    sipFrom(cue("main") - 0.3);
+    var END = cue("patients") + 0.85, ROLL = 790;
+    [cue("main"), cue("is", 2), cue("dead"), cue("patients") + 0.3].forEach(function (t, j) {
+      add({ at: t, do: "pop", who: "st" + j, squash: true });
+      add({ at: t + 0.1, do: "move", who: "st" + j, by: [ROLL * (END - t - 0.1), 0], dur: END - t - 0.1 });
+    });
+    add({ on: "main", do: "shiver", who: ["belt0", "belt1", "belt2", "belt3"], dur: END - cue("main"), amp: 2, rot: 0.2 });
+    add({ at: END, do: "shake", frames: 3, y: 5 });
+
+    KIT.collage({ id: ID, seed: 1210, plate: V ? [-5000, -30000, 7000, 7000] : [-5000, -28000, 7000, 3500], views: views, view: "man", cast: cast, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,285 @@
+{
+  "id": "short-two-futures",
+  "title": "Short: two futures (Future A)",
+  "storyboard": "storyboards/part-25-choose-your-own-adventure.md",
+  "audio": {
+    "start": 3132.8,
+    "end": 3229.6
+  },
+  "scenes": [
+    {
+      "id": "future-a-2027",
+      "file": "compositions/scenes/short-two-futures/future-a-2027.html",
+      "cue": "Future",
+      "approx": 3133.0,
+      "layer": "B"
+    },
+    {
+      "id": "audit-side-eye",
+      "file": "compositions/scenes/short-two-futures/audit-side-eye.html",
+      "cue": "audit.",
+      "approx": 3190.4,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "audit.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "arms-crossed",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "rot-in-place",
+      "file": "compositions/scenes/short-two-futures/rot-in-place.html",
+      "cue": "Your",
+      "approx": 3191.5,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "future-a-2027",
+      "cue": "Ignore",
+      "offset": 0.15,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "Manual.",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "six",
+      "sfx": "slide-up",
+      "volume": 0.4
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "four",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "weird.",
+      "sfx": "pat",
+      "volume": 0.45
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "twenty-five",
+      "offset": 0.75,
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "fifteen",
+      "sfx": "stamp",
+      "volume": 0.4
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "planning.",
+      "offset": 0.4,
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "ransomware",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "pays",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "extortion",
+      "sfx": "slide-up",
+      "volume": 0.3
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "clicks",
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "countdown",
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "instead",
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "medication",
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "dose.",
+      "sfx": "boom",
+      "volume": 0.55
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "profiting",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "forty:",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "percent",
+      "n": 3,
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "ones.",
+      "sfx": "slam",
+      "volume": 0.5
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "collapses",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "future-a-2027",
+      "cue": "evade",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "audit-side-eye",
+      "cue": "audit.",
+      "sfx": "crickets",
+      "volume": 0.35
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "fall;",
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "place,",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "another.",
+      "sfx": "slam",
+      "volume": 0.5
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "no",
+      "n": 2,
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "Colombia.",
+      "n": 2,
+      "offset": 0.65,
+      "sfx": "slide-down",
+      "volume": 0.45
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "wars",
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "nuclear.",
+      "sfx": "boom",
+      "volume": 0.55
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "argue",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "climate",
+      "sfx": "boom",
+      "volume": 0.25
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "military",
+      "sfx": "boom",
+      "volume": 0.25
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "spreadsheet",
+      "sfx": "boom",
+      "volume": 0.25
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "separate",
+      "sfx": "snip",
+      "volume": 0.45
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "columns.",
+      "sfx": "marker",
+      "volume": 0.4
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "intelligence.",
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "find",
+      "sfx": "huff",
+      "volume": 0.4
+    },
+    {
+      "scene": "rot-in-place",
+      "cue": "confused.",
+      "offset": 0.25,
+      "sfx": "squeak",
+      "volume": 0.3
+    }
+  ]
+}

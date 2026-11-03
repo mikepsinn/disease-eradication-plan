@@ -28,11 +28,11 @@ version: v3
   - the-stacks: the bar chart's merged bar, the globe cut into a pie chart, and a two-line growth chart with a dusty fire-alarm post beside it.
   - main-street: an empty lot with a bar chart, "WHAT IT PAYS", then a street: the Builder's workbench, a small hospital, his factory beside a bank, and the edge of town.
   - two-houses: two Victorian villas side by side on a street, an empty lot to the right.
-  - the-robot-chart: the robot-chain line chart, "% OF WORLD GDP".
+  - the-robot-chart: the destructive-economy line chart, "YOUR DESTRUCTIVE ECONOMY", drawn as a chain of missiles, tanks, hackers and robots.
   - the-loop: a ledger whose MILITARY line becomes a loop of road with six stations, a bombed town beside it, and a branch road to the seal-flip funnel and the lab bench.
 - **Cast:** existing cut-outs: `politician` (with his blank clipboard), `laptop`, `boot` (the Gilliam foot), `rubble`, `binder`, `globe`, `scientist`, `mushroom`. New: `robot` (the clockwork robot hunched over a laptop, the part's picture of cybercrime), `gorbachev`, `mainframe`, `kim-jong-un`, `putin`, `weapons-maker`, `builder`, `hut-builder`, `watcher`, `kid`, `warlord`, and the props under New art. Money is green paper with stick legs; its seal says what it buys (missile, cross or none).
 - **Callbacks:** from Part 10, the 1913 printing press and the paycheck that shrinks, as stations 1 and 3 of the loop (if Part 10 keeps them). Set up for Part 12: the last medicine papers file up to the lab bench, and Part 12 opens with four of them on Wishonia's console. The Earth-bomb's fuse goes out in you-defund-it, so later host shots have a plain Earth.
-- **New art:** the clockwork robot with its laptop (several poses: typing, splitting in two, hopping, elbowing); Gorbachev (birthmark and all); the Soviet mainframe with tape reels (or reuse `machine`); the rosette; the pointing hand; Kim Jong Un in a sailor's cap; Putin, shirtless; the Weapons Maker cradling a baby missile; a warhead; a missile on a launch stand; a toy aircraft carrier and a washtub; a vault door; a WiFi pole; a hospital with doors that take a padlock; a padlock; a patient on a gurney and his skeleton; a tank and its flattened version; a clock on a post (hands as pieces); the Builder (a barrel-shaped worker with a hammer, plus a charred pose and a wind-up key for his back); a workbench and a two-legged chair; a tear-off calendar; a little factory with a SUCCESS sign that flips to a bullseye; a little capitol; a bank; a crate; a crater; a fire-alarm post, "EMERGENCY: PULL"; a warlord in an army helmet three sizes too big; a toll gate; the Hut Builder and her hut; engraved map cut-outs of Somalia, Libya and Syria (Syria in pieces); a signpost; two Victorian villas, one also as a burnt frame; the Watcher with a teacup (and charred); red gas cans with the missile seal; a ballot box; a light bulb on a stand; a round red rug and a headset microphone; a ledger; a printing press; a loaf of bread; the Kid in a tiny domino mask, a school desk and a schoolhouse whose walls fall flat; a railroad switch; the seal-flip funnel; a lab bench; war, medicine and plain papers.
+- **New art:** the clockwork robot with its laptop (several poses: typing, splitting in two, hopping, elbowing); Gorbachev (birthmark and all); the Soviet mainframe with tape reels (or reuse `machine`); the rosette; the pointing hand; Kim Jong Un in a sailor's cap; Putin, shirtless; the Weapons Maker cradling a missile; a warhead; a missile on a launch stand; a toy aircraft carrier and a washtub; a vault door; a WiFi pole; a hospital with doors that take a padlock; a padlock; a patient on a gurney and his skeleton; a tank and its flattened version; a clock on a post (hands as pieces); the Builder (a barrel-shaped worker with a hammer, plus a charred pose and a wind-up key for his back); a workbench and a two-legged chair; a tear-off calendar; a little factory with a SUCCESS sign that flips to a bullseye; a little capitol; a bank; a crate; a crater; a fire-alarm post, "EMERGENCY: PULL"; a warlord in an army helmet three sizes too big; a toll gate; the Hut Builder and her hut; engraved map cut-outs of Somalia, Libya and Syria (Syria in pieces); a signpost; two Victorian villas, one also as a burnt frame; the Watcher with a teacup (and charred); red gas cans with the missile seal; a ballot box; a light bulb on a stand; a round red rug and a headset microphone; a ledger; a printing press; a loaf of bread; the Kid in a tiny domino mask, a school desk and a schoolhouse whose walls fall flat; a railroad switch; the seal-flip funnel; a lab bench; war, medicine and plain papers.
 - **Kit additions:**
   - A chart: axes, gridlines, labels, a dashed reference line, and a bar that grows to a value by stacking copies of a cut-out (the robot bar, the warhead bar, the BUILD and STEAL bars).
   - A chain: copies of a cut-out placed along a curve over time, each popping out of the last (the robot line, the line of papers round the loop).
@@ -151,7 +151,7 @@ Sound: a whoosh for the WiFi arcs; a thunk for the small pile; a splat when the 
 | "Combined, your destructive economy is thirteen point two trillion dollars per year," | $2.72T + $10.5T = $13.2T. | The chained bars from cybercrime-10-trillion: the warhead bar lifts and stacks on top of the robot bar. One bar: "$13.2 TRILLION". | |
 | "eleven point five percent of global G.D.P." | 11.5% of the world's $115 trillion. | The camera travels right to the globe on its stand, ruled into a pie chart. The Weapons Maker and a robot cut out an 11.5% wedge (41°) with a knife and fork, and a toothpick flag in it says "11.5%". | They each take a bite. |
 | "Both are growing faster than the part of your economy that makes things." | 12.6% a year against 2.5%. | A line chart, "GROWTH SINCE 2025", years along the bottom to 2040. The Builder carries crates one at a time and draws a nearly flat line, "MAKING THINGS", to 1.45. A chain of robots and warheads draws a steep one, "DESTROYING THINGS", up to 5.9. | The Builder stops to wipe his brow; the robots are already off the top of the chart. |
-| "So the part that destroys things is winning." | | The Weapons Maker rides the top of the steep line and hoists his baby missile over his head like a trophy. The line sways. | |
+| "So the part that destroys things is winning." | | The Weapons Maker rides the top of the steep line and hoists his missile over his head like a trophy. The line sways. | |
 | "I'm told this is not considered an emergency." | Nobody treats it as one. | The steep line topples over onto the Builder; only his blinking eyes and one hand show. Beside him, a fire-alarm post, "EMERGENCY: PULL", its glass gray with dust. His hand reaches up for the handle and falls short. | Nobody pulls it. Crickets. |
 
 Sound: a clank as the bars stack; a snip for the wedge; hammering as the Builder walks; a rising whistle as the steep line climbs; a sparkle for the trophy; a splat as the line lands; crickets after "emergency."
@@ -303,21 +303,18 @@ Sound: a sizzle as the smoke thins off him; a click as the slot shuts; a switch 
 - time: 21:11.5 to 21:30.8 (19.4 s)
 - voiceover: "At current growth rates, your destructive economy reaches twenty-five percent of G.D.P. by twenty thirty-three. The Soviet Union collapsed at fifteen percent of G.D.P. in military spending alone. They had worse technology, a smaller parasitic sector, and a plan. It was a terrible plan, but they had one."
 - layer: B, plate the-robot-chart
+- bit: **The destructive economy is a chain of missiles, hackers, tanks and robots climbing a chart, and we ride its tip.** Scenes 14 and 15 are one plate. The camera climbs with the chain to 25% BY 2033, drops to Gorbachev on his 15% ledge, travels along the ledge to the Politician and his blank clipboard, and pulls back to the whole chart for the boot.
 - status: planned
-
-The plate: one inked line chart on aged paper, "% OF WORLD GDP". The years run 2025 to 2040 along the bottom and 0 to 50% up the side, with faint gridlines. The line is a chain of clockwork robots, each hunched over a laptop. Every new point of the line is a robot popping out of the one before it, so the curve is literally replicating AI agents: steal money, buy compute, train better AI hackers, steal more.
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "At current growth rates, your destructive economy" | It's 11.5% today. | The chart slides in. One robot sits at 2025 on 11.5%, tagged "$13.2 TRILLION". | It's typing very fast. |
-| "reaches twenty-five percent of G.D.P. by twenty thirty-three." | It doubles in 8 years. | The robot splits into two, then four, and each copy hops further up and right. The chain draws the curve, getting steeper. It hits the 25% gridline at 2033, and "2033" stamps there. | The last robots elbow each other to be first over the line. |
-| "The Soviet Union collapsed at fifteen percent of G.D.P. in military spending alone." | There is a known collapse point. | A dashed line at 15% is tagged "USSR · 1991 · COLLAPSED". Gorbachev (a cut-out, birthmark and all) stands on it like a ledge. | The robot chain has already climbed past his ledge. |
-| "They had worse technology," | | A room-sized mainframe with tape reels thumps down next to him, and one bulb blinks. | A moth flies out. |
-| "a smaller parasitic sector," | | One robot on his side, not replicating. | It tries to split and fails. |
-| "and a plan. It was a terrible plan," | | A fat binder thumps down: "FIVE-YEAR PLAN". TERRIBLE is stamped on it. | |
-| "but they had one." | | The binder stands up straight, proud. | |
+| "At current growth rates, your destructive economy" | It's $13.2 trillion today, 11.5% of GDP. | Close, filling the frame: one missile and one masked hacker typing, a tag swinging: "$13.2 TRILLION". | |
+| "reaches twenty-five percent of G.D.P. by twenty thirty-three." | It doubles in 8 years. | Each new piece pops out of the last and the camera climbs with the tip. "25% BY 2033" stamps beside it. | The last robots elbow each other. |
+| "The Soviet Union collapsed at fifteen percent of G.D.P. in military spending alone." | There is a known collapse point. | Back down: Gorbachev, big, drops onto a dashed ledge. "15%" stamps beside him. | |
+| "They had worse technology, a smaller parasitic sector," | | His mainframe thumps down. A moth flies out and wanders the frame. | |
+| "and a plan. It was a terrible plan, but they had one." | | A fat binder, PLAN, thumps down; a slip stamped TERRIBLE lands on it; it hops on "one." | The moth settles on his head. |
 
-Sound: a typing clatter under the chain and a pop per split; a stamp thud on "2033"; a thunk as the mainframe lands and a flutter for the moth; a fizzle as the Soviet robot fails to split; a thunk and a stamp thud for the binder.
+Sound: a typing clatter on the climb and a stamp thud on "thirty-three."; a whoosh and a thunk as he lands; a stamp thud on "fifteen"; a thunk for the mainframe and for the binder, a stamp thud on "terrible", a boing on "one."
 
 ## Scene 15 · no-plan
 
@@ -328,18 +325,17 @@ Sound: a typing clatter under the chain and a pop per split; a stamp thud on "20
 - time: 21:30.8 to 21:43.3 (12.5 s)
 - voiceover: "You are approaching their ratio with better technology, a faster-growing parasitic sector, and no plan. The Soviet Union's terrible plan beat your no plan, and the Soviet Union lost."
 - layer: B, plate the-robot-chart
+- bit: Built in 25-percent-by-2033's plate and file.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "You are approaching their ratio" | We cross 15% around 2028. | The camera travels along the robot chain to where it meets the dashed 15% line at about 2028. A pointing-hand "YOU ARE HERE" sits just below it. | |
-| "with better technology," | | A sleek laptop lands next to "YOU ARE HERE", opposite the mainframe. | |
-| "a faster-growing parasitic sector," | | The robots near the hand multiply into a swarm. | |
-| "and no plan." | | The Politician pops up, grinning, holding a clipboard: "PLAN:", blank. | |
-| "The Soviet Union's terrible plan beat your no plan," | | A "1ST" rosette pins onto the Soviet binder. | |
-| "and the Soviet Union lost." | | The Gilliam foot stomps Gorbachev, the mainframe and the binder flat. The rosette floats down onto the heap. | The robot chain keeps climbing past the stomp, toward 2033. The Politician gives the heap a thumbs-up. |
+| "You are approaching their ratio with better technology, a faster-growing parasitic sector," | We cross 15% around 2028. | Along the ledge to the Politician, big, standing where the chain crosses it, thumb up, holding a clipboard: "PLAN:". The chain swarms past behind him, faster on "faster-growing". | |
+| "and no plan." | | The camera pushes in on his grin and the clipboard, blank under "PLAN:". | |
+| "The Soviet Union's terrible plan beat your no plan," | | Pull back to the whole chart: the chain climbs on toward the top. | The Politician hops on "no". |
+| "and the Soviet Union lost." | | The boot, as tall as the frame, stomps Gorbachev, the mainframe and the binder flat, and lifts. | The chain keeps climbing off the top. |
 
-Sound: a thunk for the laptop; a rising whistle as the swarm multiplies; a boing for the Politician; a pop for the rosette; a slam for the foot.
+Sound: a whoosh along the ledge; a rising whistle on "faster-growing"; a boing on "no"; a whoosh on the pull-back; a slam on "lost."
 
 ## Scene 16 · this-is-a-loop
 
@@ -378,7 +374,7 @@ Sound: a fire fizz as the spark goes round the curl.
 | "which makes legitimate work pay less," | 3. Real pay falls. | Station 3: at a factory gate, the Hut Builder holds out her paycheck, and it shrinks to a sliver in her hand. | |
 | "which pushes talent toward cybercrime," | 4. Workers turn to theft. | Station 4: she sits down at a laptop beside the Builder, and a wind-up key pops out of her back. | |
 | "which grows the destructive economy," | 5. Destruction grows. | Station 5: the robot chain from the-robot-chart runs past, one more robot popping out of the last. | |
-| "which justifies more military spending." | 6. And more war money. | Station 6: the Politician signs a bigger budget, and the Weapons Maker catches a new baby missile. The papers run on round to the press. | The camera pulls back: the loop speeds up until papers fly off the bends, and the bread's price tag bursts. |
+| "which justifies more military spending." | 6. And more war money. | Station 6: the Politician signs a bigger budget, and the Weapons Maker catches a new missile. The papers run on round to the press. | The camera pulls back: the loop speeds up until papers fly off the bends, and the bread's price tag bursts. |
 
 Sound: a whoosh as the line peels off; a whirr as the press turns; a rising whistle as the tag swells; a squeak as the paycheck shrinks; a ratchet for the key; a pop for the new robot; a scratch for the signature and a clank for the missile; a whoosh as the loop speeds up and a pop for the tag.
 

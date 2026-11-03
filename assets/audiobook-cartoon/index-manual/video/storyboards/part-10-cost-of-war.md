@@ -33,8 +33,8 @@ version: v3
   - `midway`: two carnival prize wheels, each a pie chart of the odds.
   - `desert`: cracked ground; a sea and a little island country on the right; a puddle.
   - Host scenes: Wishonia at her console on the observation deck, Earth in the window.
-- **Cast:** `uncle-sam` and `general` (existing; the shopper and the stocker), `shopping-cart`, `warhead`, `crate`, `robot`, `price-tag`, `hospital`, `space-guard` (a beanpole in a fishbowl helmet with binoculars), `porthole` (existing deck art, `assets/art/deck/porthole.webp`, shown in the binocular view), `quake-crate` (a crate with a crank and a "?"), `woodrow-wilson`, `printing-press`, `moth`, `bill-war`, `bill-med`, `bill-plain`, `skeleton`, `house`, `rubble` (existing), `you` (a busy Victorian in a bowler), `loaf`, `cash-register`, `receipt`, `pyramid`, `caveman`, `fat-cat`, `germ`, `satellite`, `prize-wheel` (two), `sandbags`, `missile` on a `leash`, `oil-derrick`, `george-w-bush` (flight suit), `banner`, `tank`, `island`, `submarine`, `mushroom` (existing).
-- **Callbacks:** the leashed missile from Part 8 (fifty-nine-elevens), which walked past a germ with no oil, finds the oil on cancer's head here. The 604 bar is Part 6's bar chart. The baby missile is the Weapons Maker's from Part 6.
+- **Cast:** `uncle-sam` and `general` (existing; the shopper and the stocker), `shopping-cart`, `warhead`, `crate`, `robot`, `price-tag`, `hospital`, `space-guard` (a beanpole in a fishbowl helmet with binoculars), `porthole` (existing deck art, `assets/art/deck/porthole.webp`, shown in the binocular view), `quake-crate` (a crate with a crank and a "?"), `woodrow-wilson`, `printing-press`, `moth`, `bill-war`, `bill-med`, `bill-plain`, `skeleton`, `house`, `rubble` (existing), `you` (a busy Victorian in a fedora), `loaf`, `cash-register`, `receipt`, `pyramid`, `caveman`, `fat-cat`, `germ`, `satellite`, `prize-wheel` (two), `sandbags`, `missile` on a `leash`, `oil-derrick`, `george-w-bush` (flight suit), `banner`, `tank`, `island`, `submarine`, `mushroom` (existing).
+- **Callbacks:** the leashed missile from Part 8 (fifty-nine-elevens), which walked past a germ with no oil, finds the oil on cancer's head here. The 604 bar is Part 6's bar chart. The missile is the Weapons Maker's from Part 6.
 - **New art:** all seven plate sheets, with no words; every cut-out in the Cast not marked existing. Prices, years, axis labels, the receipt's lines, banners and stamps are in code.
 - **Kit additions:**
   - `chart`: inked axes, ticks, labels, a dashed reference line, and a line drawn left to right over a set time (the 1913 chart, the dollar line, the two roads).
@@ -68,17 +68,16 @@ Sound: a whirr; a ka-ching as the tag flips.
 - cue: "Humans spend two point seven two trillion"
 - time: 17:18.0 to 17:26.6 (8.7 s)
 - voiceover: "Humans spend two point seven two trillion dollars every year on stuff designed specifically to make humans stop being alive:"
-- layer: A, host
-- wishonia: neutral-smile + body-presenting; excited-ee + body-wide-gesture on "trillion"; smirk-smile + body-open-palms on "specifically"; sideeye-closed + body-idle on "alive:"
+- layer: B, plate one-shopping-trip
+- bit: **One shopping trip: YOU push a giant cart past a ringing till, load it far past ENOUGH, roll it through a town, and at the till one tiny bottle of medicine is still on the counter.** Scenes 2 to 8 are one plate and one file (`bought-the-other-thing`). A receipt unrolls 38,000 years past Rome and the pyramids, and the camera comes back to the bottle.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Humans spend two point seven two trillion dollars" | $2.72T. | Iris in on Wishonia at the console. Its keys go down by themselves; the readout rings up $2.72 TRILLION like a till. | |
-| "every year" | And again next year. | It rings the same sale up again, and again, faster. | |
-| "on stuff designed specifically to make humans stop being alive:" | | A cash drawer slides out of the console and rattles. | It shoots open: a grinning baby missile in a frilly bonnet springs up on a jack-in-the-box spring and shakes its rattle at her. She side-eyes it. |
+| "Humans spend two point seven two trillion dollars every year" | $2.72T. | The till, huge. $2.72 TRILLION slams down three times, on "trillion", "every" and "year". |  |
+| "on stuff designed specifically to make humans stop being alive:" |  | The camera moves to YOU, straining behind a giant empty cart. | A missile pops up in the child seat and bounces. |
 
-Sound: a key clatter; a ka-ching on "trillion"; two more on "every year"; a boing for the spring.
+Sound: a ka-ching on "trillion", "every" and "year"; a squeak; a boing for the baby.
 
 ## Scene 3 · warheads-in-the-cart
 
@@ -88,17 +87,18 @@ Sound: a key clatter; a ka-ching on "trillion"; two more on "every year"; a boin
 - cue: "There are twelve thousand"
 - time: 17:26.6 to 17:37.4 (10.8 s)
 - voiceover: "There are twelve thousand, two hundred and forty-one nuclear warheads (enough to end civilization one hundred and twenty-two times, just in case the first one hundred and twenty-one apocalypses don't take)."
-- layer: B, plate murder-mart
+- layer: B, plate one-shopping-trip
+- bit: Same plate: one crate is enough; the pile goes off the top.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "There are twelve thousand, two hundred and forty-one nuclear warheads" | 12,241. | Uncle Sam pushes a giant shopping cart into the aisle, the baby missile in the child seat. The General shovels grinning warheads into crates of 100 and stacks the crates in the cart. | The cart's wheels splay. |
-| "(enough to end civilization" | About 100 warheads is enough. | A dashed line inks across the stack at the top of the first crate, card: ENOUGH. | |
-| "one hundred and twenty-two times," | 122 crates. | The crates keep stacking, 122 of them, far above the dashed line. | |
-| "just in case the first one hundred and twenty-one apocalypses don't take)." | 121 are spares. | SPARE stamps onto every crate above the line, 121 times, faster and faster. | The top crate wobbles, falls and hits the floor: flash, mushroom cloud. Uncle Sam and the General stand charred, blinking. The baby missile is fine. |
+| "There are twelve thousand, two hundred and forty-one nuclear warheads" | 12,241. | One crate of grinning warheads drops in. The camera gets in close on the grins. |  |
+| "(enough to end civilization" | About 100 warheads is enough. | A dashed line at the top of the first crate: ENOUGH. |  |
+| "one hundred and twenty-two times, just in case the first one hundred and twenty-one apocalypses" | 122 crates; 121 are spares. | Crates pile on, 122 of them, and the camera pulls back until the pile is a leaning thread past the clouds and the cart is a speck. 121 SPARES. |  |
+| "don't take)." |  | The top crate falls all the way down. BOOM: a mushroom cloud beside the cart. | YOU are charred for the rest of the trip. |
 
-Sound: a squeaky wheel; clanks as the crates stack; a run of stamps speeding up; a falling slide whistle; a boom.
+Sound: a clank for each crate on the words; a stamp on "twenty-one"; a slide down; a boom.
 
 ## Scene 4 · cart-gadgets
 
@@ -108,18 +108,18 @@ Sound: a squeaky wheel; clanks as the crates stack; a run of stamps speeding up;
 - cue: "There are A.I. murder-bots."
 - time: 17:37.4 to 17:49.2 (11.8 s)
 - voiceover: "There are A.I. murder-bots. There are invisible jets that cost more than hospitals. There is a Space Force (to fight the zero aliens attacking you). And there is some kind of earthquake machine"
-- layer: B, plate murder-mart
+- layer: B, plate one-shopping-trip
+- bit: Same plate: the gadgets pile on and the wheels splay a bit more each time.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "There are A.I. murder-bots." | | The charred pair push on. A tin robot hops out of its box on the shelf into the cart and folds its pincers. | |
-| "There are invisible jets that cost more than hospitals." | A jet costs more than a hospital. | An empty spot under a long price tag. Beside it, a little hospital on a stand with a short price tag. The two tags hang side by side like bars. | Something invisible lands on the hospital and flattens it. Tyre tracks across the roof. |
-| "There is a Space Force" | | A beanpole guard in a fishbowl helmet climbs onto the cart with binoculars. | |
-| "(to fight the zero aliens attacking you)." | Nobody is attacking. | His binocular view sweeps the sky: empty, one cloud, empty. It sweeps right past a porthole where Wishonia waves. A counter card on his helmet: ALIENS: 0. | The murder-bot behind him zaps him into a skeleton, still looking up. |
-| "And there is some kind of earthquake machine" | | A crate with a crank and a big "?" drops into the cart. The General cranks it. | The cart jiggles; the skeleton falls apart into a pile of bones. |
+| "There are A.I. murder-bots." |  | Back down: YOU, black, blink. A robot drops into the cart. |  |
+| "There are invisible jets that cost more than hospitals." | A jet costs more than a hospital. | A big hospital beside the aisle. A jet flickers over it for two drawings, twice. | The hospital goes flat under nothing, tyre tracks across it. The cart sags. |
+| "There is a Space Force (to fight the zero aliens attacking you)." | Nobody is attacking. | A guard in a fishbowl helmet stands on the cart, binoculars up. A saucer comes down on its string behind him. ALIENS: 0. | The robot zaps him; he is a skeleton, still looking up. |
+| "And there is some kind of earthquake machine" |  | A crate with a crank and a big ? drops into the cart and starts to shake. |  |
 
-Sound: a clank for the robot; a jet whoosh for nothing; a crunch for the hospital; a zap; a thunk and a cranking whirr.
+Sound: a clank for the robot; an airplane for nothing; a slam for the hospital; a stamp; a zap; a thunk and a whirr.
 
 ## Scene 5 · probably
 
@@ -129,15 +129,15 @@ Sound: a clank for the robot; a jet whoosh for nothing; a crunch for the hospita
 - cue: "(probably)."
 - time: 17:49.2 to 17:51.1 (1.9 s)
 - voiceover: "(probably)."
-- layer: A, host (reaction cut)
-- wishonia: skeptical-closed + body-shrug
+- layer: B, plate one-shopping-trip
+- bit: Same plate: it works.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "(probably)." | It works. | Wishonia shrugs. Earth shakes in the window; a crack zigzags across the glass beside it. | Her mug walks off the edge of the ledge. She does not move. |
+| "(probably)." | It works. | The whole frame shakes; the wheels splay flat. | The skeleton falls off. |
 
-Sound: a low rumble; a clank as the mug lands.
+Sound: a low hum, a small boom and a clank.
 
 ## Scene 6 · nothing-papers
 
@@ -147,18 +147,19 @@ Sound: a low rumble; a clank as the mug lands.
 - cue: "Since nineteen thirteen"
 - time: 17:51.1 to 18:07.3 (16.2 s)
 - voiceover: "Since nineteen thirteen, your governments have printed one hundred and seventy trillion dollars out of nothing and spent these nothing-papers on murdering three hundred and ten million humans and destroying many valuable things those humans spent their entire lives building."
-- layer: B, plate 1913-press
+- layer: B, plate one-shopping-trip
+- bit: Same plate: Wilson prints it into the cart, and the cart rolls through the town, one lurch a word.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Since nineteen thirteen," | The Federal Reserve starts in 1913. | Woodrow Wilson signs a card, FEDERAL RESERVE ACT · 1913, and starts cranking the press. | |
-| "your governments have printed one hundred and seventy trillion dollars" | $170T since 1913. | Bills fly out of the press and land in a line that draws the chart: cumulative spending, 1913 to 2024. It jumps at each world war and climbs to $170 TRILLION at the right edge. | |
-| "out of nothing" | | The camera pushes into the press's paper tray: empty, a cobweb across it. | A moth crawls out, flaps off. |
-| "and spent these nothing-papers on murdering three hundred and ten million humans" | 310 million killed. | Under the line, at each war's jump, skeletons pile up into bars. They add up across the chart, and 310,000,000 stamps over them. | The skeletons wave at Wilson. He waves back and keeps cranking. |
-| "and destroying many valuable things those humans spent their entire lives building." | | The camera travels to the town under the chart's far end. The bills march through it, and the houses fold flat into rubble, one after another. | A man taps one nail into his flattened house with a hammer. |
+| "Since nineteen thirteen, your governments have printed one hundred and seventy trillion dollars" | $170T since 1913. | Woodrow Wilson cranks a press. War bills walk off the tray toward the cart. $170 TRILLION. |  |
+| "out of nothing" |  | The camera pushes into the tray: empty, a cobweb across it. | A moth flies out; the bills keep coming. |
+| "and spent these nothing-papers on murdering three hundred and ten million humans" | 310 million killed. | The cart rolls on. A family waves in front of a house; the cart goes over them. 310,000,000. | They stand up behind it as grinning skeletons. |
+| "and destroying many valuable things" |  | One lurch a word: three houses go flat into rubble. |  |
+| "those humans spent their entire lives building." |  | A kneeling man taps a nail into the last house. It goes flat behind him. | He keeps tapping, to the end of the next line. |
 
-Sound: a pen scratch; the press clanking; a ka-ching on "trillion"; crickets in the tray; a stamp for 310,000,000; paper footsteps; a slam per house; one tap.
+Sound: a whirr and a clank; a ka-ching on "trillion"; crickets in the tray; a slam per crush; a stamp on "million"; hammer taps.
 
 ## Scene 7 · paycheck-shrinks
 
@@ -168,16 +169,17 @@ Sound: a pen scratch; the press clanking; a ka-ching on "trillion"; crickets in 
 - cue: "Consequently your paycheck"
 - time: 18:07.3 to 18:13.7 (6.4 s)
 - voiceover: "Consequently your paycheck now buys ninety-seven percent less due to the aforementioned destruction."
-- layer: B, plate 1913-press
+- layer: B, plate one-shopping-trip
+- bit: Same plate: the loaf on the paycheck.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Consequently your paycheck" | | YOU, in his bowler, stands on a second inked line under the spending chart: WHAT A DOLLAR BUYS, starting high at 1913. He holds a plain paycheck, and a full loaf of bread sits on it. | |
-| "now buys ninety-seven percent less" | 97% less. | He walks the line right to today. It falls all the way; the loaf shrinks as he goes. At the end, −97% stamps on it. | The loaf is one crumb. |
-| "due to the aforementioned destruction." | | He looks back at the spending line climbing over his head. | A pigeon takes the crumb. |
+| "Consequently your paycheck" |  | YOU let go of the cart and hold up the paycheck, big, with a whole loaf on it. |  |
+| "now buys ninety-seven percent less" | 97% less. | The loaf shrinks to a crumb. 97% LESS. |  |
+| "due to the aforementioned destruction." |  | A pigeon lands on the paycheck and takes the crumb. | YOU blink. |
 
-Sound: a falling slide whistle along the line; a stamp; a flutter for the pigeon.
+Sound: a slide down; a stamp; a whoosh for the pigeon.
 
 ## Scene 8 · bought-the-other-thing
 
@@ -187,16 +189,18 @@ Sound: a falling slide whistle along the line; a stamp; a flutter for the pigeon
 - cue: "One hundred and seventy trillion"
 - time: 18:13.7 to 18:21.7 (8.1 s)
 - voiceover: "One hundred and seventy trillion dollars is equal to thirty-eight thousand years of government clinical trial spending. You bought the other thing."
-- layer: B, plate checkout
+- layer: B, plate one-shopping-trip
+- bit: Payoff, same plate: the receipt, and the bottle.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "One hundred and seventy trillion dollars" | | The checkout: a heap of war bills on the counter. The till rings $170 TRILLION. | |
-| "is equal to thirty-eight thousand years of government clinical trial spending." | At $4.5B a year, $170T lasts 38,000 years. | The receipt starts printing out of the till: one line per year, CLINICAL TRIALS · 1 YEAR. It unrolls across the field and the camera runs along it: past a Roman at year 2,000, past the pyramids at 4,500, back to a caveman at 38,000. | The caveman, in a lab coat, holds up a flask. |
-| "You bought the other thing." | They chose war. | Back at the counter: the till tears the receipt off. Its one line: WAR. Uncle Sam takes the heap of war bills. | The 38,000-year receipt is swept up into the bin. |
+| "One hundred and seventy trillion dollars" |  | The counter and till. It rings $170 TRILLION. |  |
+| "is equal to thirty-eight thousand years" | At $4.5B a year, $170T lasts 38,000 years. | A receipt, CLINICAL TRIALS: 1 YEAR per line, unrolls out of the till and the camera runs along it: past a Roman, past the pyramids, to a caveman in a lab coat holding up a flask. 38,000 YEARS. |  |
+| "of government clinical trial spending." |  | The caveman hops. The camera comes back down the receipt. |  |
+| "You bought the other thing." | They chose war. | The counter: charred YOU, the loaded cart behind, and on the counter, unbought, one tiny bottle of medicine, glowing. | The bottle gives a small hop on "other". HOLD. |
 
-Sound: a ka-ching; a long typewriter rattle as the receipt runs; a rip; a tip into the bin.
+Sound: a ka-ching; a typewriter along the receipt; a stamp on "years"; a whoosh back; then nothing.
 
 ## Scene 9 · stopped-in-1900
 
@@ -213,8 +217,8 @@ Sound: a ka-ching; a long typewriter rattle as the receipt runs; a rip; a tip in
 |---|---|---|---|
 | "Through compounding effects," | Growth compounds. | One road, drawn as the line of a chart (income per person), runs up from the left. YOU walks along it. | |
 | "if your governments had stopped spending on murder in nineteen hundred" | | At a signpost, 1900, the road forks into two lines. YOU splits in two, one on each. | |
-| "you would be twenty-three point two times richer today," | 23.2x. | The upper road curves up steeply to the top of the sheet; the lower one barely rises. ×23.2 stamps between their ends. | Upper YOU's bowler turns into a top hat, and he swells into the fat cat. |
-| "and disease would not be stealing ten point one years of your life." | 10.1 years lost. | Under each YOU, a bar of his healthy years. On the lower road a germ bites the end off his bar: 10.1 YEARS. | Lower YOU turns into a skeleton in his bowler. |
+| "you would be twenty-three point two times richer today," | 23.2x. | The upper road curves up steeply to the top of the sheet; the lower one barely rises. ×23.2 stamps between their ends. | Upper YOU's fedora turns into a top hat, and he swells into the fat cat. |
+| "and disease would not be stealing ten point one years of your life." | 10.1 years lost. | Under each YOU, a bar of his healthy years. On the lower road a germ bites the end off his bar: 10.1 YEARS. | Lower YOU turns into a skeleton in his fedora. |
 | "The average person would earn three hundred and thirty-three thousand, six hundred and thirty-six dollars per year" | $333,636. | A paycheck flips up at the end of the upper road: $333,636 / YEAR. | The fat cat lights his cigar with it. |
 | "instead of fourteen thousand, three hundred and seventy-five dollars." | $14,375. | At the end of the lower road: $14,375 / YEAR. | The skeleton's jaw drops off onto the road. |
 

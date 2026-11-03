@@ -1,0 +1,78 @@
+<template id="two-clients-template">
+  <!-- two-clients · collage (Part 19, scene 7). Two globes, the same man on each. On the small worried one a tattooed
+       arm pays him; "die": he is a grinning skeleton in a mask, the money falls through him, and "smaller" the globe
+       shrinks under him. The camera slides to the other: the same pay, alive; "one point four three": it swells to 1.43
+       times the width of the first, and the camera backs off to see both. "1.43×". -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="two-clients" data-width="1920" data-height="1080" data-start="0" data-duration="14.54">
+    <div id="two-clients-weave"></div>
+    <div id="two-clients-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, G = 1000, BIG = V ? 780 : 1100;
+    var cy = function (s) { return V ? G - 420 / s : 620; };
+    // The globes' bodies (no sweat drops): worried 230 art px across, happy 240. 1.43 is their ratio at the end.
+    var W0 = 2.1, W1 = 1.9, H1 = W1 * 230 * 1.43 / 240, H0 = W1 * 230 / 240;
+    var LK = 0.95, SK = 0.75;
+    var views = V ? {
+      small: [0, cy(1.2), 1.2], big: [BIG, cy(1.15), 1.15], both: [(BIG + 60) / 2, cy(0.72), 0.72],
+    } : { small: [0, 600, 0.92], big: [BIG, 600, 0.92], both: [BIG / 2, 550, 0.8] };
+    var cast = {
+      worried: { art: "globe-worried", x: 0, y: G, anchor: "bottom", pivot: "bottom", scale: W0 },
+      happy: { art: "globe-happy", x: BIG, y: G, anchor: "bottom", pivot: "bottom", scale: H0 },
+      lob: { art: "lobbyist", x: 0, y: G - 244 * W0 + 16, anchor: "bottom", pivot: "bottom", scale: LK, points: { hand: [90, 170] } },
+      skel: { art: "lobbyist-skeleton", x: 0, y: G - 244 * W0 + 16, anchor: "bottom", pivot: "bottom", scale: SK, hidden: true },
+      lob2: { art: "lobbyist", x: BIG, y: G - 247 * H0 + 16, anchor: "bottom", pivot: "bottom", scale: LK, points: { hand: [90, 170] } },
+      arm: { art: "tattoo-arm", x: 360, y: 240, scale: 1.7, hidden: true },
+      cash: { art: "bundle-war", x: 150, y: 170, scale: 0.75, hidden: true },
+      arm2: { art: "tattoo-arm", x: BIG + 360, y: 300, scale: 1.7, hidden: true },
+      cash2: { art: "bundle-med", x: BIG + 150, y: 230, scale: 0.75, hidden: true },
+    };
+    var grow = (H1 - H0) * 247;
+    KIT.collage({
+      id: "two-clients", seed: 1907, plate: V ? [-2000, -2000, 3000, 3600] : [-1500, -900, 3000, 2300], views: views, view: "small", cast: cast,
+      beats: [
+        { at: 0, do: "bob", who: "lob", y: 3, r: 1, speed: 1.4, until: "die" },
+        { at: 0, do: "bob", who: "worried", y: 2, r: 1.2, speed: 2 },
+        { on: "pays", n: 1, offset: -0.3, do: "slideIn", who: "arm", from: "right", dist: 700, over: 10 },
+        { on: "pays", n: 1, offset: -0.3, do: "slideIn", who: "cash", from: "right", dist: 700, over: 10 },
+        { on: "lobby", n: 1, do: "move", who: "cash", to: "lob.hand", dur: 0.25, arc: 40 },
+        { on: "world", n: 1, do: "slideOut", who: "arm", to: "right", dist: 800 },
+        // "die": the X-ray; the money falls through him
+        { on: "die", n: 1, do: "boom", shake: 12, flash: 0.12 },
+        { on: "die", n: 1, do: "swap", who: "lob", to: "skel" },
+        { on: "die", n: 1, offset: 0.05, do: "drop", who: "cash", dist: 1200, drift: -30, spin: 60, dur: 0.6 },
+        { on: "die", n: 1, offset: 0.3, do: "shiver", who: "worried", dur: 3, amp: 3, rot: 1 },
+        // "smaller": the world shrinks under him
+        { on: "smaller", do: "move", who: "worried", scale: W1 / W0, by: [0, 0], dur: 0.5, ease: "smooth" },
+        { on: "smaller", do: "move", who: "skel", by: [0, 244 * (W0 - W1)], dur: 0.5, ease: "smooth" },
+        // The other world: the same man, the same pay, alive
+        { on: "You're", do: "camera", view: "big", dur: 0.9 },
+        { at: 0.1, do: "bob", who: "lob2", y: 3, r: 1.5, speed: 1.4 },
+        { at: 0.1, do: "bob", who: "happy", y: 2, r: 1, speed: 1.2 },
+        { on: "pays", n: 2, offset: -0.3, do: "slideIn", who: "arm2", from: "right", dist: 700, over: 10 },
+        { on: "pays", n: 2, offset: -0.3, do: "slideIn", who: "cash2", from: "right", dist: 700, over: 10 },
+        { on: "salary", do: "move", who: "cash2", to: "lob2.hand", dur: 0.25, arc: 40 },
+        { on: "to", n: 2, do: "slideOut", who: "arm2", to: "right", dist: 800 },
+        { on: "don't", do: "hop", who: "lob2", height: 44 },
+        { on: "die", n: 2, offset: 0.1, do: "hop", who: "lob2", height: 44 },
+        // "one point four three": the world swells to 1.43 times the other; the camera backs off to see both
+        { on: "economy", n: 2, do: "camera", view: "both", dur: 1.0 },
+        { on: "one", do: "move", who: "happy", scale: H1 / H0, by: [0, 0], dur: 1.35, ease: "smooth" },
+        { on: "one", do: "move", who: "lob2", by: [0, -grow], dur: 1.35, ease: "smooth" },
+        { on: "larger.", do: "stamp", id: "ratio", text: "1.43×", x: V ? 0 : BIG / 2, y: V ? -240 : 200, size: 260, width: V ? 560 : 680, tilt: -4 },
+      ],
+    });
+  </script>
+</template>

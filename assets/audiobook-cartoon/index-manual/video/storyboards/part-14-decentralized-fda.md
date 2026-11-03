@@ -38,7 +38,7 @@ version: v3
 - exam-room: the exam table and a pie chart on a stand.
 - living-room: left to right, a couch and coffee table, a console TV with rabbit ears, a doorway, the hall table, the front door.
 
-**Cast:** existing: `boot` (the Gilliam foot), `gauge` and `needle` (the loudness meter), `politician` (both panelists), `scientist`, `mushroom`, `headstone`. New: `patient` (a woman in a striped scarf, chest light red, then teal) and `patient-skeleton`, `fda-official`, `pill-bottle` (the smiling SAFE bottle, also VIOXX and dusty), `doctor`, `lawyer`, `fat-cat`, `drug-rep`, `grants-officer`, `committee`, `germ`, `bill-med` (a green bill on stick legs, cross seal), `trial-door`, `terrarium`, `tidy-human`, `hospital`, `lifeguard`, `lifeguard-chair`, `life-jacket`, `swimmer`, `swimmer-skull`, `fda-window`, `leash-human` (a human walking a disease on a leash; grey-bearded and skeleton versions), `spider`, `flashlight`, `approval-cabinet`, `arrow-sign`, `citizen`, `calendar`, `smoke-detector` (charred), `smoke-detector-live`, `prize-wheel`, `donut-box`, `flip-board`, `cereal-box`, `cigarette-pack`, `insert` (one folded panel, repeated), `tv-set`, `meadow-woman` and `meadow-skeleton`, `auctioneer`, `egg-timer`, `google-phone`, `outcome-label`, `loud-human`, `megaphone`, `trophy`.
+**Cast:** existing: `boot` (the Gilliam foot), `gauge` and `needle` (the loudness meter), `politician` (both panelists), `scientist`, `mushroom`, `headstone`. New: `patient` (a man in a blue bathrobe with a thermometer) and `patient-skeleton`, `fda-official`, `pill-bottle` (the smiling SAFE bottle, also VIOXX and dusty), `doctor`, `lawyer`, `fat-cat`, `drug-rep`, `grants-officer`, `committee`, `germ`, `bill-med` (a green bill on stick legs, cross seal), `trial-door`, `terrarium`, `tidy-human`, `hospital`, `lifeguard`, `lifeguard-chair`, `life-jacket`, `swimmer`, `swimmer-skull`, `fda-window`, `leash-human` (a human walking a disease on a leash; grey-bearded and skeleton versions), `spider`, `flashlight`, `approval-cabinet`, `arrow-sign`, `citizen`, `calendar`, `smoke-detector` (charred), `smoke-detector-live`, `prize-wheel`, `donut-box`, `flip-board`, `cereal-box`, `cigarette-pack`, `insert` (one folded panel, repeated), `tv-set`, `meadow-woman` and `meadow-skeleton`, `auctioneer`, `egg-timer`, `google-phone`, `outcome-label`, `loud-human`, `megaphone`, `trophy`.
 
 **Callbacks:**
 - Part 9: the FDA window, the queue of humans walking their diseases on leashes, grey and bearded at the back, then skeletons, and the 443-year wait (the narrator says "that about 443 years wait").
@@ -155,7 +155,7 @@ Sound: a squeak as the bill's legs kick; a low rumble each time Earth rolls; a w
 | "will go directly to subsidizing patient participation in pragmatic trials" | It goes straight to patients, not to institutions. | The 80% stands up on stick legs and stampedes right. A grants officer at his desk holds up a palm. | He is trampled flat, a trail of tiny footprints across him, and blinks. |
 | "at nine hundred and twenty-nine dollars per patient" | $929 a patient. | The herd piles into a short bar on a two-bar chart, tagged "$929", one patient standing beside it. | |
 | "instead of the usual forty-one thousand dollars." | Today it is $41,000: 44 times as much. | Beside it a second bar of bills grows 44 times taller, "$41,000", one patient beside it too. | The tall bar topples like a factory chimney and breaks into 44 short $929 bars, and a patient pops up beside each: 44 patients for the price of one. |
-| "Patients will choose which trials to join;" | The patient picks her trial. | The camera travels on to a hallway of trial doors, a disease on each door's sign. The patient (striped scarf, red chest light) walks along them and picks one. | |
+| "Patients will choose which trials to join;" | The patient picks her trial. | The camera travels on to a hallway of trial doors, a disease on each door's sign. The patient walks along them and picks one. | |
 | "their subsidy will follow them." | The money goes where she goes. | One $929 bill trots at her heel like a puppy. | |
 | "Treatment developers and providers will get paid for each participant." | Whoever runs the trial is paid per patient. | At her door the scientist holds out a hand; the bill jumps into it and the tally on the door ticks up one. Down the hall every door's tally ticks as more patients arrive with their bills. | |
 | "No grant committees deciding which diseases are fashionable this year." | No committee picks the winners. | At the far end, three bewhiskered gentlemen at a long table leaf through a catalogue, "DISEASES · SPRING COLLECTION"; a germ in a feathered hat struts down the table like a runway. The Gilliam foot comes down on the lot. | The feathered hat pokes out from under the foot, and the germ blows a kiss. |
@@ -175,7 +175,7 @@ Sound: a pop as the herd stands up; pattering feet and a splat for the grants of
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Instead of testing drugs on two hundred humans" | Trials test a few hundred people. | A glass tank on a lab bench, set up like a lizard terrarium (a heat lamp, a water dish, a plastic plant), full of identical tidy humans in gowns, chest lights off. A pet-shop sticker on the glass: "200". | |
+| "Instead of testing drugs on two hundred humans" | Trials test a few hundred people. | A glass tank on a lab bench, set up like a lizard terrarium (a heat lamp, a water dish, a plastic plant), full of identical tidy humans in gowns. A pet-shop sticker on the glass: "200". | |
 | "selected by pharmaceutical companies" | The drug company picks who gets in, and turns most real patients away. | Real patients climb the bench leg one at a time. The fat cat lifts each with long tweezers to his monocle (the old one, the one with two diseases, the patient with her red light) and flicks six of every seven away. | They sail out of the frame; the seventh, the tidiest, gets dropped into the tank. |
 | "in clinical terrariums," | | The heat lamp clicks on. | The tidy humans bask on a rock. |
 | "you'll test on real patients in real hospitals." | Trials move to ordinary hospitals, open to everyone. | The glass lifts off like a lid. The patients he flicked away walk past him into a row of three hospitals. | He gapes; his cigar drops. |
@@ -333,17 +333,17 @@ Sound: a ting as the coin flips; a tick as it lands on its edge.
 - time: 30:35.0 to 30:49.4 (14.4 s)
 - voiceover: "Treatment Rankings. Currently, your doctor picks treatments based on: that drug rep who brought good donuts in two thousand and three, something they half-remember from medical school, whatever the insurance company allows, and vibes."
 - layer: B, plate exam-room
+- bit: **Your doctor spins a carnival prize wheel, and everything that follows is what it prescribed.** Doctor, wheel and patient fill the frame. The bit runs through grape-soda and on across one plate (forty-page-insert): the skeletons who took it, the bottle, its 40 pages over the patient and along the floor to the lawyer, the TV in front of him with the woman who dies and keeps skipping, and a giant sweeper who pushes all of it off for one clean label.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Treatment Rankings. Currently, your doctor picks treatments based on:" | | The exam room: the patient on the table in a paper gown, red chest light; the doctor (head mirror, stethoscope) steps up to a pie chart on a stand with four blank slices. | |
-| "that drug rep who brought good donuts in two thousand and three," | | Slice 1 inks in: "DONUTS (2003)". The drug rep tiptoes in behind the doctor and slips a donut box under his arm. | |
-| "something they half-remember from medical school," | | Slice 2: "HALF-REMEMBERED LECTURE"; a thought bubble over the doctor shows a chalkboard, half erased. | |
-| "whatever the insurance company allows," | | Slice 3: "WHAT INSURANCE ALLOWS"; the fat cat leans in at the window and stamps "DENIED" on the patient's chart. | |
-| "and vibes." | | Slice 4: "VIBES". The doctor licks a finger, tests the wind, and spins the pie: it is a prize wheel. | It clicks to a stop on DONUTS, and he hands her a donut as her prescription. |
+| "Currently, your doctor picks treatments based on: that drug rep who brought good donuts in two thousand and three," |  | The doctor flicks a huge prize wheel, and it clicks to a stop under a pointing hand: DONUTS. |  |
+| "something they half-remember from medical school," |  | Flick, whirr, click: HALF-REMEMBERED. |  |
+| "whatever the insurance company allows," |  | It spins again. The Fat Cat shoves in between the patient and the doctor and stops it dead with his palms: INSURANCE. | The patient vanishes behind him. |
+| "and vibes." |  | The wheel flings him off: VIBES. The doctor sways. The last spin. | It stops on DONUTS, and the doctor flips the patient his prescription. |
 
-Sound: a ding as each slice inks in; a stamp thunk for DENIED; the wheel's clatter and a click as it stops.
+Sound: a whirr on each spin and a click on each stop; a thunk as the Fat Cat lands; a ding on the last DONUTS.
 
 ## Scene 15 · grape-soda
 
@@ -359,8 +359,8 @@ Sound: a ding as each slice inks in; a stamp thunk for DENIED; the wheel's clatt
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "This is called "evidence-based medicine,"" | The current method is called evidence-based. | At the console she holds up the doctor's donut, a prescription tag tied to it with string. | |
-| "which contains the word "evidence" the same way "grape soda" contains the word "grape."." | It contains no evidence. | She sets it down and lifts a can, "GRAPE SODA", with one tiny grape on its label. The camera pushes in on the grape. | It is a sticker: it peels off and flutters into her mug, and under it the can reads "0% GRAPE". |
+| "This is called "evidence-based medicine,"" | The current method is called evidence-based. | Wishonia holds up the doctor's donut, big, a PRESCRIPTION tag on it. |  |
+| "which contains the word "evidence" the same way "grape soda" contains the word "grape."." | It contains no evidence. | A big can, GRAPE SODA, one grape on its label. It swells. | The grape is a sticker: it peels off into her mug, and the can reads 0% GRAPE. |
 
 Sound: a pop as the can comes up; a peel and a small plop in the mug.
 
@@ -377,10 +377,10 @@ Sound: a pop as the can comes up; a peel and a small plop in the mug.
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Your decentralized F.D.A. will rank every treatment" | A ranked list of treatments. | The exam room as decision-wheel left it. A tall flip board drops onto the prize wheel and crushes it; its flaps clack into a bar chart, pill bottles down its side, best on top. | One slice of the wheel rolls away across the floor. |
-| "by what actually happened to real humans who took it:" | Ranked by what happened to the people who took them. | Each bar is a row of tiny humans who took that bottle: the top row standing and cheering, the bottom row mostly grinning skeletons. The patient drops her donut and holds her SAFE bottle up to row 1. | It is the same bottle. |
+| "Your decentralized F.D.A. will rank every treatment" | Every treatment gets ranked by results. | A leaderboard slams down over the spinning wheel: DEPRESSION (EXAMPLE), then 1. BUPROPION 28.3% LESS, 2. SERTRALINE 24.7% LESS, 3. VENLAFAXINE 21.2% LESS, each with a green bar (the book's example). | Far down the list: 4,807. VIBES 0% and 4,808. DONUTS 0%, a donut on its row. |
+| "by what actually happened to real humans who took it:" | Nobody has been looking at what happened to them. | The camera slides along a row of grinning skeletons in bathrobes, thermometers in their teeth, each with a donut on his lap. | The last one's donut drops on "it:". |
 
-Sound: a slam as the board lands; the clack of its flaps; a tick as each row fills; a ding as she holds her bottle up.
+Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on one plate. Sound: the wheel's whirr; a pat as the donut lands.
 
 ## Scene 17 · forty-page-insert
 
@@ -395,13 +395,12 @@ Sound: a slam as the board lands; the clack of its flaps; a tick as each row fil
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Outcome Labels. Food has nutrition labels." | | The coffee table: a cereal box turns to show "NUTRITION FACTS". | |
-| "Cigarettes have warning labels." | | A cigarette pack turns: "WARNING", with a skull. | |
-| "Drugs have forty-page inserts" | A drug's label is 40 pages. | The patient on the couch opens a pill box: the insert unfolds, and unfolds, and unfolds, off the table, over her and across the floor; its top fold reads "PAGE 1 OF 40". | She is buried to the chin. |
-| "written by lawyers having seizures," | | The camera travels along the insert through the doorway to the hall table, where the lawyer is still writing its far end; his pen hand jitters into zigzags. | The table rattles, his hair stands up and the scribbles turn to lightning. |
-| "which nobody reads, including your doctor." | | The doctor comes in at the front door, wipes his shoes on the insert like a doormat, checks his watch, and goes. | |
+| "Outcome Labels. Food has nutrition labels. Cigarettes have warning labels." |  | A huge cereal box lands, NUTRITION FACTS; a huge cigarette pack, WARNING. |  |
+| "Drugs have forty-page inserts" | A drug's label is 40 pages. | A grinning bottle lands and 40 pages erupt from it, over the patient to his chin: PAGE 1 OF 40. |  |
+| "written by lawyers having seizures," |  | The camera rides the paper along the floor, past everything, to the lawyer writing its far end. Sparks; he is charred and blinks. |  |
+| "which nobody reads, including your doctor." |  | Back to the patient, buried. The doctor skates over the pages without a glance. |  |
 
-Sound: a click as each box turns; a run of paper flaps as the insert unfolds; a pen scratch rising to a rattle; two shoe wipes.
+Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on one plate. Sound: thunks for the box and the pack, a stamp for the bottle, a whoosh for the pages and the camera, zaps for the lawyer, a whoosh for the skates.
 
 ## Scene 18 · meadow-ad
 
@@ -416,14 +415,13 @@ Sound: a click as each box turns; a run of paper flaps as the insert unfolds; a 
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Your television advertisements show a smiling human frolicking through a meadow" | | The camera pushes into the console TV: a woman in a sundress and sun hat skips through a meadow with a bunch of daisies. | |
-| "while a voiceover lists ways the drug might kill you at auctioneer speed." | The risks are read too fast to hear. | A crawl of tiny text runs along the bottom of the screen and speeds to a blur. | An auctioneer pops into a box in the corner of the screen and gabbles, gavel going. |
-| "The meadow human does not react to the word "stroke."" | | "STROKE" crawls past. | Her smile does not move. |
-| "Side effects include "death,"" | Death is in the list. | "DEATH" crawls past, the same small size as everything else, and she x-rays into a grinning skeleton mid-skip. | She keeps skipping, sun hat and daisies and all. |
-| "listed between "constipation" and "mild rash,"" | | The crawl reads "CONSTIPATION · DEATH · MILD RASH"; red spots pop out on her bones. | |
-| "as if your organs failing is roughly as inconvenient as dry skin." | | The skeleton scratches its elbow bone and skips on. The camera pulls back out of the TV. | The patient's head, sticking out of the insert, turns slowly to the camera. |
+| "Your television advertisements show a smiling human frolicking through a meadow" |  | A TV slams down in front of the patient. A woman skips through the meadow on its screen. The camera pushes in until the screen fills the frame. |  |
+| "while a voiceover lists ways the drug might kill you at auctioneer speed." | The risks are read too fast to hear. | The fine print runs along a band across the screen, slowly, then in a blur. | An auctioneer pops up in the corner, gavel going. |
+| "The meadow human does not react to the word "stroke."" |  | STROKE, in the same small type. Her smile does not move. |  |
+| "Side effects include "death," listed between "constipation" and "mild rash,"" | Death is in the list. | DEATH: a flash, and she is a grinning skeleton, still skipping. CONSTIPATION · DEATH · MILD RASH. |  |
+| "as if your organs failing is roughly as inconvenient as dry skin." |  | The fine print runs on. | Her heart falls out on "failing". She skips on. |
 
-Sound: a boing per skip; the auctioneer's gabble under the crawl; crickets after "stroke."; an x-ray zap on "death,"; a pop for the rash; a scratch.
+Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on one plate. Sound: a slam for the TV; a boing or two; typewriter under the auctioneer; crickets after "stroke."; a zap on "death,"; a splat for the heart.
 
 ## Scene 19 · ask-your-doctor
 
@@ -438,13 +436,10 @@ Sound: a boing per skip; the auctioneer's gabble under the crawl; crickets after
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "The label says "individual results may vary,"" | | The TV cuts to the ad's end card: "INDIVIDUAL RESULTS MAY VARY". | |
-| "meaning outcomes range from "cured" to "deceased" (both technically qualifying)." | The promise covers every outcome. | On the card, a range bar from "CURED" to "DECEASED"; a tick lands at each end, and "QUALIFIES" stamps across both. | The meadow skeleton skips back in and gives a bony thumbs-up. |
-| "It also says "ask your doctor,"" | | The camera pulls out of the TV and travels to the front hall: the doctor zips in through the front door on roller skates. | |
-| "but your doctor has seven minutes per appointment" | 7 minutes a visit. | He slaps an egg timer on the hall table: "7 MIN", ticking. | |
-| "and just Googled your condition in the hallway." | | He types on a phone with a Google search box: "RED CHEST LIGHT". The first result is a grinning skull. | He goes pale, looks through the doorway at the patient, and rolls slowly backwards out of the front door. |
+| "The label says "individual results may vary," meaning outcomes range from "cured" to "deceased" (both technically qualifying)." | The promise covers every outcome. | She flickers between woman and skeleton, faster and faster: "cured", the woman; "deceased", the skeleton. "both": the two skip side by side. | BOTH QUALIFY, and a blue rosette each. |
+| "It also says "ask your doctor," but your doctor has seven minutes per appointment and just Googled your condition in the hallway." |  | Pull back to the patient and the TV. The doctor skates in, slows, and holds out a big phone: WHAT IS A LIVER. He does not stop. |  |
 
-Sound: a click as the end card comes up; a ding at each end of the bar and a stamp thunk; roller-skate wheels; the egg timer ticking; keyboard clicks; a falling whistle as he rolls out.
+Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on one plate. Sound: a zap on "deceased"; a ding on the rosettes; skate whirr; typewriter on "Googled".
 
 ## Scene 20 · outcome-label
 
@@ -459,13 +454,12 @@ Sound: a click as the end card comes up; a ding at each end of the bar and a sta
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Your new system will produce Outcome Labels" | | The patient digs her SAFE bottle out of the heap and stands it on the coffee table. A clean label laid out like a nutrition label slides in over it: "OUTCOME LABEL". | |
-| "that tell you what actually happens when real humans take a drug." | The label is a chart of what happened. | Its bars fill with tiny humans: "GOT BETTER", "NO CHANGE", "SIDE EFFECTS", and under them "HEADACHES 12% · SEVERE 3%". | |
-| "Not what a marketing department hopes happens." | | The loud human (a megaphone for a head) leans in at the window and slaps a "MIRACLE!" sticker over the label. | The sticker peels itself off and slaps over the mouth of his megaphone; he can only squeak. |
-| "Not what a lawyer is comfortable admitting happens." | | The lawyer comes in from the hall and tapes his 40-page insert over the label. | The tape lets go and the insert unfolds onto him and buries him; only his briefcase sticks out. |
-| "What happens." | | The label snaps flat onto the bottle. She reads it, pops the cap and takes the pill. | Her chest light flips from red to teal, and she kicks off the rest of the insert. |
+| "Your new system will produce Outcome Labels that tell you what actually happens when real humans take a drug." |  | The whole plate at once: boxes, bottle, patient, TV, wheel, skeletons, the 40 pages, the lawyer. A giant, sorrowful sweeper pushes all of it off the right of the frame, the doctor first. Only the bottle and the patient stay. | The TV goes by still playing. |
+| "Not what a marketing department hopes happens." |  | Close on the bottle. Marketing slaps MIRACLE! on it. | It peels off and slaps over his bell. |
+| "Not what a lawyer is comfortable admitting happens." |  | The lawyer tapes his pages over the bottle. | They let go and bury him. |
+| "What happens." |  | Close on the Outcome Label, which landed on "real humans": WHAT HAPPENS. HELPS: MEMORY +35%, THINKING +28%. HARMS: HEADACHES +9%, FATIGUE +7% (the book's example). | PAGES: 1. LAWYERS: 0. The patient takes the thermometer out and smiles. |
 
-Sound: a whoosh as the label slides in; a tick per bar; a splat for the sticker and a squeak; a rip of tape and paper flaps; a sparkle as her light turns teal.
+Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on one plate. Sound: a whoosh and a slide down for the sweep; a splat and a squeak for the sticker; a stamp for the label; a sparkle for the light.
 
 ## Scene 21 · louder-wins
 
@@ -480,7 +474,7 @@ Sound: a whoosh as the label slides in; a tick per bar; a splat for the sticker 
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Your decentralized D.F.D.A. figures out which treatments work." | | The patient on the couch, chest light teal, pats her labeled bottle. | It smiles back. |
+| "Your decentralized D.F.D.A. figures out which treatments work." | | The patient on the couch pats the labeled bottle. | It smiles back. |
 | "But your governments also need to know which *policies* work, how much to spend on what, which laws to keep, which to throw away." | Governments have the same problem with laws and budgets. | The TV clicks over to a panel show and the camera pushes in: two politicians, one in a red tie and one in a blue tie, at a desk piled with papers. One hugs a paper to his chest; the other tosses one over his shoulder. | |
 | "Your current method is to argue about it on television" | | Both grab megaphones and shout across the desk; the brass gauge stands between them as a loudness meter. | |
 | "until someone wins by being louder." | Volume decides. | The needle swings harder and harder, pins in the red and bursts: a flash and a small mushroom cloud over the desk. | Both are charred black and smoking, hair up, still shouting. A trophy, "WINNER (LOUDEST)", drops into one's hands; his charred tie flickers red, blue, red. |

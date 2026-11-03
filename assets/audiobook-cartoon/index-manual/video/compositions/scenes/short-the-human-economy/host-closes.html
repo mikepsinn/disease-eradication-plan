@@ -1,0 +1,48 @@
+<template id="host-closes-template">
+  <!-- host-closes · collage host shot (Part 2, scene 5). The hungry man, big beside the console, holds out a bill as if to
+       go round the machine; "skip": it flutters away. "give": a sandwich pops onto Wishonia's palm and "food" hops it
+       straight into his hand. "probably": he turns it over looking for the price tag; "too": an enormous bite. Iris out. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="host-closes" data-width="1920" data-height="1080" data-start="0" data-duration="7.36">
+    <div id="host-closes-weave"></div>
+    <div id="host-closes-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, D = KIT.scene("host-closes").duration;
+    // the man stands in front of the console, right of her; his hand (art 182, 252) holds what he's given
+    var MAN = V ? [880, 1460, 1.0] : [1300, 1090, 1.1];
+    var HAND = [MAN[0] + (182 - 118.5) * MAN[2], MAN[1] - (684 - 252) * MAN[2]];
+    var PALM = V ? [640, 1010] : [1030, 660];
+    KIT.collage({
+      id: "host-closes", seed: 232, host: { iris: ["out", D - 0.85, D - 0.05] },
+      cast: {
+        man: { art: "hungry-man", x: MAN[0], y: MAN[1], anchor: "bottom", scale: MAN[2], hidden: true },
+        bill: { art: "bill-war", x: HAND[0] + 30, y: HAND[1] - 40, scale: V ? 0.5 : 0.55, hidden: true },
+        sand: { art: "sandwich", x: PALM[0], y: PALM[1], scale: V ? 0.5 : 0.55, hidden: true },
+        bite: { art: "sandwich-bite", x: HAND[0], y: HAND[1] - 60, scale: V ? 0.5 : 0.55, hidden: true },
+      },
+      beats: [
+        { at: 0.05, do: "slideIn", who: "man", from: "right", over: 20 },
+        { at: 0.45, do: "pop", who: "bill" },
+        { on: "skip", do: "drop", who: "bill", dist: 700, drift: 260, spin: 140, dur: 0.9 },
+        { on: "give", do: "pop", who: "sand", squash: true },
+        { on: "food", do: "move", who: "sand", to: [HAND[0], HAND[1] - 60], dur: 0.35, arc: 80 },
+        { on: "probably", do: "move", who: "sand", by: [0, -10], turn: 170, dur: 0.3 },
+        { on: "probably", offset: 0.4, do: "move", who: "sand", by: [0, 0], turn: 0, dur: 0.2 },
+        { on: "too", do: "swap", who: "sand", to: "bite" },
+        { on: "too", do: "hop", who: "man", height: 14 },
+      ],
+    });
+  </script>
+</template>

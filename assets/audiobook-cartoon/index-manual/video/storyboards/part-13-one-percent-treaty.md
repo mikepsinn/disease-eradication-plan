@@ -80,17 +80,17 @@ Sound: a boing as it springs; two cuckoos.
 - time: 25:46.6 to 25:56.6 (9.9 s)
 - voiceover: "But you're going to use those papers to persuade the leader of every country on Earth to simultaneously redirect one percent of its military budget to clinical trials. That's it."
 - layer: B, plate globe
+- bit: **The most terrifying sacrifice in history is one paper each.** Every leader, big, in one row behind the curve of a huge globe, each clutching a brick of war bills, hands over one paper in the same frame, and it becomes medicine.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "But you're going to use those papers" | The money from Part 12 does the persuading. | YOU, in his top hat and monocle, walks along the top of the globe with a pack of plain green papers on leashes, trotting and yapping like small dogs. | |
-| "to persuade the leader of every country on Earth" | Every country. | He lets them go, and they scamper off over the curve. All round the globe, leaders pop up out of their countries, each on a stack of war papers (the ones underneath upside down, unbothered): Trump, Xi Jinping, Putin, Modi, Kim Jong Un and the rest. Each catches a paper, and their eyes ring up dollar signs. | |
-| "to simultaneously" | At the same time. | Every leader lifts the top paper off his stack at the same moment, like a chorus line. Kim is a beat late; Xi turns his head and glares. | |
-| "redirect one percent of its military budget to clinical trials." | 1% of $2.72 trillion: $27.2 billion a year. | The papers fly in arcs into the funnel on the North Pole; in its window the missile seals flip to crosses. Medicine papers march out of the spout to the lab bench, a tag on the spout reading "$27.2 BILLION A YEAR", and the Scientist waves them in. | Her flask boils over. |
-| "That's it." | That is the whole plan. | The leaders dust off their hands. Each stack is one paper shorter out of 100. | |
+| "But you're going to use those papers to persuade the leader of every country on Earth" | The money does the persuading. | Close and travelling: a pack of winking bills walks the curve past Kim, Xi, Macron, Trump, Putin, Modi, Burnham and Sharif, each huge. Each bill peels off into its leader's pocket and he hops. |  |
+| "to simultaneously" | At the same time. | Wide, the earned reveal: every leader raises one paper in the same frame. | Kim is late; Xi steps over and glares. |
+| "redirect one percent of its military budget to clinical trials." | 1% goes to trials. | A giant medicine bottle slams onto the North Pole; 1% on its label; the papers fly in. It glows and bills with cross seals spring out onto the globe. |  |
+| "That's it." | The whole plan. | Every leader hops, brick barely lighter. |  |
 
-Sound: yaps as the papers trot; a pop per leader; a cash-register ding as the eyes ring up; a rising whistle as the papers lift; a ding as each seal flips; a pat for the dusted hands.
+Sound: a woof and a yelp from the pack; a whistle on the lift; a slam for the bottle; a stamp for 1%; a whoosh as the papers fly; a sparkle and a ding for the medicine; a pat on "it."
 
 ## Scene 4 · thats-the-treaty
 
@@ -121,16 +121,17 @@ Sound: a whoosh as the scroll unrolls and a distant thunk; a boing and a squeak 
 - time: 26:01.9 to 26:14.6 (12.6 s)
 - voiceover: ""But if we cut our military budget, our enemies will invade us!". Everyone cuts one percent at the same time. Your national security actually *increases*, because everyone has one percent fewer missiles pointed at them."
 - layer: B, plate fence
+- bit: **Each very bravely removes one missile, and nothing changes.** Trump and Putin glare over a fence, each in front of a mountain of missiles, the two mountains mirror images.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| ""But if we cut our military budget, our enemies will invade us!"." | The fear. | Trump and Putin, in two yards either side of a picket fence, each behind a heap of 100 grumpy missiles aimed over it. Each peeks over the fence, and a thought bubble puffs up over each: the other climbing the fence with an armful of missiles. In both bubbles, a white flash and a little mushroom cloud, which clears on the thinker charred black and blinking. | Below, the real two hug their heaps and shake. |
-| "Everyone cuts one percent at the same time." | Both cut together. | The bubbles pop. Both lift the top missile off their heaps at the same moment and set it down behind them, and smile awkwardly at each other. | |
-| "Your national security actually *increases*," | You are safer. | A tally board on a post in each yard: "POINTED AT YOU: 100" ticks to "99". | Both throw their arms up and cheer as if they had won a war. |
-| "because everyone has one percent fewer missiles pointed at them." | 1% fewer missiles aimed at you. | The two set-down missiles look at each other across the fence, shrug, and shake fins. | |
+| ""But if we cut our military budget, our enemies will invade us!"." | The fear. | Close on Trump, then Putin, huge, glaring across the fence. Wide on "us!": every missile in both mountains jolts forward. |  |
+| "Everyone cuts one percent at the same time." | Both cut together. | Each hauls one missile off his mountain, knees shaking, and drops it behind him in the same frame. Both mountains look exactly the same. | The camera holds on them, in case you missed the difference. |
+| "Your national security actually *increases*," | You are safer. | They throw their arms up as if they had won a war. INCREASES stamps above them. |  |
+| "because everyone has one percent fewer missiles pointed at them." | 1% fewer. | Wide: still cheering, they don't see every missile in both mountains swing round and re-aim at them. |  |
 
-Sound: a whoosh as the bubbles puff; a soft boom inside them; a pop as they burst; one clank as both missiles lift in step; a tick per tally; a cheer; a squeak for the fin-shake.
+Sound: whooshes between the glares; a clank on "us!"; a huff for the haul; a thunk as both drop; a bell and a stamp for INCREASES; a clank and a slam on "pointed".
 
 ## Scene 6 · one-twenty-one-apocalypses
 
@@ -141,17 +142,19 @@ Sound: a whoosh as the bubbles puff; a soft boom inside them; a pop as they burs
 - time: 26:14.6 to 26:34.4 (19.9 s)
 - voiceover: "And if you still feel like doing war, you keep the capacity for one hundred and twenty-two minus one nuclear apocalypses. Since one hundred warheads is the threshold for ending civilization and you have twelve thousand two hundred and forty-one, you are settling for one hundred and twenty-one civilizational collapses instead of one hundred and twenty-two."
 - layer: B, plate crate-tower
+- bit: **One crate off a tower of 122.** The camera climbs the tower until the Earth is a dot; one crate is whipped out like a tablecloth trick; the tower doesn't notice. That one crate chars the tiny Earth and the Weapons Maker sobbing over it.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "And if you still feel like doing war," | | The Weapons Maker pats the bottom crate of a tower of wooden crates, each stenciled "100", warhead noses poking out of the top; the tower climbs out of the top of the frame. | |
-| "you keep the capacity for one hundred and twenty-two minus one nuclear apocalypses." | The 1% cut is about one apocalypse out of 122. | He whips the bottom crate out from under the tower like the tablecloth trick; the tower drops one crate's height with a thump and stands. He hugs the crate. | |
-| "Since one hundred warheads is the threshold for ending civilization" | 100 warheads ends civilization. | The camera travels to a tiny Earth on the field with one human on top, waving, and one crate "100" beside it. Its warheads lean out over the Earth: a white flash, a little mushroom cloud, and the human charred black, blinking. | One crate is plenty. |
-| "and you have twelve thousand two hundred and forty-one," | 12,241 warheads: 122 crates. | The camera tilts up the tower, crate after crate rushing down the frame, past a cloud and the goose from Part 12. "12,241" stamps in the sky beside it. | |
-| "you are settling for one hundred and twenty-one civilizational collapses instead of one hundred and twenty-two." | 121 left. | The camera pulls back: the tower tips over and falls flat along the field, and its crates go off one after another, a row of 121 mushroom clouds marching to the horizon, faster and faster. | The clouds thin on the Weapons Maker, charred, still hugging his one crate; its warheads look at the row of craters and gulp. |
+| "And if you still feel like doing war," |  | Close: the Weapons Maker rocks his missile and pats the bottom crate, stenciled 100, of a tower of grinning warheads. |  |
+| "you keep the capacity for one hundred and twenty-two" | 12,241 warheads is 122 crates. | The camera climbs past a cloud, the goose and an airship, then pulls back until the tower is a hair and the Earth a dot. 122. |  |
+| "minus one nuclear apocalypses." | 1% is one crate. | Rush down: he snatches the bottom crate and is gone. The tower drops one step and stands there. | It doesn't notice. |
+| "Since one hundred warheads is the threshold for ending civilization" | One crate is enough. | He kneels bawling, arms round his crate, beside a tiny Earth and its waving man. On "civilization" the crate goes off: mushroom, and all four charred and blinking. | His tears stay blue. |
+| "and you have twelve thousand two hundred and forty-one," | 12,241. | Up the untouched tower to its top crate, still grinning. 12,241. |  |
+| "you are settling for one hundred and twenty-one civilizational collapses instead of one hundred and twenty-two." | 121 left. | All the way back: 121, over a black dot. Then down to him, charred, still bawling for the one he lost. |  |
 
-Sound: a thunk as the tower drops; a small boom for the tiny Earth; a rising whistle up the tower and a honk for the goose; a stamp thunk for 12,241; a whoosh as the tower falls; a rolling boom down the row; a squeak for the gulp.
+Sound: a pat; a whistle up the tower; a whoosh and a stamp for 122; a slam for the tower's drop; a yelp as he howls; a boom for the crate; a whistle and a stamp for 12,241; a whoosh and a stamp for 121; a last yelp.
 
 ## Scene 7 · more-than-sufficient
 
@@ -189,8 +192,8 @@ Sound: a pop as the steam cloud puffs; a thunk per treaty.
 | "You banned chemical weapons (nineteen ninety-three, one hundred and ninety-three countries)." | 1993, 193 countries. | A grumpy gas canister tiptoes along a long table toward YOU. He unrolls treaty 1 and slams it flat on it; a mustard-yellow puff, and he coughs. The treaty's end unrolls off the front of the table, a column of tiny signatures, to "193". | The canister's feet stick out from under it and twitch. |
 | "You banned biological weapons (nineteen seventy-five, one hundred and eighty-seven countries)." | 1975, 187 countries. | A germ scuttles past; treaty 2 slams down on it, splat. It unrolls nearly as far: "187". | |
 | "You banned landmines (nineteen ninety-seven, one hundred and sixty-four countries)." | 1997, 164 countries. | Treaty 3 slams down on a landmine: a white flash, a boom, a small mushroom cloud. It clears on YOU charred black, top hat smoking, still holding the treaty by its singed edge, blinking. It unrolls to "164". | |
-| "You've signed treaties banning weapons you actually like using." | | The camera pulls back: the three hanging treaties are a bar chart of signatures. Behind the table, the Weapons Maker rises, cradling his baby missile, and sniffles into a hanky. | |
-| "This one just asks you to buy one percent fewer of them." | It asks for less than any of them. | The one-line 1% treaty slides in at the end of the row and doesn't unroll at all: its bar is zero. A pencil rolls onto its empty signature line and stops. | Charred YOU looks at the pencil and blinks; the Weapons Maker hugs his baby tighter. |
+| "You've signed treaties banning weapons you actually like using." | | The camera pulls back: the three hanging treaties are a bar chart of signatures. Behind the table, the Weapons Maker rises, cradling his missile, and sniffles into a hanky. | |
+| "This one just asks you to buy one percent fewer of them." | It asks for less than any of them. | The one-line 1% treaty slides in at the end of the row and doesn't unroll at all: its bar is zero. A pencil rolls onto its empty signature line and stops. | Charred YOU looks at the pencil and blinks; the Weapons Maker hugs his missile tighter. |
 
 Sound: a slam per treaty; a huff for the gas and a cough; a splat for the germ; a boom for the landmine; a rattle of paper as each treaty unrolls; a slide whistle as the Weapons Maker rises and a sniffle; a whoosh as the fourth treaty slides in; a tick as the pencil stops.
 
@@ -212,7 +215,7 @@ Sound: a slam per treaty; a huff for the gas and a cough; a splat for the germ; 
 | "Some listened." | | About half the planets light up teal, and a little hospital with a cross pops up on each. | |
 | "Some didn't." | | The rest go off one after another down the line, each a white pop and a tiny mushroom cloud, and stay charred. On Earth, a wisp of smoke curls up from one edge, and stops. | |
 | "I kept the data." | | A survey satellite zips down the line, its flashbulb popping at every planet, and flashes in Earth's face. Then the planets slide out of line and settle into a chart: teal ones on the left, charred ones on the right, a clean edge between, the bottom axis blank. Earth hangs over the edge. | Earth blinks, seeing spots. |
-| "The ones that redirected resources from killing each other to keeping each other alive stopped doing war and disease." | Redirecting is what saved them. | Push in on a teal planet: its little aliens drop war papers into a tiny seal-flip funnel; medicine papers walk out of the spout; the aliens wave, their chest lights teal. | |
+| "The ones that redirected resources from killing each other to keeping each other alive stopped doing war and disease." | Redirecting is what saved them. | Push in on a teal planet: its little aliens drop war papers into a tiny seal-flip funnel; medicine papers walk out of the spout; the aliens wave. | |
 | "The ones that didn't extincted themselves." | Not redirecting is what killed them. | A charred planet: two alien skeletons, still grinning, still pointing glowing atoms at each other, a mushroom cloud rising between them. HOLD: nothing moves, and no sound, until "The" in next-page. | |
 
 Sound: a thunk as the manual lands; a stamp thunk for 847; a sparkle as the planets light; a pop per planet that goes off; a click per flash; a whoosh as the planets sort; a ding as the seals flip; a low zap from the atoms; then silence.

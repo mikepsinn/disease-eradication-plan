@@ -23,7 +23,7 @@ version: v3
 - **Plates:**
   - Host shots: Wishonia at her console on the observation deck, Earth in the window. In game-box the game's box stands on the ledge. In your-job YOU stands on top of Earth.
   - game-board: a Victorian race game, engraved and hand-tinted like the old Game of the Goose: a spiral of numbered squares on aged paper, START at the outer end. In the middle, a pool brimming with medicine bills, a diving board at one end. Behind the board, the Scoreboard on two posts and a cream chart card on an easel. Two corner squares: WAR, with a missile engraved on it, and DISEASES, with three smug germs sitting on it. Outside the board on bare paper, a man on an upturned crate.
-- **Cast:** `globe`, `mushroom`, `skeleton` (existing or from Part 22); `game-box`, `bill-med`, `bill-plain`, `pool`, `scoreboard`, `calendar`, `point-chip`, `point-holder` (three engraved players), `fat-cat-piggy`, `grandma-piggy`, `you-piggy`, `you`, `friend-man`, `friend-woman`, `crate-man`, `germ`, `binder`, `yes-button`, `gold-star`, `citizen` (tiny players), `lobbyist`, `scientist`, `hospital-legs`, `bank-legs`, `capitol-legs`, `greed-hand`, `factory`, `weapons-maker`, `baby-missile` (new or shared). `greed-hand` is Part 21's manicule; `binder` can reuse the existing `binder` art.
+- **Cast:** `globe`, `mushroom`, `skeleton` (existing or from Part 22); `game-box`, `bill-med`, `bill-plain`, `pool`, `scoreboard`, `calendar`, `point-chip`, `point-holder` (three engraved players), `fat-cat-piggy`, `grandma-piggy`, `you-piggy`, `you`, `friend-man`, `friend-woman`, `crate-man`, `germ`, `binder`, `yes-button`, `gold-star`, `citizen` (tiny players), `lobbyist`, `scientist`, `hospital-legs`, `bank-legs`, `capitol-legs`, `greed-hand`, `factory`, `weapons-maker`, `missile` (new or shared). `greed-hand` is Part 21's manicule; `binder` can reuse the existing `binder` art.
 - **Callbacks:**
   - The switch from Part 23: this part's title card comes up on its click.
   - The Scoreboard from Part 23 (two-numbers-did-it): here its two numbers get their rules.
@@ -34,7 +34,7 @@ version: v3
   - The race-game board as one large plate, with the pool, the diving board and the corner squares.
   - The Scoreboard (a ballpark board, its windows code). A tear-off calendar.
   - The point chip: a gold game token with a star.
-  - Three point holders in bathing costumes. Three piggy banks: a huge one in a top hat and monocle (the fat cat's), a small one in curlers (Grandma's), a skinny one in a bowler (YOU's retirement account).
+  - Three point holders in bathing costumes. Three piggy banks: a huge one in a top hat and monocle (the fat cat's), a small one in curlers (Grandma's), a skinny one in a fedora (YOU's retirement account).
   - YOU's two friends (a man still holding his dinner fork, a woman in curlers). A businessman on an upturned crate, and his skeleton on the same crate.
   - Five ring binders on stick legs. A YES button on a coil spring. A gold star.
   - A crowd of tiny engraved players for rain. The Lobbyist, the Scientist, and a hospital, a bank and the Capitol on stick legs.
@@ -101,7 +101,7 @@ Sound: a creak as the lid lifts on "pool"; a sparkle as the bills peek out on "m
 | "Earth Optimization Points holders split the pool." | the point holders win the pool. | The three point holders on the pool's rim hold up their gold chips. A dashed line cuts the pool into three slices like a pie, and on "pool." each holder cannonballs into a slice. | Three crowns of bills splash up, and the holders bob up waist-deep, chips held high. |
 | "If they didn't," | If not, | The film rewinds: scratch lines run down the frame, the holders fly backward out of their splashes, and the two lines on the chart undraw. They draw again, flat. | |
 | "depositors divide it pro rata" | the depositors get their money back by share. | The camera tilts down to the front of the board: the fat cat's huge piggy and Grandma's small one. The pool tips like a bathtub and pours out in two streams: a fire hose into the big piggy, a trickle into the small one. Both swell and burp. | |
-| "(still beats your retirement account)." | Even losing beats what you have now. | Further along sits a skinny piggy in YOU's bowler: YOU's retirement account. Nothing comes. | It keels over, legs up, X eyes, and the bowler rolls off onto START. |
+| "(still beats your retirement account)." | Even losing beats what you have now. | Further along sits a skinny piggy in YOU's fedora: YOU's retirement account. Nothing comes. | It keels over, legs up, X eyes, and the fedora rolls off onto START. |
 
 Sound: a switch click as the bulbs light on "Scoreboard:"; flip ticks on "live," and "earn."; a whoosh of pages on "twenty" and a ding on "forty,"; a slide whistle up as the lines climb on "up,"; a snip for the cut line on "split"; splats for the cannonballs on "pool."; a record scratch for the rewind on "If"; a pour and two burps on "pro"; crickets and a boing on "account).".
 
@@ -118,11 +118,11 @@ Sound: a switch click as the bulbs light on "Scoreboard:"; flip ticks on "live,"
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "You earn Earth Optimization Points by getting friends to play." | You score by bringing friends. | YOU steps onto START, picks his bowler up and puts it on. On "friends" he reaches over the board's edge and hauls up two friends by their collars, a man still holding his dinner fork and a woman in curlers, and plonks them on START. On "play." two gold chips land stacked on his bowler. | |
+| "You earn Earth Optimization Points by getting friends to play." | You score by bringing friends. | YOU steps onto START, picks his fedora up and puts it on. On "friends" he reaches over the board's edge and hauls up two friends by their collars, a man still holding his dinner fork and a woman in curlers, and plonks them on START. On "play." two gold chips land stacked on his fedora. | |
 | "Nobody loses." | Every player gets paid either way. | The camera pulls back over the board: a medicine bill hops into every player's hand and every piggy's slot. | The keeled-over retirement piggy gets one too, and sits up. |
-| "The only losing move is not playing." | Staying out is the only way to lose. | The camera swings off the board to the bare paper outside it: a businessman sits on an upturned crate, arms crossed, smug. His chest light blinks red, and a germ rises behind him. On "playing." it pounces. | He flashes to a skeleton, arms still crossed, still on his crate. The germ grins at the camera. |
+| "The only losing move is not playing." | Staying out is the only way to lose. | The camera swings off the board to the bare paper outside it: a businessman sits on an upturned crate, arms crossed, smug. He coughs, and a germ rises behind him. On "playing." it pounces. | He flashes to a skeleton, arms still crossed, still on his crate. The germ grins at the camera. |
 
-Sound: a whoosh as he hauls them up and two boings as they land on "friends"; two dings for the chips on "play."; a run of pops as the bills hop in on "Nobody"; ticks for the chest light on "not"; an x-ray zap on "playing.".
+Sound: a whoosh as he hauls them up and two boings as they land on "friends"; two dings for the chips on "play."; a run of pops as the bills hop in on "Nobody"; a cough on "not"; an x-ray zap on "playing.".
 
 ## Scene 5 · your-job
 

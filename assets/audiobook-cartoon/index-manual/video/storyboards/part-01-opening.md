@@ -29,7 +29,7 @@ version: v3
   - `604-bar`: a two-bar chart on aged paper whose first bar is taller than the sky.
   - Host scenes (eligible, meet-wishonia, my-surprise, earth-means-dirt): Wishonia at her console on the observation deck, Earth hanging in the glass behind her (`KIT.STUDIO.earth`).
 - **Cast:** existing: `atom`, `globe`, `mushroom`, `scientist` (with his giant shears), `uncle-sam`, `general`, `reaper` (`assets/art/reaper/`: `hug`, `face-grin`). New: `family`, `family-skeleton`, `photographer`, `germ`, `warhead`, `crate`, `snowflake`, `small-earth`, `frozen-man`, `light-bulbs`, `caveman`, `campfire`, `pentagon`, `paint-roller`, `grumpy-missile`, `hospital`, `schoolhouse`, `doghouse`, `democracy-dog`, `bill-plain`, `citizen`, `patient`, `lab-bench`, `spider`, `hungry-man`, `wheat`, `moth`, `weapons-maker`, `bomb`, `general`, `war-map`, `fat-cat`, `oil-derrick`, `bill-war`, `bill-med`, `balloon`, `you`; skeletons of the patient, the Scientist and the hungry man (`scientist` exists).
-- **Callbacks:** none from earlier parts; this is the first. Later parts pay off: the case file and its DIRT tab (Parts 4, 12, 26, 27), the Reaper (Parts 5, 6, 8), the 604 chart (Parts 6, 7, 10, 25), the busy man in the bowler as YOU (Part 10 on), the Democracy Dog (Part 6), the moth and the wheat that grows for free (Part 2), the cavemen (Part 3).
+- **Callbacks:** none from earlier parts; this is the first. Later parts pay off: the case file and its DIRT tab (Parts 4, 12, 26, 27), the Reaper (Parts 5, 6, 8), the 604 chart (Parts 6, 7, 10, 25), the busy man in the fedora as YOU (Part 10 on), the Democracy Dog (Part 6), the moth and the wheat that grows for free (Part 2), the cavemen (Part 3).
 - **New art:**
   - the Victorian family of four on the sofa (father, mother, the boy between them, the grandfather standing behind, in spectacles), and the same four as skeletons in the same clothes and poses
   - the photographer: a box camera on legs, him under its black cloth with a flash-powder tray held up
@@ -47,7 +47,7 @@ version: v3
   - the fat cat (top hat, monocle, cigar) at an oil derrick on a little globe, papers gushing from it
   - the war bill (green, missile seal, stick legs), the medicine bill (cross seal), and the medicine bill flattened with one arm out
   - a Victorian hot-air balloon with its balloonist
-  - YOU (`you`), the busy man in a bowler with a pocket watch, and his skeleton in the same bowler
+  - YOU (`you`), the busy man in a fedora with a pocket watch, and his skeleton in the same fedora
 - **Kit additions:**
   - `chart`: axes, gridlines, axis labels and a title on aged paper.
   - `stack`: copies of a cut-out hop onto one another into a column, faster and faster, the camera able to tilt with it.
@@ -88,8 +88,8 @@ Sound: the theme song itself; the video plays muted under the MP3.
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
 | "How to End War and Disease" | The book's title. | The period card: the atom emblem on plain navy; the heading slams in one word per spoken word. | |
-| "(for Busy People)" | It is short. | "(for Busy People)" slides in under it. YOU, the busy man in a bowler, sprints across the bottom of the card, left to right, eyes on his pocket watch. | |
-| "A Step-by-Step Guide to Optimizing Your Terrible Civilization" | | The subtitle pill comes in. His skeleton, in the same bowler, strolls back the other way, slowly, still checking the watch. | He was too busy to read it, and now he has all the time in the world. |
+| "(for Busy People)" | It is short. | "(for Busy People)" slides in under it. YOU, the busy man in a fedora, sprints across the bottom of the card, left to right, eyes on his pocket watch. | |
+| "A Step-by-Step Guide to Optimizing Your Terrible Civilization" | | The subtitle pill comes in. His skeleton, in the same fedora, strolls back the other way, slowly, still checking the watch. | He was too busy to read it, and now he has all the time in the world. |
 
 Sound: a whirr as the card comes up; a thunk on "Disease"; a quick whistle as he sprints on "Busy"; a slow tick-tock under the skeleton from "Step-by-Step".
 
@@ -308,62 +308,24 @@ Sound: a pop as the sign springs up; a splat as the roller hits; a tick per wall
 - act: The papers
 - transition_in: cut
 - cue: "However,"
-- time: 03:22.8 to 03:40.6 (17.8 s)
-- voiceover: "However, the most fascinating discovery about your species is that you only do things when given small pieces of paper with presidents on them. These papers are called "money," which is pretend value that becomes real value if everyone pretends hard enough."
-- layer: B, plate town-square
+- time: 03:22.8 to 04:18.4 (55.65 s; the short 604-to-1, one plate)
+- voiceover: "However, the most fascinating discovery about your species is that you only do things when given small pieces of paper with presidents on them. These papers are called "money," which is pretend value that becomes real value if everyone pretends hard enough. Without these papers, you won't: Save lives (requires many papers). Cure diseases (requires very many papers). Feed hungry people (requires papers, even though food grows for free). But WITH these papers, you will: Build bombs (you love giving papers for this). Start wars (somehow this makes more papers). Destroy the planet (surprisingly profitable in papers). In fact, your governments spend six hundred and four papers on weapons for every one paper on testing which medicines work."
+- layer: B, plate one-street
+- bit: **One bill walks down a street of frozen humans, and only what it touches comes alive.** The camera walks with it, close and big: past the people it would save, without slowing, to the Weapons Maker, the war and the burning Earth. Then it climbs a tower of 604 bills and drops to the one lonely bill on the floor.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "However, the most fascinating discovery about your species" | | A town square: ten townsfolk stand about doing nothing. One yawns. A fly lands on a nose; nobody moves. | The most fascinating species in the universe. |
-| "is that you only do things" | Humans act only for paper. | | |
-| "when given small pieces of paper with presidents on them." | | A dollar bill walks in on stick legs; the camera pushes in on its oval: George Washington, who winks on "them." The bill walks along the crowd, and whoever it stands next to works furiously (the baker kneads, the sweeper sweeps, the painter paints), and stops dead the moment it moves on. | The painter freezes with the brush mid-stroke and stays that way. |
-| "These papers are called "money,"" | | Every head snaps toward the bill. | |
-| "which is pretend value" | By itself it is worth nothing. | The ink drains off the bill until it is blank paper. | Washington's face goes last, still winking. |
-| "that becomes real value if everyone pretends hard enough." | Its value is what everyone agrees it is. | The crowd squeezes its eyes shut and pretends, trembling; the engraving inks itself back on, line by line, and the bill starts to glow. One man opens one eye: the corner nearest him goes blank, and he shuts it fast. On "hard" the woman at the front pretends so hard her head pops off and spins up. | After "enough." the head lands back on her neck upside down, eyes still shut. |
+| "However, the most fascinating discovery about your species is that you only do things" | Humans act only for paper. | Baker and sweeper, big and stock-still. | A pigeon lands on the sweeper; a cobweb stretches between the two men. |
+| "when given small pieces of paper with presidents on them." | | The bill struts in, huge. Whoever it passes works like mad, then stops dead. | The pigeon bolts. Washington winks on "them." |
+| "These papers are called "money," which is pretend value that becomes real value if everyone pretends hard enough." | Its value is what everyone agrees it is. | The crowd's whole bodies snap toward it. The ink drains to blank paper; they squeeze their eyes shut and it inks back and glows. | The matron pretends so hard her head comes off, and lands upside down. |
+| "Without these papers, you won't: Save lives (requires many papers). Cure diseases (requires very many papers)." | Saving lives costs papers. | The bill walks on without slowing. The patient, then the scientist, each lunges after it, big. | Each is a grinning skeleton behind it, still reaching. |
+| "Feed hungry people (requires papers, even though food grows for free)." | Food costs papers though it grows by itself. | The hungry man lunges after it. | Wheat shoots up right behind him; he never looks. Skeleton. |
+| "But WITH these papers, you will: Build bombs (you love giving papers for this)." | Bombs get paid for gladly. | The frozen Weapons Maker springs to life; the bill flies onto his anvil and a bomb swells on each word. | After "this)." it goes off; he stands charred, blinking, still hammering. |
+| "Start wars (somehow this makes more papers)." | War makes money. | A tank fires; the soldiers char mid-salute, blinking. A second cloud. | Bills fly out of the mushroom clouds. |
+| "Destroy the planet (surprisingly profitable in papers)." | Wrecking the planet pays. | A big terrified Earth catches fire. | Bills pour out of its mouth into the Fat Cat's hat. |
+| "In fact, your governments spend six hundred and four papers on weapons" | 604 papers to weapons... | The hat overflows and a stack of bills boils up beside him. The camera climbs it, past clouds and a warplane, to the top: "604". | A furious balloonist, and the same pigeon. |
+| "for every one paper on testing which medicines work." | ...for every 1. | The camera drops all the way down to one medicine bill on the floor: "604 : 1". It looks up. | One war bill drifts down like a leaf, then drops like an anvil and flattens it. Its little arm pokes out and waves. |
 
-Sound: tiny squeaky footsteps for the bill; a burst of work noise (kneading, sweeping, brushing) for whoever it stands by; a whoosh as the heads turn on "money,"; a fizzle as the ink drains on "pretend"; a rising hum as they strain; a pop as the head comes off on "hard"; a sparkle on "enough."; a thunk as the head lands.
+Sound: pigeon pat; squeak for the bill; scratch and marker for the work; pop on "them."; sizzle as the ink drains, hum as they strain; pop on "hard", thunk as the head lands; crickets on "Without"; a zap per skeleton; hammer; pops as the bomb grows; booms; cash register on "profitable"; slide up and whoosh for the climb; stamp on "papers" and "one"; slide down for the drop; splat; squeak.
 
-## Scene 14 · without-with-papers
-
-- id: without-with-papers
-- act: The papers
-- transition_in: cut
-- cue: "Without"
-- time: 03:40.6 to 04:08.6 (28.0 s)
-- voiceover: "Without these papers, you won't: Save lives (requires many papers). Cure diseases (requires very many papers). Feed hungry people (requires papers, even though food grows for free). But WITH these papers, you will: Build bombs (you love giving papers for this). Start wars (somehow this makes more papers). Destroy the planet (surprisingly profitable in papers)."
-- layer: B, plate papers-street
-- status: planned
-
-| Line | Claim | Visual | Gag |
-|---|---|---|---|
-| "Without these papers, you won't:" | | The left end of the street: not one paper anywhere. | |
-| "Save lives (requires many papers)." | Saving lives costs papers. | A hospital. A patient in a dressing gown sits on the bench outside, a thermometer in his mouth, his chest light blinking red. The door sign flips to "CLOSED". After "papers)." he x-rays into a skeleton, still sitting, thermometer in his teeth. | |
-| "Cure diseases (requires very many papers)." | | The camera travels right to a lab bench: the Scientist with her bubbling flask. A cobweb grows between her and the flask, a spider lowers itself on its thread, and the flask stops bubbling. After "papers)." she x-rays into a skeleton, still holding her clipboard. | |
-| "Feed hungry people (requires papers, even though food grows for free)." | Food costs papers though it grows by itself. | A bare field and a thin, hungry man. On "grows" a wheat stalk shoots up by itself right in front of him. On "free)." he opens his wallet: a moth flies out. After "free)." he x-rays into a skeleton, wallet open. | |
-| "But WITH these papers, you will:" | | A flood of war bills runs in from the right on stick legs, and the camera travels with them into the right half. | |
-| "Build bombs (you love giving papers for this)." | Bombs get paid for gladly. | The Weapons Maker hammers a bomb on his bench; bills hop into a slot in it and it swells. After "this)." it blows up in his face: he stands charred, still grinning, still hammering, and a new bomb pops onto the bench. | |
-| "Start wars (somehow this makes more papers)." | War makes money. | Two generals push toy soldiers across a war map. Each clash puffs a tiny mushroom cloud, and out of each cloud a fresh bill pops like popcorn into the generals' hands. | |
-| "Destroy the planet (surprisingly profitable in papers)." | Wrecking the planet pays. | The fat cat's oil derrick on a little globe drills; on "planet" it strikes, and a gusher of bills sprays out instead of oil while the globe sags like a punctured ball. On "profitable" he catches the bills in his top hat. | After "papers)." the camera whips back left along the whole street: the three skeletons still sit there, and the free wheat has grown taller than the hospital. |
-
-Sound: crickets on "Without"; a click as the door sign flips; an x-ray zap after each of the first three "papers)."; a moth flutter on "free)."; frantic hammering on "WITH"; a boom after "this)."; pops for the little clouds and the popcorn bills; a gusher whoosh on "planet"; a cash-register ding on "profitable"; a whoosh on the whip back.
-
-## Scene 15 · 604-papers
-
-- id: 604-papers
-- act: The papers
-- transition_in: cut
-- cue: "In fact,"
-- time: 04:08.6 to 04:18.5 (9.9 s)
-- voiceover: "In fact, your governments spend six hundred and four papers on weapons for every one paper on testing which medicines work."
-- layer: B, plate 604-bar
-- status: planned
-
-| Line | Claim | Visual | Gag |
-|---|---|---|---|
-| "In fact, your governments spend" | | A bar chart on aged paper with two columns: "WEAPONS" and "TESTING WHICH MEDICINES WORK". One medicine bill stands in the second column, small and cheerful. | |
-| "six hundred and four papers on weapons" | 604 papers to weapons... | War bills march in and hop onto each other into a stack in the first column, faster and faster; the camera tilts up with it past a gridline every 100, past the clouds. A hot-air balloon swerves round the top; "604" stamps there. | The balloonist shakes his fist. |
-| "for every one paper" | ...for every 1. | The camera falls all the way back down to the one medicine bill, which waves; "604 : 1" stamps across the sky. | |
-| "on testing which medicines work." | | The medicine bill leans back to look up. Far above, one war bill slides off the top and drifts down, rocking like a leaf. After "work." it drops like an anvil and flattens it; the medicine bill's little arm pokes out from under and waves weakly. The part ends on that frame. | |
-
-Sound: a rising slide whistle as the stack climbs; a balloon whoosh on "weapons"; a thunk as "604" stamps in; a falling slide whistle as the camera drops; a thunk as "604 : 1" stamps in on "one"; a splat after "work."; a tiny squeak.

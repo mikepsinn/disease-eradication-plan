@@ -1,9 +1,11 @@
 // Cut-out collage (cartoon-style-bible.md section 1): hand-tinted engraving cut-outs from assets/art/collage/ on
 // aged paper, moving stiffly on twos (12 drawings a second), like paper under a rostrum camera.
 //
-//   KIT.collage(spec)   builds a whole collage scene from a short spec: { id, seed, cast, beats, views }.
+//   KIT.collage(spec)   builds a whole collage scene from a short spec: { id, seed, cast, beats, views, host }.
 //                       The spec's fields and every move are in video/README.md, "Writing a collage scene".
-//   KIT.collage.SIZES   each cut-out's art size in px (add a new cut-out's size here)
+//   KIT.collage.SIZES   each cut-out's art size in px (generated: assets/js/art-sizes.js, loaded before this file)
+//   KIT.collage.axes(o) a chart's axes ({ box, x, y, title, unit }), with pt(x, y), the canvas px of a data point;
+//                       pass it as `chart` to the chart, rule and chain moves
 //
 // Load it after kit.js and film.js. Copy compositions/scenes/pilot-collage/*.html for the file around a spec.
 (function () {
@@ -12,10 +14,8 @@
   if (!K.film) throw new Error("collage.js: load assets/js/film.js before it");
   var F = 1 / 12, ART = "assets/art/collage/";
   var INK = "#2B2033", RED = "#A8322A", CARD = "#F5ECD3";
-  var SIZES = {
-    atom: [370, 450], "general-head": [353, 493], general: [359, 686], globe: [381, 643], mushroom: [425, 626],
-    scientist: [319, 753], "uncle-sam-head": [377, 611], "uncle-sam": [348, 704],
-  };
+  // every cut-out's size, from assets/js/art-sizes.js (tools/art-sizes.py; load it before this file)
+  var SIZES = window.KIT_ART_SIZES || {};
   var PAPER = "radial-gradient(circle at 17% 80%, rgba(140,96,40,0.16) 0, rgba(140,96,40,0) 8%)," +
     "radial-gradient(circle at 86% 18%, rgba(140,96,40,0.13) 0, rgba(140,96,40,0) 6%)," +
     "radial-gradient(ellipse 30% 22% at 70% 86%, rgba(120,80,30,0.10) 0, rgba(120,80,30,0) 100%)," +
@@ -84,6 +84,36 @@
     return '<svg width="' + 2 * r + '" height="' + 2 * r + '" viewBox="' + -r + " " + -r + " " + 2 * r + " " + 2 * r + '" style="position:absolute;left:0;top:0">' + s +
       '<circle r="' + r * 0.2 + '" fill="#FFF3C4" opacity="0.8"/></svg>';
   }
+  // A chart's axes: box [left, top, right, bottom] in canvas px; x and y [min, max, tick step]; xLabels and yLabels
+  // (label every this much; the tick step); title; unit (after the y labels); size (label px, 34).
+  function axes(o) {
+    var b = o.box, X = o.x, Y = o.y;
+    return { box: b, x: X, y: Y, title: o.title, subtitle: o.subtitle, unit: o.unit || "", size: o.size || 34, xLabels: o.xLabels || X[2], yLabels: o.yLabels || Y[2],
+      pt: function (xv, yv) { return [b[0] + (xv - X[0]) / (X[1] - X[0]) * (b[2] - b[0]), b[3] - (yv - Y[0]) / (Y[1] - Y[0]) * (b[3] - b[1])]; } };
+  }
+  function axesSvg(c, W, H) {
+    var b = c.box, z = c.size, s = "", every = function (v, v0, k) { var u = (v - v0) / k; return Math.abs(u - Math.round(u)) < 1e-6; };
+    var tx = function (x, y, anchor, t, size, title) {
+      return '<text x="' + x.toFixed(1) + '" y="' + y.toFixed(1) + '" text-anchor="' + anchor + '" font-family="' + (title ? "Fraunces" : "Oswald") + '" font-weight="' + (title ? 900 : 600) +
+        '" font-size="' + size.toFixed(1) + '" fill="' + INK + '">' + t + "</text>";
+    };
+    for (var yv = c.y[0]; yv <= c.y[1] + 1e-9; yv += c.y[2]) {
+      var y = c.pt(c.x[0], yv)[1];
+      if (yv > c.y[0]) s += '<line x1="' + b[0] + '" y1="' + y.toFixed(1) + '" x2="' + b[2] + '" y2="' + y.toFixed(1) + '" stroke="' + INK + '" stroke-opacity="0.16" stroke-width="2"/>';
+      if (every(yv, c.y[0], c.yLabels)) s += tx(b[0] - 18, y + z * 0.36, "end", yv + c.unit, z);
+    }
+    for (var xv = c.x[0]; xv <= c.x[1] + 1e-9; xv += c.x[2]) {
+      var x = c.pt(xv, c.y[0])[0];
+      s += '<line x1="' + x.toFixed(1) + '" y1="' + b[3] + '" x2="' + x.toFixed(1) + '" y2="' + (b[3] + 14) + '" stroke="' + INK + '" stroke-width="4"/>';
+      if (every(xv, c.x[0], c.xLabels)) s += tx(x, b[3] + 22 + z, "middle", xv, z);
+    }
+    s += '<path d="M' + b[0] + "," + (b[1] - 30) + " L" + b[0] + "," + b[3] + " L" + (b[2] + 30) + "," + b[3] + '" fill="none" stroke="' + INK + '" stroke-width="6"/>';
+    if (c.title) s += tx(b[0] - 18, b[1] - (c.subtitle ? 78 : 56), "start", c.title, z * 1.35, true);
+    if (c.subtitle) s += tx(b[0] - 18, b[1] - 34, "start", c.subtitle, z * 0.85);
+    return '<svg class="cg-full" width="' + W + '" height="' + H + '">' + s + "</svg>";
+  }
+  // element ids the kit itself uses (<scene id>-<name>)
+  var RESERVED = ["weave", "film", "shake", "stage", "bolts", "flash", "hcam", "hwall", "hwish", "hfront", "hiris"];
   var DIRS = { left: [-1, 0], right: [1, 0], top: [0, -1], bottom: [0, 1] };
   var dir = function (d) { if (!DIRS[d]) throw new Error("KIT.collage: no direction '" + d + "'"); return DIRS[d]; };
 
@@ -94,10 +124,15 @@
     var cue = function (w, n) { return K.cue(ID, w, n); };
     var timeOf = function (u) { return u === undefined ? Infinity : typeof u === "number" ? u : Array.isArray(u) ? cue(u[0], u[1]) + (u[2] || 0) : cue(u); };
     var A = {}, pieces = {}, ops = [], events = {}, tickers = [], shakes = [], cams = [];
-    var cast = [], cutLayer = [], back = [], front = [], unders = {};
+    var cast = [], cutLayer = [], back = [], front = [], unders = {}, afters = {}, chains = {};
+    // spec.plate [x0, y0, x1, y1]: the area the paper (and a wash or a flash) covers, for a camera that travels past the
+    // frame (default the frame)
+    var PL = spec.plate || [0, 0, W, H];
+    var plateBox = 'class="cg-ab" style="left:' + px(PL[0]) + ";top:" + px(PL[1]) + ";width:" + px(PL[2] - PL[0]) + ";height:" + px(PL[3] - PL[1]) + ";";
 
     function actor(name, a) {
       if (A[name] || pieces[name]) throw new Error("KIT.collage: two things called '" + name + "'");
+      if (RESERVED.indexOf(name) >= 0) throw new Error("KIT.collage: '" + name + "' is the kit's own element; call the cast member something else");
       a.name = name; a.before = a.before || ""; a.children = a.children || [];
       a.home = function () { return [a.left + a.w / 2, a.top + a.h / 2]; };
       A[name] = a; events[name] = events[name] || [];
@@ -111,7 +146,7 @@
     // A cut-out from the cast: art, x, y, scale, anchor, pivot, clip, pieces, cut, points, eyes, smoke, faces, hidden.
     function cutout(name, o) {
       var sz = SIZES[o.art];
-      if (!sz) throw new Error("KIT.collage: no size for art '" + o.art + "' (add it to KIT.collage.SIZES in collage.js)");
+      if (!sz) throw new Error("KIT.collage: no size for art '" + o.art + "' (run tools/art-sizes.py, and load assets/js/art-sizes.js before collage.js)");
       var k = o.scale || 1, an = spot(o.anchor, sz[0], sz[1]), pv = spot(o.pivot, sz[0], sz[1]);
       var a = actor(name, { o: o, k: k, w: sz[0] * k, h: sz[1] * k, pivot: [pv[0] * k, pv[1] * k], points: o.points || {},
         faces: o.faces === "left" ? -1 : 1, hidden: o.hidden, eyes: o.eyes || [], smoke: o.smoke ? [].concat(o.smoke.length && Array.isArray(o.smoke[0]) ? o.smoke : [o.smoke]) : [] });
@@ -129,8 +164,14 @@
       };
       var artHtml = o.pieces ? piecesHtml(o.pieces) : img(o.art, o.clip, k);
       a.html = function () {
-        var deco = a.eyes.map(function (e) { return '<div class="cg-eye" style="left:' + px(e[0] * k) + ";top:" + px(e[1] * k) + ';visibility:hidden"><i></i></div>'; }).join("");
+        var es = o.eyeSize || 30, deco = a.eyes.map(function (e) { return '<div class="cg-eye" style="left:' + px(e[0] * k) + ";top:" + px(e[1] * k) + (es !== 30 ? ";zoom:" + (es / 30).toFixed(3) : "") + ';visibility:hidden"><i></i></div>'; }).join("");
         a.smoke.forEach(function (sm) { for (var i = 0; i < 3; i++) deco += '<div class="cg-puff" style="left:' + px(sm[0] * k) + ";top:" + px(sm[1] * k) + ';visibility:hidden"></div>'; });
+        [].concat(o.label || []).forEach(function (l) {
+          var size = K.fitText(l.text, l.size || 40, (l.width || 200) * k, "Fraunces", 900), lw = K.textWidth(l.text, size, "Fraunces", 900);
+          deco += '<div class="cg-ab" style="left:' + px(l.at[0] * k - lw / 2) + ";top:" + px(l.at[1] * k - size * 0.6) + ";width:" + px(lw) + ";font:900 " + px(size) + "/1.2 Fraunces;color:" + INK +
+            ";white-space:nowrap;transform:rotate(" + (l.tilt || 0) + 'deg)">' + l.text + "</div>";
+        });
+        deco += a.children.map(function (c) { return A[c].html(); }).join("");
         return a.before + box(a, '<div class="cg-full cg-art">' + artHtml + "</div>" + deco, a.hidden ? "visibility:hidden" : "");
       };
       if (o.cut) {
@@ -187,12 +228,13 @@
     }
     // A rubber-stamp mark: on a sign (inside it, under its title) or free-standing at x, y.
     function stampMark(name, o, sign) {
-      var w = sign ? sign.w - 88 : null, size = K.fitText(o.text, o.size || 56, sign ? w - 52 : 1000, "Oswald", 600);
-      if (!sign) w = K.textWidth(o.text, size, "Oswald", 600) + 52;
+      var onArt = sign && sign.o, w = sign && !onArt ? sign.w - 88 : null, size = K.fitText(o.text, o.size || 56, w ? w - 52 : o.width || 1000, "Oswald", 600);
+      if (!w) w = K.textWidth(o.text, size, "Oswald", 600) + 52;
       var h = size * 1.45;
       var a = actor(name, { w: w, h: h, pivot: [w / 2, h / 2], points: {}, eyes: [], smoke: [], faces: 1, hidden: true });
-      a.left = sign ? 44 : (o.x === undefined ? W / 2 : o.x) - w / 2;
-      a.top = sign ? 60 + (sign.titleSize || 0) : (o.y === undefined ? H / 2 : o.y) - h / 2;
+      if (onArt && !o.spot) throw new Error("KIT.collage: a stamp on cut-out '" + sign.name + "' needs spot: [x, y] (art px)");
+      a.left = onArt ? o.spot[0] * sign.k - w / 2 : sign ? 44 : (o.x === undefined ? W / 2 : o.x) - w / 2;
+      a.top = onArt ? o.spot[1] * sign.k - h / 2 : sign ? 60 + (sign.titleSize || 0) : (o.y === undefined ? H / 2 : o.y) - h / 2;
       a.html = function () {
         return '<div id="' + ID + "-" + name + '" class="cg-ab" style="left:' + px(a.left) + ";top:" + px(a.top) + ";width:" + px(w) + ";height:" + px(h) + ";box-sizing:border-box;border:5px solid " + RED + ";color:" + RED +
           ";font:600 " + px(size) + "/" + px(size * 1.32) + ' Oswald;white-space:nowrap;text-align:center;visibility:hidden;transform-origin:50% 50%">' + o.text + "</div>";
@@ -415,6 +457,123 @@
           str.firstChild.setAttribute("d", "M" + k[0].toFixed(1) + "," + k[1].toFixed(1) + " Q" + ((k[0] + hx) / 2).toFixed(1) + "," + (Math.max(k[1], hy) + 40).toFixed(1) + " " + hx.toFixed(1) + "," + hy.toFixed(1));
         });
       },
+      flatten: function (b, who) {
+        who.forEach(function (n) { scaleOp(n, b.t, [[0, 1, 1], [F, 1.12, 0.4], [2 * F, 1.3, 0.12]]); });
+      },
+      // Charts: axes on the paper, a dashed rule at a value, and a chain of cut-outs that draws the line.
+      chart: function (b) {
+        var c = b.chart, name = b.id || "chart";
+        if (!c || !c.pt) throw new Error("KIT.collage: chart needs chart: KIT.collage.axes({...})");
+        var a = actor(name, { w: W, h: H, pivot: [W / 2, H / 2], points: {}, eyes: [], smoke: [], faces: 1, hidden: true });
+        a.left = 0; a.top = 0;
+        a.html = function () { return box(a, axesSvg(c, W, H), "visibility:hidden"); };
+        back.push(name);
+        if (b.enter) MOVES.slideIn({ t: b.t, from: b.enter, over: b.over === undefined ? 14 : b.over, dist: H + 60 }, [name]);
+        else ev(name, b.t, true);
+      },
+      rule: function (b) {
+        var c = b.chart, name = b.id || "rule", col = b.color === "ink" ? INK : RED, size = b.size || 32, dur = b.dur === undefined ? 0.5 : b.dur;
+        var y = c.pt(c.x[0], b.y)[1], x0 = b.from === undefined ? c.box[0] : c.pt(b.from, 0)[0], x1 = b.to === undefined ? c.box[2] : c.pt(b.to, 0)[0];
+        var a = actor(name, { w: x1 - x0, h: 6, pivot: [0, 3], points: {}, eyes: [], smoke: [], faces: 1, hidden: true });
+        a.left = x0; a.top = y - 3;
+        a.html = function () {
+          return box(a, '<div class="cg-full" style="border-top:6px dashed ' + col + '"></div>' + (b.text ? '<div class="cg-ab" style="' + (b.labelAt === "left" ? "left:0" : "right:0") +
+            (b.below ? ";top:20px" : ";bottom:16px") + ";font:600 " + px(size) + "/1 Oswald;color:" + col + ';white-space:nowrap;letter-spacing:1px">' + b.text + "</div>" : ""), "visibility:hidden;clip-path:inset(-300px 100% -300px -20px)");
+        };
+        back.push(name);
+        ev(name, b.t, true);
+        tickers.push(function (t) { var u = dur ? clamp((t - b.t) / dur) : 1; q(name).style.clipPath = "inset(-300px " + ((1 - u) * 100).toFixed(1) + "% -300px -20px)"; });
+      },
+      chain: function (b, who, bi) {
+        var name = b.id || "chain", pts = b.points, c = b.chart, k = b.scale || 1, arts = [].concat(b.art), jig = b.jiggle === undefined ? 2 : b.jiggle;
+        if (!pts) {
+          if (!c || !b.f || !b.x) throw new Error("KIT.collage: chain needs points, or chart, f (y of x) and x: [from, to]");
+          var step = b.step || 0.5, m = Math.round((b.x[1] - b.x[0]) / step);
+          pts = [];
+          for (var j = 0; j <= m; j++) { var xv = b.x[0] + j * step; pts.push(c.pt(xv, b.f(xv))); }
+        }
+        var n = pts.length, tu = timeOf(b.until), t1 = tu === Infinity ? b.t + (b.dur || 2) : tu, accel = b.accel === undefined ? 0.6 : b.accel;
+        var join = b.join ? chains[b.join] : null, names = [];
+        if (b.join && !join) throw new Error("KIT.collage: no chain '" + b.join + "' to join");
+        pts.forEach(function (p, i) {
+          var nm = name + "." + i, ti = n === 1 ? b.t : b.t + (t1 - b.t) * Math.pow(i / (n - 1), accel);
+          var art = b.pose ? b.pose(i, n) : arts[i % arts.length], sz = SIZES[art];
+          if (!sz) throw new Error("KIT.collage: no size for art '" + art + "'");
+          cutout(nm, { art: art, x: p[0], y: p[1], anchor: b.anchor || "bottom", pivot: "bottom", scale: b.height ? b.height * ((b.sizes || {})[art] || 1) / sz[1] : k, hidden: true, faces: b.faces });
+          cast.push(nm); names.push(nm);
+          ev(nm, ti - F, true);
+          var from = i ? pts[i - 1] : join ? join.pts[join.pts.length - 1] : null;
+          if (from && b.hop !== false) {
+            // it pops out of the one before and hops to its place
+            var dx = from[0] - p[0], dy = from[1] - p[1];
+            op(nm, function (s, t) { var v = keys(ti, [[-F, dx, dy, 0.6], [F, dx * 0.4, dy * 0.4 - 30, 1.06], [2 * F, 0, 0, 1]], t); s.x += v[0]; s.y += v[1]; s.sx *= v[2]; s.sy *= v[2]; });
+          } else scaleOp(nm, ti, [[-F, 0], [F, 1.12], [2 * F, 1]]);
+          if (jig) op(nm, function (s, t) {
+            if (t < ti + 2 * F) return;
+            var r = K.rng(Math.round(t * 12) * 31 + i * 977 + bi * 13);
+            s.y += (r() - 0.5) * 2 * jig; s.r += (r() - 0.5) * 1.6 * jig;
+          });
+        });
+        chains[name] = { pts: pts, names: names };
+        if (b.line === false) return;
+        var ln = name + "-line", lpts = (join ? [join.pts[join.pts.length - 1]] : []).concat(pts), lnames = (join ? [join.names[join.names.length - 1]] : []).concat(names);
+        var la = actor(ln, { w: W, h: H, pivot: [W / 2, H / 2], points: {}, eyes: [], smoke: [], faces: 1 });
+        la.left = 0; la.top = 0;
+        la.html = function () {
+          return box(la, '<svg class="cg-full" width="' + W + '" height="' + H + '"><path d="" fill="none" stroke="' + (b.lineColor === "red" ? RED : b.lineColor || INK) + '" stroke-width="' + (b.lineWidth || 5) + '" stroke-linejoin="round" stroke-linecap="round"/></svg>');
+        };
+        back.push(ln);
+        tickers.push(function (t) {
+          var d = "";
+          lnames.forEach(function (nm, i) { if (shown(nm, t)) d += (d ? " L" : "M") + lpts[i][0].toFixed(1) + "," + lpts[i][1].toFixed(1); });
+          q(ln).querySelector("path").setAttribute("d", d);
+        });
+      },
+      // A bar on a chart: a hatched bar at x (data) that grows from its last height to `to` over dur; call again with
+      // the same id to grow or shrink it again. It may run off the plate.
+      bar: function (b) {
+        var c = b.chart, name = b.id || "bar", dur = b.dur === undefined ? 0.6 : b.dur, a = A[name];
+        if (!a) {
+          if (!c || !c.pt) throw new Error("KIT.collage: bar needs chart");
+          var w = b.width || 80, x = c.pt(b.x, 0)[0], base = c.box[3], size = b.size || 30;
+          a = actor(name, { w: w, h: 1, pivot: [w / 2, 0], points: {}, eyes: [], smoke: [], faces: 1, hidden: true });
+          a.left = x - w / 2; a.top = 0; a.keys = [[-1e9, 0]];
+          a.html = function () {
+            return '<div id="' + ID + "-" + name + '" class="cg-ab" style="left:' + px(a.left) + ";top:0;width:" + px(w) + ";height:" + H + 'px;visibility:hidden">' +
+              '<div class="cg-ab cg-sh cg-barbody" style="left:0;width:100%;background-color:' + (b.fill || "#E9D9AE") + ";border:5px solid " + INK + ';box-sizing:border-box;' +
+              'background-image:repeating-linear-gradient(135deg, rgba(43,32,51,0.18) 0 2px, transparent 2px 9px)"></div>' +
+              (b.text ? '<div class="cg-ab cg-barlabel" style="left:-80px;right:-80px;text-align:center;font:600 ' + px(size) + "/1 Oswald;color:" + INK + ';white-space:nowrap">' + b.text + "</div>" : "") + "</div>";
+          };
+          back.push(name);
+          ev(name, b.t, true);
+          tickers.push(function (t) {
+            var v = keys(0, a.keys, t)[0], top = c.pt(c.x[0], v)[1], el = q(name);
+            var body = el.querySelector(".cg-barbody"), lab = el.querySelector(".cg-barlabel");
+            body.style.top = px(Math.min(top, base)); body.style.height = px(Math.abs(base - top));
+            if (lab) lab.style.top = px(top - size - 14);
+          });
+        }
+        var from = keys(0, a.keys, b.t)[0];
+        a.keys.push([b.t, from], [b.t + dur, b.to]);
+      },
+      // A flat colour over the plate that fades to `opacity` over dur: behind the whole cast, or just above the cast
+      // member `above` (the cast written after it keeps its colour). blend "saturation" greys what is under it;
+      // "normal" tints. Call again with the same id to change it.
+      wash: function (b) {
+        var name = b.id || "wash", dur = b.dur === undefined ? 0.8 : b.dur, a = A[name];
+        if (!a) {
+          a = actor(name, { w: W, h: H, pivot: [W / 2, H / 2], points: {}, eyes: [], smoke: [], faces: 1, hidden: true });
+          a.left = 0; a.top = 0; a.keys = [[-1e9, 0]];
+          a.html = function () {
+            return '<div id="' + ID + "-" + name + '" ' + plateBox + "background:" + (b.color || "#888") + ";mix-blend-mode:" + (b.blend || "saturation") + ';opacity:0;visibility:hidden;pointer-events:none"></div>';
+          };
+          if (b.above) (afters[b.above] = afters[b.above] || []).push(name); else back.push(name);
+          ev(name, b.t, true);
+          tickers.push(function (t) { q(name).style.opacity = keys(0, a.keys, t)[0].toFixed(3); });
+        }
+        var from = keys(0, a.keys, b.t)[0];
+        a.keys.push([b.t, from], [b.t + dur, b.opacity === undefined ? 1 : b.opacity]);
+      },
       camera: function (b) { cams.push(b); },
     };
 
@@ -462,11 +621,20 @@
     var weave = q("weave"), film = q("film");
     weave.style.cssText = film.style.cssText = "position:absolute;inset:0";
     var layers = back.concat(cast, cutLayer, front), html = "";
-    layers.forEach(function (n) { (unders[n] || []).forEach(function (u) { html += A[u].html(); }); html += A[n].html(); });
-    weave.innerHTML = '<div id="' + ID + '-shake" style="position:absolute;inset:0"><div id="' + ID + '-stage" class="cg-stage" style="position:absolute;inset:0;transform-origin:0 0">' +
-      '<div class="cg-full" style="background:' + PAPER + '"></div>' + html +
+    layers.forEach(function (n) {
+      (unders[n] || []).forEach(function (u) { html += A[u].html(); });
+      html += A[n].html();
+      (afters[n] || []).forEach(function (u) { html += A[u].html(); });
+    });
+    // A host shot (spec.host) puts the cast in front of Wishonia's console on the observation deck (KIT.studio), with
+    // no paper; the studio's slow push moves both.
+    var host = spec.host, ab = function (n) { return '<div id="' + ID + "-" + n + '" style="position:absolute;inset:0"></div>'; };
+    var stageHtml = '<div id="' + ID + '-stage" class="cg-stage" style="position:absolute;inset:0;transform-origin:0 0">' +
+      (host ? "" : "<div " + plateBox + "background:" + PAPER + '"></div>') + html +
       '<svg id="' + ID + '-bolts" class="cg-ab" width="' + W + '" height="' + H + '" style="left:0;top:0"></svg>' +
-      '<div id="' + ID + '-flash" class="cg-full" style="background:#FFF8E4;visibility:hidden"></div></div></div>';
+      '<div id="' + ID + '-flash" ' + plateBox + 'background:#FFF8E4;visibility:hidden"></div></div>';
+    weave.innerHTML = '<div id="' + ID + '-shake" style="position:absolute;inset:0">' +
+      (host ? '<div id="' + ID + '-hcam" style="position:absolute;inset:0">' + ab("hwall") + ab("hwish") + ab("hfront") + stageHtml + "</div>" : stageHtml) + "</div>" + (host ? ab("hiris") : "");
     flashEl = q("flash");
     var shakeEl = q("shake"), stage = q("stage"), boltsEl = q("bolts"), names = Object.keys(A), pieceNames = Object.keys(pieces);
     names.forEach(function (n) {
@@ -484,6 +652,11 @@
 
     var tl = gsap.timeline({ paused: true });
     K.film(tl, ID, weave, film, spec.seed || 300);
+    if (host) {
+      var ho = host === true ? {} : host, set = K.studio(tl, ID, { cam: q("hcam"), wall: q("hwall"), wish: q("hwish"), front: q("hfront") }, { push: ho.push });
+      // iris: ["in" or "out", t0, t1] (scene seconds), on her face
+      if (ho.iris) K.iris(tl, ID, q("hiris"), set.S.face, ho.iris[0], ho.iris[1], ho.iris[2]);
+    }
     K.onTime(tl, D, function (t0) {
       var t = twos(t0), fr = Math.round(t * 12);
       frameT = t; memo = {}; bolts = "";
@@ -519,6 +692,7 @@
   }
 
   collage.SIZES = SIZES;
+  collage.axes = axes;
   collage.F = F;
   K.collage = collage;
 })();

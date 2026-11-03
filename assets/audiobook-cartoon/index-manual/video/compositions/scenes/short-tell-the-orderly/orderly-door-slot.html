@@ -1,0 +1,308 @@
+<template id="orderly-door-slot-template">
+  <!-- orderly-door-slot · collage (Part 4, scenes 8, 9 and 10 as one plate). The bit: a madman in a padded cell with a red
+       string has worked it all out, and every word on his wall is true. Close on the Orderly's arm through the slot and
+       the man in the jacket. "accidentally": the most an accident has ever built, a birdhouse; a carrier and a bomb get
+       the crayon X. Then the wall, eight pins in a ring round the door, big, each worse than the last, the string running
+       on from pin to pin: miner, furnace, factory, soldiers, soup, ships (WELCOME, BOOM), the same villagers as demons, the
+       ballot. "pay": bills walk the string, which closes. "annually": the whole wall, the bills lapping faster, the calendar
+       shedding, first prize. "NOT": he flips the switch and all of it goes grey and stops. HOLD. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #C9B080; }
+  </style>
+  <div id="root" data-composition-id="orderly-door-slot" data-width="1920" data-height="1080" data-start="0" data-duration="51.104">
+    <div id="orderly-door-slot-weave"></div>
+    <div id="orderly-door-slot-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "orderly-door-slot", SIZES = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The wall is a 3 x 3 grid of slots, each one frame big at camera scale 1 (9:16: slot middles at screen y 700, above the
+    // captions). The door is the middle slot; the eight pins go round it clockwise from the top left.
+    var SW = V ? 1080 : 1920, SH = V ? 1500 : 1080, CX = V ? 540 : 960, CY = V ? 700 : 540, VY = V ? 260 : 0;
+    var slotAt = function (c, r) { return [CX + (c - 1) * SW, CY + (r - 1) * SH]; };
+    var SLOTS = { miner: [0, 0], furn: [1, 0], fac: [2, 0], sold: [2, 1], soup: [2, 2], ship: [1, 2], post: [0, 2], ball: [0, 1], door: [1, 1] };
+    var S = {}; Object.keys(SLOTS).forEach(function (k) { S[k] = slotAt(SLOTS[k][0], SLOTS[k][1]); });
+    var rel = function (slot, d) { return [S[slot][0] + d[0], S[slot][1] + d[1]]; };
+    // a point given in screen px of a slot's close view
+    var screen = function (slot, x, y) { return [S[slot][0] + x - KIT.W / 2, S[slot][1] + VY + y - KIT.H / 2]; };
+
+    var views = { wide: V ? [540, 1270, 0.295] : [960, 300, 0.285] };
+    Object.keys(S).forEach(function (k) { views[k] = [S[k][0], S[k][1] + VY, 1]; });
+    views.dolls = V ? [S.miner[0], S.miner[1] - 490, 1] : [S.miner[0] + 500, S.miner[1] - 580, 1];
+    views.blast = V ? [S.ship[0], S.ship[1] + VY, 1] : [S.ship[0] + 460, S.ship[1], 1];
+    views.sw = V ? [S.door[0] + 230, S.door[1] + 200, 1] : [S.door[0] + 480, S.door[1] + 100, 1];
+
+    // what goes on each pin: art, [dx, dy] from the slot's middle, scale; pin: where the push-pin and the string go
+    var PINS = V ? {
+      miner: { d: [120, -120], k: 3.1, pin: [150, -610] }, furn: { d: [130, -130], k: 2.7, pin: [130, -610] },
+      fac: { d: [-180, -150], k: 1.6, pin: [-180, -590] }, sold: { d: [60, -100], k: 2.75, pin: [60, -400] },
+      soup: { d: [130, -130], k: 3.0, pin: [200, -570] }, ship: { d: [120, 110], k: 2.6, pin: [120, -280] },
+      post: { d: [120, -130], k: 2.9, pin: [380, -600] }, ball: { d: [110, -60], k: 3.4, pin: [110, -450] },
+    } : {
+      miner: { d: [170, 20], k: 2.6, pin: [200, -395] }, furn: { d: [160, 10], k: 2.3, pin: [160, -395] },
+      fac: { d: [50, 20], k: 1.5, pin: [50, -390] }, sold: { d: [220, 40], k: 3.2, pin: [220, -320] },
+      soup: { d: [160, 10], k: 2.7, pin: [220, -395] }, ship: { d: [500, 10], k: 2.4, pin: [500, -370] },
+      post: { d: [200, 10], k: 2.5, pin: [425, -395] }, ball: { d: [170, 40], k: 3.2, pin: [170, -340] },
+    };
+    var RING = ["miner", "furn", "fac", "sold", "soup", "ship", "post", "ball"];
+    var ART = { miner: "miner", furn: "bessemer", fac: "factory", sold: "soldiers", soup: "soup-pot", ship: "village", post: "enemy-poster", ball: "ballot-box" };
+    var PT = {}; RING.forEach(function (k) { PT[k] = rel(k, PINS[k].pin); });
+
+    var tNot = cue("NOT");
+    var cast = {
+      wall: { art: "padded-wall", x: V ? 540 : 960, y: V ? 1137 : 300, scale: V ? 2.7 : 2.6 },
+    };
+    var beats = [];
+    var add = function () { for (var i = 0; i < arguments.length; i++) beats.push(arguments[i]); };
+
+    // ── The door, the Orderly, the arm ──
+    var DOOR = V ? screen("door", 170, 700) : screen("door", 200, 540), DK = 1.75;
+    var doorPt = function (x, y) { return [DOOR[0] + (x - 143.5) * DK, DOOR[1] + (y - 307.5) * DK]; };
+    var WIN = doorPt(142, 151), SLOT = doorPt(142, 326), AK = V ? 1.4 : 2.0, ARM_W = SIZES["orderly-arm"][0] * AK;
+    var ARM_OUT = [SLOT[0] + ARM_W / 2 - 40, SLOT[1]];
+    cast.orderly = { art: "orderly", x: WIN[0], y: WIN[1] + 150, anchor: [98, 52], pivot: [98, 110], scale: 3.0, clip: [[30, 0], [170, 0], [170, 150], [30, 150]] };
+    cast.door = { art: "padded-door", x: DOOR[0], y: DOOR[1], scale: DK };
+    cast.arm = { art: "orderly-arm", x: ARM_OUT[0] - ARM_W + 40, y: SLOT[1], scale: AK, hidden: true };
+    cast.doorF = { art: "padded-door", x: DOOR[0], y: DOOR[1], scale: DK, clip: [[0, 0], [142, 0], [142, 615], [0, 615]] };
+    add({ on: "orderly", do: "move", who: "orderly", by: [0, -150], dur: 0.4 },
+      { on: "slides", do: "show", who: "arm" },
+      { on: "slides", do: "move", who: "arm", to: ARM_OUT, dur: 0.6, ease: "smooth" },
+      { on: "slot:", offset: 0.25, do: "move", who: "arm", to: [ARM_OUT[0] - ARM_W + 40, SLOT[1]], dur: 0.25 },
+      { on: "slot:", offset: 0.5, do: "hide", who: "arm" },
+      { on: "largest", do: "shiver", who: "orderly", dur: 3.2, amp: 5, rot: 3 });
+    // the calendar on the door; first prize beside it
+    var CAL = doorPt(143, 490), CK = 1.25;
+    cast.calendar = { art: "calendar", x: CAL[0], y: CAL[1], scale: CK, hidden: true };
+
+    // ── The birdhouse: what accidents build ──
+    var GAG = V ? { man: screen("sold", 300, 1130), mk: [2.2, 2.2], car: screen("sold", 540, 300), ck: 2.4, bomb: screen("sold", 720, 720), bk: 2.0, x: screen("sold", 620, 500), xk: 3.2 }
+      : { man: screen("sold", 430, 530), mk: [2.3, 3.0], car: screen("sold", 1370, 290), ck: 2.2, bomb: screen("sold", 1400, 690), bk: 2.2, x: screen("sold", 1370, 500), xk: 3.4 };
+    cast.trip = { art: "trip-man", x: GAG.man[0], y: GAG.man[1], scale: GAG.mk[0], hidden: true };
+    cast.bird = { art: "birdhouse-man", x: GAG.man[0], y: GAG.man[1], pivot: "bottom", scale: GAG.mk[1], hidden: true };
+    cast.carrier = { art: "aircraft-carrier", x: GAG.car[0], y: GAG.car[1], scale: GAG.ck, hidden: true };
+    cast.bomb = { art: "nuclear-bomb", x: GAG.bomb[0], y: GAG.bomb[1], scale: GAG.bk, clip: [[0, 0], [225, 0], [245, 70], [245, 110], [225, 170], [0, 170]], hidden: true };
+    cast.xx = { art: "crayon-x", x: GAG.x[0], y: GAG.x[1], scale: GAG.xk, hidden: true };
+    add({ on: "Nobody", do: "camera", view: "sold", dur: 0.4 },
+      { on: "accidentally", do: "stamp", who: "trip", from: 1.3, shake: 3 },
+      { on: "builds", do: "swap", who: "trip", to: "bird" },
+      { on: "carrier", offset: -0.3, do: "stamp", who: "carrier", from: 1.5, shake: 8 },
+      { on: "nuclear", do: "stamp", who: "bomb", from: 1.5, shake: 10 },
+      { on: "bomb.", offset: 0.45, do: "stamp", who: "xx", from: 1.4, shake: 6 },
+      { on: "bomb.", offset: 0.85, do: "hop", who: "bird", height: 26 },
+      { on: "War", offset: 0.05, do: "drop", who: ["xx", "carrier"], dur: 0.6, dist: 1400, drift: 40, spin: 18 },
+      { on: "War", offset: 0.1, do: "drop", who: "bomb", dur: 0.6, dist: 1400, drift: 70, spin: -22 },
+      { on: "War", offset: 0.15, do: "drop", who: "bird", dur: 0.6, dist: 1400, drift: -30, spin: 24 });
+
+    // ── The frieze: millions of humans, holding hands along the top of the wall ──
+    var DK2 = V ? 2.9 : 3.4, DW = SIZES["paper-dolls"][0] * DK2 - 12, DY = S.miner[1] - SH / 2 - SIZES["paper-dolls"][1] * DK2 / 2 + (V ? 10 : 20);
+    var nDolls = V ? 3 : 5, x0 = V ? S.miner[0] : S.miner[0] - 480;
+    var dollNames = [];
+    for (var di = 0; di < nDolls; di++) {
+      var dn = "doll" + di; dollNames.push(dn);
+      cast[dn] = { art: "paper-dolls", x: x0 + di * DW, y: DY, scale: DK2, pivot: "bottom", hidden: true };
+      add({ on: "millions", n: 1, offset: di * 0.14, do: "pop", who: dn });
+      add({ on: "together", do: "bob", who: dn, y: 12, r: 0, speed: 5, phase: di * 0.6, until: tNot, fade: 0 });
+    }
+    add({ on: "War", offset: 0.1, do: "camera", view: "dolls", dur: 0.5 });
+
+    // ── The eight pins ──
+    var makeCast = function (k, art, d, kk, o) {
+      var p = rel(k, d), c = { art: art, x: p[0], y: p[1], scale: kk, pivot: "bottom", hidden: true };
+      for (var key in o || {}) c[key] = o[key];
+      return c;
+    };
+    var pinIt = function (k, o) { return makeCast(k, ART[k], PINS[k].d, PINS[k].k, o); };
+    cast.miner = pinIt("miner", { clip: [[0, 0], [201, 0], [201, 322], [0, 322], [0, 278], [32, 278], [32, 165], [0, 165]] });
+    cast.furn = pinIt("furn");
+    cast.fac = pinIt("fac");
+    var WMD = V ? [260, -90] : [520, 20], WMK = V ? 1.3 : 1.35;
+    cast.wm = makeCast("fac", "weapons-maker", WMD, WMK * 594 / 601);
+    cast.wmk = makeCast("fac", "weapons-maker-kiss", WMD, WMK);
+    cast.sold = pinIt("sold");
+    cast.soup = pinIt("soup");
+    cast.ship = pinIt("ship", { label: { text: "WELCOME", at: [176, 62], width: 170, size: 42 } });
+    cast.ship2 = pinIt("ship", { eyes: [[43, 29], [56, 29], [290, 34], [304, 34]], eyeSize: 24, smoke: [[45, 6], [298, 8]], clip: [[0, 0], [100, 0], [118, 50], [130, 30], [148, 88], [170, 58], [190, 92], [208, 44], [226, 60], [240, 0], [346, 0], [346, 321], [0, 321]] });
+    cast.post = pinIt("post", { label: { text: "THEY DESERVE IT", at: [96, 34], width: 160, size: 40 } });
+    cast.ball = pinIt("ball");
+    // the convoy, big, on the way to the WELCOME sign
+    var VEH = V ? { plane: [-110, -520, 1.5], truck: [190, -390, 1.3], war: [-250, -330, 1.3] } : { plane: [-500, -290, 1.8], truck: [-90, 280, 1.7], war: [-540, 190, 1.8] };
+    cast.war = makeCast("ship", "warship", [VEH.war[0], VEH.war[1]], VEH.war[2]);
+    cast.plane = makeCast("ship", "war-plane", [VEH.plane[0], VEH.plane[1]], VEH.plane[2]);
+    cast.truck = makeCast("ship", "war-truck", [VEH.truck[0], VEH.truck[1]], VEH.truck[2]);
+    // mushrooms: the first on "are,", then one every so often for the rest of the lap
+    var MUSHK = V ? 1.3 : 1.2, mushAt = PINS.ship.d;
+    ["m0", "m1", "m2", "m3"].forEach(function (m) {
+      cast[m] = { art: "mushroom", x: S.ship[0] + mushAt[0], y: S.ship[1] + mushAt[1] + 321 * PINS.ship.k / 2, anchor: "bottom", pivot: "bottom", scale: MUSHK, hidden: true };
+    });
+
+    // ── The string: eight strands, each a run of clipped pieces of one red thread, turned on its first pin ──
+    var STR_K = 1.5, STR_N = 6, strands = [];
+    RING.forEach(function (k, i) {
+      var a = PT[k], b = PT[RING[(i + 1) % 8]], L = Math.hypot(b[0] - a[0], b[1] - a[1]) / STR_K, ang = Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI, names = [];
+      for (var j = 0; j < STR_N; j++) {
+        var p0 = L * j / STR_N, p1 = L * (j + 1) / STR_N, nm = "st" + i + "_" + j;
+        names.push(nm);
+        cast[nm] = { art: "red-string", x: a[0], y: a[1], anchor: [0, 12.5], pivot: [0, 12.5], scale: STR_K, clip: [[p0, 0], [p1, 0], [p1, 25], [p0, 25]], hidden: true };
+        add({ at: -1, do: "hinge", who: nm, angle: ang });
+      }
+      strands.push(names);
+    });
+    var drawStrand = function (i, t0, dt) { strands[i].forEach(function (n, j) { add({ at: t0 + j * dt, do: "show", who: n }); }); };
+
+    // ── The inmate ──
+    var IK = V ? 1.4 : 1.6;
+    var stand = function (slot) { return V ? screen(slot, 280, 1065) : screen(slot, 400, 640); };
+    var JK = V ? 1.7 : 2.2, JACK = V ? screen("door", 770, 1090) : screen("door", 1400, 650);
+    cast.jacket = { art: "inmate-jacket", x: JACK[0], y: JACK[1], pivot: "bottom", scale: JK, hidden: true };
+
+    // ── The pins go up: camera, inmate, the string behind him, the push-pin, the picture ──
+    var stop = function (i, on, n, off, who) {
+      var t = cue(on, n) + off, k = RING[i];
+      add({ at: t, do: "camera", view: k, dur: 0.38 });
+      if (i > 0) drawStrand(i - 1, t, 0.055);
+      add({ at: t + 0.34, do: "pop", who: "pin" + i });
+      who.forEach(function (w) { add({ at: t + 0.34, do: "stamp", who: w, from: 1.35, shake: 5 }); });
+      add({ at: t + 0.34, do: "nudge", who: "inmate", by: [34, -34] });
+    };
+    var walk = function (slot, on, n, off) { add({ at: cue(on, n) + off, do: "move", who: "inmate", to: stand(slot), dur: 0.38 }); };
+
+    stop(0, "mine", 1, -0.34, ["miner"]); walk("miner", "mine", 1, -0.34);
+    add({ on: "metal", do: "bob", who: "miner", y: 0, r: 6, speed: 5.5, until: tNot, fade: 0 });
+    stop(1, "refine", 1, -0.34, ["furn"]); walk("furn", "refine", 1, -0.34);
+    add({ on: "alloys,", n: 1, do: "bob", who: "furn", y: 0, r: 3, speed: 3.5, until: tNot, fade: 0 });
+    stop(2, "build", 1, -0.3, ["fac"]); walk("fac", "build", 1, -0.3);
+    add({ on: "shape", do: "stamp", who: "wm", from: 1.35, shake: 3 },
+      { on: "weapons", n: 1, do: "swap", who: "wm", to: "wmk" },
+      { on: "weapons", n: 1, offset: 0.3, do: "bob", who: "wmk", y: 7, r: 2, speed: 3, until: tNot, fade: 0 },
+      { on: "weapons", n: 1, do: "bob", who: "fac", y: 0, r: 1.2, speed: 6, until: tNot, fade: 0 });
+    stop(3, "train", 1, -0.34, ["sold"]); walk("sold", "train", 1, -0.34);
+    add({ on: "millions", n: 2, do: "bob", who: "sold", y: 18, r: 0, speed: 5, until: tNot, fade: 0 });
+    stop(4, "feed", 1, -0.34, ["soup"]); walk("soup", "feed", 1, -0.34);
+    add({ on: "clothe", do: "bob", who: "soup", y: 0, r: 3, speed: 4, until: tNot, fade: 0 });
+    // the convoy: he leaves the frame and waits at the poster
+    stop(5, "build", 2, -0.34, ["ship"]); walk("post", "build", 2, -0.34);
+    add({ on: "ships", do: "slideIn", who: "war", from: "left", dist: 1300 },
+      { on: "planes", do: "slideIn", who: "plane", from: "left", dist: 1300 },
+      { on: "trucks", do: "slideIn", who: "truck", from: "left", dist: 1300 },
+      { on: "move", do: "shiver", who: ["war", "plane", "truck"], dur: 1.8, amp: 3, rot: 1 },
+      { on: "move", do: "move", who: ["war", "plane", "truck"], by: [V ? 50 : 170, 0], dur: 1.9 },
+      { on: "are,", offset: 0.1, do: "boom", shake: 22, flash: 0.2 },
+      { on: "are,", offset: 0.1, do: "camera", view: "blast", dur: 0.12 },
+      { on: "are,", offset: 0.1, do: "pop", who: ["war", "plane", "truck"], out: true },
+      { on: "are,", offset: 0.1, do: "pop", who: "m0", squash: true },
+      { on: "are,", offset: 0.1, do: "swap", who: "ship", to: "ship2" },
+      { on: "are,", offset: 0.1, do: "char", who: "ship2" },
+      { on: "are,", offset: 0.75, do: "blink", who: "ship2" },
+      { on: "convince", offset: 0.1, do: "pop", who: "m0", out: true });
+    stop(6, "convince", 1, -0.3, ["post"]);
+    add({ on: "deserve", do: "bob", who: "post", y: 0, r: 2.5, speed: 3, until: tNot, fade: 0 });
+    stop(7, "then", 1, -0.34, ["ball"]); walk("ball", "then", 1, -0.34);
+    add({ on: "vote", do: "hop", who: "ball", height: 26 },
+      { on: "vote", offset: 0.25, do: "hop", who: "ball", height: 26 },
+      { on: "pay", do: "bob", who: "ball", y: 8, r: 2, speed: 4, until: tNot, fade: 0 });
+
+    // ── The bills: out of the ballot box, up to pin 8, then round and round; every one stops dead on "NOT" ──
+    var tPay = cue("pay"), BK = V ? 1.3 : 1.6, BOX = rel("ball", PINS.ball.d), LOOP = [7, 0, 1, 2, 3, 4, 5, 6].map(function (i) { return PT[RING[i]]; });
+    var lerp = function (a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; };
+    var billNames = [];
+    for (var bi = 0; bi < 8; bi++) {
+      var bn = "bill" + bi; billNames.push(bn);
+      cast[bn] = { art: "bill-war", x: BOX[0], y: BOX[1], scale: BK, hidden: true };
+      var bt = tPay + bi * 0.26, here = BOX, seg = 0;
+      add({ at: bt, do: "pop", who: bn });
+      add({ at: bt, do: "bob", who: bn, y: 10, r: 8, speed: 6, phase: bi, until: tNot, fade: 0 });
+      while (bt < tNot) {
+        var next = LOOP[seg % 8], dur = seg === 0 ? 0.45 : Math.max(0.17, 0.62 * Math.pow(0.93, seg));
+        if (bt + dur > tNot) { next = lerp(here, next, (tNot - bt) / dur); dur = tNot - bt; }
+        add({ at: bt, do: "move", who: bn, to: next, dur: dur });
+        here = next; bt += dur; seg++;
+      }
+    }
+    drawStrand(7, tPay + 0.6, 0.08);
+
+    // ── Annually, forever: the whole wall ──
+    add({ on: "annually,", offset: -0.25, do: "camera", view: "wide", dur: 1.9 });
+    add({ on: "annually,", offset: -0.25, do: "move", who: "inmate", to: V ? rel("door", [290, 190]) : rel("door", [330, 110]), dur: 1.5, ease: "smooth" });
+    add({ on: "annually,", offset: -0.25, do: "pop", who: "calendar", squash: true });
+    // the machine runs faster now the whole wall is watching
+    add({ on: "forever.", do: "bob", who: ["miner", "furn", "fac", "ball", "wmk"], y: 6, r: 3, speed: 9, until: tNot, fade: 0 });
+    add({ on: "forever.", do: "bob", who: dollNames, y: 16, r: 0, speed: 10, until: tNot, fade: 0 });
+    // more mushrooms on the village
+    var booms = [cue("forever.") + 0.2, cue("single") + 0.1, cue("coordinated") + 0.2];
+    booms.forEach(function (bt2, i) {
+      var m = "m" + (i + 1);
+      add({ at: bt2, do: "pop", who: m, squash: true }, { at: bt2, do: "shake", y: 5, frames: 3 });
+      if (bt2 + 1.0 < tNot) add({ at: bt2 + 1.0, do: "pop", who: m, out: true });
+    });
+    add({ at: cue("forever.") + 0.8, do: "blink", who: "ship2" }, { at: cue("largest"), do: "blink", who: "ship2" });
+    // the calendar sheds pages in a blizzard; those in the air stop in the air
+    var pageK = V ? 0.8 : 1.0, pageNames = [], tp = cue("annually,") + 0.05, pgI = 0;
+    while (tp < tNot) {
+      var pn = "pg" + pgI; pageNames.push(pn);
+      cast[pn] = { art: "calendar-page", x: CAL[0], y: CAL[1], scale: pageK * (1 + (pgI % 3) * 0.2), hidden: true };
+      var drift = ((pgI * 977) % 2400 - 1200) * (V ? 0.6 : 1), fall = 800 + (pgI * 431) % 900, spin = ((pgI * 47) % 2 ? 1 : -1) * (90 + (pgI * 53) % 160), life = 1.5;
+      var u = Math.min(1, (tNot - tp) / life);
+      add({ at: tp, do: "show", who: pn },
+        { at: tp, do: "move", who: pn, by: [drift * u, fall * u], turn: spin * u, dur: life * u });
+      if (u === 1) add({ at: tp + life, do: "hide", who: pn });
+      tp += tp < cue("forever.") ? 0.4 : 0.15;
+      pgI++;
+    }
+    // first prize
+    var ROS = V ? rel("door", [190, -340]) : rel("door", [-90, -180]);
+    cast.rosette = { art: "rosette", x: ROS[0], y: ROS[1], scale: V ? 1.6 : 1.7, pivot: "center", hidden: true, label: { text: "1ST", at: [126, 128], width: 130, size: 80 } };
+    add({ on: "largest", offset: 0.1, do: "stamp", who: "rosette", from: 1.6, shake: 6 });
+
+    // ── NOT: the switch ──
+    var SWK = V ? 2.0 : 2.4, SWP = V ? rel("door", [260, -40]) : rel("door", [620, -50]);
+    add({ on: "Ending", do: "camera", view: "sw", dur: 0.5 },
+      { on: "Ending", do: "move", who: "inmate", to: [SWP[0] - (V ? 106 : 121), SWP[1] + (V ? 335 : 382)], dur: 0.5, ease: "smooth" },
+      { on: "war", n: 2, do: "pop", who: "swOn", squash: true },
+      { on: "NOT", do: "swap", who: "swOn", to: "swOff" },
+      { on: "NOT", do: "nudge", who: "inmate", by: [0, 36] },
+      { on: "NOT", do: "wash", dur: 0.04, above: pageNames[pageNames.length - 1] },
+      { on: "doing", do: "camera", view: "wide", dur: 0.04 },
+      { on: "doing", do: "banner", id: "notdoing", text: "NOT DOING ANY OF THAT", x: views.wide[0], y: S.miner[1], size: V ? 300 : 420, width: V ? 3100 : 4700, pad: 160, tilt: -3 });
+    // the inmate rocks on his heels the whole time, and stops with everything else
+    var START = V ? [views.dolls[0] + 280 - 540, views.dolls[1] + 1065 - 960] : [views.dolls[0] + 400 - 960, views.dolls[1] + 640 - 540];
+    cast.inmate = { art: "inmate-pin", x: START[0], y: START[1], pivot: "bottom", scale: IK, hidden: true };
+    cast.swOn = { art: "light-switch-on", x: SWP[0], y: SWP[1], scale: SWK, hidden: true };
+    cast.swOff = { art: "light-switch-off", x: SWP[0], y: SWP[1], scale: SWK, hidden: true };
+    add({ on: "Anyway,", offset: 0.55, do: "show", who: "jacket" },
+      { at: -1, do: "move", who: "jacket", by: [0, -1200], dur: 0.001 },
+      { on: "Anyway,", offset: 0.55, do: "move", who: "jacket", by: [0, 1200], dur: 0.2 },
+      { on: "Anyway,", offset: 0.8, do: "hop", who: "jacket", height: 120 },
+      { on: "Anyway,", offset: 1.1, do: "hop", who: "jacket", height: 50 },
+      { on: "here's", offset: 0.6, do: "bob", who: "jacket", y: 0, r: 2, speed: 2, until: "Nobody" },
+      { on: "Nobody", do: "hide", who: "jacket" },
+      { on: "War", offset: 0.1, do: "show", who: "inmate" },
+      { on: "together", do: "bob", who: "inmate", y: 8, r: 2.5, speed: 4, until: tNot, fade: 0 },
+      { on: "forever.", do: "bob", who: "inmate", y: 14, r: 4, speed: 8, until: "Ending", fade: 0.1 });
+
+    // z-order: wall, door, frieze, pictures, string, bills, pins, pages, [wash], the man and his switch (kept in colour)
+    var order = ["wall", "orderly", "door", "arm", "doorF", "calendar", "trip", "bird", "carrier", "bomb", "xx"]
+      .concat(dollNames, ["miner", "furn", "fac", "wm", "wmk", "sold", "soup", "ship", "ship2", "war", "plane", "truck", "m0", "m1", "m2", "m3", "post", "ball", "rosette"]);
+    strands.forEach(function (s) { order = order.concat(s); });
+    order = order.concat(billNames);
+    RING.forEach(function (k, i) {
+      var p = PT[k];
+      cast["pin" + i] = { art: "push-pin", x: p[0], y: p[1], anchor: [45, 45], scale: V ? 0.85 : 0.8, hidden: true };
+      order.push("pin" + i);
+    });
+    order = order.concat(pageNames, ["jacket", "swOn", "swOff", "inmate"]);
+    var ordered = {};
+    order.forEach(function (n) { if (!cast[n]) throw new Error("no cast " + n); ordered[n] = cast[n]; });
+    Object.keys(cast).forEach(function (n) { if (!ordered[n]) throw new Error("not ordered " + n); });
+
+    KIT.collage({ id: ID, seed: 402, plate: V ? [-2200, -2400, 3300, 5000] : [-3100, -1700, 5000, 2600], views: views, view: "door", cast: ordered, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,307 @@
+{
+  "id": "short-121-apocalypses",
+  "title": "Short: 121 apocalypses",
+  "storyboard": "storyboards/part-13-one-percent-treaty.md",
+  "audio": {
+    "start": 1546.56,
+    "end": 1594.42
+  },
+  "scenes": [
+    {
+      "id": "every-leader-at-once",
+      "file": "compositions/scenes/short-121-apocalypses/every-leader-at-once.html",
+      "cue": "But",
+      "approx": 1546.6,
+      "layer": "B"
+    },
+    {
+      "id": "thats-the-treaty",
+      "file": "compositions/scenes/short-121-apocalypses/thats-the-treaty.html",
+      "cue": "That's",
+      "approx": 1556.5,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "That's",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "craziness",
+          "expr": "eyeroll",
+          "rest": "closed",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "second",
+          "expr": "neutral",
+          "rest": "smile",
+          "body": "counting",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "enemies-will-invade",
+      "file": "compositions/scenes/short-121-apocalypses/enemies-will-invade.html",
+      "cue": "But",
+      "approx": 1561.9,
+      "layer": "B"
+    },
+    {
+      "id": "one-twenty-one-apocalypses",
+      "file": "compositions/scenes/short-121-apocalypses/one-twenty-one-apocalypses.html",
+      "cue": "And",
+      "approx": 1574.5,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "every-leader-at-once",
+      "cue": "use",
+      "sfx": "woof",
+      "volume": 0.25
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "papers",
+      "offset": 0.2,
+      "sfx": "yelp",
+      "volume": 0.2
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "country",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "simultaneously",
+      "offset": 0.05,
+      "sfx": "whistle",
+      "volume": 0.3
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "redirect",
+      "sfx": "slam",
+      "volume": 0.5
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "percent",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "military",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "clinical",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "trials.",
+      "sfx": "ding",
+      "volume": 0.3
+    },
+    {
+      "scene": "every-leader-at-once",
+      "cue": "it.",
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "thats-the-treaty",
+      "cue": "treaty.",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "thats-the-treaty",
+      "cue": "treaty.",
+      "offset": 0.75,
+      "sfx": "thunk",
+      "volume": 0.3
+    },
+    {
+      "scene": "thats-the-treaty",
+      "cue": "craziness",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "thats-the-treaty",
+      "cue": "objection,",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "enemies",
+      "sfx": "whoosh",
+      "volume": 0.25
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "invade",
+      "sfx": "whoosh",
+      "volume": 0.25
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "us!\".",
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "cuts",
+      "sfx": "huff",
+      "volume": 0.35
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "same",
+      "offset": 0.27,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "increases*,",
+      "sfx": "bell",
+      "volume": 0.3
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "increases*,",
+      "offset": 0.05,
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "pointed",
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "enemies-will-invade",
+      "cue": "pointed",
+      "offset": 0.25,
+      "sfx": "slam",
+      "volume": 0.3
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "war,",
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "keep",
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "hundred",
+      "n": 1,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "twenty-two",
+      "n": 1,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "minus",
+      "offset": 0.15,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "one",
+      "n": 2,
+      "offset": 0.22,
+      "sfx": "slam",
+      "volume": 0.55
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "apocalypses.",
+      "sfx": "yelp",
+      "volume": 0.3
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "civilization",
+      "sfx": "boom",
+      "volume": 0.6
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "you",
+      "n": 3,
+      "offset": 0.15,
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "twelve",
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "forty-one,",
+      "offset": 0.05,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "settling",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "twenty-one",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "instead",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "one-twenty-one-apocalypses",
+      "cue": "twenty-two",
+      "n": 2,
+      "sfx": "yelp",
+      "volume": 0.3
+    }
+  ]
+}

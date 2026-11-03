@@ -1,0 +1,360 @@
+<template id="bought-the-other-thing-template">
+  <!-- bought-the-other-thing · collage (Part 10, scenes 2 to 8 as one plate). The bit: one shopping trip. The till rings
+       $2.72 TRILLION; YOU strain behind a giant cart with a missile in the seat. One crate is ENOUGH; 122 climb off
+       the top and a spare falls and goes off (YOU are charred for the rest of the trip). A robot, an invisible jet that
+       flattens a hospital, a Space Force guard who cannot see the saucer behind him, and a mystery crate splay the wheels.
+       Wilson prints nothing into it; the cart rolls through the town, and the loaf on the paycheck shrinks to a crumb. At
+       the till a receipt unrolls past Rome and the pyramids for 38,000 years; on the counter, unbought, one ticket for clinical trials. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="bought-the-other-thing" data-width="1920" data-height="1080" data-start="0" data-duration="63.7">
+    <div id="bought-the-other-thing-weave"></div>
+    <div id="bought-the-other-thing-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // The trip runs left to right on the ground line G: till and press, cart, hospital, town, counter, then the receipt.
+    var ID = "bought-the-other-thing", V = KIT.V, G = 1000, CX = 3600;   // CX: the cart's left edge where it parks
+    var T = function (w, n) { return KIT.cue(ID, w, n); };
+    var FLOOR = G - 352, RIM = G - 680;                                  // the basket's floor and front rim
+    var YOU_K = 0.934, YOU_X = CX - 800 + 1054 * YOU_K / 2;              // YOU's fists (art 985, 50) grip the handle
+    var PX = 1900, TRAY = [PX + 277 * 1.75, G - 117 * 1.75];             // the press and its tray's end (art 565, 320)
+    var HX = 5250, FAM = 6400, HOUSES = [7300, 8200, 9100], LAST = 10100, HAM = 9590;
+    var CTR = 11452, CTOP = G - 445, TILL = 11700, BOTTLE = 11200, ENDYOU = 10740;
+    var cy = function (s) { return G - 440 / s; };
+    var views = V ? {
+      till0: [1300, cy(0.9), 0.9], cart: [CX + 400, cy(0.85), 0.85], crate: [CX + 570, G - 720, 1.6],
+      wide: [CX + 900, cy(0.118), 0.118], load: [CX + 420, cy(0.75), 0.75], hosp: [HX - 150, cy(0.8), 0.8], flat: [HX, cy(1.1), 1.1],
+      guard: [CX + 420, G - 1000, 0.85], wilson: [1760, cy(0.75), 0.75], tray: [2300, 560, 1.4],
+      r1: [5750, cy(0.8), 0.8], r2: [6250, cy(0.8), 0.8], r3: [7300, cy(0.8), 0.8], r4: [8200, cy(0.8), 0.8], r5: [9100, cy(0.8), 0.8],
+      ham: [9750, cy(0.8), 0.8], pay: [9280, cy(0.95), 0.95], till: [11450, cy(0.8), 0.8],
+      roman: [14300, cy(0.85), 0.85], pyr: [16700, cy(0.85), 0.85], cave: [19300, cy(0.85), 0.85], end: [11190, cy(0.88), 0.88], endc: [11190, cy(0.92), 0.92],
+    } : {
+      till0: [1800, 560, 1], cart: [CX + 40, 540, 1], crate: [CX + 570, G - 770, 2],
+      wide: [CX + 2800, -4800, 0.09], load: [CX + 200, 480, 0.82], hosp: [HX - 250, 520, 0.95], flat: [HX, G - 260, 1.5],
+      guard: [CX + 420, G - 900, 0.82], wilson: [1750, 520, 0.95], tray: [2300, 540, 1.7],
+      r1: [5700, 520, 0.95], r2: [6250, 520, 0.95], r3: [7300, 520, 0.95], r4: [8200, 520, 0.95], r5: [9100, 520, 0.95],
+      ham: [9800, 520, 0.95], pay: [9120, 560, 1], till: [11400, 470, 0.95],
+      roman: [14300, 520, 0.95], pyr: [16700, 520, 0.95], cave: [19100, 520, 0.95], end: [11000, 470, 1], endc: [11060, 490, 1.12],
+    };
+
+    var cast = {}, beats = [], i;
+    var add = function (b) { beats.push(b); };
+    var more = function (list) { beats = beats.concat(list); };
+
+    // ── Behind everything: clouds for the wide shot, the press, the till, the town ──
+    [[-1500, -2600, 11], [8000, -3900, 13], [-2600, -6800, 14], [9500, -8000, 12], [1500, -9900, 10]].forEach(function (c, n) {
+      cast["cl" + n] = { art: "cloud", x: c[0], y: c[1], scale: c[2] };
+    });
+    cast.till0 = { art: "cash-register", x: 1300, y: G, anchor: "bottom", scale: 2.4 };
+    cast.press = { art: "printing-press", x: PX, y: G, anchor: "bottom", scale: 1.75, hidden: true };
+    cast.wilson = { art: "woodrow-wilson", x: PX - 640, y: G, anchor: "bottom", scale: 1.5, hidden: true };
+    cast.web = { art: "cobweb", x: TRAY[0] - 90, y: TRAY[1] - 170, scale: 1.1, hidden: true };
+    cast.moth = { art: "moth", x: TRAY[0] - 170, y: TRAY[1] - 30, scale: 0.8, hidden: true };
+    cast.saucer = { art: "saucer", x: CX + 90, y: G - 1320, anchor: "bottom", scale: 1, hidden: true };
+    cast.hospital = { art: "hospital", x: HX, y: G, anchor: "bottom", pivot: "bottom", scale: 2 };
+    cast.tracks = { art: "tyre-tracks", x: HX, y: G - 62, scale: 1.7, hidden: true };
+    cast.jet = { art: "war-plane", x: HX + 40, y: G - 620, scale: 2.6, hidden: true };
+    cast.house0 = { art: "house", x: FAM + 60, y: G, anchor: "bottom", pivot: "bottom", scale: 2 };
+    cast.fam = { art: "family-wave", x: FAM - 80, y: G, anchor: "bottom", pivot: "bottom", scale: 1.7 };
+    cast.rub0 = { art: "rubble", x: FAM + 60, y: G, anchor: "bottom", scale: 1.2, hidden: true };
+    HOUSES.forEach(function (x, n) {
+      cast["house" + (n + 1)] = { art: "house", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: 2 };
+      cast["rub" + (n + 1)] = { art: "rubble", x: x, y: G, anchor: "bottom", scale: 1.2, hidden: true };
+    });
+    cast.houseL = { art: "house", x: LAST, y: G, anchor: "bottom", pivot: "bottom", scale: 2 };
+    cast.rubL = { art: "rubble", x: LAST, y: G, anchor: "bottom", scale: 1.2, hidden: true };
+
+    // ── The load: 122 crates, three a row, the lowest in front; the pile leans as it climbs ──
+    var N = 122, COLS = [570, 400, 740, 900], lean = function (r) { return 330 * Math.sin(r / 30 * Math.PI * 1.6); };
+    for (i = N - 1; i >= 0; i--) {
+      var row = Math.floor(i / 4);
+      cast["c" + i] = { art: "crate", x: CX + COLS[i % 4] + lean(row), y: FLOOR - 60 - row * 340, anchor: "bottom", scale: 1.25, hidden: true };
+    }
+    var RIDE = [], UP = [], BILLS = [];                                   // the rows that show in a close shot ride the cart
+    for (i = 0; i < N - 1; i++) (i < 30 ? RIDE : UP).push("c" + i);
+    for (i = 0; i < 10; i++) {
+      BILLS.push("b" + i);
+      cast["b" + i] = { art: "bill-war", x: TRAY[0], y: TRAY[1], scale: 1.1, hidden: true };
+    }
+    cast.robot = { art: "robot-up", x: CX + 330, y: FLOOR + 30, anchor: "bottom", scale: 1.1, hidden: true };
+    cast.guard = { art: "space-guard", x: CX + 660, y: RIM + 10, anchor: "bottom", pivot: "bottom", scale: 1.25, hidden: true };
+    cast.guardSk = { art: "space-guard-skeleton", x: CX + 660, y: RIM + 10, anchor: "bottom", pivot: "bottom", scale: 1.25, hidden: true };
+    cast.missile = { art: "missile", x: CX + 290, y: G - 862 + 300, anchor: "bottom", pivot: "bottom", scale: 0.58, hidden: true };
+    cast.cart = {
+      art: "shopping-cart", x: CX, y: G - 862, anchor: "topleft", scale: 2, hidden: true,
+      pieces: {
+        body: { clip: [[0, 0], [425, 0], [425, 362], [0, 362]] },
+        rw: { clip: [[0, 362], [115, 362], [115, 431], [0, 431]], pivot: [62, 362] },
+        fw: { clip: [[295, 362], [425, 362], [425, 431], [295, 431]], pivot: [340, 362] },
+      },
+    };
+    cast.quake = { art: "quake-crate", x: CX + 540, y: FLOOR - 10, anchor: "bottom", scale: 2.3, hidden: true,
+      label: { text: "?", at: [108, 96], size: 300, width: 150 } };
+    cast.youPush = { art: "you-push", x: YOU_X, y: G, anchor: "bottom", pivot: "bottom", scale: YOU_K, hidden: true,
+      eyes: [[745, 138], [792, 128]], eyeSize: 34, smoke: [[690, 90], [440, 400]] };
+
+    // ── In front of the cart as it passes ──
+    cast.famSk = { art: "family-skeleton", x: FAM - 80, y: G, anchor: "bottom", pivot: "bottom", scale: 1.55, hidden: true };
+    cast.hammer = { art: "hammer-man", x: HAM, y: G, anchor: "bottom", scale: 2.2 };
+    cast.youCert = { art: "you-cert", x: 9000, y: G, anchor: "bottom", scale: 1.25, hidden: true,
+      eyes: [[114, 143], [144, 143]], eyeSize: 22 };
+    cast.check = { art: "paycheck", x: 8997, y: G - 734, scale: 0.86, hidden: true };
+    cast.loaf = { art: "loaf", x: 8997, y: G - 772, anchor: "bottom", pivot: "bottom", scale: 1.5, hidden: true };
+    cast.pigeon = { art: "city-pigeon", x: 10200, y: 60, scale: 1.5, hidden: true, faces: "left", points: { beak: [18, 42] } };
+
+    // ── The counter ──
+    cast.counter = { art: "deli-counter", x: CTR, y: G, anchor: "bottom", scale: 2 };
+    cast.bottle = { art: "receipt", x: BOTTLE, y: CTOP + 8, anchor: "bottom", pivot: "bottom", scale: 1.7, label: { text: "CLINICAL TRIALS", at: [101, 26], width: 165, size: 22 } };
+    cast.till2 = { art: "cash-register", x: TILL, y: CTOP + 8, anchor: "bottom", pivot: "bottom", scale: 1.65 };
+    cast.youEnd = { art: "you-think", x: ENDYOU, y: G, anchor: "bottom", scale: 1.25, hidden: true,
+      eyes: [[122, 62], [150, 62]], eyeSize: 22, smoke: [[60, 40]] };
+
+    // ── The receipt, and what it runs past ──
+    cast.pyramid = { art: "pyramid", x: 16700, y: G - 140, anchor: "bottom", scale: 3.6 };
+    cast.drop = { art: "till-receipt", x: TILL + 245, y: G - 30, anchor: "bottom", scale: 1.3, hidden: true };
+    var TILES = [];
+    for (i = 0; i < 8; i++) {
+      TILES.push("rc" + i);
+      cast["rc" + i] = { art: "receipt", x: 12580 + i * 940, y: G - 130, scale: 5, hidden: true,
+        label: { text: "CLINICAL TRIALS: 1 YEAR", at: [96, 25], size: 96, width: 150 } };
+    }
+    cast.roman = { art: "roman-soldier", x: 14350, y: G - 70, anchor: "bottom", scale: 2 };
+    cast.caveman = { art: "caveman-scientist", x: 19350, y: G - 70, anchor: "bottom", pivot: "bottom", scale: 2.2 };
+    cast.mushroom = { art: "mushroom", x: CX - 900, y: G, anchor: "bottom", scale: 8, hidden: true };
+
+    // Everything that rides the cart.
+    var LOAD = ["cart", "youPush", "missile", "robot", "guard", "guardSk", "quake"].concat(RIDE, BILLS);
+
+    // ── 0 s: the till rings, and rings. Then the cart comes in, empty, with a missile in the seat ──
+    add({ at: 0, do: "wash", id: "paper", blend: "normal", color: "#E4D4AE", dur: 0.01 });
+    var ring = function (n, on) {
+      return { on: on, do: "banner", id: "ring" + n, text: "$2.72 TRILLION",
+        x: (V ? 1300 : 2120) + n * 26, y: (V ? -40 : 390) + n * 62, size: V ? 170 : 140, width: V ? 980 : 820, color: "ink", pad: 60, tilt: [-3, 2, -2][n] };
+    };
+    more([
+      ring(0, "trillion"), { on: "trillion", do: "hop", who: "till0", height: 60 },
+      ring(1, "every"), { on: "every", do: "hop", who: "till0", height: 60 },
+      ring(2, "year"), { on: "year", do: "hop", who: "till0", height: 60 },
+      { on: "stuff", do: "camera", view: "cart", dur: 0.8 },
+      { on: "stuff", do: "show", who: ["cart", "youPush"] },
+      { at: 0, do: "move", who: ["cart", "youPush"], by: [-260, 0], dur: 0.02 },
+      { on: "stuff", do: "move", who: ["cart", "youPush"], by: [260, 0], dur: 1.9, ease: "smooth" },
+      { on: "stuff", do: "bob", who: "youPush", y: 7, r: 1.2, speed: 2.2, until: T("alive") },
+      { on: "make", do: "pop", who: "missile", squash: true },
+      { on: "make", offset: 0.3, do: "bob", who: "missile", y: 8, r: 7, speed: 3, until: T("there", 2) },
+      { on: "alive", do: "hop", who: "missile", height: 40 },
+    ]);
+
+    // ── 9 s: one crate; the camera gets in close on its grin. ENOUGH. Then 121 more, off the top ──
+    var C0Y = FLOOR - 580;                                                // the top of the first crate
+    var line = function (x0, x1, y) { return KIT.collage.axes({ box: [x0, y, x1, G], x: [0, 1, 1], y: [0, 1, 1] }); };
+    more([
+      { on: "there", n: 1, do: "hide", who: ["till0", "ring0", "ring1", "ring2"] },
+      { on: "twelve", do: "slideIn", who: "c0", from: "top", dist: 1300, over: 18 },
+      { on: "thousand", do: "camera", view: "crate", dur: 1.6 },
+      { on: "warheads", do: "shiver", who: "c0", dur: 0.5, amp: 3, rot: 1 },
+      { on: "enough", do: "camera", view: V ? "cart" : "load", dur: 0.6 },
+      { on: "enough", offset: 0.2, do: "rule", chart: line(CX - 1200, CX + 2300, C0Y), y: 1, id: "enoughLine", dur: 0.35 },
+      { on: "to", n: 2, do: "banner", id: "enough", text: "ENOUGH", x: V ? CX + 800 : CX + 1250, y: C0Y - 75, size: 130, width: V ? 430 : 560, pad: 50, tilt: -2 },
+    ]);
+    var t0 = T("one", 1), t1 = T("dont");
+    for (i = 1; i < N; i++) add({ at: t0 + (t1 - t0) * Math.pow((i - 1) / (N - 2), 0.62), do: "pop", who: "c" + i });
+    more([
+      { on: "and", n: 2, do: "camera", view: "wide", dur: 2.9 },
+      { on: "just", do: "hide", who: "enough" },
+    ]);
+    // The line again, thick enough to see from up here, and the word.
+    var FAT = [];
+    for (i = 0; i < 12; i++) {
+      FAT.push("fat" + i);
+      add({ on: "just", do: "rule", chart: line(CX - 3600, CX + 5200, C0Y - 36 + i * 6), y: 1, id: "fat" + i, dur: 0 });
+    }
+    more([
+      { on: "first", do: "banner", id: "enoughBig", text: "ENOUGH", x: CX + 3100, y: C0Y - 520, size: V ? 560 : 620, width: V ? 2600 : 3000, pad: 170, tilt: -2 },
+      { on: "twentyone", do: "stamp", id: "spares", text: "121 SPARES", x: V ? CX + 3100 : CX + 4400, y: -5400, size: V ? 620 : 900, width: V ? 3300 : 6200, tilt: -5 },
+      // the top one falls, all the way down, and goes off. YOU are charred for the rest of the trip
+      { on: "dont", do: "drop", who: "c" + (N - 1), dist: 10600, dur: 0.45, drift: -4200, spin: 200 },
+      { on: "take", offset: 0.25, do: "boom", shake: 90, flash: 0.28 },
+      { on: "take", offset: 0.25, do: "pop", who: "mushroom" },
+      { on: "take", offset: 0.25, do: "char", who: ["youPush", "youCert", "youEnd"] },
+      { on: "there", n: 2, offset: -0.12, do: "pop", who: "mushroom", out: true },
+      { on: "there", n: 2, do: "hide", who: ["enoughBig", "spares", "enoughLine"].concat(FAT) },
+      { on: "ai", offset: 0.5, do: "hide", who: UP },
+    ]);
+
+    // ── 19 s: back down. He is black, he blinks; the missile is fine. The gadgets pile on and the wheels give ──
+    var sag = function (on, offset, angle, sink) {
+      more([
+        { on: on, offset: offset, do: "hinge", who: "cart.rw", angle: angle, frames: 2 },
+        { on: on, offset: offset, do: "hinge", who: "cart.fw", angle: -angle, frames: 2 },
+        { on: on, offset: offset, do: "move", who: LOAD, by: [0, sink], dur: 0.17 },
+      ]);
+    };
+    more([
+      { on: "there", n: 2, do: "camera", view: "load", dur: 0.8 },
+      { on: "ai", do: "blink", who: "youPush" },
+      { on: "murderbots", offset: -0.1, do: "slideIn", who: "robot", from: "top", dist: 1500, over: 30 },
+      { on: "murderbots", offset: 0.5, do: "blink", who: "youPush" },
+    ]);
+    sag("murderbots", 0.2, 8, 8);
+    // The jet is invisible. It shows for two drawings, twice; then a hospital goes flat under nothing.
+    more([
+      { on: "there", n: 3, do: "camera", view: "hosp", dur: 0.6 },
+      { on: "jets", do: "show", who: "jet" }, { on: "jets", offset: 0.12, do: "hide", who: "jet" },
+      { on: "cost", do: "show", who: "jet" }, { on: "cost", offset: 0.12, do: "hide", who: "jet" },
+      { on: "hospitals", do: "flatten", who: "hospital" },
+      { on: "hospitals", offset: 0.1, do: "camera", view: "flat", dur: 0.35 },
+      { on: "hospitals", offset: 0.05, do: "shake", y: 22, frames: 5 },
+      { on: "hospitals", offset: 0.1, do: "pop", who: "tracks" },
+      { on: "hospitals", offset: 0.55, do: "show", who: "jet" },
+      { on: "hospitals", offset: 0.55, do: "move", who: "jet", to: [CX + 620, FLOOR - 420], dur: 0.25, arc: 200 },
+      { on: "hospitals", offset: 0.8, do: "hide", who: "jet" },
+    ]);
+    sag("hospitals", 0.8, 12, 12);
+    // Space Force. He looks up; the saucer comes down behind him on its string. ALIENS: 0. The robot sees to him.
+    more([
+      { on: "there", n: 4, do: "camera", view: "guard", dur: 0.6 },
+      { on: "space", do: "slideIn", who: "guard", from: "top", dist: 1500, over: 26 },
+      { on: "zero", do: "slideIn", who: "saucer", from: "top", dist: 900, over: 16 },
+      { on: "aliens", do: "banner", id: "zero", text: "ALIENS: 0", x: V ? CX + 420 : CX + 1240, y: V ? G - 1700 : G - 1240, size: V ? 150 : 110, width: V ? 800 : 560, pad: 50, tilt: -4 },
+      { on: "attacking", do: "glow", who: "guard", dur: 0.4, size: 760 },
+      { on: "attacking", do: "shiver", who: "guard", dur: 0.5, amp: 14, rot: 3 },
+      { on: "attacking", do: "nudge", who: "robot", by: [50, -20] },
+      { on: "you", n: 1, offset: 0.1, do: "boom", shake: 14, flash: 0.14 },
+      { on: "you", n: 1, offset: 0.1, do: "swap", who: "guard", to: "guardSk" },
+    ]);
+    sag("space", 0.3, 12, 12);
+    // A crate with a crank and a question. It does something. Probably.
+    more([
+      { on: "and", n: 4, do: "camera", view: "load", dur: 0.6 },
+      { on: "and", n: 4, do: "hide", who: ["zero", "saucer"] },
+      { on: "some", do: "slideIn", who: "quake", from: "top", dist: 1700, over: 24 },
+      { on: "machine", do: "shiver", who: "quake", dur: 2.3, amp: 9, rot: 2 },
+      { on: "probably", do: "shake", x: 16, y: 10, frames: 22 },
+      { on: "probably", do: "shiver", who: RIDE.slice(0, 15).concat(["robot", "guardSk", "missile"]), dur: 1.8, amp: 7, rot: 3 },
+      { on: "probably", offset: 0.5, do: "drop", who: "guardSk", dist: 1300, drift: 300, spin: 70, dur: 0.7 },
+    ]);
+    sag("probably", 0, 16, 34);
+
+    // ── 33 s: Wilson prints it into the cart, out of an empty tray ──
+    more([
+            { on: "since", offset: -0.06, do: "show", who: ["press", "wilson"] },
+      { on: "since", do: "camera", view: "wilson", dur: 0.55 },
+      { on: "trillion", n: 2, do: "banner", id: "print", text: "$170 TRILLION", x: V ? 1760 : 2240, y: V ? -250 : 150, size: V ? 180 : 130, width: V ? 1240 : 980, color: "ink", pad: 60, tilt: -3 },
+      { on: "out", do: "camera", view: "tray", dur: 0.7 },
+      { on: "out", do: "hide", who: "print" },
+      { on: "out", do: "pop", who: "web" },
+      { on: "nothing", do: "show", who: "moth" },
+      { on: "nothing", do: "move", who: "moth", by: [260, -480], dur: 1.3, turn: 16 },
+      { on: "nothing", do: "bob", who: "moth", y: 26, r: 18, speed: 7, until: T("murdering") },
+    ]);
+    for (var tp = T("since") + 0.3; tp < T("spent", 1); tp += 0.42) {
+      add({ at: tp, do: "nudge", who: "wilson", by: [24, 18] });
+      add({ at: tp, do: "nudge", who: "press", by: [0, 7] });
+    }
+    BILLS.forEach(function (n, k) {
+      var at = T("printed") + k * 0.36;
+      more([
+        { at: at, do: "pop", who: n },
+        { at: at + 0.08, do: "move", who: n, to: [CX + 330 + k * 52, FLOOR - 200 - (k % 3) * 70], dur: 0.8, arc: 260, turn: k % 2 ? 14 : -12 },
+      ]);
+    });
+
+    // ── 39 s: the cart rolls through the town, one lurch a word; each lurch crushes something ──
+    var roll = function (on, offset, dx, dur, view) {
+      more([
+        { on: on, offset: offset, do: "move", who: LOAD, by: [dx, 0], dur: dur, ease: "smooth" },
+        { on: on, offset: offset, do: "camera", view: view, dur: dur },
+      ]);
+    };
+    roll("spent", 0, 1500, 1.4, "r1");
+    add({ on: "spent", do: "bob", who: "youPush", y: 8, r: 1.4, speed: 3, until: T("consequently") });
+    roll("murdering", -0.25, 700, 0.5, "r2");
+    more([
+      { on: "murdering", offset: 0.15, do: "flatten", who: ["fam", "house0"] },
+      { on: "murdering", offset: 0.15, do: "shake", y: 16, frames: 4 },
+      { on: "murdering", offset: 0.3, do: "hide", who: ["fam", "house0"] },
+      { on: "murdering", offset: 0.3, do: "pop", who: "rub0" },
+      { on: "three", do: "pop", who: "famSk", squash: true },
+      { on: "three", offset: 0.4, do: "bob", who: "famSk", y: 6, r: 3, speed: 3, until: T("destroying") },
+      { on: "million", do: "banner", id: "toll", text: "310,000,000", x: V ? 6250 : 6450, y: V ? -60 : 140, size: V ? 210 : 190, width: V ? 1120 : 1240, pad: 70, tilt: -4, shake: 12 },
+      { on: "destroying", do: "hide", who: "toll" },
+    ]);
+    ["many", "valuable", "things"].forEach(function (w, k) {
+      roll(w, -0.45, 900, 0.45, "r" + (k + 3));
+      more([
+        { on: w, offset: -0.1, do: "flatten", who: "house" + (k + 1) },
+        { on: w, offset: -0.1, do: "shake", y: 14, frames: 3 },
+        { on: w, offset: 0.05, do: "hide", who: "house" + (k + 1) },
+        { on: w, offset: 0.05, do: "pop", who: "rub" + (k + 1) },
+      ]);
+    });
+    // One man has spent his entire life on this house, and has one nail left. He does not stop.
+    roll("those", 0, 1000, 2.2, "ham");
+    more([
+      { on: "building", do: "flatten", who: "houseL" },
+      { on: "building", do: "shake", y: 20, frames: 5 },
+      { on: "building", offset: 0.15, do: "hide", who: "houseL" },
+      { on: "building", offset: 0.15, do: "pop", who: "rubL" },
+    ]);
+    for (var th = T("those"); th < T("one", 4) + 1; th += 0.62) add({ at: th, do: "nudge", who: "hammer", by: [18, 16] });
+
+    // ── 49 s: the paycheck. A whole loaf on it; a crumb on it; then a pigeon ──
+    more([
+      { on: "consequently", do: "camera", view: "pay", dur: 0.6 },
+      { on: "consequently", do: "swap", who: "youPush", to: "youCert" },
+      { on: "your", n: 2, do: "pop", who: "check" },
+      { on: "paycheck", do: "pop", who: "loaf", squash: true },
+      { on: "now", do: "move", who: "loaf", by: [0, 0], scale: 0.14, dur: T("less") - T("now"), ease: "smooth" },
+      { on: "now", do: "shiver", who: "check", dur: T("less") - T("now"), amp: 2, rot: 1 },
+      { on: "less", do: "stamp", id: "less", text: "97% LESS", x: V ? 9280 : 8530, y: V ? -300 : 420, size: V ? 200 : 150, width: V ? 900 : 560, tilt: -5 },
+      { on: "paycheck", offset: 1.4, do: "blink", who: "youCert" },
+      { on: "due", do: "show", who: "pigeon" },
+      { on: "due", do: "move", who: "pigeon", to: [9130, G - 860], dur: 0.8, arc: -60, ease: "smooth" },
+      { on: "aforementioned", do: "blink", who: "youCert" },
+      { on: "destruction", do: "nudge", who: "pigeon", by: [40, 20] },
+      { on: "destruction", offset: 0.15, do: "move", who: "loaf", to: "pigeon.beak", dur: 0.06 },
+      { on: "destruction", offset: 0.3, do: "move", who: "pigeon", by: [1300, -1100], dur: 0.9 },
+      { on: "destruction", offset: 0.9, do: "blink", who: "youCert" },
+    ]);
+
+    // ── 56 s: the till. $170 TRILLION; the receipt goes out the door and past everyone who ever lived ──
+    more([
+      { on: "one", n: 4, do: "camera", view: "till", dur: 0.55 },
+      { on: "one", n: 4, do: "hide", who: "less" },
+      { on: "one", n: 4, do: "move", who: LOAD, by: [250, 0], dur: 0.55, ease: "smooth" },
+      { on: "trillion", n: 3, do: "hop", who: "till2", height: 40 },
+      { on: "trillion", n: 3, do: "banner", id: "total", text: "$170 TRILLION", x: V ? 11450 : 11000, y: V ? -220 : 190, size: V ? 190 : 150, width: V ? 1150 : 1100, color: "ink", pad: 60, tilt: -2 },
+      { on: "equal", do: "show", who: "drop" },
+      { on: "equal", do: "camera", view: "roman", dur: 0.65 },
+      { on: "thirtyeight", do: "camera", view: "pyr", dur: 0.55 },
+      { on: "thousand", n: 2, do: "camera", view: "cave", dur: 0.65 },
+      { on: "years", do: "stamp", id: "years", text: "38,000 YEARS", x: V ? 19300 : 18580, y: V ? -130 : 260, size: V ? 230 : 180, width: V ? 1080 : 860, tilt: -4 },
+      { on: "government", do: "hop", who: "caveman", height: 50 },
+      { on: "trial", do: "hop", who: "caveman", height: 50 },
+      { on: "government", do: "hide", who: "total" },
+      // back to the counter, past the whole receipt. YOU are there; so is the one thing nobody rang up
+      { on: "government", do: "hide", who: ["youCert", "check", "loaf"] },
+      { on: "government", do: "show", who: "youEnd" },
+      { on: "spending", do: "camera", view: "end", dur: 0.7 },
+      { on: "spending", offset: 0.7, do: "camera", view: "endc", dur: 2 },
+      { on: "spending", offset: 0.6, do: "glow", who: "bottle", dur: 1.2, size: 380 },
+      { on: "bought", do: "blink", who: "youEnd" },
+      { on: "other", do: "hop", who: "bottle", height: 26 },
+      { on: "thing", offset: 0.25, do: "blink", who: "youEnd" },
+    ]);
+    TILES.forEach(function (n, k) { add({ at: T("equal") + 0.05 + k * 0.2, do: "pop", who: n }); });
+
+    KIT.collage({ id: ID, seed: 1010, plate: [-6500, -12500, 21500, 6200], views: views, view: "till0", cast: cast, beats: beats });
+  </script>
+</template>

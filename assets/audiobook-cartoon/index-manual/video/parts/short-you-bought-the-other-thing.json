@@ -1,0 +1,318 @@
+{
+  "id": "short-you-bought-the-other-thing",
+  "title": "Short: you bought the other thing",
+  "storyboard": "storyboards/part-10-cost-of-war.md",
+  "audio": {
+    "start": 1038.0,
+    "end": 1101.7
+  },
+  "scenes": [
+    {
+      "id": "bought-the-other-thing",
+      "file": "compositions/scenes/short-you-bought-the-other-thing/bought-the-other-thing.html",
+      "cue": "Humans",
+      "approx": 1038.0,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "trillion",
+      "sfx": "cash-register",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "every",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "year",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "stuff",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "make",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "twelve",
+      "offset": 0.25,
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "enough",
+      "offset": 0.2,
+      "sfx": "stamp",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "one",
+      "n": 1,
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "hundred",
+      "n": 2,
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "twenty-two",
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "times,",
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "just",
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "first",
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "twenty-one",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "don't",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "take).",
+      "offset": 0.25,
+      "sfx": "boom",
+      "volume": 0.6
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "murder-bots.",
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "jets",
+      "sfx": "airplane",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "hospitals.",
+      "sfx": "slam",
+      "volume": 0.5
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "Space",
+      "offset": 0.3,
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "aliens",
+      "sfx": "stamp",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "attacking",
+      "sfx": "zap",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "some",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "machine",
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "(probably).",
+      "sfx": "hum",
+      "volume": 0.4
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "(probably).",
+      "offset": 0.1,
+      "sfx": "boom",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "(probably).",
+      "offset": 0.6,
+      "sfx": "clank",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "Since",
+      "offset": 0.2,
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "printed",
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "trillion",
+      "n": 2,
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "nothing",
+      "sfx": "crickets",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "murdering",
+      "offset": 0.15,
+      "sfx": "slam",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "million",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "many",
+      "offset": -0.1,
+      "sfx": "slam",
+      "volume": 0.4
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "valuable",
+      "offset": -0.1,
+      "sfx": "slam",
+      "volume": 0.4
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "things",
+      "offset": -0.1,
+      "sfx": "slam",
+      "volume": 0.4
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "those",
+      "sfx": "hammer",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "entire",
+      "sfx": "hammer",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "lives",
+      "sfx": "hammer",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "building.",
+      "sfx": "slam",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "now",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "less",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "destruction.",
+      "offset": 0.3,
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "trillion",
+      "n": 3,
+      "sfx": "cash-register",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "equal",
+      "sfx": "typewriter",
+      "volume": 0.35
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "years",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "bought-the-other-thing",
+      "cue": "spending.",
+      "sfx": "whoosh",
+      "volume": 0.35
+    }
+  ]
+}

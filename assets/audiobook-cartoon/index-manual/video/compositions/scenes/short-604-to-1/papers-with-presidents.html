@@ -1,0 +1,284 @@
+<template id="papers-with-presidents-template">
+  <!-- papers-with-presidents · collage short (Part 1, scenes 13 to 15 as one plate). The bit: one bill walks down a street
+       of frozen humans, and only what it touches comes alive. A pigeon lands on a man who does not notice. The bill struts
+       in, winks, and on "pretend" drains to blank; the crowd squeezes its eyes shut and it inks back, and the matron
+       pretends so hard her head comes off. It walks on past the patient, the scientist and the hungry man, each lunging
+       after it, each a grinning skeleton behind it (food grows behind the last one; he doesn't look). It reaches the
+       Weapons Maker, who springs to life: the bill is hammered into a bomb that grows until it goes off in his face. War:
+       the saluting soldiers char and still salute, and the blast throws out more bills. The globe burns, and bills pour
+       out of it into the Fat Cat's hat. Payoff: the camera climbs a stack of 604 bills to a balloonist and the same
+       pigeon, then drops to one lonely medicine bill. 604 : 1. One war bill falls off the top and flattens it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="papers-with-presidents" data-width="1920" data-height="1080" data-start="0" data-duration="55.65">
+    <div id="papers-with-presidents-weave"></div>
+    <div id="papers-with-presidents-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+    // The street, left to right on the ground line G (plate px). Xp, Xs, Xh are where the bill's walk puts it just past each person on their cue.
+    var C = V ? { idler: 1760, painter: 2090, matron: 2900, lamp: 3210 } : { idler: 1610, painter: 1980, matron: 2880, lamp: 3160 };
+    var BAKER = 300, SWEEPER = 1100, STOP = 2400;
+    var Xp = 3644, Xs = 5885, Xh = 7840, Xw = 9535, Xwar = 11850, Xg = 13700, Xc = V ? 14500 : 14700, T = V ? 15150 : 15450;
+    var cy = function (s) { return G - (V ? 420 : 380) / s; };
+    var view = function (x, s) { return [x, cy(s), s]; };
+    var art = function (name, x, k, extra) { var a = { art: name, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: k }; for (var e in extra || {}) a[e] = extra[e]; return a; };
+    // the same left edge as another cut-out (so a swap keeps the feet where they were)
+    var leftOf = function (name, k, left) { return left + SZ[name][0] * k / 2; };
+    // a point on a cut-out placed with art()
+    var at = function (name, x, k, p) { return [x + (p[0] - SZ[name][0] / 2) * k, G - (SZ[name][1] - p[1]) * k]; };
+
+    // The tower: 604 bills, 16 px apart.
+    var TK = 3.4, STEP = 16, TOPY = G - 603 * STEP - SZ["bill-war-flat"][1] * TK, TOWER = [];
+    for (var i = 0; i < 604; i++) TOWER.push([T + Math.sin(i * 1.7) * 16 + Math.sin(i * 0.31) * 26, G - i * STEP]);
+
+    var views = V ? {
+      open: view(BAKER, 0.95), open2: view(SWEEPER, 0.95), ride: view(2050, 0.95), crowd: view(2500, 0.62),
+      patient: view(Xp + 250, 0.95), sci: view(Xs + 300, 0.95), hungry: view(Xh + 300, 0.95),
+      wm: view(Xw + 400, 0.85), war: view(Xwar + 70, 0.72), globe: view(14030, 0.72), base: view(T - 350, 0.72),
+      top: [T, TOPY + 310, 1], floor: view(T + 520, 0.95),
+    } : {
+      open: view(720, 1), open2: view(780, 1.03), ride: view(2050, 1), crowd: view(2380, 0.9),
+      patient: view(Xp + 600, 1), sci: view(Xs + 500, 1), hungry: view(Xh + 400, 1),
+      wm: view(Xw + 330, 1), war: view(Xwar, 1), globe: view(14200, 1), base: view(T - 350, 1),
+      top: [T, TOPY + 330, 1], floor: view(T + 650, 1),
+    };
+
+    // ── The cast ──
+    var BK = 2.6, HERO = ["bill", "wink", "ghost", "blank"], hk = function (n) { return BK * SZ["bill-plain"][1] / SZ[n][1]; };
+    var BILL0 = V ? 150 : -500, ANVIL = at("weapons-maker-anvil", Xw, 1.4, [240, 292]);
+    var PR = 2.35, PS = 2.2, SR = 2.05, SS = 2.05, HR = 2.05, HS = 2.1;
+    var pLeft = Xp - SZ.patient[0] * 1.9 / 2, sLeft = Xs - SZ["scientist-flask"][0] * 1.1 / 2, hLeft = Xh - SZ["hungry-man"][0] * 1.2 / 2;
+    var MK = 1.4, MS = SZ["matron-squint"], MW = MS[0], MH = MS[1];
+    // her head and collar come off along this line (art px)
+    var HEADP = [[45, 0], [300, 0], [290, 150], [255, 180], [135, 180], [120, 165], [45, 165]], BODYP = [[0, 165], [120, 165], [135, 180], [255, 180], [290, 150], [MW, 150], [MW, MH], [0, MH]];
+    var cast = {
+      // the frozen street
+      baker: art("baker", BAKER, 1.3),
+      sweeper: art("sweeper", SWEEPER, 1.3),
+      web: { art: "cobweb", x: V ? SWEEPER + 120 : 725, y: G - (V ? 520 : 590), scale: V ? 1.05 : 1.7, pivot: [270, 10], hidden: true },
+      pigeon: { art: "city-pigeon", x: SWEEPER - 30, y: G - SZ.sweeper[1] * 1.3 + 12, anchor: "bottom", scale: 0.62, hidden: true },
+      idler: art("idler", C.idler, 1.3), idlerS: art("idler-squint", C.idler, 1.3 * SZ.idler[1] / SZ["idler-squint"][1], { hidden: true }),
+      painter: art("painter", C.painter, 1.3), painterS: art("painter-squint", C.painter, 1.3 * SZ.painter[1] / SZ["painter-squint"][1], { hidden: true }),
+      lamp: art("lamplighter", C.lamp, 1.15), lampS: art("lamplighter-squint", C.lamp, 1.15 * SZ.lamplighter[1] / SZ["lamplighter-squint"][1], { hidden: true }),
+      matron: art("matron", C.matron, MK),
+      mBody: art("matron-squint", C.matron, MK * SZ.matron[1] / MH, { clip: BODYP, hidden: true }),
+      mHead: art("matron-squint", C.matron, MK * SZ.matron[1] / MH, { clip: HEADP, pivot: [190, 95], hidden: true }),
+      // the patient, the scientist, the hungry man: frozen, lunging, dead
+      pat: art("patient", Xp, 1.9),
+      patR: art("patient-reach", leftOf("patient-reach", PR, pLeft), PR, { hidden: true }),
+      patX: art("patient-skeleton-reach", leftOf("patient-skeleton-reach", PS, pLeft), PS, { hidden: true }),
+      sci: art("scientist-flask", Xs, 1.1),
+      sciR: art("scientist-reach", leftOf("scientist-reach", SR, sLeft), SR, { hidden: true }),
+      sciX: art("scientist-skeleton-reach", leftOf("scientist-skeleton-reach", SS, sLeft + 90), SS, { hidden: true }),
+      w0: art("wheat", Xh - (V ? 270 : 470), 1.7, { hidden: true }),
+      w1: art("wheat", Xh - (V ? 170 : 330), 1.5, { hidden: true }),
+      w2: art("wheat", Xh - (V ? 60 : 190), 1.8, { hidden: true }),
+      man: art("hungry-man", Xh, 1.2),
+      manR: art("hungry-reach", leftOf("hungry-reach", HR, hLeft), HR, { hidden: true }),
+      manX: art("hungry-skeleton-reach", leftOf("hungry-skeleton-reach", HS, hLeft + 40), HS, { hidden: true }),
+      // the Weapons Maker and his bomb
+      wm: art("weapons-maker-anvil", Xw, 1.4, { eyes: [[180, 52]], smoke: [[150, 14]], eyeSize: 26 }),
+      bomb: art("bomb", Xw + 660, 2.4, { hidden: true }),
+      mush1: art("mushroom", Xw + 660, 1.7, { hidden: true }),
+      // the war
+      mush2: art("mushroom", Xwar + 480, 1.45, { hidden: true }),
+      mush3: art("mushroom", Xwar + 60, 1.2, { hidden: true }),
+      tank: art("tank", Xwar - (V ? 260 : 590), 1.5),
+      troops: art("soldiers", Xwar + 400, 2.2, { eyes: [[57, 36], [68, 36], [115, 36], [128, 36], [177, 36], [190, 36], [242, 37], [257, 37], [307, 36], [320, 36]].map(function (e) { return [e[0] * 2, e[1] * 2]; }), smoke: [[60, 6], [180, 6], [310, 6]], eyeSize: 15 }),
+      // the globe and the Fat Cat
+      globe: { art: "globe-worried", x: Xg, y: G - 40, anchor: "bottom", pivot: "bottom", scale: 2.9 },
+      cat: art("fat-cat-catch", Xc, 1.75),
+      // the climb
+      cloudA: { art: "cloud-puff", x: T + 720, y: G - 2300, scale: 2.2 },
+      cloudB: { art: "cloud-puff", x: T - 730, y: G - 3900, scale: 2.4 },
+      plane: { art: "war-plane", x: T + 740, y: G - 5200, scale: 2.2 },
+      cloudC: { art: "cloud-puff", x: T - 720, y: G - 7000, scale: 2.6 },
+      balloon: { art: "balloon", x: T + (V ? 390 : 660), y: TOPY + (V ? 80 : 300), scale: V ? 0.85 : 1.25, pivot: "bottom" },
+      pigeon2: { art: "city-pigeon", x: T - 150, y: TOPY + 30, anchor: "bottom", scale: 0.85 },
+      // the one lonely bill
+      med: art("bill-med", T + (V ? 700 : 1120), 2),
+      arm: { art: "bill-med", x: T + (V ? 960 : 1380), y: G - 50, anchor: [198, 97], pivot: [176, 97], scale: 2, clip: [[168, 72], [226, 72], [226, 124], [168, 124]], hidden: true },
+      faller: { art: "bill-war-flat", x: T + (V ? 700 : 1120), y: -900, scale: 3.1, hidden: true },
+    };
+    // the hero, last so it walks in front of everyone
+    cast.bill = art("bill-plain", BILL0, BK, { hidden: true });
+    cast.wink = art("bill-wink", BILL0, hk("bill-wink"), { hidden: true });
+    cast.ghost = art("bill-ghost", BILL0, hk("bill-ghost"), { hidden: true });
+    cast.blank = art("bill-blank", BILL0, hk("bill-blank"), { hidden: true });
+
+    var beats = [];
+    var add = function (b) { beats.push(b); };
+    var strut = function (from, until) { HERO.forEach(function (h) { add({ at: from, do: "bob", who: h, y: 22, r: 7, speed: 6, phase: 1, until: until, fade: 0.05 }); }); };
+
+    // ── Stillness: nobody does anything; a pigeon settles on one of them ──
+    add({ at: 0.3, do: "camera", view: "open2", dur: 5 });
+    add({ on: "discovery", do: "slideIn", who: "pigeon", from: "top", dist: 900, over: 10 });
+    add({ on: "species", do: "pop", who: "web", squash: true });
+
+    // ── It struts in; whoever it passes works like mad, and stops dead ──
+    add({ at: 5.55, do: "show", who: "bill" });
+    add({ at: 5.55, do: "move", who: HERO, by: [STOP - BILL0, 0], dur: 4.85 });
+    strut(5.55, 10.4);
+    add({ on: "small", do: "shiver", who: "baker", dur: 1.1, amp: 12, rot: 3 });
+    add({ on: "paper", n: 1, do: "shiver", who: "sweeper", dur: 1.3, amp: 4, rot: 10 });
+    add({ on: "paper", n: 1, do: "move", who: "pigeon", by: [1500, -1100], dur: 0.8, turn: -15 });
+    add({ on: "paper", n: 1, offset: 0.8, do: "hide", who: "pigeon" });
+    add({ on: "paper", n: 1, do: "camera", view: "ride", dur: 1.6 });
+    add({ on: "them.", do: "swap", who: "bill", to: "wink" });
+    add({ on: "them.", offset: 0.5, do: "swap", who: "wink", to: "bill" });
+    add({ on: "these", n: 1, offset: -0.1, do: "camera", view: "crowd", dur: 0.8 });
+
+    // ── "Money": heads snap. "Pretend": the ink drains. They squeeze their eyes shut and it inks back. Her head comes off. ──
+    add({ on: "money", do: "hinge", who: ["idler", "painter", "idlerS", "painterS"], angle: 6 });
+    add({ on: "money", do: "hinge", who: ["matron", "lamp", "lampS", "mBody", "mHead"], angle: -6 });
+    add({ on: "pretend", do: "swap", who: "bill", to: "ghost" });
+    add({ on: "value", n: 1, offset: 0.1, do: "swap", who: "ghost", to: "blank" });
+    add({ on: "becomes", offset: -0.1, do: "swap", who: "idler", to: "idlerS" });
+    add({ on: "becomes", offset: -0.1, do: "swap", who: "painter", to: "painterS" });
+    add({ on: "becomes", offset: -0.1, do: "swap", who: "lamp", to: "lampS" });
+    add({ on: "becomes", offset: -0.1, do: "swap", who: "matron", to: "mBody" });
+    add({ on: "becomes", offset: -0.1, do: "show", who: "mHead" });
+    add({ on: "becomes", do: "shiver", who: ["idlerS", "painterS", "lampS", "mBody", "mHead"], dur: 2.4, amp: 4, rot: 2 });
+    add({ on: "real", do: "swap", who: "blank", to: "ghost" });
+    add({ on: "value", n: 2, do: "swap", who: "ghost", to: "bill" });
+    add({ on: "if", do: "glow", who: "bill", dur: 1.5, size: 420 });
+    add({ on: "hard", do: "move", who: "mHead", by: [0, -470], turn: 720, dur: 0.5, ease: "smooth" });
+    add({ on: "enough.", offset: 0.3, do: "move", who: "mHead", by: [0, 470], turn: 900, dur: 0.25 });
+    add({ on: "enough.", offset: 0.55, do: "shake", y: 8, frames: 3 });
+
+    // ── It walks on. It does not slow down. ──
+    add({ at: 17.35, do: "move", who: HERO, by: [Xw + 610 - STOP, 0], dur: 14.25 });
+    strut(17.35, 31.6);
+    add({ on: "these", n: 2, do: "camera", view: "patient", dur: 1.0 });
+    add({ on: "requires", n: 1, do: "swap", who: "pat", to: "patR" });
+    add({ on: "requires", n: 1, offset: 0.1, do: "nudge", who: "patR", by: [40, 0] });
+    add({ on: "papers", n: 3, offset: 0.15, do: "swap", who: "patR", to: "patX" });
+    add({ on: "papers", n: 3, offset: 0.15, do: "boom", shake: 7, flash: 0.08 });
+    add({ on: "Cure", offset: -0.65, do: "camera", view: "sci", dur: 0.9 });
+    add({ on: "very", do: "swap", who: "sci", to: "sciR" });
+    add({ on: "very", offset: 0.1, do: "nudge", who: "sciR", by: [40, 0] });
+    add({ on: "papers", n: 4, offset: 0.15, do: "swap", who: "sciR", to: "sciX" });
+    add({ on: "papers", n: 4, offset: 0.15, do: "boom", shake: 7, flash: 0.08 });
+    add({ on: "Feed", offset: -0.47, do: "camera", view: "hungry", dur: 0.9 });
+    add({ on: "requires", n: 3, do: "swap", who: "man", to: "manR" });
+    add({ on: "requires", n: 3, offset: 0.1, do: "nudge", who: "manR", by: [40, 0] });
+    // food grows right behind him; he doesn't look
+    add({ on: "grows", do: "pop", who: "w0", squash: true });
+    add({ on: "grows", offset: 0.15, do: "pop", who: "w1", squash: true });
+    add({ on: "for", n: 1, do: "pop", who: "w2", squash: true });
+    add({ on: "free).", offset: 0.25, do: "swap", who: "manR", to: "manX" });
+    add({ on: "free).", offset: 0.25, do: "boom", shake: 7, flash: 0.08 });
+
+    // ── The Weapons Maker springs to life: the bill goes under his hammer and comes out a bomb, which grows ──
+    add({ on: "But", offset: -0.34, do: "camera", view: "wm", dur: 0.7 });
+    add({ on: "these", n: 3, do: "hop", who: "wm", height: 90 });
+    add({ on: "these", n: 3, offset: 0.25, do: "shiver", who: "wm", dur: 4.6, amp: 4, rot: 3 });
+    add({ on: "will:", do: "move", who: HERO, to: ANVIL, dur: 0.4, arc: 260, scale: 0.15, turn: 200 });
+    add({ on: "will:", offset: 0.4, do: "hide", who: "bill" });
+    add({ at: 0, do: "move", who: "bomb", by: [0, 0], scale: 0.3, dur: 0.01 });
+    add({ on: "bombs", do: "pop", who: "bomb", squash: true });
+    add({ on: "love", do: "move", who: "bomb", by: [0, 0], scale: 0.48, dur: 0.15 });
+    add({ on: "giving", do: "move", who: "bomb", by: [0, 0], scale: 0.64, dur: 0.15 });
+    add({ on: "papers", n: 7, do: "move", who: "bomb", by: [0, 0], scale: 0.82, dur: 0.15 });
+    add({ on: "for", n: 2, do: "move", who: "bomb", by: [0, 0], scale: 1, dur: 0.15 });
+    add({ on: "this", n: 1, offset: 0.48, do: "hide", who: "bomb" });
+    add({ on: "this", n: 1, offset: 0.48, do: "boom", shake: 24, flash: 0.25 });
+    add({ on: "this", n: 1, offset: 0.48, do: "pop", who: "mush1", squash: true });
+    add({ on: "this", n: 1, offset: 0.48, do: "char", who: "wm" });
+    add({ on: "this", n: 1, offset: 1.0, do: "blink", who: "wm" });
+    add({ on: "this", n: 1, offset: 1.0, do: "shiver", who: "wm", dur: 0.9, amp: 3, rot: 3 });
+
+    // ── War: the tank fires, the soldiers char mid-salute, and the blasts throw out more bills ──
+    add({ on: "Start", offset: -0.15, do: "camera", view: "war", dur: 0.5 });
+    add({ on: "Start", offset: 0.35, do: "nudge", who: "tank", by: [-60, 0] });
+    add({ on: "wars", do: "boom", shake: 20, flash: 0.15 });
+    add({ on: "wars", do: "pop", who: "mush2", squash: true });
+    add({ on: "wars", do: "char", who: "troops" });
+    add({ on: "somehow", offset: 0.1, do: "blink", who: "troops" });
+    add({ on: "makes", offset: -0.2, do: "nudge", who: "tank", by: [-60, 0] });
+    add({ on: "makes", do: "boom", shake: 14, flash: 0.1 });
+    add({ on: "makes", do: "pop", who: "mush3", squash: true });
+    [[Xwar + 480, 340], [Xwar + 60, 420]].forEach(function (m, j) {
+      for (var i = 0; i < 7; i++) {
+        var nm = "wb" + j + i, t0 = 0.0 + i * 0.1 + j * 0.05;
+        cast[nm] = { art: "bill-war-flat", x: m[0], y: m[1], scale: 0.95, hidden: true };
+        add({ on: "more", offset: t0, do: "show", who: nm });
+        add({ on: "more", offset: t0, do: "move", who: nm, by: [1700 + i * 40 - j * 200, 120 - i * 40], dur: 0.9, arc: 300 + i * 40, turn: 200 });
+        add({ on: "more", offset: t0 + 0.9, do: "hide", who: nm });
+      }
+    });
+
+    // ── The globe burns, and bills pour out of it into the Fat Cat's hat ──
+    var FL = [[-310, 560, 0.42], [-190, 400, 0.36], [0, 340, 0.33], [190, 400, 0.36], [320, 560, 0.42]], HAT = at("fat-cat-catch", Xc, 1.75, [169, 175]);
+    var MOUTH = [Xg + (155 - 137) * 2.9, G - 40 - (244 - 170) * 2.9];
+    FL.forEach(function (f, i) {
+      cast["fl" + i] = { art: "flames", x: Xg + f[0], y: f[1], anchor: "bottom", pivot: "bottom", scale: f[2], hidden: true };
+      add({ on: "Destroy", offset: i * 0.14, do: "pop", who: "fl" + i, squash: true });
+      add({ on: "Destroy", offset: i * 0.14, do: "bob", who: "fl" + i, y: 0, r: 7, speed: 7, phase: i * 2 });
+    });
+    add({ on: "more", offset: 0.95, do: "camera", view: "globe", dur: 0.8 });
+    add({ on: "planet", do: "boom", shake: 14, flash: 0.1 });
+    add({ on: "Destroy", do: "shiver", who: "globe", dur: 4.6, amp: 5, rot: 2 });
+    add({ on: "surprisingly", do: "bob", who: "cat", y: 6, r: 2, speed: 5 });
+    add({ on: "profitable", do: "hop", who: "cat", height: 60 });
+    add({ on: "papers", n: 9, do: "hop", who: "cat", height: 60 });
+    for (var s = 0; s < 36; s++) {
+      var st = "st" + s, ts = KIT.cue("papers-with-presidents", "planet") + 0.1 + s * 0.12;
+      cast[st] = { art: "bill-war-flat", x: MOUTH[0], y: MOUTH[1], scale: 0.85, hidden: true };
+      add({ at: ts, do: "show", who: st });
+      add({ at: ts, do: "move", who: st, to: [HAT[0] + (s % 3 - 1) * 16, HAT[1]], dur: 0.6, arc: 350, turn: 240 });
+      add({ at: ts + 0.6, do: "hide", who: st });
+    }
+
+    // ── The tower: it boils up beside him, the camera climbs it, and drops to one lonely bill ──
+    add({ on: "in", n: 2, offset: -0.35, do: "camera", view: "base", dur: 0.8 });
+    var T0 = KIT.cue("papers-with-presidents", "in", 2) + 0.4, T1 = KIT.cue("papers-with-presidents", "six") + 0.9;
+    TOWER.forEach(function (p, i) {
+      var nm = "t" + i, ti = T0 + (T1 - T0) * Math.pow(i / 603, 0.3);
+      cast[nm] = { art: "bill-war-flat", x: p[0], y: p[1] + (i < 603 ? 27 : 0), anchor: "bottom", scale: TK, hidden: true };
+      if (i < 603) cast[nm].clip = [[8, 8], [178, 8], [178, 123], [8, 123]];
+      add({ at: ti, do: "show", who: nm });
+      if (i < 40) add({ at: ti, do: "hop", who: nm, height: 40 });
+    });
+    // the hat overflows onto it
+    for (var o = 0; o < 9; o++) {
+      var ov = "ov" + o, to = T0 - 0.2 + o * 0.13;
+      cast[ov] = { art: "bill-war-flat", x: HAT[0], y: HAT[1], scale: 0.85, hidden: true };
+      add({ at: to, do: "show", who: ov });
+      add({ at: to, do: "move", who: ov, to: [T - 200 + o * 40, 700 - o * 20], dur: 0.45, arc: 220, turn: 200 });
+      add({ at: to + 0.45, do: "hide", who: ov });
+    }
+    add({ on: "six", offset: -0.05, do: "camera", view: "top", dur: 1.5 });
+    add({ on: "papers", n: 10, do: "stamp", id: "s604", text: "604", x: T, y: TOPY + (V ? 340 : 300), size: 330, width: 900, tilt: -6 });
+    add({ on: "papers", n: 10, do: "hop", who: "pigeon2", height: 70 });
+    add({ on: "papers", n: 10, do: "shiver", who: "balloon", dur: 1.0, amp: 8, rot: 6 });
+    add({ on: "for", n: 3, offset: -0.05, do: "camera", view: "floor", dur: 0.75 });
+    add({ on: "one", do: "stamp", id: "ratio", text: "604 : 1", x: T + (V ? 680 : 760), y: V ? 160 : 290, size: V ? 200 : 240, width: V ? 740 : 1300, tilt: -4 });
+    add({ on: "one", offset: 0.1, do: "hop", who: "med", height: 40 });
+    add({ on: "one", offset: 0.45, do: "hop", who: "med", height: 40 });
+    // it looks up; one bill drifts down like a leaf, then drops like an anvil
+    add({ on: "testing", do: "hinge", who: "med", angle: -14, frames: 2 });
+    add({ on: "testing", offset: 0.15, do: "show", who: "faller" });
+    add({ on: "testing", offset: 0.15, do: "move", who: "faller", by: [0, 1200], dur: 1.35, ease: "smooth" });
+    add({ on: "testing", offset: 0.15, do: "bob", who: "faller", y: 0, r: 22, speed: 2.6, until: ["work.", 1, 0.3], fade: 0.05 });
+    add({ on: "work.", offset: 0.32, do: "move", who: "faller", to: [T + (V ? 700 : 1120), G - 190], dur: 0.12 });
+    add({ on: "work.", offset: 0.43, do: "hinge", who: "med", angle: 14 });
+    add({ on: "work.", offset: 0.43, do: "flatten", who: "med" });
+    add({ on: "work.", offset: 0.43, do: "boom", shake: 14, flash: 0 });
+    add({ on: "work.", offset: 0.9, do: "pop", who: "arm" });
+    add({ on: "work.", offset: 1.1, do: "hinge", who: "arm", angle: -28, frames: 2, hold: 0.3 });
+
+    KIT.collage({ id: "papers-with-presidents", seed: 131, plate: [-2500, TOPY - 2500, T + 3000, 3000], views: views, view: "open", cast: cast, beats: beats });
+  </script>
+</template>

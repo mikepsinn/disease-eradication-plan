@@ -1,0 +1,358 @@
+{
+  "id": "short-donut-doctor",
+  "title": "Short: the donut doctor",
+  "storyboard": "storyboards/part-14-decentralized-fda.md",
+  "audio": {
+    "start": 1834.9,
+    "end": 1924.5
+  },
+  "scenes": [
+    {
+      "id": "decision-wheel",
+      "file": "compositions/scenes/short-donut-doctor/decision-wheel.html",
+      "cue": "Treatment",
+      "approx": 1835.0,
+      "layer": "B"
+    },
+    {
+      "id": "grape-soda",
+      "file": "compositions/scenes/short-donut-doctor/grape-soda.html",
+      "cue": "This",
+      "approx": 1849.4,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "This",
+          "expr": "skeptical",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "soda\"",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "word",
+          "expr": "smirk",
+          "rest": "closed",
+          "body": "hands-hips",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "forty-page-insert",
+      "file": "compositions/scenes/short-donut-doctor/forty-page-insert.html",
+      "cue": "Your",
+      "approx": 1857.1,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "decision-wheel",
+      "cue": "picks",
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "donuts",
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "something",
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "something",
+      "sfx": "click",
+      "volume": 0.45,
+      "offset": 0.9
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "whatever",
+      "sfx": "whirr",
+      "volume": 0.3,
+      "offset": -0.25
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "company",
+      "sfx": "thunk",
+      "volume": 0.5,
+      "offset": -0.2
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "vibes.",
+      "sfx": "whirr",
+      "volume": 0.3,
+      "offset": -0.4
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "vibes.",
+      "sfx": "click",
+      "volume": 0.45,
+      "offset": 0.25
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "vibes.",
+      "sfx": "whirr",
+      "volume": 0.35,
+      "offset": 0.62
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "vibes.",
+      "sfx": "click",
+      "volume": 0.5,
+      "offset": 1.34
+    },
+    {
+      "scene": "decision-wheel",
+      "cue": "vibes.",
+      "sfx": "ding",
+      "volume": 0.4,
+      "offset": 1.36
+    },
+    {
+      "scene": "grape-soda",
+      "cue": "which",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "grape-soda",
+      "cue": "grape",
+      "sfx": "squeak",
+      "volume": 0.35,
+      "n": 2,
+      "offset": 0.2
+    },
+    {
+      "scene": "grape-soda",
+      "cue": "grape",
+      "sfx": "splat",
+      "volume": 0.25,
+      "n": 2,
+      "offset": 0.9
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "Your",
+      "sfx": "whirr",
+      "volume": 0.3,
+      "offset": 0.25
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "it:",
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "Outcome",
+      "sfx": "whoosh",
+      "volume": 0.35,
+      "n": 1
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "Food",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "Cigarettes",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "Drugs",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "forty-page",
+      "sfx": "whoosh",
+      "volume": 0.45
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "written",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "having",
+      "sfx": "zap",
+      "volume": 0.45
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "seizures,",
+      "sfx": "zap",
+      "volume": 0.45
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "including",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "television",
+      "sfx": "slam",
+      "volume": 0.55,
+      "offset": -0.1
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "frolicking",
+      "sfx": "boing",
+      "volume": 0.25
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "meadow",
+      "sfx": "boing",
+      "volume": 0.25,
+      "n": 1
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "auctioneer",
+      "sfx": "typewriter",
+      "volume": 0.35
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "\"stroke.\"",
+      "sfx": "crickets",
+      "volume": 0.35,
+      "at": "after"
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "\"death,\"",
+      "sfx": "zap",
+      "volume": 0.4,
+      "offset": 0.15
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "failing",
+      "sfx": "splat",
+      "volume": 0.4
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "\"deceased\"",
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "qualifying).",
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "but",
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "Googled",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "new",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "produce",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "department",
+      "sfx": "splat",
+      "volume": 0.45
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "hopes",
+      "sfx": "squeak",
+      "volume": 0.35,
+      "offset": 0.45
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "comfortable",
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "admitting",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "What",
+      "sfx": "stamp",
+      "volume": 0.6,
+      "n": 5,
+      "offset": -0.12
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "happens.",
+      "sfx": "sparkle",
+      "volume": 0.35,
+      "n": 4,
+      "offset": 0.6
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "rank",
+      "sfx": "stamp",
+      "volume": 0.6
+    },
+    {
+      "scene": "forty-page-insert",
+      "cue": "real",
+      "n": 2,
+      "sfx": "stamp",
+      "volume": 0.5,
+      "offset": 0.6
+    }
+  ]
+}

@@ -57,13 +57,13 @@ The episode is a 1950s atomic-age instructional film. Wishonia hosts it from her
 
 ## 3. The cast
 
-The cast are Victorian engraving cut-outs, hand-tinted, each drawn once under its name in `video/storyboards/ART.md` (which has every cut-out, its poses and states, and its parts). Each human has a small round "check engine" light on the chest that blinks red when a disease starts; greed puts dollar signs in the eyes. The recurring characters:
+The cast are hand-tinted engraving cut-outs, in 1950s clothes unless the role is period, each drawn once under its name in `video/storyboards/ART.md` (which has every cut-out, its poses and states, and its parts). Greed puts dollar signs in the eyes. The recurring characters:
 
 | Name | Look | Parts |
 |---|---|---|
-| `you` | YOU, the viewer: a busy clerk in a bowler with a pocket watch; later charred, bone-legged, a skeleton. | 1, 8, 10, 12 to 14, 17, 19 to 21, 23 to 27 |
+| `you` | YOU, the viewer: a busy office worker in a fedora with a pocket watch; later charred, bone-legged, a skeleton. | 1, 8, 10, 12 to 14, 17, 19 to 21, 23 to 27 |
 | `fat-cat` | The Rich Human: a robber-baron fat cat, egg-shaped, top hat, monocle, walrus mustache, cigar, watch chain. | 1, 4, 5, 8 to 10, 13 to 17, 21 to 23, 25, 26 |
-| `weapons-maker` | A barrel-chested foundry worker, tiny head under a hard hat, cigar, cradling his smiling `baby-missile`. | 1, 2, 4, 6, 7, 11 to 13, 15, 17 to 21, 23 to 26 |
+| `weapons-maker` | A barrel-chested foundry worker, tiny head under a hard hat, cigar, cradling a plain `missile`. | 1, 2, 4, 6, 7, 11 to 13, 15, 17 to 21, 23 to 26 |
 | `politician` | Lantern jaw, a grin full of teeth, slick hair, a wide tie that tints red, blue or teal. | 2 to 7, 11 to 15, 17, 19 to 22, 26 |
 | `lobbyist` | A masked crook: fedora, domino mask, trench coat, gloves, a briefcase with an empty BELIEFS slot. | 5, 15, 17, 19 to 24 |
 | `scientist` | A lab coat, a bun, big glasses and a bubbling flask. | 1, 4 to 7, 9, 11 to 18, 21, 22, 24, 25, 27 |
@@ -73,9 +73,9 @@ The cast are Victorian engraving cut-outs, hand-tinted, each drawn once under it
 | `super-pac` | A rust canvas backpack with a red cape, its SUPER PAC patch sewn over BRIBERY. | 5, 17, 20, 23 |
 | `germ` | A microscope-plate microbe on little legs with a smug grin. | 1, 4, 6 to 10, 14 to 17, 21, 24 to 27 |
 | `bill-war`, `bill-med`, `bill-plain` | Green banknotes on stick legs; the seal (missile, cross or none) is its own piece and flips. | most parts |
-| `patient` | A Victorian invalid with a thermometer, in a gown or an iron bed; then a skeleton. | 1, 5, 11, 12, 14 to 16, 21, 22 |
-| `citizen` | A sheet of everyday Victorians of every build: townsfolk, voters, strangers, crowds. | 1, 6, 14, 18, 20, 23, 24, 26 |
-| `family` | The Victorian family of four on the sofa; charred, then skeletons. | 1, 2, 10, 12 |
+| `patient` | A gaunt 1950s patient in a bathrobe with a thermometer, in a chair or an iron bed; then a skeleton. | 1, 5, 11, 12, 14 to 16, 21, 22 |
+| `citizen` | A sheet of everyday people of every build: townsfolk, voters, strangers, crowds. | 1, 6, 14, 18, 20, 23, 24, 26 |
+| `family` | The 1950s family of three; charred, then skeletons. | 1, 2, 10, 12 |
 | `fda-official` | Bald, glasses, an FDA badge and a magnifying glass. | 12, 14, 15 |
 | `robot` | A clockwork tin robot: hunched over a laptop (cybercrime), or in an army helmet (the pro-war algorithm). | 10, 11, 25, 27 |
 | `optimitron` | A 1970s countertop toaster-oven with a face and two dials, HEALTH and WEALTH; cards pop out like toast. | 14, 17, 22, 23 |
@@ -103,7 +103,7 @@ The shared drawing code is in `video/assets/js/kit.js`, `film.js` and `props/*.j
 - **The film look (`film.js`):** `KIT.film` (the period film), `KIT.studio` (a whole host shot: the set, Wishonia, the console and the push; `KIT.STUDIO` gives the set's positions for each shape), `KIT.iris`, `KIT.camera` (named views over a plate and timed keys), and `KIT.mix`, `KIT.burn` and `KIT.smooth`. Part 2's scenes in `video/compositions/scenes/part-02/` show each kind of shot.
 - **Collage plates (`collage.js`, after `film.js`):** `KIT.collage(spec)` builds a whole plate scene from a cast of cut-outs and a list of beats on spoken words (the moves are in `video/README.md`, "Writing a collage scene"); `KIT.collage.SIZES` holds each cut-out's size.
 - **Both shapes:** every scene is drawn for 16:9 (1920 × 1080) and 9:16 (1080 × 1920); `KIT.V` is true for 9:16.
-- **People:** `KIT.person(o)` (a stereotype human with a chest light, `skeleton` and `charred` options, hats including `uncleSam` and `ushanka`), `KIT.cast(name)` (the recurring characters), `KIT.rig(o)` (a person's pivots and hands); `tools/cast-sheet.mjs` draws the cast.
+- **People:** `KIT.person(o)` (a stereotype human, `skeleton` and `charred` options, hats including `uncleSam` and `ushanka`), `KIT.cast(name)` (the recurring characters), `KIT.rig(o)` (a person's pivots and hands); `tools/cast-sheet.mjs` draws the cast.
 - **Effects:** `KIT.flames`, `KIT.nuke`, `KIT.boom`, `KIT.xray`.
 - **Props:** `KIT.props.<name>` (documented at each function; `tools/props-sheet.mjs` draws them), `KIT.money`, `KIT.reaper`, the eligibility form (`KIT.form`), `KIT.titleScene`.
 - **Text:** `KIT.textWidth` and `KIT.fitText` measure it. Big numbers use Fraunces Black (soft), labels Oswald SemiBold, captions Inter (the fonts and their licenses are in `video/assets/fonts/`). Draw check marks and arrows as SVG; the fonts lack some symbols.

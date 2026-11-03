@@ -1,0 +1,96 @@
+<template id="enemies-will-invade-template">
+  <!-- enemies-will-invade · collage (Part 13, scene 5). Trump and Putin glare over a fence, each in front of a mountain of
+       missiles, the two mountains mirror images. "enemies": across the fence, close on each. "us!": wide, and every missile
+       in both mountains jolts forward. "one": each very bravely hauls one missile off his mountain, knees shaking; "same":
+       they drop it behind them in the same frame. Both mountains look exactly the same. "increases": they cheer as if they
+       had won a war. "pointed": still cheering, they don't see every missile re-aim at them. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="enemies-will-invade" data-width="1920" data-height="1080" data-start="0" data-duration="12.62">
+    <div id="enemies-will-invade-weave"></div>
+    <div id="enemies-will-invade-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, G = 1000, FX = 0, MAN = 480, LS = 1.05;     // the ground, the fence, each man's distance from it, his scale
+    // A mountain: rows of missiles, widest at the bottom, leaning over the fence.
+    var ROWS = V ? 10 : 8, DX = V ? 130 : 205, DY = V ? 225 : 190, HEAP = V ? 760 : 1120, MS = 0.8, AIM = 40, REAIM = 74;
+    var cy = function (s, screen) { return G - (screen - (V ? 960 : 540)) / s; };
+    var WS = V ? 0.46 : 0.53, TS = V ? 0.62 : 0.8;
+    var views = V ? {
+      trump: [-MAN - 40, cy(1.25, 1430), 1.25], putin: [MAN + 40, cy(1.25, 1430), 1.25], wide: [0, cy(WS, 1430), WS], two: [0, cy(TS, 1430), TS],
+    } : {
+      trump: [-760, cy(1, 980), 1], putin: [760, cy(1, 980), 1], wide: [0, cy(WS, 900), WS], two: [0, cy(TS, 960), TS],
+    };
+    var cast = {}, beats = [], left = [], right = [];
+    var pile = function (side, list) {           // side: -1 Trump's, 1 Putin's. Back rows first, so the front rows stand in front.
+      for (var r = ROWS - 1; r >= 0; r--) {
+        var n = ROWS - r;
+        for (var i = 0; i < n; i++) {
+          var name = (side < 0 ? "tm" : "pm") + r + "x" + i;
+          cast[name] = { art: "missile", x: side * HEAP + (i - (n - 1) / 2) * DX, y: G - 170 - r * DY, scale: MS };
+          list.push(name);
+        }
+      }
+    };
+    pile(-1, left); pile(1, right);
+    cast.fence = { art: "picket-fence", x: FX, y: G, anchor: "bottom", pivot: "bottom", scale: 1.7 };
+    cast.trump = { art: "trump", x: -MAN, y: G, anchor: "bottom", pivot: "bottom", scale: LS };
+    cast.putin = { art: "putin", x: MAN, y: G, anchor: "bottom", pivot: "bottom", scale: LS };
+    cast.trumpCheer = { art: "trump-cheer", x: -MAN, y: G, anchor: "bottom", pivot: "bottom", scale: LS, hidden: true };
+    cast.putinCheer = { art: "putin-cheer", x: MAN, y: G, anchor: "bottom", pivot: "bottom", scale: LS, hidden: true };
+    // The one missile he hauls off stands in the mountain's front row until then, and is carried in front of him.
+    cast.tone = { art: "missile", x: -MAN - 250, y: G - 300, scale: MS };
+    cast.pone = { art: "missile", x: MAN + 250, y: G - 300, scale: MS };
+    var carry = function (side) { return [side * MAN, G - 460]; };
+
+    // Every missile leans over the fence from the first frame.
+    left.concat("tone").forEach(function (n) { beats.push({ at: 0, do: "move", who: n, by: [0, 0], turn: AIM, dur: 0.01 }); });
+    right.concat("pone").forEach(function (n) { beats.push({ at: 0, do: "move", who: n, by: [0, 0], turn: -AIM, dur: 0.01 }); });
+
+    beats = beats.concat([
+      // "enemies": from one glare to the other; "us!": wide, and the mountains jolt forward
+      { at: 0.1, do: "shiver", who: "trump", dur: 1.4, amp: 3, rot: 1 },
+      { on: "enemies", do: "camera", view: "putin", dur: 0.4 },
+      { on: "enemies", offset: 0.3, do: "shiver", who: "putin", dur: 1.0, amp: 3, rot: 1 },
+      { on: "invade", do: "camera", view: "wide", dur: 0.45 },
+      { on: "us!\".", do: "nudge", who: left, by: [46, 8] },
+      { on: "us!\".", do: "nudge", who: right, by: [46, 8] },
+      { on: "us!\".", do: "shake", y: 12, frames: 4 },
+      // "one": each bravely hauls one missile off; "same": dropped behind him, in the same frame
+      { on: "Everyone", do: "camera", view: "two", dur: 0.6 },
+      { on: "cuts", do: "move", who: "tone", to: carry(-1), turn: 0, dur: 0.3, arc: 120 },
+      { on: "cuts", do: "move", who: "pone", to: carry(1), turn: 0, dur: 0.3, arc: 120 },
+      { on: "one", n: 1, do: "shiver", who: ["trump", "putin", "tone", "pone"], dur: 1.0, amp: 7, rot: 3 },
+      { on: "same", do: "move", who: "tone", to: [-MAN - 330, G - 120], turn: 90, dur: 0.25, arc: 200 },
+      { on: "same", do: "move", who: "pone", to: [MAN + 330, G - 120], turn: -90, dur: 0.25, arc: 200 },
+      { on: "same", offset: 0.27, do: "shake", y: 8, frames: 2 },
+      // Both mountains look exactly the same. They look. Nothing.
+      { on: "Your", offset: -0.3, do: "camera", view: "wide", dur: 0.6 },
+      // "increases": they cheer as if they had won a war
+      { on: "*increases*,", do: "swap", who: "trump", to: "trumpCheer" },
+      { on: "*increases*,", do: "swap", who: "putin", to: "putinCheer" },
+      { on: "*increases*,", do: "camera", view: "two", dur: 0.35 },
+      { on: "*increases*,", offset: 0.05, do: "stamp", id: "inc", text: "INCREASES", x: 0, y: V ? -500 : 30, size: 230, width: V ? 750 : 1200, tilt: -4 },
+      { on: "because", offset: -0.15, do: "hide", who: "inc" },
+      // "pointed": still cheering, and every missile on both sides re-aims at the other man's head
+      { on: "*increases*,", offset: 0.1, do: "bob", who: "trumpCheer", y: 22, r: 4, speed: 5, fade: 0.1 },
+      { on: "*increases*,", offset: 0.1, do: "bob", who: "putinCheer", y: 22, r: 4, speed: 5, fade: 0.1, phase: 1.4 },
+      { on: "fewer", do: "camera", view: "wide", dur: 0.6 },
+      { on: "pointed", do: "move", who: left, by: [0, 0], turn: REAIM, dur: 0.25 },
+      { on: "pointed", do: "move", who: right, by: [0, 0], turn: -REAIM, dur: 0.25 },
+      { on: "pointed", offset: 0.25, do: "shake", y: 14, frames: 4 },
+    ]);
+
+    KIT.collage({ id: "enemies-will-invade", seed: 512, plate: V ? [-3000, -3500, 3000, 3500] : [-3000, -1800, 3000, 2200], views: views, view: "trump", cast: cast, beats: beats });
+  </script>
+</template>

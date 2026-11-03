@@ -108,7 +108,7 @@ Sound: a quill scratch; a rising slide whistle as the bar climbs; three pops as 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
 | "Your civilization's incentive structure is the psychopath:" | The loop is the culprit. | Wide on the whole sheet: four stations, no arrows yet. The devil's horns drift down and stick in the paper either side of the factory. | The ring now reads as a horned head. |
-| "Weapons manufacturers give politicians papers." | Step 1. | The Weapons Maker steps out of the factory (sign card: LOCKHEED MARTIN), cradling his baby missile. An arrow inks from the factory to the desk, and a brick of war bills rides it. The Politician catches it and stuffs it in his coat. | |
+| "Weapons manufacturers give politicians papers." | Step 1. | The Weapons Maker steps out of the factory (sign card: LOCKHEED MARTIN), cradling his missile. An arrow inks from the factory to the desk, and a brick of war bills rides it. The Politician catches it and stuffs it in his coat. | |
 | "Politicians use the papers to get people to vote for them." | Step 2. | The arrow inks on to the ballot box. The bills fold into campaign posters of his grin and paste themselves up; three voters read them and drop ballots in the box. | |
 | "Voting for them gives them the power" | Step 3. | The arrow inks on to the Capitol. The ballots march out of the box, lift him on their shoulders and set him on the Capitol steps. | |
 | "to give more papers to weapons manufacturers." | | The dome hinges open and a contract of war bills shoots out along the last arrow to the factory. | |
@@ -132,7 +132,7 @@ Sound: a ka-ching as he pockets the brick; two pops as the ballots drop; a creak
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "No individual human in this loop is evil." | Each person is ordinary. | Pull back to the whole ring. At each station its human shrugs: the Weapons Maker, the Politician, the voters. | The baby missile shrugs too. |
+| "No individual human in this loop is evil." | Each person is ordinary. | Pull back to the whole ring. At each station its human shrugs: the Weapons Maker, the Politician, the voters. | The missile shrugs too. |
 | "The loop is evil." | The structure is. | The ring grows a face between the horns: two angry brows, and a fanged grin along the bottom bend. | |
 | "Every politician in it is making the locally rational choice:" | His choice is forced. | The camera travels to the Capitol steps: the Politician, a bill held out to him. | |
 | "take the papers" | Option 1. | He takes it. | |
@@ -174,7 +174,7 @@ Sound: none.
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "benefit the humans inside it." | The loop's own people lose. | The Weapons Maker walks up the lane to his house, cradling the baby missile, and goes in. The front wall is a cutaway: wife, two children, a family portrait. | The door slams. |
+| "benefit the humans inside it." | The loop's own people lose. | The Weapons Maker walks up the lane to his house, cradling the missile, and goes in. The front wall is a cutaway: wife, two children, a family portrait. | The door slams. |
 | "The weapons manufacturers get diseases." | Disease is not choosy. | An engraved germ crawls up his leg. He coughs; the cigar shoots across the room. | |
 | "Their children get diseases." | | Two smaller germs hop onto the children. | |
 | "Everyone they love gets diseases." | | The camera pushes in on the portrait: the Reaper climbs out of the frame, leaving a Reaper-shaped hole, and lets himself out the front door. | He waits outside, leaning on the wall, checking his clipboard. |
@@ -199,7 +199,7 @@ Sound: a door slam; a cough and a pop for the cigar; a pop as the Reaper steps o
 | "If the loop breaks and the redirect happens," | 1% is moved to trials. | Down the lane to the ring: giant scissors snip one arrow. One war bill walks into the gap and comes out the other side with its missile seal flipped to a cross. | The dog skids to a stop at the gap. |
 | "they lose one percent of their doomsday-device revenue" | He keeps 99 bills in 100. | Back at the house: he hugs a stack of exactly 100 war bills. The top one peels off and walks away. | He sobs into a hanky. |
 | "and gain a one point four three times larger economy to sell into," | The economy is 1.43x bigger in 15 years. | On the baseline beside the squeezed house, a second house pops up, 1.43 times as tall, with a new floor and a wing. ×1.43 stamps on it. The family unsquashes and moves in. | A queue of customers with shopping carts lines up at its door. |
-| "plus the ability to invest in the biotech sector" | He can own the new industry. | Across the lane the lab lights up. He slides a bill through its window and gets a share certificate back. | He holds it up next to the baby missile, comparing. |
+| "plus the ability to invest in the biotech sector" | He can own the new industry. | Across the lane the lab lights up. He slides a bill through its window and gets a share certificate back. | He holds it up next to the missile, comparing. |
 | "that absorbs the redirected twenty-seven point two billion dollars a year," | $27.2B a year goes there. | The flipped bills march up the lane into the lab. A tag swings on the line: $27.2 BILLION / YEAR. | |
 | "plus not being dead." | He lives. | The germ falls off him. | The Reaper crosses him off the clipboard, sulks, and slouches off the sheet. |
 
@@ -235,19 +235,19 @@ Sound: a typewriter clatter as the list types; a click per WORSE OFF; an adding-
 - time: 13:24.1 to 13:43.8 (19.7 s)
 - voiceover: "There's literally no voting your way out of this. It doesn't matter which political party is in power. Your "red team" and "blue team" argue about everything except the loop, because they're both inside it. They are all slaves to the same incentive structure, wearing different colored ties."
 - layer: B, plate the-loop
+- bit: **A huge dog chases its tail in a circle, forever.** The tail is knotted war bills and skeletons. Red and blue Politicians ride its back, nose to nose, shouting and shackled to it; the voter who poked it goes round on the tail. In the short this scene, wallpaper-burning-building and better-loop are one plate.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "There's literally no voting your way out of this." | Voting does not leave the loop. | The ballot box at the bottom station, a voter beside it, bills marching past. He squeezes head first into the ballot slot. | He comes out of the back of the box onto the ring and is carried off round it with the bills. |
-| "It doesn't matter which political party is in power." | | The box pops out a Politician like toast. | |
-| "Your "red team" and "blue team"" | The parties are one man in two ties. | His tie tints red. The box pops out a second, the same cut-out; his tie tints blue. | |
-| "argue about everything except the loop," | | They shout nose to nose, speech-bubble cards flipping between them. | |
-| "because they're both inside it." | | Pull back a little: they are standing on the ring. The dog runs under their feet and they both hop it without looking. | |
-| "They are all slaves to the same incentive structure," | The loop owns them both. | A shackle snaps round each man's ankle, chained to the same arrow of the ring. The ring turns and drags them along it. | |
-| "wearing different colored ties." | | The ties flip red, blue, red, blue, faster, until both men are the same purple blur. | The ring drags them under the Capitol and out the other side, still shouting. |
+| "There's literally no voting your way out of this." | Voting does not leave the loop. | Close: the voter holds his ballot up over his head and pokes the dog in the rump, twice. On "this." it turns, the tail takes his ballot, and he goes round. | It does not look round. |
+| "It doesn't matter which political party is in power." | | Pull back: the whole dog, snapping at its tail, spinning like a wheel, the voter hanging off it. | |
+| "Your "red team" and "blue team" argue about everything except the loop," | Same man, two sashes. | Close: a Politician in a red sash lands on its back; one in a blue sash lands facing him. They jab fingers in each other's faces, and don't stop. | |
+| "because they're both inside it." | | Wide: the tail is a ring round them, and they go round in it, upside down, still jabbing. | |
+| "They are all slaves to the same incentive structure," | The loop owns them both. | Close on the ankles: a shackle slams on each, chained into the dog. | |
+| "wearing different colored ties." | | It whirls faster; the sashes flip red, blue, red, blue, faster, to the same purple. | The dog's tongue is out. It never notices. |
 
-Sound: a squeak as he squeezes into the slot; a pop as he comes out; a toaster pop per Politician; a clank for each shackle; a chain rattle as they are dragged.
+Sound: a squeak per poke; a woof and a whoosh on "this."; a thunk as each lands; a clank per shackle; whooshes as it whirls.
 
 ## Scene 11 · wallpaper-burning-building
 
@@ -258,14 +258,15 @@ Sound: a squeak as he squeezes into the slot; a pop as he comes out; a toaster p
 - time: 13:43.8 to 13:48.2 (4.4 s)
 - voiceover: "Switching parties is like changing the wallpaper in a burning building."
 - layer: B, plate living-room
+- bit: **Cut to the same voter papering a burning room, charred, still holding the brush.**
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Switching parties is like changing the wallpaper" | | The voter from red-blue-ties pastes a blue-striped strip over red stripes, right over the fire extinguisher. | He pats it smooth, pleased. |
-| "in a burning building." | | The curtains are on fire. The flames run up the new strip and up his trouser leg. | He chars, still smiling, and starts pasting a red roll over the blue. Then he folds into a heap of ash, and the roll keeps unrolling. |
+| "Switching parties is like changing the wallpaper" | | Close, wall to wall: red stripes, curtain, a brass extinguisher. A blue strip comes down right over the extinguisher; he slaps it down with his brush, pleased. | |
+| "in a burning building." | | The curtain goes up, the strip goes up, the room goes up, and he chars. | Charred, blinking, he goes on pasting. |
 
-Sound: two pats; a whoosh as the flames jump; a bigger whoosh as he goes up.
+Sound: two pats; a whoosh; fire on "building.".
 
 ## Scene 12 · better-loop
 
@@ -276,17 +277,18 @@ Sound: two pats; a whoosh as the flames jump; a bigger whoosh as he goes up.
 - time: 13:48.2 to 14:00.5 (12.3 s)
 - voiceover: "This manual doesn't ask politicians to become better people (that's clearly out of the question). It builds a better loop. You give them MORE papers to do the OPPOSITE thing."
 - layer: B, plate the-loop
+- bit: **Nobody asks the dog to be good.** Back on its back: a halo on a string does nothing but char him. The same string lowers a double brick of papers, the one thing that stops him shouting. The seals flip; the tail goes last, on "cured" (the short runs this plate through "cured diseases" and starts the host shot on "and").
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "This manual doesn't ask politicians to become better people" | | The Politician at his desk. A halo is lowered onto his head on a string; it slides off. | |
-| "(that's clearly out of the question)." | It won't work. | It is lowered again. He grins his widest; the halo shorts out. | He is charred, smoking, hair on end, still grinning. The halo rolls off the sheet. |
-| "It builds a better loop." | Change the loop, not him. | Pull back to the ring. The factory flips over like a card, and on its back is the lab, the Scientist (existing art) in its door. The ring's angry face flips to a smile; the horns pop off. | |
-| "You give them MORE papers" | He is paid more. | Back on the desk: a brick of bills twice the size marches up the arrow into his arms. | |
-| "to do the OPPOSITE thing." | For cures. | Every seal in his arms flips from missile to cross. | Dollar signs light up in his charred eyes, and he hugs the pile. |
+| "This manual doesn't ask politicians to become better people" | | Close: a halo comes down on a string onto the shouting Politician and slides off. He doesn't look up. | |
+| "(that's clearly out of the question)." | It won't work. | It comes down again and shorts out. | Charred, white eyes, still jabbing. |
+| "It builds a better loop. You give them MORE papers" | He is paid more. | The same string, very slowly: a double brick of war bills. On "papers" it lands in his arms and he stops shouting. | |
+| "to do the OPPOSITE thing." | For cures. | Every seal flips from missile to cross. | Dollar signs in his charred eyes. |
+| "Same dog, same tail, but now the tail is made of cured diseases" | The same loop, aimed at cures. | Wide, one more lap; close on the tail of skeletons; on "cured" it is pills and germs knocked out cold. | |
 
-Sound: a falling slide whistle as the halo slides off; a zap and a sizzle; a card flip as the factory turns; a sparkle as the seals flip; a ka-ching on "thing.".
+Sound: a slide whistle for the halo; a zap and a sizzle; a thunk on "papers"; a sparkle on "OPPOSITE"; a ka-ching on "thing."; a woof on "dog"; a pop on "cured".
 
 ## Scene 13 · better-loop-teal-tail
 
@@ -298,12 +300,11 @@ Sound: a falling slide whistle as the halo slides off; a zap and a sizzle; a car
 - voiceover: "Same dog, same tail, but now the tail is made of cured diseases and the dog gets reelected for chasing it."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; smirk-smile + body-idle on "reelected"; sideeye-closed + body-idle on "it."
+- bit: **The dog, REELECTED, chases its tail round the Earth in Wishonia's window.**
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Same dog, same tail," | | In the window, the Democracy Dog runs round Earth like a moon, chasing its tail of war bills and skeletons. | |
-| "but now the tail is made of cured diseases" | The same loop, aimed at cures. | A puff: the tail is now pills, knotted with little germs knocked out cold, X-eyed. | |
-| "and the dog gets reelected for chasing it." | | A REELECTED rosette lands on its collar. It catches its tail and swallows a pill. | It runs faster. Wishonia side-eyes the camera; iris out on her face. |
+| "and the dog gets reelected for chasing it." | | In the window the dog runs round Earth like a moon, tail of pills. On "reelected" a rosette lands on its collar and REELECTED slams in; on "chasing" it runs faster. | Wishonia side-eyes the camera; iris out on her face. |
 
-Sound: a woof; a pop as the tail changes; a bell as the rosette lands; a gulp.
+Sound: a bell on "reelected".

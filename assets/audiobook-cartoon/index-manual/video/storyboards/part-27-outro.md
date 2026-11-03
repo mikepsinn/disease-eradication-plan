@@ -33,7 +33,7 @@ version: v3
   - The seal flip (style bible, gag 2), done by YOU's own hand on the allocation bar.
   - The iris (style bible, gag 6) closes the film on her face.
 - **New art:**
-  - YOU asleep in a wingback armchair with the manual over his face. YOU running. YOU charred black above the waist, bone legs below, bowler on top.
+  - YOU asleep in a wingback armchair with the manual over his face. YOU running. YOU charred black above the waist, bone legs below, fedora on top.
   - The glowing rectangle: a slate slab with two little TV knobs, in three sizes (tray, phone, matchbox). Its screens are code.
   - An office desk, a tear-off calendar. A friend in a deckchair with a lemonade, a sprinkler, a patch of lawn, a grumpy missile, a germ.
   - Fat gold stars on stick legs. The pro-war algorithm: a tin robot in an army helmet with a missile painted on its chest.
@@ -64,7 +64,7 @@ version: v3
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
 | "Thank you so much for taking the time to end war and disease," | Thanks for doing it. | The first frame is Part 26's last: Wishonia side-eyeing the camera, the stamped case file, a puff of saucer exhaust. She turns to a beam and spreads her arms. In the window, YOU sits back on top of Earth on nothing; a wingback armchair slides in under him just in time, and the manual flops open over his face. He is asleep. She presents him with both hands, proud. | On "disease," a snore lifts the manual off his face and it flops back. |
-| "but if at any point you decide you're too busy," | Or, if you are busy, | On "decide" he jolts awake, the manual flies up, and he checks his pocket watch. On "busy," he sprints off the edge of Earth, bone legs clattering. | His bowler hangs in the air for a beat; a hand reaches back into the frame and grabs it. Wishonia puts her hands on her hips. |
+| "but if at any point you decide you're too busy," | Or, if you are busy, | On "decide" he jolts awake, the manual flies up, and he checks his pocket watch. On "busy," he sprints off the edge of Earth, bone legs clattering. | His fedora hangs in the air for a beat; a hand reaches back into the frame and grabs it. Wishonia puts her hands on her hips. |
 
 Sound: a squeak as the chair slides in on "taking"; a snore on "disease,"; a boing as he jolts awake on "decide"; a whistle and a clatter of bone on "busy,".
 
@@ -180,7 +180,7 @@ Sound: a pop as the rectangle vanishes and a click as he presses YES on "vote!";
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Go to WarOnDisease.org right now." | Go now. | Back at the console. A sign drops into the window in front of Earth on two wires and bounces to a stop: "WARONDISEASE.ORG". On "now." charred YOU sprints across the top of Earth under it, bone legs clattering, eyes on his watch, skids to a stop and tips his bowler. | Smoke curls off him. |
+| "Go to WarOnDisease.org right now." | Go now. | Back at the console. A sign drops into the window in front of Earth on two wires and bounces to a stop: "WARONDISEASE.ORG". On "now." charred YOU sprints across the top of Earth under it, bone legs clattering, eyes on his watch, skids to a stop and tips his fedora. | Smoke curls off him. |
 | "Love you, bye!" | | On "Love" Wishonia winks and spreads her arms. On "bye!" the iris closes on her face, to black: the end of the film. | |
 
 Sound: a thunk as the sign lands on "Go"; a clatter of bone on "now."; a sparkle on "bye!".

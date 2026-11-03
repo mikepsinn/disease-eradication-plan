@@ -34,12 +34,12 @@ version: v3
 - main-street: two charts on one sheet of aged graph paper. Left, a poll, "CURING DISEASES", FOR and AGAINST. Right, "DAYS" along the bottom, with a DEAD line and a slow S-curve, "HUMANS WHO HAVE DONE THE SUM".
 - the-fork: one engraved banknote as wide as the frame, "$27.2 BILLION A YEAR", ruled across into ten equal strips, on a plain field: the Scientist's bench at the left, the fat cat and the Super PAC at the right.
 - the-allocation: a row of brass balance scales, one pair of diseases on each, with a row of glass jars behind them that fill into a bar chart; the Optimitron at the right end.
-- bond-booths: Uncle Sam's war-bond poster at the left, then one long bar chart on aged paper, "RETURN A YEAR": INFLATION, GRANDMA (4%) and YOU (272%). The paper is too short for YOU's bar until sheets are taped on.
+- bond-booths: one long plain ground: Uncle Sam, the customer's spot, the coins, Grandma's stone, the stomp. Above the coins, sky all the way up to a cloud. No chart.
 - the-machine: the bribery machine (a Victorian engine with a hopper, three hatches and a cuckoo clock on its front) and, beside it, an empty boxing ring.
 - money-loop: one inked loop of arrows on aged paper with five stations, clockwise: 1 YOU's bond counter, 2 the bill-poster's wall, 3 the treaty desk, the military-spending tower at the top right bend, 4 YOU's glass toll booth, 5 the Super PAC and three senators, and the lab on the bottom straight. Bills walk the arrows.
 - two-loops: Eisenhower's war loop on the left (four stations and a printing press), the money loop on the right, and a bar of headstones under each.
 
-**Cast:** `wishonia` (host), `console`, `deck/earth` and `deck/porthole` (existing); `atom` (existing, title emblem); `bill-war` and `bill-med` (new: one engraved banknote with a missile seal or a cross seal, the seal a separate piece so it can flip); `bond` (new: the engraved INCENTIVE ALIGNMENT BOND certificate); `snail` (new); `germ` (new: a microscope-plate microbe with legs); `reaper` (existing pieces); `fat-cat` (new: top hat, monocle, waistcoat; the investor); `scientist` and `politician` (existing); `super-pac` (new: a money sack in a cape); `lobbyist` (new: fedora, domino mask, trench coat, gloves, briefcase); `scissors` (new); `bell-jar` (new); `balance-scale` and `jar` (new); `optimitron` (new: a brass Babbage engine with a paper slot); `grandma` and `grandma-skeleton` (new: curlers, cat-eye glasses, apron); `uncle-sam` (existing); `hitler` (new, with a separate moustache piece); `boot` (existing, Gilliam's foot); `headstone` (existing); `you` (new: the busy human in the bowler); `bribery-machine` and `cuckoo-clock` (new); `weapons-maker` (new: barrel chest, tiny head, hard hat, cigar, a baby missile in his arms); `boxing-ring` and `hearse` (new); YOU also sits in a wingback armchair with a book; `bill-poster` (new: a man with a paste bucket and brush); `missile-tower` (new: engraved missiles stacked into a bar); `pavlov` (new: Ivan Pavlov, beard, lab coat, a bell); `eisenhower` (new, at a 1961 podium); `printing-press` (new); `factory` (new: missile chimneys); `darwin` (new); `club`, `sword`, `musket`, `cannon`, `tank`, `missile` (new: the march of weapons); `orphan` (new, a few poses).
+**Cast:** `wishonia` (host), `console`, `deck/earth` and `deck/porthole` (existing); `atom` (existing, title emblem); `bill-war` and `bill-med` (new: one engraved banknote with a missile seal or a cross seal, the seal a separate piece so it can flip); `bond` (new: the engraved INCENTIVE ALIGNMENT BOND certificate); `snail` (new); `germ` (new: a microscope-plate microbe with legs); `reaper` (existing pieces); `fat-cat` (new: top hat, monocle, waistcoat; the investor); `scientist` and `politician` (existing); `super-pac` (new: a money sack in a cape); `lobbyist` (new: fedora, domino mask, trench coat, gloves, briefcase); `scissors` (new); `bell-jar` (new); `balance-scale` and `jar` (new); `optimitron` (new: a brass Babbage engine with a paper slot); `grandma` and `grandma-skeleton` (new: curlers, cat-eye glasses, apron); `uncle-sam` (existing); `hitler` (new, with a separate moustache piece); `boot` (existing, Gilliam's foot); `headstone` (existing); `you` (new: the busy human in the fedora); `bribery-machine` and `cuckoo-clock` (new); `weapons-maker` (new: barrel chest, tiny head, hard hat, cigar, a missile in his arms); `boxing-ring` and `hearse` (new); YOU also sits in a wingback armchair with a book; `bill-poster` (new: a man with a paste bucket and brush); `missile-tower` (new: engraved missiles stacked into a bar); `pavlov` (new: Ivan Pavlov, beard, lab coat, a bell); `eisenhower` (new, at a 1961 podium); `printing-press` (new); `factory` (new: missile chimneys); `darwin` (new); `club`, `sword`, `musket`, `cannon`, `tank`, `missile` (new: the march of weapons); `orphan` (new, a few poses).
 
 **Callbacks:** Part 3's snail, now pushing the pen. Part 5's Reaper and his tally (the cuckoo clock, the lab door, the funeral line). Part 11's Gilliam foot, on Hitler. Part 14's Optimitron. Part 2's war money loop, named as Eisenhower's in military-industrial-loop.
 
@@ -208,20 +208,19 @@ Sound: a soft thunk as the mug touches down.
 - time: 37:09.9 to 37:31.7 (21.8 s)
 - voiceover: "funded World War Two by buying bonds? They got four percent returns and a world without Nazis (mostly). You're proposing the same thing. What Grandma Got. Dead Nazis (admittedly good). Four percent returns (barely beat inflation). Still died of cancer in nineteen eighty-seven."
 - layer: B, plate bond-booths
+- bit: **Two customers at the same bond counter, same pose.** Grandma pays Uncle Sam: the boot flattens Hitler, her 4 coins go to a rat, the x-ray makes her a skeleton in curlers, 1987. A vaudeville hook drags her aside and YOU takes the same spot: the boot flattens a giant germ, 272 coins rip through the top of the frame, and YOU tips his fedora beside her stone, alive. Payoff on "as a bonus": the boot comes back down on Hitler, for no reason. Scenes 8 and 9 are one plate, built as one scene file.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "funded World War Two by buying bonds?" | War bonds paid for the war. | Uncle Sam's poster: "BUY WAR BONDS". Grandma hobbles up, hands him a coin, and he hands her a bond. | |
-| "They got four percent returns" | 4% | The RETURN chart draws in beside the poster: Grandma's bar at 4%. | |
-| "and a world without Nazis (mostly)." | | Hitler marches across the top of the chart; Gilliam's foot comes down on him. | His moustache scuttles out from under the foot and away ("mostly"). |
-| "You're proposing the same thing." | | YOU steps in beside the poster holding up the Incentive Alignment Bond. | Uncle Sam swivels his pointing finger to YOU. |
-| "What Grandma Got." | | The camera goes back to Grandma. | |
-| "Dead Nazis (admittedly good)." | | She nods firmly at the foot; a medal pins itself to her apron. | |
-| "Four percent returns (barely beat inflation)." | 4% barely beat inflation. | An INFLATION bar grows next to hers, to just under it. | She measures the gap between finger and thumb. It's a hair. |
-| "Still died of cancer in nineteen eighty-seven." | Her bonds bought no cure. | She x-rays into a grinning skeleton, curlers and glasses still on; a headstone rises in front of her, "1987". | HOLD 1 to 2 s; the skeleton keeps smiling. |
+| "Remember when your grandparents funded World War Two by buying bonds?" | War bonds paid for the war. | Uncle Sam, big, points. Grandma hobbles up and hands over her coin; a bond comes back. | |
+| "They got four percent returns and a world without Nazis (mostly)." | 4% | Hitler goose-steps in, big. The boot comes down on "Nazis". | His moustache scuttles out from under it ("mostly"). |
+| "You're proposing the same thing." | | Cut: Uncle Sam from the recruiting poster, filling the frame, finger at you. | |
+| "What Grandma Got. Dead Nazis (admittedly good)." | | The boot, still on him. | A ribbon pins itself to the boot. |
+| "Four percent returns (barely beat inflation)." | 4% barely beat inflation. | Close on her pile of four coins, 4%. | A fat rat eats it down to one coin with a bite out of it. |
+| "Still died of cancer in nineteen eighty-seven." | Her bonds bought no cure. | The x-ray rolls up behind her: a grinning skeleton in curlers. Her headstone slams down, 1987. | |
 
-Sound: a coin clink on "bonds?"; a pop for the bar on "four"; a stomp on "Nazis"; scuttling feet on "(mostly)."; a ding for the medal; an x-ray zap on "nineteen"; a thunk for the headstone; then silence for the HOLD.
+Sound: a till on "bonds?"; a pop per coin on "four"; a slam on "Nazis"; scuttling on "(mostly)."; a stamp on "You're"; a ding for the ribbon; a squeak per bite; a zap on "nineteen"; a thunk for the stone.
 
 ## Scene 9 · what-youre-offering
 
@@ -232,21 +231,20 @@ Sound: a coin clink on "bonds?"; a pop for the bar on "four"; a stomp on "Nazis"
 - time: 37:31.7 to 38:00.7 (29.0 s)
 - voiceover: "What You're Offering. Dead diseases (objectively better than dead Nazis because diseases kill more people). Two hundred and seventy-two percent annual returns (a revenue share on ten percent of treaty funds; if the treaty grows, so do their returns, which turns investors into the world's most motivated lobbyists for expanding it). Not dying from preventable meat failures (this is the big one). Also no Nazis (as a bonus)."
 - layer: B, plate bond-booths
+- bit: Built in grandmas-war-bond's plate and file.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "What You're Offering." | | The first frame is grandmas-war-bond's last; the camera slides right along the chart to YOU, Grandma's skeleton still at the left edge. | |
-| "Dead diseases (objectively better than dead Nazis" | | Gilliam's foot comes down again, on a germ. | |
-| "because diseases kill more people)." | Disease out-kills the war. | A line chart pops up over the stomp, "DEAD": a dashed line, "ALL OF WORLD WAR II", and a DISEASE line climbing at 150,000 a day that goes through the dashed line and keeps going. | Hitler, flattened under the foot in the corner, looks at the line, offended. |
-| "Two hundred and seventy-two percent annual returns" | 272% a year, 68 times Grandma's. | Back on the RETURN chart, YOU's bar shoots up past 4% and off the top of the paper. A Gilliam hand tapes a second sheet on top, then a third, and the bar stops at 272%. | Grandma's skeleton's jaw drops off. |
-| "(a revenue share on ten percent of treaty funds;" | It is a 10% cut of treaty money. | The ten-strip banknote flashes in beside the bar, one strip lit. | |
-| "if the treaty grows, so do their returns," | Returns grow with the treaty. | A slider under the chart, "TREATY: 1%". The fat cat pushes it to 2%: the lit strip doubles, and the 272% bar doubles with it. | |
-| "which turns investors into the world's most motivated lobbyists for expanding it)." | | He pulls on the Lobbyist's domino mask and keeps shoving. | Both shoulders into it, sweating, slider creaking toward 3%. |
-| "Not dying from preventable meat failures (this is the big one)." | You live. | The x-ray frame that got Grandma sweeps over YOU. He stays flesh and blood, and pats himself down. | |
-| "Also no Nazis (as a bonus)." | | The moustache scuttles back across the chart; the foot stomps it without looking. | |
+| "What You're Offering." | | A vaudeville hook drags her skeleton and stone aside. YOU steps onto the same spot, same pose, same coin. | |
+| "Dead diseases (objectively better than dead Nazis because diseases kill more people)." | Disease out-kills the war. | The same stomp, on a giant grinning germ, next to flat Hitler. | The boot keeps jumping on it. |
+| "Two hundred and seventy-two percent annual returns" | 272% a year, 68 times Grandma's. | The same close shot as her 4 coins, and the coins go: 272 of them, one coin to the percent, ripping through the top of the frame. 272%. | Her skeleton's jaw drops off. |
+| "(a revenue share on ten percent of treaty funds; if the treaty grows, so do their returns," | Returns grow with the treaty. | The camera rides the column up past a pigeon, a goose, a balloon, an airship, a warplane and a saucer. | It is still growing. |
+| "which turns investors into the world's most motivated lobbyists for expanding it)." | | At the top, on a cloud, the fat cat shoves more coins on. On "lobbyists" he has the domino mask on. | |
+| "Not dying from preventable meat failures (this is the big one)." | You live. | All the way down. The x-ray rolls up behind YOU and nothing happens. He tips his fedora beside her stone. | |
+| "Also no Nazis (as a bonus)." | | The whole counter at last. Hitler peels himself up; the boot comes back down, for no reason. | The moustache gets away again. |
 
-Sound: a stomp on "Dead"; a line squeak as the chart draws on "kill"; tape rips as the sheets go on; a falling slide whistle as the jaw drops; a ratchet as the slider moves; an x-ray hum that fails to zap on "meat"; a last stomp on "bonus".
+Sound: a whoosh for the hook; a slam on "Dead" and each jump; a slide whistle up on "Two"; a boom for the rip; a stamp on "returns"; a whoosh up the column; a pat per shove; a slide whistle down before "Not"; a zap that does nothing on "meat"; a ding for the fedora; the biggest slam on "bonus".
 
 ## Scene 10 · enemy-is-the-clock
 
@@ -263,7 +261,7 @@ Sound: a stomp on "Dead"; a line squeak as the chart draws on "kill"; tape rips 
 |---|---|---|---|
 | "This raises the one billion dollars" | $1 billion raised. | The fat cat, masked, tips his top hat of bills into the bribery machine's hopper; a counter on its side ticks up to "$1,000,000,000". | |
 | "needed to fuel the rest of the bribery machine." | | Its gears turn and its stack puffs. | |
-| "Nobody in the machine is your enemy." | They are people doing jobs. | Three hatches pop open: the Politician, the Lobbyist and the Weapons Maker lean out, each working a lever, and wave. A sign on a stick pops up over each: "NOT THE ENEMY". | A smaller one pops over the baby missile: "(PROBABLY)". |
+| "Nobody in the machine is your enemy." | They are people doing jobs. | Three hatches pop open: the Politician, the Lobbyist and the Weapons Maker lean out, each working a lever, and wave. A sign on a stick pops up over each: "NOT THE ENEMY". | A smaller one pops over the missile: "(PROBABLY)". |
 | "The enemy is the clock." | Delay is what kills. | The cuckoo clock on the machine bangs open and the Reaper springs out instead of a bird, adds a tally mark and snaps back; again every 0.58 s. | The three slowly look up at him, their waves frozen. |
 
 Sound: a cascade of paper into the hopper; a counter rattle on "billion"; a whirr as the machine starts; three pops for the signs and a small one; a cuckoo-spring boing each time the Reaper pops out.
@@ -323,7 +321,7 @@ Sound: a cash-register ding as the till fills; a paste splat for the poster; a p
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Three. The Victory Corporation (the company that issued the bonds)" | Your company runs it. | Station 4: YOU in a glass toll booth across the arrow. He points at himself and tips his bowler. | |
+| "Three. The Victory Corporation (the company that issued the bonds)" | Your company runs it. | Station 4: YOU in a glass toll booth across the arrow. He points at himself and tips his fedora. | |
 | "takes a twenty percent management fee on that twenty-seven point two billion dollars." | Step 3: 20% fee. | The banknote reaches the booth; YOU snips off two strips and stands them inside the bell jar on his shelf. The other eight walk on. | |
 | "Four. Half of that fee (ten percent)" | | One of the two strips steps out of the back of the booth. | |
 | "goes to investor dividends: two point seven two billion dollars a year on a one billion dollar investment." | $2.72 billion a year on $1 billion. | It runs across the middle of the loop to the fat cat, and a bar chart pops up beside him: "PAID IN: $1 BILLION", once; "PAID OUT: $2.72 BILLION", 2.72 times as tall. A year counter ticks 1, 2, 3, and a new PAID OUT bar stacks up each year. | |

@@ -31,7 +31,7 @@ version: v3
   - the-people-chart: a two-bar pictogram chart, "PEOPLE": one protected man against a column of 3,389.
   - the-street: an FDA building with a conveyor, YOU's house, Part 9's warehouse, the war factory, and a little house behind a picket fence.
   - the-register: a shop counter with a big cash register.
-- **Cast:** existing cut-outs: `politician`, `scientist`, `headstone`, `binder`, `laptop`. New: `you` (the busy human in the bowler, also as his skeleton; the viewer, as in Parts 10 and 13), `fda-official` (bald, glasses, an FDA badge, a magnifying glass; also flattened, and as his skeleton), `fax-clerk` (a box-shaped man with a pocket protector bristling with pencils), `committee` (six, in different builds, beards that grow), `lifeguard` (a Victorian striped bathing costume, a whistle), `frances-kelsey`, `weapons-maker` (from Part 11), `girl` (about seven, a lab coat to her ankles, a bun and big glasses, a toy flask).
+- **Cast:** existing cut-outs: `politician`, `scientist`, `headstone`, `binder`, `laptop`. New: `you` (the busy human in the fedora, also as his skeleton; the viewer, as in Parts 10 and 13), `fda-official` (bald, glasses, an FDA badge, a magnifying glass; also flattened, and as his skeleton), `fax-clerk` (a box-shaped man with a pocket protector bristling with pencils), `committee` (six, in different builds, beards that grow), `lifeguard` (a Victorian striped bathing costume, a whistle), `frances-kelsey`, `weapons-maker` (from Part 11), `girl` (about seven, a lab coat to her ankles, a bun and big glasses, a toy flask).
 - **Callbacks:** Part 11's medicine papers, which left walking to the lab, open smoke-detector-by-mail on the console. Part 1's case file, "MAY BE ELIGIBLE FOR OPTIMIZATION", gets its second stamp in suboptimal-stamp. Part 1's family portrait (loved-ones) is on YOU's mantel in someone-you-love. Part 9's shelf and its "NEVER TESTED FOR THIS" bottle (someone-you-love). Part 10's receipt, whose top lines read "WAR ... $170,000,000,000,000" and "CLINICAL TRIALS ... $0.00" (murder-receipt). Set up for Part 13: YOU in the top hat and monocle, and the plain papers that rained on him, which he walks to the world's leaders in every-leader-at-once. Set up for Part 14, so draw them to be copied: the charred smoke detector; the approval cabinet with its hourglass, the SAFE bottle, the life preserver, the handprint and YOU's skeleton slumped against it; the beach with the lifeguard, the swimmers and skulls and the two jackets on the hook; the bearded committee; the FDA official.
 - **New art:** a smiling VIOXX bottle and a paper pill cup; a pharmacy counter; three patients and their skeletons; a fax machine, a laptop that prints, a telephone pole and wire; a tear-off calendar; a SAFETY SYSTEM sign on two chains; a pie chart on a tripod; a man at a microscope; a Victorian office building; an NIH fire truck; a firefighter with a water pistol; a Victorian house on fire and its smoking heap; a letter, "RE: SMOKE"; the approval cabinet (glass, padlock, an hourglass on top); a test bench and a SAFE bottle; an IV pole; a long committee table; a crowd of raised hands (near ones whole people, far ones dots); a long wall with a tiny door and a letter slot; a life preserver, a bucket, a thick binder, two life jackets on a hooked post; swimmers' heads and skulls; a wall-size alarm panel; a church-size brass fire bell; a pea-sized bulb; tape; an EMPLOYEE OF THE MONTH portrait; a bubble-wrapped man in a hard hat; thin iron plates stamped THALIDOMIDE (years in code) and a tarp; a tiny skeleton for the pictogram; a cloud; a goose; a conveyor; the family portrait; the warehouse shelf; the war factory with missile chimneys; a missile; a picket fence and a crayon drawing; a cash register and a long receipt; war, medicine and plain papers.
 - **Kit additions:**
@@ -173,7 +173,7 @@ Sound: a click as the sliver lights; a squeak as the Scientist squeezes in; two 
 | "The drug passed the safety test." | It is safe. | "SAFE ✓" stamps on the bottle's label. | |
 | "Everyone agrees it won't kill you." | | Behind the bench, six committee members at a long table nod in perfect time, like a row of bobbleheads. | |
 | "But you still can't have it because a committee needs to spend eight point two years" | | The chair's arm stretches across the table, snatches the bottle from under YOU's fingers, puts it in the approval cabinet and clicks the padlock. The cabinet's hourglass turns over, and a bar starts filling along the timeline. The members drop thick binders, thump thump thump, and long white beards grow down their chests page by page. | |
-| "making sure it works well enough." | You die waiting. | YOU presses his palm flat on the cabinet's glass. Halfway along the timeline he slides slowly down it, and x-rays into a grinning skeleton in the same bowler, slumped against the cabinet, palm still on the glass. | The bearded chair turns one page. |
+| "making sure it works well enough." | You die waiting. | YOU presses his palm flat on the cabinet's glass. Halfway along the timeline he slides slowly down it, and x-rays into a grinning skeleton in the same fedora, slumped against the cabinet, palm still on the glass. | The bearded chair turns one page. |
 
 Sound: a stamp thunk; a boing for the nodding; a whoosh for the snatch and a clank for the padlock; a clank as the hourglass turns; three thumps for the binders; a rising whistle as the beards grow; a falling one as YOU slides; an x-ray zap.
 
@@ -190,7 +190,7 @@ Sound: a stamp thunk; a boing for the nodding; a whoosh for the snatch and a cla
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "You'd volunteer for the trials that would answer that question faster," | Trials would answer it sooner. | Close on a living YOU, chest light blinking red, shooting a hand up and bouncing on his toes. | He windmills the arm. |
+| "You'd volunteer for the trials that would answer that question faster," | Trials would answer it sooner. | Close on a living YOU, shooting a hand up and bouncing on his toes. | He windmills the arm. |
 | "but so would one point zero eight billion other patients," | 1.08 billion willing. | The camera pulls back: he is one hand in a sea of raised hands, and the sea is a bar on a chart, "WILLING", towering up the frame: "1,080,000,000". | |
 | "and the current system has one point nine million slots." | 1.9 million slots a year. | Beside it the second bar, "SLOTS", drawn to scale: a hairline. The camera pushes in on it: it is a tiny door in a long wall, knee-high to the front row, with a sign over it, "WAIT HERE". | |
 | "That's a participation rate of zero point one seven seven percent." | 0.177%. | The door opens a crack; one human squeezes through; it slams. A tag swings on its handle: "0.177%". The crowd surges forward. | The front row is squashed flat against the wall, eyes blinking. Far back, YOU is still waving. |
@@ -224,56 +224,57 @@ Sound: a whistle; a splat into the bucket and a tick; a clank for the padlock; a
 - cue: "Your regulatory system can make"
 - time: 24:16.3 to 24:29.7 (13.3 s)
 - voiceover: "Your regulatory system can make two mistakes: approve a bad drug (Type One error), or block a good drug (Type Two error). Your F.D.A. is terrified of the first mistake and completely ignores the second."
-- layer: B, plate control-room
+- layer: B, plate the-desk-and-the-column
+- bit: **A man at a desk with two alarms, and the dead stacking up behind him while he sips.** A church bell for approving a bad drug, a pea bulb for blocking a good one. The bell clangs and he jumps out of his skin; the bulb gets tape and a portrait. The column of people who died waiting climbs past the clouds, 3,389 : 1. Six Thalidomide plates change nothing. Payoff: his desk sits on a conveyor at a factory gate, and headstones roll out. All five scenes are one plate, built as one scene file.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Your regulatory system can make two mistakes:" | | The FDA official, unflattened, sits with his feet up, sipping coffee, in front of a wall-size alarm panel with two sockets painted I and II. | |
-| "approve a bad drug (Type One error)," | Type I. | A brass fire bell the size of a church bell rises out of socket I. | |
-| "or block a good drug (Type Two error)." | Type II. | A bulb the size of a pea lights in socket II. | |
-| "Your F.D.A. is terrified of the first mistake" | | The bell clangs once, and the official jumps out of his skin: his skeleton leaps out of the suit and clings to the top of the panel, while the empty suit sits on, holding the mug. The skeleton drops back in, and the suit straightens its tie. | |
-| "and completely ignores the second." | | Bulb II blinks. Without looking, he slaps tape over it; it glows through, so he hangs his framed "EMPLOYEE OF THE MONTH" portrait over it and sips. | |
+| "Your regulatory system can make two mistakes:" | | Close: the FDA official in his chair, feet up, sipping, eyes shut, by an empty desk. | |
+| "approve a bad drug (Type One error)," | Type I. | The camera swings right as a church bell slams down, filling the frame. | |
+| "or block a good drug (Type Two error)." | Type II. | The camera has to push far in on the desk to find the bulb: pea-sized, politely blinking. | The size of the alarm is the argument. |
+| "Your F.D.A. is terrified of the first mistake" | | The bell clangs. His skeleton leaps out of the suit and hangs by its hands from the top of the frame, shaking; the empty suit keeps the mug. It drops back in. | |
+| "and completely ignores the second." | | Mid-sip, eyes shut, a long arm comes out from behind him and tapes the bulb, then hangs his EMPLOYEE OF THE MONTH portrait over the tape. Light leaks round the frame. | He never looks. |
 
-Sound: a switch as the sockets light; a rising whistle as the bell rises; a click for the bulb; one huge clang, a yelp and a boing; a thunk as he drops back in; a snip of tape; a pat for the portrait.
+Sound: a thunk as the bell lands; a click for the bulb; one huge clang and a yelp; a thunk as he drops back in; a snip of tape; a pat for the portrait.
 
 ## Scene 11 · i-calculated
 
 - id: i-calculated
 - act: The ratio
-- transition_in: cut
+- transition_in: same plate (no seam)
 - cue: "I calculated the ratio:"
 - time: 24:29.7 to 24:31.6 (1.9 s)
 - voiceover: "I calculated the ratio:"
-- layer: A, host
-- wishonia: thinking-closed + body-counting; smirk-closed + body-counting on "ratio:"
+- layer: B, plate the-desk-and-the-column
+- bit: Same plate: nothing happens. The camera drifts in on the man, still sipping.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "I calculated the ratio:" | | Wishonia counts on one finger while the console's readout chatters and its keys clatter by themselves, faster on "calculated". On "ratio:" it dings and spits out one short paper slip, and she looks at the camera. | A superintelligence counting on one finger, and all that chattering makes one slip. |
+| "I calculated the ratio:" | | He sips, closer. | |
 
-Sound: a typewriter rattle; a ding on "ratio:".
+Sound: none.
 
 ## Scene 12 · 3389-to-1
 
 - id: 3389-to-1
 - act: The ratio
-- transition_in: cut
+- transition_in: same plate (no seam)
 - cue: "for every one person protected"
 - time: 24:31.6 to 24:41.1 (9.6 s)
 - voiceover: "for every one person protected from a dangerous drug, three thousand three hundred and eighty-nine people die waiting for a safe one that's locked in the approval cabinet."
-- layer: B, plate the-people-chart
+- layer: B, plate the-desk-and-the-column
+- bit: Same plate: the column.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "for every one person protected from a dangerous drug," | 1 protected. | A two-bar pictogram chart on aged paper, "PEOPLE". Bar 1: one man wrapped head to toe in bubble wrap, in a hard hat, standing on a low stack under a tarp, thumbs up. | |
-| "three thousand three hundred and eighty-nine people" | 3,389. | Bar 2: people drop onto each other's shoulders, a column climbing so fast the camera tilts up to follow it, past a cloud and a startled goose, about 6 km up. | |
-| "die waiting" | They are dead. | The whole column x-rays at once into grinning skeletons, standing on each other's skulls. "3,389 : 1" stamps in the sky. HOLD until "locked". | |
-| "for a safe one that's locked in the approval cabinet." | The drug they need is safe. | The camera tilts back down. At the foot of the column stands the approval cabinet (the SAFE bottle and the life preserver inside, YOU's skeleton against the glass). Every skull in the column turns, slowly, to look at it. | |
+| "for every one person protected from a dangerous drug," | 1 protected. | The camera whips past the bell to one bubble-wrapped man in a hard hat, big, thumbs up. | |
+| "three thousand three hundred and eighty-nine people die waiting" | 3,389; they are dead. | Back to the desk: a sick man appears behind it, another on his shoulders, and the camera climbs with them past the clouds. On "die" the column x-rays to grinning skeletons (a grandma, a family with its loaves, YOU). A goose flees. "3,389 : 1" stamps in the sky. | He is sipping at the bottom. |
+| "for a safe one that's locked in the approval cabinet." | The drug they need is safe. | All the way down: the padlocked cabinet pops onto his desk, right in front of the column. | |
 
-Sound: a pop as he steps up; a thunk per person, faster and faster, into a drumroll; a honk for the goose; an x-ray zap and a stamp thunk; silence for the HOLD; a creak of bones as the skulls turn.
+Sound: three thunks, a whoosh up; an x-ray zap on "die"; a stamp; a whoosh down.
 
 ## Scene 13 · thalidomide-every-year
 
@@ -283,33 +284,35 @@ Sound: a pop as he steps up; a thunk per person, faster and faster, into a drumr
 - cue: "Even if you assume"
 - time: 24:41.1 to 25:01.0 (19.9 s)
 - voiceover: "Even if you assume a Thalidomide-scale catastrophe happens during post-phase one efficacy testing every single year (even though it wouldn't because Phase One safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by three thousand three hundred and eighty-nine to one."
-- layer: B, plate the-people-chart
+- layer: B, plate the-desk-and-the-column
+- bit: Same plate: six plates, and they do not matter.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Even if you assume a Thalidomide-scale catastrophe happens during post-phase one efficacy testing every single year" | The 1 already assumes a Thalidomide every year. | The tarp whips off bar 1: the bubble-wrapped man stands on a stack of thin iron plates, each stamped "THALIDOMIDE" and a year, 1962, 1963, 1964 and on up. The camera reads up the stack, one weight per word, to the top. | The most generous assumption was already in the chart. |
-| "(even though it wouldn't because Phase One safety testing actually caught it anyway)," | Safety review stopped Thalidomide. | Frances Kelsey (the FDA reviewer who refused it, in her 1960s glasses) climbs onto the stack and stamps the bottom weight "REJECTED · 1960". She glares at the rest, sighs, and leaves them there for the sake of argument. | |
-| "the deaths from just the efficacy delay still outnumber the deaths from bad drugs by three thousand three hundred and eighty-nine to one." | The ratio survives the steelman. | The camera pulls back to both bars: the weighted bar a little heap at the bottom; the skeleton column running out of the top of the frame. "3,389 : 1" stamps again. | Kelsey and the bubble-wrapped man look up the column, shading their eyes. |
+| "Even if you assume a Thalidomide-scale catastrophe happens during post-phase one efficacy testing every single year" | The 1 already assumes a Thalidomide every year. | Wider: man, desk, bell, safe man. A plate stamped THALIDOMIDE and a year slams under the safe man, six in all, and he rides up on them, thumb still up. Each one rings the bell; the skeleton is out and clinging from the first. | |
+| "(even though it wouldn't because Phase One safety testing actually caught it anyway)," | Safety review stopped Thalidomide. | Frances Kelsey rises in, big, and stamps the stack REJECTED. The skeleton drops back in its suit. | |
+| "the deaths from just the efficacy delay still outnumber the deaths from bad drugs by three thousand three hundred and eighty-nine to one." | The ratio survives the steelman. | She leaves. He sips. The camera climbs the column again: it never stopped growing, and it is twice as tall now. "3,389 : 1" again at the new top. | |
 
-Sound: a whoosh as the tarp comes off; a clank per weight read; a stamp thunk for REJECTED and a sigh; a stamp thunk for the ratio.
+Sound: a clank and a bell per plate; a stamp for REJECTED; a thunk as he drops back in; two faint thunks from far above; a long whoosh; a stamp on "one."
 
 ## Scene 14 · main-product-dead-patients
 
 - id: main-product-dead-patients
 - act: The cost
-- transition_in: cut
+- transition_in: same plate (no seam)
 - cue: "Your safety system's main product"
 - time: 25:01.0 to 25:05.1 (4.1 s)
 - voiceover: "Your safety system's main product is dead patients."
-- layer: B, plate the-street
+- layer: B, plate the-desk-and-the-column
+- bit: Payoff, same plate: the pull back.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Your safety system's main product is dead patients." | What the system produces is dead people. | The SAFETY SYSTEM sign, dented in the shape of the official, hangs over a factory gate. A conveyor starts, and plain headstones roll out of the gate one by one into a neat row. On "patients." it stops. HOLD to the end of the scene. | |
+| "Your safety system's main product is dead patients." | What the system produces is dead people. | All the way down and out: his desk, the bell, the plates and the column all stand on one long conveyor running from a factory gate under SAFETY SYSTEM. On "main" a headstone rolls out of the gate, then another, past his feet, a neat row by "patients." It stops. He sips. | |
 
-Sound: the conveyor's hum; a thunk as it stops; then silence.
+Sound: the conveyor's hum; a thunk per headstone; a thunk as it stops.
 
 ## Scene 15 · someone-you-love
 
@@ -324,7 +327,7 @@ Sound: the conveyor's hum; a thunk as it stops; then silence.
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Think about someone you love who is suffering right now." | | The camera travels next door to YOU's house and pushes in at the window: on the mantel, the family portrait from Part 1, everyone smiling. One chest light in the portrait blinks red; that face keeps smiling. | |
+| "Think about someone you love who is suffering right now." | | The camera travels next door to YOU's house and pushes in at the window: on the mantel, the family portrait from Part 1, everyone smiling. One face in the portrait coughs and keeps smiling. | |
 | "The treatment that would help them exists as an untested compound on a shelf," | The help may already be sitting there untested. | The camera travels on to the warehouse, its door rolled up: a tall shelf of dusty bottles, one wearing its "NEVER TESTED FOR THIS" tag. That bottle waves both little arms. | |
 | "because the money was busy turning into a missile." | The money went to weapons. | A war paper strolls past along the sidewalk without looking at it, checks its wristwatch, hurries, and hops through the door of the war factory next door. The factory rattles; its chimneys puff. The Weapons Maker backs out of the door cradling a newborn, smiling missile, beaming. | The missile wriggles out of his arms and launches over the rooftops; the camera chases it. |
 
@@ -403,6 +406,6 @@ Sound: a soft thunk as the mug goes down; a button click and a stamp thunk.
 |---|---|---|---|
 | "The good news: You already know how to fix this." | A fix exists. | The book pops up on the console's ledge beside the case file; its cover swings open, and a wrench pops out. | |
 | "The bad news: It requires you to do something." | You have to act. | YOU walks onto the deck from the right and stops beside the console, under the charred detector. A "TO DO" clipboard drops into his hands; he groans and sags. | |
-| "The weird news: You'll get rich doing it." | It pays. | He looks at the camera. Plain papers (no seal) rain down on him; his bowler pops off, a top hat and monocle pop on, his eyes turn to dollar signs, and the clipboard drops at his feet. Wishonia presents him with both hands. | One paper flutters down into her mug, and the film irises out on her face. |
+| "The weird news: You'll get rich doing it." | It pays. | He looks at the camera. Plain papers (no seal) rain down on him; his fedora pops off, a top hat and monocle pop on, his eyes turn to dollar signs, and the clipboard drops at his feet. Wishonia presents him with both hands. | One paper flutters down into her mug, and the film irises out on her face. |
 
 Sound: a pop as the book appears; a boing for the wrench; a thunk for the clipboard and a groan; a cash-register ding and a sparkle on "rich"; a small splat in the mug.

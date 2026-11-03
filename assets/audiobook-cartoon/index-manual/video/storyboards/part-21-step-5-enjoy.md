@@ -25,18 +25,18 @@ version: v3
   - Host shots: Wishonia at her console on the observation deck, Earth in the window. In money-defeats-morality a little brass balance stands on the console's ledge. In evolve-morally the ledge is bare.
   - volcano-road: one long strip of aged paper. On the left, an engraved Vesuvius in eruption. A road runs right from its foot past five stops, and each stop's payday is a small inked chart on a cream card staked by the road: the arms factory (its sign "LOCKHEED MARTIN"), the drug lab ("PFIZER"), the insurer, the investors, then the Lobbyist, the polling place and the hammock. Over the whole road hangs a cloud of medicine bills on little parachutes.
   - greed-field: plain aged paper. In the middle, a giant engraved pointing hand (a printer's manicule) on a post, pivoting at the wrist, "GREED" on its cuff. The cast brawls on the left; three diseases loll on the right.
-- **Cast:** `reaper` (the generated Grim Reaper art in `assets/art/reaper/`), `politician`, `scientist`, `headstone`, `globe` (existing); `you`, `you-skeleton`, `moral-human`, `halo`, `bill-war`, `bill-med`, `bill-plain`, `parachute`, `volcano`, `weapons-maker`, `baby-missile`, `factory`, `turnstile`, `patient`, `claims-clerk`, `hand-truck`, `rosette`, `cash-register`, `bubble-wrap`, `fat-cat`, `capitol`, `typewriter`, `typist`, `lobbyist`, `wiki-page`, `ballot-box`, `grandma-skeleton`, `hammock-palms`, `coconut`, `greed-hand`, `germ` (new).
+- **Cast:** `reaper` (the generated Grim Reaper art in `assets/art/reaper/`), `politician`, `scientist`, `headstone`, `globe` (existing); `you`, `you-skeleton`, `moral-human`, `halo`, `bill-war`, `bill-med`, `bill-plain`, `parachute`, `volcano`, `weapons-maker`, `missile`, `factory`, `turnstile`, `patient`, `claims-clerk`, `hand-truck`, `rosette`, `cash-register`, `bubble-wrap`, `fat-cat`, `capitol`, `typewriter`, `typist`, `lobbyist`, `wiki-page`, `ballot-box`, `grandma-skeleton`, `hammock-palms`, `coconut`, `greed-hand`, `germ` (new).
 - **Callbacks:**
   - The Grim Reaper is the one nobody pays. His jaw drops off on the title card and stays jammed back on crooked. His headstone customer is refused, and his coconut knocks him into a heap of bones.
-  - YOU, the busy man in the bowler from Part 1's title card.
+  - YOU, the busy man in the fedora from Part 1's title card.
   - The seal flip (style bible, gag 2): the bill that goes into the volcano comes out as medicine bills.
   - Grandma's skeleton (Part 17, died 1987) is refused at the ballot box.
 - **New art:**
-  - YOU: a Victorian clerk in a bowler with a pocket watch, standing and lying. His skeleton wears the same bowler.
+  - YOU: a 1950s office worker in a fedora with a pocket watch, standing and lying. His skeleton wears the same fedora.
   - The Moral Human: a thin engraved saint in a frock coat, hands clasped, eyes up, with a separate halo.
   - Banknotes on stick legs: war (missile seal), medicine (cross seal) and plain. The seal is its own piece, so it can flip. A little cream parachute.
   - Vesuvius erupting (from a Victorian print), with the crater as a separate piece.
-  - The Weapons Maker (a barrel-chested foundry man in a hard hat) and his baby missile. A brick factory with missile chimneys.
+  - The Weapons Maker (a barrel-chested foundry man in a hard hat) and his missile. A brick factory with missile chimneys.
   - A turnstile with a coin slot. A Victorian invalid in a nightshirt (the patient).
   - The insurance clerk in a green eyeshade, a hand truck, a prize rosette, a brass cash register (its flag is code), bubble wrap.
   - The fat cat (a robber baron: top hat, monocle, cigar, watch chain). The US Capitol steps.
@@ -106,8 +106,8 @@ Sound: marching pats on "treaty"; a slam and a slide whistle up on "defeats"; a 
 |---|---|---|---|
 | "The twenty-seven point two billion dollars a year" | It is 1% of the world's military money, every year. | Cut to the plate. Vesuvius smoulders on the left, and beside it stands a column of 100 war bills, tagged "$2.72 TRILLION". A Gilliam hand comes down from the top of the frame, plucks the top bill off and drops it into the crater. A card stamps over the volcano: "$27.2 BILLION A YEAR". | |
 | "money volcano erupts:" | The money comes out as medicine money. | BOOM. A geyser of medicine bills shoots out of the crater, legs kicking: the war bill went in and its seals came out as crosses. Each bill pops a parachute, and they drift right in a cloud over the whole road. | The Moral Human floats across the top of the frame, still rising. |
-| "Military Contractors keep ninety-nine percent of their murder budget" | They keep 99 of every 100 dollars. | The camera follows the cloud to the first stop, the factory, its missile chimneys grinning. The Weapons Maker sits on top of the same column, now 99 bills tall, cradling his baby missile. A tag swings on it: "99%". | He peers at the gap where the top bill was, shrugs, and pats the missile. |
-| "PLUS get two hundred and seventy-two percent returns." | And their bonds pay 2.72 times the stake every year. | Beside the column, a short stack: his bond. Parachuting medicine bills land beside it and pile into a stack 2.72 times as tall. A tag: "272% A YEAR". | The new stack lifts him higher than his war column, and his hard hat bonks the money cloud. He kisses the baby missile. |
+| "Military Contractors keep ninety-nine percent of their murder budget" | They keep 99 of every 100 dollars. | The camera follows the cloud to the first stop, the factory, its missile chimneys grinning. The Weapons Maker sits on top of the same column, now 99 bills tall, cradling his missile. A tag swings on it: "99%". | He peers at the gap where the top bill was, shrugs, and pats the missile. |
+| "PLUS get two hundred and seventy-two percent returns." | And their bonds pay 2.72 times the stake every year. | Beside the column, a short stack: his bond. Parachuting medicine bills land beside it and pile into a stack 2.72 times as tall. A tag: "272% A YEAR". | The new stack lifts him higher than his war column, and his hard hat bonks the money cloud. He kisses the missile. |
 
 Sound: a pop as the bill is plucked on "billion"; a stamp thump on "year"; the boom on "erupts:" and a whoosh as the bills fly; a tick as the tag swings on "ninety-nine"; splats as the bills land on "PLUS"; a slide whistle up on "seventy-two"; a thunk as the hat hits the cloud on "returns.".
 

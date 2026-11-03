@@ -30,7 +30,7 @@ version: v3
 - math-field: a field under a wide sky: a queue of patients at the front, open ground that fills with price-tagged hourglasses to the horizon, and sky for the number.
 - hall-of-hits: a hall-of-fame wall with a marquee, "GREATEST HITS IN NOT DYING"; on the left a penny chart (cost of one healthy year), on the right a column chart (return per dollar) with a gold cup on each column.
 
-**Cast:** existing: `gauge` and `needle` (the 1% meter), `scientist`, `globe`. New: `pill-bottle` (a pill bottle riding Part 14's `arrow-sign`), `patient` (chest light red, then teal), `hourglass`, `fat-cat` with a roll of `price-tag`, `money-bundle` (a strapped bundle of plain green bills on stick legs), `zero` (one big stamped digit that can fall), `penny`, `bed-net-cup` (a gold cup under a little net, a tiny human asleep in it), `mosquito`, `smallpox-cup`, `vaccine-cup` (a syringe for a handle), `treaty-column`, `germ`, `magnifier`, `pessimist` (a gloomy man in a raincoat) with his own `raincloud`, `marquee`.
+**Cast:** existing: `gauge` and `needle` (the 1% meter), `scientist`, `globe`. New: `pill-bottle` (a pill bottle riding Part 14's `arrow-sign`), `patient`, `hourglass`, `fat-cat` with a roll of `price-tag`, `money-bundle` (a strapped bundle of plain green bills on stick legs), `zero` (one big stamped digit that can fall), `penny`, `bed-net-cup` (a gold cup under a little net, a tiny human asleep in it), `mosquito`, `smallpox-cup`, `vaccine-cup` (a syringe for a handle), `treaty-column`, `germ`, `magnifier`, `pessimist` (a gloomy man in a raincoat) with his own `raincloud`, `marquee`.
 
 **Callbacks:**
 - Part 14: the 212 years (the narrator: "Remember the two hundred and twelve years") and its fat arrow sign, "212 YEARS SOONER", which a pill bottle now rides like a rocket.
@@ -93,7 +93,7 @@ Sound: a key click on "two", "hundred" and "twelve"; the bell, twice.
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Treatments reaching patients that many years sooner" | The 212 years, delivered. | A pill bottle roars in riding Part 14's fat arrow sign, "212 YEARS SOONER", like a rocket. It sprays bottles down a queue of patients with red chest lights; each catches one, and the lights go teal. | |
+| "Treatments reaching patients that many years sooner" | The 212 years, delivered. | A pill bottle roars in riding Part 14's fat arrow sign, "212 YEARS SOONER", like a rocket. It sprays bottles down a queue of patients with thermometers; each catches one, and the thermometers drop. | |
 | "means billions of people gain years of healthy life." | Each cured person gets healthy years back. | Over each patient's head pops a little stack of hourglasses, one per healthy year. The camera pulls back along the queue to the horizon, hourglasses popping all the way. | |
 | "Value each of those life-years at one hundred and fifty thousand dollars (the standard economic valuation)," | Each healthy year is priced at $150,000. | The fat cat waddles down the line with a fat roll of price tags, tears one off, licks it, and slaps it on the first hourglass: "$150,000". Lick, slap, lick, slap down the line. | His eyes ring up dollar signs. |
 | "multiply across the global disease burden over the acceleration window," | 50.2 billion healthy years in all. | The tagged hourglasses multiply into rows that tile the whole field to the horizon, popping in like a times table. | He licks faster and faster until his tongue hangs out. |

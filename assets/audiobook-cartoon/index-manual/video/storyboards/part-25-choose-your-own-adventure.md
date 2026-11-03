@@ -30,7 +30,7 @@ version: v3
   - two-lanes: plain aged paper split into two lanes. Left: the arms factory and YOU's first copy. Right: a hospital and his second copy. Each copy has his lifetime pay stacked at his feet as a bar of bills.
   - the-roads: one huge engraved chart on aged paper, and the two futures are its two lines. Years run along the bottom, and each milestone is a year tick: 2027, 2028, 2032, 2033, 2035, 2040, 2043, 2045, 2048, 2050. The fork is at 2026 at the left, where one road splits in two. The y-axis is how rich you are. Road A, the lower branch, runs on roughly level. It stands on a bank of earth (the economy), and from the bottom of the bank a black band of Part 11's clockwork robots eats upward: 11.5% of the bank today, 25% at 2033, 50% at 2040. A dashed line at 15% is tagged "USSR · 1991". Past 2040 road A ends at a cliff where the line drops to zero, and 2043 to 2050 are on the chart's floor. Road B, the upper branch, climbs, steeper every year, and runs off the top of the paper; strips are glued on above it up to the moon. The sky over A steps darker each milestone; over B it steps brighter. YOU walks each road, and the camera travels with him.
   - one-lifetime: plain aged paper with the existing engraved globe, and under it a timeline bar from 1917 to 1991.
-- **Cast:** `globe`, `mushroom`, `laptop`, `binder`, `rubble` (existing); `you`, `you-skeleton`, `fingerpost`, `economist`, `ruler`, `trend-line`, `thumbtack`, `factory`, `weapons-maker`, `baby-missile`, `hospital`, `bill-war`, `bill-med`, `bill-plain`, `manual`, `parachute`, `pram-woman`, `newspaper-man`, `robot` (Part 11's clockwork robot with a laptop), `gorbachev`, `plan-clipboard`, `engineer`, `crook-mask`, `ransom-skull`, `gauze`, `nurse`, `hospital-bed`, `bomb`, `court-window`, `court-clerk`, `auditor`, `tax-office`, `capitol`, `organs` (brain, heart, lungs, liver at desks), `refugee` (a line with suitcases), `border-signs`, `survivor` (two), `spreadsheet`, `cockroach`, `treaty-scroll`, `funnel`, `fat-cat`, `toaster`, `ticket-window`, `wait-sign`, `leash-human` (humans walking diseases on leashes, and skeletons), `pill-bottle`, `loud-human`, `soapbox`, `conveyor`, `goods`, `typewriter`, `journals`, `loop-stations`, `scientist`, `germ`, `child`, `missile-lamp`, `tablecloth`, `marx`, `lenin`, `mao`, `human-ages` (a baby, a young man, an old man on a cane), `pigeon`, `skulls`, `yes-button` (new or shared).
+- **Cast:** `globe`, `mushroom`, `laptop`, `binder`, `rubble` (existing); `you`, `you-skeleton`, `fingerpost`, `economist`, `ruler`, `trend-line`, `thumbtack`, `factory`, `weapons-maker`, `missile`, `hospital`, `bill-war`, `bill-med`, `bill-plain`, `manual`, `parachute`, `pram-woman`, `newspaper-man`, `robot` (Part 11's clockwork robot with a laptop), `gorbachev`, `plan-clipboard`, `engineer`, `crook-mask`, `ransom-skull`, `gauze`, `nurse`, `hospital-bed`, `bomb`, `court-window`, `court-clerk`, `auditor`, `tax-office`, `capitol`, `organs` (brain, heart, lungs, liver at desks), `refugee` (a line with suitcases), `border-signs`, `survivor` (two), `spreadsheet`, `cockroach`, `treaty-scroll`, `funnel`, `fat-cat`, `toaster`, `ticket-window`, `wait-sign`, `leash-human` (humans walking diseases on leashes, and skeletons), `pill-bottle`, `loud-human`, `soapbox`, `conveyor`, `goods`, `typewriter`, `journals`, `loop-stations`, `scientist`, `germ`, `child`, `missile-lamp`, `tablecloth`, `marx`, `lenin`, `mao`, `human-ages` (a baby, a young man, an old man on a cane), `pigeon`, `skulls`, `yes-button` (new or shared).
 - **Callbacks:**
   - The 604 bar (style bible, gag 1): 604 war bills against one medicine bill, in 2027.
   - Part 11's soviet-plan chart: its clockwork robots are the black band eating road A's bank, and Gorbachev stands on the 15% line. Part 11's blank "PLAN:" clipboard is the robot's plan in 2033.
@@ -38,7 +38,7 @@ version: v3
   - Wishonia's mug sip (style bible, gag 3) before the closing shrug.
   - The YES button is set up for Parts 26 and 27.
 - **New art:**
-  - A wooden fingerpost with two arrow boards (words are code). YOU walking, YOU charred, YOU's skeleton in his bowler.
+  - A wooden fingerpost with two arrow boards (words are code). YOU walking, YOU charred, YOU's skeleton in his fedora.
   - An economist with a ruler, a pencil behind his ear and a plaster for later. Engraved trend lines as bendable strips, and thumbtacks.
   - A hospital. Two lifetime stacks of bills.
   - The manual on a parachute; a woman with a pram; a man reading a newspaper.
@@ -96,7 +96,7 @@ Sound: a whirr under the running papers; a squeak as the paper hops orbits.
 |---|---|---|---|
 | "Now is the time to select one of the two paths" | You must choose a path. | The iris opens on Wishonia at her console. In the window, a fingerpost springs up on top of Earth: "FUTURE A" points one way, "FUTURE B" the other. YOU walks in under it, checking his pocket watch. | |
 | "for the remainder of your existence." | For the rest of your life. | He looks up at one board, then the other. Wishonia throws both arms wide and presents him like a game-show prize. | He holds his watch to his ear. |
-| "I modeled both paths for twenty of your years." | She ran both futures for 20 years. | On "modeled" YOU splits in two like a double exposure. The two YOUs tip their bowlers to each other and walk off, one under each board. | |
+| "I modeled both paths for twenty of your years." | She ran both futures for 20 years. | On "modeled" YOU splits in two like a double exposure. The two YOUs tip their fedoras to each other and walk off, one under each board. | |
 
 Sound: a boing as the post springs up on "select"; a sparkle on "existence."; a whoosh as YOU splits on "modeled".
 
@@ -133,9 +133,9 @@ Sound: a pencil squeak as he rules the line on "project"; a tick for the tag on 
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "If you stop spending papers on murder" | Money now goes to weapons. | Cut to the two lanes. In the left lane a line of war bills marches into the arms factory, where the Weapons Maker waits, cradling his baby missile. | |
+| "If you stop spending papers on murder" | Money now goes to weapons. | Cut to the two lanes. In the left lane a line of war bills marches into the arms factory, where the Weapons Maker waits, cradling his missile. | |
 | "and start spending them on medicine," | Send it to medicine instead. | The line turns round on the spot and trots across into the right lane, through a funnel (the seals flip to crosses) and into the hospital. | The Weapons Maker waves after them with his cigar. |
-| "your meat lasts longer," | You live longer. | The two YOUs stand one in each lane. The left one's chest light blinks red and he coughs; the right one's stays dark and he flexes. | |
+| "your meat lasts longer," | You live longer. | The two YOUs stand one in each lane. The left one coughs; the right one flexes. | |
 | "your productivity compounds," | Your earnings grow on themselves. | The right YOU's stack of pay doubles, then doubles again. | |
 | "and over a remaining human lifespan you earn one point five seven times" | Over a lifetime you earn 1.57 times as much. | Both age: the left one bends over a cane, the right one goes grey at the temples. Their lifetime stacks rise to their full heights, the right one 1.57 times the left, and "1.57×" stamps over it. | |
 | "what you would have earned doing the thing that kills you." | The other lane kills you. | On "kills" the factory's middle chimney, a grinning missile, lights and launches; on "you." it comes down on the left YOU. | A white flash and a mushroom cloud. He stands there charred black beside his singed short stack, only his eyes blinking. |
@@ -164,82 +164,79 @@ Sound: a creak as the arm comes off on "insight.".
 
 - id: future-a-2027
 - act: Future A
-- transition_in: cut (to the fork on the-roads)
+- transition_in: cut
 - cue: "Future A: You Ignore"
 - time: 52:13.0 to 52:26.9 (13.9 s)
 - voiceover: "Future A: You Ignore This Manual. Year twenty twenty-seven: Still spending six hundred and four times more on weapons than on testing which medicines actually work. Nobody finds this weird."
-- layer: B, plate the-roads
+- layer: B, plate the-road
+- bit: **YOU walk along one road, big, looking at your watch, and every year it gets worse.** Scenes 6 to 9 are one scene and one treadmill: the walk never eases and YOU never looks up, while black tar climbs him at his height times the share of GDP (ankles, knees at 25%, waist at 50%) and the sky goes from dust to rust. Scenes 11 to 13 are the rest of the road: it ends at a cliff, NO COLOMBIA; 2043 at the bottom; payoff, a cockroach in his fedora holding the manual upside down.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Future A: You Ignore This Manual." | Future A: you ignore the manual. | Cut to the fork at the left of the chart. YOU stands at it checking his watch. The manual floats down on a parachute into his hands; on "Ignore" he tosses it over his shoulder without looking, and sets off along road A, the lower branch. | It lands on road B with a puff of dust. |
-| "Year twenty twenty-seven:" | | The first year tick springs up out of the road: "2027". The sky over road A steps a shade darker. | |
-| "Still spending six hundred and four times more on weapons than on testing which medicines actually work." | Weapons still get 604 times the money of medical testing. | By the road, a stack of 604 war bills shoots up out of the top of the frame. At its foot stands one medicine bill. On "work." it waves a tiny white flag. | |
-| "Nobody finds this weird." | Nobody notices. | People stroll past without looking up: a woman with a pram, a man reading a newspaper, and YOU, checking his watch. | The newspaper man walks into the stack, bounces off, tips his hat to it and walks round. |
+| "Future A: You Ignore This Manual." | Future A: you ignore the manual. | YOU walks, big, reading his watch. The manual comes down on a parachute beside his hand. | On "Ignore" it goes over his shoulder. He does not look. |
+| "Still spending six hundred and four times more on weapons than on testing which medicines actually work." | Weapons get 604 times the money of medical testing. | The 2027 sign goes by. A tower of war bills shoots out of the top of the frame; 604 stamps on it. At its foot, one medicine bill hops and waves. | |
+| "Nobody finds this weird." | Nobody notices. | A man with a newspaper and a woman with a pram overtake him, neither looking up. | On "weird." YOU treads on the medicine bill. It goes flat. He does not look. |
 
-Sound: a thunk as the manual lands on "Manual."; a pop as the tick springs up on "twenty-seven:"; a slide whistle up as the stack shoots up on "six"; a boing as the newspaper man bounces on "weird.".
+Sound: a whoosh and a thunk for the manual; a slide whistle up on "six"; a stamp on "four"; a pat on "weird.".
 
 ## Scene 7 · future-a-2033
 
 - id: future-a-2033
 - act: Future A
-- transition_in: same plate (no seam): the camera travels on left
+- transition_in: same scene as future-a-2027
 - cue: "Year twenty thirty-three"
 - time: 52:26.9 to 52:38.6 (11.8 s)
 - voiceover: "Year twenty thirty-three: Destructive economy hits twenty-five percent of G.D.P. The Soviet Union collapsed at fifteen percent. You have better technology and worse planning."
-- layer: B, plate the-roads
+- layer: B, plate the-road
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Year twenty thirty-three:" | | The camera travels on along road A with YOU. "2033" springs up; the sky steps darker. | |
-| "Destructive economy hits twenty-five percent of G.D.P." | Destruction is a quarter of the economy. | The camera pulls back to show the bank under road A: the black band of clockwork robots, each hunched over a laptop, has eaten a quarter of the way up it. A card stamps: "25% OF GDP". | The robots nearest the top elbow each other to chew higher. |
-| "The Soviet Union collapsed at fifteen percent." | The USSR fell at less. | The dashed 15% line, tagged "USSR · 1991", runs across the bank below the robots' top. Gorbachev stands on it like a ledge and holds out his fat FIVE-YEAR PLAN binder to the robots climbing past. | A robot takes the binder and eats it. |
-| "You have better technology and worse planning." | | On "technology" a robot climbs out of the band onto the road, its laptop glowing. On "planning." it holds up its plan: a clipboard, "PLAN:", with nothing under it. | It turns the clipboard round to read its own plan; its eyes spin and smoke pours out of its ears. YOU walks past and gives it a thumbs up. |
+| "Destructive economy hits twenty-five percent of G.D.P." | Destruction is a quarter of the economy. | The 2033 sign goes by. The tar has reached his knees; 25% stamps beside them. | |
+| "The Soviet Union collapsed at fifteen percent. You have better technology and worse planning." | The USSR fell at less. | Gorbachev, big, in the tar beside his headstone: USSR, stamped 15%. He holds up his fat 5-YEAR PLAN binder. | On "planning." he throws it. It bounces off YOU's fedora and sinks. YOU does not look. |
 
-Sound: a pop for the tick on "thirty-three:"; a chewing rattle as the band rises and a stamp thump on "twenty-five"; a crunch as the robot eats the binder on "collapsed"; a whirr on "technology"; a zap as the robot's head smokes on "planning.".
+Sound: a stamp on "twenty-five" and on "fifteen"; a clank as the binder hits on "planning.".
 
 ## Scene 8 · future-a-2035
 
 - id: future-a-2035
 - act: Future A
-- transition_in: same plate (no seam): the camera travels on left
+- transition_in: same scene as future-a-2027
 - cue: "Year twenty thirty-five"
 - time: 52:38.6 to 52:58.3 (19.6 s)
 - voiceover: "Year twenty thirty-five: Your best engineers now work in ransomware because it pays better than engineering. Hospitals budget for extortion the way they used to budget for gauze. A nurse clicks a chart and gets a countdown timer instead of a medication dose. The people who could reverse this trend are the ones profiting from it."
-- layer: B, plate the-roads
+- layer: B, plate the-road
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Year twenty thirty-five:" | | The camera travels on. "2035" springs up; the sky steps to orange, a smoke column on the horizon. | |
-| "Your best engineers now work in ransomware because it pays better than engineering." | Crime pays engineers more than building. | By the road, an engineer at a drafting table beside his half-built bridge. On "ransomware" he swaps his drawing for a laptop showing a grinning skull and pulls on a mask and fedora. On "pays" plain bills pile up on his desk. | On "engineering." his half-built bridge falls into the creek. |
-| "Hospitals budget for extortion the way they used to budget for gauze." | Ransom is now a normal hospital cost. | The camera travels on to a hospital with a budget card on an easel: two bars, "GAUZE" and "RANSOM". On "extortion" the RANSOM bar shoots up and the GAUZE bar shrinks to a stub. Medicine bills march out of the hospital to the crook's desk, and their seals flip from crosses back to missiles as they climb his pile. | The last thing out of the door is a roll of gauze, and the crook ties up his pile with it. |
-| "A nurse clicks a chart and gets a countdown timer instead of a medication dose." | Attacks stop care in mid-treatment. | The camera pushes in through the hospital window: YOU in bed, a nurse beside him with a medicine cup. She clicks the bedside screen: a grinning skull over "00:00:03", ticking down. She looks into her cup: a tiny lit bomb sits in it instead of a pill. | On "dose." the timer hits zero and it goes off. The smoke clears: the nurse charred black, still holding out the cup, and YOU a grinning skeleton in his bowler. |
-| "The people who could reverse this trend are the ones profiting from it." | The only people who could fix it are paid not to. | The camera pulls back out of the window: the crook leans back on his pile of war bills and lights a cigar with a ransom note. | Through the window, YOU's skeleton sits up, straightens his bowler and checks his watch. |
+| "Your best engineers now work in ransomware because it pays better than engineering." | Crime pays engineers more than building. | The 2035 sign; the sky goes orange. An engineer, big, at his drawing board. On "ransomware" he is a masked crook at a laptop; on "pays" bills rain on him. | On "engineering." he runs off ahead, laptop in the air. |
+| "Hospitals budget for extortion the way they used to budget for gauze." | Ransom is now a normal hospital cost. | A hospital, big. Medicine bills paddle out of it across the tar, one after another, the way he went. | |
+| "A nurse clicks a chart and gets a countdown timer instead of a medication dose." | Attacks stop care in mid-treatment. | A nurse, big, holds out a medicine cup to YOU; beside her a skull screen counts 00:03, 00:02, 00:01. There is a lit bomb in the cup. | On "dose." it goes off: mushroom cloud, the nurse charred and blinking, still holding out her hand. YOU, charred, walks on reading his watch. |
+| "The people who could reverse this trend are the ones profiting from it." | The only people who could fix it are paid not to. | The bills arrive at a heap of bundles with the masked engineer on top, his laptop in the air. | |
 
-Sound: a pop for the tick on "thirty-five:"; typewriter keys on "ransomware"; a splash as the bridge falls on "engineering."; a slide whistle up for the RANSOM bar on "extortion"; a click on "clicks" and ticks of the timer; the boom on "dose."; a match strike on "profiting".
+Sound: typewriter on "ransomware"; a cash register on "pays" and "profiting"; a slide whistle on "extortion"; a click and three ticks; the boom on "dose.".
 
 ## Scene 9 · future-a-2040
 
 - id: future-a-2040
 - act: Future A
-- transition_in: same plate (no seam): the camera travels on left
+- transition_in: same scene as future-a-2027
 - cue: "Year twenty forty"
 - time: 52:58.3 to 53:10.4 (12.2 s)
 - voiceover: "Year twenty forty: Parasitic economy hits fifty percent. A.I. agents file more fake court cases than real ones. Tax collection collapses because A.I. can evade faster than humans can"
-- layer: B, plate the-roads
+- layer: B, plate the-road
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Year twenty forty:" | | YOU's skeleton strolls out of the hospital and on along road A. "2040" springs up; the sky steps to rust. | |
-| "Parasitic economy hits fifty percent." | Destruction is half the economy. | The camera pulls back: the robot band has eaten half way up the bank, and the road on top of it sags. A card stamps: "50% OF GDP". | A robot pops its head up through the road surface beside YOU's skeleton. |
-| "A.I. agents file more fake court cases than real ones." | Machines flood the courts with fakes. | A column of robots files paper at a court window: a bar chart of two piles, "FAKE" and "REAL". The FAKE pile climbs past the window and out of the frame; one human waits with one thin folder for REAL. | On "ones." the FAKE pile topples onto the clerk; only his hand sticks out, still banging a gavel. |
-| "Tax collection collapses because A.I. can evade faster than humans can" | Machines dodge tax faster than people can check. | Next door, the tax office, an auditor in front of it with a magnifying glass. On "collapses" the building folds flat behind him like a cardboard box. On "evade" robots zip round him faster and faster, and he spins after them. | On the second "can" he falls flat on his back, dizzy, and the last robot plucks the empty in-tray off his chest and zips away with it. |
+| "Year twenty forty:" | | The 2040 sign. | The burnt suit falls off him. The skeleton keeps the stride. |
+| "Parasitic economy hits fifty percent." | Destruction is half the economy. | The one pull-back: tar to the waist as far as you can see, the charred nurse and the heap behind him, the sky rust. 50% on a card. | |
+| "A.I. agents file more fake court cases than real ones." | Machines flood the courts with fakes. | Robots wade past him holding up FAKE on their clipboards, to a court window. Case files stack up beside the judge. | On "ones." the stack falls on him. |
+| "Tax collection collapses because A.I. can evade faster than humans can" | Machines dodge tax faster than people can check. | On "collapses" the tax office folds flat. An auditor, big, with his magnifying glass; on "evade" robots zip round him and he spins. | On the second "can" he goes under the tar. |
 
-Sound: a pop for the tick on "forty:"; a chewing rattle and a stamp thump on "fifty"; a slam as the pile topples on "ones."; a thunk as the tax office folds on "collapses"; a whoosh as the robots zip round on "evade".
+Sound: a slide whistle down as the suit falls; a stamp on "percent"; a slam on "ones."; a thunk on "collapses"; a whoosh on "evade".
 
 ## Scene 10 · audit-side-eye
 
@@ -267,56 +264,54 @@ Sound: crickets.
 - cue: "Your governments don't fall"
 - time: 53:11.5 to 53:28.1 (16.6 s)
 - voiceover: "Your governments don't fall; they rot in place, like a body whose organs are still technically present but no longer speaking to one another. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia."
-- layer: B, plate the-roads
+- layer: B, plate the-road
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Your governments don't fall;" | Governments do not fall. | Cut back to road A: the Capitol by the road. A wrecking ball swings in and bounces off its dome; it stands. | |
-| "they rot in place," | They decay standing up. | Vines creep up the columns, mushrooms sprout on the steps, and flies circle. The dome sags. | |
-| "like a body whose organs are still technically present but no longer speaking to one another." | Every part is there; none of them talk. | The dome lifts like a lid: inside, the organs sit at little office desks in a row, a brain, a heart, two lungs, a liver. The heart passes a memo to the lungs, which crumple it. | On "another." each turns its back and slams its cubicle door. |
-| "When Venezuela collapsed, Venezuelans fled to Colombia." | People used to flee to the next country. | The camera travels on to a border by the road: refugees with suitcases walk under a barrier from the "VENEZUELA" sign to the "COLOMBIA" sign, and sit on their suitcases. | |
-| "When the global economy collapses, there is no Colombia." | When it is global, there is nowhere to go. | The COLOMBIA sign keels over flat. They pick up their suitcases and walk on, YOU's skeleton joining the end of the line. The road ends at a cliff: road A's line drops straight down to the chart's floor. They walk off it in step without looking down. | YOU's skeleton, last in line and checking his watch, steps off after them. |
+| "Your governments don't fall; they rot in place," | Governments decay standing up. | The skeleton walks on past the Capitol, big. A wrecking ball bounces off its dome. It stands; moss, a cobweb and a spider arrive, and the dome sags. | |
+| "like a body whose organs are still technically present but no longer speaking to one another." | Every part is there; none of them talk. | The dome lifts like a lid: a brain, a heart, lungs and a liver at desks with laptops. | They shuffle their desks apart. On "another." the dome slams. |
+| "When Venezuela collapsed, Venezuelans fled to Colombia." | People used to flee to the next country. | Refugees with suitcases wade past him, toward a sign: COLOMBIA. | |
+| "When the global economy collapses, there is no Colombia." | When it is global, there is nowhere to go. | The earned wide shot: the road ends at a cliff with the sign at its brink, and the refugees step off one at a time. NO stamps over COLOMBIA. | The skeleton, last, walks off the edge, strolls on air for half a second, and drops. |
 
-Sound: a clank as the wrecking ball bounces on "fall;"; a creak as the dome sags on "place,"; slamming doors on "another."; a falling slide whistle as they drop on "Colombia." (second).
+Sound: a clank on "fall;"; a squeak on "place,"; a slam on "another."; a stamp on "no"; a falling slide whistle after the second "Colombia.".
 
 ## Scene 12 · future-a-2043
 
 - id: future-a-2043
 - act: Future A
-- transition_in: same plate (no seam): the camera tilts down the cliff after the refugees
+- transition_in: same scene as rot-in-place: the camera goes down the cliff
 - cue: "Year twenty forty-three"
 - time: 53:28.1 to 53:39.6 (11.5 s)
 - voiceover: "Year twenty forty-three: Water wars go nuclear. The survivors argue about whether this counts as a climate death or a military death, because the spreadsheet has separate columns."
-- layer: B, plate the-roads
+- layer: B, plate the-road
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Year twenty forty-three:" | | The camera tilts down the cliff after them to the chart's floor, under a slate sky: a heap of suitcases. "2043" leans up out of the floor. | |
-| "Water wars go nuclear." | People go to war over water. | Two ragged survivors lunge for the one drop from a dry tap and bonk heads. On "nuclear." a missile rises from the horizon behind them: a white flash and a mushroom cloud. | They stand there charred black and smoking, only their eyes blinking. |
-| "The survivors argue about whether this counts as a climate death or a military death," | They argue over the label. | They turn to a spreadsheet on an easel with two columns: "CLIMATE DEATH" and "MILITARY DEATH". YOU's skeleton crashes down between them out of the sky in a heap of bones (he has been falling since the cliff). One grabs an arm and pulls toward his column; the other grabs a leg. | |
-| "because the spreadsheet has separate columns." | | On "separate" the skeleton comes apart in the middle. On "columns." each holds his half up in his own column and makes a tally mark. | The bowler rolls away along the floor. |
+| "Year twenty forty-three: Water wars go nuclear." | People go to war over water. | The bottom, the 2043 sign. Two ragged survivors, big, lunge for a dry tap and bonk heads. On "nuclear." a mushroom cloud: they are charred and blink. | |
+| "The survivors argue about whether this counts as a climate death or a military death," | They argue over the label. | A spreadsheet stands between them, CLIMATE and MILITARY. On "argue" YOU's skeleton lands between them, late; he has been falling all this time. Each jabs for his column. | Another mushroom cloud goes up behind them on "climate", "military" and "spreadsheet". They never turn round. |
+| "because the spreadsheet has separate columns." | | On "separate" the skeleton splits down the middle, a half to each. | The fedora falls and rolls away along the road. |
 
-Sound: a pop for the tick on "forty-three:"; a boing as they bonk heads on "wars"; the boom on "nuclear."; a falling whistle and a clatter of bones on "argue"; a snap on "separate"; two marker squeaks on "columns.".
+Sound: a boing on "wars"; the boom on "nuclear."; a thunk on "argue"; three far booms; a snip on "separate"; a marker on "columns.".
 
 ## Scene 13 · cockroach-manual
 
 - id: cockroach-manual
 - act: Future A
-- transition_in: same plate (no seam): the camera travels on left after the bowler
+- transition_in: same scene as rot-in-place: the camera follows the fedora
 - cue: "Year twenty forty-five"
 - time: 53:39.6 to 53:49.7 (10.0 s)
 - voiceover: "Year twenty forty-five: Cockroaches evolve intelligence. Year twenty fifty: Cockroaches find this manual, very confused."
-- layer: B, plate the-roads
+- layer: B, plate the-road
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Year twenty forty-five: Cockroaches evolve intelligence." | Humans are gone; cockroaches take over. | The camera follows the rolling bowler to the last stretch of the floor, under a navy sky. "2045" leans up out of the rubble. A cockroach scuttles out of a crack, stands up on its hind legs, puts on tiny glasses, and its head swells. | It puts on YOU's bowler. |
-| "Year twenty fifty: Cockroaches find this manual, very confused." | Even they cannot read it. | "2050" pops up. The cockroach digs the manual out of the rubble, blows the dust off and reads it upside down. On "very" it turns it the right way up, looks round at the ruins, and looks back. | On "confused." it turns it upside down again. |
+| "Year twenty forty-five: Cockroaches evolve intelligence." | Humans are gone; cockroaches take over. | Empty road, the sky navy, the 2045 sign, the fedora on the ground. A cockroach crawls in; on "intelligence." it stands up, big, in its glasses. | It puts on the fedora. |
+| "Year twenty fifty: Cockroaches find this manual, very confused." | Even they cannot read it. | 2050. The same parachute comes down with the same manual; on "manual," it holds it upside down. | On "very" it turns it the right way up. On "confused." it turns it back. |
 
-Sound: a pop for each tick; a boing as its head swells on "intelligence."; a huff as it blows off the dust on "find".
+Sound: a boing on "intelligence."; a huff on "find"; a squeak on "confused.".
 
 ## Scene 14 · future-b-2028
 
@@ -352,7 +347,7 @@ Sound: a whoosh as the page turns on "Future"; a pop for the tick and a stamp th
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Year twenty thirty-two: First treatments from the accelerated pipeline reach patients." | Treatments reach patients. | The camera travels on along road B to a ticket window by the road, its wait sign over it. A queue of humans walking their diseases on leashes zigzags back from it, grey-bearded further back, then skeletons still holding leashes. "2032" springs up. On "reach" a pill bottle shoots out of the window into the hands of YOU at the front. | His chest light goes dark. |
+| "Year twenty thirty-two: First treatments from the accelerated pipeline reach patients." | Treatments reach patients. | The camera travels on along road B to a ticket window by the road, its wait sign over it. A queue of humans walking their diseases on leashes zigzags back from it, grey-bearded further back, then skeletons still holding leashes. "2032" springs up. On "reach" a pill bottle shoots out of the window into the hands of YOU at the front. | His cough stops. |
 | "Diseases that would have waited centuries for trials are getting tested now." | The wait drops from centuries to now. | The wait sign reads "443 YEARS". On "centuries" its digits start to roll down; on "now." they clank to a stop on "NOW". | |
 | "Nobody is cured of everything, but the queue is finally moving." | Not everything is cured, but it moves. | The next in line, a skeleton, gets a bottle, shakes it, shrugs, and hands it back. On "moving." the whole line shuffles forward one step, all the way back out of the frame. | |
 | "Humans experience the novel sensation of progress." | | YOU looks at his bottle, looks round, puzzled, and smiles. | |
@@ -430,7 +425,7 @@ Sound: a pop for the tick on "forty:"; a whirr as the ring starts on "compoundin
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
 | "Year twenty forty-eight:" | | "2048" springs up, and the sky over road B is at its brightest. | |
-| "The model projects everyone fifty-six point seven times richer than the path you're currently on." | Road B ends 56.7 times higher than road A. | The camera pulls back to the whole chart: road B climbs off the top of the paper. A Gilliam hand glues another strip on, then another, and the camera tilts up road B past the clouds, past an airplane whose pilot waves, into the night sky, until it bumps the moon. "56.7×" stamps beside it. On "path" the camera drops all the way back down to road A, a thin line near the floor. | On road A, a tiny skull in a bowler looks up. |
+| "The model projects everyone fifty-six point seven times richer than the path you're currently on." | Road B ends 56.7 times higher than road A. | The camera pulls back to the whole chart: road B climbs off the top of the paper. A Gilliam hand glues another strip on, then another, and the camera tilts up road B past the clouds, past an airplane whose pilot waves, into the night sky, until it bumps the moon. "56.7×" stamps beside it. On "path" the camera drops all the way back down to road A, a thin line near the floor. | On road A, a tiny skull in a fedora looks up. |
 | "Your children ask what "war" means." | War is forgotten. | The camera travels back up to YOU's house at the end of road B: through the window, YOU at the kitchen table with his child. In the corner stands a lamp made from a retired missile under a lampshade. The child tugs his sleeve and points at it. | |
 | "You change the subject." | | YOU points out of the window, and the child turns to look. His other hand throws the tablecloth over the missile lamp. | The missile's eyes peek out from under the cloth. |
 

@@ -37,9 +37,9 @@ version: v3
 - tv-field: two unit charts side by side on a plain field under a cream sky: 28 voters, 400 twerkers.
 - pyramid-hill: a referral pyramid on a plain field, one human at the top, two under, four under them, 29 rows down, a counter up its side.
 
-**Cast:** `wishonia` (host), `console`, `deck/earth`, `deck/porthole` (existing); `atom` (existing); `bill-war`, `bill-med` (new, as in Part 17); `yes-button` (new: a brass push-button on a stand, "YES"); `reaper` (existing pieces, plus a wristwatch); `scientist` (existing); `weapons-maker` (new, Part 17's, with his baby missile); `citizen` (new: a sheet of a dozen engraved Victorian everyday humans, men and women, every build, for the crowds); `thought-bubble` (new: a cloud with a lid that cracks open, a YES inside); `census-taker` (new: a clerk with a ledger and pen); `economist` (new: monocle, mutton chops, a pointer); `old-woman` and `old-man-skeleton` (new); `alphonse-gaston` (new: the 1901 comic-strip pair, bowing); `door` (new); `headstone` (existing); `weird-human` (new: the lone human with his small YES sign); `dunce-cap` (new); `chenoweth` (new: Erica Chenoweth, caricatured); `marchers`, `pitchforks`, `toppled-statue` (new: tiny engravings for three dots); `filing-cabinet` (new); `tumbleweed` (new); `twerker` (new: a Victorian lady in a bustle, twerking at an engraved telephone with the TikTok note on it, in two frames); `ticket` (new: a little VOTE ticket); `calendar` (new: a tear-off page); `hospital` (new); `fireworks` (new).
+**Cast:** `wishonia` (host), `console`, `deck/earth`, `deck/porthole` (existing); `atom` (existing); `bill-war`, `bill-med` (new, as in Part 17); `yes-button` (new: a brass push-button on a stand, "YES"); `reaper` (existing pieces, plus a wristwatch); `scientist` (existing); `weapons-maker` (new, Part 17's, with his missile); `citizen` (new: a sheet of a dozen engraved Victorian everyday humans, men and women, every build, for the crowds); `thought-bubble` (new: a cloud with a lid that cracks open, a YES inside); `census-taker` (new: a clerk with a ledger and pen); `economist` (new: monocle, mutton chops, a pointer); `old-woman` and `old-man-skeleton` (new); `alphonse-gaston` (new: the 1901 comic-strip pair, bowing); `door` (new); `headstone` (existing); `weird-human` (new: the lone human with his small YES sign); `dunce-cap` (new); `chenoweth` (new: Erica Chenoweth, caricatured); `marchers`, `pitchforks`, `toppled-statue` (new: tiny engravings for three dots); `filing-cabinet` (new); `tumbleweed` (new); `twerker` (new: a Victorian lady in a bustle, twerking at an engraved telephone with the TikTok note on it, in two frames); `ticket` (new: a little VOTE ticket); `calendar` (new: a tear-off page); `hospital` (new); `fireworks` (new).
 
-**Callbacks:** Part 5's Reaper and his tally (stopped by the click, waiting on the thin wedge, blown off the top of the pyramid). Part 17's ten-strip banknote is this part's 1% bill. Part 17's Weapons Maker and his baby missile.
+**Callbacks:** Part 5's Reaper and his tally (stopped by the click, waiting on the thin wedge, blown off the top of the pyramid). Part 17's ten-strip banknote is this part's 1% bill. Part 17's Weapons Maker and his missile.
 
 **New art:** every `(new)` cut-out above; the heaviest are `citizen`, `thought-bubble`, `twerker`, `chenoweth` and `alphonse-gaston`.
 
@@ -119,10 +119,10 @@ Sound: a ding as the bill lights; a sparkle on "fund"; pattering feet; a shrug-s
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
 | "You are not creating support for not dying of horrible diseases and not mass murdering each other." | The vote does not change minds. | The camera drops to the crowd: 100 humans in ten rows of ten, every one under a shut thought bubble. | |
-| "Nearly everyone already supports not dying of horrible diseases and not mass murdering each other." | Nearly everyone agrees already. | All 100 nod at once, so hard every hat hops up and lands again. In the back row one shakes his head: the Weapons Maker, and the baby missile in his arms shakes its head too. | |
+| "Nearly everyone already supports not dying of horrible diseases and not mass murdering each other." | Nearly everyone agrees already. | All 100 nod at once, so hard every hat hops up and lands again. In the back row one shakes his head: the Weapons Maker, hugging his missile. | |
 | "You are proving it." | The vote counts minds already made up. | The census-taker walks along the rows ticking heads in his ledger: tick, tick, tick, 99 ticks and one cross. | He reaches the Weapons Maker, who blows cigar smoke in his face; he crosses him off without looking up. |
 
-Sound: a thump for the nod and pats as the hats land on "supports"; a squeak as the missile shakes its head; pen ticks from "proving".
+Sound: a thump for the nod and pats as the hats land on "supports"; a squeak as he shakes his head; pen ticks from "proving".
 
 ## Scene 5 · pluralistic-ignorance
 
@@ -180,7 +180,7 @@ Sound: soft pats for the bows; a switch as each planet goes dark and a thunk for
 | "If every human realized that nearly every other human would like a world without war and disease" | What happens when everyone finds out. | Back on the town square. On the chart, the "THINK OTHERS WANT IT" bar shoots up to match "WANT IT". Every bubble pops open at once, the same YES in every one, and every head turns to look. | The skeleton's jaw drops clean off. |
 | "and an extra five hundred and eighteen thousand, eight hundred and seventy-nine dollars in lifetime income," | $518,879 more each. | A line chart slides in, "YOUR LIFETIME INCOME": two lines from birth, the treaty line ending $518,879 above the other. A fat stack of plain bills thumps into every open bubble. | The Weapons Maker's stack lands too, with a tag, "+$518,879"; his eyes go wide. |
 | "it would be done tomorrow" | | A tear-off calendar page rips off; "DONE" stamps on the next. | |
-| "and the world would be unrecognizable." | | The three factories at the top of the sheet fold flat and pop up as hospitals; their missile chimneys blast off and burst as fireworks. | The baby missile wriggles out of the Weapons Maker's arms and goes up with them. He waves goodbye. |
+| "and the world would be unrecognizable." | | The three factories at the top of the sheet fold flat and pop up as hospitals; their missile chimneys blast off and burst as fireworks. | The missile fires out of the Weapons Maker's arms and goes up with them. He waves goodbye. |
 
 Sound: pops as the bubbles burst open on "realized"; a falling slide whistle for the jaw; thunks for the stacks on "thousand,"; a cash-register ding for his tag; a rip and a stamp thump on "tomorrow"; a launch roar and firework pops on "unrecognizable.".
 

@@ -26,7 +26,7 @@ version: v3
   - treaty-road: plain aged paper with a country road across it. In the middle stands an engraved farm cart, the 1% treaty scroll standing in a heap of medicine bills in its bed. Four ropes run from its corners to four pullers in harnesses, and each harness has a pole bent forward over the puller's head with his bait dangling from it. Under each rope, an inked arrow on the paper shows the pull, its length the pull's strength. Further along the road: two germs, the Grim Reaper, and a signpost.
   - plain: bare aged paper. YOU at a school desk with a laptop, front and center. Behind him, the voters land in rows. Behind them, a chart card on two legs: voters against rounds, with a mark at 4 billion.
   - deli: the Reaper behind a white deli counter with a bell and a till, a "NOW SERVING" sign hanging over it, a "TAKE A NUMBER" dispenser, a door marked "DELETED" at one end, and a queue of humans holding tickets back to the horizon.
-- **Cast:** `reaper` (the generated art), `globe` (existing); `halo`, `treaty-cart`, `treaty-scroll`, `bill-med`, `bill-war`, `fat-cat`, `bond`, `politician`, `ballot-box`, `hand-mirror`, `you`, `pill-bottle`, `thermometer`, `germ`, `weapons-maker`, `baby-missile`, `signpost`, `cheese`, `milk-bottle`, `calendar`, `rosette`, `manual`, `school-desk`, `laptop`, `yes-button`, `cane-hook`, `friend-man`, `friend-woman`, `citizen` (a set), `deli-counter`, `ticket`, `sick-human` (with crutches, slings, ice packs and hot-water bottles), `you-bone-legs`, `receipt`, `case-file`, `gift-bow`, `saucer` (new or shared).
+- **Cast:** `reaper` (the generated art), `globe` (existing); `halo`, `treaty-cart`, `treaty-scroll`, `bill-med`, `bill-war`, `fat-cat`, `bond`, `politician`, `ballot-box`, `hand-mirror`, `you`, `pill-bottle`, `thermometer`, `germ`, `weapons-maker`, `missile`, `signpost`, `cheese`, `milk-bottle`, `calendar`, `rosette`, `manual`, `school-desk`, `laptop`, `yes-button`, `cane-hook`, `friend-man`, `friend-woman`, `citizen` (a set), `deli-counter`, `ticket`, `sick-human` (with crutches, slings, ice packs and hot-water bottles), `you-bone-legs`, `receipt`, `case-file`, `gift-bow`, `saucer` (new or shared).
 - **Callbacks:**
   - The halo that will not stay on anyone (Part 21's Moral Human): here it rolls off Wishonia and lands on the fat cat.
   - The Grim Reaper, unemployed since Part 21, is run over by the cart.
@@ -93,41 +93,26 @@ Sound: a sparkle as the halo comes down on "right"; a ding on "is),"; a falling 
 - act: Everyone's greed
 - transition_in: cut
 - cue: "The rich humans want"
-- time: 55:47.4 to 56:04.5 (17.2 s)
-- voiceover: "The rich humans want two hundred and seventy-two percent returns (they're very greedy). The politicians want to keep their jobs (they're very vain). The voters want free healthcare (they're very sick). The explosion manufacturers want money (they don't care where it comes from)."
-- layer: B, plate treaty-road
+- time: 55:47.4 to 56:15.4 (28.0 s)
+- voiceover: "The rich humans want two hundred and seventy-two percent returns (they're very greedy). The politicians want to keep their jobs (they're very vain). The voters want free healthcare (they're very sick). The explosion manufacturers want money (they don't care where it comes from). Everyone's greed aligns perfectly to accidentally save humanity. It's like you're going to cure death by mistake while trying to get rich. Humans aren't stupid."
+- layer: B, plate treaty-road (one road, the camera travels)
+- bit: **Four selfish people each chase their own bait on a pole, and accidentally drag the cart of cures.** A tug of war on one road, each one big in turn. Their ropes swing into one line and snap taut, and the cart rolls over the Reaper mid-sentence.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "The rich humans want two hundred and seventy-two percent returns (they're very greedy)." | The rich want returns. | Cut to the road: the cart in the middle, four ropes running to four empty harnesses. The camera travels to the first: the fat cat waddles in after a bond dangling on a pole, "272%", and the harness snaps shut round him on "want". He pulls for the bond; it bobs just out of reach. An inked arrow draws itself on the paper under his rope. | On "greedy)." dollar signs ring up in his eyes and he pulls harder. |
-| "The politicians want to keep their jobs (they're very vain)." | Politicians want to stay in office. | The camera travels to the second harness: the Politician strides in after a ballot box on a pole, and the harness snaps shut. He flicks out a hand mirror and checks his teeth. His arrow draws. | On "vain)." the glint off his teeth cracks the mirror. He goes on admiring himself in the cracks. |
-| "The voters want free healthcare (they're very sick)." | Voters want care. | The third harness: YOU shuffles in after a pill bottle on a pole, "FREE", a thermometer in his mouth, chest light blinking red. His arrow draws. | On "sick)." he coughs, and a germ shoots out of him and bounces off the cart's wheel. |
-| "The explosion manufacturers want money (they don't care where it comes from)." | Arms makers want money, any money. Four pulls in four directions cancel out. | The fourth harness: the Weapons Maker stomps in after a war bill on a pole, cradling his baby missile. His arrow draws. On "care" the bill's seal flips from missile to cross; he looks at it, shrugs, and wants it just as much. After "from)." the camera pulls back to the whole road: four pulls, four ways, the four arrows in an X, adding up to nothing. | The ropes twang tight, the cart shudders an inch off the road and goes nowhere, and a plank pops off its side. |
+| "The rich humans want 272% returns (they're very greedy)." | The rich want returns. | Close on the Fat Cat walking hard and going nowhere, a bond on his own pole; "percent": 272% stamps on it. | On "very" he swells. On "greedy" he lunges, and the bond, being on his own pole, goes with him. |
+| "The politicians want to keep their jobs (they're very vain)." | Politicians want office. | The camera travels to the Politician. His bait is a hand mirror with his own grinning face in it. | On "vain" the grin glints and cracks the glass. He goes on admiring it. |
+| "The voters want free healthcare (they're very sick)." | Voters want care. | YOU, sick, after a bottle marked FREE. | On "sick" he coughs a grinning germ at it; the bottle swings away and comes back and bonks him. |
+| "The explosion manufacturers want money (they don't care where it comes from)." | Arms makers want money, any money. | The Weapons Maker and his missile, after a bill with a missile seal. On "care" the seal flips to a cross; he shrugs and lunges the same. On "from" the camera pulls back: the whole road, two pulling left, two right, the cart shuddering. | |
+| "Everyone's greed aligns perfectly" | The pulls line up. | On "aligns" the two on the left turn round and leap the cart, the ropes swinging over it into one line. On "perfectly": snap, taut. | |
+| "to accidentally save humanity." | And the cart moves. | The cart lurches and the road starts to go by. Close on the wheel: two grinning germs pop up and go flat. | |
+| "It's like you're going to cure death by mistake while trying to get rich." | The cure is a side effect of greed. | The Reaper stands in the road, big, one palm out, while they walk past him. On "death" the wheel takes him: flat and charred, two white eyes that blink. The scythe springs up bent. On "rich" a bump bounces the bills into all four pockets. | |
+| "Humans aren't stupid." | | The sign UTOPIA 1 MILE. | On "stupid" the Fat Cat walks face first into the post; the other three walk into his back. |
 
-Sound: a click as each harness snaps shut, on each "want"; a cash-register ding on "greedy)."; a snip as the mirror cracks on "vain)."; a cough and a boing on "sick)."; a click for the seal flip on "care"; a twang and a pop for the plank on "from).".
+Sound: a stamp on "percent"; a slide up on "very"; a cash register on "greedy" and "money"; a sparkle and a snip on "vain"; a huff, boing and thunk on "sick"; a switch on "care"; a whoosh on "aligns"; a thunk on "perfectly"; a clank on "accidentally"; splats on "save", "humanity" and "death"; a boing for the scythe; thunk, pat, pat, pat on "stupid".
 
-## Scene 4 · cure-death-by-mistake
-
-- id: cure-death-by-mistake
-- act: Everyone's greed
-- transition_in: same plate (no seam)
-- cue: "Everyone's greed aligns perfectly"
-- time: 56:04.5 to 56:15.4 (10.8 s)
-- voiceover: "Everyone's greed aligns perfectly to accidentally save humanity. It's like you're going to cure death by mistake while trying to get rich. Humans aren't stupid."
-- layer: B, plate treaty-road
-- status: planned
-
-| Line | Claim | Visual | Gag |
-|---|---|---|---|
-| "Everyone's greed aligns perfectly" | The four pulls point the same way. | All four turn to the right at once: their poles swing round so the four baits hang in one row ahead of them, and the four ropes swing into one line ahead of the cart. On the paper the four arrows swing round and join head to tail into one long arrow. | |
-| "to accidentally save humanity." | And the cart moves. | They step off in step, and the cart rolls; the camera travels with it. The plaque on the tailgate swings into view: "ACCIDENTALLY SAVED HUMANITY WHILE GETTING RICH". On "save" a germ in a "CANCER" sash pops up ahead of the wheel: splat, flat as a rug. On "humanity." one in a "HEART DISEASE" sash: splat. | The halo from the-twist rolls in from the left, overtakes the cart and drops onto the fat cat's top hat. He does not notice. |
-| "It's like you're going to cure death by mistake while trying to get rich." | The cure is a side effect of greed. | On "cure" the Grim Reaper steps into the road, one bony palm out: STOP. On "death" nobody looks down from the baits: they march straight over him, and the wheels roll him flat. On "rich." the cart hits a bump, and medicine bills bounce out of it into all four pullers' pockets. | His scythe springs up out of the road, bent. Behind the cart, the flat Reaper blinks. |
-| "Humans aren't stupid." | | A signpost comes into the frame at the road's edge, "UTOPIA 1 MILE", its post in the fat cat's path. His monocle stays on his bond. | On "stupid." he walks face first into the post, and the other three walk into his back, thud, thud, thud. |
-
-Sound: a whoosh as they turn on "aligns"; marching footsteps on "perfectly"; a splat on "save" and on "humanity."; a ding as the halo lands; a big splat on "death" and a boing for the scythe; a cash-register ding on "rich."; a thunk on "stupid." and three pats after it.
-
-## Scene 5 · cheese-genius
+## Scene 4 · cheese-genius
 
 - id: cheese-genius
 - act: You can do this
@@ -137,18 +122,19 @@ Sound: a whoosh as they turn on "aligns"; marching footsteps on "perfectly"; a s
 - voiceover: "You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; excited-open + body-wide-gesture on "genius."; smirk-smile + body-point-right on "apply"
+- bit: **Host: the cheese.** A wedge the size of her head on a prize stand.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "You invented cheese," | Humans can be clever. | Back at the console: a little prize stand on the ledge, a milk bottle and a tear-off calendar beside it. On "cheese," a wedge of cheese rises onto the stand and turns to show itself off. | |
-| "which is milk you left out until it went bad but in a good way." | Cheese is rot on purpose. | On "left out" the calendar sheds its pages in a blur. On "bad" the milk turns green, swells and blows its cap off. On "good way." the stink lines drift over to the cheese and turn into sparkles round it. | The cap rings off Earth in the window. |
-| "That's genius." | | A rosette drops over the cheese: "GENIUS". Wishonia throws her arms wide. | |
-| "You just need to apply that same innovation to not dying." | Do the same with dying. | On "apply" she points at the stand. The cheese hops off it, and on "dying." the manual rises onto it in its place. | The rosette hops off the cheese onto the manual. |
+| "You invented cheese," | Humans can be clever. | A huge wedge rises onto a prize stand beside her and shows itself off. | |
+| "which is milk you left out until it went bad but in a good way." | Cheese is rot on purpose. | A big milk bottle on the ledge starts to shake. On "bad" it goes green and swells. | Its cap blows off and rings off Earth. |
+| "That's genius." | | The GENIUS rosette slams onto the cheese. | |
+| "You just need to apply that same innovation to not dying." | Do the same with dying. | On "not" the cheese falls off and the manual rises in its place. | On "dying" the rosette hops onto the manual. |
 
-Sound: a slide whistle up on "cheese,"; a riffle of pages on "left"; a pop as the cap blows on "bad"; a sparkle on "good"; a ding on "genius."; a slide whistle up on "dying.".
+Sound: a slide up on "cheese"; a pop on "bad" and a ding when the cap hits; a sparkle on "good"; a stamp on "genius"; a slide up on "not"; a pop on "dying".
 
-## Scene 6 · doubling-starts
+## Scene 5 · doubling-starts
 
 - id: doubling-starts
 - act: The ask
@@ -157,18 +143,19 @@ Sound: a slide whistle up on "cheese,"; a riffle of pages on "left"; a pop as th
 - time: 56:25.5 to 56:34.9 (9.5 s)
 - voiceover: "Go to war on disease dot org and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts."
 - layer: B, plate plain
+- bit: **The largest referendum in human history has one voter, and then it does not.** YOU types; two friends arrive; each brings two, until the frame is packed and the whole plate is people.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Go to war on disease dot org" | Go to the site. | Cut to the plain: YOU alone at his school desk, his chest light blinking red. The camera pushes into the laptop: "warondisease.org" types onto its screen. | |
-| "and cast your vote in the largest referendum in human history." | Vote in a vote for everyone. | A YES button springs out of the laptop on a coil, and YOU slaps it; his chest light goes teal. The camera pulls back: he is a speck on the empty plain. Behind him, the chart card on its legs, its voter count "1". | |
-| "Get two friends to do the same." | Each voter brings two. | YOU leans out with a long cane hook and yanks in a friend from the left, a man still holding his dinner fork, then one from the right, a woman in curlers. YES buttons spring up in front of them; they slap them. The count rolls to "3". | |
-| "That's how the doubling starts." | Two each doubles every round. | Each friend throws a hook out past the edge of the frame and yanks in two more, a row further back: "7". Then again, faster: "15". On "starts." again: "31", the last row landing wide across the plain. | The curve on the chart card shoots up to the mark at "4,000,000,000", tagged "ROUND 31", and runs off the top of the card. |
+| "Go to war on disease dot org" | Go to the site. | A laptop fills the frame; warondisease.org types onto it. | |
+| "and cast your vote in the largest referendum in human history." | Vote. | The laptop shrinks into the hands of YOU at his desk. A YES button springs up; he slaps it. | The camera pulls all the way back: a speck on empty paper. VOTERS: 1. |
+| "Get two friends to do the same." | Each voter brings two. | Back in. A man with a dinner fork and a woman in curlers arrive from either side, alarmed. | |
+| "That's how the doubling starts." | Two each doubles every round. | On "That's", "how", "doubling", "starts" rows of 4, 8, 16 and 32 pop in behind them until the frame is packed. | The same pull back: the whole plate is people. VOTERS: 4,130,000,000. |
 
-Sound: typewriter clacks on "war"; a boing as the button springs up on "cast" and a ding on "vote"; a whoosh for each hook on "friends"; dings on "same."; a pop for each row on "That's", "doubling" and "starts."; a rattle of numbers as the count runs.
+Sound: typewriter on "war"; a boing on "cast"; a ding on "vote"; a whoosh on "referendum"; a stamp on "human"; a pop for each arrival and each round; a whoosh and a stamp for the last pull back.
 
-## Scene 7 · countdown-104
+## Scene 6 · countdown-104
 
 - id: countdown-104
 - act: The ask
@@ -177,18 +164,19 @@ Sound: typewriter clacks on "war"; a boing as the button springs up on "cast" an
 - time: 56:34.9 to 56:46.4 (11.5 s)
 - voiceover: "Every minute of delay, one hundred and four humans permanently stop. Your vote saves two point six lives and prevents four hundred and sixty-eight thousand hours of suffering."
 - layer: B, plate deli
+- bit: **The Reaper's deli never stops, and the line shrinks by your vote.** He rings the bell every 0.576 s, whoever is at the counter turns into a skeleton and strolls out through DELETED, and the line moves up.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Every minute of delay," | Waiting costs lives. | Cut to the deli. The Reaper behind the counter, the NOW SERVING sign over him clicking up. On "minute" he slaps the bell: the customer at the counter flashes into a skeleton and strolls out through DELETED, and the line moves up one. He rings it on every click, every 0.58 seconds. | |
-| "one hundred and four humans permanently stop." | 104 people die every minute. | On "four" a card drops under the sign: "104 EVERY MINUTE". YOU reaches the counter with his ticket and his YES button. The Reaper's finger rises over the bell. | Held frame from "humans" to "Your": nothing moves but the sign's digits, which keep clicking up. No sound. |
-| "Your vote saves two point six lives" | One vote saves 2.6 lives. | On "vote" YOU presses his YES button. On "saves" the Reaper rings anyway, and YOU starts to turn to bone from the feet up. On "two" a cane hook shoots in and yanks the woman behind him out of the line; on "point" the man behind her; on "six" YOU himself, bone up to the waist. | Set down safe, YOU looks down at his bone legs, shrugs, and stays standing on them. That is the 0.6. |
-| "and prevents four hundred and sixty-eight thousand hours of suffering." | And 468,000 hours of suffering, about 53 years. | On "thousand" the Reaper's till rings and spits out a long receipt: "REFUND / 2.6 LIVES / 468,000 HOURS". On "hours" the camera pulls back over the queue: every crutch, sling, ice pack and hot-water bottle in it flies up into the air, all the way to the horizon, and the people under them stand up straight. | On "suffering." it all comes down on the Reaper and buries him. One weak ding of the bell comes from under the pile. |
+| "Every minute of delay," | Waiting costs lives. | The Reaper in his paper hat, big. Ring, skeleton, DELETED, next. NOW SERVING clicks up on every ring. | |
+| "one hundred and four humans permanently stop." | 104 a minute. | It keeps going. On "four": 104 A MINUTE. YOU reaches the counter. | |
+| "Your vote saves two point six lives" | One vote saves 2.6 lives. | On "vote" he presses YES. On "saves" the Reaper rings anyway and YOU goes to bone from the waist down. On "two" and "point" a cane hook lifts the two behind him out of the line; on "six" it lifts YOU. | Set down in front of the counter, he looks at his bone legs and hops on them. That is the 0.6. |
+| "and prevents four hundred and sixty-eight thousand hours of suffering." | And 468,000 hours. | The bell starts again. On "four" the till spits a receipt: 2.6 LIVES, 468,000 HOURS. On "hours" back over the line: every crutch, ice pack and hot-water bottle flies up. | On "suffering" they all come down on the Reaper and bury him. One weak ding. |
 
-Sound: a counter bell on "minute" and on each click after it, with an x-ray zap on the first; a click as the card drops on "four"; silence for the hold; a ding on "vote"; the bell and a zap on "saves"; a pop for each yank on "two", "point" and "six"; a cash-register ding and a rattle for the receipt on "thousand"; a whoosh on "hours"; a clatter on "suffering." and one weak bell.
+Sound: a bell on every ring; a stamp on "four"; a ding on "vote"; a bell and a zap on "saves"; a pop for each lift; a cash register on the second "four"; a whoosh on "hours"; a clatter after "suffering" and one weak ding.
 
-## Scene 8 · eligible-final-stamp
+## Scene 7 · eligible-final-stamp
 
 - id: eligible-final-stamp
 - act: The verdict
@@ -197,13 +185,14 @@ Sound: a counter bell on "minute" and on each click after it, with an x-ray zap 
 - time: 56:46.4 to 56:53.5 (7.1 s)
 - voiceover: "The universe is offering you a world without war and disease, and you're thinking about it. This is why aliens don't visit."
 - layer: A, host
-- wishonia: big, happy-smile + body-presenting; skeptical-closed + body-idle on "thinking" (the mug at her lips); smirk-smile + body-palms-down on "aliens"; sideeye-closed + body-palms-down on "visit."
+- wishonia: big, happy-smile + body-presenting; skeptical-closed + body-idle on "thinking"; smirk-smile + body-palms-down on "aliens"; sideeye-closed + body-palms-down on "visit."
+- bit: **The universe gift-wraps Earth, and the saucers turn around.**
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "The universe is offering you a world without war and disease," | The offer is on the table. | Back at the console, the case file on the ledge. On "offering" a big gift bow pops onto Earth in the window, with a tag: "TO: HUMANS". On "world" three flying saucers lower into the window on visible strings, wobbling toward the gift. | |
-| "and you're thinking about it." | Humanity hesitates. | YOU walks onto the top of Earth on his bone legs and puts his chin in his hand, a thought bubble with "..." over his bowler. Wishonia lifts her mug and sips. | On "it." he is still thinking. She puts the mug down slowly. |
-| "This is why aliens don't visit." | | On "aliens" she presses the big red button: the stamp comes down on the case file, a red bar strikes out the old "MAY BE", and "ELIGIBLE FOR OPTIMIZATION" lands. On "don't" two saucers take one look at YOU, still thinking, and are yanked up out of the frame on their strings. | On "visit." the third is yanked so hard it leaves a puff of exhaust. Wishonia side-eyes the camera. Part 27 starts on this frame. |
+| "The universe is offering you a world without war and disease," | The offer is on the table. | On "offering" a huge bow slams onto Earth, tagged TO: HUMANS. On "world" three saucers lower in on strings. | |
+| "and you're thinking about it." | Humanity hesitates. | YOU walks on, big, on his bone legs, chin in hand, "...". | |
+| "This is why aliens don't visit." | | He keeps thinking. | On "don't" two saucers are yanked up out of the frame; on "visit" the third, harder. |
 
-Sound: a pop for the bow on "offering"; a low hum for the saucers on "world"; a thunk as the mug goes down on "it."; a button click and a stamp thump on "aliens"; a whoosh on "don't" and a whistle on "visit.".
+Sound: a thunk and a sparkle on "offering"; a low hum on "world"; a whoosh on "don't"; a whistle on "visit".

@@ -2,7 +2,7 @@
 format: 1920x1080
 duration: 2:38.6
 message: "Humans call moving 1% of murder money to medicine crazy, but war is the largest coordinated effort your species undertakes, and ending it only requires not doing it."
-arc: Title card (INSTITUTIONALIZE buckled into a straitjacket) → the Orderly's net, poked up from Earth, falls short of Wishonia → the TV news chars its viewers and the inmate is netted → a human thumps his chest light → curing disease is the real hard job → sane / insane, and the trapdoor → the diagnostic criteria, a hold, and the deck light-years out in space → the padded cell: what you tell the orderly → the war chain on the wall → the chain goes dark (HOLD) → rocks manage peace → the STOP sign, and one billionaire and a PDF
+arc: Title card (INSTITUTIONALIZE buckled into a straitjacket) → the Orderly's net, poked up from Earth, falls short of Wishonia → the TV news chars its viewers and the inmate is netted → a human thumps his chest → curing disease is the real hard job → sane / insane, and the trapdoor → the diagnostic criteria, a hold, and the deck light-years out in space → the padded cell: what you tell the orderly → the war chain on the wall → the chain goes dark (HOLD) → rocks manage peace → the STOP sign, and one billionaire and a PDF
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 4, "What to Do When They Try to Institutionalize You"
@@ -25,7 +25,7 @@ version: v3
   - `padded-cell`: a padded cell with a steel door and a slot; its long wall becomes the inmate's pin board (orderly-door-slot, war-supply-chain, chain-goes-dark).
   - `rock-field`: an open field where a bomb works stands and then two rocks.
   - Host scenes (net-falls-short, less-crazy-goal, diagnostic-criteria, billionaire-pdf): Wishonia at her console on the observation deck, Earth in the glass.
-- **Cast:** existing: `politician`, `scientist`, `mushroom`, `laptop`. From Parts 1 to 3: `weapons-maker`, `baby-missile`, `factory`, `hungry-man`, `sandwich`, `bill-war`, `fat-cat`, `moth`. New: `straps`, `butterfly-net`, `tv-set`, `viewers`, `newton`, `apple-tree`, `weather-map`, `inmate`, `orderly`, `hedge`, `anatomy-man`, `cell`, `ledger`, `difference-engine`, `germ`, `pill-bottle`, `rope`, `wrench`, `game-show-stage`, `buzzer`, `trapdoor`, `audience`, `jesus-woodcut`, `telescope`, `padded-cell`, `cup`, `pins-and-string`, the eight supply-chain pieces, `light-switch`, `calutron`, `centrifuges`, `engineer`, `rocks`, `counter-sign`, `stop-sign`, `swivel-chair`, `pdf`.
+- **Cast:** existing: `politician`, `scientist`, `mushroom`, `laptop`. From Parts 1 to 3: `weapons-maker`, `missile`, `factory`, `hungry-man`, `sandwich`, `bill-war`, `fat-cat`, `moth`. New: `straps`, `butterfly-net`, `tv-set`, `viewers`, `newton`, `apple-tree`, `weather-map`, `inmate`, `orderly`, `hedge`, `anatomy-man`, `cell`, `ledger`, `difference-engine`, `germ`, `pill-bottle`, `rope`, `wrench`, `game-show-stage`, `buzzer`, `trapdoor`, `audience`, `jesus-woodcut`, `telescope`, `padded-cell`, `cup`, `pins-and-string`, the eight supply-chain pieces, `light-switch`, `calutron`, `centrifuges`, `engineer`, `rocks`, `counter-sign`, `stop-sign`, `swivel-chair`, `pdf`.
 - **Callbacks:**
   - Part 1 (eligible, earth-means-dirt): the case file "~~EARTH~~ DIRT: CASE #847" is the one she opens in diagnostic-criteria.
   - Part 2 (host-closes): the hungry man walks into less-crazy-goal still eating the club sandwich, and debug-37-trillion-cells dives into him.
@@ -115,7 +115,7 @@ Sound: a whoosh as the net comes up; a boing as it droops on "committed.".
 | "to believe war is a law of nature," | It is sold as natural. | On the screen: the Weapons Maker in a necktie reads the news, cradling his missile. | |
 | "like gravity" | | The screen cuts to Isaac Newton under his apple tree; a missile drops on his head instead of an apple. | He is charred, blinking, still holding his quill. |
 | "or weather." | | The weather map: a sun, a rain cloud, and missiles falling with the rain over a little town. After "weather." the forecast comes true: a white flash fills the TV and then the room. The viewers sit charred black, hair up, nodding along, wires bobbing. | They agree with it. |
-| "They will assume your brain is malfunctioning." | Whoever disagrees is called sick. | The charred heads turn to the window: the inmate stands on the corner with his "1%" sign; his chest light blinks. The Orderly's head rises behind the hedge on his long neck like a periscope; on "malfunctioning." his net comes down over the inmate. | After "malfunctioning." he carries him off like a prize butterfly, the 1% sign sticking out of the mesh. |
+| "They will assume your brain is malfunctioning." | Whoever disagrees is called sick. | The charred heads turn to the window: the inmate stands on the corner with his "1%" sign. The Orderly's head rises behind the hedge on his long neck like a periscope; on "malfunctioning." his net comes down over the inmate. | After "malfunctioning." he carries him off like a prize butterfly, the 1% sign sticking out of the mesh. |
 
 Sound: a click per wire on "programmed"; a TV switch on "news"; a clonk on "gravity"; rain turning to a falling whistle on "weather."; a boom after it; a whoosh as the heads turn on "assume"; a whoosh and a pop for the net on "malfunctioning.".
 
@@ -134,7 +134,7 @@ Sound: a click per wire on "programmed"; a TV switch on "news"; a clonk on "grav
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
 | "Here's what's funny about this:" | | The hungry man from Part 2 strolls in beside the console, still eating the club sandwich. | |
-| "these same humans think curing disease" | | His chest light blinks red. He thumps it with his fist like a car dashboard, and it goes out. | |
+| "these same humans think curing disease" | | He coughs, and thumps his own chest with his fist like a car dashboard. The cough stops. | |
 | "is the less crazy goal." | They think disease is the easy one. | He grins at us, cheeks full, sandwich raised. | After "goal." the light blinks back on behind his knuckles; he does not notice and takes another bite. |
 
 Sound: a dashboard ding on "curing"; a thunk on "disease"; a ding after "goal.".
@@ -143,7 +143,7 @@ Sound: a dashboard ding on "curing"; a thunk on "disease"; a ding after "goal.".
 
 - id: debug-37-trillion-cells
 - act: The real crazy goal
-- transition_in: cut (close on his blinking chest light)
+- transition_in: cut (close on his chest)
 - cue: "That's thirty-seven trillion"
 - time: 06:57.0 to 07:20.0 (23.0 s)
 - voiceover: "That's thirty-seven trillion cells per human, breaking in seven thousand different ways, involving chemistry you don't fully understand, inside organs you can't fully simulate, fighting pathogens that evolve faster than your treatments. You're trying to debug all of it. At once. While your meat is walking around using itself."
@@ -152,7 +152,7 @@ Sound: a dashboard ding on "curing"; a thunk on "disease"; a ding after "goal.".
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "That's thirty-seven trillion cells per human," | 37 trillion cells. | Close on his chest light; the camera dives through it into a field of engraved cells, each with its own little light. "37,000,000,000,000" stamps across. | The zeros don't fit; the last ones squeeze off the edge. |
+| "That's thirty-seven trillion cells per human," | 37 trillion cells. | Close on his chest; the camera dives through his shirt into a field of engraved cells. "37,000,000,000,000" stamps across. | The zeros don't fit; the last ones squeeze off the edge. |
 | "breaking in seven thousand different ways," | 7,000 diseases. | A ledger strip, "WAYS TO BREAK", unrolls down the side, numbered 1, 2, 3 ..., off the bottom of the frame; the counter at its foot races to "7,000". Cell lights blink red one after another. | |
 | "involving chemistry you don't fully understand," | | In one cell a molecule chain ties itself in a knot, then a bow. | |
 | "inside organs you can't fully simulate," | | The camera pulls back to the engraved organs. By the liver, a small Babbage difference engine cranks at a progress bar stuck at 3%; it shakes, smokes, and bursts into flames. | It keeps burning for the rest of the scene. |
@@ -213,15 +213,13 @@ Sound: a slide whistle down as the inmate falls past on "This"; silence for the 
 - time: 07:43.5 to 07:55.2 (11.7 s)
 - voiceover: "Anyway, here's what you tell the orderly when he slides your medication through the door slot: Nobody accidentally builds an aircraft carrier or a nuclear bomb."
 - layer: B, plate padded-cell
+- bit: **A madman in a padded cell with a red string has worked it all out, and every word on his wall is true.** Scenes 8, 9 and 10 are one plate: eight pins in a ring round the cell door, each a frame big; the camera rides the string from pin to pin, then pulls back to the whole wall.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Anyway, here's what you tell the orderly" | | A padded cell. The inmate drops in through a hatch in the ceiling, bounces twice and sits up, stars circling his head. The Orderly's eyes rise into the door window on his long neck. | |
-| "when he slides your medication through the door slot:" | | A paper cup slides in through the slot on his arm, which keeps coming, snaking across the whole floor to the inmate's feet, and zips back out. | |
-| "Nobody accidentally builds" | Big weapons are never an accident. | The inmate wriggles one arm free of the straitjacket and starts pinning engravings to the padded wall. First: a man trips over a toolbox, and the tools fly up and land, by pure accident, as a lopsided birdhouse. | That is the most an accident has ever built. |
-| "an aircraft carrier" | | Next to it he pins an aircraft carrier, many times bigger. | |
-| "or a nuclear bomb." | | And a nuclear bomb. After "bomb." he crosses both out with one big crayon X. | The little man by the birdhouse shrugs. |
+| "Anyway, here's what you tell the orderly when he slides your medication through the door slot:" | | Close: the man in the jacket drops in and bounces; the Orderly's eye in the door window; his long arm comes out of the slot with a paper cup and zips back. | |
+| "Nobody accidentally builds an aircraft carrier or a nuclear bomb." | Big weapons are never an accident. | A man trips over a toolbox and the tools land as a birdhouse. A carrier and a bomb slam in beside it; one crayon X. | The birdhouse is the most an accident has ever built. |
 
 Sound: two padded boings as he lands; a squeak as the Orderly's neck rises on "orderly"; a click for the slot flap and a rattle of pills on "slides"; a whistle as the arm zips back; a pin tack per engraving; a clatter and a little hammering as the birdhouse builds itself; a crayon scratch for the X.
 
@@ -234,21 +232,17 @@ Sound: two padded boings as he lands; a squeak as the Orderly's neck rises on "o
 - time: 07:55.2 to 08:30.1 (34.9 s)
 - voiceover: "War requires you to get millions of humans to work together to mine metal from the ground, refine it into alloys, build factories to shape the alloys into weapons, train millions of humans to operate the weapons, feed and clothe those humans, build ships and planes and trucks to move the weapons to where the other humans are, convince your population the other humans deserve it, and then vote to pay for all of this, annually, forever. It is the single largest coordinated effort your species undertakes."
 - layer: B, plate padded-cell
+- bit: Merged into orderly-door-slot. One pin at a time, big, the string running on behind him.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "War requires you to get millions of humans to work together" | War is mass cooperation. | The inmate turns to the long blank wall and pins up a paper-doll chain of tiny engraved workers holding hands across its top. They all lift their joined hands. From here the camera travels along the wall, one pin per phrase, a red string running on from each pin to the next; each pin comes alive as the string reaches it. | It is the conspiracy-theory wall, except every word on it is true. |
-| "to mine metal from the ground," | | Pin 1: a miner swings a pickaxe; ore pops out. | |
-| "refine it into alloys," | | Pin 2: a Bessemer converter tips and pours white-hot steel into ingots. | |
-| "build factories to shape the alloys into weapons," | | Pin 3: the factory with the missile chimneys; missiles roll off its line into the Weapons Maker's arms, and he cradles each one. | |
-| "train millions of humans to operate the weapons," | | Pin 4: a row of soldiers salutes in unison; one salutes with the wrong hand. | |
-| "feed and clothe those humans," | | Pin 5: a soup pot ladles soup; uniforms drop onto the soldiers. | |
-| "build ships and planes and trucks to move the weapons to where the other humans are," | | Pin 6: a ship, a plane and a truck, each loaded with missiles, head for a village whose people are up two ladders hanging a WELCOME banner. After "are," the missiles land: a white flash, a little mushroom cloud, and the villagers stand on their ladders charred black, each holding one end of a banner whose middle has burned away. | |
-| "convince your population the other humans deserve it," | | Pin 7: the Loud Human shouts through his megaphone head at a crowd, under a poster of the charred villagers drawn with horns and fangs: "THEY DESERVE IT". The crowd cheers. | |
-| "and then vote to pay for all of this," | | Pin 8: the crowd drops ballots into a box beside the grinning Politician; war bills pour out of its bottom and walk along the string back to the mine. | The string closes into a loop. |
-| "annually, forever." | Every year, with no end. | A calendar pinned in the middle tears off a page; the bills run another lap, and another, faster, the calendar shedding pages in a blizzard. | |
-| "It is the single largest coordinated effort your species undertakes." | Nothing else humans do is this big. | The camera pulls back to the whole wall, every pin busy. The Orderly's head pushes in through the door window on his long neck, jaw dropping. After "largest" a "1ST" rosette pins itself to the middle of the board. | |
+| "War requires you to get millions of humans to work together" | War is mass cooperation. | A frieze of paper workers holding hands along the top of the wall. | |
+| "to mine metal ... refine it ... build factories ... train millions ... feed and clothe those humans," | | He points; each pin slams up as it is named: miner, furnace, factory and Weapons Maker (kissing his missile), soldiers, soup. Each keeps running. | |
+| "build ships and planes and trucks to move the weapons to where the other humans are," | | A convoy rolls at a village hanging a WELCOME banner. BOOM on "are,": charred villagers blink, holding the stubs of the banner. | |
+| "convince your population the other humans deserve it," | | The same two villagers on a poster, with horns: THEY DESERVE IT. | |
+| "and then vote to pay for all of this, annually, forever." | Every year, with no end. | The ballot box; bills walk out of it along the string, which closes. Pull back: the whole wall, the bills lapping faster, the calendar on the door shedding pages. | |
+| "It is the single largest coordinated effort your species undertakes." | Nothing else humans do is this big. | The wide shot, every pin busy, mushrooms going off. The Orderly stares. A 1ST rosette. | |
 
 Sound: a crayon squeak and a pin tack per pin; a clank on "mine"; a sizzle on "refine"; a toaster pop as the missiles come out on "weapons,"; stamping boots on "train"; a slosh on "feed"; an airplane on "planes"; a boom after "are,"; a megaphone squawk and cheers on "convince"; a cash register as the bills pour out on "pay"; a page rip on "annually,"; a squeak as the Orderly's neck stretches and a pop for the rosette on "largest".
 
@@ -261,12 +255,12 @@ Sound: a crayon squeak and a pin tack per pin; a clank on "mine"; a sizzle on "r
 - time: 08:30.1 to 08:34.6 (4.5 s)
 - voiceover: "Ending war simply requires NOT doing any of that stuff."
 - layer: B, plate padded-cell
+- bit: Merged into orderly-door-slot. The payoff: stopping is one switch.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Ending war simply requires" | | The door swings open and the Orderly ducks in under the frame, long neck bent, a fresh cup in his hand. The inmate draws a light switch on the wall in crayon, set to ON. | |
-| "NOT doing any of that stuff." | Stopping is the whole plan. | He flicks it to OFF: every pin drains to plain uncolored engraving and freezes mid-motion, the bills stop mid-stride, the calendar stops, and the Orderly freezes mid-step. HOLD: nothing moves and nothing sounds until the cut. | |
+| "Ending war simply requires NOT doing any of that stuff." | Stopping is the whole plan. | Close on him and a crayon light switch. "NOT": he flips it; everything but him and the switch goes grey and stops dead, bills mid-stride, pages in the air. "doing": cut to the whole wall, NOT DOING ANY OF THAT. HOLD. | |
 
 Sound: a door creak on "Ending"; a crayon scratch for the switch; a click on "NOT"; then silence.
 
@@ -279,17 +273,15 @@ Sound: a door creak on "Ending"; a crayon scratch for the switch; a click on "NO
 - time: 08:34.6 to 08:54.7 (20.1 s)
 - voiceover: "Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and some of the most precise engineering your species has ever attempted. Not building a nuclear bomb requires nothing. Rocks do it every day. In fact, rocks have managed to live peacefully alongside different colored rocks for thousands of years."
 - layer: B, plate rock-field
+- bit: **A nuclear bomb's plumbing, huge, against one rock.** The camera climbs a tower of centrifuges to a sweating engineer, then whips out to one rock far below; the tower pops away; the sign beside the rock runs past trillions.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Building a nuclear bomb requires mass spectrometers," | A bomb is hard to make. | An open field. A calutron, the giant magnet ring of the Oak Ridge mass spectrometers, slides in and hums. The Weapons Maker strides in, cradling his missile. | |
-| "centrifuge cascades," | | Rows of tall centrifuge drums under branching pipes slide in and spin up. | |
-| "and some of the most precise engineering your species has ever attempted." | | Close on an engineer squinting through a loupe at a tiny dial, tweezers trembling, sweat flying. On "attempted." it clicks into place, everything whines up to speed, and the Weapons Maker kisses his missile. | |
-| "Not building a nuclear bomb requires nothing." | Not making one is free. | Everything stops dead, then vanishes in one pop, engineer and all; the Weapons Maker looks left, looks right, and vanishes with a smaller pop. His hard hat drops and rolls to a stop. | A cricket. |
-| "Rocks do it every day." | | A gray rock rolls in beside a counter sign on a post: "DAYS WITHOUT A NUCLEAR BOMB: 0". The sun arcs over once; "1". | |
-| "In fact, rocks have managed to live peacefully alongside different colored rocks" | | A rust rock rolls up beside the gray one; a little heart floats up between them. | |
-| "for thousands of years." | | The sun streaks over faster and faster and the counter spins past a million; moss and little flowers grow on both rocks, and a bird nests on the gray one. On "years." a human strolls in, picks up the rust rock and hurls it off the right edge. | The heart pops. After "years." the counter flips back to 0: the first human to touch one made a weapon of it. |
+| "Building a nuclear bomb requires mass spectrometers, centrifuge cascades," | A bomb is hard to make. | Close: the magnet ring. The camera climbs as centrifuges slam on, row after row. | |
+| "and some of the most precise engineering your species has ever attempted." | | On top, one engineer, loupe and tweezers, sweating. "attempted.": the bomb slams in. | |
+| "Not building a nuclear bomb requires nothing." | Not making one is free. | Whip out: the whole tower, and far off, one rock. "nothing.": the tower pops away. | The rock does nothing. |
+| "Rocks do it every day. In fact, rocks have managed to live peacefully alongside different colored rocks for thousands of years." | | Close on the rock under DAYS WITHOUT A NUCLEAR BOMB: 0, 1. The sun laps; a rust rock rolls up; a heart; moss and a bird; the number runs to 1,640,000,000,000. | "years.": a human walks in and throws the rust rock out of the frame. |
 
 Sound: a magnet hum on "spectrometers,"; a rising whine on "cascades,"; a click and a whirr on "attempted."; a pop and a smaller pop on "nothing."; crickets; a thunk as each rock stops; a tick per day, speeding up; a whoosh as the rock is thrown; a click as the counter resets.
 
@@ -303,13 +295,13 @@ Sound: a magnet hum on "spectrometers,"; a rising whine on "cascades,"; a click 
 - voiceover: "But somehow "stop" is the unrealistic part. Improvement is physically possible. "Stop" isn't the unrealistic part. Getting one billionaire to read a P.D.F. is."
 - layer: A, host
 - wishonia: big, skeptical-closed + body-hands-hips, then neutral-smile + body-open-palms on "physically", then smirk-closed + body-presenting on "Getting", then sideeye-closed + body-arms-crossed on "is."
+- bit: **Stop is easy; one billionaire reading a PDF is not.** The thrown rock lands here and dents the STOP sign, UNREALISTIC sticks to it, then to the fat cat who burns the PDF. Big, beside the console.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "But somehow "stop" is the unrealistic part." | Humans call stopping unrealistic. | A STOP sign on a post beside the console. The rust rock from the field flies in from the left and clangs off it, leaving a dent; an "UNREALISTIC" sticker slaps onto the sign. | |
-| "Improvement is physically possible." | | The dent pops back out. | |
-| ""Stop" isn't the unrealistic part." | | The sticker peels off and flutters up, looking for somewhere better to land. | |
-| "Getting one billionaire to read a P.D.F. is." | The obstacle is one reader. | The fat cat rolls in on a swivel chair, scrolling his phone, and knocks the STOP sign over. A one-page PDF slides along the ledge to him; he lifts it between two fingers, his monocle pops out, he rolls it into a tube and lights it off his cigar. On "is." the sticker lands on his forehead: UNREALISTIC. | After "is." he puffs the burning PDF like a second cigar and blows a smoke ring; Wishonia side-eyes the camera, and the iris closes on her face. |
+| "But somehow "stop" is the unrealistic part." | Humans call stopping unrealistic. | The rust rock from the field clangs into a big STOP sign and bends it; UNREALISTIC slaps on. | |
+| "Improvement is physically possible. "Stop" isn't the unrealistic part." | | The dent pops out; the sticker peels off and hovers. | |
+| "Getting one billionaire to read a P.D.F. is." | The obstacle is one reader. | The fat cat rolls in on his chair, big, and knocks the sign over. A PDF slides along the ledge; he lights it. "is.": the sticker lands on his face. | He smokes the PDF. Iris out on her side-eye. |
 
 Sound: a clank as the rock hits the sign on "But"; a splat as the sticker slaps on "unrealistic"; a boing as the dent pops out on "physically"; a flutter on "isn't"; a crash as the sign falls on "Getting"; a pop for the monocle on "read"; a flare as the PDF lights; a splat as the sticker lands on "is."; a huff for the smoke ring.

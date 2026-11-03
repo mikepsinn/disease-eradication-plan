@@ -1,13 +1,12 @@
 # KIT.collage moves to build
 
-Every part's "Kit additions" merged into one list, most-used first. The moves that already exist (`slideIn`, `move`, `swap`, `stamp`, `tag`, `camera` and the rest in `video/README.md`, "Writing a collage scene") are left out. Priority: **P1** for 8 or more parts, **P2** for 3 to 7, **P3** for 1 or 2.
+Every part's "Kit additions" merged into one list, most-used first. The moves that already exist (`slideIn`, `move`, `swap`, `stamp`, `tag`, `camera`, `chart`, `rule`, `chain`, `flatten` and the rest in `video/README.md`, "Writing a collage scene") are left out. Built so far: the chart's axes, its dashed line and its line as a chain of cut-outs (used by `short-soviet-plan`). Priority: **P1** for 8 or more parts, **P2** for 3 to 7, **P3** for 1 or 2.
 
 | Move | What it does | Parts | Priority |
 |---|---|---|---|
-| `chart` | Inked axes on aged paper (a chalk look for Part 8's chalkboard), with ticks, gridlines, labels, a title and value tags; plus the pieces below. | 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27 | P1 |
-| `chart` · dashed line | A dashed reference line at a value, with a tag ("ENOUGH", "USSR · 1991", 3.5%). | 10, 11, 14, 17, 18, 21, 25 | P1 |
+| `chart` | Built: inked axes, gridlines, labels and a title. Still to do: a chalk look for Part 8's chalkboard, and the pieces below. | 1, 2, 3, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27 | P1 |
 | `chart` · bars | Bars that grow to a value, built by stacking copies of a cut-out (see `stack`); a flag at a bar's top. | 1, 3, 8, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21 | P1 |
-| `chart` · line | A line that draws itself left to right over a set time; a cut-out can ride its tip or walk it as a road; two lines from one start; a line that forks. | 10, 11, 17, 20, 21, 24, 25, 26 | P1 |
+| `chart` · line | Built as `chain` (a line of cut-outs). Still to do: a plain ink line that draws itself; a cut-out riding its tip or walking it as a road; two lines from one start; a line that forks. | 10, 11, 17, 20, 21, 24, 25, 26 | P1 |
 | `chart` · pictogram | N copies of a cut-out in rows, popping in row by row, the camera able to pull back; all swap at once (hourglass to money); a 10 × 10 waffle that fills square by square. | 5, 9, 12, 14, 16, 18 | P2 |
 | `chart` · pie | A pie (or a wedge of a round cut-out such as Earth) whose slices light one at a time at given percentages and can send bills off along paths. | 5, 11, 12, 18 | P2 |
 | `chart` · timeline | Year ticks along a path or the bottom of a plate, with blocks on it (war years, the queue's ruler). | 7, 9, 12, 14 | P2 |
@@ -21,7 +20,6 @@ Every part's "Kit additions" merged into one list, most-used first. The moves th
 | `flip` | A bill's seal flips from missile to cross (or back) as it passes through the funnel; a cut-out flips over like a card to show its back. | 3, 5, 6, 10, 11, 13, 15, 18, 21, 25, 27 | P1 |
 | `march` | Copies of a cut-out walk a path in single file, popping in at its start, legs flicking on twos, each varied by seed; along a closed loop, round and round, speeding up until they blur into a ring; a cut-out riding a winding track. | 1, 2, 5, 6, 7, 9, 17, 20, 25 | P1 |
 | `unroll` | A strip, scroll or list unrolls panel by panel along a direction, past the frame, with lines of text on it, the camera following; zips back; to a set length; panels of one cut-out unfolding one after another (the 40-page insert). | 3, 4, 10, 13, 14 | P2 |
-| `chain` | Copies of a cut-out placed along a curve over time, each popping out of the last (headstones, robots, the march of weapons, strangers along every route). | 2, 11, 17, 23 | P2 |
 | `burn` | Cut-out flames flicker on a cut-out (ears, a bun, a trouser leg) until put out, leaving it charred. | 1, 3, 4, 15 | P2 |
 | `ripple` | One move run down a row of cast members with a delay each (papers lifted, books snapping shut, crates going off, bubble lids cracking). | 9, 13, 18 | P2 |
 | `tint` | Recolors a piece (the tie, red to blue to teal), or spreads a flat color over part of a cut-out and shrinks it back. | 6, 20, 25 | P2 |
@@ -31,7 +29,6 @@ Every part's "Kit additions" merged into one list, most-used first. The moves th
 | `string` | A line that stays tied between two moving points (red string from pin to pin, a halo's string, shackle chains); bills can walk along it. | 4, 6 | P3 |
 | `drain` | The plate or a cut-out goes back to plain uncolored engraving and freezes, except the named cut-outs. | 2, 4 | P3 |
 | `squeeze` | A row of cut-outs, or an axis and the lines on it, closes up like an accordion. | 14, 17 | P3 |
-| `flatten` | A cut-out squashes flat like a pancake (under a wheel), eyes still blinking. | 21, 26 | P3 |
 | `rain` | Many copies of a set of cut-outs fall from the top of the frame and heap up. | 23, 24 | P3 |
 | `page-turn` | A page of the plate turns over right to left to show the next spread; or the whole plate turns over like a page. | 22, 25 | P3 |
 | `dangle` | A cut-out hangs on a string from a point on another cut-out and swings as that one moves. | 22, 26 | P3 |
@@ -61,3 +58,27 @@ Not collage moves, but asked for in the same lists:
 - The Earth-bomb: a screw collar, a fuse whose length is set per shot, a fizzing spark, a smoke ring when it goes out (Part 11).
 - On the ledge: the case file, pencil, stamp, PLANETS tray, marker, nameplate, hanging card, unit converter (Part 1); the paper money loop, scissors, tape, the sandwich (Part 2); the two manuals, the fold-out strip, the bill on a spring, the snail (Part 3); the net through the window, the mug, the STOP sign and sticker, the PDF (Part 4); the pull-down chart, the pallet (Part 5); the cuckoo bird, a hamster wheel, a knife switch (Part 13); the brass plate, dictionary, donut, grape soda, the Optimitron (Part 14); the tower of forms, cobwebs and dust (Part 15); the Calculator (Part 16).
 - A pull-back through the window to the telescope (Part 4); a showroom spotlight on Earth (Part 2).
+
+## Asked for while building the 12 shorts
+
+What the agents had to fake, most-asked first. Each would shorten specs or remove a workaround.
+
+- **Paper beyond the canvas.** The paper (and `wash`, and the `boom` flash) cover only W × H at scale 1, so a camera that travels, climbs or pulls back shows a seam. Scenes stretched the paper in their own CSS. Asked by six agents.
+- **`flip: true` on a cast member** (a mirrored cut-out). Agents mirrored files with PIL instead (`grandma-left`, `*-harness-left`). Asked by six.
+- **Banner, tag and stamp chrome that scales** with their text and with a zoomed plate; at small sizes or 3 to 8× zoom the fixed borders swamp the words.
+- **Charred smoke that scales** with the cut-out (`eyeSize` exists; the 60 px puffs don't scale).
+- **`move` on `pieces`**, not only on cast members.
+- **A chain line in front** of the cast (`lineFront`), and a rope between two moving points (`string`).
+- **Chart axes:** hide labels, word (category) labels on x, no stray "0" at the origin; a `rule` colour.
+- **`tint`** (tie colours), and a `glow` colour.
+- **Counters and typing:** `count` and `type-on` (agents showed and hid label cards in loops).
+- **`unroll`** for scrolls and receipts.
+- **Label width:** `KIT.textWidth` / `fitText` measure Fraunces 10 to 20% narrower than a cast `label` renders; `scene-check` doesn't flag overflowing labels.
+- **Host shots:** a push toward Earth (it is small in 9:16), and a sip pose.
+
+## Kit bugs found while rebuilding the shorts
+
+- **`eyeSize` other than 30 moves the eyes:** it uses CSS `zoom`, which scales `left` and `top` too. 121-apocalypses divides its points to compensate (`eyesAt`), and money-loop uses `eyeSize: 22`; a fix must remove that and re-check both.
+- **`swap`'s squash piles up** on a pose with later swaps. democracy-dog used hide and show instead.
+- **Chrome caps fonts at 10,000 px,** so a stamp on a very wide plate can't get bigger than that.
+- **A long camera move can cross empty paper.** Keep it under about 0.7 s, or land it on the word where the next thing appears.

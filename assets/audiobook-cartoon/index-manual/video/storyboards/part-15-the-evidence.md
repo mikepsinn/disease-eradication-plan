@@ -34,7 +34,7 @@ version: v3
 
 **Callbacks:**
 - Part 1: the giant scissors from split-the-atom, now in Truman's hands, cutting something worth cutting.
-- Part 2: the factory with missile chimneys; the Weapons Maker's smiling missile.
+- Part 2: the factory with missile chimneys; the Weapons Maker's missile.
 - Part 12: the FDA official; the dead who keep waiting.
 - Part 13: the seal-flip funnel turns the 1% into medicine money.
 - Part 14: the $41,000 bar, beaten again, this time by a real trial.
@@ -159,7 +159,7 @@ Sound: a snip; a whistle down and a yell as the stack falls, and a slam; three p
 | "Every gun that is made, every warship launched, every rocket fired" | Every weapon has a price. | Out of the factory: a gun with a price tag on a conveyor; a warship sliding down into a bucket; a missile off the roof and out of the frame. | |
 | "signifies, in the final sense, a theft from those who hunger and are not fed," | The price is taken from food. | The Lobbyist slips out of his seat, lifts a thin man's soup bowl out of his hands and tips it into the factory's hopper. | The thin man is left holding an empty spoon. |
 | "those who are cold and are not clothed." | And from clothes. | He pulls the coat off another man and stuffs it in the hopper. A new missile pops out of the factory door wearing the coat, buttoned up, snug. Then HOLD, silent, until "standing". | The man shivers in polka-dot underwear and his hat, an icicle on his nose. |
-| "You gave him a standing ovation" | Everyone agreed. | The audience (the Politician, the fat cat, the Weapons Maker) leaps up and claps wildly; Ike bows. | The missile under the Weapons Maker's arm claps its little arms too. |
+| "You gave him a standing ovation" | Everyone agreed. | The audience (the Politician, the fat cat, the Weapons Maker) leaps up and claps wildly; Ike bows. | The Weapons Maker claps with the missile under his arm and nearly drops it. |
 | "and then immediately ignored him" | And did nothing. | They all sit down at once, turn their backs on him and get back to work: the Politician signs a contract on the Weapons Maker's back, the fat cat feeds bills into the hopper. | |
 | "for sixty-five" | 65 years. | Cobwebs race over the podium while a counter on the bandstand rail rolls to "2026". Ike x-rays into a grinning skeleton, still pointing, and slumps out of sight; the audience, the thin man and the cold man go to skeletons too, still at work. | The podium stands empty, its microphone drooping. |
 
