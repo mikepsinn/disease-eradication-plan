@@ -215,7 +215,7 @@ SPLIT_PAUSE_S = 0.35  # silence between the pieces of a chunk the content filter
 
 
 class ContentBlockedError(RuntimeError):
-    """The API's content filter refused the text ("content_blocked")."""
+    """The API's content filter refused the text ("content_blocked" or "recitation")."""
 
 
 def _generate_speech_single(
@@ -256,7 +256,8 @@ def _generate_speech_single(
             except urllib.error.HTTPError as e:
                 # Keep the API's message (quota name, retry time) instead of a bare status line
                 body = e.read().decode('utf-8', 'replace')
-                if '"content_blocked"' in body:
+                # "recitation": text the model has seen verbatim (the book is online); shorter pieces pass
+                if '"content_blocked"' in body or '"recitation"' in body:
                     raise ContentBlockedError(f"HTTP {e.code}: {body[:500]}") from e
                 raise RuntimeError(f"HTTP {e.code}: {body[:500]}") from e
 

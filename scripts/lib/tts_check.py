@@ -50,6 +50,38 @@ def _tokens(text: str) -> list[str]:
             if t not in NUMBER_WORDS and not any(c.isdigit() for c in t)]
 
 
+def _join_spelled(heard: list[tuple[str, float, float]], said: set[str]) -> list[tuple[str, float, float]]:
+    """Join single letters Whisper heard ("d a l y") into the text's word ("D.A.L.Y." reads "daly").
+
+    Only letters that spell a word in the text are joined, so "a U.S. law" stays "a us law".
+    """
+    out: list[tuple[str, float, float]] = []
+    run: list[tuple[str, float, float]] = []
+
+    def flush() -> None:
+        i = 0
+        while i < len(run):
+            for j in range(len(run), i + 1, -1):
+                word = "".join(t for t, _, _ in run[i:j])
+                if word in said:
+                    out.append((word, run[i][1], run[j - 1][2]))
+                    i = j
+                    break
+            else:
+                out.append(run[i])
+                i += 1
+        run.clear()
+
+    for tok in heard:
+        if len(tok[0]) == 1 and tok[0].isalpha():
+            run.append(tok)
+            continue
+        flush()
+        out.append(tok)
+    flush()
+    return out
+
+
 def _ends_with_number(text: str) -> bool:
     words = re.findall(r"[a-z0-9]+(?:'[a-z]+)?", text.lower().replace("’", "'"))
     return bool(words) and (words[-1] in NUMBER_WORDS or any(c.isdigit() for c in words[-1]))
@@ -79,7 +111,7 @@ def check_chunk(wav_path: Path, text: str) -> ChunkCheck:
     """Compare the voiced chunk with its text; trim invented words after the end in place."""
     said = _tokens(text)
     words = _transcribe(wav_path)
-    heard = [(tok, start, end) for word, start, end in words for tok in _tokens(word)]
+    heard = _join_spelled([(tok, start, end) for word, start, end in words for tok in _tokens(word)], set(said))
     heard_tokens = [tok for tok, _, _ in heard]
     opcodes = difflib.SequenceMatcher(None, said, heard_tokens, autojunk=False).get_opcodes()
     equal = [op for op in opcodes if op[0] == "equal"]
