@@ -1,0 +1,78 @@
+<template id="604-times-less-template">
+  <!-- 604-times-less · collage (Part 10, scene 10, plate 604-bar). The bit: a two-bar chart. The TRIALS bar is one medicine
+       bill in a hard hat. "six hundred": the MILITARY bar stacks up beside it, 604 war bills, past the clouds, and the
+       camera climbs with it until the top knocks a satellite out of orbit (x604). "than": back down. One bill falls off the
+       top; the medicine bill sees it coming and steps aside, and grins. Then the rest come down on it, and its hard hat
+       pops out of the heap. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="604-times-less" data-width="1080" data-height="1920" data-start="0" data-duration="7.64">
+    <div id="604-times-less-weave"></div>
+    <div id="604-times-less-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "604-times-less", V = KIT.V, SZ = KIT.collage.SIZES, W = KIT.W;
+    var T = function (w, n) { return KIT.cue(ID, w, n); };
+    // The ground line G; the trials bill on the left, the military stack on the right.
+    var G = V ? 1150 : 800, MX = V ? 330 : 700, SX = V ? 740 : 1250;
+    var MH = V ? 260 : 290, MK = MH / SZ["bill-med"][1];
+    var BK = V ? 1.45 : 1.35, STEP = 16, N = 604, CH = SZ["bill-war-flat"][1] * BK, TOPY = G - (N - 1) * STEP - CH;
+    var HALF = V ? 960 : 540;
+    var views = {
+      home: [W / 2, G - (V ? 300 : 270), 1],
+      top: [SX - (V ? 0 : 300), TOPY + HALF * 0.55, 1],
+      floor: [MX + (V ? 140 : 200), G - (V ? 200 : 200), V ? 1.1 : 1.2],
+    };
+    var HAT = [MX + 6, G - MH + 26];
+    var cast = {
+      // clouds the stack goes past, and the satellite at the top
+      cl0: { art: "cloud", x: SX - 520, y: G - 2600, scale: 4.5 },
+      cl1: { art: "cloud-puff", x: SX + 560, y: G - 4700, scale: 2.2 },
+      cl2: { art: "cloud", x: SX - 600, y: G - 6900, scale: 5 },
+      cl3: { art: "cloud-puff", x: SX + 520, y: TOPY + 500, scale: 2.4 },
+      sat: { art: "satellite", x: SX - 30, y: TOPY - 90, scale: 0.5 },
+      med: { art: "bill-med", x: MX, y: G, anchor: "bottom", pivot: "bottom", scale: MK, hidden: true },
+      hat: { art: "hard-hat", x: HAT[0], y: HAT[1], anchor: "bottom", pivot: "bottom", scale: (MH * 0.42) / SZ["hard-hat"][0], hidden: true },
+      faller: { art: "bill-war-flat", x: MX + 40, y: TOPY + 200, anchor: "bottom", pivot: "bottom", scale: BK * 0.9, hidden: true },
+    };
+    var FALL_T = T("spending.", 2), STEP_T = T("military");
+    var beats = [
+      // TRIALS: one bill, in a hard hat
+      { on: "government", do: "pop", who: "med", squash: true },
+      { on: "trials:", do: "pop", who: "hat", squash: true },
+      { on: "government", offset: 0.2, do: "banner", id: "lt", text: "TRIALS", x: MX, y: G + (V ? 70 : 45), size: V ? 60 : 44, width: 300, pad: 40, color: "ink", tilt: -2, shake: 0 },
+      // MILITARY: 604 bills, past the clouds
+      { on: "six", do: "banner", id: "lm", text: "MILITARY", x: SX, y: G + (V ? 70 : 45), size: V ? 60 : 44, width: 340, pad: 40, color: "ink", tilt: 2, shake: 0 },
+      { on: "six", do: "pile", id: "stack", art: "bill-war-flat", x: SX, y: G, count: N, scale: BK, gap: STEP, until: "less", accel: 1, jitter: 10, tilt: 2, dist: 260 },
+      { on: "six", offset: 0.25, do: "camera", view: "top", dur: T("less") - T("six") - 0.2 },
+      { on: "less", do: "stamp", id: "x604", text: "×604", x: SX - (V ? 240 : 520), y: TOPY + (V ? 620 : 330), size: V ? 180 : 220, width: V ? 400 : 560, tilt: -5 },
+      { on: "less", do: "shiver", who: "sat", dur: 0.2, amp: 10, rot: 12 },
+      { on: "less", offset: 0.15, do: "move", who: "sat", by: [-1200, -700], dur: 0.7, turn: -220 },
+      // back down: one bill comes off the top; the medicine bill steps aside and grins at us
+      { on: "than", do: "camera", view: "floor", dur: 0.45 },
+      { on: "than", offset: 0.05, do: "show", who: "faller" },
+      { on: "than", offset: 0.05, do: "move", who: "faller", to: [MX + 40, G - CH * 0.45], dur: FALL_T - T("than") - 0.05, ease: "linear", turn: 380 },
+      { at: STEP_T - 0.05, do: "move", who: ["med", "hat"], by: [V ? -170 : -200, 0], dur: 0.25, arc: 30 },
+      { at: FALL_T, do: "shake", y: 10, frames: 3 },
+      { at: FALL_T + 0.3, do: "hop", who: ["med", "hat"], height: 30 },
+      // then the rest of the stack comes down on it, and its hard hat pops out of the heap
+      { at: FALL_T + 0.55, do: "pile", id: "heap", art: "bill-war-flat", x: MX - (V ? 140 : 160), y: G, heap: 6, count: 21, scale: BK * 0.85, until: FALL_T + 0.95, accel: 0.8, dist: 900, tilt: 10, jitter: 18 },
+      { at: FALL_T + 0.95, do: "shake", y: 14, frames: 4 },
+      { at: FALL_T + 0.95, do: "hide", who: ["med", "hat"] },
+      { at: FALL_T + 1.25, do: "pile", id: "hat2", art: "hard-hat", x: MX - (V ? 150 : 170), y: G - 5 * SZ["bill-war-flat"][1] * BK * 0.85 * 0.6 - SZ["bill-war-flat"][1] * BK * 0.85 + 30, count: 1, scale: (MH * 0.42) / SZ["hard-hat"][0], dist: 40, until: FALL_T + 1.25 },
+      { at: FALL_T + 1.4, do: "shiver", who: "hat2", dur: 0.25, amp: 6, rot: 10 },
+    ];
+
+    KIT.collage({ id: ID, seed: 1100, plate: [-1600, TOPY - 1600, W + 1600, KIT.H + 600], views: views, view: "home", cast: cast, beats: beats });
+  </script>
+</template>

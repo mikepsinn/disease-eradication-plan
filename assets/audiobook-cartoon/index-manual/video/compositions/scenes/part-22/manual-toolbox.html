@@ -1,0 +1,167 @@
+<template id="manual-toolbox-template">
+  <!-- manual-toolbox · collage (Part 22, scene 3; plate tackle-box, continued by not-a-bribe-label-maker, no seam). The
+       bit: inside the manual, one pop-up per spread, and the camera turns the page (whips right) for each item.
+       "Pictures": a patient pops up holding the fine print to his nose; "hard": it gets closer; "dying": he x-rays to a
+       skeleton, who tosses the fine print over his shoulder and nods along to a picture page of a smiling pill bottle.
+       "Simple math": the Calculator pops up showing 1+1, "addition": 2, it bounces; "multiplication": a × pops up
+       beside it, its display goes ERROR, it screams and dives into a hole in the page. "Exact": the Scientist snips one
+       medicine bill in half, the stack lands beside her; "give": she slides the stack over to the Politician, CAMPAIGN
+       FUNDING; the Lobbyist reaches for it and she snips at him. "The order": five numbered envelopes on legs pop up in a
+       row; "very": 3 and 4 swap; "important": the page blows up, mushroom cloud, the five stand there charred and
+       blinking, and 4 and 3 shuffle back. The spreads (SPREAD, G, view, the envelope row) are shared with
+       not-a-bribe-label-maker. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="manual-toolbox" data-width="1920" data-height="1080" data-start="0" data-duration="16.78">
+    <div id="manual-toolbox-weave"></div>
+    <div id="manual-toolbox-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "manual-toolbox", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // ── The shared plate (same in not-a-bribe-label-maker): one spread every SPREAD px, the page's floor at G ──
+      var G = 840, SPREAD = 2600, cx = function (k) { return 960 + SPREAD * k; };
+      var view = function (k, s, sv) { return V ? [cx(k), G - 420 / sv, sv] : [cx(k), G - 330 / s, s]; };
+      // the envelope art is the five in a row: each paper is one of them, clipped out, its number and eyes in art px
+      var EK = V ? 1.6 : 1.9, EGAP = V ? 215 : 290;
+      var ENV = [   // each envelope's outline in the art, and its middle
+        { m: 50, clip: [[0, 0], [110, 0], [110, 18], [101, 24], [97, 150], [100, 160], [100, 240], [0, 240]] },
+        { m: 139, clip: [[110, 0], [166, 0], [166, 22], [178, 22], [178, 150], [174, 160], [174, 240], [100, 240], [100, 160], [97, 150], [101, 24], [110, 18]] },
+        { m: 220, clip: [[166, 0], [266, 0], [266, 8], [261, 10], [260.5, 60], [262.5, 100], [263.5, 145], [267, 155], [267, 240], [174, 240], [174, 160], [178, 150], [178, 22], [166, 22]] },
+        { m: 305, clip: [[266, 0], [341, 0], [341, 30], [347, 90], [353, 145], [356, 155], [356, 240], [267, 240], [267, 155], [263.5, 145], [262.5, 100], [260.5, 60], [261, 10], [266, 8]] },
+        { m: 398, clip: [[341, 0], [446, 0], [446, 240], [356, 240], [356, 155], [353, 145], [347, 90], [341, 30]] }];
+      var EEYE = [[[55, 50], [80, 48]], [[125, 50], [157, 48]], [[212, 33], [237, 33]], [[287, 47], [315, 42]], [[367, 50], [393, 45]]];
+      var paper = function (i) {
+        var m = ENV[i].m;
+        return { art: "envelope", clip: ENV[i].clip, x: cx(3) + (i - 2) * EGAP, y: G, anchor: [m, 236], pivot: [m, 236], scale: EK, hidden: true,
+          label: { text: String(i + 1), at: [m, 126], width: 46, size: 56 }, eyes: EEYE[i], smoke: [[m - 18, 18], [m + 16, 12]] };
+      };
+      // ── end of the shared plate ──
+
+      var views = { p0: view(0, 1.35, 1.3), p1: view(1, 1, 0.95), p2: view(2, 1, 0.95), p3: view(3, 1, 0.95) };
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+      var turn = function (t, v) { add({ at: t, do: "camera", view: v, dur: 0.35 }); };
+
+      // Spread 0, Pictures: the patient sitting up in an iron bed, and his fine print. The bed is cut in two: the
+      // headboard and pillow behind him, the mattress and footboard in front, hiding his legs.
+      var BDK = 1.2, BDX = cx(0) - 60, MATT = G - (424 - 212) * BDK;  // the mattress top under him (bed art y 212)
+      var PK = hs("patient", 500), PX = BDX + (405 - 269) * BDK, PL = PX - SZ.patient[0] * PK / 2, PB = MATT + (418 - 262) * PK;
+      var FACE = [PL + 90 * PK, PB - (418 - 62) * PK];
+      var bed = function (clip) { return { art: "iron-bed", clip: clip, x: BDX, y: G, anchor: [269, 424], pivot: [269, 424], scale: BDK, hidden: true }; };
+      cast.bedBack = bed([[285, 0], [538, 0], [538, 205], [285, 205]]);
+      // he and his skeleton are cut off at the knees, under the mattress
+      cast.patient = { art: "patient", clip: [[0, 0], [202, 0], [202, 300], [0, 300]], x: PX, y: PB, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true };
+      cast.bones = { art: "patient-skeleton", clip: [[0, 0], [261, 0], [261, 379], [0, 379]], x: PX, y: PB, anchor: "bottom", pivot: "bottom", scale: hs("patient-skeleton", 500), hidden: true };
+      cast.bedFront = bed([[0, 0], [285, 0], [285, 205], [538, 205], [538, 424], [0, 424]]);
+      cast.fine = { art: "insert", x: FACE[0] - 150, y: FACE[1] + 70, scale: hs("insert", 210), hidden: true };
+      cast.pic = { art: "picture-page", x: FACE[0] - 110, y: FACE[1] + 110, scale: hs("picture-page", 270), hidden: true };
+      add({ on: "Pictures", offset: 0.05, do: "pop", who: ["bedBack", "bedFront"], squash: true });
+      add({ on: "Pictures", offset: 0.1, do: "pop", who: "patient", squash: true });
+      add({ on: "Pictures", offset: 0.25, do: "pop", who: "fine", squash: true });
+      // "hard": the fine print comes right up to his nose
+      add({ on: "hard", do: "move", who: "fine", by: [75, -25], scale: 1.2, dur: 2 * F });
+      add({ on: "hard", do: "shiver", who: "patient", dur: 0.5, amp: 5, rot: 3 });
+      // "dying": skeleton. He tosses the fine print over his shoulder and takes the picture book.
+      add({ on: "dying).", do: "xray", who: "patient", to: ["bones"] });
+      var TOSS = cue("dying).") + 0.6;
+      add({ at: TOSS, do: "move", who: "fine", to: [PX + 480, FACE[1] - 260], turn: 220, arc: 160, dur: 0.4 });
+      add({ at: TOSS + 0.4, do: "drop", who: "fine", dist: 1400, spin: 60, dur: 0.5 });
+      add({ at: TOSS + 0.25, do: "pop", who: "pic", squash: true });
+      add({ at: TOSS + 0.55, do: "bob", who: ["patient", "pic"], y: 8, r: 3, speed: 3.4, until: cue("Simple") + 0.4, fade: 0.1 });
+
+      // Spread 1, Simple math: the Calculator.
+      var CK = hs("calculator-calm", 540), CX = cx(1) + 60, HOLE = [cx(1) - (V ? 330 : 470), G - 40];
+      var calc = function (art, text) {
+        return { art: art, x: CX, y: G, anchor: "bottom", pivot: "bottom", scale: CK, hidden: true,
+          label: { text: text, at: [116, 22], width: 92, size: 30 } };
+      };
+      cast.hole = { art: "paper-rip", x: HOLE[0], y: HOLE[1], scale: 1.05, hidden: true };
+      cast.calcA = calc("calculator-calm", "1+1");
+      cast.calcB = calc("calculator-calm", "2");
+      cast.calcC = calc("calculator", "ERROR");
+      cast.times = { art: "crayon-x", x: CX + (V ? 300 : 400), y: G - 330, scale: hs("crayon-x", 170), hidden: true };
+      turn(cue("Simple") - 0.15, "p1");
+      add({ on: "Simple", offset: 0.15, do: "pop", who: ["calcA", "hole"], squash: true });
+      add({ on: "(addition", do: "swap", who: "calcA", to: "calcB" });
+      [0, 0.12, 0.24].forEach(function (o) { add({ on: "(addition", offset: o + 0.05, do: "hop", who: "calcB", height: 40 }); });
+      add({ on: "mostly,", do: "glow", who: "calcB", size: 520, dur: 0.6 });
+      add({ on: "mostly,", do: "bob", who: "calcB", y: 6, r: 2, speed: 2.5, until: cue("some") });
+      // "multiplication": a × pops up; ERROR; it screams and dives into the hole in the page
+      add({ on: "some", do: "pop", who: "times", squash: true });
+      add({ on: "multiplication).", do: "swap", who: "calcB", to: "calcC" });
+      add({ on: "multiplication).", offset: 0.1, do: "shiver", who: "calcC", dur: 0.38, amp: 9, rot: 6 });
+      var DIVE = cue("multiplication).") + 0.5;
+      add({ at: DIVE, do: "move", who: "calcC", to: [HOLE[0], HOLE[1] - 140], scale: 0.12, turn: -40, arc: 260, dur: 0.38 });
+      add({ at: DIVE + 0.38, do: "hide", who: "calcC" });
+      add({ at: DIVE + 0.4, do: "shiver", who: "hole", dur: 1.2, amp: 3, rot: 2 });
+      add({ at: DIVE + 0.45, do: "hop", who: "times", height: 24 });
+
+      // Spread 2, Exact amounts to specific humans: the Scientist, her scissors, the Politician, the Lobbyist.
+      var SK = hs("scientist", 640), SX = cx(2) - (V ? 400 : 520), STACK = cx(2) - (V ? 140 : 200), POL = cx(2) + (V ? 400 : 470), LOB = cx(2) + (V ? 90 : 110);
+      cast.sci = { art: "scientist", x: SX, y: G, anchor: "bottom", pivot: "bottom", scale: SK, hidden: true };
+      cast.one = { art: "bill-med", x: STACK, y: G - 420, scale: hs("bill-med", 190), cut: "lr", hidden: true };
+      cast.pol = { art: "politician", x: POL, y: G, anchor: "bottom", pivot: "bottom", scale: hs("politician", 640), hidden: true };
+      cast.lob = { art: "lobbyist-shake", x: LOB, y: G, anchor: "bottom", pivot: "bottom", scale: hs("lobbyist-shake", 560), hidden: true };
+      turn(cue("Exact") - 0.5, "p2");
+      add({ on: "Exact", offset: -0.25, do: "pop", who: ["sci", "one"], squash: true });
+      add({ on: "Exact", offset: 0.1, do: "nudge", who: "sci", by: [60, 0] });
+      add({ on: "Exact", offset: 0.12, do: "split", who: "one", gap: 130, spin: 18, shake: 3 });
+      add({ on: "amounts", do: "pile", id: "stack", art: "bill-med-flat", x: STACK, y: G, count: 3, scale: 1.1, until: cue("amounts") + 0.3, accel: 1, fall: 0.15, dist: 700, tilt: 4 });
+      // the cut halves: one on top of the stack (to get it exactly right), one off the page
+      add({ on: "papers", do: "move", who: "one.R", to: [STACK + 10, G - 3 * 131 * 1.1 * 0.85 - 40], turn: 4, scale: 0.9, arc: 60, dur: 0.25 });
+      add({ on: "papers", do: "drop", who: "one.L", dist: 1200, spin: -40, dur: 0.5 });
+      // "give": the Politician pops up and she slides the stack over to him, as campaign funding
+      add({ on: "give", n: 1, offset: -0.15, do: "pop", who: "pol", squash: true });
+      add({ on: "give", n: 1, offset: 0.1, do: "move", who: ["stack", "one.R"], by: [POL - 240 - STACK, 0], dur: 0.35, arc: 30 });
+      add({ on: "give", n: 1, offset: 0.4, do: "stamp", id: "funding", text: "CAMPAIGN FUNDING", x: POL - (V ? 260 : 330), y: V ? G - 780 : G - 650, size: 52, width: 560, tilt: -4 });
+      // the Lobbyist pops up between them and reaches; she snips at him
+      add({ on: "specific", do: "pop", who: "lob", squash: true });
+      add({ on: "specific", offset: 0.3, do: "move", who: "lob", by: [30, 0], dur: 0.3 });
+      var SNIP = KIT.after(ID, "humans.");
+      add({ at: SNIP - 0.4, do: "move", who: "sci", by: [LOB - SX - 300, 0], dur: 0.25 });
+      add({ at: SNIP, do: "nudge", who: "sci", by: [70, -10] });
+      add({ at: SNIP + 0.05, do: "hop", who: "lob", height: 160 });
+      add({ at: SNIP + 0.05, do: "shiver", who: "lob", dur: 0.3, amp: 8, rot: 10 });
+      add({ at: SNIP + 0.3, do: "drop", who: "lob", dist: 1400, drift: 200, spin: 30, dur: 0.6 });
+      add({ at: SNIP + 0.8, do: "move", who: "sci", by: [-(LOB - SX - 300), 0], dur: 0.3 });
+
+      // Spread 3, The order to give them in: five numbered envelopes on legs. "very": 3 and 4 swap. "important": boom.
+      // the mushroom stands behind the papers
+      cast.cloud = { art: "mushroom", x: cx(3), y: G - 40, anchor: "bottom", scale: hs("mushroom", V ? 1100 : 800), hidden: true };
+      var ROW = ["e0", "e1", "e2", "e3", "e4"];
+      ROW.forEach(function (n, j) { cast[n] = paper(j); });
+      turn(cue("The", 1) - 0.25, "p3");
+      ROW.forEach(function (n, j) {
+        add({ on: "The", n: 1, offset: 0.05 + j * 0.13, do: "pop", who: n, squash: true });
+        add({ on: "The", n: 1, offset: 0.35 + j * 0.13, do: "bob", who: n, y: 7, r: 3, speed: 3, phase: j * 1.3, until: cue("(very") - 0.05, fade: 0.1 });
+      });
+      add({ on: "(very", do: "move", who: "e2", by: [EGAP, 0], arc: 70, dur: 0.25 });
+      add({ on: "(very", do: "move", who: "e3", by: [-EGAP, 0], arc: 40, dur: 0.25 });
+      var BOOM = cue("important).") + 0.15;
+      add({ at: BOOM, do: "boom", shake: 24, flash: 0.25 });
+      add({ at: BOOM, do: "pop", who: "cloud", swell: 0.08 });
+      add({ at: BOOM, do: "char", who: ROW });
+      add({ at: BOOM + 0.9, do: "blink", who: ROW });
+      add({ at: BOOM + 1.0, do: "pop", who: "cloud", out: true });
+      add({ at: BOOM + 1.1, do: "blink", who: ["e1", "e3"] });
+      add({ at: BOOM + 1.25, do: "move", who: "e2", by: [-EGAP, 0], dur: 0.33 });
+      add({ at: BOOM + 1.25, do: "move", who: "e3", by: [EGAP, 0], dur: 0.33 });
+      add({ at: BOOM + 1.25, do: "bob", who: ["e2", "e3"], y: 5, r: 4, speed: 4, until: BOOM + 1.6, fade: 0.05 });
+
+      KIT.collage({ id: ID, seed: 2203, plate: [-800, -2000, cx(6) + 1600, 2400], views: views, view: "p0", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

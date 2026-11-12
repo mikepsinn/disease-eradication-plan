@@ -14,7 +14,7 @@ Plan and timing files for a cartoon video of audiobook episode 1 (chapter slug `
 
 ## Source audio
 
-`https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.cbaf659d.mp3` (57:53, item 1 of `https://static.warondisease.org/assets/audiobook/manual-paperback/feed.xml`).
+`https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.7ce6b2b2.mp3` (57:06, item 1 of `https://static.warondisease.org/assets/audiobook/manual-paperback/feed.xml`).
 
 ## Notes
 

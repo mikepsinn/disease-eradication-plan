@@ -1,0 +1,134 @@
+<template id="countdown-104-template">
+  <!-- countdown-104 · collage (Part 26). The deli, and it never stops: the Reaper in his paper hat rings the bell every 0.576 s,
+       the customer at the counter turns into a skeleton and strolls out through DELETED, the line moves up, NOW SERVING
+       clicks. "four": 104 A MINUTE. "Your": YOU reaches the counter. "vote": YES. "saves": the Reaper rings anyway, and YOU goes
+       to bone from the waist down. "two", "point", "six": the hook lifts the woman behind him out of the line, the man behind
+       her, and YOU himself, set down in front of the counter on his bone legs: that is the 0.6. "four": the till spits a
+       receipt, 468,000 HOURS. "hours": every crutch, ice pack and hot-water bottle in the line flies up. "suffering.": they
+       bury the Reaper. One weak ding. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="countdown-104" data-width="1920" data-height="1080" data-start="0" data-duration="11.36">
+    <div id="countdown-104-weave"></div>
+    <div id="countdown-104-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, Z = KIT.collage.SIZES, ID = "countdown-104";
+    var hs = function (art, h) { return h / Z[art][1]; };
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var FLOOR = 880, SLOT0 = 1180, STEP = 380, QH = 640;
+    var C = {};
+    C.door = { art: "deleted-door", x: 120, y: FLOOR, anchor: "bottom", pivot: "bottom", scale: 1.7, label: { text: "DELETED", at: [121, 118], width: 112, size: 70 } };
+    C.reaper = { art: "reaper-deli", x: 480, y: 980, anchor: "bottom", pivot: "bottom", scale: 1.9 };
+    C.counter = { art: "deli-counter", x: 620, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: 1.25 };
+    // the line. Q[8] is YOU; the two behind him are the ones the vote saves
+    var ARTS = ["sick-1", "sick-3", "sick-2", "sick-6", "sick-4", "sick-5"], Q = [], YOUI = 8, COUNT = 27;
+    for (var i = 0; i < COUNT; i++) {
+      var a = i === YOUI ? "you" : ARTS[i % ARTS.length];
+      Q.push("q" + i);
+    }
+    for (var j = COUNT - 1; j >= 0; j--) {
+      var art = j === YOUI ? "you-sick" : ARTS[j % ARTS.length];
+      C["q" + j] = { art: art, x: SLOT0 + j * STEP, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: hs(art, QH) };
+    }
+    // the ones who get a skeleton
+    var DIE = [0, 1, 2, 3, 4, 5, 6, 7, 11, 12, 13, 14, 15, 16];
+    DIE.forEach(function (d) { C["b" + d] = { art: "skeleton", x: SLOT0, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: hs("skeleton", QH), hidden: true }; });
+    // the receipt hangs down the front of the counter from the till
+    C.receipt = { art: "till-receipt", x: 870, y: 480, anchor: "top", pivot: "top", scale: 4, hidden: true,
+      label: [{ text: "2.6 LIVES", at: [35, 28], width: 50, size: 44 }, { text: "468,000", at: [35, 56], width: 52, size: 70 }, { text: "HOURS", at: [35, 78], width: 48, size: 70 }] };
+    // the things the sick carry: they fly up on "hours"
+    var PROPS = ["crutch", "ice-pack", "hot-water-bottle", "crutch", "ice-pack", "crutch", "hot-water-bottle", "ice-pack", "crutch", "hot-water-bottle", "crutch", "ice-pack", "crutch", "hot-water-bottle"];
+    var PK = { crutch: 1.25, "ice-pack": 1.5, "hot-water-bottle": 1.7 };
+    PROPS.forEach(function (art, i) { C["p" + i] = { art: art, x: 1250 + i * 240, y: FLOOR - 300, scale: PK[art], hidden: true }; });
+    C.boneyou = { art: "you-bone-waist", x: SLOT0, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: hs("you-bone-waist", QH), hidden: true };
+    C.yes = { art: "yes-button", x: SLOT0 - 215, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true, label: { text: "YES", at: [82, 42], width: 100, size: 60 } };
+    // YOU's place once he is saved, in front of the counter
+    var SAFE = [540, FLOOR + 14];
+    C.hook = { art: "cane-hook", x: SLOT0, y: -900, scale: 3, hidden: true };
+
+    var t0 = cue("minute"), RING = function (n) { return t0 + 0.576 * n; }, beats = [];
+    var gone = {}; // who has left the line
+    var shift = function (t, by) {
+      Q.forEach(function (n, i) { if (!gone[i] && !(i === YOUI && t > cue("two"))) beats.push({ at: t, do: "move", who: n, by: [-STEP * by, 0], dur: 0.22, ease: "smooth" }); });
+    };
+    // the first eight: ring, skeleton, stroll out through DELETED, the line moves up
+    var die = function (k, t) {
+      gone[k] = true;
+      beats.push({ at: t, do: "nudge", who: "reaper", by: [0, 26] },
+        { at: t, do: "swap", who: "q" + k, to: "b" + k },
+        { at: t + 0.1, do: "move", who: "b" + k, to: [120, FLOOR + 10 - QH / 2], dur: 0.46 },
+        { at: t + 0.56, do: "hide", who: "b" + k });
+      shift(t + 0.14, 1);
+    };
+    for (var r = 0; r < 8; r++) die(r, RING(r));
+
+    // NOW SERVING clicks up on every ring, through everything, until he is buried
+    var SIGN = V ? [700, -260] : [1290, 74], HOURS = cue("hours"), SUFF = cue("suffering");
+    for (var n = 0; RING(n) < SUFF; n++) {
+      beats.push({ at: RING(n), do: "banner", id: "ns" + n, text: "NOW SERVING " + (n + 1), x: SIGN[0], y: SIGN[1], size: V ? 110 : 76, width: V ? 1180 : 760, pad: 50, color: "ink", tilt: 0, from: 1.05, shake: 0 });
+      if (n) beats.push({ at: RING(n), do: "hide", who: "ns" + (n - 1) });
+    }
+    // "four": the rate
+    beats.push({ on: "four", n: 1, do: "banner", id: "rate", text: "104 A MINUTE", x: SIGN[0], y: SIGN[1] + (V ? 150 : 104), size: V ? 130 : 76, width: V ? 1100 : 620, pad: 50, color: "red", tilt: -2, shake: 8 });
+
+    // "vote": YES; "saves": he rings anyway and YOU goes to bone from the waist down
+    beats.push({ on: "Your", do: "pop", who: "yes", squash: true },
+      { on: "vote", do: "nudge", who: "yes", by: [0, 60] },
+      { on: "saves", do: "nudge", who: "reaper", by: [0, 26] },
+      { on: "saves", do: "swap", who: "q" + YOUI, to: "boneyou" },
+      { on: "saves", do: "boom", shake: 8, flash: 0.08 },
+      { on: "two", do: "pop", who: "yes", out: true });
+    // "two", "point", "six": the hook comes down and lifts them out of the line; YOU lands in front of the counter
+    var HOOKLEN = Z["cane-hook"][0] * 3;
+    beats.push({ at: -1, do: "hinge", who: "hook", angle: 90 });
+    var lift = function (word, who, slot, out, turnBy) {
+      var x = SLOT0 + slot * STEP, yt = FLOOR - QH - 30 - HOOKLEN / 2;
+      beats.push({ on: word, offset: -0.14, do: "show", who: "hook" },
+        { on: word, offset: -0.14, do: "move", who: "hook", to: [x + 40, yt + 130], dur: 0.13, turn: 90 });
+      if (out) {
+        beats.push({ on: word, do: "move", who: who, by: [120, -1300], dur: 0.26, ease: "smooth" },
+          { on: word, do: "move", who: "hook", by: [120, -1300], dur: 0.26, ease: "smooth", turn: 90 },
+          { on: word, offset: 0.27, do: "hide", who: who });
+      } else {
+        beats.push({ on: word, do: "move", who: who, to: [SAFE[0], SAFE[1] - QH / 2], dur: 0.28, ease: "smooth", arc: 300 },
+          { on: word, do: "move", who: "hook", to: [SAFE[0], SAFE[1] - QH - HOOKLEN / 2 - 300], dur: 0.28, ease: "smooth", turn: 90 },
+          { on: word, offset: 0.3, do: "slideOut", who: "hook", to: "top", dist: 1400, dur: 0.25 });
+      }
+    };
+    gone[9] = gone[10] = gone[YOUI] = true;
+    lift("two", "q9", 1, true); lift("point", "q10", 2, true); lift("six", "boneyou", 0, false);
+    // the line closes up; he looks down at his bone legs and hops on them. The bell starts again
+    beats.push({ on: "lives", do: "hop", who: "boneyou", height: 40 }, { on: "and", n: 2, do: "hop", who: "boneyou", height: 24 });
+    shift(cue("six") + 0.1, 3);
+    for (var r2 = 11; r2 <= 16; r2++) if (RING(r2) < HOURS) die(r2, RING(r2));
+    // "four": the till spits out the receipt
+    beats.push({ on: "four", n: 2, do: "pop", who: "receipt", squash: true },
+      { on: "four", n: 2, do: "nudge", who: "counter", by: [0, 10] });
+    // "hours": back over the line, every prop flies up; "suffering.": they all come down on the Reaper
+    beats.push({ at: HOURS - 0.1, do: "camera", view: "line", dur: 0.3 });
+    var PILE = function (i) { return [260 + (i % 5) * 130, 110 + (i % 4) * 130 + (i % 2) * 30]; };
+    PROPS.forEach(function (art, i) {
+      beats.push({ at: HOURS + 0.02 * i, do: "show", who: "p" + i },
+        { at: HOURS + 0.02 * i, do: "move", who: "p" + i, by: [0, -780 - (i % 3) * 120], dur: 0.32, turn: 140 + 30 * i, ease: "smooth" },
+        { at: SUFF + 0.035 * i, do: "move", who: "p" + i, to: PILE(i), dur: 0.26, turn: (i % 2 ? 1 : -1) * (35 + 12 * (i % 4)), scale: 1.25 });
+    });
+    for (var h = 17; h < COUNT; h++) beats.push({ at: HOURS + 0.015 * h, do: "hop", who: "q" + h, height: 40 });
+    beats.push({ at: SUFF + 0.3, do: "shake", y: 16 }, { at: SUFF + 0.3, do: "hop", who: "counter", height: 18 },
+      { at: SUFF + 0.42, do: "shake", y: 10 }, { at: SUFF + 0.55, do: "shake", y: 8 },
+      { at: SUFF + 0.3, do: "camera", view: "close", dur: 0.4 });
+
+    var views = V ? { close: [700, 330, 0.8], line: [1100, -168, 0.42] } : { close: [960, 540, 1], line: [1720, 215, 0.54] };
+    KIT.collage({ id: ID, seed: 2607, plate: V ? [-700, -2600, 3400, 2000] : [-300, -900, 3800, 1500], views: views, view: "close", cast: C, beats: beats });
+  </script>
+</template>

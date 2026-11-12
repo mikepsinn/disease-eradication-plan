@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:12.1
+duration: 2:12.0
 message: "The fix is one treaty: every country moves 1% of its military budget to clinical trials at the same time, and humans have already signed treaties that asked for more."
 arc: Title card (one electron paper drops through the % and comes out medicine) → the console cuckoos "crazy" → every leader drops one paper into the funnel at once → the treaty is one line → the invasion goes off in their heads → one crate out of 122, and the other 121 go off → more than sufficient, and the three treaties already signed → squash, splat, boom → 847 planets, and Earth sweats → the readers stop at page 1 → 200,000 years of flicking off the mold → the fat cat's hamster wheel lights the deck
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 13, "The Solution: A 1% Treaty"
-audio: index-manual.cbaf659d.mp3, 25:42.0 to 27:54.0
+audio: index-manual.7ce6b2b2.mp3, 25:14.9 to 27:26.9
 version: v3
 ---
 
@@ -42,7 +42,7 @@ version: v3
 - act: Title
 - transition_in: cut (the parts are rendered on their own and joined)
 - cue: "The Solution. A one percent"
-- time: 25:42.0 to 25:45.4 (3.4 s)
+- time: 25:14.9 to 25:18.4 (3.5 s)
 - voiceover: "The Solution. A one percent Treaty."
 - layer: A, title card
 - status: planned
@@ -59,7 +59,7 @@ Sound: a projector whirr on "Solution."; a boing as the paper hops in; a sparkle
 - act: The treaty
 - transition_in: iris in on her face
 - cue: "This is going to sound"
-- time: 25:45.4 to 25:46.6 (1.2 s)
+- time: 25:18.4 to 25:19.7 (1.3 s)
 - voiceover: "This is going to sound crazy."
 - layer: A, host
 - wishonia: smirk-smile + body-presenting, then sideeye-closed + body-idle on "crazy."
@@ -77,7 +77,7 @@ Sound: a boing as it springs; two cuckoos.
 - act: The treaty
 - transition_in: cut
 - cue: "But you're going to use"
-- time: 25:46.6 to 25:56.6 (9.9 s)
+- time: 25:19.7 to 25:29.6 (9.9 s)
 - voiceover: "But you're going to use those papers to persuade the leader of every country on Earth to simultaneously redirect one percent of its military budget to clinical trials. That's it."
 - layer: B, plate globe
 - bit: **The most terrifying sacrifice in history is one paper each.** Every leader, big, in one row behind the curve of a huge globe, each clutching a brick of war bills, hands over one paper in the same frame, and it becomes medicine.
@@ -98,7 +98,7 @@ Sound: a woof and a yelp from the pack; a whistle on the lift; a slam for the bo
 - act: The treaty
 - transition_in: cut
 - cue: "That's the treaty."
-- time: 25:56.6 to 26:01.9 (5.4 s)
+- time: 25:29.6 to 25:35.0 (5.3 s)
 - voiceover: "That's the treaty. After the craziness objection, the second objection every human has:"
 - layer: A, host
 - wishonia: smirk-smile + body-presenting, then eyeroll-closed + body-palms-down on "craziness", then neutral-smile + body-counting on "second"
@@ -118,7 +118,7 @@ Sound: a whoosh as the scroll unrolls and a distant thunk; a boing and a squeak 
 - act: The objections
 - transition_in: cut
 - cue: "But if we cut"
-- time: 26:01.9 to 26:14.6 (12.6 s)
+- time: 25:35.0 to 25:47.6 (12.7 s)
 - voiceover: ""But if we cut our military budget, our enemies will invade us!". Everyone cuts one percent at the same time. Your national security actually *increases*, because everyone has one percent fewer missiles pointed at them."
 - layer: B, plate fence
 - bit: **Each very bravely removes one missile, and nothing changes.** Trump and Putin glare over a fence, each in front of a mountain of missiles, the two mountains mirror images.
@@ -139,7 +139,7 @@ Sound: whooshes between the glares; a clank on "us!"; a huff for the haul; a thu
 - act: The objections
 - transition_in: cut
 - cue: "And if you still"
-- time: 26:14.6 to 26:34.4 (19.9 s)
+- time: 25:47.6 to 26:07.5 (19.9 s)
 - voiceover: "And if you still feel like doing war, you keep the capacity for one hundred and twenty-two minus one nuclear apocalypses. Since one hundred warheads is the threshold for ending civilization and you have twelve thousand two hundred and forty-one, you are settling for one hundred and twenty-one civilizational collapses instead of one hundred and twenty-two."
 - layer: B, plate crate-tower
 - bit: **One crate off a tower of 122.** The camera climbs the tower until the Earth is a dot; one crate is whipped out like a tablecloth trick; the tower doesn't notice. That one crate chars the tiny Earth and the Weapons Maker sobbing over it.
@@ -162,7 +162,7 @@ Sound: a pat; a whistle up the tower; a whoosh and a stamp for 122; a slam for t
 - act: The objections
 - transition_in: cut
 - cue: "This should be more"
-- time: 26:34.4 to 26:43.2 (8.8 s)
+- time: 26:07.5 to 26:16.3 (8.8 s)
 - voiceover: "This should be more than sufficient. "But humans would never agree to a treaty!" you say. You already have. Multiple times."
 - layer: A, host
 - wishonia: smirk-closed + body-idle (the mug at her lips), then smirk-smile + body-idle on "sufficient.", then skeptical-closed + body-arms-crossed on "But", then smirk-smile + body-counting on "already"
@@ -182,7 +182,7 @@ Sound: a pop as the steam cloud puffs; a thunk per treaty.
 - act: The objections
 - transition_in: cut
 - cue: "You banned chemical weapons"
-- time: 26:43.2 to 27:03.8 (20.6 s)
+- time: 26:16.3 to 26:36.9 (20.6 s)
 - voiceover: "You banned chemical weapons (nineteen ninety-three, one hundred and ninety-three countries). You banned biological weapons (nineteen seventy-five, one hundred and eighty-seven countries). You banned landmines (nineteen ninety-seven, one hundred and sixty-four countries). You've signed treaties banning weapons you actually like using. This one just asks you to buy one percent fewer of them."
 - layer: B, plate signing-table
 - status: planned
@@ -203,7 +203,7 @@ Sound: a slam per treaty; a huff for the gas and a cough; a splat for the germ; 
 - act: Wishonia has done this before
 - transition_in: cut
 - cue: "I've done this before."
-- time: 27:03.8 to 27:27.1 (23.3 s)
+- time: 26:36.9 to 27:00.2 (23.3 s)
 - voiceover: "I've done this before. I've sent versions of this manual to eight hundred and forty-seven civilizations on eight hundred and forty-seven planets. Some listened. Some didn't. I kept the data. The ones that redirected resources from killing each other to keeping each other alive stopped doing war and disease. The ones that didn't extincted themselves."
 - layer: B, plate planets
 - status: planned
@@ -226,7 +226,7 @@ Sound: a thunk as the manual lands; a stamp thunk for 847; a sparkle as the plan
 - act: Wishonia has done this before
 - transition_in: same plate (no seam): the camera travels back along the line to Earth and down onto its top
 - cue: "The only variable was"
-- time: 27:27.1 to 27:33.8 (6.7 s)
+- time: 27:00.2 to 27:06.9 (6.7 s)
 - voiceover: "The only variable was the percentage of the population that decided it sounded crazy without reading the next page."
 - layer: B, plate planets
 - status: planned
@@ -244,7 +244,7 @@ Sound: a slap as the card lands; a boing for the cuckoo; a slam as the first boo
 - act: Wishonia has done this before
 - transition_in: cut
 - cue: "That is the same reflex"
-- time: 27:33.8 to 27:43.2 (9.4 s)
+- time: 27:06.9 to 27:16.2 (9.3 s)
 - voiceover: "That is the same reflex that kept you from inventing antibiotics for two hundred thousand years while bread mold sat right there on your bread."
 - layer: B, plate cave
 - status: planned
@@ -263,7 +263,7 @@ Sound: a click for the flick; a sparkle as the mold glows; a fast run of clicks 
 - act: Two advantages
 - transition_in: cut
 - cue: "And you have two"
-- time: 27:43.2 to 27:54.0 (10.8 s)
+- time: 27:16.2 to 27:26.9 (10.7 s)
 - voiceover: "And you have two other advantages, the internet and a new financial instrument designed specifically for harnessing the most powerful force in the universe: human greed."
 - layer: A, host
 - wishonia: neutral-smile + body-counting, then happy-smile + body-presenting on "financial", then smirk-smile + body-point-right on "harnessing", then excited-open + body-fist on "greed."

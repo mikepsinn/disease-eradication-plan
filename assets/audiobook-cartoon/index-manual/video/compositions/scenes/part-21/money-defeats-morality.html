@@ -1,0 +1,74 @@
+<template id="money-defeats-morality-template">
+  <!-- money-defeats-morality · collage host shot (Part 21, scene 2). Iris in on Wishonia at her console. A brass balance
+       stands on the ledge; on its right pan the Moral Human prays, so light that the beam stays level. Two plain bills
+       march along the ledge with the rolled-up 1% TREATY over their heads like ants with a leaf. "money": they hop onto
+       the left pan; "defeats": it slams down and the Moral Human, who weighs nothing, floats up off his pan and out of
+       the top of the frame (slide whistle). His halo stays hanging in the air where his head was. "tradition.": it
+       drops and rings onto a tall stack of identical halos at the end of the ledge. She shrugs. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="money-defeats-morality" data-width="1920" data-height="1080" data-start="0" data-duration="5.28">
+    <div id="money-defeats-morality-weave"></div>
+    <div id="money-defeats-morality-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      // It all stands on the deck floor, right of the console.
+      var V = KIT.V, TOP = V ? 1455 : 1000, SZ = KIT.collage.SIZES;
+      // The balance (art 350 x 360: the beam turns on [175, 48]; the pans' tops are at y 180, x 55 and 295).
+      var BX = V ? 860 : 1450, BK = V ? 1.05 : 1.9, PAN_Y = TOP - (360 - 180) * BK, LP = BX - 120 * BK, RP = BX + 120 * BK;
+      var TILT = -16, rad = TILT * Math.PI / 180;
+      var panMove = function (vx) {   // how far a pan moves when the beam tips, canvas px
+        var vy = 132, x = vx * Math.cos(rad) - vy * Math.sin(rad), y = vx * Math.sin(rad) + vy * Math.cos(rad);
+        return [(x - vx) * BK, (y - vy) * BK];
+      };
+      var LD = panMove(-120), RD = panMove(120);
+      var MK = V ? 0.3 : 0.55, MH = SZ["moral-human"][1] * MK, HALO = [RP + 2, PAN_Y - MH - 4];
+      var HK = V ? 0.36 : 0.6, SK = V ? 0.45 : 0.8, STACK = V ? 1045 : 1830, NH = 14, HG = V ? 10 : 19;
+      var BILLK = V ? 0.3 : 0.5, LEDGE = V ? [690, 770] : [1030, 1160], SCK = V ? 0.27 : 0.45;
+      var BH = SZ["bill-plain"][1] * BILLK, SCROLL_Y = TOP - BH - 8;
+      var cast = {};
+      for (var i = 0; i < NH; i++) cast["h" + i] = { art: "halo", x: STACK, y: TOP - i * HG, anchor: "bottom", scale: SK };
+      cast.bal = { art: "balance-scale", x: BX, y: TOP, anchor: "bottom", scale: BK,
+        pieces: { base: { clip: [[0, 205], [350, 205], [350, 360], [0, 360]] }, beam: { clip: [[0, 0], [350, 0], [350, 206], [0, 206]], pivot: [175, 48] } } };
+      cast.saint = { art: "moral-human", x: RP, y: PAN_Y + 4, anchor: "bottom", pivot: "bottom", scale: MK };
+      cast.halo = { art: "halo", x: HALO[0], y: HALO[1], scale: HK };
+      LEDGE.forEach(function (x, j) { cast["b" + j] = { art: "bill-plain", x: x, y: TOP, anchor: "bottom", pivot: "bottom", scale: BILLK, hidden: true }; });
+      cast.scroll = { art: "scroll-rolled", x: (LEDGE[0] + LEDGE[1]) / 2, y: SCROLL_Y, anchor: "bottom", scale: SCK, hidden: true, label: { text: "1% TREATY", at: [283, 66], width: 300, size: 56 } };
+      var army = ["b0", "b1", "scroll"], ONTO = [LP - (LEDGE[0] + LEDGE[1]) / 2, PAN_Y - TOP];
+      var STACK_TOP = TOP - (NH - 1) * HG - SZ.halo[1] * SK * 0.5 - 4;
+      KIT.collage({
+        id: "money-defeats-morality", seed: 2102, host: { iris: ["in", 0, 0.55] },
+        cast: cast,
+        beats: [
+          { at: 0, do: "glow", who: "halo", size: V ? 120 : 170, dur: 1.2 },
+          { at: 0, do: "bob", who: ["saint", "halo"], y: 4, r: 1, speed: 0.7, until: "defeats" },
+          // "Your treaty passes": the bills march in with the treaty over their heads
+          { on: "Your", offset: 0.1, do: "slideIn", who: army, from: "bottom", dist: V ? 500 : 400, over: 10 },
+          { on: "Your", offset: 0.1, do: "bob", who: army, y: 7, r: 4, speed: 4, until: "money" },
+          // "money defeats morality": onto the left pan; it slams down and the saint floats away
+          { on: "money", do: "move", who: army, by: ONTO, dur: 0.32, arc: V ? 90 : 120 },
+          { on: "defeats", do: "hinge", who: "bal.beam", angle: TILT, frames: 1 },
+          { on: "defeats", do: "move", who: army, by: LD, dur: KIT.collage.F },
+          { on: "defeats", do: "move", who: "saint", by: RD, dur: KIT.collage.F },
+          { on: "defeats", do: "shake", y: 8, frames: 3 },
+          { on: "defeats", offset: 0.12, do: "move", who: "saint", by: [V ? 30 : 60, -1300], dur: 1.5, ease: "smooth", turn: 8 },
+          { on: "morality,", do: "bob", who: "halo", y: 6, r: 2, speed: 1 },
+          // "as is tradition.": the halo drops and rings onto the stack that was always there
+          { on: "tradition.", offset: 0.05, do: "move", who: "halo", to: [STACK, STACK_TOP], dur: 0.28, arc: 50, scale: SK / HK },
+          { on: "tradition.", offset: 0.33, do: "shiver", who: ["h" + (NH - 1), "halo"], dur: 0.5, amp: 3, rot: 6 },
+        ],
+      });
+    })();
+  </script>
+</template>

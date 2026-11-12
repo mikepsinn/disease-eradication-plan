@@ -1,0 +1,22 @@
+<template id="sounds-familiar-template">
+  <!-- sounds-familiar · collage host shot: arms crossed, one eyebrow up at us, and she holds it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="sounds-familiar" data-width="1920" data-height="1080" data-start="0" data-duration="1.6">
+    <div id="sounds-familiar-weave"></div>
+    <div id="sounds-familiar-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    KIT.collage({ id: "sounds-familiar", seed: 1718, host: { push: [1.02, 1.1] }, cast: {}, beats: [] });
+  </script>
+</template>

@@ -3,8 +3,8 @@
   "title": "Step 5: Enjoy",
   "storyboard": "storyboards/part-21-step-5-enjoy.md",
   "audio": {
-    "start": 2756.924,
-    "end": 2843.704
+    "start": 2728.252,
+    "end": 2813.676
   },
   "noCaptions": [
     "step-5-enjoy-title"
@@ -14,14 +14,14 @@
       "id": "step-5-enjoy-title",
       "file": "compositions/scenes/part-21/step-5-enjoy-title.html",
       "cue": "Step",
-      "approx": 2756.9,
+      "approx": 2728.524,
       "layer": "A"
     },
     {
       "id": "money-defeats-morality",
       "file": "compositions/scenes/part-21/money-defeats-morality.html",
       "cue": "Your",
-      "approx": 2762.7,
+      "approx": 2734.464,
       "layer": "A",
       "wishonia": [
         { "cue": "Your", "expr": "smirk", "rest": "smile", "body": "presenting", "mode": "big" },
@@ -32,42 +32,42 @@
       "id": "money-volcano",
       "file": "compositions/scenes/part-21/money-volcano.html",
       "cue": "The",
-      "approx": 2767.9,
+      "approx": 2739.744,
       "layer": "B"
     },
     {
       "id": "pharma-per-patient",
       "file": "compositions/scenes/part-21/pharma-per-patient.html",
       "cue": "Instead",
-      "approx": 2780.5,
+      "approx": 2752.924,
       "layer": "B"
     },
     {
       "id": "insurance-zero-claims",
       "file": "compositions/scenes/part-21/insurance-zero-claims.html",
       "cue": "Insurance",
-      "approx": 2789.7,
+      "approx": 2762.064,
       "layer": "B"
     },
     {
       "id": "investor-lobby-force",
       "file": "compositions/scenes/part-21/investor-lobby-force.html",
       "cue": "Investors",
-      "approx": 2803.2,
+      "approx": 2775.364,
       "layer": "B"
     },
     {
       "id": "wiki-voters-hammock",
       "file": "compositions/scenes/part-21/wiki-voters-hammock.html",
       "cue": "Lobbyists",
-      "approx": 2818.6,
+      "approx": 2789.264,
       "layer": "B"
     },
     {
       "id": "evolve-morally",
       "file": "compositions/scenes/part-21/evolve-morally.html",
       "cue": "Nobody",
-      "approx": 2836.5,
+      "approx": 2806.644,
       "layer": "A",
       "wishonia": [
         { "cue": "Nobody", "expr": "smirk", "rest": "smile", "body": "hands-hips", "mode": "big" },
@@ -78,7 +78,7 @@
       "id": "greed-arrow",
       "file": "compositions/scenes/part-21/greed-arrow.html",
       "cue": "You",
-      "approx": 2838.9,
+      "approx": 2809.204,
       "layer": "B"
     }
   ],
@@ -143,7 +143,9 @@
     { "scene": "investor-lobby-force", "cue": "lobbying", "sfx": "pat", "volume": 0.45 },
     { "scene": "investor-lobby-force", "cue": "lobbying", "offset": 0.35, "sfx": "pat", "volume": 0.4 },
     { "scene": "investor-lobby-force", "cue": "lobbying", "offset": 0.7, "sfx": "pat", "volume": 0.4 },
-    { "scene": "investor-lobby-force", "cue": "expected", "sfx": "boing", "volume": 0.45 },
+    { "scene": "investor-lobby-force", "cue": "sentence", "sfx": "typewriter", "volume": 0.45 },
+    { "scene": "investor-lobby-force", "cue": "expected", "sfx": "ding", "volume": 0.35 },
+    { "scene": "investor-lobby-force", "cue": "write.", "offset": 0.2, "sfx": "thunk", "volume": 0.5 },
 
     { "scene": "wiki-voters-hammock", "cue": "salary,", "sfx": "cash-register", "volume": 0.35 },
     { "scene": "wiki-voters-hammock", "cue": "Wikipedia", "sfx": "whoosh", "volume": 0.3 },
@@ -161,13 +163,13 @@
     { "scene": "wiki-voters-hammock", "cue": "strategy).", "offset": 0.15, "sfx": "boing", "volume": 0.4 },
     { "scene": "wiki-voters-hammock", "cue": "stupid", "sfx": "slide-down", "volume": 0.35 },
     { "scene": "wiki-voters-hammock", "cue": "things", "sfx": "boing", "volume": 0.5 },
-    { "scene": "wiki-voters-hammock", "cue": "things", "offset": 0.3, "sfx": "thunk", "volume": 0.55 },
+        { "scene": "wiki-voters-hammock", "cue": "things", "offset": 0.28, "sfx": "thunk", "volume": 0.55 },
     { "scene": "wiki-voters-hammock", "cue": "things", "offset": 0.45, "sfx": "hammer", "volume": 0.3 },
     { "scene": "wiki-voters-hammock", "cue": "(priceless,", "sfx": "squeak", "volume": 0.35 },
     { "scene": "wiki-voters-hammock", "cue": "free).", "sfx": "ding", "volume": 0.35 },
 
     { "scene": "evolve-morally", "cue": "Nobody", "sfx": "slide-down", "volume": 0.4 },
-    { "scene": "evolve-morally", "cue": "evolve", "sfx": "splat", "volume": 0.55 },
+    { "scene": "evolve-morally", "cue": "evolve", "sfx": "clank", "volume": 0.5 },
     { "scene": "evolve-morally", "cue": "morally.", "sfx": "sparkle", "volume": 0.3 },
 
     { "scene": "greed-arrow", "cue": "You", "sfx": "hammer", "volume": 0.35 },

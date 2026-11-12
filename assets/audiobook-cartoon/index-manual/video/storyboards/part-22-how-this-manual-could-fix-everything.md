@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 0:49.3
+duration: 0:49.6
 message: "The manual is built for humans as they are: pictures, simple math, exact amounts and the order to pay them, legal names for bribes, an appliance that rates policies, and templates for tricking politicians into saving lives."
 arc: Title card (the wrench fixes EVERYTHING, crooked) → at the console the manual lands → inside it, page by pop-up page: the patient dies reading the fine print and his skeleton enjoys the picture book, the Calculator screams at a ×, the Lobbyist's fingers get flattened, the envelopes swap and blow up → more pages: the Lobbyist labeled NOT A BRIBE, the Optimitron spits out MORE WAR and pops CURE IT into a sobbing chin, the Politician trapped into being a hero → the dysfunction engine: the fat cat sprints on the treadmill after a dangled bill and burns PLEASE BE GOOD for his cigar → back at the console: the self-help book onto a heap of its copies, one paper held up like a treat, and Earth follows it
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 22, "How This Manual Could Fix Everything"
-audio: index-manual.cbaf659d.mp3, 47:23.7 to 48:13.0
+audio: index-manual.7ce6b2b2.mp3, 46:53.7 to 47:43.3
 version: v3
 ---
 
@@ -46,7 +46,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "How This Manual Could Fix Everything"
-- time: 47:23.7 to 47:27.2 (3.5 s)
+- time: 46:53.7 to 46:57.5 (3.8 s)
 - voiceover: "How This Manual Could Fix Everything."
 - layer: A, title card
 - status: planned
@@ -64,7 +64,7 @@ Sound: a projector whirr from "How"; two ratchet clicks on "Everything."; a clan
 - act: What is in the manual
 - transition_in: iris in on her face
 - cue: "This manual contains"
-- time: 47:27.2 to 47:28.9 (1.6 s)
+- time: 46:57.5 to 46:59.2 (1.7 s)
 - voiceover: "This manual contains:"
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; lookright-oh + body-presenting on "contains:"
@@ -82,7 +82,7 @@ Sound: a thump on "This"; a riffle of pages on "contains:".
 - act: What is in the manual
 - transition_in: cut (into the manual: tray 1)
 - cue: "Pictures (because reading"
-- time: 47:28.9 to 47:45.6 (16.8 s)
+- time: 46:59.2 to 47:16.0 (16.8 s)
 - voiceover: "Pictures (because reading is hard when you're diseased and dying). Simple math (addition mostly, some multiplication). Exact amounts of papers to give to specific humans. The order in which to give them (very important)."
 - layer: B, plate tackle-box
 - status: planned
@@ -106,7 +106,7 @@ Sound: a riffle for each page turn; a boing as his eyes cross on "hard"; an x-ra
 - act: What is in the manual
 - transition_in: same plate (no seam)
 - cue: "Legal ways to call bribes"
-- time: 47:45.6 to 48:01.2 (15.5 s)
+- time: 47:16.0 to 47:31.2 (15.3 s)
 - voiceover: "Legal ways to call bribes other things. An appliance that tells your governments which policies work (it doesn't have feelings, which is why it's better at governing). Templates for tricking politicians into saving lives."
 - layer: B, plate tackle-box
 - status: planned
@@ -126,7 +126,7 @@ Sound: three stamp thumps on "bribes", "other" and "things."; a slide whistle do
 - act: With human dysfunction
 - transition_in: cut
 - cue: "Everything is designed to work"
-- time: 48:01.2 to 48:05.5 (4.4 s)
+- time: 47:31.2 to 47:35.9 (4.6 s)
 - voiceover: "Everything is designed to work WITH human dysfunction, not against it."
 - layer: B, plate dysfunction-engine
 - status: planned
@@ -144,7 +144,7 @@ Sound: a whirr as the engine starts on "WITH"; a pop per bottle from "dysfunctio
 - act: With human dysfunction
 - transition_in: cut
 - cue: "I'm not asking humans"
-- time: 48:05.5 to 48:13.0 (7.5 s)
+- time: 47:35.9 to 47:43.3 (7.4 s)
 - voiceover: "I'm not asking humans to be better humans. I'm showing you how to bribe humanity into not dying."
 - layer: A, host
 - wishonia: big, neutral-smile + body-presenting; eyeroll-closed + body-presenting on "better"; smirk-ee + body-palms-down on "bribe"; smirk-smile + body-presenting on "humanity"; sideeye-closed + body-idle on "dying."

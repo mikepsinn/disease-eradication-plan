@@ -6,8 +6,7 @@
        door sign flips to CLOSED; after "papers).": he x-rays into a skeleton, still sitting, grinning, thermometer in
        his teeth. "Cure": the lab, the Scientist by her bubbling flask; "very many papers": a cobweb grows between her
        and the flask, a spider lowers on its thread, the bubbling stops; after "papers).": she x-rays, clipboard and all.
-       "Feed": a thin hungry human on a bare field, belly growling; "grows": a wheat stalk shoots up by itself in front
-       of him; "free).": he looks into his wallet and a moth flies out; after it he x-rays, wallet still open.
+       "Feed": a thin hungry human on a bare field, belly growling; "papers).": he looks into his wallet and a moth flies out; after it he x-rays, wallet still open.
        "WITH": a flood of war papers runs in from the right and the camera travels with them into the busy half. The
        Weapons Maker hammers a bomb on his workbench; "giving papers": two papers hop into its slot and it swells; after
        "this).": it goes off in his face; he stands charred, hard hat on, grinning, and keeps hammering a new bomb.
@@ -15,15 +14,14 @@
        "more papers": a paper pops out of each cloud like popcorn into their hands. "Destroy": a sweating digger shovels
        into a hill; after "planet": the dirt cracks and falls off both sides: it is the Earth, with a bite out of its
        top, molten inside; "profitable": papers sprout from the bite like wheat and the digger grins. After the last
-       "papers).": the camera whips back to the start: three skeletons still grinning, and the wheat (it never stopped
-       growing) is taller than the hospital. -->
+       "papers).": the camera whips back to the start: three skeletons still grinning. -->
   <style>
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
     #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #C8B07B; }
     #without-with-papers-weave, #without-with-papers-shake, #without-with-papers-plate, #without-with-papers-film { position: absolute; inset: 0; }
     #without-with-papers-flash { position: absolute; inset: -40px; background: #FFFBEF; opacity: 0; }
   </style>
-  <div id="root" data-composition-id="without-with-papers" data-width="1920" data-height="1080" data-start="0" data-duration="28">
+  <div id="root" data-composition-id="without-with-papers" data-width="1920" data-height="1080" data-start="0" data-duration="22.839">
     <div id="without-with-papers-weave">
       <div id="without-with-papers-shake"><div id="without-with-papers-plate"></div></div>
       <div id="without-with-papers-flash"></div>
@@ -224,7 +222,7 @@
         '<path d="M-6,-2 l-14,-10 l-6,8 M-6,2 l-16,0 l-4,10 M-6,5 l-12,10 l0,8 M6,-2 l14,-10 l6,8 M6,2 l16,0 l4,10 M6,5 l12,10 l0,8" fill="none" stroke="' + ink + '" stroke-width="2.6" stroke-linejoin="round"/>' +
         '<ellipse cx="0" cy="2" rx="10" ry="12" fill="' + ink + '"/><circle cx="0" cy="-10" r="6" fill="' + ink + '"/><circle cx="-2.4" cy="-11" r="1.8" fill="#FFFFFF"/><circle cx="2.4" cy="-11" r="1.8" fill="#FFFFFF"/></g></g>';
 
-      // the bare field: the hungry human with his wallet, the wheat that grows by itself, the moth
+      // the bare field: the hungry human with his wallet, the moth
       var hMid = [(RH.hand[0][0] + RH.hand[1][0]) / 2, (RH.hand[0][1] + RH.hand[1][1]) / 2 + 2];
       var hunAlive = KIT.person(HUN) + '<g transform="translate(' + f(hMid[0]) + "," + f(hMid[1]) + ')"><g id="' + ID + '-wal-shut">' + wallet(false) + '</g><g id="' + ID + '-wal-open" opacity="0">' + wallet(true) + "</g></g>";
       var hunBones = KIT.person(copy(HUN, { skeleton: true })) + '<g transform="translate(' + f(hMid[0]) + "," + f(hMid[1]) + ')">' + wallet(true) + "</g>";
@@ -232,8 +230,6 @@
       var growl = '<g id="' + ID + '-growl" opacity="0">' + [0, 1, 2].map(function (i) {
         return '<path d="M' + f(BELLY[0] + 40 + i * 6) + "," + f(BELLY[1] - 26 + i * 22) + " l12,-6 l0,10 l12,-6 l0,10 l12,-6" + '" fill="none" stroke="' + ink + '" stroke-width="3.6" stroke-linejoin="miter"/>';
       }).join("") + "</g>";
-      var WHEAT = [[WX, 200, -4], [WX + 34, 170, 8], [WX - 30, 150, -10]];
-      var wheat = WHEAT.map(function (w, i) { return '<g transform="translate(' + w[0] + ',0)"><g id="' + ID + "-wheat" + i + '" transform="scale(0)">' + stalk(w[1], w[2]) + "</g></g>"; }).join("");
       var hun = place(FX, S, '<g id="' + ID + '-hun-alive">' + hunAlive + '</g><g id="' + ID + '-hun-bones" opacity="0">' + hunBones + "</g>");
       var mothSvg = '<g id="' + ID + '-moth" opacity="0">' + moth(true) + moth(false) + "</g>";
 
@@ -329,7 +325,7 @@
 
       var flash = "";
       q("plate").innerHTML = KIT.svg(W, H, '<rect x="-100" y="-100" width="' + (W + 200) + '" height="' + (H + 200) + '" fill="' + GROUND + '"/>' +
-        '<g id="' + ID + '-cam">' + field + hosp + lab + webSvg + spider + wheat + hun + growl + mothSvg +
+        '<g id="' + ID + '-cam">' + field + hosp + lab + webSvg + spider + hun + growl + mothSvg +
         nukeW + benchW + bombSvg + bomb2Svg + wm + table + mapTop + clouds + toys + rakes + gens + pops +
         globe + sprouts + hill + digger + clods + flood + "</g>");
 
@@ -338,7 +334,7 @@
 
       // ── Cues ──
       var tSave = cue("Save"), tMany = cue("many"), tX1 = after("papers", 2), tCure = cue("Cure"), tVery = cue("very"), tX2 = after("papers", 3);
-      var tFeed = cue("Feed"), tHungry = cue("hungry"), tReq3 = cue("requires", 3), tGrows = cue("grows"), tFree = cue("free)."), tX3 = after("free).");
+      var tFeed = cue("Feed"), tHungry = cue("hungry"), tReq3 = cue("requires", 3), tFree = cue("papers", 4), tX3 = after("papers", 4);
       var tWith = cue("WITH"), tBuild = cue("Build"), tGiving = cue("giving"), tBoom = after("this", 1), tStart = cue("Start"), tWars = after("wars");
       var tMore = cue("more"), tDestroy = cue("Destroy"), tPlanet = after("planet"), tProfit = cue("profitable"), tLastEnd = KIT.cueEnd(ID, "papers", 8), tWhip = tLastEnd + 0.02;
 
@@ -356,7 +352,6 @@
       var labEl = el("lab"), bubbles = Array.prototype.slice.call(labEl.querySelectorAll(".lab-bubble")), labFlame = labEl.querySelector(".lab-flame");
       var webEl = el("web"), thread = el("thread"), spiderB = el("spider-b");
       var walShut = el("wal-shut"), walOpen = el("wal-open"), hunHead = el("hun-alive").querySelector(".head"), growlEl = el("growl"), mothEl = el("moth");
-      var wheatEls = WHEAT.map(function (w, i) { return el("wheat" + i); });
       var wmAlive = el("wm-alive"), wmChar = el("wm-char");
       [wmAlive, wmChar].forEach(function (g) { g.querySelector(".arm-l").insertAdjacentHTML("beforeend", HAM); });
       var wmArms = [wmAlive, wmChar].map(function (g) { return g.querySelector(".arm-l"); });
@@ -423,16 +418,11 @@
         thread.setAttribute("d", "M" + f(SPIDER_X) + ",-760 V" + f(spY - 14));
         spiderB.setAttribute("transform", "translate(" + f(SPIDER_X) + "," + f(spY) + ")");
 
-        // ── the field: the belly growls; the wheat grows by itself on "grows" and never stops; "free).": he looks into
+        // ── the field: the belly growls; "papers).": he looks into
         // the wallet and a moth flies out
         var gr = (t > tHungry + 0.3 && t < tHungry + 1.2) || (t > tReq3 && t < tReq3 + 0.8);
         show(growlEl, gr);
         if (gr) growlEl.setAttribute("transform", "translate(" + f(Math.sin(t * 60) * 3) + ",0)");
-        wheatEls.forEach(function (w, i) {
-          var u = (t - tGrows - 0.05 - i * 0.06) / 0.42, k0 = u <= 0 ? 0 : u >= 1 ? 1 : 1 + 2.4 * Math.pow(u - 1, 3) + 1.4 * Math.pow(u - 1, 2);
-          var k = k0 * (1 + 2.9 * smooth((t - tGrows - 1.0) / (tWhip - tGrows - 1.0)));
-          w.setAttribute("transform", "scale(" + Math.max(0, k).toFixed(3) + ")");
-        });
         var look = smooth((t - tFree) / 0.25);
         hunHead.setAttribute("transform", "rotate(" + f(16 * look) + " " + f(RH.neck[0]) + " " + f(RH.neck[1]) + ")");
         show(walShut, t < tFree + 0.1); show(walOpen, t >= tFree + 0.1);

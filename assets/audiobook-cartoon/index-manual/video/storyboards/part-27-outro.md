@@ -6,7 +6,7 @@ arc: Wishonia thanks YOU, who falls asleep on Earth under the manual → his glo
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 27, "Outro"
-audio: index-manual.cbaf659d.mp3, 56:53.5 to 57:53.3
+audio: index-manual.7ce6b2b2.mp3, 56:05.9 to 57:05.8
 version: v3
 ---
 
@@ -55,7 +55,7 @@ version: v3
 - act: The asks
 - transition_in: cut (the parts are rendered on their own and joined); the first frame is Part 26's eligible-final-stamp last frame: Wishonia side-eyeing the camera, the stamp just lifted off the case file on the console ledge, the mug, and on the free wall YOU on his bone legs, chin in hand, beside the gift-wrapped Earth on its pedestal, a puff of saucer exhaust over them
 - cue: "Thank you so much"
-- time: 56:53.5 to 57:01.3 (7.8 s)
+- time: 56:05.9 to 56:13.7 (7.8 s)
 - voiceover: "Thank you so much for taking the time to end war and disease, but if at any point you decide you're too busy,"
 - layer: A, host
 - wishonia: big, happy-open + body-wide-gesture; happy-smile + body-presenting on "time"; skeptical-smile + body-hands-hips on "busy,"
@@ -74,7 +74,7 @@ Sound: a squeak as the chair slides in on "taking"; a snore on "disease,"; a boi
 - act: The asks
 - transition_in: cut
 - cue: "please press the share button"
-- time: 57:01.3 to 57:08.6 (7.3 s)
+- time: 56:13.7 to 56:21.1 (7.3 s)
 - voiceover: "please press the share button on your glowing rectangle in case one of your friends have a free afternoon to end war and disease instead."
 - layer: B, plate busy-field
 - status: planned
@@ -93,7 +93,7 @@ Sound: a whoosh of pages on "press"; a pop for the rectangle on "share"; a zap f
 - act: The asks
 - transition_in: same plate (no seam)
 - cue: "And if you're too busy"
-- time: 57:08.6 to 57:21.2 (12.6 s)
+- time: 56:21.1 to 56:33.7 (12.6 s)
 - voiceover: "And if you're too busy to even do that, please leave a really, really, really good rating and review so we overcome the pro -war algorithmic suppression and find someone with more spare time for ending wars and diseases."
 - layer: B, plate busy-field
 - status: planned
@@ -113,7 +113,7 @@ Sound: a slide whistle down as the rectangle shrinks on "busy"; a clatter of bon
 - act: The asks
 - transition_in: cut
 - cue: "The good review doesn't have to be true"
-- time: 57:21.2 to 57:24.0 (2.7 s)
+- time: 56:33.7 to 56:36.4 (2.7 s)
 - voiceover: "The good review doesn't have to be true, they don't check."
 - layer: A, host
 - wishonia: big, smirk-smile + body-palms-down; sideeye-closed + body-palms-down on "check."
@@ -131,7 +131,7 @@ Sound: a stamp thump on "true,", on "they" and on "check.".
 - act: The asks
 - transition_in: cut (back to the busy-field plate, at YOU)
 - cue: "But if you're too busy"
-- time: 57:24.0 to 57:39.4 (15.4 s)
+- time: 56:36.4 to 56:51.8 (15.4 s)
 - voiceover: "But if you're too busy to even do that, the absolute least you could do is take 15 seconds to go to WarOnDisease.org and make your wishocratic allocation, telling us what fraction of humanity's resources should go to explosions versus clinical trials."
 - layer: B, plate busy-field
 - status: planned
@@ -151,7 +151,7 @@ Sound: a slide whistle down on "busy"; a fire whoosh on "do"; a sizzle as the fi
 - act: The vote
 - transition_in: same plate (no seam)
 - cue: "And vote"
-- time: 57:39.4 to 57:49.2 (9.8 s)
+- time: 56:51.8 to 57:01.6 (9.8 s)
 - voiceover: "And vote! If the 1% treaty passes, your vote will be personally to blame for saving 2.6 lives and preventing 468,000 hours of suffering."
 - layer: B, plate busy-field
 - status: planned
@@ -172,7 +172,7 @@ Sound: a pop as the rectangle vanishes and a click as he presses YES on "vote!";
 - act: Goodbye
 - transition_in: cut
 - cue: "Go to WarOnDisease.org right now"
-- time: 57:49.2 to 57:53.3 (4.1 s)
+- time: 57:01.6 to 57:05.8 (4.1 s)
 - voiceover: "Go to WarOnDisease.org right now. Love you, bye!"
 - layer: A, host
 - wishonia: big, happy-smile + body-counting; blink-smile + body-wide-gesture on "Love"

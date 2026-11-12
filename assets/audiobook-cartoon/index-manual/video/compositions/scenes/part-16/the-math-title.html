@@ -1,0 +1,62 @@
+<template id="the-math-title-template">
+  <!-- the-math-title · the period title card (KIT.titleScene, look "atomic"): THE over MATH, up from black. A beat
+       after "Math." the Calculator (the collage cut-out) pops up behind MATH, only its display ("0") and eyes over the
+       letters; it slides its eyes left to right along the heading, a bead of sweat flies off, and it ducks. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="the-math-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.021">
+    <div id="the-math-title-cam">
+      <div id="the-math-title-bg"></div>
+      <div id="the-math-title-back"></div>
+      <div id="the-math-title-words"></div>
+      <div id="the-math-title-art"></div>
+    </div>
+    <div id="the-math-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "the-math-title",
+      lines: [{ words: ["THE"], style: "small" }, ["MATH"]],
+      gag: function (c) {
+        var tl = c.tl, b = c.word("MATH").box;
+        // The Calculator cut-out (227 x 308 art px): display y 7-40, eyes y 44-105. It stands behind MATH in a
+        // window that ends at the letters' middle, so only its display and eyes clear their tops.
+        var k = b.h * 0.95 / 105, w = 227 * k, h = 308 * k;
+        var cx = b.x + b.w * 0.8, winTop = b.y - 200 * k, winH = b.y + b.h * 0.22 - winTop;
+        var win = document.createElement("div");
+        win.style.cssText = "position:absolute;left:" + (cx - w).toFixed(1) + "px;top:" + winTop.toFixed(1) + "px;width:" + (2 * w).toFixed(1) + "px;height:" + winH.toFixed(1) + "px;overflow:hidden";
+        var calc = document.createElement("div");
+        var restTop = b.y - 96 * k - winTop;           // its eyes' bottoms just above the letters' tops
+        calc.style.cssText = "position:absolute;left:" + (w / 2).toFixed(1) + "px;top:" + restTop.toFixed(1) + "px;width:" + w.toFixed(1) + "px;height:" + h.toFixed(1) + "px";
+        calc.innerHTML = '<img src="assets/art/collage/calculator-calm.webp" style="position:absolute;inset:0;width:100%;height:100%">' +
+          '<div style="position:absolute;left:0;right:0;top:' + (9 * k).toFixed(1) + 'px;text-align:center;font:900 ' + (24 * k).toFixed(1) + 'px/1 Fraunces;color:#2A1C10">0</div>';
+        win.appendChild(calc);
+        c.back.appendChild(win);
+        // A bead of sweat in front of the letters.
+        var bead = document.createElement("div"), bs = 16 * k;
+        bead.style.cssText = "position:absolute;left:" + (cx + w * 0.48).toFixed(1) + "px;top:" + (b.y - 70 * k).toFixed(1) + "px;width:" + bs.toFixed(1) + "px;height:" + (bs * 1.35).toFixed(1) +
+          "px;border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;background:#BFE6F2;border:" + (3 * k).toFixed(1) + "px solid #2A1C10;opacity:0";
+        c.art.appendChild(bead);
+
+        var t0 = c.after("Math."), D = c.D, hide = h + 20;
+        // pops up (boing), reads the heading left to right in three hops, sweats, ducks (pop)
+        tl.fromTo(calc, { y: hide }, { y: 0, duration: 0.17, ease: "back.out(2.2)" }, t0);
+        tl.fromTo(calc, { x: -b.w * 0.16 }, { keyframes: [{ x: -b.w * 0.16, duration: 0.08 }, { x: 0, duration: 0.01 }, { x: 0, duration: 0.1 }, { x: b.w * 0.16, duration: 0.01 }], ease: "none" }, t0 + 0.05);
+        tl.fromTo(bead, { opacity: 0, x: 0, y: 0 }, { opacity: 1, duration: 0.01 }, t0 + 0.3);
+        tl.to(bead, { x: 70 * k, y: -50 * k, duration: 0.12, ease: "power2.out" }, t0 + 0.31);
+        tl.to(bead, { x: 120 * k, y: 140 * k, opacity: 0, duration: 0.25, ease: "power2.in" }, t0 + 0.43);
+        tl.to(calc, { y: hide, duration: 0.12, ease: "power3.in" }, Math.min(t0 + 0.45, D - 0.2));
+      },
+    });
+  </script>
+</template>

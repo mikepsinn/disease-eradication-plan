@@ -3,22 +3,22 @@
   "title": "Short: the donut doctor",
   "storyboard": "storyboards/part-14-decentralized-fda.md",
   "audio": {
-    "start": 1834.9,
-    "end": 1924.5
+    "start": 1812.556,
+    "end": 1901.157
   },
   "scenes": [
     {
       "id": "decision-wheel",
       "file": "compositions/scenes/short-donut-doctor/decision-wheel.html",
       "cue": "Treatment",
-      "approx": 1835.0,
+      "approx": 1812.824,
       "layer": "B"
     },
     {
       "id": "grape-soda",
       "file": "compositions/scenes/short-donut-doctor/grape-soda.html",
       "cue": "This",
-      "approx": 1849.4,
+      "approx": 1826.664,
       "layer": "A",
       "wishonia": [
         {
@@ -48,7 +48,7 @@
       "id": "forty-page-insert",
       "file": "compositions/scenes/short-donut-doctor/forty-page-insert.html",
       "cue": "Your",
-      "approx": 1857.1,
+      "approx": 1835.164,
       "layer": "B"
     }
   ],

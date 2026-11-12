@@ -1,0 +1,41 @@
+<template id="heres-one-template">
+  <!-- heres-one · collage host shot. "here's": she slaps the INCENTIVE ALIGNMENT BOND down on her console, facing us, and Earth jolts in its orbit beside her and wobbles back. "one.": its gold seal gleams. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="heres-one" data-width="1920" data-height="1080" data-start="0" data-duration="1.32">
+    <div id="heres-one-weave"></div>
+    <div id="heres-one-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V, S = KIT.STUDIO, E = S.earth, SZ = KIT.collage.SIZES;
+      var EK = 2.04 * E[2] / SZ["earth-big"][0];
+      var BOND = V ? [720, S.top + 10] : [1010, S.top + 12];
+      KIT.collage({
+        id: "heres-one", seed: 1704, host: true,
+        cast: {
+          earth: { art: "earth-big", x: E[0], y: E[1], scale: EK },
+          bond: { art: "bond", x: BOND[0], y: BOND[1], anchor: "bottom", pivot: "bottom", scale: V ? 1.2 : 1.1, hidden: true,
+            label: [{ text: "INCENTIVE", at: [143, 74], width: 200, size: 34 }, { text: "ALIGNMENT BOND", at: [143, 112], width: 210, size: 30 }] },
+        },
+        beats: [
+          { on: "here's", offset: -0.06, do: "stamp", who: "bond", from: 1.8, shake: 14 },
+          { on: "here's", offset: 0.02, do: "move", who: "earth", by: [V ? 26 : 40, V ? -14 : -20], turn: 9, dur: 0.08 },
+          { on: "here's", offset: 0.12, do: "move", who: "earth", by: [V ? -26 : -40, V ? 14 : 20], turn: 0, dur: 0.3, ease: "smooth" },
+          { on: "here's", offset: 0.12, do: "shiver", who: "earth", dur: 0.5, amp: 5, rot: 4 },
+          { on: "one.", do: "glow", who: "bond", size: V ? 300 : 360, dur: 0.6 },
+        ],
+      });
+    })();
+  </script>
+</template>

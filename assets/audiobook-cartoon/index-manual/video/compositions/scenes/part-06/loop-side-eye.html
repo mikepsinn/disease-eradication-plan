@@ -1,0 +1,33 @@
+<template id="loop-side-eye-template">
+  <!-- loop-side-eye · collage host shot (Part 6, scene 6, a reaction cut). Wishonia, arms crossed, side-eyes the camera;
+       in the window behind her a little mushroom cloud puffs up on Earth. She is the only one who looked round. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="loop-side-eye" data-width="1920" data-height="1080" data-start="0" data-duration="1.64">
+    <div id="loop-side-eye-weave"></div>
+    <div id="loop-side-eye-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "loop-side-eye", V = KIT.V, E = KIT.STUDIO.earth, SZ = KIT.collage.SIZES;
+    // the cloud stands on Earth's left limb, the side the missiles rolled off
+    var a = -150 * Math.PI / 180, P = [E[0] + E[2] * 0.82 * Math.cos(a), E[1] + E[2] * 0.82 * Math.sin(a)];
+    var cast = { cloud: { art: "mushroom", x: P[0], y: P[1], anchor: "bottom", pivot: "bottom", scale: E[2] * 0.95 / SZ.mushroom[1], hidden: true } };
+    KIT.collage({
+      id: ID, seed: 606, host: true, cast: cast,
+      beats: [
+        { on: "loop", do: "pop", who: "cloud", squash: true, swell: 0.5 },
+        { on: "loop", do: "shake", x: 4, frames: 2 },
+      ],
+    });
+  </script>
+</template>

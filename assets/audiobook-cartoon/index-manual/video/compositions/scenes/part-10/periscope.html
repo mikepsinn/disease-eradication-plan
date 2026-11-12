@@ -1,0 +1,42 @@
+<template id="periscope-template">
+  <!-- periscope · collage host shot (Part 10, scene 14). Wishonia at the console, her mug on the ledge. "useful": the
+       desert submarine's periscope rises out of her coffee and has a look round; "live": it turns and stares at her;
+       "land.": it ducks back under. She side-eyes it. Iris out on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="periscope" data-width="1080" data-height="1920" data-start="0" data-duration="2.759">
+    <div id="periscope-weave"></div>
+    <div id="periscope-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "periscope", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+    var TOP = S.top + 6, MH = V ? 230 : 260, MK = MH / SZ["desk-mug"][1], MX = V ? 610 : 1110;
+    // the submarine's periscope (the art clipped to it), its lens facing left, at her
+    var SCK = (MH * 0.8) / 80, UP = MH * 0.75;
+    var cast = {
+      // the periscope sits inside the mug, out of sight, until it rises
+      scope: { art: "submarine", clip: [[160, 0], [213, 0], [213, 80], [160, 80]], x: MX - 34 * MK, y: TOP - MH + 45 * MK + 80 * SCK,
+        anchor: [187, 80], pivot: [187, 80], scale: SCK, faces: "left" },
+      mug: { art: "desk-mug", x: MX, y: TOP, anchor: "bottom", pivot: "bottom", scale: MK },
+    };
+    var beats = [
+      { on: "somehow", do: "shiver", who: "mug", dur: 0.3, amp: 3, rot: 2 },
+      { on: "useful", do: "move", who: "scope", by: [0, -UP], dur: 0.25, ease: "smooth" },
+      { on: "when", do: "hinge", who: "scope", angle: 14, frames: 1, hold: 0.25 },
+      { on: "live", do: "nudge", who: "scope", by: [16, 0] },
+      { on: "land.", do: "move", who: "scope", by: [0, UP], dur: 0.17 },
+      { on: "land.", offset: 0.17, do: "hop", who: "mug", height: 8 },
+    ];
+    KIT.collage({ id: ID, seed: 1140, host: { iris: ["out", D - 0.55, D - 0.05] }, cast: cast, beats: beats });
+  </script>
+</template>

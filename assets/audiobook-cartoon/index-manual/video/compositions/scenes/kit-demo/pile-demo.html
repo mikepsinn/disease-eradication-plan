@@ -1,0 +1,36 @@
+<template id="pile-demo-template">
+  <!-- pile-demo · kit demo (scratch): bills falling into a column to a height; headstones heaped (stack); bills stacking to a chart value -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="pile-demo" data-width="1920" data-height="1080" data-start="0" data-duration="4.78">
+    <div id="pile-demo-weave"></div>
+    <div id="pile-demo-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+
+      var G = V ? 1400 : 980;
+      var ch = KIT.collage.axes(V ? { box: [600, 500, 1000, 1400], x: [0, 2, 1], y: [0, 10, 2] } : { box: [1450, 300, 1850, 980], x: [0, 2, 1], y: [0, 10, 2] });
+      KIT.collage({
+        id: "pile-demo", seed: 402,
+        beats: [
+          { at: 0, do: "chart", chart: ch },
+          { at: 0.2, do: "pile", id: "bills", art: "bill-war-flat", x: V ? 230 : 450, y: G, tall: 700, gap: 40, dur: 3 },
+          { at: 0.4, do: "stack", id: "heap", art: "headstone", scale: 0.3, x: V ? 440 : 950, y: G, heap: 5, count: 15, dur: 2.6 },
+          { at: 0.6, do: "pile", id: "bar", chart: ch, x: 1, to: 8, art: "bill-med-flat", gap: 30, dur: 3, accel: 0.5, jitter: 3, tilt: 2 },
+        ],
+      });
+    })();
+  </script>
+</template>

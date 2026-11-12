@@ -3,8 +3,8 @@
   "title": "How This Manual Could Fix Everything",
   "storyboard": "storyboards/part-22-how-this-manual-could-fix-everything.md",
   "audio": {
-    "start": 2843.704,
-    "end": 2893.004
+    "start": 2813.676,
+    "end": 2863.324
   },
   "noCaptions": [
     "how-this-manual-could-fix-everything-title"
@@ -14,14 +14,14 @@
       "id": "how-this-manual-could-fix-everything-title",
       "file": "compositions/scenes/part-22/how-this-manual-could-fix-everything-title.html",
       "cue": "How",
-      "approx": 2843.7,
+      "approx": 2814.024,
       "layer": "A"
     },
     {
       "id": "manual-contains",
       "file": "compositions/scenes/part-22/manual-contains.html",
       "cue": "This",
-      "approx": 2847.2,
+      "approx": 2817.484,
       "layer": "A",
       "wishonia": [
         {
@@ -44,28 +44,28 @@
       "id": "manual-toolbox",
       "file": "compositions/scenes/part-22/manual-toolbox.html",
       "cue": "Pictures",
-      "approx": 2848.9,
+      "approx": 2819.164,
       "layer": "B"
     },
     {
       "id": "not-a-bribe-label-maker",
       "file": "compositions/scenes/part-22/not-a-bribe-label-maker.html",
       "cue": "Legal",
-      "approx": 2865.6,
+      "approx": 2835.944,
       "layer": "B"
     },
     {
       "id": "dysfunction-engine",
       "file": "compositions/scenes/part-22/dysfunction-engine.html",
       "cue": "Everything",
-      "approx": 2881.2,
+      "approx": 2851.224,
       "layer": "B"
     },
     {
       "id": "bribe-humanity",
       "file": "compositions/scenes/part-22/bribe-humanity.html",
       "cue": "I'm",
-      "approx": 2885.5,
+      "approx": 2855.864,
       "layer": "A",
       "wishonia": [
         {
@@ -112,7 +112,7 @@
     { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "offset": 0.3, "sfx": "click", "volume": 0.45 },
     { "scene": "how-this-manual-could-fix-everything-title", "cue": "Everything.", "at": "after", "sfx": "clank", "volume": 0.35 },
 
-    { "scene": "manual-contains", "cue": "This", "sfx": "slam", "volume": 0.5 },
+    { "scene": "manual-contains", "cue": "This", "offset": 0.3, "sfx": "slam", "volume": 0.5 },
     { "scene": "manual-contains", "cue": "contains:", "sfx": "clank", "volume": 0.35 },
     { "scene": "manual-contains", "cue": "contains:", "offset": 0.2, "sfx": "click", "volume": 0.4 },
     { "scene": "manual-contains", "cue": "contains:", "offset": 0.4, "sfx": "click", "volume": 0.4 },
@@ -158,7 +158,7 @@
     { "scene": "dysfunction-engine", "cue": "against", "sfx": "thunk", "volume": 0.35 },
     { "scene": "dysfunction-engine", "cue": "it.", "at": "after", "offset": -0.2, "sfx": "fire", "volume": 0.35 },
 
-    { "scene": "bribe-humanity", "cue": "humans.", "n": 2, "at": "after", "sfx": "thunk", "volume": 0.4 },
+    { "scene": "bribe-humanity", "cue": "better", "offset": 0.5, "sfx": "thunk", "volume": 0.4 },
     { "scene": "bribe-humanity", "cue": "bribe", "sfx": "slam", "volume": 0.5 },
     { "scene": "bribe-humanity", "cue": "bribe", "offset": 0.4, "sfx": "sparkle", "volume": 0.3 },
     { "scene": "bribe-humanity", "cue": "not", "n": 2, "sfx": "squeak", "volume": 0.3 },

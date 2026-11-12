@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:19.1
+duration: 3:15.5
 message: "War plus cybercrime is a $13.2 trillion destructive economy growing faster than the productive one; at this rate it passes the share that collapsed the Soviet Union, unless the treaty defunds the loop that feeds it."
 arc: Title card, where the Weapons Maker lights the fuse on the Earth at the heart of the atom → Wishonia tags the official murder budget on the Earth-bomb, and robots peek over its rim → off the books, cybercrime is the war that pays better → the destroying stack outgrows the making one, and Wishonia calls it Tuesday → on main street, building stops making sense, and the town becomes a failed state → the neighbor's gasoline basement goes up, and Wishonia sips through the boom → the robot chain passes the Soviet 15% and hits 25% by 2033, and the foot stomps Gorbachev's plan → the military line is a loop → the treaty switches the money off the loop, the papers come out with the cross seal, and the fuse on Earth goes out
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 11, "Your Civilization Has a Countdown"
-audio: index-manual.cbaf659d.mp3, 19:14.9 to 22:34.0
+audio: index-manual.7ce6b2b2.mp3, 18:55.3 to 22:10.9
 version: v3
 ---
 
@@ -46,7 +46,7 @@ version: v3
 - act: Title
 - transition_in: cut (parts are rendered on their own)
 - cue: "Your Civilization Has a Countdown."
-- time: 19:14.9 to 19:17.9 (3.0 s)
+- time: 18:55.3 to 18:58.3 (3.0 s)
 - voiceover: "Your Civilization Has a Countdown."
 - layer: A, title card
 - status: planned
@@ -63,7 +63,7 @@ Sound: a projector whirr on "Your"; a fire fizz as the fuse catches.
 - act: Off the books
 - transition_in: cut
 - cue: "And that's just the official"
-- time: 19:17.9 to 19:21.1 (3.3 s)
+- time: 18:58.3 to 19:01.6 (3.3 s)
 - voiceover: "And that's just the official murder budget."
 - layer: A, host
 - wishonia: smirk-closed + body-point-right; sideeye-closed + body-idle on "budget."
@@ -82,7 +82,7 @@ Sound: a pop as the tag spins and a stamp thud; a burst of typing as the robots 
 - act: Off the books
 - transition_in: cut
 - cue: "Cybercrime costs ten point five trillion"
-- time: 19:21.1 to 19:28.7 (7.5 s)
+- time: 19:01.6 to 19:09.1 (7.5 s)
 - voiceover: "Cybercrime costs ten point five trillion dollars per year and growing at fifteen percent annually. This is not a separate problem."
 - layer: B, plate off-the-books
 - status: planned
@@ -101,7 +101,7 @@ Sound: a typing clatter as the robot bar stacks; a click per year and a pop per 
 - act: Off the books
 - transition_in: same plate (no seam)
 - cue: "North Korea can't build"
-- time: 19:28.7 to 19:41.9 (13.2 s)
+- time: 19:09.1 to 19:22.3 (13.2 s)
 - voiceover: "North Korea can't build an aircraft carrier, but it funds its nuclear program by stealing one point five billion dollars in cryptocurrency in a single afternoon. Russia finances military operations with ransomware."
 - layer: B, plate off-the-books
 - status: planned
@@ -123,7 +123,7 @@ Sound: a slide-down whistle as the carrier sinks and a pop for the bubble; a cla
 - act: Off the books
 - transition_in: same plate (no seam)
 - cue: "Cybercrime is war conducted"
-- time: 19:41.9 to 19:46.3 (4.5 s)
+- time: 19:22.3 to 19:26.8 (4.4 s)
 - voiceover: "Cybercrime is war conducted through WiFi, and it pays better."
 - layer: B, plate off-the-books
 - status: planned
@@ -141,7 +141,7 @@ Sound: a whoosh for the WiFi arcs; a thunk for the small pile; a splat when the 
 - act: The destroying economy
 - transition_in: cut
 - cue: "Combined, your destructive economy"
-- time: 19:46.3 to 20:03.7 (17.4 s)
+- time: 19:26.8 to 19:44.2 (17.4 s)
 - voiceover: "Combined, your destructive economy is thirteen point two trillion dollars per year, eleven point five percent of global G.D.P. Both are growing faster than the part of your economy that makes things. So the part that destroys things is winning. I'm told this is not considered an emergency."
 - layer: B, plate the-stacks
 - status: planned
@@ -162,7 +162,7 @@ Sound: a clank as the bars stack; a snip for the wedge; hammering as the Builder
 - act: The destroying economy
 - transition_in: cut
 - cue: "On your planet this"
-- time: 20:03.7 to 20:06.6 (2.9 s)
+- time: 19:44.2 to 19:47.0 (2.9 s)
 - voiceover: "On your planet this is considered "Tuesday."."
 - layer: A, host
 - wishonia: smirk-closed + body-idle; smirk-smile + body-palms-down on "Tuesday"
@@ -180,7 +180,7 @@ Sound: a click per calendar page; a soft thunk as the mug goes down.
 - act: Build or steal
 - transition_in: cut
 - cue: "When the parasitic economy grows"
-- time: 20:06.6 to 20:21.6 (15.0 s)
+- time: 19:47.0 to 20:02.0 (15.0 s)
 - voiceover: "When the parasitic economy grows large enough relative to the productive one, the rational choice for any individual, company, or nation flips from "build things" to "steal things." Why spend years building a product when you can ransom a hospital in an afternoon?"
 - layer: B, plate main-street
 - status: planned
@@ -201,7 +201,7 @@ Sound: a slide as the slider moves; a boing for each rider; a ding as the bars c
 - act: Build or steal
 - transition_in: same plate (no seam)
 - cue: "Why manufacture exports"
-- time: 20:21.6 to 20:38.6 (17.1 s)
+- time: 20:02.0 to 20:19.1 (17.1 s)
 - voiceover: "Why manufacture exports when hacking banks pays better? Once enough of your economy is extraction, producing anything makes you a target rather than a success. Production becomes irrational. Parasitism becomes the only means of survival."
 - layer: B, plate main-street
 - status: planned
@@ -223,7 +223,7 @@ Sound: a thunk as the crates load; a typing clatter; a clank as the vault opens;
 - act: Where it ends
 - transition_in: same plate (no seam)
 - cue: "You have a name for places"
-- time: 20:38.6 to 20:56.0 (17.4 s)
+- time: 20:19.1 to 20:36.5 (17.4 s)
 - voiceover: "You have a name for places where this already happened. You call them "failed states." Somalia, Libya, parts of Syria. The productive economy collapsed, the warlord economy replaced it, and nobody can restart production because anyone who builds something gets it taken."
 - layer: B, plate main-street
 - status: planned
@@ -244,7 +244,7 @@ Sound: a stamp thud on the sign; a thunk per map and a clatter as Syria drops; a
 - act: Where it ends
 - transition_in: cut
 - cue: "You've watched this happen"
-- time: 20:56.0 to 21:04.0 (8.0 s)
+- time: 20:36.5 to 20:44.5 (8.0 s)
 - voiceover: "You've watched this happen to individual countries the way someone watches a neighbor's house burn down while storing gasoline in their own basement."
 - layer: B, plate two-houses
 - status: planned
@@ -262,7 +262,7 @@ Sound: a fire whoosh as the roof catches; a clank as the last can rolls in; a bo
 - act: Where it ends
 - transition_in: cut
 - cue: "Once it starts,"
-- time: 21:04.0 to 21:05.0 (1.0 s)
+- time: 20:44.5 to 20:45.5 (1.0 s)
 - voiceover: "Once it starts,"
 - layer: A, host (reaction cut)
 - wishonia: sideeye-closed + body-idle
@@ -280,7 +280,7 @@ Sound: nothing new; the boom from neighbors-house rolls on under the sip.
 - act: Where it ends
 - transition_in: cut back to the two-houses plate, where the camera would have got to
 - cue: "you can't vote"
-- time: 21:05.0 to 21:11.5 (6.4 s)
+- time: 20:45.5 to 20:51.9 (6.4 s)
 - voiceover: "you can't vote your way out, innovate your way out, or give a TED Talk about it. (You will try all three.)."
 - layer: B, plate two-houses
 - status: planned
@@ -300,7 +300,7 @@ Sound: a sizzle as the smoke thins off him; a click as the slot shuts; a switch 
 - act: The Soviet comparison
 - transition_in: cut
 - cue: "At current growth rates"
-- time: 21:11.5 to 21:30.8 (19.4 s)
+- time: 20:51.9 to 21:11.3 (19.4 s)
 - voiceover: "At current growth rates, your destructive economy reaches twenty-five percent of G.D.P. by twenty thirty-three. The Soviet Union collapsed at fifteen percent of G.D.P. in military spending alone. They had worse technology, a smaller parasitic sector, and a plan. It was a terrible plan, but they had one."
 - layer: B, plate the-robot-chart
 - bit: **The destructive economy is a chain of missiles, hackers, tanks and robots climbing a chart, and we ride its tip.** Scenes 14 and 15 are one plate. The camera climbs with the chain to 25% BY 2033, drops to Gorbachev on his 15% ledge, travels along the ledge to the Politician and his blank clipboard, and pulls back to the whole chart for the boot.
@@ -322,7 +322,7 @@ Sound: a typing clatter on the climb and a stamp thud on "thirty-three."; a whoo
 - act: The Soviet comparison
 - transition_in: same plate (no seam)
 - cue: "You are approaching their ratio"
-- time: 21:30.8 to 21:43.3 (12.5 s)
+- time: 21:11.3 to 21:23.6 (12.3 s)
 - voiceover: "You are approaching their ratio with better technology, a faster-growing parasitic sector, and no plan. The Soviet Union's terrible plan beat your no plan, and the Soviet Union lost."
 - layer: B, plate the-robot-chart
 - bit: Built in 25-percent-by-2033's plate and file.
@@ -343,7 +343,7 @@ Sound: a whoosh along the ledge; a rising whistle on "faster-growing"; a boing o
 - act: The loop
 - transition_in: cut
 - cue: "This is a loop,"
-- time: 21:43.3 to 21:44.7 (1.4 s)
+- time: 21:23.6 to 21:24.6 (1.0 s)
 - voiceover: "This is a loop,"
 - layer: A, host (reaction cut)
 - wishonia: sideeye-closed + body-arms-crossed
@@ -361,7 +361,7 @@ Sound: a fire fizz as the spark goes round the curl.
 - act: The loop
 - transition_in: cut
 - cue: "not a line item."
-- time: 21:44.7 to 22:02.4 (17.7 s)
+- time: 21:24.6 to 21:40.5 (15.9 s)
 - voiceover: "not a line item. Your governments print money to fund military spending, which devalues wages through inflation, which makes legitimate work pay less, which pushes talent toward cybercrime, which grows the destructive economy, which justifies more military spending."
 - layer: B, plate the-loop
 - status: planned
@@ -384,7 +384,7 @@ Sound: a whoosh as the line peels off; a whirr as the press turns; a rising whis
 - act: The loop
 - transition_in: same plate (no seam)
 - cue: "Every nation you've bombed"
-- time: 22:02.4 to 22:16.2 (13.8 s)
+- time: 21:40.5 to 21:54.1 (13.6 s)
 - voiceover: "Every nation you've bombed or sanctioned has learned that parasitizing your economy is cheaper than fighting you conventionally. That's not crime. That's homework. You built the incentive structure and they did the math."
 - layer: B, plate the-loop
 - status: planned
@@ -404,7 +404,7 @@ Sound: a slide-down whistle and three pops; a stamp thud and a slam as the walls
 - act: The loop
 - transition_in: same plate (no seam)
 - cue: "The treaty breaks this loop"
-- time: 22:16.2 to 22:32.0 (15.8 s)
+- time: 21:54.1 to 22:09.5 (15.5 s)
 - voiceover: "The treaty breaks this loop. Redirect the war money to medical research, make the productive economy so rewarding that crime becomes irrational, and defund the war machine that manufactures the poverty that feeds the cycle. You don't outlaw the loop."
 - layer: B, plate the-loop
 - status: planned
@@ -425,7 +425,7 @@ Sound: a whoosh as the scroll unrolls; a clank as the switch drops in; a ding as
 - act: The loop
 - transition_in: cut
 - cue: "You defund it."
-- time: 22:32.0 to 22:34.0 (2.0 s)
+- time: 22:09.5 to 22:10.9 (1.3 s)
 - voiceover: "You defund it."
 - layer: A, host
 - wishonia: happy-smile + body-open-palms; smirk-smile + body-idle on "it."

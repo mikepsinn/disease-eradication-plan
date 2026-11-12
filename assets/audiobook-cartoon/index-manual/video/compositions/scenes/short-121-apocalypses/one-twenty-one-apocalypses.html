@@ -1,17 +1,17 @@
 <template id="one-twenty-one-apocalypses-template">
   <!-- one-twenty-one-apocalypses · collage (Part 13, scene 6). The payoff: the world's most terrifying sacrifice. Close: the
-       Weapons Maker rocks his missile and pats the bottom crate of a tower of grinning warheads. "keep": the camera climbs
-       the tower, past the cloud and the goose, and pulls back until the Earth is a dot: 122. "one": he whips the bottom
-       crate out like a tablecloth; the tower drops a step and doesn't notice. He runs after the crate and bawls over it,
-       beside a tiny Earth. "civilization": that one crate goes off; Earth, man, crate and mourner char and blink. "twelve":
-       up the untouched tower: 12,241. "settling": all the way back: 121, over a black dot. "instead": down to him,
-       charred, still bawling for the one he lost. -->
+       weapons factory hugs its missile and pats the bottom crate of a tower of grinning warheads. "keep": the camera climbs
+       the tower, past the cloud and the goose, and pulls back until the Earth is a dot: 122. "one": it whips the bottom
+       crate out like a tablecloth; the tower drops a step and doesn't notice. It runs after the crate and bawls beside it
+       and a tiny Earth. "civilization": that one crate goes off; Earth, man, crate and mourner char and blink. "twelve":
+       up the untouched tower: 12,241. "settling": all the way back: 121, over a black dot. "instead": down to it,
+       charred, still bawling for the one it lost. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
     #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
   </style>
-  <div id="root" data-composition-id="one-twenty-one-apocalypses" data-width="1920" data-height="1080" data-start="0" data-duration="19.856">
+  <div id="root" data-composition-id="one-twenty-one-apocalypses" data-width="1920" data-height="1080" data-start="0" data-duration="19.764">
     <div id="one-twenty-one-apocalypses-weave"></div>
     <div id="one-twenty-one-apocalypses-film"></div>
   </div>
@@ -26,7 +26,7 @@
     var V = KIT.V, G = 1000, N = 122, CS = 1.25, STEP = 274 * CS;   // a crate's box is its bottom 194 art px; 80 more show the warheads' grins
     var TOPC = G - (N - 2) * STEP;                                  // the top crate's foot, once the tower has dropped a step
     var LX = 2000, EX = V ? 2350 : 2620, CB = 1.6;                // where the whipped crate lands; the tiny Earth
-    var SOB = [LX - 330, 0.8];                                      // his arms close round the crate
+    var WK = 1.25 * 601 / 478, SOB = [LX - 390, 1.25 * 601 / 516];  // the factory as tall as the man it replaced; it sobs just left of the crate
     var cy = function (s, screen) { return G - (screen - (V ? 960 : 540)) / s; };   // the view's y that puts the ground at this screen y
     var WS = V ? 0.0333 : 0.0205;                                   // the wide shot: the whole tower
     var views = V ? {
@@ -48,12 +48,8 @@
     };
     for (var i = 0; i < N; i++) cast["c" + i] = { art: "crate", x: 0, y: G - i * STEP, anchor: "bottom", pivot: "bottom", scale: CS, label: label100 };
     cast.hero = { art: "crate", x: LX, y: G, anchor: "bottom", pivot: "bottom", scale: CB, label: label100, hidden: true };
-    cast.wm = { art: "weapons-maker", x: 400, y: G, anchor: "bottom", pivot: "bottom", scale: 1.25 };
-    cast.sob = { art: "weapons-maker-sob", x: SOB[0], y: G, anchor: "bottom", pivot: "bottom", scale: SOB[1], hidden: true, eyes: eyesAt([[385, 112], [448, 118]], 26), eyeSize: 26, smoke: [[300, 30], [420, 10]] };
-    // his tears keep their colour when he chars: the two sprays cut from the same drawing, bobbing with it
-    var tear = function (poly) { return { art: "weapons-maker-sob", x: SOB[0], y: G, anchor: "bottom", pivot: "bottom", scale: SOB[1], hidden: true, clip: poly }; };
-    cast.tearL = tear([[100, 90], [290, 90], [270, 230], [215, 305], [100, 320]]);
-    cast.tearR = tear([[465, 5], [750, 5], [750, 180], [610, 180], [590, 110], [465, 100]]);
+    cast.wm = { art: "factory-kiss", x: 460, y: G, anchor: "bottom", pivot: "bottom", scale: WK };
+    cast.sob = { art: "factory-sob", x: SOB[0], y: G, anchor: "bottom", pivot: "bottom", scale: SOB[1], hidden: true, eyes: eyesAt([[110, 212], [212, 212]], 30), eyeSize: 30, smoke: [[115, 20], [237, 25]] };
     cast.boomA = { art: "mushroom", x: LX + 150, y: G + 30, anchor: "bottom", pivot: "bottom", scale: V ? 1.75 : 1.5, hidden: true };
 
     var tower = [];
@@ -61,7 +57,7 @@
     var stampSize = V ? 9000 : 10000, stampW = 40000, stampX = V ? 8500 : 22000, stampY = V ? -18000 : -21000;   // 10,000 px is the browser's largest font
 
     var beats = [
-      // "war,": he rocks his missile and pats the crate
+      // "war,": it rocks its missile and pats the crate
       { at: 0, do: "bob", who: "wm", y: 4, r: 2.5, speed: 3, until: "keep" },
       { on: "war,", do: "nudge", who: "wm", by: [-30, 0] },
       { on: "war,", offset: 0.35, do: "nudge", who: "wm", by: [-30, 0] },
@@ -72,14 +68,14 @@
       { on: "twenty-two", n: 1, do: "stamp", id: "count122", text: "122", x: stampX, y: stampY, size: stampSize, width: stampW, tilt: -5, shake: 4 },
       { on: "minus", offset: 0.15, do: "camera", view: "base", dur: 0.3 },
       { on: "minus", offset: 0.15, do: "hide", who: "count122" },
-      // "one": the tablecloth trick. He snatches the crate and is gone with it; the tower drops a step and doesn't notice.
+      // "one": the tablecloth trick. It snatches the crate and is gone with it; the tower drops a step and doesn't notice.
       { on: "one", n: 2, offset: 0.05, do: "move", who: "c0", to: [LX, G - 416 * CS / 2], dur: 3 / 12 },
       { on: "one", n: 2, offset: 0.3, do: "hide", who: "c0" },
       { on: "one", n: 2, offset: 0.3, do: "show", who: "hero" },
-      { on: "one", n: 2, offset: 0.05, do: "move", who: "wm", to: [SOB[0], G - 601 * 1.25 / 2], dur: 3 / 12 },
+      { on: "one", n: 2, offset: 0.05, do: "move", who: "wm", to: [SOB[0], G - 478 * WK / 2], dur: 3 / 12 },
       { on: "one", n: 2, offset: 0.13, do: "move", who: tower, by: [0, STEP], dur: 1 / 12 },
       { on: "one", n: 2, offset: 0.22, do: "shake", y: 18, frames: 3 },
-      // and he howls over it
+      // and it howls beside it
       { on: "one", n: 2, offset: 0.35, do: "swap", who: "wm", to: "sob" },
       { on: "apocalypses.", do: "camera", view: "earth", dur: 0.5 },
       // "civilization": that one crate is plenty
@@ -87,10 +83,8 @@
       { on: "civilization", do: "boom", shake: 26, flash: 0.22 },
       { on: "civilization", do: "pop", who: "boomA", squash: true },
       { on: "civilization", offset: 0.05, do: "char", who: ["earth", "hero", "sob"] },
-      { on: "civilization", offset: 0.05, do: "show", who: ["tearL", "tearR"] },
+      { on: "civilization", offset: 0.05, do: "shiver", who: "sob", dur: 0.6, amp: 10, rot: 3 },
       { on: "you", n: 2, do: "bob", who: "sob", y: 7, r: 2, speed: 5, fade: 0.1 },
-      { on: "you", n: 2, do: "bob", who: "tearL", y: 7, r: 2, speed: 5, fade: 0.1 },
-      { on: "you", n: 2, do: "bob", who: "tearR", y: 7, r: 2, speed: 5, fade: 0.1 },
       { on: "you", n: 3, offset: -0.15, do: "pop", who: "boomA", out: true },
       { on: "you", n: 3, offset: 0.15, do: "blink", who: ["earth", "sob"] },
       // "twelve": up the tower, which hasn't noticed this either
@@ -100,7 +94,7 @@
       { on: "settling", do: "camera", view: "wide", dur: 1.0 },
       { on: "settling", offset: 0.2, do: "hide", who: "count12241" },
       { on: "twenty-one", do: "stamp", id: "count121", text: "121", x: stampX, y: stampY, size: stampSize, width: stampW, tilt: -5, shake: 4 },
-      // "instead": down to him, charred, still bawling for the one he lost
+      // "instead": down to it, charred, still bawling for the one it lost
       { on: "instead", do: "camera", view: "earth", dur: 0.8 },
       { on: "instead", do: "hide", who: "count121" },
       { on: "one", n: 5, do: "blink", who: "earth" },

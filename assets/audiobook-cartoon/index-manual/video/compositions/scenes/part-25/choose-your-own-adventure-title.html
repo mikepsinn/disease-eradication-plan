@@ -1,0 +1,70 @@
+<template id="choose-your-own-adventure-title-template">
+  <!-- choose-your-own-adventure-title · the period title card (KIT.titleScene, look "atomic"), the whole heading on as
+       it comes up from black. The gag: on "Adventure." the paper on the flat orbit stops where its orbit crosses
+       another, looks left, then right, hops onto the other orbit and runs off the other way. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="choose-your-own-adventure-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.226">
+    <div id="choose-your-own-adventure-title-cam"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "choose-your-own-adventure-title",
+      lines: [{ words: ["CHOOSE", "YOUR", "OWN"], style: "small" }, ["ADVENTURE"]],
+      gag: function (c) {
+        var E = c.emblem, D = c.D, id = c.id, TILT = [0, 60, -60].map(function (a) { return a * Math.PI / 180; });
+        // a point on orbit i at angle th (as the card's own emblem draws them)
+        var on = function (i, th) {
+          var ex = E.rx * Math.cos(th), ey = E.ry * Math.sin(th), a = TILT[i];
+          return [E.at[0] + ex * Math.cos(a) - ey * Math.sin(a), E.at[1] + ex * Math.sin(a) + ey * Math.cos(a)];
+        };
+        // inside (< 0) or outside (> 0) orbit j
+        var side = function (j, p) {
+          var dx = p[0] - E.at[0], dy = p[1] - E.at[1], a = -TILT[j];
+          var x = dx * Math.cos(a) - dy * Math.sin(a), y = dx * Math.sin(a) + dy * Math.cos(a);
+          return (x / E.rx) * (x / E.rx) + (y / E.ry) * (y / E.ry) - 1;
+        };
+        // paper 0 runs th = 2.4 t; it stops at the first crossing after "Adventure."
+        var SPEED = 2.4, th0 = SPEED * Math.max(0.6, c.cue("Adventure.")), hit = null;
+        for (var th = th0; th < th0 + 6.3 && !hit; th += 0.002) {
+          for (var j = 1; j <= 2; j++) if (side(j, on(0, th)) * side(j, on(0, th + 0.002)) <= 0) { hit = { th: th, j: j }; break; }
+        }
+        var T_STOP = hit.th / SPEED, T_HOP = Math.min(D - 0.75, T_STOP + 0.5), P = on(0, hit.th);
+        // its angle on the other orbit, where it lands
+        var dx = P[0] - E.at[0], dy = P[1] - E.at[1], a = -TILT[hit.j];
+        var phi = Math.atan2((dx * Math.sin(a) + dy * Math.cos(a)) / E.ry, (dx * Math.cos(a) - dy * Math.sin(a)) / E.rx);
+        var el = document.getElementById(id + "-e0"), legs = el.querySelector(".legs");
+        // the card's emblem has already placed it for this frame; this runs after and takes over from T_STOP
+        KIT.onTime(c.tl, D, function (t0) {
+          var t = Math.floor(t0 * 12) / 12;
+          if (t < T_STOP) return;
+          var p, flip = 1, lift = 0;
+          if (t < T_HOP) {
+            p = P;
+            // looks left, then right
+            flip = t < T_STOP + 0.17 ? 1 : t < T_STOP + 0.34 ? -1 : 1;
+            legs.setAttribute("d", "M-16,24 l-1,22 h-8 M16,24 l1,22 h8");
+          } else {
+            var u = t - T_HOP;
+            p = on(hit.j, phi - u * 3.2);
+            flip = -1;
+            lift = u < 0.25 ? Math.sin(Math.PI * u / 0.25) * 34 : 0;
+            var l = Math.floor(t * 10) % 2;
+            legs.setAttribute("d", "M-16,24 l" + (-6 + l * 10) + ",22 h-8 M16,24 l" + (6 - l * 10) + ",22 h8");
+          }
+          el.setAttribute("transform", "translate(" + p[0].toFixed(1) + "," + (p[1] - 6 - lift).toFixed(1) + ") scale(" + flip + ",1)");
+        });
+      },
+    });
+  </script>
+</template>

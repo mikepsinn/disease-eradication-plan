@@ -1,0 +1,98 @@
+<template id="no-opposition-template">
+  <!-- no-opposition · collage (back to the-machine plate: the bribery machine and its clock, and beside it an empty
+       boxing ring under a spotlight, OPPOSITION). "There is no opposition.": the bell rings and nobody steps in;
+       crickets, and a tumbleweed rolls across the canvas. "humans who haven't done the arithmetic yet": the Politician, the Lobbyist and
+       the weapons factory stand at a blackboard with a long sum, their NOT THE ENEMY signs still up; the Politician
+       counts on his fingers, the Lobbyist copies. "one hundred and fifty thousand daily funerals": horse-drawn hearses file
+       past behind them in a line with no end, one every 0.58 s, and the Reaper pops out of the clock with each; HOLD.
+       "finish.": the Lobbyist x-rays into a grinning skeleton, still at the sum, and a headstone pops up beside him. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="no-opposition" data-width="1920" data-height="1080" data-start="0" data-duration="12.48">
+    <div id="no-opposition-weave"></div>
+    <div id="no-opposition-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "no-opposition", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hK = function (art, h) { return h / SZ[art][1]; };
+      // Left to right on the ground G (plate px): the machine and its clock, the factory, the podium, the Politician,
+      // the blackboard, the Lobbyist. The funerals walk past behind them.
+      var MX = 330, MK = 1.08, MTOP = G - SZ["bribery-machine"][1] * MK, REAPH = 330;
+      // the cuckoo door on the machine's clock (art px 278, 222), where the Reaper springs out
+      var DOOR = [MX + (278 - SZ["bribery-machine"][0] / 2) * MK, MTOP + 222 * MK];
+      var PH = 470, X = { fac: 760, pod: 1080, pol: 1370, board: 1600, lob: 1830 };
+      var PODTOP = G - SZ["boxing-ring"][1] * 1.05;
+      var views = V ? { wide: [1000, G - 440 / 0.54, 0.54] } : { wide: [960, 530, 0.98] };
+      var cast = {
+        mach: { art: "bribery-machine", x: MX, y: G, anchor: "bottom", pivot: "bottom", scale: MK },
+        reaper: { art: "reaper-stop", x: DOOR[0], y: DOOR[1], anchor: "bottom", pivot: "bottom", scale: hK("reaper-stop", REAPH), hidden: true },
+        pod: { art: "boxing-ring", x: X.pod, y: G, anchor: "bottom", pivot: "bottom", scale: 1.05, label: { text: "OPPOSITION", at: [205, 252], width: 220, size: 44, plaque: true } },
+        weed: { art: "tumbleweed", x: X.pod - 260, y: G - 80, anchor: "bottom", pivot: "center", scale: 0.35, hidden: true },
+        fac: { art: "factory-proud", x: X.fac, y: G, anchor: "bottom", pivot: "bottom", scale: hK("factory-proud", PH), hidden: true },
+        bell: { art: "bell", x: X.pod + 170, y: PODTOP + 40, anchor: "bottom", pivot: [145, 40], scale: 0.32 },
+        
+        pol: { art: "politician", x: X.pol, y: G, anchor: "bottom", pivot: "bottom", scale: hK("politician", PH), hidden: true },
+        board: { art: "chalkboard-legs", x: X.board, y: G, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true,
+          label: { text: "1% OF $2.72T = ?", at: [180, 150], width: 260, size: 44, plaque: true } },
+        lob: { art: "lobbyist", x: X.lob, y: G, anchor: "bottom", pivot: "bottom", scale: hK("lobbyist", PH), hidden: true },
+        lobsk: { art: "lobbyist-skeleton", x: X.lob, y: G, anchor: "bottom", pivot: "bottom", scale: hK("lobbyist-skeleton", PH * 1.03), hidden: true },
+        stone: { art: "headstone", x: X.lob - 160, y: G + 6, anchor: "bottom", pivot: "bottom", scale: 0.55, hidden: true },
+      };
+      var ne = function (id, x, on, off) { return { on: on, offset: off, do: "banner", id: id, text: "NOT THE ENEMY", x: x, y: G - PH - 70, size: 34, width: 230, pad: 22, color: "ink", tilt: 0 }; };
+      var beats = [
+        { at: 0, do: "glow", who: "pod", size: 520, dur: 1.2 },
+        // "There is no opposition.": the bell rings; nobody comes; crickets, and a cobweb
+        { on: "opposition.", n: 2, do: "shiver", who: "bell", dur: 0.8, amp: 4, rot: 16 },
+        { on: "opposition.", n: 2, offset: 0.7, do: "show", who: "weed" },
+        { on: "opposition.", n: 2, offset: 0.7, do: "move", who: "weed", by: [560, 0], turn: 540, dur: 1.4 },
+        { on: "opposition.", n: 2, offset: 0.9, do: "bob", who: "weed", y: 14, r: 0, speed: 6, until: ["There", 2, 0.2], fade: 0.05 },
+        { on: "There", n: 2, offset: 0.2, do: "hide", who: "weed" },
+        // "There are only humans who haven't done the arithmetic yet,"
+        { on: "There", n: 2, do: "pop", who: "pol", squash: true },
+        { on: "only", do: "pop", who: "board", squash: true },
+        { on: "humans", do: "pop", who: "lob", squash: true },
+        { on: "who", do: "pop", who: "fac", squash: true },
+        ne("ne0", X.fac, "who", 0.1), ne("ne1", X.pol, "who", 0.2), ne("ne2", X.lob - 20, "who", 0.3),
+        { on: "arithmetic", do: "shiver", who: "pol", dur: 1.2, amp: 3, rot: 4 },
+        { on: "arithmetic", offset: 0.2, do: "move", who: "lob", by: [-40, 0], turn: -10, dur: 0.3 },
+        { on: "yet,", offset: 0.2, do: "move", who: "lob", by: [40, 0], turn: 0, dur: 0.3 },
+        // "and one hundred and fifty thousand daily funerals": the line of headstones behind them, with no end
+        { on: "and", n: 1, do: "march", id: "funerals", art: "hearse", count: 18, height: 120, turn: false, path: [[2300, G - 520], [-260, G - 520]], speed: 520, gap: 300, bob: 10, rock: 4, end: "hide" },
+        // "finish.": the Lobbyist x-rays, still at the sum; a headstone for him
+        { on: "finish.", offset: 0.2, do: "xray", who: "lob", to: "lobsk" },
+        { on: "finish.", offset: 0.75, do: "pop", who: "stone", squash: true },
+        { on: "finish.", offset: 0.9, do: "bob", who: "lobsk", y: 3, r: 2, speed: 3 },
+      ];
+      // The Reaper springs out of the cuckoo door at t: up from his feet with an overshoot, gone `stay` s later.
+      // (Moves, not pops: a pop's squash holds its from-size before it, which would shrink the earlier springs.)
+      var spring = function (t, stay) {
+        beats.push({ at: t - 0.02, do: "move", who: "reaper", by: [0, 0], scale: 0.15, dur: 0.01 });
+        beats.push({ at: t, do: "show", who: "reaper" });
+        beats.push({ at: t, do: "move", who: "reaper", by: [0, 0], scale: 1.12, dur: 0.16 });
+        beats.push({ at: t + 0.17, do: "move", who: "reaper", by: [0, 0], scale: 1, dur: 0.08 });
+        beats.push({ at: t + stay, do: "hide", who: "reaper" });
+      };
+      // with each funeral, counting on the clock face
+      var t0 = cue("hundred"), k = 0;
+      for (var t = t0; t < D - 0.35; t += 0.58, k++) {
+        beats.push({ at: t - 0.04, do: "shiver", who: "mach", dur: 0.16, amp: 2, rot: 1 });
+        spring(t, 0.3);
+        beats.push(k ? { at: t + 0.1, do: "counter", id: "tally", to: k + 1, dur: 0.01 }
+          : { at: t + 0.1, do: "counter", id: "tally", who: "mach", spot: [281, 268], from: 0, to: 1, dur: 0.01, style: "tick", size: 44, card: false, color: "#2A1C10" });
+      }
+      KIT.collage({ id: ID, seed: 1717, plate: V ? [-1200, -1800, 3300, 2400] : [-500, -500, 2500, 1600], views: views, view: "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

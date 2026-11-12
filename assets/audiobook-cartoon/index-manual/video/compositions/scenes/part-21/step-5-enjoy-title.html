@@ -1,0 +1,102 @@
+<template id="step-5-enjoy-title-template">
+  <!-- step-5-enjoy-title · the period title card (KIT.titleScene, look "atomic"): STEP 5: over ENJOY, up from black under
+       the atom and its three running war bills. Just after "Enjoy." the bills stop running for the first time in the
+       film, lean back on their orbits, and flip over: medicine bills (the sparkle). The italic line comes in on
+       "Everyone"; on "Nobody" the Grim Reaper rises beside its end and runs a bony finger along it; on "Dies" his jaw
+       drops off and falls out of the bottom of the card (the clank). He stares, jawless, until black. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="step-5-enjoy-title" data-width="1920" data-height="1080" data-start="0" data-duration="6.232">
+    <div id="step-5-enjoy-title-cam">
+      <div id="step-5-enjoy-title-bg"></div>
+      <div id="step-5-enjoy-title-back"></div>
+      <div id="step-5-enjoy-title-words"></div>
+      <div id="step-5-enjoy-title-art"></div>
+    </div>
+    <div id="step-5-enjoy-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+      KIT.titleScene({
+        id: "step-5-enjoy-title",
+        lines: [{ words: ["STEP", "5:"], style: "small" }, ["ENJOY"],
+          { words: ["Everyone Gets Rich and Nobody Dies"], style: "italic", cue: "Everyone" }],
+        linesTall: [{ words: ["STEP", "5:"], style: "small" }, ["ENJOY"],
+          { words: ["Everyone Gets Rich"], style: "italic", cue: "Everyone" }, { words: ["and Nobody Dies"], style: "italic", cue: "and" }],
+
+        gag: function (c) {
+          var tl = c.tl, E = c.emblem, D = c.D, R = KIT.REAPER, TILT = [0, 60, -60].map(function (a) { return a * Math.PI / 180; });
+          var STOP = Math.min(c.after("Enjoy.") - 0.3, c.cue("Everyone") - 0.9), FLIP = STOP + 0.3;
+          // The emblem's bills (title.js runs them every frame; this runs after it and holds them once they stop).
+          var bills = [0, 1, 2].map(function (i) {
+            var el = document.getElementById(c.id + "-e" + i), inner = el.firstChild;
+            inner.insertAdjacentHTML("beforeend", KIT.money("med", 0));
+            var ms = inner.querySelectorAll(".money");
+            ms[1].setAttribute("visibility", "hidden");
+            var th = i * 2.1 + STOP * 2.4, ex = E.rx * Math.cos(th), ey = E.ry * Math.sin(th);
+            return { el: el, war: ms[0], med: ms[1], medLegs: ms[1].querySelector(".legs"),
+              x: E.at[0] + ex * Math.cos(TILT[i]) - ey * Math.sin(TILT[i]), y: E.at[1] + ex * Math.sin(TILT[i]) + ey * Math.cos(TILT[i]) - 6 };
+          });
+
+          // The Reaper (KIT.REAPER units: hem at y 100, hood tip at -190), drawn here as a puppet with a jaw that comes off.
+          var it = c.layout.lines[c.layout.lines.length - 1], k = V ? 1.25 : 1.35;
+          var RX = V ? Math.min(it.x + it.w + 40, c.W - 120) : it.x + it.w + 150, RY = V ? it.y + it.h + 170 * k : it.y + it.h / 2 + 150 * k;
+          var A = R.art, f = R.face, JAW = f[1] + f[3] * 0.6;
+          var img = function (name, b, clip) { return '<image href="' + A + name + '.webp" x="' + b[0] + '" y="' + b[1] + '" width="' + b[2] + '" height="' + b[3] + '"' + (clip ? ' clip-path="url(#' + clip + ')"' : "") + "/>"; };
+          var s = R.body[2] / 527, arm = R.arm.open, sh = R.shoulder[0];
+          var armB = [sh[0] - arm[2] * s, sh[1] - arm[3] * s, arm[0] * s, arm[1] * s];
+          var wrap = document.createElement("div");
+          wrap.style.cssText = "position:absolute;left:0;top:0;width:" + c.W + "px;height:" + c.H + "px";
+          wrap.innerHTML = '<svg width="' + c.W + '" height="' + c.H + '" style="position:absolute;left:0;top:0;overflow:visible">' +
+            '<defs><clipPath id="s5-skull"><rect x="-40" y="-200" width="80" height="' + (JAW + 200) + '"/></clipPath>' +
+            '<clipPath id="s5-jaw"><rect x="-40" y="' + JAW + '" width="80" height="60"/></clipPath></defs>' +
+            '<g id="s5-reaper" visibility="hidden"><g id="s5-rise">' +
+            img("body", R.body) + img("face-grin", f, "s5-skull") +
+            '<g id="s5-arm">' + img("arm-open", armB) + "</g>" +
+            '<g id="s5-jaw-g">' + img("face-grin", f, "s5-jaw") + "</g></g></g></svg>";
+          c.art.appendChild(wrap);
+          var reaper = document.getElementById("s5-reaper"), rise = document.getElementById("s5-rise");
+          var armG = document.getElementById("s5-arm"), jaw = document.getElementById("s5-jaw-g");
+          var UP = c.cue("Nobody") - 0.15, DROP = c.cue("Dies*") + 0.3;
+          var smooth = function (u) { u = Math.max(0, Math.min(1, u)); return u * u * (3 - 2 * u); };
+
+          KIT.onTime(tl, D, function (t0) {
+            var t = Math.floor(t0 * 12 + 1e-6) / 12;
+            // the bills stop, lean back on their orbits, and flip over to medicine money
+            bills.forEach(function (b, i) {
+              if (t < STOP) { b.war.setAttribute("visibility", "inherit"); b.med.setAttribute("visibility", "hidden"); return; }
+              var lean = -24 * smooth((t - STOP) / 0.25), u = (t - FLIP) / 0.17, sx = u < 0 || u > 1 ? 1 : Math.abs(Math.cos(Math.PI * u));
+              var med = t >= FLIP + 0.085;
+              b.war.setAttribute("visibility", med ? "hidden" : "inherit");
+              b.med.setAttribute("visibility", med ? "inherit" : "hidden");
+              b.medLegs.setAttribute("d", "M-16,24 l18,10 h10 M16,24 l18,10 h10");
+              b.el.querySelector(".legs").setAttribute("d", "M-16,24 l-6,22 h-8 M16,24 l6,22 h8");
+              b.el.setAttribute("transform", "translate(" + b.x.toFixed(1) + "," + b.y.toFixed(1) + ") rotate(" + lean.toFixed(1) + ") scale(" + Math.max(0.04, sx).toFixed(3) + ",1)");
+            });
+            // the Reaper rises beside the line and runs a finger along it; on "Dies" his jaw drops off
+            reaper.setAttribute("visibility", t >= UP ? "inherit" : "hidden");
+            var r = smooth((t - UP) / 0.3), dy = (1 - r) * (V ? 900 : 700);
+            reaper.setAttribute("transform", "translate(" + RX.toFixed(1) + "," + (RY + dy).toFixed(1) + ") scale(" + k + ")");
+            var trace = t < UP + 0.3 ? 0 : Math.min(1, (t - UP - 0.3) / Math.max(0.3, DROP - UP - 0.5));
+            var armA = (t < UP + 0.2 ? 20 : 78 + 22 * Math.sin(trace * Math.PI * 2.5)) * (t >= DROP ? 0.6 : 1);
+            armG.setAttribute("transform", "rotate(" + armA.toFixed(1) + " " + sh[0] + " " + sh[1] + ")");
+            var fall = Math.max(0, t - DROP), jy = 0.5 * 2600 * fall * fall, jr = 160 * fall;
+            jaw.setAttribute("transform", "translate(" + (14 * fall) + "," + (jy / k).toFixed(1) + ") rotate(" + jr.toFixed(1) + " 0 " + (JAW + 10) + ")");
+            jaw.setAttribute("visibility", jy / k > 900 ? "hidden" : "inherit");
+          });
+        },
+      });
+    })();
+  </script>
+</template>

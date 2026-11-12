@@ -1,0 +1,83 @@
+<template id="you-can-get-template">
+  <!-- you-can-get · collage host shot. "two hundred and eighty million": the 3.5% wedge on Earth fills with tiny
+       humans. One of the twerkers (the Victorian lady in a bustle, at her wall telephone) stands among them, twerking in
+       two frames, her bustle to a YES button; "yes": she bumps it with her bustle, click. "treaty.": the question mark on its spring turns into an exclamation mark. Wishonia smirks. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="you-can-get" data-width="1920" data-height="1080" data-start="0" data-duration="4.62">
+    <div id="you-can-get-weave"></div>
+    <div id="you-can-get-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "you-can-get", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // Earth as click-to-not-die draws it (bigger than the deck's own, over it), with its 3.5% wedge lit.
+      var E = V ? [860, 560, 200] : [1450, 520, 260];
+      var EK = 2.04 * E[2] / SZ["earth-big"][0], R = E[2] * 0.97;
+      var rim = function (th, out) { var a = th * Math.PI / 180, r = R + (out || 0); return [E[0] + r * Math.sin(a), E[1] - r * Math.cos(a)]; };
+      var WA = -42, HALF = 3.5 * 3.6 / 2;
+      var cast = { earth: { art: "earth-big", x: E[0], y: E[1], scale: EK } }, beats = [], add = function (b) { beats.push(b); };
+      // the question mark on its coil spring, standing out of the wedge (its base at the rim, leaning with it)
+      var SPR = rim(WA, -6), SPH = V ? 150 : 190;
+      var spring = function (mark, hidden) {
+        return { art: "jack-spring", x: SPR[0], y: SPR[1], anchor: "bottom", pivot: "bottom", scale: SPH / SZ["jack-spring"][1], hidden: hidden,
+          label: { text: mark, at: [67, 40], width: 120, size: V ? 70 : 90, plaque: true } };
+      };
+      cast.q = spring("?", false);
+      cast.ex = spring("!", true);
+      add({ at: -1, do: "move", who: ["q", "ex"], by: [0, 0], turn: WA, dur: 0.01 });
+      add({ at: 0, do: "bob", who: "q", y: 6, r: 5, speed: 2 });
+      // tiny humans up the wedge, from the middle of Earth to its rim
+      var ARTS = ["citizen-1", "citizen-2", "citizen-5", "citizen-8", "citizen-12", "citizen-3", "citizen-11", "citizen-9"], TH = V ? 46 : 58;
+      for (var i = 0; i < 8; i++) {
+        var p = rim(WA + (i % 2 ? 2.2 : -2.2), -R * (0.85 - i * 0.1)), a = ARTS[i];
+        cast["h" + i] = { art: a, x: p[0], y: p[1], anchor: "bottom", pivot: "bottom", scale: TH * (0.7 + i * 0.06) / SZ[a][1], hidden: true };
+        add({ on: "two", offset: 0.1 + i * 0.12, do: "pop", who: "h" + i, squash: true });
+      }
+      // the twerker on the rim past the wedge's edge, facing her telephone, her bustle to the button behind her
+      // (the button clear of the spring, her bustle just touching it; the button drawn in front of her)
+      var TW = rim(WA + 22.5), BT = rim(WA + 12.5), TWH = V ? 125 : 160;
+      cast.tw = { art: "twerker", x: TW[0], y: TW[1], anchor: "bottom", pivot: "bottom", scale: TWH / SZ["twerker"][1], hidden: true };
+      cast.tw2 = { art: "twerker-2", x: TW[0], y: TW[1], anchor: "bottom", pivot: "bottom", scale: TWH / SZ["twerker-2"][1], hidden: true };
+      cast.btn = { art: "yes-button", x: BT[0], y: BT[1], anchor: "bottom", pivot: "bottom", scale: (V ? 75 : 95) / SZ["yes-button"][1], hidden: true };
+      add({ at: -1, do: "move", who: ["tw", "tw2"], by: [0, 0], turn: WA + 22.5, dur: 0.01 });
+      add({ at: -1, do: "move", who: "btn", by: [0, 0], turn: WA + 12.5, dur: 0.01 });
+      add({ on: "million", do: "pop", who: ["tw", "btn"], squash: true });
+      add({ on: "million", offset: 0.3, do: "bob", who: ["tw", "tw2"], y: 4, r: 4, speed: 4, until: "yes" });
+      // the two frames of the dance, three drawings each, back on the first (her bustle out) for the bump
+      for (var t = cue("million") + 0.25, k = 1; t < cue("yes") - 0.1; t += 0.25, k++) {
+        add({ at: t, do: "hide", who: k % 2 ? "tw" : "tw2" });
+        add({ at: t, do: "show", who: k % 2 ? "tw2" : "tw" });
+      }
+      add({ on: "yes", offset: -0.1, do: "hide", who: "tw2" });
+      add({ on: "yes", offset: -0.1, do: "show", who: "tw" });
+      add({ on: "yes", offset: -0.06, do: "nudge", who: "tw", by: [-24, 0] });
+      add({ on: "yes", do: "nudge", who: "btn", by: [0, 8] });
+      add({ on: "yes", do: "glow", who: "btn", size: 90, dur: 0.3 });
+      // "treaty.": the question becomes an answer
+      add({ on: "treaty.", do: "hide", who: "q" });
+      add({ on: "treaty.", do: "pop", who: "ex", squash: true });
+      add({ on: "treaty.", offset: 0.2, do: "bob", who: "ex", y: 8, r: 6, speed: 3 });
+      var tl = KIT.collage({ id: ID, seed: 1812, host: true, cast: cast, beats: beats });
+      document.querySelector("#" + ID + "-hwall .earth").style.visibility = "hidden";
+      // the wedge, over Earth
+      var p0 = rim(WA - HALF), p1 = rim(WA + HALF), wedge = document.createElement("div");
+      wedge.style.cssText = "position:absolute;left:0;top:0;width:0;height:0";
+      wedge.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible"><path d="M' + E[0] + "," + E[1] + " L" + p0[0].toFixed(1) + "," + p0[1].toFixed(1) +
+        " A" + R + "," + R + " 0 0 1 " + p1[0].toFixed(1) + "," + p1[1].toFixed(1) + ' Z" fill="#FFE27A" fill-opacity="0.85" stroke="#2B2033" stroke-width="3" stroke-linejoin="round"/></svg>';
+      var earthEl = document.getElementById(ID + "-earth");
+      earthEl.parentNode.insertBefore(wedge, earthEl.nextSibling);
+    })();
+  </script>
+</template>

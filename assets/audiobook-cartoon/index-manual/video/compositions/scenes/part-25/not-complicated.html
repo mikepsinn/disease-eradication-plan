@@ -1,0 +1,54 @@
+<template id="not-complicated-template">
+  <!-- not-complicated · collage host shot (Part 25, scene 5). Back at the console. The YOU the missile charred in the
+       last scene walks onto the free wall beside her, smoking, and scratches his head. On "insight." his arm comes off
+       at the shoulder and drops. He watches it go; Wishonia side-eyes the camera. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="not-complicated" data-width="1920" data-height="1080" data-start="0" data-duration="3.18">
+    <div id="not-complicated-weave"></div>
+    <div id="not-complicated-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "not-complicated", V = KIT.V, SZ = KIT.collage.SIZES;
+      var FEET = V ? 1450 : 1060, X = V ? 880 : 1480, YH = V ? 460 : 620, K = YH / SZ.you[1];
+      // YOU (art 217 x 574) in two pieces: his right arm (on our left, from the shoulder at art 45, 140) and the rest
+      var ARM = [[18, 138], [62, 130], [66, 372], [22, 378], [14, 330]];
+      var BODY = [[0, 0], [217, 0], [217, 574], [0, 574], [0, 384], [68, 380], [64, 128], [0, 132]];
+      var SH = [45, 142];
+      var X0 = V ? 1300 : 2200;
+      var o = function (clip, extra) { var c = { art: "you", clip: clip, x: X0, y: FEET, anchor: "bottom", scale: K }; for (var k in extra) c[k] = extra[k]; return c; };
+      var cast = {
+        body: o(BODY, { pivot: "bottom", eyes: [[86, 52], [119, 52]], eyeSize: 22, smoke: [[100, 14], [150, 120]] }),
+        arm: o(ARM, { pivot: SH }),
+      };
+      var beats = [
+        { at: 0, do: "char", who: ["body", "arm"] },
+        // a warm light behind him, so the black reads on the night sky
+        { at: 0, do: "glow", who: "body", dur: 3.3, size: V ? 420 : 560 },
+        // he walks on, still smoking
+        { at: 0.05, do: "move", who: ["body", "arm"], by: [X - X0, 0], dur: 1.0, ease: "smooth" },
+        { at: 0.05, do: "bob", who: ["body", "arm"], y: 6, r: 1.5, speed: 3, until: 1.05 },
+        { at: 0.6, do: "blink", who: "body" },
+        // "complicated": he scratches his head with that arm
+        { on: "complicated", offset: -0.15, do: "move", who: "arm", by: [0, 0], turn: 145, dur: 0.25 },
+        { on: "complicated", offset: 0.15, do: "shiver", who: "arm", dur: 0.3, amp: 3, rot: 6 },
+        // "insight.": it comes off at the shoulder and drops; he watches it go
+        { on: "insight.", offset: 0.15, do: "drop", who: "arm", dur: 0.9, dist: 900, drift: 60, spin: 200 },
+        { on: "insight.", offset: 0.3, do: "move", who: "body", by: [0, 0], turn: -6, dur: 0.3 },
+        { on: "insight.", offset: 0.9, do: "blink", who: "body" },
+      ];
+      KIT.collage({ id: ID, seed: 2505, host: true, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

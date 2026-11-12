@@ -3,8 +3,8 @@
        of frozen humans, and only what it touches comes alive. A pigeon lands on a man who does not notice. The bill struts
        in, winks, and on "pretend" drains to blank; the crowd squeezes its eyes shut and it inks back, and the matron
        pretends so hard her head comes off. It walks on past the patient, the scientist and the hungry man, each lunging
-       after it, each a grinning skeleton behind it (food grows behind the last one; he doesn't look). It reaches the
-       Weapons Maker, who springs to life: the bill is hammered into a bomb that grows until it goes off in his face. War:
+       after it, each a grinning skeleton behind it. It reaches the
+       weapons factory, which springs to life: the bill is hammered into a bomb that grows until it goes off in its face. War:
        the saluting soldiers char and still salute, and the blast throws out more bills. The globe burns, and bills pour
        out of it into the Fat Cat's hat. Payoff: the camera climbs a stack of 604 bills to a balloonist and the same
        pigeon, then drops to one lonely medicine bill. 604 : 1. One war bill falls off the top and flattens it. -->
@@ -13,7 +13,7 @@
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
     #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
   </style>
-  <div id="root" data-composition-id="papers-with-presidents" data-width="1920" data-height="1080" data-start="0" data-duration="55.65">
+  <div id="root" data-composition-id="papers-with-presidents" data-width="1920" data-height="1080" data-start="0" data-duration="46.337">
     <div id="papers-with-presidents-weave"></div>
     <div id="papers-with-presidents-film"></div>
   </div>
@@ -45,7 +45,7 @@
     var views = V ? {
       open: view(BAKER, 0.95), open2: view(SWEEPER, 0.95), ride: view(2050, 0.95), crowd: view(2500, 0.62),
       patient: view(Xp + 250, 0.95), sci: view(Xs + 300, 0.95), hungry: view(Xh + 300, 0.95),
-      wm: view(Xw + 400, 0.85), war: view(Xwar + 70, 0.72), globe: view(14030, 0.72), base: view(T - 350, 0.72),
+      wm: view(Xw + 240, 0.85), war: view(Xwar + 70, 0.72), globe: view(14030, 0.72), base: view(T - 350, 0.72),
       top: [T, TOPY + 310, 1], floor: view(T + 520, 0.95),
     } : {
       open: view(720, 1), open2: view(780, 1.03), ride: view(2050, 1), crowd: view(2380, 0.9),
@@ -56,7 +56,7 @@
 
     // ── The cast ──
     var BK = 2.6, HERO = ["bill", "wink", "ghost", "blank"], hk = function (n) { return BK * SZ["bill-plain"][1] / SZ[n][1]; };
-    var BILL0 = V ? 150 : -500, ANVIL = at("weapons-maker-anvil", Xw, 1.4, [240, 292]);
+    var BILL0 = V ? 150 : -500, WK = 1.4 * 573 / SZ["factory-anvil"][1], ANVIL = at("factory-anvil", Xw, WK, [265, 372]);
     var PR = 2.35, PS = 2.2, SR = 2.05, SS = 2.05, HR = 2.05, HS = 2.1;
     var pLeft = Xp - SZ.patient[0] * 1.9 / 2, sLeft = Xs - SZ["scientist-flask"][0] * 1.1 / 2, hLeft = Xh - SZ["hungry-man"][0] * 1.2 / 2;
     var MK = 1.4, MS = SZ["matron-squint"], MW = MS[0], MH = MS[1];
@@ -81,14 +81,11 @@
       sci: art("scientist-flask", Xs, 1.1),
       sciR: art("scientist-reach", leftOf("scientist-reach", SR, sLeft), SR, { hidden: true }),
       sciX: art("scientist-skeleton-reach", leftOf("scientist-skeleton-reach", SS, sLeft + 90), SS, { hidden: true }),
-      w0: art("wheat", Xh - (V ? 270 : 470), 1.7, { hidden: true }),
-      w1: art("wheat", Xh - (V ? 170 : 330), 1.5, { hidden: true }),
-      w2: art("wheat", Xh - (V ? 60 : 190), 1.8, { hidden: true }),
       man: art("hungry-man", Xh, 1.2),
       manR: art("hungry-reach", leftOf("hungry-reach", HR, hLeft), HR, { hidden: true }),
       manX: art("hungry-skeleton-reach", leftOf("hungry-skeleton-reach", HS, hLeft + 40), HS, { hidden: true }),
-      // the Weapons Maker and his bomb
-      wm: art("weapons-maker-anvil", Xw, 1.4, { eyes: [[180, 52]], smoke: [[150, 14]], eyeSize: 26 }),
+      // the weapons factory and its bomb (eyes are drawn at point * eyeSize / 30, so the points are scaled back up)
+      wm: art("factory-anvil", Xw, WK, { eyes: [[230, 228], [305, 232]].map(function (e) { return [e[0] * 30 / 26, e[1] * 30 / 26]; }), smoke: [[230, 20], [290, 12]], eyeSize: 26 }),
       bomb: art("bomb", Xw + 660, 2.4, { hidden: true }),
       mush1: art("mushroom", Xw + 660, 1.7, { hidden: true }),
       // the war
@@ -173,14 +170,10 @@
     add({ on: "Feed", offset: -0.47, do: "camera", view: "hungry", dur: 0.9 });
     add({ on: "requires", n: 3, do: "swap", who: "man", to: "manR" });
     add({ on: "requires", n: 3, offset: 0.1, do: "nudge", who: "manR", by: [40, 0] });
-    // food grows right behind him; he doesn't look
-    add({ on: "grows", do: "pop", who: "w0", squash: true });
-    add({ on: "grows", offset: 0.15, do: "pop", who: "w1", squash: true });
-    add({ on: "for", n: 1, do: "pop", who: "w2", squash: true });
-    add({ on: "free).", offset: 0.25, do: "swap", who: "manR", to: "manX" });
-    add({ on: "free).", offset: 0.25, do: "boom", shake: 7, flash: 0.08 });
+    add({ on: "papers", n: 5, offset: 0.15, do: "swap", who: "manR", to: "manX" });
+    add({ on: "papers", n: 5, offset: 0.15, do: "boom", shake: 7, flash: 0.08 });
 
-    // ── The Weapons Maker springs to life: the bill goes under his hammer and comes out a bomb, which grows ──
+    // ── The weapons factory springs to life: the bill goes under its hammer and comes out a bomb, which grows ──
     add({ on: "But", offset: -0.34, do: "camera", view: "wm", dur: 0.7 });
     add({ on: "these", n: 3, do: "hop", who: "wm", height: 90 });
     add({ on: "these", n: 3, offset: 0.25, do: "shiver", who: "wm", dur: 4.6, amp: 4, rot: 3 });
@@ -191,7 +184,7 @@
     add({ on: "love", do: "move", who: "bomb", by: [0, 0], scale: 0.48, dur: 0.15 });
     add({ on: "giving", do: "move", who: "bomb", by: [0, 0], scale: 0.64, dur: 0.15 });
     add({ on: "papers", n: 7, do: "move", who: "bomb", by: [0, 0], scale: 0.82, dur: 0.15 });
-    add({ on: "for", n: 2, do: "move", who: "bomb", by: [0, 0], scale: 1, dur: 0.15 });
+    add({ on: "for", n: 1, do: "move", who: "bomb", by: [0, 0], scale: 1, dur: 0.15 });
     add({ on: "this", n: 1, offset: 0.48, do: "hide", who: "bomb" });
     add({ on: "this", n: 1, offset: 0.48, do: "boom", shake: 24, flash: 0.25 });
     add({ on: "this", n: 1, offset: 0.48, do: "pop", who: "mush1", squash: true });
@@ -263,7 +256,7 @@
     add({ on: "papers", n: 10, do: "stamp", id: "s604", text: "604", x: T, y: TOPY + (V ? 340 : 300), size: 330, width: 900, tilt: -6 });
     add({ on: "papers", n: 10, do: "hop", who: "pigeon2", height: 70 });
     add({ on: "papers", n: 10, do: "shiver", who: "balloon", dur: 1.0, amp: 8, rot: 6 });
-    add({ on: "for", n: 3, offset: -0.05, do: "camera", view: "floor", dur: 0.75 });
+    add({ on: "for", n: 2, offset: -0.05, do: "camera", view: "floor", dur: 0.75 });
     add({ on: "one", do: "stamp", id: "ratio", text: "604 : 1", x: T + (V ? 680 : 760), y: V ? 160 : 290, size: V ? 200 : 240, width: V ? 740 : 1300, tilt: -4 });
     add({ on: "one", offset: 0.1, do: "hop", who: "med", height: 40 });
     add({ on: "one", offset: 0.45, do: "hop", who: "med", height: 40 });

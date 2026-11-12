@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 5:09.5
+duration: 5:09.2
 message: "Step 1 sells $1 billion of bonds whose treaty money would pay investors 272% a year, reward the politicians who vote yes, and send 80% to clinical trials, so greed keeps the treaty alive."
 arc: Title card, the emblem's papers jam the atom → Wishonia fishes a sleeping human out of a hammock with a paper → a disease is the only protester against cures, the Reaper keeps count and the snail with the sum rockets off after a paper → she slaps the bond on her console → the banknote is cut 80/10/10 and a bell jar seals the two 10% strips → the fat cat's money bag cannot tip the disease scales, and the Optimitron charts the War on Drugs → she sets her mug down slowly → Grandma's war bond, then Grandma's skeleton → YOU sells the fat cat a 272% bond and he puts on a lobbyist's mask → nobody in the machine is the enemy, the Reaper pops out of the cuckoo clock → YOU nods off in his armchair on Earth → the money loop, stop by stop: the bond counter, the treaty, the toll booth, NOT A TYPO and the fat cat faints → she rolls her eyes → the senators sit up like dogs, the money goes round and the germs pop → an empty ring while the hearses file past → she raises an eyebrow → Eisenhower's loop prints war bills and headstones → the same loop pointed at diseases prints three little headstones → Wishonia draws the money loop on a blank blueprint, and the orphans' parents walk back
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 17, "The Five-Step Plan, Step 1: Sell Incentive Alignment Bonds"
-audio: index-manual.cbaf659d.mp3, 35:43.4 to 40:53.0
+audio: index-manual.7ce6b2b2.mp3, 35:21.3 to 40:30.6
 version: v3
 ---
 
@@ -60,7 +60,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the parts are rendered on their own and joined)
 - cue: "The Five-Step Plan."
-- time: 35:43.4 to 35:53.3 (9.8 s)
+- time: 35:21.3 to 35:31.2 (9.8 s)
 - voiceover: "The Five-Step Plan. *Saving Humanity While Making Everyone Obscenely Wealthy* Step One: Sell Incentive Alignment Bonds."
 - layer: A, title card
 - status: planned
@@ -80,7 +80,7 @@ Sound: the projector whirr from "The"; a slide whistle down as the bills spill a
 - act: Why bonds
 - transition_in: iris in on her face
 - cue: "On my planet, people"
-- time: 35:53.3 to 35:59.4 (6.1 s)
+- time: 35:31.2 to 35:37.4 (6.2 s)
 - voiceover: "On my planet, people do useful things because they're useful. On Earth, you need a financial instrument."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; smirk-smile + body-point-right on "Earth,"; smirk-ee + body-open-palms on "instrument."
@@ -100,7 +100,7 @@ Sound: a reel whirr on "financial"; a boing as he springs up on "instrument.".
 - act: Why bonds
 - transition_in: cut
 - cue: "Not because anyone rationally"
-- time: 35:59.4 to 36:15.6 (16.2 s)
+- time: 35:37.4 to 35:53.5 (16.1 s)
 - voiceover: "Not because anyone rationally opposes curing diseases (they don't; see above), but because one hundred and fifty thousand people die per day while the arithmetic propagates, and money is how you compress the timeline."
 - layer: B, plate main-street
 - status: planned
@@ -121,7 +121,7 @@ Sound: a squeak as the germ signs on "above),"; silence for the HOLD; a whoosh a
 - act: Why bonds
 - transition_in: cut
 - cue: "So here's one."
-- time: 36:15.6 to 36:16.9 (1.3 s)
+- time: 35:53.5 to 35:54.8 (1.3 s)
 - voiceover: "So here's one."
 - layer: A, host
 - wishonia: big, smirk-smile + body-palms-down
@@ -139,7 +139,7 @@ Sound: a slam on "here's"; a sparkle off the gold seal on "one.".
 - act: The split
 - transition_in: cut
 - cue: "An Incentive Alignment Bond funds"
-- time: 36:16.9 to 36:51.4 (34.5 s)
+- time: 35:54.8 to 36:29.3 (34.5 s)
 - voiceover: "An Incentive Alignment Bond funds a policy campaign, then splits the resulting government savings three ways: eighty percent to clinical trials, ten percent to investors as a revenue share on treaty funds, and ten percent to a Super PAC that rewards politicians who voted yes (campaign support while they're running, cushy post-office careers when they're done). Investors give money, get more money back. Politicians get reelected. Eighty percent goes to curing diseases. The corruption is capped at twenty percent and fully transparent."
 - layer: B, plate the-fork
 - status: planned
@@ -167,7 +167,7 @@ Sound: a splat of paste on "campaign,"; a snip per cut from "eighty"; a cash-reg
 - act: The split
 - transition_in: cut
 - cue: "The other eighty percent"
-- time: 36:51.4 to 37:08.5 (17.1 s)
+- time: 36:29.3 to 36:46.4 (17.1 s)
 - voiceover: "The other eighty percent goes directly to clinical trials through wishocratic allocation, where nobody with money gets to decide where it goes. Meanwhile, the Optimitron tells governments which of their own policies are working and which ones are expensive ways to accomplish nothing."
 - layer: B, plate the-allocation
 - status: planned
@@ -187,7 +187,7 @@ Sound: ticks as slivers land on the pans; a pop as the bag floats off; a bonk on
 - act: The split
 - transition_in: cut
 - cue: "Remember when your grandparents"
-- time: 37:08.5 to 37:09.9 (1.4 s)
+- time: 36:46.4 to 36:47.8 (1.4 s)
 - voiceover: "Remember when your grandparents"
 - layer: A, host (reaction cut)
 - wishonia: big, sideeye-closed + body-idle
@@ -205,7 +205,7 @@ Sound: a soft thunk as the mug touches down.
 - act: What Grandma got
 - transition_in: cut
 - cue: "funded World War Two"
-- time: 37:09.9 to 37:31.7 (21.8 s)
+- time: 36:47.8 to 37:09.6 (21.8 s)
 - voiceover: "funded World War Two by buying bonds? They got four percent returns and a world without Nazis (mostly). You're proposing the same thing. What Grandma Got. Dead Nazis (admittedly good). Four percent returns (barely beat inflation). Still died of cancer in nineteen eighty-seven."
 - layer: B, plate bond-booths
 - bit: **Two customers at the same bond counter, same pose.** Grandma pays Uncle Sam: the boot flattens Hitler, her 4 coins go to a rat, the x-ray makes her a skeleton in curlers, 1987. A vaudeville hook drags her aside and YOU takes the same spot: the boot flattens a giant germ, 272 coins rip through the top of the frame, and YOU tips his fedora beside her stone, alive. Payoff on "as a bonus": the boot comes back down on Hitler, for no reason. Scenes 8 and 9 are one plate, built as one scene file.
@@ -228,7 +228,7 @@ Sound: a till on "bonds?"; a pop per coin on "four"; a slam on "Nazis"; scuttlin
 - act: What Grandma got
 - transition_in: same plate (no seam)
 - cue: "What You're Offering. Dead"
-- time: 37:31.7 to 38:00.7 (29.0 s)
+- time: 37:09.6 to 37:38.6 (29.0 s)
 - voiceover: "What You're Offering. Dead diseases (objectively better than dead Nazis because diseases kill more people). Two hundred and seventy-two percent annual returns (a revenue share on ten percent of treaty funds; if the treaty grows, so do their returns, which turns investors into the world's most motivated lobbyists for expanding it). Not dying from preventable meat failures (this is the big one). Also no Nazis (as a bonus)."
 - layer: B, plate bond-booths
 - bit: Built in grandmas-war-bond's plate and file.
@@ -252,7 +252,7 @@ Sound: a whoosh for the hook; a slam on "Dead" and each jump; a slide whistle up
 - act: The bribery machine
 - transition_in: cut
 - cue: "This raises the one billion"
-- time: 38:00.7 to 38:10.0 (9.3 s)
+- time: 37:38.6 to 37:47.8 (9.3 s)
 - voiceover: "This raises the one billion dollars needed to fuel the rest of the bribery machine. Nobody in the machine is your enemy. The enemy is the clock."
 - layer: B, plate the-machine
 - status: planned
@@ -272,7 +272,7 @@ Sound: a cascade of paper into the hopper; a counter rattle on "billion"; a whir
 - act: The money loop
 - transition_in: cut
 - cue: "How the Money Loop"
-- time: 38:10.0 to 38:17.6 (7.6 s)
+- time: 37:47.8 to 37:55.5 (7.6 s)
 - voiceover: "How the Money Loop Works. Here's the part where humans usually stop reading because it involves following money through more than one step:"
 - layer: A, host
 - wishonia: big, skeptical-smile + body-presenting; sideeye-closed + body-idle on "stop"; smirk-smile + body-counting on "more"; annoyed-closed + body-fist on "step:"
@@ -292,7 +292,7 @@ Sound: a soft snore after "reading"; a thump on "step:" and a boing as he wakes.
 - act: The money loop
 - transition_in: cut
 - cue: "One. You sell one"
-- time: 38:17.6 to 38:36.6 (19.0 s)
+- time: 37:55.5 to 38:14.7 (19.3 s)
 - voiceover: "One. You sell one billion dollars in VICTORY Incentive Alignment Bonds to investors. This funds the campaign. Two. The campaign succeeds. Your treaty redirects one percent of military spending: twenty-seven point two billion dollars a year flows from the murder budget to clinical trials."
 - layer: B, plate money-loop
 - status: planned
@@ -314,7 +314,7 @@ Sound: a cash-register ding as the till fills; a paste splat for the poster; a p
 - act: The money loop
 - transition_in: same plate (no seam)
 - cue: "Three. The Victory Corporation"
-- time: 38:36.6 to 39:01.0 (24.4 s)
+- time: 38:14.7 to 38:39.8 (25.0 s)
 - voiceover: "Three. The Victory Corporation (the company that issued the bonds) takes a twenty percent management fee on that twenty-seven point two billion dollars. Four. Half of that fee (ten percent) goes to investor dividends: two point seven two billion dollars a year on a one billion dollar investment. That's two hundred and seventy-two percent annual returns. Your investors will think it's a typo. It's not."
 - layer: B, plate money-loop
 - status: planned
@@ -337,7 +337,7 @@ Sound: a snip per strip on "twenty"; pattering feet as the strip runs; a typewri
 - act: The money loop
 - transition_in: cut
 - cue: "Five."
-- time: 39:01.0 to 39:02.5 (1.5 s)
+- time: 38:39.8 to 38:40.4 (0.7 s)
 - voiceover: "Five."
 - layer: A, host (reaction cut)
 - wishonia: big, eyeroll-closed + body-palms-down
@@ -355,7 +355,7 @@ Sound: none.
 - act: The money loop
 - transition_in: cut (back to the money loop on loop-steps-three-four's last frame)
 - cue: "The other half (ten"
-- time: 39:02.5 to 39:20.8 (18.3 s)
+- time: 38:40.4 to 38:58.7 (18.3 s)
 - voiceover: "The other half (ten percent) goes to a Super PAC that spends two point seven two billion dollars a year getting treaty-friendly politicians elected and funding cushy post-office careers for the ones who voted yes. The more you voted for the treaty, the more support you get. It's Pavlovian conditioning, but for senators."
 - layer: B, plate money-loop
 - status: planned
@@ -377,7 +377,7 @@ Sound: a gulp as the Super PAC swallows the strip; a paste splat; a door creak; 
 - act: The money loop
 - transition_in: same plate (no seam)
 - cue: "The remaining eighty percent"
-- time: 39:20.8 to 39:43.2 (22.4 s)
+- time: 38:58.7 to 39:21.1 (22.4 s)
 - voiceover: "The remaining eighty percent of twenty-seven point two billion dollars goes where it's supposed to: funding clinical trials that keep humans alive. This is the entire trick. You use greed to fund the campaign, greed to pass the treaty, and greed to keep it passed. The money just circulates until diseases stop existing."
 - layer: B, plate money-loop
 - status: planned
@@ -401,7 +401,7 @@ Sound: a ding per patient whose heart steadies; an eraser scratch; a cash-regist
 - act: The money loop
 - transition_in: cut (back to the-machine plate)
 - cue: "None of this is overcoming"
-- time: 39:43.2 to 39:55.7 (12.5 s)
+- time: 39:21.1 to 39:33.6 (12.5 s)
 - voiceover: "None of this is overcoming opposition. There is no opposition. There are only humans who haven't done the arithmetic yet, and one hundred and fifty thousand daily funerals that won't wait for them to finish."
 - layer: B, plate the-machine
 - status: planned
@@ -422,7 +422,7 @@ Sound: a ring bell on "opposition." and crickets after it; chalk squeaks on "ari
 - act: The complexes
 - transition_in: cut
 - cue: "If this sounds familiar,"
-- time: 39:55.7 to 39:57.3 (1.6 s)
+- time: 39:33.6 to 39:35.2 (1.6 s)
 - voiceover: "If this sounds familiar,"
 - layer: A, host (reaction cut)
 - wishonia: big, skeptical-smile + body-arms-crossed
@@ -440,7 +440,7 @@ Sound: none.
 - act: The complexes
 - transition_in: cut
 - cue: "it should. Eisenhower"
-- time: 39:57.3 to 40:14.7 (17.4 s)
+- time: 39:35.2 to 39:52.5 (17.3 s)
 - voiceover: "it should. Eisenhower warned you about the Military Industrial Complex: weapons manufacturers fund politicians, politicians fund weapons contracts, contracts fund contractors, contractors fund politicians. It's a self-sustaining loop that prints money and corpses."
 - layer: B, plate two-loops
 - status: planned
@@ -463,7 +463,7 @@ Sound: a finger-wag tick; a cash-register ding for the pocket; a pen scratch; pu
 - act: The complexes
 - transition_in: same plate (no seam)
 - cue: "You're building the same"
-- time: 40:14.7 to 40:38.4 (23.7 s)
+- time: 39:52.5 to 40:16.2 (23.7 s)
 - voiceover: "You're building the same machine, but pointed at diseases instead of countries. Call it the Patient Industrial Complex. Investors fund politicians, politicians fund clinical trials, trials generate returns, returns fund investors, investors fund politicians. Same loop. Same greed. Same self-sustaining mechanics. Different corpses (fewer of them)."
 - layer: B, plate two-loops
 - status: planned
@@ -486,7 +486,7 @@ Sound: a whoosh as the camera slides; a yelp from the germ; a stamp for the lett
 - act: The complexes
 - transition_in: cut
 - cue: "The Military Industrial Complex wasn't"
-- time: 40:38.4 to 40:53.0 (14.6 s)
+- time: 40:16.2 to 40:30.6 (14.4 s)
 - voiceover: "The Military Industrial Complex wasn't designed. It evolved, because the incentives aligned. An Incentive Alignment Bond just aligns them on purpose, toward something that doesn't require orphans."
 - layer: A, host
 - wishonia: big, thinking-closed + body-thinking; eyeroll-smile + body-shrug on "designed."; happy-smile + body-presenting on "An"; sideeye-closed + body-arms-crossed on "orphans."

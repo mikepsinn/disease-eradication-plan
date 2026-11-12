@@ -1,0 +1,63 @@
+<template id="calculator-returns-template">
+  <!-- calculator-returns · collage host shot (Part 16, scene 7). The "=" key still lies on the ledge where
+       calculator-scream left it. "than": the Calculator peeks up over the ledge's right end, tape across its cracked
+       display, which reads 92.1. It reads it; "nets.": its mouth trembles open in a smaller scream and it drops back out
+       of sight. A crash from below, and a second key (".") bounces up and lands beside the "=". She side-eyes the
+       camera (her state on "nets."). Iris out on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="calculator-returns" data-width="1920" data-height="1080" data-start="0" data-duration="3.52">
+    <div id="calculator-returns-weave"></div>
+    <div id="calculator-returns-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "calculator-returns", V = KIT.V, TOP = KIT.STUDIO.top, D = KIT.scene(ID).duration;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var CALC = V ? [615, TOP + 6, 0.95] : [975, TOP + 6, 1.2], K = CALC[2];
+    var KEY = [CALC[0] - (V ? 70 : 100), TOP - 34], KEY2 = [CALC[0] - (V ? 10 : 20), TOP - 30];
+    // It peeks: its eyes (art y 75) just over the ledge, the rest of it in front of the console.
+    var PY = TOP - 4 + (306 - 75) * K, X = CALC[0] + (V ? 50 : 70);
+    var DIST = V ? 900 : 470;
+    var at = function (art, ax, ay) { return [X + (ax - 113) * K, PY - (306 - ay) * K]; };
+    var calc = function (art, lab, hidden) {
+      return { art: art, x: X, y: PY, anchor: "bottom", pivot: "bottom", scale: K, hidden: hidden, label: { text: "92.1", at: lab, width: 84, size: 30 } };
+    };
+    var crack = at("calculator-calm", 92, 10), tape = at("calculator-calm", 120, 26);
+    var cast = {
+      calm: calc("calculator-calm", [111, 23], true),
+      scr: calc("calculator", [116, 23], true),
+      crack: { art: "glass-crack", x: crack[0], y: crack[1], anchor: "top", scale: 0.075 * K, hidden: true },
+      tapeX: { art: "tape-strip", x: tape[0], y: tape[1], scale: 0.2 * K, hidden: true },
+    };
+    var face = ["calm", "crack", "tapeX"], faceS = ["scr", "crack", "tapeX"];
+    var tN = cue("nets.");
+    var beats = [
+      { at: 0, do: "banner", id: "eq", text: "=", x: KEY[0], y: KEY[1], size: 64, width: 60, pad: 40, color: "ink", tilt: 8, from: 1, shake: 0 },
+      // up it comes (boing), and reads its own display
+      { on: "than", do: "slideIn", who: face, from: "bottom", dist: DIST, over: 14 },
+      { on: "than", offset: 0.6, do: "move", who: face, by: [0, -14], dur: 0.25 },
+      { on: "bed", do: "shiver", who: face, dur: 0.4, amp: 1.5, rot: 0.6 },
+      // "nets.": the smaller scream, then down it goes
+      { at: tN, do: "swap", who: "calm", to: "scr" },
+      { at: tN, do: "shiver", who: faceS, dur: 0.15, amp: 3, rot: 1.5 },
+      { at: tN + 0.15, do: "slideOut", who: faceS, to: "bottom", dist: DIST + 120, dur: 0.25 },
+      // the crash below, and the second key lands beside the "="
+      { at: tN + 0.6, do: "shake", frames: 3, y: 6 },
+      { at: tN + 0.85, do: "banner", id: "dot", text: ".", x: KEY2[0], y: KEY2[1], size: 64, width: 60, pad: 40, color: "ink", tilt: 0, from: 1, shake: 0 },
+      { at: tN + 0.8, do: "move", who: "dot", by: [120, 520], dur: 0.01 },
+      { at: tN + 0.87, do: "move", who: "dot", to: KEY2, arc: 240, turn: -350, dur: 0.33 },
+      { at: tN + 1.2, do: "hop", who: "dot", height: 10 },
+    ];
+    KIT.collage({ id: ID, seed: 1607, host: { iris: ["out", D - 0.55, D - 0.05] }, cast: cast, beats: beats });
+  </script>
+</template>

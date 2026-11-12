@@ -181,3 +181,6 @@ zenodo-upload-report.md
 /scripts/voice/eval
 # Session scratch and build artifacts (epub/pdf/kpf builds, deploy logs, image-review renders)
 output/
+
+# Codex reference sheets for the cartoon cut-outs: kept on disk, not loaded by renders
+assets/audiobook-cartoon/**/sheets/*.png

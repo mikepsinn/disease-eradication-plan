@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:15.6
+duration: 2:15.3
 message: "Papers move politics in a fixed order (rich humans, loud humans, lobbyists, politicians' friends), and the treaty pays everyone back from $27.2 billion a year, 80% of it for clinical trials."
 arc: Title card, hooded papers file into a top hat → Wishonia's pull-down chart walks the papers round its ring of five → Step 1, a billion papers from a fat cat who ticks the heart on the Reaper's clipboard → 2,800 fat cats, one prefers living → Step 2, loud humans blast your thing → Step 3, the long way to the Politician's pocket, stamped LEGAL → Step 4, the Super PAC swallows a river → the $650 million budget flattens the Lobbyist → Step 5, the treaty flips $27.2 billion to medicine money and splits it 80/10/10, and forever outlasts the fat cat until the lab brings him back → the Reaper snaps his pencil
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 5, "The Sacred Order of Paper Distribution"
-audio: index-manual.cbaf659d.mp3, 09:07.0 to 11:22.6
+audio: index-manual.7ce6b2b2.mp3, 08:42.6 to 10:57.9
 version: v3
 ---
 
@@ -65,7 +65,7 @@ version: v3
 - act: Title
 - transition_in: cut (up from black)
 - cue: "The Sacred Order of Paper"
-- time: 09:07.0 to 09:10.7 (3.8 s)
+- time: 08:42.6 to 08:46.3 (3.7 s)
 - voiceover: "The Sacred Order of Paper Distribution."
 - layer: A, title card
 - status: planned
@@ -82,7 +82,7 @@ Sound: the card's whirr on "Sacred"; a pop as the hat burps.
 - act: The five steps
 - transition_in: iris in (on Wishonia's face)
 - cue: "After eighty years of observation"
-- time: 09:10.7 to 09:19.3 (8.6 s)
+- time: 08:46.3 to 08:55.1 (8.8 s)
 - voiceover: "After eighty years of observation, I've decoded the paper-giving sequence. This manual will teach you the precise order: Step one:"
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; lookright-smile + body-point-right on "decoded"; smirk-smile + body-counting on "Step"
@@ -103,7 +103,7 @@ Sound: a whoosh as the chart drops on "decoded"; a rising slide whistle as it sn
 - act: Step 1
 - transition_in: cut
 - cue: "Get Many Papers from Rich"
-- time: 09:19.3 to 09:40.8 (21.5 s)
+- time: 08:55.1 to 09:16.5 (21.5 s)
 - voiceover: "Get Many Papers from Rich Humans You convince rich humans to give you papers (at least one billion to be exact) by promising them even more papers later. This is called "investment," which is gambling but wearing a suit. You really only need one human with a billion papers who prefers not dying of horrible diseases to dying of horrible diseases."
 - layer: B, plate the-hill
 - status: planned
@@ -126,7 +126,7 @@ Sound: a chair squeak on "Rich"; a falling slide whistle as the bundle slides on
 - act: Step 1
 - transition_in: same plate (no seam)
 - cue: "There are approximately two thousand"
-- time: 09:40.8 to 09:48.5 (7.6 s)
+- time: 09:16.5 to 09:24.2 (7.7 s)
 - voiceover: "There are approximately two thousand eight hundred of these humans on your planet. Statistically, at least one of them prefers living."
 - layer: B, plate the-hill
 - status: planned
@@ -144,7 +144,7 @@ Sound: a rising slide whistle on the pull-back; a stamp thunk on "planet."; a sp
 - act: Step 2
 - transition_in: cut
 - cue: "Step two: Give Some"
-- time: 09:48.5 to 10:04.3 (15.8 s)
+- time: 09:24.2 to 09:40.0 (15.8 s)
 - voiceover: "Step two: Give Some of the Papers to Loud Humans Some humans are very loud on the internet. If you give them papers, they become loud about your thing instead of other things. This is called "marketing" which is lying but with graphics."
 - layer: B, plate the-internet
 - status: planned
@@ -165,7 +165,7 @@ Sound: a scribble scratch on the second "loud"; a gulp per bill on "papers,"; a 
 - act: Step 3
 - transition_in: cut
 - cue: "Step three: Give Some"
-- time: 10:04.3 to 10:24.5 (20.2 s)
+- time: 09:40.0 to 10:00.2 (20.3 s)
 - voiceover: "Step three: Give Some of the Papers to the Humans Who Give Papers to Politicians Politicians don't take papers directly (that's "illegal"). Instead, you give papers to people called "lobbyists." The lobbyists give papers to "campaigns." The campaigns give papers to politicians. It's like money laundering but backwards and legal."
 - layer: B, plate the-laundry
 - status: planned
@@ -187,7 +187,7 @@ Sound: a splat as the sign lands on "illegal"; a click as the briefcase opens on
 - act: Step 4
 - transition_in: cut
 - cue: "Step four: Give Some"
-- time: 10:24.5 to 10:42.4 (18.0 s)
+- time: 10:00.2 to 10:18.2 (18.0 s)
 - voiceover: "Step four: Give Some of the Papers to the Politicians' Friends Politicians have friends called "Super PACs" which are like normal PACs but super. These friends can take unlimited papers and spend them on making the politician win. This isn't bribery because you called it something else."
 - layer: B, plate the-rally
 - status: planned
@@ -209,7 +209,7 @@ Sound: a gulp per bill on "Give"; a whoosh as the Super PAC swoops in on "Super"
 - act: Step 4
 - transition_in: cut
 - cue: "(This is part of the"
-- time: 10:42.4 to 10:49.0 (6.6 s)
+- time: 10:18.2 to 10:24.8 (6.6 s)
 - voiceover: "(This is part of the six hundred and fifty million dollar lobbying budget.). Step five:"
 - layer: A, host
 - wishonia: big, smirk-smile + body-hand-chest; happy-smile + body-counting on "Step"
@@ -228,7 +228,7 @@ Sound: a falling slide whistle on "six"; a thunk on "million"; a squeak for the 
 - act: Step 5
 - transition_in: cut
 - cue: "Give Papers You Get Back"
-- time: 10:49.0 to 11:20.5 (31.5 s)
+- time: 10:24.8 to 10:56.3 (31.5 s)
 - voiceover: "Give Papers You Get Back From The Government Back to the Rich Humans (Forever) Your treaty passes, redirecting twenty-seven point two billion dollars in papers annually. Eighty percent funds clinical trials (the point). Ten percent goes to a fund that rewards politicians who voted yes. Ten percent goes back to the rich humans as returns, forever. This is a good deal because forever is a long time. Unless you die from preventable diseases. Which you're fixing,"
 - layer: B, plate the-payout
 - status: planned
@@ -253,7 +253,7 @@ Sound: a neon buzz on "(Forever)"; a stamp thunk on "passes,"; a hum from the fu
 - act: Step 5
 - transition_in: cut
 - cue: "so it works out."
-- time: 11:20.5 to 11:22.6 (2.1 s)
+- time: 10:56.3 to 10:57.9 (1.6 s)
 - voiceover: "so it works out."
 - layer: A, host
 - wishonia: big, smirk-smile + body-open-palms; sideeye-closed + body-idle on "out."

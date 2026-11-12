@@ -1,0 +1,159 @@
+<template id="quadrillion-equation-template">
+  <!-- quadrillion-equation · collage (Part 16, scene 3; plate math-field). The bit: the 212 years arrive as a pill bottle
+       riding Part 14's arrow sign down a queue of sick patients; each gets well and an hourglass (a healthy year) pops
+       over its head; the Fat Cat slaps a $150,000 price tag on each, faster and faster; the hourglasses tile the whole
+       field to the horizon and flip
+       into money; a stamp machine-guns $7,530,000,000,000,000 into the sky; a little $1 BILLION bill walks in under it
+       and gulps; dividing knocks the $ and nine zeros off the number, onto the bill: 7,530,000 : 1. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="quadrillion-equation" data-width="1920" data-height="1080" data-start="0" data-duration="29.4">
+    <div id="quadrillion-equation-weave"></div>
+    <div id="quadrillion-equation-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "quadrillion-equation", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The plate (plate px): the ground line G; the queue of patients along it, left to right; the field of healthy years
+    // above their heads up to the horizon; the sky above that for the number.
+    var G = 1000, N = 26, PX = function (i) { return 260 + i * 300; };
+    var PK = 1.15, PH = SZ.patient[1] * PK, HY = G - PH - 75;      // a patient's height; an hourglass's middle over its head
+    var FIELD = V ? [-300, -3200, 4700, 330] : [-300, -1350, 8300, 330], COLS = V ? 20 : 40, COUNT = 280;
+    var views = V ? {
+      open: [600, 467, 0.9], queue: [2600, -1180, 0.22], cat: [700, 467, 0.9], field: [2000, -1526, 0.19],
+      sky: [2200, -1900, 0.17], bill: [2600, -1400, 0.2],
+    } : {
+      open: [900, 560, 1], queue: [4000, 250, 0.24], cat: [1000, 560, 1], field: [4000, -200, 0.22],
+      sky: [4300, -560, 0.2], bill: [4400, -440, 0.235],
+    };
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+
+    // ── The queue: sick (thermometers), then well; an hourglass over each head ──
+    for (var i = 0; i < N; i++) {
+      cast["p" + i] = { art: "patient", x: PX(i), y: G, anchor: "bottom", pivot: "bottom", scale: PK };
+      cast["w" + i] = { art: "patient-well", x: PX(i), y: G, anchor: "bottom", pivot: "bottom", scale: PK * SZ.patient[1] / SZ["patient-well"][1], hidden: true };
+      cast["h" + i] = { art: "hourglass", x: PX(i), y: HY, pivot: "bottom", scale: 0.22, hidden: true };
+      cast["m" + i] = { art: "bundle-med", x: PX(i), y: HY, scale: 0.6, hidden: true };
+    }
+    // ── The pill bottle rides the 212 YEARS SOONER sign in like a rocket, and sprays bottles down the queue ──
+    // the arrow sign without its post (clipped off below the board), the bottle standing on its top edge
+    var SIGN = V ? [560, 390] : [820, 395], AK = 1.4, PK2 = 0.52;
+    cast.sign = { art: "arrow-sign", x: SIGN[0], y: SIGN[1], anchor: [213, 140], scale: AK, hidden: true, clip: [[0, 0], [426, 0], [426, 262], [229, 262], [229, 224], [0, 224]],
+      points: { top: [100, 58] }, label: { text: "212 YEARS SOONER", at: [190, 142], width: 330, size: 66 } };
+    add({ at: 0, do: "show", who: "sign" });
+    add({ at: 0, do: "move", who: "sign", by: [-2600, -260], dur: 0.01 });
+    add({ at: 0.05, do: "move", who: "sign", to: [SIGN[0], SIGN[1] + (166 - 140) * AK], dur: 0.5 });
+    add({ at: 0.55, do: "shake", frames: 3, x: 10 });
+    // off it roars, up and away, once the bottles are out
+    add({ at: 1.45, do: "move", who: "sign", by: [4200, -2600], dur: 0.7 });
+    add({ at: 2.2, do: "hide", who: ["sign", "pill"] });
+    cast.pill = { art: "pill-bottle", x: SIGN[0] + 180, y: SIGN[1] - 70, anchor: "bottom", pivot: "bottom", scale: PK2, hidden: true };
+    add({ at: 0, do: "show", who: "pill" });
+    add({ at: 0, do: "move", who: "pill", to: "sign.top", by: [0, -SZ["pill-bottle"][1] * PK2 / 2 + 6], dur: 0.01 });
+    add({ at: 0.6, do: "bob", who: "pill", y: 5, r: 4, speed: 3 });
+    var LAND = [];
+    for (var j = 0; j < 4; j++) {
+      var bn = "b" + j, tj = cue("patients") + j * 0.18;
+      cast[bn] = { art: "medicine-bottle", x: SIGN[0] + 180, y: SIGN[1] - 200, scale: 0.5, hidden: true };
+      add({ at: tj, do: "pop", who: bn });
+      add({ at: tj + 0.05, do: "move", who: bn, to: [PX(j) + 30, G - 230], dur: 0.35, arc: 160, turn: 300 });
+      add({ at: tj + 0.42, do: "hide", who: bn });
+      LAND.push(tj + 0.42);
+    }
+    // each one caught gets well (the thermometer drops), down the line as the camera pulls back
+    var CURE = [];
+    for (i = 0; i < N; i++) CURE.push(i < 4 ? LAND[i] : cue("sooner") + (i - 4) * 0.1);
+    CURE.forEach(function (t, k) {
+      add({ at: t, do: "swap", who: "p" + k, to: "w" + k });
+      add({ at: t + 0.35, do: "pop", who: "h" + k, squash: true });
+    });
+    add({ on: "means", do: "camera", view: "queue", dur: 2.4 });
+
+    // ── The Fat Cat prices each hourglass: $150,000 a healthy year ──
+    var FW = 2.1, FS = 2.4, REACH = 170 * FS / 1.7;            // the stamp's reach ahead of his middle
+    cast.fcW = { art: "fat-cat-waddle", x: -500, y: G + 30, anchor: "bottom", pivot: "bottom", scale: FW, hidden: true };
+    cast.fcS = { art: "fat-cat-stamp", x: -500, y: G + 30, anchor: "bottom", pivot: "bottom", scale: FS, hidden: true };
+    var FAT = ["fcW", "fcS"];
+    for (var tk = 0; tk < 14; tk++) cast["tag" + tk] = { art: "price-tag", x: PX(tk) + 30, y: HY - 6, anchor: [115, 92], pivot: [115, 92], scale: 0.42, hidden: true,
+      label: { text: "$150,000", at: [290, 178], width: 290, size: 90 } };
+    add({ on: "Value", do: "camera", view: "cat", dur: 0.9 });
+    add({ on: "Value", do: "show", who: "fcW" });
+    add({ on: "Value", do: "move", who: FAT, by: [PX(0) - REACH + 500, 0], dur: 1.0 });
+    add({ on: "Value", do: "bob", who: "fcW", y: 8, r: 3, speed: 4, until: "dollars" });
+    var stampAt = function (t, k, first) {
+      if (!first) add({ at: t - 0.26, do: "move", who: FAT, by: [300, 0], dur: 0.2 });
+      add({ at: t - 0.05, do: "hide", who: "fcW" }); add({ at: t - 0.05, do: "show", who: "fcS" });
+      add({ at: t, do: "stamp", who: "tag" + k, from: 1.6, shake: 2 });
+      add({ at: t + 0.1, do: "bob", who: "tag" + k, y: 0, r: 4, speed: 2 });
+      add({ at: t + 0.14, do: "hide", who: "fcS" }); add({ at: t + 0.14, do: "show", who: "fcW" });
+    };
+    [cue("thousand"), cue("dollars", 1), cue("standard"), cue("economic", 1), cue("valuation),")].forEach(function (t, k) { stampAt(t, k, !k); });
+    add({ on: "valuation),", offset: 0.2, do: "shiver", who: "fcW", dur: 0.6, amp: 3, rot: 2 });
+    // faster and faster down the line while the field fills
+    for (var k = 5; k < 14; k++) stampAt(cue("multiply") + 0.1 + 2.9 * Math.pow((k - 5) / 8, 0.7), k, false);
+
+    // ── The hourglasses multiply over the whole field to the horizon ──
+    add({ on: "multiply", do: "camera", view: "field", dur: 1.6 });
+    add({ on: "multiply", offset: 0.2, do: "pictogram", id: "years", art: "hourglass", count: COUNT, cols: COLS, box: FIELD, dur: 3.2, accel: 0.8 });
+    // ── ... and flip into money; the camera pulls up and back; the number machine-guns into the sky ──
+    var FLIP = cue("and", 2);
+    add({ at: FLIP, do: "pictogram", id: "years", to: "bundle-med", stagger: 0.004 });
+    for (i = 0; i < N; i++) add({ at: FLIP + 0.02 * i, do: "swap", who: "h" + i, to: "m" + i });
+    for (k = 0; k < 14; k++) add({ at: FLIP + 0.02 * k, do: "pop", who: "tag" + k, out: true });
+    add({ at: FLIP, do: "camera", view: "sky", dur: 1.8 });
+    // the number: chunks stamped one per thump, abutting (one row in 16:9; two in 9:16)
+    var SIZE = V ? 600 : 480, CH = SIZE * 1.45;
+    var TXT = ["$", "7,530", ",000", ",000", ",000", ",000"];
+    var CW = TXT.map(function (s) { return KIT.textWidth(s, SIZE, "Oswald", 600) + 52; });
+    var rows = V ? [[0, 1, 2], [3, 4, 5]] : [[0, 1, 2, 3, 4, 5]], RY = V ? [-4600, -3700] : [-1800];
+    var NXC = V ? 3000 : 4300, CX = [], CY = [];
+    rows.forEach(function (r, ri) {
+      var w = r.reduce(function (s, c) { return s + CW[c]; }, 0), x = NXC - w / 2;
+      r.forEach(function (c) { CX[c] = x + CW[c] / 2; CY[c] = RY[ri]; x += CW[c]; });
+    });
+    var THUMP = [cue("seven", 1), cue("three", 1), cue("quadrillion"), cue("quadrillion") + 0.25, cue("quadrillion") + 0.5, cue("quadrillion") + 0.75];
+    TXT.forEach(function (s, c) {
+      add({ at: THUMP[c], do: "stamp", id: "z" + c, text: s, x: CX[c], y: CY[c], size: SIZE, width: CW[c] + 200, tilt: c % 2 ? 1.5 : -1.5, shake: 9 });
+    });
+
+    // ── A little $1 BILLION bill walks in under it, looks up, and gulps ──
+    var BX = V ? NXC : (CX[3] + CX[5]) / 2, BK = 1.6;
+    cast.bill = { art: "money-bundle", x: BX, y: G + 40, anchor: "bottom", pivot: "bottom", scale: BK, hidden: true };
+    cast.billTag = { art: "price-tag", x: BX - 520, y: G - 560, scale: 1.25, hidden: true, label: { text: "$1 BILLION", at: [290, 178], width: 290, size: 80 } };
+    add({ on: "Divide", do: "camera", view: "bill", dur: 0.9 });
+    add({ on: "Divide", do: "show", who: "bill" });
+    add({ on: "Divide", do: "move", who: "bill", by: [V ? 3000 : 4500, 0], dur: 0.01 });
+    add({ on: "Divide", offset: 0.05, do: "move", who: "bill", to: [BX, G + 40 - SZ["money-bundle"][1] * BK / 2], dur: 1.35 });
+    add({ on: "Divide", offset: 0.05, do: "bob", who: "bill", y: 16, r: 6, speed: 5, until: "billion" });
+    add({ on: "billion", do: "stamp", who: "billTag", from: 1.6, shake: 3 });
+    add({ on: "billion", do: "move", who: "billTag", to: "bill", by: [-480, -260], dur: 0.01 });
+    add({ on: "campaign", do: "move", who: "bill", by: [0, 0], turn: -10, dur: 0.3 });
+    add({ on: "cost,", do: "shiver", who: "bill", dur: 0.45, amp: 6, rot: 3 });
+
+    // ── Divide by a billion: the number shakes, the $ falls off, then nine zeros, onto the bill ──
+    add({ on: "return", do: "shiver", who: ["z0", "z1", "z2", "z3", "z4", "z5"], dur: 0.55, amp: 14, rot: 2 });
+    add({ on: "seven", n: 2, do: "drop", who: "z0", dist: V ? 6000 : 3600, spin: 40, dur: 0.7 });
+    [["z5", "point"], ["z4", "five"], ["z3", "three"]].forEach(function (p, j) {
+      var tilt = [14, -18, 9][j];
+      add({ on: p[1], n: 2, do: "move", who: p[0], to: [BX + [-140, 160, -20][j], G - 520 - j * 330], dur: 0.38, arc: 400, turn: tilt });
+      add({ on: p[1], n: 2, offset: 0.38, do: "shake", frames: 2, y: 8 });
+    });
+    add({ on: "one.", n: 3, do: "stamp", id: "ratio", text: ": 1", x: V ? NXC : CX[3] - CW[3] / 2 + (KIT.textWidth(": 1", SIZE, "Oswald", 600) + 52) / 2, y: V ? RY[1] : RY[0], size: SIZE, width: 2000, tilt: -2, shake: 12 });
+    // its legs kick out of the heap
+    add({ on: "one.", n: 3, offset: 0.4, do: "shiver", who: "bill", dur: 1.2, amp: 10, rot: 5 });
+    add({ on: "one.", n: 3, offset: 0.4, do: "hide", who: "billTag" });
+
+    KIT.collage({ id: ID, seed: 1603, plate: V ? [-5000, -9500, 9000, 3500] : [-3500, -4600, 11500, 3200], views: views, view: "open", cast: cast, beats: beats });
+  </script>
+</template>

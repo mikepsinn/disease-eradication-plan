@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:30.5
+duration: 2:30.4
 message: "Nobody has to coordinate the plan: like a pencil, a cured disease can come from millions of strangers who never meet, steered only by two numbers on a Scoreboard and the papers."
 arc: Title card (YOU's hair catches fire over the manual) → on Earth in the window, YOU juggles the five steps until they flatten him → the pencil nobody can make (the Weapons Maker sharpens his missile and blows up the TV) → inside a wall map, the pencil's parts fly home and strangers who would brawl pass them back → the camera pulls out of the map: it hangs in an empty central office, and a spider moves into the chair → a cash register nobody runs rings out pencils → YOU, reading his paper, is buried by a day's goods without looking up → the same story for a cure: the den again, then the chain of strangers across the map until the data kills the sea monster and a jar drops over it → millions cooperate, and the spider has died in the chair waiting for orders → two numbers and a paper beat the committee, the charity and the plan → the machine needs only its switch, and YOU's hand stops just short of it
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 23, "But You Don't Need to Understand Any of That"
-audio: index-manual.cbaf659d.mp3, 48:13.0 to 50:43.5
+audio: index-manual.7ce6b2b2.mp3, 47:43.3 to 50:13.8
 version: v3
 ---
 
@@ -55,7 +55,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the parts are rendered on their own and joined)
 - cue: "But You Don't Need to Understand"
-- time: 48:13.0 to 48:15.6 (2.6 s)
+- time: 47:43.3 to 47:45.9 (2.6 s)
 - voiceover: "But You Don't Need to Understand Any of That."
 - layer: A, title card
 - status: planned
@@ -73,7 +73,7 @@ Sound: a projector whirr from "But"; a steam whistle on "Understand"; a fire who
 - act: The objection
 - transition_in: iris in on her face
 - cue: "You just read five steps"
-- time: 48:15.6 to 48:31.8 (16.2 s)
+- time: 47:45.9 to 48:02.1 (16.2 s)
 - voiceover: "You just read five steps involving bonds, lobbyists, Super PACs, a decentralized F.D.A., and an appliance that optimizes government policy. The obvious objection: "Nobody can coordinate all of that.". Correct."
 - layer: A, host
 - wishonia: big, neutral-smile + body-counting; thinking-small + body-thinking on "objection:"; smirk-closed + body-open-palms on "Correct."
@@ -93,7 +93,7 @@ Sound: a whoosh per throw from "bonds,"; a boing as his knees buckle on "applian
 - act: The pencil
 - transition_in: cut
 - cue: "Nobody coordinates a pencil either"
-- time: 48:31.8 to 48:41.8 (10.0 s)
+- time: 48:02.1 to 48:12.1 (10.1 s)
 - voiceover: "Nobody coordinates a pencil either. One of your economists held up a pencil on television and said: "There's not a single person in the world who could make this pencil."
 - layer: B, plate tv-den
 - status: planned
@@ -112,7 +112,7 @@ Sound: a click as the TV comes on on "economists"; a crank whirr on "single"; a 
 - act: The pencil
 - transition_in: cut
 - cue: "The wood comes from"
-- time: 48:41.8 to 48:53.7 (11.8 s)
+- time: 48:12.1 to 48:24.0 (11.9 s)
 - voiceover: "The wood comes from a tree in Washington. The graphite comes from mines in South America. The rubber comes from Malaya. The brass ferrule, I haven't the slightest idea where it came from."
 - layer: B, plate office-map
 - status: planned
@@ -132,7 +132,7 @@ Sound: a whoosh for each whip; a thunk as the wood slots in on "Washington."; a 
 - act: The pencil
 - transition_in: same plate (no seam)
 - cue: "Literally thousands of people cooperated"
-- time: 48:53.7 to 49:04.5 (10.8 s)
+- time: 48:24.0 to 48:34.6 (10.6 s)
 - voiceover: "Literally thousands of people cooperated to make this pencil. People who don't speak the same language, who practice different religions, who might hate one another if they ever met."
 - layer: B, plate office-map
 - status: planned
@@ -152,7 +152,7 @@ Sound: a pop as the strangers appear on "thousands"; soft pats as the parts pass
 - act: The pencil
 - transition_in: same plate (no seam)
 - cue: "No one sitting in a central office"
-- time: 49:04.5 to 49:13.0 (8.5 s)
+- time: 48:34.6 to 48:42.6 (8.0 s)
 - voiceover: "No one sitting in a central office gave orders to these thousands of people. No military police enforced the orders that were not given.""
 - layer: B, plate office-map
 - status: planned
@@ -170,7 +170,7 @@ Sound: the phone bell on "gave" and a clank as the handset drops on "orders"; cr
 - act: The price system
 - transition_in: same plate (no seam)
 - cue: "A pencil costs twenty-five cents"
-- time: 49:13.0 to 49:29.6 (16.6 s)
+- time: 48:42.6 to 48:59.9 (17.3 s)
 - voiceover: "A pencil costs twenty-five cents. Making one requires thousands of strangers across dozens of countries. Nobody planned it. Nobody runs it. Everyone involved just wanted money, and the price system turned their selfishness into pencils."
 - layer: B, plate office-map
 - status: planned
@@ -191,7 +191,7 @@ Sound: a ding as the tag swings on on "cents."; pops as strangers appear on "doz
 - act: The price system
 - transition_in: cut
 - cue: "Your species does this"
-- time: 49:29.6 to 49:34.4 (4.8 s)
+- time: 48:59.9 to 49:04.7 (4.8 s)
 - voiceover: "Your species does this billions of times a day without noticing."
 - layer: A, host
 - wishonia: big, smirk-smile + body-open-palms; eyeroll-closed + body-arms-crossed on "noticing."
@@ -209,7 +209,7 @@ Sound: soft pats as the goods fall from "billions"; a slam as the heap buries hi
 - act: The cured disease
 - transition_in: cut
 - cue: "Now look at this cured disease"
-- time: 49:34.4 to 49:40.8 (6.4 s)
+- time: 49:04.7 to 49:11.1 (6.4 s)
 - voiceover: "Now look at this cured disease. There is not a single person in the world who could cure it."
 - layer: B, plate tv-den
 - status: planned
@@ -227,7 +227,7 @@ Sound: a click as the TV comes on on "Now"; a ding as the tag swings on "disease
 - act: The cured disease
 - transition_in: cut
 - cue: "The researcher in Lagos"
-- time: 49:40.8 to 49:58.2 (17.4 s)
+- time: 49:11.1 to 49:28.4 (17.3 s)
 - voiceover: "The researcher in Lagos who found the cheaper trial design does not know the lobbyist in Brussels who passed the directive. The lobbyist does not know the nonprofit in Manila that recruited a million voters. The voters do not know the bondholder in New York whose greed funded the campaign."
 - layer: B, plate office-map
 - status: planned
@@ -247,7 +247,7 @@ Sound: a snip on "cheaper"; a whoosh for each whip on "know"; a stamp thump on "
 - act: The cured disease
 - transition_in: same plate (no seam)
 - cue: "The bondholder does not know"
-- time: 49:58.2 to 50:15.4 (17.2 s)
+- time: 49:28.4 to 49:45.5 (17.0 s)
 - voiceover: "The bondholder does not know the politician in Delhi who voted yes because the Super PAC funded her opponent last time she voted no. The politician does not know the factory worker in Dhaka whose clinical trial enrollment generated the data that proved the treatment worked."
 - layer: B, plate office-map
 - status: planned
@@ -267,7 +267,7 @@ Sound: a whoosh for each whip; a thunk on "yes"; limping squeaks from "because";
 - act: Nobody in charge
 - transition_in: same plate (no seam)
 - cue: "Literally millions of people"
-- time: 50:15.4 to 50:26.4 (11.0 s)
+- time: 49:45.5 to 49:56.7 (11.2 s)
 - voiceover: "Literally millions of people cooperated to cure this disease. No one sitting in a central office gave orders. No military police enforced the orders that were not given."
 - layer: B, plate office-map
 - status: planned
@@ -286,7 +286,7 @@ Sound: a slide whistle up as the camera pulls back on "millions" and pops as peo
 - act: Nobody in charge
 - transition_in: cut
 - cue: "Two numbers on a Scoreboard and"
-- time: 50:26.4 to 50:35.5 (9.0 s)
+- time: 49:56.7 to 50:05.8 (9.1 s)
 - voiceover: "Two numbers on a Scoreboard and pieces of paper with presidents on them did what no committee, no charity, and no central plan has ever done."
 - layer: B, plate quiz-show
 - status: planned
@@ -304,7 +304,7 @@ Sound: a switch click as the bulbs light on "Two"; ticks as the numbers roll; a 
 - act: The switch
 - transition_in: cut
 - cue: "The five steps above are the machinery"
-- time: 50:35.5 to 50:43.5 (8.0 s)
+- time: 50:05.8 to 50:13.8 (8.0 s)
 - voiceover: "The five steps above are the machinery. You do not need to build the machinery. You need to turn it on. Here is the switch."
 - layer: A, host
 - wishonia: big, neutral-smile + body-presenting; smirk-smile + body-palms-down on "build"; happy-smile + body-point-right on "Here"; smirk-closed + body-point-right on "switch."

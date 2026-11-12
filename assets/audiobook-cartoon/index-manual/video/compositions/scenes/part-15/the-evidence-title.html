@@ -1,0 +1,82 @@
+<template id="the-evidence-title-template">
+  <!-- the-evidence-title · Layer A title card (storyboards/part-15-the-evidence.md), built by KIT.titleScene: WHY THIS
+       COULD / ACTUALLY WORK slams in word by word under the emblem, the italic line slides up on "Unlike". The gag: the
+       Lobbyist (generated cut-out) tiptoes in along the empty line below it, stops in the middle and looks up; on
+       "Evidence." THE EVIDENCE slams down as a stamp plate on top of him. His shoes stick out under it, his gloved
+       hand pokes out of the right end and lets go of one war bill, and his fedora rolls out of the left end. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="the-evidence-title" data-width="1920" data-height="1080" data-start="0" data-duration="7.77">
+    <div id="the-evidence-title-cam"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script>
+    (function () {
+      var ID = "the-evidence-title", SZ = window.KIT_ART_SIZES, ART = "assets/art/collage/";
+      KIT.titleScene({
+        id: ID,
+        lines: [["WHY", "THIS", "COULD"], ["ACTUALLY", "WORK"], { words: ["Unlike Everything Else Humanity Has Tried"], style: "italic", cue: "Unlike" },
+          { words: ["THE EVIDENCE"], style: "stamp", cue: "Evidence.", tilt: -3 }],
+        linesTall: [["WHY", "THIS"], ["COULD"], ["ACTUALLY"], ["WORK"], { words: ["Unlike Everything Else Humanity Has Tried"], style: "italic", cue: "Unlike" },
+          { words: ["THE EVIDENCE"], style: "stamp", cue: "Evidence.", tilt: -3 }],
+        spoken: ["Why", "This", "Could", "Actually", "Work."],
+        maxH: KIT.V ? 640 : 350, minTop: KIT.V ? 800 : 500, cy: KIT.V ? 1120 : 690,
+        gag: function (c) {
+          var tl = c.tl, f = function (n) { return n.toFixed(1) + "px"; };
+          var plate = c.word("THE EVIDENCE").box, base = plate.y + plate.h, mid = plate.x + plate.w / 2;
+          // The Lobbyist stands on the plate's bottom edge, a bit taller than the plate; it lands on top of him.
+          var LH = plate.h * (c.V ? 2.5 : 2.6), k = LH / SZ.lobbyist[1], LW = SZ.lobbyist[0] * k;
+          var tIn = c.cue("Everything") - 0.1, tStop = c.cue("Tried*") + 0.15, tUp = tStop + 0.25;
+          var tHit = c.cue("Evidence.") + 0.14, startX = -LW, stopX = mid - LW / 2;
+          var div = function (n, x, y, w, h, inner, extra) {
+            return '<div id="' + ID + "-" + n + '" style="position:absolute;left:' + f(x) + ";top:" + f(y) + ";width:" + f(w) + ";height:" + f(h) + ";" + (extra || "") + '">' + inner + "</div>";
+          };
+          var im = function (name, clip) { return '<img src="' + ART + name + '.webp" style="position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(4px 5px 2px rgba(0,0,0,0.5))' + (clip ? ";clip-path:" + clip : "") + '">'; };
+          // his gloved hand (lobbyist-shake, art px 138 to 238 by 150 to 245), pokes out of the plate's right end
+          var hk = (plate.h * 0.75) / 95, sh = SZ["lobbyist-shake"];
+          var handW = sh[0] * hk, handH = sh[1] * hk, handX = plate.x + plate.w - 150 * hk, handY = plate.y + plate.h * 0.5 - 197 * hk;
+          var bk = (plate.h * 0.7) / SZ["bill-war-flat"][1], fk = (plate.h * 0.55) / SZ.fedora[1];
+          c.back.innerHTML =
+            div("lob", 0, base - LH, LW, LH, im("lobbyist"), "transform-origin:50% 100%") +
+            div("shoes", stopX, base - LH * 0.9, LW, LH, im("lobbyist", "inset(84% 0 0 0)"), "visibility:hidden") +
+            div("hand", handX, handY, handW, handH, im("lobbyist-shake", "polygon(58% 27%, 100% 27%, 100% 45%, 58% 45%)"), "visibility:hidden") +
+            div("bill", plate.x + plate.w + 10 * hk, plate.y + plate.h * 0.2, SZ["bill-war-flat"][0] * bk, SZ["bill-war-flat"][1] * bk, im("bill-war-flat"), "visibility:hidden") +
+            div("hat", plate.x + 10, base - SZ.fedora[1] * fk, SZ.fedora[0] * fk, SZ.fedora[1] * fk, im("fedora"), "visibility:hidden");
+          var g = function (n) { return document.getElementById(ID + "-" + n); };
+          var lob = g("lob"), shoes = g("shoes"), hand = g("hand"), bill = g("bill"), hat = g("hat");
+          gsap.set(lob, { x: startX, visibility: "hidden" });
+          // tiptoe in, high-stepping, then stop and look up at the empty space over his head
+          tl.set(lob, { visibility: "inherit" }, tIn);
+          tl.to(lob, { x: stopX, duration: tStop - tIn, ease: "none" }, tIn);
+          KIT.onTime(tl, c.D, function (t) {
+            var step = t > tIn && t < tStop ? Math.floor((t - tIn) / 0.16) : -1;
+            var bob = step < 0 ? 0 : step % 2 ? -0.07 * LH : 0, lean = step < 0 ? 0 : step % 2 ? 4 : -2;
+            if (t >= tUp && t < tHit) { bob = -0.03 * LH; lean = -6; }
+            gsap.set(lob, { y: bob, rotation: lean });
+          });
+          // squashed under the plate: his shoes stick out, his hand lets go of a bill, his hat rolls away
+          tl.set(lob, { visibility: "hidden" }, tHit);
+          tl.set(shoes, { visibility: "inherit" }, tHit);
+          tl.fromTo(shoes, { scaleX: 1.25 }, { scaleX: 1.12, duration: 0.2, ease: "power2.out", immediateRender: false }, tHit);
+          tl.set(hand, { visibility: "inherit" }, tHit + 0.35);
+          tl.fromTo(hand, { x: -0.3 * handW }, { x: 0, duration: 0.25, ease: "power2.out", immediateRender: false }, tHit + 0.35);
+          tl.set(bill, { visibility: "inherit" }, tHit + 0.55);
+          tl.fromTo(bill, { x: 0, y: 0, rotation: 0 }, { x: plate.h * 0.6, y: plate.h * 1.3, rotation: 28, duration: 0.9, ease: "sine.inOut", immediateRender: false }, tHit + 0.6);
+          tl.to(hand, { rotation: -14, duration: 0.15, yoyo: true, repeat: 1, ease: "sine.inOut" }, tHit + 0.6);
+          tl.set(hat, { visibility: "inherit" }, tHit + 0.1);
+          tl.fromTo(hat, { x: 0, rotation: 0 }, { x: -plate.h * 2.4, rotation: -340, duration: 1.0, ease: "power2.out", immediateRender: false }, tHit + 0.1);
+        },
+      });
+    })();
+  </script>
+</template>

@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 4:45.4
+duration: 4:50.0
 message: "Spend the treaty money on patients instead of committees, and treatments reach people 212 years sooner, which prevents 10.7 billion deaths."
 arc: Title card (the FDA scatters to the edges of the card) → Wishonia's ticker-tape parade and the dictionary with no word for it → the FDA official sitting on SAFE bottles like a hen → one dangled bill rolls Earth after it → the money follows the patient and tramples the grants office → out of the terrarium → the protocol stamp flattens the lifeguard and jackets fly to 23.4 million → one lands on Wishonia's mug → 443 years squeezed to 36 → the approval cabinet opens, 212 years sooner → 10.7 billion rise out of the field with plans for Tuesday → the live detector lands on the one that works by mail → the coin on its edge → the doctor's prize wheel → grape soda → the ranking board crushes the wheel → the 40-page insert buries the patient → the meadow human dies mid-skip and keeps skipping → the doctor Googles in the hall → the outcome label buries the lawyer → louder wins, and both are charred → the Optimitron's card knocks the trophy away
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 14, "Your Decentralized FDA"
-audio: index-manual.cbaf659d.mp3, 27:54.0 to 32:39.5
+audio: index-manual.7ce6b2b2.mp3, 27:26.9 to 32:17.0
 version: v3
 ---
 
@@ -65,7 +65,7 @@ version: v3
 - act: Title
 - transition_in: cut (the parts are rendered on their own and joined); up from black
 - cue: "Your decentralized F.D.A."
-- time: 27:54.0 to 27:57.4 (3.4 s)
+- time: 27:26.9 to 27:30.7 (3.8 s)
 - voiceover: "Your decentralized F.D.A."
 - layer: A, title card
 - status: planned
@@ -82,7 +82,7 @@ Sound: the projector whirr on "Your"; little pops as the FDAs hop off; a stamp t
 - act: Wishonia's version
 - transition_in: iris in on her face (the title card ends on black)
 - cue: "We built ours with"
-- time: 27:57.4 to 28:13.8 (16.4 s)
+- time: 27:30.7 to 27:47.7 (17.0 s)
 - voiceover: "We built ours with the funding from our version of the treaty, three thousand years ago. Every treatment is tracked in real time. Every outcome is published. Every patient can participate. We don't have a word for "unapproved medicine" because we don't have a bureaucracy that"
 - layer: A, host
 - wishonia: happy-smile + body-presenting on "We", then smirk-smile + body-hand-chest on "three", then happy-smile + body-counting on "Every", then happy-closed + body-wide-gesture on "participate.", then thinking-small + body-thinking on "We" (the second), then skeptical-smile + body-presenting on "bureaucracy"
@@ -105,7 +105,7 @@ Sound: a huff for the dust; the ticker's chatter from "tracked"; a sparkle as th
 - act: Wishonia's version
 - transition_in: cut
 - cue: "sits on safe treatments"
-- time: 28:13.8 to 28:16.7 (2.9 s)
+- time: 27:47.7 to 27:51.0 (3.3 s)
 - voiceover: "sits on safe treatments while people die."
 - layer: B, plate hen
 - status: planned
@@ -123,7 +123,7 @@ Sound: a cluck on "sits"; an x-ray zap on "die."; a pop as the bottle squeezes o
 - act: Wishonia's version
 - transition_in: cut
 - cue: "You'd call our system"
-- time: 28:16.7 to 28:26.8 (10.1 s)
+- time: 27:51.0 to 28:00.1 (9.1 s)
 - voiceover: "You'd call our system a decentralized F.D.A. Here's what yours would look like, adjusted for the fact that you require small pieces of paper before you'll do anything."
 - layer: A, host
 - wishonia: eyeroll-smile + body-shrug on "You'd", then smirk-smile + body-presenting on "Here's", then skeptical-smile + body-point-right on "small", then smirk-smile + body-point-right on "anything."
@@ -144,7 +144,7 @@ Sound: a squeak as the bill's legs kick; a low rumble each time Earth rolls; a w
 - act: Paying patients
 - transition_in: cut
 - cue: "Eighty percent of the"
-- time: 28:26.8 to 28:53.4 (26.7 s)
+- time: 28:00.1 to 28:26.7 (26.6 s)
 - voiceover: "Eighty percent of the twenty-seven point two billion dollars will go directly to subsidizing patient participation in pragmatic trials at nine hundred and twenty-nine dollars per patient instead of the usual forty-one thousand dollars. Patients will choose which trials to join; their subsidy will follow them. Treatment developers and providers will get paid for each participant. No grant committees deciding which diseases are fashionable this year."
 - layer: B, plate trial-hall
 - status: planned
@@ -168,7 +168,7 @@ Sound: a pop as the herd stands up; pattering feet and a splat for the grants of
 - act: Paying patients
 - transition_in: cut
 - cue: "Instead of testing drugs"
-- time: 28:53.4 to 29:05.1 (11.7 s)
+- time: 28:26.7 to 28:37.9 (11.1 s)
 - voiceover: "Instead of testing drugs on two hundred humans selected by pharmaceutical companies in clinical terrariums, you'll test on real patients in real hospitals. Where the diseases are."
 - layer: B, plate terrarium
 - status: planned
@@ -189,7 +189,7 @@ Sound: a snip of the tweezers for each flick and a whistle as each patient sails
 - act: Paying patients
 - transition_in: cut
 - cue: "The whole thing will"
-- time: 29:05.1 to 29:26.5 (21.4 s)
+- time: 28:37.9 to 28:59.9 (22.0 s)
 - voiceover: "The whole thing will use your new decentralized F.D.A. protocol, reducing trial costs by forty-four point one times and funding twenty-three point four million patients per year (versus the current one point nine million patients per year). Remember that billion patients drowning in line for two life jackets? Your decentralized F.D.A. will hand out twenty-three point four"
 - layer: B, plate beach
 - status: planned
@@ -210,8 +210,8 @@ Sound: a stamp thunk and a splat for the lifeguard; a squeal for the tag; a crea
 - id: one-for-the-mug
 - act: Paying patients
 - transition_in: cut
-- cue: "million. This"
-- time: 29:26.5 to 29:28.1 (1.6 s)
+- cue: "million. The treaty's"
+- time: 28:59.9 to 29:01.3 (1.5 s)
 - voiceover: "million."
 - layer: A, host (reaction cut)
 - wishonia: happy-smile + body-palms-down
@@ -228,17 +228,17 @@ Sound: a whoosh as the jacket flies in; a pat.
 - id: accordion-timeline
 - act: Faster treatments
 - transition_in: cut
-- cue: "This will increase the"
-- time: 29:28.1 to 29:37.4 (9.2 s)
-- voiceover: "This will increase the treatment discovery rate twelve point three times, compressing that about four hundred and forty-three years wait to about thirty-six years."
+- cue: "The treaty\'s money will"
+- time: 29:01.3 to 29:10.6 (9.2 s)
+- voiceover: "The treaty's money will increase the treatment discovery rate twelve point three times, shrinking that four hundred and forty-three year wait to thirty-six."
 - layer: B, plate queue
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "This will increase the treatment discovery rate twelve point three times," | First treatments go from 15 diseases a year to about 185. | Part 9's FDA window, its counter reading "15 PER YEAR"; the queue of humans, each walking a disease on a leash, runs right along a year ruler on the ground. The counter flips to "185 PER YEAR" and "12.3×" stamps beside it. | The shutter blurs up and down, spitting bottles to the front of the line. |
-| "compressing that about four hundred and forty-three years wait" | Today the last of the 6,650 untreated diseases waits until about 2469. | The camera pulls back along the queue to its far end at "2469", tagged "443 YEARS": the back of the line grey and bearded, then skeletons still holding their leashes. | |
-| "to about thirty-six years." | At 12.3× the queue is done by about 2062. | The rope posts slam together like an accordion and the whole queue squeezes up the ruler to end at "2062", tagged "36 YEARS". | The grey beards zip back up into their chins like tape measures. The skeletons squeezed to the front get their bottles and take them anyway. |
+| "The treaty's money will increase the treatment discovery rate twelve point three times," | First treatments go from 15 diseases a year to about 185. | Part 9's FDA window, its counter reading "15 PER YEAR"; the queue of humans, each walking a disease on a leash, runs right along a year ruler on the ground. The counter flips to "185 PER YEAR" and "12.3×" stamps beside it. | The shutter blurs up and down, spitting bottles to the front of the line. |
+| "shrinking that four hundred and forty-three year wait" | Today the last of the 6,650 untreated diseases waits until about 2469. | The camera pulls back along the queue to its far end at "2469", tagged "443 YEARS": the back of the line grey and bearded, then skeletons still holding their leashes. | |
+| "to thirty-six." | At 12.3× the queue is done by about 2062. | The rope posts slam together like an accordion and the whole queue squeezes up the ruler to end at "2062", tagged "36 YEARS". | The grey beards zip back up into their chins like tape measures. The skeletons squeezed to the front get their bottles and take them anyway. |
 
 Sound: the shutter's whirr; a clank as the counter flips; a squeezebox wheeze as the line closes up; a rattle from the skeletons.
 
@@ -247,20 +247,19 @@ Sound: the shutter's whirr; a clank as the counter flips; a squeezebox wheeze as
 - id: two-hundred-twelve-years-sooner
 - act: Faster treatments
 - transition_in: continues on the plate (no seam)
-- cue: "Two things will save"
-- time: 29:37.4 to 30:02.7 (25.3 s)
-- voiceover: "Two things will save lives. First, finding treatments faster: treatments that would have sat undiscovered for centuries will get found two hundred and four years sooner on average. Second, eliminating the eight point two years bureaucratic delay between proving a drug is safe and letting dying humans take it. Combined, treatments will reach patients two hundred and twelve years sooner on average."
+- cue: "The average disease sits"
+- time: 29:10.6 to 29:25.9 (15.3 s)
+- voiceover: "The average disease sits halfway down that queue, so its treatment arrives two hundred and four years sooner. Keep the safety test, drop the eight point two year wait, and find out if it works during normal care. Patients get it two hundred and twelve years sooner."
 - layer: B, plate queue
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Two things will save lives." | There are two gains. | The same year ruler, the queue settled at the window. Two blank wooden arrow signs spring out of the ground above the ruler. | |
-| "First, finding treatments faster: treatments that would have sat undiscovered for centuries" | An untested treatment sits on a shelf for centuries. | At the ruler's start, a dusty bottle in a cobweb on a shelf, tagged "NEVER TESTED FOR THIS"; a band of dust runs from it along the ruler for two centuries. | The spider over it has grown a long white beard, and yawns. |
-| "will get found two hundred and four years sooner on average." | 204 years sooner. | A flashlight beam lands on the bottle; the band of dust snaps back like a tape measure to a stub, and arrow sign 1 spans the gap it leaves: "204 YEARS SOONER". | The spider is yanked along with it, beard flapping. |
-| "Second, eliminating the eight point two years bureaucratic delay" | Then 8.2 more years of approval after a drug is shown safe. | At the stub's end stands Part 12's approval cabinet, its hourglass on "8.2 YEARS", the SAFE bottle on its shelf, YOU's skeleton slumped against the glass. The Gilliam foot comes down on it. | Glass bursts and the hourglass sprays sand. |
-| "between proving a drug is safe and letting dying humans take it." | | The SAFE bottle hops out and runs to the patient, who catches it. Arrow sign 2: "8.2 YEARS SOONER". | YOU's skeleton lifts a bony hand for the bottle, eight years late. |
-| "Combined, treatments will reach patients two hundred and twelve years sooner on average." | 204 + 8.2 = 212. | The two arrow signs slam together into one fat arrow sign; a stamp comes down on it: "212 YEARS SOONER". | The queue throws its hats in the air; one skeleton throws its skull by mistake and catches it. |
+| "The average disease sits halfway down that queue," | An untested treatment sits on a shelf. | The same year ruler, the queue settled at the window; two blank wooden arrow signs spring out of the ground above it. At the ruler's start, a dusty bottle in a cobweb on a shelf, tagged "NEVER TESTED FOR THIS"; a band of dust runs from it along the ruler for two centuries. | The spider over it has grown a long white beard, and yawns. |
+| "so its treatment arrives two hundred and four years sooner." | 204 years sooner. | A flashlight beam lands on the bottle; the band of dust snaps back like a tape measure to a stub, and arrow sign 1 spans the gap it leaves: "204 YEARS SOONER". | The spider is yanked along with it, beard flapping. |
+| "Keep the safety test, drop the eight point two year wait," | Then 8.2 more years of approval after a drug is shown safe. | At the stub's end stands Part 12's approval cabinet, its hourglass on "8.2 YEARS", the SAFE bottle on its shelf, YOU's skeleton slumped against the glass. The Gilliam foot comes down on it. | Glass bursts and the hourglass sprays sand. |
+| "and find out if it works during normal care. Patients get it" | | The SAFE bottle hops out and runs to the patient, who catches it. Arrow sign 2: "8.2 YEARS SOONER". | YOU's skeleton lifts a bony hand for the bottle, eight years late. |
+| "two hundred and twelve years sooner." | 204 + 8.2 = 212. | The two arrow signs slam together into one fat arrow sign; a stamp comes down on it: "212 YEARS SOONER". | The queue throws its hats in the air; one skeleton throws its skull by mistake and catches it. |
 
 Sound: a pop as the signs spring up; a huff of dust and a zip as the tape measure snaps back; the foot's stomp and breaking glass; a boing as the bottle hops; a slam as the signs meet and a stamp thunk on "twelve"; a pop as the hats go up.
 
@@ -269,15 +268,17 @@ Sound: a pop as the signs spring up; a huff of dust and a zip as the tape measur
 - id: plans-for-tuesday
 - act: Faster treatments
 - transition_in: cut
-- cue: "That timeline shift will"
-- time: 30:02.7 to 30:12.3 (9.5 s)
-- voiceover: "That timeline shift will prevent ten point seven billion deaths. Those are individual humans who currently have plans for next Tuesday."
+- cue: "About one hundred and"
+- time: 29:25.9 to 29:47.8 (22.0 s)
+- voiceover: "About one hundred and thirty-nine thousand of you die each day from diseases research could eventually cure. That's fifty-one million a year. Two hundred and twelve fewer years of that prevents ten point seven billion deaths. Those are individual humans who currently have plans for next Tuesday."
 - layer: B, plate tuesday-field
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "That timeline shift will prevent ten point seven billion deaths." | 10.7 billion deaths prevented. | The field of 107 headstones in rows to the horizon. "10,700,000,000" stamps into the sky. Then HOLD, silent, until "individual". | |
+| "About one hundred and thirty-nine thousand of you die each day from diseases research could eventually cure." | 139,000 a day. | A desk calendar on a bare field, one page, "139,000". | |
+| "That's fifty-one million a year." | 139,000 x 365. | The pages riffle to a year: "51,000,000". | |
+| "Two hundred and twelve fewer years of that prevents ten point seven billion deaths." | 51 million x 212 = 10.7 billion prevented. | The field fills with 107 headstones in rows to the horizon. "10,700,000,000" stamps into the sky. Then HOLD, silent, until "individual". | |
 | "Those are individual humans" | Each one is a person. | Row by row, front to horizon, every headstone sinks and a little engraved human rises in its place: a pictogram of 107 people, one for each 100 million. | |
 | "who currently have plans for next Tuesday." | They are alive now, with ordinary plans. | The camera pushes in on the front row: each holds up a desk calendar open on "TUE" with a note: "KID'S RECITAL", "BINGO", "FISHING", "DENTIST". | The dentist reads his note and groans; everyone else beams. |
 
@@ -289,7 +290,7 @@ Sound: a thunk as the number lands; then nothing for the HOLD; a soft pop for ea
 - act: Real-time safety monitoring
 - transition_in: cut
 - cue: "Real-Time Safety Monitoring."
-- time: 30:12.3 to 30:30.7 (18.4 s)
+- time: 29:47.8 to 30:07.1 (19.3 s)
 - voiceover: "Real-Time Safety Monitoring. Remember Vioxx and the smoke detector that works by mail? Your new system will collect every side effect automatically in real time. You'll know "twelve percent got headaches, three percent were severe" BEFORE you take the pill, not after the class action lawsuit."
 - layer: B, plate kitchen
 - status: planned
@@ -311,7 +312,7 @@ Sound: a pen scratch and a squeak as the flag goes up; a slam as the live detect
 - act: Real-time safety monitoring
 - transition_in: cut
 - cue: "The F.D.A. doesn't publish"
-- time: 30:30.7 to 30:35.0 (4.3 s)
+- time: 30:07.1 to 30:12.8 (5.7 s)
 - voiceover: "The F.D.A. doesn't publish these numbers at all. They make you guess."
 - layer: A, host
 - wishonia: skeptical-smile + body-presenting on "The", then smirk-closed + body-palms-down on "They", then sideeye-closed + body-idle on "guess."
@@ -330,7 +331,7 @@ Sound: a ting as the coin flips; a tick as it lands on its edge.
 - act: Treatment rankings
 - transition_in: cut
 - cue: "Treatment Rankings. Currently,"
-- time: 30:35.0 to 30:49.4 (14.4 s)
+- time: 30:12.8 to 30:26.7 (13.8 s)
 - voiceover: "Treatment Rankings. Currently, your doctor picks treatments based on: that drug rep who brought good donuts in two thousand and three, something they half-remember from medical school, whatever the insurance company allows, and vibes."
 - layer: B, plate exam-room
 - bit: **Your doctor spins a carnival prize wheel, and everything that follows is what it prescribed.** Doctor, wheel and patient fill the frame. The bit runs through grape-soda and on across one plate (forty-page-insert): the skeletons who took it, the bottle, its 40 pages over the patient and along the floor to the lawyer, the TV in front of him with the woman who dies and keeps skipping, and a giant sweeper who pushes all of it off for one clean label.
@@ -351,7 +352,7 @@ Sound: a whirr on each spin and a click on each stop; a thunk as the Fat Cat lan
 - act: Treatment rankings
 - transition_in: cut
 - cue: "This is called evidence-based"
-- time: 30:49.4 to 30:57.1 (7.7 s)
+- time: 30:26.7 to 30:35.2 (8.5 s)
 - voiceover: "This is called "evidence-based medicine," which contains the word "evidence" the same way "grape soda" contains the word "grape."."
 - layer: A, host
 - wishonia: skeptical-smile + body-presenting on "This", then smirk-smile + body-presenting on "soda", then smirk-closed + body-hands-hips on "word" (the second)
@@ -370,7 +371,7 @@ Sound: a pop as the can comes up; a peel and a small plop in the mug.
 - act: Treatment rankings
 - transition_in: cut back to the plate as decision-wheel left it
 - cue: "Your decentralized F.D.A. will rank"
-- time: 30:57.1 to 31:03.9 (6.8 s)
+- time: 30:35.2 to 30:41.8 (6.6 s)
 - voiceover: "Your decentralized F.D.A. will rank every treatment by what actually happened to real humans who took it:"
 - layer: B, plate exam-room
 - status: planned
@@ -388,7 +389,7 @@ Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on o
 - act: Outcome labels
 - transition_in: cut
 - cue: "Outcome Labels. Food has"
-- time: 31:03.9 to 31:16.2 (12.3 s)
+- time: 30:41.8 to 30:54.2 (12.4 s)
 - voiceover: "Outcome Labels. Food has nutrition labels. Cigarettes have warning labels. Drugs have forty-page inserts written by lawyers having seizures, which nobody reads, including your doctor."
 - layer: B, plate living-room
 - status: planned
@@ -408,7 +409,7 @@ Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on o
 - act: Outcome labels
 - transition_in: continues on the plate (no seam)
 - cue: "Your television advertisements show"
-- time: 31:16.2 to 31:36.4 (20.2 s)
+- time: 30:54.2 to 31:14.2 (20.0 s)
 - voiceover: "Your television advertisements show a smiling human frolicking through a meadow while a voiceover lists ways the drug might kill you at auctioneer speed. The meadow human does not react to the word "stroke." Side effects include "death," listed between "constipation" and "mild rash," as if your organs failing is roughly as inconvenient as dry skin."
 - layer: B, plate living-room
 - status: planned
@@ -429,7 +430,7 @@ Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on o
 - act: Outcome labels
 - transition_in: continues on the plate (no seam)
 - cue: "The label says individual"
-- time: 31:36.4 to 31:51.1 (14.7 s)
+- time: 31:14.2 to 31:28.9 (14.7 s)
 - voiceover: "The label says "individual results may vary," meaning outcomes range from "cured" to "deceased" (both technically qualifying). It also says "ask your doctor," but your doctor has seven minutes per appointment and just Googled your condition in the hallway."
 - layer: B, plate living-room
 - status: planned
@@ -447,7 +448,7 @@ Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on o
 - act: Outcome labels
 - transition_in: continues on the plate (no seam)
 - cue: "Your new system will produce"
-- time: 31:51.1 to 32:04.5 (13.4 s)
+- time: 31:28.9 to 31:42.5 (13.5 s)
 - voiceover: "Your new system will produce Outcome Labels that tell you what actually happens when real humans take a drug. Not what a marketing department hopes happens. Not what a lawyer is comfortable admitting happens. What happens."
 - layer: B, plate living-room
 - status: planned
@@ -467,7 +468,7 @@ Merged into forty-page-insert: the short plays scenes 16 to 20 as one scene on o
 - act: The Optimitron
 - transition_in: continues on the plate (no seam)
 - cue: "Your decentralized D.F.D.A. figures"
-- time: 32:04.5 to 32:19.8 (15.3 s)
+- time: 31:42.5 to 31:58.0 (15.5 s)
 - voiceover: "Your decentralized D.F.D.A. figures out which treatments work. But your governments also need to know which *policies* work, how much to spend on what, which laws to keep, which to throw away. Your current method is to argue about it on television until someone wins by being louder."
 - layer: B, plate living-room
 - status: planned
@@ -487,7 +488,7 @@ Sound: a switch as the TV clicks over; two yells; the needle's whine; a boom; a 
 - act: The Optimitron
 - transition_in: cut
 - cue: "Back home, the Optimitron"
-- time: 32:19.8 to 32:39.5 (19.7 s)
+- time: 31:58.0 to 32:17.0 (19.0 s)
 - voiceover: "Back home, the Optimitron handles this. It's an appliance. You plug in what ten thousand jurisdictions tried, it tells you which policies actually made people richer or less dead. Its Optimal Budget Generator does budgets; its Optimal Policy Generator does laws."
 - layer: A, host
 - wishonia: happy-smile + body-presenting on "Back", then smirk-closed + body-idle on "handles" (the mug at her lips), then smirk-smile + body-presenting on "appliance.", then happy-smile + body-counting on "richer", then excited-oh + body-excited on "Policy", then smirk-smile + body-hands-hips on "laws."

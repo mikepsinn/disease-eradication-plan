@@ -1,0 +1,83 @@
+<template id="back-soon-template">
+  <!-- back-soon · collage (Part 9, scene 3, plate the-queue). The bit: the FDA is its building, and its door is the
+       dispensary window. "Food": the card FOOD AND DRUG ADMINISTRATION slams over it. "has": a patient walks up with his
+       germ at heel. "not": the building slams its door and folds its arms; BACK SOON swings on the door. "drugs": he
+       knocks, three times. "ninety-five": the door opens a crack and the camera looks in: a wall of 100 pigeonholes,
+       95 of them cobwebs, 5 a bottle. "food-and-drug-related": slam. "problems.": he knocks on; a cobweb strings his
+       knuckles to the door, a beard shoots to the floor and the germ yawns. queue-to-not-die continues this plate (no seam): keep the shared
+       set (G, X, the FDA, P0) the same in both files. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="back-soon" data-width="1920" data-height="1080" data-start="0" data-duration="8.48">
+    <div id="back-soon-weave"></div>
+    <div id="back-soon-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "back-soon", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // ── The shared set (same in queue-to-not-die) ──
+    var G = 860, FX = 1400, FK = 1.45, FFK = 1.41;                    // ground line; the FDA's middle and scales
+    var DOOR = [FX - 96, G - 162 * FK, FX + 93, G - 12 * FK];          // fda-building's open doorway (art 95..225, 345..495)
+    var HP = 470, X0 = 1200;                                           // patient height; the knocker's spot
+    var pk = function (art) { return HP / SZ[art][1]; };
+    var GK = 150 / SZ["germ-grin"][1];
+    var cy = function (s) { return V ? G - 440 / s : G - 260 / s; };   // the ground at y 1400 (9:16) or 800 (16:9)
+    var views = V ? { fda: [1330, cy(1.1), 1.1], door: [(DOOR[0] + DOOR[2]) / 2, (DOOR[1] + DOOR[3]) / 2, 3.6] }
+      : { fda: [1250, cy(0.95), 0.95], door: [(DOOR[0] + DOOR[2]) / 2, (DOOR[1] + DOOR[3]) / 2, 3.6] };
+    var NAME = { text: "FOOD AND DRUG ADMINISTRATION", x: FX - (V ? 70 : 50), y: V ? G - 800 : G - 770, size: 70, width: V ? 860 : 1000, pad: 50, color: "ink", tilt: -2 };
+
+    var cast = {
+      fda: { art: "fda-building", x: FX, y: G, anchor: "bottom", pivot: "bottom", scale: FK, label: [] },
+      fdaF: { art: "fda-folded", x: FX + 70, y: G, anchor: "bottom", pivot: "bottom", scale: FFK, hidden: true, label: [] },
+      fdaF2: { art: "fda-folded", x: FX + 70, y: G, anchor: "bottom", pivot: "bottom", scale: FFK, hidden: true, label: [] },
+      g0: { art: "germ-grin", x: X0 - 120, y: G, anchor: "bottom", pivot: "bottom", scale: GK, hidden: true },
+      p0: { art: "sick-1", x: X0, y: G, anchor: "bottom", pivot: "bottom", scale: pk("sick-1"), hidden: true },
+      beard: { art: "beard", x: X0 + 3, y: G - (717 - 128) * pk("sick-1"), anchor: "top", pivot: "top", scale: 0.5, hidden: true },
+      web: { art: "cobweb", x: X0 + 60, y: G - 330, anchor: "topleft", scale: 0.8, hidden: true },
+      spider: { art: "spider", x: X0 + 120, y: G - 420, anchor: "top", scale: 0.45, hidden: true },
+    };
+    var knock = function (t) { return { at: t, do: "nudge", who: "p0", by: [55, 0] }; };
+    var slam = function (t, from, to) {
+      return [{ at: t, do: "hide", who: from }, { at: t, do: "show", who: to }, { at: t, do: "shake", y: 8, frames: 3 }];
+    };
+    var beats = [
+      { on: "Food", do: "banner", id: "name", text: NAME.text, x: NAME.x, y: NAME.y, size: NAME.size, width: NAME.width, pad: NAME.pad, color: "ink", tilt: NAME.tilt },
+      // a patient walks up, his germ at heel
+      { on: "has", do: "slideIn", who: ["p0", "g0"], from: "left", dist: 1100, over: 14 },
+      { on: "has", offset: 0.5, do: "bob", who: "g0", y: 5, r: 3, speed: 2 },
+    ].concat(slam(cue("not"), "fda", "fdaF"), [
+      { on: "administered", do: "tag", id: "soon", who: "fdaF", text: "BACK SOON", knot: [175, 345], x: FX + 50, y: G - 250, w: 230, h: 95, swing: 6 },
+      knock(cue("drugs")), knock(cue("drugs") + 0.22), knock(cue("drugs") + 0.44),
+      // a crack: the camera looks in at 100 pigeonholes, 95 of them cobwebs
+      { on: "ninety-five", do: "hide", who: ["fdaF", "soon"] }, { on: "ninety-five", do: "show", who: "fda" },
+      { on: "ninety-five", do: "camera", view: "door", dur: 0.35 },
+      { on: "ninety-five", offset: 0.1, do: "pictogram", id: "holes", art: "cobweb", count: 100, cols: 10, box: [DOOR[0] + 10, DOOR[1] + 14, DOOR[2] - 10, DOOR[3] - 6], dur: 0.45, fill: 0.9 },
+      { on: "percent", do: "pictogram", id: "holes", to: "pill-bottle", pick: [7, 23, 46, 68, 91], stagger: 0.1 },
+      { on: "food-and-drug-related", do: "hide", who: "holes" },
+      { on: "food-and-drug-related", do: "camera", view: "fda", dur: 0.3 },
+    ], slam(cue("food-and-drug-related"), "fda", "fdaF2"), [
+      { on: "food-and-drug-related", do: "show", who: "soon" },
+      // he knocks on; a cobweb strings his knuckles to the door, the spider drops in, the germ yawns
+      knock(cue("problems.") - 0.5), knock(cue("problems.") - 0.25),
+      { on: "problems.", do: "pop", who: "web" },
+      { on: "problems.", offset: 0.25, do: "pop", who: "spider" },
+      { on: "problems.", offset: 0.25, do: "bob", who: "spider", y: 20, r: 0, speed: 1.4 },
+      knock(cue("problems.") + 0.5),
+      { on: "problems.", offset: 0.6, do: "shiver", who: "g0", dur: 0.6, amp: 3, rot: 8 },
+      // the beard shoots to the floor
+      { on: "problems.", offset: 0.15, do: "pop", who: "beard", squash: true },
+    ]);
+
+    KIT.collage({ id: ID, seed: 903, plate: [-400, -900, 3400, 2200], views: views, view: "fda", cast: cast, beats: beats });
+  </script>
+</template>

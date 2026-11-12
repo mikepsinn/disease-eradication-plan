@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:04.6
+duration: 1:06.6
 message: "95% of human diseases have no approved treatment, and at the current rate testing the untested uses of 9,500 known safe compounds would take 443 years, far longer than any viewer will live."
 arc: Title card (the explorer runs back, chased) → the disease drinks Wishonia's coffee → the FDA window is shut, BACK SOON → a transport department that drives you off a cliff → the queue to not die, skeletons at the back → the warehouse behind the window and the 443-year wait → the readout's 443 years against YOU's 80, and a calm Earth with its paper
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 9, "The Unexplored Therapeutic Frontier"
-audio: index-manual.cbaf659d.mp3, 16:10.6 to 17:15.2
+audio: index-manual.7ce6b2b2.mp3, 15:45.2 to 16:51.8
 version: v3
 ---
 
@@ -42,7 +42,7 @@ version: v3
 - act: Title
 - transition_in: cut (up from black)
 - cue: "The Unexplored Therapeutic Frontier."
-- time: 16:10.6 to 16:14.2 (3.6 s)
+- time: 15:45.2 to 15:48.8 (3.6 s)
 - voiceover: "The Unexplored Therapeutic Frontier."
 - layer: A, title card
 - status: planned
@@ -60,7 +60,7 @@ Sound: a whirr; a yelp as she runs back.
 - act: No treatments
 - transition_in: iris in on Wishonia's face
 - cue: "Ninety-five percent of your diseases"
-- time: 16:14.2 to 16:18.8 (4.6 s)
+- time: 15:48.8 to 15:53.7 (4.9 s)
 - voiceover: "Ninety-five percent of your diseases have zero F.D.A.-approved treatments."
 - layer: A, host
 - wishonia: happy-smile + body-presenting; smirk-smile + body-open-palms on "zero"; sideeye-closed + body-idle on "treatments."
@@ -79,7 +79,7 @@ Sound: a typewriter clatter as the grid fills; a slurp.
 - act: No treatments
 - transition_in: cut
 - cue: "This means your Food and Drug Administration"
-- time: 16:18.8 to 16:26.7 (7.9 s)
+- time: 15:53.7 to 16:02.2 (8.5 s)
 - voiceover: "This means your Food and Drug Administration has not administered drugs for ninety-five percent of food-and-drug-related problems."
 - layer: B, plate the-queue
 - status: planned
@@ -98,7 +98,7 @@ Sound: a rattle and a slam; three knocks; a whoosh as the beard drops.
 - act: No treatments
 - transition_in: cut
 - cue: "It's like having a Department of Transportation"
-- time: 16:26.7 to 16:31.2 (4.5 s)
+- time: 16:02.2 to 16:06.8 (4.6 s)
 - voiceover: "It's like having a Department of Transportation that hasn't gotten around to roads yet."
 - layer: B, plate no-roads
 - status: planned
@@ -116,7 +116,7 @@ Sound: a horn honk; a rattling engine; a falling slide whistle.
 - act: The wait
 - transition_in: cut (back to the-queue, on back-soon's last framing)
 - cue: "Only fifteen diseases"
-- time: 16:31.2 to 16:48.6 (17.4 s)
+- time: 16:06.8 to 16:24.4 (17.6 s)
 - voiceover: "Only fifteen diseases get their first effective treatment each year. Six thousand, six hundred and fifty diseases are still waiting. There is a queue to not die, and it is longer than any queue humans have ever voluntarily stood in, which is saying something because you invented Disneyland."
 - layer: B, plate the-queue
 - status: planned
@@ -137,8 +137,8 @@ Sound: a clank as the board lands; a slam and a splat on the nose; a whoosh as t
 - act: The wait
 - transition_in: same plate (no seam): the camera pulls back from the end of the line
 - cue: "There are nine thousand five hundred"
-- time: 16:48.6 to 17:05.5 (16.8 s)
-- voiceover: "There are nine thousand five hundred known safe compounds, and ninety-nine point seven percent of their potential uses have never been tested. At the current discovery rate, finding treatments for all of them will take approximately four hundred and forty-three years."
+- time: 16:24.4 to 16:42.8 (18.4 s)
+- voiceover: "There are nine thousand five hundred known safe compounds, and ninety-nine point seven percent of their potential uses have never been tested. At the current discovery rate, finding treatments for all of those waiting diseases will take approximately four hundred and forty-three years."
 - layer: B, plate the-queue
 - status: planned
 
@@ -157,7 +157,7 @@ Sound: a typewriter clatter as the tags flip; a huff of dust; a squeak per rung;
 - act: The wait
 - transition_in: cut
 - cue: "You personally will be dead"
-- time: 17:05.5 to 17:15.2 (9.8 s)
+- time: 16:42.8 to 16:51.8 (9.0 s)
 - voiceover: "You personally will be dead within eighty years, which I mention not to be rude but because you seem weirdly calm about this."
 - layer: A, host
 - wishonia: happy-smile + body-presenting; neutral-closed + body-palms-down on "rude"; skeptical-closed + body-palms-down on "weirdly"

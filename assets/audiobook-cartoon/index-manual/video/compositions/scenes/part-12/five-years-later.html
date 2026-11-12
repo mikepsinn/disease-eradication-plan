@@ -1,0 +1,84 @@
+<template id="five-years-later-template">
+  <!-- five-years-later · collage (Part 12, scene 5; the fda-office plate, at the far end of vioxx-by-fax's phone
+       wire). Over 2004 the form creeps in off the wire and a human reads it through his magnifying glass, beside the
+       FDA's building, sipping. "Five years": the camera pulls back along the timeline as headstones stack over each
+       year from 1999 to 2004, each column taller than the last, until they tower over the building. "noticed": it
+       turns round in fright; "pattern.": a red trend line rules itself across the tops. "This is your safety system":
+       a sign on two chains, SAFETY SYSTEM, drops on the building and flattens it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="five-years-later" data-width="1920" data-height="1080" data-start="0" data-duration="9.36">
+    <div id="five-years-later-weave"></div>
+    <div id="five-years-later-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "five-years-later", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The fda-office plate (as in vioxx-by-fax): the floor and timeline on G, 1999 at x 400, 2004 at x 4400.
+    var G = 840, WIRE = G - 520, CH_H = V ? 4200 : 1700;
+    var CH = KIT.collage.axes({ box: [400, G - CH_H, 4400, G], x: [1999, 2004, 1], y: [0, 60000, 60000], yLabels: 1e9, size: V ? 120 : 80 });
+    // The dead so far, by year: 55,000 by 2004.
+    var DEAD = [[1999, 4000], [2000, 15000], [2001, 26000], [2002, 37000], [2003, 48000], [2004, 55000]];
+    var X = V ? { reader: 4560, fda: 5040 } : { reader: 4600, fda: 5180 };
+    var PH = 560, FH = 760, RK = PH / SZ["engineer"][1], FK = FH / SZ["fda-sip"][1];
+    var READ = [X.reader + 150, G - 470];
+    var cy = function (s) { return G - 440 / s; };            // 9:16: the ground at y 1400, above the captions
+    var views = V ? {
+      read: [4760, cy(0.95), 0.95], wide: [2700, cy(0.21), 0.21], fda: [X.fda - 40, cy(0.8), 0.8],
+    } : {
+      read: [4820, G - 300, 1.1], wide: [2800, G - 720, 0.37], fda: [X.fda - 150, G - 470, 0.75],
+    };
+    var fda = function (art, hidden) { return { art: art, x: X.fda, y: G, anchor: "bottom", pivot: "bottom", scale: FH / SZ[art][1], hidden: hidden,
+      label: { text: "F.D.A.", at: art === "fda-sip" ? [174, 189] : [232, 185], width: 170, size: 46, plaque: true } }; };
+    var SK = (V ? 2.3 : 2.0);
+    var cast = {
+      reader: { art: "engineer", x: X.reader, y: G, anchor: "bottom", pivot: "bottom", scale: RK },
+      fda: fda("fda-sip"), fdaS: fda("fda-scared", true),
+      form: { art: "pdf", x: 3700, y: WIRE - 120, scale: 0.6, pivot: "bottom", label: { text: "FORM.PDF", at: [106, 52], width: 170, size: 40 } },
+      sign: { art: "safety-sign", x: X.fda, y: -2600, anchor: "bottom", pivot: "bottom", scale: SK,
+        label: { text: "SAFETY SYSTEM", at: [101, 340], width: 160, size: 40, plaque: true } },
+    };
+    var beats = [
+      { at: 0, do: "chart", chart: CH },
+      { at: 0, do: "line", id: "wire", points: [[-2000, WIRE], [X.reader + 60, WIRE]], dur: 0.01, color: "ink", width: 5 },
+      // the form creeps in off the wire, and the human reads it
+      { at: 0, do: "move", who: "form", to: [X.reader + 40, WIRE - 120], dur: cue("human") + 0.1 },
+      { at: 0.2, do: "shiver", who: "form", dur: 0.5, amp: 3, rot: 4 },
+      { on: "human", offset: 0.15, do: "move", who: "form", to: READ, dur: 0.3, arc: 40, scale: 0.75 },
+      { on: "read", do: "nudge", who: "reader", by: [18, 0] },
+      { on: "it.", do: "shiver", who: "reader", dur: 0.6, amp: 1, rot: 1.5 },
+      { on: "Five", do: "hide", who: "wire" },
+      // five years: pull back along the timeline as the headstones stack over each year
+      { on: "Five", do: "camera", view: "wide", dur: cue("later,") - cue("Five") },
+    ];
+    DEAD.forEach(function (d, i) {
+      beats.push({ at: cue("years") + 0.4 * i, do: "pile", id: "col" + i, chart: CH, x: d[0], to: d[1], art: "headstone",
+        height: V ? 560 : 250, dur: 0.8 + 0.15 * i, accel: 0.6, jitter: 5, tilt: 2 });
+    });
+    beats = beats.concat([
+      // noticed: the building turns round in fright; the trend line rules itself across the tops
+      { on: "noticed", do: "swap", who: "fda", to: "fdaS" },
+      { on: "noticed", do: "hop", who: "fdaS", height: 80 },
+      { on: "pattern.", do: "line", id: "trend", chart: CH, points: DEAD.map(function (d) { return [d[0], d[1] + 3500]; }), dur: 0.7, color: "red", width: V ? 22 : 12, front: true },
+      { on: "pattern.", offset: 0.6, do: "shiver", who: "fdaS", dur: 0.5, amp: 4, rot: 3 },
+      // This is your safety system: the sign drops on the building and flattens it
+      { on: "This", do: "camera", view: "fda", dur: 0.5 },
+      { on: "safety", do: "move", who: "sign", to: [X.fda, G - FH * 0.92 - SK * 379 / 2], dur: 0.22, ease: "linear" },
+      { on: "system.", offset: 0.05, do: "move", who: "sign", to: [X.fda, G - 6 - SK * 379 / 2], dur: 0.12, ease: "linear" },
+      { on: "system.", offset: 0.05, do: "flatten", who: "fdaS" },
+      { on: "system.", offset: 0.15, do: "shake", frames: 4, y: 10 },
+      { on: "system.", offset: 0.6, do: "shiver", who: "sign", dur: 0.6, amp: 2, rot: 2 },
+    ]);
+    KIT.collage({ id: ID, seed: 1205, plate: [-4000, -9000, 9000, 3000], views: views, view: "read", cast: cast, beats: beats });
+  </script>
+</template>

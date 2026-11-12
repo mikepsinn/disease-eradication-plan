@@ -1,0 +1,84 @@
+<template id="greed-arrow-template">
+  <!-- greed-arrow · collage (Part 21, scene 9), the greed-field. A giant pointing hand on a post, GREED on its board,
+       points left at a dust cloud where the cast of the road brawl (hats flying out of it). YOU puts his shoulder to it.
+       "diseases": the hand swings round to point right at three grinning germs (clank) and they stop grinning.
+       "instead": the brawl rolls along the finger onto the germs; "each": it clears, the germs are flat as rugs, and the
+       fat cat, the weapons factory and the Politician stand on them, grinning. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="greed-arrow" data-width="1920" data-height="1080" data-start="0" data-duration="4.452">
+    <div id="greed-arrow-weave"></div>
+    <div id="greed-arrow-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V, SZ = KIT.collage.SIZES;
+      var G = V ? 1360 : 930, K = V ? 0.75 : 1;               // the ground, and the size of everything
+      var MID = V ? 470 : 960, BRAWL = V ? 170 : 400, GERMS = V ? [740, 870, 1000] : [1400, 1600, 1800];
+      var SIGNK = 1.8 * K, PIVOT = [MID, G - (340 - 15) * SIGNK - 40 * K];
+      var cast = {};
+      // the brawl: two of them visible at its edges, the cloud over them
+      cast.f1 = { art: "fat-cat-push", x: BRAWL - 230 * K, y: G, anchor: "bottom", pivot: "bottom", scale: 1.0 * K };
+      cast.f2 = { art: "politician-shout", x: BRAWL + 250 * K, y: G, anchor: "bottom", pivot: "bottom", scale: 1.1 * K };
+      cast.f3 = { art: "factory-anvil", x: BRAWL, y: G, anchor: "bottom", pivot: "bottom", scale: 0.9 * K };
+      cast.dust = { art: "cloud-puff", x: BRAWL, y: G - 230 * K, scale: 2.2 * K };
+      var HATS = ["top-hat", "hard-hat", "fedora", "bowler"], hk = { "top-hat": 0.35, "hard-hat": 0.8, fedora: 0.7, bowler: 0.7 };
+      HATS.forEach(function (h, i) { cast["hat" + i] = { art: h, x: BRAWL, y: G - 300 * K, scale: hk[h] * K, hidden: true }; });
+      // the sign and its hand (the hand hangs from its cuff; turned a quarter it points left)
+      cast.post = { art: "sign-board", x: MID, y: G, anchor: [107, 340], scale: SIGNK, label: { text: "GREED", at: [107, 80], width: 170, size: 54 } };
+      cast.hand = { art: "pointing-hand", x: PIVOT[0], y: PIVOT[1], anchor: [87, 10], pivot: [87, 10], scale: 1.05 * K };
+      cast.you = { art: "you-push", x: MID - 300 * K, y: G, anchor: "bottom", pivot: "bottom", scale: 0.5 * K, hidden: true };
+      // the germs, and the winners who end up standing on them
+      var GA = ["germ-grin", "germ-grin", "germ-grin"];
+      GERMS.forEach(function (x, i) {
+        cast["g" + i] = { art: GA[i], x: x, y: G, anchor: "bottom", pivot: "bottom", scale: 1.0 * K };
+        cast["s" + i] = { art: "germ", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85 * K, hidden: true };
+      });
+      var WIN = ["fat-cat", "factory-pay", "politician"], wk = { "fat-cat": 0.95, "factory-pay": 0.9, politician: 0.62 };
+      WIN.forEach(function (w, i) { cast["w" + i] = { art: w, x: GERMS[i], y: G - 30 * K, anchor: "bottom", pivot: "bottom", scale: wk[w] * K, hidden: true }; });
+
+      var beats = [
+        { at: 0, do: "hinge", who: "hand", angle: 90, frames: 1 },
+        { at: 0, do: "shiver", who: ["dust", "f1", "f2", "f3"], dur: 2.3, amp: 7, rot: 3 },
+        { on: "You", do: "slideIn", who: "you", from: "left", dist: V ? 700 : 1000, over: 12 },
+        { on: "point", do: "nudge", who: "you", by: [24, 0] },
+        { on: "greed", do: "nudge", who: "you", by: [24, 0] },
+        { on: "at", do: "nudge", who: "you", by: [30, 0] },
+        // "diseases": it swings round to point at the germs, and they stop grinning
+        { on: "diseases", do: "hinge", who: "hand", angle: -180, frames: 3 },
+        { on: "diseases", offset: 0.3, do: "shake", x: 8, frames: 3 },
+        { on: "diseases", offset: 0.35, do: "hide", who: ["g0", "g1", "g2"] },
+        { on: "diseases", offset: 0.35, do: "show", who: ["s0", "s1", "s2"] },
+        { on: "diseases", offset: 0.4, do: "shiver", who: ["s0", "s1", "s2"], dur: 0.4, amp: 4, rot: 3 },
+        // "instead of each other": the brawl rolls along the finger onto them
+        { on: "instead", do: "move", who: ["dust", "f1", "f2", "f3"], by: [GERMS[1] - BRAWL, 0], dur: 0.8, ease: "smooth" },
+        { on: "instead", do: "shiver", who: ["dust", "f1", "f2", "f3"], dur: 0.9, amp: 9, rot: 4 },
+        { on: "each", do: "flatten", who: ["s0", "s1", "s2"] },
+        { on: "each", do: "hide", who: ["f1", "f2", "f3"] },
+        { on: "each", do: "pop", who: "dust", out: true },
+        { on: "each", offset: 0.05, do: "pop", who: "w0", squash: true },
+        { on: "each", offset: 0.15, do: "pop", who: "w1", squash: true },
+        { on: "each", offset: 0.25, do: "pop", who: "w2", squash: true },
+        { on: "other.", offset: 0.5, do: "bob", who: ["w0", "w1", "w2"], y: 6, r: 2, speed: 3 },
+      ];
+      // hats fly out of the brawl the whole time it lasts
+      HATS.forEach(function (h, i) {
+        var t = 0.15 + i * 0.5;
+        beats.push({ at: t, do: "pop", who: "hat" + i });
+        beats.push({ at: t, do: "move", who: "hat" + i, by: [(i % 2 ? 1 : -1) * (180 + 60 * i) * K, -(360 + 50 * i) * K], dur: 0.35, turn: (i % 2 ? 1 : -1) * 120 });
+        beats.push({ at: t + 0.4, do: "drop", who: "hat" + i, dur: 0.6, drift: (i % 2 ? 1 : -1) * 120, spin: 200 });
+      });
+      KIT.collage({ id: "greed-arrow", seed: 2109, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

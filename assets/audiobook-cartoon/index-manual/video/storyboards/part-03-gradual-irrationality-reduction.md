@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:30.2
+duration: 1:30.0
 message: "Humans cannot stop being illogical all at once, so the plan moves 1% of murder money to medicine money in year one and a little more each year, until war is forgotten."
 arc: Title card (a snail pushes the bar to 1%) → Wishonia's dusty manual unfolds 12,000 years of war → the nations bonk each other for 10,000 years and keep going as skeletons → the toddlers nap through a mushroom cloud → a dog doing calculus catches fire → the new manual, a bribe on a spring → the funnel from year 1 to year 20 → paint chips swapped for peas → the dog turns down the last chip
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 3, "The Gradual Irrationality Reduction Program"
-audio: index-manual.cbaf659d.mp3, 04:58.2 to 06:28.4
+audio: index-manual.7ce6b2b2.mp3, 04:33.7 to 06:03.7
 version: v3
 ---
 
@@ -55,7 +55,7 @@ version: v3
 - act: Title
 - transition_in: up from black (Part 2 irises out to black)
 - cue: "The Gradual Irrationality Reduction Program"
-- time: 04:58.2 to 05:02.3 (4.1 s)
+- time: 04:33.7 to 04:37.9 (4.1 s)
 - voiceover: "The Gradual Irrationality Reduction Program."
 - layer: A, title card
 - status: planned
@@ -72,7 +72,7 @@ Sound: the card's whirr on "Gradual"; a tick at 1%.
 - act: How Wishonia's planet did it
 - transition_in: iris in on Wishonia's face (the title card ends on black)
 - cue: "We ended wars using"
-- time: 05:02.3 to 05:17.6 (15.4 s)
+- time: 04:37.9 to 04:53.4 (15.5 s)
 - voiceover: "We ended wars using this exact program four thousand, two hundred and ninety-seven years ago. Before that we'd been fighting for twelve thousand years, which now seems like quite a long time to do something nobody enjoyed."
 - layer: A, host
 - wishonia: big, happy-smile + body-hand-chest; thinking-closed + body-thinking on "Before"; skeptical-closed + body-shrug on "nobody"
@@ -94,7 +94,7 @@ Sound: a huff of dust on "exact"; one small offstage bell ding on "four thousand
 - act: Why not all at once
 - transition_in: cut
 - cue: "Your nations have been hitting"
-- time: 05:17.6 to 05:23.8 (6.2 s)
+- time: 04:53.4 to 04:59.6 (6.2 s)
 - voiceover: "Your nations have been hitting each other for ten thousand years because the other one hit them last."
 - layer: B, plate the-strait
 - status: planned
@@ -113,7 +113,7 @@ Sound: a bonk per hit, speeding to a drumroll; a whirr as the calendar pages fly
 - act: Why not all at once
 - transition_in: same plate (no seam): the camera travels from the islands to the house
 - cue: "This is the conflict resolution"
-- time: 05:23.8 to 05:38.8 (14.9 s)
+- time: 04:59.6 to 05:14.5 (14.9 s)
 - voiceover: "This is the conflict resolution strategy of four-year-olds, except four-year-olds eventually get tired and take a nap. Your species invented naps and then refused to apply them to geopolitics."
 - layer: B, plate the-strait
 - status: planned
@@ -134,7 +134,7 @@ Sound: a toy bonk per hit, slowing; a yawn on "tired"; a soft thud on "nap." and
 - act: Why not all at once
 - transition_in: cut
 - cue: "You can't just stop being"
-- time: 05:38.8 to 05:45.9 (7.1 s)
+- time: 05:14.5 to 05:21.7 (7.1 s)
 - voiceover: "You can't just stop being illogical all at once. That would be like teaching a dog calculus before it learns to sit."
 - layer: B, plate the-classroom
 - status: planned
@@ -153,7 +153,7 @@ Sound: chalk squeaks on "You"; a steam whistle on "calculus"; a whoosh of fire o
 - act: The plan
 - transition_in: cut
 - cue: "So this manual shows"
-- time: 05:45.9 to 05:52.9 (7.0 s)
+- time: 05:21.7 to 05:28.7 (7.0 s)
 - voiceover: "So this manual shows you how to bribe humanity into being less irrational gradually:"
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; smirk-smile + body-open-palms on "bribe"; lookright-smile + body-idle on "gradually:" (the lookright head looks to screen left, so the snail comes in on that side)
@@ -173,7 +173,7 @@ Sound: a sparkle on "manual"; a boing on "bribe".
 - act: The plan
 - transition_in: cut
 - cue: "Year one"
-- time: 05:52.9 to 06:14.5 (21.6 s)
+- time: 05:28.7 to 05:50.4 (21.7 s)
 - voiceover: "Year one: Move one percent of murder money to medicine money (baby steps). Year two: "Hey, we didn't die! Let's do two percent!". Year five: "Remember when we spent money on bombs? That was weird.". Year ten: "What's a war?". Year twenty: "We used to WHAT?!"."
 - layer: B, plate the-funnel
 - status: planned
@@ -198,7 +198,7 @@ Sound: a tick per calendar flip on each "Year"; a ding per seal flip through the
 - act: The plan
 - transition_in: cut
 - cue: "It's like weaning a baby"
-- time: 06:14.5 to 06:24.4 (9.9 s)
+- time: 05:50.4 to 06:00.2 (9.8 s)
 - voiceover: "It's like weaning a baby off eating paint chips. You can't just take away all the paint chips at once. They'll cry. You have to gradually replace paint chips with food"
 - layer: B, plate the-kitchen
 - status: planned
@@ -218,7 +218,7 @@ Sound: a crunch on "chips."; a whoosh as the bowl goes up on "all"; a wail and a
 - act: The plan
 - transition_in: cut
 - cue: "until they forget"
-- time: 06:24.4 to 06:28.4 (3.9 s)
+- time: 06:00.2 to 06:03.7 (3.5 s)
 - voiceover: "until they forget paint chips were ever an option."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; sideeye-closed + body-idle on "option."

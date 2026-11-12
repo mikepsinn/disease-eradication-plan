@@ -1,0 +1,33 @@
+<template id="march-demo-template">
+  <!-- march-demo · kit demo (scratch): six YOUs walk a winding road in single file and queue at its end; every other one x-rays -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="march-demo" data-width="1920" data-height="1080" data-start="0" data-duration="7.3">
+    <div id="march-demo-weave"></div>
+    <div id="march-demo-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+
+      var path = V ? [[-120, 1300], [300, 1250], [600, 1350], [900, 1200], [1000, 1200]] : [[-150, 900], [500, 820], [900, 940], [1400, 820], [1750, 860]];
+      KIT.collage({
+        id: "march-demo", seed: 405,
+        beats: [
+          { at: 0.2, do: "march", id: "walkers", art: "you-walk", count: 6, height: V ? 220 : 260, path: path, speed: V ? 330 : 420 },
+          { at: 5.4, do: "xray", who: "walkers", every: 2, stagger: 0.15, art: "you-skeleton-walk" },
+        ],
+      });
+    })();
+  </script>
+</template>

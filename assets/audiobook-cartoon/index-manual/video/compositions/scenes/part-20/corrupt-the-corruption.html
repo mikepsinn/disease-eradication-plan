@@ -1,0 +1,56 @@
+<template id="corrupt-the-corruption-template">
+  <!-- corrupt-the-corruption · collage host shot (Part 20, scene 5). Wishonia presents the Politician, sold, beside her
+       console, a war bill still sticking out of his belly. "surprisingly affordable": a CLEARANCE tag drops onto his tie
+       and he hops, grin undimmed. "corrupt the corruption": his tie flips from war red to teal and the bill's missile
+       seal flips to a cross. He grins exactly the same grin. (The teal tie is the same cut-out's tie, clipped and
+       hue-rotated in code.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="corrupt-the-corruption" data-width="1920" data-height="1080" data-start="0" data-duration="5.88">
+    <div id="corrupt-the-corruption-weave"></div>
+    <div id="corrupt-the-corruption-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "corrupt-the-corruption", V = KIT.V, SZ = KIT.collage.SIZES;
+      var PX = V ? 800 : 1640, FEET = V ? 1430 : 1075, PK = V ? 1.05 : 1.6;
+      var PW = SZ["politician-red"][0], PH = SZ["politician-red"][1];
+      var at = function (ax, ay) { return [PX - PW * PK / 2 + ax * PK, FEET - PH * PK + ay * PK]; };
+      // His tie, in art px (a little suit grey round it, which the hue turn leaves grey).
+      var TIE = [[114, 94], [140, 94], [157, 150], [134, 196], [99, 152]];
+      var BELLY = at(150, 222), BK = V ? 0.3 : 0.42;
+      var pol = function (extra) { var o = { art: "politician-red", x: PX, y: FEET, anchor: "bottom", pivot: "bottom", scale: PK }; for (var k in extra) o[k] = extra[k]; return o; };
+      var cast = {
+        pol: pol({}),
+        tieT: pol({ clip: TIE, hidden: true }),
+        bill: { art: "bill-war", x: BELLY[0], y: BELLY[1], scale: BK },
+        billM: { art: "bill-med", x: BELLY[0], y: BELLY[1], scale: BK, hidden: true },
+      };
+      var tag = V ? { x: PX - 230, y: FEET - 150, w: 400, h: 150 } : { x: PX - 470, y: FEET - 430, w: 480, h: 170 };
+      var beats = [
+        { at: -1, do: "move", who: ["bill", "billM"], by: [0, 0], turn: -18, dur: 0.01 },
+        { at: 0, do: "bob", who: ["pol", "bill"], y: 3, r: 0.6, speed: 1.4, until: "surprisingly" },
+        // "surprisingly affordable.": the CLEARANCE tag catches on his tie
+        { on: "surprisingly", do: "tag", id: "clear", who: "pol", text: "CLEARANCE", knot: [128, 150], x: tag.x, y: tag.y, w: tag.w, h: tag.h, swing: 5 },
+        { on: "affordable.", offset: 0.2, do: "hop", who: ["pol", "bill"], height: 26 },
+        // "corrupt": the tie goes teal and the seal goes to a cross
+        { on: "corrupt", do: "show", who: "tieT" },
+        { on: "corrupt", do: "glow", who: "tieT", size: V ? 220 : 320, dur: 0.6 },
+        { on: "corrupt", do: "swap", who: "bill", to: "billM" },
+        { on: "corruption.", n: 2, offset: 0.2, do: "hop", who: ["pol", "tieT", "billM"], height: 20 },
+      ];
+      KIT.collage({ id: ID, seed: 2005, host: true, cast: cast, beats: beats });
+      document.getElementById(ID + "-tieT").querySelector("img").style.filter = "hue-rotate(172deg) saturate(0.9) brightness(0.92)";
+    })();
+  </script>
+</template>

@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:15.7
+duration: 1:15.8
 message: "Every group's greed pulls the same way, so humanity may cure disease by accident; the viewer's part is one vote at warondisease.org and two friends, while 104 humans stop every minute."
 arc: Title card (a padlock snaps shut on CHOICE) → Wishonia's halo rolls away when she says it is right → four greedy groups take four baits and pull the treaty cart four ways → the baits line up, the cart runs over two diseases and Death himself, and the fat cat walks into a signpost → cheese, a genius invention, and the manual takes its medal → one vote on a board built for billions, two friends hooked in, the voters branching across a bare plain → the Reaper's deli, 104 a minute, and the vote that hooks 2.6 humans out of the line → the final stamp, and the alien saucers leave on their strings
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 26, "The Part Where Humanity Has No Choice"
-audio: index-manual.cbaf659d.mp3, 55:37.7 to 56:53.5
+audio: index-manual.7ce6b2b2.mp3, 54:50.1 to 56:05.9
 version: v3
 ---
 
@@ -56,7 +56,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "The Part Where Humanity Has No Choice"
-- time: 55:37.7 to 55:41.0 (3.3 s)
+- time: 54:50.1 to 54:53.5 (3.4 s)
 - voiceover: "The Part Where Humanity Has No Choice."
 - layer: A, title card
 - status: planned
@@ -73,7 +73,7 @@ Sound: a projector whirr from "The"; a clank as the padlock snaps shut on "Choic
 - act: Everyone's greed
 - transition_in: iris in on her face
 - cue: "The twist"
-- time: 55:41.0 to 55:47.4 (6.3 s)
+- time: 54:53.5 to 54:59.9 (6.4 s)
 - voiceover: "The twist: you might do this anyway. Not because it's right (though it is), but because:"
 - layer: A, host
 - wishonia: big, smirk-smile + body-counting (one finger up); happy-smile + body-hand-chest on "right"; smirk-smile + body-idle on "because:"
@@ -93,7 +93,7 @@ Sound: a sparkle as the halo comes down on "right"; a ding on "is),"; a falling 
 - act: Everyone's greed
 - transition_in: cut
 - cue: "The rich humans want"
-- time: 55:47.4 to 56:15.4 (28.0 s)
+- time: 54:59.9 to 55:27.8 (27.9 s)
 - voiceover: "The rich humans want two hundred and seventy-two percent returns (they're very greedy). The politicians want to keep their jobs (they're very vain). The voters want free healthcare (they're very sick). The explosion manufacturers want money (they don't care where it comes from). Everyone's greed aligns perfectly to accidentally save humanity. It's like you're going to cure death by mistake while trying to get rich. Humans aren't stupid."
 - layer: B, plate treaty-road (one road, the camera travels)
 - bit: **Four selfish people each chase their own bait on a pole, and accidentally drag the cart of cures.** A tug of war on one road, each one big in turn. Their ropes swing into one line and snap taut, and the cart rolls over the Reaper mid-sentence.
@@ -118,7 +118,7 @@ Sound: a stamp on "percent"; a slide up on "very"; a cash register on "greedy" a
 - act: You can do this
 - transition_in: cut
 - cue: "You invented cheese"
-- time: 56:15.4 to 56:25.5 (10.1 s)
+- time: 55:27.8 to 55:37.8 (10.0 s)
 - voiceover: "You invented cheese, which is milk you left out until it went bad but in a good way. That's genius. You just need to apply that same innovation to not dying."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; excited-open + body-wide-gesture on "genius."; smirk-smile + body-point-right on "apply"
@@ -140,7 +140,7 @@ Sound: a slide up on "cheese"; a pop on "bad" and a ding when the cap hits; a sp
 - act: The ask
 - transition_in: cut
 - cue: "Go to war on disease dot org"
-- time: 56:25.5 to 56:34.9 (9.5 s)
+- time: 55:37.8 to 55:47.4 (9.6 s)
 - voiceover: "Go to war on disease dot org and cast your vote in the largest referendum in human history. Get two friends to do the same. That's how the doubling starts."
 - layer: B, plate plain
 - bit: **The largest referendum in human history has one voter, and then it does not.** YOU types; two friends arrive; each brings two, until the frame is packed and the whole plate is people.
@@ -161,7 +161,7 @@ Sound: typewriter on "war"; a boing on "cast"; a ding on "vote"; a whoosh on "re
 - act: The ask
 - transition_in: cut
 - cue: "Every minute of delay"
-- time: 56:34.9 to 56:46.4 (11.5 s)
+- time: 55:47.4 to 55:58.8 (11.4 s)
 - voiceover: "Every minute of delay, one hundred and four humans permanently stop. Your vote saves two point six lives and prevents four hundred and sixty-eight thousand hours of suffering."
 - layer: B, plate deli
 - bit: **The Reaper's deli never stops, and the line shrinks by your vote.** He rings the bell every 0.576 s, whoever is at the counter turns into a skeleton and strolls out through DELETED, and the line moves up.
@@ -182,7 +182,7 @@ Sound: a bell on every ring; a stamp on "four"; a ding on "vote"; a bell and a z
 - act: The verdict
 - transition_in: cut
 - cue: "The universe is offering you"
-- time: 56:46.4 to 56:53.5 (7.1 s)
+- time: 55:58.8 to 56:05.9 (7.1 s)
 - voiceover: "The universe is offering you a world without war and disease, and you're thinking about it. This is why aliens don't visit."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; skeptical-closed + body-idle on "thinking"; smirk-smile + body-palms-down on "aliens"; sideeye-closed + body-palms-down on "visit."

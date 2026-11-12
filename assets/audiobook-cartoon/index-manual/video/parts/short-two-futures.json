@@ -3,38 +3,22 @@
   "title": "Short: two futures (Future A)",
   "storyboard": "storyboards/part-25-choose-your-own-adventure.md",
   "audio": {
-    "start": 3132.8,
-    "end": 3229.6
+    "start": 3102.922,
+    "end": 3188.139
   },
   "scenes": [
     {
       "id": "future-a-2027",
       "file": "compositions/scenes/short-two-futures/future-a-2027.html",
       "cue": "Future",
-      "approx": 3133.0,
+      "approx": 3103.124,
       "layer": "B"
-    },
-    {
-      "id": "audit-side-eye",
-      "file": "compositions/scenes/short-two-futures/audit-side-eye.html",
-      "cue": "audit.",
-      "approx": 3190.4,
-      "layer": "A",
-      "wishonia": [
-        {
-          "cue": "audit.",
-          "expr": "sideeye",
-          "rest": "closed",
-          "body": "arms-crossed",
-          "mode": "big"
-        }
-      ]
     },
     {
       "id": "rot-in-place",
       "file": "compositions/scenes/short-two-futures/rot-in-place.html",
       "cue": "Your",
-      "approx": 3191.5,
+      "approx": 3153.884,
       "layer": "B"
     }
   ],
@@ -162,24 +146,6 @@
       "cue": "ones.",
       "sfx": "slam",
       "volume": 0.5
-    },
-    {
-      "scene": "future-a-2027",
-      "cue": "collapses",
-      "sfx": "thunk",
-      "volume": 0.45
-    },
-    {
-      "scene": "future-a-2027",
-      "cue": "evade",
-      "sfx": "whoosh",
-      "volume": 0.35
-    },
-    {
-      "scene": "audit-side-eye",
-      "cue": "audit.",
-      "sfx": "crickets",
-      "volume": 0.35
     },
     {
       "scene": "rot-in-place",

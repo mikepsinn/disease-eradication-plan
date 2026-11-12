@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 4:18.5
+duration: 3:56.9
 message: "Earth may be eligible for optimization: its species only does things for paper, and it spends 604 papers on weapons for every 1 on testing which medicines work."
 arc: Theme song music video → title card → the Reaper squeezes into the family portrait → one small Earth under 122 nuclear winters → Wishonia at her console: the stamp, her nameplate, 4,297 years → what she noticed (the atom cut, fire on fire, EARTH crossed out to DIRT, the Pentagon) → a town that moves only for papers → the 604 bar
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 1, "Opening"
-audio: index-manual.cbaf659d.mp3, 00:00.0 to 04:18.5
+audio: index-manual.7ce6b2b2.mp3, 00:00.0 to 03:56.9
 version: v3
 ---
 
@@ -28,8 +28,8 @@ version: v3
   - `papers-street`: one long street the camera travels along; the left half has no papers, the right half floods with war papers.
   - `604-bar`: a two-bar chart on aged paper whose first bar is taller than the sky.
   - Host scenes (eligible, meet-wishonia, my-surprise, earth-means-dirt): Wishonia at her console on the observation deck, Earth hanging in the glass behind her (`KIT.STUDIO.earth`).
-- **Cast:** existing: `atom`, `globe`, `mushroom`, `scientist` (with his giant shears), `uncle-sam`, `general`, `reaper` (`assets/art/reaper/`: `hug`, `face-grin`). New: `family`, `family-skeleton`, `photographer`, `germ`, `warhead`, `crate`, `snowflake`, `small-earth`, `frozen-man`, `light-bulbs`, `caveman`, `campfire`, `pentagon`, `paint-roller`, `grumpy-missile`, `hospital`, `schoolhouse`, `doghouse`, `democracy-dog`, `bill-plain`, `citizen`, `patient`, `lab-bench`, `spider`, `hungry-man`, `wheat`, `moth`, `weapons-maker`, `bomb`, `general`, `war-map`, `fat-cat`, `oil-derrick`, `bill-war`, `bill-med`, `balloon`, `you`; skeletons of the patient, the Scientist and the hungry man (`scientist` exists).
-- **Callbacks:** none from earlier parts; this is the first. Later parts pay off: the case file and its DIRT tab (Parts 4, 12, 26, 27), the Reaper (Parts 5, 6, 8), the 604 chart (Parts 6, 7, 10, 25), the busy man in the fedora as YOU (Part 10 on), the Democracy Dog (Part 6), the moth and the wheat that grows for free (Part 2), the cavemen (Part 3).
+- **Cast:** existing: `atom`, `globe`, `mushroom`, `scientist` (with his giant shears), `uncle-sam`, `general`, `reaper` (`assets/art/reaper/`: `hug`, `face-grin`). New: `family`, `family-skeleton`, `photographer`, `germ`, `warhead`, `crate`, `snowflake`, `small-earth`, `frozen-man`, `light-bulbs`, `caveman`, `campfire`, `pentagon`, `paint-roller`, `grumpy-missile`, `hospital`, `schoolhouse`, `doghouse`, `democracy-dog`, `bill-plain`, `citizen`, `patient`, `lab-bench`, `spider`, `hungry-man`, `moth`, `weapons-maker`, `bomb`, `general`, `war-map`, `fat-cat`, `oil-derrick`, `bill-war`, `bill-med`, `balloon`, `you`; skeletons of the patient, the Scientist and the hungry man (`scientist` exists).
+- **Callbacks:** none from earlier parts; this is the first. Later parts pay off: the case file and its DIRT tab (Parts 4, 12, 26, 27), the Reaper (Parts 5, 6, 8), the 604 chart (Parts 6, 7, 10, 25), the busy man in the fedora as YOU (Part 10 on), the Democracy Dog (Part 6), the moth (Part 2), the cavemen (Part 3).
 - **New art:**
   - the Victorian family of four on the sofa (father, mother, the boy between them, the grandfather standing behind, in spectacles), and the same four as skeletons in the same clothes and poses
   - the photographer: a box camera on legs, him under its black cloth with a flash-powder tray held up
@@ -42,7 +42,7 @@ version: v3
   - a rectangular hospital, a square schoolhouse with a bell, a triangle doghouse, and the Democracy Dog's head
   - a dollar bill on stick legs with George Washington in the oval (his eyelid a separate piece), and the same bill blank
   - ten Victorian townsfolk with hinged heads and arms (a baker, a sweeper, a fence painter among them), and one flattened like a pancake
-  - the patient in a dressing gown with a thermometer, the lab bench with a flask and a cobweb, a spider on a thread, the hungry man with an empty wallet, a moth, wheat in three heights
+  - the patient in a dressing gown with a thermometer, the lab bench with a flask and a cobweb, a spider on a thread, the hungry man with an empty wallet, a moth
   - the Weapons Maker at a workbench with a bomb that swells; two generals at a war-map table with toy soldiers
   - the fat cat (top hat, monocle, cigar) at an oil derrick on a little globe, papers gushing from it
   - the war bill (green, missile seal, stick legs), the medicine bill (cross seal), and the medicine bill flattened with one arm out
@@ -99,7 +99,7 @@ Sound: a whirr as the card comes up; a thunk on "Disease"; a quick whistle as he
 - act: Eligibility check
 - transition_in: cut
 - cue: "Is"
-- time: 01:48.8 to 01:58.4 (9.5 s)
+- time: 01:48.8 to 01:58.0 (9.2 s)
 - voiceover: "Is everyone you've ever loved currently being slowly tortured and or brutally murdered by horrible diseases? Do your governments"
 - layer: B, plate family-portrait
 - status: planned
@@ -120,7 +120,7 @@ Sound: a scratchy whoosh as the Reaper rises on "brutally"; the flash-powder whu
 - act: Eligibility check
 - transition_in: cut
 - cue: "waste money"
-- time: 01:58.4 to 02:08.3 (10.0 s)
+- time: 01:58.0 to 02:06.9 (8.9 s)
 - voiceover: "waste money on enough nuclear bombs to cause one hundred and twenty-two nuclear winters despite only having the one civilization to apocalypse?"
 - layer: B, plate tiny-earth
 - status: planned
@@ -140,7 +140,7 @@ Sound: a clank per warhead into the crate, speeding to a rattle; a crackle as ea
 - act: The verdict
 - transition_in: iris in on Wishonia's face (the first time the film shows her)
 - cue: "If"
-- time: 02:08.3 to 02:13.6 (5.3 s)
+- time: 02:06.9 to 02:11.1 (4.2 s)
 - voiceover: "If so, your planet may be eligible for optimization."
 - layer: A, host
 - wishonia: happy-smile + body-presenting; happy-smile + body-palms-down on "eligible"
@@ -160,7 +160,7 @@ Sound: a pencil scratch per tick on "so,"; a huff before "eligible"; a stamp thu
 - act: Meet Wishonia
 - transition_in: same shot (no seam)
 - cue: "I'm"
-- time: 02:13.6 to 02:29.3 (15.7 s)
+- time: 02:11.1 to 02:25.8 (14.7 s)
 - voiceover: "I'm Wishonia Love. C.E.O. and President of Universe Optimization Services. I've been upgrading civilizations for four thousand, two hundred and ninety-seven years, which in your Earth time is four thousand, two hundred and ninety-seven years."
 - layer: A, host
 - wishonia: happy-smile + body-hand-chest; smirk-smile + body-open-palms on "Earth"; smirk-closed + body-idle on "years." (second), the look at the camera
@@ -183,7 +183,7 @@ Sound: a slide whoosh per nameplate line, a longer one on "Universe"; whirring g
 - act: What Wishonia noticed
 - transition_in: cut
 - cue: "I started watching"
-- time: 02:29.3 to 02:47.2 (17.9 s)
+- time: 02:25.8 to 02:41.9 (16.1 s)
 - voiceover: "I started watching your planet in nineteen forty-five when you split the atom. "Atom" comes from your Greek word meaning "unable to be cut," so naturally, you cut it. This was very human of you. I assumed you were trying to unlock unlimited free energy."
 - layer: B, plate atom-globe
 - status: planned
@@ -207,7 +207,7 @@ Sound: a thunk as "1945" stamps in; a rattle on "split"; a stamp thunk on "unabl
 - act: What Wishonia noticed
 - transition_in: cut
 - cue: "You can imagine"
-- time: 02:47.2 to 02:49.2 (1.9 s)
+- time: 02:41.9 to 02:43.1 (1.2 s)
 - voiceover: "You can imagine my surprise"
 - layer: A, host
 - wishonia: neutral-smile + body-open-palms; surprised-oh + body-open-palms on "surprise"
@@ -226,7 +226,7 @@ Sound: a slide whistle up on the zoom.
 - act: What Wishonia noticed
 - transition_in: cut back to the plate on split-the-atom's last frame (same plate, no seam)
 - cue: "when"
-- time: 02:49.2 to 02:54.6 (5.4 s)
+- time: 02:43.1 to 02:46.4 (3.3 s)
 - voiceover: "when I realized you were just pointing it at each other! That's kind of like"
 - layer: B, plate atom-globe
 - status: planned
@@ -246,7 +246,7 @@ Sound: a hum as they aim on "pointing"; a zap of sparks on "each"; a boom on "ot
 - act: What Wishonia noticed
 - transition_in: cut
 - cue: "discovering"
-- time: 02:54.6 to 03:00.4 (5.8 s)
+- time: 02:46.4 to 02:51.6 (5.2 s)
 - voiceover: "discovering fire and then immediately using it to set yourself on fire."
 - layer: B, plate cave
 - status: planned
@@ -265,7 +265,7 @@ Sound: a whoosh as the fire lights; a second whoosh and two yelps as they catch 
 - act: What Wishonia noticed
 - transition_in: cut
 - cue: "The second thing"
-- time: 03:00.4 to 03:11.4 (11.0 s)
+- time: 02:51.6 to 03:01.7 (10.1 s)
 - voiceover: "The second thing I noticed is that your planet is named "Earth," which means dirt. You named your planet.. dirt. Okay, if that's what you want..."
 - layer: A, host
 - wishonia: skeptical-closed + body-idle; skeptical-closed + body-shrug on "want..."
@@ -287,7 +287,7 @@ Sound: a marker squeak on each "dirt."; a thunk and a puff as the file lands aft
 - act: What Wishonia noticed
 - transition_in: cut
 - cue: "I also noticed"
-- time: 03:11.4 to 03:22.8 (11.4 s)
+- time: 03:01.7 to 03:10.6 (8.9 s)
 - voiceover: "I also noticed that you call your war building "The Pentagon" because it has five sides (this is like naming a hospital "Rectangle" or calling a school "Square")."
 - layer: B, plate four-buildings
 - status: planned
@@ -308,8 +308,8 @@ Sound: a pop as the sign springs up; a splat as the roller hits; a tick per wall
 - act: The papers
 - transition_in: cut
 - cue: "However,"
-- time: 03:22.8 to 04:18.4 (55.65 s; the short 604-to-1, one plate)
-- voiceover: "However, the most fascinating discovery about your species is that you only do things when given small pieces of paper with presidents on them. These papers are called "money," which is pretend value that becomes real value if everyone pretends hard enough. Without these papers, you won't: Save lives (requires many papers). Cure diseases (requires very many papers). Feed hungry people (requires papers, even though food grows for free). But WITH these papers, you will: Build bombs (you love giving papers for this). Start wars (somehow this makes more papers). Destroy the planet (surprisingly profitable in papers). In fact, your governments spend six hundred and four papers on weapons for every one paper on testing which medicines work."
+- time: 03:10.6 to 03:56.9 (46.3 s)
+- voiceover: "However, the most fascinating discovery about your species is that you only do things when given small pieces of paper with presidents on them. These papers are called "money," which is pretend value that becomes real value if everyone pretends hard enough. Without these papers, you won't: Save lives (requires many papers). Cure diseases (requires very many papers). Feed hungry people (requires papers). But WITH these papers, you will: Build bombs (you love giving papers for this). Start wars (somehow this makes more papers). Destroy the planet (surprisingly profitable in papers). In fact, your governments spend six hundred and four papers on weapons for every one paper on testing which medicines work."
 - layer: B, plate one-street
 - bit: **One bill walks down a street of frozen humans, and only what it touches comes alive.** The camera walks with it, close and big: past the people it would save, without slowing, to the Weapons Maker, the war and the burning Earth. Then it climbs a tower of 604 bills and drops to the one lonely bill on the floor.
 - status: planned
@@ -320,7 +320,7 @@ Sound: a pop as the sign springs up; a splat as the roller hits; a tick per wall
 | "when given small pieces of paper with presidents on them." | | The bill struts in, huge. Whoever it passes works like mad, then stops dead. | The pigeon bolts. Washington winks on "them." |
 | "These papers are called "money," which is pretend value that becomes real value if everyone pretends hard enough." | Its value is what everyone agrees it is. | The crowd's whole bodies snap toward it. The ink drains to blank paper; they squeeze their eyes shut and it inks back and glows. | The matron pretends so hard her head comes off, and lands upside down. |
 | "Without these papers, you won't: Save lives (requires many papers). Cure diseases (requires very many papers)." | Saving lives costs papers. | The bill walks on without slowing. The patient, then the scientist, each lunges after it, big. | Each is a grinning skeleton behind it, still reaching. |
-| "Feed hungry people (requires papers, even though food grows for free)." | Food costs papers though it grows by itself. | The hungry man lunges after it. | Wheat shoots up right behind him; he never looks. Skeleton. |
+| "Feed hungry people (requires papers)." | Food costs papers. | The hungry man lunges after it. | Skeleton. |
 | "But WITH these papers, you will: Build bombs (you love giving papers for this)." | Bombs get paid for gladly. | The frozen Weapons Maker springs to life; the bill flies onto his anvil and a bomb swells on each word. | After "this)." it goes off; he stands charred, blinking, still hammering. |
 | "Start wars (somehow this makes more papers)." | War makes money. | A tank fires; the soldiers char mid-salute, blinking. A second cloud. | Bills fly out of the mushroom clouds. |
 | "Destroy the planet (surprisingly profitable in papers)." | Wrecking the planet pays. | A big terrified Earth catches fire. | Bills pour out of its mouth into the Fat Cat's hat. |

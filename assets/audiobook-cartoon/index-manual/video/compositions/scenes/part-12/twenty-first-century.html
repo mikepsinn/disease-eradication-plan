@@ -1,0 +1,50 @@
+<template id="twenty-first-century-template">
+  <!-- twenty-first-century · collage host shot (Part 12, scene 4). She rolls her eyes down the lens. The charred alarm
+       still smokes on the wall, its letter up. At the ledge's edge the last medicine paper turns to the camera too,
+       sighs, shrugs and hops off after the others. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="twenty-first-century" data-width="1920" data-height="1080" data-start="0" data-duration="1.96">
+    <div id="twenty-first-century-weave"></div>
+    <div id="twenty-first-century-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "twenty-first-century", V = KIT.V, ST = KIT.STUDIO;
+    // The charred alarm and the ledge, as smoke-detector-by-mail left them.
+    var DET = V ? { x: 810, y: 650, k: 0.62 } : { x: 1165, y: 345, k: 0.72 };
+    var LEDGE = ST.top, EDGE = V ? 640 : 1040, PK = V ? 0.62 : 0.68;
+    // the wire wastebasket on the floor past the ledge's end
+    var BK = { x: V ? 800 : 1180, y: V ? 1440 : 1075, k: V ? 0.7 : 0.75 }, BTOP = BK.y - 348 * BK.k;
+    KIT.collage({
+      id: ID, seed: 1204, host: { push: [1.02, 1.06] },
+      cast: {
+        alarm: { art: "smoke-detector", x: DET.x, y: DET.y, scale: DET.k, eyes: [[100, 175], [165, 175]], eyeSize: 40, smoke: [[130, 40], [400, 60]] },
+        letter: { art: "letter", x: DET.x + 330 * DET.k, y: DET.y - 300 * DET.k, scale: 0.55 * DET.k, pivot: "bottom", label: { text: "RE: SMOKE", at: [208, 110], width: 330, size: 70 } },
+        p3: { art: "bill-med", x: EDGE - 70 - 20, y: LEDGE + 6, anchor: "bottom", pivot: "bottom", scale: PK },
+        basket: { art: "wastebasket", x: BK.x, y: BK.y, anchor: "bottom", pivot: "bottom", scale: BK.k },
+      },
+      beats: [
+        { at: 0, do: "char", who: "alarm" },
+        { at: 0.5, do: "blink", who: "alarm" },
+        { on: "in", do: "shiver", who: "p3", dur: 0.35, amp: 2, rot: 4 },
+        { on: "twenty-first", do: "move", who: "p3", by: [0, 6], dur: 0.3 },
+        { on: "century.)", do: "hop", who: "p3", height: 26 },
+        { on: "century.)", offset: 0.3, do: "move", who: "p3", by: [80, -40], dur: 0.15, arc: 30 },
+        { on: "century.)", offset: 0.45, do: "move", who: "p3", to: [BK.x, BTOP + 30], turn: 30, dur: 0.3, arc: 40 },
+        { on: "century.)", offset: 0.75, do: "hide", who: "p3" },
+        { on: "century.)", offset: 0.75, do: "shiver", who: "basket", dur: 0.25, amp: 3, rot: 3 },
+        { on: "century.)", offset: 0.6, do: "blink", who: "alarm" },
+      ],
+    });
+  </script>
+</template>

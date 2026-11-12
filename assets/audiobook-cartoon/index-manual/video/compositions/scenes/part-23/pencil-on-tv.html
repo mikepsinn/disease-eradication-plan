@@ -1,0 +1,102 @@
+<template id="pencil-on-tv-template">
+  <!-- pencil-on-tv · collage (Part 23, scene 3), the parlor. A yellow pencil stands on its end on the side table.
+       "economists": the television clicks on; Milton Friedman grins on its screen. "held up": the pencil
+       hops off the table into the screen and into his hand, and he holds it up. "There's": beside the TV the weapons
+       factory jams its missile nose first into a crank pencil sharpener and cranks; "person": it pulls the missile out sharpened
+       to a pencil point, a pink eraser on its tail, and on "make" holds it up exactly the way he holds his pencil.
+       "this": the missile shoots into the TV: a white flash and a mushroom cloud. The screen is cracked, and the
+       Friedman on it is charred black, blinking, still holding up his pencil. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="pencil-on-tv" data-width="1920" data-height="1080" data-start="0" data-duration="10.06">
+    <div id="pencil-on-tv-weave"></div>
+    <div id="pencil-on-tv-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "pencil-on-tv", V = KIT.V, Z = KIT.collage.SIZES;
+      var hk = function (art, h) { return h / Z[art][1]; };
+      // The parlor, on the floor line G (plate px = the 16:9 frame): side table, television, crank box, weapons factory.
+      var G = 1010;
+      var TVX = 900, TVK = hk("tv-big", 800), SCREEN = [TVX + (272 - 433.5) * TVK, G - 975 * TVK + 470 * TVK];
+      var EK = 360 / 330, EA = [SCREEN[0] + 10, SCREEN[1] + 197];       // the economist, waist up, standing on the screen's bottom
+      var FMK = 1.85, HAND = [EA[0] + (40 - 146) * FMK, EA[1] + (120 - 185) * FMK];
+      var TABLE = [300, G], TK = 1.5, TTOP = G - 210 * TK + 22;
+      var PK = 0.75, PL = 511 * PK;
+      var FX = 1620, FK = hk("factory-proud", 560), FHAND = [FX + (30 - 189) * FK, G - 560 + 380 * FK];
+      var BOX = [1270, G], BTOP = G - 300 + 70;
+      var MK = hk("missile", 360), MH = 360;
+      var views = V ? { table: [600, 650, 1.4], tv: [860, 650, 1.4], wm: [1440, 650, 1.4] } : { wide: [960, 650, 1] };
+      var cast = {
+        table: { art: "side-table", x: TABLE[0], y: G, anchor: "bottom", scale: TK },
+        tv: { art: "tv-big", x: TVX, y: G, anchor: "bottom", scale: TVK },
+        // Milton Friedman, chest up, on the screen, his pencil held up
+        econ: { art: "friedman", x: EA[0], y: EA[1], anchor: [146, 185], pivot: [146, 185], scale: FMK, clip: [[8, 0], [283, 0], [283, 185], [8, 185]], hidden: true,
+          points: { hand: [40, 120] }, eyes: [[119, 56], [162, 56]], smoke: [[140, 4]] },
+        crack: { art: "glass-crack", x: SCREEN[0] + 185, y: SCREEN[1] + 5, scale: 0.7, hidden: true },
+        pencil: { art: "pencil", x: TABLE[0], y: TTOP - PL / 2, scale: PK, hidden: true },
+        // the missile sits behind the box, so it goes into it
+        missile: { art: "missile", x: FHAND[0] - 40, y: FHAND[1] - MH / 2, scale: MK, hidden: true },
+        box: { art: "sharpener", x: BOX[0], y: G, anchor: "bottom", pivot: "bottom", scale: hk("sharpener", 300) },
+        fac: { art: "factory-proud", x: FX, y: G, anchor: "bottom", pivot: "bottom", scale: FK, eyes: [[148 * 30 / 34, 262 * 30 / 34], [240 * 30 / 34, 262 * 30 / 34]], eyeSize: 34, smoke: [[189, 140]] },
+        tip: { art: "pencil-snapped-tip", x: 0, y: 0, scale: hk("pencil-snapped-tip", 46), hidden: true },
+        rub: { art: "pencil-eraser", x: 0, y: 0, scale: hk("pencil-eraser", 84), hidden: true },
+        fly: { art: "missile-fly", x: FHAND[0] - 60, y: 560, scale: 1.0, hidden: true, faces: "left" },
+        boomCloud: { art: "mushroom", x: SCREEN[0] + 20, y: G - 975 * TVK + 120, anchor: "bottom", scale: hk("mushroom", 420), hidden: true },
+      };
+      // where the held-up missile stands, and its nose and tail there (it is upright)
+      var HELD = [FHAND[0] - 30, FHAND[1] - MH / 2 - 260];
+      var beats = [
+        { at: -1, do: "move", who: "pencil", by: [0, 0], turn: -90, dur: 0.01 },
+        { at: -1, do: "move", who: "fly", by: [0, 0], turn: 180, dur: 0.01 },
+        { on: "Nobody", offset: 0.3, do: "pop", who: "pencil", squash: true },
+        // "economists": the TV clicks on, and the economist grins on it
+        { on: "economists", do: "camera", view: V ? "tv" : "wide", dur: 0.5 },
+        { on: "economists", do: "show", who: "econ" },
+        { on: "economists", do: "glow", who: "econ", size: 420, dur: 0.25 },
+        { on: "economists", do: "shake", y: 2, frames: 2 },
+        // "held up": the pencil hops off the table into the screen, into his hand, held up
+        { on: "held", do: "move", who: "pencil", to: "econ.hand", by: [0, -40], arc: 220, dur: 0.4, turn: -90 },
+        { on: "up", n: 1, do: "hop", who: "econ", height: 10 },
+        { on: "television", do: "bob", who: "econ", y: 3, r: 1, speed: 0.8, until: "this" },
+        // "There's": the weapons factory jams its missile nose first into the pencil sharpener and cranks
+        { on: "said:", do: "camera", view: V ? "wm" : "wide", dur: 0.6 },
+        { on: "said:", offset: 0.2, do: "pop", who: "missile" },
+        { on: "\"There's", do: "move", who: "missile", to: [BOX[0] - 20, BTOP - MH * 0.18], turn: 180, arc: 120, dur: 0.35 },
+        { on: "\"There's", offset: 0.25, do: "nudge", who: "fac", by: [-30, 0] },
+        { on: "single", do: "shiver", who: ["box", "missile"], dur: 0.38, amp: 5, rot: 3 },
+        { on: "single", do: "shiver", who: "fac", dur: 0.38, amp: 3, rot: 2 },
+        // "person": out it comes, sharpened, an eraser on its tail; "make": held up like his pencil
+        { on: "person", do: "move", who: "missile", to: HELD, turn: 0, arc: 90, dur: 0.35 },
+        { on: "person", offset: 0.35, do: "show", who: ["tip", "rub"] },
+        { on: "person", offset: 0.35, do: "move", who: "tip", to: [HELD[0], HELD[1] - MH / 2 - 40], turn: 90, dur: 0.01 },
+        { on: "person", offset: 0.35, do: "move", who: "rub", to: [HELD[0], HELD[1] + MH / 2 + 22], turn: 180, dur: 0.01 },
+        { on: "make", do: "hop", who: ["missile", "tip", "rub"], height: 40 },
+        { on: "make", do: "hop", who: "fac", height: 16 },
+        // "this": its tail lights and it shoots into the TV; "pencil.": the bang
+        { on: "this", n: 1, do: "camera", view: V ? "tv" : "wide", dur: 0.18 },
+        { on: "this", n: 1, do: "hide", who: ["missile", "tip", "rub"] },
+        { on: "this", n: 1, do: "show", who: "fly" },
+        { on: "this", n: 1, do: "move", who: "fly", to: SCREEN, turn: 180, dur: 0.16 },
+        { on: "pencil.", n: 3, do: "hide", who: "fly" },
+        { on: "pencil.", n: 3, do: "boom", shake: 20, flash: 0.22 },
+        { on: "pencil.", n: 3, do: "pop", who: "boomCloud" },
+        { on: "pencil.", n: 3, do: "show", who: "crack" },
+        { on: "pencil.", n: 3, do: "char", who: ["econ", "pencil", "fac"] },
+        { on: "pencil.", n: 3, offset: 0.55, do: "pop", who: "boomCloud", out: true },
+        { on: "pencil.", n: 3, offset: 0.65, do: "blink", who: ["econ", "fac"] },
+      ];
+      KIT.collage({ id: ID, seed: 2303, plate: [-200, -200, 2200, 1500], views: views, view: V ? "table" : "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

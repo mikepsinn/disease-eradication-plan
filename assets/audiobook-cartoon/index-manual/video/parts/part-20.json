@@ -3,8 +3,8 @@
   "title": "Step 4: Purchase Democracy",
   "storyboard": "storyboards/part-20-step-4-purchase-democracy.md",
   "audio": {
-    "start": 2660.684,
-    "end": 2756.924
+    "start": 2639.007,
+    "end": 2728.252
   },
   "noCaptions": [
     "step-4-purchase-democracy-title"
@@ -14,14 +14,14 @@
       "id": "step-4-purchase-democracy-title",
       "file": "compositions/scenes/part-20/step-4-purchase-democracy-title.html",
       "cue": "Step",
-      "approx": 2660.7,
+      "approx": 2639.304,
       "layer": "A"
     },
     {
       "id": "coin-op-politician",
       "file": "compositions/scenes/part-20/coin-op-politician.html",
       "cue": "Politicians",
-      "approx": 2665.2,
+      "approx": 2643.684,
       "layer": "A",
       "wishonia": [
         {
@@ -51,21 +51,21 @@
       "id": "democracy-auction",
       "file": "compositions/scenes/part-20/democracy-auction.html",
       "cue": "Currently,",
-      "approx": 2668.8,
+      "approx": 2646.604,
       "layer": "B"
     },
     {
       "id": "bidder-paddles",
       "file": "compositions/scenes/part-20/bidder-paddles.html",
       "cue": "Your",
-      "approx": 2683.1,
+      "approx": 2659.044,
       "layer": "B"
     },
     {
       "id": "corrupt-the-corruption",
       "file": "compositions/scenes/part-20/corrupt-the-corruption.html",
       "cue": "Politicians",
-      "approx": 2698.3,
+      "approx": 2671.024,
       "layer": "A",
       "wishonia": [
         {
@@ -95,28 +95,28 @@
       "id": "super-pac-rewards",
       "file": "compositions/scenes/part-20/super-pac-rewards.html",
       "cue": "Remember",
-      "approx": 2704.3,
+      "approx": 2676.904,
       "layer": "B"
     },
     {
       "id": "scenic-route-algorithm",
       "file": "compositions/scenes/part-20/scenic-route-algorithm.html",
       "cue": "Vote",
-      "approx": 2721.5,
+      "approx": 2693.184,
       "layer": "B"
     },
     {
       "id": "nra-letter-grade",
       "file": "compositions/scenes/part-20/nra-letter-grade.html",
       "cue": "The",
-      "approx": 2734,
+      "approx": 2705.504,
       "layer": "B"
     },
     {
       "id": "most-problems-scroll",
       "file": "compositions/scenes/part-20/most-problems-scroll.html",
       "cue": "The",
-      "approx": 2747.5,
+      "approx": 2719.284,
       "layer": "A",
       "wishonia": [
         {
@@ -173,8 +173,8 @@
     },
     {
       "scene": "step-4-purchase-democracy-title",
-      "cue": "Anyway",
-      "offset": 0.3,
+      "cue": "Sale",
+      "offset": 1.15,
       "sfx": "cash-register",
       "volume": 0.4
     },
@@ -275,33 +275,35 @@
     },
     {
       "scene": "bidder-paddles",
-      "cue": "eight",
+      "cue": "five",
       "sfx": "click",
       "volume": 0.45
     },
     {
       "scene": "bidder-paddles",
-      "cue": "eight",
+      "cue": "five",
       "offset": 0.2,
       "sfx": "click",
       "volume": 0.45
     },
     {
       "scene": "bidder-paddles",
-      "cue": "eight",
+      "cue": "five",
       "offset": 0.4,
       "sfx": "click",
       "volume": 0.45
     },
     {
       "scene": "bidder-paddles",
-      "cue": "cycle).",
+      "cue": "spend",
+      "n": 2,
       "sfx": "slam",
       "volume": 0.5
     },
     {
       "scene": "bidder-paddles",
-      "cue": "cycle).",
+      "cue": "spend",
+      "n": 2,
       "at": "after",
       "sfx": "thunk",
       "volume": 0.5

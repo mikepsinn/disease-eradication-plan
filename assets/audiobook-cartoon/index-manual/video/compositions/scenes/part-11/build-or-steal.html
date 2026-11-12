@@ -1,510 +1,202 @@
 <template id="build-or-steal-template">
-  <!-- build-or-steal · Layer B (storyboards/part-11-civilization-countdown.md): zoom into the wall screen onto a seesaw,
-       BUILD THINGS on one end and STEAL THINGS on the other. The Masked Crook sits on STEAL, grinning, while war papers
-       land in a heap beside him ("parasitic", pops); two plain papers sit on BUILD ("productive one,"), weighing nothing.
-       The Builder ("individual,"), a little factory ("company,") and a little capitol ("nation") hop onto BUILD, a boing
-       each, and tip it down. "flips": a brick of war papers drops onto STEAL, the plank slams down (slam) and catapults
-       all three off the top of the frame (slide-up whistle). "building": the Builder drops back onto his stool, stars
-       circling his head (thunk), the factory and the capitol land upside down behind him; "product": he starts a chair,
-       one hammer blow per piece. "ransom": the Crook flicks a padlock onto a hospital's door (clank), a RANSOM note goes
-       up and medicine papers squeeze out under the door into his briefcase. "afternoon?": the wall clock jumps from 12
-       to 5 (ding); the chair has two legs. After "afternoon?": the Builder sits on it to rest and it tips him over
-       backwards (thunk). The fuse burns in the top-left corner (inside the camera in this one scene, so it zooms in
-       with the paper). -->
+  <!-- build-or-steal · collage (Part 11, scenes 8 to 10 on one plate, main-street). The bit: once stealing pays more
+       than building, everyone on the street stops building, and the camera walks down the street watching it happen.
+       An empty lot: a bar chart, WHAT IT PAYS, a tall BUILD bar and a short STEAL bar; a slider, PARASITIC SHARE,
+       creeps right and the STEAL bar grows with it. The Builder, a farm stand and the Capitol pop onto the BUILD bar,
+       one per word; "flips": STEAL passes BUILD with a ding and all three turn to look. Down the street the Builder
+       hammers, one slow blow per year on the calendar; next door a robot locks a hospital, RANSOM, the papers walk out
+       into its laptop and the hands of the clock on its post spin from 12 to 5. The Builder's foundry under a SUCCESS sign sends its cereal out
+       along a conveyor; next door a robot cracks the BANK and the papers pile up past the foundry. More robots arrive
+       and ring it; "target": the sign flips to TARGET and a missile whistles down: boom, rubble, the Builder charred
+       and blinking with his crate. "Parasitism": he sits down among the robots and is one of them. The edge of town:
+       WELCOME, stamped FAILED STATE; signposts SOMALIA, LIBYA and SYRIA, and on each word its map slams onto its post
+       (Syria arrives in pieces; one piece stays nailed up and the rest drops). Back up the street everything falls
+       flat; a warlord in a helmet three sizes too big stands at his toll gate, TOLL, and lifts the bar as everyone's
+       papers march in; a farmer builds a stand, and the warlord lifts it out of his reach. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
-    #build-or-steal-cam, #build-or-steal-bg, #build-or-steal-art, #build-or-steal-fuse, #build-or-steal-pip, #build-or-steal-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+    #build-or-steal-pays text[text-anchor="middle"] { display: none; }
+    #build-or-steal-pays text[text-anchor="end"] { display: none; }
   </style>
-  <div id="root" data-composition-id="build-or-steal" data-width="1920" data-height="1080" data-start="0" data-duration="15">
-    <div id="build-or-steal-cam">
-      <div id="build-or-steal-bg"></div>
-      <div id="build-or-steal-art"></div>
-      <!-- the fuse: inside the camera in this scene only (the zoom into the wall screen grows it with the paper) -->
-      <div id="build-or-steal-fuse"></div>
-      <div id="build-or-steal-pip"></div>
-    </div>
-    <div id="build-or-steal-grain"></div>
+  <div id="root" data-composition-id="build-or-steal" data-width="1920" data-height="1080" data-start="0" data-duration="49.42">
+    <div id="build-or-steal-weave"></div>
+    <div id="build-or-steal-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
-  <script src="assets/js/props/places.js"></script>
-  <script src="assets/js/props/objects-b.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
   <script>
     (function () {
-      var ID = "build-or-steal";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
-      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var ID = "build-or-steal", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
       var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line, P = ID + "-";
-      var RAD = Math.PI / 180;
-
-      // ── Drawing helpers (the kit's print look: a navy pass under each fill, mitred corners) ──
-      function n1(v) { var r = Math.round(v * 10) / 10; return String(r === 0 ? 0 : r); }
-      function pt(x, y) { return n1(x) + "," + n1(y); }
-      function polyD(pts) { return "M" + pts.map(function (p) { return pt(p[0], p[1]); }).join(" L") + " Z"; }
-      function pg(pts) { return 'path d="' + polyD(pts) + '"'; }
-      function ci(cx, cy, r) { return 'circle cx="' + n1(cx) + '" cy="' + n1(cy) + '" r="' + n1(r) + '"'; }
-      function R(x, y, w, h) { return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]]; }
-      function S(tags, col, w) {
-        w = w || 4.4;
-        return tags.map(function (t) { return "<" + t + ' fill="' + ink + '" stroke="' + ink + '" stroke-width="' + w + '" stroke-linejoin="miter" stroke-miterlimit="8"/>'; }).join("") +
-          tags.map(function (t) { return "<" + t + ' fill="' + col + '"/>'; }).join("");
-      }
-      function F(tag, col, extra) { return "<" + tag + ' fill="' + col + '"' + (extra ? " " + extra : "") + "/>"; }
-      function line(d, col, w, extra) { return '<path d="' + d + '" fill="none" stroke="' + (col || ink) + '" stroke-width="' + (w || 2) + '" stroke-linejoin="miter" stroke-linecap="round"' + (extra ? " " + extra : "") + "/>"; }
-      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
-      function at(x, y, s, inner, rot) { return '<g transform="translate(' + n1(x) + "," + n1(y) + ")" + (rot ? " rotate(" + rot + ")" : "") + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
-      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
-      function txt(x, y, size, s, col, extra) { return '<text x="' + n1(x) + '" y="' + n1(y) + '" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + size + '" fill="' + (col || ink) + '"' + (extra ? " " + extra : "") + ">" + s + "</text>"; }
-
-      // ── THE FUSE (storyboard, Running gag: the fuse): the same in every Part 11 scene (copied from war-through-wifi). ──
-      // The civilization is a cartoon bomb: a small Earth with a navy screw collar and a lit fuse that burns by part
-      // time (L = L0 - k t), so it is continuous across scenes. Returns the spark's flare group (scale it to flare).
-      function fuse(layer, tl) {
-        var Fz = V ? { cx: 110, cy: 150, r: 56, collar: [94, 80, 32, 14], d: "M110,86 Q116,64 148,66 L690,66", L0: 560, k: 2.2 }
-          : { cx: 112, cy: 116, r: 58, collar: [96, 46, 32, 14], d: "M112,52 Q118,30 150,32 L780,32", L0: 640, k: 2.6 };
-        var c = Fz.collar, t0 = sc.start;
-        var cords = '<path id="' + P + "cord-a" + '" d="' + Fz.d + '" fill="none" stroke="' + ink + '" stroke-width="9" stroke-linecap="round"/>' +
-          '<path id="' + P + "cord-b" + '" d="' + Fz.d + '" fill="none" stroke="' + C.tan + '" stroke-width="5" stroke-linecap="round"/>';
-        var spark = '<g id="' + P + 'spark"><g id="' + P + 'spark-flare"><g id="' + P + 'spark-flick">' +
-          KIT.star(0, 0, 14, C.yellow) + '<g transform="rotate(45)">' + KIT.star(0, 0, 10, C.yellow) + "</g>" + KIT.star(0, 0, 8, C.orange) + "</g></g>" +
-          '<g id="' + P + 'spark-smoke">' + line("M2,-12 q-7,-8 0,-15 q7,-8 0,-15", "#8C8782", 2.6) + "</g></g>";
-        layer.innerHTML = KIT.svg(W, H, cords +
-          at(Fz.cx, Fz.cy + Fz.r, 1, KIT.props.earthGlobe({ r: Fz.r })) +
-          S([pg(R(c[0], c[1], c[2], c[3]))], C.navy, 3) + line("M" + (c[0] + 3) + "," + (c[1] + 3) + " H" + (c[0] + c[2] - 3), C.orange, 1.6) +
-          line("M" + (c[0] + 2) + "," + (c[1] + 8) + " H" + (c[0] + c[2] - 2), C.peri, 1.4) + spark);
-        var a = document.getElementById(P + "cord-a"), b = document.getElementById(P + "cord-b"), sp = document.getElementById(P + "spark");
-        KIT.onTime(tl, D, function (lt) {
-          var Lc = Math.max(0, Fz.L0 - Fz.k * (t0 + lt)), p = a.getPointAtLength(Lc);
-          a.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
-          b.setAttribute("stroke-dasharray", Lc.toFixed(1) + " 3000");
-          sp.setAttribute("transform", "translate(" + p.x.toFixed(1) + "," + p.y.toFixed(1) + ")");
-        });
-        var fl = document.getElementById(P + "spark-flick"), sm = document.getElementById(P + "spark-smoke");
-        gsap.set(fl, { svgOrigin: "0 0" });
-        tl.fromTo(fl, { scale: 0.8 }, { scale: 1.2, duration: 0.09, repeat: Math.floor(D / 0.09) - 1, yoyo: true, ease: "sine.inOut" }, 0);
-        tl.fromTo(sm, { x: -2, opacity: 0.9 }, { x: 2, opacity: 0.6, duration: 0.4, repeat: Math.floor(D / 0.4) - 1, yoyo: true, ease: "sine.inOut" }, 0);
-        return document.getElementById(P + "spark-flare");
-      }
-
-      // ── THE WALL CLOCK (as crypto-afternoon draws it): a cream face r 70 (in 16:9), a navy rim 8 px, 12 ticks, orange
-      // hands and a mustard hub. Drawn around its center (0,0) at radius r; the hands are untransformed groups pointing
-      // at 12 (rotate them about "0 0"). ──
-      function clock(r) {
-        var ticks = "";
-        for (var i = 0; i < 12; i++) {
-          var a = i * 30 * RAD, r0 = r - (i % 3 ? 11 : 18), r1 = r - 5;
-          ticks += "M" + pt(r0 * Math.sin(a), -r0 * Math.cos(a)) + " L" + pt(r1 * Math.sin(a), -r1 * Math.cos(a)) + " ";
-        }
-        var nums = [[0, "12"], [3, "3"], [6, "6"], [9, "9"]].map(function (n) {
-          var a = n[0] * 30 * RAD, rr = r - 33;
-          return txt(rr * Math.sin(a), -rr * Math.cos(a) + r * 0.11, Math.round(r * 0.3), n[1]);
-        }).join("");
-        var hand = function (len, w) { return S([pg([[-w, 9], [w, 9], [w * 0.7, -len + 8], [0, -len], [-w * 0.7, -len + 8]])], C.orange, 3.4); };
-        return F(ci(6, 8, r + 4), ink, 'opacity="0.85"') + '<circle cx="0" cy="0" r="' + r + '" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="8"/>' +
-          '<circle cx="0" cy="0" r="' + (r - 9) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' + line(ticks, ink, 3.4) + nums +
-          g("hand-h", hand(r * 0.48, 6)) + g("hand-m", hand(r * 0.76, 4.4)) + S([ci(0, 0, 7)], C.yellow, 3);
-      }
-
-      // ── A stack of war papers seen edge-on (as war-through-wifi draws it): thin green bills, each with its red seal at
-      // one end; w wide, n bills, standing on y 0 around x 0. ──
-      function billStack(w, n, seed) {
-        var r = KIT.rng(seed), out = "";
-        for (var i = 0; i < n; i++) {
-          var y = -12 * (i + 1), j = Math.round((r() - 0.5) * 10), wj = Math.round((r() - 0.5) * 8), x0 = -w / 2 + j, ww = w + wj;
-          out += '<rect x="' + x0 + '" y="' + y + '" width="' + ww + '" height="12" rx="2" fill="' + C.money + '" stroke="' + ink + '" stroke-width="2"/>' +
-            '<path d="M' + (x0 + 8) + "," + (y + 4) + " H" + (x0 + ww - 22) + '" stroke="#D4E4C6" stroke-width="1.4" opacity="0.7"/>' +
-            '<circle cx="' + (i % 2 ? x0 + ww - 9 : x0 + 9) + '" cy="' + (y + 6) + '" r="3.6" fill="' + C.war + '" stroke="' + ink + '" stroke-width="1.2"/>';
-        }
-        return out;
-      }
-
-      // ── Layout, per canvas shape ──────────────────────────────────────────────────────────────────
-      // G: the ground under the seesaw and the hospital; G1: the ground of the Builder's corner (a shelf above in 9:16).
-      // apex: the fulcrum's top (the plank's pivot); half, thick: the plank; tilt: how far it tips (degrees, + = STEAL down).
-      // s: the humans' scale; fs, cs: the little factory's and capitol's; bs: the war papers' in the heap.
-      // ride: where each rider stands on the plank (plank units from the pivot); crook: where the Crook sits.
-      // heap: [x, y, rotation] of each war paper landing on STEAL; stack: [x, width, bills] of the brick that lands on "flips".
-      // bench: the workbench [x0, x1]; stool, chair: their x (the chair's front feet); home: where the Builder, the
-      // factory and the capitol stand at first; flat: where the factory and the capitol land upside down.
-      // hosp: [x, scale]; clock: [x, y, r].
-      var L = V
-        ? { G: 1420, G1: 960, apex: [430, 1320], half: 385, thick: 46, tilt: 13.5, s: 1.45, fs: 0.3, cs: 0.25, bs: 0.6, lab: 27,
-            ride: { b: -285, f: -172, c: -58, p: [-370, -340] }, crook: 300,
-            heap: [[80, -16, -6], [145, -16, 7], [210, -15, -4], [110, -44, 5], [178, -44, -8], [94, -72, -3], [158, -72, 6], [128, -100, -5]],
-            stack: [140, 132, 11], drop: 1500,
-            bench: [60, 170], stool: 222, chair: 476, home: { b: 330, f: 525, c: 680 }, flat: { f: 606, c: 734 },
-            hosp: [952, 0.48], clock: [560, 590, 95], shelf: [56, 792] }
-        : { G: 860, G1: 860, apex: [930, 750], half: 440, thick: 50, tilt: 13.5, s: 1.7, fs: 0.36, cs: 0.3, bs: 0.7, lab: 30,
-            ride: { b: -335, f: -210, c: -68, p: [-424, -392] }, crook: 335,
-            heap: [[95, -18, -6], [165, -18, 7], [235, -17, -4], [130, -50, 5], [200, -50, -8], [112, -82, -3], [180, -82, 6], [148, -114, -5]],
-            stack: [165, 160, 12], drop: 1000,
-            bench: [64, 176], stool: 222, chair: 492, home: { b: 345, f: 475, c: 625 }, flat: { f: 612, c: 748 },
-            hosp: [1497, 0.66], clock: [1480, 250, 70], shelf: null };
-      var G = L.G, G1 = L.G1, AX = L.apex[0], AY = L.apex[1], HALF = L.half, TH = L.thick, s = L.s;
-      // the Builder's furniture is drawn for a human at scale 1.45, and scaled with the humans
-      var k = s / 1.45;
-      // A point on the plank (plank units: x along it from the pivot, y down as in SVG, so its top is at -thick) in the
-      // frame, with the plank at angle th.
-      function onPlank(lx, ly, th) {
-        var c = Math.cos(th * RAD), n = Math.sin(th * RAD);
-        return [AX + lx * c - ly * n, AY + lx * n + ly * c];
-      }
-
-      q("bg").innerHTML = KIT.paper(ID);
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
-
-      // ── The humans ──
-      // The Builder (storyboard Cast): an orange barrel in overalls, a hammer in his right hand.
-      var BUILDER = { tone: 1, outfit: "overalls", color: 0, seed: 7, mood: "eager" };
-      var SEATED = { legPose: [[85, 10], [95, 15]] };
-      var oStand = mix(BUILDER, { arms: [[20, 10], [-30, 60]] });
-      var oFly = mix(BUILDER, { mood: "worried", arms: [[-150, -170], [150, 170]] });
-      var oSit = mix(BUILDER, { build: SEATED, arms: [[30, 80], [60, 95]] });
-      var rStand = KIT.rig(oStand), rSit = KIT.rig(oSit), rFly = KIT.rig(oFly);
-      // A hammer in the right hand, held across the forearm, its head up (in the person's units: it goes inside .arm-r,
-      // so it swings with the arm).
-      function hammer(o, r) {
-        var h = r.hand[1], a2 = o.arms[1][1] * RAD, d = [Math.sin(a2), Math.cos(a2)], nn = [Math.cos(a2), -Math.sin(a2)];
-        var e = [h[0] + nn[0] * 34, h[1] + nn[1] * 34], s0 = [h[0] - nn[0] * 6, h[1] - nn[1] * 6];
-        var hd = [[-12, -4], [10, -4], [10, 6], [-12, 6]].map(function (p) { return [e[0] + d[0] * p[0] + nn[0] * p[1], e[1] + d[1] * p[0] + nn[1] * p[1]]; });
-        return line("M" + pt(s0[0], s0[1]) + " L" + pt(e[0], e[1]), ink, 7) + line("M" + pt(s0[0], s0[1]) + " L" + pt(e[0], e[1]), C.tan, 3.6) + S([pg(hd)], C.slate, 2.6);
-      }
-      // A person's markup with the hammer added inside the right arm (the arm group is the last one in a person).
-      function withHammer(o, r) { return KIT.person(o).replace(/<\/g><\/g><\/g>$/, hammer(o, r) + "</g></g></g>"); }
-      // The Masked Crook, sitting on the plank, grinning: briefcase on his lap, a fistful of cash up.
-      var crookO = KIT.castOpts("lobbyist", { look: "right", mood: "grin", build: mix(KIT.CAST.lobbyist.build, { legPose: [[85, 15], [95, 25]] }), arms: [[30, 70], [40, 150]], holdL: "briefcase", holdR: "cash" });
-      var crR = KIT.rig(crookO);
-
-      // ── Props drawn in the scene ──
-      // The seesaw's fulcrum: a slate triangle from the apex to the ground, with a bolt at the top.
-      var fulcrum = S([pg([[AX, AY - 4], [AX + 74, G], [AX - 74, G]])], C.slate) + line("M" + pt(AX + 8, AY + 10) + " L" + pt(AX + 66, G - 4), C.orange, 2) +
-        S([ci(AX, AY + 6, 9)], C.yellow, 3) + S([pg(R(AX - 90, G - 10, 180, 10))], C.navy, 3);
-      // The plank (plank units: the pivot at the middle of its underside), painted BUILD THINGS and STEAL THINGS.
-      function plankArt() {
-        var grain = "", r = KIT.rng(5);
-        for (var i = 0; i < 9; i++) { var x0 = -HALF + 20 + r() * (2 * HALF - 160); grain += "M" + pt(x0, -TH * (0.25 + 0.5 * r())) + " h" + n1(50 + r() * 90) + " "; }
-        var panel = function (x, word, col) {
-          var w = word.length * L.lab * 0.5 + 36;
-          return S([pg(R(x - w / 2, -TH + 7, w, TH - 14))], C.cream, 3) + g("lab-" + (x < 0 ? "b" : "s"), txt(x, -TH / 2 + L.lab * 0.36, L.lab, word, col, 'letter-spacing="1.5"'), 'data-x="' + n1(x) + '"');
-        };
-        return S([pg(R(-HALF, -TH, 2 * HALF, TH))], C.tan) + line(grain, C.rust, 2, 'opacity="0.55"') + line("M" + (-HALF + 4) + "," + (-TH + 4) + " H" + (HALF - 4), C.cream, 2.2, 'opacity="0.7"') +
-          line("M" + (-HALF + 4) + ",-4 H" + (HALF - 4), C.rust, 2.4) +
-          [-HALF + 16, -HALF / 2, HALF / 2, HALF - 16].map(function (x) { return F(ci(x, -TH / 2, 3), ink); }).join("") +
-          panel(-HALF * 0.4, "BUILD THINGS", ink) + panel(HALF * 0.4, "STEAL THINGS", C.war);
-      }
-      // The workbench (the Builder's corner): a tan top on navy legs, a shelf of planks, a saw hanging off the front.
-      function workbench(x0, x1, G0) {
-        var top = G0 - 92, out = S([pg(R(x0 + 8, top + 12, 10, G0 - top - 12)), pg(R(x1 - 18, top + 12, 10, G0 - top - 12))], C.navy, 3);
-        out += S([pg(R(x0 + 10, G0 - 34, x1 - x0 - 20, 8))], C.rust, 3) + S([pg(R(x0 + 18, G0 - 46, x1 - x0 - 44, 10)), pg(R(x0 + 24, G0 - 56, x1 - x0 - 60, 10))], C.tan, 2.4);
-        out += S([pg(R(x0, top, x1 - x0, 14))], C.tan) + line("M" + (x0 + 4) + "," + (top + 4) + " H" + (x1 - 4), C.cream, 2, 'opacity="0.7"');
-        // a saw hanging from the front edge, and a jar of nails on top
-        var sx = x0 + (x1 - x0) * 0.62;
-        out += S([pg([[sx - 4, top + 14], [sx + 30, top + 14], [sx + 30, top + 60], [sx - 4, top + 34]])], "#C9C2B5", 2.6) + line("M" + (sx + 2) + "," + (top + 32) + " L" + (sx + 28) + "," + (top + 58), ink, 1.2, 'stroke-dasharray="3 3"') +
-          S([pg(R(sx + 22, top + 8, 18, 12))], C.rust, 2.4);
-        out += S([pg(R(x0 + 14, top - 22, 22, 22))], "#FFFFFF", 2.4) + line("M" + (x0 + 18) + "," + (top - 14) + " h14 M" + (x0 + 18) + "," + (top - 8) + " h14", "#8C8782", 1.6);
-        return out;
-      }
-      // A little stool, its seat seatH above the ground at x (stool units: k = 1 at a human scale of 1.45).
-      function stool(x, G0, seatH) { return at(x, G0, k, stoolArt(seatH / k)); }
-      function stoolArt(seatH) {
-        var x = 0, G0 = 0, y = G0 - seatH;
-        return S([pg([[x - 18, y + 6], [x - 12, y + 6], [x - 20, G0], [x - 27, G0]]), pg([[x + 12, y + 6], [x + 18, y + 6], [x + 27, G0], [x + 20, G0]]), pg([[x - 3, y + 6], [x + 3, y + 6], [x + 3, G0 - 4], [x - 3, G0 - 4]])], C.navy, 3) +
-          S([pg([[x - 30, y], [x + 30, y], [x + 26, y + 9], [x - 26, y + 9]])], C.tan, 3.4);
-      }
-      // The chair the Builder makes (3/4 view, facing right), in chair units: its front feet on y 0, the near one at x 0.
-      // Each piece is its own group, so it can go on with a hammer blow: .seat, .back, .leg0, .leg1. It never gets its
-      // back legs (there are only nail holes where they go), so it tips over backwards when someone sits on it.
-      function chairArt(h) {
-        var seatTop = [[-74, -h], [0, -h], [14, -h - 12], [-60, -h - 12]];
-        var seat = S([pg(seatTop)], C.tan, 3.4) + S([pg(R(-74, -h, 74, 9))], C.rust, 3) + F(ci(-66, -h + 5, 2.2), ink) + F(ci(-8, -h + 5, 2.2), ink);
-        var back = S([pg(R(-74, -h - 112, 9, 106)), pg(R(-60, -h - 124, 9, 114))], C.tan, 3) + S([pg([[-78, -h - 116], [-56, -h - 128], [-50, -h - 110], [-72, -h - 98]])], C.rust, 3) +
-          S([pg([[-74, -h - 72], [-55, -h - 82], [-55, -h - 72], [-74, -h - 62]])], C.tan, 2.4);
-        var leg0 = S([pg(R(-8, -h + 9, 8, h - 9))], C.tan, 3), leg1 = S([pg(R(7, -h - 4, 7, h - 9))], C.tan, 3);
-        return g("chair-leg1", leg1, 'opacity="0"') + g("chair-back", back, 'opacity="0"') + g("chair-seat", seat, 'opacity="0"') + g("chair-leg0", leg0, 'opacity="0"');
-      }
-
-      // ── Assemble ──
-      // Seat heights: the Builder sits with his feet on the ground (stool and chair).
-      var seatH = s * (100 - rSit.hipY) - 2;
-      var pr = function (o, sc2) { return at(0, -100 * sc2, sc2, o); }; // a person drawn with its feet at (0,0)
-      var factoryUp = function (k, smoke) { return at(0, 0, k, KIT.props.factory({ label: "", smoke: smoke })); };
-      var capitolUp = function (k) { return at(0, 0, k, KIT.props.capitol({})); };
-      // upside down, standing on their roofs: the prop's base at -h (h its height), turned over
-      var factoryDown = function (k) { return at(0, -351 * k, 1, at(0, 0, k, KIT.props.factory({ label: "", smoke: false })), 180); };
-      var capitolDown = function (k) { return at(0, -398 * k, 1, at(0, 0, k, KIT.props.capitol({})), 180); };
-
-      var ground = line("M60," + G + " H" + (W - 60), ink, 5) + [0.08, 0.3, 0.55, 0.8].map(function (f) {
-        var gx = 70 + f * (W - 140);
-        return line("M" + gx + "," + G + " l-6,-14 M" + (gx + 6) + "," + G + " l2,-18 M" + (gx + 12) + "," + G + " l8,-12", ink, 3);
-      }).join("");
-      if (L.shelf) ground += line("M" + L.shelf[0] + "," + G1 + " H" + L.shelf[1], ink, 5) + line("M" + (L.shelf[0] + 40) + "," + (G1 + 12) + " H" + (L.shelf[1] - 120), ink, 2, 'opacity="0.4"') +
-        [0.2, 0.7].map(function (f) { var gx = L.shelf[0] + f * (L.shelf[1] - L.shelf[0]); return line("M" + gx + "," + G1 + " l-6,-14 M" + (gx + 6) + "," + G1 + " l2,-18 M" + (gx + 12) + "," + G1 + " l8,-12", ink, 3); }).join("");
-
-      // The clock.
-      var CK = L.clock, clockArt = at(CK[0], CK[1], 1, clock(CK[2]));
-      // The hospital, its padlock, the RANSOM note and the medicine papers under its door.
-      var HS = L.hosp, hk = HS[1], doorY = G - 6 * hk;
-      var hospital = at(HS[0], G, hk, g("hosp", KIT.props.hospital({})));
-      var lockAt = [HS[0], G - 52 * hk], lockK = V ? 1.15 : 1.35;
-      var lock = at(lockAt[0], lockAt[1], 1, g("lock", at(0, 23 * lockK, lockK, KIT.props.padlock({})), 'opacity="0"'));
-      var note = at(HS[0] + 4, G - 205 * hk, V ? 0.85 : 1, g("note", S([pg([[-62, -24], [62, -27], [64, 24], [-60, 26]])], "#FFFFFF", 3.4) +
-        txt(1, 11, 31, "RANSOM", C.war, 'letter-spacing="2"') + S([pg(R(-12, -32, 24, 10))], "#E9DDA8", 2), 'opacity="0"'));
-      var squeeze = [0, 1, 2, 3].map(function (i) { return g("med-" + i, g("med-sq-" + i, at(0, -16, 0.36, KIT.money("med", i % 2))), 'opacity="0"'); }).join("");
-
-      // The Builder's corner: the workbench, the stool, the chair (in its tip group), the Builder at home (he hops from
-      // there), the little factory and capitol at home (they hop too), and where they land later.
-      var BN = L.bench;
-      var corner = at(BN[0], G1, k, workbench(0, (BN[1] - BN[0]) / k, 0)) + stool(L.stool, G1, seatH);
-      var chairX = L.chair;
-      // the seated Builder, drawn with his hip at (0,0); sitG moves him from the stool to the chair
-      var seatedArt = at(0, -s * rSit.hipY, s, g("b-sit-art", withHammer(oSit, rSit)));
-      var STARS = [0, 1, 2].map(function (i) { return g("dz-" + i, KIT.star(0, 0, 13, C.yellow) + KIT.star(0, 0, 6, C.orange)); }).join("");
-      var headSit = [s * rSit.head[0], -s * rSit.hipY + s * (rSit.top[1] - 14)];
-      var tipG = g("tip", at(chairX, G1, k, g("chair", chairArt(seatH / k))) +
-        g("sit", seatedArt + at(headSit[0], headSit[1], 1, g("dz", STARS)), 'opacity="0"'));
-      var homeB = g("b-hop", g("b-hop-sq", pr(withHammer(oStand, rStand), s)));
-      var homeF = g("f-hop", g("f-hop-sq", factoryUp(L.fs, true)));
-      var homeC = g("c-hop", g("c-hop-sq", capitolUp(L.cs)));
-      var flatF = g("f-land", g("f-land-sq", factoryDown(L.fs)));
-      var flatC = g("c-land", g("c-land-sq", capitolDown(L.cs)));
-      // the fliers: the three riders, catapulted off the top of the frame, tumbling
-      var flyB = g("b-fly", pr(withHammer(oFly, rFly), s), 'opacity="0"');
-      var flyF = g("f-fly", factoryUp(L.fs, false), 'opacity="0"');
-      var flyC = g("c-fly", capitolUp(L.cs), 'opacity="0"');
-      // the two plain papers from BUILD, fluttering down afterwards like leaves
-      var leaves = [0, 1].map(function (i) { return g("leaf-" + i, g("leaf-in-" + i, at(0, 0, 0.5, KIT.money("plain", i))), 'opacity="0"'); }).join("");
-
-      // The plank group: everything that tips with it. Plank units, the pivot at (0,0).
-      var heap = L.heap.map(function (h, i) { return g("heap-" + i, at(h[0], -TH + h[1], 1, at(0, 0, L.bs, KIT.money("war", (i % 3) / 2)), h[2])); }).join("");
-      var ST = L.stack, heapTop = -TH + L.heap[L.heap.length - 1][1] - 18;
-      var stack = g("stack", at(ST[0], heapTop, 1, g("stack-sq", billStack(ST[1], ST[2], 41) +
-        S([pg(R(-14, -12 * ST[2] - 2, 28, 12 * ST[2] + 4))], "#E9DDA8", 2.4) + txt(0, -6 * ST[2] + 5, 15, "$", ink, 'transform="rotate(-90 0 ' + (-6 * ST[2]) + ')"'))));
-      var crook = at(L.crook, -TH - s * crR.hipY, s, g("crook", KIT.person(crookO)));
-      var plainOn = L.ride.p.map(function (x, i) { return g("pl-" + i, at(x, -TH - 24 * 0.5 - 1, 1, at(0, 0, 0.5, KIT.money("plain", i)))); }).join("");
-      var rideB = at(L.ride.b, -TH, 1, g("b-ride", g("b-ride-sq", pr(withHammer(oStand, rStand), s)), 'opacity="0"'));
-      var rideF = at(L.ride.f, -TH, 1, g("f-ride", g("f-ride-sq", factoryUp(L.fs, true)), 'opacity="0"'));
-      var rideC = at(L.ride.c, -TH, 1, g("c-ride", g("c-ride-sq", capitolUp(L.cs)), 'opacity="0"'));
-      var plank = at(AX, AY, 1, g("plank", heap + stack + rideC + rideF + rideB + plainOn + g("board", plankArt()) + crook));
-
-      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + clockArt + ground + hospital + note + squeeze + corner + flatF + flatC + homeF + homeC + homeB +
-        fulcrum + plank + tipG + flyF + flyC + flyB + leaves + lock);
-
-      var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      KIT.enter(tl, q("cam"), "zoom into the wall screen", KIT.OFFICE.screen);
-      fuse(q("fuse"), tl);
-      var show = function (el, t) { tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.01 }, t); };
-      var hide = function (el, t) { tl.to(el, { opacity: 0, duration: 0.01 }, t); };
-      // A bump on landing: squash an inner group about its feet.
-      // (two .to tweens, so a seek back to before the landing shows the drawing unsquashed)
-      var squash = function (el, t, k) {
-        k = k || 0.22;
-        tl.to(el, { scaleY: 1 - k, scaleX: 1 + k * 0.6, duration: 0.03, ease: "power2.in" }, t - 0.03);
-        tl.to(el, { scaleY: 1, scaleX: 1, duration: 0.35, ease: "elastic.out(1.2,0.4)" }, t);
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // ── The lot: WHAT IT PAYS ──
+      var C = KIT.collage.axes({ box: [250, 150, 1150, 740], x: [0, 3, 1], y: [0, 10, 2], title: "WHAT IT PAYS", size: 44 });
+      var BX = C.pt(1, 0)[0], SX = C.pt(2, 0)[0], BTOP = C.pt(1, 6)[1];
+      // ── The street, left to right ──
+      var X = { builder: 1900, cal: 2180, robot: 2470, hosp: 2770, clock: 3040, found: 3720, belt: 4040, robot3: 4400, bank: 4720,
+        welcome: 5450, posts: 5800, warlord: 6350, farmer: 6950, stand: 7250 };
+      var cy = function (s) { return V ? G - 420 / s : 620; };
+      var views = V ? {
+        lot: [700, 560, 0.95], bench: [2040, cy(1.1), 1.1], hosp: [2770, cy(1.05), 1.05], found: [3840, cy(0.95), 0.95], bank: [4470, cy(1.0), 1.0],
+        ring: [4020, cy(0.8), 0.8], rubble: [3800, cy(1.05), 1.05], edge: [5980, cy(0.75), 0.75], street: [3800, 500, 0.3], warlord: [6650, cy(0.9), 0.9], stand: [6700, cy(0.85), 0.85],
+      } : {
+        lot: [700, 540, 1], bench: [2470, 620, 1], hosp: [2470, 620, 1], found: [4120, 620, 1], bank: [4120, 620, 1], ring: [4120, 580, 0.9],
+        rubble: [3920, 620, 1], edge: [5850, 620, 1], street: [4100, 470, 0.32], warlord: [6800, 620, 1], stand: [6800, 620, 1],
       };
-      ["b-ride-sq", "f-ride-sq", "c-ride-sq", "b-hop-sq", "f-hop-sq", "c-hop-sq", "f-land-sq", "c-land-sq", "stack-sq"].forEach(function (k) { gsap.set(q(k), { svgOrigin: "0 0" }); });
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
 
-      // The plank's angle over time (each landing tips it), with the pivot at its middle.
-      var plk = q("plank"), A0 = L.tilt;
-      gsap.set(plk, { svgOrigin: "0 0", rotation: A0 });
-      var tB = cue("individual,"), tF = cue("company,"), tC = cue("nation"), tX = cue("flips");
-      var A1 = A0 * 0.45, A2 = -A0 * 0.08, A3 = -A0;
+      // the lot
+      cast.rail = { art: "slider-rail", x: (BX + SX) / 2, y: 815, scale: 1.0 };
+      cast.knob = { art: "slider-knob", x: (BX + SX) / 2 - 190, y: 812, scale: 0.36 };
+      cast.rider0 = { art: "builder", x: BX - 110, y: BTOP, anchor: "bottom", pivot: "bottom", scale: hs("builder", 230), hidden: true };
+      cast.rider1 = { art: "farm-stand", x: BX + 15, y: BTOP, anchor: "bottom", pivot: "bottom", scale: hs("farm-stand", 200), hidden: true };
+      cast.rider2 = { art: "capitol", x: BX + 150, y: BTOP, anchor: "bottom", pivot: "bottom", scale: hs("capitol", 260), hidden: true };
+      // the bench and the hospital
+      cast.bench = { art: "workbench", x: X.builder + 60, y: G, anchor: "bottom", scale: hs("workbench", 330) };
+      cast.builder = { art: "builder", x: X.builder - 100, y: G, anchor: "bottom", pivot: "bottom", scale: hs("builder", 520) };
+      cast.cal = { art: "calendar", x: X.cal, y: G, anchor: "bottom", pivot: "bottom", scale: hs("calendar", 360) };
+      cast.robot = { art: "robot", x: X.robot, y: G, anchor: "bottom", pivot: "bottom", scale: hs("robot", 380) };
+      cast.hosp = { art: "hospital", x: X.hosp, y: G, anchor: "bottom", pivot: "bottom", scale: hs("hospital", 600) };
+      // the clock on its post, its hands on the face's middle (art [93, 151])
+      var CK = hs("post-clock", 400), FACE = [X.clock + (93 - 94.5) * CK, G - (482 - 151) * CK];
+      cast.clock = { art: "post-clock", x: X.clock, y: G, anchor: "bottom", pivot: "bottom", scale: CK };
+      cast.hourH = { art: "post-clock-hour", x: FACE[0], y: FACE[1], anchor: [32, 214], pivot: [32, 214], scale: 31 / 214 };
+      cast.minH = { art: "post-clock-minute", x: FACE[0], y: FACE[1], anchor: [32, 338], pivot: [32, 338], scale: 47 / 338 };
+      // the foundry and the bank
+      cast.found = { art: "success-factory", x: X.found, y: G, anchor: "bottom", pivot: "bottom", scale: hs("success-factory", 600), label: { text: "SUCCESS", at: [165, 160], width: 180, size: 48 } };
+      cast.target = { art: "success-factory", x: X.found, y: G, anchor: "bottom", pivot: "bottom", scale: hs("success-factory", 600), hidden: true, label: { text: "TARGET", at: [165, 160], width: 180, size: 48 } };
+      cast.lock = { art: "padlock", x: X.hosp, y: G - 120, scale: 0.42, hidden: true };
+      cast.pole = { art: "wifi-pole", x: X.robot3 + 130, y: G, anchor: "bottom", scale: hs("wifi-pole", 520) };
+      cast.belt = { art: "conveyor", x: X.belt, y: G, anchor: "bottom", scale: 1.6 };
+      cast.robot3 = { art: "robot", x: X.robot3, y: G, anchor: "bottom", pivot: "bottom", scale: hs("robot", 380) };
+      cast.bank = { art: "bank", x: X.bank, y: G, anchor: "bottom", pivot: "bottom", scale: hs("bank", 560) };
+      cast.missile = { art: "missile-fly", x: X.found + 300, y: -900, scale: 1.4, pivot: "center", hidden: true };
+      cast.boom = { art: "mushroom", x: X.found, y: G, anchor: "bottom", scale: hs("mushroom", 900), hidden: true };
+      cast.rubble = { art: "crater", x: X.found, y: G + 40, anchor: "bottom", scale: hs("crater", 200), hidden: true };
+      cast.charB = { art: "builder-charred", x: X.found + 60, y: G, anchor: "bottom", pivot: "bottom", scale: hs("builder-charred", 520), hidden: true, smoke: [[150, 20], [190, 30]] };
+      cast.crate = { art: "cereal-box", x: X.found + 150, y: G - 120, anchor: "bottom", scale: 0.55, hidden: true };
+      cast.newbot = { art: "robot", x: X.found + 240, y: G, anchor: "bottom", pivot: "bottom", scale: hs("robot", 380), hidden: true };
+      // the edge of town
+      cast.welcome = { art: "sign-board", x: X.welcome, y: G, anchor: "bottom", pivot: "bottom", scale: 2.2, label: { text: "WELCOME", at: [107, 72], width: 170, size: 46 } };
+      // a signpost per name, and its map nailed on the post under the board (the post is art x 24 of 115)
+      ["SOMALIA", "LIBYA", "SYRIA"].forEach(function (n, i) {
+        cast["post" + i] = { art: "signpost", x: X.posts + i * 300, y: G - i * 30, anchor: "bottom", pivot: "bottom", scale: 3.6, label: { text: n, at: [58, 43], width: 78, size: 26 } };
+      });
+      var MAPX = function (i) { return X.posts + i * 300 + (24 - 57.5) * 3.6; }, MAPY = function (i) { return G - i * 30 - 260; };
+      cast.map0 = { art: "country-maps-somalia", x: MAPX(0), y: MAPY(0), scale: hs("country-maps-somalia", 270), hidden: true };
+      cast.map1 = { art: "country-maps-libya", x: MAPX(1), y: MAPY(1), scale: hs("country-maps-libya", 240), hidden: true };
+      cast.map2 = { art: "country-maps-syria-broken-a", x: MAPX(2), y: MAPY(2), scale: hs("country-maps-syria-broken-a", 260), hidden: true };
+      // the piece of Syria that stays nailed up: the middle one of the four (art [179, 147] of broken-a)
+      var SK = hs("country-maps-syria-broken-a", 260);
+      cast.syriaPiece = { art: "country-maps-syria-broken-b", x: MAPX(2) + (179 - 155) * SK, y: MAPY(2) + (147 - 156) * SK, scale: SK * 0.8, hidden: true };
+      // the warlord and his own toll gate; the bar is a piece that lifts on its bolt (art [213, 270])
+      cast.warlord = { art: "warlord", x: X.warlord, y: G, anchor: "bottom", pivot: "bottom", scale: hs("warlord", 640), hidden: true, pieces: {
+        body: { clip: [[0, 0], [378, 0], [378, 200], [226, 230], [226, 304], [378, 276], [378, 565], [0, 565]] },
+        arm: { clip: [[226, 230], [378, 200], [378, 276], [226, 304]], pivot: [213, 270] } } };
+      cast.farmer = { art: "hut-builder", x: X.farmer, y: G, anchor: "bottom", pivot: "bottom", scale: hs("hut-builder", 440), hidden: true };
+      cast.stand = { art: "hut-builder-hut", x: X.stand, y: G, anchor: "bottom", pivot: "bottom", scale: hs("hut-builder-hut", 400), hidden: true };
 
-      // "parasitic economy": war papers drop onto STEAL, one after another, into a heap (pops on the first two).
-      var tP = cue("parasitic"), drops = [tP, tP + 0.3, tP + 0.62, tP + 0.9, tP + 1.2, tP + 1.5, tP + 1.85, tP + 2.2];
-      L.heap.forEach(function (h, i) {
-        var el = q("heap-" + i), t = drops[i], t0 = Math.max(0, t - 0.3);
-        tl.fromTo(el, { y: -L.drop }, { y: 0, duration: t - t0, ease: "power2.in" }, t0);
-        tl.to(el, { y: -8, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out" }, t);
-      });
-      // the Crook grins at the camera through it all; he waves his cash on "rational choice"
-      var cr = q("crook"), crArmR = cr.querySelector(".arm-r"), crArmL = cr.querySelector(".arm-l"), crHead = cr.querySelector(".head");
-      gsap.set(crArmR, { svgOrigin: crR.shoulder[1].join(" ") });
-      gsap.set(crArmL, { svgOrigin: crR.shoulder[0].join(" ") });
-      gsap.set(crHead, { svgOrigin: crR.neck.join(" ") });
-      var tR = cue("rational");
-      tl.fromTo(crArmR, { rotation: 0 }, { rotation: -14, duration: 0.12, yoyo: true, repeat: 5, ease: "sine.inOut" }, tR);
-      // "productive one,": two plain papers sit on BUILD; the plank doesn't notice
-      var tPO = cue("productive");
-      [0, 1].forEach(function (i) {
-        var el = q("pl-" + i);
-        tl.fromTo(el, { y: -L.drop }, { y: 0, duration: 0.3, ease: "power2.in" }, tPO - 0.25 + i * 0.18);
-      });
+      // ── When the parasitic economy grows: the slider creeps, STEAL grows ──
+      add({ at: 0, do: "chart", id: "pays", chart: C });
+      add({ at: 0, do: "bar", id: "build", chart: C, x: 1, to: 6, dur: 0.01, width: 200, text: "BUILD", size: 44 });
+      add({ at: 0, do: "bar", id: "steal", chart: C, x: 2, to: 1, dur: 0.01, width: 200, text: "STEAL", size: 44, fill: "#B5462F" });
+      add({ at: 0, do: "banner", id: "share", text: "PARASITIC SHARE", x: (BX + SX) / 2, y: 885, size: 36, width: 400, pad: 40, color: "ink", tilt: 0, shake: 0, from: 1 });
+      add({ on: "parasitic", do: "move", who: "knob", by: [230, 0], dur: cue("flips") + 0.2 - cue("parasitic"), ease: "linear" });
+      add({ on: "parasitic", do: "bar", id: "steal", chart: C, x: 2, to: 4.5, dur: cue("individual,") - cue("parasitic") });
+      // one rider per word on BUILD
+      add({ on: "individual,", do: "pop", who: "rider0", squash: true });
+      add({ on: "company,", do: "pop", who: "rider1", squash: true });
+      add({ on: "nation", do: "pop", who: "rider2", squash: true });
+      // flips: STEAL passes BUILD
+      add({ on: "flips", do: "bar", id: "steal", chart: C, x: 2, to: 8.5, dur: 0.5 });
+      add({ on: "flips", offset: 0.5, do: "move", who: ["rider0", "rider1", "rider2"], turn: 12, dur: 0.15 });
+      add({ on: "\"steal", do: "shiver", who: ["rider0", "rider1", "rider2"], dur: 0.5, amp: 4, rot: 3 });
+      add({ on: "\"steal", do: "stamp", id: "more", text: "STEAL PAYS MORE", x: V ? (BX + SX) / 2 : SX + 330, y: V ? 970 : C.pt(2, 6)[1], size: 56, width: 460, tilt: -6 });
 
-      // The Builder at home taps his hammer, waiting.
-      var hb = q("b-hop"), hbArm = hb.querySelector(".arm-r");
-      gsap.set(hbArm, { svgOrigin: rStand.shoulder[1].join(" ") });
-      tl.fromTo(hbArm, { rotation: 0 }, { rotation: -26, duration: 0.22, yoyo: true, repeat: Math.floor((tB - 0.6 - 0.8) / 0.22) | 1, ease: "sine.inOut" }, 0.8);
-      // A hop from home onto the plank: an arc, landing on its spot at the plank's angle then, with a boing.
-      function hop(id, home, lx, th, tLand, dur, lift) {
-        var el = q(id + "-hop"), to = onPlank(lx, -TH, th), t0 = tLand - dur, peak = Math.min(home[1], to[1]) - lift;
-        gsap.set(el, { svgOrigin: "0 0" });
-        tl.fromTo(el, { x: home[0], rotation: 0 }, { x: to[0], rotation: th, duration: dur, ease: "none" }, t0);
-        tl.fromTo(el, { y: home[1] }, { y: peak, duration: dur * 0.5, ease: "power2.out" }, t0);
-        tl.to(el, { y: to[1], duration: dur * 0.5, ease: "power2.in" }, t0 + dur * 0.5);
-        tl.fromTo(q(id + "-hop-sq"), { scaleY: 1, scaleX: 1 }, { scaleY: 0.8, scaleX: 1.12, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t0 - 0.16);
-        hide(el, tLand);
-        show(q(id + "-ride"), tLand);
-        squash(q(id + "-ride-sq"), tLand);
-      }
-      hop("b", [L.home.b, G1], L.ride.b, A0, tB, 0.42, 80);
-      hop("f", [L.home.f, G1], L.ride.f, A1, tF, 0.38, 90);
-      hop("c", [L.home.c, G1], L.ride.c, A2, tC, 0.24, 90);
-      // each landing tips the plank toward BUILD; the capitol slams it all the way down
-      tl.to(plk, { rotation: A1, duration: 0.4, ease: "back.out(2.2)" }, tB);
-      tl.to(plk, { rotation: A2, duration: 0.22, ease: "back.out(2)" }, tF);
-      tl.to(plk, { rotation: A3, duration: 0.16, ease: "power2.in" }, tC);
-      tl.to(plk, { rotation: A3 + 1.6, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, tC + 0.16);
-      // up in the air, the Crook keeps grinning; he looks down at the camera over his mask
-      tl.to(crHead, { rotation: 10, duration: 0.2, ease: "power2.out" }, tC + 0.1);
+      // ── Why spend years building a product: one blow a year ──
+      add({ on: "Why", do: "camera", view: "bench", dur: 0.8 });
+      add({ on: "Why", offset: 0.6, do: "counter", id: "yr", who: "cal", spot: [80, 150], from: 2026, to: 2031, style: "tick", dur: cue("hospital") - cue("Why") - 0.6, prefix: "", suffix: "", commas: false, size: 52, card: false });
+      ["years", "building", "product", "when", "ransom", "hospital"].forEach(function (w, i) {
+        add({ at: cue(w, w === "when" ? 2 : undefined), do: "nudge", who: "builder", by: [0, 22] });
+      });
+      // ...when you can ransom a hospital in an afternoon?
+      add({ on: "ransom", offset: -0.3, do: "camera", view: "hosp", dur: 0.6 });
+      add({ on: "ransom", do: "stamp", who: "lock", from: 1.6, shake: 6 });
+      add({ on: "ransom", offset: 0.2, do: "stamp", who: "hosp", text: "RANSOM", spot: [138, 130], size: 80, tilt: -6, shake: 8 });
+      add({ on: "hospital", do: "march", id: "loot", art: "bill-war", count: 5, height: 100, path: [[X.hosp, G], [X.robot + 70, G - 120]], speed: 600, end: "hide" });
+      // the clock jumps from 12 to 5: the minute hand spins five times, the hour hand goes round to 5; ding
+      var SPIN = (cue("afternoon?") + 0.3 - cue("ransom")) * 12;
+      add({ on: "ransom", do: "hinge", who: "minH", angle: 1800, frames: SPIN });
+      add({ on: "ransom", do: "hinge", who: "hourH", angle: 150, frames: SPIN });
+      add({ on: "afternoon?", offset: 0.35, do: "hop", who: ["clock", "hourH", "minH"], height: 26 });
+      add({ on: "afternoon?", offset: 0.5, do: "hop", who: "robot", height: 30 });
 
-      // "flips": a brick of war papers drops onto STEAL (slam). The plank slams down the other way and catapults the
-      // riders (and the plain papers) off the top of the frame (the slide-up whistle).
-      tl.fromTo(q("stack"), { y: -L.drop - 300 }, { y: 0, duration: 0.3, ease: "power3.in" }, tX - 0.3);
-      squash(q("stack-sq"), tX, 0.18);
-      tl.to(plk, { rotation: A0 + 1, duration: 0.09, ease: "power3.in" }, tX);
-      tl.to(plk, { rotation: A0 - 1.5, duration: 0.1, ease: "power1.out" }, tX + 0.09);
-      tl.to(plk, { rotation: A0, duration: 0.2, ease: "bounce.out" }, tX + 0.19);
-      tl.to(crHead, { rotation: 0, duration: 0.15 }, tX);
-      var tL = tX + 0.07;
-      function launch(id, lx, sc2, dx, spin, dur) {
-        var el = q(id + "-fly"), p = onPlank(lx, -TH, A3);
-        gsap.set(el, { svgOrigin: "0 0" });
-        hide(q(id + "-ride"), tL);
-        show(el, tL);
-        tl.fromTo(el, { x: p[0], rotation: A3 }, { x: p[0] + dx, rotation: spin, duration: dur, ease: "power1.out" }, tL);
-        tl.fromTo(el, { y: p[1] }, { y: -420, duration: dur, ease: "power2.out" }, tL);
-        hide(el, tL + dur);
-      }
-      launch("b", L.ride.b, s, 60, -540, 0.62);
-      launch("f", L.ride.f, L.fs, 140, 400, 0.55);
-      launch("c", L.ride.c, L.cs, 200, -360, 0.5);
-      [0, 1].forEach(function (i) {
-        var p = onPlank(L.ride.p[i], -TH - 12, A3), el = q("pl-" + i);
-        hide(el, tL);
-        // they come down slowly, rocking like leaves, by the Builder's corner
-        // (onto the workbench's top)
-        var lf = q("leaf-" + i), lin = q("leaf-in-" + i), x1 = L.bench[0] + (L.bench[1] - L.bench[0]) * (0.28 + 0.44 * i), t1 = tL + 1.2 + i * 0.5, t2 = cue("Why") + 0.4 + i * 0.3;
-        gsap.set(lin, { svgOrigin: "0 0" });
-        show(lf, tL);
-        tl.fromTo(lf, { x: p[0], y: p[1] }, { y: V ? 300 : 150, x: p[0] + 40, duration: 0.5, ease: "power2.out" }, tL);
-        tl.to(lf, { x: x1, duration: t2 - t1, ease: "sine.in" }, t1);
-        tl.to(lf, { y: G1 - 92 * k - 14 * 0.5 - 12, duration: t2 - t1, ease: "sine.out" }, t1);
-        tl.fromTo(lin, { rotation: -24 }, { rotation: 24, duration: 0.5, yoyo: true, repeat: Math.floor((t2 - t1) / 0.5), ease: "sine.inOut" }, t1);
-        tl.to(lin, { rotation: 0, duration: 0.15 }, t2);
-      });
-      // '"build things" to "steal things."': each word on the plank jumps as it is said
-      var labB = q("lab-b"), labS = q("lab-s");
-      gsap.set(labB, { svgOrigin: labB.dataset.x + " " + (-TH / 2) }); gsap.set(labS, { svgOrigin: labS.dataset.x + " " + (-TH / 2) });
-      tl.fromTo(labB, { scale: 1 }, { scale: 1.25, duration: 0.14, yoyo: true, repeat: 1, ease: "power2.out" }, cue("build"));
-      tl.fromTo(labS, { scale: 1 }, { scale: 1.3, duration: 0.16, yoyo: true, repeat: 1, ease: "power2.out" }, cue("steal"));
-      tl.to(crHead, { rotation: -8, duration: 0.25, ease: "sine.inOut" }, cue("steal") + 0.1);
+      // ── Why manufacture exports when hacking banks pays better? ──
+      add({ on: "Why", n: 2, do: "camera", view: "found", dur: 0.8 });
+      add({ on: "manufacture", do: "march", id: "exports", art: "cereal-box", count: 14, height: 120, path: [[X.found + 200, G - 180], [X.belt + 340, G - 180], [X.belt + 700, G - 180]], speed: 260, until: "irrational.", end: "hide" });
+      add({ on: "hacking", do: "camera", view: "bank", dur: 0.6 });
+      add({ on: "hacking", do: "bob", who: "robot3", y: 4, r: 2, speed: 6 });
+      add({ on: "banks", do: "pile", id: "vault", art: "bill-war-flat", x: X.robot3 - 160, y: G, height: 56, gap: 36, count: 18, until: "better?", tilt: 4, jitter: 8 });
+      // Once enough of your economy is extraction: more robots, round the foundry
+      add({ on: "Once", do: "camera", view: "ring", dur: 0.8 });
+      add({ on: "enough", n: 2, do: "march", id: "ring", art: "robot-elbow", count: 3, height: 360, path: [[X.bank + 700, G], [X.belt - 120, G]], speed: 900, end: "stop", gap: 210 });
+      // producing anything makes you a target rather than a success
+      add({ on: "target", do: "swap", who: "found", to: "target" });
+      add({ on: "rather", do: "show", who: "missile" });
+      add({ on: "rather", do: "move", who: "missile", to: [X.found + 120, G - 200], turn: 70, dur: cue("success.") + 0.1 - cue("rather") });
+      add({ on: "success.", offset: 0.1, do: "hide", who: ["missile", "target", "belt"] });
+      add({ on: "success.", offset: 0.1, do: "boom", shake: 24, flash: 0.25 });
+      add({ on: "success.", offset: 0.1, do: "pop", who: "boom" });
+      add({ on: "success.", offset: 0.1, do: "show", who: ["rubble", "charB", "crate"] });
+      add({ on: "Production", do: "pop", who: "boom", out: true });
+      add({ on: "Production", do: "camera", view: "rubble", dur: 0.6 });
+      add({ on: "irrational.", do: "shiver", who: "charB", dur: 0.4, amp: 3, rot: 2 });
+      // Parasitism becomes the only means of survival: he drops the crate and becomes one of them
+      add({ on: "Parasitism", do: "drop", who: "crate", dur: 0.5, spin: 40 });
+      add({ on: "becomes", n: 2, do: "move", who: "charB", by: [-140, 0], dur: 0.4 });
+      add({ on: "only", do: "swap", who: "charB", to: "newbot" });
+      add({ on: "survival.", do: "bob", who: "newbot", y: 4, r: 2, speed: 6 });
 
-      // "building" (+0.4): they come back down. The factory and the capitol land upside down, the Builder lands on his
-      // stool (thunk), stars circling his head.
-      var tLand = cue("building") + 0.4;
-      [["f", L.flat.f, tLand - 0.1], ["c", L.flat.c, tLand - 0.05]].forEach(function (a) {
-        var el = q(a[0] + "-land");
-        tl.fromTo(el, { x: a[1], y: -600 }, { y: G1, duration: 0.38, ease: "power2.in" }, a[2] - 0.38);
-        squash(q(a[0] + "-land-sq"), a[2], 0.3);
-      });
-      var sit = q("sit"), seatX = L.stool;
-      show(sit, tLand - 0.4);
-      tl.fromTo(sit, { x: seatX, y: -400 }, { y: G1 - seatH, duration: 0.4, ease: "power2.in" }, tLand - 0.4);
-      var sitArt = q("b-sit-art");
-      gsap.set(sitArt, { svgOrigin: "0 " + (s * rSit.hipY) });
-      tl.to(sitArt, { scaleY: 0.72, scaleX: 1.15, duration: 0.03, ease: "power2.in" }, tLand - 0.03);
-      tl.to(sitArt, { scaleY: 1, scaleX: 1, duration: 0.4, ease: "elastic.out(1.2,0.4)" }, tLand);
-      // the stars circle his head for the rest of the scene
-      var dz = [0, 1, 2].map(function (i) { return q("dz-" + i); }), rx = 34 * s / 1.45, ry = 10 * s / 1.45;
-      KIT.onTime(tl, D, function (lt) {
-        var on = lt >= tLand;
-        dz.forEach(function (el, i) {
-          var a = (lt - tLand) * 7 + (i * 2 * Math.PI) / 3;
-          el.setAttribute("transform", "translate(" + (rx * Math.cos(a)).toFixed(1) + "," + (ry * Math.sin(a)).toFixed(1) + ")");
-          el.setAttribute("opacity", on ? 1 : 0);
-        });
-      });
+      // ── You have a name for places where this already happened ──
+      add({ on: "name", do: "camera", view: "edge", dur: 1.0 });
+      add({ on: "\"failed", do: "stamp", id: "failed", text: "FAILED STATE", x: X.welcome, y: G - 640, size: 80, width: 440, tilt: -8, shake: 8 });
+      add({ on: "Somalia,", do: "stamp", who: "map0", from: 1.6, shake: 6 });
+      add({ on: "Libya,", do: "stamp", who: "map1", from: 1.6, shake: 6 });
+      add({ on: "parts", do: "stamp", who: "map2", from: 1.6, shake: 6 });
+      add({ on: "Syria.", offset: 0.2, do: "show", who: "syriaPiece" });
+      add({ on: "Syria.", offset: 0.2, do: "drop", who: "map2", dur: 0.6, spin: 40 });
+      // The productive economy collapsed: back up the street, everything falls flat
+      add({ on: "productive", n: 2, do: "camera", view: "street", dur: 0.8 });
+      add({ on: "collapsed,", offset: -0.4, do: "flatten", who: ["cal", "builder"] });
+      add({ on: "collapsed,", offset: -0.2, do: "flatten", who: ["hosp", "clock", "robot"] });
+      add({ on: "collapsed,", offset: -0.2, do: "hide", who: ["hourH", "minH"] });
+      add({ on: "collapsed,", do: "flatten", who: ["rubble", "ring", "newbot", "robot3"] });
+      add({ on: "collapsed,", offset: 0.2, do: "flatten", who: ["bank", "vault"] });
+      add({ on: "collapsed,", offset: 0.4, do: "flatten", who: ["welcome", "post0", "post1", "post2"] });
+      add({ on: "collapsed,", offset: 0.4, do: "drop", who: ["map0", "map1", "syriaPiece"], dur: 0.5, spin: 20 });
+      // the warlord economy replaced it: the toll gate, and everyone's papers
+      add({ on: "warlord", do: "camera", view: "warlord", dur: 0.7 });
+      add({ on: "warlord", do: "slideIn", who: "warlord", from: "left", over: 18 });
+      add({ on: "economy", n: 4, do: "tag", id: "tollTag", who: "warlord", text: "TOLL", knot: [225, 340], x: X.warlord + 190, y: G - 170, w: 220, h: 100, swing: 4 });
+      add({ on: "replaced", do: "hinge", who: "warlord.arm", angle: -60, frames: 2, hold: 1.9 });
+      add({ on: "replaced", do: "march", id: "toll", art: "bill-war", count: 5, height: 100, path: [[X.stand + 700, G], [X.warlord + 10, G - 260]], speed: 800, end: "hide" });
+      // anyone who builds something gets it taken
+      add({ on: "nobody", do: "camera", view: "stand", dur: 0.7 });
+      add({ on: "nobody", do: "slideIn", who: "farmer", from: "right", over: 14 });
+      add({ on: "builds", do: "pop", who: "stand", squash: true });
+      add({ on: "gets", do: "nudge", who: "warlord", by: [60, 0] });
+      add({ on: "taken.", do: "move", who: "stand", to: [X.warlord + 40, G - 560], dur: 0.5, arc: 100, turn: -10 });
+      add({ on: "taken.", offset: 0.3, do: "hop", who: "farmer", height: 70 });
+      add({ on: "taken.", offset: 0.75, do: "hop", who: "farmer", height: 70 });
 
-      // "product": he starts a chair. Each hammer blow puts on one piece: the seat, the back, one leg, another leg.
-      var tPr = cue("product"), sArm = sitArt.querySelector(".arm-r"), hits = [tPr, tPr + 0.62, tPr + 1.24, tPr + 1.86, tPr + 2.48];
-      gsap.set(sArm, { svgOrigin: rSit.shoulder[1].join(" ") });
-      hits.forEach(function (t, i) {
-        tl.fromTo(sArm, { rotation: i ? 34 : 0 }, { rotation: -46, duration: 0.3, ease: "power2.out", immediateRender: false }, t - 0.42);
-        tl.to(sArm, { rotation: 34, duration: 0.1, ease: "power3.in" }, t - 0.1);
-      });
-      tl.to(sArm, { rotation: 0, duration: 0.25, ease: "sine.out" }, hits[4] + 0.1);
-      ["chair-seat", "chair-back", "chair-leg0", "chair-leg1"].forEach(function (k, i) {
-        var el = q(k);
-        tl.fromTo(el, { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.12, ease: "back.out(3)" }, hits[i]);
-      });
-      tl.fromTo(q("chair"), { x: 0 }, { x: 3, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, hits[4]);
-
-      // "ransom": the Crook flicks a padlock onto the hospital's door (clank); a RANSOM note goes up and the sign turns.
-      var tRa = cue("ransom"), hand = (function () {
-        var hR = crR.hand[1];
-        return onPlank(L.crook + s * hR[0], -TH - s * crR.hipY + s * hR[1], A0);
-      })();
-      tl.to(crArmR, { rotation: 38, duration: 0.12, ease: "power2.in" }, tRa - 0.3);
-      tl.to(crArmR, { rotation: 0, duration: 0.3, ease: "power2.out" }, tRa - 0.18);
-      var lk = q("lock");
-      gsap.set(lk, { svgOrigin: "0 0" });
-      show(lk, tRa - 0.3);
-      tl.fromTo(lk, { x: hand[0] - lockAt[0], rotation: -200 }, { x: 0, rotation: 0, duration: 0.3, ease: "none" }, tRa - 0.3);
-      tl.fromTo(lk, { y: hand[1] - lockAt[1] }, { y: Math.min(hand[1], lockAt[1]) - lockAt[1] - 110, duration: 0.15, ease: "power2.out" }, tRa - 0.3);
-      tl.to(lk, { y: 0, duration: 0.15, ease: "power2.in" }, tRa - 0.15);
-      var shk = lk.querySelector(".padlock-shackle"), lbody = lk.querySelector(".padlock-body");
-      tl.fromTo(shk, { y: -9 }, { y: 0, duration: 0.06, ease: "power3.in" }, tRa);
-      tl.fromTo(lbody, { rotation: -8, svgOrigin: "0 -11.5" }, { rotation: 0, svgOrigin: "0 -11.5", duration: 0.4, ease: "elastic.out(1.5,0.3)", immediateRender: false }, tRa + 0.04);
-      var nt = q("note");
-      gsap.set(nt, { svgOrigin: "0 -30" });
-      tl.fromTo(nt, { opacity: 0, scale: 0.2, rotation: -20 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.25, ease: "back.out(2.4)" }, tRa + 0.12);
-      var hsp = q("hosp"), signO = hsp.querySelector(".hospital-open"), signX = hsp.querySelector(".hospital-closed");
-      tl.to(signO, { opacity: 0, duration: 0.01 }, tRa + 0.2);
-      tl.fromTo(signX, { opacity: 0 }, { opacity: 1, duration: 0.01 }, tRa + 0.2);
-      // medicine papers squeeze out under the door, pop back into shape and hop into his briefcase
-      var hL = crR.hand[0], brief = onPlank(L.crook + s * (hL[0] - 2), -TH - s * crR.hipY + s * (hL[1] + 18), A0);
-      [0, 1, 2, 3].forEach(function (i) {
-        var t = tRa + 0.3 + i * 0.27, el = q("med-" + i), sq = q("med-sq-" + i), x0 = HS[0] + 14, x1 = HS[0] - 42 * hk - 26;
-        gsap.set(sq, { svgOrigin: "0 0" });
-        show(el, t);
-        tl.fromTo(el, { x: x0, y: doorY }, { x: x1, duration: 0.2, ease: "power1.out" }, t);
-        tl.fromTo(sq, { scaleY: 0.12, scaleX: 1.2 }, { scaleY: 1, scaleX: 1, duration: 0.14, ease: "back.out(3)", immediateRender: false }, t + 0.2);
-        tl.to(el, { x: brief[0], duration: 0.26, ease: "none" }, t + 0.34);
-        tl.to(el, { y: Math.min(brief[1], doorY) - 70, duration: 0.13, ease: "power2.out" }, t + 0.34);
-        tl.to(el, { y: brief[1], duration: 0.13, ease: "power2.in" }, t + 0.47);
-        tl.to(sq, { scale: 0.2, duration: 0.06 }, t + 0.56);
-        hide(el, t + 0.62);
-        tl.fromTo(crArmL, { rotation: 0 }, { rotation: -6, duration: 0.05, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, t + 0.6);
-      });
-
-      // "afternoon?": the clock jumps from 12 to 5 (ding): the minute hand whirls five times round, the hour hand to 5.
-      var tA = cue("afternoon?"), hh = q("hand-h"), hm = q("hand-m");
-      gsap.set([hh, hm], { svgOrigin: "0 0" });
-      tl.fromTo(hm, { rotation: 0 }, { rotation: 1800, duration: 0.32, ease: "power2.inOut" }, tA - 0.04);
-      tl.fromTo(hh, { rotation: 0 }, { rotation: 150, duration: 0.32, ease: "power2.inOut" }, tA - 0.04);
-      // after "afternoon?": he hops onto his two-legged chair to rest and it tips him over backwards (thunk).
-      var tT = KIT.after(ID, "afternoon?"), tHop = tT - 0.62, chX = chairX - 37 * k;
-      tl.to(sit, { x: chX, duration: 0.24, ease: "none" }, tHop);
-      tl.to(sit, { y: G1 - seatH - 60, duration: 0.12, ease: "power2.out" }, tHop);
-      tl.to(sit, { y: G1 - seatH, duration: 0.12, ease: "power2.in" }, tHop + 0.12);
-      var tp = q("tip");
-      gsap.set(tp, { svgOrigin: (chairX + 7 * k) + " " + G1 });
-      // it pivots on its front feet until it lies on its back, the backrest on the ground (lifted as it turns, so
-      // nothing sinks below the ground line)
-      tl.to(tp, { rotation: -8, duration: 0.14, ease: "sine.inOut" }, tHop + 0.26);
-      tl.to(tp, { rotation: -88, y: -80 * k, duration: tT - (tHop + 0.4), ease: "power2.in" }, tHop + 0.4);
-      tl.to(tp, { rotation: -83, duration: 0.08, yoyo: true, repeat: 1, ease: "power1.out" }, tT);
-      tl.fromTo(q("cam"), { y: 0 }, { y: 5, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, tT);
-      tl.set({}, {}, D);
-      window.__timelines[ID] = tl;
+      KIT.collage({ id: ID, seed: 1108, plate: V ? [-2000, -4000, 10400, 5600] : [-800, -1400, 9200, 2800], views: views, view: "lot", cast: cast, beats: beats });
     })();
   </script>
 </template>

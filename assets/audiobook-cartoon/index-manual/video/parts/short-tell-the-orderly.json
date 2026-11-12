@@ -3,29 +3,29 @@
   "title": "Short: tell the orderly",
   "storyboard": "storyboards/part-04-institutionalize.md",
   "audio": {
-    "start": 463.5,
-    "end": 546.96
+    "start": 439.24,
+    "end": 522.599
   },
   "scenes": [
     {
       "id": "orderly-door-slot",
       "file": "compositions/scenes/short-tell-the-orderly/orderly-door-slot.html",
       "cue": "Anyway,",
-      "approx": 463.5,
+      "approx": 439.244,
       "layer": "B"
     },
     {
       "id": "centrifuge-vs-rocks",
       "file": "compositions/scenes/short-tell-the-orderly/centrifuge-vs-rocks.html",
       "cue": "Building",
-      "approx": 514.6,
+      "approx": 490.324,
       "layer": "B"
     },
     {
       "id": "billionaire-pdf",
       "file": "compositions/scenes/short-tell-the-orderly/billionaire-pdf.html",
       "cue": "But",
-      "approx": 534.7,
+      "approx": 510.464,
       "layer": "A",
       "wishonia": [
         {

@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 4:06.7
+duration: 3:48.8
 message: "Two futures modeled over 20 years: ignore the manual and the destructive economy eats half of everything; follow it and the model projects everyone 56.7 times richer."
-arc: Title card (one running paper stops at a crossing of orbits and picks the other way) → on Earth in the window a fingerpost springs up, FUTURE A and FUTURE B, and YOU splits in two → the economist's straight line across the worsening trends flings him off the card → two YOUs, 1.57×, and the war factory's missile chars the left one → his arm falls off into space → road A, left from the fork, darker every year: YOU throws the manual away, dies when the ransomware timer runs out, walks on as a skeleton past the folded tax office (Wishonia side-eyes the camera), walks off the cliff past the COLOMBIA sign with the refugees, is split between two columns, and a cockroach finds the manual → the cockroach turns back the page → road B, right from the fork, brighter every year: YOU reads the manual, gets the first pill, rides out of the factory on top of its goods (Wishonia gives the camera a skeptical look), runs the good loop, ends up 56.7× richer and hides the missile lamp → communism did it in one lifetime by pigeon, stamped SUBOPTIMAL → busy humans walk past the YES button, Wishonia sips and shrugs, iris out
+arc: Title card (one running paper stops at a crossing of orbits and picks the other way) → on Earth in the window a fingerpost springs up, FUTURE A and FUTURE B, and YOU splits in two → the economist's straight line across the worsening trends flings him off the card → two YOUs, 1.57×, and the war factory's missile chars the left one → his arm falls off into space → road A, left from the fork, darker every year: YOU throws the manual away, dies when the ransomware timer runs out, walks on as a skeleton past the court that buries him in fake cases, walks off the cliff past the COLOMBIA sign with the refugees, is split between two columns, and a cockroach finds the manual → the cockroach turns back the page → road B, right from the fork, brighter every year: YOU reads the manual, gets the first pill, rides out of the factory on top of its goods (Wishonia gives the camera a skeptical look), runs the good loop, ends up 56.7× richer and hides the missile lamp → communism did it in one lifetime by pigeon, stamped SUBOPTIMAL → busy humans walk past the YES button, Wishonia sips and shrugs, iris out
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 25, "Choose Your Own Adventure"
-audio: index-manual.cbaf659d.mp3, 51:31.0 to 55:37.7
+audio: index-manual.7ce6b2b2.mp3, 51:01.3 to 54:50.1
 version: v3
 ---
 
@@ -25,12 +25,12 @@ version: v3
   - No death toll is spoken in this part.
 - **What the viewer must leave with:** two modeled futures. Ignore the manual, and destruction eats half the economy by 2040 and the whole thing falls off a cliff. Follow it, and you end up 56.7 times richer. Humans have changed the whole planet within one lifetime before, with a worse idea.
 - **Plates:**
-  - Host shots: Wishonia at her console on the observation deck, Earth in the window. YOU stands on top of Earth in fork-in-the-road, not-complicated and dont-know-what-to-tell-you. audit-side-eye and retrospect-look are one-second reaction cuts with nothing else in them.
+  - Host shots: Wishonia at her console on the observation deck, Earth in the window. YOU stands on top of Earth in fork-in-the-road, not-complicated and dont-know-what-to-tell-you. retrospect-look is a one-second reaction cut with nothing else in them.
   - the-forecast: a cream chart card, "GDP GROWTH", years along the bottom.
   - two-lanes: plain aged paper split into two lanes. Left: the arms factory and YOU's first copy. Right: a hospital and his second copy. Each copy has his lifetime pay stacked at his feet as a bar of bills.
   - the-roads: one huge engraved chart on aged paper, and the two futures are its two lines. Years run along the bottom, and each milestone is a year tick: 2027, 2028, 2032, 2033, 2035, 2040, 2043, 2045, 2048, 2050. The fork is at 2026 at the left, where one road splits in two. The y-axis is how rich you are. Road A, the lower branch, runs on roughly level. It stands on a bank of earth (the economy), and from the bottom of the bank a black band of Part 11's clockwork robots eats upward: 11.5% of the bank today, 25% at 2033, 50% at 2040. A dashed line at 15% is tagged "USSR · 1991". Past 2040 road A ends at a cliff where the line drops to zero, and 2043 to 2050 are on the chart's floor. Road B, the upper branch, climbs, steeper every year, and runs off the top of the paper; strips are glued on above it up to the moon. The sky over A steps darker each milestone; over B it steps brighter. YOU walks each road, and the camera travels with him.
   - one-lifetime: plain aged paper with the existing engraved globe, and under it a timeline bar from 1917 to 1991.
-- **Cast:** `globe`, `mushroom`, `laptop`, `binder`, `rubble` (existing); `you`, `you-skeleton`, `fingerpost`, `economist`, `ruler`, `trend-line`, `thumbtack`, `factory`, `weapons-maker`, `missile`, `hospital`, `bill-war`, `bill-med`, `bill-plain`, `manual`, `parachute`, `pram-woman`, `newspaper-man`, `robot` (Part 11's clockwork robot with a laptop), `gorbachev`, `plan-clipboard`, `engineer`, `crook-mask`, `ransom-skull`, `gauze`, `nurse`, `hospital-bed`, `bomb`, `court-window`, `court-clerk`, `auditor`, `tax-office`, `capitol`, `organs` (brain, heart, lungs, liver at desks), `refugee` (a line with suitcases), `border-signs`, `survivor` (two), `spreadsheet`, `cockroach`, `treaty-scroll`, `funnel`, `fat-cat`, `toaster`, `ticket-window`, `wait-sign`, `leash-human` (humans walking diseases on leashes, and skeletons), `pill-bottle`, `loud-human`, `soapbox`, `conveyor`, `goods`, `typewriter`, `journals`, `loop-stations`, `scientist`, `germ`, `child`, `missile-lamp`, `tablecloth`, `marx`, `lenin`, `mao`, `human-ages` (a baby, a young man, an old man on a cane), `pigeon`, `skulls`, `yes-button` (new or shared).
+- **Cast:** `globe`, `mushroom`, `laptop`, `binder`, `rubble` (existing); `you`, `you-skeleton`, `fingerpost`, `economist`, `ruler`, `trend-line`, `thumbtack`, `factory`, `weapons-maker`, `missile`, `hospital`, `bill-war`, `bill-med`, `bill-plain`, `manual`, `parachute`, `pram-woman`, `newspaper-man`, `robot` (Part 11's clockwork robot with a laptop), `gorbachev`, `plan-clipboard`, `engineer`, `crook-mask`, `ransom-skull`, `gauze`, `nurse`, `hospital-bed`, `bomb`, `court-window`, `court-clerk`, `capitol`, `organs` (brain, heart, lungs, liver at desks), `refugee` (a line with suitcases), `border-signs`, `survivor` (two), `spreadsheet`, `cockroach`, `treaty-scroll`, `funnel`, `fat-cat`, `toaster`, `ticket-window`, `wait-sign`, `leash-human` (humans walking diseases on leashes, and skeletons), `pill-bottle`, `loud-human`, `soapbox`, `conveyor`, `goods`, `typewriter`, `journals`, `loop-stations`, `scientist`, `germ`, `child`, `missile-lamp`, `tablecloth`, `marx`, `lenin`, `mao`, `human-ages` (a baby, a young man, an old man on a cane), `pigeon`, `skulls`, `yes-button` (new or shared).
 - **Callbacks:**
   - The 604 bar (style bible, gag 1): 604 war bills against one medicine bill, in 2027.
   - Part 11's soviet-plan chart: its clockwork robots are the black band eating road A's bank, and Gorbachev stands on the 15% line. Part 11's blank "PLAN:" clipboard is the robot's plan in 2033.
@@ -44,7 +44,7 @@ version: v3
   - The manual on a parachute; a woman with a pram; a man reading a newspaper.
   - Part 11's clockwork robot, in bulk. Gorbachev caricatured, birthmark and all, with Part 11's FIVE-YEAR PLAN binder (the existing `binder`). A robot holding the blank clipboard.
   - An engineer who turns into a masked crook with a laptop; a grinning-skull screen; a roll of gauze; a hospital bed; a nurse; a little lit bomb in a medicine cup.
-  - A court window with a clerk, a tax office that folds flat, an auditor with a magnifying glass.
+  - A court window with a clerk.
   - The Capitol with a hinged dome, and organs at office desks inside.
   - A line of refugees with suitcases, border signs, a cliff edge. Two ragged survivors, a dry tap, a two-column spreadsheet on an easel.
   - A cockroach that stands up, with tiny glasses and a bigger head.
@@ -69,7 +69,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "Choose Your Own Adventure"
-- time: 51:31.0 to 51:33.1 (2.1 s)
+- time: 51:01.3 to 51:03.5 (2.2 s)
 - voiceover: "Choose Your Own Adventure."
 - layer: A, title card
 - status: planned
@@ -86,7 +86,7 @@ Sound: a whirr under the running papers; a squeak as the paper hops orbits.
 - act: Two paths
 - transition_in: iris in on her face
 - cue: "Now is the time to select"
-- time: 51:33.1 to 51:41.3 (8.2 s)
+- time: 51:03.5 to 51:11.5 (8.0 s)
 - voiceover: "Now is the time to select one of the two paths for the remainder of your existence. I modeled both paths for twenty of your years."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; happy-smile + body-wide-gesture on "existence."; neutral-smile + body-open-palms on "I"
@@ -106,7 +106,7 @@ Sound: a boing as the post springs up on "select"; a sparkle on "existence."; a 
 - act: Two paths
 - transition_in: cut
 - cue: "Your economists project"
-- time: 51:41.3 to 51:52.6 (11.3 s)
+- time: 51:11.5 to 51:23.0 (11.5 s)
 - voiceover: "Your economists project steady two point five percent growth, which requires every trend that is currently getting worse to simultaneously stop getting worse. Good luck with that."
 - layer: B, plate the-forecast
 - status: planned
@@ -126,7 +126,7 @@ Sound: a pencil squeak as he rules the line on "project"; a tick for the tag on 
 - act: Two paths
 - transition_in: cut
 - cue: "If you stop spending papers"
-- time: 51:52.6 to 52:09.9 (17.2 s)
+- time: 51:23.0 to 51:40.0 (17.0 s)
 - voiceover: "If you stop spending papers on murder and start spending them on medicine, your meat lasts longer, your productivity compounds, and over a remaining human lifespan you earn one point five seven times what you would have earned doing the thing that kills you."
 - layer: B, plate two-lanes
 - status: planned
@@ -148,7 +148,7 @@ Sound: marching pats on "murder"; a whistle as the line turns and a sparkle as t
 - act: Two paths
 - transition_in: cut
 - cue: "This is not a complicated insight"
-- time: 52:09.9 to 52:13.0 (3.1 s)
+- time: 51:40.0 to 51:43.1 (3.2 s)
 - voiceover: "This is not a complicated insight."
 - layer: A, host
 - wishonia: big, eyeroll-closed + body-palms-down; sideeye-closed + body-idle on "insight."
@@ -166,7 +166,7 @@ Sound: a creak as the arm comes off on "insight.".
 - act: Future A
 - transition_in: cut
 - cue: "Future A: You Ignore"
-- time: 52:13.0 to 52:26.9 (13.9 s)
+- time: 51:43.1 to 51:56.6 (13.4 s)
 - voiceover: "Future A: You Ignore This Manual. Year twenty twenty-seven: Still spending six hundred and four times more on weapons than on testing which medicines actually work. Nobody finds this weird."
 - layer: B, plate the-road
 - bit: **YOU walk along one road, big, looking at your watch, and every year it gets worse.** Scenes 6 to 9 are one scene and one treadmill: the walk never eases and YOU never looks up, while black tar climbs him at his height times the share of GDP (ankles, knees at 25%, waist at 50%) and the sky goes from dust to rust. Scenes 11 to 13 are the rest of the road: it ends at a cliff, NO COLOMBIA; 2043 at the bottom; payoff, a cockroach in his fedora holding the manual upside down.
@@ -186,7 +186,7 @@ Sound: a whoosh and a thunk for the manual; a slide whistle up on "six"; a stamp
 - act: Future A
 - transition_in: same scene as future-a-2027
 - cue: "Year twenty thirty-three"
-- time: 52:26.9 to 52:38.6 (11.8 s)
+- time: 51:56.6 to 52:07.9 (11.3 s)
 - voiceover: "Year twenty thirty-three: Destructive economy hits twenty-five percent of G.D.P. The Soviet Union collapsed at fifteen percent. You have better technology and worse planning."
 - layer: B, plate the-road
 - status: planned
@@ -204,7 +204,7 @@ Sound: a stamp on "twenty-five" and on "fifteen"; a clank as the binder hits on 
 - act: Future A
 - transition_in: same scene as future-a-2027
 - cue: "Year twenty thirty-five"
-- time: 52:38.6 to 52:58.3 (19.6 s)
+- time: 52:07.9 to 52:26.5 (18.6 s)
 - voiceover: "Year twenty thirty-five: Your best engineers now work in ransomware because it pays better than engineering. Hospitals budget for extortion the way they used to budget for gauze. A nurse clicks a chart and gets a countdown timer instead of a medication dose. The people who could reverse this trend are the ones profiting from it."
 - layer: B, plate the-road
 - status: planned
@@ -224,8 +224,8 @@ Sound: typewriter on "ransomware"; a cash register on "pays" and "profiting"; a 
 - act: Future A
 - transition_in: same scene as future-a-2027
 - cue: "Year twenty forty"
-- time: 52:58.3 to 53:10.4 (12.2 s)
-- voiceover: "Year twenty forty: Parasitic economy hits fifty percent. A.I. agents file more fake court cases than real ones. Tax collection collapses because A.I. can evade faster than humans can"
+- time: 52:26.5 to 52:33.9 (7.4 s)
+- voiceover: "Year twenty forty: Parasitic economy hits fifty percent. A.I. agents file more fake court cases than real ones."
 - layer: B, plate the-road
 - status: planned
 
@@ -234,35 +234,16 @@ Sound: typewriter on "ransomware"; a cash register on "pays" and "profiting"; a 
 | "Year twenty forty:" | | The 2040 sign. | The burnt suit falls off him. The skeleton keeps the stride. |
 | "Parasitic economy hits fifty percent." | Destruction is half the economy. | The one pull-back: tar to the waist as far as you can see, the charred nurse and the heap behind him, the sky rust. 50% on a card. | |
 | "A.I. agents file more fake court cases than real ones." | Machines flood the courts with fakes. | Robots wade past him holding up FAKE on their clipboards, to a court window. Case files stack up beside the judge. | On "ones." the stack falls on him. |
-| "Tax collection collapses because A.I. can evade faster than humans can" | Machines dodge tax faster than people can check. | On "collapses" the tax office folds flat. An auditor, big, with his magnifying glass; on "evade" robots zip round him and he spins. | On the second "can" he goes under the tar. |
 
-Sound: a slide whistle down as the suit falls; a stamp on "percent"; a slam on "ones."; a thunk on "collapses"; a whoosh on "evade".
+Sound: a slide whistle down as the suit falls; a stamp on "percent"; a slam on "ones.".
 
-## Scene 10 · audit-side-eye
-
-- id: audit-side-eye
-- act: Future A
-- transition_in: cut
-- cue: "audit"
-- time: 53:10.4 to 53:11.5 (1.0 s)
-- voiceover: "audit."
-- layer: A, host
-- wishonia: big, sideeye-closed + body-arms-crossed
-- status: planned
-
-| Line | Claim | Visual | Gag |
-|---|---|---|---|
-| "audit." | | Cut to Wishonia at her console, arms crossed, side-eyeing the camera while it pushes in on her face. | |
-
-Sound: crickets.
-
-## Scene 11 · rot-in-place
+## Scene 10 · rot-in-place
 
 - id: rot-in-place
 - act: Future A
 - transition_in: cut back to the plate, where the camera would have got to (traveling on left)
 - cue: "Your governments don't fall"
-- time: 53:11.5 to 53:28.1 (16.6 s)
+- time: 52:33.9 to 52:49.5 (15.6 s)
 - voiceover: "Your governments don't fall; they rot in place, like a body whose organs are still technically present but no longer speaking to one another. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia."
 - layer: B, plate the-road
 - status: planned
@@ -276,13 +257,13 @@ Sound: crickets.
 
 Sound: a clank on "fall;"; a squeak on "place,"; a slam on "another."; a stamp on "no"; a falling slide whistle after the second "Colombia.".
 
-## Scene 12 · future-a-2043
+## Scene 11 · future-a-2043
 
 - id: future-a-2043
 - act: Future A
 - transition_in: same scene as rot-in-place: the camera goes down the cliff
 - cue: "Year twenty forty-three"
-- time: 53:28.1 to 53:39.6 (11.5 s)
+- time: 52:49.5 to 52:59.7 (10.2 s)
 - voiceover: "Year twenty forty-three: Water wars go nuclear. The survivors argue about whether this counts as a climate death or a military death, because the spreadsheet has separate columns."
 - layer: B, plate the-road
 - status: planned
@@ -295,13 +276,13 @@ Sound: a clank on "fall;"; a squeak on "place,"; a slam on "another."; a stamp o
 
 Sound: a boing on "wars"; the boom on "nuclear."; a thunk on "argue"; three far booms; a snip on "separate"; a marker on "columns.".
 
-## Scene 13 · cockroach-manual
+## Scene 12 · cockroach-manual
 
 - id: cockroach-manual
 - act: Future A
 - transition_in: same scene as rot-in-place: the camera follows the fedora
 - cue: "Year twenty forty-five"
-- time: 53:39.6 to 53:49.7 (10.0 s)
+- time: 52:59.7 to 53:08.3 (8.7 s)
 - voiceover: "Year twenty forty-five: Cockroaches evolve intelligence. Year twenty fifty: Cockroaches find this manual, very confused."
 - layer: B, plate the-road
 - status: planned
@@ -313,13 +294,13 @@ Sound: a boing on "wars"; the boom on "nuclear."; a thunk on "argue"; three far 
 
 Sound: a boing on "intelligence."; a huff on "find"; a squeak on "confused.".
 
-## Scene 14 · future-b-2028
+## Scene 13 · future-b-2028
 
 - id: future-b-2028
 - act: Future B
 - transition_in: the page turns back: the cockroach turns cockroach-manual's last frame over like a page of a book, from left to right, onto the fork
 - cue: "Future B: You Follow"
-- time: 53:49.7 to 54:07.0 (17.3 s)
+- time: 53:08.3 to 53:24.7 (16.3 s)
 - voiceover: "Future B: You Follow Instructions. Year twenty twenty-eight: Treaty passes. Murder money becomes medicine money. Investors confused by returns that aren't a typo. Military contractors discover that alive customers buy more things than dead ones."
 - layer: B, plate the-roads
 - status: planned
@@ -334,13 +315,13 @@ Sound: a boing on "intelligence."; a huff on "find"; a squeak on "confused.".
 
 Sound: a whoosh as the page turns on "Future"; a pop for the tick and a stamp thump on "passes."; a sparkle as the seals flip on "medicine"; a squeak as he rubs the statement on "typo."; a cash-register ding on "alive"; a clank on "dead".
 
-## Scene 15 · future-b-2032
+## Scene 14 · future-b-2032
 
 - id: future-b-2032
 - act: Future B
 - transition_in: same plate (no seam): the camera travels on right
 - cue: "Year twenty thirty-two"
-- time: 54:07.0 to 54:30.0 (23.0 s)
+- time: 53:24.7 to 53:44.6 (19.9 s)
 - voiceover: "Year twenty thirty-two: First treatments from the accelerated pipeline reach patients. Diseases that would have waited centuries for trials are getting tested now. Nobody is cured of everything, but the queue is finally moving. Humans experience the novel sensation of progress. Several publish op-eds arguing it's happening too fast."
 - layer: B, plate the-roads
 - status: planned
@@ -355,13 +336,13 @@ Sound: a whoosh as the page turns on "Future"; a pop for the tick and a stamp th
 
 Sound: a pop for the tick on "thirty-two:"; a ding and a sparkle as the bottle lands on "reach"; a whirr as the digits roll on "centuries" and a clank on "now."; a shuffle of feet on "moving."; a megaphone squawk on "op-eds".
 
-## Scene 16 · future-b-2035
+## Scene 15 · future-b-2035
 
 - id: future-b-2035
 - act: Future B
 - transition_in: same plate (no seam): the camera travels on right
 - cue: "Year twenty thirty-five"
-- time: 54:30.0 to 54:43.1 (13.1 s)
+- time: 53:44.6 to 53:57.5 (12.9 s)
 - voiceover: "Year twenty thirty-five: Turns out when you stop spending money on destruction and start spending it on production, things get produced. Your economists publish papers explaining why this was obvious in"
 - layer: B, plate the-roads
 - status: planned
@@ -374,13 +355,13 @@ Sound: a pop for the tick on "thirty-two:"; a ding and a sparkle as the bottle l
 
 Sound: a pop for the tick on "thirty-five:"; a shrug squeak on "destruction"; factory hammering on "production,"; a boing as YOU is scooped up on "produced."; typewriter keys on "publish"; a slide whistle up on "obvious".
 
-## Scene 17 · retrospect-look
+## Scene 16 · retrospect-look
 
 - id: retrospect-look
 - act: Future B
 - transition_in: cut
 - cue: "retrospect"
-- time: 54:43.1 to 54:44.5 (1.5 s)
+- time: 53:57.5 to 53:58.9 (1.4 s)
 - voiceover: "retrospect."
 - layer: A, host
 - wishonia: big, skeptical-closed + body-hands-hips
@@ -392,13 +373,13 @@ Sound: a pop for the tick on "thirty-five:"; a shrug squeak on "destruction"; fa
 
 Sound: none; the look is silent.
 
-## Scene 18 · future-b-2040
+## Scene 17 · future-b-2040
 
 - id: future-b-2040
 - act: Future B
 - transition_in: cut back to the plate, where the camera would have got to (traveling on right)
 - cue: "Year twenty forty"
-- time: 54:44.5 to 55:01.4 (16.9 s)
+- time: 53:58.9 to 54:14.9 (16.1 s)
 - voiceover: "Year twenty forty: The compounding kicks in. Healthier people work more, earn more, spend more, fund more research, which cures more diseases, which makes more people healthier. Humans begin to suspect that not killing each other was the missing variable."
 - layer: B, plate the-roads
 - status: planned
@@ -411,13 +392,13 @@ Sound: none; the look is silent.
 
 Sound: a pop for the tick on "forty:"; a whirr as the ring starts on "compounding"; a tick per station from "work"; a slam as the germ is knocked out on "cures"; a slide whistle up as the ring lifts off on "variable.".
 
-## Scene 19 · future-b-2048
+## Scene 18 · future-b-2048
 
 - id: future-b-2048
 - act: Future B
 - transition_in: same plate (no seam): the camera travels on right
 - cue: "Year twenty forty-eight"
-- time: 55:01.4 to 55:14.6 (13.2 s)
+- time: 54:14.9 to 54:27.0 (12.1 s)
 - voiceover: "Year twenty forty-eight: The model projects everyone fifty-six point seven times richer than the path you're currently on. Your children ask what "war" means. You change the subject."
 - layer: B, plate the-roads
 - status: planned
@@ -431,13 +412,13 @@ Sound: a pop for the tick on "forty:"; a whirr as the ring starts on "compoundin
 
 Sound: a pop for the tick on "forty-eight:"; a slide whistle up as the camera climbs from "projects"; an airplane on "point"; a boing as it bumps the moon and a stamp thump on "richer"; a falling slide whistle on "path"; a whoosh for the tablecloth on "subject.".
 
-## Scene 20 · fax-machine-lifetime
+## Scene 19 · fax-machine-lifetime
 
 - id: fax-machine-lifetime
 - act: It has been done before
 - transition_in: cut
 - cue: "Communism was invented"
-- time: 55:14.6 to 55:27.8 (13.2 s)
+- time: 54:27.0 to 54:39.3 (12.3 s)
 - voiceover: "Communism was invented, took over half your planet, and collapsed in a SINGLE human lifetime. In a world without fax machines. It required mass murder and was a TERRIBLE idea."
 - layer: B, plate one-lifetime
 - status: planned
@@ -453,13 +434,13 @@ Sound: a pop for the tick on "forty-eight:"; a slide whistle up as the camera cl
 
 Sound: a scratch of pen on "invented,"; a spreading hiss for the tint on "half"; an x-ray zap on "lifetime."; a pat of wings on "fax"; silence for the hold; a stamp thump on "TERRIBLE".
 
-## Scene 21 · dont-know-what-to-tell-you
+## Scene 20 · dont-know-what-to-tell-you
 
 - id: dont-know-what-to-tell-you
 - act: It has been done before
 - transition_in: cut
 - cue: "You have the internet"
-- time: 55:27.8 to 55:37.7 (9.9 s)
+- time: 54:39.3 to 54:50.1 (10.8 s)
 - voiceover: "You have the internet and an idea that mainly requires people to click a button and then receive money. If you can't make this happen, I genuinely don't know what to tell you."
 - layer: A, host
 - wishonia: big, neutral-smile + body-open-palms; smirk-closed + body-idle on "receive"; eyeroll-closed + body-shrug on "tell"

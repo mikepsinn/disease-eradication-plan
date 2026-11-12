@@ -1,408 +1,410 @@
 <template id="forty-page-insert-template">
-  <!-- forty-page-insert · Layer B (storyboards/part-14-decentralized-fda.md): the patient's kitchen counter. On
-       "nutrition" a plain cereal box turns to show "NUTRITION FACTS"; on "warning" a plain cigarette pack turns to
-       show "WARNING" and a skull. On "forty-page" the patient opens a plain pill box: the insert unfolds, and unfolds,
-       and unfolds, across the floor, then piles up over her until only her head and scarf stick out ("PAGE 1 OF 40").
-       "lawyers": at its far end the lawyer from smoke-detector-live slides in at a desk, still writing it; on
-       "seizures," his pen hand jitters, his scribbles turn to zigzags and the desk rattles. "nobody reads,": two
-       humans walk across it, one behind a newspaper, one with her nose in the air. "doctor.": the doctor walks in,
-       wipes his shoes on it like a doormat, and steps over the patient. -->
+  <!-- forty-page-insert · collage (Part 14, scenes 16 to 21 as one plate: short-donut-doctor's file, plus scene 21, louder-wins, at its end). The bit goes on: the wheel is still spinning.
+       "what actually happened": the camera slides along everyone who took it, grinning skeletons in bathrobes, each with
+       a donut on his lap. Then the grinning bottle lands and its 40-page insert erupts: over the patient to his chin, and
+       along the floor past everything to the lawyer writing its far end, who is electrocuted. The doctor skates past.
+       The TV slams down in front of the patient: a woman skips through a meadow while the fine print runs; STROKE: nothing;
+       DEATH: she is a skeleton, still skipping, still smiling; her heart falls out. Both versions qualify. The doctor
+       skates by again, Googling. Pull back to the whole mess: a giant sweeper pushes all of it off the plate. Marketing
+       slaps on MIRACLE!, the lawyer tapes on his pages; both get what they gave. One clean label lands: WHAT HAPPENS. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
-    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
-    #forty-page-insert-cam, #forty-page-insert-bg, #forty-page-insert-art, #forty-page-insert-pip, #forty-page-insert-grain { position: absolute; inset: 0; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
   </style>
-  <div id="root" data-composition-id="forty-page-insert" data-width="1920" data-height="1080" data-start="0" data-duration="12.34">
-    <div id="forty-page-insert-cam">
-      <div id="forty-page-insert-bg"></div>
-      <div id="forty-page-insert-art"></div>
-      <div id="forty-page-insert-pip"></div>
-      <div id="forty-page-insert-grain"></div>
-    </div>
+  <div id="root" data-composition-id="forty-page-insert" data-width="1920" data-height="1080" data-start="0" data-duration="82.8">
+    <div id="forty-page-insert-weave"></div>
+    <div id="forty-page-insert-film"></div>
   </div>
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
   <script>
-    (function () {
-      var ID = "forty-page-insert";
-      var sc = KIT.scene(ID);
-      var D = sc.duration;
-      var q = function (s) { return document.getElementById(ID + "-" + s); };
-      var cue = function (w, n) { return KIT.cue(ID, w, n); };
-      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V;
-      var P = ID + "-", INK = C.line, WHITE = "#FBF6E6", CARD = "#FBF5E4", PAGE = "#F7F1DD";
+    // Left to right on the ground G: cereal, cigarettes, bottle, patient, TV (over the wheel's first place), wheel, doctor,
+    // the skeletons, the lawyer. The wheel's layout is decision-wheel's.
+    var V = KIT.V, G = 1000, ID = "forty-page-insert", cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var PAT = V ? [520, 1.9] : [340, 1.95], DOC = V ? [1410, 1.7] : [1600, 1.7], WH = V ? [960, 100, 2.05] : [960, 585, 1.9];
+    var X = V ? { cereal: -960, pack: -480, bot: 0, tv: 1290, stop: 1260 } : { cereal: -1240, pack: -760, bot: -280, tv: 1145, stop: 1020 };
+    var SK0 = 2400, SKN = 6, SKGAP = 420, LAW = 5050, BOTK = 0.9, TVK = 0.98;
+    // The TV's screen is a hole in the art (x 70 to 700, y 250 to 710, centre 385, 480); what is behind it plays on the
+    // plate. The band and the fine print stay inside the cabinet: the camera is close whenever they run past the screen.
+    var TVC = [X.tv + (385 - 433.5) * TVK, G - (975 - 480) * TVK], BAND = TVC[1] + 123;
+    var cy = function (s) { return G - 420 / s; };
+    var views = V ? {
+      wheel: [960, cy(0.82), 0.82], row1: [2600, cy(1.05), 1.05], row2: [3800, cy(1.05), 1.05], shelf: [-720, cy(0.8), 0.8], ins: [236, cy(1), 1],
+      law: [4950, cy(0.95), 0.95], tv2: [1014, cy(0.755), 0.755], tv: [TVC[0], TVC[1], 1.75], google: [1100, cy(0.9), 0.9], wide: [1900, cy(0.2), 0.2],
+      bot: [150, cy(0.85), 0.85], label: [180, cy(0.95), 0.95],
+    } : {
+      wheel: [960, 620, 1], row1: [2900, 620, 1], row2: [3700, 620, 1], shelf: [-830, 620, 1], ins: [30, 620, 1],
+      law: [4800, 620, 1], tv2: [860, 640, 1.15], tv: [X.tv, TVC[1] - 10, 2.35], google: [860, 610, 1.2], wide: [1650, -481, 0.243],
+      bot: [30, 610, 1], label: [-130, 565, 1.25],
+    };
+    var beats = [], add = function (b) { beats.push(b); };
+    var cast = {};
 
-      // Layout per shape. 16:9 is a side view on one floor line: the counter left, the patient, the insert running
-      // right along the floor to the lawyer's desk. 9:16 adds depth: the counter and the lawyer's desk stand at the
-      // back wall (floor line back), the walkers cross the middle (mid), the patient and the doctor stand in front.
-      // pat: [x, ground, scale, look]; law: [x, desk top, scale, look]; desk: [x0, x1, top, ground]; path: the floor run
-      // of the insert from her box to the desk (pages every step px, scaled by depth()); up: its climb up the desk to
-      // the pen; pile: [x0, x1]; mat: the doormat spill [x0, x1]; doc: [x from, x wipe, x land]; walk: [ground, scale].
-      var L = V
-        ? { back: 880, counter: [60, 1020], top: 650, cereal: 570, cig: 830, items: 1.5,
-            pat: [800, 1440, 3.3, "left"], law: [215, 740, 2.4, "right"], desk: [70, 380, 740, 892], step: 34,
-            path: [[668, 1150], [650, 1428], [520, 1250], [395, 905]], up: [[384, 885], [384, 752], [318, 736]],
-            pile: [670, 940], mat: [540, 680], doc: [-160, 560, 1010], walk: [1150, 2.6], dir: -1,
-            banner: [60, 112, 660, 130, 58], lawFrom: -420 }
-        : { back: 880, counter: [60, 600], top: 606, cereal: 190, cig: 450, items: 1.6,
-            pat: [720, 880, 3.1, "right"], law: [1390, 640, 3.1, "left"], desk: [1170, 1480, 640, 880], step: 40,
-            path: [[836, 600], [852, 866], [1170, 866]], up: [[1172, 870], [1172, 650], [1250, 640]],
-            pile: [592, 880], mat: [455, 610], doc: [-170, 480, 1000], walk: [880, 2.7], dir: 1,
-            banner: [880, 46, 760, 112, 54], lawFrom: 2260 };
-      var S = L.pat[2], PX = L.pat[0], PY = L.pat[1] - 100 * S;
-      function depth(y) { return V ? 0.68 + 0.32 * Math.max(0, Math.min(1, (y - L.back) / (L.pat[1] - L.back))) : 1; }
+    // The giant sweeper goes first, behind everything. His broom's leading edge (art 205, 600) runs at v from x0.
+    var SW = { t0: cue("new") + 0.1, x0: -2600, v: 2300, T: 5 };
+    cast.sweeper = { art: "sweeper", x: SW.x0, y: G + 30, anchor: [205, 606], scale: V ? 8 : 6, hidden: true };
+    // what the broom reaches keeps going in front of it: names, their left edge, how high the heap throws them, a spin
+    var sweep = function (who, left, dy, turn) {
+      var at = SW.t0 + Math.max(0, left - SW.x0) / SW.v, dur = SW.t0 + SW.T - at;
+      add({ at: at, do: "move", who: who, by: [SW.v * dur, dy], dur: dur, turn: turn || 0 });
+    };
 
-      q("bg").innerHTML = KIT.paper(ID);
-      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+    // the wheel and the doctor, as decision-wheel left them
+    cast.stand = { art: "wheel-stand", x: WH[0], y: WH[1], anchor: [106, 96], scale: (G - WH[1]) / 373 };
+    cast.wheel = { art: "prize-wheel", x: WH[0], y: WH[1], anchor: [209, 208], pivot: [209, 208], scale: WH[2], label: [
+      { text: "DONUTS", at: [209, 98], width: 170, size: 76 },
+      { text: "HALF-", at: [346, 208], width: 90, size: 50, tilt: 90 },
+      { text: "REMEMBERED", at: [306, 208], width: 150, size: 50, tilt: 90 },
+      { text: "INSURANCE", at: [209, 318], width: 170, size: 76, tilt: 180 },
+      { text: "VIBES", at: [100, 208], width: 150, size: 76, tilt: -90 },
+    ] };
+    cast.hand = { art: "pointing-hand", x: WH[0], y: WH[1] - 209 * WH[2] + 36, anchor: [95, 285], scale: 0.6 };
+    cast.doc = { art: "doctor", x: DOC[0], y: G, anchor: "bottom", pivot: "bottom", scale: DOC[1], faces: "left" };
 
-      function g(id, inner, attrs) { return '<g id="' + P + id + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
-      function at(x, y, s, inner) { return '<g transform="translate(' + (+x).toFixed(1) + "," + (+y).toFixed(1) + ")" + (s !== 1 ? " scale(" + s + ")" : "") + '">' + inner + "</g>"; }
-      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b) o[k] = b[k]; return o; }
-      function pts(a) { return a.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" "); }
-      function poly(a, fill, w, extra) { return '<polygon points="' + pts(a) + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="' + (w || 3) + '" stroke-linejoin="miter" ' + (extra || "") + "/>"; }
-      function text(x, y, size, t, fill, family, extra) {
-        return '<text x="' + x + '" y="' + y + '" font-family="' + (family || "Oswald") + '" font-weight="' + (family === "Inter" ? 700 : 600) + '" font-size="' + size + '" fill="' + (fill || INK) + '" ' + (extra || "") + ">" + t + "</text>";
+    // everyone who took it
+    var SKK = 1.55;
+    for (var i = 0; i < SKN; i++) {
+      var sx = SK0 + i * SKGAP;
+      cast["sk" + i] = { art: "patient-skeleton", x: sx, y: G, anchor: "bottom", pivot: "bottom", scale: SKK };
+      cast["skd" + i] = { art: "donut", x: sx + 12, y: G - 205 * SKK, scale: 0.58 };
+    }
+
+    // The leaderboard lands on the wheel. The book's depression example, then what the wheel was choosing from.
+    var BK = 0.9, BC = V ? [960, -187] : [960, 473], RK = BK * 0.87;
+    var bpt = function (ax, ay) { return [BC[0] + (ax - 450) * BK, BC[1] + (ay - 481.5) * BK]; };
+    cast.board = { art: "rank-board", x: BC[0], y: BC[1], scale: BK, hidden: true, label: { text: "DEPRESSION (EXAMPLE)", at: [450, 147], width: 640, size: 60 } };
+    var RANKS = [["1. BUPROPION", 28.3], ["2. SERTRALINE", 24.7], ["3. VENLAFAXINE", 21.2], ["4,807. VIBES", 0], ["4,808. DONUTS", 0]];
+    var RANKN = [];
+    RANKS.forEach(function (r, n) {
+      var c = bpt(450, 300 + n * 140), left = c[0] - 395 * RK * 0.9;
+      cast["rank" + n] = { art: "rank-row", x: c[0], y: c[1], scale: RK, hidden: true, label: [
+        { text: r[0], at: [255, 50], width: 440, size: 44 }, { text: r[1] + "% LESS", at: [715, 50], width: 240, size: 44 }] };
+      RANKN.push("rank" + n);
+      if (r[1]) {
+        var w = 870 * r[1] / 30;
+        cast["rbar" + n] = { art: "rank-bar-green", x: left, y: c[1] + 26 * RK, anchor: [0, 18], scale: RK * 0.9, hidden: true, clip: [[0, 0], [w, 0], [w, 36], [0, 36]] };
+        RANKN.push("rbar" + n);
       }
-      var uid = 0;
+    });
+    var RD = bpt(150, 860 + 28);
+    cast.rdonut = { art: "donut", x: RD[0], y: RD[1], scale: 0.28, hidden: true };
+    RANKN.push("rdonut", "board");
 
-      // ── The kitchen: checker floor from the back line, a tiled backsplash, cream cabinets, a mustard top ──
-      function kitchen(k) {
-        var out = "", x, y, i, j, top = k.top, x0 = k.counter[0], x1 = k.counter[1], fl = k.floor, cs = V ? 64 : 58;
-        out += '<defs><clipPath id="' + P + 'floor"><rect x="44" y="' + fl + '" width="' + (W - 88) + '" height="' + (H - 44 - fl) + '"/></clipPath></defs><g clip-path="url(#' + P + 'floor)">' +
-          '<rect x="44" y="' + fl + '" width="' + (W - 88) + '" height="' + (H - 44 - fl) + '" fill="' + CARD + '"/>';
-        for (i = 0; 44 + i * cs < W - 44; i++) for (j = 0; fl + j * cs < H - 44; j++) if ((i + j) % 2) out += '<rect x="' + (44 + i * cs) + '" y="' + (fl + j * cs) + '" width="' + cs + '" height="' + cs + '" fill="' + C.peri + '" opacity="' + (V ? 0.32 : 0.5) + '"/>';
-        out += '</g><rect x="44" y="' + (fl - 3) + '" width="' + (W - 88) + '" height="6" fill="' + INK + '"/>';
-        var sh = V ? 150 : 140, ts = V ? 38 : 35;
-        out += '<rect x="' + x0 + '" y="' + (top - sh) + '" width="' + (x1 - x0) + '" height="' + sh + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="3"/>';
-        for (x = x0; x < x1; x += ts) out += '<path d="M' + x + "," + (top - sh) + " V" + top + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.5"/>';
-        for (y = top - sh; y < top; y += ts) out += '<path d="M' + x0 + "," + y + " H" + x1 + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.5"/>';
-        var tr = KIT.rng(5);
-        for (x = x0; x < x1 - ts; x += ts) for (y = top - sh; y < top - ts + 1; y += ts) if (tr() < 0.12) out += '<rect x="' + (x + 2) + '" y="' + (y + 2) + '" width="' + (ts - 4) + '" height="' + (ts - 4) + '" fill="' + C.orange + '" opacity="0.8"/>';
-        var ch = fl - top;
-        out += '<rect x="' + x0 + '" y="' + top + '" width="' + (x1 - x0) + '" height="' + ch + '" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="5"/>';
-        var nd = Math.max(1, Math.round((x1 - x0) / (V ? 190 : 200))), dw = (x1 - x0) / nd;
-        for (i = 0; i < nd; i++) {
-          var dx = x0 + i * dw;
-          out += '<rect x="' + (dx + 14) + '" y="' + (top + 34) + '" width="' + (dw - 28) + '" height="' + (ch - 56) + '" fill="' + CARD + '" stroke="' + INK + '" stroke-width="3"/>' +
-            '<rect x="' + (dx + dw * 0.55) + '" y="' + (top + 34) + '" width="' + (dw * 0.45 - 14) + '" height="' + (ch - 56) + '" fill="url(#' + P + 'fine)" opacity="0.3"/>' +
-            '<rect x="' + (dx + dw / 2 - 16) + '" y="' + (top + 52) + '" width="32" height="9" rx="2" fill="' + C.orange + '" stroke="' + INK + '" stroke-width="2.4"/>';
-        }
-        out += '<rect x="' + (x0 - 12) + '" y="' + (top - 6) + '" width="' + (x1 - x0 + 24) + '" height="22" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="5"/>' +
-          '<path d="M' + (x0 - 6) + "," + (top + 9) + " H" + (x1 + 6) + '" stroke="' + WHITE + '" stroke-width="3" opacity="0.8"/>';
-        return out;
-      }
+    // the 40 pages: three arching off the bottle, six stacked on the patient to his chin, thirty along the floor to the
+    // lawyer, and page 1 on his chest. Those on the floor go in here, under the TV; the rest go in front of the patient.
+    var INS = V ? [[X.bot + 130, 120], [X.bot + 250, 200], [X.bot + 300, 460]] : [[X.bot + 170, 120], [X.bot + 340, 190], [X.bot + 450, 390]];
+    [[-180, 820], [0, 820], [180, 820], [-180, 625], [180, 625], [0, 625]].forEach(function (o) { INS.push([PAT[0] + o[0], o[1]]); });
+    var FLOOR0 = PAT[0] + 340, FLOORN = 30, FSTEP = (LAW - 150 - FLOOR0) / (FLOORN - 1);
+    for (var f = 0; f < FLOORN; f++) INS.push([FLOOR0 + f * FSTEP, f % 2 ? 860 : 845]);
+    var page = function (n) { var p = INS[n], fl = n >= 9; return { art: "insert", x: p[0], y: p[1], scale: n < 3 ? 1 : fl ? 1.2 : 1.5, hidden: true }; };
+    for (var fi = 9; fi < INS.length; fi++) cast["ins" + fi] = page(fi);
 
-      // ── The patient (the same woman in every Part 14 scene), her scarf, and the plain pill box ──
-      var PAT = { tone: 2, outfit: "dress", hair: 1, color: 1, light: "red", mood: "worried" };
-      function scarf(o) {
-        var r = KIT.rig(o), n = r.neck, f = r.facing, x = n[0], y = n[1] + 1, cid = P + "scarf" + ++uid;
-        var band = [[x - 9, y - 3], [x + 9, y - 5], [x + 10.5, y + 3], [x - 9.5, y + 5]];
-        var t1 = [[x + 3 * f, y + 3], [x + 9 * f, y + 2], [x + 15 * f, y + 19], [x + 9 * f, y + 21]];
-        var t2 = [[x + 2 * f, y + 4], [x + 7 * f, y + 5], [x + 6 * f, y + 25], [x + 0 * f, y + 23]];
-        var stripes = "";
-        for (var s = -16; s < 30; s += 5) stripes += '<path d="M' + (x + s) + "," + (y - 8) + " l-8,36" + '" stroke="' + C.yellow + '" stroke-width="2.4"/>';
-        var c1 = cid + "b", c2 = cid + "t1", c3 = cid + "t2";
-        return '<g class="scarf"><defs><clipPath id="' + c1 + '"><polygon points="' + pts(band) + '"/></clipPath><clipPath id="' + c2 + '"><polygon points="' + pts(t1) + '"/></clipPath><clipPath id="' + c3 + '"><polygon points="' + pts(t2) + '"/></clipPath></defs>' +
-          '<g class="scarf-tails">' + poly(t2, C.orange, 2) + '<g clip-path="url(#' + c3 + ')">' + stripes + "</g>" + poly(t1, C.orange, 2) + '<g clip-path="url(#' + c2 + ')">' + stripes + "</g></g>" +
-          poly(band, C.orange, 2) + '<g clip-path="url(#' + c1 + ')">' + stripes + "</g>" +
-          poly([[x + 1 * f, y + 1], [x + 7 * f, y], [x + 8 * f, y + 6], [x + 2 * f, y + 7]], C.yellow, 2) + "</g>";
-      }
-      var f = L.pat[3] === "right" ? 1 : -1;
-      var patO = mix(PAT, { look: L.pat[3], arms: f > 0 ? [[30, 95], [0, 90]] : [[0, -90], [-30, -95]] }), PR = KIT.rig(patO);
-      var BOX = [(PR.hand[0][0] + PR.hand[1][0]) / 2, (PR.hand[0][1] + PR.hand[1][1]) / 2 - 2];
-      // the plain pill box (person units, centered on her hands); its flap (.box-flap) opens about its hinge
-      var pbox = poly([[-11, -12], [11, -12], [11, 13], [-11, 13]], WHITE, 2.2) + '<rect x="2" y="-12" width="9" height="25" fill="url(#' + P + 'fine)" opacity="0.3"/>' +
-        text(0, 6, 9, "Rx", INK, "Oswald", 'text-anchor="middle"') + '<path d="M-7,9 H7" stroke="' + C.orange + '" stroke-width="1.6"/>' +
-        g("box-flap", poly([[-11, -12], [11, -12], [9, -18], [-9, -18]], CARD, 2));
+    // the lawyer at the far end
+    var LAWK = 1.85;
+    cast.law = { art: "lawyer", x: LAW, y: G, anchor: "bottom", pivot: "bottom", scale: LAWK, faces: "left", eyes: [[56, 62], [84, 62]], eyeSize: 34, smoke: [[110, 20]] };
 
-      // ── The insert: an accordion of cream pages standing in a zigzag (each page tilts the other way) ──
-      function page(i, k, lab) {
-        var w = 40 * k, h = 52 * k, lean = (i % 2 ? 1 : -1) * 13, r = KIT.rng(31 + i), lines = "";
-        for (var j = 0; j < 4; j++) lines += '<path d="M' + (-w / 2 + 6 * k) + "," + (-h + (12 + j * 10) * k) + " h" + ((22 + r() * 10) * k).toFixed(1) + '" stroke="' + INK + '" stroke-width="' + (1.4 * k).toFixed(2) + '" opacity="0.45"/>';
-        return '<g transform="rotate(' + lean + ')">' + poly([[-w / 2, 0], [w / 2, 0], [w / 2, -h], [-w / 2, -h]], i % 2 ? PAGE : WHITE, 2.4 * k) +
-          (i % 2 ? '<rect x="' + (-w / 2) + '" y="' + (-h) + '" width="' + w + '" height="' + h + '" fill="url(#' + P + 'fine)" opacity="0.25"/>' : "") + lines + "</g>";
-      }
-      // points every `step` px along a polyline, with the direction there
-      function along(path, step) {
-        var out = [], carry = 0;
-        for (var i = 0; i < path.length - 1; i++) {
-          var a = path[i], b = path[i + 1], dx = b[0] - a[0], dy = b[1] - a[1], len = Math.sqrt(dx * dx + dy * dy), d = carry;
-          while (d <= len) { out.push([a[0] + (dx * d) / len, a[1] + (dy * d) / len, Math.atan2(dy, dx)]); d += step; }
-          carry = d - len;
-        }
-        return out;
-      }
-      var run = along(L.path, L.step), climb = along(L.up, L.step * 0.8);
-      // pages on the floor stand up; on the way down from the box and up the desk they lie along the run
-      function placed(list, cls) {
-        return list.map(function (p, i) {
-          var k = depth(p[1]), vertical = Math.abs(Math.sin(p[2])) > 0.85;
-          var rot = vertical ? (p[2] * 180) / Math.PI + (p[2] > 0 ? -90 : 90) : 0;
-          return '<g transform="translate(' + p[0].toFixed(1) + "," + p[1].toFixed(1) + ") rotate(" + rot.toFixed(1) + ')"><g class="' + cls + '"' + (cls === "run-page" ? ' opacity="0"' : "") + ">" + page(i, k) + "</g></g>";
-        }).join("");
-      }
+    // the shelf
+    cast.cereal = { art: "cereal-box", x: X.cereal, y: G, anchor: "bottom", pivot: "bottom", scale: 2.6, hidden: true, label: [
+      { text: "NUTRITION", at: [97, 95], width: 130, size: 60 }, { text: "FACTS", at: [97, 145], width: 100, size: 60 }] };
+    cast.pack = { art: "cigarette-pack", x: X.pack, y: G, anchor: "bottom", pivot: "bottom", scale: 2.6, hidden: true, label: { text: "WARNING", at: [66, 160], width: 90, size: 60 } };
 
-      // ── The pile around her: a heap of folded pages to her chin, with PAGE 1 OF 40 at the front ──
-      var px0 = L.pile[0], px1 = L.pile[1], base = L.pat[1] + 2, ptop = PY + S * -24, pr = KIT.rng(9), heap = [[px0 - 20, base]];
-      for (var hi = 0; hi <= 12; hi++) {
-        var hx = px0 + ((px1 - px0) * hi) / 12, hump = Math.sin((Math.PI * hi) / 12);
-        heap.push([hx, base - (base - ptop) * (0.25 + 0.75 * Math.pow(hump, 0.6)) - pr() * 18]);
-      }
-      heap.push([px1 + 20, base]);
-      var folds = "";
-      for (var fy = base - 22; fy > ptop - 30; fy -= 26) {
-        var zz = "M" + (px0 - 30) + "," + fy;
-        for (var fx = px0 - 30; fx < px1 + 30; fx += 24) zz += " L" + (fx + 12) + "," + (fy - 9) + " L" + (fx + 24) + "," + fy;
-        folds += '<path d="' + zz + '" fill="none" stroke="' + INK + '" stroke-width="2" opacity="0.55"/>';
-      }
-      var scrib = "";
-      for (var si = 0; si < 26; si++) { var sx = px0 + pr() * (px1 - px0), sy = ptop + 30 + pr() * (base - ptop - 40); scrib += '<path d="M' + sx.toFixed(0) + "," + sy.toFixed(0) + " h" + (14 + pr() * 22).toFixed(0) + '" stroke="' + INK + '" stroke-width="1.6" opacity="0.4"/>'; }
-      var card = (V ? [px0 + 20, base - 40] : [px0 + 28, base - 46]);
-      var pileArt = '<defs><clipPath id="' + P + 'heap"><polygon points="' + pts(heap) + '"/></clipPath></defs>' + poly(heap, WHITE, 5) +
-        '<g clip-path="url(#' + P + 'heap)">' + folds + scrib + '<rect x="' + ((px0 + px1) / 2) + '" y="' + (ptop - 40) + '" width="' + (px1 - px0) + '" height="' + (base - ptop + 60) + '" fill="url(#' + P + 'fine)" opacity="0.28"/></g>' +
-        '<g transform="translate(' + card[0] + "," + card[1] + ') rotate(-8)">' + poly([[-6, 0], [128, 0], [128, -84], [-6, -84]], WHITE, 3.4) +
-        text(61, -50, 30, "PAGE 1", INK, "Oswald", 'text-anchor="middle" letter-spacing="1.5"') + text(61, -16, 30, "OF 40", C.war, "Oswald", 'text-anchor="middle" letter-spacing="1.5"') + "</g>";
-      // the doormat: loose pages spilled on the floor where the doctor wipes his feet
-      var mat = "";
-      for (var mi = 0; mi < 5; mi++) { var mx = L.mat[0] + ((L.mat[1] - L.mat[0]) * mi) / 4; mat += at(mx, L.pat[1] - 2, 1, '<g transform="rotate(' + (mi % 2 ? 8 : -6) + ')">' + poly([[-24, 0], [24, 0], [22, -14], [-22, -14]], mi % 2 ? PAGE : WHITE, 2.4) + "</g>"); }
+    // the TV: what plays behind its hole, then the cabinet in front
+    cast.meadow = { art: "meadow-big", x: TVC[0], y: TVC[1], scale: 0.46, hidden: true };
+    var WK = 0.75, SKIP = { x: TVC[0], y: BAND + 20, anchor: "bottom", pivot: "bottom", scale: WK, hidden: true, points: { chest: [125, 250] } };
+    cast.woman = Object.assign({ art: "meadow-woman" }, SKIP);
+    cast.skel = Object.assign({ art: "meadow-skeleton" }, SKIP);
+    cast.heart = { art: "heart", x: TVC[0], y: BAND - 300, scale: 0.8, hidden: true };
+    cast.ros1 = { art: "rosette", x: TVC[0], y: TVC[1], scale: 0.3, hidden: true };
+    cast.ros2 = { art: "rosette", x: TVC[0], y: TVC[1], scale: 0.3, hidden: true };
+    cast.auct = { art: "auctioneer", x: TVC[0] + 175, y: BAND + 40, anchor: "bottom", pivot: "bottom", scale: 0.85, hidden: true };
+    cast.band = { art: "bottle-big", x: TVC[0], y: BAND, anchor: [265, 518], scale: 1.64, hidden: true, clip: [[70, 500], [460, 500], [460, 536], [70, 536]] };
+    var FINE = "MAY CAUSE NAUSEA · DIZZINESS · DRY MOUTH · HAIR LOSS · BLEEDING · SUDDEN SNEEZING · BLINDNESS · KIDNEY STONES · TREMORS · UNCONTROLLABLE GAMBLING · LOSS OF LIMB · THE URGE TO BUY A BOAT · ";
+    FINE = FINE + FINE;
+    var FSIZE = 30, FW = KIT.textWidth(FINE, FSIZE, "Fraunces", 900), NONE = [[0, 0], [1, 0], [0, 1]];
+    var words = function (text, width, x, size) { return { art: "insert", x: x === undefined ? TVC[0] : x, y: BAND - 4, scale: 1, hidden: true, clip: NONE, label: { text: text, at: [106.5, 138.5], width: width, size: size || 36 } }; };
+    var RUN0 = TVC[0] + 310 + FW / 2;
+    cast.run1 = words(FINE, FW + 20, RUN0, FSIZE);
+    cast.run2 = words(FINE, FW + 20, RUN0, FSIZE);
+    cast.wStroke = words("STROKE", 300);
+    cast.wDeath = words("DEATH", 300);
+    cast.wList = words("CONSTIPATION · DEATH · MILD RASH", 540);
+    cast.wVary = words("INDIVIDUAL RESULTS MAY VARY", 490);
+    cast.wBoth = words("BOTH QUALIFY", 300);
+    cast.wAsk = words("ASK YOUR DOCTOR", 400);
+    cast.tv = { art: "tv-big", x: X.tv, y: G, anchor: "bottom", pivot: "bottom", scale: TVK, hidden: true };
 
-      // ── The cereal box and the cigarette pack (plain, no brands), each with its front and its turned side ──
-      var cereal = { front: poly([[-60, 0], [60, 0], [60, -170], [-60, -170]], C.orange, 4) + '<rect x="-48" y="-158" width="96" height="146" fill="' + C.yellow + '" stroke="' + INK + '" stroke-width="3"/>' +
-          '<path d="M-36,-60 Q0,-20 36,-60 Z" fill="' + WHITE + '" stroke="' + INK + '" stroke-width="3"/>' + [[-18, -66], [-2, -72], [14, -66], [-8, -78], [8, -80]].map(function (c) { return '<circle cx="' + c[0] + '" cy="' + c[1] + '" r="7" fill="' + C.tan + '" stroke="' + INK + '" stroke-width="2"/>'; }).join("") +
-          KIT.star(0, -122, 26, C.war) + '<rect x="30" y="-170" width="30" height="170" fill="url(#' + P + 'fine)" opacity="0.3"/>',
-        side: poly([[-56, 0], [56, 0], [56, -170], [-56, -170]], C.orange, 4) + poly([[-48, -10], [48, -10], [48, -162], [-48, -162]], WHITE, 3) +
-          text(0, -133, 20, "NUTRITION", INK, "Oswald", 'text-anchor="middle"') + text(0, -109, 20, "FACTS", INK, "Oswald", 'text-anchor="middle"') +
-          '<path d="M-42,-96 H42" stroke="' + INK + '" stroke-width="6"/>' + [-82, -68, -54, -40, -26].map(function (y, i) { return '<path d="M-40,' + y + " H" + (i % 2 ? 8 : 18) + " M" + (i % 2 ? 22 : 26) + "," + y + ' H40" stroke="' + INK + '" stroke-width="3.4"/>'; }).join("") };
-      var pack = { front: poly([[-34, 0], [34, 0], [34, -104], [-34, -104]], WHITE, 4) + poly([[-34, -104], [34, -104], [34, -70], [0, -52], [-34, -70]], C.rust, 3) +
-          '<path d="M-34,-104 H34" stroke="' + INK + '" stroke-width="4"/>' + '<rect x="12" y="-104" width="22" height="104" fill="url(#' + P + 'fine)" opacity="0.3"/>' +
-          poly([[-14, -112], [-6, -112], [-6, -104], [-14, -104]], C.cream, 2) + poly([[-2, -116], [6, -116], [6, -104], [-2, -104]], C.cream, 2),
-        side: poly([[-42, 0], [42, 0], [42, -104], [-42, -104]], WHITE, 4) + poly([[-36, -98], [36, -98], [36, -6], [-36, -6]], "#151A28", 2.4) +
-          text(0, -72, 16.5, "WARNING", WHITE, "Oswald", 'text-anchor="middle"') +
-          '<g transform="translate(0,-38)"><path d="M-12,4 C-14,-14 14,-14 12,4 L8,6 V12 H-8 V6 Z" fill="' + WHITE + '" stroke="' + WHITE + '" stroke-width="1"/>' +
-          '<circle cx="-5" cy="-1" r="3.4" fill="#151A28"/><circle cx="5" cy="-1" r="3.4" fill="#151A28"/><path d="M-3,9 V12 M0,9 V12 M3,9 V12" stroke="#151A28" stroke-width="1.4"/></g>' };
+    // the bottle and the patient, who stay when everything else goes
+    var BOTC = [X.bot, G - (985 - 625) * BOTK];
+    cast.bottle = { art: "bottle-big", x: X.bot, y: G, anchor: "bottom", pivot: "bottom", scale: BOTK, hidden: true };
+    cast.pat = { art: "patient", x: PAT[0], y: G, anchor: "bottom", pivot: "bottom", scale: PAT[1] };
+    cast.well = { art: "patient-well", x: PAT[0], y: G, anchor: "bottom", pivot: "bottom", scale: PAT[1] * 418 / 489, hidden: true };
+    cast.donut = { art: "donut", x: PAT[0] + 10 * PAT[1], y: G - 130 * PAT[1], scale: 0.675 };
+    for (var ci = 0; ci < 9; ci++) cast["ins" + ci] = page(ci);
+    cast.page1 = { art: "insert", x: INS[8][0], y: INS[8][1], scale: 1.5, hidden: true, label: { text: "PAGE 1 OF 40", at: [106, 60], width: 170, size: 40, tilt: -3 } };
 
-      // ── The lawyer (box build, jowls, bald; the same man in every Part 14 scene), writing at his desk ──
-      var LAW = { tone: 3, outfit: "suit", color: 1, holdR: "briefcase" };
-      var lf = L.law[3] === "left" ? 1 : -1; // 1: his pen hand is his screen-left arm
-      var lawO = mix(LAW, { holdR: null, look: L.law[3], mood: "flat", arms: lf > 0 ? [[-10, -80], [20, -40]] : [[-20, 40], [10, 80]] });
-      var LRg = KIT.rig(lawO), penArm = lf > 0 ? 0 : 1, penHand = LRg.hand[penArm];
-      var LS = L.law[2], LPY = L.law[1] - 12 * LS; // his origin: the desk top at his belly
-      var dk = L.desk, dw0 = dk[1] - dk[0];
-      var lawArt = KIT.person(lawO).replace('<g class="' + (penArm ? "arm-r" : "arm-l") + '">', '<g class="' + (penArm ? "arm-r" : "arm-l") + '"><g class="pen-arm">');
-      lawArt = lawArt.replace(/(<g class="pen-arm">[\s\S]*?)(<g class="arm-[lr]">|<\/g><\/g>$)/, function (m, a, b) { return a + "</g>" + b; });
-      var pen = at(penHand[0], penHand[1], 1, '<path d="M0,2 L' + (-6 * lf) + ',-16" stroke="' + INK + '" stroke-width="4" stroke-linecap="round"/><path d="M0,2 L' + (-6 * lf) + ',-16" stroke="' + C.yellow + '" stroke-width="1.8" stroke-linecap="round"/>');
-      // the page he writes on (on the desk, under his pen) and its scribbles: tiny lines, then zigzags
-      var wx = L.law[0] + penHand[0] * LS, wy = dk[2] - 4;
-      var sheet = poly([[wx - 70, wy], [wx + 40, wy], [wx + 34, wy - 12], [wx - 64, wy - 12]], WHITE, 2.6);
-      var calm = "", wild = "";
-      for (var ci = 0; ci < 3; ci++) {
-        var yy = wy - 3 - ci * 3, xa = wx - 58;
-        calm += '<path class="calm" d="M' + xa + "," + yy + " l4,-1.5 l4,1.5 l4,-1.5 l4,1.5 l4,-1.5 l4,1.5 l4,-1.5 l4,1.5" + '" fill="none" stroke="' + INK + '" stroke-width="1.4" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
-      }
-      var zigs = "M" + (wx - 30) + "," + (wy - 40);
-      for (var zi = 0; zi < 9; zi++) zigs += " L" + (wx - 24 + zi * 8) + "," + (wy - (zi % 2 ? 72 : 30));
-      wild = '<path id="' + P + 'wild" d="' + zigs + '" fill="none" stroke="' + INK + '" stroke-width="3" stroke-linejoin="miter" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>';
-      var desk = poly([[dk[0], dk[2]], [dk[1], dk[2]], [dk[1], dk[3]], [dk[0], dk[3]]], C.tan, 5) +
-        '<rect x="' + (dk[0] + 18) + '" y="' + (dk[2] + 30) + '" width="' + (dw0 - 36) + '" height="' + (dk[3] - dk[2] - 48) + '" fill="' + C.rust + '" stroke="' + INK + '" stroke-width="3"/>' +
-        '<rect x="' + (dk[0] + dw0 * 0.55) + '" y="' + (dk[2] + 30) + '" width="' + (dw0 * 0.45 - 18) + '" height="' + (dk[3] - dk[2] - 48) + '" fill="url(#' + P + 'hatch)" opacity="0.25"/>' +
-        poly([[dk[0] - 14, dk[2] - 12], [dk[1] + 14, dk[2] - 12], [dk[1] + 14, dk[2] + 6], [dk[0] - 14, dk[2] + 6]], C.rust, 4);
-      var chair = poly([[L.law[0] - 52 * LS / 3, L.law[1] - 230 * LS / 3.1], [L.law[0] + 52 * LS / 3, L.law[1] - 230 * LS / 3.1], [L.law[0] + 46 * LS / 3, L.law[1]], [L.law[0] - 46 * LS / 3, L.law[1]]], C.rust, 4) +
-        '<path d="M' + (L.law[0] - 34 * LS / 3) + "," + (L.law[1] - 200 * LS / 3.1) + " H" + (L.law[0] + 34 * LS / 3) + '" stroke="' + C.orange + '" stroke-width="4"/>';
-      var deskGroup = g("desk", chair + at(L.law[0], LPY, LS, g("law-in", g("law-j", lawArt + g("pen", pen)))) + desk + placed(climb, "up-page") + sheet + g("calm", calm) + wild);
+    // The Outcome Label, on the bottle: the book's example, what it helps and what it harms, and how long it is.
+    var LK = 0.8, LC = [BOTC[0], V ? BOTC[1] + 40 : 533];
+    var lpt = function (ax, ay) { return [LC[0] + (ax - 300) * LK, LC[1] + (ay - 400) * LK]; };
+    cast.lab = { art: "outcome-label", x: LC[0], y: LC[1], scale: LK, hidden: true, label: [
+      { text: "WHAT HAPPENS", at: [300, 92], width: 450, size: 60 }, { text: "OUTCOME LABEL (EXAMPLE)", at: [300, 160], width: 420, size: 30 },
+      { text: "HELPS", at: [110, 262], width: 130, size: 32 },
+      { text: "MEMORY +35%", at: [385, 262], width: 290, size: 32 }, { text: "THINKING +28%", at: [385, 332], width: 290, size: 32 },
+      { text: "HARMS", at: [110, 440], width: 130, size: 32 },
+      { text: "HEADACHES +9%", at: [385, 440], width: 290, size: 32 }, { text: "FATIGUE +7%", at: [385, 510], width: 290, size: 32 },
+      { text: "PAGES: 1", at: [300, 625], width: 300, size: 54 }, { text: "LAWYERS: 0", at: [300, 695], width: 340, size: 54 }] };
+    var LABN = ["lab"];
+    [["green", 35, 298], ["green", 28, 368], ["red", 9, 476], ["red", 7, 546]].forEach(function (o, n) {
+      var p = lpt(235, o[2]), w = 870 * o[1] / 35;
+      cast["lbar" + n] = { art: "rank-bar-" + o[0], x: p[0], y: p[1], anchor: [0, 18], scale: LK * 0.34, hidden: true, clip: [[0, 0], [w, 0], [w, 36], [0, 36]] };
+      LABN.push("lbar" + n);
+    });
 
-      // ── The walkers (nobody reads it): a man behind his newspaper, a woman with her nose in the air ──
-      var WG = L.walk[0], WS = L.walk[1];
-      var w1o = { tone: 0, outfit: "suit", color: 2, hat: "bowler", look: L.dir > 0 ? "right" : "left", arms: L.dir > 0 ? [[150, 70], [130, 60]] : [[-130, -60], [-150, -70]] };
-      var w1r = KIT.rig(w1o), np = [(w1r.hand[0][0] + w1r.hand[1][0]) / 2, (w1r.hand[0][1] + w1r.hand[1][1]) / 2 - 10];
-      var paper = at(np[0], np[1], 1, poly([[-34, -26], [34, -26], [34, 26], [-34, 26]], PAGE, 2.4) + '<path d="M0,-26 V26" stroke="' + INK + '" stroke-width="1.6"/>' +
-        '<path d="M-28,-16 H-6 M-28,-8 H-6 M-28,0 H-8 M6,-16 H28 M6,-8 H28 M6,0 H24 M-28,10 H-6 M6,10 H28" stroke="' + INK + '" stroke-width="2" opacity="0.5"/>' + text(-17, -18, 7, "NEWS", INK, "Oswald", 'text-anchor="middle"'));
-      var w2o = { tone: 3, outfit: "dress", hair: 1, color: 3, mood: "smug", look: L.dir > 0 ? "right" : "left" }, w2r = KIT.rig(w2o);
-      var walkers = g("w1", g("w1-b", KIT.person(w1o) + paper)) + g("w2", g("w2-b", KIT.person(w2o)));
+    // Marketing (his bell is on his right, art 228, 70) and the lawyer's second try
+    var LOUD = V ? -360 : -640;
+    cast.sticker = { art: "miracle-sticker", x: BOTC[0], y: BOTC[1], scale: 0.62, hidden: true, label: { text: "MIRACLE!", at: [270, 272], width: 280, size: 90, tilt: -6 } };
+    cast.loud = { art: "loud-human", x: LOUD, y: G, anchor: "bottom", pivot: "bottom", scale: 1.2, hidden: true, points: { mouth: [262, 62] } };
+    var LAW2 = V ? 560 : 780;
+    cast.law2 = { art: "lawyer", x: LAW2, y: G, anchor: "bottom", pivot: "bottom", scale: 1.5, faces: "left", hidden: true };
+    var TAPE = [[-90, -120], [85, -20], [-40, 130], [60, 130], [-70, 20]];
+    TAPE.forEach(function (o, n) { cast["tape" + n] = { art: "insert", x: BOTC[0] + o[0], y: BOTC[1] + o[1], scale: 1.05, hidden: true }; });
 
-      // ── The doctor (lab coat, lantern jaw, bald; the same man in every Part 14 scene): head mirror, stethoscope ──
-      var DOC = { tone: 1, outfit: "labcoat", color: 1 };
-      var docO = mix(DOC, { look: "right", mood: "flat" }), DR = KIT.rig(docO);
-      var mirror = '<path d="M-15,-11 L17,-15" stroke="' + INK + '" stroke-width="2.6"/><circle cx="7" cy="-19" r="7.5" fill="#DDE6EC" stroke="' + INK + '" stroke-width="2.2"/><circle cx="7" cy="-19" r="2.2" fill="' + INK + '"/><path d="M3,-23 l3,-1" stroke="#FFF" stroke-width="1.6"/>';
-      var stetho = '<path d="M-7,-28 Q-13,-10 -2,-4 M7,-28 Q11,-12 2,-4 M0,-4 V6" fill="none" stroke="' + INK + '" stroke-width="2.4"/><circle cx="0" cy="9" r="4" fill="#C9CED6" stroke="' + INK + '" stroke-width="2"/>';
-      var docArt = KIT.person(docO).replace("<!--face-end-->", mirror + "<!--face-end-->") + stetho;
+    // the doctor on skates, phone out
+    var SKATE = 2000;
+    cast.docS = { art: "doctor-skates", x: SKATE, y: G, anchor: "bottom", pivot: "bottom", scale: 1.6, hidden: true, faces: "left", points: { fist: [65, 248] } };
+    cast.phone = { art: "google-phone", x: SKATE, y: G - 450, scale: 1.45, hidden: true, label: [
+      { text: "WHAT IS", at: [81, 130], width: 104, size: 60 }, { text: "A LIVER", at: [81, 190], width: 104, size: 60 }] };
+    // ── The wheel is still spinning, and nobody is looking at the row ──
+    add({ at: 0, do: "bob", who: "pat", y: 3, r: 1, speed: 0.7, phase: 1, until: cue("forty-page") });
+    add({ at: 0.25, do: "nudge", who: "doc", by: [36, 0] });
+    add({ at: 0.25, do: "move", who: "wheel", turn: 1800, dur: 2.9, ease: "smooth" });
+    add({ on: "rank", do: "stamp", who: "board", from: 1.6, shake: 12 });
+    add({ on: "every", do: "stamp", who: "rank0", from: 1.3, shake: 3 });
+    add({ on: "every", do: "show", who: "rbar0" });
+    add({ on: "treatment", do: "stamp", who: "rank1", from: 1.3, shake: 3 });
+    add({ on: "treatment", do: "show", who: "rbar1" });
+    add({ on: "by", do: "stamp", who: "rank2", from: 1.3, shake: 3 });
+    add({ on: "by", do: "show", who: "rbar2" });
+    add({ on: "actually", do: "stamp", who: "rank3", from: 1.3, shake: 3 });
+    add({ on: "happened", do: "stamp", who: "rank4", from: 1.3, shake: 3 });
+    add({ on: "happened", offset: 0.25, do: "stamp", who: "rdonut", from: 2, shake: 3 });
+    add({ on: "who", n: 1, offset: -0.2, do: "camera", view: "row2", dur: 0.45 });
+    // the last man's donut slides off his lap on "it:"
+    add({ on: "it:", do: "drop", who: "skd" + (SKN - 1), dist: 340, drift: 30, spin: 80, dur: 0.45 });
 
-      // ── The banner ──
-      var B = L.banner, nt = 34;
-      var ribbon = function (dx, dy, fill, extra) {
-        return '<path d="M' + (B[0] + dx) + "," + (B[1] + dy) + " H" + (B[0] + B[2] + dx) + " l" + -nt + "," + B[3] / 2 + " l" + nt + "," + B[3] / 2 + " H" + (B[0] + dx) + " l" + nt + "," + -B[3] / 2 + ' Z" fill="' + fill + '" ' + (extra || "") + "/>";
-      };
-      var banner = '<defs><clipPath id="' + P + 'bclip"><rect id="' + P + 'bmask" x="' + (B[0] - 4) + '" y="' + (B[1] - 10) + '" width="0" height="' + (B[3] + 30) + '"/></clipPath></defs>' +
-        '<g clip-path="url(#' + P + 'bclip)">' + ribbon(10, 10, C.ink, 'opacity="0.85"') + ribbon(0, 0, CARD, 'stroke="' + INK + '" stroke-width="5" stroke-linejoin="round"') +
-        '<rect x="' + (B[0] + nt + 14) + '" y="' + (B[1] + 12) + '" width="' + (B[2] - 2 * nt - 28) + '" height="' + (B[3] - 24) + '" fill="none" stroke="' + C.orange + '" stroke-width="2"/>' +
-        text(B[0] + B[2] / 2, B[1] + B[3] / 2 + B[4] * 0.36, B[4], "OUTCOME LABELS", INK, "Oswald", 'text-anchor="middle" letter-spacing="3"') + "</g>" +
-        g("broll", '<rect x="-9" y="' + (B[1] - 8) + '" width="18" height="' + (B[3] + 16) + '" rx="8" fill="' + CARD + '" stroke="' + INK + '" stroke-width="4"/>', 'opacity="0"');
+    // ── Food has a label. Cigarettes have a label. ──
+    add({ on: "Food", offset: -0.3, do: "camera", view: "shelf", dur: 0.3 });
+    add({ on: "Food", do: "hide", who: RANKN });
+    add({ on: "Food", do: "stamp", who: "cereal", from: 1.7, shake: 8 });
+    add({ on: "Cigarettes", do: "stamp", who: "pack", from: 1.7, shake: 8 });
 
-      var dizzy = [0, 1, 2].map(function () { return '<g class="fp-star" opacity="0">' + KIT.star(0, 0, 9, C.yellow) + "</g>"; }).join("");
-      q("art").innerHTML = KIT.svg(W, H, KIT.paperDefs(ID) + kitchen({ floor: L.back, top: L.top, counter: L.counter }) +
-        at(L.cereal, L.top - 6, L.items, g("cereal-f", cereal.front) + g("cereal-s", cereal.side, 'opacity="0"')) +
-        at(L.cig, L.top - 6, L.items, g("pack-f", pack.front) + g("pack-s", pack.side, 'opacity="0"')) +
-        (V ? g("desk-in", deskGroup) : "") +
-        g("run", placed(run, "run-page")) + g("mat", mat, 'opacity="0"') +
-        g("walkers", walkers) +
-        (V ? "" : g("desk-in", deskGroup)) +
-        at(PX, PY, S, g("pat-j", KIT.person(patO) + scarf(patO) + at(BOX[0], BOX[1], 1, g("box", pbox)))) +
-        g("pile", pileArt) +
-        g("doc", at(0, 0, S, g("doc-in", docArt)), 'opacity="0"') + dizzy +
-        banner);
+    // ── Drugs: the bottle lands, grinning, and erupts ──
+    add({ on: "Drugs", do: "stamp", who: "bottle", from: 1.7, shake: 14 });
+    add({ on: "Drugs", do: "camera", view: "ins", dur: 0.4 });
+    add({ on: "forty-page", do: "shiver", who: "bottle", dur: 1.2, amp: 9, rot: 3 });
+    var T0 = cue("forty-page") + 0.1, T1 = cue("lawyers");
+    INS.forEach(function (p, n) { add({ at: T0 + (T1 - T0) * Math.pow(n / (INS.length - 1), 0.7), do: "pop", who: "ins" + n }); });
+    add({ at: T0 + (T1 - T0) * Math.pow(8 / (INS.length - 1), 0.7) + 0.02, do: "show", who: "page1" });
+    add({ on: "inserts", do: "shiver", who: "pat", dur: 0.5, amp: 5, rot: 1 });
+    // the camera rides the leading edge to the lawyer, who is having a very bad day
+    add({ on: "written", do: "camera", view: "law", dur: 0.6 });
+    add({ on: "written", do: "move", who: ["stand", "wheel", "hand"], by: [1200, 0], turn: 0, dur: 0.01 });
+    add({ on: "written", do: "hide", who: "doc" });
+    add({ on: "lawyers", do: "shiver", who: "law", dur: 0.6, amp: 7, rot: 3 });
+    add({ on: "having", do: "shiver", who: "law", dur: 1.25, amp: 20, rot: 8 });
+    add({ on: "having", do: "sparks", who: ["law", "ins38"], until: "which" });
+    add({ on: "seizures,", do: "char", who: "law" });
+    add({ on: "seizures,", do: "shake", x: 8, frames: 3 });
+    add({ on: "which", offset: 0.1, do: "blink", who: "law" });
+    // back to the patient, buried to the chin; the doctor skates over the paper without a glance
+    add({ on: "nobody", offset: -0.2, do: "camera", view: "ins", dur: 0.6 });
+    add({ on: "including", offset: -0.1, do: "show", who: "docS" });
+    add({ on: "including", offset: -0.1, do: "move", who: "docS", by: [-3600, 0], dur: 0.85 });
+    add({ on: "doctor.", n: 1, offset: 0.4, do: "hide", who: "docS" });
 
-      var tl = gsap.timeline({ paused: true });
-      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
-      KIT.enter(tl, q("cam"), "slide left");
+    // ── The TV, right in front of him ──
+    var TVB = cue("television") - 0.1;
+    add({ at: TVB, do: "camera", view: "tv2", dur: 0.35 });
+    add({ at: TVB, do: "stamp", who: "tv", from: 1.5, shake: 16 });
+    add({ at: TVB + 0.1, do: "show", who: "meadow" });
+    add({ on: "smiling", do: "pop", who: "woman", squash: true });
+    // she skips, and she keeps skipping
+    for (var h = cue("smiling") + 0.25; h < 57; h += 0.5) add({ at: h, do: "hop", who: ["woman", "skel"], height: 26 });
+    add({ on: "while", do: "camera", view: "tv", dur: 1.0 });
+    // the fine print: slowly, then at auctioneer speed
+    var R1 = cue("voiceover") + 0.45, R2 = cue("auctioneer"), R3 = cue("meadow", 2) + 1.4;
+    add({ at: R1, do: "show", who: ["band", "run1"] });
+    add({ at: R1, do: "move", who: "run1", by: [-170 * (R2 - R1), 0], dur: R2 - R1 });
+    add({ at: R2, do: "move", who: "run1", by: [-800 * (R3 - R2), 0], dur: R3 - R2 });
+    add({ at: R3, do: "hide", who: "run1" });
+    add({ on: "auctioneer", offset: -0.05, do: "pop", who: "auct", squash: true });
+    add({ on: "auctioneer", offset: 0.1, do: "shiver", who: "auct", dur: 1.4, amp: 7, rot: 7 });
+    add({ on: "meadow", n: 2, offset: -0.1, do: "pop", who: "auct", out: true });
+    // STROKE goes by, the same size as everything else; the smile does not move
+    add({ on: "\"stroke.\"", offset: -0.1, do: "show", who: "wStroke" });
+    add({ on: "Side", offset: -0.2, do: "hide", who: "wStroke" });
+    // DEATH does, a bit
+    add({ on: "\"death,\"", do: "show", who: "wDeath" });
+    add({ on: "\"death,\"", offset: 0.15, do: "hide", who: "woman" });
+    add({ on: "\"death,\"", offset: 0.15, do: "show", who: "skel" });
+    add({ on: "\"death,\"", offset: 0.15, do: "boom", shake: 10, flash: 0.14 });
+    add({ on: "\"constipation\"", offset: -0.1, do: "hide", who: "wDeath" });
+    add({ on: "\"constipation\"", offset: -0.1, do: "show", who: "wList" });
+    add({ on: "as", n: 1, offset: -0.2, do: "hide", who: "wList" });
+    // her heart falls out; she skips on
+    var R4 = cue("as", 1) - 0.2, R5 = cue("individual") - 0.3;
+    add({ at: R4, do: "show", who: "run2" });
+    add({ at: R4, do: "move", who: "run2", by: [-900 * (R5 - R4), 0], dur: R5 - R4 });
+    add({ at: R5, do: "hide", who: "run2" });
+    add({ on: "organs", do: "pop", who: "heart" });
+    add({ on: "failing", do: "move", who: "heart", by: [-20, 235], turn: 25, dur: 0.3 });
+    add({ on: "failing", offset: 0.3, do: "hop", who: "heart", height: 30 });
+    add({ on: "roughly", do: "move", who: ["woman", "skel"], by: [150, 0], dur: 1.0 });
+    // results vary: she flickers, then cured, deceased, and both; each wins a rosette
+    add({ on: "individual", do: "show", who: "wVary" });
+    add({ on: "meaning", offset: 1.0, do: "hide", who: "wVary" });
+    add({ on: "results", do: "move", who: ["woman", "skel"], by: [-150, 0], dur: 0.5 });
+    var ON = cue("results") + 0.1, STEPS = [0, 0.5, 0.9, 1.2, 1.45, 1.65, 1.8, 1.95, 2.05, 2.15, 2.25];
+    STEPS.forEach(function (d, n) {
+      add({ at: ON + d, do: n % 2 ? "hide" : "show", who: "woman" });
+      add({ at: ON + d, do: n % 2 ? "show" : "hide", who: "skel" });
+    });
+    add({ on: "\"cured\"", do: "show", who: "woman" });
+    add({ on: "\"cured\"", do: "hide", who: "skel" });
+    add({ on: "\"deceased\"", do: "hide", who: "woman" });
+    add({ on: "\"deceased\"", do: "show", who: "skel" });
+    add({ on: "\"deceased\"", do: "boom", shake: 8, flash: 0.1 });
+    add({ on: "(both", do: "show", who: ["woman", "skel"] });
+    add({ on: "(both", do: "move", who: "woman", by: [-140, 0], dur: 0.3 });
+    add({ on: "(both", do: "move", who: "skel", by: [140, 0], dur: 0.3 });
+    add({ on: "technically", do: "show", who: "wBoth" });
+    add({ on: "qualifying).", do: "move", who: "ros1", to: "woman.chest", dur: 0.01 });
+    add({ on: "qualifying).", do: "move", who: "ros2", to: "skel.chest", dur: 0.01 });
+    add({ on: "qualifying).", do: "pop", who: "ros1", squash: true });
+    add({ on: "qualifying).", offset: 0.15, do: "pop", who: "ros2", squash: true });
 
-      var T = {
-        labels: cue("Labels.", 1), nutr: cue("nutrition"), warn: cue("warning"), forty: cue("forty-page"), lawyers: cue("lawyers"),
-        seize: cue("seizures,"), nobody: cue("nobody"), incl: cue("including"), doctor: cue("doctor.")
-      };
-      function pivot(el, o) { gsap.set(el, { svgOrigin: o }); }
-      function set(el, op, t) { tl.set(el, { opacity: op }, t); }
+    // ── Ask your doctor: he slows down, Googling, and doesn't stop ──
+    add({ on: "also", offset: -0.2, do: "camera", view: "tv2", dur: 0.9 });
+    add({ on: "also", offset: -0.2, do: "hide", who: "wBoth" });
+    add({ on: "\"ask", do: "show", who: "wAsk" });
+    add({ on: "but", offset: -0.1, do: "move", who: "docS", by: [3600, 0], dur: 0.01 });
+    add({ on: "but", do: "move", who: "phone", to: "docS.fist", by: [-120, -170], dur: 0.01 });
+    add({ on: "but", do: "show", who: ["docS", "phone"] });
+    add({ on: "but", do: "move", who: "docS", by: [X.stop - SKATE, 0], dur: 2.25, ease: "smooth" });
+    add({ on: "but", do: "bob", who: "docS", y: 5, r: 2, speed: 2.5, until: "new" });
+    add({ on: "Googled", offset: -0.25, do: "camera", view: "google", dur: 0.4 });
+    add({ on: "Googled", do: "shiver", who: "phone", dur: 0.9, amp: 3, rot: 1 });
+    add({ on: "hallway.", offset: 0.15, do: "camera", view: "tv2", dur: 0.4 });
+    add({ on: "hallway.", offset: 0.15, do: "move", who: "docS", by: [-1900 - X.stop, 0], dur: SW.t0 - cue("hallway.") - 0.15 });
 
-      // "Labels.": the banner unrolls (whoosh).
-      var bm = q("bmask"), br = q("broll");
-      tl.fromTo(bm, { attr: { width: 0 } }, { attr: { width: B[2] + 30 }, duration: 0.5, ease: "power2.out" }, T.labels);
-      set(br, 1, T.labels);
-      tl.fromTo(br, { x: B[0] }, { x: B[0] + B[2] + 8, duration: 0.5, ease: "power2.out" }, T.labels);
-      set(br, 0, T.labels + 0.5);
+    // ── All of it: the whole plate, and the broom ──
+    add({ on: "new", offset: -0.15, do: "camera", view: "wide", dur: 1.0 });
+    add({ at: SW.t0 - 0.2, do: "show", who: "sweeper" });
+    add({ at: SW.t0, do: "move", who: "sweeper", by: [SW.v * SW.T, 0], dur: SW.T });
+    for (var b = 0; b < 8; b++) add({ at: SW.t0 + b * 0.5, do: "nudge", who: "sweeper", by: [50, 0] });
+    sweep("docS", -2200, -500, -1080);
+    sweep("cereal", X.cereal - 250, -120, 140);
+    sweep("pack", X.pack - 170, -760, -200);
+    sweep("donut", PAT[0], -300, 720);
+    for (var c9 = 0; c9 < 9; c9++) sweep("ins" + c9, INS[c9][0] - 160, -140 - c9 * 120, 200 + c9 * 70);
+    sweep("page1", INS[8][0] - 160, -1200, 500);
+    for (var fl = 9; fl < INS.length; fl++) sweep("ins" + fl, INS[fl][0] - 130, -60 - (fl % 7) * 230, (fl % 2 ? 1 : -1) * (120 + fl * 9));
+    // the TV goes whole, still playing
+    var tvGroup = ["meadow", "woman", "skel", "heart", "auct", "band", "wAsk", "tv"];
+    sweep(tvGroup, X.tv - 420, -340);
+    sweep(["wheel"], WH[0] + 1200 - 400, -60, 1800 + 2520);
+    sweep(["stand"], WH[0] + 1200 - 300, -1000, -300);
+    sweep(["hand"], WH[0] + 1200 - 100, -1400, 300);
+    for (var s = 0; s < SKN; s++) {
+      sweep("sk" + s, SK0 + s * SKGAP - 200, -220 * (s % 3), (s % 2 ? 1 : -1) * 260);
+      if (s < SKN - 1) sweep("skd" + s, SK0 + s * SKGAP - 60, -900 - 200 * s, 400);
+    }
+    sweep("law", LAW - 270, -600, -300);
 
-      // "nutrition" / "warning": each box hops and turns to show its label (click).
-      function turn(front, side, t) {
-        var F = q(front), Sd = q(side);
-        pivot(F, "0 0"); pivot(Sd, "0 0");
-        tl.to(F, { scaleX: 0, y: -18, duration: 0.12, ease: "power2.in" }, t);
-        set(F, 0, t + 0.12); set(Sd, 1, t + 0.12);
-        tl.fromTo(Sd, { scaleX: 0, y: -18 }, { scaleX: 1, y: 0, duration: 0.2, ease: "back.out(2)" }, t + 0.12);
-      }
-      turn("cereal-f", "cereal-s", T.nutr);
-      turn("pack-f", "pack-s", T.warn);
+    // ── Bare paper, the bottle and the patient ──
+    add({ on: "real", n: 2, offset: -0.2, do: "camera", view: "bot", dur: 1.1 });
+    add({ on: "real", n: 2, offset: 0.6, do: "stamp", who: "lab", from: 1.8, shake: 12 });
+    add({ on: "real", n: 2, offset: 0.6, do: "show", who: LABN.slice(1) });
+    add({ on: "drug.", n: 2, do: "hop", who: "bottle", height: 34 });
+    // Marketing slaps on MIRACLE!; it peels off and slaps over his bell
+    add({ on: "Not", n: 2, offset: -0.05, do: "slideIn", who: "loud", from: "left", dist: 1000, over: 26, tilt: 3 });
+    add({ on: "department", do: "stamp", who: "sticker", from: 2.0, shake: 9 });
+    add({ on: "hopes", offset: 0.15, do: "move", who: "sticker", to: "loud.mouth", scale: 0.75, turn: 25, dur: 0.3, arc: 120, ease: "smooth" });
+    add({ on: "hopes", offset: 0.45, do: "shiver", who: "loud", dur: 0.7, amp: 7, rot: 5 });
+    add({ on: "Not", n: 3, offset: -0.2, do: "slideOut", who: ["loud"], to: "left", dist: 1400, dur: 0.4 });
+    // The lawyer tapes his pages over it; they let go and bury him
+    add({ on: "Not", n: 3, offset: 0.05, do: "slideIn", who: "law2", from: "right", dist: 1000, over: 26, tilt: -3 });
+    add({ on: "comfortable", offset: -0.3, do: "stamp", who: "tape0", from: 1.6, shake: 4 });
+    add({ on: "comfortable", offset: -0.15, do: "stamp", who: "tape1", from: 1.6, shake: 4 });
+    add({ on: "comfortable", do: "stamp", who: "tape2", from: 1.6, shake: 4 });
+    add({ on: "comfortable", offset: 0.12, do: "stamp", who: "tape3", from: 1.6, shake: 4 });
+    add({ on: "comfortable", offset: 0.24, do: "stamp", who: "tape4", from: 1.6, shake: 4 });
+    TAPE.forEach(function (o, n) {
+      add({ on: "admitting", offset: 0.1 + n * 0.09, do: "move", who: "tape" + n, to: [LAW2 + [-80, 90, -30, 70, 0][n], G - [650, 500, 330, 210, 110][n]], scale: 1.35, turn: [-14, 10, 6, -9, 3][n], dur: 0.32, arc: 90, ease: "smooth" });
+    });
+    add({ on: "happens.", n: 3, do: "shiver", who: ["law2", "tape0", "tape1", "tape2", "tape3", "tape4"], dur: 0.4, amp: 5, rot: 3 });
 
-      // ── The patient: she looks at the boxes, then opens her pill box on "forty-page" ──
-      var patJ = q("pat-j"), phead = patJ.querySelector(".head"), flap = q("box-flap");
-      pivot(phead, PR.neck.join(" ")); pivot(flap, (f > 0 ? -11 : 11) + " -12"); pivot(patJ, "0 100");
-      tl.to(phead, { rotation: f > 0 ? 10 : -10, duration: 0.3 }, T.nutr - 0.1);
-      tl.to(phead, { rotation: f > 0 ? 6 : -6, duration: 0.3 }, T.warn - 0.1);
-      tl.to(phead, { rotation: 0, duration: 0.3 }, T.forty - 0.4);
-      tl.to(flap, { rotation: f > 0 ? -150 : 150, duration: 0.15, ease: "back.out(2)" }, T.forty);
-      tl.to(patJ, { y: -6, duration: 0.08, yoyo: true, repeat: 1 }, T.forty);
+    // ── What happens. ──
+    var WH0 = cue("What", 5) - 0.12;
+    add({ at: WH0, do: "slideOut", who: ["law2", "tape0", "tape1", "tape2", "tape3", "tape4"], to: "right", dist: 1700, dur: 0.3 });
+    add({ at: WH0, do: "shake", y: 14, frames: 3 });
+    add({ at: WH0, do: "camera", view: "label", dur: 0.5 });
+    add({ at: WH0 + 0.75, do: "swap", who: "pat", to: "well" });
+    add({ at: WH0 + 0.75, do: "glow", who: "well", size: 500, dur: 0.6 });
 
-      // "forty-page": the insert shoots out of the box in three bursts (whoosh, then a pat as each lands)...
-      var runPages = document.querySelectorAll("#" + P + "run .run-page"), n = runPages.length;
-      var bursts = [T.forty, T.forty + 0.3, T.forty + 0.6, T.forty + 0.9];
-      runPages.forEach(function (pg, i) {
-        var b = Math.min(2, Math.floor((i / n) * 3)), k0 = Math.floor((b * n) / 3), k1 = Math.floor(((b + 1) * n) / 3);
-        var t = bursts[b] + ((i - k0) / Math.max(1, k1 - k0)) * 0.28;
-        pivot(pg, "0 0");
-        set(pg, 1, t);
-        tl.fromTo(pg, { scaleY: 0, scaleX: 0.4 }, { scaleY: 1, scaleX: 1, duration: 0.1, ease: "back.out(2.5)" }, t);
-      });
-      // ...then piles up around her until only her head and scarf stick out (in three heaves)
-      var pile = q("pile"), PB = L.pat[1] + 2;
-      pivot(pile, ((L.pile[0] + L.pile[1]) / 2) + " " + PB);
-      tl.fromTo(pile, { scaleY: 0, scaleX: 0.6 }, { scaleY: 0.4, scaleX: 0.9, duration: 0.25, ease: "power2.out" }, T.forty + 0.95);
-      tl.to(pile, { scaleY: 0.75, scaleX: 1, duration: 0.25, ease: "power2.out" }, T.forty + 1.3);
-      tl.to(pile, { scaleY: 1.06, duration: 0.25, ease: "power2.out" }, T.forty + 1.62);
-      tl.to(pile, { scaleY: 1, duration: 0.2, ease: "sine.inOut" }, T.forty + 1.87);
-      set(q("mat"), 1, T.forty + 0.95);
-      // her eyes blink as she sinks
-      document.querySelectorAll("#" + P + "pat-j .eye").forEach(function (e, i) {
-        pivot(e, (i ? 10.8 : -2.5) + " -4");
-      });
-      [T.forty + 2.3, T.nobody + 0.4].forEach(function (b) { patJ.querySelectorAll(".eye").forEach(function (e) { tl.to(e, { scaleY: 0.1, duration: 0.06, yoyo: true, repeat: 1 }, b); }); });
+    // -- Part 14 only (scene 21, louder-wins, on the same plate): the bottle smiles back; governments have the same
+    // problem with laws, and on TV the louder one wins. A second TV slides in where the wheel was: a panel show, two
+    // politicians at a desk, a paper hugged and a paper thrown; they shout; the decibels climb; "louder.": the bomb
+    // goes off over the desk, both are charred and still shouting, and the one with the megaphone gets the WINNER (LOUDEST) trophy. --
+    var X2 = 1300, TK2 = 0.98, SC2 = [X2 + (385 - 433.5) * TK2, G - (975 - 480) * TK2];   // the second TV's screen centre
+    views.tvroom = V ? [920, cy(0.55), 0.55] : [900, 600, 0.8];
+    views.panel = V ? [SC2[0], SC2[1] + 30, 1.6] : [SC2[0], SC2[1] + 10, 2.25];
+    var PB = SC2[1] + 200, PK = 330 / KIT.collage.SIZES["politician-shout-blue"][1];
+    cast.studio = { art: "curtain", x: SC2[0], y: SC2[1], scale: 470 / KIT.collage.SIZES.curtain[1], hidden: true };
+    cast.polB = { art: "politician-shout-blue", x: SC2[0] - 170, y: PB, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true, smoke: [[150, 10]] };
+    cast.polR = { art: "politician-shout-left-red", x: SC2[0] + 170, y: PB, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true, smoke: [[150, 10]] };
+    cast.hug = { art: "insert", x: SC2[0] + 190, y: PB - 180, scale: 0.42, hidden: true };
+    cast.toss = { art: "insert", x: SC2[0] - 150, y: PB - 170, scale: 0.42, hidden: true };
+    cast.pdesk = { art: "desk", x: SC2[0], y: SC2[1] + 230, anchor: "bottom", pivot: "bottom", scale: 0.62, hidden: true };
+    cast.boomM = { art: "mushroom", x: SC2[0], y: SC2[1] + 100, anchor: "bottom", pivot: "bottom", scale: 0.55, hidden: true };
+    cast.meg = { art: "megaphone", x: SC2[0] - 170 + 60 * PK + 60, y: PB - 290, scale: 0.3, hidden: true };
+    cast.win = { art: "trophy", x: SC2[0] - 150, y: SC2[1] - 600, scale: 0.45, hidden: true,
+      label: [{ text: "WINNER", at: [174, 383], width: 150, size: 60 }, { text: "(LOUDEST)", at: [174, 405], width: 130, size: 40 }] };
+    cast.tv2 = { art: "tv-big", x: X2, y: G, anchor: "bottom", pivot: "bottom", scale: TK2, hidden: true };
+    var PANEL = ["studio", "polB", "polR", "pdesk"];
+    // "figures out which treatments work.": the patient pats the labelled bottle; it smiles back
+    add({ on: "figures", do: "nudge", who: "well", by: [-30, 0] });
+    add({ on: "figures", offset: 0.2, do: "hop", who: "bottle", height: 24 });
+    // "But your governments": the second TV, and in through its screen to the panel show
+    add({ on: "But", n: 2, offset: -0.1, do: "camera", view: "tvroom", dur: 0.6 });
+    add({ on: "But", n: 2, do: "show", who: PANEL });
+    add({ on: "But", n: 2, do: "stamp", who: "tv2", from: 1.5, shake: 14 });
+    add({ on: "need", do: "camera", view: "panel", dur: 1.0 });
+    add({ on: "keep,", offset: -0.2, do: "pop", who: "hug", squash: true });
+    add({ on: "keep,", do: "nudge", who: "polR", by: [-14, 0] });
+    add({ on: "throw", offset: -0.15, do: "pop", who: "toss" });
+    add({ on: "throw", do: "move", who: "toss", by: [-260, -260], turn: -540, dur: 0.5, arc: 80 });
+    add({ on: "away.", offset: 0.1, do: "hide", who: "toss" });
+    // they argue on television, and the decibels climb until someone wins by being louder
+    add({ on: "argue", offset: -0.15, do: "pop", who: "meg", squash: true });
+    add({ on: "argue", do: "shiver", who: ["polB", "polR", "hug", "meg"], dur: cue("louder.") - cue("argue"), amp: 5, rot: 3 });
+    add({ on: "argue", do: "counter", id: "db", from: 60, to: 140, dur: cue("until") - cue("argue"), suffix: "\u00a0dB", x: SC2[0], y: SC2[1] - 150, size: 60, pad: 30 });
+    add({ on: "until", do: "counter", id: "db", from: 140, to: 194, dur: cue("louder.") - cue("until") });
+    add({ on: "louder.", do: "boom", shake: 24, flash: 0.25 });
+    add({ on: "louder.", do: "hide", who: "db" });
+    add({ on: "louder.", do: "pop", who: "boomM", squash: true });
+    add({ on: "louder.", do: "char", who: ["polB", "polR", "hug", "pdesk", "meg"] });
+    add({ on: "louder.", offset: 0.8, do: "pop", who: "boomM", out: true });
+    add({ on: "louder.", offset: 0.9, do: "blink", who: ["polB", "polR"] });
+    add({ on: "louder.", offset: 1.0, do: "show", who: "win" });
+    add({ on: "louder.", offset: 1.0, do: "move", who: "win", by: [0, 640], turn: 360, dur: 0.35 });
+    add({ on: "louder.", offset: 1.4, do: "shiver", who: ["polB", "polR"], dur: 0.6, amp: 4, rot: 3 });
 
-      // "lawyers": at the far end his desk slides in, the insert running up it to his pen; he writes (scratch).
-      var deskIn = q("desk-in"), lawJ = q("law-j"), penArmEl = deskIn.querySelector(".pen-arm");
-      tl.fromTo(deskIn, { x: L.lawFrom - L.law[0] }, { x: 0, duration: 0.35, ease: "power3.out" }, T.lawyers - 0.4);
-      var penEl = q("pen"), armPen = [penArmEl, penEl];
-      armPen.forEach(function (e) { pivot(e, LRg.shoulder[penArm].join(" ")); });
-      tl.fromTo(armPen, { rotation: 0 }, { rotation: 5 * lf, duration: 0.1, repeat: 7, yoyo: true, ease: "sine.inOut" }, T.lawyers);
-      deskIn.querySelectorAll(".calm").forEach(function (c, i) {
-        tl.fromTo(c, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.25, ease: "none" }, T.lawyers + i * 0.26);
-      });
-      // "seizures,": the pen hand jitters, the scribbles go wild and the desk rattles
-      tl.fromTo(armPen, { rotation: -10 * lf }, { rotation: 14 * lf, duration: 0.04, repeat: 17, yoyo: true, ease: "none", immediateRender: false }, T.seize);
-      tl.to(armPen, { rotation: 0, duration: 0.1 }, T.seize + 0.74);
-      tl.fromTo(q("wild"), { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.6, ease: "none" }, T.seize);
-      tl.fromTo(deskIn, { y: 0 }, { y: -5, duration: 0.04, repeat: 17, yoyo: true, ease: "none", immediateRender: false }, T.seize);
-      pivot(lawJ, "0 6");
-      tl.fromTo(lawJ, { rotation: -2 }, { rotation: 2, duration: 0.05, repeat: 13, yoyo: true, ease: "none", immediateRender: false }, T.seize);
-      tl.to(lawJ, { rotation: 0, duration: 0.1 }, T.seize + 0.7);
-
-      // "nobody reads,": two humans walk across the insert, not looking down (squeak as the first steps on it).
-      var walkList = [];
-      KIT.onTime(tl, D, function (t) {
-        walkList.forEach(function (w) {
-          var k = Math.max(0, Math.min(1, (t - w.t0) / w.dur)), x = w.x0 + (w.x1 - w.x0) * k;
-          w.el.setAttribute("transform", "translate(" + x.toFixed(1) + "," + (WG - 100 * WS).toFixed(1) + ") scale(" + WS + ")");
-        });
-      });
-      function walker(id, o, r, x0, x1, t0, dur, n) {
-        var el = q(id), body = q(id + "-b");
-        walkList.push({ el: el, x0: x0, x1: x1, t0: t0, dur: dur });
-        el.setAttribute("transform", "translate(" + x0 + "," + (WG - 100 * WS) + ") scale(" + WS + ")");
-        ["leg-l", "leg-r"].forEach(function (c, i) {
-          var leg = body.querySelector("." + c);
-          pivot(leg, r.hip[i].join(" "));
-          tl.fromTo(leg, { rotation: i ? 22 : -22 }, { rotation: i ? -22 : 22, duration: dur / n, repeat: n - 1, yoyo: true, ease: "sine.inOut" }, t0);
-        });
-        pivot(body, "0 100");
-        tl.fromTo(body, { y: 0 }, { y: -4, duration: dur / n / 2, repeat: n * 2 - 1, yoyo: true, ease: "sine.inOut" }, t0);
-      }
-      // the first steps onto the doormat on "nobody" (squeak); they cross behind her and the desk
-      var wMat = (L.mat[0] + L.mat[1]) / 2, wFrom = L.dir > 0 ? -300 : W + 300, wTo = L.dir > 0 ? W + 300 : -300, wSp = (V ? 760 : 1090) * L.dir;
-      var w1t = T.nobody - (wMat - wFrom) / wSp, wDur = (wTo - wFrom) / wSp;
-      walker("w1", w1o, w1r, wFrom, wTo, w1t, wDur, Math.round(wDur / 0.24));
-      walker("w2", w2o, w2r, wFrom, wTo, w1t + 0.4, wDur, Math.round(wDur / 0.24));
-      var w2h = q("w2-b").querySelector(".head");
-      pivot(w2h, w2r.neck.join(" "));
-      tl.set(w2h, { rotation: -14 * L.dir }, 0);
-
-      // "including": the doctor walks in; "doctor.": he wipes his shoes on it like a doormat (pat) and steps over her.
-      var doc = q("doc"), docIn = q("doc-in"), dl = docIn.querySelector(".leg-l"), dr = docIn.querySelector(".leg-r");
-      pivot(dl, DR.hip[0].join(" ")); pivot(dr, DR.hip[1].join(" "));
-      var DX0 = L.doc[0], DXW = L.doc[1], DXL = L.doc[2], t0 = T.incl - 0.55, tw = T.doctor - 0.05, tj = T.doctor + 0.42, tland = tj + 0.5;
-      set(doc, 1, t0);
-      var GY = L.pat[1] - 100 * S, LIFT = (DR.hipY - PR.top[1]) * S + 18; // a hurdle: his hips clear her head
-      KIT.onTime(tl, D, function (t) {
-        var x = DX0, y = GY;
-        if (t >= t0 && t < tw) x = DX0 + (DXW - DX0) * Math.min(1, (t - t0) / (tw - t0 - 0.1));
-        else if (t >= tw && t < tj) x = DXW;
-        else if (t >= tj) {
-          var k = Math.min(1, (t - tj) / (tland - tj));
-          x = DXW + (DXL - DXW) * k;
-          y = GY - Math.sin(Math.PI * k) * LIFT;
-        }
-        doc.setAttribute("transform", "translate(" + x.toFixed(1) + "," + y.toFixed(1) + ")");
-      });
-      var walkN = 6, wd = (tw - t0 - 0.1) / walkN;
-      tl.fromTo(dl, { rotation: -22 }, { rotation: 22, duration: wd, repeat: walkN - 1, yoyo: true, ease: "sine.inOut" }, t0);
-      tl.fromTo(dr, { rotation: 22 }, { rotation: -22, duration: wd, repeat: walkN - 1, yoyo: true, ease: "sine.inOut" }, t0);
-      // the wipe: each foot scrapes back and forth on the paper
-      tl.to(dl, { rotation: -26, duration: 0.09, repeat: 3, yoyo: true, ease: "sine.inOut" }, tw);
-      tl.to(dr, { rotation: -26, duration: 0.09, repeat: 3, yoyo: true, ease: "sine.inOut" }, tw + 0.05);
-      tl.to(dl, { rotation: 0, duration: 0.06 }, tj - 0.08);
-      tl.to(dr, { rotation: 0, duration: 0.06 }, tj - 0.08);
-      // the step over: front leg reaching forward, back leg trailing, over her head
-      tl.to(dr, { rotation: -92, duration: 0.16, ease: "power2.out" }, tj);
-      tl.to(dl, { rotation: 62, duration: 0.16, ease: "power2.out" }, tj);
-      tl.to(dr, { rotation: 0, duration: 0.15, ease: "power2.in" }, tland - 0.15);
-      tl.to(dl, { rotation: 0, duration: 0.15, ease: "power2.in" }, tland - 0.15);
-      // she ducks as he goes over
-      tl.to(phead, { rotation: f > 0 ? 18 : -18, duration: 0.15 }, tj + 0.1);
-      tl.to(phead, { rotation: 0, duration: 0.18 }, tland - 0.05);
-      // the doctor's head mirror flashes as he lands
-      var dhead = docIn.querySelector(".head");
-      pivot(dhead, DR.neck.join(" "));
-      tl.to(dhead, { rotation: -8, duration: 0.08, yoyo: true, repeat: 1 }, tland);
-
-      tl.set({}, {}, D);
-      window.__timelines[ID] = tl;
-    })();
+    KIT.collage({ id: ID, seed: 1404, plate: V ? [-1800, -6500, 8000, 4500] : [-3000, -3300, 7000, 2400], views: views, view: "wheel", cast: cast, beats: beats });
   </script>
 </template>

@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:09.8
+duration: 1:10.3
 message: "Lobbyists have clients, not beliefs, so you hire them away: the same salary, a better legacy, and an economy 1.43 times larger."
 arc: Title card, a $500,000 price tag that turns out SOLD → at the console the Lobbyist, on a fainting couch, slides Wishonia a bribe, then a bigger one → one coin into his case and a column of 1,813 past the frame → left of the couch, his current life: cash, two mushroom clouds, a headstone among orphans → right of it, the same cash, a halo, he sits up on "keep the money", his statue → his briefcase opens on an empty BELIEFS slot and a rolodex → two little worlds: he dies on the shrinking one and lives on the one that grows to 1.43 → the Calculator reads 1.43 and, for once, does not scream
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 19, "Step 3: Bribe the Bribers"
-audio: index-manual.cbaf659d.mp3, 43:10.9 to 44:20.7
+audio: index-manual.7ce6b2b2.mp3, 42:48.7 to 43:59.0
 version: v3
 ---
 
@@ -46,7 +46,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "Step 3: Bribe the Bribers"
-- time: 43:10.9 to 43:14.7 (3.8 s)
+- time: 42:48.7 to 42:52.6 (3.9 s)
 - voiceover: "Step 3: Bribe the Bribers."
 - layer: A, title card
 - status: planned
@@ -63,7 +63,7 @@ Sound: the projector whirr from "Step"; a cash-register ding as the tag lands; a
 - act: The patient
 - transition_in: iris in (on Wishonia's face)
 - cue: "Professional Briber Conversion Therapy"
-- time: 43:14.7 to 43:17.3 (2.6 s)
+- time: 42:52.6 to 42:55.2 (2.6 s)
 - voiceover: "Professional Briber Conversion Therapy"
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; sideeye-closed + body-arms-crossed on "Therapy"
@@ -82,7 +82,7 @@ Sound: a paper slide on "Conversion"; a thunk as the stack lands after "Therapy"
 - act: The spreadsheet
 - transition_in: cut
 - cue: "Military lobbyists currently get"
-- time: 43:17.3 to 43:56.7 (39.4 s)
+- time: 42:55.2 to 43:34.5 (39.3 s)
 - voiceover: "Military lobbyists currently get one thousand, eight hundred and thirteen dollars back per dollar invested in democracy corruption. Show them a spreadsheet: Current Job. The salary is five hundred thousand dollars. The moral status is somewhere between "arms dealer" and "the person who puts raisins in cookies". The legacy is "Here lies someone who made orphans". Your Offer. The salary is the same, but for lobbying politicians to fund clinical trials instead of cluster bombs. The moral status is "Philanthropist" (but you get to keep the money). The legacy is "Accidentally saved humanity while getting rich"."
 - layer: B, plate the-couch (camera: couch, column, coin, couch, left to his current life, right to his offer, couch, statue, wide)
 - bit: **A lobbyist on a therapy couch, and the treatment is arithmetic.** One man, big, in fedora and mask, shown what he makes (a column of coins past the frame), his current life (cash, a mushroom cloud, a raisin that goes off just the same, a headstone and its orphans) and his offer (the same cash, a halo, a statue). He sits up on "keep the money". His case holds no beliefs; two globes and a sweating calculator close it.
@@ -108,7 +108,7 @@ Sound: a ding as the coin goes in; a jackpot bell and a cash register on "thousa
 - act: The sale
 - transition_in: cut
 - cue: "They won't even need convincing"
-- time: 43:56.7 to 44:02.5 (5.8 s)
+- time: 43:34.5 to 43:40.5 (6.0 s)
 - voiceover: "They won't even need convincing. Lobbyists don't have beliefs. They have clients."
 - layer: A, host
 - wishonia: big, smirk-smile + body-open-palms; skeptical-closed + body-palms-down on "beliefs."; sideeye-closed + body-idle on "clients."
@@ -129,7 +129,7 @@ Sound: a click as the latches pop; a whirr as the rolodex spins and a click as i
 - act: The sale
 - transition_in: cut
 - cue: "The current client pays"
-- time: 44:02.5 to 44:17.0 (14.5 s)
+- time: 43:40.5 to 43:55.6 (15.1 s)
 - voiceover: "The current client pays them to lobby for a world where they die of preventable diseases in a smaller economy. You're offering a client that pays the same salary to lobby for a world where they don't die and the economy is one point four three times larger."
 - layer: B, plate two-worlds
 - bit: **A lobbyist on a therapy couch, and the treatment is arithmetic.** One man, big, in fedora and mask, shown what he makes (a column of coins past the frame), his current life (cash, a mushroom cloud, a raisin that goes off just the same, a headstone and its orphans) and his offer (the same cash, a halo, a statue). He sits up on "keep the money". His case holds no beliefs; two globes and a sweating calculator close it.
@@ -149,7 +149,7 @@ Sound: a cash register on "pays"; an x-ray zap on "die"; a slide down on "smalle
 - act: The sale
 - transition_in: cut
 - cue: "This is not a hard sell"
-- time: 44:17.0 to 44:20.7 (3.6 s)
+- time: 43:55.6 to 43:59.0 (3.4 s)
 - voiceover: "This is not a hard sell. It is arithmetic."
 - layer: A, host
 - wishonia: big, smirk-smile + body-palms-down; sideeye-closed + body-idle on "arithmetic."

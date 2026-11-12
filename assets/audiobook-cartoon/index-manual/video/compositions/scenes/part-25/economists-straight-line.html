@@ -1,0 +1,84 @@
+<template id="economists-straight-line-template">
+  <!-- economists-straight-line · collage (Part 25, scene 3, plate the-forecast). The bit: the economist's forecast is
+       a ruled straight line, and it only holds if he holds every worsening trend down by hand. "project": he rules it,
+       +2.5% A YEAR. "worse": the worsening trends climb up from the bottom of the card toward it, CYBERCRIME +15% A YEAR
+       and MILITARY + CYBERCRIME +12.6% A YEAR. "simultaneously": he pins them flat where they meet his line and holds
+       them down, beaming and trembling. "luck": the pins ping out, the lines spring up and fling him off the top of the
+       card. A moment later his ruler drops back in and lands on his line. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="economists-straight-line" data-width="1920" data-height="1080" data-start="0" data-duration="11.48">
+    <div id="economists-straight-line-weave"></div>
+    <div id="economists-straight-line-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "economists-straight-line", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var ch = KIT.collage.axes(V ? { box: [150, 300, 990, 1180], x: [2026, 2046, 5], y: [0, 30, 10], xLabels: 10, yLabels: 100, title: "GDP GROWTH", size: 40 }
+        : { box: [330, 210, 1480, 800], x: [2026, 2046, 5], y: [0, 30, 10], xLabels: 5, yLabels: 100, title: "GDP GROWTH", size: 38 });
+      // his line, and the two trends that are getting worse (they meet his line at X1 and X2)
+      var line = function (x) { return 12 + 0.5 * (x - 2026); };
+      var cyber = function (x) { return 2 * Math.pow(1.15, x - 2026); };
+      var destr = function (x) { return 4.5 * Math.pow(1.126, x - 2026); };
+      var meet = function (f) { for (var x = 2026; x < 2046; x += 0.01) if (f(x) >= line(x)) return x; return 2046; };
+      var X1 = meet(destr), X2 = meet(cyber), P1 = ch.pt(X1, line(X1)), P2 = ch.pt(X2, line(X2));
+      // the economist: standing beside the card, then over the two pins
+      var EH = V ? 380 : 520, EK = EH / SZ.economist[1];
+      var E0 = V ? [820, 1450] : [1690, 1000];
+      var HOLD = [(P1[0] + P2[0]) / 2, Math.max(P1[1], P2[1]) + (V ? 160 : 200)];
+      var cast = {
+        econ: { art: "economist", x: E0[0], y: E0[1], anchor: "bottom", pivot: "bottom", scale: EK, hidden: false },
+        pin1: { art: "thumbtack-1", x: P1[0], y: P1[1], anchor: [62, 166], pivot: [62, 166], scale: V ? 0.5 : 0.62, hidden: true },
+        pin2: { art: "thumbtack-2", x: P2[0], y: P2[1], anchor: [58, 162], pivot: [58, 162], scale: V ? 0.5 : 0.62, hidden: true },
+        pencil: { art: "ruler", x: ch.pt(2041, line(2041))[0], y: -200, scale: V ? 0.7 : 0.85, hidden: true },
+      };
+      var beats = [
+        { at: 0, do: "chart", chart: ch },
+        // "project": a dead straight line, rising gently; he points at it
+        { on: "project", do: "line", id: "fore", chart: ch, f: line, x: [2026, 2046], dur: 1.0, ease: "linear", width: V ? 7 : 9 },
+        { on: "project", do: "nudge", who: "econ", by: [-30, 0] },
+        { on: "two", do: "banner", id: "tag", text: "+2.5% A YEAR", x: ch.pt(V ? 2034 : 2032, 0)[0], y: ch.pt(2032, line(2032))[1] - (V ? 80 : 90), size: V ? 44 : 52, width: V ? 280 : 340, pad: 40, color: "ink", tilt: -3 },
+        { on: "growth,", do: "hop", who: "econ", height: 20 },
+        // "every trend that is currently getting worse": they climb up from the bottom of the card toward his line
+        { on: "every", do: "line", id: "l1", chart: ch, f: destr, x: [2026, X1], dur: 1.6, color: "red", width: V ? 6 : 8 },
+        { on: "trend", do: "line", id: "l2", chart: ch, f: cyber, x: [2026, X2], dur: 1.6, color: "red", width: V ? 6 : 8 },
+        { on: "currently", do: "banner", id: "lab1", text: V ? "MILITARY + CYBERCRIME" : "MILITARY + CYBERCRIME +12.6% A YEAR", x: ch.pt(V ? 2033 : 2032, 0)[0], y: ch.pt(0, destr(2031) + 3)[1] - (V ? 30 : 0), size: V ? 40 : 40, width: V ? 560 : 640, pad: 30, color: "ink", tilt: -2 },
+        { on: "currently", offset: 0.1, do: "banner", id: "lab1b", text: "+12.6% A YEAR", x: ch.pt(2033, 0)[0], y: ch.pt(0, destr(2031) + 3)[1] + 34, size: 40, width: 360, pad: 30, color: "ink", tilt: -2 },
+        { on: "getting", n: 1, do: "banner", id: "lab2", text: V ? "CYBERCRIME" : "CYBERCRIME +15% A YEAR", x: ch.pt(2040, 0)[0], y: ch.pt(0, 5)[1] - (V ? 30 : 0), size: 40, width: V ? 300 : 440, pad: 30, color: "ink", tilt: 2 },
+        { on: "getting", n: 1, offset: 0.1, do: "banner", id: "lab2b", text: "+15% A YEAR", x: ch.pt(2040, 0)[0], y: ch.pt(0, 5)[1] + 34, size: 40, width: 300, pad: 30, color: "ink", tilt: 2 },
+        // "simultaneously": he pins them flat where they meet his line, and holds them down
+        { on: "to", n: 1, do: "move", who: "econ", by: [HOLD[0] - E0[0], HOLD[1] - E0[1]], dur: 0.45, arc: 80 },
+        { on: "simultaneously", do: "stamp", who: "pin1", from: 1.8, shake: 4 },
+        { on: "simultaneously", offset: 0.35, do: "stamp", who: "pin2", from: 1.8, shake: 4 },
+        { on: "stop", do: "move", who: "econ", by: [0, 0], turn: -8, dur: 0.2 },
+        { on: "stop", offset: 0.25, do: "shiver", who: "econ", dur: cue("luck") - cue("stop") - 0.25, amp: 3, rot: 2 },
+        { on: "stop", offset: 0.25, do: "shiver", who: ["pin1", "pin2"], dur: cue("luck") - cue("stop") - 0.25, amp: 2, rot: 5 },
+        // "luck": the pins ping out, the lines spring up off the top of the card, and he rides one out of the frame
+        { on: "luck", do: "move", who: "pin1", by: [-80, -700], turn: -500, dur: 0.4 },
+        { on: "luck", offset: 0.05, do: "move", who: "pin2", by: [90, -700], turn: 500, dur: 0.4 },
+        { on: "luck", offset: 0.45, do: "hide", who: ["pin1", "pin2"] },
+        { on: "luck", offset: 0.05, do: "line", id: "s1", chart: ch, f: destr, x: [X1, 2046], dur: 0.35, ease: "linear", color: "red", width: V ? 6 : 8, rider: "econ", tilt: 0.3 },
+        { on: "luck", offset: 0.12, do: "line", id: "s2", chart: ch, f: cyber, x: [X2, 2046], dur: 0.4, ease: "linear", color: "red", width: V ? 6 : 8 },
+        { on: "luck", offset: 0.1, do: "shake", y: 10, frames: 3 },
+        // a moment later his ruler drops back in and lands on his line
+        { on: "that.", n: 2, offset: 0.45, do: "show", who: "pencil" },
+        { on: "that.", n: 2, offset: 0.45, do: "move", who: "pencil", by: [0, ch.pt(2041, line(2041))[1] + 200 - 20], turn: 36, dur: 0.3 },
+        { on: "that.", n: 2, offset: 0.75, do: "hop", who: "pencil", height: 16 },
+      ];
+      // the labels are one line in 16:9 and two in 9:16
+      if (!V) beats = beats.filter(function (b) { return b.id !== "lab1b" && b.id !== "lab2b"; });
+      KIT.collage({ id: ID, seed: 2503, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

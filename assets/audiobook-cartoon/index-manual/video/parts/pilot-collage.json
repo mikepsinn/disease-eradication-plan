@@ -2,15 +2,15 @@
   "id": "pilot-collage",
   "title": "Collage pilot: split the atom",
   "storyboard": "storyboards/part-01-opening.md",
-  "audio": { "start": 149.344, "end": 174.584 },
+  "audio": { "start": 145.804, "end": 166.404 },
   "scenes": [
-    { "id": "split-the-atom", "file": "compositions/scenes/pilot-collage/split-the-atom.html", "cue": "I", "approx": 149.3, "layer": "B" },
-    { "id": "my-surprise", "file": "compositions/scenes/part-01/my-surprise.html", "cue": "You", "approx": 167.2, "layer": "A",
+    { "id": "split-the-atom", "file": "compositions/scenes/pilot-collage/split-the-atom.html", "cue": "I", "approx": 145.784, "layer": "B" },
+    { "id": "my-surprise", "file": "compositions/scenes/part-01/my-surprise.html", "cue": "You", "approx": 161.864, "layer": "A",
       "wishonia": [
         { "cue": "You", "expr": "neutral", "rest": "smile", "body": "open-palms", "mode": "big" },
         { "cue": "surprise", "expr": "surprised", "rest": "oh", "body": "open-palms", "mode": "big" }
       ] },
-    { "id": "pointing-at-each-other", "file": "compositions/scenes/pilot-collage/pointing-at-each-other.html", "cue": "when", "approx": 169.2, "layer": "B" }
+    { "id": "pointing-at-each-other", "file": "compositions/scenes/pilot-collage/pointing-at-each-other.html", "cue": "when", "approx": 163.064, "layer": "B" }
   ],
   "sounds": [
     { "scene": "split-the-atom", "cue": "nineteen", "sfx": "thunk", "volume": 0.45 },

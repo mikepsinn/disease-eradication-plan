@@ -1,0 +1,170 @@
+<template id="chenoweth-shelf-template">
+  <!-- chenoweth-shelf · collage, a library wall. "Chenoweth": Erica Chenoweth walks in with her clipboard and jabs at
+       a sheet of graph paper, and it is pinned up, a pin in each corner; she leaves before the dots (9:16: on
+       "studied") or before the drawer (16:9).
+       "studied": a dot plotted for every major movement, fast: PEAK PARTICIPATION along the bottom, two rows, WON and
+       LOST. "failed": a dashed line drops in at 3.5%; every dot right of it is in the WON row. "Not": the FAILURES
+       counter clicks round and lands on 0, and a man with a magnifying glass sweeps the LOST row right of the line:
+       nothing. "Every civil rights movement, every revolution, every regime change": three dots right of the line pop
+       up into tiny engravings, marchers with placards, a pair of pitchforks, and a dictator's statue that topples onto Kim Jong
+       Un. "win.": a bell rings, stars fall. "cheat code": the line glows and a card, 3.5%, slides out of the chart.
+       "never": a clerk files it in the drawer under the chart, LATER, and walks off; a cobweb grows over it and a tumbleweed rolls past. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="chenoweth-shelf" data-width="1920" data-height="1080" data-start="0" data-duration="27.88">
+    <div id="chenoweth-shelf-weave"></div>
+    <div id="chenoweth-shelf-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "chenoweth-shelf", V = KIT.V, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration, F = KIT.collage.F;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hgt = function (art, h) { return h / SZ[art][1]; };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      // The sheet of graph paper (plate px): participation 0 to 8% along x, the WON and LOST rows.
+      var SH = [220, 60, 1500, 680], X0 = 320, X1 = 1420, WON = 260, LOST = 500;
+      var px = function (p) { return X0 + p / 8 * (X1 - X0); }, LX = px(3.5);
+      // the movements: every one past 3.5% won; below it, most lost
+      var rs = KIT.rng(3535), dots = [], N = 46;
+      for (var i = 0; i < N; i++) {
+        var p = 0.2 + 7.6 * Math.pow(rs(), 1.6), won = p > 3.5 || rs() < 0.3;
+        dots.push([px(p), (won ? WON : LOST) + (rs() - 0.5) * 70]);
+      }
+      // three won dots far right become engravings
+      var ENG = [[px(4.7), WON - 10], [px(6.0), WON + 18], [px(7.3), WON - 4]];
+      ENG.forEach(function (e) { dots.push(e); });
+      var T0 = cue("studied"), T1 = cue("century");
+      var dotAt = dots.map(function (d, i) { return T0 + (T1 - T0) * Math.pow(i / (dots.length - 1), 0.8); });
+
+      // the pins in the sheet's corners
+      [[SH[0] + 30, SH[1] + 30], [SH[2] - 30, SH[1] + 30], [SH[0] + 30, SH[3] - 30], [SH[2] - 30, SH[3] - 30]].forEach(function (c, j) {
+        cast["pin" + j] = { art: "push-pin", x: c[0], y: c[1], anchor: [45, 145], scale: 0.5, hidden: true };
+      });
+      // Erica Chenoweth at the sheet's left edge (9:16: in front of it, the frame is narrower)
+      var CH = V ? [330, 1000, 640] : [95, 960, 720];
+      cast.chen = { art: "chenoweth", x: CH[0], y: CH[1], anchor: "bottom", pivot: "bottom", scale: hgt("chenoweth", CH[2]), hidden: true };
+      // the engravings: marchers with placards, a crowd with pitchforks, the statue and the dictator under it
+      cast.march = { art: "marchers", x: ENG[0][0], y: ENG[0][1] + 20, anchor: "bottom", pivot: "bottom", scale: hgt("marchers", 185), hidden: true };
+      cast.shout = { art: "pitchforks", x: ENG[1][0], y: ENG[1][1] + 20, anchor: "bottom", pivot: "bottom", scale: hgt("pitchforks", 150), hidden: true };
+      cast.fallen = { art: "toppled-statue", x: ENG[2][0] + 150, y: ENG[2][1] + 24, anchor: "bottom", pivot: "bottom", scale: 260 / SZ["toppled-statue"][0], hidden: true };
+      cast.weed = { art: "tumbleweed", x: -200, y: 1250, anchor: "bottom", pivot: "center", scale: hgt("tumbleweed", 150), hidden: true };
+      cast.statue = { art: "statue", x: ENG[2][0], y: ENG[2][1] + 20, anchor: "bottom", pivot: [256, 698], scale: hgt("statue", 220), hidden: true };
+      cast.kim = { art: "kim-jong-un", x: ENG[2][0] + 110, y: ENG[2][1] + 20, anchor: "bottom", pivot: "bottom", scale: hgt("kim-jong-un", 110), hidden: true };
+      // the man with the magnifying glass (its lens at art (215, 40))
+      var AK = hgt("auditor", 300);
+      cast.glass = { art: "auditor", x: LX + 40, y: LOST + 300 - 40 * AK, anchor: "bottom", pivot: "bottom", scale: AK, hidden: true };
+      // the bell, the stars
+      cast.bell = { art: "fire-bell", x: SH[2] - 120, y: SH[1] - 20, anchor: "bottom", pivot: "bottom", scale: hgt("fire-bell", 200), hidden: true };
+      for (i = 0; i < 10; i++) cast["star" + i] = { art: "gold-star", x: SH[0] + 80 + i * 125, y: SH[1] - 80 - (i % 3) * 40, scale: 0.16, hidden: true };
+      // the card, the drawer, the clerk
+      var CAB = [960, 1250], CK = hgt("filing-cabinet", 440), SLOT = [CAB[0], CAB[1] - 440 + 100 * CK];
+      cast.cab = { art: "filing-cabinet", x: CAB[0], y: CAB[1], anchor: "bottom", pivot: "bottom", scale: CK };
+      cast.card = { art: "ticket", x: LX, y: SH[1] + 40, scale: 0.55, hidden: true, label: { text: "3.5%", at: [186, 108], width: 250, size: 90 } };
+      cast.clerk = { art: "citizen-6", x: CAB[0] + 300, y: CAB[1], anchor: "bottom", pivot: "bottom", scale: hgt("citizen-6", 420), hidden: true };
+      cast.web = { art: "cobweb", x: CAB[0] + 70, y: CAB[1] - 360, scale: 0.8, hidden: true };
+
+      var views = V ? { chart: [860, 420, 0.8], dots: [1110, 330, 1.5], drawer: [960, 900, 1.1] }
+        : { chart: [860, 440, 1.0], dots: [1110, 320, 1.6], drawer: [960, 960, 1.0] };
+      // "Chenoweth": she walks in, jabs at the sheet, and it is pinned up
+      add({ on: "Erica", offset: -0.2, do: "slideIn", who: "chen", from: "left", dist: 700, tilt: 4 });
+      add({ on: "Chenoweth", offset: -0.08, do: "nudge", who: "chen", by: [30, 0] });
+      [0, 1, 2, 3].forEach(function (j) { add({ on: "Chenoweth", offset: 0.12 * j, do: "stamp", who: "pin" + j, from: 1.8, shake: j ? 0 : 4 }); });
+      add({ on: "Chenoweth", offset: 0.7, do: "bob", who: "chen", y: 3, r: 1, speed: 1.5, until: V ? "studied" : "then" });
+      if (V) add({ on: "studied", offset: -0.3, do: "slideOut", who: "chen", to: "left", dist: 700 });
+      else add({ on: "Humanity", do: "slideOut", who: "chen", to: "left", dist: 800 });
+      // "failed": the line; "Not": FAILURES 0, and the magnifying glass finds nothing
+      var CX = V ? 860 : 1180, CY = V ? -230 : -30;
+      add({ on: "Not", offset: -0.5, do: "counter", id: "fails", from: 9, to: 0, dur: 0.5, x: CX, y: CY, size: V ? 80 : 64, prefix: "FAILURES: ", style: "tick", border: "ink" });
+      add({ on: "one.", offset: -0.1, do: "slideIn", who: "glass", from: "bottom", dist: 600, over: 10 });
+      add({ on: "one.", offset: 0.3, do: "move", who: "glass", by: [X1 - LX - 150, 0], dur: 0.9, ease: "smooth" });
+      add({ on: "one.", offset: 1.25, do: "slideOut", who: "glass", to: "bottom", dist: 700 });
+      // the three engravings, and the statue falls on the dictator
+      add({ on: "civil", offset: -0.15, do: "camera", view: "dots", dur: 0.6 });
+      add({ on: "civil", offset: 0.2, do: "pop", who: "march", squash: true });
+      add({ on: "rights", offset: 0.5, do: "bob", who: "march", y: 6, r: 3, speed: 3 });
+      add({ on: "revolution,", do: "pop", who: "shout", squash: true });
+      add({ on: "revolution,", offset: 0.3, do: "shiver", who: "shout", dur: 1.0, amp: 4, rot: 5 });
+      add({ on: "regime", offset: -0.2, do: "pop", who: ["statue", "kim"], squash: true });
+      add({ on: "change.", do: "hinge", who: "statue", angle: 80, frames: 3 });
+      add({ on: "change.", offset: 0.25, do: "flatten", who: "kim" });
+      add({ on: "change.", offset: 0.25, do: "hide", who: "statue" });
+      add({ on: "change.", offset: 0.25, do: "show", who: "fallen" });
+      add({ on: "change.", offset: 0.25, do: "shake", y: 6, frames: 3 });
+      // "win.": the bell rings, stars fall
+      add({ on: "Hit", do: "camera", view: "chart", dur: 0.6 });
+      add({ on: "win.", do: "pop", who: "bell", squash: true });
+      add({ on: "win.", offset: 0.1, do: "shiver", who: "bell", dur: 0.9, amp: 6, rot: 12 });
+      for (i = 0; i < 10; i++) {
+        add({ on: "win.", offset: 0.05 * i, do: "pop", who: "star" + i });
+        add({ on: "win.", offset: 0.3 + 0.05 * i, do: "drop", who: "star" + i, dist: 900, drift: (i % 2 ? 60 : -60), spin: 200, dur: 1.4 });
+      }
+      add({ on: "Humanity", do: "pop", who: "bell", out: true });
+      // the cheat code: a card slides out of the line; a clerk files it under LATER
+      add({ on: "code", do: "pop", who: "card", squash: true });
+      add({ on: "code", offset: 0.1, do: "move", who: "card", by: [0, -150], dur: 0.4, ease: "smooth" });
+      add({ on: "code", offset: 0.4, do: "bob", who: "card", y: 6, r: 2, speed: 2, until: "then" });
+      add({ on: "then", offset: -0.3, do: "camera", view: "drawer", dur: 0.7 });
+      add({ on: "then", offset: -0.3, do: "slideIn", who: "clerk", from: "right", dist: 900 });
+      add({ on: "then", offset: -0.1, do: "move", who: "card", to: [CAB[0] + 170, CAB[1] - 300], dur: 0.5, turn: -8 });
+      add({ on: "never", offset: -0.1, do: "move", who: "card", to: SLOT, dur: 0.25, scale: 0.4 });
+      add({ on: "never", offset: 0.15, do: "hide", who: "card" });
+      add({ on: "never", offset: 0.15, do: "nudge", who: "cab", by: [0, 8] });
+      add({ on: "used", do: "stamp", who: "cab", text: "LATER", spot: [156, 110], size: 70, width: 240, tilt: -6, id: "later" });
+      add({ on: "it", do: "slideOut", who: "clerk", to: "right", dist: 1000, dur: 0.8 });
+      add({ on: "purpose.", do: "pop", who: "web", swell: 0.3 });
+      add({ on: "on", do: "show", who: "weed" });
+      add({ on: "on", do: "move", who: "weed", by: [V ? 1900 : 2500, 0], turn: 900, dur: D - cue("on") });
+      add({ on: "purpose.", do: "wash", id: "dust", color: "#9A8A6A", blend: "normal", opacity: 0.25, dur: 1.2, above: "cab" });
+
+      var tl = KIT.collage({ id: ID, seed: 1810, plate: [-1600, -1600, 3600, 2800], views: views, view: "chart", cast: cast, beats: beats });
+
+      // The graph paper, its labels, the dots, the 3.5% line, drawn on the paper behind the cast.
+      var g = "", w = SH[2] - SH[0], h = SH[3] - SH[1];
+      g += '<rect x="' + SH[0] + '" y="' + SH[1] + '" width="' + w + '" height="' + h + '" fill="#F4EEDC" stroke="#8FA7B8" stroke-width="3" filter="drop-shadow(5px 7px 3px rgba(58,36,12,0.4))"/>';
+      for (var x = SH[0] + 40; x < SH[2]; x += 40) g += '<line x1="' + x + '" y1="' + SH[1] + '" x2="' + x + '" y2="' + SH[3] + '" stroke="#9DB7C9" stroke-width="' + ((x - SH[0]) % 200 ? 1 : 2.5) + '" opacity="0.7"/>';
+      for (var y = SH[1] + 40; y < SH[3]; y += 40) g += '<line x1="' + SH[0] + '" y1="' + y + '" x2="' + SH[2] + '" y2="' + y + '" stroke="#9DB7C9" stroke-width="' + ((y - SH[1]) % 200 ? 1 : 2.5) + '" opacity="0.7"/>';
+      var txt = function (x, y, s, size, anchor, font) {
+        return '<text x="' + x + '" y="' + y + '" text-anchor="' + (anchor || "middle") + '" font-family="' + (font || "Oswald") + '" font-weight="' + (font ? 900 : 600) + '" font-size="' + size + '" fill="#2B2033">' + s + "</text>";
+      };
+      g += '<path d="M' + X0 + "," + (SH[1] + 40) + " V" + (LOST + 70) + " H" + (X1 + 30) + '" fill="none" stroke="#2B2033" stroke-width="5"/>';
+      g += txt(SH[0] + 20, WON + 14, "WON", 40, "start") + txt(SH[0] + 20, LOST + 14, "LOST", 40, "start");
+      [0, 2, 4, 6, 8].forEach(function (v) { g += txt(px(v), LOST + 112, v + "%", 32); });
+      g += txt((X0 + X1) / 2, SH[3] - 18, "PEAK PARTICIPATION", 40, "middle", "Fraunces");
+      var stage = document.getElementById(ID + "-stage"), d = document.createElement("div");
+      d.style.cssText = "position:absolute;left:0;top:0;width:0;height:0";
+      d.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible">' + g +
+        '<path class="rule" d="M' + LX + "," + (SH[1] + 20) + " V" + (SH[3] - 70) + '" fill="none" stroke="#A8322A" stroke-width="7" stroke-dasharray="22 14"/>' +
+        '<text class="rlab" x="' + (LX + 14) + '" y="' + (SH[1] + 50) + '" font-family="Oswald" font-weight="600" font-size="40" fill="#A8322A">3.5%</text>' +
+        dots.map(function (p) { return '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="13" fill="#2B2033"/>'; }).join("") + "</svg>";
+      stage.insertBefore(d, stage.children[1]);
+      var circles = d.querySelectorAll("circle"), rule = d.querySelector(".rule"), rlab = d.querySelector(".rlab");
+      var RULE = cue("failed"), LEN = SH[3] - 70 - SH[1] - 20, GLOW = cue("code") - 0.5;
+      KIT.onTime(tl, D, function (t0) {
+        var t = Math.floor(t0 * 12) / 12;
+        // dots that became engravings hide when they pop
+        var engT = [cue("civil") + 0.2, cue("revolution,"), cue("regime") - 0.2];
+        Array.prototype.forEach.call(circles, function (c, i) {
+          var on = t >= dotAt[i] && !(i >= N && t >= engT[i - N]);
+          c.style.visibility = on ? "inherit" : "hidden";
+        });
+        var u = Math.min(1, Math.max(0, (t - RULE) / 0.5));
+        rule.style.visibility = t >= RULE ? "inherit" : "hidden";
+        rule.setAttribute("d", "M" + LX + "," + (SH[1] + 20) + " V" + (SH[1] + 20 + LEN * Math.max(0.01, u)).toFixed(1));
+        rlab.style.visibility = t >= RULE + 0.4 ? "inherit" : "hidden";
+        var glow = t >= GLOW && t < cue("then");
+        rule.setAttribute("stroke", glow ? "#F2C230" : "#A8322A");
+        rule.setAttribute("stroke-width", glow ? (11 + 3 * Math.sin(t * 9)).toFixed(1) : "7");
+      });
+    })();
+  </script>
+</template>

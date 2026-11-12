@@ -1,0 +1,63 @@
+<template id="two-billion-sick-template">
+  <!-- two-billion-sick · collage host shot (Part 6, scene 2). Iris in on her face. "two billion": a readout card rolls
+       up to 2,000,000,000 under Earth, and grinning germs pop out on a quarter of it. "suffering": a thermometer pokes
+       out of the top of Earth and its mercury climbs into the red; an ice pack lands on Earth's head. "disease,":
+       Earth sneezes (a jolt) and the thermometer shoots off into space. "you'd": she looks at the camera. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="two-billion-sick" data-width="1920" data-height="1080" data-start="0" data-duration="3.96">
+    <div id="two-billion-sick-weave"></div>
+    <div id="two-billion-sick-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "two-billion-sick", V = KIT.V, E = KIT.STUDIO.earth, SZ = KIT.collage.SIZES;
+    var at = function (a, d) { a = a * Math.PI / 180; return [E[0] + E[2] * d * Math.cos(a), E[1] + E[2] * d * Math.sin(a)]; };
+    // One human in four: germs on a quarter of Earth (its upper right).
+    var GH = E[2] * 0.56, cast = {};
+    [[-78, 0.6], [-30, 0.62], [-2, 0.55], [-52, 0.18]].forEach(function (g, i) {
+      var p = at(g[0], g[1]);
+      cast["g" + i] = { art: "germ-grin", x: p[0], y: p[1], scale: GH / SZ["germ-grin"][1], hidden: true };
+    });
+    // The thermometer sticks out of Earth's top right like one in a mouth (there is no room straight above the pole):
+    // its bulb (art [42, 355]) just inside the rim, tilted TH degrees. The mercury is a red line up its tube (art x 42).
+    var TH = V ? 35 : 45, TK = (V ? 145 : 220) / SZ.thermometer[1], BULB = at(-90 + TH, V ? 0.72 : 0.9);
+    var tube = function (ay) { var d = (ay - 355) * TK, a = TH * Math.PI / 180; return [BULB[0] - d * Math.sin(a), BULB[1] + d * Math.cos(a)]; };
+    cast.therm = { art: "thermometer", x: BULB[0], y: BULB[1], anchor: [42, 355], pivot: [42, 355], scale: TK, hidden: true };
+    var TOPE = [E[0] - E[2] * 0.25, E[1] - E[2] * 0.45];
+    cast.ice = { art: "ice-pack", x: TOPE[0], y: TOPE[1], anchor: "bottom", pivot: "bottom", scale: E[2] * 0.75 / SZ["ice-pack"][0], hidden: true };
+    var beats = [
+      { on: "two", offset: -0.1, do: "counter", id: "sick", from: 0, to: 2000000000, until: ["humans", 1, 0.3], prefix: "", suffix: "", x: V ? 790 : E[0], y: V ? 470 : E[1] + E[2] + 105, size: V ? 48 : 72, font: "oswald" },
+      { on: "billion", do: "pop", who: "g0", squash: true },
+      { on: "billion", offset: 0.12, do: "pop", who: "g1", squash: true },
+      { on: "humans", do: "pop", who: "g2", squash: true },
+      { on: "humans", offset: 0.12, do: "pop", who: "g3", squash: true },
+      { on: "humans", offset: 0.3, do: "bob", who: ["g0", "g1", "g2", "g3"], y: 4, r: 6, speed: 3 },
+      // "suffering": the thermometer pokes out and the mercury climbs to the top
+      { at: -1, do: "move", who: "therm", by: [0, 0], turn: TH, dur: 0.01 },
+      { on: "suffering", offset: -0.1, do: "pop", who: "therm", squash: true },
+      { on: "suffering", offset: 0.05, do: "line", id: "mercury", points: [tube(200), tube(48)], until: ["disease,", 1, -0.05], ease: "linear", front: true, color: "#B23A22", width: 11 * TK },
+      { at: -1, do: "move", who: "ice", by: [0, -900], dur: 0.01 },
+      { on: "suffering", offset: 0.1, do: "show", who: "ice" },
+      { on: "suffering", offset: 0.1, do: "move", who: "ice", by: [0, 900], dur: 0.33 },
+      { on: "suffering", offset: 0.43, do: "shake", y: 5, frames: 2 },
+      { on: "disease,", offset: 0.15, do: "shiver", who: "therm", dur: 0.45, amp: 2, rot: 0 },
+      // the sneeze: a jolt, and the thermometer shoots off into space
+      { on: "disease,", offset: 0.65, do: "shake", x: 14, frames: 4 },
+      { on: "disease,", offset: 0.65, do: "hide", who: "mercury" },
+      { on: "disease,", offset: 0.65, do: "move", who: "therm", by: V ? [500, -560] : [1100, -1100], turn: TH + 30, dur: 0.45 },
+      { on: "disease,", offset: 0.65, do: "hop", who: "ice", height: 40 },
+      { on: "disease,", offset: 0.65, do: "shiver", who: ["g0", "g1", "g2", "g3"], dur: 0.4, amp: 6, rot: 10 },
+    ];
+    KIT.collage({ id: ID, seed: 602, host: { iris: ["in", 0.0, 0.6] }, cast: cast, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,46 @@
+<template id="host-remembers-template">
+  <!-- host-remembers · collage host shot (Part 16, scene 2). Iris in on her face. The Calculator stands on the right end
+       of her console's ledge; it punches in 2, 21, 212 (a key ripple each), then bounces from foot to foot like a prize
+       fighter before the bell. The bell rings twice after "shift?" (sound). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="host-remembers" data-width="1920" data-height="1080" data-start="0" data-duration="3.22">
+    <div id="host-remembers-weave"></div>
+    <div id="host-remembers-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, TOP = KIT.STUDIO.top;
+    // The Calculator on the right end of the ledge (calculator-calm, 226 x 306; its display at art [111, 23]).
+    var CALC = V ? [615, TOP + 6, 0.95] : [975, TOP + 6, 1.2];
+    var calc = function (text, hidden) {
+      return { art: "calculator-calm", x: CALC[0], y: CALC[1], anchor: "bottom", pivot: "bottom", scale: CALC[2], hidden: hidden,
+        label: { text: text, at: [111, 23], width: 84, size: 30 } };
+    };
+    KIT.collage({
+      id: "host-remembers", seed: 1602, host: { iris: ["in", 0.02, 0.6] },
+      cast: { c0: calc("0", false), c2: calc("2", true), c21: calc("21", true), c212: calc("212", true) },
+      beats: [
+        { on: "two", do: "hide", who: "c0" }, { on: "two", do: "show", who: "c2" },
+        { on: "two", do: "shiver", who: "c2", dur: 0.17, amp: 2, rot: 1 },
+        { on: "hundred", do: "hide", who: "c2" }, { on: "hundred", do: "show", who: "c21" },
+        { on: "hundred", do: "shiver", who: "c21", dur: 0.17, amp: 2, rot: 1 },
+        { on: "twelve", do: "hide", who: "c21" }, { on: "twelve", do: "show", who: "c212" },
+        { on: "twelve", do: "shiver", who: "c212", dur: 0.17, amp: 2, rot: 1 },
+        // the prize fighter: foot to foot, faster and faster
+        { on: "years", do: "bob", who: "c212", y: 12, r: 7, speed: 4.5, fade: 0.15 },
+        { on: "shift?", offset: 0.3, do: "hop", who: "c212", height: 40 },
+        { on: "shift?", offset: 0.62, do: "hop", who: "c212", height: 40 },
+      ],
+    });
+  </script>
+</template>

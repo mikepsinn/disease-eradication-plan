@@ -1,0 +1,96 @@
+<template id="vioxx-by-fax-template">
+  <!-- vioxx-by-fax · collage (Part 12, scene 3; plate fda-office, which five-years-later continues). A timeline runs
+       along the floor, 1999 to 2004. At 1999 a smiling VIOXX bottle on the pharmacy counter: 55,000, then APPROVED,
+       and it hops for joy. "patients": three patients beside the counter hold paper pill cups; "dying,": they clutch their chests and x-ray into
+       grinning skeletons, one after another. "someone filled out a P.D.F. form": the clerk at his desk prints the form
+       out of his laptop to fill it in by hand, FORM.PDF. "faxed": it goes into the fax machine and creeps off along the phone wire towards 2004. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="vioxx-by-fax" data-width="1920" data-height="1080" data-start="0" data-duration="12.82">
+    <div id="vioxx-by-fax-weave"></div>
+    <div id="vioxx-by-fax-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "vioxx-by-fax", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The fda-office plate (shared with five-years-later): the floor and timeline on G, 1999 at x 400, 2004 at x 4400.
+    var G = 840, WIRE = G - 520;
+    var TL = KIT.collage.axes({ box: [400, G - 20, 4400, G], x: [1999, 2004, 1], y: [0, 1, 1e9], size: 40 });
+    var X = { counter: 520, bottle: 430, pat: [1010, 1200, 1400], desk: 1900, clerk: 1700 };
+    var CK = 1.2, CTOP = G - (383 - 82) * CK;                         // the counter's top (the glass case)
+    var DK = 1.45, DTOP = G - (350 - 150) * DK;                       // the desk's top
+    var PH = 560;
+    var person = function (art, x, hidden) { return { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: PH / SZ[art][1], hidden: hidden }; };
+    var cy = function (s) { return G - 440 / s; };            // 9:16: the ground at y 1400, above the captions
+    var views = V ? {
+      bottle: [470, cy(1.1), 1.1], pats: [1200, cy(1.15), 1.15], clerk: [1880, cy(1.15), 1.15], wire: [2450, cy(0.75), 0.75],
+    } : {
+      bottle: [560, G - 345, 1.2], pats: [1150, G - 280, 1.15], clerk: [1880, G - 290, 1.15], wire: [2500, G - 420, 0.85],
+    };
+    var PDFK = 0.75, FAXX = X.desk + 110, POLE = X.desk + 360, PK = (G - WIRE) / (453 - 32);
+    var cast = {
+      counter: { art: "pharmacy-counter", x: X.counter, y: G, anchor: "bottom", scale: CK },
+      bottle: { art: "pill-bottle", x: X.bottle, y: CTOP + 8, anchor: "bottom", pivot: "bottom", scale: 0.95,
+        label: { text: "VIOXX", at: [79, 300], width: 120, size: 46 } },
+      p0: person("sick-1", X.pat[0]), p1: person("sick-2", X.pat[1]), p2: person("you-sick", X.pat[2]),
+      b0: person("skeleton", X.pat[0], true), b1: person("grandma-skeleton", X.pat[1], true), b2: person("you-skeleton", X.pat[2], true),
+      c0: { art: "pill-cup", x: X.pat[0] + 70, y: G - 0.5 * PH, scale: 0.2, hidden: true },
+      c1: { art: "pill-cup", x: X.pat[1] + 80, y: G - 0.52 * PH, scale: 0.2, hidden: true },
+      c2: { art: "pill-cup", x: X.pat[2] + 60, y: G - 0.5 * PH, scale: 0.2, hidden: true },
+      pole: { art: "phone-pole", x: POLE, y: G, anchor: "bottom", scale: PK },
+      clerk: person("fax-clerk", X.clerk),
+      desk: { art: "desk", x: X.desk, y: G, anchor: "bottom", scale: DK },
+      laptop: { art: "laptop", x: X.desk - 50, y: DTOP + 6, anchor: "bottom", scale: 0.5 },
+      fax: { art: "fax-machine", x: FAXX, y: DTOP + 6, anchor: "bottom", scale: 0.55 },
+      sent: { art: "pdf", x: POLE, y: WIRE - 0.5 * 329 * 0.55, scale: 0.55, pivot: "bottom", hidden: true,
+        label: { text: "FORM.PDF", at: [106, 52], width: 170, size: 40 } },
+      form: { art: "pdf", x: X.desk - 50, y: DTOP - 90, scale: PDFK, pivot: "bottom", hidden: true,
+        label: { text: "FORM.PDF", at: [106, 52], width: 170, size: 40 } },
+    };
+    var HELD = [X.clerk + 120, G - PH * 0.98];
+    var FAX = cue("faxed");
+    var beats = [
+      { at: 0, do: "chart", chart: TL },
+      // the phone wire, strung from the pole off towards 2004
+      { at: 0, do: "line", id: "wire", points: [[FAXX + 70, DTOP - 120], [POLE - 150, WIRE + 30], [POLE, WIRE], [7000, WIRE]], dur: 0.01, color: "ink", width: 5 },
+      // 55,000, then APPROVED; the bottle hops
+      { on: "thousand", do: "stamp", id: "dead", text: "55,000", x: V ? 470 : 820, y: V ? G - 1000 : G - 640, size: 130, width: V ? 640 : 420, tilt: -5 },
+      { on: "approved", do: "stamp", who: "bottle", id: "approved", text: "APPROVED", spot: [79, 230], width: V ? 260 : 230, size: 60, tilt: -8 },
+      { on: "it.", n: 1, do: "hop", who: "bottle", height: 40 },
+      { on: "When", do: "camera", view: "pats", dur: 0.6 },
+      { on: "When", do: "hide", who: "dead" },
+      // they clutch their chests and x-ray, one after another
+      { on: "patients", do: "pop", who: ["c0", "c1", "c2"] },
+      { on: "started", do: "shiver", who: ["p0", "p1", "p2"], dur: 0.45, amp: 5, rot: 4 },
+      { on: "dying,", offset: 0.2, do: "xray", who: ["p0", "p1", "p2"], to: ["b0", "b1", "b2"], stagger: 0.22 },
+      // the clerk prints the PDF to fill it in by hand
+      { on: "someone", do: "camera", view: "clerk", dur: 0.6 },
+      { on: "filled", do: "pop", who: "form", squash: true },
+      { on: "filled", offset: 0.15, do: "move", who: "form", to: HELD, dur: 0.35, arc: 60 },
+      { on: "P.D.F.", n: 1, do: "shiver", who: "form", dur: 0.6, amp: 3, rot: 3 },
+      { on: "form.", do: "hop", who: "form", height: 30 },
+      { on: "P.D.F.", n: 2, do: "nudge", who: "form", by: [0, -40] },
+      { on: "P.D.F.", n: 2, offset: 0.2, do: "shiver", who: "clerk", dur: 0.5, amp: 2, rot: 2 },
+      // faxed: it creeps off along the wire
+      { on: "Then", do: "camera", view: "wire", dur: 1.0 },
+      { on: "Then", do: "move", who: "form", to: [FAXX, DTOP - 110], dur: 0.25, arc: 80, scale: PDFK * 0.5 },
+      { on: "faxed", do: "hide", who: "form" },
+      { on: "faxed", do: "shiver", who: "fax", dur: 0.5, amp: 4, rot: 3 },
+      { on: "faxed", do: "shake", frames: 3, x: 5 },
+      { on: "faxed", offset: 0.15, do: "show", who: "sent" },
+      { on: "faxed", offset: 0.15, do: "move", who: "sent", by: [(12.82 - FAX) * 420, 0], dur: 12.82 - FAX, ease: "linear" },
+      { on: "faxed", offset: 0.2, do: "shiver", who: "sent", dur: 0.6, amp: 3, rot: 5 },
+    ];
+    KIT.collage({ id: ID, seed: 1203, plate: [-2000, -2500, 8000, 2600], views: views, view: "bottle", cast: cast, beats: beats });
+  </script>
+</template>

@@ -1,6 +1,6 @@
 // Fill in each storyboard scene's time and narration from its cue words.
 //
-//   node tools/storyboard-times.mjs [storyboards/part-NN-*.md ...]   (default: every part in parts.json)
+//   node tools/storyboard-times.mjs [--chapter <slug>] [storyboards/part-NN-*.md ...]   (default: every part in parts.json)
 //
 // Each scene's "- cue:" line quotes the narration's own words where the scene starts (the last
 // quoted phrase on the line is the one matched). Cues are found in order, inside the part's
@@ -10,12 +10,9 @@
 // part's end. Exits 1 if a cue is not found.
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, dirname, join, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-
-const VIDEO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const BOARDS = join(VIDEO, "storyboards");
+import { BOARDS, IS_EP1, PLAN, SLUG, VIDEO } from "./chapter.mjs";
 const { audio, parts } = JSON.parse(readFileSync(join(BOARDS, "parts.json"), "utf8"));
-const words = JSON.parse(readFileSync(join(VIDEO, "../word-timings.json"), "utf8"));
+const words = JSON.parse(readFileSync(join(PLAN, "word-timings.json"), "utf8"));
 const norm = (s) => s.toLowerCase().replace(/[^a-z0-9%$]/g, "");
 const toks = words.map((w) => norm(w.word));
 
@@ -33,7 +30,7 @@ function setField(block, key, value, after) {
   return block.replace(new RegExp(`^(- ${after}: .*)$`, "m"), (m) => `${m}\n- ${key}: ${value}`);
 }
 
-const files = process.argv.length > 2 ? process.argv.slice(2).map((f) => resolve(VIDEO, f)) : parts.map((p) => join(BOARDS, p.file)).filter(existsSync);
+const files = process.argv.length > 2 ? process.argv.slice(2).map((f) => resolve(IS_EP1 ? VIDEO : PLAN, f)) : parts.map((p) => join(BOARDS, p.file)).filter(existsSync);
 let failed = false;
 for (const file of files) {
   const part = parts.find((p) => p.file === basename(file));

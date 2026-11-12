@@ -3,15 +3,15 @@
   "title": "Short: 604 to 1",
   "storyboard": "storyboards/part-01-opening.md",
   "audio": {
-    "start": 202.75,
-    "end": 258.4
+    "start": 190.544,
+    "end": 236.881
   },
   "scenes": [
     {
       "id": "papers-with-presidents",
       "file": "compositions/scenes/short-604-to-1/papers-with-presidents.html",
       "cue": "However,",
-      "approx": 202.8,
+      "approx": 190.584,
       "layer": "B"
     }
   ],
@@ -122,14 +122,9 @@
     },
     {
       "scene": "papers-with-presidents",
-      "cue": "grows",
-      "sfx": "slide-up",
-      "volume": 0.3
-    },
-    {
-      "scene": "papers-with-presidents",
-      "cue": "free).",
-      "offset": 0.25,
+      "cue": "papers",
+      "n": 5,
+      "offset": 0.15,
       "sfx": "zap",
       "volume": 0.4
     },
@@ -181,7 +176,7 @@
     {
       "scene": "papers-with-presidents",
       "cue": "for",
-      "n": 2,
+      "n": 1,
       "sfx": "pop",
       "volume": 0.35
     },
@@ -252,7 +247,7 @@
     {
       "scene": "papers-with-presidents",
       "cue": "for",
-      "n": 3,
+      "n": 2,
       "sfx": "slide-down",
       "volume": 0.4
     },

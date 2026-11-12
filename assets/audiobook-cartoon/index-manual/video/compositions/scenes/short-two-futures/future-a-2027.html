@@ -5,13 +5,13 @@
        knees at 25%, waist at 50%. 2027: the manual is thrown away, 604 bills shoot past the frame, the one medicine bill
        gets stepped on. 2033: Gorbachev's stone, his binder off YOU's fedora. 2035: the engineer in a mask, the nurse's
        countdown, BOOM: YOU charred, still walking. 2040: the burnt suit falls off and the skeleton strolls on, past robots
-       filing fakes and an auditor who drowns dizzy. -->
+       filing fakes until the case files bury him. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
     #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
   </style>
-  <div id="root" data-composition-id="future-a-2027" data-width="1920" data-height="1080" data-start="0" data-duration="57.644">
+  <div id="root" data-composition-id="future-a-2027" data-width="1920" data-height="1080" data-start="0" data-duration="50.982">
     <div id="future-a-2027-weave"></div>
     <div id="future-a-2027-film"></div>
   </div>
@@ -133,7 +133,7 @@
       put("hp" + j, { art: j % 3 ? "bundle-med" : "bundle-war", x: HX + p[0] * (V ? 0.75 : 1), y: G - p[1], scale: V ? 1.3 : 1.65 });
     });
 
-    // ── 2040: the robots file past, the court buries itself, the tax office folds, the auditor goes under ──
+    // ── 2040: the robots file past, the court buries itself, the stack falls on him ──
     yearSign("y40", 2040, CUE("forty:"));
     var CX = w(52.0, 680, 400), FN = 11, FK = V ? 0.62 : 0.72;
     stand("court", "court-window", CX, V ? 1.55 : 1.85, { y: G - 120 });
@@ -143,13 +143,6 @@
       add({ on: "ones.", offset: i * 0.02, do: "move", who: "f" + i, to: [CX - 170 + (i % 4) * 110, G - 760 + (i % 3) * 120], dur: 0.3, turn: (i % 2 ? 1 : -1) * (20 + i * 7) });
     }
     add({ on: "ones.", offset: 0.25, do: "shake", y: 12, frames: 4 });
-    var TAXX = w(55.6, 640, 400);
-    stand("tax", "tax-office", TAXX, V ? 1.8 : 2.2);
-    add({ on: "collapses", do: "flatten", who: "tax" });
-    var AX = w(CUE("evade") + 0.1, 620, 370);
-    put("aud", { art: "auditor", x: AX, y: G - 560, scale: V ? 1.75 : 2.05 });
-    add({ on: "evade", do: "move", who: "aud", by: [0, 0], turn: 900, dur: 1.2 });
-    add({ on: "can", n: 2, do: "move", who: "aud", by: [120, 620], turn: 990, dur: 0.24 });
     // "A.I. agents": robots holding up FAKE cases march past him to the court, wading
     var RN = 6, RY = G - 310;
     for (i = 0; i < RN; i++) {
@@ -161,12 +154,6 @@
       add({ at: rt, do: "bob", who: rname, y: 12, r: 2.5, speed: 2.6, phase: i });
       add({ at: rt + 3.1, do: "pop", who: rname, out: true });
     }
-    // "evade": two robots zip round the auditor
-    ["z0", "z1"].forEach(function (n, j) {
-      put(n, { art: "robot-elbow", x: AX + (j ? 620 : -620), y: G - 200, anchor: "bottom", pivot: "bottom", scale: 1.15, hidden: true });
-      add({ on: "evade", do: "show", who: n });
-      for (var h = 0; h < 5; h++) add({ on: "evade", offset: h * 0.25 + j * 0.12, do: "move", who: n, to: [AX + (h % 2 === j ? 520 : -520), G - 200], dur: 0.22 });
-    });
 
     // ── 2027: nobody looks. Two strollers overtake him, reading and pushing ──
     cast.man = { art: "newspaper-man", x: X0 - 900, y: G + 6, anchor: "bottom", pivot: "bottom", scale: V ? 1.45 : 1.65, hidden: true };

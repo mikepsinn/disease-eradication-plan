@@ -1,0 +1,22 @@
+<template id="retrospect-look-template">
+  <!-- retrospect-look · collage host shot (Part 25). Host cut (scene 17): Wishonia at her console, hands on hips, gives the camera a long skeptical look while it pushes in on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="retrospect-look" data-width="1920" data-height="1080" data-start="0" data-duration="1.4">
+    <div id="retrospect-look-weave"></div>
+    <div id="retrospect-look-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    KIT.collage({ id: "retrospect-look", seed: 2517, host: { push: [1, 1.16] }, cast: {}, beats: [] });
+  </script>
+</template>

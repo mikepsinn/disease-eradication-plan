@@ -1,0 +1,100 @@
+<template id="nra-letter-grade-template">
+  <!-- nra-letter-grade · collage (Part 20, scene 8; plate schoolroom). The bit: the senator is a schoolboy afraid of his
+       report card. The No Politician (blue tie) is squeezed in behind a little school desk; "N.R.A." chalks itself onto
+       the blackboard (chalk is code, wiped on). "letter grade": the REPORT CARD, SUBJECT: GUNS, slides onto the desk and
+       a red F stamps on it (the card has the NRA eagle). "more afraid of a bad mark": he shakes; the F peels off the card and grows into the F
+       monster (`f-monster`), clawed and fanged, twice his height behind him, and lunges. HOLD from
+       "mass" to "plagiarizing": nothing moves. "plagiarizing their system": YOU tiptoes in and slips carbon paper under the card; GUNS is crossed out in red
+       crayon and NOT DYING FROM DISEASES stamps in; the F monster vanishes, his tie flips to teal (the same cut-out's tie,
+       clipped and hue-rotated in code), and a gold star stamps an A on the card. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="nra-letter-grade" data-width="1920" data-height="1080" data-start="0" data-duration="13.78">
+    <div id="nra-letter-grade-weave"></div>
+    <div id="nra-letter-grade-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "nra-letter-grade", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The room (plate px): the blackboard on the wall at the left, the desk with the senator behind it, YOU's spot.
+      var BK = 1.6, BOARD = [560, 420];
+      var DK = 1.5, DESK = 1250, PX = 1230, PFEET = G - 110, PK = 1.4;
+      var CK = 1.15, CARD = [965, 650];
+      var cardPt = function (ax, ay) { return [CARD[0] + (ax - SZ["report-card"][0] / 2) * CK, CARD[1] + (ay - SZ["report-card"][1] / 2) * CK]; };
+      var GUNS = cardPt(300, 160), STAR = cardPt(300, 268), FSPOT = cardPt(300, 300);
+      // the F monster: drawn small on the card's F, it grows (x FM) to twice the senator's height behind him
+      var FK = 0.2, FM = 10, FX = V ? 850 : 700;
+      var TIE = [[126, 96], [152, 96], [167, 150], [142, 198], [117, 150]];
+      var pol = function (extra) { var o = { art: "politician-blue", x: PX, y: PFEET, anchor: "bottom", pivot: "bottom", scale: PK }; for (var k in extra) o[k] = extra[k]; return o; };
+      var cast = {
+        board: { art: "chalkboard", x: BOARD[0], y: BOARD[1], scale: BK },
+        fmon: { art: "f-monster", x: FSPOT[0], y: FSPOT[1], anchor: "bottom", pivot: "bottom", scale: FK, hidden: true },
+        pol: pol({}),
+        tieT: pol({ clip: TIE, hidden: true }),
+        desk: { art: "school-desk", x: DESK, y: G, anchor: "bottom", scale: DK },
+        carbon: { art: "carbon-paper", x: V ? 1420 : 1560, y: 560, scale: 0.55, hidden: true },
+        card: { art: "report-card", x: CARD[0], y: CARD[1], scale: CK, hidden: true,
+          label: [{ text: "REPORT CARD", at: [300, 52], width: 170, size: 34 }, { text: "SUBJECT:", at: [300, 108], width: 150, size: 30 }, { text: "GUNS", at: [300, 160], width: 150, size: 54 }] },
+        cross: { art: "crayon-x", x: GUNS[0], y: GUNS[1], scale: 0.5, hidden: true },
+        star: { art: "gold-star", x: STAR[0], y: STAR[1], scale: 0.52, hidden: true, label: { text: "A", at: [200, 210], width: 160, size: 170 } },
+        you: { art: "you-walk", x: V ? 1520 : 1660, y: G, anchor: "bottom", pivot: "bottom", scale: 1.1, faces: "left", hidden: true },
+      };
+      var views = V ? { room: [900, 600, 0.78], close: [1050, 560, 1.0] } : { room: [960, 540, 1], close: [1080, 470, 1.3] };
+      var beats = [
+        { at: 0, do: "bob", who: ["pol"], y: 3, r: 0.8, speed: 1.3, until: "They" },
+        // "letter grade,": the report card slides onto his desk; a red F stamps on it
+        { on: "letter", offset: -0.25, do: "slideIn", who: "card", from: "top", dist: 900, over: 12 },
+        { on: "grade,", do: "stamp", id: "fGrade", who: "card", spot: [300, 268], text: "F", size: 96, tilt: -8, shake: 6 },
+        // "more afraid of a bad mark than a mass shooting.": he shakes; a giant F looms over him and lunges
+        { on: "senators", do: "camera", view: "close", dur: 0.6 },
+        { on: "afraid", do: "shiver", who: ["pol", "tieT"], dur: 0.56, amp: 5, rot: 2 },
+        { on: "bad", do: "hide", who: "fGrade" },
+        { on: "bad", do: "show", who: "fmon" },
+        { on: "bad", do: "move", who: "fmon", to: [FX, G], scale: FM, dur: 0.4, ease: "smooth" },
+        { on: "mark", do: "move", who: "fmon", by: [V ? 30 : 40, 0], turn: V ? 3 : 4, scale: FM * 1.06, dur: 0.15 },
+        { on: "mark", do: "shake", frames: 3, x: 6 },
+        { on: "mark", do: "hop", who: "pol", height: 44 },
+        // HOLD from "mass" until "plagiarizing": nothing moves.
+        // "You're plagiarizing their system and replacing 'guns' with 'not dying from diseases'": YOU tiptoes in
+        { on: "You're", do: "camera", view: "room", dur: 0.5 },
+        { on: "plagiarizing", do: "slideIn", who: "you", from: "right", dist: 900, over: 10 },
+        { on: "plagiarizing", offset: 0.4, do: "bob", who: "you", y: 10, r: 3, speed: 2.4, until: "diseases." },
+        // he slips a sheet of carbon paper under the card
+        { on: "system", do: "show", who: "carbon" },
+        { on: "system", do: "move", who: "carbon", to: [CARD[0] - 60, CARD[1] + 70], turn: -8, dur: 0.35, arc: 60 },
+        { on: "guns", do: "pop", who: "cross", squash: true },
+        { on: "dying", do: "stamp", id: "newSub1", who: "card", spot: [110, 205], text: "NOT DYING", size: 40, width: 190, tilt: -4, shake: 3 },
+        { on: "diseases.", offset: -0.3, do: "stamp", id: "newSub2", who: "card", spot: [110, 250], text: "FROM DISEASES", size: 40, width: 190, tilt: -4, shake: 3 },
+        { on: "diseases.", do: "pop", who: "fmon", out: true },
+        { on: "diseases.", do: "show", who: "tieT" },
+        { on: "diseases.", do: "glow", who: "tieT", size: 300, dur: 0.6 },
+        { on: "diseases.", offset: 0.4, do: "slideOut", who: "you", to: "right", dist: 900, dur: 0.5 },
+        { on: "diseases.", offset: 0.4, do: "move", who: "carbon", by: [1500, 0], dur: 0.5 },
+        { on: "diseases.", offset: 0.99, do: "stamp", who: "star", from: 1.8, shake: 6 },
+        { on: "diseases.", offset: 1.05, do: "hop", who: ["pol", "tieT"], height: 30 },
+      ];
+      KIT.collage({ id: ID, seed: 2008, plate: V ? [-900, -900, 2900, 2700] : [-400, -300, 2400, 1500], views: views, view: "room", cast: cast, beats: beats });
+      document.getElementById(ID + "-tieT").querySelector("img").style.filter = "hue-rotate(-38deg) saturate(1.1)";
+      // "N.R.A." chalks itself onto the board, wiped on left to right.
+      var board = document.getElementById(ID + "-board"), chalk = document.createElement("div");
+      chalk.style.cssText = "position:absolute;left:0;top:" + (190 * BK - 80).toFixed(0) + "px;width:100%;text-align:center;font:900 160px/1 Fraunces;color:#EEEBDD;opacity:0.88;" +
+        "letter-spacing:6px;visibility:hidden;clip-path:inset(0% 100% 0% 0%)";
+      chalk.textContent = "N.R.A.";
+      board.appendChild(chalk);
+      var tl = window.__timelines[ID], tc = cue("N.R.A.");
+      tl.set(chalk, { visibility: "inherit" }, tc);
+      tl.fromTo(chalk, { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.45, ease: "none", immediateRender: false }, tc);
+    })();
+  </script>
+</template>

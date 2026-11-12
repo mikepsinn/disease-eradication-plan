@@ -1,0 +1,52 @@
+<template id="game-box-template">
+  <!-- game-box · collage host shot. The iris opens quickly on Wishonia at her console, pointing at a games box on the
+       ledge, THE EARTH OPTIMIZATION GAME on its lid. On "pool" the lid lifts a crack like a treasure chest; on "money."
+       green light spills out and three medicine bills peek over the rim. She smirks. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="game-box" data-width="1920" data-height="1080" data-start="0" data-duration="1.48">
+    <div id="game-box-weave"></div>
+    <div id="game-box-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "game-box", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+    // The box stands on the ledge's right end, under her pointing hand, the lid on it; the bills wait inside, behind
+    // the box (they show only once they rise over its back rim).
+    var BW = V ? 300 : 360, BK = BW / SZ["game-box"][0], BH = SZ["game-box"][1] * BK, TOP = S.top + 8;
+    var BL = V ? 520 : 905, BT = TOP - BH;                          // the box's top left
+    var billK = (V ? 130 : 150) / SZ["bill-med-flat"][1];
+    var bill = function (dx) { return { art: "bill-med-flat", x: BL + BW * (0.5 + dx), y: BT + BH * 0.5, scale: billK, hidden: true }; };
+    var cast = {
+      box: { art: "game-box", x: BL, y: BT, anchor: "topleft", pivot: "bottom", scale: BK },
+      b0: bill(-0.2), b1: bill(0.04), b2: bill(0.26),
+      // the lid sits on the tray, its front wall showing under it; it hinges on its back edge
+      lid: { art: "game-box-lid", x: BL - 8 * BK, y: BT - 14 * BK, anchor: "topleft", pivot: [135, 15], scale: BK,
+        label: [{ text: "THE EARTH", at: [214, 76], width: 130, size: 34, tilt: 9 }, { text: "OPTIMIZATION", at: [205, 118], width: 200, size: 46, tilt: 9 },
+          { text: "GAME", at: [197, 162], width: 120, size: 50, tilt: 9 }] },
+    };
+    var RISE = BH * 0.34;
+    var beats = [
+      // "pool": the lid lifts a crack, like a treasure chest
+      { on: "pool", do: "move", who: "lid", by: [6, -BH * 0.12], turn: -4, dur: 0.17, ease: "smooth" },
+      { on: "pool", offset: 0.05, do: "glow", who: "box", size: V ? 200 : 230, dur: 1.2 },
+      // "money.": the lid flips further and three bills peek over the rim
+      { on: "money.", do: "move", who: "lid", by: [10, -BH * 0.3], turn: -10, dur: 0.17, ease: "smooth" },
+      { on: "money.", do: "show", who: ["b0", "b1", "b2"] },
+      { on: "money.", do: "move", who: "b0", by: [-14, -RISE], turn: -16, dur: 0.17, ease: "smooth" },
+      { on: "money.", offset: 0.06, do: "move", who: "b1", by: [0, -RISE * 1.15], turn: 2, dur: 0.17, ease: "smooth" },
+      { on: "money.", offset: 0.12, do: "move", who: "b2", by: [14, -RISE], turn: 16, dur: 0.17, ease: "smooth" },
+      { on: "money.", offset: 0.3, do: "bob", who: ["b0", "b1", "b2"], y: 5, r: 3, speed: 3 },
+    ];
+    KIT.collage({ id: ID, seed: 2402, host: { iris: ["in", 0, 0.28] }, cast: cast, beats: beats });
+  </script>
+</template>

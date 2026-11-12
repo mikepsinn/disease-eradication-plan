@@ -1,0 +1,74 @@
+<template id="child-scientist-template">
+  <!-- child-scientist · collage (Part 12, scene 15; the-street, continuing someone-you-love: the camera has chased the
+       missile here). A little house behind a picket fence; in the yard a child holds up a flask to show the missile,
+       beaming. "incinerated": it dives on her, a white flash and a boom, and the smoke clears on a small grinning
+       skeleton still holding up the flask. "grown up": her crayon drawing pinned to the fence, WHEN I GROW UP, catches,
+       chars and crumbles. HOLD on the skeleton and the bare pin. The child is the `girl` cut-out when it exists (a
+       girl of about seven in a lab coat with a toy flask); until then a boy stands in, with a flask. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="child-scientist" data-width="1920" data-height="1080" data-start="0" data-duration="4.86">
+    <div id="child-scientist-weave"></div>
+    <div id="child-scientist-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "child-scientist", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // the-street, as in someone-you-love; the girl's house is further right.
+    var G = V ? 1380 : 860;
+    var X = { house: 4350, kid: 4700, fence: 4300 };
+    var h = function (art, px) { return px / SZ[art][1]; };
+    var GIRL = SZ["girl"] ? "girl" : "human-ages-kid", KH = V ? 620 : 560;
+    var HAND = [X.kid + 0.17 * KH, G - 0.55 * KH];
+    var cy = function (s) { return G - 440 / s; };
+    var views = V ? { yard: [4560, cy(1), 1], close: [4620, cy(1.15), 1.15] } : { yard: [4520, 500, 1], close: [4560, 520, 1.12] };
+    var cast = {
+      house: { art: "house", x: X.house, y: G - 60, anchor: "bottom", scale: h("house", 640) },
+      fenceL: { art: "picket-fence", x: X.fence - 420, y: G, anchor: "bottom", scale: h("picket-fence", 300) },
+      fence: { art: "picket-fence", x: X.fence - 130, y: G, anchor: "bottom", scale: h("picket-fence", 300) },
+      drawing: { art: "pdf", x: X.fence - 130, y: G - 170, scale: 0.6, pivot: "bottom", eyes: [], smoke: [[106, 40]],
+        label: [{ text: "WHEN I GROW UP", at: [106, 52], width: 170, size: 40 }] },
+      pin: { art: "push-pin", x: X.fence - 130, y: G - 268, scale: 0.35 },
+      kid: { art: GIRL, x: X.kid, y: G, anchor: "bottom", pivot: "bottom", scale: h(GIRL, KH) },
+      bones: { art: "skeleton", x: X.kid, y: G, anchor: "bottom", pivot: "bottom", scale: h("skeleton", KH * 0.86), hidden: true },
+      flask: { art: "flask", x: HAND[0], y: HAND[1], scale: h("flask", 0.2 * KH), hidden: GIRL === "girl" },
+      missile: { art: "missile-fly", x: X.kid - 900, y: G - 1300, scale: 1.1, hidden: true },
+      puff0: { art: "flames", x: X.kid - 60, y: G, anchor: "bottom", scale: 0.55, hidden: true },
+      puff1: { art: "flames", x: X.kid + 70, y: G, anchor: "bottom", scale: 0.65, hidden: true },
+      burn: { art: "flames", x: X.fence - 130, y: G - 80, anchor: "bottom", scale: 0.3, hidden: true },
+    };
+    var HIT = cue("incinerated") + 0.12;
+    var beats = [
+      // she holds the flask up to show it, beaming
+      { at: 0, do: "bob", who: ["kid", "flask"], y: 6, r: 2, speed: 3, until: HIT - 0.05 },
+      // it dives on her
+      { at: 0, do: "show", who: "missile" },
+      { at: 0, do: "move", who: "missile", to: [X.kid, G - 0.6 * KH], turn: 52, dur: HIT, ease: "linear" },
+      { at: HIT, do: "hide", who: "missile" },
+      { at: HIT, do: "boom", shake: 22, flash: 0.22 },
+      { at: HIT, do: "pop", who: ["puff0", "puff1"], squash: true },
+      { at: HIT + 0.05, do: "shiver", who: ["puff0", "puff1"], dur: 0.6, amp: 8, rot: 6 },
+      { at: HIT + 0.7, do: "pop", who: ["puff0", "puff1"], out: true },
+      { at: HIT + 0.1, do: "xray", who: "kid", to: "bones", flash: 0, follow: false },
+      { at: HIT + 0.1, do: "show", who: "flask" },
+      { on: "child", do: "camera", view: "close", dur: 1.2 },
+      // the drawing catches and burns
+      { on: "grown", do: "pop", who: "burn", squash: true },
+      { on: "grown", offset: 0.1, do: "shiver", who: "burn", dur: 0.8, amp: 4, rot: 6 },
+      { on: "up", do: "char", who: "drawing" },
+      { on: "discover", do: "ash", who: "drawing" },
+      { on: "discover", offset: 0.3, do: "pop", who: "burn", out: true },
+    ];
+    KIT.collage({ id: ID, seed: 1215, plate: [2000, -3000, 7000, 3000], views: views, view: "yard", cast: cast, beats: beats });
+  </script>
+</template>

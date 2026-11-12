@@ -1,0 +1,188 @@
+<template id="cure-chain-lagos-to-new-york-template">
+  <!-- cure-chain-lagos-to-new-york · collage (Part 23, scenes 10 to 12 as one plate: the cure). The same globe on
+       the wall of the same empty office as pencil-parts-map. The disease lounges in the middle of the Atlantic like an
+       old map's sea monster, smug. Lagos: a researcher holds up her trial blueprint and snips its price tag off ("cheaper").
+       "know": the camera whips north to Brussels, where the Lobbyist stamps a scroll PASSED without reading it; east
+       to Manila , where the Loud Human's megaphone pours out tiny voters and a card rolls to 1,000,000; west to New
+       York, where the fat cat on his hill of money sends a line of medicine bills marching off ("funded"). Delhi: a
+       politician slams YES while the charred No Politician limps past behind her and drops soot; she slams it twice
+       more. Dhaka, right behind her: a factory worker coughs, enrolls on a laptop, takes the pill, and stops coughing.
+       "proved": the disease clutches its chest; "worked.": it flops over dead and a glass jar drops over it, the jar
+       the economist holds up. "millions": crowds pop up over the whole map. "No one sitting": out into the office
+       under thick dust; the spider is dead in the chair, legs up; cobwebs. "police": a bird pokes its head out of the
+       MP helmet on its hook. "given.": a baby spider lowers itself. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="cure-chain-lagos-to-new-york" data-width="1920" data-height="1080" data-start="0" data-duration="45.56">
+    <div id="cure-chain-lagos-to-new-york-weave"></div>
+    <div id="cure-chain-lagos-to-new-york-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "cure-chain-lagos-to-new-york", V = KIT.V, Z = KIT.collage.SIZES;
+      var hk = function (art, h) { return h / Z[art][1]; };
+      // W(word, near): the scene time of that spoken word nearest `near` seconds (the scene repeats know, not, the)
+      var P = window.HF_PART, SC = P.scenes.filter(function (s) { return s.id === ID; })[0];
+      var norm = function (s) { return s.toLowerCase().replace(/[^a-z0-9%$]/g, ""); };
+      var W = function (word, near) {
+        var best = null;
+        P.words.forEach(function (w) {
+          var t = w.s - SC.start;
+          if (t < -0.05 || t >= SC.duration || norm(w.w) !== norm(word)) return;
+          if (best === null || Math.abs(t - near) < Math.abs(best - near)) best = t;
+        });
+        if (best === null) throw new Error(ID + ": no '" + word + "'");
+        return best;
+      };
+      // ── The plate (shared with pencil-parts-map: keep the two in step) ──
+      // The world map on the wall: world-map at 10x, its top-left at (0, 0), so an art point (x, y) is plate (10x, 10y).
+      var GK = 10, on = function (x, y) { return [x * GK, y * GK]; };
+      var SEA = on(180, 150), LAGOS = on(222, 162), BRUX = on(231, 92), MANILA = on(388, 158), NYC = on(112, 108);
+      var DELHI = on(330, 128), DHAKA = on(350, 138);
+      var G = 5000, DOOR = [-1300, G], HOOK = [-480, 3300], CHAIR = [500, G], CK = hk("swivel-chair", 1250);
+      var DESK = [1700, G], DK = hk("desk", 1200), DTOP = G - 1200 + 120 * DK, SEAT = [CHAIR[0] + 10, G - 1250 * 0.52];
+      var cam = function (p, dy, s) { return [p[0], p[1] - dy, s || 1]; };
+      var views = {
+        open: [(SEA[0] + LAGOS[0]) / 2, (SEA[1] + LAGOS[1]) / 2 - 100, V ? 0.5 : 0.62], sea: cam(SEA, 60, 0.75),
+        lagos: cam(LAGOS, 260, 0.8), brux: cam(BRUX, 250, 0.8), manila: cam([MANILA[0] - 150, MANILA[1]], 220, 0.8), nyc: cam(NYC, 260, 0.8),
+        delhi: cam([DELHI[0] - 100, DELHI[1]], 240, 0.8), dhaka: cam([DHAKA[0] - 80, DHAKA[1]], 220, 0.75), globe: V ? [2340, 1700, 0.23] : [2340, 1700, 0.32],
+        office: V ? [700, 3100, 0.27] : [1300, 3000, 0.27], door: V ? [-200, 3950, 0.55] : [-700, 4150, 0.62],
+      };
+      var cast = {
+        globe: { art: "world-map", x: 0, y: 0, anchor: "topleft", scale: GK },
+        door: { art: "deleted-door", x: DOOR[0], y: G, anchor: "bottom", scale: hk("deleted-door", 2000), label: { text: "CENTRAL OFFICE", at: [120, 112], width: 118, size: 22 } },
+        hook: { art: "push-pin", x: HOOK[0], y: HOOK[1], scale: hk("push-pin", 150) },
+        stick: { art: "nightstick", x: HOOK[0] + 260, y: HOOK[1] + 260, scale: hk("nightstick", 520) },
+        helmet: { art: "mp-helmet", x: HOOK[0], y: HOOK[1] + 200, scale: hk("mp-helmet", 380), label: { text: "MP", at: [180, 170], width: 130, size: 90 } },
+        // the bird nesting on it: the cuckoo without its spring
+        bird: { art: "cuckoo", x: HOOK[0] + 10, y: HOOK[1] + 330, anchor: [116, 128], pivot: [116, 128], clip: [[0, 0], [233, 0], [233, 128], [0, 128]], scale: hk("cuckoo", 1.7 * 128), hidden: true },
+        desk: { art: "desk", x: DESK[0], y: G, anchor: "bottom", scale: DK },
+        bell: { art: "telephone", x: DESK[0] - 400, y: DTOP, anchor: "bottom", pivot: "bottom", scale: hk("telephone", 260) },
+        till: { art: "cash-register", x: DESK[0] + 400, y: DTOP, anchor: "bottom", pivot: "bottom", scale: hk("cash-register", 640) },
+        chair: { art: "swivel-chair", x: CHAIR[0], y: G, anchor: "bottom", pivot: "bottom", scale: CK },
+        // the spider, dead in the chair, legs up (turned over below)
+        spider: { art: "spider", x: SEAT[0], y: SEAT[1] - 60, anchor: [64, 626], pivot: [64, 626], clip: [[0, 575], [128, 575], [128, 677], [0, 677]], scale: 2.2 },
+        web1: { art: "cobweb", x: CHAIR[0] + 90, y: G - 1250, anchor: [280, 0], scale: hk("cobweb", 560), hidden: true },
+        web2: { art: "cobweb", x: DESK[0] + 520, y: DTOP - 640, anchor: [280, 0], scale: hk("cobweb", 520), hidden: true },
+        web3: { art: "cobweb", x: DOOR[0] + 480, y: G - 2000, anchor: [280, 0], scale: hk("cobweb", 600), hidden: true },
+        baby: { art: "spider", x: CHAIR[0] - 300, y: G - 1400, anchor: "bottom", scale: hk("spider", 700), hidden: true },
+        // the disease, lounging in the sea
+        dis: { art: "disease", x: SEA[0], y: SEA[1], pivot: "center", scale: hk("disease", 560) },
+        dead: { art: "disease-dead", x: SEA[0], y: SEA[1] + 40, scale: hk("disease-dead", 460), hidden: true },
+        jar: { art: "specimen-jar", x: SEA[0], y: SEA[1] - 2600, scale: hk("specimen-jar", 800), hidden: true },
+        // Lagos: the researcher, her trial blueprint and its price tag
+        sci: { art: "scientist-lagos", x: LAGOS[0], y: LAGOS[1] + 300, anchor: "bottom", pivot: "bottom", scale: hk("scientist-lagos", 640), label: { text: "TRIAL", at: [135, 200], width: 120, size: 40 } },
+        snip: { art: "scissors", x: LAGOS[0] + 330, y: LAGOS[1] + 20, scale: hk("scissors", 240), hidden: true },
+        // Brussels: the Lobbyist at a little desk with a scroll
+        lob: { art: "lobbyist", x: BRUX[0] - 170, y: BRUX[1] + 120, anchor: "bottom", pivot: "bottom", scale: hk("lobbyist", 560) },
+        ldesk: { art: "desk", x: BRUX[0] + 150, y: BRUX[1] + 120, anchor: "bottom", scale: hk("desk", 330) },
+        scroll: { art: "scroll-rolled", x: BRUX[0] + 150, y: BRUX[1] - 110, scale: hk("scroll-rolled", 90) },
+        // Manila: the Loud Human
+        loud: { art: "loud-human", x: MANILA[0] - 160, y: MANILA[1] + 160, anchor: "bottom", pivot: "bottom", scale: hk("loud-human", 640) },
+        // New York: the fat cat on his hill of money
+        hill: { art: "money-hill", x: NYC[0], y: NYC[1] + 160, anchor: "bottom", scale: hk("money-hill", 360) },
+        cat: { art: "fat-cat", x: NYC[0], y: NYC[1] - 120, anchor: "bottom", pivot: "bottom", scale: hk("fat-cat", 460) },
+        // Delhi: the No Politician limping past behind her, and her YES key; Dhaka, right behind her: the worker
+        noPol: { art: "politician", x: DELHI[0] - 700, y: DELHI[1] + 110, anchor: "bottom", pivot: "bottom", scale: hk("politician", 560), smoke: [[192, 40], [170, 60]], hidden: true },
+        pol: { art: "politician-delhi", x: DELHI[0] - 150, y: DELHI[1] + 160, anchor: "bottom", pivot: "bottom", scale: hk("politician-delhi", 580) },
+        yes: { art: "yes-button", x: DELHI[0] + 70, y: DELHI[1] + 140, anchor: "bottom", pivot: "bottom", scale: hk("yes-button", 300), label: { text: "YES", at: [82, 45], width: 110, size: 46 } },
+        work: { art: "factory-worker", x: DHAKA[0] + 160, y: DHAKA[1] + 160, anchor: "bottom", pivot: "bottom", scale: hk("factory-worker", 580) },
+        lap: { art: "laptop", x: DHAKA[0] + 330, y: DHAKA[1] - 120, scale: hk("laptop", 130), hidden: true },
+        pill: { art: "pill-bottle", x: DHAKA[0] + 60, y: DHAKA[1] - 330, scale: hk("pill-bottle", 110), hidden: true },
+        soot: { art: "cloud-puff", x: DELHI[0], y: DELHI[1] - 300, scale: 0.7, hidden: true },
+      };
+      var beats = [{ at: 0, do: "line", id: "floor", points: [[-7000, G], [9000, G]], color: "ink", width: 16, dur: 0.01 }];
+      var add = function (b) { beats.push(b); };
+      add({ at: -1, do: "move", who: "spider", by: [0, 0], turn: 180, dur: 0.01 });
+      add({ at: 0, do: "bob", who: "dis", y: 10, r: 4, speed: 0.5, until: W("proved", 32) });
+      // ── Scene 10 ── Lagos: the price tag on the blueprint, snipped off
+      add({ at: 0, do: "tag", id: "cost", who: "sci", text: "$$$$$$", x: LAGOS[0] + 330, y: LAGOS[1] + 230, w: 360, h: 180, knot: [240, 240], swing: 4 });
+      add({ at: W("Lagos", 0.8), do: "camera", view: "lagos", dur: 0.6 });
+      add({ at: W("found", 1.5), do: "pop", who: "snip" });
+      add({ at: W("cheaper", 2) - 0.05, do: "hinge", who: "snip", angle: 25, frames: 1, hold: 0.15 });
+      add({ at: W("cheaper", 2) + 0.05, do: "drop", who: "cost", dist: 1400, spin: 40, dur: 0.6 });
+      add({ at: W("design", 2.7), do: "hop", who: "sci", height: 30 });
+      add({ at: W("design", 2.7), do: "pop", who: "snip", out: true });
+      // Brussels: the Lobbyist stamps it, unread
+      add({ at: W("know", 3.7), do: "camera", view: "brux", dur: 0.35 });
+      add({ at: W("passed", 5.5) - 0.1, do: "nudge", who: "lob", by: [50, 0] });
+      add({ at: W("passed", 5.5), do: "stamp", id: "passed", text: "PASSED", x: BRUX[0] + 150, y: BRUX[1] - 230, size: 150, width: 520, tilt: -6 });
+      // Manila: the Loud Human pours out voters; the count rolls to a million
+      var MOUTH = [MANILA[0] - 160 - 120, MANILA[1] + 160 - 590];
+      add({ at: W("know", 8.0), do: "camera", view: "manila", dur: 0.4 });
+      add({ at: W("recruited", 9.9) - 0.3, do: "shiver", who: "loud", dur: 1.2, amp: 4, rot: 2 });
+      add({ at: W("recruited", 9.9) - 0.3, do: "march", id: "voters", path: [MOUTH, [MOUTH[0] - 250, MOUTH[1] + 150], [MOUTH[0] - 450, MOUTH[1] + 560], [MOUTH[0] + 300, MOUTH[1] + 760]], art: ["citizen-1", "citizen-2", "citizen-4", "citizen-7", "citizen-9"], count: 10, height: 150, speed: 700, gap: 80, end: "stop" });
+      add({ at: W("million", 10.6), do: "counter", id: "count", from: 0, to: 1000000, prefix: "", suffix: "", dur: 0.9, x: MANILA[0] - 160, y: MANILA[1] - 600, size: 120, font: "oswald" });
+      // New York: the fat cat's greed; the medicine bills march off the hill
+      add({ at: W("know", 13), do: "camera", view: "nyc", dur: 0.5 });
+      add({ at: W("know", 13) + 0.5, do: "hide", who: "count" });
+      add({ at: W("greed", 14.9), do: "glow", who: "cat", size: 500, dur: 0.5 });
+      add({ at: W("greed", 14.9), do: "hop", who: "cat", height: 30 });
+      add({ at: W("funded", 15.3), do: "march", id: "meds", path: [[NYC[0] - 60, NYC[1] + 120], [NYC[0] + 400, NYC[1] + 200], [NYC[0] + 1100, NYC[1] + 260]], art: "bill-med", count: 6, height: 150, speed: 900, gap: 120, end: "hide" });
+      // out at sea, the disease, still smug
+      add({ at: W("campaign.", 16.1), do: "camera", view: "sea", dur: 0.45 });
+      add({ at: W("campaign.", 16.1) + 0.4, do: "shiver", who: "dis", dur: 0.6, amp: 3, rot: 6 });
+      // ── Scene 11 ── Delhi: YES, while the No Politician limps past, sooty
+      add({ at: W("know", 18.6), do: "camera", view: "delhi", dur: 0.45 });
+      add({ at: W("yes", 20.9) - 0.08, do: "nudge", who: "pol", by: [40, 0] });
+      add({ at: W("yes", 20.9), do: "stamp", who: "yes", from: 1.3, shake: 6 });
+      add({ at: W("because", 21.3), do: "show", who: "noPol" });
+      add({ at: W("because", 21.3), do: "char", who: "noPol" });
+      add({ at: W("because", 21.3), do: "move", who: "noPol", by: [1100, 0], dur: 3.4 });
+      add({ at: W("because", 21.3), do: "bob", who: "noPol", y: 18, r: 6, speed: 1.4, until: W("no.", 24.7) + 0.6 });
+      add({ at: W("opponent", 23.2), do: "shiver", who: "pol", dur: 0.5, amp: 4, rot: 3 });
+      add({ at: W("no.", 24.7), do: "move", who: "soot", to: [DELHI[0] - 700 + 1100 * (W("no.", 24.7) - W("because", 21.3)) / 3.4, DELHI[1] - 420], dur: 0.01 });
+      add({ at: W("no.", 24.7), do: "pop", who: "soot" });
+      add({ at: W("no.", 24.7) + 0.4, do: "pop", who: "soot", out: true });
+      add({ at: W("no.", 24.7) + 0.25, do: "nudge", who: "pol", by: [40, 0] });
+      add({ at: W("no.", 24.7) + 0.3, do: "stamp", who: "yes", from: 1.25, shake: 4 });
+      add({ at: W("no.", 24.7) + 0.55, do: "stamp", who: "yes", from: 1.25, shake: 4 });
+      add({ at: W("no.", 24.7) + 0.5, do: "nudge", who: "pol", by: [40, 0] });
+      add({ at: W("no.", 24.7) + 0.5, do: "shiver", who: "pol", dur: 0.6, amp: 4, rot: 3 });
+      // Dhaka, right behind her: coughs; enrolls; the pill; the cough stops
+      add({ at: W("politician", 25.9), do: "camera", view: "dhaka", dur: 0.6 });
+      add({ at: W("politician", 25.9), do: "hide", who: "noPol" });
+      add({ at: W("Dhaka", 28.6), do: "shiver", who: "work", dur: 0.5, amp: 5, rot: 5 });
+      add({ at: W("clinical", 29.4), do: "shiver", who: "work", dur: 0.4, amp: 5, rot: 5 });
+      add({ at: W("enrollment", 30.2), do: "pop", who: "lap" });
+      add({ at: W("enrollment", 30.2) + 0.1, do: "nudge", who: "work", by: [30, 0] });
+      add({ at: W("data", 31.6) - 0.3, do: "pop", who: "pill" });
+      add({ at: W("data", 31.6), do: "move", who: "pill", to: [DHAKA[0] + 110, DHAKA[1] - 400], dur: 0.15 });
+      add({ at: W("data", 31.6) + 0.2, do: "pop", who: "pill", out: true });
+      add({ at: W("data", 31.6) + 0.3, do: "hop", who: "work", height: 30 });
+      // the disease clutches its chest; "worked.": dead, and the jar drops over it
+      add({ at: W("proved", 32.2), do: "camera", view: "sea", dur: 0.3 });
+      add({ at: W("proved", 32.2), do: "shiver", who: "dis", dur: 1.0, amp: 10, rot: 10 });
+      add({ at: W("worked.", 33.3), do: "swap", who: "dis", to: "dead" });
+      add({ at: W("worked.", 33.3) + 0.05, do: "show", who: "jar" });
+      add({ at: W("worked.", 33.3) + 0.05, do: "move", who: "jar", to: [SEA[0], SEA[1] - 40], dur: 0.22 });
+      add({ at: W("worked.", 33.3) + 0.27, do: "shake", y: 8, frames: 3 });
+      // ── Scene 12 ── millions: crowds pop up over the whole map
+      add({ at: W("millions", 34.7), do: "camera", view: "globe", dur: 0.8 });
+      add({ at: W("millions", 34.7) + 0.3, do: "pictogram", id: "crowds", art: "crowd", count: 66, cols: 11, box: [500, 500, 4200, 2900], dur: 2.2, fill: 0.7 });
+      add({ at: W("disease.", 37.5), do: "hop", who: "crowds", height: 60 });
+      // "No one sitting": out into the office, under thick dust; the spider dead in the chair
+      add({ at: W("No", 38.9), do: "camera", view: "office", dur: 1.3 });
+      add({ at: W("No", 38.9), do: "wash", id: "dust", color: "#8E836C", blend: "normal", opacity: 0.38, dur: 1.2, above: "baby" });
+      add({ at: W("sitting", 39.1), do: "pop", who: ["web1", "web2", "web3"] });
+      // "police": a bird has nested in the helmet; "given.": a baby spider, and another cobweb
+      add({ at: W("military", 41.8), do: "camera", view: "door", dur: 0.6 });
+      add({ at: W("police", 42.2), do: "pop", who: "bird", squash: true });
+      add({ at: W("enforced", 42.7), do: "hop", who: "bird", height: 30 });
+      add({ at: W("orders", 43.7), do: "bob", who: "bird", y: 6, r: 6, speed: 2, until: 45.5 });
+      add({ at: W("given.", 44.4) - 0.3, do: "slideIn", who: "baby", from: "top", dist: 2200, over: 20 });
+
+      KIT.collage({ id: ID, seed: 2310, plate: [-9000, -6000, 11000, 9000], views: views, view: "open", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -1,0 +1,75 @@
+<template id="step-4-purchase-democracy-title-template">
+  <!-- step-4-purchase-democracy-title · the period title card (KIT.titleScene, look "atomic"): STEP 4 stamps on, PURCHASE
+       and DEMOCRACY slam in under the atom and its three war bills, then the italic line. On "For Sale" the tattooed arm
+       (the collage cut-out) reaches down from the top edge, grabs DEMOCRACY by its R and lifts the word off the card. One
+       war bill flutters down into the gap it left (the cash-register ka-ching as it lands). Down to black. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="step-4-purchase-democracy-title" data-width="1920" data-height="1080" data-start="0" data-duration="4.697">
+    <div id="step-4-purchase-democracy-title-cam">
+      <div id="step-4-purchase-democracy-title-bg"></div>
+      <div id="step-4-purchase-democracy-title-back"></div>
+      <div id="step-4-purchase-democracy-title-words"></div>
+      <div id="step-4-purchase-democracy-title-art"></div>
+    </div>
+    <div id="step-4-purchase-democracy-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+      var stamp = { words: ["STEP 4"], style: "stamp", cue: "four:", offset: 0.15, tilt: -4 };
+      var italic = { words: ["It's For Sale Anyway"], style: "italic", cue: "It's" };
+      KIT.titleScene({
+        id: "step-4-purchase-democracy-title",
+        lines: [stamp, ["PURCHASE", "DEMOCRACY"], italic],
+        linesTall: [stamp, ["PURCHASE"], ["DEMOCRACY"], italic],
+        spoken: ["Purchase", "Democracy."],
+        width: V ? undefined : 1500,
+        gag: function (c) {
+          var tl = c.tl, wd = c.word("DEMOCRACY"), b = wd.box;
+          // The arm (282 x 121 art px): the hand at the left, the sleeve at the right. Turned -90 degrees it hangs from the
+          // top edge, fingers down; it turns on its fingertips (art 20, 58), which grab the R (about 62% along the word).
+          var k = V ? 1.8 : 2.1, AW = 282 * k, AH = 121 * k, GRIP = [20 * k, 58 * k];
+          var hook = [b.x + b.w * 0.62, b.y + b.h * 0.6];
+          var arm = document.createElement("div");
+          arm.style.cssText = "position:absolute;left:" + (hook[0] - GRIP[0]).toFixed(1) + "px;top:" + (hook[1] - GRIP[1]).toFixed(1) + "px;width:" + AW.toFixed(1) + "px;height:" + AH.toFixed(1) +
+            "px;transform-origin:" + GRIP[0].toFixed(1) + "px " + GRIP[1].toFixed(1) + "px;visibility:hidden";
+          arm.innerHTML = '<img src="assets/art/collage/tattoo-arm.webp" style="position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(5px 7px 3px rgba(0,0,0,0.5))">';
+          c.art.appendChild(arm);
+          // The bill that flutters into the gap.
+          var BW = V ? 170 : 220, BH = BW * 229 / 226, cx = b.x + b.w / 2;
+          var bill = document.createElement("div");
+          bill.style.cssText = "position:absolute;left:0;top:0;width:" + BW + "px;height:" + BH.toFixed(1) + "px;visibility:hidden";
+          bill.innerHTML = '<img src="assets/art/collage/bill-war.webp" style="position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(4px 6px 3px rgba(0,0,0,0.5))">';
+          c.art.appendChild(bill);
+
+          var tIn = c.cue("For") - 0.1, tGrab = c.cue("Sale") + 0.04, tLift = tGrab + 0.2, L = hook[1] + AW + 300;
+          tl.set(arm, { visibility: "inherit" }, tIn);
+          tl.fromTo(arm, { rotation: -90, y: -(hook[1] + AW + 40) }, { rotation: -90, y: 0, duration: 0.2, ease: "power2.out", immediateRender: false }, tIn);
+          // the grab: a squeeze, the word jolts and tips
+          tl.to(arm, { keyframes: [{ rotation: -84, duration: 0.06 }, { rotation: -90, duration: 0.08 }] }, tGrab);
+          tl.to(wd.el, { keyframes: [{ rotation: -5, y: 8, duration: 0.08 }, { rotation: -3, y: 0, duration: 0.1 }] }, tGrab);
+          // the lift: arm and word go up off the card together, like a plank off a shelf
+          tl.to(arm, { y: -L, duration: 0.42, ease: "power2.in" }, tLift);
+          tl.to(wd.el, { y: -L, rotation: 4, duration: 0.42, ease: "power2.in" }, tLift);
+          // one bill flutters down into the gap and settles where DEMOCRACY was
+          var tB = tLift + 0.3, x0 = cx - BW / 2;
+          tl.set(bill, { visibility: "inherit", x: x0, rotation: -25 }, tB);
+          tl.fromTo(bill, { y: -BH - 60 }, { y: b.y + (V ? 3 : 2.2) * b.h - BH, duration: 0.62, ease: "power1.in", immediateRender: false }, tB);
+          tl.to(bill, { keyframes: [{ x: x0 + 70, rotation: 22, duration: 0.2, ease: "sine.inOut" }, { x: x0 - 45, rotation: -14, duration: 0.2, ease: "sine.inOut" },
+            { x: x0, rotation: 3, duration: 0.22, ease: "sine.inOut" }] }, tB);
+        },
+      });
+    })();
+  </script>
+</template>

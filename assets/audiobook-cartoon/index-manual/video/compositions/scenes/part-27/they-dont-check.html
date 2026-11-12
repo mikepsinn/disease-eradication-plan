@@ -1,0 +1,65 @@
+<template id="they-dont-check-template">
+  <!-- they-dont-check · collage host shot (Part 27, scene 4). The bit: nobody checks reviews. On the ledge, a little REVIEW
+       CHECKING booth, its clerk looking the other way. Review cards slide in under his stamp one at a time and he stamps
+       each CHECKED without looking: "true,", "they", and on "check." a card with so many stars they run off both ends.
+       She side-eyes the camera. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="they-dont-check" data-width="1920" data-height="1080" data-start="0" data-duration="2.74">
+    <div id="they-dont-check-weave"></div>
+    <div id="they-dont-check-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "they-dont-check", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+      var hk = function (art, h) { return h / SZ[art][1]; };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var E = S.earth;
+      // Earth keeps its gift bow. On the deck under it, the review-checking booth; its clerk, inside, turned away from
+      // the window, laughing into a telephone.
+      var BX = V ? 820 : 1480, BY = V ? 1460 : 872, BW = V ? 470 : 560, BK = BW / 364, SHELF = BY - (384 - 206) * BK;
+      var CK = 150 * BW / 470 / 330;
+      var cast = {
+        bow: { art: "gift-bow", x: E[0] - 0.66 * E[2], y: E[1] - 0.72 * E[2], scale: hk("gift-bow", 0.6 * E[2]) },
+        booth: { art: "booth", x: BX, y: BY, anchor: "bottom", scale: BK,
+          label: [{ text: "REVIEW", at: [182, 282], width: 200, size: 70, plaque: true }, { text: "CHECKING", at: [182, 336], width: 240, size: 70, plaque: true }] },
+        clerk: { art: "booth-clerk", x: BX + 0.2 * BW, y: SHELF + 4, anchor: [130, 330], pivot: [130, 330], scale: CK,
+          clip: [[0, 0], [259, 0], [259, 330], [0, 330]] },
+      };
+      // Review cards come in under his stamp one at a time; he stamps each without looking.
+      var CW = 0.58 * BW, TK = CW / 283, CX = BX - 0.1 * BW;
+      ["c0", "c1", "c2"].forEach(function (n, i) {
+        cast[n] = { art: "review-card-" + (i + 1), x: CX + i * 5, y: SHELF + 8, anchor: "bottom", pivot: "bottom", scale: TK, hidden: true };
+      });
+      // The third has so many stars they run off both ends.
+      var NST = 11, SW = CW * 2.1 / NST;
+      // (only the ones off the card's ends: the card prints its own five)
+      var STARS = [];
+      for (var i = 0; i < NST; i++) {
+        var dx = (i - (NST - 1) / 2) * SW;
+        if (Math.abs(dx) < CW / 2) continue;
+        cast["x" + i] = { art: "gold-star", x: CX + 10 + dx, y: SHELF + 8 - 58 * TK, scale: hk("gold-star", SW * 0.95), hidden: true };
+        STARS.push("x" + i);
+      }
+      var hits = [cue("true,"), cue("they"), cue("check.")];
+      var beats = [{ at: 0.1, do: "bob", who: "clerk", y: 3, r: 3, speed: 6 }];
+      hits.forEach(function (t, j) {
+        beats.push({ at: t - 0.25, do: "pop", who: "c" + j, squash: true });
+        if (j === 2) STARS.forEach(function (n, k) { beats.push({ at: t - 0.2 + k * 0.012, do: "pop", who: n }); });
+        beats.push({ at: t - 0.06, do: "hop", who: "clerk", height: -10 });
+        beats.push({ at: t, do: "stamp", who: "c" + j, text: "CHECKED", spot: [141, 58], size: Math.round(CW * 0.2), width: Math.round(CW * 0.86), tilt: [-8, 5, -3][j], from: 1.6 });
+      });
+      KIT.collage({ id: ID, seed: 2704, host: true, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

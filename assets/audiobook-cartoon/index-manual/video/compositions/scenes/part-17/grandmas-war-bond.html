@@ -1,0 +1,245 @@
+<template id="grandmas-war-bond-template">
+  <!-- grandmas-war-bond · collage (Part 17, scenes 8 and 9 as one plate). The bit: two customers at the same bond counter,
+       same pose. Grandma pays Uncle Sam: the boot flattens Hitler (mostly), and it gets a ribbon; her 4 coins go to a rat;
+       the x-ray makes her a skeleton in curlers, 1987. A vaudeville hook drags her aside and Uncle Sam leaves. YOU hold up the bond; the Fat Cat holds out his hat: the boot flattens
+       a giant germ, again and again; 272 coins rip through the top of the frame and the camera rides them up to the fat
+       cat, on a cloud, shoving on more. The x-ray comes for YOU and nothing happens; he tips his fedora beside her stone.
+       "bonus": the whole counter at once, and the boot comes back down on Hitler, for no reason. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="grandmas-war-bond" data-width="1920" data-height="1080" data-start="0" data-duration="50.82">
+    <div id="grandmas-war-bond-weave"></div>
+    <div id="grandmas-war-bond-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // Left to right on the ground line G (plate px): Uncle Sam, the customer's spot, the coins, Grandma's stone, the stomp.
+    var V = KIT.V, G = 1000;
+    var SAM = 380, CUST = V ? 930 : 1100, COIN = V ? 1230 : 1480, STONE = V ? 1400 : 1700, HIT = V ? 2700 : 2900, GERM = V ? 3120 : 3320, WANT = -1700;
+    var PUSH = STONE - CUST;                                     // how far the hook drags Grandma's stone
+    var TIP = [SAM - 174 * 1.3 + 341 * 1.3, G - (704 - 208) * 1.3];   // Sam's fingertip (art 341, 208)
+    var GK = 2.1, GHAND = [CUST - 301 * GK / 2 + 16 * GK, G - (405 - 92) * GK];   // Grandma's coin hand (art 16, 92)
+    var YK = 1.15, YHAND = [CUST - 433 * YK / 2 + 23 * YK, G - (704 - 60) * YK];  // YOU's coin hand (art 23, 60)
+    // One coin is one percent: Grandma's pile is 4, YOU's is 272, at the same scale and in the same place.
+    var STEP = 24, RISE = 50, N = 272, VIS = V ? 78 : 38;
+    var coinAt = function (i) { return [COIN + 12 * Math.sin(i * 1.7), G - 6 - i * STEP]; };
+    var pts = function (a, b) { var p = []; for (var i = a; i < b; i++) p.push(coinAt(i)); return p; };
+    var PEAK = G - 6 - (N + RISE) * STEP;                         // the top of the finished column
+    var cy = function (s) { return V ? G - 420 / s : 620; };      // 9:16 keeps the ground above the captions
+    var views = V ? {
+      counter: [878, cy(0.74), 0.74], coins: [1400, cy(1.6), 1.6], stomp: [HIT, cy(0.8), 0.8], germ: [GERM, cy(0.8), 0.8],
+      want: [WANT, 888, 1.08], want2: [WANT, 860, 1.2], climb: [COIN, PEAK + 700, 1.05], tip: [COIN - 240, PEAK + 25, 0.9], all: [1950, cy(0.42), 0.42],
+    } : {
+      counter: [960, 620, 1], coins: [1600, 850, 2.3], stomp: [HIT, 620, 1], germ: [GERM, 620, 1],
+      want: [WANT, 540, 1], want2: [WANT, 520, 1.14], climb: [COIN, PEAK + 260, 1.35], tip: [COIN - 200, PEAK + 60, 1.1], all: [1900, 280, 0.5],
+    };
+    var CATK = 1.2, CATX = COIN - 340, CATY = PEAK + 180, CATH = [CATX - 449 * CATK / 2 + 430 * CATK, CATY - (472 - 190) * CATK];  // his hands
+    var bootCast = function (x) { return { art: "boot", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: 3, hidden: true, points: { pin: [235, 300] } }; };
+    var ribbon = function (x) { return { art: "rosette", x: x, y: 300, scale: 0.9, hidden: true }; };
+    var coin = function (x, y, k) { return { art: "coin", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: k || 0.85, hidden: true }; };
+    var beats = [];
+    var add = function (b) { beats.push(b); };
+
+    // The boot jumps up and down on the germ.
+    var stompOn = function (word, n) {
+      add({ on: word, n: n, offset: -0.25, do: "move", who: ["boot2", "rib2"], by: [0, -480], dur: 0.17, ease: "smooth" });
+      add({ on: word, n: n, offset: -0.05, do: "move", who: ["boot2", "rib2"], by: [0, 480], dur: 0.08 });
+      add({ on: word, n: n, offset: 0.03, do: "shake", y: 12, frames: 3 });
+    };
+    // A coin rains out of the rip.
+    var RAIN = [[-380, 260], [-140, -220], [120, 240], [320, -160], [-60, 90], [230, 330]];
+
+    beats = beats.concat([
+      { at: 0, do: "bob", who: "sam", y: 3, r: 0.6, speed: 2 },
+      { at: -1, do: "move", who: "gma", by: [1000, 0], dur: 0.01 },
+      { at: 0.1, do: "move", who: "gma", by: [-1000, 0], dur: 1.6 },
+      { at: 0.1, do: "bob", who: "gma", y: 12, r: 4, speed: 4, until: 1.7, fade: 0.05 },
+      { at: 1.7, do: "bob", who: "gma", y: 5, r: 1.2, speed: 2.4, until: "cancer" },
+      // "bonds?": her coin to Sam's finger, and the bond back
+      { on: "bonds?", do: "pop", who: "coinA" },
+      { on: "bonds?", offset: 0.05, do: "move", who: "coinA", to: TIP, dur: 0.3, arc: 60 },
+      { on: "bonds?", offset: 0.4, do: "pop", who: "coinA", out: true },
+      { on: "bonds?", offset: 0.45, do: "pop", who: "bond" },
+      { on: "bonds?", offset: 0.55, do: "move", who: "bond", to: [GHAND[0] - 95, GHAND[1] + 15], dur: 0.33, arc: 50 },
+      // "four": four coins, about her ankle
+      { on: "four", do: "pop", who: "c0" }, { on: "four", offset: 0.08, do: "pop", who: "c1" },
+      { on: "percent", do: "pop", who: "c2" }, { on: "percent", offset: 0.1, do: "pop", who: "c3" },
+      // "world without Nazis (mostly).": Hitler goose-steps in; the boot; his moustache gets away
+      { on: "returns", n: 1, do: "camera", view: "stomp", dur: 0.6 },
+      { on: "returns", n: 1, offset: 0.2, do: "move", who: "hit", by: [300, 0], dur: 1.1 },
+      { on: "returns", n: 1, offset: 0.2, do: "bob", who: "hit", y: 12, r: 5, speed: 5, until: "Nazis", fade: 0.05 },
+      { on: "Nazis", n: 1, offset: -0.3, do: "slideIn", who: "boot", from: "top", over: 0 },
+      { on: "Nazis", n: 1, offset: 0.03, do: "flatten", who: "hit" },
+      { on: "Nazis", n: 1, offset: 0.03, do: "boom", shake: 24, flash: 0 },
+      { on: "(mostly).", do: "show", who: "stache" },
+      { on: "(mostly).", do: "move", who: "stache", by: [-760, 0], dur: 1.9 },
+      { on: "(mostly).", do: "shiver", who: "stache", dur: 1.9, amp: 3, rot: 12 },
+      { on: "(mostly).", offset: 1.9, do: "hide", who: "stache" },
+      // "You're proposing": cut; the poster, at you
+      { on: "You're", n: 1, offset: -0.04, do: "camera", view: "want", dur: 0.01 },
+      { on: "You're", n: 1, do: "stamp", who: "want", from: 1.5, shake: 14 },
+      { on: "You're", n: 1, offset: 0.1, do: "camera", view: "want2", dur: 2.4 },
+      { on: "same", do: "nudge", who: "want", by: [0, 22] },
+      // "What Grandma Got. Dead Nazis (admittedly good).": back along the plate; the boot gets a ribbon
+      { on: "What", n: 1, offset: -0.05, do: "camera", view: "counter", dur: 0.01 },
+      { on: "Dead", n: 1, offset: -0.6, do: "camera", view: "stomp", dur: 0.6 },
+      { on: "good).", offset: -0.1, do: "move", who: "rib", to: "boot.pin", dur: 0.01 },
+      { on: "good).", offset: -0.1, do: "pop", who: "rib", squash: true },
+      { on: "good).", offset: 0.65, do: "slideOut", who: ["boot", "rib"], to: "top", dist: 1700, dur: 0.35 },
+      // "Four percent returns (barely beat inflation).": close on her pile, 4%; the rat eats it
+      { on: "Four", n: 2, offset: -0.45, do: "camera", view: "coins", dur: 0.55 },
+      { on: "Four", n: 2, do: "stamp", id: "four", text: "4%", x: V ? COIN + 170 : COIN + 110, y: V ? 560 : 660, size: V ? 110 : 56, width: 300, tilt: -5, shake: 4 },
+      { on: "(barely", do: "slideIn", who: "rat", from: "right", dist: 700, over: 10 },
+      { on: "(barely", offset: 0.6, do: "shiver", who: "rat", dur: 2.1, amp: 3, rot: 3 },
+      { on: "(barely", offset: 0.55, do: "pop", who: "c3", out: true },
+      { on: "beat", offset: -0.1, do: "pop", who: "c2", out: true },
+      { on: "inflation).", offset: 0.2, do: "pop", who: "c1", out: true },
+      { on: "inflation).", offset: 0.7, do: "swap", who: "c0", to: "c0b" },
+      { on: "inflation).", offset: 0.7, do: "hop", who: "rat", height: 20 },
+      // "Still died of cancer in nineteen eighty-seven.": the x-ray rolls up behind her
+      { on: "Still", offset: -0.25, do: "camera", view: "counter", dur: 0.55 },
+      { on: "Still", offset: -0.1, do: "slideOut", who: "rat", to: "right", dist: 1000, dur: 0.5 },
+      { on: "Still", offset: -0.1, do: "hide", who: "four" },
+      { on: "of", offset: -0.1, do: "show", who: "xr" },
+      { on: "of", offset: -0.1, do: "move", who: "xr", by: [-1150, 0], dur: 0.45 },
+      { on: "nineteen", do: "swap", who: "gma", to: "gsk" },
+      { on: "nineteen", do: "hide", who: "bond" },
+      { on: "nineteen", do: "boom", shake: 10, flash: 0.12 },
+      { on: "eighty-seven.", offset: 0.1, do: "move", who: "xr", by: [1150, 0], dur: 0.35 },
+      { on: "eighty-seven.", offset: 0.5, do: "hide", who: "xr" },
+      { on: "eighty-seven.", offset: 0.35, do: "stamp", who: "stone", from: 1.5, shake: 12 },
+      // "What You're Offering.": the hook drags her out of the way, and YOU takes the same spot, same pose
+      { on: "What", n: 2, offset: -0.45, do: "slideIn", who: "hook", from: "right", dist: 1500, over: 0 },
+      { on: "What", n: 2, offset: 0.05, do: "move", who: ["gsk", "stone", "c0b"], by: [PUSH, 0], dur: 0.33 },
+      { on: "What", n: 2, offset: 0.05, do: "move", who: "hook", by: [PUSH, 0], turn: 180, dur: 0.33 },
+      { on: "What", n: 2, offset: 0.45, do: "slideOut", who: "hook", to: "right", dist: 1500, dur: 0.3 },
+      { on: "What", n: 2, offset: 0.05, do: "slideOut", who: "sam", to: "left", dist: 1500, dur: 0.33 },
+      { on: "You're", n: 2, do: "slideIn", who: "you", from: "right", dist: 1400, over: 12 },
+      { on: "You're", n: 2, do: "slideIn", who: "inv", from: "left", dist: 1400, over: 12 },
+      // "Dead diseases": the same stomp, on something worth it, and it keeps jumping on him
+      { on: "Dead", n: 2, offset: -0.75, do: "camera", view: "germ", dur: 0.5 },
+      { on: "Dead", n: 2, offset: -0.75, do: "pop", who: "germ", squash: true },
+      { on: "Dead", n: 2, offset: -0.3, do: "move", who: "rib2", to: "boot2.pin", dur: 0.01 },
+      { on: "Dead", n: 2, offset: -0.3, do: "slideIn", who: ["boot2", "rib2"], from: "top", over: 0 },
+      { on: "Dead", n: 2, offset: 0.03, do: "flatten", who: "germ" },
+      { on: "Dead", n: 2, offset: 0.03, do: "boom", shake: 30, flash: 0 },
+    ]);
+    stompOn("better", 1); stompOn("dead", 3); stompOn("kill", 1); stompOn("people).", 1);
+
+    beats = beats.concat([
+      // "Two hundred and seventy-two percent": back to the same close shot; the coins go, and they don't stop
+      { on: "Two", n: 2, offset: -0.75, do: "camera", view: "coins", dur: 0.7 },
+      { on: "Two", n: 2, offset: -0.75, do: "slideOut", who: ["boot2", "rib2"], to: "top", dist: 1700, dur: 0.3 },
+      { on: "Two", n: 2, do: "chain", id: "pile", points: pts(0, VIS), art: "coin", scale: 0.85, until: ["percent", 3], accel: 1, jiggle: 0, line: false },
+      { on: "and", n: 2, do: "camera", view: "counter", dur: 0.8 },
+      { on: "percent", n: 3, do: "chain", id: "pile2", join: "pile", points: pts(VIS, N), art: "coin", scale: 0.85, until: ["returns", 3], accel: 1, jiggle: 0, line: false },
+      { on: "percent", n: 3, do: "pop", who: "rip", squash: true },
+      { on: "percent", n: 3, do: "boom", shake: 26, flash: 0 },
+      { on: "returns", n: 3, offset: -0.1, do: "stamp", id: "pct", text: "272%", x: V ? 700 : 720, y: V ? -150 : 730, size: V ? 320 : 170, width: V ? 1000 : 470, tilt: -5, shake: 10 },
+      { on: "returns", n: 3, offset: 0.45, do: "stamp", id: "pctP", text: "PROJECTED", x: V ? 700 : 720, y: V ? 30 : 830, size: V ? 90 : 50, width: V ? 560 : 260, tilt: -5 },
+      { on: "returns", n: 3, offset: 0.15, do: "drop", who: "gsk.jaw", dist: 560, spin: 200, dur: 0.75 },
+      // "(a revenue share ... if the treaty grows": up the column, past everything
+      { on: "(a", n: 2, offset: -0.05, do: "hide", who: ["pct", "pctP", "rip"] },
+      { on: "(a", n: 2, offset: -0.05, do: "camera", view: "climb", dur: 4.9 },
+      { on: "which", offset: -0.25, do: "camera", view: "tip", dur: 0.5 },
+      { on: "grows,", do: "chain", id: "pile3", join: "pile2", points: pts(N, N + RISE), art: "coin", scale: 0.85, until: ["investors", 1], accel: 1, jiggle: 0, line: false },
+      // "which turns investors into the world's most motivated lobbyists for expanding it": up top, shoving on more
+      { on: "lobbyists", offset: -0.1, do: "swap", who: "cat", to: "catM" },
+    ]);
+    [["world's", 0], ["motivated", 0], ["lobbyists", 0.1], ["for", 0], ["expanding", 0.1], ["it).", 0]].forEach(function (w, i) {
+      var who = "pc" + i, y = PEAK - i * STEP, body = w[0] === "world's" || w[0] === "motivated" ? "cat" : "catM";
+      add({ on: w[0], offset: w[1] - 0.05, do: "pop", who: who });
+      add({ on: w[0], offset: w[1], do: "move", who: who, to: [COIN, y], dur: 0.2, arc: 50 });
+      add({ on: w[0], offset: w[1], do: "nudge", who: body, by: [34, 0] });
+    });
+
+    beats = beats.concat([
+      // "Not dying": all the way down; the same x-ray rolls up behind YOU, and nothing happens
+      { on: "Not", offset: -0.6, do: "camera", view: "counter", dur: 0.6 },
+      { on: "dying", offset: -0.1, do: "show", who: "xr" },
+      { on: "dying", offset: -0.1, do: "move", who: "xr", by: [-1150, 0], dur: 0.5 },
+      { on: "meat", do: "boom", shake: 10, flash: 0.12 },
+      { on: "failures", offset: 0.2, do: "move", who: "xr", by: [1150, 0], dur: 0.4 },
+      { on: "failures", offset: 0.65, do: "hide", who: "xr" },
+      // "(this is the big one).": he tips his fedora beside her stone
+      { on: "big", offset: -0.1, do: "swap", who: "you", to: "youTip" },
+      // "Also no Nazis (as a bonus).": the whole counter, Hitler peels himself up, and the boot comes back for no reason
+      { on: "Also", offset: -0.15, do: "camera", view: "all", dur: 0.9 },
+      { on: "Nazis", n: 4, offset: -0.25, do: "swap", who: "hit", to: "hit2" },
+      { on: "Nazis", n: 4, offset: 0.1, do: "bob", who: "hit2", y: 12, r: 5, speed: 5, until: "bonus).", fade: 0.05 },
+      { on: "bonus).", offset: -0.33, do: "move", who: "rib3", to: "boot3.pin", dur: 0.01 },
+      { on: "bonus).", offset: -0.3, do: "slideIn", who: ["boot3", "rib3"], from: "top", over: 0 },
+      { on: "bonus).", offset: 0.03, do: "flatten", who: "hit2" },
+      { on: "bonus).", offset: 0.03, do: "boom", shake: 34, flash: 0 },
+      { on: "bonus).", offset: 0.5, do: "show", who: "stache2" },
+      { on: "bonus).", offset: 0.5, do: "move", who: "stache2", by: [-640, 0], dur: 1.1 },
+      { on: "bonus).", offset: 0.5, do: "shiver", who: "stache2", dur: 1.1, amp: 3, rot: 12 },
+    ]);
+    // the rip rains coins while the column goes through it
+    RAIN.forEach(function (r, i) {
+      add({ on: "percent", n: 3, offset: 0.1 + i * 0.13, do: "show", who: "rain" + i });
+      add({ on: "percent", n: 3, offset: 0.1 + i * 0.13, do: "drop", who: "rain" + i, dist: V ? 2400 : 1200, drift: r[0], spin: r[1], dur: 0.8 });
+    });
+
+    var LM = V ? -1000 : 0, RIPY = V ? -830 : 120, RIPK = V ? 2.6 : 1.5;
+    var cast = {
+      rip: { art: "paper-rip", x: COIN, y: RIPY, scale: RIPK, hidden: true },
+      pig: { art: "city-pigeon", x: COIN + 300, y: LM + (-280), scale: 1.2 },
+      cl0: { art: "cloud-puff", x: COIN + 450, y: LM + (-800), scale: 1.3 },
+      goose: { art: "goose", x: COIN - 340, y: LM + (-1250), scale: 1.5 },
+      ball: { art: "balloon", x: COIN - 430, y: LM + (-1900), scale: 1.1 },
+      ship: { art: "airship", x: COIN + 430, y: LM + (-2500), scale: 1.7 },
+      cl1: { art: "cloud-puff", x: COIN - 470, y: LM + (-3050), scale: 1.7 },
+      jet: { art: "war-plane", x: COIN + 370, y: LM + (-3600), scale: 1.6 },
+      cl2: { art: "cloud-puff", x: COIN - 420, y: LM + (-4150), scale: 1.2 },
+      ufo: { art: "saucer", x: COIN + 430, y: LM + (-4800), scale: 0.8 },
+      cl3: { art: "cloud-puff", x: COIN + 470, y: PEAK + 500, scale: 1.4 },
+      perch: { art: "cloud-puff", x: CATX - 40, y: CATY + 110, scale: 2.5 },
+      cat: { art: "fat-cat-push", x: CATX, y: CATY, anchor: "bottom", scale: CATK },
+      catM: { art: "fat-cat-push-mask", x: CATX, y: CATY, anchor: "bottom", scale: CATK, hidden: true },
+      xr: { art: "xray", x: CUST + 1150, y: G + 6, anchor: "bottom", pivot: "bottom", scale: 1.55, hidden: true },
+      sam: { art: "uncle-sam", x: SAM, y: G, anchor: "bottom", pivot: "bottom", scale: 1.3 },
+      want: { art: "uncle-sam-want", x: WANT, y: 628, scale: 1.25, hidden: true },
+      gma: { art: "grandma-left", x: CUST, y: G, anchor: "bottom", pivot: "bottom", scale: GK },
+      gsk: { art: "grandma-skeleton", x: CUST, y: G, anchor: "bottom", pivot: "bottom", scale: GK, hidden: true, pieces: {
+        skull: { clip: [[0, 0], [194, 0], [194, 99], [128, 99], [128, 124], [194, 124], [194, 416], [0, 416]] },
+        jaw: { clip: [[128, 99], [182, 99], [182, 124], [128, 124]], pivot: [140, 104] },
+      } },
+      stone: { art: "headstone", x: CUST, y: G + 8, anchor: "bottom", pivot: "bottom", scale: 1.15, hidden: true, label: { text: "1987", at: [179, 215], width: 210, size: 90 } },
+      you: { art: "you-cert", x: CUST, y: G, anchor: "bottom", pivot: "bottom", scale: 1.27, hidden: true, label: { text: "BOND", at: [117, 55], width: 110, size: 40 } },
+      youTip: { art: "you-tip", x: CUST, y: G, anchor: "bottom", pivot: "bottom", scale: 1.12, hidden: true },
+      c0: coin(COIN - 62, G - 6), c1: coin(COIN + 62, G - 6), c2: coin(COIN, G - 88), c3: coin(COIN + 6, G - 170),
+      c0b: { art: "coin", x: COIN - 62, y: G - 6, anchor: "bottom", pivot: "bottom", scale: 0.85, hidden: true,
+        clip: [[0, 0], [100, 0], [108, 26], [124, 22], [128, 44], [146, 44], [145, 68], [157, 76], [157, 162], [0, 162]] },
+      rat: { art: "inflation-rat", x: COIN + 300, y: G + 4, anchor: "bottom", pivot: "bottom", scale: 1.25, faces: "left", hidden: true },
+      coinA: { art: "coin", x: GHAND[0], y: GHAND[1], scale: 0.4, hidden: true },
+            inv: { art: "fat-cat-catch", x: SAM, y: G, anchor: "bottom", pivot: "bottom", scale: 1.35, hidden: true },
+      bond: { art: "bond", x: TIP[0], y: TIP[1], scale: 0.85, hidden: true },
+      hook: { art: "cane-hook", x: CUST + 540, y: 365, scale: 2.8, hidden: true },
+      hit: { art: "hitler", x: HIT - 300, y: G, anchor: "bottom", pivot: "bottom", scale: 0.88 },
+      hit2: { art: "hitler", x: HIT, y: G, anchor: "bottom", pivot: "bottom", scale: 0.88, hidden: true },
+      germ: { art: "germ-giant", x: GERM, y: G, anchor: "bottom", pivot: "bottom", scale: 1.05, hidden: true },
+      stache: { art: "moustache", x: HIT - 360, y: G - 40, scale: 1.3, hidden: true },
+      stache2: { art: "moustache", x: HIT - 360, y: G - 30, scale: 1.4, hidden: true },
+      boot: bootCast(HIT), rib: ribbon(HIT),
+      boot2: bootCast(GERM), rib2: ribbon(GERM),
+      boot3: bootCast(HIT), rib3: ribbon(HIT),
+    };
+    for (var ci = 0; ci < 6; ci++) cast["pc" + ci] = { art: "coin", x: CATH[0] + 30, y: CATH[1], anchor: "bottom", pivot: "bottom", scale: 0.85, hidden: true };
+    RAIN.forEach(function (r, i) { cast["rain" + i] = { art: "coin", x: COIN + r[0] * 0.5, y: RIPY + 30, scale: 0.85, hidden: true }; });
+
+    // the hook comes in from stage right with its crook first
+    beats.unshift({ at: -1, do: "move", who: "hook", by: [0, 0], turn: 180, dur: 0.01 });
+
+    KIT.collage({ id: "grandmas-war-bond", seed: 1708, plate: V ? [-3000, -9000, 5500, 3400] : [-3000, -8600, 5500, 2200], views: views, view: "counter", cast: cast, beats: beats });
+  </script>
+</template>

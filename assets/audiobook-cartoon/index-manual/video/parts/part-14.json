@@ -3,8 +3,8 @@
   "title": "Your Decentralized FDA",
   "storyboard": "storyboards/part-14-decentralized-fda.md",
   "audio": {
-    "start": 1674.044,
-    "end": 1959.464
+    "start": 1646.924,
+    "end": 1936.974
   },
   "noCaptions": [
     "decentralized-fda-title"
@@ -14,14 +14,14 @@
       "id": "decentralized-fda-title",
       "file": "compositions/scenes/part-14/decentralized-fda-title.html",
       "cue": "Your",
-      "approx": 1674,
+      "approx": 1647.084,
       "layer": "A"
     },
     {
       "id": "home-planet",
       "file": "compositions/scenes/part-14/home-planet.html",
       "cue": "We",
-      "approx": 1677.4,
+      "approx": 1650.684,
       "layer": "A",
       "wishonia": [
         {
@@ -72,14 +72,14 @@
       "id": "hen-on-safe-bottles",
       "file": "compositions/scenes/part-14/hen-on-safe-bottles.html",
       "cue": "sits",
-      "approx": 1693.8,
+      "approx": 1667.684,
       "layer": "B"
     },
     {
       "id": "small-pieces-of-paper",
       "file": "compositions/scenes/part-14/small-pieces-of-paper.html",
       "cue": "You'd",
-      "approx": 1696.7,
+      "approx": 1670.964,
       "layer": "A",
       "wishonia": [
         {
@@ -116,28 +116,28 @@
       "id": "subsidy-follows-patient",
       "file": "compositions/scenes/part-14/subsidy-follows-patient.html",
       "cue": "Eighty",
-      "approx": 1706.8,
+      "approx": 1680.084,
       "layer": "B"
     },
     {
       "id": "clinical-terrarium",
       "file": "compositions/scenes/part-14/clinical-terrarium.html",
       "cue": "Instead",
-      "approx": 1733.4,
+      "approx": 1706.724,
       "layer": "B"
     },
     {
       "id": "life-jackets-handed-out",
       "file": "compositions/scenes/part-14/life-jackets-handed-out.html",
       "cue": "The",
-      "approx": 1745.1,
+      "approx": 1717.864,
       "layer": "B"
     },
     {
       "id": "one-for-the-mug",
       "file": "compositions/scenes/part-14/one-for-the-mug.html",
       "cue": "million.",
-      "approx": 1766.5,
+      "approx": 1739.864,
       "layer": "A",
       "wishonia": [
         {
@@ -152,36 +152,29 @@
     {
       "id": "accordion-timeline",
       "file": "compositions/scenes/part-14/accordion-timeline.html",
-      "cue": "This",
-      "approx": 1768.1,
-      "layer": "B"
-    },
-    {
-      "id": "two-hundred-twelve-years-sooner",
-      "file": "compositions/scenes/part-14/two-hundred-twelve-years-sooner.html",
-      "cue": "Two",
-      "approx": 1777.4,
+      "cue": "The",
+      "approx": 1741.324,
       "layer": "B"
     },
     {
       "id": "plans-for-tuesday",
       "file": "compositions/scenes/part-14/plans-for-tuesday.html",
-      "cue": "That",
-      "approx": 1802.7,
+      "cue": "About",
+      "approx": 1765.864,
       "layer": "B"
     },
     {
       "id": "smoke-detector-live",
       "file": "compositions/scenes/part-14/smoke-detector-live.html",
       "cue": "Real-Time",
-      "approx": 1812.3,
+      "approx": 1787.824,
       "layer": "B"
     },
     {
       "id": "they-make-you-guess",
       "file": "compositions/scenes/part-14/they-make-you-guess.html",
       "cue": "The",
-      "approx": 1830.7,
+      "approx": 1807.084,
       "layer": "A",
       "wishonia": [
         {
@@ -211,14 +204,14 @@
       "id": "decision-wheel",
       "file": "compositions/scenes/part-14/decision-wheel.html",
       "cue": "Treatment",
-      "approx": 1835,
+      "approx": 1812.824,
       "layer": "B"
     },
     {
       "id": "grape-soda",
       "file": "compositions/scenes/part-14/grape-soda.html",
       "cue": "This",
-      "approx": 1849.4,
+      "approx": 1826.664,
       "layer": "A",
       "wishonia": [
         {
@@ -245,52 +238,17 @@
       ]
     },
     {
-      "id": "ranked-treatments",
-      "file": "compositions/scenes/part-14/ranked-treatments.html",
-      "cue": "Your",
-      "approx": 1857.1,
-      "layer": "B"
-    },
-    {
       "id": "forty-page-insert",
       "file": "compositions/scenes/part-14/forty-page-insert.html",
-      "cue": "Outcome",
-      "approx": 1863.9,
-      "layer": "B"
-    },
-    {
-      "id": "meadow-ad",
-      "file": "compositions/scenes/part-14/meadow-ad.html",
       "cue": "Your",
-      "approx": 1876.2,
-      "layer": "B"
-    },
-    {
-      "id": "ask-your-doctor",
-      "file": "compositions/scenes/part-14/ask-your-doctor.html",
-      "cue": "The",
-      "approx": 1896.4,
-      "layer": "B"
-    },
-    {
-      "id": "outcome-label",
-      "file": "compositions/scenes/part-14/outcome-label.html",
-      "cue": "Your",
-      "approx": 1911.1,
-      "layer": "B"
-    },
-    {
-      "id": "louder-wins",
-      "file": "compositions/scenes/part-14/louder-wins.html",
-      "cue": "Your",
-      "approx": 1924.5,
+      "approx": 1835.164,
       "layer": "B"
     },
     {
       "id": "optimitron-appliance",
       "file": "compositions/scenes/part-14/optimitron-appliance.html",
       "cue": "Back",
-      "approx": 1939.8,
+      "approx": 1917.964,
       "layer": "A",
       "wishonia": [
         {
@@ -339,748 +297,130 @@
     }
   ],
   "sounds": [
-    {
-      "scene": "decentralized-fda-title",
-      "cue": "Your",
-      "sfx": "whirr",
-      "volume": 0.25
-    },
-    {
-      "scene": "decentralized-fda-title",
-      "cue": "F.D.A.",
-      "offset": 0.6,
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "decentralized-fda-title",
-      "cue": "F.D.A.",
-      "offset": 1.3,
-      "sfx": "stamp",
-      "volume": 0.5
-    },
-    {
-      "scene": "home-planet",
-      "cue": "ago.",
-      "sfx": "huff",
-      "volume": 0.4
-    },
-    {
-      "scene": "home-planet",
-      "cue": "tracked",
-      "sfx": "typewriter",
-      "volume": 0.35
-    },
-    {
-      "scene": "home-planet",
-      "cue": "participate.",
-      "sfx": "sparkle",
-      "volume": 0.35
-    },
-    {
-      "scene": "home-planet",
-      "cue": "medicine\"",
-      "at": "after",
-      "sfx": "crickets",
-      "volume": 0.3
-    },
-    {
-      "scene": "home-planet",
-      "cue": "bureaucracy",
-      "offset": 0.25,
-      "sfx": "ding",
-      "volume": 0.35
-    },
-    {
-      "scene": "hen-on-safe-bottles",
-      "cue": "die.",
-      "sfx": "zap",
-      "volume": 0.3
-    },
-    {
-      "scene": "hen-on-safe-bottles",
-      "cue": "die.",
-      "at": "after",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "small-pieces-of-paper",
-      "cue": "paper",
-      "sfx": "squeak",
-      "volume": 0.35
-    },
-    {
-      "scene": "small-pieces-of-paper",
-      "cue": "anything.",
-      "at": "after",
-      "sfx": "whoosh",
-      "volume": 0.4
-    },
-    {
-      "scene": "small-pieces-of-paper",
-      "cue": "anything.",
-      "at": "after",
-      "offset": 0.5,
-      "sfx": "slam",
-      "volume": 0.5
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "percent",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "directly",
-      "sfx": "pat",
-      "volume": 0.4
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "directly",
-      "offset": 0.45,
-      "sfx": "splat",
-      "volume": 0.45
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "subsidizing",
-      "sfx": "boing",
-      "volume": 0.4
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "dollars.",
-      "n": 3,
-      "sfx": "pop",
-      "volume": 0.5
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "paid",
-      "sfx": "cash-register",
-      "volume": 0.4
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "committees",
-      "sfx": "slam",
-      "volume": 0.55
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "fashionable",
-      "sfx": "sparkle",
-      "volume": 0.3
-    },
-    {
-      "scene": "subsidy-follows-patient",
-      "cue": "year.",
-      "at": "after",
-      "sfx": "squeak",
-      "volume": 0.35
-    },
-    {
-      "scene": "clinical-terrarium",
-      "cue": "selected",
-      "sfx": "snip",
-      "volume": 0.4
-    },
-    {
-      "scene": "clinical-terrarium",
-      "cue": "pharmaceutical",
-      "sfx": "whistle",
-      "volume": 0.35
-    },
-    {
-      "scene": "clinical-terrarium",
-      "cue": "pharmaceutical",
-      "offset": 0.6,
-      "sfx": "boing",
-      "volume": 0.4
-    },
-    {
-      "scene": "clinical-terrarium",
-      "cue": "real",
-      "sfx": "slide-up",
-      "volume": 0.35
-    },
-    {
-      "scene": "clinical-terrarium",
-      "cue": "diseases",
-      "sfx": "yelp",
-      "volume": 0.35
-    },
-    {
-      "scene": "life-jackets-handed-out",
-      "cue": "protocol,",
-      "sfx": "stamp",
-      "volume": 0.5
-    },
-    {
-      "scene": "life-jackets-handed-out",
-      "cue": "protocol,",
-      "offset": 0.12,
-      "sfx": "splat",
-      "volume": 0.4
-    },
-    {
-      "scene": "life-jackets-handed-out",
-      "cue": "forty-four",
-      "sfx": "slide-down",
-      "volume": 0.35
-    },
-    {
-      "scene": "life-jackets-handed-out",
-      "cue": "twenty-three",
-      "sfx": "whirr",
-      "volume": 0.3
-    },
-    {
-      "scene": "life-jackets-handed-out",
-      "cue": "hand",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "life-jackets-handed-out",
-      "cue": "out",
-      "sfx": "boing",
-      "volume": 0.4
-    },
-    {
-      "scene": "one-for-the-mug",
-      "cue": "million.",
-      "sfx": "whoosh",
-      "volume": 0.35
-    },
-    {
-      "scene": "one-for-the-mug",
-      "cue": "million.",
-      "at": "after",
-      "sfx": "pat",
-      "volume": 0.35
-    },
-    {
-      "scene": "accordion-timeline",
-      "cue": "twelve",
-      "sfx": "whirr",
-      "volume": 0.3
-    },
-    {
-      "scene": "accordion-timeline",
-      "cue": "compressing",
-      "sfx": "huff",
-      "volume": 0.4
-    },
-    {
-      "scene": "accordion-timeline",
-      "cue": "thirty-six",
-      "sfx": "clank",
-      "volume": 0.4
-    },
-    {
-      "scene": "two-hundred-twelve-years-sooner",
-      "cue": "things",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "two-hundred-twelve-years-sooner",
-      "cue": "found",
-      "sfx": "huff",
-      "volume": 0.35
-    },
-    {
-      "scene": "two-hundred-twelve-years-sooner",
-      "cue": "found",
-      "offset": 0.3,
-      "sfx": "sparkle",
-      "volume": 0.3
-    },
-    {
-      "scene": "two-hundred-twelve-years-sooner",
-      "cue": "eliminating",
-      "sfx": "clank",
-      "volume": 0.4
-    },
-    {
-      "scene": "two-hundred-twelve-years-sooner",
-      "cue": "dying",
-      "sfx": "boing",
-      "volume": 0.4
-    },
-    {
-      "scene": "two-hundred-twelve-years-sooner",
-      "cue": "twelve",
-      "sfx": "stamp",
-      "volume": 0.5
-    },
-    {
-      "scene": "two-hundred-twelve-years-sooner",
-      "cue": "average.",
-      "n": 2,
-      "at": "after",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "plans-for-tuesday",
-      "cue": "billion",
-      "sfx": "thunk",
-      "volume": 0.55
-    },
-    {
-      "scene": "plans-for-tuesday",
-      "cue": "individual",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "plans-for-tuesday",
-      "cue": "plans",
-      "sfx": "pat",
-      "volume": 0.4
-    },
-    {
-      "scene": "plans-for-tuesday",
-      "cue": "Tuesday.",
-      "sfx": "sparkle",
-      "volume": 0.3
-    },
-    {
-      "scene": "plans-for-tuesday",
-      "cue": "Tuesday.",
-      "at": "after",
-      "sfx": "huff",
-      "volume": 0.35
-    },
-    {
-      "scene": "smoke-detector-live",
-      "cue": "smoke",
-      "sfx": "scratch",
-      "volume": 0.3
-    },
-    {
-      "scene": "smoke-detector-live",
-      "cue": "mail?",
-      "sfx": "squeak",
-      "volume": 0.35
-    },
-    {
-      "scene": "smoke-detector-live",
-      "cue": "automatically",
-      "sfx": "slam",
-      "volume": 0.55
-    },
-    {
-      "scene": "smoke-detector-live",
-      "cue": "real",
-      "sfx": "switch",
-      "volume": 0.4
-    },
-    {
-      "scene": "smoke-detector-live",
-      "cue": "\"twelve",
-      "sfx": "ding",
-      "volume": 0.3
-    },
-    {
-      "scene": "smoke-detector-live",
-      "cue": "three",
-      "sfx": "ding",
-      "volume": 0.3
-    },
-    {
-      "scene": "smoke-detector-live",
-      "cue": "class",
-      "sfx": "pat",
-      "volume": 0.4
-    },
-    {
-      "scene": "smoke-detector-live",
-      "cue": "lawsuit.",
-      "sfx": "slide-down",
-      "volume": 0.35
-    },
-    {
-      "scene": "they-make-you-guess",
-      "cue": "They",
-      "sfx": "ding",
-      "volume": 0.3
-    },
-    {
-      "scene": "they-make-you-guess",
-      "cue": "guess.",
-      "at": "after",
-      "sfx": "tick",
-      "volume": 0.5
-    },
-    {
-      "scene": "decision-wheel",
-      "cue": "donuts",
-      "sfx": "ding",
-      "volume": 0.3
-    },
-    {
-      "scene": "decision-wheel",
-      "cue": "half-remember",
-      "sfx": "ding",
-      "volume": 0.3
-    },
-    {
-      "scene": "decision-wheel",
-      "cue": "company",
-      "sfx": "stamp",
-      "volume": 0.5
-    },
-    {
-      "scene": "decision-wheel",
-      "cue": "vibes.",
-      "sfx": "whirr",
-      "volume": 0.3
-    },
-    {
-      "scene": "decision-wheel",
-      "cue": "vibes.",
-      "at": "after",
-      "sfx": "click",
-      "volume": 0.45
-    },
-    {
-      "scene": "grape-soda",
-      "cue": "soda\"",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "grape-soda",
-      "cue": "grape",
-      "n": 2,
-      "at": "after",
-      "sfx": "squeak",
-      "volume": 0.35
-    },
-    {
-      "scene": "grape-soda",
-      "cue": "grape",
-      "n": 2,
-      "at": "after",
-      "offset": 0.4,
-      "sfx": "splat",
-      "volume": 0.3
-    },
-    {
-      "scene": "ranked-treatments",
-      "cue": "rank",
-      "sfx": "slam",
-      "volume": 0.55
-    },
-    {
-      "scene": "ranked-treatments",
-      "cue": "rank",
-      "offset": 0.3,
-      "sfx": "typewriter",
-      "volume": 0.35
-    },
-    {
-      "scene": "ranked-treatments",
-      "cue": "happened",
-      "sfx": "tick",
-      "volume": 0.45
-    },
-    {
-      "scene": "ranked-treatments",
-      "cue": "it:",
-      "sfx": "ding",
-      "volume": 0.35
-    },
-    {
-      "scene": "forty-page-insert",
-      "cue": "nutrition",
-      "sfx": "click",
-      "volume": 0.4
-    },
-    {
-      "scene": "forty-page-insert",
-      "cue": "warning",
-      "sfx": "click",
-      "volume": 0.4
-    },
-    {
-      "scene": "forty-page-insert",
-      "cue": "forty-page",
-      "sfx": "whoosh",
-      "volume": 0.4
-    },
-    {
-      "scene": "forty-page-insert",
-      "cue": "forty-page",
-      "offset": 0.4,
-      "sfx": "pat",
-      "volume": 0.4
-    },
-    {
-      "scene": "forty-page-insert",
-      "cue": "lawyers",
-      "sfx": "scratch",
-      "volume": 0.3
-    },
-    {
-      "scene": "forty-page-insert",
-      "cue": "seizures,",
-      "sfx": "typewriter",
-      "volume": 0.35
-    },
-    {
-      "scene": "forty-page-insert",
-      "cue": "doctor.",
-      "sfx": "pat",
-      "volume": 0.4
-    },
-    {
-      "scene": "meadow-ad",
-      "cue": "frolicking",
-      "sfx": "boing",
-      "volume": 0.35
-    },
-    {
-      "scene": "meadow-ad",
-      "cue": "meadow",
-      "sfx": "boing",
-      "volume": 0.35
-    },
-    {
-      "scene": "meadow-ad",
-      "cue": "voiceover",
-      "sfx": "typewriter",
-      "volume": 0.3
-    },
-    {
-      "scene": "meadow-ad",
-      "cue": "auctioneer",
-      "sfx": "typewriter",
-      "volume": 0.35
-    },
-    {
-      "scene": "meadow-ad",
-      "cue": "stroke",
-      "at": "after",
-      "sfx": "crickets",
-      "volume": 0.3
-    },
-    {
-      "scene": "meadow-ad",
-      "cue": "death",
-      "sfx": "zap",
-      "volume": 0.3
-    },
-    {
-      "scene": "meadow-ad",
-      "cue": "mild",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "meadow-ad",
-      "cue": "skin.",
-      "sfx": "scratch",
-      "volume": 0.3
-    },
-    {
-      "scene": "ask-your-doctor",
-      "cue": "individual",
-      "sfx": "click",
-      "volume": 0.4
-    },
-    {
-      "scene": "ask-your-doctor",
-      "cue": "cured",
-      "sfx": "ding",
-      "volume": 0.3
-    },
-    {
-      "scene": "ask-your-doctor",
-      "cue": "deceased",
-      "sfx": "ding",
-      "volume": 0.3
-    },
-    {
-      "scene": "ask-your-doctor",
-      "cue": "qualifying).",
-      "sfx": "stamp",
-      "volume": 0.5
-    },
-    {
-      "scene": "ask-your-doctor",
-      "cue": "ask",
-      "sfx": "whoosh",
-      "volume": 0.4
-    },
-    {
-      "scene": "ask-your-doctor",
-      "cue": "seven",
-      "sfx": "tick",
-      "volume": 0.5
-    },
-    {
-      "scene": "ask-your-doctor",
-      "cue": "Googled",
-      "sfx": "typewriter",
-      "volume": 0.35
-    },
-    {
-      "scene": "ask-your-doctor",
-      "cue": "hallway.",
-      "at": "after",
-      "sfx": "slide-down",
-      "volume": 0.35
-    },
-    {
-      "scene": "outcome-label",
-      "cue": "Labels",
-      "sfx": "whoosh",
-      "volume": 0.4
-    },
-    {
-      "scene": "outcome-label",
-      "cue": "humans",
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "outcome-label",
-      "cue": "department",
-      "sfx": "splat",
-      "volume": 0.45
-    },
-    {
-      "scene": "outcome-label",
-      "cue": "hopes",
-      "sfx": "squeak",
-      "volume": 0.35
-    },
-    {
-      "scene": "outcome-label",
-      "cue": "lawyer",
-      "sfx": "snip",
-      "volume": 0.4
-    },
-    {
-      "scene": "outcome-label",
-      "cue": "admitting",
-      "sfx": "pat",
-      "volume": 0.4
-    },
-    {
-      "scene": "outcome-label",
-      "cue": "What",
-      "n": 4,
-      "sfx": "thunk",
-      "volume": 0.5
-    },
-    {
-      "scene": "outcome-label",
-      "cue": "happens.",
-      "n": 4,
-      "at": "after",
-      "sfx": "sparkle",
-      "volume": 0.35
-    },
-    {
-      "scene": "louder-wins",
-      "cue": "policies",
-      "sfx": "switch",
-      "volume": 0.4
-    },
-    {
-      "scene": "louder-wins",
-      "cue": "argue",
-      "sfx": "yelp",
-      "volume": 0.35
-    },
-    {
-      "scene": "louder-wins",
-      "cue": "wins",
-      "sfx": "whirr",
-      "volume": 0.3
-    },
-    {
-      "scene": "louder-wins",
-      "cue": "louder.",
-      "sfx": "boom",
-      "volume": 0.6
-    },
-    {
-      "scene": "louder-wins",
-      "cue": "louder.",
-      "at": "after",
-      "sfx": "bell",
-      "volume": 0.4
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "Optimitron",
-      "sfx": "pat",
-      "volume": 0.4
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "appliance.",
-      "at": "after",
-      "sfx": "thunk",
-      "volume": 0.45
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "jurisdictions",
-      "sfx": "thunk",
-      "volume": 0.5
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "tried,",
-      "sfx": "whirr",
-      "volume": 0.3
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "richer",
-      "sfx": "click",
-      "volume": 0.45
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "dead.",
-      "sfx": "click",
-      "volume": 0.45
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "Budget",
-      "sfx": "toaster",
-      "volume": 0.45
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "Policy",
-      "sfx": "toaster",
-      "volume": 0.45
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "laws.",
-      "sfx": "whistle",
-      "volume": 0.3
-    },
-    {
-      "scene": "optimitron-appliance",
-      "cue": "laws.",
-      "at": "after",
-      "sfx": "clank",
-      "volume": 0.4
-    }
+    {"scene": "decentralized-fda-title", "cue": "Your", "sfx": "whirr", "volume": 0.25},
+    {"scene": "decentralized-fda-title", "cue": "F.D.A.", "offset": 0.6, "sfx": "pop", "volume": 0.4},
+    {"scene": "decentralized-fda-title", "cue": "F.D.A.", "offset": 1.3, "sfx": "stamp", "volume": 0.5},
+    {"scene": "home-planet", "cue": "ago.", "sfx": "huff", "volume": 0.4},
+    {"scene": "home-planet", "cue": "tracked", "sfx": "typewriter", "volume": 0.35},
+    {"scene": "home-planet", "cue": "participate.", "sfx": "sparkle", "volume": 0.35},
+    {"scene": "home-planet", "cue": "medicine\"", "at": "after", "sfx": "crickets", "volume": 0.3},
+    {"scene": "home-planet", "cue": "bureaucracy", "offset": 0.25, "sfx": "ding", "volume": 0.35},
+    {"scene": "hen-on-safe-bottles", "cue": "die.", "sfx": "zap", "volume": 0.3},
+    {"scene": "hen-on-safe-bottles", "cue": "die.", "at": "after", "sfx": "pop", "volume": 0.4},
+    {"scene": "hen-on-safe-bottles", "cue": "sits", "sfx": "squeak", "volume": 0.35},
+    {"scene": "small-pieces-of-paper", "cue": "paper", "sfx": "squeak", "volume": 0.35},
+    {"scene": "small-pieces-of-paper", "cue": "before", "offset": 0.1, "sfx": "hum", "volume": 0.3},
+    {"scene": "small-pieces-of-paper", "cue": "anything.", "offset": 0.6, "sfx": "whistle", "volume": 0.3},
+    {"scene": "subsidy-follows-patient", "cue": "percent", "sfx": "stamp", "volume": 0.4, "offset": 0.3},
+    {"scene": "subsidy-follows-patient", "cue": "directly", "sfx": "pat", "volume": 0.4},
+    {"scene": "subsidy-follows-patient", "cue": "directly", "offset": 0.45, "sfx": "splat", "volume": 0.45},
+    {"scene": "subsidy-follows-patient", "cue": "subsidizing", "sfx": "boing", "volume": 0.4},
+    {"scene": "subsidy-follows-patient", "cue": "dollars.", "n": 3, "sfx": "pop", "volume": 0.5},
+    {"scene": "subsidy-follows-patient", "cue": "paid", "sfx": "cash-register", "volume": 0.4},
+    {"scene": "subsidy-follows-patient", "cue": "fashionable", "sfx": "slam", "volume": 0.55, "offset": -0.1},
+    {"scene": "subsidy-follows-patient", "cue": "diseases", "sfx": "sparkle", "volume": 0.3},
+    {"scene": "subsidy-follows-patient", "cue": "year.", "at": "after", "sfx": "squeak", "volume": 0.35},
+    {"scene": "clinical-terrarium", "cue": "selected", "sfx": "snip", "volume": 0.4},
+    {"scene": "clinical-terrarium", "cue": "pharmaceutical", "sfx": "whistle", "volume": 0.35},
+    {"scene": "clinical-terrarium", "cue": "pharmaceutical", "offset": 0.6, "sfx": "boing", "volume": 0.4},
+    {"scene": "clinical-terrarium", "cue": "you'll", "sfx": "slide-up", "volume": 0.35, "offset": -0.1},
+    {"scene": "clinical-terrarium", "cue": "diseases", "sfx": "yelp", "volume": 0.35},
+    {"scene": "clinical-terrarium", "cue": "terrariums, ", "offset": -0.3, "sfx": "click", "volume": 0.4},
+    {"scene": "life-jackets-handed-out", "cue": "protocol, ", "sfx": "stamp", "volume": 0.5},
+    {"scene": "life-jackets-handed-out", "cue": "protocol, ", "offset": 0.12, "sfx": "splat", "volume": 0.4},
+    {"scene": "life-jackets-handed-out", "cue": "forty-four", "sfx": "slide-down", "volume": 0.35},
+    {"scene": "life-jackets-handed-out", "cue": "twenty-three", "sfx": "whirr", "volume": 0.3},
+    {"scene": "life-jackets-handed-out", "cue": "hand", "sfx": "pop", "volume": 0.4},
+    {"scene": "life-jackets-handed-out", "cue": "out", "sfx": "boing", "volume": 0.4},
+    {"scene": "one-for-the-mug", "cue": "million.", "sfx": "whoosh", "volume": 0.35},
+    {"scene": "one-for-the-mug", "cue": "million.", "sfx": "pat", "volume": 0.35, "offset": 0.8},
+    {"scene": "accordion-timeline", "cue": "twelve", "sfx": "whirr", "volume": 0.3},
+    {"scene": "accordion-timeline", "cue": "shrinking", "sfx": "huff", "volume": 0.4},
+    {"scene": "accordion-timeline", "cue": "thirty-six", "sfx": "clank", "volume": 0.4},
+    {"scene": "accordion-timeline", "cue": "average", "sfx": "pop", "volume": 0.4},
+    {"scene": "accordion-timeline", "cue": "arrives", "sfx": "huff", "volume": 0.35},
+    {"scene": "accordion-timeline", "cue": "arrives", "offset": 0.3, "sfx": "sparkle", "volume": 0.3},
+    {"scene": "accordion-timeline", "cue": "drop", "sfx": "stamp", "volume": 0.5, "offset": -0.05},
+    {"scene": "accordion-timeline", "cue": "find", "sfx": "boing", "volume": 0.4},
+    {"scene": "accordion-timeline", "cue": "twelve", "sfx": "stamp", "volume": 0.5, "n": 2},
+    {"scene": "accordion-timeline", "cue": "sooner.", "n": 2, "offset": 0.15, "sfx": "pop", "volume": 0.4},
+    {"scene": "plans-for-tuesday", "cue": "billion", "sfx": "thunk", "volume": 0.55},
+    {"scene": "plans-for-tuesday", "cue": "individual", "sfx": "pop", "volume": 0.4},
+    {"scene": "plans-for-tuesday", "cue": "plans", "sfx": "pat", "volume": 0.4},
+    {"scene": "plans-for-tuesday", "cue": "Tuesday.", "sfx": "sparkle", "volume": 0.3},
+    {"scene": "plans-for-tuesday", "cue": "Tuesday.", "at": "after", "sfx": "huff", "volume": 0.35},
+    {"scene": "smoke-detector-live", "cue": "smoke", "sfx": "scratch", "volume": 0.3},
+    {"scene": "smoke-detector-live", "cue": "mail?", "sfx": "squeak", "volume": 0.35},
+    {"scene": "smoke-detector-live", "cue": "automatically", "sfx": "slam", "volume": 0.55},
+    {"scene": "smoke-detector-live", "cue": "real", "sfx": "switch", "volume": 0.4},
+    {"scene": "smoke-detector-live", "cue": "\"twelve", "sfx": "ding", "volume": 0.3},
+    {"scene": "smoke-detector-live", "cue": "three", "sfx": "ding", "volume": 0.3},
+    {"scene": "smoke-detector-live", "cue": "class", "sfx": "pat", "volume": 0.4},
+    {"scene": "smoke-detector-live", "cue": "lawsuit.", "sfx": "slide-down", "volume": 0.35},
+    {"scene": "smoke-detector-live", "cue": "lawsuit.", "offset": 0.45, "sfx": "zap", "volume": 0.35},
+    {"scene": "they-make-you-guess", "cue": "They", "sfx": "ding", "volume": 0.3},
+    {"scene": "they-make-you-guess", "cue": "guess.", "at": "after", "sfx": "tick", "volume": 0.5},
+    {"scene": "decision-wheel", "cue": "picks", "sfx": "whirr", "volume": 0.35},
+    {"scene": "decision-wheel", "cue": "donuts", "sfx": "click", "volume": 0.45},
+    {"scene": "decision-wheel", "cue": "something", "sfx": "whirr", "volume": 0.3},
+    {"scene": "decision-wheel", "cue": "something", "sfx": "click", "volume": 0.45, "offset": 0.9},
+    {"scene": "decision-wheel", "cue": "whatever", "sfx": "whirr", "volume": 0.3, "offset": -0.25},
+    {"scene": "decision-wheel", "cue": "company", "sfx": "thunk", "volume": 0.5, "offset": -0.2},
+    {"scene": "decision-wheel", "cue": "vibes.", "sfx": "whirr", "volume": 0.3, "offset": -0.4},
+    {"scene": "decision-wheel", "cue": "vibes.", "sfx": "click", "volume": 0.45, "offset": 0.25},
+    {"scene": "decision-wheel", "cue": "vibes.", "sfx": "whirr", "volume": 0.35, "offset": 0.45},
+    {"scene": "decision-wheel", "cue": "vibes.", "sfx": "click", "volume": 0.5, "offset": 1.05},
+    {"scene": "decision-wheel", "cue": "vibes.", "sfx": "ding", "volume": 0.4, "offset": 1.07},
+    {"scene": "grape-soda", "cue": "which", "sfx": "pop", "volume": 0.4},
+    {"scene": "grape-soda", "cue": "grape", "sfx": "squeak", "volume": 0.35, "n": 2, "offset": 0.2},
+    {"scene": "grape-soda", "cue": "grape", "sfx": "splat", "volume": 0.25, "n": 2, "offset": 0.9},
+    {"scene": "forty-page-insert", "cue": "Your", "sfx": "whirr", "volume": 0.3, "offset": 0.25},
+    {"scene": "forty-page-insert", "cue": "it:", "sfx": "pat", "volume": 0.35},
+    {"scene": "forty-page-insert", "cue": "Outcome", "sfx": "whoosh", "volume": 0.35, "n": 1},
+    {"scene": "forty-page-insert", "cue": "Food", "sfx": "thunk", "volume": 0.4},
+    {"scene": "forty-page-insert", "cue": "Cigarettes", "sfx": "thunk", "volume": 0.4},
+    {"scene": "forty-page-insert", "cue": "Drugs", "sfx": "stamp", "volume": 0.5},
+    {"scene": "forty-page-insert", "cue": "forty-page", "sfx": "whoosh", "volume": 0.45},
+    {"scene": "forty-page-insert", "cue": "written", "sfx": "whoosh", "volume": 0.35},
+    {"scene": "forty-page-insert", "cue": "having", "sfx": "zap", "volume": 0.45},
+    {"scene": "forty-page-insert", "cue": "seizures, ", "sfx": "zap", "volume": 0.45},
+    {"scene": "forty-page-insert", "cue": "including", "sfx": "whoosh", "volume": 0.35},
+    {"scene": "forty-page-insert", "cue": "television", "sfx": "slam", "volume": 0.55, "offset": -0.1},
+    {"scene": "forty-page-insert", "cue": "frolicking", "sfx": "boing", "volume": 0.25},
+    {"scene": "forty-page-insert", "cue": "meadow", "sfx": "boing", "volume": 0.25, "n": 1},
+    {"scene": "forty-page-insert", "cue": "auctioneer", "sfx": "typewriter", "volume": 0.35},
+    {"scene": "forty-page-insert", "cue": "\"stroke.\"", "sfx": "crickets", "volume": 0.35, "at": "after"},
+    {"scene": "forty-page-insert", "cue": "\"death,\"", "sfx": "zap", "volume": 0.4, "offset": 0.15},
+    {"scene": "forty-page-insert", "cue": "failing", "sfx": "splat", "volume": 0.4},
+    {"scene": "forty-page-insert", "cue": "\"deceased\"", "sfx": "zap", "volume": 0.3},
+    {"scene": "forty-page-insert", "cue": "qualifying).", "sfx": "ding", "volume": 0.35},
+    {"scene": "forty-page-insert", "cue": "but", "sfx": "whirr", "volume": 0.3},
+    {"scene": "forty-page-insert", "cue": "Googled", "sfx": "typewriter", "volume": 0.3},
+    {"scene": "forty-page-insert", "cue": "new", "sfx": "whoosh", "volume": 0.4},
+    {"scene": "forty-page-insert", "cue": "produce", "sfx": "slide-down", "volume": 0.35},
+    {"scene": "forty-page-insert", "cue": "department", "sfx": "splat", "volume": 0.45},
+    {"scene": "forty-page-insert", "cue": "hopes", "sfx": "squeak", "volume": 0.35, "offset": 0.45},
+    {"scene": "forty-page-insert", "cue": "comfortable", "sfx": "pat", "volume": 0.4},
+    {"scene": "forty-page-insert", "cue": "admitting", "sfx": "whoosh", "volume": 0.35},
+    {"scene": "forty-page-insert", "cue": "What", "sfx": "stamp", "volume": 0.6, "n": 5, "offset": -0.12},
+    {"scene": "forty-page-insert", "cue": "happens.", "sfx": "sparkle", "volume": 0.35, "n": 4, "offset": 0.6},
+    {"scene": "forty-page-insert", "cue": "rank", "sfx": "stamp", "volume": 0.6},
+    {"scene": "forty-page-insert", "cue": "real", "n": 2, "sfx": "stamp", "volume": 0.5, "offset": 0.6},
+    {"scene": "forty-page-insert", "cue": "But", "sfx": "slam", "volume": 0.5, "n": 2},
+    {"scene": "forty-page-insert", "cue": "argue", "sfx": "yelp", "volume": 0.35},
+    {"scene": "forty-page-insert", "cue": "wins", "sfx": "whirr", "volume": 0.3},
+    {"scene": "forty-page-insert", "cue": "louder.", "sfx": "boom", "volume": 0.6},
+    {"scene": "forty-page-insert", "cue": "louder.", "at": "after", "sfx": "bell", "volume": 0.4},
+    {"scene": "optimitron-appliance", "cue": "Optimitron", "sfx": "pat", "volume": 0.4},
+    {"scene": "optimitron-appliance", "cue": "appliance.", "at": "after", "sfx": "thunk", "volume": 0.45},
+    {"scene": "optimitron-appliance", "cue": "jurisdictions", "sfx": "thunk", "volume": 0.5},
+    {"scene": "optimitron-appliance", "cue": "tried, ", "sfx": "whirr", "volume": 0.3},
+    {"scene": "optimitron-appliance", "cue": "richer", "sfx": "click", "volume": 0.45},
+    {"scene": "optimitron-appliance", "cue": "dead.", "sfx": "click", "volume": 0.45},
+    {"scene": "optimitron-appliance", "cue": "Budget", "sfx": "toaster", "volume": 0.45},
+    {"scene": "optimitron-appliance", "cue": "Policy", "sfx": "toaster", "volume": 0.45},
+    {"scene": "optimitron-appliance", "cue": "laws.", "sfx": "whistle", "volume": 0.3},
+    {"scene": "optimitron-appliance", "cue": "laws.", "at": "after", "sfx": "clank", "volume": 0.4},
+    {"scene": "optimitron-appliance", "cue": "plug", "sfx": "click", "volume": 0.4}
   ]
 }

@@ -1,0 +1,69 @@
+<template id="step-3-bribe-the-bribers-title-template">
+  <!-- step-3-bribe-the-bribers-title · the period title card (KIT.titleScene, look "atomic"): STEP 3: over BRIBE THE
+       BRIBERS, up from black under the atom and its three war bills. Just after "Bribers." a price tag (the collage
+       cut-out) drops in on its string and catches on the last S: "$500,000" (the cash-register ding). A beat later it
+       spins round on its string (the whoosh): "SOLD". Down to black. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="step-3-bribe-the-bribers-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.87">
+    <div id="step-3-bribe-the-bribers-title-cam">
+      <div id="step-3-bribe-the-bribers-title-bg"></div>
+      <div id="step-3-bribe-the-bribers-title-back"></div>
+      <div id="step-3-bribe-the-bribers-title-words"></div>
+      <div id="step-3-bribe-the-bribers-title-art"></div>
+    </div>
+    <div id="step-3-bribe-the-bribers-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "step-3-bribe-the-bribers-title",
+      lines: [{ words: ["STEP", "3:"], style: "small" }, ["BRIBE", "THE", "BRIBERS"]],
+      linesTall: [{ words: ["STEP", "3:"], style: "small" }, ["BRIBE", "THE"], ["BRIBERS"]],
+      width: KIT.V ? undefined : 1500, cy: KIT.V ? undefined : 620,
+      gag: function (c) {
+        var tl = c.tl, V = c.V, D = c.D, id = c.id, wd = c.word("BRIBERS"), b = wd.box;
+        // The tag cut-out (454 x 314 art px): its rope loop tops out at about (96, 14), the card is x 60-445 (the eyelet at x 105, so the words start at 140),
+        // y 105-300. It hangs by the loop from the last S's lower curve, tilted so it reads.
+        var k = V ? 0.66 : 0.6, TW = 454 * k, TH = 314 * k, LOOP = [96 * k, 14 * k];
+        var hook = [b.x + b.w - wd.size * 0.12, b.y + b.h * 0.62];
+        var face = function (cls, txt, font, size, color, extra) {
+          var fit = KIT.fitText(txt, size, 270, font, font === "Fraunces" ? 900 : 600);
+          return '<div class="' + cls + '" style="position:absolute;left:' + (140 * k).toFixed(1) + "px;width:" + (295 * k).toFixed(1) + "px;top:" + (110 * k).toFixed(1) + "px;height:" + (190 * k).toFixed(1) +
+            "px;display:flex;align-items:center;justify-content:center;white-space:nowrap;font:" + (font === "Fraunces" ? 900 : 600) + " " + (fit * k).toFixed(1) + "px/1 " + font + ";color:" + color + ";" + (extra || "") + '">' + txt + "</div>";
+        };
+        var hang = document.createElement("div");
+        hang.style.cssText = "position:absolute;left:" + (hook[0] - LOOP[0]).toFixed(1) + "px;top:" + (hook[1] - LOOP[1]).toFixed(1) + "px;width:" + TW.toFixed(1) + "px;height:" + TH.toFixed(1) +
+          "px;transform-origin:" + LOOP[0].toFixed(1) + "px " + LOOP[1].toFixed(1) + "px;visibility:hidden";
+        var spin = document.createElement("div");
+        spin.style.cssText = "position:absolute;inset:0;transform-origin:" + LOOP[0].toFixed(1) + "px 50%";
+        spin.innerHTML = '<img src="assets/art/collage/price-tag.webp" style="position:absolute;inset:0;width:100%;height:100%;filter:drop-shadow(4px 6px 3px rgba(0,0,0,0.5))">' +
+          face("price", "$500,000", "Fraunces", 96, "#2A1C10") +
+          face("sold", "SOLD", "Oswald", 130, "#B3261E", "visibility:hidden;letter-spacing:4px");
+        hang.appendChild(spin);
+        c.art.appendChild(hang);
+        var price = spin.querySelector(".price"), sold = spin.querySelector(".sold");
+
+        // It drops in from above the card and catches on the S, swinging; then it spins round to SOLD.
+        var tLand = Math.min(D - 1.25, c.cue("Bribers.") + 0.97), tSpin = tLand + 0.4, REST = KIT.V ? 22 : 12;
+        tl.set(hang, { visibility: "inherit" }, tLand - 0.22);
+        tl.fromTo(hang, { y: -(hook[1] + TH + 60), rotation: REST - 30 }, { y: 0, rotation: REST - 30, duration: 0.22, ease: "power2.in", immediateRender: false }, tLand - 0.22);
+        tl.to(hang, { keyframes: [{ rotation: REST + 16, duration: 0.12, ease: "power2.out" }, { rotation: REST - 8, duration: 0.14, ease: "sine.inOut" },
+          { rotation: REST + 4, duration: 0.12, ease: "sine.inOut" }, { rotation: REST, duration: 0.1, ease: "sine.inOut" }] }, tLand);
+        tl.fromTo(spin, { scaleX: 1 }, { scaleX: 0, duration: 0.08, ease: "power2.in", immediateRender: false }, tSpin);
+        tl.set(price, { visibility: "hidden" }, tSpin + 0.08);
+        tl.set(sold, { visibility: "inherit" }, tSpin + 0.08);
+        tl.fromTo(spin, { scaleX: 0 }, { scaleX: 1, duration: 0.1, ease: "back.out(2)", immediateRender: false }, tSpin + 0.08);
+      },
+    });
+  </script>
+</template>

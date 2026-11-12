@@ -1,20 +1,19 @@
 <template id="one-percent-treaty-title-template">
-  <!-- one-percent-treaty-title · Layer A title card (storyboards/part-13-one-percent-treaty.md), built by KIT.titleScene:
-       THE and SOLUTION slam in on "The" and "Solution."; the small line A / 1% (teal) / TREATY slides up word by word
-       on "A", "one" and "Treaty.". The gag, the whole plan in one hop: on "percent" a war paper (green, red missile seal)
-       trots in along the tops of the second line's letters; on "Treaty." it hops into the top ring of the "%" and spins
-       down it like a drain, a green blip runs down the slash, and it pops out of the bottom ring as a medicine paper
-       (teal cross seal) with a sparkle, leaps over TREATY to the end of the line and, a beat after "Treaty.", bows. -->
+  <!-- one-percent-treaty-title · the period title card (KIT.titleScene, look "atomic"; storyboards/part-13-one-percent-treaty.md,
+       scene 1): THE SOLUTION over A 1% TREATY under the film's emblem, the three war papers running round the atom.
+       "one": the horizontal orbit's paper jumps off the atom and lands at the start of the second line; "percent": it
+       trots along the tops of the letters to the "%"; "Treaty.": it hops into the top ring and spins down it like a
+       drain, a green blip runs down the slash, and it pops out of the bottom ring as a medicine paper with a sparkle,
+       leaps over TREATY to the end of the line and bows. The atom runs on one electron short for the rest of the card. -->
   <style>
     @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
     @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
-    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
   </style>
-  <div id="root" data-composition-id="one-percent-treaty-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.44">
+  <div id="root" data-composition-id="one-percent-treaty-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.509">
     <div id="one-percent-treaty-title-cam">
       <div id="one-percent-treaty-title-bg"></div>
-      <div id="one-percent-treaty-title-sun"></div>
       <div id="one-percent-treaty-title-back"></div>
       <div id="one-percent-treaty-title-words"></div>
       <div id="one-percent-treaty-title-art"></div>
@@ -25,6 +24,7 @@
   <script src="data/part.js"></script>
   <script src="data/aspect.js"></script>
   <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
   <script src="assets/js/props/title.js"></script>
   <script>
     (function () {
@@ -69,10 +69,19 @@
           var war = g("war"), spin = g("war-spin"), bob = g("war-bob"), blip = g("blip"), med = g("med"), bow = g("med-bow"), spark = g("spark");
           var legA = bob.querySelector("." + ID + "-leg-a"), legB = bob.querySelector("." + ID + "-leg-b");
           var tP = c.cue("percent"), tT = c.cue("Treaty."), tBow = c.after("Treaty.");
-          var t0 = tP - 0.28, tArrive = tT - 0.02;
-          // "percent": it trots in from the left along the tops of A and 1, legs swapping, bobbing (the squeak).
-          tl.fromTo(war, { opacity: 0, x: 0, y: 0 }, { opacity: 1, duration: 0.08, ease: "none" }, t0);
-          tl.fromTo(war, { x: 0 }, { x: walkTo - startX, duration: tArrive - t0, ease: "power1.out", immediateRender: false }, t0);
+          var tLeave = c.cue("one"), t0 = tLeave + 0.24, tArrive = tT - 0.02;
+          // "one": the horizontal orbit's paper (the kit's #<id>-e0, at runEmblem's angle 0 + t * 2.4) jumps off the
+          // atom and lands at the start of the line; the atom runs one electron short from here on.
+          var E = c.emblem, th = tLeave * 2.4, k0 = E.k / k;
+          var ex = E.at[0] + E.rx * Math.cos(th) - startX, ey = E.at[1] + E.ry * Math.sin(th) - 6 - (capTop - feet);
+          var e0 = document.getElementById(ID + "-e0");
+          KIT.onTime(tl, c.D, function (t) { e0.setAttribute("opacity", t >= tLeave ? 0 : 1); });
+          gsap.set(war, { svgOrigin: "0 0" });
+          tl.fromTo(war, { opacity: 0, x: ex, y: ey, scale: k0 }, { opacity: 1, duration: 0.01, ease: "none" }, tLeave);
+          tl.to(war, { x: ex * 0.5, y: Math.min(ey, 0) - 0.45 * s, scale: (k0 + 1) / 2, duration: 0.11, ease: "power2.out" }, tLeave + 0.01);
+          tl.to(war, { x: 0, y: 0, scale: 1, duration: 0.11, ease: "power2.in" }, tLeave + 0.12);
+          // "percent": it trots along the tops of A and 1, legs swapping, bobbing (the squeak).
+          tl.to(war, { x: walkTo - startX, duration: tArrive - t0, ease: "power1.out" }, t0);
           KIT.onTime(tl, c.D, function (t) {
             var walking = t >= t0 && t < tArrive, ph = walking ? Math.floor((t - t0) / 0.07) % 2 : 0;
             legA.setAttribute("opacity", ph ? 0 : 1);

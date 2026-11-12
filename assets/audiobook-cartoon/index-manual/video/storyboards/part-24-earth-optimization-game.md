@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 0:47.6
+duration: 0:47.5
 message: "The switch is a game: a pool of money goes to Earth Optimization Points holders if the Scoreboard's two numbers (how long people live, how much they earn) go up by 2040, depositors get it back pro rata if they don't, points come from getting friends to play, and the players' greed pulls in the people who know how to cure diseases."
 arc: Title card (the emblem's nucleus becomes a spinner) → Wishonia presents the game box: its new lid lifts off Part 7's old OBJECTIVE: LOSE lid, and medicine money pushes the old one up → the board: the Scoreboard, 2040, the holders cannonball into the pool, the film rewinds, the pool pours into the fat cat's piggy bank and YOU's retirement piggy keels over → YOU hauls two friends onto START, and the one human who won't play is x-rayed into a skeleton on his crate → on Earth in the window, the five steps sprout legs and walk off into the game box on their own, and YOU shrugs, presses YES and gets a gold star → 4 billion dollar-eyed players burst the box, a magnet pulls in lobbyists, scientists and walking buildings, the GREED hand nukes the WAR corner out of habit, the stampede drags it round to the diseases, and the hospital flattens the last one
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 24, "The Earth Optimization Game"
-audio: index-manual.cbaf659d.mp3, 50:43.5 to 51:31.0
+audio: index-manual.7ce6b2b2.mp3, 50:13.8 to 51:01.3
 version: v3
 ---
 
@@ -52,7 +52,7 @@ version: v3
 - act: Title
 - transition_in: up from black on a switch click (the parts are rendered on their own and joined)
 - cue: "The Earth Optimization Game"
-- time: 50:43.5 to 50:46.1 (2.6 s)
+- time: 50:13.8 to 50:16.4 (2.6 s)
 - voiceover: "The Earth Optimization Game."
 - layer: A, title card
 - status: planned
@@ -69,7 +69,7 @@ Sound: a switch click on "The"; ticks as the arrow spins.
 - act: The game
 - transition_in: iris in on her face (quick)
 - cue: "A pool of money"
-- time: 50:46.1 to 50:47.6 (1.5 s)
+- time: 50:16.4 to 50:17.9 (1.5 s)
 - voiceover: "A pool of money."
 - layer: A, host
 - wishonia: big, happy-smile + body-point-right; smirk-smile + body-point-right on "money."
@@ -87,7 +87,7 @@ Sound: a creak as the lid lifts on "pool"; a sparkle as the bills peek out on "m
 - act: The rules
 - transition_in: cut
 - cue: "Two numbers on a Scoreboard"
-- time: 50:47.6 to 51:02.2 (14.6 s)
+- time: 50:17.9 to 50:32.6 (14.7 s)
 - voiceover: "Two numbers on a Scoreboard: how long people live, how much they earn. By twenty forty, if the numbers went up, Earth Optimization Points holders split the pool. If they didn't, depositors divide it pro rata (still beats your retirement account)."
 - layer: B, plate game-board
 - status: planned
@@ -111,7 +111,7 @@ Sound: a switch click as the bulbs light on "Scoreboard:"; flip ticks on "live,"
 - act: The rules
 - transition_in: same plate (no seam)
 - cue: "You earn Earth Optimization Points"
-- time: 51:02.2 to 51:09.5 (7.3 s)
+- time: 50:32.6 to 50:39.9 (7.3 s)
 - voiceover: "You earn Earth Optimization Points by getting friends to play. Nobody loses. The only losing move is not playing."
 - layer: B, plate game-board
 - status: planned
@@ -130,7 +130,7 @@ Sound: a whoosh as he hauls them up and two boings as they land on "friends"; tw
 - act: Your job
 - transition_in: cut
 - cue: "Your job was never to understand"
-- time: 51:09.5 to 51:16.3 (6.8 s)
+- time: 50:39.9 to 50:46.6 (6.7 s)
 - voiceover: "Your job was never to understand the five steps. Your job is to vote and get two friends to play."
 - layer: A, host
 - wishonia: big, neutral-smile + body-palms-down; smirk-smile + body-open-palms on "never"; sideeye-closed + body-idle on "steps."; happy-smile + body-counting on "vote"
@@ -149,7 +149,7 @@ Sound: pops as the legs sprout on "never"; a patter of little feet on "understan
 - act: Greed does the rest
 - transition_in: cut
 - cue: "Four billion humans whose payout"
-- time: 51:16.3 to 51:31.0 (14.7 s)
+- time: 50:46.6 to 51:01.3 (14.7 s)
 - voiceover: "Four billion humans whose payout depends on curing diseases will attract the lobbyists, researchers, and institutions who know how to do the rest. The greed handles it. It always has. You just never pointed it at anything useful before."
 - layer: B, plate game-board
 - status: planned

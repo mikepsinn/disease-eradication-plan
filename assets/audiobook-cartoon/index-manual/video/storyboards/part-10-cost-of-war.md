@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:59.7
+duration: 2:03.6
 message: "Humans spend $2.72 trillion a year on killing, and since 1913 have printed $170 trillion for it, enough for 38,000 years of clinical trials; they bought the other thing."
 arc: Title card with a price tag too long for the card → Wishonia rings up $2.72 trillion on her console and a cash drawer slides out → the murder mart: warheads by the heap, a spare that goes off, a murder-bot, an invisible jet that flattens a hospital, Space Force zapped from inside the cart, an earthquake machine → the quake cracks the deck's window → the 1913 press prints dotted nothing-papers that bomb Part 2's skeleton family under the same 310,000,000 and flatten the town, and the paycheck buys one crumb → the checkout: a thumb on the scale leaves the trials hanging out of reach, and the receipt → the fork at 1900: the fat cat and the skeleton → the 604 bar topples onto the medicine paper → the guarded wheel and the unguarded one → Part 8's leashed missile sniffs out the oil on cancer's head and drags the army in → the repair money flips back to war, a missile blows a country off the map, and a submarine hides in a puddle → a periscope rises out of Wishonia's coffee
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 10, "The Cost of War"
-audio: index-manual.cbaf659d.mp3, 17:15.2 to 19:14.9
+audio: index-manual.7ce6b2b2.mp3, 16:51.8 to 18:55.3
 version: v3
 ---
 
@@ -49,7 +49,7 @@ version: v3
 - act: Title
 - transition_in: cut (up from black)
 - cue: "The Cost of War."
-- time: 17:15.2 to 17:18.0 (2.8 s)
+- time: 16:51.8 to 16:54.6 (2.8 s)
 - voiceover: "The Cost of War."
 - layer: A, title card
 - status: planned
@@ -66,7 +66,7 @@ Sound: a whirr; a ka-ching as the tag flips.
 - act: The bill
 - transition_in: iris in on her face
 - cue: "Humans spend two point seven two trillion"
-- time: 17:18.0 to 17:26.6 (8.7 s)
+- time: 16:54.6 to 17:03.9 (9.3 s)
 - voiceover: "Humans spend two point seven two trillion dollars every year on stuff designed specifically to make humans stop being alive:"
 - layer: B, plate one-shopping-trip
 - bit: **One shopping trip: YOU push a giant cart past a ringing till, load it far past ENOUGH, roll it through a town, and at the till one tiny bottle of medicine is still on the counter.** Scenes 2 to 8 are one plate and one file (`bought-the-other-thing`). A receipt unrolls 38,000 years past Rome and the pyramids, and the camera comes back to the bottle.
@@ -85,7 +85,7 @@ Sound: a ka-ching on "trillion", "every" and "year"; a squeak; a boing for the b
 - act: The murder mart
 - transition_in: cut
 - cue: "There are twelve thousand"
-- time: 17:26.6 to 17:37.4 (10.8 s)
+- time: 17:03.9 to 17:15.4 (11.5 s)
 - voiceover: "There are twelve thousand, two hundred and forty-one nuclear warheads (enough to end civilization one hundred and twenty-two times, just in case the first one hundred and twenty-one apocalypses don't take)."
 - layer: B, plate one-shopping-trip
 - bit: Same plate: one crate is enough; the pile goes off the top.
@@ -106,7 +106,7 @@ Sound: a clank for each crate on the words; a stamp on "twenty-one"; a slide dow
 - act: The murder mart
 - transition_in: same plate (no seam)
 - cue: "There are A.I. murder-bots."
-- time: 17:37.4 to 17:49.2 (11.8 s)
+- time: 17:15.4 to 17:27.7 (12.3 s)
 - voiceover: "There are A.I. murder-bots. There are invisible jets that cost more than hospitals. There is a Space Force (to fight the zero aliens attacking you). And there is some kind of earthquake machine"
 - layer: B, plate one-shopping-trip
 - bit: Same plate: the gadgets pile on and the wheels splay a bit more each time.
@@ -127,7 +127,7 @@ Sound: a clank for the robot; an airplane for nothing; a slam for the hospital; 
 - act: The murder mart
 - transition_in: cut
 - cue: "(probably)."
-- time: 17:49.2 to 17:51.1 (1.9 s)
+- time: 17:27.7 to 17:29.9 (2.2 s)
 - voiceover: "(probably)."
 - layer: B, plate one-shopping-trip
 - bit: Same plate: it works.
@@ -145,7 +145,7 @@ Sound: a low hum, a small boom and a clank.
 - act: Since 1913
 - transition_in: cut
 - cue: "Since nineteen thirteen"
-- time: 17:51.1 to 18:07.3 (16.2 s)
+- time: 17:29.9 to 17:47.1 (17.2 s)
 - voiceover: "Since nineteen thirteen, your governments have printed one hundred and seventy trillion dollars out of nothing and spent these nothing-papers on murdering three hundred and ten million humans and destroying many valuable things those humans spent their entire lives building."
 - layer: B, plate one-shopping-trip
 - bit: Same plate: Wilson prints it into the cart, and the cart rolls through the town, one lurch a word.
@@ -167,7 +167,7 @@ Sound: a whirr and a clank; a ka-ching on "trillion"; crickets in the tray; a sl
 - act: Since 1913
 - transition_in: same plate (no seam)
 - cue: "Consequently your paycheck"
-- time: 18:07.3 to 18:13.7 (6.4 s)
+- time: 17:47.1 to 17:53.3 (6.2 s)
 - voiceover: "Consequently your paycheck now buys ninety-seven percent less due to the aforementioned destruction."
 - layer: B, plate one-shopping-trip
 - bit: Same plate: the loaf on the paycheck.
@@ -187,7 +187,7 @@ Sound: a slide down; a stamp; a whoosh for the pigeon.
 - act: The checkout
 - transition_in: cut
 - cue: "One hundred and seventy trillion"
-- time: 18:13.7 to 18:21.7 (8.1 s)
+- time: 17:53.3 to 18:02.2 (8.9 s)
 - voiceover: "One hundred and seventy trillion dollars is equal to thirty-eight thousand years of government clinical trial spending. You bought the other thing."
 - layer: B, plate one-shopping-trip
 - bit: Payoff, same plate: the receipt, and the bottle.
@@ -208,7 +208,7 @@ Sound: a ka-ching; a typewriter along the receipt; a stamp on "years"; a whoosh 
 - act: The fork at 1900
 - transition_in: cut
 - cue: "Through compounding effects"
-- time: 18:21.7 to 18:44.1 (22.4 s)
+- time: 18:02.2 to 18:24.6 (22.4 s)
 - voiceover: "Through compounding effects, if your governments had stopped spending on murder in nineteen hundred you would be twenty-three point two times richer today, and disease would not be stealing ten point one years of your life. The average person would earn three hundred and thirty-three thousand, six hundred and thirty-six dollars per year instead of fourteen thousand, three hundred and seventy-five dollars."
 - layer: B, plate two-roads
 - status: planned
@@ -230,7 +230,7 @@ Sound: footsteps; a pop as he splits; a rising slide whistle up the upper road; 
 - act: Today
 - transition_in: cut
 - cue: "Today, government spending on clinical trials"
-- time: 18:44.1 to 18:51.7 (7.5 s)
+- time: 18:24.6 to 18:32.3 (7.6 s)
 - voiceover: "Today, government spending on clinical trials: six hundred and four times less than military spending."
 - layer: B, plate 604-bar
 - status: planned
@@ -249,7 +249,7 @@ Sound: a rising slide whistle up the stack; a clank for the satellite; a thunk a
 - act: Today
 - transition_in: cut
 - cue: "Your chance of dying from terrorism"
-- time: 18:51.7 to 19:00.1 (8.4 s)
+- time: 18:32.3 to 18:40.5 (8.2 s)
 - voiceover: "Your chance of dying from terrorism: one in thirty million. Your chance of dying from disease: one hundred percent."
 - layer: B, plate midway
 - status: planned
@@ -267,7 +267,7 @@ Sound: a whirr and ticks for each wheel; a click as each stops; a thunk for the 
 - act: Today
 - transition_in: cut
 - cue: "If cancer had oil reserves"
-- time: 19:00.1 to 19:04.5 (4.5 s)
+- time: 18:40.5 to 18:45.0 (4.4 s)
 - voiceover: "If cancer had oil reserves, you would have cured it by two thousand and three."
 - layer: B, plate desert
 - status: planned
@@ -285,7 +285,7 @@ Sound: a pop for the derrick; a woof; tank treads; a boom; a banner unrolling.
 - act: Today
 - transition_in: same plate (no seam)
 - cue: "Instead, you spent the repair money"
-- time: 19:04.5 to 19:12.1 (7.6 s)
+- time: 18:45.0 to 18:52.6 (7.6 s)
 - voiceover: "Instead, you spent the repair money on murder tubes that cost more than countries and submarines that hide underwater,"
 - layer: B, plate desert
 - status: planned
@@ -304,7 +304,7 @@ Sound: a falling sparkle as the seals flip back; a paper roll; a rising whistle 
 - act: Today
 - transition_in: cut
 - cue: "as if that's somehow useful"
-- time: 19:12.1 to 19:14.9 (2.8 s)
+- time: 18:52.6 to 18:55.3 (2.8 s)
 - voiceover: "as if that's somehow useful when you live on land."
 - layer: A, host
 - wishonia: annoyed-closed + body-palms-down; eyeroll-smile + body-shrug on "live"; sideeye-closed + body-arms-crossed on "land."

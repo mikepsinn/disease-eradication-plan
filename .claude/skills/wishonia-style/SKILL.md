@@ -123,7 +123,6 @@ Don't use generic words. Invent a phrase that is technically accurate and absurd
 | slow safety system | smoke detector that works by mail |
 | lobbying | money laundering but backwards and legal |
 | military budget | murder money |
-| the economy | a system where food grows for free but you need papers to eat it |
 
 **Rule: If you can replace a noun with a phrase that is MORE accurate AND more absurd, always do it.**
 

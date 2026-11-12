@@ -1,0 +1,33 @@
+<template id="pictogram-demo-template">
+  <!-- pictogram-demo · kit demo (scratch): 100 patients pop in row by row; one in ten greys out; five at random turn to skeletons -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="pictogram-demo" data-width="1920" data-height="1080" data-start="0" data-duration="8.26">
+    <div id="pictogram-demo-weave"></div>
+    <div id="pictogram-demo-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+
+      KIT.collage({
+        id: "pictogram-demo", seed: 406,
+        beats: [
+          { at: 0.2, do: "pictogram", id: "ppl", art: "patient", count: 100, cols: V ? 10 : 20, box: V ? [80, 300, 1000, 1400] : [200, 140, 1720, 860], dur: 1.5 },
+          { at: 2.5, do: "pictogram", id: "ppl", grey: true, every: 10, stagger: 0.04 },
+          { at: 4.5, do: "pictogram", id: "ppl", to: "patient-skeleton", random: 5, stagger: 0.25 },
+        ],
+      });
+    })();
+  </script>
+</template>

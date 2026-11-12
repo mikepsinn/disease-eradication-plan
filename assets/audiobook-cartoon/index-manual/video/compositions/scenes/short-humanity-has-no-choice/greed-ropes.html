@@ -2,8 +2,8 @@
   <!-- greed-ropes · collage (Part 26, the first two scenes as one plate). The bit: four selfish people each chase their own
        bait on a pole and accidentally drag the cart of cures. A tug of war on one road, each one big in turn: the Fat Cat
        after 272% (he swells), the Politician after his own face in a mirror (the grin cracks it), sick YOU after FREE
-       medicine (he coughs a germ at it and it swings back and bonks him), the Weapons Maker after a bill (its seal flips to
-       a cross; he does not care). "from).": the whole road, the cart going nowhere. "aligns": two of them leap the cart, the
+       medicine (he coughs a germ at it and it swings back and bonks him), the weapons factory after a bill (its seal flips
+       to a cross; it does not care). "from).": the whole road, the cart going nowhere. "aligns": two of them leap the cart, the
        ropes swing into one line and snap taut, and it rolls: germs go flat, the Reaper puts out one palm, nobody looks, and
        he goes under the wheel, charred and blinking. "stupid.": the Fat Cat walks face first into UTOPIA. -->
   <style>
@@ -11,7 +11,7 @@
     @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
     #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
   </style>
-  <div id="root" data-composition-id="greed-ropes" data-width="1920" data-height="1080" data-start="0" data-duration="27.964">
+  <div id="root" data-composition-id="greed-ropes" data-width="1920" data-height="1080" data-start="0" data-duration="28.112">
     <div id="greed-ropes-weave"></div>
     <div id="greed-ropes-film"></div>
   </div>
@@ -34,17 +34,19 @@
       fat: { art: "fat-cat-harness", tip: [399, 113], back: [85, 260], face: [312, 191] },
       pol: { art: "politician-harness", tip: [359, 107], back: [90, 270] },
       you: { art: "you-harness", tip: [334, 100], back: [65, 260], mouth: [235, 222] },
-      wm: { art: "weapons-maker-harness", tip: [396, 108], back: [85, 285] },
+      // the weapons factory, as tall as the man it replaced (602 art px at PK). Its own rope runs off its left edge (back);
+      // its pole (wmPole) is mounted on its roof at pole
+      wm: { art: "factory-harness", k: PK * 602 / 501, back: [4, 328], pole: [300, 175] },
     };
     var ptOn = function (n, x, left, p, k) {
-      var a = Z[PT[n].art], q0 = left ? a[0] - p[0] : p[0], kk = k || PK;
+      var a = Z[PT[n].art], q0 = left ? a[0] - p[0] : p[0], kk = k || PT[n].k || PK;
       return [x + (q0 - a[0] / 2) * kk, G - (a[1] - p[1]) * kk];
     };
     var cartPt = function (p) { var a = Z["treaty-cart"]; return [(p[0] - a[0] / 2) * CK, G - (a[1] - p[1]) * CK]; };
     var puller = function (n, left, x, extra) {
       var a = PT[n], pts = {};
-      Object.keys(a).forEach(function (k) { if (k !== "art") pts[k] = left ? [Z[a.art][0] - a[k][0], a[k][1]] : a[k]; });
-      var o = { art: left ? a.art + "-left" : a.art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: PK, points: pts };
+      Object.keys(a).forEach(function (k) { if (k !== "art" && k !== "k") pts[k] = left ? [Z[a.art][0] - a[k][0], a[k][1]] : a[k]; });
+      var o = { art: left ? a.art + "-left" : a.art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: a.k || PK, points: pts };
       if (left) o.faces = "left";
       for (var k in extra || {}) o[k] = extra[k];
       return o;
@@ -81,6 +83,10 @@
     C.scythe = { art: "scythe-bent", x: world(WHEEL - 240, tD), y: G + 40, anchor: "bottom", pivot: "bottom", scale: 1.05, hidden: true };
     C.g1 = germ(tS1); C.g2 = germ(tS2);
     C.cart = { art: "treaty-cart", x: 0, y: G + 12, anchor: "bottom", pivot: "bottom", scale: CK };
+    // the factory's fishing pole, cut from the old harness drawing (its butt, at POLEB, hides behind the roof); it rides on wm.pole
+    var POLEB = [122, 178], POLE0 = ptOn("wm", X.wm, false, PT.wm.pole);
+    C.wmPole = { art: "weapons-maker-harness", x: POLE0[0], y: POLE0[1], anchor: POLEB, pivot: POLEB, scale: PT.wm.k, points: { tip: [396, 108] },
+      clip: [[60, 0], [413, 0], [413, 124], [380, 124], [380, 30], [330, 22], [280, 30], [238, 45], [205, 68], [178, 95], [160, 125], [147, 155], [132, 180], [60, 180]] };
     // the pullers, and their right-facing selves for after the turn
     C.fat = puller("fat", true, X.fat); C.pol = puller("pol", true, X.pol); C.you = puller("you", false, X.you); C.wm = puller("wm", false, X.wm);
     C.pol2 = puller("pol", false, X.pol, { hidden: true });
@@ -104,10 +110,12 @@
     BILLS.forEach(function (b, i) { C[b] = { art: "bill-med-flat", x: BED[0] + (i - 4) * 70, y: BED[1], scale: 1.5, hidden: true }; });
 
     // ── The beats ──
-    var hang = function (b, on, n, dir, t, dur) { return { at: t, do: "move", who: b, to: on + ".tip", by: [dir * BAIT[n][1], baitH(b) / 2 + 4], dur: dur || 0.01, ease: "smooth" }; };
+    var hang = function (b, on, n, dir, t, dur) { return { at: t, do: "move", who: b, to: (on === "wm" ? "wmPole" : on) + ".tip", by: [dir * BAIT[n][1], baitH(b) / 2 + 4], dur: dur || 0.01, ease: "smooth" }; };
     var swing = function (b, t) { return { at: t, do: "bob", who: b, y: 5, r: 7, speed: 2.4, fade: 0 }; };
     var beats = [];
     NAMES.forEach(function (n) { ROPES[n].forEach(function (r) { beats.push({ at: -1, do: "hinge", who: r.nm, angle: r.ang }); }); });
+    var PSZ = Z["weapons-maker-harness"];
+    beats.push({ at: -1, do: "move", who: "wmPole", to: "wm.pole", by: [(PSZ[0] / 2 - POLEB[0]) * PT.wm.k, (PSZ[1] / 2 - POLEB[1]) * PT.wm.k], dur: 0.01 });
     // he swells on "very" (before the walk, so it doesn't straighten the walk)
     beats.push({ on: "very", n: 1, do: "move", who: "fat", by: [0, 0], scale: FATK, dur: 0.35, ease: "smooth" });
     // they all walk from the start and get nowhere
@@ -139,7 +147,7 @@
       { on: "sick", offset: 0.68, do: "shiver", who: "you", dur: 0.3, amp: 9, rot: 4 },
       { on: "sick", offset: 0.95, do: "pop", who: "cough", out: true });
     beats.push({ at: 11.8, do: "camera", view: "wm", dur: 0.55 });
-    // the Weapons Maker. "money": he lunges. "care": the seal flips to a cross; he shrugs and lunges just the same
+    // the weapons factory. "money": it lunges. "care": the seal flips to a cross; it hops and lunges just the same
     beats.push(hang("bwm2", "wm", "wm", 1, 0), swing("bwm2", 0),
       { on: "money", do: "nudge", who: "wm", by: [90, -14] },
       { on: "care", do: "swap", who: "bwm", to: "bwm2" },
@@ -203,7 +211,7 @@
     // Close views fill the frame with one puller; 9:16 keeps the ground above the captions.
     var cy = function (s) { return G - 420 / s; };
     var views = V ? {
-      fat: [X.fat - 190, cy(1.15), 1.15], pol: [X.pol - 140, cy(1.15), 1.15], you: [X.you + 70, cy(1.15), 1.15], wm: [X.wm + 190, cy(1.15), 1.15],
+      fat: [X.fat - 190, cy(1.15), 1.15], pol: [X.pol - 140, cy(1.15), 1.15], you: [X.you + 70, cy(1.15), 1.15], wm: [X.wm + 320, cy(0.9), 0.9],
       wide: [0, 20, 0.245], file: [960, 330, 0.362], wheel: [380, cy(0.8), 0.8], hit: [430, cy(1), 1], behind: [-320, cy(0.8), 0.8], smack: [POST - 40, cy(0.78), 0.78],
     } : {
       fat: [X.fat - 180, 640, 1], pol: [X.pol - 150, 660, 1], you: [X.you + 120, 660, 1], wm: [X.wm + 190, 660, 1], wheel: [430, 575, 0.8],

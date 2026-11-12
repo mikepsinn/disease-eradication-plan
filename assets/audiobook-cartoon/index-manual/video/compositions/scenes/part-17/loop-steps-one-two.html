@@ -1,0 +1,208 @@
+<template id="loop-steps-one-two-template">
+  <!-- loop-steps-one-two · collage (plate money-loop, scenes 12 and 13 as one plate). The bit: one inked loop of arrows, and the money goes round it stop by stop. 1: YOU sells the fat cat a bond at his counter and the bills go in the till; they walk the arrow to the poster wall, 1% TREATY: YES; 3: the Politician signs the treaty with a flourish; the scissors snip a slice off the top of the tower of stacked missiles (MILITARY SPENDING: $2.72 TRILLION A YEAR, the weapons factory on top not noticing), and the slice is a war bill whose seal flips to a cross, $27.2 BILLION A YEAR. It walks on to 4: YOU in his booth takes two strips and stands them in the bell jar; the rest walk on. "Four": one strip runs across the middle of the loop to the fat cat, and his chart: PAID IN once, PAID OUT 2.72 times as tall, then again each year; 272%, PROJECTED. "It's not.": NOT A TYPO, and the fat cat goes over backwards, rocking like a tipped egg. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="loop-steps-one-two" data-width="1920" data-height="1080" data-start="0" data-duration="44.28">
+    <div id="loop-steps-one-two-weave"></div>
+    <div id="loop-steps-one-two-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "loop-steps-one-two";
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // ── The money loop plate (the same drawing in loop-steps-one-two and pavlovian-senators) ──
+      // One inked loop of arrows inside the canvas (a chart's axes are drawn inside it, so the charts sit inside the
+      // loop), clockwise: 1 YOU's bond counter (left side), 2 the poster wall and 3 the treaty desk (top), the military
+      // spending tower of stacked missiles (top right corner), 4 YOU's booth with the bell jar (right side), 5 the Super PAC and three senators
+      // (bottom right), and the lab (bottom). The camera goes in close on each.
+      var V = KIT.V, SZ = KIT.collage.SIZES;
+      var L = V ? 170 : 330, T = V ? 330 : 230, R = V ? 910 : 1600, B = V ? 1380 : 880, RC = V ? 70 : 90;
+      var PH = V ? 190 : 200;                                       // a person's height on the plate
+      var hK = function (art, h) { return h / SZ[art][1]; };
+      var loopPts = (function () {
+        var p = [], arc = function (cx, cy, a0) { for (var k = 0; k <= 8; k++) { var a = (a0 + 90 * k / 8) * Math.PI / 180; p.push([cx + RC * Math.cos(a), cy + RC * Math.sin(a)]); } };
+        p.push([L, B - RC]); arc(L + RC, T + RC, 180); arc(R - RC, T + RC, 270); arc(R - RC, B - RC, 0); arc(L + RC, B - RC, 90);
+        return p;
+      })();
+      // a point a fraction u of the way round (clockwise from the bottom of the left side), and the stretch from u0 to u1
+      var LOOP = (function () {
+        var d = [0];
+        for (var i = 1; i < loopPts.length; i++) d.push(d[i - 1] + Math.hypot(loopPts[i][0] - loopPts[i - 1][0], loopPts[i][1] - loopPts[i - 1][1]));
+        var P = d[d.length - 1];
+        var at = function (u) {
+          u = ((u % 1) + 1) % 1; var s = u * P, i = 1;
+          while (i < d.length - 1 && d[i] < s) i++;
+          var f = (s - d[i - 1]) / (d[i] - d[i - 1] || 1), a = loopPts[i - 1], b = loopPts[i];
+          return [a[0] + (b[0] - a[0]) * f, a[1] + (b[1] - a[1]) * f];
+        };
+        var seg = function (u0, u1) { var out = [], n = 40; if (u1 < u0) u1 += 1; for (var k = 0; k <= n; k++) out.push(at(u0 + (u1 - u0) * k / n)); return out; };
+        var uOf = function (pt) { var best = 0, bd = 1e9; for (var k = 0; k <= 400; k++) { var q = at(k / 400), dd = Math.hypot(q[0] - pt[0], q[1] - pt[1]); if (dd < bd) { bd = dd; best = k / 400; } } return best; };
+        return { at: at, seg: seg, uOf: uOf, P: P };
+      })();
+      var S1 = [L, T + 0.62 * (B - T)], S2 = [L + 0.2 * (R - L), T], S3 = [L + 0.5 * (R - L), T], TW = [R - RC * 0.3, T + RC * 0.3];
+      var S4 = [R, T + 0.52 * (B - T)], S5 = [L + 0.8 * (R - L), B], LAB = [L + 0.38 * (R - L), B];
+      var TWH = PH * 1.5, TWTOP = T - TWH;                         // the missile tower: its height and its top
+      var U = { s1: LOOP.uOf(S1), s2: LOOP.uOf(S2), s3: LOOP.uOf(S3), tw: LOOP.uOf(TW), s4: LOOP.uOf(S4), s5: LOOP.uOf(S5), lab: LOOP.uOf(LAB) };
+      // the fat cat stands inside the loop by the bond counter, with his chart beside him
+      var CAT = V ? [L + 170, T + 0.66 * (B - T)] : [L + 150, T + 0.66 * (B - T)], CATK = hK("fat-cat-catch", PH * 1.05);
+      var PAID = V ? [L + 280, T + 360, R - 90, T + 700] : [L + 330, T + 110, L + 700, T + 380];
+      var paid = KIT.collage.axes({ box: PAID, x: [0, 3, 3], xLabels: 1000, y: [0, 9, 3], unit: "B", title: "BILLIONS", size: 22 });
+      var cy = function (feet, s) { return V ? feet - 330 / s : feet - 0.42 * PH; };
+      var CS = V ? 2.3 : 2.6;
+      var views = {
+        wide: V ? [540, 860, 0.92] : [965, 545, 0.92],
+        s1: [S1[0] + (V ? 120 : 140), cy(S1[1] + 20, CS), CS],
+        s2: [S2[0] + 40, cy(T, CS), CS], s3: [S3[0], cy(T, CS), CS], tw: V ? [TW[0] - 90, cy(T, CS) - 40, CS * 0.85] : [TW[0] - 80, T - 170, 1.8],
+        s4: [S4[0] - (V ? 40 : 10), cy(S4[1] + 10, CS), CS], cat: V ? [560, 940, 1.45] : [(L + PAID[2]) / 2, (PAID[1] + PAID[3]) / 2 + 40, 2.0],
+        s5: [S5[0] + (V ? -60 : 20), cy(B, CS * 0.9), CS * 0.9], lab: [LAB[0], cy(B, CS), CS],
+      };
+      var arrowAt = function (u, k) {
+        var a = LOOP.at(u - 0.004), b = LOOP.at(u + 0.004);
+        return { art: "ink-arrow", x: LOOP.at(u)[0], y: LOOP.at(u)[1], scale: k || 0.9, turn: Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI };
+      };
+      var plateCast = {
+        // station 1: YOU's bond counter, the fat cat inside the loop
+        counter: { art: "deli-counter", x: S1[0] - 10, y: S1[1] + 16, anchor: "bottom", pivot: "bottom", scale: hK("deli-counter", PH * 0.52) },
+        you1: { art: "you-cert", x: S1[0] - (V ? 70 : 90), y: S1[1] - PH * 0.18, anchor: "bottom", pivot: "bottom", scale: hK("you-cert", PH) },
+        cat: { art: "fat-cat-catch", x: CAT[0], y: CAT[1], anchor: "bottom", pivot: "bottom", scale: CATK },
+        // station 2: the poster wall
+        bucket: { art: "bucket", x: S2[0] + 70, y: T, anchor: "bottom", pivot: "bottom", scale: hK("bucket", PH * 0.36) },
+        brush: { art: "paste-brush", x: S2[0] + 80, y: T - PH * 0.24, anchor: "bottom", pivot: [135, 520], scale: hK("paste-brush", PH * 0.5) },
+        // station 3: the treaty desk
+        desk: { art: "desk", x: S3[0] + 40, y: T, anchor: "bottom", pivot: "bottom", scale: hK("desk", PH * 0.5) },
+        pol: { art: "politician", x: S3[0] - 60, y: T, anchor: "bottom", pivot: "bottom", scale: hK("politician", PH) },
+        // the military spending tower: missiles stacked into a bar, the weapons factory sitting on top
+        fac: { art: "factory-proud", x: TW[0] + 10, y: TWTOP + 10, anchor: "bottom", pivot: "bottom", scale: hK("factory-proud", PH * 0.8) },
+        // station 4: YOU's booth, the bell jar on its table
+        table: { art: "side-table", x: S4[0] - 10, y: S4[1] + 20, anchor: "bottom", pivot: "bottom", scale: hK("side-table", PH * 0.42) },
+        jar: { art: "bell-jar", x: S4[0] - 10, y: S4[1] + 20 - PH * 0.42 + 6, anchor: "bottom", pivot: "bottom", scale: hK("bell-jar", PH * 0.55) },
+        you4: { art: "you-tip", x: S4[0] + (V ? 60 : 85), y: S4[1] + 20, anchor: "bottom", pivot: "bottom", scale: hK("you-tip", PH * 1.15) },
+        // station 5: the Super PAC and three senators; the lab on the bottom straight
+        pac: { art: "super-pac", x: S5[0] - (V ? 90 : 110), y: B, anchor: "bottom", pivot: "bottom", scale: hK("super-pac", PH * 0.6), label: { text: "SUPER PAC", at: [214, 102], width: 150, size: 34 } },
+        sen1: { art: "politician-red", x: S5[0] + (V ? -10 : 0), y: B, anchor: "bottom", pivot: "bottom", scale: hK("politician-red", PH * 0.95) },
+        sen2: { art: "politician-blue", x: S5[0] + (V ? 50 : 70), y: B, anchor: "bottom", pivot: "bottom", scale: hK("politician-blue", PH * 0.95) },
+        sen3: { art: "politician", x: S5[0] + (V ? 110 : 140), y: B, anchor: "bottom", pivot: "bottom", scale: hK("politician", PH * 0.95) },
+        lab: { art: "lab", x: LAB[0], y: B, anchor: "bottom", pivot: "bottom", scale: hK("lab", PH * 1.2) },
+      };
+      var arrows = [0.07, 0.2, 0.32, 0.45, 0.57, 0.7, 0.82, 0.94];
+      arrows.forEach(function (u, i) { var a = arrowAt(u); plateCast["arr" + i] = { art: a.art, x: a.x, y: a.y, scale: a.scale }; });
+      var plateBeats = [{ at: -1, do: "line", id: "loop", points: loopPts.concat([loopPts[0], loopPts[1]]), dur: 0.01, width: V ? 8 : 9, color: "ink" }];
+      arrows.forEach(function (u, i) { plateBeats.push({ at: -1, do: "move", who: "arr" + i, by: [0, 0], turn: arrowAt(u).turn, dur: 0.01 }); });
+      var PLATE = V ? [-900, -900, 2000, 2900] : [-700, -500, 2600, 1600];
+      var HAT = [CAT[0] - SZ["fat-cat-catch"][0] * CATK / 2 + 145 * CATK, CAT[1] - SZ["fat-cat-catch"][1] * CATK + 225 * CATK];
+      var TILL = [S1[0] + 40, S1[1] - PH * 0.4];
+      var BH = PH * 0.42;                                            // a walking bill's height
+      var cast = {
+        // the missile tower (part of the plate) goes first, so the scissors and the slice stay in front of it
+        tower: { art: "missile-tower", x: TW[0] + 10, y: T + 6, anchor: "bottom", pivot: "bottom", scale: hK("missile-tower", TWH) },
+        bond: { art: "bond", x: S1[0] - 60, y: S1[1] - PH * 1.05, scale: hK("bond", PH * 0.22), hidden: true },
+        yes: { art: "sign-board", x: S2[0] - 40, y: T, anchor: "bottom", pivot: "bottom", scale: hK("sign-board", PH * 0.9), hidden: true,
+          label: [{ text: "1% TREATY:", at: [107, 45], width: 180, size: 36 }, { text: "YES", at: [107, 88], width: 120, size: 40 }] },
+        scroll: { art: "treaty-scroll", x: S3[0] + 30, y: T - PH * 0.5 + 4, anchor: "bottom", pivot: "bottom", scale: hK("treaty-scroll", PH * 0.32), hidden: true },
+        quill: { art: "quill", x: S3[0] + 50, y: T - PH * 0.62, scale: hK("quill", PH * 0.3), hidden: true },
+        scis: { art: "scissors", x: TW[0] + 90, y: TWTOP + PH * 0.25, scale: hK("scissors", PH * 0.5), hidden: true },
+        warbill: { art: "bill-war", x: TW[0] + 10, y: TWTOP + PH * 0.45, anchor: "bottom", pivot: "bottom", scale: hK("bill-war", BH * 1.5), hidden: true },
+        medbill: { art: "bill-med", x: TW[0] + 10, y: T + 4, anchor: "bottom", pivot: "bottom", scale: hK("bill-med", BH * 1.5), hidden: true },
+        st1: { art: "bill-med-flat", x: S4[0] - 22, y: S4[1] + 20 - PH * 0.42 - 20, scale: hK("bill-med-flat", PH * 0.12), turn: 0, hidden: true },
+        st2: { art: "bill-med-flat", x: S4[0] + 2, y: S4[1] + 20 - PH * 0.42 - 36, scale: hK("bill-med-flat", PH * 0.12), hidden: true },
+        run1: { art: "bill-med", x: S4[0] - 40, y: S4[1] + 20, anchor: "bottom", pivot: "bottom", scale: hK("bill-med", BH * 0.7), hidden: true },
+      };
+      for (var k in plateCast) cast[k] = plateCast[k];
+      // the bills YOU takes for the bond, and the ones that walk to the poster wall
+      for (var i = 0; i < 4; i++) cast["c" + i] = { art: "bill-plain", x: HAT[0], y: HAT[1], scale: hK("bill-plain", BH * 0.5), hidden: true };
+      var beats = plateBeats.slice();
+      var add = function (b) { beats.push(b); };
+      // "One. You sell one billion dollars in VICTORY Incentive Alignment Bonds to investors.": the bond counter
+      add({ on: "You", n: 1, offset: -0.2, do: "camera", view: "s1", dur: 0.8 });
+      add({ on: "sell", offset: 0.3, do: "pop", who: "bond" });
+      add({ on: "VICTORY", do: "move", who: "bond", to: [HAT[0] - 10, HAT[1] - 30], turn: 28, dur: 0.4, arc: 70 });
+      add({ on: "VICTORY", offset: 0.45, do: "hop", who: "cat", height: 16 });
+      for (i = 0; i < 4; i++) {
+        add({ on: "Bonds", offset: 0.1 * i, do: "pop", who: "c" + i });
+        add({ on: "Bonds", offset: 0.1 * i + 0.05, do: "move", who: "c" + i, to: TILL, turn: 30 * i, dur: 0.35, arc: 60 });
+        add({ on: "investors.", offset: -0.1 + 0.05 * i, do: "hide", who: "c" + i });
+      }
+      add({ on: "investors.", do: "shiver", who: "counter", dur: 0.4, amp: 3, rot: 2 });
+      // "This funds the campaign.": the bills walk the arrow to the poster wall, and the poster goes up
+      add({ on: "This", n: 1, do: "camera", view: "s2", dur: 1.0 });
+      add({ on: "This", n: 1, do: "march", id: "walk1", art: "bill-plain", count: 4, height: BH, path: LOOP.seg(U.s1, U.s2 - 0.01), speed: V ? 520 : 620, end: "hide" });
+      add({ on: "campaign.", n: 1, offset: 0.1, do: "move", who: "brush", by: [-PH * 0.5, -PH * 0.25], turn: -50, dur: 0.22, arc: 20 });
+      add({ on: "campaign.", n: 1, offset: 0.35, do: "stamp", who: "yes", from: 1.4, shake: 6 });
+      add({ on: "campaign.", n: 1, offset: 0.4, do: "move", who: "brush", by: [PH * 0.5, PH * 0.25], turn: 0, dur: 0.25 });
+      // "Two. The campaign succeeds.": the treaty, signed with a flourish
+      add({ on: "Two.", do: "camera", view: "s3", dur: 0.8 });
+      add({ on: "campaign", n: 2, do: "pop", who: "scroll", squash: true });
+      add({ on: "campaign", n: 2, offset: 0.1, do: "pop", who: "quill" });
+      add({ on: "succeeds.", do: "move", who: "quill", by: [PH * 0.12, PH * 0.05], turn: 18, dur: 0.15 });
+      add({ on: "succeeds.", offset: 0.15, do: "move", who: "quill", by: [-PH * 0.1, PH * 0.04], turn: -10, dur: 0.15 });
+      add({ on: "succeeds.", offset: 0.3, do: "move", who: "quill", by: [PH * 0.18, -PH * 0.12], turn: 30, dur: 0.15 });
+      add({ on: "succeeds.", offset: 0.5, do: "hop", who: "pol", height: 14 });
+      // "Your treaty redirects one percent of military spending:": the tower; a thin slice snipped off its top
+      add({ on: "Your", n: 1, offset: -0.2, do: "camera", view: "tw", dur: 0.8 });
+      add({ on: "treaty", n: 1, do: "banner", id: "mil", text: "MILITARY SPENDING:", x: TW[0] - (V ? 200 : 250), y: T - PH * 1.35, size: 34, width: V ? 250 : 290, pad: 18, color: "ink", tilt: -2 });
+      add({ on: "treaty", n: 1, offset: 0.2, do: "banner", id: "mil2", text: "$2.72 TRILLION A YEAR", x: TW[0] - (V ? 200 : 250), y: T - PH * 0.95, size: 34, width: V ? 250 : 290, pad: 18, color: "ink", tilt: 2 });
+      add({ on: "treaty", n: 1, do: "bob", who: "fac", y: 2, r: 1.5, speed: 1.2 });
+      add({ on: "redirects", do: "slideIn", who: "scis", from: "right", dist: V ? 700 : 900 });
+      add({ on: "percent", n: 1, do: "move", who: "scis", by: [-PH * 0.35, 0], turn: -10, dur: 0.12 });
+      add({ on: "percent", n: 1, offset: 0.05, do: "pop", who: "warbill" });
+      add({ on: "military", n: 1, do: "slideOut", who: "scis", to: "right", dist: V ? 700 : 900 });
+      add({ on: "spending:", do: "move", who: "warbill", by: [0, T + 4 - TWTOP - PH * 0.45], turn: 0, dur: 0.45, arc: -20 });
+      // "twenty-seven point two billion dollars a year": the missile seal flips to a cross
+      add({ on: "twenty-seven", n: 1, do: "swap", who: "warbill", to: "medbill" });
+      add({ on: "twenty-seven", n: 1, do: "glow", who: "medbill", size: PH * 1.3, dur: 0.6 });
+      add({ on: "billion", n: 2, do: "tag", id: "fund", who: "medbill", text: "$27.2 BILLION A YEAR", w: V ? 230 : 260, h: V ? 110 : 120, x: TW[0] - (V ? 150 : 200), y: T - PH * 0.45, knot: [113, 40] });
+      // "flows from the murder budget to clinical trials.": it walks on down the arrow toward station 4
+      add({ on: "flows", offset: 0.3, do: "hide", who: "fund" });
+      add({ on: "flows", do: "move", who: "medbill", to: [R, S4[1] - PH * 0.9], dur: 2.3 });
+      add({ on: "flows", do: "bob", who: "medbill", y: 6, r: 4, speed: 4, until: "Three.", fade: 0.1 });
+      add({ on: "trials.", do: "camera", view: "s4", dur: 1.2 });
+      add({ on: "trials.", do: "hide", who: ["mil", "mil2"] });
+      // "Three. The Victory Corporation (the company that issued the bonds)": YOU, in his booth
+      add({ on: "Corporation", do: "hop", who: "you4", height: 18 });
+      add({ on: "Corporation", offset: 0.15, do: "glow", who: "you4", size: PH * 1.4, dur: 0.5 });
+      // "takes a twenty percent management fee": two strips into the bell jar; the other eight walk on
+      add({ on: "takes", do: "move", who: "medbill", to: [R, S4[1] - PH * 0.2], dur: 0.4 });
+      add({ on: "twenty", n: 1, do: "pop", who: "st1" });
+      add({ on: "twenty", n: 1, offset: 0.12, do: "pop", who: "st2" });
+      add({ on: "fee", n: 1, do: "move", who: "medbill", to: [R, B - PH * 0.2], dur: 1.0 });
+      add({ on: "that", n: 2, do: "move", who: "medbill", to: [R - 260, B + 2], dur: 0.8 });
+      add({ on: "dollars.", n: 3, do: "hide", who: ["medbill", "fund"] });
+      // "Four. Half of that fee (ten percent)": one strip steps out of the jar
+      add({ on: "(ten", do: "swap", who: "st1", to: "run1" });
+      // "goes to investor dividends": it runs across the middle of the loop to the fat cat, and the chart
+      add({ on: "goes", do: "camera", view: "cat", dur: 1.0 });
+      add({ on: "goes", do: "move", who: "run1", to: [HAT[0] + 20, HAT[1] + 10], dur: 1.0 });
+      add({ on: "goes", do: "bob", who: "run1", y: 8, r: 6, speed: 6, until: "dividends:", fade: 0.05 });
+      add({ on: "dividends:", offset: 0.1, do: "hide", who: "run1" });
+      add({ on: "dividends:", do: "chart", id: "paid", chart: paid });
+      add({ on: "dividends:", offset: 0.2, do: "bar", id: "in", chart: paid, x: 1, to: 1, dur: 0.4, width: V ? 70 : 64, text: "PAID IN", size: 20 });
+      add({ on: "billion", n: 4, do: "bar", id: "out", chart: paid, x: 2, to: 2.72, dur: 0.5, width: V ? 70 : 64, text: "PAID OUT", size: 20, fill: "#C9DDB0" });
+      add({ on: "billion", n: 4, do: "counter", id: "year", from: 0, to: 1, dur: 0.01, style: "tick", prefix: "YEAR ", suffix: "", x: paid.pt(0.75, 8.3)[0], y: paid.pt(0.75, 8.3)[1], size: V ? 30 : 26, pad: 40 });
+      add({ on: "dollar", do: "bar", id: "out", chart: paid, x: 2, to: 5.44, dur: 0.4 });
+      add({ on: "dollar", do: "counter", id: "year", to: 2, dur: 0.01 });
+      add({ on: "investment.", offset: 0.35, do: "bar", id: "out", chart: paid, x: 2, to: 8.16, dur: 0.4 });
+      add({ on: "investment.", offset: 0.35, do: "counter", id: "year", to: 3, dur: 0.01 });
+      // "That's two hundred and seventy-two percent annual returns."
+      add({ on: "seventy-two", do: "stamp", id: "pct", text: "272%", x: (PAID[0] + PAID[2]) / 2, y: (PAID[1] + PAID[3]) / 2, size: V ? 120 : 110, width: V ? 330 : 300, tilt: -6, shake: 8 });
+      add({ on: "returns.", do: "stamp", id: "proj", text: "PROJECTED", x: (PAID[0] + PAID[2]) / 2, y: (PAID[1] + PAID[3]) / 2 + (V ? 95 : 85), size: 30, width: V ? 180 : 170, tilt: -6 });
+      // "Your investors will think it's a typo. It's not.": he looks again, and goes over backwards
+      add({ on: "think", do: "shiver", who: "cat", dur: 0.7, amp: 3, rot: 2 });
+      add({ on: "typo.", do: "nudge", who: "cat", by: [PH * 0.1, 0] });
+      add({ on: "not.", do: "stamp", id: "typo", text: "NOT A TYPO", x: CAT[0] + (V ? 60 : 70), y: CAT[1] - PH * 0.35, size: V ? 64 : 56, width: V ? 360 : 330, tilt: 4, shake: 10 });
+      add({ on: "not.", offset: 0.3, do: "hide", who: "bond" });
+      add({ on: "not.", offset: 0.3, do: "move", who: "cat", by: [0, 0], turn: -96, dur: 0.25 });
+      add({ on: "not.", offset: 0.6, do: "bob", who: "cat", y: 2, r: 7, speed: 3 });
+      KIT.collage({ id: ID, seed: 1712, plate: PLATE, views: views, view: "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -3,8 +3,8 @@
   "title": "The Human Economy",
   "storyboard": "storyboards/part-02-the-human-economy.md",
   "audio": {
-    "start": 258.464,
-    "end": 298.184
+    "start": 236.881,
+    "end": 273.736
   },
   "noCaptions": [
     "title-card"
@@ -13,15 +13,15 @@
     {
       "id": "title-card",
       "file": "compositions/scenes/part-02/title-card.html",
-      "cue": "Human",
-      "approx": 258.5,
+      "cue": "The",
+      "approx": 237.064,
       "layer": "A"
     },
     {
       "id": "host-opens",
       "file": "compositions/scenes/part-02/host-opens.html",
       "cue": "Humanity",
-      "approx": 260.8,
+      "approx": 239.464,
       "layer": "A",
       "wishonia": [
         {
@@ -44,21 +44,21 @@
       "id": "money-loop",
       "file": "compositions/scenes/part-02/money-loop.html",
       "cue": "You",
-      "approx": 264.2,
+      "approx": 242.564,
       "layer": "B"
     },
     {
       "id": "the-toll",
       "file": "compositions/scenes/part-02/the-toll.html",
       "cue": "One",
-      "approx": 284.3,
+      "approx": 261.204,
       "layer": "B"
     },
     {
       "id": "host-closes",
       "file": "compositions/scenes/part-02/host-closes.html",
       "cue": "On",
-      "approx": 290.8,
+      "approx": 267.964,
       "layer": "A",
       "wishonia": [
         {
@@ -69,7 +69,7 @@
           "mode": "big"
         },
         {
-          "cue": "give",
+          "cue": "skip",
           "expr": "happy",
           "rest": "smile",
           "body": "presenting",
@@ -93,94 +93,30 @@
     }
   ],
   "sounds": [
-    {
-      "scene": "title-card",
-      "cue": "Human",
-      "sfx": "whirr",
-      "volume": 0.25
-    },
-    {
-      "scene": "money-loop",
-      "cue": "print",
-      "sfx": "stamp",
-      "volume": 0.45
-    },
-    {
-      "scene": "money-loop",
-      "cue": "makers.",
-      "sfx": "cash-register",
-      "volume": 0.4
-    },
-    {
-      "scene": "money-loop",
-      "cue": "that",
-      "offset": 0.2,
-      "sfx": "slide-down",
-      "volume": 0.4
-    },
-    {
-      "scene": "money-loop",
-      "cue": "everything.",
-      "sfx": "boom",
-      "volume": 0.65
-    },
-    {
-      "scene": "money-loop",
-      "cue": "\"jobs\"",
-      "sfx": "bell",
-      "volume": 0.45
-    },
-    {
-      "scene": "money-loop",
-      "cue": "papers.",
-      "n": 2,
-      "sfx": "pop",
-      "volume": 0.4
-    },
-    {
-      "scene": "money-loop",
-      "cue": "grows",
-      "sfx": "slide-up",
-      "volume": 0.4
-    },
-    {
-      "scene": "money-loop",
-      "cue": "free).",
-      "offset": 0.37,
-      "sfx": "ding",
-      "volume": 0.3
-    },
-    {
-      "scene": "money-loop",
-      "cue": "economy\".",
-      "at": "after",
-      "sfx": "whistle",
-      "volume": 0.3
-    },
-    {
-      "scene": "the-toll",
-      "cue": "killed",
-      "sfx": "zap",
-      "volume": 0.25
-    },
-    {
-      "scene": "the-toll",
-      "cue": "million",
-      "sfx": "thunk",
-      "volume": 0.55
-    },
-    {
-      "scene": "host-closes",
-      "cue": "give",
-      "offset": 0.1,
-      "sfx": "sparkle",
-      "volume": 0.3
-    },
-    {
-      "scene": "host-closes",
-      "cue": "directly,",
-      "sfx": "pop",
-      "volume": 0.45
-    }
+    {"scene": "title-card", "cue": "Human", "sfx": "whirr", "volume": 0.25},
+    {"scene": "host-opens", "cue": "magnificent:", "sfx": "sparkle", "volume": 0.4},
+    {"scene": "host-opens", "cue": "magnificent:", "offset": 0.05, "sfx": "slide-up", "volume": 0.25},
+    {"scene": "money-loop", "cue": "print", "sfx": "thunk", "volume": 0.35},
+    {"scene": "money-loop", "cue": "from", "sfx": "thunk", "volume": 0.3},
+    {"scene": "money-loop", "cue": "nothing", "sfx": "thunk", "volume": 0.3},
+    {"scene": "money-loop", "cue": "(called", "sfx": "stamp", "volume": 0.45},
+    {"scene": "money-loop", "cue": "makers.", "sfx": "ding", "volume": 0.4},
+    {"scene": "money-loop", "cue": "destroy", "sfx": "whoosh", "volume": 0.4},
+    {"scene": "money-loop", "cue": "everything.", "sfx": "boom", "volume": 0.55},
+    {"scene": "money-loop", "cue": "This", "n": 1, "offset": 0.6, "sfx": "whistle", "volume": 0.25},
+    {"scene": "money-loop", "cue": "papers.", "n": 2, "sfx": "pop", "volume": 0.35},
+    {"scene": "money-loop", "cue": "papers.", "n": 2, "offset": 0.15, "sfx": "pop", "volume": 0.3},
+    {"scene": "money-loop", "cue": "papers.", "n": 2, "offset": 0.3, "sfx": "pop", "volume": 0.3},
+    {"scene": "money-loop", "cue": "food.", "offset": 0.3, "sfx": "pat", "volume": 0.35},
+    {"scene": "money-loop", "cue": "called", "n": 2, "offset": 1.7, "sfx": "whoosh", "volume": 0.3},
+    {"scene": "money-loop", "cue": "called", "n": 2, "offset": 2.05, "sfx": "boom", "volume": 0.4},
+    {"scene": "the-toll", "cue": "killed", "sfx": "thunk", "volume": 0.5},
+    {"scene": "the-toll", "cue": "million", "sfx": "stamp", "volume": 0.5},
+    {"scene": "host-closes", "cue": "On", "sfx": "whoosh", "volume": 0.3},
+    {"scene": "host-closes", "cue": "skip", "sfx": "slide-down", "volume": 0.45},
+    {"scene": "host-closes", "cue": "skip", "offset": 0.1, "sfx": "sparkle", "volume": 0.35},
+    {"scene": "host-closes", "cue": "mass", "offset": -0.2, "sfx": "stamp", "volume": 0.4},
+    {"scene": "host-closes", "cue": "mass", "offset": -0.15, "sfx": "whoosh", "volume": 0.25},
+    {"scene": "host-closes", "cue": "step,", "offset": 0.3, "sfx": "ding", "volume": 0.4}
   ]
 }

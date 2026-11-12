@@ -1,0 +1,92 @@
+<template id="dont-know-what-to-tell-you-template">
+  <!-- dont-know-what-to-tell-you · collage host shot (Part 25, scene 21). Back at the console. On the free wall beside
+       her, a YES button on its stand. "click": it goes down by itself, like a showroom demonstration, and pops back up.
+       "receive": she raises her mug; "money.": a medicine bill pops out of the button like toast. She sips. "If you
+       can't make this happen,": busy humans walk past it reading their watches, YOU last; one walks straight into it,
+       bounces off, tips his hat to it and walks round. "genuinely": the mug goes down. "tell": the shrug. Iris out. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="dont-know-what-to-tell-you" data-width="1920" data-height="1080" data-start="0" data-duration="10.759">
+    <div id="dont-know-what-to-tell-you-weave"></div>
+    <div id="dont-know-what-to-tell-you-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "dont-know-what-to-tell-you", V = KIT.V, D = KIT.scene(ID).duration, SZ = KIT.collage.SIZES, ST = KIT.STUDIO;
+      var FEET = V ? 1450 : 1060, BX = V ? 880 : 1430, BH = V ? 400 : 520, BK = BH / SZ["yes-button"][1];
+      var CAP = [[0, 0], [164, 0], [164, 106], [0, 106]], STAND = [[0, 100], [164, 100], [164, 409], [0, 409]];
+      var CAPTOP = FEET - BH, PUSH = 48 * BK;
+      // the walkers: heights matched to YOU's, feet on the same line
+      var HH = V ? 430 : 560;
+      var walker = function (art, x, extra) { var c = { art: art, x: x, y: FEET, anchor: "bottom", pivot: "bottom", scale: HH / SZ[art][1], hidden: true }; for (var k in extra) c[k] = extra[k]; return c; };
+      var FROM = V ? 1250 : 2150, TO = V ? 560 : 1000;
+      var cast = {}, beats = [];
+      // three busy humans walk past behind the button, then YOU
+      var who = ["citizen-1", "citizen-5", "citizen-9"];
+      who.forEach(function (a, i) { cast["w" + i] = walker(a, FROM); });
+      cast.you = walker("you-watch", FROM);
+      // the medicine bill, behind the cap, that pops out like toast
+      cast.bill = { art: "bill-med", x: BX, y: CAPTOP + 40, scale: V ? 0.75 : 0.95, hidden: true };
+      cast.stand = { art: "yes-button", clip: STAND, x: BX, y: FEET, anchor: "bottom", scale: BK };
+      cast.cap = { art: "yes-button", clip: CAP, x: BX, y: FEET, anchor: "bottom", scale: BK, label: { text: "YES", at: [82, 44], width: 110, size: 70 } };
+      // the one who walks into it, in front
+      cast.bump = walker("citizen-12", FROM);
+      // her mug on the ledge by her hand; it comes up to her face and goes back down
+      var MK = (V ? 120 : 110) / 224, MUG = [ST.face[0] + (V ? 160 : 190), ST.top], LIP = [ST.face[0] + (V ? 80 : 75), ST.face[1] + (V ? 250 : 225)];
+      cast.mug = { art: "desk-mug", x: MUG[0], y: MUG[1], anchor: "bottom", pivot: [20, 112], scale: MK * 1.25 };
+
+      // "click": down by itself, and back up
+      beats.push({ on: "click", do: "move", who: "cap", by: [0, PUSH], dur: 0.1 });
+      beats.push({ on: "click", offset: 0.25, do: "move", who: "cap", by: [0, -PUSH], dur: 0.12 });
+      beats.push({ on: "click", offset: 0.37, do: "hop", who: "cap", height: 14 });
+      // "receive": the mug comes up; "money.": the bill pops out of the button like toast; she sips
+      beats.push({ on: "receive", do: "move", who: "mug", by: [LIP[0] - MUG[0], LIP[1] + 75 - MUG[1]], dur: 0.35, arc: 40 });
+      beats.push({ on: "money.", do: "show", who: "bill" });
+      beats.push({ on: "money.", do: "move", who: "bill", by: [0, -(V ? 230 : 290)], dur: 0.22, turn: -8 });
+      beats.push({ on: "money.", offset: 0.22, do: "move", who: "bill", by: [0, V ? 150 : 190], dur: 0.3, turn: 4 });
+      beats.push({ on: "money.", offset: 0.4, do: "move", who: "mug", by: [0, 0], turn: -25, dur: 0.25 });
+      beats.push({ on: "money.", offset: 0.9, do: "move", who: "mug", by: [0, 0], turn: 0, dur: 0.2 });
+      // "If you can't make this happen,": they walk past without looking, reading their watches
+      var T0 = KIT.cue(ID, "If") - 0.6, WALK = V ? 2.6 : 3.0;
+      who.forEach(function (a, i) {
+        var t = T0 + i * 0.55;
+        beats.push({ at: t, do: "show", who: "w" + i });
+        beats.push({ at: t, do: "move", who: "w" + i, by: [TO - FROM, 0], dur: WALK });
+        beats.push({ at: t, do: "bob", who: "w" + i, y: 7, r: 1.5, speed: 2.6, phase: i, until: t + WALK });
+        beats.push({ at: t + WALK, do: "hide", who: "w" + i });
+      });
+      // one walks straight into it, bounces off, tips his hat to it, and walks round
+      var TB = KIT.cue(ID, "happen,");
+      beats.push({ at: TB - 0.9, do: "show", who: "bump" });
+      beats.push({ at: TB - 0.9, do: "move", who: "bump", by: [BX + (V ? 110 : 150) - FROM, 0], dur: 0.9 });
+      beats.push({ at: TB - 0.9, do: "bob", who: "bump", y: 7, r: 1.5, speed: 2.6, until: TB });
+      beats.push({ at: TB, do: "shake", x: 5, frames: 2 });
+      beats.push({ at: TB, do: "move", who: "bump", by: [V ? 90 : 120, 0], dur: 0.2, arc: 30 });
+      beats.push({ at: TB, do: "shiver", who: "cap", dur: 0.4, amp: 3, rot: 3 });
+      beats.push({ on: "I", n: 1, do: "bow", who: "bump", angle: 18, hold: 0.35 });
+      beats.push({ on: "don't", do: "move", who: "bump", by: [TO - BX - (V ? 200 : 270), 0], dur: 1.4, arc: V ? 60 : 90 });
+      beats.push({ on: "don't", do: "bob", who: "bump", y: 7, r: 1.5, speed: 2.6, until: ["don't", 1, 1.4] });
+      beats.push({ on: "don't", offset: 1.4, do: "hide", who: "bump" });
+      // YOU last, reading his watch
+      var TY = T0 + 1.9;
+      beats.push({ at: TY, do: "show", who: "you" });
+      beats.push({ at: TY, do: "move", who: "you", by: [TO - FROM, 0], dur: WALK + 0.4 });
+      beats.push({ at: TY, do: "bob", who: "you", y: 7, r: 1.5, speed: 2.6, until: TY + WALK + 0.4 });
+      beats.push({ at: TY + WALK + 0.4, do: "hide", who: "you" });
+      // "genuinely": the mug goes down, slowly
+      beats.push({ on: "genuinely", do: "move", who: "mug", by: [MUG[0] - LIP[0], MUG[1] - LIP[1] - 75], dur: 0.6, ease: "smooth" });
+
+      KIT.collage({ id: ID, seed: 2521, host: { iris: ["out", D - 0.6, D - 0.05] }, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

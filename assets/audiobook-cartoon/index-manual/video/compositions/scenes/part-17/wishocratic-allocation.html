@@ -1,0 +1,113 @@
+<template id="wishocratic-allocation-template">
+  <!-- wishocratic-allocation · collage (plate the-allocation). The bit: everyone splits the 80%, two diseases at a time,
+       and money buys no say. The eight medical bills walk in; ordinary humans push the knobs of two pairwise sliders
+       (CANCER or ALZHEIMER'S, MALARIA or PARKINSON'S) and the bars of CLINICAL TRIALS grow unevenly. "nobody with money":
+       the fat cat drops his money bag on a knob; the knob does not move, and the bag floats off like a balloon.
+       "Meanwhile": the sliders slide away and the Optimitron slides in; the Politician feeds it a policy card and it
+       prints a chart going the right way, WORKING; then the WAR ON DRUGS: spending climbs, and overdose deaths climb with
+       it, 6,000 in 1971 to over 100,000 in 2023. EXPENSIVE WAY TO ACCOMPLISH NOTHING; the Politician hides it and
+       whistles. (A chart's axes are drawn inside the canvas, so both charts sit in the same place, one after the other.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="wishocratic-allocation" data-width="1920" data-height="1080" data-start="0" data-duration="17.1">
+    <div id="wishocratic-allocation-weave"></div>
+    <div id="wishocratic-allocation-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "wishocratic-allocation", V = KIT.V, SZ = KIT.collage.SIZES;
+      var G = V ? 1420 : 1000;
+      // The sliders over the chart of trial money; later the Optimitron, and its printout where the chart was.
+      var RX = V ? 540 : 480, RAIL = V ? [[RX, 330], [RX, 540]] : [[RX, 260], [RX, 470]], RK = V ? 0.9 : 1.1, LX = V ? 345 : 400, LW = V ? 200 : 260;
+      var BOX = V ? [190, 790, 960, 1250] : [1060, 230, 1760, 800];
+      var PBOX = V ? [150, 600, 840, 1000] : [1060, 230, 1760, 660];
+      var trials = KIT.collage.axes({ box: BOX, x: [0, 5, 5], xLabels: 1000, y: [0, 40, 10], unit: "%", title: "CLINICAL TRIALS" });
+      var work = KIT.collage.axes({ box: PBOX, x: [0, 10, 10], xLabels: 1000, y: [0, 10, 5], yLabels: 100, title: "WORKING" });
+      var drugs = KIT.collage.axes({ box: PBOX, x: [1971, 2023, 52], y: [0, 100, 25], unit: "K", title: "WAR ON DRUGS" });
+      var OPT = V ? [330, G] : [620, G], OK = V ? 1.05 : 1.35;
+      var SLOT = [OPT[0] + (60 - 237) * OK, G - (353 - 120) * OK], POLX = V ? 940 : 160;
+      var views = V ? { slide: [540, 900, 1], money: [520, 940, 1.12], opt: [540, 900, 1] } : { slide: [960, 540, 1], money: [760, 560, 1.15], opt: [960, 540, 1] };
+      var hK = function (art, h) { return h / SZ[art][1]; };
+      var cast = {
+        r0: { art: "slider-rail", x: RAIL[0][0], y: RAIL[0][1], scale: RK },
+        r1: { art: "slider-rail", x: RAIL[1][0], y: RAIL[1][1], scale: RK },
+        k0: { art: "slider-knob", x: RAIL[0][0], y: RAIL[0][1] - 30 * RK, scale: 0.8 * RK / 1.1 },
+        k1: { art: "slider-knob", x: RAIL[1][0], y: RAIL[1][1] - 30 * RK, scale: 0.8 * RK / 1.1 },
+        h0: { art: "citizen-5", x: V ? 130 : 150, y: G, anchor: "bottom", pivot: "bottom", scale: hK("citizen-5", V ? 420 : 520), hidden: true },
+        h1: { art: "citizen-1", x: V ? 960 : 900, y: G, anchor: "bottom", pivot: "bottom", scale: hK("citizen-1", V ? 420 : 520), faces: "left", hidden: true },
+        cat: { art: "fat-cat-waddle", x: V ? 220 : 330, y: G, anchor: "bottom", pivot: "bottom", scale: hK("fat-cat-waddle", V ? 470 : 540), hidden: true },
+        bag: { art: "bundle-war", x: RAIL[0][0], y: RAIL[0][1] - 70 * RK, anchor: "bottom", pivot: "bottom", scale: 0.8 * RK, hidden: true },
+        opt: { art: "optimitron", x: OPT[0], y: G, anchor: "bottom", pivot: "bottom", scale: OK, hidden: true },
+        pol: { art: "politician", x: POLX, y: G, anchor: "bottom", pivot: "bottom", scale: hK("politician", V ? 520 : 640), faces: V ? "left" : "right", hidden: true },
+        card: { art: "ticket", x: POLX + (V ? -120 : 120), y: G - (V ? 380 : 430), scale: 0.5, hidden: true },
+      };
+      var ink = function (id, text, x, y, on, offset, w) {
+        var b = { offset: offset || 0, do: "banner", id: id, text: text, x: x, y: y, size: V ? 34 : 40, width: w || LW, pad: 24, color: "ink", tilt: 0 };
+        if (on) b.on = on; else b.at = 0.05;
+        return b;
+      };
+      var beats = [
+        { at: 0, do: "chart", id: "trials", chart: trials },
+        ink("l0", "CANCER", RX - LX, RAIL[0][1]), ink("l1", "ALZHEIMER'S", RX + LX, RAIL[0][1]),
+        ink("l2", "MALARIA", RX - LX, RAIL[1][1]), ink("l3", "PARKINSON'S", RX + LX, RAIL[1][1]),
+        // "The other eighty percent": the medical bills walk in, and ordinary humans push the knobs
+        { at: 0.1, do: "march", id: "eight", art: "bill-med", count: 8, height: V ? 100 : 120, path: V ? [[-300, BOX[3] + 90], [600, BOX[3] + 90], [1400, BOX[3] + 90]] : [[-300, 900], [700, 900], [1250, 900]], speed: 1300, end: "hide" },
+        { on: "directly", do: "slideIn", who: "h0", from: "left", dist: 900 },
+        { on: "clinical", do: "slideIn", who: "h1", from: "right", dist: 1600 },
+        { on: "through", do: "move", who: "k0", by: [-110 * RK, 0], dur: 0.3 },
+        { on: "wishocratic", do: "move", who: "k1", by: [140 * RK, 0], dur: 0.3 },
+        { on: "allocation,", do: "move", who: "k0", by: [60 * RK, 0], dur: 0.2 },
+        { on: "through", do: "bar", id: "b1", chart: trials, x: 1, to: 31, dur: 1.4, width: 90, text: "CANCER", size: 26 },
+        { on: "through", offset: 0.2, do: "bar", id: "b2", chart: trials, x: 2, to: 19, dur: 1.3, width: 90, text: "ALZ.", size: 26 },
+        { on: "through", offset: 0.4, do: "bar", id: "b3", chart: trials, x: 3, to: 24, dur: 1.2, width: 90, text: "MALARIA", size: 26 },
+        { on: "through", offset: 0.6, do: "bar", id: "b4", chart: trials, x: 4, to: 6, dur: 1.0, width: 90, text: "PARK.", size: 26 },
+        // "where nobody with money gets to decide where it goes.": the money bag weighs nothing here
+        { on: "where", n: 1, offset: -0.3, do: "camera", view: "money", dur: 0.6 },
+        { on: "where", n: 1, do: "slideOut", who: "h0", to: "left", dist: 900 },
+        { on: "where", n: 1, offset: 0.1, do: "slideIn", who: "cat", from: "left", dist: 900 },
+        { on: "with", do: "pop", who: "bag", squash: true },
+        { on: "money", n: 1, do: "stamp", who: "bag", from: 1.3, shake: 4 },
+        { on: "money", n: 1, offset: 0.05, do: "shiver", who: "k0", dur: 0.2, amp: 1, rot: 0 },
+        { on: "decide", do: "move", who: "bag", by: [90, -800], turn: 14, dur: 1.6, ease: "smooth" },
+        { on: "decide", do: "bob", who: "bag", y: 10, r: 6, speed: 3 },
+        { on: "goes.", n: 2, do: "move", who: "cat", by: [0, 0], turn: -6, dur: 0.2 },
+        // "Meanwhile, the Optimitron": the sliders slide away, the Optimitron slides in, the policy card goes in
+        { on: "Meanwhile,", offset: -0.25, do: "camera", view: "opt", dur: 0.5 },
+        { on: "Meanwhile,", offset: -0.25, do: "slideOut", who: ["r0", "r1", "k0", "k1", "cat", "h1"], to: "left", dist: 2400, dur: 0.35 },
+        { on: "Meanwhile,", offset: -0.25, do: "hide", who: ["trials", "b1", "b2", "b3", "b4", "l0", "l1", "l2", "l3"] },
+        { on: "Meanwhile,", offset: 0.05, do: "slideIn", who: ["opt", "pol"], from: "right", dist: 2000 },
+        { on: "tells", do: "pop", who: "card" },
+        { on: "governments", do: "move", who: "card", to: SLOT, turn: 0, dur: 0.4, arc: 60 },
+        { on: "which", n: 1, do: "hide", who: "card" },
+        { on: "which", n: 1, do: "shiver", who: "opt", dur: 0.9, amp: 5, rot: 3 },
+        { on: "working", do: "chart", id: "work", chart: work },
+        { on: "working", do: "line", id: "up", chart: work, points: [[0, 1], [3, 3], [6, 6], [10, 9.3]], dur: 0.6, color: "#2E6B3A", width: 8 },
+        { on: "working", offset: 0.2, do: "hop", who: "pol", height: 30 },
+        // "and which ones are expensive ways to accomplish nothing.": the War on Drugs
+        { on: "expensive", do: "hide", who: ["work", "up"] },
+        { on: "expensive", do: "shiver", who: "opt", dur: 0.7, amp: 6, rot: 4 },
+        { on: "expensive", offset: 0.1, do: "chart", id: "drugs", chart: drugs },
+        { on: "expensive", offset: 0.15, do: "line", id: "spend", chart: drugs, points: [[1971, 8], [1985, 30], [2000, 55], [2010, 70], [2023, 92]], dur: 1.2, color: "ink", width: 7, dash: [16, 10] },
+        { on: "expensive", offset: 0.25, do: "line", id: "dead", chart: drugs, points: [[1971, 6], [1990, 9], [2000, 17], [2010, 38], [2016, 64], [2023, 105]], dur: 1.2, color: "red", width: 8 },
+        ink("lspend", "SPENDING", drugs.pt(1985, 50)[0], drugs.pt(1985, 50)[1], "ways", 0.1, 200),
+        ink("ldead", "OVERDOSE DEATHS", drugs.pt(2002, 3)[0], drugs.pt(2002, 3)[1] - 34, "ways", 0.3, 300),
+        { on: "accomplish", do: "stamp", id: "nothing", text: "EXPENSIVE WAY TO ACCOMPLISH NOTHING", x: (PBOX[0] + PBOX[2]) / 2, y: V ? PBOX[1] - 120 : 790, size: V ? 44 : 50, width: V ? 820 : 760, tilt: -4 },
+        // he hides it and whistles
+        { on: "nothing.", offset: 0.5, do: "hide", who: ["drugs", "spend", "dead", "lspend", "ldead", "nothing"] },
+        { on: "nothing.", offset: 0.5, do: "move", who: "pol", by: [V ? 60 : -60, 0], turn: -5, dur: 0.25 },
+        { on: "nothing.", offset: 0.8, do: "bob", who: "pol", y: 4, r: 3, speed: 3 },
+      ];
+      KIT.collage({ id: ID, seed: 1706, plate: V ? [-1200, -600, 2300, 2600] : [-600, -400, 2500, 1500], views: views, view: "slide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

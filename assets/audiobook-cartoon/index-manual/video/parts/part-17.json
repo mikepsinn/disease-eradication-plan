@@ -3,8 +3,8 @@
   "title": "The Five-Step Plan, Step 1: Sell Incentive Alignment Bonds",
   "storyboard": "storyboards/part-17-step-1-incentive-alignment-bonds.md",
   "audio": {
-    "start": 2143.444,
-    "end": 2452.964
+    "start": 2121.324,
+    "end": 2430.556
   },
   "noCaptions": [
     "title-card"
@@ -14,14 +14,14 @@
       "id": "title-card",
       "file": "compositions/scenes/part-17/title-card.html",
       "cue": "The",
-      "approx": 2143.44,
+      "approx": 2121.304,
       "layer": "A"
     },
     {
       "id": "financial-instrument",
       "file": "compositions/scenes/part-17/financial-instrument.html",
       "cue": "On",
-      "approx": 2153.26,
+      "approx": 2131.144,
       "layer": "A",
       "wishonia": [
         {
@@ -51,14 +51,14 @@
       "id": "the-arithmetic",
       "file": "compositions/scenes/part-17/the-arithmetic.html",
       "cue": "Not",
-      "approx": 2159.4,
+      "approx": 2137.384,
       "layer": "B"
     },
     {
       "id": "heres-one",
       "file": "compositions/scenes/part-17/heres-one.html",
       "cue": "So",
-      "approx": 2175.58,
+      "approx": 2153.444,
       "layer": "A",
       "wishonia": [
         {
@@ -74,21 +74,21 @@
       "id": "bond-splits-three-ways",
       "file": "compositions/scenes/part-17/bond-splits-three-ways.html",
       "cue": "An",
-      "approx": 2176.88,
+      "approx": 2154.764,
       "layer": "B"
     },
     {
       "id": "wishocratic-allocation",
       "file": "compositions/scenes/part-17/wishocratic-allocation.html",
       "cue": "The",
-      "approx": 2211.4,
+      "approx": 2189.264,
       "layer": "B"
     },
     {
       "id": "slow-sip",
       "file": "compositions/scenes/part-17/slow-sip.html",
       "cue": "Remember",
-      "approx": 2228.48,
+      "approx": 2206.364,
       "layer": "A",
       "wishonia": [
         {
@@ -104,28 +104,21 @@
       "id": "grandmas-war-bond",
       "file": "compositions/scenes/part-17/grandmas-war-bond.html",
       "cue": "funded",
-      "approx": 2229.9,
-      "layer": "B"
-    },
-    {
-      "id": "what-youre-offering",
-      "file": "compositions/scenes/part-17/what-youre-offering.html",
-      "cue": "What",
-      "approx": 2251.7,
+      "approx": 2207.744,
       "layer": "B"
     },
     {
       "id": "enemy-is-the-clock",
       "file": "compositions/scenes/part-17/enemy-is-the-clock.html",
       "cue": "This",
-      "approx": 2280.7,
+      "approx": 2258.564,
       "layer": "B"
     },
     {
       "id": "stop-reading",
       "file": "compositions/scenes/part-17/stop-reading.html",
       "cue": "How",
-      "approx": 2289.98,
+      "approx": 2267.864,
       "layer": "A",
       "wishonia": [
         {
@@ -162,21 +155,14 @@
       "id": "loop-steps-one-two",
       "file": "compositions/scenes/part-17/loop-steps-one-two.html",
       "cue": "One.",
-      "approx": 2297.62,
-      "layer": "B"
-    },
-    {
-      "id": "loop-steps-three-four",
-      "file": "compositions/scenes/part-17/loop-steps-three-four.html",
-      "cue": "Three.",
-      "approx": 2316.6,
+      "approx": 2275.464,
       "layer": "B"
     },
     {
       "id": "count-five",
       "file": "compositions/scenes/part-17/count-five.html",
       "cue": "Five.",
-      "approx": 2341.04,
+      "approx": 2319.744,
       "layer": "A",
       "wishonia": [
         {
@@ -192,28 +178,21 @@
       "id": "pavlovian-senators",
       "file": "compositions/scenes/part-17/pavlovian-senators.html",
       "cue": "The",
-      "approx": 2342.5,
-      "layer": "B"
-    },
-    {
-      "id": "greed-loop-runs",
-      "file": "compositions/scenes/part-17/greed-loop-runs.html",
-      "cue": "The",
-      "approx": 2360.84,
+      "approx": 2320.404,
       "layer": "B"
     },
     {
       "id": "no-opposition",
       "file": "compositions/scenes/part-17/no-opposition.html",
       "cue": "None",
-      "approx": 2383.24,
+      "approx": 2361.084,
       "layer": "B"
     },
     {
       "id": "sounds-familiar",
       "file": "compositions/scenes/part-17/sounds-familiar.html",
       "cue": "If",
-      "approx": 2395.7,
+      "approx": 2373.564,
       "layer": "A",
       "wishonia": [
         {
@@ -229,21 +208,14 @@
       "id": "military-industrial-loop",
       "file": "compositions/scenes/part-17/military-industrial-loop.html",
       "cue": "it",
-      "approx": 2397.28,
-      "layer": "B"
-    },
-    {
-      "id": "patient-industrial-loop",
-      "file": "compositions/scenes/part-17/patient-industrial-loop.html",
-      "cue": "You're",
-      "approx": 2414.7,
+      "approx": 2375.164,
       "layer": "B"
     },
     {
       "id": "evolved-on-purpose",
       "file": "compositions/scenes/part-17/evolved-on-purpose.html",
       "cue": "The",
-      "approx": 2438.36,
+      "approx": 2416.164,
       "layer": "A",
       "wishonia": [
         {
@@ -550,60 +522,58 @@
       "volume": 0.5
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "diseases",
-      "n": 1,
       "sfx": "yelp",
       "volume": 0.3
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "diseases",
-      "n": 1,
       "offset": 0.4,
       "sfx": "thunk",
       "volume": 0.45
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "seventy-two",
       "sfx": "pop",
       "volume": 0.4
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "seventy-two",
       "offset": 0.3,
       "sfx": "cash-register",
       "volume": 0.4
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "grows,",
       "sfx": "slide-up",
       "volume": 0.35
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "lobbyists",
       "sfx": "click",
       "volume": 0.45
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "big",
       "sfx": "boing",
       "volume": 0.45
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "bonus).",
       "at": "after",
       "sfx": "tick",
       "volume": 0.5
     },
     {
-      "scene": "what-youre-offering",
+      "scene": "grandmas-war-bond",
       "cue": "bonus).",
       "at": "after",
       "offset": 0.14,
@@ -741,45 +711,44 @@
       "volume": 0.35
     },
     {
-      "scene": "loop-steps-three-four",
+      "scene": "loop-steps-one-two",
       "cue": "twenty",
-      "n": 1,
       "sfx": "pop",
       "volume": 0.4
     },
     {
-      "scene": "loop-steps-three-four",
+      "scene": "loop-steps-one-two",
       "cue": "dividends:",
       "sfx": "pat",
       "volume": 0.35
     },
     {
-      "scene": "loop-steps-three-four",
+      "scene": "loop-steps-one-two",
       "cue": "billion",
-      "n": 2,
+      "n": 4,
       "sfx": "typewriter",
       "volume": 0.3
     },
     {
-      "scene": "loop-steps-three-four",
+      "scene": "loop-steps-one-two",
       "cue": "seventy-two",
       "sfx": "thunk",
       "volume": 0.5
     },
     {
-      "scene": "loop-steps-three-four",
+      "scene": "loop-steps-one-two",
       "cue": "typo.",
       "sfx": "cash-register",
       "volume": 0.4
     },
     {
-      "scene": "loop-steps-three-four",
+      "scene": "loop-steps-one-two",
       "cue": "not.",
       "sfx": "stamp",
       "volume": 0.55
     },
     {
-      "scene": "loop-steps-three-four",
+      "scene": "loop-steps-one-two",
       "cue": "not.",
       "offset": 0.35,
       "sfx": "thunk",
@@ -845,59 +814,58 @@
       "volume": 0.5
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "alive.",
       "sfx": "ding",
       "volume": 0.3
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "alive.",
       "at": "after",
       "sfx": "scratch",
       "volume": 0.35
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "greed",
-      "n": 1,
       "sfx": "cash-register",
       "volume": 0.3
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "greed",
       "n": 2,
       "sfx": "cash-register",
       "volume": 0.3
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "greed",
       "n": 3,
       "sfx": "cash-register",
       "volume": 0.3
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "passed.",
       "sfx": "woof",
       "volume": 0.4
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "circulates",
       "sfx": "whirr",
       "volume": 0.35
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "stop",
       "sfx": "pop",
       "volume": 0.4
     },
     {
-      "scene": "greed-loop-runs",
+      "scene": "pavlovian-senators",
       "cue": "stop",
       "offset": 0.25,
       "sfx": "pop",
@@ -982,72 +950,73 @@
       "volume": 0.4
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "machine,",
       "sfx": "whoosh",
       "volume": 0.35
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "diseases",
       "sfx": "yelp",
       "volume": 0.3
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "Complex.",
       "sfx": "thunk",
-      "volume": 0.45
+      "volume": 0.45,
+      "n": 2
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "politicians,",
-      "n": 1,
+      "n": 4,
       "sfx": "pop",
       "volume": 0.35
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "trials,",
-      "n": 1,
       "sfx": "marker",
       "volume": 0.35
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "returns,",
-      "n": 1,
       "sfx": "sparkle",
       "volume": 0.3
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "investors,",
       "n": 2,
       "sfx": "cash-register",
       "volume": 0.35
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "greed.",
       "sfx": "cash-register",
       "volume": 0.35
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "corpses",
       "sfx": "thunk",
-      "volume": 0.4
+      "volume": 0.4,
+      "n": 2
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "corpses",
       "offset": 0.4,
       "sfx": "thunk",
-      "volume": 0.35
+      "volume": 0.35,
+      "n": 2
     },
     {
-      "scene": "patient-industrial-loop",
+      "scene": "military-industrial-loop",
       "cue": "(fewer",
       "sfx": "pop",
       "volume": 0.35

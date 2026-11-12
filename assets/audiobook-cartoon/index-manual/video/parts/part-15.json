@@ -3,8 +3,8 @@
   "title": "Why This Could Actually Work: The Evidence",
   "storyboard": "storyboards/part-15-the-evidence.md",
   "audio": {
-    "start": 1959.464,
-    "end": 2060.644
+    "start": 1936.974,
+    "end": 2038.263
   },
   "noCaptions": [
     "the-evidence-title"
@@ -13,15 +13,15 @@
     {
       "id": "the-evidence-title",
       "file": "compositions/scenes/part-15/the-evidence-title.html",
-      "cue": "This",
-      "approx": 1959.5,
+      "cue": "Why",
+      "approx": 1937.044,
       "layer": "A"
     },
     {
       "id": "proof-required",
       "file": "compositions/scenes/part-15/proof-required.html",
       "cue": "Humans",
-      "approx": 1966.9,
+      "approx": 1944.724,
       "layer": "A",
       "wishonia": [
         {
@@ -51,28 +51,28 @@
       "id": "recovery-trial",
       "file": "compositions/scenes/part-15/recovery-trial.html",
       "cue": "The",
-      "approx": 1975,
+      "approx": 1952.924,
       "layer": "B"
     },
     {
       "id": "postwar-boom",
       "file": "compositions/scenes/part-15/postwar-boom.html",
       "cue": "After",
-      "approx": 2003.3,
+      "approx": 1981.204,
       "layer": "B"
     },
     {
       "id": "empty-podium",
       "file": "compositions/scenes/part-15/empty-podium.html",
       "cue": "Even",
-      "approx": 2031.4,
+      "approx": 2009.284,
       "layer": "B"
     },
     {
       "id": "sixty-five-years",
       "file": "compositions/scenes/part-15/sixty-five-years.html",
       "cue": "years.",
-      "approx": 2059.1,
+      "approx": 2037.004,
       "layer": "A",
       "wishonia": [
         {
@@ -138,23 +138,15 @@
     },
     {
       "scene": "proof-required",
-      "cue": "proof",
-      "n": 2,
-      "sfx": "click",
-      "volume": 0.6
-    },
-    {
-      "scene": "proof-required",
-      "cue": "before",
-      "n": 2,
+      "cue": "required",
       "sfx": "boom",
       "volume": 0.55
     },
     {
       "scene": "proof-required",
       "cue": "starting:",
-      "sfx": "sizzle",
-      "volume": 0.3
+      "sfx": "click",
+      "volume": 0.6
     },
     {
       "scene": "recovery-trial",
@@ -435,22 +427,25 @@
     },
     {
       "scene": "postwar-boom",
-      "cue": "exploding",
-      "offset": 0.1,
+      "cue": "people",
+      "n": 3,
+      "offset": 0.0,
       "sfx": "pop",
       "volume": 0.35
     },
     {
       "scene": "postwar-boom",
-      "cue": "exploding",
-      "offset": 0.25,
+      "cue": "people",
+      "n": 3,
+      "offset": 0.15,
       "sfx": "pop",
       "volume": 0.35
     },
     {
       "scene": "postwar-boom",
-      "cue": "exploding",
-      "offset": 0.4,
+      "cue": "people",
+      "n": 3,
+      "offset": 0.3,
       "sfx": "pop",
       "volume": 0.35
     },

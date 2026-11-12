@@ -1,0 +1,87 @@
+<template id="fire-department-water-template">
+  <!-- fire-department-water · collage (Part 12, scene 6; plate nih-street). A bar chart of the National Institutes of
+       Health's budget, $47 billion a year, the Scientist beside it. "three point three percent": the CLINICAL TRIALS bar
+       grows to a stub, and on "trials." she shrinks to fit on it. "ninety-seven percent": the other bar shoots up the
+       frame, and fills with basic research (a man at a microscope), administration (a pile of forms) and a
+       whole office building, wedged in. "fire department": the camera travels down the street to a burning house, and
+       the NIH fire truck limps up with an office building strapped on its roof; a firefighter hops off and aims his hose:
+       it is a water pistol; "water.": one tiny puff, and the house falls
+       into a smoking heap. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="fire-department-water" data-width="1920" data-height="1080" data-start="0" data-duration="18.36">
+    <div id="fire-department-water-weave"></div>
+    <div id="fire-department-water-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "fire-department-water", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The chart on the left, the street running right from it on the ground line G.
+    var G = V ? 1380 : 860;
+    var CH = KIT.collage.axes({ box: V ? [170, 380, 830, G] : [380, 200, 1180, G], x: [0, 3, 3], y: [0, 100, 100], xLabels: 7, yLabels: 70, unit: "%",
+      title: "NIH BUDGET", subtitle: "$47 BILLION A YEAR", size: V ? 44 : 38 });
+    var BW = V ? 230 : 260, X1 = CH.pt(0.9, 0)[0], X2 = CH.pt(2.1, 0)[0];
+    var TOP97 = CH.pt(2.1, 96.7)[1], BAR_H = G - TOP97, BAR3 = G - CH.pt(0.9, 3.3)[1];
+    var HOUSE = V ? 2600 : 3200, HK = (V ? 860 : 640) / SZ["burning-house"][1], TRUCK = HOUSE - (V ? 640 : 700), TK = (V ? 340 : 300) / SZ["fire-truck"][1];
+    var cy = function (s) { return G - 440 / s; };
+    var EXT = [HOUSE - (V ? 420 : 460), G - 60], FFK = (V ? 480 : 430) / SZ["firefighter"][1];
+    var TIP = [EXT[0] + (215 - 114) * FFK, G - (670 - 40) * FFK];         // the water pistol's muzzle
+    var views = V ? { chart: [520, 960, 1], house: [HOUSE - 260, cy(0.8), 0.8], ext: [TIP[0], TIP[1] + 60, 2.4] } : { chart: [900, 540, 1], house: [HOUSE - 360, 520, 1], ext: [TIP[0] + 80, TIP[1] + 40, 2.4] };
+    var SCK = (V ? 700 : 560) / SZ["scientist-flask"][1];
+    var cast = {
+      sci: { art: "scientist-flask", x: V ? 1000 : 1460, y: G, anchor: "bottom", pivot: "bottom", scale: SCK },
+      // the 97%: basic research, administration, buildings
+      research: { art: "microscope-man", x: X2 - BW * 0.1, y: G - 8, anchor: "bottom", pivot: "bottom", scale: 0.33 * BAR_H / SZ["microscope-man"][1], hidden: true },
+      office: { art: "office-building", x: X2, y: TOP97 + 0.68 * BAR_H, anchor: "bottom", pivot: "bottom", scale: (BW * 0.8) / SZ["office-building"][0], hidden: true },
+      // the street
+      house: { art: "burning-house", x: HOUSE, y: G, anchor: "bottom", pivot: "bottom", scale: HK },
+      heap: { art: "burning-house-heap", x: HOUSE, y: G, anchor: "bottom", pivot: "bottom", scale: 0.8 * SZ["burning-house"][1] * HK / SZ["burning-house-heap"][1], hidden: true },
+      // the NIH fire truck, with the office building strapped on its roof, comes from the chart end of the street
+      truck: { art: "fire-truck", x: TRUCK - 900, y: G, anchor: "bottom", pivot: "bottom", scale: TK, hidden: true },
+      roof: { art: "office-building", x: TRUCK - 900 + 20, hidden: true, y: G - 0.78 * SZ["fire-truck"][1] * TK, anchor: "bottom", pivot: "bottom", scale: (V ? 300 : 270) / SZ["office-building"][1] },
+      ext: { art: "firefighter", x: EXT[0], y: G, anchor: "bottom", pivot: "bottom", scale: FFK, hidden: true },
+      squirt: { art: "cloud-puff", x: TIP[0] + 25, y: TIP[1], scale: 0.1, hidden: true },
+    };
+    var PUFF = cue("water.") + 0.05, FALL = PUFF + 0.55;
+    var beats = [
+      { at: 0, do: "chart", chart: CH, enter: "top" },
+      // 3.3% on clinical trials: a stub, and the Scientist shrinks to fit on it
+      { on: "three", do: "bar", id: "trials", chart: CH, x: 0.9, to: 3.3, width: BW, text: "TRIALS 3.3%", size: V ? 34 : 34, dur: 0.5 },
+      { on: "trials.", offset: -0.3, do: "move", who: "sci", to: [X1 + 0.38 * BW, G - BAR3 - 0.5 * SCK * SZ["scientist-flask"][1]], scale: 105 / SZ["scientist-flask"][1], dur: 0.45, arc: 120 },
+      { on: "trials.", offset: 0.2, do: "shiver", who: "sci", dur: 0.4, amp: 1, rot: 3 },
+      // the other ninety-seven percent
+      { on: "ninety-seven", do: "bar", id: "rest", chart: CH, x: 2.1, to: 96.7, width: BW, text: "EVERYTHING ELSE 97%", size: V ? 34 : 34, dur: 0.8 },
+      { on: "research,", do: "pop", who: "research", squash: true },
+      { on: "administration,", do: "pile", id: "forms", art: "pdf", x: X2 + BW * 0.18, y: G - 8, height: 0.09 * BAR_H, heap: 2, spread: 0.12 * BAR_H, count: 9, dur: 0.7, tilt: 10 },
+      { on: "buildings.", do: "stamp", who: "office", from: 1.8, shake: 12 },
+      { on: "buildings.", offset: 0.3, do: "shiver", who: ["research", "office"], dur: 0.4, amp: 3, rot: 2 },
+      // the fire department: down the street to the fire
+      { on: "like", do: "camera", view: "house", dur: 1.0 },
+      { on: "fire", do: "shiver", who: "house", dur: PUFF + 0.5 - cue("fire"), amp: 2, rot: 0.6 },
+      // the truck limps up, its tyres squashed under the building on its roof
+      { on: "department", do: "show", who: ["truck", "roof"] },
+      { on: "department", do: "move", who: ["truck", "roof"], by: [900, 0], dur: cue("three", 3) - cue("department") - 0.1, ease: "smooth" },
+      { on: "department", do: "bob", who: ["truck", "roof"], y: 6, r: 1.5, speed: 5, until: cue("three", 3) },
+      { on: "three", n: 3, do: "pop", who: "ext", squash: true },
+      { on: "percent", n: 3, do: "camera", view: "ext", dur: 0.5 },
+      { on: "budget", n: 2, do: "hop", who: "ext", height: 10 },
+      { on: "water.", do: "nudge", who: "ext", by: [8, 0] },
+      { at: PUFF, do: "pop", who: "squirt" },
+      { at: PUFF + 0.3, do: "pop", who: "squirt", out: true },
+      { at: FALL - 0.25, do: "camera", view: "house", dur: 0.3 },
+      { at: FALL, do: "swap", who: "house", to: "heap" },
+      { at: FALL, do: "shake", frames: 4, y: 10 },
+    ];
+    KIT.collage({ id: ID, seed: 1206, plate: [-1000, -1000, 5000, 3000], views: views, view: "chart", cast: cast, beats: beats });
+  </script>
+</template>

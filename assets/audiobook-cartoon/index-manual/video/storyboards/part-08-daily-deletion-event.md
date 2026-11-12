@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:12.6
+duration: 1:11.5
 message: "Diseases delete 150,000 humans every day, and every one of those failures is a solvable engineering problem that humans have not made a priority."
 arc: Title card (an eraser rubs out a passer-by) → the Grim Reaper's deli counter, NOW SERVING 150,000, EVERY 24 HOURS, where a bribe buys nothing and a bug in the meat software is enough → the same deli's calendar sheds forty days while the queue fills in claim forms to the death, then every page is the eleventh of September and the missile goes for the oil → YOU in his armchair, his appointment waiting next door and the NOW SERVING sign coming down behind his chair → Wishonia's readout fixes a human with a wrench, part by part, and she pops the thought that humans would make it a priority
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 8, "The Problem: The Daily Deletion Event"
-audio: index-manual.cbaf659d.mp3, 14:58.0 to 16:10.6
+audio: index-manual.7ce6b2b2.mp3, 14:33.7 to 15:45.2
 version: v3
 ---
 
@@ -37,7 +37,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "The Problem. The Daily Deletion Event."
-- time: 14:58.0 to 15:01.9 (3.9 s)
+- time: 14:33.7 to 14:37.9 (4.3 s)
 - voiceover: "The Problem. The Daily Deletion Event."
 - layer: A, title card
 - status: planned
@@ -55,7 +55,7 @@ Sound: a whirr; an eraser scratch on "Deletion"; a pop as the bag tips.
 - act: The daily number
 - transition_in: cut (in from the title card's black, on the sign)
 - cue: "One hundred and fifty thousand"
-- time: 15:01.9 to 15:11.4 (9.5 s)
+- time: 14:37.9 to 14:47.2 (9.3 s)
 - voiceover: "One hundred and fifty thousand humans permanently stop every twenty-four hours from diseases that are basically just bugs in your meat software."
 - layer: B, plate deli
 - status: planned
@@ -76,7 +76,7 @@ Sound: a clatter of flip digits and a clank as they stop; a ka-ching for the bri
 - act: The daily number
 - transition_in: same plate (no seam): the camera travels on from deletion-board's last framing
 - cue: "That's one Holocaust every forty days"
-- time: 15:11.4 to 15:23.0 (11.5 s)
+- time: 14:47.2 to 14:59.1 (11.8 s)
 - voiceover: "That's one Holocaust every forty days, except with fewer Nazis and more insurance paperwork (though some would argue the paperwork is worse; at least the Nazis were straightforward about the killing part)."
 - layer: B, plate deli
 - status: planned
@@ -98,7 +98,7 @@ Sound: chalk squeaks; a flutter of tearing pages; a stamp for 40 DAYS; a thunk f
 - act: The daily number
 - transition_in: same plate (no seam): the camera travels on from holocaust-every-40-days' last framing
 - cue: "That's also fifty nine-elevens"
-- time: 15:23.0 to 15:30.9 (8.0 s)
+- time: 14:59.1 to 15:07.1 (8.0 s)
 - voiceover: "That's also fifty nine-elevens every single day, except nobody invades anyone about it because diseases don't have oil."
 - layer: B, plate deli
 - status: planned
@@ -118,7 +118,7 @@ Sound: chalk squeaks; a stamp for ×50; a paper flip per day; a sniff; a pop for
 - act: One body
 - transition_in: cut
 - cue: "Your body is quietly falling apart"
-- time: 15:30.9 to 15:46.0 (15.1 s)
+- time: 15:07.1 to 15:20.8 (13.8 s)
 - voiceover: "Your body is quietly falling apart. Right now, as you read this sentence, something inside you is breaking. You don't know which part yet. You won't know until a doctor sits you down and says a word that rearranges the rest of your life."
 - layer: B, plate living-room
 - status: planned
@@ -139,7 +139,7 @@ Sound: a tiny tick as the button lands; a page turn; a faint crack; a soft flutt
 - act: One body
 - transition_in: same plate (no seam): the camera travels on from falling-apart's last framing
 - cue: "Somewhere in you, right now"
-- time: 15:46.0 to 15:58.0 (12.0 s)
+- time: 15:20.8 to 15:32.1 (11.2 s)
 - voiceover: "Somewhere in you, right now, cells are copying themselves wrong, proteins are misfolding, tissue is quietly scarring. You are dissolving on a schedule you can't see."
 - layer: B, plate living-room
 - status: planned
@@ -161,7 +161,7 @@ Sound: a soft pop as the cell splits; a squeak as the protein knots; a clank as 
 - act: Solvable
 - transition_in: cut
 - cue: "You're a meat robot"
-- time: 15:58.0 to 16:04.7 (6.7 s)
+- time: 15:32.1 to 15:38.3 (6.2 s)
 - voiceover: "You're a meat robot with worn-out parts. Every one of these failures is a solvable engineering problem."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; excited-ee + body-presenting on "solvable"; smirk-smile + body-hands-hips on "problem."
@@ -181,7 +181,7 @@ Sound: a beep per red part; a boing for the kneecap; a ratchet click per wrench.
 - act: Solvable
 - transition_in: same shot (no seam): it starts on meat-robot's last frame
 - cue: "You'd think humans would prioritize"
-- time: 16:04.7 to 16:10.6 (5.9 s)
+- time: 15:38.3 to 15:45.2 (6.8 s)
 - voiceover: "You'd think humans would prioritize solving these problems. That thought would be incorrect."
 - layer: A, host
 - wishonia: big, lookright-smile + body-idle; skeptical-closed + body-idle on "That"; smirk-closed + body-point-right on "incorrect."

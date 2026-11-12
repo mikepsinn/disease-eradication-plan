@@ -116,9 +116,15 @@
     lookright: ["smile", "closed", "open", "oh"],
     blink: ["smile"],
   };
+  // Nearest shape for a mouth this expression doesn't have, so she doesn't speak with her lips shut.
+  var TALK_SHAPES = { open: ["oh", "ee", "small"], oh: ["open", "small", "ee"], ee: ["small", "open", "oh"], small: ["ee", "oh", "open"] };
+  function canTalk(expression) {
+    return EXPRESSION_MOUTHS[expression].filter(function (m) { return TALK_SHAPES[m]; }).length >= 2;
+  }
   function getHeadName(expression, viseme) {
     var available = EXPRESSION_MOUTHS[expression];
-    var mouth = available.indexOf(viseme) >= 0 ? viseme : "closed";
+    var near = (TALK_SHAPES[viseme] || []).filter(function (m) { return available.indexOf(m) >= 0; })[0];
+    var mouth = available.indexOf(viseme) >= 0 ? viseme : near || "closed";
     if (available.indexOf(mouth) < 0) mouth = available[0];
     return expression + "-" + mouth;
   }
@@ -136,7 +142,16 @@
     var st = lastAt(P.states, t, "t");
     var m = lastAt(P.mouth, t);
     var v = m ? m[1] : null;
-    var head = v === null ? st.expr + "-" + st.rest : getHeadName(st.expr, v);
+    // A smirk, side-eye or eye-roll has at most one speaking mouth, which reads as a frozen face: she speaks with her last
+    // face that can, and the expression shows in the pauses.
+    var expr = st.expr;
+    if (v !== null && !canTalk(expr)) {
+      expr = "happy";
+      for (var k = P.states.indexOf(st) - 1; k >= 0 && P.states[k].scene === st.scene; k--) {
+        if (canTalk(P.states[k].expr)) { expr = P.states[k].expr; break; }
+      }
+    }
+    var head = v === null ? st.expr + "-" + st.rest : getHeadName(expr, v);
     for (var i = 0; i < P.blinks.length; i++) {
       var b = P.blinks[i];
       if (t >= b[0] && t < b[0] + b[1]) head = "blink-smile";
@@ -158,6 +173,7 @@
     var sc = scene(opts.scene);
     var w = opts.w;
     var heads = { "blink-smile": 1 };
+    EXPRESSION_MOUTHS.happy.forEach(function (m) { heads["happy-" + m] = 1; });
     var bodies = {};
     var first = lastAt(P.states, sc.start, "t");
     P.states.forEach(function (st) {

@@ -1,0 +1,223 @@
+<template id="greed-ropes-template">
+  <!-- greed-ropes · collage (Part 26). The bit: four selfish people each chase their own
+       bait on a pole and accidentally drag the cart of cures. A tug of war on one road, each one big in turn: the Fat Cat
+       after 272% (he swells), the Politician after his own face in a mirror (the grin cracks it), sick YOU after FREE
+       medicine (he coughs a germ at it and it swings back and bonks him), the weapons factory after a bill (its seal flips
+       to a cross; it does not care). "from).": the whole road, the cart going nowhere. "aligns": two of them leap the cart, the
+       ropes swing into one line and snap taut, and it rolls: germs go flat, the Reaper puts out one palm, nobody looks, and
+       he goes under the wheel, charred and blinking. "stupid.": the Fat Cat walks face first into UTOPIA. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="greed-ropes" data-width="1920" data-height="1080" data-start="0" data-duration="27.94">
+    <div id="greed-ropes-weave"></div>
+    <div id="greed-ropes-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, Z = KIT.collage.SIZES, ID = "greed-ropes", G = 1000;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var PK = 1.35, CK = 2.6, FATK = 1.16, NAMES = ["fat", "pol", "you", "wm"];
+    // the tug of war, then single file ahead of the cart with the Fat Cat in front
+    var X = V ? { fat: -1750, pol: -950, you: 950, wm: 1750 } : { fat: -2750, pol: -1300, you: 1300, wm: 2650 };
+    var F2 = V ? { you: 800, wm: 1150, pol: 1500, fat: 1850 } : { you: 1050, wm: 1620, pol: 2190, fat: 2760 };
+    var LEFT = { fat: true, pol: true };
+    var PT = {
+      fat: { art: "fat-cat-harness", tip: [399, 113], back: [85, 260], face: [312, 191] },
+      pol: { art: "politician-harness", tip: [359, 107], back: [90, 270] },
+      you: { art: "you-harness", tip: [334, 100], back: [65, 260], mouth: [235, 222] },
+      // the weapons factory, as tall as the man it replaced (602 art px at PK). Its own rope runs off its left edge (back);
+      // its pole (wmPole) is mounted on its roof at pole
+      wm: { art: "factory-harness", k: PK * 602 / 501, back: [4, 328], pole: [300, 175] },
+    };
+    var ptOn = function (n, x, left, p, k) {
+      var a = Z[PT[n].art], q0 = left ? a[0] - p[0] : p[0], kk = k || PT[n].k || PK;
+      return [x + (q0 - a[0] / 2) * kk, G - (a[1] - p[1]) * kk];
+    };
+    var cartPt = function (p) { var a = Z["treaty-cart"]; return [(p[0] - a[0] / 2) * CK, G - (a[1] - p[1]) * CK]; };
+    var puller = function (n, left, x, extra) {
+      var a = PT[n], pts = {};
+      Object.keys(a).forEach(function (k) { if (k !== "art" && k !== "k") pts[k] = left ? [Z[a.art][0] - a[k][0], a[k][1]] : a[k]; });
+      var o = { art: left ? a.art + "-left" : a.art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: a.k || PK, points: pts };
+      if (left) o.faces = "left";
+      for (var k in extra || {}) o[k] = extra[k];
+      return o;
+    };
+
+    // ── The cast, back to front ──
+    var C = {};
+    // the road
+    var RK = 3, RW = (Z.road[0] - 14) * RK, RCLIP = [[7, 0], [Z.road[0] - 7, 0], [Z.road[0] - 7, Z.road[1]], [7, Z.road[1]]], ROADS = [];
+    for (var i = 0; i < 18; i++) { ROADS.push("road" + i); C["road" + i] = { art: "road", x: -3700 + i * RW, y: G + 10, scale: RK, clip: RCLIP }; }
+    // the ropes: real rope, N lengths end to end. Each swings to its place in the single file on "aligns"
+    var TIE = { fat: [8, 110], pol: [14, 178], you: [300, 110], wm: [398, 186] }, TONGUE = cartPt([398, 186]), N = 7, ROPES = {};
+    NAMES.forEach(function (n) {
+      var a = cartPt(TIE[n]), b = ptOn(n, X[n], LEFT[n], PT[n].back), a2 = TONGUE, b2 = ptOn(n, F2[n], false, PT[n].back);
+      var L = Math.hypot(b[0] - a[0], b[1] - a[1]), L2 = Math.hypot(b2[0] - a2[0], b2[1] - a2[1]), k = L / N / 205, k2 = L2 / N / 205;
+      ROPES[n] = [];
+      for (var j = 0; j < N; j++) {
+        var u = (j + 0.5) / N, nm = "r" + n + j;
+        C[nm] = { art: "rope", x: a[0] + (b[0] - a[0]) * u, y: a[1] + (b[1] - a[1]) * u, scale: k };
+        ROPES[n].push({ nm: nm, ang: Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI, to: [a2[0] + (b2[0] - a2[0]) * u, a2[1] + (b2[1] - a2[1]) * u],
+          ang2: Math.atan2(b2[1] - a2[1], b2[0] - a2[0]) * 180 / Math.PI, s: k2 / k, arc: LEFT[n] ? 900 * Math.sin(Math.PI * u) : 0 });
+      }
+    });
+
+    // ── When things happen ──
+    var TA = cue("aligns"), SW = 0.5, TP = cue("perfectly"), T0 = cue("accidentally"), T1 = cue("stupid"), VEL = V ? 620 : 800, DX = VEL * (T1 - T0);
+    var tS1 = cue("save"), tS2 = cue("humanity"), tD = cue("death") + 0.25, tR = cue("rich", 2);
+    // the world scrolls left from T0: where a thing must stand to reach x at time t
+    var world = function (x, t) { return x + VEL * (t - T0); };
+    var WHEEL = cartPt([300, 200])[0];
+
+    var germ = function (t) { return { art: "germ-grin", x: world(WHEEL, t), y: G + 30, anchor: "bottom", pivot: "bottom", scale: 460 / Z["germ-grin"][1], hidden: true }; };
+    C.reaper = { hidden: true, art: "reaper-stop", x: world(WHEEL + 110, tD), y: G + 20, anchor: "bottom", pivot: "bottom", scale: 1.25, eyes: [[172, 138], [205, 138]], eyeSize: 34 };
+    C.scythe = { art: "scythe-bent", x: world(WHEEL - 240, tD), y: G + 40, anchor: "bottom", pivot: "bottom", scale: 1.05, hidden: true };
+    C.g1 = germ(tS1); C.g2 = germ(tS2);
+    C.cart = { art: "treaty-cart", x: 0, y: G + 12, anchor: "bottom", pivot: "bottom", scale: CK };
+    // the factory's fishing pole, cut from the old harness drawing (its butt, at POLEB, hides behind the roof); it rides on wm.pole
+    var POLEB = [122, 178], POLE0 = ptOn("wm", X.wm, false, PT.wm.pole);
+    C.wmPole = { art: "weapons-maker-harness", x: POLE0[0], y: POLE0[1], anchor: POLEB, pivot: POLEB, scale: PT.wm.k, points: { tip: [396, 108] },
+      clip: [[60, 0], [413, 0], [413, 124], [380, 124], [380, 30], [330, 22], [280, 30], [238, 45], [205, 68], [178, 95], [160, 125], [147, 155], [132, 180], [60, 180]] };
+    // the pullers, and their right-facing selves for after the turn
+    C.fat = puller("fat", true, X.fat); C.pol = puller("pol", true, X.pol); C.you = puller("you", false, X.you); C.wm = puller("wm", false, X.wm);
+    C.pol2 = puller("pol", false, X.pol, { hidden: true });
+    // the baits on the strings. BAIT: width, and how far ahead of the string its middle hangs, clear of the face
+    var BAIT = { fat: [400, 180], pol: [320, 185], you: [215, 60], wm: [430, 185] };
+    var baitH = function (b) { return Z[C[b].art][1] * C[b].scale; };
+    var bait = function (art, w, extra) { var o = { art: art, x: 0, y: 0, pivot: "top", scale: w / Z[art][0], hidden: true }; for (var k in extra || {}) o[k] = extra[k]; return o; };
+    C.bfat = bait("bond-cert", BAIT.fat[0]);
+    C.bpol = bait("vain-mirror", BAIT.pol[0]); C.bpol2 = bait("vain-mirror-cracked", BAIT.pol[0]);
+    C.byou = bait("medicine-bottle", BAIT.you[0], { label: { text: "FREE", at: [71, 232], width: 112, size: 60 } });
+    C.bwm = bait("bill-war-flat", BAIT.wm[0]); C.bwm2 = bait("bill-med-flat", BAIT.wm[0]);
+    var MOUTH = ptOn("you", X.you, false, PT.you.mouth);
+    C.cough = { art: "germ-grin", x: MOUTH[0], y: MOUTH[1], scale: 1.05, hidden: true };
+    C.fat2 = puller("fat", false, X.fat, { hidden: true, scale: PK * FATK }); // in front of the mirror behind him
+    // UTOPIA: the sign the Fat Cat walks into, its post where his face stops
+    var SK = 3.6, POST = F2.fat + 250;
+    C.sign = { art: "sign-board", x: POST + DX, y: G + 20, anchor: [107, 347], pivot: [107, 347], scale: SK,
+      label: [{ text: "UTOPIA", at: [107, 76], width: 165, size: 170 }, { text: "1 MILE", at: [107, 112], width: 90, size: 70 }] };
+    // the bills that bounce out of the cart into their pockets
+    var BILLS = ["k0", "k1", "k2", "k3", "k4", "k5", "k6", "k7"], BED = cartPt([190, 60]);
+    BILLS.forEach(function (b, i) { C[b] = { art: "bill-med-flat", x: BED[0] + (i - 4) * 70, y: BED[1], scale: 1.5, hidden: true }; });
+
+    // ── The beats ──
+    var hang = function (b, on, n, dir, t, dur) { return { at: t, do: "move", who: b, to: (on === "wm" ? "wmPole" : on) + ".tip", by: [dir * BAIT[n][1], baitH(b) / 2 + 4], dur: dur || 0.01, ease: "smooth" }; };
+    var swing = function (b, t) { return { at: t, do: "bob", who: b, y: 5, r: 7, speed: 2.4, fade: 0 }; };
+    var beats = [];
+    NAMES.forEach(function (n) { ROPES[n].forEach(function (r) { beats.push({ at: -1, do: "hinge", who: r.nm, angle: r.ang }); }); });
+    var PSZ = Z["weapons-maker-harness"];
+    beats.push({ at: -1, do: "move", who: "wmPole", to: "wm.pole", by: [(PSZ[0] / 2 - POLEB[0]) * PT.wm.k, (PSZ[1] / 2 - POLEB[1]) * PT.wm.k], dur: 0.01 });
+    // he swells on "very" (before the walk, so it doesn't straighten the walk)
+    beats.push({ on: "very", n: 1, do: "move", who: "fat", by: [0, 0], scale: FATK, dur: 0.35, ease: "smooth" });
+    // they all walk from the start and get nowhere
+    beats.push({ at: 0, do: "bob", who: ["fat", "pol", "you", "wm"], y: 9, r: 1.8, speed: 3.6, fade: 0 });
+    [["bfat", "fat", "fat", -1], ["bpol", "pol", "pol", -1], ["byou", "you", "you", 1], ["bwm", "wm", "wm", 1]].forEach(function (x) {
+      beats.push({ at: 0, do: "show", who: x[0] }, hang(x[0], x[1], x[2], x[3], 0), swing(x[0], 0));
+    });
+
+    // 272%. "greedy": he lunges, and the bond, being on his own pole, goes with him
+    beats.push({ on: "percent", do: "stamp", id: "pct", who: "bfat", text: "272%", spot: [159, 100], size: 110, tilt: -6 },
+      { on: "percent", offset: 0.3, do: "stamp", id: "pctP", who: "bfat", text: "PROJECTED", spot: [159, 182], size: 34, tilt: -6 },
+      { on: "greedy", do: "nudge", who: "fat", by: [90, -14] }, { on: "greedy", offset: 0.42, do: "nudge", who: "fat", by: [90, -14] });
+    beats.push({ at: 4.55, do: "camera", view: "pol", dur: 0.55 });
+    // the Politician gazes at the mirror. "very": he puckers up. "vain": the grin cracks the glass; he goes on admiring it
+    beats.push(hang("bpol2", "pol", "pol", -1, 0), swing("bpol2", 0),
+      { on: "very", n: 2, do: "nudge", who: "pol", by: [60, -6] },
+      { on: "vain", do: "glow", who: "bpol", dur: 0.3, size: 420 },
+      { on: "vain", offset: 0.3, do: "swap", who: "bpol", to: "bpol2" },
+      { on: "vain", offset: 0.3, do: "shiver", who: "bpol2", dur: 0.3, amp: 6, rot: 5 });
+    beats.push({ at: 8.2, do: "camera", view: "you", dur: 0.75 });
+    // YOU coughs a germ at the bottle; it swings away and comes back and bonks him; the germ walks off grinning
+    var BOT = [X.you + (333 - 174.5) * PK + BAIT.you[1], G - (579 - 108) * PK + 180];
+    beats.push({ on: "sick", do: "pop", who: "cough", squash: true },
+      { on: "sick", do: "nudge", who: "you", by: [-40, 8] },
+      { on: "sick", offset: 0.02, do: "move", who: "cough", to: BOT, dur: 0.2 },
+      { on: "sick", offset: 0.22, do: "hinge", who: "byou", angle: -38, frames: 1, hold: 0.25 },
+      { on: "sick", offset: 0.22, do: "move", who: "cough", to: [BOT[0] + 150, G - 150], dur: 0.45, arc: 180 },
+      { on: "sick", offset: 0.68, do: "hinge", who: "byou", angle: 16, frames: 1, hold: 0.1 },
+      { on: "sick", offset: 0.68, do: "shiver", who: "you", dur: 0.3, amp: 9, rot: 4 },
+      { on: "sick", offset: 0.95, do: "pop", who: "cough", out: true });
+    beats.push({ at: 11.8, do: "camera", view: "wm", dur: 0.55 });
+    // the weapons factory. "money": it lunges. "care": the seal flips to a cross; it hops and lunges just the same
+    beats.push(hang("bwm2", "wm", "wm", 1, 0), swing("bwm2", 0),
+      { on: "money", do: "nudge", who: "wm", by: [90, -14] },
+      { on: "care", do: "swap", who: "bwm", to: "bwm2" },
+      { on: "care", offset: 0.3, do: "hop", who: "wm", height: 34 },
+      { on: "comes", do: "nudge", who: "wm", by: [90, -14] });
+    // "from).": the whole road, four men and a cart going nowhere
+    var WIDE = cue("from") + 0.3;
+    beats.push({ at: WIDE, do: "camera", view: "wide", dur: 0.85 },
+      { at: WIDE + 0.75, do: "shiver", who: ["cart"], dur: 0.9, amp: 8, rot: 1.2 },
+      { at: WIDE + 0.75, do: "shiver", who: ["fat", "pol", "you", "wm"], dur: 0.9, amp: 10, rot: 2 });
+
+    // "aligns": the two on the left turn round and leap the cart; the ropes swing over it into one line
+    beats.push({ at: TA, do: "swap", who: "fat", to: "fat2" }, { at: TA, do: "swap", who: "pol", to: "pol2" });
+    var who2 = { fat: "fat2", pol: "pol2", you: "you", wm: "wm" }, bait2 = { fat: "bfat", pol: "bpol2", you: "byou", wm: "bwm2" };
+    NAMES.forEach(function (n) {
+      var w = who2[n], dx = F2[n] - X[n];
+      beats.push({ at: TA, do: "move", who: w, by: [dx, 0], dur: SW, ease: "smooth", arc: LEFT[n] ? 1000 : 60 });
+      beats.push(hang(bait2[n], w, n, 1, TA, SW * 0.5), swing(bait2[n], TA + 0.01));
+      ROPES[n].forEach(function (r) {
+        beats.push({ at: TA, do: "move", who: r.nm, to: r.to, dur: SW, ease: "smooth", turn: r.ang2, scale: r.s, arc: r.arc });
+      });
+      beats.push({ at: TP, do: "hop", who: w, height: 60 });
+      beats.push({ at: TA + SW, do: "bob", who: w, y: 12, r: 2, speed: 5.2, fade: 0.1, until: T1 });
+    });
+    beats.push({ at: TA, do: "camera", view: "file", dur: 0.7 });
+    // "perfectly": snap, taut. "accidentally": the cart lurches and the world starts to go by
+    beats.push({ at: TP, do: "shake", y: 14, frames: 4 }, { at: TP, do: "hinge", who: "cart", angle: -3, frames: 1, hold: 0.25 },
+      { at: T0, do: "nudge", who: "cart", by: [90, 0] }, { at: T0, do: "shake", x: 14 },
+      { at: T0 + 0.1, do: "bob", who: "cart", y: 8, r: 0.7, speed: 6, fade: 0.1, until: T1 });
+    var WORLD = ROADS.concat(["reaper", "scythe", "g1", "g2", "sign"]);
+    beats.push({ at: T0, do: "show", who: "reaper" }, { at: T0, do: "move", who: WORLD, by: [-DX, 0], dur: T1 - T0 });
+    // close on the front wheel for the germs
+    beats.push({ at: tS1 - 0.75, do: "camera", view: "wheel", dur: 0.45 });
+    // two germs pop up in the road and go flat
+    [["g1", tS1], ["g2", tS2]].forEach(function (g) {
+      beats.push({ at: g[1] - 0.5, do: "pop", who: g[0], squash: true }, { at: g[1], do: "flatten", who: g[0] }, { at: g[1], do: "shake", y: 10 });
+    });
+    // the Reaper has been standing in the road, palm out, while all four walk past him; push in; the wheel takes him
+    beats.push({ on: "cure", offset: -0.1, do: "camera", view: "hit", dur: 0.4 },
+      { at: tD, do: "flatten", who: "reaper" }, { at: tD, do: "char", who: "reaper" }, { at: tD, do: "boom", shake: 22, flash: 0 },
+      { at: tD + 0.02, do: "hop", who: "cart", height: 40 },
+      { on: "while", do: "camera", view: "behind", dur: 0.35 },
+      { on: "while", offset: 0.1, do: "pop", who: "scythe", squash: true },
+      { on: "trying", offset: 0.05, do: "blink", who: "reaper" }, { on: "get", do: "blink", who: "reaper" },
+      { on: "get", offset: -0.1, do: "camera", view: "file", dur: 0.35 });
+    // "rich": a bump, and the cures' money bounces out into four pockets
+    beats.push({ at: tR, do: "hop", who: "cart", height: 60 }, { at: tR, do: "shake", y: 8 });
+    BILLS.forEach(function (b, i) {
+      var n = NAMES[i % 4];
+      beats.push({ at: tR + 0.03 * i, do: "show", who: b },
+        { at: tR + 0.03 * i, do: "move", who: b, to: who2[n], dur: 0.55, arc: 500, turn: 300 + 40 * i },
+        { at: tR + 0.6 + 0.03 * i, do: "pop", who: b, out: true });
+    });
+    // "stupid": face first into the post; the other three walk into his back
+    beats.push({ on: "Humans", n: 2, offset: -0.2, do: "camera", view: "smack", dur: 0.55 },
+      { at: T1, do: "nudge", who: "fat2", by: [-70, 0] }, { at: T1, do: "shiver", who: ["sign", "fat2"], dur: 0.45, amp: 9, rot: 2 }, { at: T1, do: "shake", x: 16 },
+      { at: T1 + 0.18, do: "nudge", who: "pol2", by: [150, 0] }, { at: T1 + 0.2, do: "nudge", who: "fat2", by: [24, 0] },
+      { at: T1 + 0.34, do: "nudge", who: "you", by: [150, 0] }, { at: T1 + 0.36, do: "nudge", who: ["pol2", "fat2"], by: [24, 0] },
+      { at: T1 + 0.5, do: "nudge", who: "wm", by: [150, 0] }, { at: T1 + 0.52, do: "nudge", who: ["you", "pol2", "fat2"], by: [24, 0] });
+
+    // Close views fill the frame with one puller; 9:16 keeps the ground above the captions.
+    var cy = function (s) { return G - 420 / s; };
+    var views = V ? {
+      fat: [X.fat - 190, cy(1.15), 1.15], pol: [X.pol - 140, cy(1.15), 1.15], you: [X.you + 70, cy(1.15), 1.15], wm: [X.wm + 320, cy(0.9), 0.9],
+      wide: [0, 20, 0.245], file: [960, 330, 0.362], wheel: [380, cy(0.8), 0.8], hit: [430, cy(1), 1], behind: [-320, cy(0.8), 0.8], smack: [POST - 40, cy(0.78), 0.78],
+    } : {
+      fat: [X.fat - 180, 640, 1], pol: [X.pol - 150, 660, 1], you: [X.you + 120, 660, 1], wm: [X.wm + 190, 660, 1], wheel: [430, 575, 0.8],
+      wide: [0, 200, 0.29], file: [1460, 367, 0.48], hit: [420, 660, 1], behind: [-320, 580, 0.8], smack: [POST - 40, 575, 0.8],
+    };
+
+    KIT.collage({ id: ID, seed: 2603, plate: V ? [-2600, -4200, 3700, 4300] : [-3400, -1500, 4000, 2500], views: views, view: "fat", cast: C, beats: beats });
+  </script>
+</template>

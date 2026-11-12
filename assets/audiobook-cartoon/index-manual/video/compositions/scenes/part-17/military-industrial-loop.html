@@ -1,0 +1,144 @@
+<template id="military-industrial-loop-template">
+  <!-- military-industrial-loop · collage (plate two-loops, scenes 19 and 20 as one plate). The bit: the same loop twice.
+       Eisenhower at his podium names the loop beside him, MILITARY INDUSTRIAL COMPLEX: war bills walk from the weapons
+       factory to the Politician's campaign fund, he signs a contract, the contract walks to the factory and its chimneys
+       puff, and the bills walk back to his fund. "self-sustaining": nobody touches it and the bills keep going round. "prints
+       money and corpses": a press on the loop stamps out a bill, then a headstone, and the headstones stack up beside it.
+       "You're building the same machine": the camera pulls back and slides right to the money loop, the same shape; a germ
+       puts its claws up. PATIENT INDUSTRIAL COMPLEX letters itself over it, and Eisenhower leans in. The bills walk it one
+       stop per phrase. "Same loop": both turn in step. "Same greed": the weapons factory and the fat cat, back to back,
+       dollar-sign eyes. "Different corpses (fewer of them)": the war loop's headstones grow into a mountain; the money
+       loop's press prints a few tiny ones, and no more come. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="military-industrial-loop" data-width="1920" data-height="1080" data-start="0" data-duration="41">
+    <div id="military-industrial-loop-weave"></div>
+    <div id="military-industrial-loop-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "military-industrial-loop", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hK = function (art, h) { return h / SZ[art][1]; };
+      // Two loops of the same shape (plate px): Eisenhower's war loop on the left, the money loop on the right.
+      // (9:16 stacks the money loop under the war loop instead of beside it)
+      var RX = 430, RY = 250, WC = [900, 560], MC = V ? [900, 1700] : [2700, 560], PH = 300, BH = 110;
+      var on = function (c, deg) { var a = deg * Math.PI / 180; return [c[0] + RX * Math.cos(a), c[1] + RY * Math.sin(a)]; };
+      var arc = function (c, d0, d1) { var p = []; for (var k = 0; k <= 24; k++) p.push(on(c, d0 + (d1 - d0) * k / 24)); return p; };
+      var ring = function (c) { return arc(c, 0, 362); };
+      // stations: left 180, top 270, right 360, bottom 450 (clockwise on screen)
+      var W1 = on(WC, 180), W2 = on(WC, 270), W3 = on(WC, 0), W4 = on(WC, 90), WP = on(WC, 45);
+      var M1 = on(MC, 180), M2 = on(MC, 270), M3 = on(MC, 0), M4 = on(MC, 90), MP = on(MC, 45);
+      var views = V ? { war: [880, 590, 0.78], both: [900, 1180, 0.55], money: [900, MC[1] + 30, 0.78], mid: [2200, 1040, 0.8] }
+        : { war: [850, 520, 0.98], both: [1800, 520, 0.47], money: [2700, 520, 0.98], mid: [1800, 560, 0.9] };
+      var cast = {
+        ike: { art: "eisenhower", x: V ? 250 : 190, y: 1060, anchor: "bottom", pivot: "bottom", scale: hK("eisenhower", V ? 380 : 440), hidden: true },
+        // the war loop
+        wm: { art: "factory-pay", x: W1[0] - 60, y: W1[1] + PH / 2, anchor: "bottom", pivot: "bottom", scale: hK("factory-pay", PH) },
+        box1: { art: "ballot-box", x: W2[0] + 110, y: W2[1] + 10, anchor: "bottom", pivot: "bottom", scale: hK("ballot-box", PH * 0.38),
+          label: { text: "CAMPAIGN FUND", at: [101, 130], width: 160, size: 30, plaque: true } },
+        pol1: { art: "politician", x: W2[0] - 30, y: W2[1] + 10, anchor: "bottom", pivot: "bottom", scale: hK("politician", PH * 1.05) },
+        contract: { art: "treaty-scroll", x: W3[0] + 50, y: W3[1] + PH * 0.25, anchor: "bottom", pivot: "bottom", scale: hK("treaty-scroll", PH * 0.6), hidden: true,
+          label: [{ text: "CONTRACT", at: [191, 200], width: 260, size: 50 }] },
+        miss: { art: "missile", x: W3[0] + 50, y: W3[1] + PH * 0.05, scale: hK("missile", PH * 0.28), hidden: true },
+        fac: { art: "factory", x: W4[0], y: W4[1] + PH * 0.55, anchor: "bottom", pivot: "bottom", scale: hK("factory", PH * 1.05) },
+        puff: { art: "cloud-puff", x: W4[0], y: W4[1] - PH * 0.6, scale: 0.6, hidden: true },
+        press1: { art: "printing-press", x: WP[0] + 40, y: WP[1] + 70, anchor: "bottom", pivot: "bottom", scale: hK("printing-press", PH * 0.6), hidden: true },
+        // the money loop
+        cat: { art: "fat-cat-catch", x: M1[0] - 70, y: M1[1] + PH / 2, anchor: "bottom", pivot: "bottom", scale: hK("fat-cat-catch", PH) },
+        box2: { art: "ballot-box", x: M2[0] + 110, y: M2[1] + 10, anchor: "bottom", pivot: "bottom", scale: hK("ballot-box", PH * 0.38),
+          label: { text: "CAMPAIGN FUND", at: [101, 130], width: 160, size: 30, plaque: true } },
+        pol2: { art: "politician", x: M2[0] - 30, y: M2[1] + 10, anchor: "bottom", pivot: "bottom", scale: hK("politician", PH * 1.05) },
+        lab: { art: "lab", x: M3[0] + 60, y: M3[1] + PH / 2, anchor: "bottom", pivot: "bottom", scale: hK("lab", PH * 1.1) },
+        germ: { art: "germ-grin", x: M3[0] + 250, y: M3[1] + PH / 2, anchor: "bottom", pivot: "bottom", scale: hK("germ-grin", PH * 0.45), hidden: true },
+        ctr: { art: "deli-counter", x: M4[0] + 40, y: M4[1] + PH * 0.45, anchor: "bottom", pivot: "bottom", scale: hK("deli-counter", PH * 0.5) },
+        you: { art: "you-cert", x: M4[0] - 30, y: M4[1] + PH * 0.25, anchor: "bottom", pivot: "bottom", scale: hK("you-cert", PH * 0.95) },
+        press2: { art: "printing-press", x: MP[0] + 40, y: MP[1] + 70, anchor: "bottom", pivot: "bottom", scale: hK("printing-press", PH * 0.6), hidden: true },
+        ike2: { art: "eisenhower", x: MC[0] + RX + (V ? 230 : 330), y: MC[1] + 540, anchor: "bottom", pivot: "bottom", scale: hK("eisenhower", 520), hidden: true },
+        // between the loops: the two of them, back to back
+        wm2: { art: "factory-proud", x: V ? 2100 : 1700, y: V ? 1200 : 900, anchor: "bottom", pivot: "bottom", scale: hK("factory-proud", PH * 1.2), hidden: true },
+        cat2: { art: "fat-cat", x: V ? 2300 : 1900, y: V ? 1200 : 900, anchor: "bottom", pivot: "bottom", scale: hK("fat-cat", PH * 1.15), hidden: true },
+      };
+      var bill = function (art, p) { return { art: art, x: p[0], y: p[1], scale: hK(art, BH), hidden: true }; };
+      for (var i = 0; i < 4; i++) { cast["w" + i] = bill("bill-war", WC); cast["m" + i] = bill("bill-med", MC); }
+      var beats = [
+        { at: -1, do: "line", id: "loopW", points: ring(WC), dur: 0.01, width: 9, color: "ink" },
+        { at: -1, do: "line", id: "loopM", points: ring(MC), dur: 0.01, width: 9, color: "ink" },
+      ];
+      var add = function (b) { beats.push(b); };
+      var walk = function (id, art, c, d0, d1, on, n, off) { add({ on: on, n: n, offset: off || 0, do: "march", id: id, art: art, count: 3, height: BH, path: arc(c, d0, d1), speed: 700, end: "hide" }); };
+      // "Eisenhower warned you about the Military Industrial Complex:"
+      add({ on: "it", offset: 0.1, do: "slideIn", who: "ike", from: "left", dist: 900 });
+      add({ on: "warned", do: "nudge", who: "ike", by: [30, 0] });
+      add({ on: "about", do: "nudge", who: "ike", by: [30, 0] });
+      add({ on: "Military", do: "banner", id: "mic", text: "MILITARY INDUSTRIAL COMPLEX", x: WC[0], y: WC[1], size: 70, width: 640, pad: 50, color: "ink", tilt: -3 });
+      // the loop, stop by stop
+      walk("wa", "bill-war", WC, 185, 262, "weapons", 1);
+      add({ on: "politicians,", n: 1, do: "shiver", who: "box1", dur: 0.4, amp: 3, rot: 3 });
+      add({ on: "contracts,", n: 1, offset: -0.4, do: "pop", who: "contract", squash: true });
+      add({ on: "contracts,", n: 1, offset: -0.3, do: "pop", who: "miss" });
+      add({ on: "contracts,", n: 1, do: "nudge", who: "pol1", by: [24, 0] });
+      add({ on: "contractors,", do: "move", who: ["contract", "miss"], to: [W4[0] + 160, W4[1] - PH * 0.1], dur: 0.6, arc: 40 });
+      add({ on: "contractors,", offset: 0.6, do: "hide", who: ["contract", "miss"] });
+      add({ on: "contractors,", offset: 0.6, do: "pop", who: "puff", squash: true });
+      add({ on: "contractors,", offset: 0.65, do: "shiver", who: "fac", dur: 0.6, amp: 3, rot: 2 });
+      add({ on: "contractors", n: 2, do: "pop", who: "puff", out: true });
+      walk("wb", "bill-war", WC, 95, 262, "contractors", 2);
+      add({ on: "politicians.", n: 3, do: "shiver", who: "box1", dur: 0.4, amp: 3, rot: 3 });
+      // "It's a self-sustaining loop": nobody touches it; it goes round by itself
+      add({ on: "It's", do: "show", who: ["w0", "w1", "w2", "w3"] });
+      for (i = 0; i < 4; i++) add({ on: "It's", do: "lap", who: "w" + i, loop: [WC[0], WC[1], RX, RY], laps: 30, dur: 2.0, faster: 1, from: i / 4, depth: 0 });
+      add({ on: "self-sustaining", n: 1, do: "move", who: "ike", by: [0, 0], turn: -5, dur: 0.3 });
+      add({ on: "loop", n: 1, do: "hop", who: "ike", height: 20 });
+      // "that prints money and corpses.": the press, bill, headstone, bill, headstone
+      add({ on: "that", do: "pop", who: "press1", squash: true });
+      add({ on: "prints", do: "shiver", who: "press1", dur: 1.6, amp: 4, rot: 2 });
+      add({ on: "money", n: 1, do: "pile", id: "warbills", art: "bill-war-flat", height: 40, count: 5, heap: 3, spread: 50, x: WP[0] + 200, y: WP[1] + 70, dist: 300, dur: 0.8 });
+      add({ on: "corpses.", do: "pile", id: "stones1", art: "headstone", height: 70, count: 8, heap: 4, spread: 60, x: WP[0] + 360, y: WP[1] + 70, dist: 300, dur: 1.2, accel: 0.8 });
+      // "You're building the same machine, but pointed at diseases instead of countries.": the other loop, the same shape
+      add({ on: "You're", do: "camera", view: "both", dur: 1.0 });
+      add({ on: "same", n: 1, offset: 0.2, do: "camera", view: "money", dur: 1.2 });
+      add({ on: "diseases", do: "pop", who: "germ", squash: true });
+      add({ on: "diseases", offset: 0.15, do: "shiver", who: "germ", dur: 1.2, amp: 6, rot: 8 });
+      // "Call it the Patient Industrial Complex."
+      add({ on: "Patient", do: "banner", id: "pic", text: "PATIENT INDUSTRIAL COMPLEX", x: MC[0], y: MC[1], size: 70, width: 640, pad: 50, color: "ink", tilt: -3 });
+      add({ on: "Complex.", n: 2, offset: 0.3, do: "slideIn", who: "ike2", from: "right", dist: 700, over: 8 });
+      add({ on: "Investors", n: 1, offset: -0.2, do: "slideOut", who: "ike2", to: "right", dist: 700 });
+      // "Investors fund politicians, politicians fund clinical trials, trials generate returns, returns fund investors"
+      walk("ma", "bill-med", MC, 185, 262, "Investors", 1);
+      walk("mb", "bill-med", MC, 275, 352, "politicians", 5);
+      walk("mc", "bill-med", MC, 5, 82, "trials", 2);
+      walk("md", "bill-med", MC, 95, 172, "returns", 2);
+      walk("me", "bill-med", MC, 185, 262, "investors", 3);
+      add({ on: "politicians.", n: 6, do: "shiver", who: "box2", dur: 0.4, amp: 3, rot: 3 });
+      // "Same loop. Same greed. Same self-sustaining mechanics.": both turn, in step
+      add({ on: "Same", n: 2, offset: -0.3, do: "camera", view: "both", dur: 0.6 });
+      add({ on: "Same", n: 2, do: "show", who: ["m0", "m1", "m2", "m3"] });
+      for (i = 0; i < 4; i++) add({ on: "Same", n: 2, do: "lap", who: "m" + i, loop: [MC[0], MC[1], RX, RY], laps: 30, dur: 2.0, faster: 1, from: i / 4 + ((cue("Same", 2) - cue("It's")) / 2.0) % 1, depth: 0 });
+      add({ on: "Same", n: 3, offset: -0.35, do: "camera", view: "mid", dur: 0.4 });
+      add({ on: "Same", n: 3, offset: -0.3, do: "pop", who: ["wm2", "cat2"], squash: true });
+      add({ on: "greed.", do: "stamp", id: "gw", text: "$ $", who: "wm2", spot: [158, 150], size: 34, tilt: 0, from: 1.6 });
+      add({ on: "greed.", do: "stamp", id: "gc", text: "$ $", who: "cat2", spot: [128, 100], size: 30, tilt: 0, from: 1.6 });
+      add({ on: "greed.", offset: 0.35, do: "move", who: "wm2", by: [0, 0], turn: 8, dur: 0.2 });
+      add({ on: "greed.", offset: 0.35, do: "move", who: "cat2", by: [0, 0], turn: -8, dur: 0.2 });
+      add({ on: "Same", n: 4, offset: -0.2, do: "camera", view: "both", dur: 0.6 });
+      add({ on: "Same", n: 4, offset: -0.2, do: "hide", who: ["wm2", "cat2", "gw", "gc"] });
+      // "Different corpses (fewer of them).": a mountain under one, a few tiny ones under the other
+      add({ on: "Different", do: "pile", id: "mountain", art: "headstone", height: 90, count: 70, heap: 12, spread: 80, x: WC[0] + 120, y: WC[1] + RY + 380, dist: 900, until: ["them).", 1, 0.3], accel: 0.6 });
+      add({ on: "Different", do: "pop", who: "press2", squash: true });
+      add({ on: "corpses", n: 2, do: "pile", id: "tiny", art: "headstone", height: 34, count: 3, heap: 3, spread: 40, x: MP[0] + 190, y: MP[1] + 70, dist: 200, dur: 0.9 });
+      add({ on: "(fewer", do: "shiver", who: "press2", dur: 0.5, amp: 3, rot: 2 });
+      KIT.collage({ id: ID, seed: 1719, plate: V ? [-2600, -3400, 6200, 4600] : [-1500, -1200, 5100, 2300], views: views, view: "war", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

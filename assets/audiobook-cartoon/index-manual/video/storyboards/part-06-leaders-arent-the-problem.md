@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:45.9
+duration: 2:46.1
 message: "Your leaders are not monsters: a loop that pays politicians to buy weapons is the psychopath, it hurts even the people running it, and the plan keeps the loop but pays it to cure diseases."
 arc: Title card (PROBLEM lands on a Politician) → Wishonia and an Earth with every ailment at once → the monster at the desk is a Politician in a costume, sipping tea, beside the 604 bar → the loop road, stop by stop, and the Democracy Dog → the loop grows a face and runs with its plug pulled, and only Wishonia looks round at the bomb → the Weapons Maker's family gets sick, the Reaper steps out of their portrait, and his house shrinks → the snip, and what he loses and gains → Wishonia's verdict, the Weapons Maker's arithmetic → red tie, blue tie, same strings → wallpaper in a burning room → the halo, the rebuilt loop → the same dog with a tail of pills, reelected
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 6, "Why Your Leaders Aren't the Problem"
-audio: index-manual.cbaf659d.mp3, 11:22.6 to 14:08.5
+audio: index-manual.7ce6b2b2.mp3, 10:57.9 to 13:44.0
 version: v3
 ---
 
@@ -40,7 +40,7 @@ version: v3
 - act: Title
 - transition_in: cut (up from black, the head of the reel)
 - cue: "Why Your Leaders Aren't the"
-- time: 11:22.6 to 11:25.6 (3.0 s)
+- time: 10:57.9 to 11:01.4 (3.5 s)
 - voiceover: "Why Your Leaders Aren't the Problem."
 - layer: A, title card
 - status: planned
@@ -58,7 +58,7 @@ Sound: a projector whirr on "Why"; a splat on "Problem."; a tiny squeak from und
 - act: Not monsters
 - transition_in: iris in on her face
 - cue: "With over two billion humans"
-- time: 11:25.6 to 11:29.6 (4.0 s)
+- time: 11:01.4 to 11:05.4 (4.0 s)
 - voiceover: "With over two billion humans suffering from disease, you'd have to be a complete"
 - layer: A, host
 - wishonia: big, sad-closed + body-hand-chest; skeptical-closed + body-palms-down on "you'd"
@@ -78,7 +78,7 @@ Sound: a ka-chunk as the readout flips; a huff for the sneeze.
 - act: Not monsters
 - transition_in: cut
 - cue: "psychopath to make the conscious"
-- time: 11:29.6 to 11:43.3 (13.7 s)
+- time: 11:05.4 to 11:19.1 (13.8 s)
 - voiceover: "psychopath to make the conscious decision to spend six hundred and four times more on weapons than on helping them. But your leaders aren't monsters. They're just operating in a system that rewards the wrong things."
 - layer: B, plate the-loop
 - status: planned
@@ -100,7 +100,7 @@ Sound: a quill scratch; a rising slide whistle as the bar climbs; three pops as 
 - act: The loop
 - transition_in: same plate (no seam)
 - cue: "Your civilization's incentive structure"
-- time: 11:43.3 to 12:12.0 (28.7 s)
+- time: 11:19.1 to 11:47.8 (28.7 s)
 - voiceover: "Your civilization's incentive structure is the psychopath: Weapons manufacturers give politicians papers. Politicians use the papers to get people to vote for them. Voting for them gives them the power to give more papers to weapons manufacturers. Weapons manufacturers give them more papers. It's circular, like a dog chasing its tail, except the dog is democracy and the tail is made of money and corpses."
 - layer: B, plate the-loop
 - status: planned
@@ -125,7 +125,7 @@ Sound: a ka-ching as he pockets the brick; two pops as the ballots drop; a creak
 - act: The loop
 - transition_in: same plate (no seam)
 - cue: "No individual human in"
-- time: 12:12.0 to 12:31.6 (19.6 s)
+- time: 11:47.8 to 12:07.2 (19.4 s)
 - voiceover: "No individual human in this loop is evil. The loop is evil. Every politician in it is making the locally rational choice: take the papers or lose your job to someone who will. It's a machine that converts good intentions into missiles, and it runs automatically."
 - layer: B, plate the-loop
 - status: planned
@@ -149,7 +149,7 @@ Sound: a boing on the shrug; a slam as the face snaps on; a squeak and a slam fo
 - act: The loop
 - transition_in: cut
 - cue: "This loop does not even"
-- time: 12:31.6 to 12:33.1 (1.5 s)
+- time: 12:07.2 to 12:08.8 (1.6 s)
 - voiceover: "This loop does not even"
 - layer: A, host (reaction cut)
 - wishonia: big, sideeye-closed + body-arms-crossed
@@ -167,7 +167,7 @@ Sound: none.
 - act: Nobody wins
 - transition_in: cut (back to the plate as loop-is-evil left it)
 - cue: "benefit the humans inside"
-- time: 12:33.1 to 12:46.8 (13.8 s)
+- time: 12:08.8 to 12:22.6 (13.8 s)
 - voiceover: "benefit the humans inside it. The weapons manufacturers get diseases. Their children get diseases. Everyone they love gets diseases. They live in the same economy that the loop is shrinking."
 - layer: B, plate the-loop
 - status: planned
@@ -189,7 +189,7 @@ Sound: a door slam; a cough and a pop for the cigar; a pop as the Reaper steps o
 - act: Nobody wins
 - transition_in: same plate (no seam)
 - cue: "If the loop breaks"
-- time: 12:46.8 to 13:08.6 (21.8 s)
+- time: 12:22.6 to 12:44.6 (22.0 s)
 - voiceover: "If the loop breaks and the redirect happens, they lose one percent of their doomsday-device revenue and gain a one point four three times larger economy to sell into, plus the ability to invest in the biotech sector that absorbs the redirected twenty-seven point two billion dollars a year, plus not being dead."
 - layer: B, plate the-loop
 - status: planned
@@ -211,7 +211,7 @@ Sound: a snip; a sparkle as the seal flips; a sob; a rising slide whistle as the
 - act: Nobody wins
 - transition_in: cut
 - cue: "This is not a case"
-- time: 13:08.6 to 13:24.1 (15.5 s)
+- time: 12:44.6 to 12:59.9 (15.3 s)
 - voiceover: "This is not a case where an entrenched industry rationally profits at the public's expense. There is no rational beneficiary of the current arrangement. Everyone in the loop is worse off, including the people running it. They just haven't done the arithmetic."
 - layer: A, host
 - wishonia: big, skeptical-closed + body-thinking; annoyed-closed + body-palms-down on "beneficiary"; smirk-smile + body-presenting on "haven't"
@@ -232,7 +232,7 @@ Sound: a typewriter clatter as the list types; a click per WORSE OFF; an adding-
 - act: Same loop, any party
 - transition_in: cut
 - cue: "There's literally no voting"
-- time: 13:24.1 to 13:43.8 (19.7 s)
+- time: 12:59.9 to 13:19.5 (19.7 s)
 - voiceover: "There's literally no voting your way out of this. It doesn't matter which political party is in power. Your "red team" and "blue team" argue about everything except the loop, because they're both inside it. They are all slaves to the same incentive structure, wearing different colored ties."
 - layer: B, plate the-loop
 - bit: **A huge dog chases its tail in a circle, forever.** The tail is knotted war bills and skeletons. Red and blue Politicians ride its back, nose to nose, shouting and shackled to it; the voter who poked it goes round on the tail. In the short this scene, wallpaper-burning-building and better-loop are one plate.
@@ -255,7 +255,7 @@ Sound: a squeak per poke; a woof and a whoosh on "this."; a thunk as each lands;
 - act: Same loop, any party
 - transition_in: cut
 - cue: "Switching parties is like"
-- time: 13:43.8 to 13:48.2 (4.4 s)
+- time: 13:19.5 to 13:23.9 (4.4 s)
 - voiceover: "Switching parties is like changing the wallpaper in a burning building."
 - layer: B, plate living-room
 - bit: **Cut to the same voter papering a burning room, charred, still holding the brush.**
@@ -274,7 +274,7 @@ Sound: two pats; a whoosh; fire on "building.".
 - act: A better loop
 - transition_in: cut
 - cue: "This manual doesn't ask politicians"
-- time: 13:48.2 to 14:00.5 (12.3 s)
+- time: 13:23.9 to 13:36.3 (12.4 s)
 - voiceover: "This manual doesn't ask politicians to become better people (that's clearly out of the question). It builds a better loop. You give them MORE papers to do the OPPOSITE thing."
 - layer: B, plate the-loop
 - bit: **Nobody asks the dog to be good.** Back on its back: a halo on a string does nothing but char him. The same string lowers a double brick of papers, the one thing that stops him shouting. The seals flip; the tail goes last, on "cured" (the short runs this plate through "cured diseases" and starts the host shot on "and").
@@ -296,7 +296,7 @@ Sound: a slide whistle for the halo; a zap and a sizzle; a thunk on "papers"; a 
 - act: A better loop
 - transition_in: cut
 - cue: "Same dog, same tail"
-- time: 14:00.5 to 14:08.5 (8.0 s)
+- time: 13:36.3 to 13:44.0 (7.8 s)
 - voiceover: "Same dog, same tail, but now the tail is made of cured diseases and the dog gets reelected for chasing it."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; smirk-smile + body-idle on "reelected"; sideeye-closed + body-idle on "it."

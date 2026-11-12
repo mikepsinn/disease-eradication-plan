@@ -1,0 +1,90 @@
+<template id="billion-volunteers-template">
+  <!-- billion-volunteers · collage (Part 12, scene 8; plate trial-door). Close on YOU, hand up, bouncing: he'd
+       volunteer. "but so would": the camera pulls back as raised hands pile up beside him into a bar, WILLING,
+       1,080,000,000. "slots.": the second bar, SLOTS, drawn to scale, is a hairline; the camera pushes in on it, and
+       "That's": it is a tiny door in a long wall, WAIT HERE, knee-high to the crowd. One patient squeezes through and
+       it slams. "percent.": a tag swings on it, 0.177%, the crowd surges and the front row is squashed flat. Far
+       back, YOU is still waving. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="billion-volunteers" data-width="1920" data-height="1080" data-start="0" data-duration="16.46">
+    <div id="billion-volunteers-weave"></div>
+    <div id="billion-volunteers-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "billion-volunteers", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The chart (left) and, far to the right of it, the wall with the door the SLOTS bar turns out to be.
+    var G = V ? 1300 : 860;
+    var CH = KIT.collage.axes({ box: V ? [170, 420, 960, G] : [360, 170, 1500, G], x: [0, 3, 3], y: [0, 1.5e9, 1.5e9], xLabels: 7, yLabels: 1e12, size: V ? 44 : 36,
+      title: "TRIAL VOLUNTEERS", subtitle: "willing patients and the places for them, to scale" });
+    var WILL = 1.08e9, SLOTS = 1.9e6;
+    var CROWD_H = V ? 125 : 120, YH = V ? 330 : 300;
+    var XY = CH.pt(0.35, 0)[0], X2 = CH.pt(2.1, 0)[0], TOPW = CH.pt(1, WILL)[1];
+    // the door scene
+    // trial-door: a long wall (511 x 185 art px) with a tiny door in its middle, its top at art y 128
+    var DX = 9000, DOOR = DX, CH2 = V ? 470 : 520, WK = (V ? 3.2 : 3.6), DOORTOP = G - (185 - 128) * WK, W2 = CH2 * 276 / 238;
+    var cy = function (s) { return G - 440 / s; };
+    var views = V ? {
+      you: [XY + 120, G - 260, 1.6], chart: [560, 980, 1], hair: [X2 + 60, G - 40, 5], door: [DX - 330, cy(0.95), 0.95],
+    } : {
+      you: [XY + 160, G - 230, 1.7], chart: [930, 520, 1], hair: [X2 + 60, G - 40, 5], door: [DX - 500, G - 380, 0.8],
+    };
+    var crowd = function (x, y, h) { return { art: "crowd", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: h / SZ["crowd"][1] }; };
+    var cast = {
+      you: { art: "you-slap", x: XY, y: G, anchor: "bottom", pivot: "bottom", scale: YH / SZ["you-slap"][1] },
+      // the long wall, the tiny door, and the crowd at it
+      wall: { art: "trial-door", x: DX, y: G + 8, anchor: "bottom", pivot: "bottom", scale: WK },
+      far: { art: "you-slap", x: DOOR - 2.2 * W2, y: G - 0.42 * CH2, anchor: "bottom", pivot: "bottom", scale: 0.42 * CH2 / SZ["you-slap"][1] },
+      r3: crowd(DOOR - 1.75 * W2, G - 0.3 * CH2, 0.8 * CH2), r4: crowd(DOOR - 1.0 * W2, G - 0.3 * CH2, 0.8 * CH2),
+      r0: crowd(DOOR - 2.0 * W2, G, CH2), r1: crowd(DOOR - 1.3 * W2, G, CH2), r2: crowd(DOOR - 0.6 * W2, G, CH2),
+      squeeze: { art: "sick-6", x: DOOR - 30, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85 * (G - DOORTOP) / SZ["sick-6"][1], hidden: true },
+    };
+    var beats = [
+      { at: 0, do: "chart", chart: CH },
+      // YOU, hand up, bouncing
+      { on: "volunteer", do: "hop", who: "you", height: 40 },
+      { on: "trials", do: "bob", who: "you", y: 14, r: 5, speed: 5, until: 16 },
+      // so would 1.08 billion other patients: the hands pile up into a bar
+      { on: "but", do: "camera", view: "chart", dur: 2.4 },
+    ];
+    [0.75, 1.25, 0.9, 1.1, 1.0].forEach(function (x, i) {
+      beats.push({ at: cue("so") + 0.15 * i, do: "pile", id: "will" + i, chart: CH, x: x, to: WILL, art: "crowd", height: CROWD_H,
+        until: cue("patients,") + 0.1 * i, accel: 0.55, jitter: 8, tilt: 3 });
+    });
+    beats = beats.concat([
+      { on: "billion", offset: 0.2, do: "stamp", id: "willing", text: "WILLING 1,080,000,000", x: CH.pt(1, 0)[0], y: TOPW - (V ? 90 : 70), size: 80, width: V ? 620 : 560, tilt: -3 },
+      // the current system has 1.9 million slots: the second bar, to scale
+      { on: "nine", do: "bar", id: "slots", chart: CH, x: 2.1, to: SLOTS, width: 70, text: "SLOTS 1,900,000", size: V ? 34 : 30, dur: 0.3 },
+      { on: "slots.", do: "camera", view: "hair", dur: 1.0 },
+      // That's: the hairline is a tiny door in a long wall
+      { on: "That's", do: "camera", view: "door", dur: 0.04 },
+      { on: "That's", do: "tag", id: "wait", who: "wall", text: "WAIT HERE", knot: [256, 120], x: DOOR + (V ? 60 : 80), y: DOORTOP - (V ? 140 : 130), w: V ? 300 : 270, h: V ? 110 : 100 },
+      // one patient squeezes through, and it slams
+      { on: "participation", do: "show", who: "squeeze" },
+      { on: "participation", do: "move", who: "squeeze", to: [DOOR, G - 0.4 * (G - DOORTOP)], dur: 0.5 },
+      { on: "rate", do: "hide", who: "squeeze" },
+      { on: "rate", do: "shake", frames: 4, x: 8 },
+      { on: "rate", do: "shiver", who: "wall", dur: 0.25, amp: 2, rot: 0.3 },
+      { on: "zero", n: 2, do: "hide", who: "wait" },
+      { on: "percent.", do: "tag", id: "rate", who: "wall", text: "0.177%", knot: [256, 120], x: DOOR + (V ? 60 : 80), y: DOORTOP - (V ? 140 : 130), w: V ? 300 : 260, h: V ? 120 : 110 },
+      // the crowd surges; the front row is squashed flat against the wall
+      { on: "percent.", offset: 0.35, do: "move", who: ["r0", "r1", "r3", "r4"], by: [70, 0], dur: 0.2 },
+      { on: "percent.", offset: 0.35, do: "move", who: "r2", by: [40, 0], dur: 0.15 },
+      { on: "percent.", offset: 0.55, do: "flatten", who: "r2" },
+      { on: "percent.", offset: 0.55, do: "shake", frames: 3, y: 6 },
+      { on: "zero", n: 2, do: "bob", who: "far", y: 10, r: 8, speed: 4, until: 16.4 },
+    ]);
+    KIT.collage({ id: ID, seed: 1208, plate: [-1000, -1500, 11500, 3000], views: views, view: "you", cast: cast, beats: beats });
+  </script>
+</template>

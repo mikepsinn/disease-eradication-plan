@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:36.2
+duration: 1:29.2
 message: "Weapons makers spend $198 million a year buying politicians; a one-time $1 billion budget outbids five years of it, and the Super PAC pays only through a scoring algorithm that rewards treaty votes."
 arc: Title card, a hairy arm with a missile tattoo lifts DEMOCRACY off the card and leaves one war bill in its place → the coin-op Politician runs down beside Wishonia's console → the auction, where the Weapons Maker feeds him and gets a second missile out of him, dies of the same diseases and keeps bidding as a skeleton, and YOU's paddle presses him for free → the paddles ($198 million against $1 billion), the skeleton's tower of five topples and the lot goes to YOU → back at the console, CLEARANCE and a teal tie → the race track, where the Super PAC carries the yes vote and becomes his jet pack → the same jet pack chars the no vote; the papers ride the scenic route, the senator jumps through the hoop and then rings the training bell on himself → the letter grade, the F monster, the HOLD, the carbon copy → the scroll of unpaid problems goes all the way round the planet
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 20, "Step 4: Purchase Democracy"
-audio: index-manual.cbaf659d.mp3, 44:20.7 to 45:56.9
+audio: index-manual.7ce6b2b2.mp3, 43:59.0 to 45:28.3
 version: v3
 ---
 
@@ -17,8 +17,7 @@ version: v3
 **The numbers:**
 - `defense_lobbying_annual`: $198 million a year spent by weapons makers on lobbying.
 - `treaty_campaign_total_cost`: $1 billion, once.
-- The ratio: the narrator says "eight times their annual spend". At $198 million it is 5.05 times ($1B / $198M). The chart is drawn to scale, so five of their yearly bars reach the top of yours, not eight. Needs Mike's call: re-record the line, or keep the narration and the true chart.
-- The election cycle: two years is $396 million; $1 billion is 2.5 times that ("about twice", narrated).
+- The ratio: "five times their annual spend". At $198 million it is 5.05 times ($1B / $198M), and the chart is drawn to scale: five of their yearly bars reach the top of yours.
 - `iab_political_incentive_funding_annual`: $2.72 billion a year to the Super PAC (Part 17's 10% strip).
 
 **What the viewer must leave with:** politicians are already for sale to weapons makers at $198 million a year; a one-time $1 billion outbids them, and the Super PAC's $2.72 billion a year then pays only through a score of how each one voted on the treaty, the way NRA grades already work.
@@ -48,7 +47,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "Step four: Purchase Democracy"
-- time: 44:20.7 to 44:25.2 (4.6 s)
+- time: 43:59.0 to 44:03.7 (4.7 s)
 - voiceover: "Step four: Purchase Democracy. *It's For Sale Anyway*"
 - layer: A, title card
 - status: planned
@@ -66,7 +65,7 @@ Sound: the projector whirr; a stamp thump on "four:"; a cash-register ka-ching o
 - act: The auction
 - transition_in: iris in on her face
 - cue: "Politicians need papers and votes"
-- time: 44:25.2 to 44:28.8 (3.6 s)
+- time: 44:03.7 to 44:06.6 (2.9 s)
 - voiceover: "Politicians need papers and votes to keep their jobs."
 - layer: A, host
 - wishonia: big, smirk-smile + body-presenting; thinking-small + body-counting on "papers"; sideeye-closed + body-idle on "jobs."
@@ -85,7 +84,7 @@ Sound: a pop per slot; a winding-down slide whistle on "jobs.".
 - act: The auction
 - transition_in: cut
 - cue: "Currently, weapons manufacturers provide"
-- time: 44:28.8 to 44:43.1 (14.3 s)
+- time: 44:06.6 to 44:19.1 (12.4 s)
 - voiceover: "Currently, weapons manufacturers provide both. You're going to outbid them. Not because they're the enemy (they die of the same diseases you do), but because politicians do not do things for free, and the clock is running."
 - layer: B, plate auction-hall
 - status: planned
@@ -107,8 +106,8 @@ Sound: two clicks as the bill and the ballot go in; a boing as he springs up; a 
 - act: The auction
 - transition_in: same plate (no seam)
 - cue: "Your explosion manufacturers spend"
-- time: 44:43.1 to 44:58.3 (15.1 s)
-- voiceover: "Your explosion manufacturers spend one hundred and ninety-eight million dollars a year buying politicians. Your one-time bribery budget is one billion dollars, which is eight times their annual spend (and about twice what they spend over a full election cycle)."
+- time: 44:19.1 to 44:31.0 (12.0 s)
+- voiceover: "Your explosion manufacturers spend one hundred and ninety-eight million dollars a year buying politicians. Your one-time bribery budget is one billion dollars, which is five times their annual spend."
 - layer: B, plate auction-hall
 - status: planned
 
@@ -116,10 +115,9 @@ Sound: two clicks as the bill and the ballot go in; a boing as he springs up; a 
 |---|---|---|---|
 | "Your explosion manufacturers spend one hundred and ninety-eight million dollars a year buying politicians." | $198 million a year. | The first frame is democracy-auction's last. The camera finds the slate behind the rostrum, now a bar chart: the skeleton's bar, "$198 MILLION A YEAR". A ribbon of war bills flies off it into the Politician's bill slot. | The Politician blows the skeleton a kiss. |
 | "Your one-time bribery budget is one billion dollars," | $1 billion, once. | YOU's bar rises beside it, "$1 BILLION, ONCE", five times as tall; its shadow falls over the crowd. | |
-| "which is eight times their annual spend" | It outspends a year of theirs many times over. | The skeleton stacks his yearly bars one on another to match it: one, two, three, four, five reach the top of YOU's. | (The narration says eight; see the numbers.) |
-| "(and about twice what they spend over a full election cycle)." | It beats a whole cycle of theirs. | Two of his stacked bars, one election cycle, glow; YOU's bar stands two and a half times over them. | The stack sways one slow full circle and topples onto the skeleton. His skull pops up out of the pile; the Lobbyist bangs the gavel and points it at YOU: sold. YOU tips his fedora. |
+| "which is five times their annual spend." | It outspends a year of theirs five times over. | The skeleton stacks his yearly bars one on another to match it: one, two, three, four, five reach the top of YOU's. | The stack sways one slow full circle and topples onto the skeleton. His skull pops up out of the pile; the Lobbyist bangs the gavel and points it at YOU: sold. YOU tips his fedora. |
 
-Sound: a whoosh for the ribbon of bills; a ding as YOU's bar tops out on "billion,"; a click per stacked bar on "eight"; a crash on "cycle)."; a gavel thunk after it.
+Sound: a whoosh for the ribbon of bills; a ding as YOU's bar tops out on "billion,"; a click per stacked bar on "five"; a crash on "spend." (the second one); a gavel thunk after it.
 
 ## Scene 5 · corrupt-the-corruption
 
@@ -127,7 +125,7 @@ Sound: a whoosh for the ribbon of bills; a ding as YOU's bar tops out on "billio
 - act: The punchline
 - transition_in: cut
 - cue: "Politicians are surprisingly affordable"
-- time: 44:58.3 to 45:04.3 (6.0 s)
+- time: 44:31.0 to 44:36.9 (5.9 s)
 - voiceover: "Politicians are surprisingly affordable. It's not corruption if you corrupt the corruption."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; neutral-smile + body-palms-down on "It's"; smirk-smile + body-hands-hips on "corrupt"
@@ -146,7 +144,7 @@ Sound: a pop as the tag lands; a sparkle as the tie and the seal flip on "corrup
 - act: The scoring algorithm
 - transition_in: cut
 - cue: "Remember that two point seven two"
-- time: 45:04.3 to 45:21.5 (17.2 s)
+- time: 44:36.9 to 44:53.2 (16.3 s)
 - voiceover: "Remember that two point seven two billion dollars a year from step one? This is where it goes. The Super PAC gives money to politicians based on how they voted on the treaty. Simple: campaign support for the ones running, post-office fellowships for the ones retiring. Vote yes on the treaty, get rewarded."
 - layer: B, plate race-track
 - status: planned
@@ -168,7 +166,7 @@ Sound: a glass clink as the lid lifts; a gulp and a whoosh for the Super PAC; pa
 - act: The scoring algorithm
 - transition_in: same plate (no seam)
 - cue: "Vote no, watch your opponent"
-- time: 45:21.5 to 45:34.0 (12.5 s)
+- time: 44:53.2 to 45:05.5 (12.3 s)
 - voiceover: "Vote no, watch your opponent get rewarded. No papers go directly to politicians. The papers take a scenic route through a scoring algorithm, which is apparently the only legal way to train a senator."
 - layer: B, plate race-track
 - status: planned
@@ -188,7 +186,7 @@ Sound: a click on "no,"; a fire whoosh and a sizzle on "rewarded."; a boing as t
 - act: The scoring algorithm
 - transition_in: cut
 - cue: "The N.R.A. already perfected"
-- time: 45:34.0 to 45:47.5 (13.5 s)
+- time: 45:05.5 to 45:19.3 (13.8 s)
 - voiceover: "The N.R.A. already perfected this technology. They give politicians a letter grade, and your senators are more afraid of a bad mark than a mass shooting. You're plagiarizing their system and replacing "guns" with "not dying from diseases.""
 - layer: B, plate schoolroom
 - status: planned
@@ -208,7 +206,7 @@ Sound: a chalk scratch on "N.R.A."; a stamp thump on "grade,"; a rising slide wh
 - act: The bond for everything
 - transition_in: cut
 - cue: "The Incentive Alignment Bond works"
-- time: 45:47.5 to 45:56.9 (9.5 s)
+- time: 45:19.3 to 45:28.3 (8.9 s)
 - voiceover: "The Incentive Alignment Bond works for any problem where politicians need to do something good but haven't been paid to do it yet, which on your planet is most problems."
 - layer: A, host
 - wishonia: big, neutral-smile + body-presenting; smirk-smile + body-idle on "problem"; surprised-oh + body-idle on "planet"; eyeroll-smile + body-shrug on "most"; sideeye-closed + body-shrug on "problems."

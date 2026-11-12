@@ -1,0 +1,64 @@
+<template id="eligible-final-stamp-template">
+  <!-- eligible-final-stamp · collage host shot (Part 26). "offering": the universe gift-wraps Earth: a huge bow, tagged TO: HUMANS.
+       "world": three flying saucers lower in on strings to see it. "you're": YOU walks on, big, on his bone legs; "thinking":
+       chin in hand, "...". He keeps thinking. "don't": two saucers take one look and are yanked up out of the frame;
+       "visit.": the third, harder. The case file EARTH has lain on the ledge all along; "aliens": ELIGIBLE slams onto
+       it, the verdict Part 1's MAY BE ELIGIBLE FOR OPTIMIZATION promised. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="eligible-final-stamp" data-width="1920" data-height="1080" data-start="0" data-duration="7.12">
+    <div id="eligible-final-stamp-weave"></div>
+    <div id="eligible-final-stamp-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, S = KIT.STUDIO, Z = KIT.collage.SIZES, E = S.earth;
+    var hs = function (art, h) { return h / Z[art][1]; };
+    var BOW = [E[0], E[1] + E[2] * 0.1], BK = hs("gift-bow", E[2] * 2.3);
+    var SK = V ? 0.42 : 0.6;
+    var SAU = V ? [[600, 300], [1000, 500], [790, 125]] : [[1150, 215], [1860, 430], [1560, 175]];
+    var YH = V ? 530 : 650, YOUAT = V ? [860, S.top + 2] : [1260, 900];
+    var FH = V ? 300 : 380, FX = V ? 150 : 240, SW = V ? 165 : 205;
+    var cast = {
+      file: { art: "case-file", x: FX, y: S.top + 10, anchor: "bottom", pivot: "bottom", scale: hs("case-file", FH),
+        label: [{ text: "EARTH", at: [186, 115], width: 200, size: 60 }, { text: "CASE #847", at: [235, 165], width: 105, size: 44 }] },
+      bow: { art: "gift-bow", x: BOW[0], y: BOW[1], scale: BK, hidden: true },
+      you: { art: "you-bone-think", x: YOUAT[0], y: YOUAT[1], anchor: "bottom", pivot: "bottom", scale: hs("you-bone-think", YH), hidden: true },
+      think: { art: "thought-bubble-blank", x: YOUAT[0] + (V ? -180 : 210), y: YOUAT[1] - YH * (V ? 0.92 : 0.92), scale: hs("thought-bubble-blank", V ? 170 : 230), hidden: true,
+        label: { text: "...", at: [122, 100], width: 150, size: 120 } },
+    };
+    SAU.forEach(function (p, i) { cast["s" + i] = { art: "saucer", x: p[0], y: p[1], anchor: "bottom", pivot: "top", scale: SK, hidden: true }; });
+    var beats = [
+      // "offering": the bow slams onto Earth, with its tag
+      { on: "offering", do: "stamp", who: "bow", from: 1.6, shake: 6 },
+      { on: "you", n: 1, do: "tag", id: "giftTag", who: "bow", text: "TO: HUMANS", knot: [185, 200],
+        x: V ? E[0] - 90 : E[0] + 10, y: E[1] + E[2] + (V ? 70 : 60), w: V ? 330 : 400, h: V ? 86 : 100, swing: 4 },
+      // "world": three saucers lower in on their strings and wobble
+      { on: "world", do: "slideIn", who: "s0", from: "top", over: 30 },
+      { on: "world", offset: 0.15, do: "slideIn", who: "s1", from: "top", over: 30 },
+      { on: "world", offset: 0.3, do: "slideIn", who: "s2", from: "top", over: 30 },
+      { on: "world", offset: 0.6, do: "bob", who: ["s0", "s1", "s2"], y: 9, r: 6, speed: 1.8, fade: 0.3 },
+      // "you're thinking": YOU, big, on his bone legs, chin in hand
+      { on: "you're", do: "slideIn", who: "you", from: V ? "right" : "bottom", over: 16 },
+      { on: "thinking", do: "pop", who: "think", squash: true },
+      { on: "aliens", do: "hop", who: "think", height: 14 },
+      // "aliens": the verdict lands on the file
+      { on: "aliens", do: "stamp", who: "file", id: "eligible", text: "ELIGIBLE", spot: [186, 330], width: SW, size: 100, tilt: -8, shake: 8 },
+      { on: "aliens", do: "hop", who: "file", height: 16 },
+      // "don't": two saucers take one look and are yanked up; "visit.": the third, harder
+      { on: "don't", do: "slideOut", who: ["s0", "s1"], to: "top", dur: 0.22 },
+      { on: "visit", do: "slideOut", who: "s2", to: "top", dur: 0.13 },
+      { on: "visit", do: "shake", y: 6 },
+    ];
+    KIT.collage({ id: "eligible-final-stamp", seed: 2608, host: true, cast: cast, beats: beats });
+  </script>
+</template>

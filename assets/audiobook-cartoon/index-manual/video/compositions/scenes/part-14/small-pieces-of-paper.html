@@ -1,0 +1,56 @@
+<template id="small-pieces-of-paper-template">
+  <!-- small-pieces-of-paper · collage host shot (Part 14, scene 4). Back at the console she shrugs. "Here's": she comes
+       up from under the ledge with one plain green bill and holds it up against the window at arm's length, like a dead
+       mouse; on "paper" its little legs kick, and Earth turns to face it. "before": the bill goes left and Earth rolls
+       left after it; "do": right, and it rolls back. After "anything.": she lets go and the bill flutters down toward
+       Earth and out of the frame (it lands on the bar in the next scene). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="small-pieces-of-paper" data-width="1920" data-height="1080" data-start="0" data-duration="9.12">
+    <div id="small-pieces-of-paper-weave"></div>
+    <div id="small-pieces-of-paper-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, S = KIT.STUDIO, Z = KIT.collage.SIZES, E = S.earth, TOP = S.top;
+    // Earth in the window as a cut-out of the deck's own Earth (assets/art/deck/earth.webp), so it can roll; the
+    // deck's copy is hidden once the set is drawn
+    var EARTH = "../deck/earth"; Z[EARTH] = [667, 651];
+    var EK = 2 * E[2] / 667;
+    // the bill, held up by its corner (art 30, 40) against the glass, to the left of Earth
+    var HOLD = V ? [610, 360] : [1180, 330], BK = V ? 0.85 : 1.05, SWING = V ? 150 : 190;
+    KIT.collage({
+      id: "small-pieces-of-paper", seed: 1421, host: true,
+      cast: {
+        earth: { art: EARTH, x: E[0], y: E[1], scale: EK },
+        bill: { art: "bill-plain", x: HOLD[0], y: HOLD[1], anchor: [30, 40], pivot: [30, 40], scale: BK, hidden: true },
+      },
+      beats: [
+        // up from under the ledge, held out at arm's length, a little tilted
+        { on: "Here's", do: "slideIn", who: "bill", from: "bottom", over: 20, tilt: 6 },
+        { on: "look", do: "move", who: "bill", by: [0, 0], turn: 12, dur: 0.3, ease: "smooth" },
+        // its legs kick; Earth turns to face it
+        { on: "paper", offset: -0.25, do: "shiver", who: "bill", dur: 0.6, amp: 5, rot: 10 },
+        { on: "small", do: "move", who: "earth", by: [-8, 0], turn: -28, dur: 0.5, ease: "smooth" },
+        // dangled left, and Earth rolls after it; right, and back it comes
+        { on: "before", offset: -0.1, do: "move", who: "bill", by: [-SWING, 20], turn: 18, dur: 0.35, ease: "smooth" },
+        { on: "before", offset: 0.1, do: "move", who: "earth", by: [-36, 6], turn: -70, dur: 0.4, ease: "smooth" },
+        { on: "do", offset: -0.15, do: "move", who: "bill", by: [SWING * 1.6, -10], turn: 4, dur: 0.35, ease: "smooth" },
+        { on: "do", offset: 0.05, do: "move", who: "earth", by: [60, -6], turn: 50, dur: 0.4, ease: "smooth" },
+        { on: "anything.", offset: 0.2, do: "shiver", who: "bill", dur: 0.3, amp: 4, rot: 8 },
+        // she lets go: it flutters down toward Earth and out of the frame
+        { on: "anything.", offset: 0.55, do: "drop", who: "bill", dur: 0.7, dist: 1100, drift: V ? 120 : 160, spin: 220 },
+      ],
+    });
+    document.getElementById("small-pieces-of-paper-hwall").querySelector(".earth").style.visibility = "hidden";
+  </script>
+</template>

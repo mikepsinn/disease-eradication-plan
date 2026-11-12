@@ -1,37 +1,84 @@
 [
   {
-    "words": ["The", "Earth", "Optimization", "Game."],
-    "near": 3045.984,
-    "start": 3043.46,
-    "end": 3045.16,
-    "why": "The forced alignment squeezed the heading into zero-length words at 50:46.0; ffmpeg silencedetect and Whisper put it at 50:43.5 to 50:45.2."
+    "words": [
+      "The",
+      "Earth",
+      "Optimization",
+      "Game."
+    ],
+    "near": 3013.93,
+    "start": 3013.77,
+    "end": 3015.47,
+    "why": "The heading's first word gets zero length; this chunk's audio has not changed, so these are the times measured with ffmpeg silencedetect, moved with the chunk."
   },
   {
-    "words": ["Build", "bombs"],
-    "near": 236.82,
-    "start": 236.61,
-    "end": 237.35,
-    "why": "The alignment gave \"Build\" zero length at 3:56.8; silencedetect puts the two words between the pauses at 3:56.6 and 3:57.4."
+    "words": [
+      "Build",
+      "bombs"
+    ],
+    "near": 218.78,
+    "start": 218.7,
+    "end": 219.45,
+    "why": "The alignment ends \"bombs\" early and starts \"(you\" inside the pause; silencedetect puts the words between the pauses at 3:38.7 to 3:39.5."
   },
   {
-    "words": ["(you", "love", "giving", "papers", "for", "this)."],
-    "near": 237.1,
-    "start": 237.68,
-    "end": 239.64,
-    "why": "The alignment started \"(you\" inside the pause; Whisper and silencedetect start it at 3:57.7."
+    "words": [
+      "(you",
+      "love",
+      "giving",
+      "papers",
+      "for",
+      "this)."
+    ],
+    "near": 219.24,
+    "start": 219.7,
+    "end": 221.01,
+    "why": "The alignment started \"(you\" inside the pause; Whisper and silencedetect put the aside at 3:39.7 to 3:41.0."
   },
   {
-    "words": ["Start", "wars"],
-    "near": 241.7,
-    "start": 240.33,
-    "end": 241.36,
-    "why": "The alignment put \"Start wars\" 1.3 s late; Whisper and silencedetect put it at 4:00.3 to 4:01.4."
+    "words": [
+      "Start",
+      "wars"
+    ],
+    "near": 221.82,
+    "start": 221.55,
+    "end": 222.38,
+    "why": "The alignment gave \"Start\" almost no length at 3:41.8; silencedetect puts the words at 3:41.6 to 3:42.4."
   },
   {
-    "words": ["(somehow", "this", "makes", "more", "papers)."],
-    "near": 242.86,
-    "start": 241.59,
-    "end": 243.24,
-    "why": "The alignment squeezed four of these words into zero length at 4:02.9; Whisper and silencedetect put the aside at 4:01.6 to 4:03.2."
+    "words": [
+      "(somehow",
+      "this",
+      "makes",
+      "more",
+      "papers)."
+    ],
+    "near": 222.12,
+    "start": 222.77,
+    "end": 224.14,
+    "why": "The alignment started \"(somehow\" inside the pause; Whisper and silencedetect put the aside at 3:42.8 to 3:44.1."
+  },
+  {
+    "words": [
+      "Destroy",
+      "the",
+      "planet"
+    ],
+    "near": 225.24,
+    "start": 224.62,
+    "end": 225.83,
+    "why": "The alignment gave \"Destroy\" zero length at 3:45.2; silencedetect puts the words at 3:44.6 to 3:45.8."
+  },
+  {
+    "words": [
+      "(surprisingly",
+      "profitable",
+      "in",
+      "papers)."
+    ],
+    "near": 226.36,
+    "start": 226.29,
+    "end": 227.84,
+    "why": "The alignment started \"(surprisingly\" late in the pause; silencedetect puts the aside at 3:46.3 to 3:47.8."
   }
 ]

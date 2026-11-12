@@ -1,0 +1,181 @@
+<template id="postwar-boom-template">
+  <!-- postwar-boom · collage (Part 15, scene 4: plate money-stacks). The bit: US military spending as stacks of war
+       bills, one bill = 1939, with the weapons factory (it is the Weapons Maker) sitting on top hugging its missile.
+       "After": the 1945 stack is 49 bills high beside 1939's one bill. "cut": the giant scissors (Part 1's) snip it six
+       bills up; "eighty-seven": the top 43 bills fall like a felled tree with the factory riding them down; −87.6% stamps
+       on the stump, which becomes 1947. "stumbled": the fallen bills drop their missile seals and scamper off as plain
+       bills; three houses pop up where they stop, and the family that moves in. "running out of people to shoot at":
+       the factory aims its missile at the barbecue dad, who holds out a hot dog, then the mom with the pram; it droops and the factory sobs. "now": over to
+       NOW, where a stack regrows to 30.6 bills with the factory riding it up; 30.6× stamps; the 1939 bill gulps.
+       "inflation-adjusted": an accountant pumps the 1939 bill up like a pillow; it pops in his face, he stands charred,
+       and the bill is exactly the same size. "one percent": a sliver a third of a bill thick slides out from under the
+       factory like a drawer and back; 1%. "love": it kisses its missile; three hearts float up and go off as tiny
+       mushroom clouds. "handle": it flicks the sliver off with its free hand, into the seal-flip funnel, and it walks
+       out of the spout as medicine money. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="postwar-boom" data-width="1920" data-height="1080" data-start="0" data-duration="28.08">
+    <div id="postwar-boom-weave"></div>
+    <div id="postwar-boom-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "postwar-boom", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The stacks on the ground line G: one bill = 1939's spending ($29 billion in 2024 dollars); each bill adds STEP
+      // px. 1945 = 49 bills, cut to 6 (1947, −87.6%); NOW = 30.6 (31 bills; the factory sits on 30.6).
+      var G = 960, BK = 0.6, STEP = 30, BH = SZ["bill-war-flat"][1] * BK;
+      var X = { b39: 420, b45: 860, house: [2520, 2880, 3240], dad: 2700, mom: 3060, now: 3800, funnel: 4250 };
+      var top = function (n) { return G - (n - 1) * STEP - BH; };            // the top of an n-bill stack
+      var FK = 0.72, FH = SZ["factory-kiss"][1] * FK, MID = G - FH / 2;     // the factory, its height, its middle standing on G
+      var CUT = 6, N45 = 49, NNOW = 31, LAND = X.b45 + 120 + (N45 - CUT) * STEP;
+      // cy(s): the view's y that puts the ground at y 880 (16:9) or 1430 (9:16, above the captions)
+      var cy = function (s) { return G - (V ? 470 : 340) / s; };
+      var views = V ? {
+        top45: [X.b45, top(N45) - 150, 1.3], peak: [1000, cy(0.75), 0.75], suburb: [2850, cy(0.72), 0.72],
+        now: [X.now, cy(0.85), 0.85], wide: [2300, cy(0.27), 0.27], low: [500, G - 380 / 1.2, 1.2], high: [X.now, top(NNOW) - 40, 1.1], funnel: [3980, cy(0.8), 0.8],
+      } : {
+        top45: [X.b45 + 150, top(N45) - 120, 1.0], peak: [1100, cy(0.46), 0.46], suburb: [2850, 540, 0.82],
+        now: [X.now + 150, cy(0.62), 0.62], wide: [2300, cy(0.45), 0.45], low: [560, 720, 1.1], high: [X.now + 80, top(NNOW) - 60, 1.0], funnel: [X.now + 260, 420, 0.7],
+      };
+
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+      var tag = function (id, text, x, t) { add({ at: t, do: "banner", id: id, text: text, x: x, y: G + 40, size: 52, width: 170, pad: 26, color: "ink", tilt: 0 }); };
+      // 1939: one bill that can look up (the walking war bill)
+      cast.one = { art: "bill-war", x: X.b39, y: G, anchor: "bottom", pivot: "bottom", scale: 0.62 };
+      // the accountant and his bicycle pump (one cut-out), the pump's hose ending at the bill's foot
+      cast.aud = { art: "accountant", x: X.b39 - 120, y: G, anchor: "bottom", pivot: "bottom", scale: 0.62, hidden: true,
+        eyes: [[165, 113], [218, 93]], eyeSize: 12, smoke: [[70, 12]] };   // eyes at art (66, 45), (87, 37): the eye's zoom (12/30) scales its position too
+      cast.scis = { art: "scissors", x: X.b45 - 230, y: top(CUT) + 30, scale: 0.9, hidden: true };
+      X.house.forEach(function (x, i) { cast["h" + i] = { art: "house", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: 1.25, hidden: true }; });
+      X.house.forEach(function (x, i) { cast["baby" + i] = { art: "baby", x: x + 100, y: G - 522 - 45, scale: 0.22, hidden: true }; });
+      cast.dad = { art: "barbecue-dad", x: X.dad, y: G, anchor: "bottom", pivot: "bottom", scale: 0.62, hidden: true };
+      cast.mom = { art: "pram-woman", x: X.mom, y: G, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true };
+      cast.funnel = { art: "funnel", x: X.funnel, y: G, anchor: "bottom", scale: 1.05, hidden: true };
+      cast.med = { art: "bill-med", x: X.funnel, y: G, anchor: "bottom", scale: 0.8, hidden: true };
+      // the factory: on the 1945 stack, then fallen, sobbing, and on top of NOW
+      cast.fac = { art: "factory-kiss", x: X.b45, y: top(N45) + 8, anchor: "bottom", pivot: "bottom", scale: FK, hidden: true };
+      cast.sob = { art: "factory-sob", x: LAND + 40, y: G, anchor: "bottom", pivot: "bottom", scale: FK, hidden: true };
+      cast.fac2 = { art: "factory-kiss", x: X.now, y: G, anchor: "bottom", pivot: "bottom", scale: FK, hidden: true };
+      // the 1% sliver: the top third of one bill, just under the factory's seat
+      cast.slice = { art: "bill-war-flat", x: X.now, y: top(NNOW) + 6, anchor: "top", scale: BK, clip: [[0, 0], [186, 0], [186, 44], [0, 44]], hidden: true };
+      [0, 1, 2].forEach(function (i) {
+        cast["heart" + i] = { art: "heart", x: X.now + 60 + i * 50, y: top(NNOW) - FH * 0.6, scale: 0.8, hidden: true };
+        cast["boom" + i] = { art: "mushroom", x: X.now + 20 + i * 90, y: top(NNOW) - FH * 0.6 - 170 - i * 50, scale: 0.3, hidden: true };
+      });
+
+      // "After World War Two": 1939's one bill, and 1945's stack of 49 with the factory on top
+      add({ at: 0, do: "pile", id: "s45", art: "bill-war-flat", x: X.b45, y: G, count: N45, scale: BK, gap: STEP, dur: 0.7, fall: 0.12, jitter: 3, tilt: 1.5 });
+      add({ at: 0.75, do: "pop", who: "fac", squash: true });
+      add({ on: "Two,", do: "bob", who: "fac", y: 5, r: 2, speed: 2, until: "cut" });
+      add({ at: V ? cue("percent") + 0.3 : cue("humans"), do: "banner", id: "title", text: "U.S. MILITARY SPENDING", x: V ? 900 : 2000, y: V ? -800 : -560, size: 90, width: V ? 760 : 1150, pad: 60, color: "ink", tilt: -2 });
+      tag("y39", "1939", X.b39, 0.2);
+      tag("y45", "1945", X.b45, 0.3);
+      // "cut ... eighty-seven point six percent": the scissors snip it six bills up; the top falls like a tree
+      add({ at: 0, do: "move", who: "scis", by: [0, 0], turn: 90, dur: 0.01 });
+      add({ on: "humans", offset: -0.25, do: "camera", view: "peak", dur: 0.45 });
+      add({ on: "humans", do: "slideIn", who: "scis", from: "left" });
+      add({ on: "cut", do: "shiver", who: "scis", dur: 0.25, amp: 6, rot: 10 });
+      add({ on: "cut", do: "shake", x: 5, frames: 2 });
+      add({ on: "spending", n: 1, do: "slideOut", who: "scis", to: "left" });
+      var tFell = cue("eighty-seven") - 0.1;
+      for (var i = CUT; i < N45; i++) {
+        var u = (i - CUT) / (N45 - CUT);
+        add({ at: tFell + 0.35 * Math.sqrt(u), do: "move", who: "s45." + i, to: [X.b45 + 120 + (i - CUT) * STEP, G - 40], turn: 90, dur: 0.18 + 0.25 * u, arc: 30 * u });
+      }
+      add({ at: tFell, do: "move", who: "fac", to: [LAND + 40, G - FH * 0.4], turn: 75, dur: 0.6, arc: 60 });
+      add({ at: tFell + 0.62, do: "shake", y: 12, frames: 4 });
+      add({ on: "percent", n: 1, do: "stamp", id: "cut", text: "−87.6%", x: X.b45, y: top(CUT) - 120, size: 130, width: 520, tilt: -6 });
+      add({ on: "years", do: "hide", who: "y45" });
+      tag("y47", "1947", X.b45, cue("years"));
+      add({ on: "and", n: 1, do: "swap", who: "fac", to: "sob" });
+      // "stumbled into the greatest economic boom": the fallen bills turn plain and scamper off to build houses
+      add({ on: "stumbled", do: "camera", view: "suburb", dur: 0.6 });
+      for (i = CUT; i < N45; i++) add({ on: "stumbled", offset: 0.02 * (i - CUT) % 0.3, do: "hide", who: "s45." + i });
+      add({ on: "stumbled", do: "march", id: "plain", art: "bill-plain", count: 6, height: 150, speed: 1500,
+        path: [[LAND - 400, G], [X.house[0] - 300, G - 20], [X.house[2] + 600, G]], end: "hide", steps: 5, bob: 12 });
+      ["greatest", "greatest", "greatest"].forEach(function (w, j) { add({ on: w, offset: j * 0.12, do: "pop", who: "h" + j, squash: true }); });
+      add({ on: "economic", do: "pop", who: "dad", squash: true });
+      add({ on: "economic", offset: 0.2, do: "pop", who: "mom", squash: true });
+      // a baby out of each chimney, like toast
+      X.house.forEach(function (x, j) {
+        add({ on: "boom", offset: 0.05 + j * 0.15, do: "pop", who: "baby" + j, squash: true });
+        add({ on: "boom", offset: 0.1 + j * 0.15, do: "hop", who: "baby" + j, height: 60 });
+      });
+      // "running out of people to shoot at.": it aims, at the dad, at the mom; nobody left to shoot; it sobs
+      add({ on: "by", n: 2, do: "swap", who: "sob", to: "fac2" });
+      add({ on: "by", n: 2, do: "move", who: "fac2", to: [X.dad - 300, MID], dur: 0.01 });
+      add({ on: "running", do: "nudge", who: "fac2", by: [70, 0] });
+      add({ on: "running", offset: 0.1, do: "nudge", who: "dad", by: [-40, 0] });                 // he holds out the hot dog
+      add({ on: "people", n: 1, do: "move", who: "fac2", to: [X.mom - 280, MID], dur: 0.3, arc: 20 });
+      add({ on: "shoot", do: "nudge", who: "fac2", by: [70, 0] });
+      add({ on: "shoot", offset: 0.1, do: "shiver", who: "mom", dur: 0.3, amp: 4, rot: 3 });
+      add({ on: "at.", do: "swap", who: "fac2", to: "sob" });
+      add({ on: "at.", offset: 0.05, do: "move", who: "sob", to: [X.mom - 280, MID], dur: 0.01 });
+      // "now spending thirty point six times": over to NOW; a stack regrows with the factory riding it up
+      add({ on: "now", do: "camera", view: "now", dur: 0.6 });
+      add({ on: "now", do: "swap", who: "sob", to: "fac" });
+      add({ on: "now", do: "move", who: "fac", to: [X.now, MID], turn: 0, dur: 0.5, arc: 220 });
+      tag("yNow", "NOW", X.now, cue("now") + 0.3);
+      var g0 = cue("thirty"), g1 = cue("times") - 0.05;
+      add({ at: g0, do: "pile", id: "sNow", art: "bill-war-flat", x: X.now, y: G, count: NNOW, scale: BK, gap: STEP, dur: g1 - g0, accel: 1, fall: 0.04, dist: 30, jitter: 3, tilt: 1.5 });
+      add({ at: g0, do: "move", who: "fac", by: [0, top(NNOW) + 8 - G], dur: g1 - g0 + 0.04 });
+      add({ on: "times", do: "stamp", id: "x306", text: "30.6×", x: X.now + (V ? 0 : 420), y: V ? top(NNOW) - FH - 140 : top(NNOW) + 80, size: 140, width: 420, tilt: -5 });
+      // "the pre-World War Two baseline": the whole chart; down at the foot, 1939's bill looks up and gulps
+      add({ on: "pre-World", do: "camera", view: "wide", dur: 0.7 });
+      add({ on: "baseline", do: "hop", who: "one", height: 30 });
+      add({ on: "baseline", offset: 0.25, do: "shiver", who: "one", dur: 0.4, amp: 3, rot: 4 });
+      // "inflation-adjusted dollars.": pumped up like a pillow; it pops in the accountant's face; it is the same size
+      add({ on: "in", n: 3, do: "camera", view: "low", dur: 0.5 });
+      add({ on: "in", n: 3, do: "hide", who: "cut" });
+      add({ on: "in", n: 3, do: "slideIn", who: "aud", from: "left" });
+      add({ on: "inflation-adjusted", do: "nudge", who: "aud", by: [0, 18] });
+      add({ on: "inflation-adjusted", do: "move", who: "one", by: [0, 0], scale: 1.6, dur: 0.3 });
+      add({ on: "inflation-adjusted", offset: 0.4, do: "nudge", who: "aud", by: [0, 18] });
+      add({ on: "inflation-adjusted", offset: 0.4, do: "move", who: "one", by: [0, 0], scale: 2.3, dur: 0.3 });
+      add({ on: "dollars.", do: "move", who: "one", by: [0, 0], scale: 1, dur: 0.01 });
+      add({ on: "dollars.", do: "boom", shake: 10, flash: 0.1 });
+      add({ on: "dollars.", do: "char", who: "aud" });
+      add({ on: "dollars.", offset: 0.5, do: "blink", who: "aud" });
+      add({ on: "You're", n: 2, offset: -0.2, do: "blink", who: "aud" });
+      // "asking for one percent.": a sliver a third of a bill thick slides out from under its seat and back
+      add({ on: "You're", n: 2, do: "camera", view: "high", dur: 0.6 });
+      add({ on: "You're", n: 2, do: "hide", who: "x306" });
+      add({ on: "asking", do: "show", who: "slice" });
+      add({ on: "asking", offset: 0.1, do: "move", who: "slice", by: [V ? 150 : 190, 0], dur: 0.25 });
+      add({ on: "one", n: 1, do: "stamp", id: "pct", text: "1%", x: X.now + (V ? 230 : 400), y: top(NNOW) + 70, size: 110, width: 200, tilt: -5 });
+      add({ on: "percent.", n: 2, offset: 0.2, do: "move", who: "slice", by: [V ? -150 : -190, 0], dur: 0.25 });
+      // "love exploding people": it kisses its missile; three hearts float up and go off as tiny mushroom clouds
+      add({ on: "Even", do: "hide", who: "pct" });
+      add({ on: "people", n: 2, do: "bob", who: "fac", y: 4, r: 3, speed: 3, until: "should" });
+      [0, 1, 2].forEach(function (j) {
+        add({ on: "love", offset: j * 0.15, do: "pop", who: "heart" + j });
+        add({ on: "love", offset: j * 0.15 + 0.05, do: "move", who: "heart" + j, by: [-40 + j * 40, -170 - j * 50], dur: 0.6, ease: "smooth" });
+        add({ on: "people", n: 3, offset: j * 0.15, do: "swap", who: "heart" + j, to: "boom" + j });
+        add({ on: "people", n: 3, offset: 0.7 + j * 0.15, do: "pop", who: "boom" + j, out: true });
+      });
+      // "handle one percent.": it flicks the sliver off; down the funnel; out walks medicine money
+      add({ on: "should", do: "camera", view: "funnel", dur: 0.6 });
+      add({ on: "should", do: "pop", who: "funnel", squash: true });
+      add({ on: "handle", do: "nudge", who: "fac", by: [30, 0] });
+      add({ on: "handle", offset: 0.05, do: "move", who: "slice", to: [X.funnel, G - SZ.funnel[1] * 1.05 + 30], turn: 200, dur: 0.45, arc: 200 });
+      add({ on: "handle", offset: 0.5, do: "hide", who: "slice" });
+      add({ on: "handle", offset: 0.6, do: "move", who: "fac", by: [0, 8], dur: 0.15 });
+      add({ on: "percent.", n: 3, offset: -0.1, do: "pop", who: "med", squash: true });
+      add({ on: "percent.", n: 3, do: "move", who: "med", by: [V ? 260 : 380, 0], dur: 0.8 });
+
+      KIT.collage({ id: ID, seed: 1504, plate: V ? [-3400, -6600, 8000, 6600] : [-2200, -2600, 6800, 3400], views: views, view: "top45", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

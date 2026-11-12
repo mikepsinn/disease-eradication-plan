@@ -21,6 +21,16 @@ Working folder: this worktree (`E:/eos/manual/.claude/worktrees/cartoon-storyboa
   - `video/storyboards/DECISIONS.md`: Mike's open questions.
 - **Older work:** Parts 1 to 14 have scenes in the flat 1950s look, and Parts 1 and 3 are rendered. They get rebuilt in collage. The code-drawn people and props kit goes once nothing uses it.
 
+## Audio (2026-11-06)
+
+- All timings follow `index-manual.7ce6b2b2.mp3` (57:06). Six chunks differ from the published take (02, 06, 08, 10, 15, 18): the food line cut to "we skip the mass murder step", the two-mistakes and 10.7 billion passages condensed, "five times" fixed, and the 2040 line about AI evading tax collection cut (chunk 18, so Part 25 lost the tax office, the auditor and the `audit-side-eye` host cut).
+- **It is not published.** The feed still serves `cbaf659d`, so `build-part.mjs` only works where `assets/audiobook/cartoon/index-manual.7ce6b2b2.mp3` exists locally. A fresh checkout gets a 404 until it is uploaded.
+- The takes are in `assets/audiobook/cartoon/audio-7ce6b2b2/` (git-ignored): the six chunks and their hashes, the prepared text, alignment, subtitles and the MP3. To publish: merge develop into this branch, copy them into the main checkout's `assets/audiobook/manual-paperback/`, update `index-manual.source_hash` so text prep doesn't rewrite and re-voice the chapter, then sync. Running text prep without that re-voices all 19 chunks.
+- This branch is behind develop: its `index-manual.qmd` lacks the restored Nazi line, which the audio has.
+- `two-mistakes` is rebuilt on the condensed passage as v4: the cabinet pops onto his desk (12.4 MILLION A YEAR, 8.2 YEARS), the column climbs to 102,000,000, the Thalidomide plates and Kelsey come before the ratio, and the second climb ends on 3,389 : 1. `hyperframes check` flags the REJECTED stamp over the plates, which is intended.
+- Other old renders still stand on the old take with the same words: `604-to-1`, `you-bought-the-other-thing`, `donut-doctor`. `the-human-economy` is re-cut as v9 (a new art sheet, `sheets/tomorrow.png`): on "skip" the murder drops out of the same machine, the bills' seals flip from missiles to crosses, the city of tomorrow rises where the bones were, the money goes straight to the family and "23.2× RICHER" replaces THE ECONOMY; she closes the punchline at the console.
+- Her mouth (2026-11-05): `build-part.mjs` gives a fast word the most open shape among its letters instead of dropping every shape, and `kit.js` makes a smirk, side-eye or eye-roll wait for a pause while she speaks with her last face that can. Every part's data carries this; renders made earlier don't. Part 2's flat `host-closes` is that plain host shot until its collage rebuild; its beat sheet has the clean machine.
+
 ## Next
 
 1. Mike watches the shorts and answers DECISIONS.md.

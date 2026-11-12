@@ -1,0 +1,76 @@
+<template id="lobbyists-have-clients-template">
+  <!-- lobbyists-have-clients · collage host shot (Part 19, scene 4). He stands by the console with his hand already out.
+       "Lobbyists": a hand flicks his shut case open; the brass plate says BELIEFS and the slot is empty; a moth comes out.
+       "beliefs.": the rolodex spins through the military contractors and stops on LOCKHEED; "clients.": the hand flicks
+       it to YOU, and he nods. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="lobbyists-have-clients" data-width="1920" data-height="1080" data-start="0" data-duration="5.96">
+    <div id="lobbyists-have-clients-weave"></div>
+    <div id="lobbyists-have-clients-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, TOP = KIT.STUDIO.top;
+    var LOB = V ? [960, 1460, 0.85] : [1790, 1060, 1.1];
+    var CASE = V ? [620, 1460, 1.6] : [1400, 1060, 2.4], ROLO = V ? [620, 1460, 1.85] : [1400, 1060, 2.8];
+    var HAND = V ? [620, 830, 0.6] : [1400, 200, 0.75], HAND2 = V ? [620, 790, 0.6] : [1400, 130, 0.75];
+    var rolo = function (text) {
+      return { art: "rolodex", x: ROLO[0], y: ROLO[1], anchor: "bottom", pivot: "bottom", scale: ROLO[2], hidden: true,
+        label: { text: text, at: [100, 90], width: 108, size: 90 } };
+    };
+    var CARDS = ["LOCKHEED", "RAYTHEON", "BOEING", "LOCKHEED", "RAYTHEON", "BOEING", "LOCKHEED"];
+    var cast = {
+      lob: { art: "lobbyist-shake", x: LOB[0], y: LOB[1], anchor: "bottom", pivot: "bottom", scale: LOB[2] },
+      shut: { art: "briefcase-shut", x: CASE[0], y: CASE[1], anchor: "bottom", pivot: "bottom", scale: CASE[2] * 1.05 },
+      brief: { art: "briefcase", x: CASE[0], y: CASE[1], anchor: "bottom", pivot: "bottom", scale: CASE[2], hidden: true,
+        label: { text: "BELIEFS", at: [144, 74], width: 74, size: 60 } },
+      moth: { art: "moth", x: CASE[0], y: CASE[1] - 110 * CASE[2], scale: V ? 0.45 : 0.65, hidden: true },
+      you: rolo("YOU"),
+      flick: { art: "pointing-hand", x: HAND[0], y: HAND[1], scale: HAND[2], hidden: true },
+      flick2: { art: "pointing-hand", x: HAND2[0], y: HAND2[1], scale: HAND2[2], hidden: true },
+    };
+    CARDS.forEach(function (c, i) { cast["r" + i] = rolo(c); });
+    // The rolodex spins: each card shows for a drawing or two, and the last one stays.
+    var spin = [], t0 = KIT.cue("lobbyists-have-clients", "beliefs.") + 0.2, t1 = KIT.cue("lobbyists-have-clients", "clients."), step = (t1 - t0) / (CARDS.length - 1);
+    CARDS.forEach(function (c, i) {
+      if (i) spin.push({ at: t0 + i * step, do: "show", who: "r" + i }, { at: t0 + i * step, do: "hide", who: "r" + (i - 1) });
+    });
+    KIT.collage({
+      id: "lobbyists-have-clients", seed: 1906, host: true,
+      cast: cast,
+      beats: [
+        { at: 0.05, do: "slideIn", who: "lob", from: "right", tilt: 3 },
+        { at: 0.6, do: "bob", who: "lob", y: 3, r: 1.5 },
+        { on: "convincing.", do: "shiver", who: "shut", dur: 0.5, amp: 2, rot: 1 },
+        // She flicks it open: empty
+        { on: "Lobbyists", offset: -0.35, do: "slideIn", who: "flick", from: "top", dist: 500, over: 12 },
+        { on: "Lobbyists", do: "nudge", who: "flick", by: [0, 40] },
+        { on: "Lobbyists", offset: 0.08, do: "swap", who: "shut", to: "brief" },
+        { on: "Lobbyists", offset: 0.35, do: "slideOut", who: "flick", to: "top", dist: 600 },
+        { on: "beliefs.", offset: -0.25, do: "pop", who: "moth" },
+        { on: "beliefs.", offset: -0.1, do: "move", who: "moth", to: V ? [860, 500] : [1560, 130], dur: 1.2, arc: 140, turn: 25 },
+        { on: "beliefs.", offset: 1.1, do: "hide", who: "moth" },
+        // The rolodex spins, stops on LOCKHEED, and she flicks it on
+        { at: t0, do: "pop", who: "r0", squash: true },
+        { at: t0 + 0.08, do: "shiver", who: CARDS.map(function (c, i) { return "r" + i; }), dur: t1 - t0, amp: 2, rot: 2 },
+      ].concat(spin, [
+        { on: "clients.", offset: 0.3, do: "slideIn", who: "flick2", from: "top", dist: 500, over: 8 },
+        { on: "clients.", offset: 0.55, do: "nudge", who: "flick2", by: [0, 40] },
+        { on: "clients.", offset: 0.6, do: "show", who: "you" },
+        { on: "clients.", offset: 0.6, do: "hide", who: "r" + (CARDS.length - 1) },
+        { on: "clients.", offset: 0.6, do: "shiver", who: "you", dur: 0.2, amp: 3, rot: 2 },
+        { on: "clients.", offset: 0.8, do: "bow", who: "lob", angle: 8, hold: 0.2 },
+      ]),
+    });
+  </script>
+</template>

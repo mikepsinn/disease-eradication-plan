@@ -1,0 +1,118 @@
+<template id="referral-pyramid-template">
+  <!-- referral-pyramid · collage, a plain field. "Two hundred and fifty million dollars": a pile of plain bills thumps
+       down, $250,000,000. "sharing": one human at the top hands a VOTE ticket to two below him, and a bill hops from the
+       pile into his hand; "link": each of them hands it to two more, and gets a bill. "pyramid": the handing runs down
+       row after row, twice as many each time, and the counter up its side runs 1, 2, 4, 8 ... to 280,000,000. "top":
+       the camera tilts up: the Reaper is standing on the top of it. "not": every human in the pyramid shouts up at him
+       at once, and the blast blows him off the top, scythe and clipboard flying. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="referral-pyramid" data-width="1920" data-height="1080" data-start="0" data-duration="12.22">
+    <div id="referral-pyramid-weave"></div>
+    <div id="referral-pyramid-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "referral-pyramid", V = KIT.V, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration, F = KIT.collage.F;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hgt = function (art, h) { return h / SZ[art][1]; };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      // The pyramid, apex at (960, 0): row k holds 2^k humans in a row 360 (k + 1) px wide, each in a square cell
+      // 360 (k + 1) / 2^k px (so the rows are a triangle and the humans get smaller as they double). Nine rows here;
+      // the counter says the rest.
+      var ROWS = 9, C0 = 360, AX = 960, cell = [], top = [0];
+      for (var k = 0; k < ROWS; k++) { cell.push(C0 * (k + 1) / Math.pow(2, k)); top.push(top[k] + cell[k]); }
+      var ARTS = ["citizen-1", "citizen-2", "citizen-5", "citizen-7", "citizen-8", "citizen-12", "citizen-3", "citizen-11", "citizen-10"];
+      // rows 0 to 2 are cut-outs (they hand the tickets); the rest are pictograms
+      var person = [];
+      for (k = 0; k < 3; k++) {
+        var n = Math.pow(2, k), w = C0 * (k + 1);
+        for (var j = 0; j < n; j++) {
+          var nm = "r" + k + "_" + j, art = ARTS[(k * 3 + j) % ARTS.length];
+          cast[nm] = { art: art, x: AX - w / 2 + (j + 0.5) * cell[k], y: top[k + 1], anchor: "bottom", pivot: "bottom", scale: hgt(art, cell[k] * 0.86), hidden: true };
+          person.push(nm);
+        }
+      }
+      var hand = function (nm) { var c = cast[nm], h = SZ[c.art][1] * c.scale; return [c.x + h * 0.12, c.y - h * 0.5]; };
+      // the pile of bills on the left, and the bills that hop from it
+      var PILE = [V ? 470 : 300, top[2] + 40];
+      for (j = 0; j < ROWS; j++) cast["pay" + j] = { art: "bill-plain", x: PILE[0], y: PILE[1] - 250, scale: 0.42, hidden: true };
+      for (j = 0; j < 6; j++) cast["tk" + j] = { art: "ticket", x: 0, y: 0, scale: 0.2, hidden: true, label: { text: "VOTE", at: [186, 108], width: 260, size: 40 } };
+      // the Reaper standing on the top human's head
+      cast.reaper = { art: "reaper-stop", x: AX + 20, y: top[1] - cell[0] * 0.8, anchor: "bottom", pivot: "bottom", scale: hgt("reaper-stop", 420) };
+      cast.rclip = { art: "plan-clipboard", x: AX - 120, y: top[1] - cell[0] * 0.8 - 230, scale: 0.3, hidden: true };
+
+      var views = V ? { close: [960, 500, 0.75], wide: [960, 700, 0.32], top: [960, 50, 1.3], gone: [960, 0, 0.9] }
+        : { close: [960, 500, 0.7], wide: [960, 700, 0.42], top: [960, 30, 1.1], gone: [960, 0, 0.8] };
+      // "Two hundred and fifty million dollars": the pile thumps down
+      add({ on: "Two", do: "pile", id: "pile", art: "bill-plain", x: PILE[0], y: PILE[1], count: 24, heap: 6, spread: 60, scale: 0.42, until: "dollars" });
+      add({ on: "dollars", offset: 0.1, do: "stamp", id: "budget", text: "$250,000,000", x: PILE[0], y: PILE[1] - 470, size: 90, width: 560, tilt: -4 });
+      // the people at the top
+      add({ on: "paid", do: "pop", who: "r0_0", squash: true });
+      add({ on: "referral", do: "pop", who: ["r1_0", "r1_1"], squash: true });
+      // "sharing": he hands a ticket to each of two; a bill hops from the pile into his hand
+      var give = function (t, from, to, ti, pi) {
+        cast["tk" + ti].x = hand(from)[0]; cast["tk" + ti].y = hand(from)[1];
+        add({ at: t, do: "pop", who: "tk" + ti });
+        add({ at: t + 0.1, do: "move", who: "tk" + ti, to: hand(to), dur: 0.3, arc: 40 });
+        add({ at: t + 0.5, do: "pop", who: "tk" + ti, out: true });
+        if (pi !== undefined) {
+          add({ at: t + 0.2, do: "pop", who: "pay" + pi });
+          add({ at: t + 0.25, do: "move", who: "pay" + pi, to: hand(from), dur: 0.35, arc: 120, scale: 0.55 });
+          add({ at: t + 0.65, do: "hop", who: from, height: 24 });
+        }
+      };
+      var S0 = cue("sharing");
+      give(S0, "r0_0", "r1_0", 0, 0);
+      give(S0 + 0.15, "r0_0", "r1_1", 1);
+      add({ at: S0 + 0.6, do: "pop", who: ["r2_0", "r2_1", "r2_2", "r2_3"], squash: true });
+      var L0 = cue("link");
+      give(L0, "r1_0", "r2_0", 2, 1); give(L0 + 0.12, "r1_0", "r2_1", 3);
+      give(L0 + 0.3, "r1_1", "r2_2", 4, 2); give(L0 + 0.42, "r1_1", "r2_3", 5);
+      // "pyramid": row after row, faster and faster; the counter doubles up its side
+      add({ on: "financially", do: "camera", view: "wide", dur: 1.4 });
+      var P0 = cue("vote") + 0.3, P1 = cue("pyramid");
+      for (k = 3; k < ROWS; k++) {
+        var nk = Math.pow(2, k), wk = C0 * (k + 1), t = P0 + (P1 - P0) * Math.pow((k - 3) / (ROWS - 3), 0.7);
+        add({ at: t, do: "pictogram", id: "row" + k, art: ARTS[k], count: nk, cols: nk, box: [AX - wk / 2, top[k], AX + wk / 2, top[k + 1]], dur: 0.25, fill: 0.86, order: "cells" });
+        add({ at: t, do: "pop", who: "pay" + k });
+        add({ at: t + 0.05, do: "move", who: "pay" + k, to: [AX - wk / 2 + 30, top[k + 1] - cell[k] / 2], dur: 0.3, arc: 150, scale: 0.3 });
+        add({ at: t + 0.4, do: "pop", who: "pay" + k, out: true });
+      }
+      var CX = V ? AX : AX + 900, CY = V ? -900 : 220;
+      // 1, 2, 4 ... as each row fills, then on to 280,000,000 (the card sized for the last number)
+      var RT = [cue("paid"), cue("referral"), S0 + 0.6];
+      for (k = 3; k < ROWS; k++) RT.push(P0 + (P1 - P0) * Math.pow((k - 3) / (ROWS - 3), 0.7));
+      RT.forEach(function (t, k) {
+        add({ at: t, do: "counter", id: "count", from: k ? undefined : 1, to: Math.pow(2, k), dur: 0.01, x: CX, y: CY, size: V ? 200 : 170, prefix: "", width: V ? 1050 : 1000, border: "ink" });
+      });
+      add({ at: P1 + 0.2, do: "counter", id: "count", to: 280000000, dur: cue("top") - P1 - 0.4, ease: "smooth" });
+      // "top": the Reaper on the top of it, tapping his foot
+      add({ on: "where", do: "camera", view: "top", dur: 0.8 });
+      add({ on: "where", do: "hide", who: "count" });
+      add({ on: "thing", do: "bob", who: "reaper", y: 3, r: 2, speed: 3, until: "not" });
+      // "not": everyone shouts up at him; the blast blows him off the top
+      var NOT = cue("not");
+      add({ at: NOT, do: "hop", who: person, height: 30 });
+      for (k = 3; k < ROWS; k++) add({ at: NOT + 0.03 * k, do: "hop", who: "row" + k, height: 20 });
+      add({ at: NOT, do: "shake", y: 16, frames: 8 });
+      add({ at: NOT + 0.1, do: "boom", shake: 12, flash: 0.1 });
+      add({ at: NOT + 0.1, do: "camera", view: "gone", dur: 0.6 });
+      add({ at: NOT + 0.15, do: "move", who: "reaper", by: [1500, -1300], turn: 720, dur: 1.0 });
+      add({ at: NOT + 0.15, do: "show", who: "rclip" });
+      add({ at: NOT + 0.2, do: "move", who: "rclip", by: [-1300, -900], turn: -540, dur: 0.9 });
+
+      KIT.collage({ id: ID, seed: 1813, plate: [-3500, -3800, 5500, 4500], views: views, view: "close", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

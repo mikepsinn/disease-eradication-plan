@@ -1,0 +1,91 @@
+<template id="the-switch-template">
+  <!-- the-switch · collage host shot (Part 23, scene 14). In the window, three pairs of big gears are bolted onto
+       Earth, meshing, one of the five steps fixed to each hub: the bond, the Lobbyist, the Super PAC, the laptop and
+       the Optimitron. "machinery.": a cable runs from them in through the glass to a knife switch on her ledge, its handle
+       up. "build": YOU climbs up over the ledge with a wrench, looks at the gears and faints backward out of the
+       frame; the wrench follows him by itself. "turn": the gears twitch and puff dust. "Here": she points at the
+       switch. "switch.": YOU's hand comes up from the bottom of the frame toward it; a spark bites his fingertip, the
+       hand jerks back smoking, comes up again and stops just short. Iris out on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="the-switch" data-width="1920" data-height="1080" data-start="0" data-duration="8.006">
+    <div id="the-switch-weave"></div>
+    <div id="the-switch-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "the-switch", V = KIT.V, S = KIT.STUDIO, Z = KIT.collage.SIZES, TOP = S.top, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hk = function (art, h) { return h / Z[art][1]; };
+      // Earth as a cut-out of the deck's own (the deck's copy is hidden below), lower and bigger, so the gears fit on it.
+      var EARTH = "../deck/earth"; Z[EARTH] = [667, 651];
+      var E = V ? [850, 650, 200] : [1490, 640, 300], EK = 2 * E[2] / 667;
+      // three pairs of gears across the face of Earth; the hubs are at art (170, 165) and (415, 165)
+      var GK = (V ? 230 : 330) / Z.gears[0], r = E[2];
+      var PAIRS = [[-0.18, -0.42], [0.2, 0.02], [-0.22, 0.45]].map(function (p) { return [E[0] + p[0] * r * 1.6, E[1] + p[1] * r]; });
+      var hub = function (p, j) { return [p[0] + ((j ? 415 : 170) - 264) * GK, p[1] + (165 - 162) * GK]; };
+      var IH = V ? 52 : 74;
+      var cast = { earth: { art: EARTH, x: E[0], y: E[1], scale: EK } };
+      PAIRS.forEach(function (p, i) { cast["g" + i] = { art: "gears", x: p[0], y: p[1], scale: GK, rotate: 0 }; });
+      var STEPS = [["bond", 0.55], ["lobbyist", 1.25], ["super-pac", 0.9], ["laptop", 0.75], ["optimitron", 0.8]];
+      STEPS.forEach(function (st, i) {
+        var h = hub(PAIRS[Math.floor(i / 2)], i % 2);
+        cast["s" + i] = { art: st[0], x: h[0], y: h[1], scale: hk(st[0], IH * st[1]) };
+      });
+      // the switch on the ledge, right of her, and where the cable leaves Earth
+      var SW = V ? [610, TOP + 8] : [1010, TOP + 8], SWH = V ? 170 : 230, SWK = hk("knife-switch", SWH);
+      var LEVER = [SW[0], SW[1] - SWH * 0.5];
+      var OUT = hub(PAIRS[2], 0);
+      cast.sw = { art: "knife-switch", x: SW[0], y: SW[1], anchor: "bottom", pivot: "bottom", scale: SWK };
+      // YOU, at ledge scale, climbing up over its front edge with his wrench
+      var YH = V ? 330 : 420, YX = V ? 930 : 1260;
+      cast.you = { art: "you-think", x: YX, y: TOP + YH * 0.72, anchor: "bottom", pivot: "bottom", scale: hk("you-think", YH), hidden: true };
+      cast.wrench = { art: "wrench", x: YX + YH * 0.22, y: TOP - 20, scale: hk("wrench", YH * 0.3), hidden: true };
+      ["d0", "d1", "d2"].forEach(function (n, i) { cast[n] = { art: "cloud-puff", x: PAIRS[i][0], y: PAIRS[i][1] - 60, scale: V ? 0.3 : 0.42, hidden: true }; });
+      // his hand, finger up, from the bottom of the frame
+      var HH = V ? 260 : 300, HX = LEVER[0] + (V ? 20 : 30), HY = V ? 1400 : 1080 + HH * 0.5;
+      cast.hand = { art: "pointing-hand", x: HX, y: HY, scale: hk("pointing-hand", HH), hidden: true, smoke: [[87, 270]] };
+
+      var NEAR = LEVER[1] + HH * 0.62;
+      var beats = [
+        { at: -1, do: "move", who: "hand", by: [0, 0], turn: 180, dur: 0.01 },
+        // "machinery.": the cable from the bottom gears in through the glass, along the ledge to the switch
+        { on: "machinery.", n: 1, offset: -0.5, do: "line", id: "cable", points: [OUT, [OUT[0] - (V ? 120 : 200), OUT[1] + (V ? 90 : 120)], [SW[0] + (V ? 120 : 200), TOP - (V ? 10 : 14)], [SW[0] + SWH * 0.3, LEVER[1] + 10]], color: "ink", width: V ? 7 : 9, dur: 0.6 },
+        { on: "machinery.", n: 1, do: "shiver", who: ["g0", "g1", "g2"], dur: 0.35, amp: 2, rot: 3 },
+        // "build": YOU climbs over the ledge with his wrench, looks, and faints backward out of the frame
+        { on: "need", n: 1, do: "slideIn", who: "you", from: "bottom", dist: YH, over: 10 },
+        { on: "need", n: 1, offset: 0.1, do: "slideIn", who: "wrench", from: "bottom", dist: YH, over: 10 },
+        { on: "build", do: "shiver", who: "you", dur: 0.4, amp: 3, rot: 2 },
+        { on: "machinery.", n: 2, do: "move", who: "you", by: [V ? 60 : 90, 30], turn: 70, dur: 0.25 },
+        { on: "machinery.", n: 2, offset: 0.25, do: "drop", who: "you", dist: 1300, spin: 20, dur: 0.6 },
+        { on: "machinery.", n: 2, offset: 0.45, do: "move", who: "wrench", by: [V ? 60 : 90, 0], turn: 90, dur: 0.2 },
+        { on: "machinery.", n: 2, offset: 0.65, do: "drop", who: "wrench", dist: 1300, spin: 60, dur: 0.6 },
+        // "turn": the gears twitch and puff dust
+        { on: "turn", do: "shiver", who: ["g0", "g1", "g2", "s0", "s1", "s2", "s3", "s4"], dur: 0.3, amp: 4, rot: 6 },
+        { on: "turn", offset: 0.05, do: "pop", who: ["d0", "d1", "d2"] },
+        { on: "turn", offset: 0.1, do: "move", who: ["d0", "d1", "d2"], by: [-30, -60], scale: 1.6, dur: 0.6, ease: "smooth" },
+        { on: "turn", offset: 0.7, do: "pop", who: ["d0", "d1", "d2"], out: true },
+        // "switch.": the hand comes up; a spark; it jerks back smoking; up again, and stops just short
+        { on: "switch.", offset: -0.35, do: "show", who: "hand" },
+        { on: "switch.", offset: -0.35, do: "move", who: "hand", to: [HX, NEAR + 40], turn: 180, dur: 0.3 },
+        { on: "switch.", do: "sparks", who: ["hand", "sw"], until: ["switch.", 1, 0.12] },
+        { on: "switch.", offset: 0.05, do: "char", who: "hand" },
+        { on: "switch.", offset: 0.05, do: "move", who: "hand", by: [0, V ? 160 : 150], turn: 190, dur: 0.08 },
+        { on: "switch.", offset: 0.2, do: "move", who: "hand", to: [HX, NEAR + (V ? 70 : 60)], turn: 180, dur: 0.2, ease: "smooth" },
+        { on: "switch.", offset: 0.42, do: "shiver", who: "hand", dur: 0.5, amp: 2, rot: 1 },
+      ];
+      KIT.collage({ id: ID, seed: 2314, host: { iris: ["out", D - 0.5, D - 0.02] }, cast: cast, beats: beats });
+      document.getElementById(ID + "-hwall").querySelector(".earth").style.visibility = "hidden";
+    })();
+  </script>
+</template>

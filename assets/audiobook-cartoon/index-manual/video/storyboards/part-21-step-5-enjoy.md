@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:26.8
+duration: 1:25.4
 message: "Once the treaty passes, the $27.2 billion a year pays every group that profited from war, so nobody has to become a better person."
 arc: Title card (the emblem's papers stop running and lie back; the Reaper's jaw drops at "Nobody Dies") → at the console, money carries the treaty onto a brass balance, and the Moral Human, who weighs nothing, floats off it like a balloon → the money volcano erupts over a road, and the camera travels it stop by stop as each group gets paid: the Weapons Maker heaved up into the money cloud, the Scientist's turnstile turned round so patients queue to get in, the insurer bubble-wrapping YOU, the fat cat's investors storming the Capitol, the Lobbyist's Wikipedia page, the Politician buried in ballots, YOU in the hammock while the Reaper's coconut comes back on him → the Moral Human comes down on the console → YOU swings the GREED hand off the brawl onto the diseases
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 21, "Step 5: Enjoy"
-audio: index-manual.cbaf659d.mp3, 45:56.9 to 47:23.7
+audio: index-manual.7ce6b2b2.mp3, 45:28.3 to 46:53.7
 version: v3
 ---
 
@@ -59,7 +59,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "Step five: Enjoy"
-- time: 45:56.9 to 46:02.7 (5.8 s)
+- time: 45:28.3 to 45:34.5 (6.2 s)
 - voiceover: "Step five: Enjoy. *Everyone Gets Rich and Nobody Dies*"
 - layer: A, title card
 - status: planned
@@ -77,7 +77,7 @@ Sound: a projector whirr from "Step"; a sparkle as the seals flip, after "Enjoy.
 - act: The treaty passes
 - transition_in: iris in on her face
 - cue: "Your treaty passes because"
-- time: 46:02.7 to 46:07.9 (5.2 s)
+- time: 45:34.5 to 45:39.8 (5.3 s)
 - voiceover: "Your treaty passes because money defeats morality, as is tradition."
 - layer: A, host
 - wishonia: big, smirk-smile + body-presenting; smirk-closed + body-shrug on "tradition."
@@ -97,7 +97,7 @@ Sound: marching pats on "treaty"; a slam and a slide whistle up on "defeats"; a 
 - act: The money volcano
 - transition_in: cut
 - cue: "The twenty-seven point two billion"
-- time: 46:07.9 to 46:20.5 (12.6 s)
+- time: 45:39.8 to 45:52.9 (13.2 s)
 - voiceover: "The twenty-seven point two billion dollars a year money volcano erupts: Military Contractors keep ninety-nine percent of their murder budget PLUS get two hundred and seventy-two percent returns."
 - layer: B, plate volcano-road
 - status: planned
@@ -117,7 +117,7 @@ Sound: a pop as the bill is plucked on "billion"; a stamp thump on "year"; the b
 - act: The money volcano
 - transition_in: same plate (no seam)
 - cue: "Instead of paying forty-one thousand"
-- time: 46:20.5 to 46:29.7 (9.2 s)
+- time: 45:52.9 to 46:02.1 (9.1 s)
 - voiceover: "Instead of paying forty-one thousand dollars for phase two and three trials, the treaty pays Big Pharma for each patient that joins their trials."
 - layer: B, plate volcano-road
 - status: planned
@@ -137,7 +137,7 @@ Sound: a thump as the stack goes in on "forty-one"; one click on "trials,"; a bo
 - act: The money volcano
 - transition_in: same plate (no seam)
 - cue: "Insurance Companies find"
-- time: 46:29.7 to 46:43.2 (13.5 s)
+- time: 46:02.1 to 46:15.4 (13.3 s)
 - voiceover: "Insurance Companies find that healthy people file fewer claims than dead people (dead people file zero claims, which is the ideal customer except they also pay zero premiums, creating a revenue problem)."
 - layer: B, plate volcano-road
 - status: planned
@@ -159,7 +159,7 @@ Sound: a cash-register ding as YOU's premium bar rises on "healthy"; squeaky han
 - act: The money volcano
 - transition_in: same plate (no seam)
 - cue: "Investors receive two hundred"
-- time: 46:43.2 to 46:58.6 (15.4 s)
+- time: 46:15.4 to 46:29.3 (13.9 s)
 - voiceover: "Investors receive two hundred and seventy-two percent returns that scale with every treaty expansion, turning them into the world's most aggressive pro-health and anti-war lobbying force, not a sentence anyone expected to write."
 - layer: B, plate volcano-road
 - status: planned
@@ -179,7 +179,7 @@ Sound: a ding on "seventy-two"; a pop per stack on "every", "treaty" and "expans
 - act: The money volcano
 - transition_in: same plate (no seam)
 - cue: "Lobbyists keep the same job"
-- time: 46:58.6 to 47:16.5 (17.9 s)
+- time: 46:29.3 to 46:46.7 (17.4 s)
 - voiceover: "Lobbyists keep the same job and salary, but their Wikipedia page no longer needs a "Controversies" section. Politicians get reelected by living voters (a revolutionary strategy). Regular humans enjoy not dying from stupid things (priceless, but also free)."
 - layer: B, plate volcano-road
 - status: planned
@@ -201,7 +201,7 @@ Sound: a flip on "salary,"; a whoosh as the page unfolds on "Wikipedia" and a sn
 - act: The turn
 - transition_in: cut
 - cue: "Nobody has to evolve morally"
-- time: 47:16.5 to 47:18.9 (2.4 s)
+- time: 46:46.7 to 46:49.2 (2.6 s)
 - voiceover: "Nobody has to evolve morally."
 - layer: A, host
 - wishonia: big, smirk-smile + body-hands-hips; sideeye-closed + body-idle on "morally."
@@ -219,7 +219,7 @@ Sound: a falling slide whistle on "Nobody"; a splat on "evolve"; a sparkle on "m
 - act: The turn
 - transition_in: cut
 - cue: "You just point everyone's greed"
-- time: 47:18.9 to 47:23.7 (4.8 s)
+- time: 46:49.2 to 46:53.7 (4.5 s)
 - voiceover: "You just point everyone's greed at diseases instead of each other."
 - layer: B, plate greed-field
 - status: planned

@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:17.9
+duration: 2:18.2
 message: "Nearly everyone already wants less war and disease; a yes vote by 3.5% of humanity (280 million people) proves it, and paid referral bonuses get it there."
 arc: Title card, a finger rings the atom and one running paper turns into medicine money → at the console, one click stops the Reaper's scythe and Earth's 3.5% wedge is a sliver → one war bill flips its seal and walks to the Scientist → the whole town already agrees, except the Weapons Maker, who is crossed off → nobody opens their bubble first, and an old woman's husband dies beside her with his hand half up → the galaxy's longest game of you-go-first, with headstones → every bubble pops open, and the missile factories pop up as hospitals → the lone weird human presses the button and the stadium lights up → the wedge asks why → the shelf of history, FAILURES: 0, and the cheat code filed under LATER → 28 voters beside 400 twerkers → the twerker votes with his hip → the referral pyramid blasts the Reaper off the top, and his clipboard lands on the console
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 18, "Step 2: The Great Clicking"
-audio: index-manual.cbaf659d.mp3, 40:53.0 to 43:10.9
+audio: index-manual.7ce6b2b2.mp3, 40:30.6 to 42:48.7
 version: v3
 ---
 
@@ -55,7 +55,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "Step 2: The Great Clicking"
-- time: 40:53.0 to 40:56.1 (3.1 s)
+- time: 40:30.6 to 40:33.9 (3.4 s)
 - voiceover: "Step 2: The Great Clicking."
 - layer: A, title card
 - status: planned
@@ -73,7 +73,7 @@ Sound: the projector whirr from "Step"; a click on "Clicking."; a sparkle as the
 - act: The button
 - transition_in: iris in on her face
 - cue: "Make Humans Click a Button"
-- time: 40:56.1 to 41:03.5 (7.4 s)
+- time: 40:33.9 to 40:41.3 (7.4 s)
 - voiceover: "Make Humans Click a Button to Not Die You need three point five percent of humanity to vote yes on:"
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; smirk-smile + body-idle on "Die"; lookright-smile + body-point-right on "five"; skeptical-smile + body-hands-hips on "yes"
@@ -93,7 +93,7 @@ Sound: a click on "Click"; a whoosh and a record scratch as the scythe stops on 
 - act: The button
 - transition_in: cut
 - cue: "Should your country redirect"
-- time: 41:03.5 to 41:08.7 (5.3 s)
+- time: 40:41.3 to 40:46.5 (5.2 s)
 - voiceover: ""Should your country redirect one percent of military spending to fund clinical trials?"."
 - layer: B, plate town-square
 - status: planned
@@ -111,7 +111,7 @@ Sound: a ding as the bill lights; a sparkle on "fund"; pattering feet; a shrug-s
 - act: Everyone already agrees
 - transition_in: same plate (no seam)
 - cue: "You are not creating"
-- time: 41:08.7 to 41:22.4 (13.6 s)
+- time: 40:46.5 to 41:00.3 (13.8 s)
 - voiceover: "You are not creating support for not dying of horrible diseases and not mass murdering each other. Nearly everyone already supports not dying of horrible diseases and not mass murdering each other. You are proving it."
 - layer: B, plate town-square
 - status: planned
@@ -130,7 +130,7 @@ Sound: a thump for the nod and pats as the hats land on "supports"; a squeak as 
 - act: Everyone already agrees
 - transition_in: same plate (no seam)
 - cue: "Everyone thinks this is crazy"
-- time: 41:22.4 to 41:35.8 (13.4 s)
+- time: 41:00.3 to 41:13.6 (13.3 s)
 - voiceover: "Everyone thinks this is crazy because everyone else thinks this is crazy. Your economists call it pluralistic ignorance, which is the polite term for eight billion people waiting for permission to want what they already want."
 - layer: B, plate town-square
 - status: planned
@@ -152,7 +152,7 @@ Sound: a squeak as her lid cracks and a pop as it shuts; a ripple of pops on "cr
 - act: Everyone already agrees
 - transition_in: cut
 - cue: "It is the galaxy's longest"
-- time: 41:35.8 to 41:44.2 (8.4 s)
+- time: 41:13.6 to 41:22.0 (8.4 s)
 - voiceover: "It is the galaxy's longest game of you-go-first. Most species that start playing it don't finish playing it."
 - layer: B, plate planets
 - status: planned
@@ -170,7 +170,7 @@ Sound: soft pats for the bows; a switch as each planet goes dark and a thunk for
 - act: The moment they find out
 - transition_in: cut
 - cue: "If every human realized"
-- time: 41:44.2 to 41:59.9 (15.8 s)
+- time: 41:22.0 to 41:37.9 (15.9 s)
 - voiceover: "If every human realized that nearly every other human would like a world without war and disease and an extra five hundred and eighteen thousand, eight hundred and seventy-nine dollars in lifetime income, it would be done tomorrow and the world would be unrecognizable."
 - layer: B, plate town-square
 - status: planned
@@ -190,7 +190,7 @@ Sound: pops as the bubbles burst open on "realized"; a falling slide whistle for
 - act: The moment they find out
 - transition_in: cut
 - cue: "Right now every human"
-- time: 41:59.9 to 42:10.7 (10.7 s)
+- time: 41:37.9 to 41:48.5 (10.6 s)
 - voiceover: "Right now every human who wants less war and disease assumes they are the weird one. The referendum is the moment they find out they are everyone."
 - layer: B, plate stadium
 - status: planned
@@ -208,7 +208,7 @@ Sound: a switch for the spotlight; crickets; a slide whistle down for the dunce 
 - act: Why 3.5%
 - transition_in: cut
 - cue: "Why three point five percent?"
-- time: 42:10.7 to 42:13.1 (2.4 s)
+- time: 41:48.5 to 41:50.9 (2.4 s)
 - voiceover: "Why three point five percent?"
 - layer: A, host
 - wishonia: big, thinking-closed + body-thinking; lookright-smile + body-point-right on "five"; skeptical-smile + body-hands-hips on "percent?"
@@ -226,7 +226,7 @@ Sound: a boing on "percent?".
 - act: Why 3.5%
 - transition_in: cut
 - cue: "A political scientist named"
-- time: 42:13.1 to 42:40.9 (27.9 s)
+- time: 41:50.9 to 42:18.8 (27.9 s)
 - voiceover: "A political scientist named Erica Chenoweth studied every major political movement of the last century and found that none had ever failed after achieving three point five percent active participation. Not one. Every civil rights movement, every revolution, every regime change. Hit three point five percent and you win. Humanity discovered the cheat code for changing its own civilization and then never used it on purpose."
 - layer: B, plate history-shelf
 - status: planned
@@ -250,7 +250,7 @@ Sound: a pin thunk on "Chenoweth"; pencil dots on "studied"; a tick as the count
 - act: 280 million
 - transition_in: cut
 - cue: "That's two hundred and eighty million"
-- time: 42:40.9 to 42:52.0 (11.0 s)
+- time: 42:18.8 to 42:29.8 (11.0 s)
 - voiceover: "That's two hundred and eighty million humans. Sounds like a lot until you remember that more than ten times as many of you downloaded TikTok to watch people twerk."
 - layer: B, plate tv-field
 - status: planned
@@ -269,7 +269,7 @@ Sound: pops as the voters fill in; a stamp thump on "humans."; a slide whistle u
 - act: 280 million
 - transition_in: cut
 - cue: "You can get two hundred"
-- time: 42:52.0 to 42:56.5 (4.5 s)
+- time: 42:29.8 to 42:34.5 (4.6 s)
 - voiceover: "You can get two hundred and eighty million to vote yes or no on the treaty."
 - layer: A, host
 - wishonia: big, smirk-smile + body-presenting; happy-smile + body-open-palms on "vote"; smirk-closed + body-idle on "treaty."
@@ -287,7 +287,7 @@ Sound: a click on "yes"; a boing for the exclamation mark on "treaty.".
 - act: 280 million
 - transition_in: cut
 - cue: "Two hundred and fifty million dollars"
-- time: 42:56.5 to 43:08.8 (12.3 s)
+- time: 42:34.5 to 42:46.7 (12.2 s)
 - voiceover: "Two hundred and fifty million dollars of the campaign budget goes to paid referral bonuses that make sharing their link to vote financially attractive. It's a pyramid scheme where the thing at the top of the pyramid is not dying from"
 - layer: B, plate pyramid-hill
 - status: planned
@@ -307,7 +307,7 @@ Sound: a thunk for the pile; a cash-register ding per handover, faster and faste
 - act: 280 million
 - transition_in: cut
 - cue: "preventable diseases."
-- time: 43:08.8 to 43:10.9 (2.1 s)
+- time: 42:46.7 to 42:48.7 (2.0 s)
 - voiceover: "preventable diseases."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; smirk-smile + body-idle on "diseases."

@@ -1,0 +1,93 @@
+<template id="personally-to-blame-template">
+  <!-- personally-to-blame · collage (Part 27, scene 6; busy-field plate, continues wishocratic-slider with no seam by
+       replaying its beats before t 0). The bit: one YES button makes YOU a wanted man. The matchbox rectangle vanishes
+       with a pop; a YES button the size of a fire hydrant pops up and he pokes it with one charred finger. "treaty": a
+       little 1% TREATY scroll pops out of it, and "passes," PASSED is stamped on it. "personally": the field goes dark
+       and a police spotlight finds YOU. "blame": a WANTED poster drops out of the sky, his charred mugshot on it.
+       "2.6": 2.6 LIVES rolls on under it, and three humans pop up behind the lab and wave: two whole, the third inked
+       only to his chest, the rest still pencil, the pencil hovering. "468,000": 468,000 HOURS.
+       "suffering.": the mugshot winks, and YOU, under it, blinks. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="personally-to-blame" data-width="1920" data-height="1080" data-start="0" data-duration="9.8">
+    <div id="personally-to-blame-weave"></div>
+    <div id="personally-to-blame-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script src="compositions/scenes/part-27/busy-field.js"></script>
+  <script>
+    (function () {
+      var ID = "personally-to-blame", P = window.P27, G = P.G, X = P.X, V = P.V, hk = P.hk;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      // The last scene's frame: the bar dragged, the bills at the lab, YOU charred at the divider, the stopwatch at 0.
+      P.slider(cast, add, P.shift("wishocratic-slider", -KIT.scene("wishocratic-slider").duration));
+      var last = function (n) { var o = cast[n]; delete cast[n]; cast[n] = o; };
+      // The three it saves, in front of the lab bench: two whole, the third inked only to the chest.
+      var RH = 420, YX = P.KNOB1 + 110, R = [X.lab - 210, X.lab - 60, X.lab + 95];
+      cast.r0 = { art: "rescued-man", x: R[0], y: G - 10, anchor: "bottom", pivot: "bottom", scale: hk("rescued-man", RH), hidden: true };
+      cast.r1 = { art: "rescued-woman", x: R[1], y: G - 10, anchor: "bottom", pivot: "bottom", scale: hk("rescued-woman", RH * 0.96), hidden: true };
+      // the third (0.6 of a life) is inked only to his chest; the rest is still pencil, the pencil hovering beside him
+      var K3 = hk("rescued-child", 300);
+      cast.r2 = { art: "rescued-child", x: R[2] + 10, y: G - 10, anchor: "bottom", pivot: "bottom", scale: K3, hidden: true };
+      cast.pencil = { art: "pencil", x: R[2] + 120, y: G - 90, scale: hk("pencil", 26), hidden: true };
+      ["yB", "yT", "phone2", "phone3", "phone4", "f0", "f1", "f2", "puff", "watch"].forEach(last);
+      cast.yes = { art: "yes-button", x: YX + 230, y: G + 6, anchor: "bottom", pivot: "bottom", scale: hk("yes-button", 300), hidden: true,
+        label: { text: "YES", at: [82, 42], width: 110, size: 44 } };
+      cast.scroll = { art: "treaty-scroll", x: YX + 230, y: G - 300, anchor: "bottom", pivot: "bottom", scale: hk("treaty-scroll", 420), hidden: true,
+        label: [{ text: "1%", at: [191, 330], width: 260, size: 64 }, { text: "TREATY", at: [191, 450], width: 280, size: 64 }] };
+      cast.lamp = { art: "spotlight-police", x: YX - 520, y: G + 6, anchor: "bottom", scale: hk("spotlight-police", 260), hidden: true };
+      // The WANTED poster: beside him in 16:9, above his head in 9:16.
+      var PH = 560, PK = hk("wanted-poster", PH), PX = V ? YX + 90 : YX - 490, PY = V ? G - 1150 : G - 610;
+      cast.poster = { art: "wanted-poster", x: PX, y: PY, scale: PK, hidden: true, label: { text: "WANTED", at: [153, 38], width: 230, size: 46 } };
+      var MK = 1.05;
+      cast.mug = { art: "you-bone-legs", x: PX, y: PY + (205 / 420 - 0.5) * PH, anchor: [121, 100], scale: MK, hidden: true,
+        clip: [[0, 0], [242, 0], [242, 200], [0, 200]], eyes: [[103, 83], [141, 83]], eyeSize: 14 };
+
+      // "And": in on YOU; the matchbox shrinks to a speck and vanishes.
+      add({ at: 0, do: "camera", view: "blame", dur: 0.6 });
+      add({ on: "And", offset: 0.15, do: "pop", who: "phone4", out: true });
+      // "vote!": a YES button the size of a fire hydrant; he pokes it with one charred finger.
+      add({ on: "And", offset: 0.15, do: "pop", who: "yes", squash: true });
+      add({ on: "vote!", offset: 0.05, do: "nudge", who: "yT", by: [40, 0] });
+      add({ on: "vote!", offset: 0.12, do: "hop", who: "yes", height: -16 });
+      // "treaty": the scroll pops out of it like toast; "passes,": PASSED.
+      add({ on: "treaty", do: "pop", who: "scroll", squash: true });
+      add({ on: "treaty", do: "move", who: "scroll", by: [0, -120], dur: 0.25, arc: 60 });
+      add({ on: "passes,", do: "stamp", who: "scroll", text: "PASSED", spot: [191, 640], size: 44, width: 200, tilt: -8 });
+      // "personally": the field goes dark, and a police spotlight finds YOU.
+      add({ on: "personally", do: "hide", who: ["boom", "trials", "bang", "watch", "secs"] });
+      for (var w = 0; w < 6; w++) add({ on: "personally", do: "hide", who: ["wb." + w, "wb." + w + ".bones"] });
+      add({ on: "personally", do: "wash", id: "dark", color: "#140D08", blend: "normal", opacity: 0.8, dur: 0.12, above: "knob" });
+      add({ on: "personally", do: "slideIn", who: "lamp", from: "left", dist: 700, over: 10 });
+      add({ on: "personally", offset: 0.12, do: "glow", who: "yB", size: 900, dur: 0.3 });
+      // "blame": the WANTED poster drops out of the sky, his charred mugshot on it.
+      add({ on: "blame", do: "slideIn", who: ["poster", "mug"], from: "top", dist: 1400, over: 30 });
+      add({ on: "blame", do: "char", who: "mug" });
+      // "2.6 lives": rolls on under it; three humans pop up behind the lab, the third only inked to his chest.
+      var CY = [PY + PH / 2 + 70, PY + PH / 2 + 170];
+      add({ on: "2.6", do: "counter", id: "lives", from: 0, to: 2.6, decimals: 1, suffix: " LIVES", dur: 0.55, x: PX + (V ? 60 : 0), y: CY[0], size: V ? 80 : 60, font: "oswald", pad: 34 });
+      [0, 0.18, 0.36].forEach(function (o, j) { add({ on: "2.6", offset: o, do: "pop", who: "r" + j, squash: true }); });
+      add({ on: "2.6", offset: 0.4, do: "pop", who: "pencil" });
+      add({ on: "2.6", offset: 0.4, do: "move", who: "pencil", by: [0, 0], turn: -35, dur: 0.01 });
+      add({ on: "2.6", offset: 0.5, do: "bob", who: "pencil", y: 8, r: 5, speed: 3 });
+      ["r0", "r1", "r2"].forEach(function (n, j) { add({ on: "lives", offset: j * 0.15, do: "bob", who: n, y: 6, r: 3, speed: 3 }); });
+      // "468,000 hours".
+      add({ on: "468,000", do: "counter", id: "hours", from: 0, to: 468000, suffix: " HOURS", dur: 1.6, x: PX + (V ? 60 : 0), y: CY[1], size: V ? 80 : 60, font: "oswald", pad: 34 });
+      // "suffering.": the mugshot winks; YOU, under it, blinks.
+      add({ on: "suffering.", do: "blink", who: "mug" });
+      add({ on: "suffering.", offset: 0.25, do: "blink", who: "yT" });
+
+      KIT.collage({ id: ID, seed: 2706, plate: [-2200, -2500, 7400, 3200], views: P.views, view: "bar", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

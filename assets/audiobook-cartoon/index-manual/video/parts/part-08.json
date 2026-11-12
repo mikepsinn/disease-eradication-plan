@@ -3,8 +3,8 @@
   "title": "The Problem: The Daily Deletion Event",
   "storyboard": "storyboards/part-08-daily-deletion-event.md",
   "audio": {
-    "start": 898.004,
-    "end": 970.584
+    "start": 873.661,
+    "end": 945.151
   },
   "noCaptions": [
     "daily-deletion-event-title"
@@ -14,49 +14,28 @@
       "id": "daily-deletion-event-title",
       "file": "compositions/scenes/part-08/daily-deletion-event-title.html",
       "cue": "The",
-      "approx": 898,
+      "approx": 873.724,
       "layer": "A"
     },
     {
       "id": "deletion-board",
       "file": "compositions/scenes/part-08/deletion-board.html",
       "cue": "One",
-      "approx": 901.9,
-      "layer": "B"
-    },
-    {
-      "id": "holocaust-every-40-days",
-      "file": "compositions/scenes/part-08/holocaust-every-40-days.html",
-      "cue": "That's",
-      "approx": 911.4,
-      "layer": "B"
-    },
-    {
-      "id": "fifty-nine-elevens",
-      "file": "compositions/scenes/part-08/fifty-nine-elevens.html",
-      "cue": "That's",
-      "approx": 923,
+      "approx": 877.924,
       "layer": "B"
     },
     {
       "id": "falling-apart",
       "file": "compositions/scenes/part-08/falling-apart.html",
       "cue": "Your",
-      "approx": 930.9,
-      "layer": "B"
-    },
-    {
-      "id": "dissolving-on-schedule",
-      "file": "compositions/scenes/part-08/dissolving-on-schedule.html",
-      "cue": "Somewhere",
-      "approx": 946,
+      "approx": 907.044,
       "layer": "B"
     },
     {
       "id": "meat-robot",
       "file": "compositions/scenes/part-08/meat-robot.html",
       "cue": "You're",
-      "approx": 958,
+      "approx": 932.064,
       "layer": "A",
       "wishonia": [
         {
@@ -79,16 +58,7 @@
           "rest": "smile",
           "body": "hands-hips",
           "mode": "big"
-        }
-      ]
-    },
-    {
-      "id": "thought-incorrect",
-      "file": "compositions/scenes/part-08/thought-incorrect.html",
-      "cue": "You'd",
-      "approx": 964.7,
-      "layer": "A",
-      "wishonia": [
+        },
         {
           "cue": "You'd",
           "expr": "lookright",
@@ -199,70 +169,70 @@
       "volume": 0.45
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "Holocaust",
       "sfx": "whoosh",
       "volume": 0.25
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "days,",
       "sfx": "thunk",
       "volume": 0.35
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "paperwork",
       "sfx": "thunk",
       "volume": 0.45
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "(though",
       "sfx": "scratch",
       "volume": 0.35
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "argue",
       "sfx": "thunk",
       "volume": 0.35
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "paperwork",
       "n": 2,
       "sfx": "thunk",
       "volume": 0.4
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "worse;",
       "sfx": "zap",
       "volume": 0.3
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "straightforward",
       "sfx": "stamp",
       "volume": 0.7
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "straightforward",
       "offset": 0.25,
       "sfx": "cash-register",
       "volume": 0.35
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "part).",
       "at": "after",
       "sfx": "splat",
       "volume": 0.55
     },
     {
-      "scene": "holocaust-every-40-days",
+      "scene": "deletion-board",
       "cue": "part).",
       "at": "after",
       "offset": 0.15,
@@ -270,63 +240,66 @@
       "volume": 0.3
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "fifty",
       "sfx": "stamp",
-      "volume": 0.55
+      "volume": 0.55,
+      "n": 2
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "every",
       "sfx": "scratch",
-      "volume": 0.35
+      "volume": 0.35,
+      "n": 3
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "single",
       "sfx": "scratch",
       "volume": 0.35
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "day,",
       "sfx": "scratch",
       "volume": 0.35
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "invades",
       "offset": 0.3,
       "sfx": "woof",
       "volume": 0.45
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "diseases",
       "sfx": "huff",
-      "volume": 0.3
+      "volume": 0.3,
+      "n": 2
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "don't",
       "sfx": "pop",
       "volume": 0.3
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "have",
       "sfx": "whistle",
       "volume": 0.4
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "oil.",
       "offset": 0.1,
       "sfx": "boom",
       "volume": 0.55
     },
     {
-      "scene": "fifty-nine-elevens",
+      "scene": "deletion-board",
       "cue": "oil.",
       "offset": 0.75,
       "sfx": "splat",
@@ -358,52 +331,52 @@
       "volume": 0.15
     },
     {
-      "scene": "dissolving-on-schedule",
+      "scene": "falling-apart",
       "cue": "cells",
       "sfx": "pop",
       "volume": 0.2
     },
     {
-      "scene": "dissolving-on-schedule",
+      "scene": "falling-apart",
       "cue": "proteins",
       "sfx": "squeak",
       "volume": 0.15
     },
     {
-      "scene": "dissolving-on-schedule",
+      "scene": "falling-apart",
       "cue": "scarring.",
       "sfx": "scratch",
       "volume": 0.15
     },
     {
-      "scene": "dissolving-on-schedule",
+      "scene": "falling-apart",
       "cue": "schedule",
       "sfx": "clank",
       "volume": 0.3
     },
     {
-      "scene": "dissolving-on-schedule",
+      "scene": "falling-apart",
       "cue": "schedule",
       "offset": 0.4,
       "sfx": "tick",
       "volume": 0.35
     },
     {
-      "scene": "dissolving-on-schedule",
+      "scene": "falling-apart",
       "cue": "schedule",
       "offset": 0.976,
       "sfx": "tick",
       "volume": 0.35
     },
     {
-      "scene": "dissolving-on-schedule",
+      "scene": "falling-apart",
       "cue": "schedule",
       "offset": 1.552,
       "sfx": "tick",
       "volume": 0.35
     },
     {
-      "scene": "dissolving-on-schedule",
+      "scene": "falling-apart",
       "cue": "schedule",
       "offset": 2.128,
       "sfx": "tick",
@@ -442,38 +415,38 @@
       "volume": 0.5
     },
     {
-      "scene": "thought-incorrect",
+      "scene": "meat-robot",
       "cue": "think",
       "sfx": "slide-up",
       "volume": 0.3
     },
     {
-      "scene": "thought-incorrect",
+      "scene": "meat-robot",
       "cue": "prioritize",
       "sfx": "marker",
       "volume": 0.45
     },
     {
-      "scene": "thought-incorrect",
+      "scene": "meat-robot",
       "cue": "problems.",
       "sfx": "sparkle",
       "volume": 0.35
     },
     {
-      "scene": "thought-incorrect",
+      "scene": "meat-robot",
       "cue": "incorrect.",
       "sfx": "pop",
       "volume": 0.7
     },
     {
-      "scene": "thought-incorrect",
+      "scene": "meat-robot",
       "cue": "incorrect.",
       "offset": 0.35,
       "sfx": "clank",
       "volume": 0.45
     },
     {
-      "scene": "thought-incorrect",
+      "scene": "meat-robot",
       "cue": "incorrect.",
       "at": "after",
       "offset": 0.1,

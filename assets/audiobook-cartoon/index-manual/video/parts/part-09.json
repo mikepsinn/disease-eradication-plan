@@ -3,8 +3,8 @@
   "title": "The Unexplored Therapeutic Frontier",
   "storyboard": "storyboards/part-09-unexplored-therapeutic-frontier.md",
   "audio": {
-    "start": 970.584,
-    "end": 1035.224
+    "start": 945.151,
+    "end": 1011.784
   },
   "noCaptions": [
     "title-card"
@@ -14,14 +14,14 @@
       "id": "title-card",
       "file": "compositions/scenes/part-09/title-card.html",
       "cue": "Unexplored",
-      "approx": 970.7,
+      "approx": 945.344,
       "layer": "A"
     },
     {
       "id": "zero-treatments",
       "file": "compositions/scenes/part-09/zero-treatments.html",
       "cue": "Ninety-five",
-      "approx": 974.2,
+      "approx": 948.744,
       "layer": "A",
       "wishonia": [
         {
@@ -51,35 +51,28 @@
       "id": "back-soon",
       "file": "compositions/scenes/part-09/back-soon.html",
       "cue": "This",
-      "approx": 978.8,
+      "approx": 953.664,
       "layer": "B"
     },
     {
       "id": "no-roads",
       "file": "compositions/scenes/part-09/no-roads.html",
       "cue": "It's",
-      "approx": 986.7,
+      "approx": 962.144,
       "layer": "B"
     },
     {
       "id": "queue-to-not-die",
       "file": "compositions/scenes/part-09/queue-to-not-die.html",
       "cue": "Only",
-      "approx": 991.2,
-      "layer": "B"
-    },
-    {
-      "id": "untested-warehouse",
-      "file": "compositions/scenes/part-09/untested-warehouse.html",
-      "cue": "There",
-      "approx": 1008.6,
+      "approx": 966.764,
       "layer": "B"
     },
     {
       "id": "weirdly-calm",
       "file": "compositions/scenes/part-09/weirdly-calm.html",
       "cue": "You",
-      "approx": 1025.5,
+      "approx": 1002.784,
       "layer": "A",
       "wishonia": [
         {
@@ -122,20 +115,33 @@
     },
     {
       "scene": "zero-treatments",
+      "cue": "Ninety-five",
+      "sfx": "typewriter",
+      "volume": 0.25
+    },
+    {
+      "scene": "zero-treatments",
       "cue": "diseases",
       "sfx": "boing",
       "volume": 0.35
     },
     {
       "scene": "zero-treatments",
+      "cue": "F.D.A.-approved",
+      "offset": 0.1,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "zero-treatments",
       "cue": "treatments.",
-      "at": "after",
-      "sfx": "click",
+      "offset": 0.35,
+      "sfx": "huff",
       "volume": 0.35
     },
     {
       "scene": "back-soon",
-      "cue": "administered",
+      "cue": "not",
       "sfx": "slam",
       "volume": 0.45
     },
@@ -147,15 +153,62 @@
     },
     {
       "scene": "back-soon",
-      "cue": "percent",
+      "cue": "drugs",
+      "offset": 0.22,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "back-soon",
+      "cue": "drugs",
+      "offset": 0.44,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "back-soon",
+      "cue": "ninety-five",
       "sfx": "whoosh",
       "volume": 0.3
+    },
+    {
+      "scene": "back-soon",
+      "cue": "food-and-drug-related",
+      "sfx": "slam",
+      "volume": 0.45
+    },
+    {
+      "scene": "back-soon",
+      "cue": "problems.",
+      "offset": -0.5,
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "back-soon",
+      "cue": "problems.",
+      "offset": -0.25,
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "back-soon",
+      "cue": "problems.",
+      "offset": 0.5,
+      "sfx": "pat",
+      "volume": 0.35
     },
     {
       "scene": "no-roads",
       "cue": "Transportation",
       "sfx": "squeak",
       "volume": 0.35
+    },
+    {
+      "scene": "no-roads",
+      "cue": "that",
+      "sfx": "boing",
+      "volume": 0.3
     },
     {
       "scene": "no-roads",
@@ -166,16 +219,18 @@
       "volume": 0.4
     },
     {
-      "scene": "queue-to-not-die",
-      "cue": "fifteen",
-      "sfx": "click",
-      "volume": 0.35
+      "scene": "no-roads",
+      "cue": "yet.",
+      "at": "after",
+      "offset": 0.37,
+      "sfx": "thunk",
+      "volume": 0.45
     },
     {
       "scene": "queue-to-not-die",
-      "cue": "diseases",
-      "sfx": "typewriter",
-      "volume": 0.2
+      "cue": "fifteen",
+      "sfx": "clank",
+      "volume": 0.4
     },
     {
       "scene": "queue-to-not-die",
@@ -210,6 +265,61 @@
     },
     {
       "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 0.58,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 1.16,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 1.74,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 2.32,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 2.9,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 3.48,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 4.06,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "longer",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
       "cue": "Disneyland.",
       "sfx": "whistle",
       "volume": 0.35
@@ -217,65 +327,113 @@
     {
       "scene": "queue-to-not-die",
       "cue": "Disneyland.",
-      "at": "after",
+      "offset": 0.95,
       "sfx": "pop",
       "volume": 0.4
     },
     {
-      "scene": "untested-warehouse",
+      "scene": "queue-to-not-die",
+      "cue": "There",
+      "n": 2,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "queue-to-not-die",
       "cue": "ninety-nine",
       "sfx": "typewriter",
       "volume": 0.3
     },
     {
-      "scene": "untested-warehouse",
+      "scene": "queue-to-not-die",
       "cue": "never",
       "sfx": "huff",
       "volume": 0.3
     },
     {
-      "scene": "untested-warehouse",
+      "scene": "queue-to-not-die",
       "cue": "current",
       "sfx": "squeak",
       "volume": 0.3
     },
     {
-      "scene": "untested-warehouse",
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "offset": 0.42,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "offset": 0.84,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "offset": 1.26,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "offset": 1.88,
+      "sfx": "huff",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
       "cue": "approximately",
       "sfx": "zap",
       "volume": 0.25
     },
     {
-      "scene": "untested-warehouse",
+      "scene": "queue-to-not-die",
+      "cue": "approximately",
+      "offset": 0.4,
+      "sfx": "zap",
+      "volume": 0.25
+    },
+    {
+      "scene": "queue-to-not-die",
       "cue": "years.",
       "sfx": "clank",
       "volume": 0.5
     },
     {
       "scene": "weirdly-calm",
-      "cue": "dead",
-      "at": "before",
-      "sfx": "slide-down",
-      "volume": 0.35
+      "cue": "You",
+      "sfx": "marker",
+      "volume": 0.3
     },
     {
       "scene": "weirdly-calm",
       "cue": "dead",
+      "sfx": "marker",
+      "volume": 0.3
+    },
+    {
+      "scene": "weirdly-calm",
+      "cue": "years,",
+      "offset": 0.2,
       "sfx": "thunk",
-      "volume": 0.55
+      "volume": 0.5
     },
     {
       "scene": "weirdly-calm",
-      "cue": "calm",
-      "sfx": "huff",
-      "volume": 0.2
+      "cue": "weirdly",
+      "sfx": "scratch",
+      "volume": 0.25
     },
     {
       "scene": "weirdly-calm",
       "cue": "this.",
       "at": "after",
-      "sfx": "huff",
-      "volume": 0.2
+      "sfx": "scratch",
+      "volume": 0.25
     }
   ]
 }

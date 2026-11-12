@@ -124,9 +124,10 @@
     cast.miner = pinIt("miner", { clip: [[0, 0], [201, 0], [201, 322], [0, 322], [0, 278], [32, 278], [32, 165], [0, 165]] });
     cast.furn = pinIt("furn");
     cast.fac = pinIt("fac");
-    var WMD = V ? [260, -90] : [520, 20], WMK = V ? 1.3 : 1.35;
-    cast.wm = makeCast("fac", "weapons-maker", WMD, WMK * 594 / 601);
-    cast.wmk = makeCast("fac", "weapons-maker-kiss", WMD, WMK);
+    // the weapons factory beside it, as tall as the man it replaced (594 art px at WMK): proud, then kissing its missile
+    var WMD = V ? [250, -90] : [560, 20], WMK = (V ? 1.3 : 1.35) * 594 / 478;
+    cast.wm = makeCast("fac", "factory-proud", WMD, WMK);
+    cast.wmk = makeCast("fac", "factory-kiss", WMD, WMK);
     cast.sold = pinIt("sold");
     cast.soup = pinIt("soup");
     cast.ship = pinIt("ship", { label: { text: "WELCOME", at: [176, 62], width: 170, size: 42 } });

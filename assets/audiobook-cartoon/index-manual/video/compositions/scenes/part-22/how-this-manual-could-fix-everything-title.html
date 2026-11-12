@@ -1,0 +1,62 @@
+<template id="how-this-manual-could-fix-everything-title-template">
+  <!-- how-this-manual-could-fix-everything-title · collage title card (Part 22, scene 1). The heading slams in:
+       HOW THIS MANUAL COULD FIX / EVERYTHING. "Fix": a big chrome wrench swings in from the right and clamps onto the
+       end of EVERYTHING. "Everything.": it cranks twice and the word tips with each crank. It lets go and drops away;
+       EVERYTHING stays crooked. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="how-this-manual-could-fix-everything-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.828">
+    <div id="how-this-manual-could-fix-everything-title-weave"></div>
+    <div id="how-this-manual-could-fix-everything-title-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "how-this-manual-could-fix-everything-title", V = KIT.V, F = KIT.collage.F;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The heading cards. EVERYTHING sits left of middle so the wrench's handle fits on its right.
+      var HEAD = V ? [{ id: "h1", text: "HOW THIS MANUAL", y: 560, size: 120, width: 860 }, { id: "h2", text: "COULD FIX", y: 770, size: 120, width: 640 }]
+        : [{ id: "h1", text: "HOW THIS MANUAL COULD FIX", y: 330, size: 120, width: 1560 }];
+      var EV = V ? { text: "EVERYTHING", x: 480, y: 1030, size: 200, width: 790 } : { text: "EVERYTHING", x: 840, y: 610, size: 230, width: 1120 };
+      var size = KIT.fitText(EV.text, EV.size, EV.width, "Fraunces", 900), EVW = KIT.textWidth(EV.text, size, "Fraunces", 900) + 110;
+      // The wrench's jaw (art 40, 75) grips the card's right edge; R is the edge's distance from the card's middle.
+      var WK = V ? 0.85 : 1.25, JAW = [40, 75], R = EVW / 2 - 6;
+      var edge = function (deg) { var a = deg * Math.PI / 180; return [EV.x + R * Math.cos(a), EV.y + R * Math.sin(a)]; };
+      var step = function (d0, d1) { var a = edge(d0), b = edge(d1); return [b[0] - a[0], b[1] - a[1]]; };
+      var E0 = edge(0);
+      var cast = {
+        wrench: { art: "wrench", x: E0[0], y: E0[1], anchor: JAW, pivot: JAW, scale: WK, hidden: true },
+      };
+      var beats = [];
+      var add = function (b) { beats.push(b); };
+      HEAD.forEach(function (c, i) {
+        add({ on: "How", offset: i * 0.12, do: "banner", id: c.id, text: c.text, x: V ? 540 : 960, y: c.y, size: c.size, width: c.width, pad: 90, color: "ink", tilt: -1 });
+      });
+      add({ on: "How", offset: 0.3, do: "banner", id: "ev", text: EV.text, x: EV.x, y: EV.y, size: EV.size, width: EV.width, pad: 110, tilt: 0, shake: 9 });
+      // "Fix": the wrench swings in and clamps on
+      add({ on: "Fix", offset: -0.25, do: "slideIn", who: "wrench", from: "right", dist: 1100, over: 16, tilt: 6 });
+      // "Everything.": two cranks, the word tips with each
+      var C1 = cue("Everything."), C2 = C1 + 0.3, LET = KIT.after(ID, "Everything.");
+      [[C1, 0, 4], [C2, 4, 8]].forEach(function (k) {
+        add({ at: k[0], do: "move", who: "wrench", by: step(k[1], k[2]), turn: 24, dur: 2 * F });
+        add({ at: k[0], do: "move", who: "ev", turn: k[2], dur: 2 * F });
+        add({ at: k[0] + 2 * F, do: "shake", frames: 2, y: 5 });
+        add({ at: k[0] + 0.17, do: "move", who: "wrench", turn: 0, dur: 2 * F });
+      });
+      // it lets go: EVERYTHING stays crooked
+      add({ at: LET - 0.1, do: "move", who: "wrench", by: [40, -20], turn: -10, dur: 2 * F });
+      add({ at: LET, do: "drop", who: "wrench", dist: 1500, drift: 160, spin: 50, dur: 0.6 });
+      add({ at: LET + 0.1, do: "hop", who: "ev", height: 8 });
+      KIT.collage({ id: ID, seed: 2201, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

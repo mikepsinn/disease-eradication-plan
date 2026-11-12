@@ -3,8 +3,8 @@
   "title": "The Sacred Order of Paper Distribution",
   "storyboard": "storyboards/part-05-sacred-order-of-paper-distribution.md",
   "audio": {
-    "start": 546.964,
-    "end": 682.604
+    "start": 522.599,
+    "end": 657.916
   },
   "noCaptions": [
     "sacred-order-title"
@@ -14,14 +14,14 @@
       "id": "sacred-order-title",
       "file": "compositions/scenes/part-05/sacred-order-title.html",
       "cue": "The",
-      "approx": 547.0,
+      "approx": 522.744,
       "layer": "A"
     },
     {
       "id": "sacred-scroll",
       "file": "compositions/scenes/part-05/sacred-scroll.html",
       "cue": "After",
-      "approx": 550.7,
+      "approx": 526.284,
       "layer": "A",
       "wishonia": [
         { "cue": "After", "expr": "happy", "rest": "smile", "body": "presenting", "mode": "big" },
@@ -33,42 +33,42 @@
       "id": "step-1-dice-in-a-suit",
       "file": "compositions/scenes/part-05/step-1-dice-in-a-suit.html",
       "cue": "Get",
-      "approx": 559.3,
+      "approx": 535.064,
       "layer": "B"
     },
     {
       "id": "2800-top-hats",
       "file": "compositions/scenes/part-05/2800-top-hats.html",
       "cue": "There",
-      "approx": 580.8,
+      "approx": 556.524,
       "layer": "B"
     },
     {
       "id": "step-2-loud-humans",
       "file": "compositions/scenes/part-05/step-2-loud-humans.html",
       "cue": "Step",
-      "approx": 588.5,
+      "approx": 564.184,
       "layer": "B"
     },
     {
       "id": "step-3-lobbyist-funnels",
       "file": "compositions/scenes/part-05/step-3-lobbyist-funnels.html",
       "cue": "Step",
-      "approx": 604.3,
+      "approx": 579.944,
       "layer": "B"
     },
     {
       "id": "step-4-super-pac",
       "file": "compositions/scenes/part-05/step-4-super-pac.html",
       "cue": "Step",
-      "approx": 624.5,
+      "approx": 600.224,
       "layer": "B"
     },
     {
       "id": "lobbying-budget",
       "file": "compositions/scenes/part-05/lobbying-budget.html",
       "cue": "(This",
-      "approx": 642.4,
+      "approx": 618.204,
       "layer": "A",
       "wishonia": [
         { "cue": "(This", "expr": "smirk", "rest": "smile", "body": "hand-chest", "mode": "big" },
@@ -79,14 +79,14 @@
       "id": "step-5-treaty-split",
       "file": "compositions/scenes/part-05/step-5-treaty-split.html",
       "cue": "Give",
-      "approx": 649.0,
+      "approx": 624.804,
       "layer": "B"
     },
     {
       "id": "works-out",
       "file": "compositions/scenes/part-05/works-out.html",
       "cue": "so",
-      "approx": 680.5,
+      "approx": 656.284,
       "layer": "A",
       "wishonia": [
         { "cue": "so", "expr": "smirk", "rest": "smile", "body": "open-palms", "mode": "big" },
@@ -100,7 +100,7 @@
 
     { "scene": "sacred-scroll", "cue": "decoded", "sfx": "whoosh", "volume": 0.4 },
     { "scene": "sacred-scroll", "cue": "precise", "sfx": "whirr", "volume": 0.3 },
-    { "scene": "sacred-scroll", "cue": "order:", "offset": 1.0, "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "sacred-scroll", "cue": "order:", "sfx": "slide-up", "volume": 0.4 },
 
     { "scene": "step-1-dice-in-a-suit", "cue": "Rich", "sfx": "squeak", "volume": 0.4 },
     { "scene": "step-1-dice-in-a-suit", "cue": "billion", "sfx": "slide-down", "volume": 0.4 },
@@ -130,11 +130,12 @@
     { "scene": "step-3-lobbyist-funnels", "cue": "backwards", "sfx": "slide-up", "volume": 0.4 },
     { "scene": "step-3-lobbyist-funnels", "cue": "legal.", "sfx": "stamp", "volume": 0.5 },
 
+    { "scene": "step-4-super-pac", "cue": "Give", "sfx": "pop", "volume": 0.35 },
     { "scene": "step-4-super-pac", "cue": "Super", "sfx": "whoosh", "volume": 0.4 },
     { "scene": "step-4-super-pac", "cue": "super.", "n": 2, "sfx": "sparkle", "volume": 0.3 },
     { "scene": "step-4-super-pac", "cue": "papers", "n": 2, "sfx": "pop", "volume": 0.45 },
-    { "scene": "step-4-super-pac", "cue": "win.", "sfx": "slide-up", "volume": 0.4 },
-    { "scene": "step-4-super-pac", "cue": "win.", "at": "after", "sfx": "thunk", "volume": 0.5 },
+    { "scene": "step-4-super-pac", "cue": "spend", "sfx": "slide-up", "volume": 0.4 },
+    { "scene": "step-4-super-pac", "cue": "win.", "offset": 0.05, "sfx": "thunk", "volume": 0.5 },
     { "scene": "step-4-super-pac", "cue": "bribery", "sfx": "scratch", "volume": 0.35 },
     { "scene": "step-4-super-pac", "cue": "else.", "sfx": "pat", "volume": 0.4 },
 
@@ -148,12 +149,12 @@
     { "scene": "step-5-treaty-split", "cue": "dollars", "sfx": "sparkle", "volume": 0.35 },
     { "scene": "step-5-treaty-split", "cue": "point).", "n": 2, "sfx": "ding", "volume": 0.3 },
     { "scene": "step-5-treaty-split", "cue": "yes.", "sfx": "click", "volume": 0.4 },
-    { "scene": "step-5-treaty-split", "cue": "yes.", "at": "after", "sfx": "cash-register", "volume": 0.4 },
+    { "scene": "step-5-treaty-split", "cue": "yes.", "offset": 0.25, "sfx": "pop", "volume": 0.4 },
     { "scene": "step-5-treaty-split", "cue": "forever", "n": 3, "sfx": "whoosh", "volume": 0.35 },
     { "scene": "step-5-treaty-split", "cue": "long", "sfx": "slide-down", "volume": 0.4 },
     { "scene": "step-5-treaty-split", "cue": "die", "sfx": "zap", "volume": 0.35 },
     { "scene": "step-5-treaty-split", "cue": "fixing,", "sfx": "splat", "volume": 0.45 },
-    { "scene": "step-5-treaty-split", "cue": "fixing,", "offset": 0.2, "sfx": "zap", "volume": 0.3 },
+    { "scene": "step-5-treaty-split", "cue": "fixing,", "offset": 0.05, "sfx": "zap", "volume": 0.3 },
 
     { "scene": "works-out", "cue": "out.", "sfx": "snip", "volume": 0.45 }
   ]

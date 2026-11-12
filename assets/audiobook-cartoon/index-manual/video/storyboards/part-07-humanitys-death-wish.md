@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 0:49.5
+duration: 0:49.6
 message: "Humanity knows war is illogical (it makes movies, books and prizes against it) and keeps paying for war anyway, like a game where the objective is to lose."
 arc: Title card (a falling star that is a missile) → Wishonia: your species KNOWS (Earth taps its temple with a hammer and bonks itself) → the tourist tours the Museum of Knowing Better, agrees with every exhibit and is wrecked by each one's opposite → humanity's board game, objective lose, ends in a mushroom cloud and a reset → Wishonia digresses, and the readout's spending line runs past its STOP flag and on across the console
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 7, "Humanity's Death Wish"
-audio: index-manual.cbaf659d.mp3, 14:08.5 to 14:58.0
+audio: index-manual.7ce6b2b2.mp3, 13:44.0 to 14:33.7
 version: v3
 ---
 
@@ -37,7 +37,7 @@ version: v3
 - act: Title
 - transition_in: up from black (a cut from Part 6's last frame)
 - cue: "Humanity's Death Wish"
-- time: 14:08.5 to 14:10.8 (2.3 s)
+- time: 13:44.0 to 13:46.7 (2.6 s)
 - voiceover: "Humanity's Death Wish."
 - layer: A, title card
 - status: planned
@@ -54,7 +54,7 @@ Sound: a whirr; a falling slide whistle; a small boom.
 - act: It knows
 - transition_in: iris in on her face
 - cue: "What's most endearing about"
-- time: 14:10.8 to 14:16.2 (5.4 s)
+- time: 13:46.7 to 13:52.0 (5.3 s)
 - voiceover: "What's most endearing about your species is it KNOWS it's being illogical:"
 - layer: A, host
 - wishonia: happy-smile + body-hand-chest; excited-ee + body-point-right on "KNOWS"; smirk-smile + body-shrug on "illogical:"
@@ -74,7 +74,7 @@ Sound: two taps; a bonk; a boing as the bump swells.
 - act: It knows
 - transition_in: cut
 - cue: "You have movies"
-- time: 14:16.2 to 14:43.1 (26.8 s)
+- time: 13:52.0 to 14:18.8 (26.8 s)
 - voiceover: "You have movies about how wars are bad (which you watch between wars). You have books about peace (that you tax to buy bombs). You give prizes to people who promote peace (funded by weapons manufacturers). You have a "Department of Defense" (that mainly just attacks people). You have a "Department of Health" (that apparently makes coronaviruses and has not yet produced any observable health)."
 - layer: B, plate museum
 - status: planned
@@ -101,7 +101,7 @@ Sound: a sob; a march drum as the war block slides; a stamp thump on "tax"; a bo
 - act: The game
 - transition_in: cut
 - cue: "It's like humanity is playing"
-- time: 14:43.1 to 14:52.3 (9.2 s)
+- time: 14:18.8 to 14:28.0 (9.2 s)
 - voiceover: "It's like humanity is playing a game where the objective is to lose, but it is trying to lose as elaborately as possible. But I digress."
 - layer: B, plate living-room
 - status: planned
@@ -121,7 +121,7 @@ Sound: a thunk as the board flops out; a party horn on the cheer; a clatter of g
 - act: But I digress
 - transition_in: cut
 - cue: "That's an Earth word"
-- time: 14:52.3 to 14:58.0 (5.7 s)
+- time: 14:28.0 to 14:33.7 (5.6 s)
 - voiceover: "That's an Earth word I learned. It means continuing after you should have stopped. Like your military spending."
 - layer: A, host
 - wishonia: happy-smile + body-hand-chest; neutral-smile + body-point-right on "continuing"; smirk-closed + body-idle on "stopped." (the sip); sideeye-closed + body-idle on "military"; sideeye-closed + body-palms-down on "spending." (the mug goes down)

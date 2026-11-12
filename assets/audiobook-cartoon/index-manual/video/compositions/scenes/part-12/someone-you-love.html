@@ -1,0 +1,78 @@
+<template id="someone-you-love-template">
+  <!-- someone-you-love · collage (Part 12, scene 14; plate the-street, which child-scientist continues). YOU's house and
+       the family waving in front of it; "suffering": the grandmother beside them coughs and keeps smiling. "The
+       treatment": the camera travels on to a shelf of dusty bottles; "untested compound": one bottle in front of it waves,
+       and on "shelf," a tag swings on it, NEVER TESTED FOR THIS. "because the money": a war paper strolls past it into the
+       weapons factory next door, which rattles, and on "missile." comes out cradling one. It launches over the rooftops
+       and the camera chases it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="someone-you-love" data-width="1920" data-height="1080" data-start="0" data-duration="11.28">
+    <div id="someone-you-love-weave"></div>
+    <div id="someone-you-love-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "someone-you-love", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // the-street (shared with child-scientist): on the ground G, YOU's house, the shelf, the weapons factory; the
+    // girl's house further right.
+    var G = V ? 1380 : 860;
+    var X = { house: 420, fam: 830, gran: 1080, shelf: 1900, bottle: 2140, factory: 3000 };
+    var h = function (art, px) { return px / SZ[art][1]; };
+    var cy = function (s) { return G - 440 / s; };
+    var views = V ? {
+      house: [640, cy(0.95), 0.95], shelf: [2000, cy(1.05), 1.05], factory: [2900, cy(0.9), 0.9], sky: [3700, cy(0.9) - 700, 0.9],
+    } : {
+      house: [720, 500, 1.05], shelf: [2000, 500, 1.1], factory: [2850, 480, 1], sky: [3800, -150, 0.9],
+    };
+    var FK = h("factory-proud", 760);
+    var cast = {
+      house: { art: "house", x: X.house, y: G, anchor: "bottom", scale: h("house", 680) },
+      fam: { art: "family-wave", x: X.fam, y: G, anchor: "bottom", pivot: "bottom", scale: h("family-wave", 520) },
+      gran: { art: "sick-4", x: X.gran, y: G, anchor: "bottom", pivot: "bottom", scale: h("sick-4", 520) },
+      shelf: { art: "shelf", x: X.shelf, y: G, anchor: "bottom", scale: h("shelf", 620) },
+      bottle: { art: "pill-bottle", x: X.bottle, y: G, anchor: "bottom", pivot: "bottom", scale: h("pill-bottle", 250) },
+      wm: { art: "factory-proud", x: X.factory, y: G, anchor: "bottom", pivot: "bottom", scale: FK },
+      wmKiss: { art: "factory-kiss", x: X.factory, y: G, anchor: "bottom", pivot: "bottom", scale: h("factory-kiss", 760), hidden: true },
+      bill: { art: "bill-war", x: X.bottle + 220, y: G, anchor: "bottom", pivot: "bottom", scale: 0.8, hidden: true },
+      missile: { art: "missile-fly", x: X.factory + 150, y: G - 380, scale: 1.1, hidden: true },
+    };
+    var LAUNCH = cue("missile.") + 0.45;
+    var beats = [
+      // someone you love, suffering: Grandma coughs and keeps smiling
+      { on: "love", do: "bob", who: "fam", y: 4, r: 1, speed: 2, until: "The" },
+      { on: "suffering", do: "shiver", who: "gran", dur: 0.35, amp: 5, rot: 4 },
+      { on: "now.", do: "shiver", who: "gran", dur: 0.3, amp: 5, rot: 4 },
+      // the untested compound on a shelf
+      { on: "The", do: "camera", view: "shelf", dur: 0.9 },
+      { on: "untested", do: "hop", who: "bottle", height: 30 },
+      { on: "compound", do: "bob", who: "bottle", y: 8, r: 8, speed: 4, until: "because" },
+      { on: "shelf,", do: "tag", id: "never", who: "bottle", text: "NEVER TESTED FOR THIS", knot: [79, 60], x: X.bottle + (V ? 160 : 260), y: G - (V ? 420 : 380), w: V ? 380 : 420, h: V ? 150 : 130 },
+      // the money was busy turning into a missile
+      { on: "because", do: "camera", view: "factory", dur: 1.2 },
+      { on: "money", do: "show", who: "bill" },
+      { on: "money", do: "move", who: "bill", to: [X.factory, G - 115], dur: cue("turning") - cue("money") },
+      { on: "money", do: "bob", who: "bill", y: 6, r: 4, speed: 4, until: "turning" },
+      { on: "turning", do: "hide", who: "bill" },
+      { on: "turning", do: "shiver", who: "wm", dur: cue("missile.") - cue("turning"), amp: 4, rot: 2 },
+      { on: "missile.", do: "swap", who: "wm", to: "wmKiss" },
+      { on: "missile.", offset: 0.15, do: "bob", who: "wmKiss", y: 6, r: 3, speed: 3, until: LAUNCH },
+      // it launches over the rooftops, and the camera chases it
+      { at: LAUNCH, do: "swap", who: "wmKiss", to: "wm" },
+      { at: LAUNCH, do: "show", who: "missile" },
+      { at: LAUNCH, do: "move", who: "missile", by: [1600, -1300], turn: -35, dur: 11.28 - LAUNCH + 0.2, ease: "linear" },
+      { at: LAUNCH, do: "camera", view: "sky", dur: 11.28 - LAUNCH },
+    ];
+    KIT.collage({ id: ID, seed: 1214, plate: [-1500, -3000, 7000, 3000], views: views, view: "house", cast: cast, beats: beats });
+  </script>
+</template>

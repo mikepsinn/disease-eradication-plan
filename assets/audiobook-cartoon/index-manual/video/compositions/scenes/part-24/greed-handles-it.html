@@ -1,0 +1,184 @@
+<template id="greed-handles-it-template">
+  <!-- greed-handles-it · collage (Part 24, scene 6, plate game-board: the same board as game-pool-rules). The bit: the
+       players' greed does the work. "Four billion humans": tiny players rain onto the board, a few, then a heap of
+       them, as a card rolls to 4,000,000,000; on "payout" they all jump. "attract": PAYS FOR CURES over the pool;
+       lobbyists skid in from the left, scientists from the right, the Capitol, a bank and a hospital on legs stomp in over the
+       back; on "rest." the germs on DISEASES shiver. "The greed handles it.": the GREED hand drops in on its post
+       between WAR and DISEASES and spins by itself; on "always" it stops on WAR, and the weapons factory's missile lands
+       there on "has.": the cloud stands over WAR and its players are charred, chips still up. "pointed": the crowd
+       stampedes for DISEASES and drags the finger round; "useful": two germs are trampled flat; "before.": the hospital
+       stomps on the last one. Hold. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="greed-handles-it" data-width="1920" data-height="1080" data-start="0" data-duration="14.694">
+    <div id="greed-handles-it-weave"></div>
+    <div id="greed-handles-it-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "greed-handles-it", V = KIT.V, SZ = KIT.collage.SIZES, F = KIT.collage.F;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    var INK = "#2A1E14";
+
+    // ── The board (plate px), drawn as in game-pool-rules.
+    var B = { x0: 0, y0: 500, x1: 2600, y1: 1500, T: 240 };
+    function boardSvg() {
+      var T = B.T, s = "", tint = ["#EBDDB4", "#B9C9A4", "#E0B76E", "#A9BCCB"], n = 0;
+      var sq = function (x, y, w, h, fill, label, size) {
+        s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="6"/>';
+        if (label) s += '<text x="' + (x + w / 2) + '" y="' + (y + h / 2 + size * 0.36) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + size + '" fill="' + INK + '">' + label + "</text>";
+      };
+      var num = function (x, y, w, h) { n++; sq(x, y, w, h, tint[n % 4], String(n), 54); };
+      var W = B.x1 - B.x0, H = B.y1 - B.y0, top = 16, side = 4, cw = (W - 2 * T) / top, ch = (H - 2 * T) / side, i;
+      // the board itself: a dark rim and the field
+      s += '<rect x="' + (B.x0 - 34) + '" y="' + (B.y0 - 34) + '" width="' + (W + 68) + '" height="' + (H + 68) + '" rx="18" fill="#7B5A36" stroke="' + INK + '" stroke-width="7"/>';
+      s += '<rect x="' + B.x0 + '" y="' + B.y0 + '" width="' + W + '" height="' + H + '" fill="#E9D9AC" stroke="' + INK + '" stroke-width="6"/>';
+      s += '<rect x="' + (B.x0 + T + 22) + '" y="' + (B.y0 + T + 22) + '" width="' + (W - 2 * T - 44) + '" height="' + (H - 2 * T - 44) + '" fill="none" stroke="' + INK + '" stroke-width="3"/>';
+      // START, then the bottom row left to right, the right side up, DISEASES, the top row right to left, WAR, the left side down
+      sq(B.x0, B.y1 - T, T, T, "#E3B94F", "", 0);
+      var zs = KIT.fitText("START", 70, T - 40, "Fraunces", 900);
+      s += '<text x="' + (B.x0 + T / 2) + '" y="' + (B.y1 - T + 22 + zs) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + zs + '" fill="' + INK + '">START</text>';
+      for (i = 0; i < top; i++) num(B.x0 + T + i * cw, B.y1 - T, cw, T);
+      num(B.x1 - T, B.y1 - T, T, T);
+      for (i = side - 1; i >= 0; i--) num(B.x1 - T, B.y0 + T + i * ch, T, ch);
+      sq(B.x1 - T, B.y0, T, T, "#B9C06A", "", 0);
+      for (i = top - 1; i >= 0; i--) num(B.x0 + T + i * cw, B.y0, cw, T);
+      sq(B.x0, B.y0, T, T, "#B8663F", "", 0);
+      for (i = 0; i < side; i++) num(B.x0, B.y0 + T + i * ch, T, ch);
+      // the corner words sit along the square's bottom edge, under what stands on it
+      var word = function (x, t) { var z = KIT.fitText(t, 52, T - 34, "Fraunces", 900); s += '<text x="' + (x + T / 2) + '" y="' + (B.y0 + T - 22) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + z + '" fill="' + INK + '">' + t + "</text>"; };
+      word(B.x0, "WAR");
+      word(B.x1 - T, "DISEASES");
+      return s;
+    }
+
+    // ── Where things stand.
+    var PK = hs("pool", 640), PB = [1290, 1255], HEAP = [1290, 1000], WARC = [B.x0 + B.T / 2, B.y0 + B.T], DISC = [B.x1 - B.T / 2, B.y0 + B.T];
+    var GX = 1300, GG = 486, GK = 520 / SZ["greed-hand"][0], JOINT = [118, 222];
+    var FAC = [-330, 480], FAK = hs("factory", 640), FTOP = [FAC[0], FAC[1] - 640 + 40];
+    var S = function (x, y, s) { return [x, y, s]; };
+    var views = V ? { top: S(1300, 750, 0.4), greed: S(620, 470, 0.56), drag: S(1500, 620, 0.5), dis: S(2380, 560, 1.4) }
+      : { top: S(1300, 820, 0.52), greed: S(1000, 500, 0.85), drag: S(1300, 600, 0.68), dis: S(2360, 500, 1.35) };
+
+    var cast = {}, beats = [], add = function (b) { beats.push(b); };
+    // the pool of medicine money in the field
+    cast.tub = { art: "pool", x: PB[0], y: PB[1], anchor: "bottom", scale: PK };
+    // beyond the board: the weapons factory, its missile
+    cast.factory = { art: "factory", x: FAC[0], y: FAC[1], anchor: "bottom", pivot: "bottom", scale: FAK };
+    cast.missile = { art: "missile", x: FTOP[0], y: FTOP[1], anchor: "bottom", pivot: "center", scale: hs("missile", 230), hidden: true };
+    // behind the board: the institutions, waiting above the frame
+    cast.capitol = { art: "capitol", x: 760, y: 486, anchor: "bottom", pivot: "bottom", scale: hs("capitol", 470), hidden: true };
+    cast.bank = { art: "bank-legs", x: 1800, y: 486, anchor: "bottom", pivot: "bottom", scale: hs("bank-legs", 400), hidden: true };
+    cast.hosp = { art: "hospital-giant", x: 2110, y: 486, anchor: "bottom", pivot: "bottom", scale: hs("hospital-giant", 520), hidden: true };
+    // the GREED hand on its post: the post stays put, the hand turns on the joint
+    cast.gpost = { art: "greed-hand", x: GX, y: GG, anchor: "bottom", scale: GK, clip: [[70, 226], [170, 226], [170, 322], [70, 322]], hidden: true };
+    cast.ghand = { art: "greed-hand", x: GX, y: GG, anchor: "bottom", pivot: JOINT, scale: GK, clip: [[0, 0], [462, 0], [462, 232], [0, 232]], hidden: true,
+      points: { f1: [330, 52], f2: [420, 46] },
+      label: { text: "GREED", at: [52, 112], width: 80, size: 30, tilt: -8 } };
+    // on the board: the missile on WAR, three smug germs on DISEASES
+    cast.warM = { art: "missile", x: WARC[0], y: WARC[1] - 70, anchor: "bottom", scale: hs("missile", 170), eyes: [], smoke: [[95, 40]] };
+    [-70, 0, 70].forEach(function (dx, j) { cast["germ" + j] = { art: "germ", x: DISC[0] + dx, y: DISC[1] - 56 - (j === 1 ? 30 : 0), anchor: "bottom", pivot: "bottom", scale: hs("germ", 140) }; });
+    cast.boomC = { art: "mushroom", x: WARC[0], y: WARC[1] - 20, anchor: "bottom", pivot: "bottom", scale: hs("mushroom", 720), hidden: true };
+    // the people who know how: lobbyists from the left, scientists from the right
+    cast.lob0 = { art: "lobbyist", x: V ? 90 : -260, y: 1470, anchor: "bottom", pivot: "bottom", scale: hs("lobbyist", 430), hidden: true };
+    cast.lob1 = { art: "lobbyist-shake", x: V ? 290 : -60, y: 1480, anchor: "bottom", pivot: "bottom", scale: hs("lobbyist-shake", 440), hidden: true };
+    cast.sci0 = { art: "scientist-flask", x: V ? 2330 : 2700, y: 1470, anchor: "bottom", pivot: "bottom", scale: hs("scientist-flask", 450), hidden: true, faces: "left" };
+    cast.sci1 = { art: "scientist-reach", x: V ? 2510 : 2900, y: 1480, anchor: "bottom", pivot: "bottom", scale: hs("scientist-reach", 300), hidden: true };
+    // two front runners who grab the finger and hang off it as it swings round
+    cast.hang0 = { art: "citizen-3", x: 1150, y: 690, scale: hs("citizen-3", 170), hidden: true };
+    cast.hang1 = { art: "citizen-8", x: 1000, y: 690, scale: hs("citizen-8", 170), hidden: true };
+
+    // ── Beats.
+    // "Four billion humans": players rain onto the board, a few, then heaps of them, as the count rolls up
+    var PEOPLE = ["citizen-1", "citizen-2", "citizen-3", "citizen-4", "citizen-5", "citizen-6", "citizen-7", "citizen-8", "citizen-9", "citizen-10", "citizen-11", "citizen-12"];
+    var SPOTS = [[170, 760], [560, 760], [950, 760], [1650, 760], [2030, 760], [2190, 900], [170, 1470], [560, 1470], [950, 1470], [1650, 1470], [2040, 1470], [2430, 1470], [1300, 1480]];
+    var RAIN0 = cue("Four"), RAIN1 = cue("diseases") + 0.3, CROWD = [];
+    SPOTS.forEach(function (p, j) {
+      var order = [6, 0, 10, 4, 8, 2, 12, 7, 1, 11, 5, 9, 3].indexOf(j), t0 = RAIN0 + 0.12 * order;
+      var arts = PEOPLE.slice(j % 12).concat(PEOPLE.slice(0, j % 12));
+      add({ at: t0, do: "pile", id: "c" + j, art: arts, x: p[0], y: p[1], heap: 4, count: 9, height: 150, spread: 82, until: RAIN1 - 0.08 * (12 - order), accel: 0.5, tilt: 4, jitter: 10 });
+      CROWD.push("c" + j);
+    });
+    add({ on: "Four", do: "counter", id: "count", from: 0, to: 4000000000, x: 1300, y: V ? -600 : 210, size: V ? 200 : 130, prefix: "", suffix: "", until: RAIN1, ease: "smooth" });
+    add({ on: "humans", offset: 0.2, do: "shake", y: 9, frames: 4 });
+    // "payout": every player jumps for it
+    add({ on: "payout", do: "hop", who: CROWD, height: 46 });
+    add({ on: "depends", do: "hop", who: CROWD, height: 24 });
+    // "attract": the money pulls in the people who know how
+    add({ on: "attract", do: "banner", id: "cures", text: "PAYS FOR CURES", x: HEAP[0], y: V ? 880 : 860, size: V ? 230 : 120, width: V ? 1800 : 980, pad: V ? 120 : 70, color: "ink", tilt: -3 });
+    add({ on: "lobbyists,", offset: 0.1, do: "slideIn", who: "lob0", from: "left", dist: 1400, tilt: -10, over: 40 });
+    add({ on: "lobbyists,", offset: 0.4, do: "slideIn", who: "lob1", from: "left", dist: 1400, tilt: -10, over: 40 });
+    add({ on: "researchers,", do: "slideIn", who: "sci0", from: "right", dist: 1400, tilt: 10, over: 40 });
+    add({ on: "researchers,", offset: 0.35, do: "slideIn", who: "sci1", from: "right", dist: 1400, tilt: 10, over: 40 });
+    ["capitol", "bank", "hosp"].forEach(function (n, j) {
+      add({ on: "institutions", offset: 0.22 * j - 0.12, do: "slideIn", who: n, from: "top", dist: 1600, over: 30 });
+      add({ on: "institutions", offset: 0.22 * j, do: "shake", y: 7, frames: 2 });
+    });
+    add({ on: "who", do: "bob", who: ["bank", "hosp"], y: 6, r: 2, speed: 2.6, until: "rest." });
+    add({ on: "rest.", do: "nudge", who: ["lob0", "lob1"], by: [40, 0] });
+    add({ on: "rest.", do: "nudge", who: ["sci0", "sci1"], by: [-40, 0] });
+    add({ on: "rest.", offset: 0.05, do: "shiver", who: ["germ0", "germ1", "germ2"], dur: 0.6, amp: 4, rot: 6 });
+    add({ on: "rest.", offset: 0.3, do: "hide", who: "cures" });
+    // "The greed handles it. It always has.": the GREED hand drops in and spins by itself; it stops on WAR, and the
+    // factory's missile lands there
+    add({ on: "greed", offset: -0.3, do: "camera", view: "greed", dur: 0.6 });
+    add({ on: "greed", offset: -0.3, do: "pop", who: "count", out: true });
+    add({ on: "greed", do: "slideIn", who: ["gpost", "ghand"], from: "top", dist: 1400, over: 26 });
+    var SP0 = cue("handles"), SP1 = cue("always"), STEPS = 12;
+    for (var i = 1; i <= STEPS; i++) {
+      var u = i / STEPS, ts = SP0 + (SP1 - SP0) * (1 - Math.pow(1 - u, 1.6)) - (SP1 - SP0) / STEPS;
+      add({ at: ts, do: "move", who: "ghand", turn: -45 * i, dur: F });
+    }
+    add({ on: "always", do: "shiver", who: "ghand", dur: 0.25, amp: 2, rot: 2 });
+    add({ on: "always", offset: 0.05, do: "show", who: "missile" });
+    add({ on: "always", offset: 0.05, do: "move", who: "missile", to: [WARC[0], WARC[1] - 200], arc: 520, turn: 200, dur: cue("has.") - cue("always") - 0.05, ease: "smooth" });
+    add({ on: "has.", do: "hide", who: "missile" });
+    add({ on: "has.", do: "boom", shake: 20, flash: 0.22 });
+    add({ on: "has.", do: "pop", who: "boomC" });
+    add({ on: "has.", do: "char", who: ["c0", "c1", "warM"] });
+    add({ on: "has.", offset: 1.3, do: "pop", who: "boomC", out: true });
+    // "You just never pointed it at anything useful before.": the crowd stampedes for DISEASES and drags the finger
+    // round; two germs go flat under it; the hospital stomps on the last one
+    add({ on: "You", offset: -0.1, do: "camera", view: "drag", dur: 0.6 });
+    var RUN = CROWD.filter(function (n) { return n !== "c0" && n !== "c1"; });
+    RUN.forEach(function (n) { var x = SPOTS[Number(n.slice(1))][0]; add({ on: "pointed", do: "move", who: n, by: [x < 1900 ? 300 : 80, -30], dur: cue("useful") - cue("pointed"), ease: "smooth" }); });
+    add({ on: "pointed", do: "bob", who: RUN, y: 14, r: 4, speed: 4, until: "before." });
+    add({ on: "pointed", do: "move", who: ["lob0", "lob1"], by: [520, -60], dur: 0.9, ease: "smooth" });
+    add({ on: "pointed", do: "move", who: ["sci0", "sci1"], by: [-230, -60], dur: 0.9, ease: "smooth" });
+    // two of them leap up and grab the finger, and hang off it as the crowd drags it round to DISEASES
+    add({ on: "pointed", do: "show", who: ["hang0", "hang1"] });
+    add({ on: "pointed", do: "move", who: "hang0", to: "ghand.f1", by: [0, 80], arc: 120, dur: 0.17 });
+    add({ on: "pointed", offset: 0.05, do: "move", who: "hang1", to: "ghand.f2", by: [0, 80], arc: 140, dur: 0.17 });
+    var DR = cue("anything") + 0.05;
+    for (i = 1; i <= 4; i++) add({ at: cue("pointed") + 0.17 + (DR - cue("pointed") - 0.17) * i / 4, do: "move", who: "ghand", turn: -540 - 45 * i, dur: 2 * F });
+    add({ at: DR + 0.08, do: "shiver", who: "ghand", dur: 0.25, amp: 3, rot: 2 });
+    add({ on: "useful", offset: 0.05, do: "flatten", who: ["germ0", "germ2"] });
+    add({ on: "useful", offset: -0.15, do: "camera", view: "dis", dur: 0.45 });
+    // its feet (half its 520 px height below its middle) come down on the germ
+    add({ on: "before.", offset: -0.25, do: "move", who: "hosp", to: [DISC[0] + 20, DISC[1] - 40 - 260], arc: 180, dur: 0.25 });
+    add({ on: "before.", do: "flatten", who: "germ1" });
+    add({ on: "before.", do: "shake", y: 14, frames: 4 });
+    add({ on: "before.", offset: 0.45, do: "move", who: "hosp", by: [-330, -20], arc: 60, dur: 0.22 });
+
+    KIT.collage({ id: ID, seed: 2406, plate: V ? [-3200, -2600, 6000, 4600] : [-1800, -1000, 4600, 2800], views: views, view: "top", cast: cast, beats: beats });
+
+    var stage = document.getElementById(ID + "-stage");
+    var d = document.createElement("div");
+    d.style.cssText = "position:absolute;left:0;top:0;width:0;height:0;overflow:visible";
+    d.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible">' + boardSvg() + "</svg>";
+    stage.insertBefore(d, stage.children[1]);
+    // the germs, the hospital that stomps them, the missile and its cloud stand in front of the crowd
+    var bolts = document.getElementById(ID + "-bolts");
+    ["germ0", "germ1", "germ2", "hosp", "missile", "boomC"].forEach(function (n) { stage.insertBefore(document.getElementById(ID + "-" + n), bolts); });
+  </script>
+</template>

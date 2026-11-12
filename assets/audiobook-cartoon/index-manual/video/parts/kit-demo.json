@@ -1,0 +1,19 @@
+{
+  "id": "kit-demo",
+  "title": "Kit demo: the collage kit's newer moves (scratch, not for render)",
+  "storyboard": "storyboards/KIT-TODO.md",
+  "audio": {
+    "start": 1429.036,
+    "end": 1478.08
+  },
+  "scenes": [
+    { "id": "line-demo", "file": "compositions/scenes/kit-demo/line-demo.html", "cue": "Your", "approx": 1429.504, "layer": "B" },
+    { "id": "pile-demo", "file": "compositions/scenes/kit-demo/pile-demo.html", "cue": "blamed", "approx": 1434.984, "layer": "B" },
+    { "id": "counter-demo", "file": "compositions/scenes/kit-demo/counter-demo.html", "cue": "All", "approx": 1439.764, "layer": "B" },
+    { "id": "xray-demo", "file": "compositions/scenes/kit-demo/xray-demo.html", "cue": "Each", "approx": 1445.224, "layer": "B" },
+    { "id": "march-demo", "file": "compositions/scenes/kit-demo/march-demo.html", "cue": "Between", "approx": 1449.724, "layer": "B" },
+    { "id": "pictogram-demo", "file": "compositions/scenes/kit-demo/pictogram-demo.html", "cue": "I", "approx": 1457.024, "layer": "B" },
+    { "id": "lap-demo", "file": "compositions/scenes/kit-demo/lap-demo.html", "cue": "For", "approx": 1465.284, "layer": "B" }
+  ],
+  "sounds": []
+}

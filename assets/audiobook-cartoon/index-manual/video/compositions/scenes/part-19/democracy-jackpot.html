@@ -1,0 +1,180 @@
+<template id="democracy-jackpot-template">
+  <!-- democracy-jackpot · collage (Part 19, scene 3; adapted from the short briber-conversion-therapy). The bit: a lobbyist on a couch, and the
+       treatment is arithmetic. He lies there, big. One coin into his shut case and a column of coins goes up past the
+       frame, past the clouds, to 1,813; then the camera drops back to the one coin. A ledger lands on him. Left of the
+       couch, his current life: a pile of cash, a mushroom cloud, a raisin in a cookie that goes off just the same, a
+       headstone and its orphans. Right of it, his offer: the same pile with new seals, the Politician trading his bomb
+       for a flask, a halo, and on "keep" he sits up. His statue slams down and the camera pulls back on both lives. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="democracy-jackpot" data-width="1920" data-height="1080" data-start="0" data-duration="39.32">
+    <div id="democracy-jackpot-weave"></div>
+    <div id="democracy-jackpot-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, G = 1000;
+    var cy = function (s) { return V ? G - 420 / s : 620; };
+    // The room, left to right on the ground line: headstone, cash, couch, case and its column, cash again, statue.
+    var CASE = V ? 650 : 760, COUCH_K = 2.2, UP_K = COUCH_K * 433 / 645;
+    var TILE = 508 * 3, BASE = G - 100, TILES = 8, TOPY = BASE - (TILES - 1) * TILE - 528 * 3;     // joined tiles: their cream ends cut off
+    var X = V ? { pile: -1650, baker: -1200, m1: -1750, grave: -2850, pile2: 1700, pol: 2230, statue: 3100, fam: 3560 }
+      : { pile: -1600, baker: -850, m1: -1650, grave: -2950, pile2: 1700, pol: 2550, statue: 3100, fam: 3700 };
+    var views = V ? {
+      couch: [195, cy(0.8), 0.8], top: [CASE + 240, TOPY + 510, 1], coin: [CASE + 170, cy(2), 2],
+      cash: [-1565, cy(0.9), 0.9], grave: [X.grave, cy(0.8), 0.8], offer: [1790, cy(0.9), 0.9], statue: [3300, cy(0.85), 0.85],
+      sit: [195, cy(0.8), 0.8], wide: [175, cy(0.147), 0.147],
+    } : {
+      couch: [240, 655, 1.1], top: [CASE + 390, TOPY + 320, 1], coin: [CASE + 230, 850, 2.2],
+      cash: [-1330, 620, 1], grave: [X.grave, 620, 1], offer: [2000, 620, 1], statue: [3450, 620, 1], sit: [300, 620, 1],
+      wide: [165, -290, 0.24],
+    };
+
+    // A pile of six banded stacks, bottom row first, on the floor round x.
+    var SPOTS = [[-320, 0], [0, 0], [320, 0], [-160, 210], [160, 210], [0, 420]];
+    var pile = function (cast, pre, x, art) {
+      return SPOTS.map(function (p, i) {
+        cast[pre + i] = { art: art, x: x + p[0], y: G - p[1], anchor: "bottom", pivot: "bottom", scale: 1.7, hidden: true };
+        return pre + i;
+      });
+    };
+    var ORPH = V ? { at: [-560, 300, -430, 430, -300, 560], k: 1.25 } : { at: [-760, 760, -600, 600, -445, 445], k: 1.6 };
+
+    var cast = {};
+    cast.m1 = { art: "mushroom", x: X.m1, y: G, anchor: "bottom", pivot: "bottom", scale: V ? 1.9 : 1.55, hidden: true };
+    cast.m2 = { art: "mushroom", x: X.baker, y: G, anchor: "bottom", pivot: "bottom", scale: V ? 1.9 : 1.55, hidden: true };
+    var war1 = pile(cast, "a", X.pile, "bundle-war");
+    cast.baker = { art: "raisin-baker", x: X.baker, y: G, anchor: "bottom", pivot: "bottom", scale: 1.7, hidden: true, eyes: [[123, 66], [161, 68]], eyeSize: 26, smoke: [[110, 20], [170, 30]] };
+    cast.stone = { art: "headstone", x: X.grave, y: G, anchor: "bottom", scale: 2.05, hidden: true, label: [
+      { text: "HERE LIES", at: [177, 115], width: 240, size: 78 }, { text: "SOMEONE", at: [177, 165], width: 240, size: 78 },
+      { text: "WHO MADE", at: [177, 215], width: 240, size: 78 }, { text: "ORPHANS", at: [177, 265], width: 240, size: 78 },
+    ] };
+    var orphans = ORPH.at.map(function (dx, i) {
+      cast["o" + i] = { art: "orphan", x: X.grave + dx, y: G, anchor: "bottom", pivot: "bottom", scale: ORPH.k, hidden: true };
+      return "o" + i;
+    });
+    // The column stands in front of the open case, its foot in the lower compartment; clouds pass it on the way up.
+    cast.cl0 = { art: "cloud", x: CASE - 520, y: BASE - 2600, scale: 3.4 };
+    cast.cl1 = { art: "cloud", x: CASE + 560, y: BASE - 4700, scale: 4 };
+    cast.ship = { art: "airship", x: CASE - 560, y: BASE - 7000, scale: 2.2 };
+    cast.cl2 = { art: "cloud", x: CASE + 520, y: BASE - 9300, scale: 3.4 };
+    cast.couch = { art: "lobbyist-couch", x: 0, y: G, anchor: "bottom", pivot: "bottom", scale: COUCH_K };
+    cast.up = { art: "lobbyist-couch-up", x: 0, y: G, anchor: "bottom", pivot: "bottom", scale: UP_K, hidden: true };
+    cast.ledger = { art: "ledger", x: 270, y: 690, scale: 0.42, hidden: true,
+      label: [{ text: "CURRENT JOB", at: [300, 110], width: 440, size: 70 }, { text: "YOUR OFFER", at: [815, 110], width: 420, size: 70 }] };
+    cast.caseShut = { art: "briefcase-shut", x: CASE, y: G, anchor: "bottom", pivot: "bottom", scale: 1.3 };
+    cast.caseOpen = { art: "briefcase", x: CASE, y: G, anchor: "bottom", pivot: "bottom", scale: 1.4, hidden: true };
+    var tiles = [];
+    for (var i = TILES - 1; i >= 0; i--) {
+      cast["t" + i] = { art: "coin-column", x: CASE, y: BASE - i * TILE, anchor: "bottom", pivot: "bottom", scale: 3, hidden: true,
+        clip: [[0, i === TILES - 1 ? 0 : 10], [80, i === TILES - 1 ? 0 : 10], [80, i ? 528 - 10 : 528], [0, i ? 528 - 10 : 528]] };
+      tiles.unshift("t" + i);
+    }
+    cast.pigeon = { art: "city-pigeon", x: CASE, y: TOPY + 8, anchor: "bottom", pivot: "bottom", scale: 1.5, hidden: true };
+    cast.coin0 = { art: "coin", x: 0, y: 668, scale: 0.55, hidden: true };
+    cast.coin1 = { art: "coin", x: CASE, y: G - 200, scale: 0.9, hidden: true };
+    var FLY = [[-420, 420], [420, 300], [-250, 620], [300, 560]];
+    FLY.forEach(function (f, i) { cast["f" + i] = { art: "coin", x: CASE, y: BASE - 40, scale: 0.8, hidden: true }; });
+    var war2 = pile(cast, "b", X.pile2, "bundle-war"), med2 = pile(cast, "c", X.pile2, "bundle-med");
+    cast.polBomb = { art: "politician-bomb", x: X.pol, y: G, anchor: "bottom", pivot: "bottom", scale: 1.83, hidden: true };
+    cast.polFlask = { art: "politician-flask", x: X.pol, y: G, anchor: "bottom", pivot: "bottom", scale: 1.42, hidden: true };
+    cast.bomb = { art: "bomb", x: X.pol, y: G - 460, scale: 0.85, hidden: true };
+    cast.halo = { art: "halo", x: -290, y: 300, scale: 1.7, hidden: true };
+    cast.lap = { art: "bundle-med", x: -60, y: 600, scale: 1.25, hidden: true };
+    cast.statue = { art: "statue", x: X.statue, y: G, anchor: "bottom", pivot: "bottom", scale: 1.3, hidden: true };
+    cast.fam = { art: "family-wave", x: X.fam, y: G, anchor: "bottom", pivot: "bottom", scale: 1.25, hidden: true };
+
+    var beats = [
+      // He lies there. One coin into the case; the case rattles.
+      { at: 0, do: "bob", who: "couch", y: 2, r: 0.5, speed: 1.2, until: "keep" },
+      { on: "lobbyists", do: "pop", who: "coin0" },
+      { on: "lobbyists", offset: 0.25, do: "move", who: "coin0", to: [CASE, G - 300], dur: 0.45, arc: 240, turn: 300 },
+      { on: "lobbyists", offset: 0.7, do: "hide", who: "coin0" },
+      { on: "currently", do: "shiver", who: "caseShut", dur: 1.05, amp: 4, rot: 1.5 },
+      // "thousand,": the case bursts and the column goes up past the frame, past the clouds, to a pigeon
+      { on: "thousand,", do: "swap", who: "caseShut", to: "caseOpen" },
+      { on: "thousand,", do: "shake", y: 10, frames: 4 },
+      { on: "thousand,", do: "pop", who: "t0", squash: true },
+      { on: "thousand,", offset: 0.02, do: "show", who: "coin1" },
+      { on: "thousand,", offset: 0.04, do: "move", who: "coin1", to: [CASE + 300, G - 72], dur: 0.45, arc: 200, turn: 360 },
+      { on: "thousand,", offset: 0.1, do: "camera", view: "top", dur: 1.5 },
+    ];
+    tiles.slice(1).forEach(function (t, j) { beats.push({ on: "thousand,", offset: 0.06 + j * 0.05, do: "show", who: t }); });
+    FLY.forEach(function (f, j) {
+      beats.push({ on: "thousand,", offset: j * 0.05, do: "show", who: "f" + j },
+        { on: "thousand,", offset: 0.02 + j * 0.05, do: "move", who: "f" + j, to: [CASE + f[0], G + 150], dur: 0.7, arc: f[1], turn: 400 },
+        { on: "thousand,", offset: 0.75 + j * 0.05, do: "hide", who: "f" + j });
+    });
+    beats = beats.concat([
+      { on: "thousand,", offset: 0.5, do: "show", who: "pigeon" },
+      { on: "dollars", do: "stamp", id: "n1813", text: "1,813", x: views.top[0] + (V ? 190 : 370), y: TOPY + (V ? 300 : 230), size: V ? 300 : 420, width: V ? 620 : 900, tilt: -4 },
+      { on: "back", do: "hop", who: "pigeon", height: 26 },
+      // "per dollar": all the way back down, to the one coin
+      { on: "dollar", do: "camera", view: "coin", dur: 0.85 },
+      { on: "corruption.", do: "shiver", who: "coin1", dur: 0.5, amp: 3, rot: 3 },
+      // "Show them a spreadsheet:" it lands on him
+      { on: "Show", do: "camera", view: "couch", dur: 0.6 },
+      { on: "spreadsheet:", do: "stamp", who: "ledger", from: 2, shake: 9 },
+      // Current Job: the cash
+      { on: "Current", do: "camera", view: "cash", dur: 0.95 },
+      { on: "Current", do: "slideOut", who: "ledger", to: "left", dist: 1500, dur: 0.6 },
+    ]);
+    war1.forEach(function (b, j) { beats.push({ on: "Current", offset: 0.6 + j * 0.27, do: "stamp", who: b, from: 1.5, shake: 3 }); });
+    beats = beats.concat([
+      // "arms dealer": the bomb goes off behind it. "raisins in cookies": the same.
+      { on: "\"arms", do: "boom", shake: 18, flash: 0.2 },
+      { on: "\"arms", do: "pop", who: "m1", swell: 0.12 },
+      { on: "person", do: "slideIn", who: "baker", from: "right", dist: 1000, over: 26 },
+      { on: "raisins", offset: 0.15, do: "nudge", who: "baker", by: [0, 16] },
+      { on: "cookies\".", do: "boom", shake: 22, flash: 0.2 },
+      { on: "cookies\".", do: "pop", who: "m2", swell: 0.12 },
+      { on: "cookies\".", do: "char", who: "baker" },
+      { on: "cookies\".", offset: 0.75, do: "blink", who: "baker" },
+      // The legacy: the stone, then its orphans, staring
+      { on: "legacy", n: 1, do: "camera", view: "grave", dur: 0.7 },
+      { on: "legacy", n: 1, offset: 0.25, do: "slideIn", who: "stone", from: "bottom", dist: 1400, over: 16 },
+    ]);
+    orphans.forEach(function (o, j) { beats.push({ on: "orphans\".", offset: -0.25 + j * 0.1, do: "pop", who: o, squash: true }); });
+    // Your Offer: the same pile, the same way; the seals change on "clinical"
+    beats.push({ on: "Your", do: "camera", view: "offer", dur: 1.0 });
+    war2.forEach(function (b, j) { beats.push({ on: "salary", n: 2, offset: j * 0.14, do: "stamp", who: b, from: 1.5, shake: 3 }); });
+    war2.forEach(function (b, j) { beats.push({ on: "clinical", offset: j * 0.09, do: "swap", who: b, to: med2[j] }); });
+    beats = beats.concat([
+      { on: "politicians", do: "slideIn", who: "polBomb", from: "right", dist: 1000, over: 24 },
+      { on: "clinical", do: "swap", who: "polBomb", to: "polFlask" },
+      { on: "clinical", do: "show", who: "bomb" },
+      { on: "instead", do: "move", who: "bomb", to: [V ? 1000 : 700, G - 200], dur: 0.8, arc: 420, turn: -300 },
+      { on: "bombs.", offset: -0.05, do: "hide", who: "bomb" },
+      { on: "bombs.", do: "boom", shake: 24, flash: 0.15 },
+      { on: "bombs.", offset: 0.2, do: "hop", who: "polFlask", height: 22 },
+      // "Philanthropist": a halo. "keep the money": he sits up.
+      { on: "moral", n: 2, do: "camera", view: "couch", dur: 0.8 },
+      { on: "\"Philanthropist\"", do: "slideIn", who: "halo", from: "top", dist: 800, over: 10 },
+      { on: "\"Philanthropist\"", offset: 0.35, do: "bob", who: "halo", y: 5, r: 3, speed: 2 },
+      { on: "keep", do: "swap", who: "couch", to: "up" },
+      { on: "keep", do: "camera", view: "sit", dur: 0.25 },
+      { on: "keep", do: "move", who: "halo", to: [-220, 140], dur: 0.17 },
+      { on: "money).", do: "stamp", who: "lap", from: 2, shake: 8 },
+      { on: "money).", offset: 0.1, do: "hop", who: "up", height: 18 },
+      // "Accidentally": his statue. "while": both lives at once.
+      { on: "legacy", n: 2, do: "camera", view: "statue", dur: 0.8 },
+      { on: "\"Accidentally", do: "stamp", who: "statue", from: 1.7, shake: 14 },
+      { on: "saved", do: "slideIn", who: "fam", from: "right", dist: 1100, over: 22 },
+      { on: "saved", offset: 0.3, do: "bob", who: "fam", y: 6, r: 2, speed: 2.5 },
+      { on: "\"Accidentally", offset: 0.1, do: "stamp", id: "acc1", text: "ACCIDENTALLY", x: V ? 3300 : 3680, y: V ? -150 : 215, size: 170, width: 900, tilt: -3, shake: 0 },
+      { on: "humanity", do: "stamp", id: "acc2", text: "SAVED HUMANITY", x: V ? 3300 : 3680, y: V ? 10 : 365, size: 150, width: 900, tilt: -3 },
+      { on: "while", do: "camera", view: "wide", dur: 1.4 },
+    ]);
+
+    KIT.collage({ id: "democracy-jackpot", seed: 1903, plate: V ? [-3900, -13500, 4300, 4900] : [-3900, -12600, 4700, 2000], views: views, view: "couch", cast: cast, beats: beats });
+  </script>
+</template>

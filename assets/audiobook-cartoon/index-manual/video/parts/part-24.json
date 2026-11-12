@@ -3,8 +3,8 @@
   "title": "The Earth Optimization Game",
   "storyboard": "storyboards/part-24-earth-optimization-game.md",
   "audio": {
-    "start": 3043.46,
-    "end": 3091.044
+    "start": 3013.77,
+    "end": 3061.298
   },
   "noCaptions": [
     "earth-optimization-game-title"
@@ -14,14 +14,14 @@
       "id": "earth-optimization-game-title",
       "file": "compositions/scenes/part-24/earth-optimization-game-title.html",
       "cue": "The",
-      "approx": 3043.46,
+      "approx": 3013.75,
       "layer": "A"
     },
     {
       "id": "game-box",
       "file": "compositions/scenes/part-24/game-box.html",
       "cue": "A",
-      "approx": 3046.08,
+      "approx": 3016.384,
       "layer": "A",
       "wishonia": [
         {
@@ -44,21 +44,14 @@
       "id": "game-pool-rules",
       "file": "compositions/scenes/part-24/game-pool-rules.html",
       "cue": "Two",
-      "approx": 3047.62,
-      "layer": "B"
-    },
-    {
-      "id": "friends-to-play",
-      "file": "compositions/scenes/part-24/friends-to-play.html",
-      "cue": "You",
-      "approx": 3062.2,
+      "approx": 3017.864,
       "layer": "B"
     },
     {
       "id": "your-job",
       "file": "compositions/scenes/part-24/your-job.html",
       "cue": "Your",
-      "approx": 3069.52,
+      "approx": 3039.904,
       "layer": "A",
       "wishonia": [
         {
@@ -95,7 +88,7 @@
       "id": "greed-handles-it",
       "file": "compositions/scenes/part-24/greed-handles-it.html",
       "cue": "Four",
-      "approx": 3076.3,
+      "approx": 3046.584,
       "layer": "B"
     }
   ],
@@ -250,84 +243,84 @@
       "volume": 0.4
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "getting",
       "sfx": "whoosh",
       "volume": 0.35
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "friends",
       "sfx": "boing",
       "volume": 0.35
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "friends",
       "offset": 0.2,
       "sfx": "boing",
       "volume": 0.35
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "play.",
       "sfx": "ding",
       "volume": 0.35
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "play.",
       "offset": 0.15,
       "sfx": "ding",
       "volume": 0.35
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "Nobody",
       "sfx": "pop",
       "volume": 0.25
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "Nobody",
       "offset": 0.1,
       "sfx": "pop",
       "volume": 0.25
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "Nobody",
       "offset": 0.2,
       "sfx": "pop",
       "volume": 0.25
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "loses.",
       "sfx": "cash-register",
       "volume": 0.35
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "move",
       "sfx": "squeak",
       "volume": 0.35
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "not",
       "sfx": "tick",
       "volume": 0.45
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "not",
       "offset": 0.12,
       "sfx": "tick",
       "volume": 0.45
     },
     {
-      "scene": "friends-to-play",
+      "scene": "game-pool-rules",
       "cue": "playing.",
       "sfx": "zap",
       "volume": 0.4

@@ -1,0 +1,72 @@
+<template id="hen-on-safe-bottles-template">
+  <!-- hen-on-safe-bottles · collage (Part 14, scene 3). The bit: the FDA, its building, broods on a heap of smiling SAFE
+       bottles like a hen on eggs, flapping its arms and clucking, while the people in front reach for the bottles.
+       "die.": they x-ray into grinning skeletons, still reaching. A bottle squeezes out from under it toward them; the
+       building hooks it back with its shoe and settles. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="hen-on-safe-bottles" data-width="1920" data-height="1080" data-start="0" data-duration="3.28">
+    <div id="hen-on-safe-bottles-weave"></div>
+    <div id="hen-on-safe-bottles-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "hen-on-safe-bottles", V = KIT.V, G = 1000, cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The heap of SAFE bottles on the right, three rows; the FDA sits in it between the back rows and the front one.
+    var HX = 1420, BK = 0.55, BW = 92, ROWS = [[6, G], [5, G - 150], [4, G - 300]];
+    var views = V ? { hen: [1010, G - 420 / 0.7, 0.7] } : { hen: [960, 540, 1] };
+    var cast = {}, beats = [];
+    var bottle = function (x, y) { return { art: "pill-bottle", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: BK, label: { text: "SAFE", at: [78, 300], width: 120, size: 60 } }; };
+    // back rows first
+    [2, 1].forEach(function (r) {
+      var n = ROWS[r][0];
+      for (var i = 0; i < n; i++) cast["b" + r + i] = bottle(HX + (i - (n - 1) / 2) * BW, ROWS[r][1]);
+    });
+    // the FDA, brooding: arms folded and eyes shut, or flapping (the scared pose has its arms up)
+    var FK = 0.9, FY = G - 330;
+    var fda = function (art, sign, hidden) { return { art: art, x: HX, y: FY, anchor: "bottom", pivot: "bottom", scale: FK * 584 / KIT.collage.SIZES[art][1], hidden: hidden,
+      label: { text: "F.D.A.", at: sign, width: 170, size: 46, plaque: true } }; };
+    cast.fda = fda("fda-folded", [221, 202], false);
+    cast.flap = fda("fda-scared", [232, 185], true);
+    // the front row, in front of it; one of them squeezes out
+    for (var i = 0; i < 6; i++) cast["b0" + i] = bottle(HX + (i - 2.5) * BW, G);
+    // the people in front, reaching for the heap, and their skeletons
+    var P = [["hungry-reach", "hungry-skeleton-reach", 290, 1.3], ["patient-reach", "patient-skeleton-reach", 650, 1.45], ["hungry-reach", "hungry-skeleton-reach", 960, 1.15]];
+    P.forEach(function (p, j) {
+      cast["p" + j] = { art: p[0], x: p[2], y: G, anchor: "bottom", pivot: "bottom", scale: p[3] };
+      cast["s" + j] = { art: p[1], x: p[2], y: G, anchor: "bottom", pivot: "bottom", scale: p[3] * KIT.collage.SIZES[p[0]][1] / KIT.collage.SIZES[p[1]][1], hidden: true };
+    });
+
+    // It flaps and clucks: a few quick cuts between the poses, then it settles, arms folded.
+    var flap = function (t0, n) {
+      for (var k = 0; k < n; k++) {
+        beats.push({ at: t0 + k * 0.18, do: "hide", who: "fda" }, { at: t0 + k * 0.18, do: "show", who: "flap" });
+        beats.push({ at: t0 + k * 0.18 + 0.09, do: "hide", who: "flap" }, { at: t0 + k * 0.18 + 0.09, do: "show", who: "fda" });
+      }
+    };
+    flap(0.05, 4);
+    beats.push({ on: "sits", do: "nudge", who: "fda", by: [0, -14] });
+    beats.push({ on: "safe", do: "bob", who: "fda", y: 5, r: 2.5, speed: 2.2, until: "die.", fade: 0.1 });
+    beats.push({ on: "treatments", do: "shiver", who: ["p0", "p1", "p2"], dur: 0.4, amp: 3, rot: 1.5 });
+    // "die.": still reaching
+    beats.push({ on: "die.", do: "xray", who: ["p0", "p1", "p2"], to: ["s0", "s1", "s2"], stagger: 0.08 });
+    // a bottle squeezes out toward them; the shoe hooks it back
+    var OUT = cue("die.") + 0.55;
+    beats.push({ at: OUT, do: "move", who: "b00", by: [-230, 0], turn: -14, dur: 0.22, arc: 40 });
+    beats.push({ at: OUT + 0.15, do: "hop", who: "s1", height: 20 });
+    flap(OUT + 0.3, 1);
+    beats.push({ at: OUT + 0.55, do: "move", who: "b00", by: [230, 0], turn: 0, dur: 0.2 });
+    beats.push({ at: OUT + 0.8, do: "nudge", who: "fda", by: [0, 12] });
+
+    KIT.collage({ id: ID, seed: 1403, plate: V ? [-600, -1600, 2600, 2600] : [-400, -600, 2400, 1500], views: views, view: "hen", cast: cast, beats: beats });
+  </script>
+</template>

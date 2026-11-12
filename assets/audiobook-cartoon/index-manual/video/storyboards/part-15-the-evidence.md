@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:41.2
+duration: 1:41.3
 message: "It has worked before: one trial ran 82 times cheaper during a pandemic, and after World War Two humans cut military spending 87.6% and got the biggest boom in history."
 arc: Title card (the evidence lands on a crook) → Wishonia: a tower of forms to stop a war, one blank sticky note to start one → the pandemic ward does the science on fire while the calm room next door waits its patients to death → the war stack cut, the baby boom, the Weapons Maker flicks 1% off today's 30.6 stack with one hand → the empty podium, the theft acted out, the ovation, 65 years in two seconds → the console under 65 years of dust
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 15, "Why This Could Actually Work: The Evidence"
-audio: index-manual.cbaf659d.mp3, 32:39.5 to 34:20.6
+audio: index-manual.7ce6b2b2.mp3, 32:17.0 to 33:58.3
 version: v3
 ---
 
@@ -56,7 +56,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "Why This Could Actually"
-- time: 32:39.5 to 32:46.9 (7.4 s)
+- time: 32:17.0 to 32:24.7 (7.8 s)
 - voiceover: "Why This Could Actually Work. *Unlike Everything Else Humanity Has Tried* The Evidence."
 - layer: A, title card
 - status: planned
@@ -75,7 +75,7 @@ Sound: the projector whirr; tiptoe squeaks; a stamp thunk on "Evidence."; a sque
 - act: Proof
 - transition_in: iris in on her face
 - cue: "Humans usually want proof"
-- time: 32:46.9 to 32:55.0 (8.2 s)
+- time: 32:24.7 to 32:32.9 (8.2 s)
 - voiceover: "Humans usually want "proof" before they stop doing something stupid, which is interesting because you never required proof before starting:"
 - layer: A, host
 - wishonia: big, skeptical-smile + body-presenting; smirk-smile + body-open-palms on "never"; skeptical-closed + body-arms-crossed on "starting:"
@@ -95,7 +95,7 @@ Sound: thunks for the bundles; a rising whistle as the tower shoots up; a far bo
 - act: The evidence
 - transition_in: cut
 - cue: "The RECOVERY trial tested"
-- time: 32:55.0 to 33:23.3 (28.3 s)
+- time: 32:32.9 to 33:01.2 (28.3 s)
 - voiceover: "The RECOVERY trial tested six treatments on forty-eight thousand patients for five hundred dollars per patient instead of the usual forty-one thousand dollars per patient. That's an eighty-two times cost reduction. Not in theory. In reality. During a pandemic. While panicking. Your species does its best medical research when terrified and disorganized, which suggests your normal system is somehow worse than panic."
 - layer: B, plate pandemic-ward
 - status: planned
@@ -121,7 +121,7 @@ Sound: a slam as the ward door bursts open; the counter's whirr; a slam as the t
 - act: The evidence
 - transition_in: cut
 - cue: "After World War Two,"
-- time: 33:23.3 to 33:51.4 (28.0 s)
+- time: 33:01.2 to 33:29.3 (28.1 s)
 - voiceover: "After World War Two, humans cut military spending by eighty-seven point six percent in two years and stumbled into the greatest economic boom in history by running out of people to shoot at. You're now spending thirty point six times the pre-World War Two baseline in inflation-adjusted dollars. You're asking for one percent. Even people who really, really, love exploding people should be able to handle one percent."
 - layer: B, plate money-stacks
 - status: planned
@@ -146,7 +146,7 @@ Sound: a snip; a whistle down and a yell as the stack falls, and a slam; three p
 - act: The evidence
 - transition_in: cut
 - cue: "Even your own war heroes"
-- time: 33:51.4 to 34:19.1 (27.8 s)
+- time: 33:29.3 to 33:57.0 (27.7 s)
 - voiceover: "Even your own war heroes figured this out. Eisenhower, the human who won World War Two, warned you that the weapons industry was eating your civilization alive: "Every gun that is made, every warship launched, every rocket fired signifies, in the final sense, a theft from those who hunger and are not fed, those who are cold and are not clothed." You gave him a standing ovation and then immediately ignored him for sixty-five"
 - layer: B, plate town-square
 - status: planned
@@ -171,7 +171,7 @@ Sound: a switch click for the spotlight; footsteps; two chomps and a burp; a cla
 - act: The evidence
 - transition_in: cut
 - cue: "years."
-- time: 34:19.1 to 34:20.6 (1.5 s)
+- time: 33:57.0 to 33:58.3 (1.2 s)
 - voiceover: "years."
 - layer: A, host
 - wishonia: big, sideeye-closed + body-arms-crossed

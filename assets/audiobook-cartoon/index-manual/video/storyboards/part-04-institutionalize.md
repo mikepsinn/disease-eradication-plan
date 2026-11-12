@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:38.6
+duration: 2:38.9
 message: "Humans call moving 1% of murder money to medicine crazy, but war is the largest coordinated effort your species undertakes, and ending it only requires not doing it."
 arc: Title card (INSTITUTIONALIZE buckled into a straitjacket) → the Orderly's net, poked up from Earth, falls short of Wishonia → the TV news chars its viewers and the inmate is netted → a human thumps his chest → curing disease is the real hard job → sane / insane, and the trapdoor → the diagnostic criteria, a hold, and the deck light-years out in space → the padded cell: what you tell the orderly → the war chain on the wall → the chain goes dark (HOLD) → rocks manage peace → the STOP sign, and one billionaire and a PDF
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 4, "What to Do When They Try to Institutionalize You"
-audio: index-manual.cbaf659d.mp3, 06:28.4 to 09:07.0
+audio: index-manual.7ce6b2b2.mp3, 06:03.7 to 08:42.6
 version: v3
 ---
 
@@ -68,7 +68,7 @@ version: v3
 - act: Title
 - transition_in: cut (from Part 3)
 - cue: "What to Do When They"
-- time: 06:28.4 to 06:32.2 (3.8 s)
+- time: 06:03.7 to 06:07.8 (4.1 s)
 - voiceover: "What to Do When They Try to Institutionalize You."
 - layer: A, title card
 - status: planned
@@ -85,7 +85,7 @@ Sound: a whirr on "What"; a squeak as the straps cinch and a click per buckle on
 - act: They call you crazy
 - transition_in: iris in on her face
 - cue: "When you suggest moving"
-- time: 06:32.2 to 06:39.6 (7.4 s)
+- time: 06:07.8 to 06:15.3 (7.5 s)
 - voiceover: "When you suggest moving one percent of murder money to medicine money, other humans will have you committed."
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting, then smirk-closed + body-arms-crossed on "committed."
@@ -104,7 +104,7 @@ Sound: a whoosh as the net comes up; a boing as it droops on "committed.".
 - act: They call you crazy
 - transition_in: cut
 - cue: "Most humans have been programmed"
-- time: 06:39.6 to 06:49.9 (10.3 s)
+- time: 06:15.3 to 06:25.7 (10.4 s)
 - voiceover: "Most humans have been programmed by their news boxes to believe war is a law of nature, like gravity or weather. They will assume your brain is malfunctioning."
 - layer: B, plate living-room
 - status: planned
@@ -125,7 +125,7 @@ Sound: a click per wire on "programmed"; a TV switch on "news"; a clonk on "grav
 - act: The real crazy goal
 - transition_in: cut
 - cue: "Here's what's funny about"
-- time: 06:49.9 to 06:57.0 (7.1 s)
+- time: 06:25.7 to 06:32.7 (7.0 s)
 - voiceover: "Here's what's funny about this: these same humans think curing disease is the less crazy goal."
 - layer: A, host
 - wishonia: big, smirk-smile + body-presenting, then eyeroll-smile + body-shrug on "less"
@@ -145,7 +145,7 @@ Sound: a dashboard ding on "curing"; a thunk on "disease"; a ding after "goal.".
 - act: The real crazy goal
 - transition_in: cut (close on his chest)
 - cue: "That's thirty-seven trillion"
-- time: 06:57.0 to 07:20.0 (23.0 s)
+- time: 06:32.7 to 06:55.7 (23.0 s)
 - voiceover: "That's thirty-seven trillion cells per human, breaking in seven thousand different ways, involving chemistry you don't fully understand, inside organs you can't fully simulate, fighting pathogens that evolve faster than your treatments. You're trying to debug all of it. At once. While your meat is walking around using itself."
 - layer: B, plate the-body
 - status: planned
@@ -169,7 +169,7 @@ Sound: a whoosh on the dive; a stamp thunk on "trillion"; ticks speeding up as t
 - act: The real crazy goal
 - transition_in: cut
 - cue: "That: sane."
-- time: 07:20.0 to 07:27.8 (7.7 s)
+- time: 06:55.7 to 07:03.6 (8.0 s)
 - voiceover: "That: sane. "Give one percent fewer papers to people who build murder machines": insane."
 - layer: B, plate game-show
 - status: planned
@@ -188,7 +188,7 @@ Sound: a whoosh per card flip; a ding and a sparkle for SANE on "sane."; the buz
 - act: The diagnostic criteria
 - transition_in: cut
 - cue: "This is your planet's diagnostic"
-- time: 07:27.8 to 07:43.5 (15.8 s)
+- time: 07:03.6 to 07:19.3 (15.6 s)
 - voiceover: "This is your planet's diagnostic criteria. I looked up the last person on your planet who went around suggesting universal love and peace. You nailed him to a piece of wood. So I consider it quite fortunate that I'm making this suggestion from several light-years away."
 - layer: A, host
 - wishonia: big, neutral-closed + body-palms-down, then sad-closed + body-hand-chest on "nailed", then smirk-closed + body-idle on "So", then smirk-smile + body-open-palms on "light-years"
@@ -210,7 +210,7 @@ Sound: a slide whistle down as the inmate falls past on "This"; silence for the 
 - act: What you tell the orderly
 - transition_in: cut
 - cue: "Anyway, here's what you tell"
-- time: 07:43.5 to 07:55.2 (11.7 s)
+- time: 07:19.3 to 07:31.0 (11.7 s)
 - voiceover: "Anyway, here's what you tell the orderly when he slides your medication through the door slot: Nobody accidentally builds an aircraft carrier or a nuclear bomb."
 - layer: B, plate padded-cell
 - bit: **A madman in a padded cell with a red string has worked it all out, and every word on his wall is true.** Scenes 8, 9 and 10 are one plate: eight pins in a ring round the cell door, each a frame big; the camera rides the string from pin to pin, then pulls back to the whole wall.
@@ -229,7 +229,7 @@ Sound: two padded boings as he lands; a squeak as the Orderly's neck rises on "o
 - act: What you tell the orderly
 - transition_in: same plate (no seam)
 - cue: "War requires you to get"
-- time: 07:55.2 to 08:30.1 (34.9 s)
+- time: 07:31.0 to 08:05.9 (34.9 s)
 - voiceover: "War requires you to get millions of humans to work together to mine metal from the ground, refine it into alloys, build factories to shape the alloys into weapons, train millions of humans to operate the weapons, feed and clothe those humans, build ships and planes and trucks to move the weapons to where the other humans are, convince your population the other humans deserve it, and then vote to pay for all of this, annually, forever. It is the single largest coordinated effort your species undertakes."
 - layer: B, plate padded-cell
 - bit: Merged into orderly-door-slot. One pin at a time, big, the string running on behind him.
@@ -252,7 +252,7 @@ Sound: a crayon squeak and a pin tack per pin; a clank on "mine"; a sizzle on "r
 - act: What you tell the orderly
 - transition_in: same plate (no seam)
 - cue: "Ending war simply requires"
-- time: 08:30.1 to 08:34.6 (4.5 s)
+- time: 08:05.9 to 08:10.3 (4.4 s)
 - voiceover: "Ending war simply requires NOT doing any of that stuff."
 - layer: B, plate padded-cell
 - bit: Merged into orderly-door-slot. The payoff: stopping is one switch.
@@ -270,7 +270,7 @@ Sound: a door creak on "Ending"; a crayon scratch for the switch; a click on "NO
 - act: Rocks do it every day
 - transition_in: cut
 - cue: "Building a nuclear bomb requires"
-- time: 08:34.6 to 08:54.7 (20.1 s)
+- time: 08:10.3 to 08:30.5 (20.1 s)
 - voiceover: "Building a nuclear bomb requires mass spectrometers, centrifuge cascades, and some of the most precise engineering your species has ever attempted. Not building a nuclear bomb requires nothing. Rocks do it every day. In fact, rocks have managed to live peacefully alongside different colored rocks for thousands of years."
 - layer: B, plate rock-field
 - bit: **A nuclear bomb's plumbing, huge, against one rock.** The camera climbs a tower of centrifuges to a sweating engineer, then whips out to one rock far below; the tower pops away; the sign beside the rock runs past trillions.
@@ -291,7 +291,7 @@ Sound: a magnet hum on "spectrometers,"; a rising whine on "cascades,"; a click 
 - act: The real obstacle
 - transition_in: cut
 - cue: "But somehow stop is"
-- time: 08:54.7 to 09:07.0 (12.3 s)
+- time: 08:30.5 to 08:42.6 (12.1 s)
 - voiceover: "But somehow "stop" is the unrealistic part. Improvement is physically possible. "Stop" isn't the unrealistic part. Getting one billionaire to read a P.D.F. is."
 - layer: A, host
 - wishonia: big, skeptical-closed + body-hands-hips, then neutral-smile + body-open-palms on "physically", then smirk-closed + body-presenting on "Getting", then sideeye-closed + body-arms-crossed on "is."

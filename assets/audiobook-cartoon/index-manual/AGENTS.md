@@ -8,8 +8,9 @@ The cartoon of audiobook episode 1 is rendered with HyperFrames, one part at a t
 - Gags go all the way, as in the theme song: the bomb goes off, people are charred and blink, the dead become grinning skeletons.
 - Keep each framing minimal: one idea on a plain field, nothing the viewer has to work out.
 - Money is green, never red; its seal (a missile or a cross) says what it buys.
-- People are engraved cut-outs in 1950s clothes. Period dress only where the role is period: Fat Cat, Uncle Sam, Wilson, the Roman, the caveman, Kelsey. The Weapons Maker wears an executive's suit, and drug ads on TV are realistic.
+- People are engraved cut-outs in 1950s clothes. Period dress only where the role is period: Fat Cat, Uncle Sam, Wilson, the Roman, the caveman, Kelsey. Drug ads on TV are realistic.
 - Pictures follow the book's rules. Money never lands in a leader's or politician's hands (campaign funding is labelled), YOU offer the bonds rather than buy them, the government doesn't sell them, returns are PROJECTED, and medicine isn't shown sitting unbought (trials find treatments).
+- Institutions are their buildings, not a person: the arms industry is the weapons factory (`factory-*`), the FDA its building (`fda-*`), the Federal Reserve its press cranking itself (`fed-crank-*`). Beat sheets that still say the Weapons Maker or the FDA official mean these. People stay people where the line is about people (YOU, patients, real figures, the politicians and lobbyists the book addresses).
 - No chest lights. Nobody has one; existing cut-outs lose it when they are redrawn.
 - Use the numbers the narrator says (the audiobook's figures), not the website's.
 

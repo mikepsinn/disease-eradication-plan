@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:07.9
+duration: 3:04.1
 message: "The FDA finds deadly drugs by fax and holds safe ones for 8.2 years, so 3,389 people die waiting for every one person it protects."
 arc: Title card stamped APPROVED → Wishonia's smoke detector that works by mail → Vioxx by fax, and her eye-roll → five years of headstones and the SAFETY SYSTEM sign → the fire truck with a water pistol → safe, agreed and locked for 8.2 years → a billion volunteers at one tiny door → the lifeguard → two mistakes and the man who jumps out of his skin → Wishonia counts on one finger → 3,389 skeletons in a column against one bubble-wrapped man, and the Thalidomide plates that barely lift him → the factory that makes headstones, the shelf, the missile and the girl → the receipt → SUBOPTIMAL → good, bad and weird news
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 12, "The FDA Is Unsafe and Ineffective"
-audio: index-manual.cbaf659d.mp3, 22:34.0 to 25:42.0
+audio: index-manual.7ce6b2b2.mp3, 22:10.9 to 25:14.9
 version: v3
 ---
 
@@ -46,7 +46,7 @@ version: v3
 - act: Title
 - transition_in: cut (the parts are rendered on their own and joined); the card comes up from black
 - cue: "The F.D.A. is Unsafe and Ineffective."
-- time: 22:34.0 to 22:37.6 (3.6 s)
+- time: 22:10.9 to 22:14.4 (3.5 s)
 - voiceover: "The F.D.A. is Unsafe and Ineffective."
 - layer: A, title card
 - status: planned
@@ -63,7 +63,7 @@ Sound: a projector whirr on "F.D.A."; a rubber-stamp thunk.
 - act: Slow alarms
 - transition_in: iris in on Wishonia's face (from the title card's black)
 - cue: "Even the money you DO"
-- time: 22:37.6 to 22:46.6 (9.0 s)
+- time: 22:14.4 to 22:22.6 (8.2 s)
 - voiceover: "Even the money you DO spend on medicine is mostly wasted, because the system that approves treatments is a smoke detector that works by mail."
 - layer: A, host
 - wishonia: smirk-smile + body-presenting; eyeroll-smile + body-shrug on "mostly"; lookright-smile + body-point-right on "smoke"; sideeye-closed + body-idle on "mail."
@@ -83,7 +83,7 @@ Sound: squeaky footsteps; a soft pat per paper into the basket; a sniff; a pen s
 - act: Slow alarms
 - transition_in: cut
 - cue: "Vioxx killed an estimated"
-- time: 22:46.6 to 22:59.6 (13.0 s)
+- time: 22:22.6 to 22:35.4 (12.8 s)
 - voiceover: "Vioxx killed an estimated fifty-five thousand people from heart attacks. The F.D.A. approved it. When patients started dying, someone filled out a P.D.F. form. A P.D.F. Then they faxed it."
 - layer: B, plate fda-office
 - status: planned
@@ -104,7 +104,7 @@ Sound: a thunk as 55,000 lands, then silence for the HOLD; a stamp thunk; three 
 - act: Slow alarms
 - transition_in: cut
 - cue: "(Yes, in the twenty-first century.)"
-- time: 22:59.6 to 23:02.2 (2.6 s)
+- time: 22:35.4 to 22:37.4 (2.0 s)
 - voiceover: "(Yes, in the twenty-first century.)"
 - layer: A, host
 - wishonia: sideeye-closed + body-arms-crossed; eyeroll-closed + body-arms-crossed on "century.)"
@@ -122,7 +122,7 @@ Sound: a soft pat as the paper lands.
 - act: Slow alarms
 - transition_in: cut back to the fda-office plate (the camera has traveled down the phone wire)
 - cue: "Then a human read it."
-- time: 23:02.2 to 23:12.0 (9.8 s)
+- time: 22:37.4 to 22:46.7 (9.4 s)
 - voiceover: "Then a human read it. Five years and tens of thousands of corpses later, someone noticed a pattern. This is your safety system."
 - layer: B, plate fda-office
 - status: planned
@@ -142,7 +142,7 @@ Sound: a typewriter clatter as the page creeps out; a thunk per headstone, faste
 - act: Slow alarms
 - transition_in: cut
 - cue: "Your National Institutes of Health"
-- time: 23:12.0 to 23:31.0 (19.0 s)
+- time: 22:46.7 to 23:05.1 (18.4 s)
 - voiceover: "Your National Institutes of Health, the agency nominally responsible for finding cures, spends three point three percent of its budget on clinical trials. The other approximately ninety-seven percent goes to basic research, administration, and buildings. It's like a fire department that spends three percent of its budget on water."
 - layer: B, plate nih-street
 - status: planned
@@ -161,9 +161,9 @@ Sound: a click as the sliver lights; a squeak as the Scientist squeezes in; two 
 - id: committee-8-years
 - act: The delay
 - transition_in: cut
-- cue: "Then there's a eight point two"
-- time: 23:31.0 to 23:47.8 (16.8 s)
-- voiceover: "Then there's a eight point two years delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend eight point two years making sure it works well enough."
+- cue: "Then there's an eight point two"
+- time: 23:05.1 to 23:20.6 (15.5 s)
+- voiceover: "Then there's an eight point two year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend eight point two years making sure it works well enough."
 - layer: B, plate committee-room
 - status: planned
 
@@ -183,7 +183,7 @@ Sound: a stamp thunk; a boing for the nodding; a whoosh for the snatch and a cla
 - act: The delay
 - transition_in: cut
 - cue: "You'd volunteer for the trials"
-- time: 23:47.8 to 24:03.8 (16.0 s)
+- time: 23:20.6 to 23:37.0 (16.5 s)
 - voiceover: "You'd volunteer for the trials that would answer that question faster, but so would one point zero eight billion other patients, and the current system has one point nine million slots. That's a participation rate of zero point one seven seven percent."
 - layer: B, plate trial-door
 - status: planned
@@ -203,7 +203,7 @@ Sound: a pop as the hand shoots up; a thunk as the number lands; a squeak as the
 - act: The delay
 - transition_in: cut
 - cue: "It's like a lifeguard"
-- time: 24:03.8 to 24:16.3 (12.6 s)
+- time: 23:37.0 to 23:49.5 (12.5 s)
 - voiceover: "It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets."
 - layer: B, plate beach
 - status: planned
@@ -222,87 +222,72 @@ Sound: a whistle; a splat into the bucket and a tick; a clank for the padlock; a
 - act: The ratio
 - transition_in: cut
 - cue: "Your regulatory system can make"
-- time: 24:16.3 to 24:29.7 (13.3 s)
-- voiceover: "Your regulatory system can make two mistakes: approve a bad drug (Type One error), or block a good drug (Type Two error). Your F.D.A. is terrified of the first mistake and completely ignores the second."
+- time: 23:49.5 to 24:17.0 (27.5 s)
+- voiceover: "Your regulatory system can make two mistakes: approve a bad drug, or block a good one. It is blamed for the first and never for the second, so it makes the second. All of your approved drugs, together, save twelve point four million lives a year. Each one waited an average of eight point two years in that cabinet first. Between nineteen sixty-two and twenty twenty-four, the waiting killed about one hundred and two million of you."
 - layer: B, plate the-desk-and-the-column
-- bit: **A man at a desk with two alarms, and the dead stacking up behind him while he sips.** A church bell for approving a bad drug, a pea bulb for blocking a good one. The bell clangs and he jumps out of his skin; the bulb gets tape and a portrait. The column of people who died waiting climbs past the clouds, 3,389 : 1. Six Thalidomide plates change nothing. Payoff: his desk sits on a conveyor at a factory gate, and headstones roll out. All five scenes are one plate, built as one scene file.
+- bit: **The FDA, its building, sipping coffee at a desk with two alarms, and the dead stacking up beside it.** A church bell for approving a bad drug, a pea bulb for blocking a good one. The bell clangs and he jumps out of his skin; the bulb gets tape and a portrait. The column of people who died waiting climbs past the clouds, 3,389 : 1. Six Thalidomide plates change nothing. Payoff: his desk sits on a conveyor at a factory gate, and headstones roll out. All four scenes are one plate, built as one scene file.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
 | "Your regulatory system can make two mistakes:" | | Close: the FDA official in his chair, feet up, sipping, eyes shut, by an empty desk. | |
-| "approve a bad drug (Type One error)," | Type I. | The camera swings right as a church bell slams down, filling the frame. | |
-| "or block a good drug (Type Two error)." | Type II. | The camera has to push far in on the desk to find the bulb: pea-sized, politely blinking. | The size of the alarm is the argument. |
-| "Your F.D.A. is terrified of the first mistake" | | The bell clangs. His skeleton leaps out of the suit and hangs by its hands from the top of the frame, shaking; the empty suit keeps the mug. It drops back in. | |
-| "and completely ignores the second." | | Mid-sip, eyes shut, a long arm comes out from behind him and tapes the bulb, then hangs his EMPLOYEE OF THE MONTH portrait over the tape. Light leaks round the frame. | He never looks. |
+| "approve a bad drug," | Approving a bad drug. | The camera swings right as a church bell slams down, filling the frame. | |
+| "or block a good one." | Blocking a good one. | The camera has to push far in on the desk to find the bulb: pea-sized, politely blinking. | The size of the alarm is the argument. |
+| "It is blamed for the first" | Approving a bad drug gets it blamed. | The bell clangs. The building leaps in terror, legs kicking, and drops back to its coffee. | |
+| "and never for the second, so it makes the second." | Blocking a good drug costs it nothing. | It folds its arms and shuts its eyes while tape slaps over the bulb. Light leaks round the tape. | It never looks. |
+| "All of your approved drugs, together, save twelve point four million lives a year." | 12.4 million lives a year, all approved drugs together. | The padlocked cabinet pops onto the desk, SAFE bottles on its shelf, stamped "12.4 MILLION A YEAR". | |
+| "Each one waited an average of eight point two years in that cabinet first." | 8.2 years each. | The hourglass on the cabinet: "8.2 YEARS". The building sips. | |
+| "Between nineteen sixty-two and twenty twenty-four, the waiting killed about one hundred and two million of you." | 12.4 million x 8.2 = 102 million. | Behind him a sick man appears, another on his shoulders, and the camera climbs a column of the dead past the clouds. "102,000,000" stamps at the top. | |
 
-Sound: a thunk as the bell lands; a click for the bulb; one huge clang and a yelp; a thunk as he drops back in; a snip of tape; a pat for the portrait.
+Sound: a thunk as the bell lands; a click for the bulb; one huge clang and a yelp; a thunk as he drops back in; a snip of tape; a pat for the portrait; a pop for the cabinet; a whoosh up the column; a stamp on "you."
 
-## Scene 11 · i-calculated
-
-- id: i-calculated
-- act: The ratio
-- transition_in: same plate (no seam)
-- cue: "I calculated the ratio:"
-- time: 24:29.7 to 24:31.6 (1.9 s)
-- voiceover: "I calculated the ratio:"
-- layer: B, plate the-desk-and-the-column
-- bit: Same plate: nothing happens. The camera drifts in on the man, still sipping.
-- status: planned
-
-| Line | Claim | Visual | Gag |
-|---|---|---|---|
-| "I calculated the ratio:" | | He sips, closer. | |
-
-Sound: none.
-
-## Scene 12 · 3389-to-1
-
-- id: 3389-to-1
-- act: The ratio
-- transition_in: same plate (no seam)
-- cue: "for every one person protected"
-- time: 24:31.6 to 24:41.1 (9.6 s)
-- voiceover: "for every one person protected from a dangerous drug, three thousand three hundred and eighty-nine people die waiting for a safe one that's locked in the approval cabinet."
-- layer: B, plate the-desk-and-the-column
-- bit: Same plate: the column.
-- status: planned
-
-| Line | Claim | Visual | Gag |
-|---|---|---|---|
-| "for every one person protected from a dangerous drug," | 1 protected. | The camera whips past the bell to one bubble-wrapped man in a hard hat, big, thumbs up. | |
-| "three thousand three hundred and eighty-nine people die waiting" | 3,389; they are dead. | Back to the desk: a sick man appears behind it, another on his shoulders, and the camera climbs with them past the clouds. On "die" the column x-rays to grinning skeletons (a grandma, a family with its loaves, YOU). A goose flees. "3,389 : 1" stamps in the sky. | He is sipping at the bottom. |
-| "for a safe one that's locked in the approval cabinet." | The drug they need is safe. | All the way down: the padlocked cabinet pops onto his desk, right in front of the column. | |
-
-Sound: three thunks, a whoosh up; an x-ray zap on "die"; a stamp; a whoosh down.
-
-## Scene 13 · thalidomide-every-year
+## Scene 11 · thalidomide-every-year
 
 - id: thalidomide-every-year
 - act: The ratio
 - transition_in: same plate (no seam)
-- cue: "Even if you assume"
-- time: 24:41.1 to 25:01.0 (19.9 s)
-- voiceover: "Even if you assume a Thalidomide-scale catastrophe happens during post-phase one efficacy testing every single year (even though it wouldn't because Phase One safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by three thousand three hundred and eighty-nine to one."
+- cue: "I calculated the ratio,"
+- time: 24:17.0 to 24:25.3 (8.3 s)
+- voiceover: "I calculated the ratio, assuming a Thalidomide-scale catastrophe every single year, although Phase One safety testing caught the real one."
 - layer: B, plate the-desk-and-the-column
 - bit: Same plate: six plates, and they do not matter.
 - status: planned
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Even if you assume a Thalidomide-scale catastrophe happens during post-phase one efficacy testing every single year" | The 1 already assumes a Thalidomide every year. | Wider: man, desk, bell, safe man. A plate stamped THALIDOMIDE and a year slams under the safe man, six in all, and he rides up on them, thumb still up. Each one rings the bell; the skeleton is out and clinging from the first. | |
-| "(even though it wouldn't because Phase One safety testing actually caught it anyway)," | Safety review stopped Thalidomide. | Frances Kelsey rises in, big, and stamps the stack REJECTED. The skeleton drops back in its suit. | |
-| "the deaths from just the efficacy delay still outnumber the deaths from bad drugs by three thousand three hundred and eighty-nine to one." | The ratio survives the steelman. | She leaves. He sips. The camera climbs the column again: it never stopped growing, and it is twice as tall now. "3,389 : 1" again at the new top. | |
+| "I calculated the ratio," | The ratio already assumes the worst for the drugs. | Wider: man, desk, bell, and one bubble-wrapped man in a hard hat beside them, thumb up. | |
+| "assuming a Thalidomide-scale catastrophe every single year," | The 1 already assumes a Thalidomide every year. | A plate stamped THALIDOMIDE and a year slams under the safe man, six in all, and he rides up on them, thumb still up. Each one rings the bell; the building leaps on the first and shivers. | |
+| "although Phase One safety testing caught the real one." | Safety review stopped Thalidomide. | Frances Kelsey rises in, big, and stamps the stack REJECTED. The building settles back to its coffee. | |
 
-Sound: a clank and a bell per plate; a stamp for REJECTED; a thunk as he drops back in; two faint thunks from far above; a long whoosh; a stamp on "one."
+Sound: a clank and a bell per plate; a stamp for REJECTED; a thunk as the building settles.
 
-## Scene 14 · main-product-dead-patients
+## Scene 12 · 3389-to-1
+
+- id: 3389-to-1
+- act: The ratio
+- transition_in: same plate (no seam)
+- cue: "For every one person protected"
+- time: 24:25.3 to 24:34.5 (9.2 s)
+- voiceover: "For every one person protected from a dangerous drug, at least three thousand three hundred and eighty-nine die waiting for a safe one."
+- layer: B, plate the-desk-and-the-column
+- bit: Same plate: the column.
+- status: planned
+
+| Line | Claim | Visual | Gag |
+|---|---|---|---|
+| "For every one person protected from a dangerous drug," | 1 protected. | The camera whips to the safe man on his six plates, thumbs up. | |
+| "at least three thousand three hundred and eighty-nine die waiting" | At least 3,389; they are dead. | Back to the desk: the column goes on climbing, twice as tall now, past the clouds. On "die" the column x-rays to grinning skeletons (a grandma, a family with its loaves, YOU). A goose flees. "3,389 : 1" stamps in the sky. | He is sipping at the bottom. |
+| "for a safe one." | The drug they need is safe. | All the way down: the padlocked cabinet, right in front of the column. | |
+
+Sound: a pop for the safe man; a whoosh up; a slam on the number; an x-ray zap on "die"; a thunk.
+
+## Scene 13 · main-product-dead-patients
 
 - id: main-product-dead-patients
 - act: The cost
 - transition_in: same plate (no seam)
 - cue: "Your safety system's main product"
-- time: 25:01.0 to 25:05.1 (4.1 s)
+- time: 24:34.5 to 24:38.2 (3.7 s)
 - voiceover: "Your safety system's main product is dead patients."
 - layer: B, plate the-desk-and-the-column
 - bit: Payoff, same plate: the pull back.
@@ -310,17 +295,17 @@ Sound: a clank and a bell per plate; a stamp for REJECTED; a thunk as he drops b
 
 | Line | Claim | Visual | Gag |
 |---|---|---|---|
-| "Your safety system's main product is dead patients." | What the system produces is dead people. | All the way down and out: his desk, the bell, the plates and the column all stand on one long conveyor running from a factory gate under SAFETY SYSTEM. On "main" a headstone rolls out of the gate, then another, past his feet, a neat row by "patients." It stops. He sips. | |
+| "Your safety system's main product is dead patients." | What the system produces is dead people. | All the way down and out: his desk, the bell, the plates and the column all stand on one long conveyor under SAFETY SYSTEM. On "main" a headstone rolls out of the FDA's door, then another, a neat row by "patients." It stops. The building sips. | |
 
 Sound: the conveyor's hum; a thunk per headstone; a thunk as it stops.
 
-## Scene 15 · someone-you-love
+## Scene 14 · someone-you-love
 
 - id: someone-you-love
 - act: The cost
 - transition_in: same plate (no seam)
 - cue: "Think about someone you love"
-- time: 25:05.1 to 25:16.4 (11.3 s)
+- time: 24:38.2 to 24:49.5 (11.3 s)
 - voiceover: "Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money was busy turning into a missile."
 - layer: B, plate the-street
 - status: planned
@@ -333,13 +318,13 @@ Sound: the conveyor's hum; a thunk per headstone; a thunk as it stops.
 
 Sound: a click as the light blinks; a squeak as the bottle waves; squeaky footsteps and a watch tick; factory hammering; a pop as the missile is born; a rising whistle as it launches.
 
-## Scene 16 · child-scientist
+## Scene 15 · child-scientist
 
 - id: child-scientist
 - act: The cost
 - transition_in: same plate (no seam)
 - cue: "That missile incinerated a child"
-- time: 25:16.4 to 25:21.2 (4.9 s)
+- time: 24:49.5 to 24:54.3 (4.9 s)
 - voiceover: "That missile incinerated a child who might have grown up to discover the cure."
 - layer: B, plate the-street
 - status: planned
@@ -351,13 +336,13 @@ Sound: a click as the light blinks; a squeak as the bottle waves; squeaky footst
 
 Sound: a falling whistle; a boom; a fire whoosh as the drawing catches; then silence.
 
-## Scene 17 · murder-receipt
+## Scene 16 · murder-receipt
 
 - id: murder-receipt
 - act: The cost
 - transition_in: cut
 - cue: "You lose the treatment"
-- time: 25:21.2 to 25:29.7 (8.5 s)
+- time: 24:54.3 to 25:02.8 (8.5 s)
 - voiceover: "You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder."
 - layer: B, plate the-register
 - status: planned
@@ -372,13 +357,13 @@ Sound: a falling whistle; a boom; a fire whoosh as the drawing catches; then sil
 
 Sound: a typewriter clack per line; a cash-register ding on lines 3 and 4 only; silence after line 5.
 
-## Scene 18 · suboptimal-stamp
+## Scene 17 · suboptimal-stamp
 
 - id: suboptimal-stamp
 - act: The verdict
 - transition_in: cut
 - cue: "This is suboptimal."
-- time: 25:29.7 to 25:31.7 (2.0 s)
+- time: 25:02.8 to 25:04.8 (2.0 s)
 - voiceover: "This is suboptimal."
 - layer: A, host
 - wishonia: sad-closed + body-idle; smirk-closed + body-palms-down on "suboptimal."
@@ -390,13 +375,13 @@ Sound: a typewriter clack per line; a cash-register ding on lines 3 and 4 only; 
 
 Sound: a soft thunk as the mug goes down; a button click and a stamp thunk.
 
-## Scene 19 · good-bad-weird-news
+## Scene 18 · good-bad-weird-news
 
 - id: good-bad-weird-news
 - act: The verdict
 - transition_in: same shot (no seam)
 - cue: "The good news"
-- time: 25:31.7 to 25:42.0 (10.2 s)
+- time: 25:04.8 to 25:14.9 (10.1 s)
 - voiceover: "The good news: You already know how to fix this. The bad news: It requires you to do something. The weird news: You'll get rich doing it."
 - layer: A, host
 - wishonia: smirk-smile + body-counting; eyeroll-smile + body-shrug on "bad"; skeptical-smile + body-counting on "weird"; happy-smile + body-presenting on "rich"

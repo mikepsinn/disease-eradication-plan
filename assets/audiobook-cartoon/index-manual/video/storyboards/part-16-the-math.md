@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 1:22.8
+duration: 1:23.1
 message: "A $1 billion campaign that gets treatments to patients 212 years sooner returns 7.53 million to one, at two cents per healthy year of life."
 arc: Title card (the Calculator peeks over MATH) → at the console, the Calculator warms up like a prize fighter → one plate: the queue of the dead fills back in, the fat cat prices them, the blobs are bowled off the globe, a mountain of money, and dividing by a billion knocks nine zeros off the sky onto the campaign's bundle → the Calculator screams and steps off the ledge → the hall of greatest hits: the giant treaty trophy breaks the shelf → the pessimist hangs the gauge on 1%, and the shrunken trophy still towers → the Calculator peeks back, screams smaller and loses a second key
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 16, "The Math"
-audio: index-manual.cbaf659d.mp3, 34:20.6 to 35:43.4
+audio: index-manual.7ce6b2b2.mp3, 33:58.3 to 35:21.3
 version: v3
 ---
 
@@ -51,7 +51,7 @@ version: v3
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "The Math."
-- time: 34:20.6 to 34:22.4 (1.8 s)
+- time: 33:58.3 to 34:00.3 (2.0 s)
 - voiceover: "The Math."
 - layer: A, title card
 - status: planned
@@ -68,7 +68,7 @@ Sound: the projector whirr; a boing as it pops up; a pop as it ducks.
 - act: The return
 - transition_in: iris in on her face
 - cue: "Remember the two hundred"
-- time: 34:22.4 to 34:25.6 (3.2 s)
+- time: 34:00.3 to 34:03.5 (3.2 s)
 - voiceover: "Remember the two hundred and twelve years timeline shift?"
 - layer: A, host
 - wishonia: big, happy-smile + body-presenting; skeptical-smile + body-hands-hips on "shift?"
@@ -86,7 +86,7 @@ Sound: a key click on "two", "hundred" and "twelve"; the bell, twice.
 - act: The return
 - transition_in: cut
 - cue: "Treatments reaching patients"
-- time: 34:25.6 to 34:55.0 (29.4 s)
+- time: 34:03.5 to 34:32.9 (29.4 s)
 - voiceover: "Treatments reaching patients that many years sooner means billions of people gain years of healthy life. Value each of those life-years at one hundred and fifty thousand dollars (the standard economic valuation), multiply across the global disease burden over the acceleration window, and you get seven point five three quadrillion dollars in total economic value. Divide that by the one billion dollars campaign cost, and you get a return of seven point five three million to one."
 - layer: B, plate math-field
 - status: planned
@@ -109,7 +109,7 @@ Sound: a rocket whoosh and a crash; a run of soft pops as the lights turn; squea
 - act: The return
 - transition_in: cut
 - cue: "Your calculator will display"
-- time: 34:55.0 to 35:02.7 (7.7 s)
+- time: 34:32.9 to 34:40.3 (7.4 s)
 - voiceover: "Your calculator will display an error, emit a tiny electronic scream, and attempt to leave the desk. This is correct."
 - layer: A, host
 - wishonia: big, happy-smile + body-hands-hips; smirk-closed + body-idle on "desk." (the sip); happy-closed + body-hands-hips on "correct."
@@ -130,7 +130,7 @@ Sound: an electric zap on "error,"; a tiny yelp of a scream; squeaky footsteps; 
 - act: Cost-effectiveness
 - transition_in: cut
 - cue: "Cost-effectiveness: two cents"
-- time: 35:02.7 to 35:30.2 (27.5 s)
+- time: 34:40.3 to 35:07.9 (27.6 s)
 - voiceover: "Cost-effectiveness: two cents to save one year of healthy human life. Anti-malaria bed nets, the gold standard for keeping humans alive, cost one hundred and eighty-four dollars. This is nine thousand two hundred times cheaper. It beats smallpox eradication (one hundred and fifty-nine to one) and childhood vaccinations (ten point nine to one), which were humanity's previous greatest hits in the "not dying" genre."
 - layer: B, plate hall-of-hits
 - status: planned
@@ -153,7 +153,7 @@ Sound: a ding as the glass reads "2¢"; a slap for the star; a mosquito whine an
 - act: Cost-effectiveness
 - transition_in: same plate (no seam)
 - cue: "Even if you assume"
-- time: 35:30.2 to 35:39.9 (9.8 s)
+- time: 35:07.9 to 35:17.8 (9.9 s)
 - voiceover: "Even if you assume only a one percent probability of the treaty actually passing (because you're you), the expected return is still ninety-two point one times better"
 - layer: B, plate hall-of-hits
 - status: planned
@@ -172,7 +172,7 @@ Sound: a clank as the gauge lands; a whistle down as the needle is hauled to 1%;
 - act: Cost-effectiveness
 - transition_in: cut
 - cue: "than anti-malaria bed nets."
-- time: 35:39.9 to 35:43.4 (3.5 s)
+- time: 35:17.8 to 35:21.3 (3.5 s)
 - voiceover: "than anti-malaria bed nets."
 - layer: A, host
 - wishonia: big, smirk-smile + body-presenting; sideeye-closed + body-idle on "nets."

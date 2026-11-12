@@ -1,0 +1,93 @@
+<template id="lifeguard-cabinet-template">
+  <!-- lifeguard-cabinet · collage (Part 12, scene 9; plate beach). The lifeguard stands on the sand with his bucket,
+       beside the approval cabinet (YOU's skeleton still slumped against it from committee-8-years). "floats,":
+       FLOATS stamps on his bucket. "locks": the cabinet shudders shut; "study its buoyancy profile": a
+       binder as thick as a phone book thumps down, BUOYANCY PROFILE. "while": the camera pans out to sea, where a line of
+       swimmers runs from a post in the shallows, two life jackets on it, to the horizon. "drown": down the line, they go under
+       one after another and come back up grinning skulls, still in line. "jackets.": the first one reaches for the
+       post, and the lifeguard blows his whistle at him: WAIT. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="lifeguard-cabinet" data-width="1920" data-height="1080" data-start="0" data-duration="12.5">
+    <div id="lifeguard-cabinet-weave"></div>
+    <div id="lifeguard-cabinet-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "lifeguard-cabinet", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The sand on G, left; the sea from SEA0 right to the horizon, its surface at SURF.
+    var G = V ? 1300 : 820, SURF = G - 40, SEA0 = V ? 1000 : 1150, SEA1 = 9000;
+    var SEA = KIT.collage.axes({ box: [SEA0, SURF, SEA1, G + 420], x: [0, 1, 1], y: [0, 1, 1] });
+    var X = { guard: 230, bucket: 470, cab: 740, binder: V ? 1010 : 1060, post: SEA0 + 230 };
+    var GH = V ? 640 : 600, CK = (V ? 560 : 540) / SZ["approval-cabinet-full"][1];
+    var cy = function (s) { return G - 440 / s; };
+    var views = V ? {
+      beach: [620, cy(0.95), 0.95], sea: [2100, cy(0.5), 0.5], post: [X.post + 60, cy(0.85), 0.85],
+    } : {
+      beach: [780, 470, 1], sea: [2350, 400, 0.6], post: [X.post - 120, 470, 0.95],
+    };
+    var JK = 0.42;
+    var cast = {
+      guard: { art: "lifeguard", x: X.guard, y: G, anchor: "bottom", pivot: "bottom", scale: GH / SZ["lifeguard"][1] },
+      bucket: { art: "bucket", x: X.bucket, y: G, anchor: "bottom", pivot: "bottom", scale: 0.6 },
+      ring: { art: "life-preserver", x: X.bucket, y: G - 425 * 0.6 - 160, scale: 0.36, hidden: true },
+      cab: { art: "approval-cabinet-full", x: X.cab, y: G, anchor: "bottom", pivot: "bottom", scale: CK },
+      bones: { art: "you-skeleton", x: X.cab + 120, y: G + 20, anchor: "bottom", pivot: "bottom", scale: 0.95 * 560 / SZ["you-skeleton"][1] },
+      binder: { art: "binder", x: X.binder, y: G, anchor: "bottom", pivot: "bottom", scale: 0.7, hidden: true,
+        label: { text: "BUOYANCY PROFILE", at: [270, 100], width: 160, size: 40 } },
+      post: { art: "sign-board", x: X.post, y: G + 150, anchor: "bottom", pivot: "bottom", scale: (V ? 820 : 740) / SZ["sign-board"][1] },
+      j0: { art: "life-jacket", x: X.post - 70, y: G - (V ? 560 : 500), scale: JK },
+      j1: { art: "life-jacket", x: X.post + 70, y: G - (V ? 540 : 480), scale: JK },
+    };
+    // The line of swimmers from the post to the horizon, smaller and closer together the further out.
+    var N = 16, heads = [], skulls = [];
+    var hx = X.post + 260, hh = V ? 330 : 300;
+    for (var i = 0; i < N; i++) {
+      var k = Math.pow(0.86, i), y = SURF + 0.16 * hh * k - 110 * (1 - k);
+      cast["h" + i] = { art: "swimmer", x: hx, y: y, anchor: "bottom", pivot: "bottom", scale: hh * k / SZ["swimmer"][1] };
+      cast["k" + i] = { art: "swimmer-skull", x: hx, y: y, anchor: "bottom", pivot: "bottom", scale: hh * k / SZ["swimmer-skull"][1], hidden: true };
+      heads.push("h" + i); skulls.push("k" + i);
+      hx += 330 * k + 30;
+    }
+    var beats = [
+      { at: 0, do: "bar", id: "sea", chart: SEA, x: 0.5, to: 1, width: SEA1 - SEA0, fill: "#8FB4BD", dur: 0.01 },
+      { at: 0, do: "bob", who: heads, y: 6, r: 3, speed: 1.6 },
+      // the lifeguard confirms the preserver floats
+      { on: "lifeguard", do: "hop", who: "guard", height: 20 },
+      { on: "confirms", do: "pop", who: "ring", squash: true },
+      { on: "preserver", offset: -0.1, do: "move", who: "ring", by: [0, 150], dur: 0.2 },
+      { on: "preserver", offset: 0.1, do: "shiver", who: "bucket", dur: 0.4, amp: 3, rot: 2 },
+      { on: "preserver", offset: 0.2, do: "bob", who: "ring", y: 8, r: 4, speed: 3, until: "then" },
+      { on: "floats,", do: "stamp", who: "bucket", id: "floats", text: "FLOATS", spot: [158, 260], width: V ? 210 : 200, size: 60, tilt: -6 },
+      // then locks it in the cabinet for years, to study its buoyancy profile
+      { on: "locks", do: "move", who: "guard", by: [0, 0], turn: 6, dur: 0.2 },
+      { on: "then", do: "move", who: "ring", to: [X.cab, G - 160], dur: 0.35, arc: 120 },
+      { on: "cabinet", do: "hide", who: "ring" },
+      { on: "cabinet", do: "shiver", who: "cab", dur: 0.35, amp: 3, rot: 2 },
+      { on: "cabinet", do: "move", who: "guard", by: [0, 0], turn: 0, dur: 0.2 },
+      { on: "study", do: "stamp", who: "binder", from: 1.8, shake: 8 },
+      { on: "profile", do: "shiver", who: "guard", dur: 0.4, amp: 1, rot: 1 },
+      // while a billion people drown in line for the two available life jackets
+      { on: "while", do: "camera", view: "sea", dur: 0.8 },
+      { on: "drown", do: "xray", who: heads.slice().reverse(), to: skulls.slice().reverse(), stagger: 0.09, flash: 0.12 },
+      { on: "line", offset: 0.6, do: "bob", who: skulls, y: 6, r: 3, speed: 1.6 },
+      { on: "two", do: "camera", view: "post", dur: 0.6 },
+      { on: "two", offset: 0.1, do: "shiver", who: ["j0", "j1"], dur: 0.4, amp: 2, rot: 4 },
+      { on: "life", n: 2, do: "move", who: "k0", by: [-60, -20], turn: -10, dur: 0.3 },
+      { on: "jackets.", do: "nudge", who: "guard", by: [30, 0] },
+      { on: "jackets.", offset: 0.35, do: "stamp", id: "wait", text: "WAIT", x: X.post + (V ? 20 : -40), y: G - (V ? 820 : 720), size: 160, width: V ? 420 : 360, tilt: -8 },
+      { on: "jackets.", offset: 0.45, do: "move", who: "k0", by: [60, 20], turn: 0, dur: 0.25 },
+    ];
+    KIT.collage({ id: ID, seed: 1209, plate: [-1500, -4500, 9500, 3000], views: views, view: "beach", cast: cast, beats: beats });
+  </script>
+</template>

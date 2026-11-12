@@ -1,0 +1,80 @@
+<template id="you-dont-need-to-understand-title-template">
+  <!-- you-dont-need-to-understand-title · collage title card (Part 23, scene 1). The heading slams in: BUT YOU DON'T
+       NEED TO / UNDERSTAND ANY OF THAT. YOU stands at the end of it with his nose in the manual, its pages riffling.
+       "Understand": steam puffs out of both ears. "Any": his hair catches fire; he keeps reading. "That.": he flings
+       the manual over his shoulder, the flames go out in a puff, and he stands there charred black, only his eyes
+       blinking, and his shoulders drop with relief. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="you-dont-need-to-understand-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.6">
+    <div id="you-dont-need-to-understand-title-weave"></div>
+    <div id="you-dont-need-to-understand-title-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "you-dont-need-to-understand-title", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The heading; YOU stands at the end of it (16:9: right of the second line; 9:16: under it).
+      var HEAD = V ? [{ id: "h1", text: "BUT YOU DON'T", y: 250, w: 900 }, { id: "h2", text: "NEED TO", y: 400, w: 560 },
+        { id: "h3", text: "UNDERSTAND", y: 550, w: 900 }, { id: "h4", text: "ANY OF THAT.", y: 700, w: 900 }]
+        : [{ id: "h1", text: "BUT YOU DON'T NEED TO", y: 210, w: 1500, x: 900 }, { id: "h2", text: "UNDERSTAND ANY OF THAT.", y: 400, w: 1300, x: 780 }];
+      var YH = V ? 600 : 620, YK = YH / SZ.you[1], FEET = V ? 1420 : 890, YX = V ? 540 : 1640;
+      var at = function (ax, ay) { return [YX - SZ.you[0] * YK / 2 + ax * YK, FEET - YH + ay * YK]; };
+      var BOOK = at(110, 126), EARS = [at(72, 84), at(148, 84)], HAIR = at(110, 20);
+      var BK = 74 * YK / SZ["manual-closed"][0];
+      var cast = {
+        you: { art: "you", x: YX, y: FEET, anchor: "bottom", pivot: "bottom", scale: YK, eyes: [[99 * 1.5, 66 * 1.5], [122 * 1.5, 66 * 1.5]], eyeSize: 20,   // (the kit zooms the eye with its position: art px times 30 / eyeSize)
+        smoke: [[110, 10]] },
+        book: { art: "manual-closed", x: BOOK[0], y: BOOK[1], scale: BK,
+          label: [{ text: "HOW TO END", at: [102, 105], width: 112, size: 34 }, { text: "WAR AND DISEASE", at: [102, 138], width: 112, size: 34 }] },
+        steamL: { art: "cloud-puff", x: EARS[0][0], y: EARS[0][1], scale: 0.26 * YK, hidden: true },
+        steamR: { art: "cloud-puff", x: EARS[1][0], y: EARS[1][1], scale: 0.26 * YK, hidden: true },
+        f0: { art: "flames", x: HAIR[0] - 34 * YK, y: HAIR[1] + 30 * YK, anchor: "bottom", pivot: "bottom", scale: 0.09 * YK, hidden: true },
+        f1: { art: "flames", x: HAIR[0] + 4 * YK, y: HAIR[1] + 26 * YK, anchor: "bottom", pivot: "bottom", scale: 0.12 * YK, hidden: true },
+        f2: { art: "flames", x: HAIR[0] + 40 * YK, y: HAIR[1] + 32 * YK, anchor: "bottom", pivot: "bottom", scale: 0.085 * YK, hidden: true },
+        puff: { art: "cloud-puff", x: HAIR[0], y: HAIR[1] - 10 * YK, scale: 0.5 * YK, hidden: true },
+      };
+      var beats = [];
+      var add = function (b) { beats.push(b); };
+      HEAD.forEach(function (c, i) {
+        add({ at: 0.02 + i * 0.08, do: "banner", id: c.id, text: c.text, x: c.x || (V ? 540 : 960), y: c.y, size: V ? 120 : 130, width: c.w, pad: 90, color: "ink", tilt: i % 2 ? 1 : -1, shake: 4 });
+      });
+      // he riffles the pages the whole time
+      add({ at: 0, do: "shiver", who: "book", dur: cue("That."), amp: 2, rot: 4 });
+      // "Understand": steam out of both ears
+      [["steamL", -1], ["steamR", 1]].forEach(function (s) {
+        add({ on: "Understand", do: "pop", who: s[0], squash: true });
+        add({ on: "Understand", offset: 0.05, do: "move", who: s[0], by: [s[1] * 110 * YK, -90 * YK], dur: 0.4, ease: "smooth" });
+        add({ on: "Understand", offset: 0.4, do: "pop", who: s[0], out: true });
+      });
+      add({ on: "Understand", do: "shiver", who: "you", dur: 0.3, amp: 3, rot: 1 });
+      // "Any": his hair catches fire; he keeps reading
+      ["f0", "f1", "f2"].forEach(function (f, i) {
+        add({ on: "Any", offset: i * 0.05, do: "pop", who: f, squash: true });
+        add({ on: "Any", offset: 0.15, do: "shiver", who: f, dur: cue("That.") - cue("Any"), amp: 2, rot: 7 });
+      });
+      // "That.": the manual goes over his shoulder, the fire goes out in a puff, and he is charred
+      add({ on: "That.", do: "move", who: "book", by: [-160 * YK, -420 * YK], turn: -200, dur: 0.25, ease: "smooth" });
+      add({ on: "That.", offset: 0.25, do: "drop", who: "book", dist: 900, drift: -200, spin: -120, dur: 0.5 });
+      add({ on: "That.", offset: 0.05, do: "hide", who: ["f0", "f1", "f2"] });
+      add({ on: "That.", offset: 0.05, do: "pop", who: "puff", squash: true });
+      add({ on: "That.", offset: 0.28, do: "pop", who: "puff", out: true });
+      add({ on: "That.", offset: 0.05, do: "char", who: "you" });
+      add({ on: "That.", offset: 0.6, do: "blink", who: "you" });
+      // his shoulders drop with relief
+      add({ on: "That.", offset: 0.6, do: "move", who: "you", by: [0, 0], scale: 0.97, dur: 0.17 });
+      add({ on: "That.", offset: 0.8, do: "blink", who: "you" });
+      KIT.collage({ id: ID, seed: 2301, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -1,0 +1,212 @@
+<template id="scenic-route-algorithm-template">
+  <!-- scenic-route-algorithm · collage (Part 20, scene 7; plate race-track, no seam). It starts on super-pac-rewards'
+       last frame: that file's race() is copied below (keep the two the same) and drawn in its end state
+       (race(ID, true)). "Vote no, watch your opponent get rewarded.": the No Politician slaps NO; the Super PAC leaves
+       the Politician (who keeps climbing on his own) for the Challenger, whose line shoots up past the No Politician;
+       the blast chars him and his line drops to the floor. "No papers go directly to politicians.": a medicine bill
+       walks past him; he lunges; it hops over him and he goes flat, blinking. "a scenic route through a scoring
+       algorithm": the bills climb into a toy train, which rides a track the long way round the whole chart into
+       the scoring machine; it shakes and glows. "the only legal way to train a senator.": the bell dings by itself,
+       the Politician jumps through the hoop, a campaign poster pops out of the machine, and he rings the bell himself. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="scenic-route-algorithm" data-width="1920" data-height="1080" data-start="0" data-duration="12.32">
+    <div id="scenic-route-algorithm-weave"></div>
+    <div id="scenic-route-algorithm-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // ── race(ID, E): the race-track plate. E false: this scene's beats. E true: its end state at time 0 (for
+    //    scenic-route-algorithm, which copies this function). Returns { cast, beats, views, P }. ──
+    function race(ID, E) {
+      var V = KIT.V, SZ = KIT.collage.SIZES;
+      var T = function (w, n, off) { return E ? -2 : KIT.cue(ID, w, n) + (off || 0); };
+      // The chart sits inside the canvas (its axes are drawn on a canvas-sized sheet); the bell jar and the Super PAC
+      // wait off it to the left, the tabulating machine and its hoop at its right end.
+      var box = V ? [150, 420, 990, 1280] : [300, 200, 1440, 800];
+      var chart = KIT.collage.axes({ box: box, x: [0, 10, 1], y: [0, 100, 25], xLabels: 2, yLabels: 25, unit: "%", title: "THE RACE", subtitle: "VOTES, WEEK BY WEEK", size: V ? 28 : 30 });
+      var pt = chart.pt, FLOOR = box[3];
+      var RH = V ? 200 : 180;                                          // a rider's height
+      var rk = function (art) { return RH / SZ[art][1]; };
+      var J = -650, JY = FLOOR, PAC = [V ? -40 : 0, FLOOR];
+      var TAB = V ? [1300, FLOOR + 60, 0.56] : [1700, FLOOR + 60, 0.75];
+      var TABTOP = TAB[1] - SZ.tabulator[1] * TAB[2];
+      var HOOP = V ? [1100, 980, 0.42] : [1510, 540, 0.5];
+      var views = V ? {
+        jar: [-250, 860, 0.9], chart: [570, 860, 1.0], tab: [1200, 1080, 1.2],
+      } : {
+        jar: [-250, 500, 1], chart: [870, 520, 1.12], tab: [1560, 600, 1.5],
+      };
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+      var NW = SZ.banknote[0], NH = SZ.banknote[1], NK = 1.4;
+      cast.strip = { art: "banknote", x: J, y: JY - 40, anchor: "bottom", pivot: "bottom", scale: NK, clip: [[NW * 0.9, 0], [NW, 0], [NW, NH], [NW * 0.9, NH]], hidden: E };
+      cast.jar = { art: "bell-jar", x: J - 8, y: JY + 10, anchor: "bottom", pivot: "bottom", scale: 0.9, hidden: E };
+      // The Super PAC: it rides on a candidate's back by its straps (art 237, 160), and its flame on its nozzle.
+      cast.pac = { art: "super-pac", x: PAC[0], y: PAC[1], anchor: "bottom", pivot: "bottom", scale: 0.8,
+        points: { nozzle: [250, 400 + 270] }, label: { text: "SUPER PAC", at: [285, 160], width: 190, size: 40 } };
+      cast.flame = { art: "flames", x: 0, y: 0, scale: V ? 0.26 : 0.3, hidden: true };
+      // The candidates. eyes: where the charred No Politician's eyes go.
+      cast.old = { art: "old-politician", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: rk("old-politician") * 0.95 };
+      cast.chair = { art: "armchair", x: pt(1.9, 0)[0], y: FLOOR + 8, anchor: "bottom", pivot: "bottom", scale: V ? 0.34 : 0.4, hidden: !E,
+        label: { text: "FELLOWSHIP", at: [204, 300], width: 300, size: 52, plaque: true } };
+      cast.polN = { art: "politician-blue", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: rk("politician-blue"),
+        eyes: [[124, 40], [143, 40]], eyeSize: 11, smoke: [[130, 10]] };
+      cast.pol = { art: "politician-red", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: rk("politician-red"), points: { back: [140, 150] } };
+      cast.chal = { art: "challenger", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: rk("challenger"), points: { back: [108, 230] }, hidden: true };
+      for (var i = 0; i < 3; i++) cast["poster" + i] = { art: "campaign-poster", x: pt(2.2 + i * 0.8, 38)[0], y: pt(2, 37)[1], scale: V ? 0.22 : 0.22, hidden: !E };
+      cast.yes = { art: "yes-button", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: V ? 0.3 : 0.34, hidden: !E, label: { text: "YES", at: [82, 36], width: 120, size: 50 } };
+      cast.no = { art: "yes-button", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: V ? 0.3 : 0.34, hidden: true, label: { text: "NO", at: [82, 36], width: 120, size: 50 } };
+      cast.bell = { art: "bell", x: TAB[0] + 40, y: TABTOP + 8, anchor: "bottom", pivot: "bottom", scale: V ? 0.22 : 0.26 };
+      cast.tab = { art: "tabulator", x: TAB[0], y: TAB[1], anchor: "bottom", pivot: "bottom", scale: TAB[2],
+        label: { text: "SCORE", at: [140, 392], width: 150, size: 44, plaque: true } };
+      cast.hoop = { art: "hoop", x: HOOP[0], y: HOOP[1], scale: HOOP[2] };
+
+      // The lines, in data points. Each candidate rides his own tip; the dates are scene times.
+      var YES = [[0, 48], [1, 50], [2, 49], [3, 52], [4, 55]], NO = [[0, 14], [1, 16], [2, 15], [3, 17], [4, 16]], OLD = [[0, 8], [0.75, 6], [1.5, 4]];
+      var YES2 = [[4, 55], [5, 62], [6, 70]], YES3 = [[6, 70], [6.8, 82], [7.5, 90]];
+      var ln = function (id, pts, rider, t0, t1, color) {
+        add({ at: t0, do: "line", id: id, chart: chart, points: pts, rider: rider, tilt: 0, until: t1, ease: "linear", color: color || "ink", width: 7 });
+      };
+      add({ at: E ? -2 : 0, do: "chart", chart: chart });
+      var L0 = T("Super", 1, 0.3), L1 = T("treaty.", 1, 0.2);
+      ln("lYes", YES, "pol", L0, E ? -1.99 : L1, "red");
+      ln("lNo", NO, "polN", L0, E ? -1.99 : L1, "#2F5D9E");
+      ln("lOld", OLD, "old", L0, E ? -1.99 : L1 - 0.6, "#7C6F5E");
+      ln("lYes2", YES2, "pol", T("running,", 1, -0.4), E ? -1.99 : T("running,", 1, 0.5), "red");
+      ln("lYes3", YES3, "pol", T("rewarded.", 1, 0), E ? -1.99 : T("rewarded.", 1, 0.5), "red");
+      var CK = V ? 0.34 : 0.4, OH = RH * 0.95, SEAT = [pt(1.9, 0)[0] - 4, FLOOR - 0.42 * SZ.armchair[1] * CK - OH / 2], SINK = OH * 0.45;
+      if (E) {
+        add({ at: -2, do: "move", who: "old", to: [SEAT[0], SEAT[1] + SINK], dur: 0.01 });
+        add({ at: -2, do: "move", who: "pac", to: "pol.back", scale: V ? 0.3 : 0.36, dur: 0.01 });
+        add({ at: -2, do: "show", who: "flame" });
+        add({ at: -2, do: "move", who: "flame", to: "pac.nozzle", turn: 180, dur: 0.01 });
+        add({ at: -2, do: "move", who: "yes", to: pt(6.45, 70), by: [0, 30], dur: 0.01 });
+        add({ at: -2, do: "stamp", id: "vYes", who: "pol", spot: [300, 40], text: "YES", size: 54, tilt: -6, shake: 0 });
+        add({ at: -2, do: "stamp", id: "vNo", who: "polN", spot: [300, 40], text: "NO", size: 54, tilt: 5, shake: 0 });
+      } else {
+        // "Remember that two point seven two billion dollars a year from step one?": the jar lifts; the strip walks out
+        add({ on: "two", n: 1, do: "move", who: "jar", by: [0, -560], dur: 0.4, ease: "smooth" });
+        add({ on: "billion", do: "tag", id: "stripTag", who: "strip", text: "$2.72 BILLION A YEAR", knot: [NW * 0.95, 30], x: J + (V ? 330 : 360), y: JY - (V ? 520 : 470), w: V ? 520 : 600, h: V ? 150 : 170, swing: 3 });
+        add({ on: "step", do: "hop", who: "strip", height: 40 });
+        add({ on: "one?", do: "move", who: "strip", by: [180, 0], dur: 0.5 });
+        add({ on: "one?", do: "bob", who: "strip", y: 10, r: 4, speed: 4, until: "goes." });
+        // "This is where it goes.": into the Super PAC, which swells and snaps its cape
+        add({ on: "This", do: "move", who: "strip", to: [PAC[0], PAC[1] - 200], dur: 0.5, arc: 140, turn: 30 });
+        add({ on: "goes.", do: "hide", who: ["strip", "stripTag"] });
+        add({ on: "goes.", do: "move", who: "pac", scale: 1.05, by: [0, 0], dur: 0.25 });
+        add({ on: "goes.", offset: 0.1, do: "shiver", who: "pac", dur: 0.5, amp: 8, rot: 6 });
+        // "The Super PAC gives money to politicians based on how they voted on the treaty.": the race
+        add({ on: "Super", do: "camera", view: "chart", dur: 0.7 });
+        add({ on: "Super", do: "move", who: "pac", to: pt(0.8, 92), scale: V ? 0.33 : 0.4, dur: 0.6, arc: 160 });
+        add({ on: "voted", do: "stamp", id: "vYes", who: "pol", spot: [300, 40], text: "YES", size: 54, tilt: -6, shake: 4 });
+        add({ on: "voted", offset: 0.2, do: "stamp", id: "vNo", who: "polN", spot: [300, 40], text: "NO", size: 54, tilt: 5, shake: 4 });
+        // "campaign support for the ones running,": the Super PAC pastes posters under his line, and it lifts
+        add({ on: "Simple:", do: "move", who: "pac", to: pt(2.2, 46), dur: 0.5, arc: 60 });
+        ["campaign", "for", "ones"].forEach(function (w, i) {
+          add({ on: w, n: 1, do: "move", who: "pac", to: pt(2.2 + i * 0.8, 44), dur: 0.15 });
+          add({ on: w, n: 1, offset: 0.12, do: "stamp", who: "poster" + i, from: 1.5, shake: 2 });
+        });
+        add({ on: "running,", offset: 0.1, do: "move", who: "pac", to: pt(6.6, 30), dur: 0.5, arc: 40 });
+        // "post-office fellowships for the ones retiring.": the old man steps off into the armchair and sinks
+        add({ on: "post-office", do: "pop", who: "chair", squash: true });
+        add({ on: "fellowships", do: "move", who: "old", to: SEAT, dur: 0.5, arc: 90 });
+        add({ on: "retiring.", do: "move", who: "old", by: [0, SINK], dur: 0.9 });
+        add({ on: "retiring.", do: "shiver", who: "chair", dur: 0.9, amp: 2, rot: 1 });
+        // "Vote yes on the treaty, get rewarded.": YES, the Super PAC straps on, fires, and his line shoots up
+        add({ on: "Vote", offset: -0.1, do: "pop", who: "yes" });
+        add({ on: "Vote", offset: -0.1, do: "move", who: "yes", to: pt(6.45, 70), by: [0, 30], dur: 0.01 });
+        add({ on: "yes", do: "nudge", who: "pol", by: [24, 0] });
+        add({ on: "yes", do: "shiver", who: "yes", dur: 0.3, amp: 4, rot: 3 });
+        add({ on: "treaty,", do: "move", who: "pac", to: "pol.back", scale: V ? 0.3 : 0.36, dur: 0.35, arc: 80 });
+        add({ on: "rewarded.", do: "show", who: "flame" });
+        add({ on: "rewarded.", do: "move", who: "flame", to: "pac.nozzle", turn: 180, dur: 0.01 });
+        add({ on: "rewarded.", do: "shiver", who: "flame", dur: 1.0, amp: 4, rot: 6 });
+        add({ on: "rewarded.", do: "shake", y: 6, frames: 3 });
+        add({ on: "rewarded.", offset: 0.6, do: "hop", who: "pol", height: 30 });
+      }
+      return { cast: cast, beats: beats, views: views, P: { chart: chart, pt: pt, FLOOR: FLOOR, TAB: TAB, TABTOP: TABTOP, HOOP: HOOP, box: box, RH: RH } };
+    }
+    // ── end race ──
+
+    (function () {
+      var ID = "scenic-route-algorithm", r = race(ID, true), P = r.P, pt = P.pt, chart = P.chart, V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var beats = r.beats, cast = r.cast;
+      var add = function (b) { beats.push(b); };
+      var ln = function (id, pts, rider, t0, t1, color) {
+        add({ at: t0, do: "line", id: id, chart: chart, points: pts, rider: rider, tilt: 0, until: t1, ease: "smooth", color: color || "ink", width: 7 });
+      };
+      cast.billW = { art: "bill-med", x: pt(3.2, 0)[0], y: P.FLOOR, anchor: "bottom", pivot: "bottom", scale: V ? 0.4 : 0.38, hidden: true };
+      cast.cart = { art: "train", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: V ? 0.5 : 0.6, hidden: true, points: { c1: [150, 40], c2: [240, 40], c3: [330, 40] } };
+      ["p1", "p2", "p3"].forEach(function (n) { cast[n] = { art: "bill-med", x: 0, y: 0, scale: V ? 0.16 : 0.19, hidden: true }; });
+      cast.poster = { art: "campaign-poster", x: P.TAB[0] - 40, y: P.TABTOP + 60, scale: V ? 0.26 : 0.3, hidden: true };
+      // "Vote no,": he slaps NO
+      add({ on: "Vote", offset: -0.05, do: "move", who: "no", to: pt(4.45, 16), by: [0, 30], dur: 0.01 });
+      add({ on: "Vote", offset: -0.05, do: "pop", who: "no" });
+      add({ on: "no,", do: "nudge", who: "polN", by: [24, 0] });
+      add({ on: "no,", do: "shiver", who: "no", dur: 0.3, amp: 4, rot: 3 });
+      // "watch your opponent get rewarded.": the Super PAC leaves the Politician (who keeps climbing on his own) for
+      // the Challenger; her line shoots up past him, and the blast chars him and drops his line off the bottom
+      add({ on: "watch", do: "show", who: "chal" });
+      ln("lChal", [[4.4, 5], [4.8, 9]], "chal", cue("watch"), cue("watch") + 0.4, "#2E7D6E");
+      add({ on: "watch", do: "move", who: "pac", to: "chal.back", scale: V ? 0.3 : 0.36, dur: 0.6, arc: 140 });
+      ln("lYes4", [[7.5, 90], [8.4, 93], [9.3, 96]], "pol", cue("watch"), cue("politicians.") + 0.6, "red");
+      ln("lChal2", [[4.8, 9], [5.6, 40], [6.4, 74]], "chal", cue("rewarded."), cue("rewarded.") + 0.5, "#2E7D6E");
+      add({ on: "rewarded.", do: "shake", y: 6, frames: 3 });
+      add({ on: "rewarded.", offset: 0.2, do: "boom", shake: 10, flash: 0.12 });
+      add({ on: "rewarded.", offset: 0.2, do: "char", who: "polN" });
+      ln("lNo2", [[4, 16], [4.5, 8], [4.9, 0]], "polN", cue("rewarded.") + 0.4, cue("rewarded.") + 0.85, "#2F5D9E");
+      add({ on: "rewarded.", offset: 0.9, do: "shiver", who: "polN", dur: 0.4, amp: 3, rot: 2 });
+      add({ on: "No", n: 2, offset: 0.1, do: "blink", who: "polN" });
+      // "No papers go directly to politicians.": a medicine bill walks past; he lunges; it hops over him; he goes flat
+      add({ on: "No", n: 2, do: "pop", who: "billW" });
+      add({ on: "No", n: 2, offset: 0.1, do: "move", who: "billW", to: [pt(4.4, 0)[0], P.FLOOR - 50], dur: 1.0 });
+      add({ on: "No", n: 2, offset: 0.1, do: "bob", who: "billW", y: 6, r: 4, speed: 4, until: "politicians." });
+      add({ on: "politicians.", offset: -0.1, do: "nudge", who: "polN", by: [-40, 0] });
+      add({ on: "politicians.", do: "move", who: "billW", to: [pt(5.6, 0)[0], P.FLOOR - 50], dur: 0.35, arc: 180 });
+      add({ on: "politicians.", offset: 0.15, do: "flatten", who: "polN" });
+      add({ on: "politicians.", offset: 0.6, do: "blink", who: "polN" });
+      // "The papers take a scenic route through a scoring algorithm,": into the train, the long way round the whole
+      // chart, and into the scoring machine
+      var TK = P.TAB[2], slot = [P.TAB[0] - 160 * TK, P.TABTOP + 300 * TK];
+      var path = [pt(0.3, 6), pt(-0.6, 45), pt(0.4, 104), pt(4, 112), pt(8, 108), pt(10.4, 92), slot];
+      add({ on: "The", do: "move", who: "billW", to: path[0], dur: 0.3, arc: 120 });
+      add({ on: "papers", n: 2, do: "hide", who: "billW" });
+      add({ on: "papers", n: 2, do: "pop", who: "cart" });
+      // the papers ride in its open cars
+      ["p1", "p2", "p3"].forEach(function (n, i) {
+        add({ on: "papers", n: 2, offset: 0.1 + 0.1 * i, do: "show", who: n });
+        add({ on: "papers", n: 2, offset: 0.1 + 0.1 * i, do: "move", who: n, to: "cart.c" + (i + 1), by: [0, -14], dur: 0.01 });
+      });
+      add({ on: "take", do: "line", id: "rails", points: path, rider: "cart", tilt: 0.25, until: cue("scoring") - 0.05, ease: "smooth", color: "#6E4A28", width: 8, dash: [22, 14] });
+      add({ on: "scoring", do: "hide", who: ["cart", "p1", "p2", "p3"] });
+      add({ on: "scoring", do: "camera", view: "tab", dur: 0.5 });
+      add({ on: "scoring", do: "shiver", who: "tab", dur: 0.9, amp: 4, rot: 1 });
+      add({ on: "scoring", offset: 0.1, do: "glow", who: "tab", size: V ? 300 : 380, dur: 0.4 });
+      add({ on: "algorithm,", do: "glow", who: "tab", size: V ? 300 : 380, dur: 0.4 });
+      add({ on: "algorithm,", offset: 0.5, do: "hide", who: "rails" });
+      // "which is apparently the only legal way to train a senator.": the bell dings by itself; he jumps through the
+      // hoop; a campaign poster pops out of the machine; he rings the bell himself, and waits
+      add({ on: "which", do: "bob", who: "pol", y: 5, r: 1.5, speed: 2.2, until: "train" });
+      add({ on: "train", do: "shiver", who: "bell", dur: 0.5, amp: 5, rot: 14 });
+      add({ on: "train", offset: 0.04, do: "move", who: "pol", to: P.HOOP, dur: 0.2, arc: 70 });
+      var LAND = V ? [P.TAB[0] - 190, P.TAB[1] - P.RH / 2 - 10] : [P.TAB[0] - 290, P.TAB[1] - P.RH / 2 - 10];
+      add({ on: "train", offset: 0.24, do: "move", who: "pol", to: LAND, dur: 0.14, arc: 30 });
+      add({ on: "senator.", do: "pop", who: "poster" });
+      add({ on: "senator.", do: "move", who: "poster", by: [0, V ? -140 : -170], dur: 0.2 });
+      add({ on: "senator.", offset: 0.45, do: "nudge", who: "pol", by: [30, -10] });
+      add({ on: "senator.", offset: 0.45, do: "shiver", who: "bell", dur: 0.4, amp: 4, rot: 12 });
+      KIT.collage({ id: ID, seed: 2007, plate: KIT.V ? [-2200, -600, 2600, 2600] : [-2200, -800, 2600, 1900], views: r.views, view: "chart", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

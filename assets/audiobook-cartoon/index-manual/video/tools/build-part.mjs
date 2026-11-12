@@ -25,12 +25,19 @@ import { fileURLToPath } from "node:url";
 const VIDEO = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const PLAN = resolve(VIDEO, "..");
 const REPO = resolve(PLAN, "../../..");
-const MP3_URL = "https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.cbaf659d.mp3";
-// Named after the MP3, so that a cached copy of an older episode is never used by mistake.
-const MP3 = join(REPO, "assets/audiobook/cartoon", MP3_URL.split("/").pop());
+const EP1_MP3_URL = "https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/index-manual.7ce6b2b2.mp3";
 const SPRITES = join(REPO, "transmit/public/assets/sprites/alien");
 
 const part = JSON.parse(readFileSync(resolve(VIDEO, process.argv[2] ?? "parts/part-02.json"), "utf8"));
+// A part of another chapter names it ("chapter": "<slug>"): its audio is that chapter's published MP3
+// (the name in its storyboards/parts.json) and its words are that chapter's word timings.
+const CHAPTER = part.chapter && part.chapter !== "index-manual" ? part.chapter : null;
+const CHAPTER_PLAN = CHAPTER ? resolve(PLAN, "..", CHAPTER) : PLAN;
+const MP3_URL = CHAPTER
+  ? `https://static.warondisease.org/assets/audiobook/manual-paperback/mp3/${JSON.parse(readFileSync(join(CHAPTER_PLAN, "storyboards/parts.json"), "utf8")).audio}`
+  : EP1_MP3_URL;
+// Named after the MP3, so that a cached copy of an older episode is never used by mistake.
+const MP3 = join(REPO, "assets/audiobook/cartoon", MP3_URL.split("/").pop());
 const START = part.audio.start;
 const DURATION = round(part.audio.end - START);
 const aspectAt = process.argv.indexOf("--aspect");
@@ -46,7 +53,7 @@ function round(x) {
 
 // ── Words ────────────────────────────────────────────────────────────────
 // Whisper splits numbers ("10" ".7", "2" ",782", "87" "%"). Join those pieces into one word.
-const allWords = JSON.parse(readFileSync(join(PLAN, "word-timings.json"), "utf8"));
+const allWords = JSON.parse(readFileSync(join(CHAPTER_PLAN, "word-timings.json"), "utf8"));
 const words = [];
 for (const w of allWords) {
   if (w.end <= START || w.start >= part.audio.end) continue;
@@ -85,7 +92,7 @@ for (const sc of scenes) {
   let after = sc.start;
   for (const st of sc.wishonia || []) {
     const t = states.length === 0 ? 0 : sc.wishonia.indexOf(st) === 0 ? sc.start : findWord(st.cue, after);
-    after = t;
+    after = Math.max(t, sc.start); // the first state of a part starts at 0, but its cues are still in its own scene
     states.push({ t: round(t), expr: st.expr, rest: st.rest, body: st.body, mode: st.mode, scene: sc.id });
   }
 }
@@ -116,6 +123,7 @@ function spell(word) {
 
 const MIN_SHAPE = 0.06; // shorter mouth shapes flicker at 30 fps
 const REST_GAP = 0.18; // a pause this long shows the resting mouth
+const OPENNESS = { open: 4, oh: 3, ee: 2, small: 1, closed: 0 };
 const mouth = []; // [time, viseme | null]; null = the resting mouth of the current state
 function pushMouth(t, v) {
   const last = mouth[mouth.length - 1];
@@ -127,9 +135,15 @@ function pushMouth(t, v) {
 }
 pushMouth(0, null);
 words.forEach((w, i) => {
-  const letters = spell(w.w).split("");
-  const step = (w.e - w.s) / Math.max(1, letters.length);
-  letters.forEach((ch, k) => pushMouth(w.s + k * step, CHAR_TO_VISEME[ch] ?? "small"));
+  // Letters too fast for a shape each share one: the most open shape among them, so a fast word still opens.
+  const shapes = spell(w.w).split("").map((ch) => CHAR_TO_VISEME[ch] ?? "small");
+  const dur = w.e - w.s;
+  const slots = Math.max(1, Math.min(shapes.length, Math.floor(dur / (MIN_SHAPE + 0.001))));
+  for (let k = 0; k < slots; k++) {
+    const group = shapes.slice(Math.floor((k * shapes.length) / slots), Math.floor(((k + 1) * shapes.length) / slots));
+    const shape = group.reduce((a, b) => ((OPENNESS[b] ?? 1) > (OPENNESS[a] ?? 1) ? b : a), "closed");
+    pushMouth(w.s + (k * dur) / slots, shape);
+  }
   const next = words[i + 1];
   const gap = next ? next.s - w.e : 1;
   if (gap >= REST_GAP) pushMouth(w.e, null);

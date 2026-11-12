@@ -1,0 +1,54 @@
+<template id="stop-reading-template">
+  <!-- stop-reading · collage host shot. On the shoulder of Earth a tiny YOU sits at his desk, reading. "stop reading": he nods off on the desk and a Z drifts off into space, then another. "step:": she thumps the console; Earth jolts in its orbit and he jerks awake. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="stop-reading" data-width="1920" data-height="1080" data-start="0" data-duration="7.6">
+    <div id="stop-reading-weave"></div>
+    <div id="stop-reading-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V, S = KIT.STUDIO, E = S.earth, SZ = KIT.collage.SIZES;
+      var EK = 2.04 * E[2] / SZ["earth-big"][0], R = E[2] * 0.97;
+      var rim = function (th) { var a = th * Math.PI / 180; return [E[0] + R * Math.sin(a), E[1] - R * Math.cos(a)]; };
+      var TH = V ? -62 : -75, P = rim(TH), YK = (V ? 150 : 210) / SZ["you-desk"][1];
+      var HEAD = [P[0] + (V ? 130 : 200) * Math.sin(TH * Math.PI / 180), P[1] - (V ? 130 : 200) * Math.cos(TH * Math.PI / 180)];
+      var z = function (k) { return { art: "cloud", x: HEAD[0], y: HEAD[1], scale: k, hidden: true, label: { text: "Z", at: [70, 47], width: 60, size: 62 } }; };
+      KIT.collage({
+        id: "stop-reading", seed: 1711, host: true,
+        cast: {
+          earth: { art: "earth-big", x: E[0], y: E[1], scale: EK },
+          you: { art: "you-desk", x: P[0], y: P[1], anchor: "bottom", pivot: "bottom", scale: YK },
+          z1: z(V ? 0.6 : 0.8), z2: z(V ? 0.45 : 0.6),
+        },
+        beats: [
+          { at: -1, do: "move", who: "you", by: [0, 0], turn: TH, dur: 0.01 },
+          // nods off on "stop", and the Zs drift off into space
+          { on: "stop", do: "move", who: "you", by: [V ? -8 : -10, V ? 8 : 10], turn: TH - 16, dur: 0.5, ease: "smooth" },
+          { on: "reading", offset: 0.1, do: "pop", who: "z1" },
+          { on: "reading", offset: 0.1, do: "move", who: "z1", by: [V ? -200 : -300, V ? 40 : -60], scale: V ? 0.9 : 1.2, dur: 2.2 },
+          { on: "following", do: "pop", who: "z2" },
+          { on: "following", do: "move", who: "z2", by: [V ? -160 : -260, V ? 70 : -20], scale: V ? 0.7 : 0.95, dur: 1.6 },
+          { on: "more", do: "pop", who: "z1", out: true },
+          // "step:": the thump; Earth jolts, and he jerks awake
+          { on: "step:", do: "hide", who: "z2" },
+          { on: "step:", offset: 0.03, do: "move", who: ["earth", "you"], by: [V ? 22 : 34, V ? 14 : 20], dur: 0.08 },
+          { on: "step:", offset: 0.12, do: "move", who: ["earth", "you"], by: [V ? -22 : -34, V ? -14 : -20], dur: 0.35, ease: "smooth" },
+          { on: "step:", offset: 0.05, do: "move", who: "you", by: [V ? 8 : 10, V ? -8 : -10], turn: TH, dur: 0.1 },
+          { on: "step:", offset: 0.1, do: "hop", who: "you", height: V ? 40 : 55 },
+          { on: "step:", offset: 0.4, do: "shiver", who: "you", dur: 0.6, amp: 3, rot: 4 },
+        ],
+      });
+    })();
+  </script>
+</template>

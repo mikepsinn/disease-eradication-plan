@@ -1,0 +1,86 @@
+<template id="most-problems-scroll-template">
+  <!-- most-problems-scroll · collage host shot (Part 20, scene 9). Wishonia at the console. "Bond": the INCENTIVE
+       ALIGNMENT BOND lands on the console; "problem": the PROBLEMS scroll thunks down beside it. It unrolls (the paper strip
+       is code: an ink line under a cream one) up off the console towards Earth: 1. WAR, 2. DISEASE, 3. POTHOLES, and its
+       number races past a hundred. "which on your planet is most problems.": the paper wraps round and round the Earth
+       and its far end comes back down onto the console, numbered in the thousands. She shrugs; the iris closes. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="most-problems-scroll" data-width="1920" data-height="1080" data-start="0" data-duration="8.948">
+    <div id="most-problems-scroll-weave"></div>
+    <div id="most-problems-scroll-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "most-problems-scroll", V = KIT.V, S = KIT.STUDIO, E = S.earth, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var BOND = V ? [560, S.top + 10, 1.0] : [1010, S.top + 12, 1.1];
+      var ROLL = V ? [880, S.top + 4, 0.34] : [1330, S.top + 4, 0.42];
+      var RW = SZ.scroll[0] * ROLL[2], RH = SZ.scroll[1] * ROLL[2];
+      var START = [ROLL[0] + (262 - 150) * ROLL[2], ROLL[1] - 30 * ROLL[2]];
+      // The strip: up from the roll to the lower right of Earth (where the first items are written), then round and
+      // round the planet at four latitudes, then back down onto the console.
+      var R = E[2], B = [E[0] + R * 0.95, E[1] + R * 0.8];
+      // (16:9: right along the ledge, then straight up past Earth's right side, so the items have room.)
+      if (!V) B = [E[0] + R * 1.12, E[1] - R * 0.25];
+      var leg1 = V ? [START, [START[0] + (B[0] - START[0]) * 0.5 + 60, START[1] + (B[1] - START[1]) * 0.5], B]
+        : [START, [E[0] + R * 1.4, START[1] - 6], [E[0] + R * 1.4, E[1] - R * 0.1], B];
+      var rings = [B], lats = [0.55, 0.15, -0.25, -0.6];
+      lats.forEach(function (f) {
+        var dy = f * R, rx = Math.sqrt(R * R - dy * dy) + (V ? 26 : 34), ry = R * 0.18;
+        for (var k = 0; k <= 24; k++) { var a = Math.PI * 0.1 + (k / 24) * 2 * Math.PI; rings.push([E[0] + rx * Math.cos(a), E[1] + dy + ry * Math.sin(a)]); }
+      });
+      var END = V ? [760, S.top - 6] : [1180, S.top - 8];
+      rings.push([E[0] - R * 1.15, E[1] + R * 0.9], END);
+      var W1 = V ? 48 : 58, W2 = V ? 38 : 47, CREAM = "#F1E6C6";
+      var t1 = cue("problem") + 0.25, t2 = cue("good") + 0.1, t3 = cue("problems.") + 0.2;
+      var beats = [
+        { on: "Bond", offset: -0.06, do: "stamp", who: "bond", from: 1.8, shake: 12 },
+        { on: "Bond", do: "glow", who: "bond", size: V ? 280 : 340, dur: 0.6 },
+        { on: "problem", do: "stamp", who: "roll", from: 1.6, shake: 8 },
+        { at: t1, do: "line", id: "ink1", points: leg1, until: t2, ease: "linear", width: W1 + 24, front: true },
+        { at: t1, do: "line", id: "paper1", points: leg1, until: t2, ease: "linear", width: W2 + 24, color: CREAM, front: true },
+        { at: t2, do: "line", id: "ink2", points: rings, until: t3, ease: "smooth", width: W1, front: true },
+        { at: t2, do: "line", id: "paper2", points: rings, until: t3, ease: "smooth", width: W2, color: CREAM, front: true },
+        { on: "most", do: "shiver", who: "roll", dur: 0.3, amp: 5, rot: 4 },
+        { at: t3, do: "shake", y: 5, frames: 3 },
+      ];
+      // The first three items, written along the first leg as it goes by.
+      var segs = [], L = 0;
+      for (var j = 1; j < leg1.length; j++) { var l = Math.hypot(leg1[j][0] - leg1[j - 1][0], leg1[j][1] - leg1[j - 1][1]); segs.push([L, l, leg1[j - 1], leg1[j]]); L += l; }
+      var item = function (u) {
+        var d = u * L, sg = segs[segs.length - 1];
+        for (var j = 0; j < segs.length; j++) if (d <= segs[j][0] + segs[j][1]) { sg = segs[j]; break; }
+        var f = (d - sg[0]) / sg[1], p = sg[2], q = sg[3], tilt = Math.atan2(q[1] - p[1], q[0] - p[0]) * 180 / Math.PI;
+        return { x: p[0] + (q[0] - p[0]) * f, y: p[1] + (q[1] - p[1]) * f, tilt: tilt < -100 ? tilt + 180 : tilt };
+      };
+      (V ? [["1. WAR", 0.3], ["2. DISEASE", 0.56], ["3. POTHOLES", 0.82]] : [["1. WAR", 0.17], ["2. DISEASE", 0.5], ["3. POTHOLES", 0.79]]).forEach(function (it, i) {
+        var p = item(it[1]), t = t1 + (t2 - t1) * it[1] + 0.05;
+        beats.push({ at: t, do: "stamp", id: "item" + i, text: it[0], x: p.x, y: p.y, size: V ? 30 : 36, width: V ? 200 : 240, tilt: p.tilt, from: 1.3, shake: 0 });
+      });
+      // Its number races past a hundred, into the thousands by the time the far end lands.
+      beats.push({ at: t1 + 0.9, do: "counter", id: "count", prefix: "No. ", suffix: "", from: 4, to: 4817, until: t3, ease: "smooth",
+        x: V ? 870 : 1240, y: V ? S.top - 110 : S.top - 330, size: V ? 46 : 60 });
+      KIT.collage({
+        id: ID, seed: 2009, host: { iris: ["out", D - 0.55, D - 0.05] },
+        cast: {
+          bond: { art: "bond", x: BOND[0], y: BOND[1], anchor: "bottom", pivot: "bottom", scale: BOND[2], hidden: true,
+            label: [{ text: "INCENTIVE", at: [143, 74], width: 200, size: 34 }, { text: "ALIGNMENT BOND", at: [143, 112], width: 210, size: 30 }] },
+          roll: { art: "scroll", x: ROLL[0], y: ROLL[1], anchor: "bottom", pivot: "bottom", scale: ROLL[2], hidden: true,
+            label: { text: "PROBLEMS", at: [178, 80], width: 200, size: 46 } },
+        },
+        beats: beats,
+      });
+    })();
+  </script>
+</template>
