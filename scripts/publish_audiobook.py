@@ -311,11 +311,13 @@ def print_staleness_summary(config_path: Path, chapter_filter: int | None,
         outro_hash_file = wavs_dir / "podcast-outro.qmdhash"
         outro_wav = wavs_dir / "podcast-outro.wav"
 
+        # Same key as generate_audiobook.generate_outro_audio (text, variables and TTS settings)
+        from lib.tts import tts_cache_hash
         qmd_content = OUTRO_QMD_PATH.read_text(encoding='utf-8')
         hash_input = qmd_content
         if VARIABLES_YML.exists():
             hash_input += VARIABLES_YML.read_text(encoding='utf-8')
-        current_hash = hashlib.sha256(hash_input.encode('utf-8')).hexdigest()[:16]
+        current_hash = tts_cache_hash(hash_input)
 
         if not outro_wav.exists():
             outro_status = ("STALE", "no audio yet")

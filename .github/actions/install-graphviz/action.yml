@@ -11,10 +11,19 @@ runs:
         # apt rebuilds the man-db index after every install; nothing here reads man pages
         sudo rm -f /var/lib/man-db/auto-update
         apt_opts=(-o Acquire::Retries=3 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30)
+        # Graphviz 14 (ubuntu-26.04) moved the neato, fdp, sfdp, twopi, circo and osage
+        # layouts into this package; older graphviz packages include them and lack it
+        layout_pkg=libgvplugin-neato-layout8
         for attempt in 1 2 3; do
           if timeout 180 sudo apt-get "${apt_opts[@]}" update -qq &&
-             timeout 300 sudo apt-get "${apt_opts[@]}" install -y graphviz; then
+             timeout 300 sudo apt-get "${apt_opts[@]}" install -y graphviz \
+               $(apt-cache show "$layout_pkg" >/dev/null 2>&1 && echo "$layout_pkg"); then
             dot -V
+            # A runner image that drops circo should fail here, not 30 minutes into a render
+            if ! echo 'graph{a--b}' | dot -Kcirco -Tsvg >/dev/null; then
+              echo "::error::Graphviz has no circo layout engine; check which package provides it on this runner image (was $layout_pkg)"
+              exit 1
+            fi
             exit 0
           fi
           echo "::warning::Graphviz install attempt $attempt failed or stalled"

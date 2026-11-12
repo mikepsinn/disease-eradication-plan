@@ -42,7 +42,8 @@ from pydub import AudioSegment
 sys.path.insert(0, str(Path(__file__).parent))
 # Add project root to path for dih_models imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE
+from lib.tts import generate_speech, AVAILABLE_VOICES, DEFAULT_VOICE, TTS_MODEL_ID, tts_cache_hash
+from lib.tts_check import check_chunk
 from dih_models.yaml_utils import load_quarto_config
 from lib.audiobook_common import (
     PROJECT_ROOT, AUDIOBOOK_DIR, WAV_AUDIO_DIR,
@@ -52,7 +53,7 @@ from lib.audiobook_common import (
     AudiobookPaths, config_name_from_path, get_paths,
     mp3_content_hash, find_current_mp3, parse_hashed_mp3, PODCAST_HASH_RE,
 )
-from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields
+from lib.audiobook_manifest import read_manifest, write_manifest, update_chapter_fields, sync_manifest_from_config
 from lib.build_logger import BuildLogger, SingleLineProgress
 from lib.retry import RateLimiter
 from lib.script_lock import acquire_script_lock, ScriptLockError
@@ -94,6 +95,9 @@ LOGGER: BuildLogger | None = None
 SYNC_VERBOSE = _env_flag("AUDIOBOOK_SYNC_VERBOSE", False)
 # Per-chunk TTS start/done logs are noisy under parallel workers; keep compact by default.
 TTS_CHUNK_VERBOSE = _env_flag("AUDIOBOOK_TTS_CHUNK_VERBOSE", False)
+# Whisper check of each new chunk against its text (see lib/tts_check.py); failures are re-voiced.
+TTS_CHECK = _env_flag("AUDIOBOOK_TTS_CHECK", True)
+TTS_CHECK_ATTEMPTS = 3
 # Single-line chapter chunk progress to avoid noisy repeated status lines.
 TTS_SINGLE_LINE_PROGRESS = _env_flag("AUDIOBOOK_TTS_SINGLE_LINE_PROGRESS", True)
 # Single-line cache-scan progress for chunk freshness checks.
@@ -494,9 +498,9 @@ def generate_chapter_audio(
         status = "new"
 
         if audio_chunk_path.exists():
-            # Check if source text has changed since this audio was generated
+            # Check if source text or TTS settings changed since this audio was generated
             text_content = chunk_file.read_text(encoding='utf-8')
-            text_hash = hashlib.sha256(text_content.encode('utf-8')).hexdigest()[:16]
+            text_hash = tts_cache_hash(text_content, voice)
             old_hash = hash_path.read_text(encoding='utf-8').strip() if hash_path.exists() else ''
 
             if old_hash == text_hash:
@@ -564,12 +568,29 @@ def generate_chapter_audio(
                 progress.clear()
                 print(f"    [{label}] Starting ({len(chunk_text):,} chars)")
             start = time.monotonic()
-            tts_rate_limiter.acquire()
-            generate_speech(text=chunk_text, output_path=out_path, voice_name=voice)
-            # Trim silent regions from TTS output (Gemini sometimes produces long silent tails)
-            trim_silence(out_path, label=label)
+            problems: list[str] = []
+            for attempt in range(1, TTS_CHECK_ATTEMPTS + 1):
+                tts_rate_limiter.acquire()
+                generate_speech(text=chunk_text, output_path=out_path, voice_name=voice)
+                # Trim silent regions from TTS output (Gemini sometimes produces long silent tails)
+                trim_silence(out_path, label=label)
+                if not TTS_CHECK:
+                    break
+                # Whisper transcript vs. text: trims invented words at the end, flags the rest
+                check = check_chunk(out_path, chunk_text)
+                if check.trimmed_s:
+                    progress.clear()
+                    print(f"    [TTS CHECK] {label}: trimmed {check.trimmed_s:.1f}s of invented words after the last line")
+                if check.ok:
+                    break
+                problems = check.problems
+                progress.clear()
+                print(f"    [TTS CHECK] {label} attempt {attempt}/{TTS_CHECK_ATTEMPTS}: {'; '.join(problems)}")
+            else:
+                out_path.unlink()
+                raise RuntimeError(f"{label} failed the transcript check {TTS_CHECK_ATTEMPTS} times: {'; '.join(problems)}")
             # Write text hash sidecar so we can detect stale audio later
-            text_hash = hashlib.sha256(chunk_text.encode('utf-8')).hexdigest()[:16]
+            text_hash = tts_cache_hash(chunk_text, voice)
             out_path.with_suffix('.texthash').write_text(text_hash, encoding='utf-8')
             elapsed = time.monotonic() - start
             if TTS_CHUNK_VERBOSE:
@@ -800,7 +821,13 @@ def list_chapters(chapters: list[dict], paths: AudiobookPaths | None = None):
 def update_manifest(timestamps: list[ChapterTimestamp], total_duration_ms: int,
                     chapters: list[dict] | None = None, paths: AudiobookPaths | None = None,
                     quiet: bool = False):
-    """Update manifest.json with duration and timing data."""
+    """Update manifest.json with duration and timing data.
+
+    chapters must be the whole book: entries are updated by index, so the
+    manifest is first synced to the config in case chapters were added or moved.
+    """
+    if chapters:
+        sync_manifest_from_config(chapters, paths)
     # Build path lookup for stale-entry detection
     path_by_index = {ch['index']: ch['path'] for ch in chapters} if chapters else {}
     for ts in timestamps:
@@ -1265,14 +1292,14 @@ def generate_outro_audio(
     wavs_dir = paths.wavs if paths else WAV_AUDIO_DIR
     outro_wav = wavs_dir / "podcast-outro.wav"
 
-    # Hash-based cache check: hash both QMD source AND _variables.yml
-    # so the outro regenerates when variable values change (e.g. voter_lives_saved)
+    # Hash-based cache check: hash QMD source, _variables.yml and the TTS settings
+    # so the outro regenerates when variable values change (e.g. voter_lives_saved) or the voice does
     from lib.audiobook_common import VARIABLES_YML
     qmd_content = OUTRO_QMD_PATH.read_text(encoding='utf-8')
     hash_input = qmd_content
     if VARIABLES_YML.exists():
         hash_input += VARIABLES_YML.read_text(encoding='utf-8')
-    current_hash = hashlib.sha256(hash_input.encode('utf-8')).hexdigest()[:16]
+    current_hash = tts_cache_hash(hash_input, voice)
     hash_file = wavs_dir / "podcast-outro.qmdhash"
 
     if outro_wav.exists() and not force:
@@ -1548,6 +1575,7 @@ def export_single_chapter_mp3(
 
     # TTS provenance
     tag.add(id3_mod.TXXX(encoding=3, desc='tts_voice', text=[voice]))
+    tag.add(id3_mod.TXXX(encoding=3, desc='tts_model', text=[TTS_MODEL_ID]))
     tag.add(id3_mod.TXXX(encoding=3, desc='generation_date', text=[generation_date]))
     if book_meta.get('version'):
         tag.add(id3_mod.TXXX(encoding=3, desc='version', text=[book_meta['version']]))

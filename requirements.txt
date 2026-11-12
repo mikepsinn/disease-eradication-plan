@@ -43,6 +43,7 @@ ebooklib
 lxml
 mutagen
 stable-ts  # Whisper-based forced alignment for audiobook subtitles
+faster-whisper  # Transcript check of each TTS chunk (scripts/lib/tts_check.py)
 boto3  # S3-compatible API for Cloudflare R2 audiobook uploads
 # Content distribution (scripts/distribute/)
 tweepy  # Twitter/X API v2

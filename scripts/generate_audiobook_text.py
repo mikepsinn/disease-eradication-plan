@@ -61,6 +61,8 @@ OUTPUT_DIR = NARRATION_DIR
 LOGGER: BuildLogger | None = None
 
 MAX_CHUNK_CHARS = 3_000
+# Part of the chunk-cache key: bump when chunk_text() splits text differently.
+CHUNKING_VERSION = "2"
 
 # LLM parallelization
 def _env_int(name: str, default: int, minimum: int = 1) -> int:
@@ -543,7 +545,12 @@ def rewrite_for_audiobook(
 
 
 def chunk_text(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list[str]:
-    """Split text into chunks at paragraph boundaries."""
+    """Split text into chunks at paragraph boundaries.
+
+    A section heading never ends a chunk: it moves to the next chunk with its
+    section. Handed a trailing title, the TTS model sometimes invents a sentence
+    to follow it.
+    """
     paragraphs = text.split('\n\n')
     chunks = []
     current: list[str] = []
@@ -552,9 +559,12 @@ def chunk_text(text: str, max_chars: int = MAX_CHUNK_CHARS) -> list[str]:
     for para in paragraphs:
         para_len = len(para) + 2
         if current_len + para_len > max_chars and current:
+            carried: list[str] = []
+            while len(current) > 1 and current[-1].lstrip().startswith('#'):
+                carried.insert(0, current.pop())
             chunks.append('\n\n'.join(current))
-            current = [para]
-            current_len = para_len
+            current = carried + [para]
+            current_len = sum(len(p) + 2 for p in current)
         else:
             current.append(para)
             current_len += para_len
@@ -670,10 +680,11 @@ def generate_chapter_text(
             'elapsed_s': time.monotonic() - chapter_start,
         }
 
-    # Invalidate chunk cache if prepared text has changed
+    # Invalidate chunk cache if prepared text or the chunk split has changed
     chunk_dir = output_path.parent.parent / "narration-txt-chunks" / output_path.stem
     hash_file = chunk_dir / ".prepared_hash"
     hash_content = (intro_text + '\n\n' + prepared) if intro_text else prepared
+    hash_content += f"\n\nchunking:{CHUNKING_VERSION}"
     prepared_hash = hashlib.sha256(hash_content.encode('utf-8')).hexdigest()[:16]
     if chunk_dir.exists():
         if force:
