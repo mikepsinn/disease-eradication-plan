@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:15.3
+duration: 2:59.9
 message: "150,000 people die of disease every day, 92.6% of it fixable in principle; 212 years sooner prevents 10.7 billion deaths, and at the government's own $150,000 a year of life that is $84.8 quadrillion."
 arc: Title card (the counter clicks 1.7 times a second) → headstones pile up behind YOU's armchair while he reads, 92.6% of them redraw in dotted lines, the ladder man keeps getting hit, and the old man bonks the theoretical ceiling → 10.7 billion against everyone alive, and the house-sized cup comes down over the economist's OBJECTION → the price tag on DEAD → the Capitol prices everyone in the footnote of HUMAN LIFE IS PRICELESS* → one bar of lost years becomes money and copies itself 212 times onto the receipt → the GDP register rings up toast and says NO SALE to being alive → Earth sneezes on the window → the dice man rolls the 212 bars into a blur, rolls himself to pieces, and they settle back on 212
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 3, "The Price Tag on Not Being Dead"
-audio: health-dividend.77700cce.mp3, 06:26.9 to 09:42.1
+audio: health-dividend.7548a91e.mp3, 06:24.7 to 09:24.7
 version: v2
 ---
 
@@ -43,7 +43,7 @@ version: v2
 - act: Title
 - transition_in: cut
 - cue: "The Body Count."
-- time: 06:26.9 to 06:29.1 (2.2 s)
+- time: 06:24.7 to 06:27.1 (2.4 s)
 - voiceover: "The Body Count."
 - layer: A, title card
 - bit: The counter on the card runs at the real rate.
@@ -61,8 +61,8 @@ Sound: a whirr; the counter's click, 1.7 a second; a thunk per headstone.
 - act: The body count
 - transition_in: cut
 - cue: "One hundred and fifty thousand"
-- time: 06:29.1 to 07:15.3 (46.2 s)
-- voiceover: "One hundred and fifty thousand deaths per day die from disease every day. While you were reading the previous section, approximately three hundred of them did. They are not coming back to find out how the math turned out. Not all of those deaths are currently preventable, but ninety-two point six percent are eventually avoidable with sufficient biomedical research. "Eventually avoidable" does not mean "currently preventable." It means: given enough research, these diseases have biological solutions. The only category excluded is accidents (falling off things, being hit by things). Every disease, including aging, is a biological process, and biological processes are, in principle, fixable. This is the theoretical ceiling, not a near-term promise."
+- time: 06:27.1 to 07:11.2 (44.1 s)
+- voiceover: "one hundred and fifty thousand people die from disease every day. While you were reading the previous section, approximately three hundred of them did. They are not coming back to find out how the math turned out. Not all of those deaths are currently preventable, but ninety-two point six percent are *eventually* avoidable with sufficient biomedical research. "Eventually avoidable" does not mean "currently preventable." It means: given enough research, these diseases have biological solutions. The only category excluded is accidents (falling off things, being hit by things). Every disease, including aging, is a biological process, and biological processes are, in principle, fixable. This is the theoretical ceiling, not a near-term promise."
 - layer: B, plate the-parlour
 - bit: **The dead pile up behind YOU's armchair while he reads, and he never looks round.** Their skeletons leave; the empty graves redraw in dotted lines (fixable, not fixed), all but the accidents, where one man keeps getting hit by cars. Payoff: an old man is steered into the dotted rows and bonks his head on the ceiling.
 - status: planned
@@ -84,8 +84,8 @@ Sound: the counter click; a thunk per headstone; a page turn; a rattle of bones 
 - act: The body count
 - transition_in: cut
 - cue: "Over a two hundred and"
-- time: 07:15.3 to 07:55.4 (40.2 s)
-- voiceover: "Over a two hundred and twelve-year timeline shift, the cumulative toll: ten point seven billion deaths. That is five hundred and sixty-five billion disability-adjusted life years, or D.A.L.Y.s, of healthy life, and one point nine three quadrillion hours of suffering eliminated. These are cumulative, one-time benefits from permanently accelerating the discovery pipeline, the same methodology used to value smallpox eradication. Nobody objected to the methodology when it was used for smallpox. They will object now because the number is larger, which is a strange reason to object to saving more people."
+- time: 07:11.2 to 07:51.2 (40.0 s)
+- voiceover: "Over a two hundred and twelve-year timeline shift, the cumulative toll: ten point seven billion deaths. That is five hundred and sixty-five billion disability-adjusted life years, or D.A.L.Y.s of healthy life, and one point nine three quadrillion hours of suffering eliminated. These are cumulative, one-time benefits from permanently accelerating the discovery pipeline, the same methodology used to value smallpox eradication. Nobody objected to the methodology when it was used for smallpox. They will object now because the number is larger, which is a strange reason to object to saving more people."
 - layer: B, plate the-cups
 - bit: **The people the shift saves outnumber everyone alive, and their cup is so big the economist objects to it.** He applauds the same method on the small smallpox cup. Payoff: the big one comes down over him.
 - status: planned
@@ -106,7 +106,7 @@ Sound: a pop per row; the counters' rolling clicks; a long sigh of relief; a squ
 - act: Title
 - transition_in: cut
 - cue: "The Price Tag on Not"
-- time: 07:55.4 to 07:58.4 (3.0 s)
+- time: 07:51.2 to 07:54.2 (3.1 s)
 - voiceover: "The Price Tag on Not Being Dead."
 - layer: A, title card
 - bit: The price tag hangs off the word DEAD.
@@ -124,7 +124,7 @@ Sound: a whirr; a tag flip; a soft clack of bones.
 - act: The price tag
 - transition_in: cut
 - cue: "Your governments already put"
-- time: 07:58.4 to 08:22.5 (24.0 s)
+- time: 07:54.2 to 08:14.7 (20.5 s)
 - voiceover: "Your governments already put a price on human life when deciding whether to approve drugs, build highways, or regulate pollution. The standard rate: one hundred and fifty thousand dollars per quality-adjusted life year. Your species finds this uncomfortable to discuss but does it constantly. You just prefer to do it in footnotes, where the dying can't see."
 - layer: B, plate the-field
 - bit: **The Capitol walks down a row of people pricing each one with a tag gun, and the whole row turns out to be a footnote.** The camera pulls back to the billboard it sits under: "HUMAN LIFE IS PRICELESS*".
@@ -144,8 +144,8 @@ Sound: a clack per tag; a whistle; a long whoosh back; a squint creak.
 - act: The price tag
 - transition_in: same plate (the camera travels right along the field)
 - cue: "The world loses two point"
-- time: 08:22.5 to 08:54.0 (31.5 s)
-- voiceover: "The world loses two point eight eight billion D.A.L.Y.s per year. Ninety-two point six percent are eventually avoidable with sufficient research. At one hundred and fifty thousand dollars per quality-adjusted life year, or Q.A.L.Y., that is four hundred trillion dollars per year in welfare losses. Multiply by the two hundred and twelve-year timeline shift and you get the total economic value of the health dividend: eighty-four point eight quadrillion dollars."
+- time: 08:14.7 to 08:40.8 (26.1 s)
+- voiceover: "The world loses two point eight eight billion D.A.L.Y.s per year. ninety-two point six percent are *eventually* avoidable with sufficient research. At one hundred and fifty thousand dollars per Q.A.L.Y., that is four hundred trillion dollars per year in welfare losses. Multiply by the two hundred and twelve-year timeline shift and you get the total economic value of the health dividend: seven point five three quadrillion dollars."
 - layer: B, plate the-field
 - bit: **One bar of lost years turns into money and copies itself 212 times to the horizon, and the receipt prints the total.** The multiplication is shown, not told.
 - status: planned
@@ -165,7 +165,7 @@ Sound: a clink per hourglass; a dotted tick; a clack per tag; a flip per bundle;
 - act: The price tag
 - transition_in: same plate (no seam)
 - cue: "But that is more than"
-- time: 08:54.0 to 09:13.7 (19.7 s)
+- time: 08:40.8 to 08:58.3 (17.5 s)
 - voiceover: ""But that is more than global G.D.P.!" Yes. G.D.P. (one hundred and fifteen trillion dollars) measures market transactions. It does not measure the value of not being dead, not being in pain, and not watching your children die of treatable diseases."
 - layer: B, plate the-field
 - bit: **The GDP register rings up toast and shoes, and says NO SALE to staying alive.**
@@ -186,8 +186,8 @@ Sound: three dings; three flat clunks for NO SALE; a drawer slide.
 - act: The price tag
 - transition_in: cut
 - cue: "The one hundred and fifty"
-- time: 09:13.7 to 09:27.2 (13.4 s)
-- voiceover: "The one hundred and fifty thousand dollars per quality-adjusted life year, or Q.A.L.Y. figure is not something I invented. I just multiplied it by the number of sick people, which is also not my fault."
+- time: 08:58.3 to 09:10.9 (12.6 s)
+- voiceover: "The one hundred and fifty thousand dollars per quality-adjusted life year, or Q.A.L.Y., figure is not something I invented. I just multiplied it by the number of sick people, which is also not my fault."
 - layer: A, host
 - wishonia: neutral-smile + body-open-palms; smirk-smile + body-point-right on "sick"; sideeye-closed + body-shrug on "fault."
 - bit: The sick people are Earth, and Earth sneezes on her window.
@@ -207,7 +207,7 @@ Sound: the printer chatter; a cough; a big wet sneeze and a splat on glass.
 - act: The price tag
 - transition_in: cut back to the-field
 - cue: "The only debatable input is"
-- time: 09:27.2 to 09:42.1 (15.0 s)
+- time: 09:10.9 to 09:24.7 (13.8 s)
 - voiceover: "The only debatable input is whether the timeline shift is really approximately two hundred and twelve years. See the full derivation for how that number is calculated, and the Monte Carlo simulations for what happens when every input varies."
 - layer: B, plate the-field
 - bit: **Monte Carlo is a man made of dice rolling along the 212 bars, and every roll changes how many there are, until he rolls himself to pieces and they settle back on 212.**

@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:39.7
+duration: 2:32.6
 message: "Old treaty campaigns cost $25 to 50 million; this one picks a fight with the weapons industry, so it budgets $1 billion, and it moves $27.2 billion a year, forever."
 arc: The Fed's press cranks four old campaigns' coin columns taller → signing landmines away cost $40 million, digging them up $5 billion, and the signer strolls off through the field → a boxing ring: the treaty campaign kits up against a factory the size of its corner → back on the cost chart a $1 billion boxer towers over the old campaigns and splits into four years → in the ring, one punch and the factory coughs up 1% of the world's military budget, a slab a year, forever
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 2, "Inflation-Adjusted to 2024 Dollars"
-audio: treaty-feasibility.858ed1cd.mp3, 04:05.0 to 06:44.7
+audio: treaty-feasibility.82039d3b.mp3, 04:03.0 to 06:35.5
 version: v2
 ---
 
@@ -39,8 +39,8 @@ version: v2
 - act: What it costs now
 - transition_in: cut
 - cue: "Inflation-Adjusted to twenty twenty-four Dollars"
-- time: 04:05.0 to 04:51.8 (46.8 s)
-- voiceover: "Inflation-Adjusted to twenty twenty-four Dollars. Using B.L.S. C.P.I. data: The Ottawa Treaty in nineteen ninety-seven cost between fifteen and twenty-five million dollars, which is thirty to fifty million in today's money. The Cluster Munitions Convention in two thousand and eight cost fifteen to twenty-five million, or twenty-three to thirty-eight million in twenty twenty-four dollars. The Arms Trade Treaty in twenty thirteen cost twenty to thirty million, which is twenty-seven to forty-one million today. The Nuclear Ban Treaty in twenty seventeen cost ten to twenty million, or thirteen to twenty-five million in twenty twenty-four dollars. In today's money: Treaty campaigns cost roughly twenty-five to fifty million dollars (twenty twenty-four U.S.D.)."
+- time: 04:03.0 to 04:54.3 (51.4 s)
+- voiceover: "Inflation-Adjusted to twenty twenty-four Dollars. Using the Bureau of Labor Statistics, or B.L.S., Consumer Price Index, or C.P.I. data: For the Ottawa Treaty in nineteen ninety-seven, the original cost estimate was fifteen to twenty-five million dollars, which is thirty to fifty million in twenty twenty-four dollars. The Cluster Munitions treaty in two thousand and eight cost fifteen to twenty-five million dollars, or twenty-three to thirty-eight million in twenty twenty-four dollars. The Arms Trade Treaty in twenty thirteen cost twenty to thirty million dollars, or twenty-seven to forty-one million in twenty twenty-four dollars. The Nuclear Ban treaty in twenty seventeen cost ten to twenty million dollars, or thirteen to twenty-five million in twenty twenty-four dollars. In today's money: Treaty campaigns cost roughly twenty-five to fifty million dollars (twenty twenty-four U.S.D.)."
 - layer: B, plate campaign-chart
 - bit: **The Federal Reserve cranks its press, and every crank pumps the old campaigns' coin columns taller, the oldest one most.**
 - status: planned
@@ -61,8 +61,8 @@ Sound: a crank clank per turn; a clink per coin; a ping as the top coin pops.
 - act: What it costs now
 - transition_in: cut
 - cue: "Banning landmines"
-- time: 04:51.8 to 05:09.1 (17.3 s)
-- voiceover: "Banning landmines: roughly forty million dollars to get the signatures, and over five billion dollars to actually dig them up. The paperwork is always the cheap part. The expensive part is doing the thing you wrote on the paperwork (your species often skips this part)."
+- time: 04:54.3 to 05:10.5 (16.2 s)
+- voiceover: "Banning landmines: about forty million dollars to get the signatures, and five billion plus dollars to actually dig them up. The paperwork is always the cheap part. The expensive part is doing the thing you wrote on the paperwork (your species often skips this part)."
 - layer: B, plate landmine-chart
 - bit: **Signing the landmines away is a knee-high bar; digging them up is a tower of mines into the clouds, with one man and a teaspoon at the bottom. The signer strolls off across the field.**
 - status: planned
@@ -82,7 +82,7 @@ Sound: a soft stamp for $40M; a long riser up the tower; a tiny scrape of the sp
 - act: The fight
 - transition_in: cut
 - cue: "Cost for a one percent Health Treaty"
-- time: 05:09.1 to 05:45.6 (36.6 s)
+- time: 05:10.5 to 05:44.5 (34.0 s)
 - voiceover: "Cost for a one percent Health Treaty. Historical treaty campaigns ran on pocket change. But this is not just a signature campaign. It is a referendum engine, lobbying operation, diplomatic push, and reserve fund aimed directly at military budgets, which means you are picking a fight with the most powerful industry your species has ever created. The relevant planning number is not what it costs to collect signatures. It is what it costs to win a fight with the people who build aircraft carriers."
 - layer: B, plate boxing-ring
 - bit: **A boxing ring. In one corner the treaty campaign, a money bundle on stick legs, kitted up one piece per word; in the other corner the weapons factory, so big it is the corner, with an aircraft carrier for a stool.**
@@ -103,8 +103,8 @@ Sound: a bell; a click per piece of kit; knuckle cracks; a ship's horn and a cre
 - act: The fight
 - transition_in: cut
 - cue: "Historical treaty-signing benchmark"
-- time: 05:45.6 to 06:17.6 (32.0 s)
-- voiceover: "Historical treaty-signing benchmark: N.G.O.-led campaigns to get signatures on paper cost twenty-five to fifty million dollars in twenty twenty-four U.S. dollars. A modeled one percent Treaty campaign covering referendum, lobbying, diplomacy, legal work, and a reserve fund costs one billion dollars. The modeled annual burn is an average spend across the campaign window of two hundred and fifty million dollars per year."
+- time: 05:44.5 to 06:12.9 (28.4 s)
+- voiceover: "The historical treaty-signing benchmark for N.G.O.-led campaigns to get signatures on paper is twenty-five to fifty million dollars in twenty twenty-four U.S. dollars. A modeled one percent Treaty campaign covering referendum, lobbying, diplomacy, legal work, and a reserve fund costs one billion dollars. The modeled annual burn, or the average spend across the campaign window, is two hundred and fifty million dollars per year."
 - layer: B, plate campaign-chart
 - bit: The boxer from the ring steps onto the cost chart, as big as a building next to the old campaigns, and splits into four years.
 - status: planned
@@ -123,7 +123,7 @@ Sound: a grinding growth sound; a rip as it splits; four sets of footsteps.
 - act: The math
 - transition_in: cut
 - cue: "The Math"
-- time: 06:17.6 to 06:44.7 (27.1 s)
+- time: 06:12.9 to 06:35.5 (22.6 s)
 - voiceover: "The Math. Modeled campaign cost: one billion dollars. What the treaty unlocks: twenty-seven point two billion dollars per year. Forever. Even before you count downstream health gains, this is a one-year redirection of government spending far larger than the campaign that triggered it. You are not buying signatures. You are buying leverage."
 - layer: B, plate boxing-ring
 - bit: **Back in the ring, the $1 billion boxer lands one punch, and the weapons factory coughs up a slab of war money 27 times the boxer's size; its seals flip to crosses and it slides out under the ropes to the lab. Then the bell rings every year and the factory coughs up another by itself, while the boxer sits on its stool.**

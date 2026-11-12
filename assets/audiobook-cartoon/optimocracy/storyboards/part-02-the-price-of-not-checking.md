@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:52.0
+duration: 2:36.6
 message: "Not checking is expensive: America spends more than Switzerland and dies 6.5 years sooner, governance runs at half power, and the War on Drugs got 18 times worse while its budget went up; meanwhile 10,000 places have already run the experiments."
 arc: Title card (its price tag spins up) → Uncle Sam and the Swiss walk the road of life, and Uncle Sam falls in his grave 6.5 years early while the debate panel grows beards → the civilization car on the same road runs on half its cylinders, the other half a committee arguing about forward, until the glovebox drops two audits on it → Nixon's tank fires at a bag of dope and the overdose line climbs in headstones from 6,000 to 100,000 while the budget is piled higher → the map of 10,000 experiments: Kansas's school falls flat, fifty wage tags, Portugal's deckchair and Singapore's prison jacket, and YOU watches the twerking video → the drug machine and the Optimitron at the map's foot, same question, a mountain more dead
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 2, "The Price of Not Checking"
-audio: optimocracy.27caf050.mp3, 04:46.7 to 07:38.7
+audio: optimocracy.f31c7536.mp3, 04:39.2 to 07:15.8
 version: v2
 ---
 
@@ -46,7 +46,7 @@ version: v2
 - act: Title
 - transition_in: cut
 - cue: "The Price of Not Checking"
-- time: 04:46.7 to 04:49.5 (2.9 s)
+- time: 04:39.2 to 04:41.4 (2.2 s)
 - voiceover: "The Price of Not Checking."
 - layer: A, title card
 - bit: The title card has a price tag, and it spins.
@@ -64,8 +64,8 @@ Sound: a whirr; a fast pump-meter tick.
 - act: Paying more, dying sooner
 - transition_in: cut
 - cue: "The United States spends"
-- time: 04:49.5 to 05:18.8 (29.3 s)
-- voiceover: "The United States spends three hundred percentage points more of G.D.P. than Switzerland on government. Switzerland gets six point five more years of life expectancy. One of these countries is doing it wrong. On Wishonia, we would check which one. On Earth, you have a debate about it. The debate has been going on for fifty years. The Swiss are still winning. You're paying more and dying sooner, and your response is to have opinions about it."
+- time: 04:41.4 to 05:09.6 (28.1 s)
+- voiceover: "The United States spends three percent of G.D.P. more than Switzerland on government. Switzerland gets six point five years more years of life expectancy. One of these countries is doing it wrong. A rational civilization would check which one. Your species had a debate about it. The debate has been going on for fifty years. The Swiss are still winning. You're paying more and dying sooner, and your response is to have opinions about it."
 - layer: B, plate the-road
 - bit: **Uncle Sam pays more for the walk of life and falls into his grave first.** Two bars become two walkers on a road marked in years; Uncle Sam drops into a hole 6.5 years short while the Swiss strolls on, and the debaters at the roadside grow beards for fifty years. Payoff: Uncle Sam's skeleton climbs out and joins the debate.
 - status: planned
@@ -86,8 +86,8 @@ Sound: two thumps as they hop down; footsteps; a slide whistle down into the gra
 - act: Running at half power
 - transition_in: cut
 - cue: "Documented U.S. governance waste"
-- time: 05:18.8 to 06:03.6 (44.7 s)
-- voiceover: "Documented U.S. governance waste totals four point nine trillion dollars (seventeen percent of G.D.P.). Globally, the opportunity cost of suboptimal policy reaches one hundred and one trillion dollars (eighty-seven point eight percent of G.D.P.), putting your civilization's governance efficiency at fifty-one point nine percent. Your species is running at roughly half its technological potential. Imagine building a car, then only turning on half the cylinders because the other half are controlled by a committee that meets once a year and disagrees about what "forward" means. (For the full accounting, see the Political Dysfunction Tax and U.S. Efficiency Audit.)"
+- time: 05:09.6 to 05:51.6 (42.1 s)
+- voiceover: "Documented U.S. governance waste totals four point nine eight trillion dollars (seventeen point three percent of G.D.P.). Globally, the opportunity cost of suboptimal policy reaches one hundred and one trillion dollars (eighty-seven point eight percent of G.D.P.), putting your civilization's governance efficiency at fifty-one point eight percent. Your species is running at roughly half its technological potential. Imagine building a car, then only turning on half the cylinders because the other half are controlled by a committee that meets once a year and disagrees about what "forward" means. (For the full accounting, see the Political Dysfunction Tax and U.S. Efficiency Audit.)."
 - layer: B, plate the-road
 - bit: **Civilization is a gleaming car running on four of its eight cylinders, because a committee sits in the other four.** Money blows out of the exhaust, the gauge reads 51.9%, and the car drives in a circle while the committee points every way but forward. Payoff: the glovebox drops the two audits on the committee, and two cylinders start firing.
 - status: planned
@@ -107,8 +107,8 @@ Sound: a cough and a flutter of bills; two stamps; a needle wobble; the chug of 
 - act: Not checking
 - transition_in: cut
 - cue: "Or consider the War on Drugs"
-- time: 06:03.6 to 06:43.5 (39.9 s)
-- voiceover: "Or consider the War on Drugs. Your species spends ninety billion dollars per year on it. When Nixon declared it in nineteen seventy-one, about six thousand Americans died annually from drug overdoses. After fifty years and over a trillion dollars, that number exceeded one hundred thousand. At no point did anyone check whether the policy was working. At no point did anyone stop funding it because it wasn't. On Wishonia, if you spend a trillion dollars on something and the problem gets eighteen times worse, you stop doing it. On Earth, you increase the budget."
+- time: 05:51.6 to 06:27.3 (35.6 s)
+- voiceover: "Or consider the War on Drugs. Your species spends ninety billion dollars per year on it. When Nixon declared it in nineteen seventy-one, about six thousand Americans died annually from drug overdoses. After fifty years and over a trillion dollars, that number exceeded one hundred thousand. At no point did anyone check whether the policy was working. At no point did anyone stop funding it because it wasn't. No sane species would spend a trillion dollars on something, watch the problem get eighteen times worse, and increase the budget. Your species did exactly that."
 - layer: B, plate war-on-drugs-chart
 - bit: **Nixon's tank fires at a bag of dope, and after every shot there are more bags and more headstones.** The overdose line climbs as a chain of headstones from 6,000 to 100,000, the spending bars feed the tank, and the Optimitron sits unplugged in the corner. Payoff: the budget gets piled higher, the tank grows, and the recoil knocks Nixon off his podium.
 - status: planned
@@ -129,7 +129,7 @@ Sound: a tank boom per shot, faster; a pop per new bag; a thunk per headstone; a
 - act: The answer key
 - transition_in: cut
 - cue: "The Answer Key You Already Have"
-- time: 06:43.5 to 06:46.1 (2.7 s)
+- time: 06:27.3 to 06:29.8 (2.5 s)
 - voiceover: "The Answer Key You Already Have."
 - layer: A, title card
 - bit: The heading, with the answers written on the back of the card.
@@ -147,7 +147,7 @@ Sound: a whirr; a card flip.
 - act: The answer key
 - transition_in: cut
 - cue: "Your planet has roughly ten thousand"
-- time: 06:46.1 to 07:18.7 (32.6 s)
+- time: 06:29.8 to 06:56.6 (26.8 s)
 - voiceover: "Your planet has roughly ten thousand jurisdictions making different policy choices. Kansas cut education funding; Minnesota increased it. Fifty states adopted different minimum wages over thirty years. Portugal decriminalized drugs; Singapore didn't. These are natural experiments, and the math can now figure out which policy caused which result, without needing anyone's permission to run an experiment. The experiment already happened. You just weren't paying attention."
 - layer: B, plate experiment-map
 - bit: **The whole map is a lab, and every experiment has already gone off.** The camera dives to pairs of pins that chose differently and shows what happened to each; then every pin is a bubbling flask. Payoff: YOU, in front of the map, is watching the twerking video while the flasks pop behind him.
@@ -169,7 +169,7 @@ Sound: a soft field of pin clicks; a snip and a wall-flat slam; a school bell; s
 - act: The answer key
 - transition_in: same plate (no seam)
 - cue: "Same logic as your decentralized"
-- time: 07:18.7 to 07:38.7 (19.9 s)
+- time: 06:56.6 to 07:15.8 (19.2 s)
 - voiceover: "Same logic as your decentralized F.D.A.: watch what actually happens, then analyze the data. Your decentralized F.D.A. applies this to medicine. The Evidence Machine applies it to governance. Instead of "which drug works?" you're asking "which policy works?" Same question, higher body count."
 - layer: B, plate experiment-map
 - bit: **Two machines ask the same question, and the policy one faces a much bigger pile of dead.** At the foot of the map, the drug machine in front of a heap of skeletons and the Optimitron in front of a mountain of them, a tank on top. Payoff: the Optimitron looks up, and up, and gulps.

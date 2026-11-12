@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:51.0
+duration: 2:55.1
 message: "Today lobbyists buy thousands of cheap buttons at 100 to 1; the Evidence Machine leaves one target, five independent sources plus a citizen survey, and the median throws out any one that is bribed, so corruption goes from illegal to impractical."
 arc: Title card (the word CORRUPTION gets five padlocks) → Wishonia: yes, that's the right question → the Capitol is a vending machine with hundreds of labelled buttons, a quarter in and a sofa of money out → on the street of five buildings that hate each other, the Lobbyist's heist ends with every window a spotlight on him → the same five line up by their numbers, the bribed university swells to +5.0% and drops through a trapdoor, the median stays +2.1%; the shared pipes, the sixth source of millions, and a liar who moves nothing → door number one, guarded by a bribed cop for 3,000 years, and door number two, the vault with five locks held by five buildings who bonk the Lobbyist
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 5, "Corruption, But Make It Difficult"
-audio: optimocracy.27caf050.mp3, 12:51.6 to 15:42.6
+audio: optimocracy.f31c7536.mp3, 13:44.3 to 16:39.4
 version: v2
 ---
 
@@ -43,7 +43,7 @@ version: v2
 - act: Title
 - transition_in: cut
 - cue: "Corruption, But Make It Difficult"
-- time: 12:51.6 to 12:54.4 (2.8 s)
+- time: 13:44.3 to 13:47.5 (3.2 s)
 - voiceover: "Corruption, But Make It Difficult."
 - layer: A, title card
 - bit: The heading, padlocked.
@@ -61,7 +61,7 @@ Sound: a whirr; five snaps.
 - act: The heist
 - transition_in: iris in on her face
 - cue: "But won't someone corrupt"
-- time: 12:54.4 to 13:01.6 (7.2 s)
+- time: 13:47.5 to 13:55.3 (7.8 s)
 - voiceover: ""But won't someone corrupt the measurement system?" Yes. This is the right question. It's the only question that matters."
 - layer: A, host
 - wishonia: skeptical-smile + body-listening; happy-smile + body-point-right on "Yes."; thinking-closed + body-thinking on "only"
@@ -81,8 +81,8 @@ Sound: a "hm!" of a raised hand; a sticker pat; a padlock rattle.
 - act: The heist
 - transition_in: cut
 - cue: "Currently, your lobbying industry"
-- time: 13:01.6 to 13:27.4 (25.8 s)
-- voiceover: "Currently, your lobbying industry has thousands of capture points. Committee earmarks, agency decisions, regulatory rulings, budget amendments, riders on unrelated bills. Each one is cheap to influence. Your federal lobbyists spend four point four billion dollars per year with estimated one hundred to one returns. Your democracy is a vending machine, and the buttons are labeled."
+- time: 13:55.3 to 14:24.0 (28.8 s)
+- voiceover: "Currently, your lobbying industry has thousands of capture points. Committee earmarks, agency decisions, regulatory rulings, budget amendments, riders on unrelated bills. Each one is cheap to influence. Your federal lobbyists spend four point four billion dollars per year. Companies that lobbied for one two thousand and four tax break got back two hundred and twenty dollars for every dollar. Your democracy is a vending machine, and the buttons are labeled."
 - layer: B, plate vending-capitol
 - bit: **The Capitol is a vending machine, and the Lobbyist is its best customer.** Hundreds of labelled buttons at a quarter each; he feeds in a quarter and a sofa of money drops out of the door. Payoff: he plays the buttons like a piano, and the machine gives him his change.
 - status: planned
@@ -102,7 +102,7 @@ Sound: a hum of the machine; pops for the labels; a coin clink; a button click a
 - act: The heist
 - transition_in: cut
 - cue: "The Evidence Machine collapses"
-- time: 13:27.4 to 14:03.0 (35.6 s)
+- time: 14:24.0 to 15:01.3 (37.3 s)
 - voiceover: "The Evidence Machine collapses all those capture points to a single target: the measurement methodology. Here's the heist: simultaneously bribe the Census Bureau, the Federal Reserve, the Bureau of Labor Statistics, academic institutions, AND decentralized citizen surveys. All without detection. All at the same time. All institutions with different governance structures, different funding sources, different methodologies, and different reasons to hate each other. This is not a corruption strategy. This is the plot of a movie where the criminals lose."
 - layer: B, plate five-buildings
 - bit: **The Lobbyist plans a heist movie on five buildings that hate each other, and it ends the way those movies end.** He unrolls the blueprint, the buildings light up one by one glaring at their neighbours, and they bicker. Payoff: every window on the street swings onto him as a spotlight, and the shackles snap on.
@@ -123,8 +123,8 @@ Sound: a sliding clatter as buttons merge; a lamp buzz; a watch tick; grumbles a
 - act: The median
 - transition_in: cut
 - cue: "Here's how it works in practice"
-- time: 14:03.0 to 15:15.6 (72.7 s)
-- voiceover: "Here's how it works in practice. Five independent sources measure median income growth: The Census Bureau American Community Survey reports plus two point one percent. The Federal Reserve Survey of Consumer Finances reports plus two point three percent. The Bureau of Labor Statistics Current Population Survey reports plus one point nine percent. The University of Michigan Panel Study of Income Dynamics reports plus two point two percent. The Tax Foundation I.R.S. data analysis reports plus two point zero percent. Take the median: PLUS TWO POINT ONE PERCENT. If one source reports plus five point zero percent (because someone bribed them), the median throws it out automatically. No investigation needed. No whistleblower needed. No committee hearing. Math does the work. (An honest caveat: these five sources share some underlying data, so they're not perfectly independent. That's why there's a sixth source: decentralized citizen surveys, collected directly from millions of humans, sharing no methodology with the others. One person lying has approximately zero effect on the median. This is statistics, not voting.)."
+- time: 15:01.3 to 16:11.1 (69.8 s)
+- voiceover: "Here's how it works in practice. Five independent sources measure median income growth: The Census Bureau (American Community Survey) reports plus two point one percent. The Federal Reserve (Survey of Consumer Finances) reports plus two point three percent. The Bureau of Labor Statistics (Current Population Survey) reports plus one point nine percent. The University of Michigan (Panel Study of Income Dynamics) reports plus two point two percent. The Tax Foundation (I.R.S. data analysis) reports plus two point zero percent. Take the median: plus two point one percent. If one source reports plus five point zero percent (because someone bribed them), the median throws it out automatically. No investigation needed. No whistleblower needed. No committee hearing. Math does the work. These five sources overlap in some inputs. The sixth source, decentralized citizen surveys, breaks that dependence by adding a methodology-independent stream collected directly from millions of humans. One person lying has approximately zero effect on the median. This is statistics, not voting."
 - layer: B, plate five-buildings
 - bit: **Five buildings line up by their numbers and a spotlight sits on the one in the middle; bribe one and it just shuffles to the end of the line and drops through the floor.** Nobody has to investigate; the Calculator works the light. Then the honest caveat: the five drink from one mainframe, so millions of strangers with postcards join the line. Payoff: one liar holds up +900%, and the spotlight doesn't twitch.
 - status: planned
@@ -146,8 +146,8 @@ Sound: a placard flap per source; a shuffle of feet; a spotlight clunk and a sta
 - act: Impractical, not illegal
 - transition_in: cut
 - cue: "Your species has spent centuries"
-- time: 15:15.6 to 15:42.6 (26.9 s)
-- voiceover: "Your species has spent centuries making corruption illegal. It hasn't worked, because laws are enforced by the same humans who are being bribed. On Wishonia, we tried something different: we made corruption impractical. There's a difference between "you shouldn't steal" and "the vault has five locks held by five people who hate each other." Your species tried door number one for three thousand years. We recommend door number two."
+- time: 16:11.1 to 16:39.4 (28.3 s)
+- voiceover: "Your species has spent centuries making corruption illegal. It hasn't worked, because laws are enforced by the same humans who are being bribed. The alternative is obvious: make corruption impractical. There's a difference between "you shouldn't steal" and "the vault has five locks held by five people who hate each other." Your species tried door number one for three thousand years. We recommend door number two."
 - layer: B, plate two-doors
 - bit: **A game show with two doors: behind door one a polite sign and a bribed cop, worn smooth by 3,000 years of Lobbyists; behind door two a vault with five locks, and five keyholders who would rather bonk the Lobbyist than help each other.**
 - status: planned

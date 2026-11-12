@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:43.4
+duration: 2:36.1
 message: "Humans only change when things get bad enough, things are bad enough now for about 18 months, and in the Second World War whole industries switched jobs in months; charities can switch to the 1% treaty."
 arc: Title card catches fire → the HOW BAD line crosses UNBEARABLE three times: the guillotine, Roosevelt, Truman → YOU only leaves his armchair when it catches fire, then everything goes wrong in his parlour at once → the window opens, the TV comes on, it slams → title card with rivets → GM, Ford, Frigidaire and Smith-Corona switch from cars, fridges and typewriters to tanks, bombers, machine guns and rifles under Uncle Sam's finger → the nonprofit factory aims its chute at the bowl and takes decades to turn an inch → the RESULTS line on its wall is a scarf: HOBBY
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 5, "The Window"
-audio: nonprofit-coalition-strategy.bc12e99d.mp3, 12:23.6 to 15:06.9
+audio: nonprofit-coalition-strategy.42921084.mp3, 11:41.9 to 14:17.9
 version: v2
 ---
 
@@ -42,7 +42,7 @@ version: v2
 - act: Title
 - transition_in: up from black
 - cue: "Why Your Species Only Changes"
-- time: 12:23.6 to 12:27.5 (3.9 s)
+- time: 11:41.9 to 11:45.9 (4.1 s)
 - voiceover: "Why Your Species Only Changes When the Building Is On Fire."
 - layer: A, title card
 - bit: The card catches fire.
@@ -60,7 +60,7 @@ Sound: a whirr; a crackle; a pat, pat.
 - act: The window
 - transition_in: cut
 - cue: "Your species only reorganizes"
-- time: 12:27.5 to 12:43.8 (16.4 s)
+- time: 11:45.9 to 12:02.4 (16.5 s)
 - voiceover: "Your species only reorganizes resources when things are going badly enough that ignoring the problem becomes more painful than fixing it. This is not a theory. It is the entirety of your political history, from the French Revolution to the New Deal to the creation of NATO."
 - layer: B, plate how-bad-chart
 - bit: **History is one line, and humans only move when it crosses UNBEARABLE.** Each crossing pops out its own engraving, and the moment the line dips back, CHANGE goes flat.
@@ -81,7 +81,7 @@ Sound: a pen line drawing; a guillotine's thunk; a radio crackle; a pen scratch;
 - act: The window
 - transition_in: cut
 - cue: "Comfortable humans don't change things."
-- time: 12:43.8 to 13:26.4 (42.5 s)
+- time: 12:02.4 to 12:41.9 (39.5 s)
 - voiceover: "Comfortable humans don't change things. Uncomfortable humans change everything. Then they get comfortable and stop changing things again. Right now, for the first time in eighty years, everything is going wrong at the same time. Military budgets are expanding while everything else gets cut. Trust in government spending priorities has reached "used car salesman" levels. Pandemics exposed the cost of underfunding resilience. Climate disasters have shifted public opinion from "debatable" to "my house is underwater." And your leaders are searching for a unifying narrative, which is political language for "someone please tell us what to do before we get voted out."."
 - layer: B, plate parlour
 - bit: **YOU's parlour is the planet: he only gets up when his own chair is on fire.** Then one disaster per line arrives in the room, until he is standing knee-deep and the Politician is asking him what to do. The window scene pays it off.
@@ -103,8 +103,8 @@ Sound: a page turn; a crackle; a yelp and a slosh; fast hammering; a contented s
 - act: The window
 - transition_in: same plate (no seam)
 - cue: "This is your window."
-- time: 13:26.4 to 13:44.4 (18.0 s)
-- voiceover: "This is your window. It opens when humans are scared and closes when they get distracted. Based on my four thousand, two hundred and ninety-seven years of observation, the average window lasts about eighteen months before your species discovers a new television show and forgets the crisis entirely."
+- time: 12:41.9 to 13:01.1 (19.2 s)
+- voiceover: "This is your window. It opens when humans are scared and closes when they get distract-ed. Based on my four thousand two hundred and ninety-seven years of observation, the average window lasts about eighteen months before your species discovers a new television show and forgets the crisis entirely."
 - layer: B, plate parlour
 - bit: Same plate, payoff: the parlour window swings open, and the TV in the corner shuts it.
 - status: planned
@@ -123,7 +123,7 @@ Sound: a creak and birdsong; a page tear per month; a TV jingle; a laugh track; 
 - act: Title
 - transition_in: up from black
 - cue: "The Factory Precedent."
-- time: 13:44.4 to 13:46.3 (1.9 s)
+- time: 13:01.1 to 13:03.2 (2.1 s)
 - voiceover: "The Factory Precedent."
 - layer: A, title card
 - bit: The card is riveted together.
@@ -141,7 +141,7 @@ Sound: a factory whistle; four rivet bangs; a ping.
 - act: The factories
 - transition_in: cut
 - cue: "During World War Two"
-- time: 13:46.3 to 14:14.8 (28.5 s)
+- time: 13:03.2 to 13:32.3 (29.1 s)
 - voiceover: "During World War Two, your species did something remarkable. G.M. built tanks. Ford built B twenty-four bombers. Frigidaire (yes, the refrigerator people) produced machine guns. Typewriter manufacturers made rifles. Not because they "supported war." Because the system needed realignment and ignoring it was impossible. Also because the government asked very firmly, in a tone that strongly implied "this isn't really a question."."
 - layer: B, plate factory-row
 - bit: **Four factories, one switch each:** what goes in their door as a car, a fridge or a typewriter comes out a weapon, and Uncle Sam's finger is the reason.
@@ -162,7 +162,7 @@ Sound: an engine in and a tank's clank out; a propeller roar; a fridge hum, a do
 - act: The factories
 - transition_in: same plate (no seam)
 - cue: "Your nonprofit sector is the modern"
-- time: 14:14.8 to 14:46.5 (31.7 s)
+- time: 13:32.3 to 14:00.2 (27.8 s)
 - voiceover: "Your nonprofit sector is the modern equivalent of those car factories: massive capacity, talented people, pointed at the wrong problem. You have millions of humans optimizing spreadsheets for the wrong budget. The factories pivoted in months. Your nonprofits have been "focused on their core mission" for decades while the core mission gets harder every year. You didn't get better at focus. You got better at ignoring the context in which your focus operates."
 - layer: B, plate factory-row
 - bit: Same plate: at the end of the row, a huge nonprofit factory points its whole output chute at Part 1's little bowl. The war factories turn round in a second; it takes decades to creak an inch, and its blinkers grow.
@@ -183,8 +183,8 @@ Sound: typewriters clattering; a slap per spreadsheet; four quick whooshes; a lo
 - act: The factories
 - transition_in: same plate (no seam)
 - cue: "A few years of effort"
-- time: 14:46.5 to 15:06.9 (20.5 s)
-- voiceover: "A few years of effort to shift one percent of global budgets could produce more impact than thirty years of incremental programs. Decades during which, I should note, the problems got worse. On Wishonia, we have a word for "doing the same thing for thirty years while results decline." The word is "hobby."."
+- time: 14:00.2 to 14:17.9 (17.8 s)
+- voiceover: "A few years of effort to shift one percent of global budgets could produce more impact than thirty years of incremental programs. Decades during which, I should note, the problems got worse. Your species has a word for "doing the same thing for thirty years while results decline." The word is "hobby."."
 - layer: B, plate factory-row
 - bit: The camera rounds the nonprofit factory to its side wall: a RESULTS chart, and its falling line is being knitted, stitch by stitch, by a dog in a rocking chair.
 - status: planned

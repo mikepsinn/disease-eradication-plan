@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:34.1
+duration: 2:39.8
 message: "Charities are firefighters ignoring the gasoline: the war budget makes every mission harder, and moving 1% of it from the mountain to the puddle ($27.2 billion a year) lets every charity win while militaries keep 99%."
 arc: Title card (a dog in blinkers) → the firefighter dog in CORE MISSION blinkers squirts a water pistol while the factory pours gasoline → the charity puddles shrink as the war mountain swells over them, and the lobbyist plants his flag on top, then circles (b) on the dog's exam → title card → the zero-sum seesaw and von Neumann's noughts and crosses; the treaty grounds both ends; pizzas to the ceiling; the order by treaty takes years → Wishonia blows up 19 tiny Earths in a row and looks at the empty 20th spot → 1% of the mountain makes the puddle a lake; the mountain insurance clerk turns his sign over
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 4, "The Mountain and the Puddle"
-audio: nonprofit-coalition-strategy.bc12e99d.mp3, 09:49.5 to 12:23.6
+audio: nonprofit-coalition-strategy.42921084.mp3, 09:02.0 to 11:41.9
 version: v2
 ---
 
@@ -43,8 +43,8 @@ version: v2
 - act: Title
 - transition_in: up from black
 - cue: "But Shouldn't Nonprofits Focus"
-- time: 09:49.5 to 09:53.1 (3.6 s)
-- voiceover: ""But Shouldn't Nonprofits Focus on Their Core Mission?"."
+- time: 09:02.0 to 09:06.1 (4.1 s)
+- voiceover: ""But Shouldn't Nonprofits Focus on Their Core Mission?""
 - layer: A, title card
 - bit: The heading, and a dog walks across it in blinkers.
 - status: planned
@@ -61,7 +61,7 @@ Sound: a whirr; footsteps; a bonk, bonk.
 - act: The core mission
 - transition_in: cut
 - cue: "Yes. That is exactly the point."
-- time: 09:53.1 to 10:14.2 (21.1 s)
+- time: 09:06.1 to 09:26.6 (20.4 s)
 - voiceover: "Yes. That is exactly the point. Your core mission is failing because your resources are shrinking while the resources of the people making your mission harder are expanding. This is like a firefighter insisting they should "focus on firefighting" while someone is actively pouring gasoline on the fire and nobody is addressing the gasoline."
 - layer: B, plate burning-house
 - bit: **The firefighter dog in blinkers squirts at a fire, and the weapons factory behind it pours on gasoline.** The hose shrinks, the can grows, and the fire takes the dog.
@@ -82,8 +82,8 @@ Sound: a hose rush that shrinks to a pfft; a glug and a whoomp per pour, bigger 
 - act: The core mission
 - transition_in: cut
 - cue: "Every nonprofit today operates"
-- time: 10:14.2 to 10:57.9 (43.7 s)
-- voiceover: "Every nonprofit today operates inside a system that guarantees their failure. Too few grant dollars. Too much competition for those dollars. Shrinking government budgets for health, climate, and poverty. Ballooning budgets for war. Donor fatigue (your donors are tired because you keep asking them for money to do things that don't work because you don't have enough money). And the people whose job is "convince politicians that killing is profitable" get two point seven two trillion dollars annually to make your job harder. Your future funding and impact will be determined by either (a) you, or (b) Lockheed Martin's lobbying department. Currently it's (b). You seem fine with this."
+- time: 09:26.6 to 10:09.0 (42.5 s)
+- voiceover: "Every nonprofit today operates inside a system that guarantees their failure. Too few grant dollars. Too much competition for those dollars. Shrinking government budgets for health, climate, and poverty. Ballooning budgets for war. Donor fatigue (your donors are tired because you keep asking them for money to do things that don't work because you don't have enough money). And the people whose job is "convince politicians that killing is profitable" get two point seven two trillion dollars annually to make your job harder. Your future funding and impact will be determined by either (a) you, or (b) Lockheed Martin's lobbying department. Currently it's (b). The sector seems fine with this."
 - layer: B, plate mountain-and-puddle
 - bit: **The charities' puddles shrink while the war mountain swells over them.** The lobbyist climbs it and plants his flag, then comes down to fill in the dog's exam for it.
 - status: planned
@@ -105,7 +105,7 @@ Sound: a shrink-squeak per puddle; a deep rumble as the mountain swells; a coin 
 - act: Title
 - transition_in: cut
 - cue: "The Obvious Solution"
-- time: 10:57.9 to 11:01.2 (3.3 s)
+- time: 10:09.0 to 10:12.4 (3.3 s)
 - voiceover: "The Obvious Solution That Nobody Sees."
 - layer: A, title card
 - bit: A heading nobody looks at.
@@ -123,8 +123,8 @@ Sound: a whirr; sniffing.
 - act: The solution
 - transition_in: cut
 - cue: "Right now, every grant you win"
-- time: 11:01.2 to 11:43.2 (42.0 s)
-- voiceover: "Right now, every grant you win is a grant another organization loses. This is called a "zero-sum game," which your species invented the mathematics to describe and then immediately forgot to apply to anything useful. A one percent treaty turns this into a positive-sum game. twenty-seven point two billion dollars per year in new funding. Malaria gets cured AND Alzheimer's gets cured. You stop writing proposals and start getting paid for results. This is like discovering that instead of fighting over one pizza, you can just order more pizzas than anyone can eat. Except the pizzas are billions of dollars and the ordering is international treaty ratification, which admittedly takes longer than calling Domino's."
+- time: 10:12.4 to 10:59.3 (46.9 s)
+- voiceover: "Right now, every grant you win is a grant another organization loses. This is called a "zero-sum game," which your species invented the mathematics to describe and then immediately forgot to apply to anything useful. A one percent Treaty turns this into a positive-sum game. twenty-seven point two billion dollars per year in new funding. Malaria gets cured AND Alzheimer's gets cured. You stop writing proposals and start getting paid for results. This is like discovering that instead of fighting over one pizza, you can just order more pizzas than anyone can eat. Except the pizzas are billions of dollars and the ordering is international treaty ratification, which admittedly takes longer than calling Domino's."
 - layer: B, plate seesaw
 - bit: **Two dogs on a seesaw with one bill: one up, one down,** while von Neumann, who did the maths, plays noughts and crosses. New money lands on both ends and both dogs win; then the pizza that ends the fight is ordered by treaty, and arrives very slowly.
 - status: planned
@@ -146,7 +146,7 @@ Sound: a seesaw creak and a thunk per swap; chalk squeaks; two chalk taps and a 
 - act: The solution
 - transition_in: cut
 - cue: "Countries still keep"
-- time: 11:43.2 to 11:56.7 (13.5 s)
+- time: 10:59.3 to 11:13.1 (13.8 s)
 - voiceover: "Countries still keep ninety-nine percent of their apocalypse capacity. They can still end all life nineteen times instead of twenty. If you can't successfully end the world with nineteen attempts, the twentieth probably wasn't going to help."
 - layer: A, host
 - wishonia: neutral-smile + body-presenting; smirk-smile + body-counting on "nineteen"; sideeye-closed + body-shrug on "help."
@@ -167,7 +167,7 @@ Sound: a flick and a soft plop; nineteen small booms in a run; a cough.
 - act: The solution
 - transition_in: cut
 - cue: "But that single percentage point"
-- time: 11:56.7 to 12:23.6 (26.8 s)
+- time: 11:13.1 to 11:41.9 (28.7 s)
 - voiceover: "But that single percentage point creates a twenty-seven point two billion dollars a year one percent Treaty Fund, funds global decentralized clinical trials, and makes every nonprofit's mission dramatically more feasible. Move one percent from the mountain to the puddle. The puddle becomes a lake. The mountain is still a mountain. Everybody wins except the people who were selling mountain insurance, and even they can pivot."
 - layer: B, plate mountain-and-puddle
 - bit: Back at the mountain: one slab of it, poured through the seal-flip funnel, turns the dogs' flattened puddle into a lake, and the mountain looks exactly the same.

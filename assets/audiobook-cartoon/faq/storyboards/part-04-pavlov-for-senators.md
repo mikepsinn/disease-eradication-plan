@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:58.4
+duration: 4:37.4
 message: "Countries will cheat, so the system pays politicians who comply, pays nothing to those who don't and puts every paper on a public ledger; and aging, like smallpox, is natural damage with known repair pathways, which trials can test."
 arc: YOU's placard says CHEAT → in the lab, two politicians shake hands with fingers crossed and FAITH and CREDIT fall off the money → Wishonia's 847th case file, and math instead of trust → the YES politician's labelled campaign jar fills and his armchair arrives; the NO one gets an empty jar; the public tube lights up the paper he hides; history's hands get slapped by the machine; Pavlov rings, he drools and votes yes → YOU's placard says NATURAL → at the human garage, smallpox and polio hang on the wall and the man who says earthquakes are natural falls in the crack → the mechanic replaces hearts, kidneys, blood, bones and taps Grandma's hip; then the work order of five repairs, waiting for trials → a rocket off a slide rule, an atom split on the garage floor, and a report card that says SEE ME
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 4, "Pavlov for Senators"
-audio: faq.c4d81e11.mp3, 08:56.5 to 11:54.9
+audio: faq.c12b2c60.mp3, 09:00.7 to 13:38.1
 version: v2
 ---
 
@@ -38,8 +38,8 @@ version: v2
 - act: Countries cheat
 - transition_in: cut
 - cue: ""What If Countries Cheat?"."
-- time: 08:56.5 to 09:04.7 (8.2 s)
-- voiceover: ""What If Countries Cheat?". Objection: "Countries will promise to reduce military spending but won't."."
+- time: 09:00.7 to 09:08.3 (7.6 s)
+- voiceover: ""What If Countries Cheat?" Objection: "Countries will promise to reduce military spending but won't.""
 - layer: B, plate step-four
 - status: planned
 
@@ -56,7 +56,7 @@ Sound: a clank.
 - act: Countries cheat
 - transition_in: cut
 - cue: "Of course they will."
-- time: 09:04.7 to 09:21.0 (16.3 s)
+- time: 09:08.3 to 09:22.1 (13.9 s)
 - voiceover: "Of course they will. Trust has a historical compliance rate of approximately "whenever it suits them." Your governments print "full faith and credit" on their money, which is charming given that they ran out of both in nineteen seventy-one."
 - layer: B, plate pavlov-lab
 - bit: Trust is a handshake with crossed fingers, and the money's promise falls off the money.
@@ -76,7 +76,7 @@ Sound: a handshake squeeze; the press's thump; two clatters; a flutter.
 - act: Countries cheat
 - transition_in: cut
 - cue: "This system was designed"
-- time: 09:21.0 to 09:31.2 (10.2 s)
+- time: 09:22.1 to 09:31.8 (9.7 s)
 - voiceover: "This system was designed by someone who has watched eight hundred and forty-seven civilizations (me), and it does not use trust. It uses math."
 - layer: A, host
 - wishonia: smirk-smile + body-hand-chest; happy-smile + body-presenting on "(me),"; smirk-closed + body-point-right on "math."
@@ -95,7 +95,7 @@ Sound: a tap; a slap and a boing.
 - act: Countries cheat
 - transition_in: cut
 - cue: "Politicians who comply receive"
-- time: 09:31.2 to 10:22.2 (51.0 s)
+- time: 09:31.8 to 10:16.1 (44.3 s)
 - voiceover: "Politicians who comply receive Incentive Alignment Bond benefits: campaign funding and cushy post-office careers (they love this). Politicians who don't comply get nothing (they hate this). Every contribution is public on blockchain, so lying is difficult (they really hate this). Benefits route automatically via smart contracts, because humans cannot be trusted to distribute papers fairly (this has been tested extensively, for all of recorded history, and the results are in). The system assumes the worst about human nature and designs around it. Compliance is the career-maximizing choice. It's Pavlovian conditioning, but for senators. The senators don't love this comparison. The data supports it anyway."
 - layer: B, plate pavlov-lab
 - bit: **A lab experiment on two politicians.** The one who votes yes gets a labelled campaign jar that fills and an armchair; the one who votes no gets an empty jar; every paper runs through a public glass tube; the machine slaps away every hand in history that reaches in; and Pavlov rings his bell and the politician drools and votes yes.
@@ -118,8 +118,8 @@ Sound: a button click and the fill of papers; a soft armchair whump; a flutter; 
 - act: Aging
 - transition_in: cut
 - cue: ""You Can't Cure Aging"."
-- time: 10:22.2 to 10:31.1 (8.9 s)
-- voiceover: ""You Can't Cure Aging". Objection: "Aging is natural and inevitable. You can't fight nature."."
+- time: 10:16.1 to 10:24.2 (8.0 s)
+- voiceover: ""You Can't Cure Aging" Objection: "Aging is natural and inevitable. You can't fight nature.""
 - layer: B, plate step-four
 - status: planned
 
@@ -136,8 +136,8 @@ Sound: a clank.
 - act: Aging
 - transition_in: cut
 - cue: "Smallpox was natural."
-- time: 10:31.1 to 10:51.2 (20.1 s)
-- voiceover: "Smallpox was natural. Polio was natural. Dying in childbirth was natural. You fought all of them and won. "Natural" is not a synonym for "good." Earthquakes are natural. You don't argue against earthquake-proof buildings by saying "but earthquakes are natural and inevitable."."
+- time: 10:24.2 to 10:44.6 (20.5 s)
+- voiceover: "Smallpox was natural. Polio was natural. Dying in childbirth was natural. You fought all of them and won. "Natural" is not a synonym for "good." Earthquakes are natural. You don't argue against earthquake-proof buildings by saying "but earthquakes are natural and inevitable.""
 - layer: B, plate human-garage
 - bit: **Natural killers Earth has beaten hang on the garage wall like stags' heads; then the ground shakes, the garage bounces on its springs, and the man who defends nature falls in the crack.**
 - status: planned
@@ -156,7 +156,7 @@ Sound: two trophy thunks; a rumble; boing-boing of springs; a falling whistle an
 - act: Aging
 - transition_in: same plate (no seam)
 - cue: "You already replace everything that breaks:"
-- time: 10:51.2 to 11:41.5 (50.3 s)
+- time: 10:44.6 to 11:34.4 (49.7 s)
 - voiceover: "You already replace everything that breaks: Hearts (replaced; you're basically a car at this point). Kidneys (replaced, or hooked to a machine thrice weekly). Blood (replaced from other humans, which is recycling). Bones (titanium; stronger than the original). Joints (your grandma is fifteen percent metal and doing fine). Aging is damage accumulation with known repair pathways: Telomeres shorten: lengthen them (telomerase activation). Cells senesce: clear them (senolytic drugs). Proteins misfold: refold them (molecular chaperones). Mitochondria fail: replace them (mitochondrial transfer). D.N.A. breaks: repair it (CRISPR, base editing)."
 - layer: B, plate human-garage
 - bit: **The body is a car at a 1950s service station.** The mechanic swaps YOU's parts off the shelf one by one and taps Grandma's metal hip; then an old man rolls in with the work order for aging, five jobs on it, and each still needs a trial.
@@ -179,8 +179,8 @@ Sound: a hydraulic hiss; a hood slam; a gas-pump bell; two clangs and a fiddle s
 - act: Aging
 - transition_in: same plate (no seam)
 - cue: "You went to the moon"
-- time: 11:41.5 to 11:54.9 (13.4 s)
-- voiceover: "You went to the moon with slide rules. You split the atom before you invented the transistor. You can probably fix cells with A.I. Unless you think cells are harder than atoms, in which case I have concerns about your physics curriculum."
+- time: 11:34.4 to 13:38.1 (123.8 s)
+- voiceover: "You went to the moon with slide rules. You split the atom before you invented the transistor. You can probably fix cells with A.I. Unless you think cells are harder than atoms, in which case I have concerns about your physics curriculum. Can One Person Actually Pull This Off? Objection: "This is a nice P.D.F., but be realistic." Wrong question. The right question is: can eight billion humans, two thousand and eight hundred billionaires, millions of scientists, thousands of institutions, and one hundred and ninety-five governments persuade one hundred and eighty politicians to act in their rational self-interest for five minutes? The plan does not require you to implement it. It requires one billionaire out of two thousand and eight hundred to fund the bonds. One lobbying firm out of thousands to pivot. One country out of one hundred and ninety-five to sign first. Two hundred and eighty million of people to click a button. Isaac Newton did not personally cause apples to fall. He described why they fall. The description was useful regardless of Newton's personal apple-dropping capabilities. Say "no" to any of these premises out loud and listen to how it sounds: Is a one percent military spending cut physically possible? (You cut eighty-seven point six percent after World War Two.) Do the benefits compound? (Healthier people work more, earn more, pay more taxes, fund more research.) Do politicians respond to money? (The military industry spends one hundred and ninety-eight million dollars on lobbying and gets nearly one trillion dollars back.) Do rich people prefer living? (Two thousand and eight hundred billionaires, each with a one hundred percent chance of dying from disease.) Can the plan reach one willing billionaire? (Six degrees of separation. Facebook measured three point five seven in twenty sixteen.) The answer to each is yes. Five yeses do not sum to impossible. The conclusion is not hope. It is arithmetic."
 - layer: B, plate human-garage, then A, host
 - wishonia: skeptical-smile + body-arms-crossed; sideeye-closed + body-palms-down on "concerns"
 - bit: **The garage has done the hard jobs with bad tools: a rocket goes up off a slide rule, the atom is split on the floor and blows the Scientist up, and the cell, the easy job, is left to a robot with a screwdriver.**

@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:16.9
+duration: 2:50.9
 message: "Government wars build departments that need their problem to survive; a market that pays for treatments found does not; and the treaty's lobbying is the same K Street buying medicine instead of murder, with corruption capped at a public 20% and the other 80% untouchable."
 arc: YOU's placard says ALL FAILED → Wishonia spells MARKETS in alphabet blocks → at the start of a race track, three department buildings walk their problems on leashes and feed them treats while the hungry man starves → down the track, thousands of teams race to a germ and a till that rings only when it drops, the committee is at lunch, the grant writer types a novel, MARKET FOR HEALTH goes up and Ken Burns walks out of his own pan → YOU's placard says BRIBERY → two identical K Street doors, same wine, one puts out a missile and one a flask; YOU sits quietly in the corner → a glass pie in front of the doors, 10% and 10% in plain sight, 80% behind glass the Fat Cat, the Lobbyist and the Politician press their noses on, and the Pentagon still patting its sides
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 8, "Same K Street"
-audio: faq.c4d81e11.mp3, 20:51.3 to 24:08.3
+audio: faq.c12b2c60.mp3, 22:20.4 to 25:11.3
 version: v2
 ---
 
@@ -38,8 +38,8 @@ version: v2
 - act: Wars on X
 - transition_in: cut
 - cue: ""All Wars on X Have Failed"."
-- time: 20:51.3 to 21:00.7 (9.4 s)
-- voiceover: ""All Wars on X Have Failed". Objection: "War on Drugs, War on Poverty, War on Terror all failed. This will too.""
+- time: 22:20.4 to 22:29.2 (8.9 s)
+- voiceover: ""All Wars on X Have Failed" Objection: "War on Drugs, War on Poverty, War on Terror all failed. This will too.""
 - layer: B, plate step-four
 - status: planned
 
@@ -56,7 +56,7 @@ Sound: a clank.
 - act: Wars on X
 - transition_in: cut
 - cue: "Those were government wars"
-- time: 21:00.7 to 21:11.9 (11.2 s)
+- time: 22:29.2 to 22:38.9 (9.7 s)
 - voiceover: "Those were government wars using central planning. This uses markets. The difference is important, and I will explain it using small words because this objection comes up a lot."
 - layer: A, host
 - wishonia: smirk-smile + body-presenting; happy-smile + body-point-right on "markets."; eyeroll-smile + body-counting on "small words"
@@ -75,7 +75,7 @@ Sound: a wooden clack per block.
 - act: Wars on X
 - transition_in: cut
 - cue: "Government wars create bureaucracies"
-- time: 21:11.9 to 21:40.4 (28.5 s)
+- time: 22:38.9 to 23:05.2 (26.3 s)
 - voiceover: "Government "wars" create bureaucracies that need the problem to exist. The War on Drugs needs drug crime. The War on Poverty needs poor people. The War on Terror needs enemies. Each one accidentally created a government department whose continued employment depends on the problem never being solved. The departments are thriving. The problems are also thriving. Everyone is thriving except the people the departments were supposed to help."
 - layer: B, plate race-track (the start)
 - bit: **Three department buildings walk their problems on leashes like pets and feed them treats; all six grow fat, and the man they were meant to help starves at their feet.**
@@ -97,7 +97,7 @@ Sound: jingling leashes; a reel whirr and a crunch of a treat; creaks as the bui
 - act: Wars on X
 - transition_in: same plate (no seam)
 - cue: "Why this is different:"
-- time: 21:40.4 to 22:32.1 (51.7 s)
+- time: 23:05.2 to 23:50.3 (45.1 s)
 - voiceover: "Why this is different: Markets instead of ministries (markets don't need the problem to keep existing). Pays for outcomes, not process (no one gets rich by failing slowly). No bureaucracy to preserve (smart contracts don't have pensions, don't take lunch breaks, and have never once asked for a corner office). Thousands of teams competing instead of one committee deciding (the committee is at lunch). Researchers paid for cures, not grant applications (which are different skills; grant writing is a literary genre, not a scientific method). Call it the Market for Health. Less dramatic. Might actually work. Would definitely not get its own Ken Burns documentary, which is how you know it's a real solution."
 - layer: B, plate race-track
 - bit: **Down the track from the departments, a race of thousands of teams toward a germ, with a till at the finish that rings only when the germ drops;** it is so undramatic that Ken Burns walks out of his own documentary about it.
@@ -120,8 +120,8 @@ Sound: shuffling feet; a starting pistol; thundering feet; a pop as the germ dro
 - act: Bribery
 - transition_in: cut
 - cue: ""This Sounds Like Bribery"."
-- time: 22:32.1 to 22:40.0 (7.9 s)
-- voiceover: ""This Sounds Like Bribery". Objection: "You're just bribing politicians. That's illegal and immoral."."
+- time: 23:50.3 to 23:57.5 (7.2 s)
+- voiceover: ""This Sounds Like Bribery" Objection: "You're just bribing politicians. That's illegal and immoral.""
 - layer: B, plate step-four
 - status: planned
 
@@ -138,8 +138,8 @@ Sound: a clank.
 - act: Bribery
 - transition_in: cut
 - cue: "You're describing lobbying."
-- time: 22:40.0 to 23:18.7 (38.8 s)
-- voiceover: "You're describing lobbying. I know this because I looked up your laws. The mechanics are identical: same K Street firms, same campaign contributions, same revolving door, same wine. The only difference is what you're buying. Current lobbying buys murder contracts: one trillion dollars in defense spending. New lobbying buys medicine contracts: clinical trials. Same K Street. Different product. If you're comfortable with the first one and uncomfortable with the second one, I encourage you to sit quietly and think about why."
+- time: 23:57.5 to 24:32.0 (34.5 s)
+- voiceover: "You're describing lobbying. I know this because I looked up your laws. The mechanics are identical: same K Street firms, same campaign contributions, same revolving door, same wine. The only difference is what you're buying. Current lobbying buys murder contracts: one trillion dollars in military spending. New lobbying buys medicine contracts: clinical trials. Same K Street. Different product. If you're comfortable with the first one and uncomfortable with the second one, I encourage you to sit quietly and think about why."
 - layer: B, plate k-street
 - bit: **Two identical halves of one K Street doorway, every move mirrored, until one puts out a missile and the other a flask.**
 - status: planned
@@ -161,7 +161,7 @@ Sound: two of everything at once: envelope drops, door spins, a wine pour, a cli
 - act: Bribery
 - transition_in: same plate (no seam)
 - cue: "This system caps corruption"
-- time: 23:18.7 to 24:08.3 (49.5 s)
+- time: 24:32.0 to 25:11.3 (39.3 s)
 - voiceover: "This system caps corruption at twenty percent and makes it fully transparent. Ten percent goes to investors (money for money, no influence attached). Ten percent goes to political incentives (campaign support and post-office careers for politicians who vote yes). The remaining eighty percent goes to clinical trials via wishocratic allocation, where every human votes on priorities. That eighty percent is untouchable by lobbyists, investors, or politicians. Humans find the twenty percent cap suspicious. No government budget in history has a lower corruption rate. Your skepticism about twenty percent corruption is itself a review of the system it's trying to protect."
 - layer: B, plate k-street (the pavement)
 - bit: **A glass pie: two thin slices in plain sight and a big one behind glass that everyone with influence presses his nose on; the skeptic inspects the glass while the Pentagon, behind him, is still looking for $2.5 trillion.**

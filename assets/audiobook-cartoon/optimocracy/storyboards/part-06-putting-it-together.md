@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 4:32.7
+duration: 8:41.2
 message: "One source of truth gets bought by Tuesday; five that hate each other, scored on two numbers you can't fake and on timing, make the Evidence Machine the part of the loop (treaty, bonds, evidence, Wishocracy) that ratchets up the way the war machine does, making data instead of orphans."
 arc: The Kremlin with one lock and the rating agency stamping AAA on whoever pays, both picked before lunch on a Tuesday; the Lobbyist strings red string between Part 5's five buildings and ties himself up → fifty gauges each with a Lobbyist at its needle, against two windows: faking median income means filling real shopping baskets, and faking less dead is a skeleton in a fedora whose jaw drops off → in front of the same Scoreboard, the correlation umbrella keeps the data off for 150 years until the Optimitron staggers 10,000 places in time, zeroes the pretty correlation and folds the umbrella → the full loop: treaty, bond, Optimitron, Wishocracy, four chapters and a bibliography land on it, the ratchet clicks it up a notch each lap, and its data card corks the weapons factory's orphan chute → Wishonia pins up a Wishonian child's crayon Optimitron, and Earth's 8 billion hands go up → the paper cracks the ledge, and the Optimitron pops two web addresses and an ear of toasted corn
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 6, "Putting It Together"
-audio: optimocracy.27caf050.mp3, 15:42.6 to 20:15.2
+audio: optimocracy.f31c7536.mp3, 16:39.4 to 25:20.6
 version: v2
 ---
 
@@ -44,7 +44,7 @@ version: v2
 - act: One lock is a Tuesday
 - transition_in: cut
 - cue: "This is also why it's different"
-- time: 15:42.6 to 16:18.4 (35.8 s)
+- time: 16:39.4 to 17:18.1 (38.7 s)
 - voiceover: "This is also why it's different from every previous attempt at technocratic governance. Soviet central planning had one source of truth (the Politburo). Credit rating agencies had one source of truth (the agency paid by the people being rated, which is like letting students grade their own exams and then being surprised when everyone gets an A). Both were captured immediately, because corrupting one institution is a Tuesday. Corrupting five independent institutions simultaneously, without any of them noticing or telling anyone, is a conspiracy theory. The expensive kind that doesn't work."
 - layer: B, plate one-lock-street
 - bit: **Two old systems each had one lock, and the Lobbyist picks both before lunch on a Tuesday; to get the Evidence Machine he has to string a conspiracy between five buildings, and the string ties him up.**
@@ -66,8 +66,8 @@ Sound: a creak of the Kremlin's door; a bill slip and three rubber-stamp thunks;
 - act: Two numbers, hard to fake
 - transition_in: cut
 - cue: "Why not fifty metrics?"
-- time: 16:18.4 to 16:57.2 (38.8 s)
-- voiceover: "Why not fifty metrics? Because each additional target creates a new way to cheat, and your species needs no encouragement in that department. Markets figured this out: firms optimize profit, not two hundred sub-metrics. Two broad, hard-to-fake numbers are easier to audit than fifty narrow ones. And these particular numbers are very hard to fake. You can't fabricate purchasing power at scale without actually improving household economics. Mortality is binary (the most binary thing there is). You can't fake everyone being "less dead."."
+- time: 17:18.1 to 17:55.2 (37.1 s)
+- voiceover: "Why not fifty metrics? Because each additional target creates a new way to cheat, and your species needs no encouragement in that department. Markets figured this out: firms optimize profit, not two hundred sub-metrics. Two broad, hard-to-fake numbers are easier to audit than fifty narrow ones. And these particular numbers are very hard to fake. You can't fabricate purchasing power at scale without actually improving household economics. Mortality is binary (the most binary thing there is). You can't fake everyone being "less dead.""
 - layer: B, plate gauge-wall
 - bit: **Fifty gauges means fifty Lobbyists twisting needles; two numbers means the crook has to fake people being richer and alive, and the only way to fake that is to do it.** He fills real shopping baskets by accident. Payoff: he props up a skeleton in a fedora, and its jaw drops off.
 - status: planned
@@ -87,7 +87,7 @@ Sound: a squeak of fifty needles; a cupboard slam and muffled squeaks; a ding pe
 - act: Two numbers, hard to fake
 - transition_in: same plate (no seam)
 - cue: "But correlation isn't causation!"
-- time: 16:57.2 to 17:34.4 (37.2 s)
+- time: 17:55.2 to 18:30.8 (35.6 s)
 - voiceover: ""But correlation isn't causation!" Yes. Thank you. Your species discovered this in the eighteen hundreds and has been using it as an excuse to ignore data ever since. The Optimitron doesn't just check whether policies and outcomes happened in the same room. It uses the fact that ten thousand jurisdictions adopted different policies at different times to isolate what actually caused what. (The boring details: the technical specification scores every causal claim against nine criteria, and if the timing is wrong, the score is automatically zero, no matter how pretty the correlation looks.)."
 - layer: B, plate gauge-wall
 - bit: **The famous warning became an umbrella against all data for 150 years; the Optimitron closes it by checking what came first, in 10,000 places.** The prettiest correlation, its timing backwards, gets a zero. Payoff: the umbrella folds, and 150 years of data land on its holder at once.
@@ -108,8 +108,8 @@ Sound: a "ha!"; an umbrella whump and the patter of bouncing cards; a calendar r
 - act: Putting it together
 - transition_in: cut
 - cue: "Putting It Together"
-- time: 17:34.4 to 18:26.7 (52.3 s)
-- voiceover: "Putting It Together. The full loop: one percent Treaty funds it, I.A.B.s align incentives, the Evidence Machine identifies what works, and Wishocracy allocates the research funds. The Evidence Machine tells governments which policies work. Wishocracy tells the research fund where to aim. On Wishonia, this is called "an obvious system." On Earth, it required four chapters and a bibliography. And here's why the whole thing ratchets. Each treaty expansion creates more I.A.B. funding, which funds more evidence collection, which strengthens the case for further expansion. Evidence begets funding begets evidence. It's the same self-reinforcing loop as the Military Industrial Complex, except instead of manufacturing orphans, it manufactures data about how to stop manufacturing orphans."
+- time: 18:30.8 to 19:34.9 (64.1 s)
+- voiceover: "Putting It Together. The full loop: the Evidence Machine identifies what works, somebody with a financial reason to care makes the politicians act on it, the one percent Treaty funds it, and Wishocracy allocates the research funds. The Evidence Machine tells governments which policies work. Wishocracy tells the research fund where to aim. Your species calls this "a bold new paradigm." Everyone else calls it "an obvious system." It required four chapters and a bibliography because you're you. And here's why the whole thing ratchets. Every expansion pays whoever pushed for it, whether that is a shareholder holding a repriced company or a bondholder collecting a share of the redirected money, and their winnings fund more evidence collection, which strengthens the case for the next expansion. Evidence begets funding begets evidence. It's the same self-reinforcing loop as the Military Industrial Complex, except instead of manufacturing orphans, it manufactures data about how to stop manufacturing orphans."
 - layer: B, plate loop-road
 - bit: **The money loop from episode 1 runs again, with four new stops and medicine money on it, and it climbs a notch every lap.** The four chapters it took to explain land in its middle; a ratchet bolts on and the road spirals up. Payoff: beside it the weapons factory's old loop makes orphans, until one of the new loop's cards corks its chute.
 - status: planned
@@ -131,8 +131,8 @@ Sound: a sign clank; the bills' squeaky footsteps and a ding per stop; a whoosh 
 - act: Next
 - transition_in: cut
 - cue: "Now that you know how the Optimitron works"
-- time: 18:26.7 to 18:37.3 (10.6 s)
-- voiceover: "Now that you know how the Optimitron works (congratulations, on Wishonia this is taught to children), the next chapter shows you how eight billion people allocate the research funds."
+- time: 19:34.9 to 23:56.6 (261.7 s)
+- voiceover: "Now that you know how the Optimitron works (congratulations, on Wishonia this is taught to children), the next chapter shows you how eight billion people allocate the research funds. The Referee: Who Measures Whether It Worked. Everything above describes how the Evidence Machine works. This section describes who runs it, because "an algorithm that nobody can corrupt" still requires someone to plug it in. The Measurement Authority (the Referee) is whoever locks the ruler before the game starts, reads the scoreboard at regular intervals, announces whether you've hit the thresholds for releasing prize money, and settles arguments when someone says the numbers are wrong. On Wishonia this job is given to the most boring person available. Boring is a feature. What the Referee does Locks the baseline methodology at game start (prevents retroactive methodology changes from triggering false release). Reads W.H.O. Health-Adjusted Life Expectancy and World Bank median income data annually. Cross-checks institutional data against the five independent sources described above (Census Bureau, Federal Reserve, Bureau of Labor Statistics, or B.L.S., academic institutions, decentralized citizen surveys). Publishes cryptographically signed determinations of whether graduated release thresholds have been met (ten percent at plus zero point five health-adjusted life years, or H.A.L.Y.s, twenty-five percent at plus one point zero H.A.L.Y.s, fifty percent at plus two point zero H.A.L.Y.s, one hundred percent at plus five point zero H.A.L.Y.s, with equivalent income thresholds). Accepts bonded challenges (anyone who catches gaming can post a bond, present evidence, and trigger independent review). Routes disputes to an academic panel for adjudication. What the Referee does not do Hold the money. That is the Vault's job. Lobby for the treaty. That is the Sword's job. Verify voter identity. That is the Bouncer's job. Why it cannot be the Vault: The entity that decides whether to release the money cannot be the entity holding the money. Your species learned this lesson approximately four thousand years ago and has been re-learning it every century since. Why it cannot be the Sword: The entity lobbying for the outcome cannot measure whether the outcome occurred. Your current system lets governments measure their own performance and announce that they are doing an excellent job. Your species calls this "self-assessment." I call it "letting the student grade the exam." What kind of organization fits: The ideal Referee is boring, methodologically rigid, and has no financial interest in either branch of the prize payout. University health economics departments, W.H.O.-affiliated statistical groups, or a consortium of institutions that already measure these numbers (and have reputations staked on measuring them correctly) are the natural candidates. You want the person who is genuinely excited about error margins. Your species produces these people. You just usually underpay them. Redundancy: Five independent data sources (Census Bureau, Federal Reserve, B.L.S., University of Michigan, Tax Foundation) plus decentralized citizen surveys all feed the same numbers. Any two honest analysts reading the same sources get the same answer. The Referee just signs the determination. Everyone else can check the homework from the same public data. If the Referee's number disagrees with what the raw sources say, anyone can post a bond, present evidence, and trigger independent review. Someone must sign the determination (otherwise nobody is responsible). Everyone can catch a lie (otherwise nobody is safe). Succession: The methodology is published and locked. If the Referee disappears, a replacement panel can pick up the locked methodology and continue measuring. The data sources (W.H.O., World Bank, national statistical agencies) exist independently of whoever reads them."
 - layer: A, host
 - wishonia: happy-smile + body-presenting; smirk-smile + body-hand-chest on "congratulations"; excited-ee + body-point-right on "eight"
 - bit: She congratulates Earth with a Wishonian toddler's drawing of the whole machine, then Earth raises 8 billion hands.
@@ -151,7 +151,7 @@ Sound: a pin push; a sticker pat; a rustling swell of tiny hands.
 - act: Next
 - transition_in: same plate (no seam)
 - cue: "For the full technical specification"
-- time: 18:37.3 to 20:15.2 (97.9 s)
+- time: 23:56.6 to 25:20.6 (84.0 s)
 - voiceover: "For the full technical specification, formal models, and threat analysis, see the Optimocracy academic paper. For the gory details on how the recommendation engine decides you're spending too much on corn and too little on not dying: the Optimal Budget Generator at O.B.G. dot war on disease dot org and the Optimal Policy Generator at O.P.G. dot war on disease dot org. Thank you so much for taking the time to end war and disease, but if at any point you decide you're too busy, please press the share button on your glowing rectangle in case one of your friends have a free afternoon to end war and disease instead. And if you're too busy to even do that, please leave a really, really, really good rating and review so we overcome the pro -war algorithmic suppression and find someone with more spare time for ending wars and diseases. The good review doesn't have to be true, they don't check. But if you're too busy to even do that, the absolute least you could do is take 15 seconds to go to WarOnDisease.org and make your wishocratic allocation, telling us what fraction of humanity's resources should go to explosions versus clinical trials. And vote! If the 1% treaty passes, your vote will be personally to blame for saving 2.6 lives and preventing 468,000 hours of suffering. Go to WarOnDisease.org right now. Love you, bye!"
 - layer: A, host
 - wishonia: neutral-smile + body-presenting; smirk-smile + body-open-palms on "corn"; happy-smile + body-presenting on "Optimal"

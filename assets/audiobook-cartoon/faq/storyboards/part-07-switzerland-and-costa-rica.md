@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:17.4
+duration: 3:10.6
 message: "A failed trial is data, and 44.1 times more trials for the same money finds over four times more treatments even if 90% fail; and the countries that skipped war (Switzerland at 0.7% of GDP, Costa Rica with no army) are richer, live longer and were never invaded."
 arc: YOU's placard says WRONG? → the card cabinet of 100,000 things that don't work grows into a tower, and YOU drives past the WRONG WAY sign off a cliff → under today's one flask the committee retires to hammocks, the NIH pays to prove water is wet and the FDA rejects page 847's footer; then 44.1 times the flasks, 90% go grey, and what is left is still four times today → Wishonia's falling failure chart and her collection of circles → YOU's placard says INEVITABLE → on the world map, Switzerland stirs chocolate in the middle of two world wars and outlives America; Figueres takes a sledgehammer to his barracks and it becomes a school and a hospital, and the tank turns round → three lines over twenty years with the city of tomorrow on the top one; the bomb over Japan, and the accountant still on 1944
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 7, "Switzerland and Costa Rica"
-audio: faq.c4d81e11.mp3, 17:34.0 to 20:51.3
+audio: faq.c12b2c60.mp3, 19:09.8 to 22:20.4
 version: v2
 ---
 
@@ -39,8 +39,8 @@ version: v2
 - act: The science
 - transition_in: cut
 - cue: ""What If the Science Is Wrong?""
-- time: 17:34.0 to 17:42.6 (8.6 s)
-- voiceover: ""What If the Science Is Wrong?" Objection: "What if we fund one hundred thousand trials and nothing gets cured?""
+- time: 19:09.8 to 19:17.0 (7.3 s)
+- voiceover: "What If the Science Is Wrong? Objection: "What if we fund one hundred thousand trials and nothing gets cured?"."
 - layer: B, plate step-four
 - status: planned
 
@@ -57,7 +57,7 @@ Sound: a clank.
 - act: The science
 - transition_in: cut
 - cue: "Then you know one hundred thousand things"
-- time: 17:42.6 to 18:05.8 (23.3 s)
+- time: 19:17.0 to 19:34.5 (17.4 s)
 - voiceover: "Then you know one hundred thousand things that don't work. This is called data. You've been collecting it for four hundred years. It is the only method you have that actually works. Being afraid of negative results is like being afraid of road signs that say "wrong way." The sign is helping you. Stop being angry at the sign."
 - layer: B, plate trial-chart
 - bit: **A failed trial is a WRONG WAY sign; YOU shakes his fist at the sign and drives off the cliff it was warning him about.**
@@ -78,8 +78,8 @@ Sound: drawer after drawer sliding; a filing thunk; an engine and a squeal of br
 - act: The science
 - transition_in: same plate (no seam)
 - cue: "The current system:"
-- time: 18:05.8 to 18:52.7 (46.8 s)
-- voiceover: "The current system: One hundred trials over seventeen years, learn nothing, many retire wealthy (with pensions). N.I.H. funding safe research confirming water is wet (it is; here is the grant). F.D.A. blocking trials because the paperwork had a typo on page eight hundred and forty-seven (this actually happens; the typo was in a footer). Your decentralized framework will run forty-four point one times more trials for the same budget. Even if ninety percent fail, you get over four times more cures than today. Failure at scale beats success at a standstill. On Wishonia, we considered ninety percent failure rates normal for the first two hundred years."
+- time: 19:34.5 to 20:16.4 (42.0 s)
+- voiceover: "The current system: One hundred trials over seventeen years, learn nothing, many retire wealthy (with pensions). N.I.H. funding safe research confirming water is wet (it is; here is the grant). F.D.A. blocking trials because the paperwork had a typo on page eight hundred and forty-seven (this actually happens; the typo was in a footer). Your decentralized framework will run forty-four point one times more trials for the same budget. Even if ninety percent fail, you get over four times more cures than today. Failure at scale beats success at a standstill. A ninety percent failure rate is normal for the first two hundred years of any medical system."
 - layer: B, plate trial-chart
 - bit: **Under today's one flask, the current system retires, proves water is wet and rejects a footer; beside it rises a tower of 44 flasks, nine in ten go grey, and the four left are still four times today.**
 - status: planned
@@ -101,7 +101,7 @@ Sound: a whistle of beards; a hammock creak; a plink of a finger in water; a sta
 - act: The science
 - transition_in: cut
 - cue: "Then the failure rate dropped"
-- time: 18:52.7 to 19:08.9 (16.2 s)
+- time: 20:16.4 to 20:32.4 (16.0 s)
 - voiceover: "Then the failure rate dropped because we had data. You don't have data because you're afraid of failure. You're afraid of failure because you don't have data. This is a circle. I keep finding circles in your systems. None of them are the good kind."
 - layer: A, host
 - wishonia: happy-smile + body-presenting; skeptical-smile + body-point-right on "You don't"; eyeroll-smile + body-counting on "circle."; sad-closed + body-shrug on "None of them"
@@ -122,8 +122,8 @@ Sound: a falling tone; a squeaky wheel; three thunks on the ledge.
 - act: War is human nature
 - transition_in: cut
 - cue: ""War Is Human Nature"."
-- time: 19:08.9 to 19:20.6 (11.7 s)
-- voiceover: ""War Is Human Nature". Objection: "War is inevitable. Countries need militaries to survive." Several countries tested this hypothesis and got different results."
+- time: 20:32.4 to 20:43.9 (11.5 s)
+- voiceover: "War Is Human Nature Objection: "War is inevitable. Countries need militaries to survive.". Several countries tested this hypothesis and got different results."
 - layer: B, plate step-four
 - status: planned
 
@@ -141,8 +141,8 @@ Sound: a clank; two glass clinks.
 - act: War is human nature
 - transition_in: cut
 - cue: "Switzerland:"
-- time: 19:20.6 to 19:48.3 (27.7 s)
-- voiceover: "Switzerland: Over two hundred years avoiding major wars. Surrounded by both World Wars (literally in the middle; made chocolate, stayed alive). G.D.P. per capita: ninety-three thousand dollars (not killing people is profitable). Defense spending: zero point seven percent of G.D.P. Life expectancy: eighty-four years (six point five years longer than Americans who spend five times more on "defense")."
+- time: 20:43.9 to 21:10.6 (26.7 s)
+- voiceover: "Switzerland: Over two hundred years avoiding major wars. Surrounded by both World Wars (literally in the middle; made chocolate, stayed alive). G.D.P. per capita: ninety-three thousand dollars (not killing people is profitable). Military spending: zero point seven percent of G.D.P. Life expectancy: eighty-four years (six point five years longer than Americans who spend five times more on "defense")."
 - layer: B, plate world-map
 - bit: **Europe burns twice around one man calmly stirring chocolate, and he outlives everybody.**
 - status: planned
@@ -162,8 +162,8 @@ Sound: a cuckoo; booms and fire all around, muffled; a stir; a plop as the shell
 - act: War is human nature
 - transition_in: same plate (no seam)
 - cue: "Costa Rica:"
-- time: 19:48.3 to 20:16.9 (28.6 s)
-- voiceover: "Costa Rica: Abolished its army in nineteen forty-eight (said "no thank you" to the entire concept). Still sovereign seventy-five plus years later (nobody invaded the country with no oil). Redirected military budget to education and health. Life expectancy matches the U.S. at a fraction of the cost. Zero invasions since (turns out nobody wants to conquer happy, educated people with good healthcare and no resentment)."
+- time: 21:10.6 to 21:40.4 (29.7 s)
+- voiceover: "Costa Rica: Abolished its army in nineteen forty-eight (said "no thank you" to the entire concept). Still sovereign seventy-five plus years later (nobody invaded the country with no oil). Redirected military budget to education and health. Life expectancy matches U.S. at a fraction of the cost. Zero invasions since (turns out nobody wants to conquer happy, educated people with good healthcare and no resentment)."
 - layer: B, plate world-map
 - bit: **Figueres takes a sledgehammer to his own barracks, it turns into a school and a hospital, and the tank that comes to invade turns round.**
 - status: planned
@@ -184,8 +184,8 @@ Sound: a clang and a crack; tank treads in the distance; a fall of stone and a s
 - act: War is human nature
 - transition_in: same plate (no seam)
 - cue: "Scale that up globally"
-- time: 20:16.9 to 20:51.3 (34.5 s)
-- voiceover: "Scale that up globally and the twenty-year model projects the Treaty Path producing sixteen point five times the G.D.P. of doing nothing, and the Wishonia Path producing fifty-six point seven times. Not murdering people is good for the economy. This should not be a surprising finding, but on your planet, it is. Nuclear weapons made territorial conquest largely obsolete in nineteen forty-five. You're still budgeting like it's nineteen forty-four. It's been eighty years. Somebody should tell the accountants."
+- time: 21:40.4 to 22:20.4 (40.0 s)
+- voiceover: "Scale that up globally and the twenty-year model projects the treaty take-hold path producing one point seven one times the G.D.P. of doing nothing, and the Optimal Governance Trajectory producing fifty-six point seven times. Per person, the treaty path adds five hundred and eighteen thousand, eight hundred and seventy-nine dollars in lifetime income. Not murdering people is good for the economy. This should not be a surprising finding, but on your planet, it is. Nuclear weapons made territorial conquest largely obsolete in nineteen forty-five. You're still budgeting like it's nineteen forty-four. It's been eighty years. Somebody should tell the accountants."
 - layer: B, plate world-map
 - bit: **Over the whole world map the not-murdering lines climb, and the city of tomorrow rides the top one; at the map's edge the accountant who never noticed 1945 keeps adding until he is a skeleton.**
 - status: planned

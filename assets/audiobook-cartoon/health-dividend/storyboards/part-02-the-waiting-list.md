@@ -6,7 +6,7 @@ arc: Title card (ticket 6,650, now serving 15) → the queue along the year rule
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 2, "The Waiting List"
-audio: health-dividend.77700cce.mp3, 04:28.9 to 06:26.9
+audio: health-dividend.7548a91e.mp3, 04:26.8 to 06:24.7
 version: v2
 ---
 
@@ -42,7 +42,7 @@ version: v2
 - act: Title
 - transition_in: cut
 - cue: "The Waiting List."
-- time: 04:28.9 to 04:31.0 (2.1 s)
+- time: 04:26.8 to 04:28.9 (2.2 s)
 - voiceover: "The Waiting List."
 - layer: A, title card
 - bit: The ticket says 6,650 and the board says 15.
@@ -60,7 +60,7 @@ Sound: a whirr; a ticket tear; a squelch.
 - act: The queue
 - transition_in: cut
 - cue: "You met the queue"
-- time: 04:31.0 to 05:13.6 (42.6 s)
+- time: 04:28.9 to 05:12.1 (43.2 s)
 - voiceover: "You met the queue in the untapped therapeutic frontier: six thousand six hundred and fifty diseases with zero approved treatments, and fifteen getting their first treatment per year. At that rate, you clear the backlog in four hundred and forty-three years. I will let you sit with that number for a moment. It is longer than your species has had writing. For context, four hundred and forty-three years ago, Shakespeare was writing plays, Galileo was building telescopes, and your species already had printing presses, universities, and intercontinental shipping. You just had not gotten around to curing most diseases. At this pace, you still will not for another four hundred and forty-three years."
 - layer: B, plate the-queue
 - bit: **A queue of humans walking their diseases on leashes, served 15 a year, runs 443 years in both directions.** They sit down for "a moment" and the moment turns them into skeletons; 443 years back, Shakespeare and Galileo are in the same queue and go the same way; 443 years forward, the humans of 2469 are still in it.
@@ -83,7 +83,7 @@ Sound: footsteps and little germ yips; a whoosh down the line; the shutter up an
 - act: The queue
 - transition_in: same plate (no seam)
 - cue: "Apply the twelve point"
-- time: 05:13.6 to 05:33.0 (19.4 s)
+- time: 05:12.1 to 05:33.9 (21.7 s)
 - voiceover: "Apply the twelve point three times multiplier. Instead of fifteen diseases getting their first treatment per year, you get one hundred and eighty-five diseases per year. The queue clears in thirty-six years instead of four hundred and forty-three years. The average untreated disease gets its first treatment two hundred and four years earlier."
 - layer: B, plate the-queue
 - bit: **12.3 times the trials is literally 12.3 doors: the window, eleven trial doors and a cat flap.** The queue splits and runs; the ruler shrinks from 2469 to 2062; a man halfway down the line, carving his own headstone, gets his bottle instead.
@@ -104,8 +104,8 @@ Sound: a stamp; eleven door bangs and a little flap; a stampede of feet; pops as
 - act: The queue
 - transition_in: cut
 - cue: "That is the difference between"
-- time: 05:33.0 to 05:47.3 (14.3 s)
-- voiceover: "That is the difference between "your grandchildren might see a cure" and "you might see a cure." On Wishonia, we consider this a meaningful distinction. On Earth, it apparently requires a seventy-eight-page chapter to justify."
+- time: 05:33.9 to 05:47.2 (13.3 s)
+- voiceover: "That is the difference between "your grandchildren might see a cure" and "you might see a cure." Most observers consider this a meaningful distinction. On Earth, it apparently requires a seventy-eight-page chapter to justify."
 - layer: A, host
 - wishonia: neutral-smile + body-presenting; happy-smile + body-point-right on "you"; happy-smile + body-hand-chest on "Wishonia,"; eyeroll-smile + body-shrug on "seventy-eight-page"
 - bit: **One photo on the readout, two versions: YOU's headstone or YOU.** Then the 78-page argument for it lands on the console.
@@ -126,7 +126,7 @@ Sound: a camera-shutter click on each snapshot; a slam and a crack; a yelp; the 
 - act: The delay
 - transition_in: cut
 - cue: "Your species figured out how"
-- time: 05:47.3 to 06:18.0 (30.7 s)
+- time: 05:47.2 to 06:16.6 (29.4 s)
 - voiceover: "Your species figured out how to split atoms in six years during a war, but letting a cancer patient take a pill that passed safety testing requires the gestation period of three consecutive elephants. The twelve point three times multiplier compresses the elephant parade. But trial capacity is only half the delay. Once a drug passes safety testing, your regulatory system sits on it for another eight point two years to confirm it works well enough, while people who could be taking it die instead."
 - layer: B, plate the-bedside
 - bit: **Everything that stands between a dying patient and a pill that already passed safety testing.** Six calendar pages are enough for the bomb; for the pill it takes three pregnant elephants in a row. 12.3× squashes them into one, whose baby brings the bottle, and then the FDA building sits down on the bottle like a hen on an egg for 8.2 years.
@@ -148,7 +148,7 @@ Sound: a calendar tear per page; a boom; heavy footfalls; three soft pops for th
 - act: The delay
 - transition_in: cut back to the-queue
 - cue: "Add the capacity acceleration and"
-- time: 06:18.0 to 06:26.9 (8.8 s)
+- time: 06:16.6 to 06:24.7 (8.1 s)
 - voiceover: "Add the capacity acceleration and the efficacy lag together: two hundred and twelve years of dying, condensed into not dying."
 - layer: B, plate the-queue
 - bit: **The queue that died sitting down stands up alive in a city of tomorrow.** Payoff for sit-with-that-number.

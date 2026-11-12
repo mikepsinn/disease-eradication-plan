@@ -23,1421 +23,1841 @@ you can trade the nuclear warheads for medicine.
 And it's not even a crime.
 
 7
-00:01:40,604 --> 00:01:41,404
+00:01:40,834 --> 00:01:41,584
 Optimocracy:
 
 8
-00:01:41,464 --> 00:01:42,264
+00:01:41,664 --> 00:01:42,724
 The Evidence Machine
 
 9
-00:01:42,864 --> 00:01:46,464
-On Wishonia, the Optimitron comes free with your first government.
+00:01:43,404 --> 00:01:46,504
+The Optimitron comes free with your first government.
 
 10
-00:01:47,444 --> 00:01:50,184
+00:01:47,144 --> 00:01:50,164
 Its Optimal Budget Generator (O.B.G.)
 
 11
-00:01:50,364 --> 00:01:52,844
+00:01:50,304 --> 00:01:53,264
 and Optimal Policy Generator (O.P.G.)
 
 12
-00:01:53,344 --> 00:01:57,084
+00:01:53,524 --> 00:01:57,724
 check which policies work by looking at the ten thousand places that already
 
 13
-00:01:57,084 --> 00:01:57,704
+00:01:57,724 --> 00:01:58,444
 tried them.
 
 14
-00:01:58,244 --> 00:02:01,224
+00:01:59,164 --> 00:02:02,784
 Your species skipped this step and went straight to arguing.
 
 15
-00:02:01,784 --> 00:02:06,284
-Incentive Alignment Bonds make saving lives and advancing careers the same
+00:02:03,424 --> 00:02:06,884
+Ten thousand jurisdictions have already tried your policy.
 
 16
-00:02:06,284 --> 00:02:06,784
-sentence.
+00:02:07,924 --> 00:02:09,184
+They wrote down what happened.
 
 17
-00:02:07,424 --> 00:02:07,924
-One problem:
+00:02:09,624 --> 00:02:12,444
+Your species skipped that step and went straight to arguing.
 
 18
-00:02:08,464 --> 00:02:10,514
-how do you know which policies to recommend?
-
-19
-00:02:11,444 --> 00:02:13,364
+00:02:13,464 --> 00:02:15,184
 The Only Two Numbers That Matter.
 
-20
-00:02:14,244 --> 00:02:14,804
+19
+00:02:16,364 --> 00:02:16,864
 Two numbers.
 
-21
-00:02:15,324 --> 00:02:16,664
+20
+00:02:17,264 --> 00:02:17,764
 Just two.
 
-22
-00:02:16,664 --> 00:02:19,164
+21
+00:02:18,764 --> 00:02:20,944
 Real after-tax median income growth.
 
-23
-00:02:19,944 --> 00:02:22,064
+22
+00:02:21,604 --> 00:02:23,824
 Did the person in the middle get richer this year?
 
-24
-00:02:22,664 --> 00:02:24,084
+23
+00:02:24,324 --> 00:02:25,024
 Not G.D.P.
 
-25
-00:02:24,084 --> 00:02:27,604
+24
+00:02:25,184 --> 00:02:28,524
 per capita, which looks great when three billionaires move into your city
 
-26
-00:02:27,604 --> 00:02:29,424
+25
+00:02:28,524 --> 00:02:30,284
 while everyone else's rent doubles.
 
-27
-00:02:30,364 --> 00:02:32,144
+26
+00:02:31,404 --> 00:02:32,884
 Median healthy life years.
 
-28
-00:02:32,804 --> 00:02:36,654
+27
+00:02:33,644 --> 00:02:36,464
 How many years can the person in the middle expect to live in good health?
 
-29
-00:02:37,524 --> 00:02:41,844
+28
+00:02:37,504 --> 00:02:40,724
 Not average life expectancy, which counts the billionaire who replaced his
 
-30
-00:02:41,844 --> 00:02:45,544
+29
+00:02:40,724 --> 00:02:43,704
 blood six times as canceling out someone who died at forty.
 
-31
-00:02:47,264 --> 00:02:48,164
+30
+00:02:45,104 --> 00:02:45,804
 Why these two?
 
-32
-00:02:48,744 --> 00:02:52,544
+31
+00:02:46,564 --> 00:02:49,784
 Because everything important your governments do eventually makes people
 
+32
+00:02:49,784 --> 00:02:52,724
+richer or less dead, and if it doesn't do either,
+
 33
-00:02:52,544 --> 00:02:56,824
-richer or less dead, and if it doesn't do either, it wasn't important.
+00:02:53,404 --> 00:02:54,544
+it wasn't important.
 
 34
-00:02:57,984 --> 00:03:01,884
+00:02:55,324 --> 00:02:58,444
 Your government currently measures success by how much money it spends,
 
 35
-00:03:02,264 --> 00:03:06,064
+00:02:59,044 --> 00:03:02,024
 which is like a restaurant measuring success by how much food it buys.
 
 36
-00:03:06,684 --> 00:03:09,924
+00:03:02,764 --> 00:03:05,384
 You could buy a mountain of ingredients and poison everyone.
 
 37
-00:03:10,564 --> 00:03:12,744
+00:03:05,744 --> 00:03:08,084
 By your current metrics, that's a good year.
 
 38
-00:03:13,844 --> 00:03:18,864
+00:03:09,544 --> 00:03:13,424
 Your species engineered a pocket-sized device with sixteen billion transistors,
 
 39
-00:03:19,084 --> 00:03:22,824
+00:03:14,084 --> 00:03:17,584
 mass spectrometry, and supply chains spanning forty-three countries.
 
 40
-00:03:23,564 --> 00:03:29,024
-Then you built an algorithm that A B tests billions of user interactions,
+00:03:18,484 --> 00:03:22,584
+Then you built an algorithm that A/B tests billions of user interactions,
 
 41
-00:03:29,444 --> 00:03:33,784
+00:03:23,184 --> 00:03:27,244
 optimizing hundreds of signals in real time, so that device can show you
 
 42
-00:03:33,784 --> 00:03:35,604
+00:03:27,244 --> 00:03:28,944
 the optimal twerking video.
 
 43
-00:03:36,264 --> 00:03:40,164
+00:03:29,984 --> 00:03:34,284
 That is more empirical rigor than your species applies to allocating its
 
 44
-00:03:40,304 --> 00:03:41,084
+00:03:34,284 --> 00:03:35,004
 federal budget.
 
 45
-00:03:41,964 --> 00:03:46,724
+00:03:36,264 --> 00:03:39,984
 The federal budget decides who gets medicine, who gets clean water, and
 
 46
-00:03:46,724 --> 00:03:47,324
+00:03:39,984 --> 00:03:41,104
 who gets bombed.
 
 47
-00:03:48,504 --> 00:03:53,164
-Fifty-five million people die every year from diseases you already have
+00:03:41,784 --> 00:03:45,644
+Fifty-five million people die every year from diseases and aging, mostly
 
 48
-00:03:53,164 --> 00:03:53,984
-treatments for.
+00:03:45,644 --> 00:03:48,604
+from diseases with no treatment, because nobody ran the trials.
 
 49
-00:03:54,724 --> 00:03:56,204
+00:03:49,344 --> 00:03:50,683
 You optimized the twerking.
 
 50
-00:03:56,664 --> 00:03:59,384
+00:03:50,963 --> 00:03:52,894
 You did not optimize the not-dying.
 
 51
-00:04:01,024 --> 00:04:05,084
+00:03:54,264 --> 00:03:56,824
 Here's what makes these numbers useful beyond measurement:
 
 52
-00:04:05,124 --> 00:04:07,764
+00:03:57,784 --> 00:04:00,124
 your species already agrees on both goals.
 
 53
-00:04:08,524 --> 00:04:11,604
+00:04:00,844 --> 00:04:03,784
 Nobody campaigns on "make people poorer and sicker."
 
 54
-00:04:12,324 --> 00:04:17,084
+00:04:04,524 --> 00:04:09,974
 But without a scoreboard, policy debates become tribal arguments about vibes.
 
 55
-00:04:17,684 --> 00:04:18,804
+00:04:10,484 --> 00:04:11,624
 You forgot the question.
 
 56
-00:04:19,604 --> 00:04:23,924
+00:04:12,464 --> 00:04:16,304
 You're not arguing about whether people should be healthier and richer;
 
 57
-00:04:23,944 --> 00:04:28,264
+00:04:16,344 --> 00:04:21,004
 you're arguing about which policies achieve that, and nobody's checking.
 
 58
-00:04:29,024 --> 00:04:31,344
+00:04:21,524 --> 00:04:23,964
 Once you check, most of the argument disappears,
 
 59
-00:04:32,104 --> 00:04:35,204
+00:04:24,744 --> 00:04:28,544
 because it turns out the answer isn't left or right.
 
 60
-00:04:35,784 --> 00:04:39,564
+00:04:28,764 --> 00:04:32,884
 It's in the data from the ten thousand places that already tried it.
 
 61
-00:04:41,304 --> 00:04:42,814
-Now that you know what we're measuring,
+00:04:34,104 --> 00:04:37,864
+Now that you know what we're measuring, here's how badly your species is
 
 62
-00:04:43,544 --> 00:04:45,804
-here's how badly your species is doing at it.
+00:04:37,864 --> 00:04:39,234
+doing at it.
 
 63
-00:04:46,904 --> 00:04:48,694
+00:04:39,344 --> 00:04:40,564
 The Price of Not Checking.
 
 64
-00:04:49,504 --> 00:04:54,304
-The United States spends three hundred percentage points more of G.D.P.
+00:04:41,444 --> 00:04:44,244
+The United States spends three percent of G.D.P.
 
 65
-00:04:54,344 --> 00:04:56,004
-than Switzerland on government.
+00:04:44,484 --> 00:04:45,724
+more than Switzerland on government.
 
 66
-00:04:56,764 --> 00:05:00,394
-Switzerland gets six point five more years of life expectancy.
+00:04:46,584 --> 00:04:50,144
+Switzerland gets six point five years more years of life expectancy.
 
 67
-00:05:01,164 --> 00:05:03,044
+00:04:50,964 --> 00:04:52,744
 One of these countries is doing it wrong.
 
 68
-00:05:03,924 --> 00:05:05,724
-On Wishonia, we would check which one.
+00:04:53,324 --> 00:04:55,904
+A rational civilization would check which one.
 
 69
-00:05:06,124 --> 00:05:08,604
-On Earth, you have a debate about it.
+00:04:56,724 --> 00:04:58,784
+Your species had a debate about it.
 
 70
-00:05:08,784 --> 00:05:11,244
+00:04:59,284 --> 00:05:01,914
 The debate has been going on for fifty years.
 
 71
-00:05:11,844 --> 00:05:13,224
+00:05:02,624 --> 00:05:03,704
 The Swiss are still winning.
 
 72
-00:05:13,744 --> 00:05:17,664
+00:05:04,284 --> 00:05:08,124
 You're paying more and dying sooner, and your response is to have opinions
 
 73
-00:05:17,664 --> 00:05:18,204
+00:05:08,124 --> 00:05:08,744
 about it.
 
 74
-00:05:18,844 --> 00:05:20,064
+00:05:09,584 --> 00:05:11,144
 Documented U.S.
 
 75
-00:05:20,064 --> 00:05:25,184
-governance waste totals four point nine trillion dollars (seventeen percent
+00:05:11,144 --> 00:05:15,584
+governance waste totals four point nine eight trillion dollars (seventeen
 
 76
-00:05:25,264 --> 00:05:25,984
-of G.D.P.).
+00:05:15,584 --> 00:05:18,184
+point three percent of G.D.P.).
 
 77
-00:05:26,724 --> 00:05:31,664
+00:05:18,304 --> 00:05:22,644
 Globally, the opportunity cost of suboptimal policy reaches one hundred
 
 78
-00:05:31,664 --> 00:05:36,164
-and one trillion dollars (eighty-seven point eight percent of G.D.P.),
+00:05:22,644 --> 00:05:27,644
+and one trillion dollars (eighty-seven point eight percent of G.D.P.), putting
 
 79
-00:05:36,824 --> 00:05:40,824
-putting your civilization's governance efficiency at fifty-one point nine
+00:05:27,644 --> 00:05:31,844
+your civilization's governance efficiency at fifty-one point eight percent.
 
 80
-00:05:40,824 --> 00:05:41,344
-percent.
-
-81
-00:05:42,144 --> 00:05:45,664
+00:05:32,684 --> 00:05:36,044
 Your species is running at roughly half its technological potential.
 
-82
-00:05:46,564 --> 00:05:50,964
+81
+00:05:36,764 --> 00:05:40,564
 Imagine building a car, then only turning on half the cylinders because
 
-83
-00:05:50,964 --> 00:05:54,804
+82
+00:05:40,564 --> 00:05:43,644
 the other half are controlled by a committee that meets once a year and
 
+83
+00:05:43,644 --> 00:05:46,044
+disagrees about what "forward" means.
+
 84
-00:05:54,804 --> 00:05:56,063
-disagrees about what "forward"
-
-85
-00:05:57,044 --> 00:05:57,544
-means.
-
-86
-00:05:57,844 --> 00:06:01,684
+00:05:46,604 --> 00:05:50,144
 (For the full accounting, see the Political Dysfunction Tax and U.S.
 
-87
-00:06:01,883 --> 00:06:02,604
-Efficiency Audit.)
+85
+00:05:50,144 --> 00:05:50,824
+Efficiency Audit.).
 
-88
-00:06:03,564 --> 00:06:05,764
+86
+00:05:51,644 --> 00:05:52,984
 Or consider the War on Drugs.
 
-89
-00:06:06,204 --> 00:06:09,924
+87
+00:05:53,584 --> 00:05:56,864
 Your species spends ninety billion dollars per year on it.
 
-90
-00:06:10,524 --> 00:06:12,744
+88
+00:05:57,344 --> 00:05:59,084
 When Nixon declared it in nineteen seventy-one,
 
-91
-00:06:13,364 --> 00:06:17,084
+89
+00:05:59,684 --> 00:06:02,744
 about six thousand Americans died annually from drug overdoses.
 
-92
-00:06:17,844 --> 00:06:22,464
+90
+00:06:03,404 --> 00:06:07,964
 After fifty years and over a trillion dollars, that number exceeded one
 
-93
-00:06:22,724 --> 00:06:23,484
+91
+00:06:07,964 --> 00:06:09,164
 hundred thousand.
 
-94
-00:06:24,184 --> 00:06:27,004
+92
+00:06:09,664 --> 00:06:12,784
 At no point did anyone check whether the policy was working.
 
-95
-00:06:28,184 --> 00:06:31,224
+93
+00:06:13,184 --> 00:06:16,664
 At no point did anyone stop funding it because it wasn't.
 
+94
+00:06:17,504 --> 00:06:21,604
+No sane species would spend a trillion dollars on something, watch the problem
+
+95
+00:06:21,604 --> 00:06:24,924
+get eighteen times worse, and increase the budget.
+
 96
-00:06:32,064 --> 00:06:36,304
-On Wishonia, if you spend a trillion dollars on something and the problem
+00:06:25,044 --> 00:06:26,624
+Your species did exactly that.
 
 97
-00:06:36,304 --> 00:06:39,644
-gets eighteen times worse, you stop doing it.
-
-98
-00:06:40,304 --> 00:06:42,264
-On Earth, you increase the budget.
-
-99
-00:06:43,464 --> 00:06:45,284
+00:06:27,264 --> 00:06:29,634
 The Answer Key You Already Have.
 
-100
-00:06:46,144 --> 00:06:50,804
+98
+00:06:29,784 --> 00:06:33,624
 Your planet has roughly ten thousand jurisdictions making different policy
 
-101
-00:06:50,804 --> 00:06:51,304
+99
+00:06:33,624 --> 00:06:34,124
 choices.
 
-102
-00:06:52,004 --> 00:06:54,264
+100
+00:06:34,664 --> 00:06:36,244
 Kansas cut education funding;
 
-103
-00:06:54,304 --> 00:06:55,904
+101
+00:06:36,244 --> 00:06:37,384
 Minnesota increased it.
 
-104
-00:06:56,644 --> 00:07:00,544
+102
+00:06:37,824 --> 00:06:40,784
 Fifty states adopted different minimum wages over thirty years.
 
-105
-00:07:01,244 --> 00:07:03,304
+103
+00:06:41,524 --> 00:06:43,164
 Portugal decriminalized drugs;
 
-106
-00:07:03,304 --> 00:07:04,284
+104
+00:06:43,164 --> 00:06:44,404
 Singapore didn't.
 
-107
-00:07:05,024 --> 00:07:09,124
+105
+00:06:44,584 --> 00:06:48,364
 These are natural experiments, and the math can now figure out which policy
 
-108
-00:07:09,124 --> 00:07:13,404
+106
+00:06:48,364 --> 00:06:52,184
 caused which result, without needing anyone's permission to run an experiment.
 
-109
-00:07:14,004 --> 00:07:15,804
+107
+00:06:52,624 --> 00:06:54,684
 The experiment already happened.
 
-110
-00:07:16,324 --> 00:07:17,844
+108
+00:06:54,764 --> 00:06:55,944
 You just weren't paying attention.
 
-111
-00:07:18,744 --> 00:07:20,234
-Same logic as your decentralized
+109
+00:06:56,604 --> 00:06:58,904
+Same logic as your decentralized F.D.A.:
 
-112
-00:07:21,114 --> 00:07:21,864
-F.D.A.:
-
-113
-00:07:21,984 --> 00:07:24,524
+110
+00:06:59,064 --> 00:07:01,584
 watch what actually happens, then analyze the data.
 
-114
-00:07:25,224 --> 00:07:27,064
+111
+00:07:02,184 --> 00:07:03,704
 Your decentralized F.D.A.
 
-115
-00:07:27,064 --> 00:07:27,984
+112
+00:07:03,704 --> 00:07:04,624
 applies this to medicine.
 
-116
-00:07:28,644 --> 00:07:30,724
+113
+00:07:04,984 --> 00:07:06,904
 The Evidence Machine applies it to governance.
 
-117
-00:07:31,304 --> 00:07:32,984
+114
+00:07:07,644 --> 00:07:09,104
 Instead of "which drug works?"
 
-118
-00:07:33,324 --> 00:07:35,444
+115
+00:07:09,784 --> 00:07:12,024
 you're asking "which policy works?"
 
-119
-00:07:35,864 --> 00:07:37,604
+116
+00:07:12,644 --> 00:07:14,844
 Same question, higher body count.
 
-120
-00:07:38,904 --> 00:07:40,744
+117
+00:07:16,064 --> 00:07:17,584
 Why Knowing Isn't Enough.
 
-121
-00:07:41,364 --> 00:07:44,944
+118
+00:07:18,424 --> 00:07:22,084
 If you're thinking "just publish the results and politicians will do the
 
-122
-00:07:44,944 --> 00:07:48,424
-right thing," I have some bad news about your species.
+119
+00:07:22,084 --> 00:07:22,784
+right thing,"
 
-123
-00:07:49,084 --> 00:07:54,004
+120
+00:07:23,644 --> 00:07:26,004
+I have some bad news about your species.
+
+121
+00:07:26,944 --> 00:07:31,884
 The Copenhagen Consensus already publishes rigorous benefit-cost analyses.
 
+122
+00:07:32,724 --> 00:07:36,644
+Vaccinating more children in eighty of the poorest countries:
+
+123
+00:07:36,764 --> 00:07:38,364
+one hundred and one to one.
+
 124
-00:07:54,904 --> 00:07:55,984
-Childhood vaccination:
+00:07:39,484 --> 00:07:43,244
+Pragmatic clinical trials, by the math in your own D.F.D.A. (a decentralized F.D.A.)
 
 125
-00:07:56,424 --> 00:07:58,164
-one hundred and one to one returns.
+00:07:43,244 --> 00:07:43,864
+impact analysis:
 
 126
-00:07:58,884 --> 00:08:00,344
-Pragmatic clinical trials:
+00:07:44,604 --> 00:07:46,884
+four hundred and thirty-nine to one.
 
 127
-00:08:00,884 --> 00:08:02,524
-six hundred and thirty-seven to one.
-
-128
-00:08:03,134 --> 00:08:04,444
-Agricultural subsidies:
-
-129
-00:08:04,864 --> 00:08:05,804
-less than one to one.
-
-130
-00:08:06,544 --> 00:08:07,994
+00:07:47,764 --> 00:07:49,464
 The answer key is public.
 
-131
-00:08:08,064 --> 00:08:09,384
+128
+00:07:49,924 --> 00:07:51,524
 It's been public for years.
 
-132
-00:08:09,944 --> 00:08:11,304
+129
+00:07:52,044 --> 00:07:53,204
 Your governments ignore it.
 
-133
-00:08:12,104 --> 00:08:15,984
+130
+00:07:53,864 --> 00:07:57,624
 You have the cheat sheet, and you're still failing the test on purpose.
 
-134
-00:08:16,444 --> 00:08:17,024
+131
+00:07:58,444 --> 00:07:59,024
 Why?
 
-135
-00:08:17,264 --> 00:08:20,424
+132
+00:07:59,444 --> 00:08:02,224
 Because information doesn't change incentives.
 
-136
-00:08:20,504 --> 00:08:24,804
-A Princeton study analyzed one thousand seven hundred and seventy-nine policy
+133
+00:08:02,744 --> 00:08:07,004
+A Princeton study analyzed one thousand, seven hundred and seventy-nine
 
-137
-00:08:24,804 --> 00:08:29,484
-decisions and found that average citizens have "little or no independent
+134
+00:08:07,004 --> 00:08:11,964
+policy decisions and found that average citizens have "little or no independent
 
-138
-00:08:29,484 --> 00:08:30,824
+135
+00:08:11,964 --> 00:08:13,944
 influence" on policy outcomes.
 
-139
-00:08:32,144 --> 00:08:35,084
+136
+00:08:14,644 --> 00:08:18,164
 Economic elites and organized interest groups drive policy.
 
-140
-00:08:35,704 --> 00:08:39,244
+137
+00:08:18,784 --> 00:08:22,334
 You already knew this (it's covered in Unrepresentative Democracy).
 
-141
-00:08:39,784 --> 00:08:43,464
+138
+00:08:22,704 --> 00:08:26,664
 The point here is that publishing better data doesn't fix the problem.
 
-142
-00:08:43,964 --> 00:08:47,224
+139
+00:08:27,504 --> 00:08:30,804
 Your politicians already know which programs produce value.
 
-143
-00:08:47,804 --> 00:08:52,184
+140
+00:08:31,544 --> 00:08:35,684
 They don't act because acting doesn't maximize getting votes, getting papers,
 
-144
-00:08:52,264 --> 00:08:55,444
+141
+00:08:35,964 --> 00:08:39,484
 or getting a nice job afterward selling access to their replacements.
 
+142
+00:08:40,304 --> 00:08:44,544
+So there are two problems, and this chapter is only about the first one.
+
+143
+00:08:45,344 --> 00:08:49,384
+The knowledge problem is "which policies actually work," and it is solved
+
+144
+00:08:49,384 --> 00:08:51,224
+by measurement nobody can corrupt.
+
 145
-00:08:56,464 --> 00:09:00,764
-This is the gap between Incentive Alignment Bonds (which solve the incentive
+00:08:51,824 --> 00:08:55,624
+The incentive problem is "why would anyone act on the answer," and it has
 
 146
-00:09:00,764 --> 00:09:04,784
-problem) and the Evidence Machine (which solves the knowledge problem).
+00:08:55,624 --> 00:08:58,124
+several solutions of varying price:
 
 147
-00:09:05,664 --> 00:09:08,204
-I.A.B.s make doing the right thing profitable.
+00:08:58,144 --> 00:09:01,204
+an institution that adopts the recommendations because they are correct,
 
 148
-00:09:08,844 --> 00:09:11,164
-But they need to know what the right thing IS.
+00:09:01,904 --> 00:09:05,224
+a shareholder who points out that a company's lobbying is losing its own
 
 149
-00:09:12,024 --> 00:09:14,904
-That requires a measurement system nobody can corrupt.
+00:09:05,224 --> 00:09:09,904
+shareholders money, a SuperPAC, or bonds paying a share of whatever gets
 
 150
-00:09:15,724 --> 00:09:16,364
-The Mechanism:
+00:09:09,904 --> 00:09:10,404
+redirected.
 
 151
-00:09:16,884 --> 00:09:18,764
-Recommend, Track, Reward.
+00:09:11,184 --> 00:09:14,504
+Every one of them needs the same thing first, which is a number that is
 
 152
-00:09:19,664 --> 00:09:22,004
-The Evidence Machine does three things.
+00:09:14,704 --> 00:09:15,784
+actually true.
 
 153
-00:09:22,044 --> 00:09:22,904
-That's it.
+00:09:16,384 --> 00:09:17,484
+The Mechanism:
 
 154
-00:09:22,984 --> 00:09:23,784
-Three things.
+00:09:17,664 --> 00:09:19,564
+Recommend, Track, Reward.
 
 155
-00:09:24,524 --> 00:09:28,264
-Your species has difficulty with three things, so I'll use small words.
+00:09:20,644 --> 00:09:22,504
+The Evidence Machine does three things.
 
 156
-00:09:28,884 --> 00:09:31,124
-(On Wishonia, we just call this the Optimitron.
+00:09:23,124 --> 00:09:23,624
+That's it.
 
 157
-00:09:31,764 --> 00:09:32,404
-It's an appliance.
+00:09:24,044 --> 00:09:24,544
+Three things.
 
 158
-00:09:32,884 --> 00:09:35,284
-You plug in policies, it tells you which ones work.).
+00:09:25,044 --> 00:09:28,184
+Your species has difficulty with three things, so I'll use small words.
 
 159
-00:09:36,124 --> 00:09:36,904
-Recommend.
+00:09:29,284 --> 00:09:29,904
+(It's an appliance.
 
 160
-00:09:36,964 --> 00:09:39,034
-The Optimitron has two settings.
+00:09:30,524 --> 00:09:33,264
+You plug in policies, it tells you which ones work.
 
 161
-00:09:39,344 --> 00:09:43,504
-The Optimal Budget Generator answers "how much should you spend on what?"
+00:09:33,924 --> 00:09:36,124
+Your species will find this concept exotic.).
 
 162
-00:09:44,064 --> 00:09:48,664
-The Optimal Policy Generator answers "which laws should you enact, replace,
+00:09:37,224 --> 00:09:37,724
+Recommend.
 
 163
-00:09:48,704 --> 00:09:49,204
-or repeal?"
+00:09:38,144 --> 00:09:39,844
+The Optimitron has two settings.
 
 164
-00:09:49,844 --> 00:09:52,904
-Here's a sample of what the budget output looks like, applied to the United
+00:09:40,504 --> 00:09:44,424
+The Optimal Budget Generator answers "how much should you spend on what?"
 
 165
-00:09:52,904 --> 00:09:53,404
-States:
+00:09:45,124 --> 00:09:49,384
+The Optimal Policy Generator answers "which laws should you enact, replace,
 
 166
-00:09:54,244 --> 00:09:58,524
-For pragmatic clinical trials, the current budget is zero point five billion
+00:09:49,664 --> 00:09:50,164
+or repeal?"
 
 167
-00:09:58,524 --> 00:10:03,124
-dollars, the optimal budget is fifty billion dollars, for a gap of plus
+00:09:50,764 --> 00:09:55,104
+Here's a sample of what the budget output looks like, applied to the United
 
 168
-00:10:03,124 --> 00:10:08,044
-forty-nine point five billion dollars, based on evidence grade A from randomized
+00:09:55,104 --> 00:09:55,644
+States
 
 169
-00:10:08,044 --> 00:10:10,124
-controlled trials, or R.C.T.s.
+00:09:56,284 --> 00:09:57,564
+(illustrative numbers;
 
 170
-00:10:10,864 --> 00:10:15,023
-For vaccinations, the current budget is eight billion dollars, the optimal
+00:09:57,564 --> 00:10:01,264
+the trial and vaccine targets are worked out in the paper, and the military
 
 171
-00:10:15,023 --> 00:10:19,764
-budget is thirty-five billion dollars, for a gap of plus twenty-seven billion
+00:10:01,264 --> 00:10:06,684
+target is what it costs to defend the actual country, priced one real threat
 
 172
-00:10:19,764 --> 00:10:23,143
-dollars, based on evidence grade A from R.C.T.s.
+00:10:06,684 --> 00:10:07,204
+at a time):
 
 173
-00:10:23,903 --> 00:10:27,964
-For military discretionary spending, the current budget is eight hundred
+00:10:08,324 --> 00:10:12,783
+For pragmatic clinical trials, current spending is zero point five billion
 
 174
-00:10:27,964 --> 00:10:32,704
-and fifty billion dollars, the optimal budget is four hundred and fifty-nine
+00:10:12,783 --> 00:10:17,543
+dollars, while the optimal spending is fifty billion dollars, an increase
 
 175
-00:10:32,704 --> 00:10:37,004
-billion dollars, for a gap of minus three hundred and ninety-one billion
+00:10:17,543 --> 00:10:19,804
+of forty-nine point five billion dollars.
 
 176
-00:10:37,004 --> 00:10:40,384
-dollars, based on evidence grade C from benchmarks.
+00:10:20,564 --> 00:10:21,523
+Evidence grade:
 
 177
-00:10:41,004 --> 00:10:45,404
-For agricultural subsidies, the current budget is twenty-five billion dollars,
+00:10:21,604 --> 00:10:24,584
+A (randomized controlled trials, or R.C.T.s).
 
 178
-00:10:45,704 --> 00:10:50,544
-the optimal budget is zero dollars, for a gap of minus twenty-five billion
+00:10:25,264 --> 00:10:29,884
+For vaccinations, current spending is eight billion dollars, while the optimal
 
 179
-00:10:50,544 --> 00:10:54,244
-dollars, based on evidence grade A from welfare analysis.
+00:10:29,884 --> 00:10:34,364
+spending is sixteen billion dollars, an increase of eight billion dollars.
 
 180
-00:10:54,764 --> 00:10:58,604
-You are spending one hundred times less than optimal on figuring out which
+00:10:34,784 --> 00:10:35,444
+Evidence grade:
 
 181
-00:10:58,604 --> 00:11:03,564
-medicines work, and paying farmers twenty-five billion dollars a year to
+00:10:35,664 --> 00:10:36,794
+A (R.C.T.s).
 
 182
-00:11:03,564 --> 00:11:05,524
-grow food nobody asked for.
+00:10:37,664 --> 00:10:38,224
+For the military,
 
 183
-00:11:06,104 --> 00:11:07,304
-The Optimitron noticed.
+00:10:39,184 --> 00:10:43,144
+current spending is eight hundred and eighty-six billion dollars, while
 
 184
-00:11:07,844 --> 00:11:11,564
-It also noticed you could cut three hundred and ninety-one billion dollars
+00:10:43,144 --> 00:10:47,684
+the optimal spending is one hundred and eighty-four billion dollars, a cut
 
 185
-00:11:11,564 --> 00:11:15,904
-from the murder budget and still have the largest military on the planet.
+00:10:47,684 --> 00:10:50,844
+of seven hundred and two billion dollars.
 
 186
-00:11:16,624 --> 00:11:20,184
-The policy generator then does the same thing law by law:
+00:10:50,984 --> 00:10:51,944
+Evidence grade:
 
 187
-00:11:20,684 --> 00:11:23,344
-enact this, repeal that, adjust the other thing.
+00:10:52,044 --> 00:10:53,684
+C (threat-by-threat costs).
 
 188
-00:11:24,124 --> 00:11:28,364
-Every recommendation traceable to what actually happened when another jurisdiction
+00:10:54,644 --> 00:10:59,204
+For agricultural subsidies, current spending is twenty-five billion dollars,
 
 189
-00:11:28,364 --> 00:11:28,944
-tried it.
+00:10:59,584 --> 00:11:04,204
+while the optimal spending is zero dollars, a decrease of twenty-five billion
 
 190
-00:11:29,704 --> 00:11:30,604
-No opinions.
+00:11:04,204 --> 00:11:04,704
+dollars.
 
 191
-00:11:30,724 --> 00:11:31,284
-Just receipts.
+00:11:05,204 --> 00:11:06,104
+Evidence grade:
 
 192
-00:11:32,404 --> 00:11:33,244
-Track.
+00:11:06,184 --> 00:11:08,264
+C (assumed to fail the cash test).
 
 193
-00:11:33,244 --> 00:11:37,124
-When politicians vote, record whether they aligned with the evidence-based
+00:11:09,244 --> 00:11:13,184
+You are spending one hundred times less than optimal on figuring out which
 
 194
-00:11:37,124 --> 00:11:38,074
-recommendation.
+00:11:13,184 --> 00:11:17,624
+medicines work, and paying farmers twenty-five billion dollars a year to
 
 195
-00:11:38,884 --> 00:11:39,384
-Senator Smith:
+00:11:17,664 --> 00:11:19,244
+grow food nobody asked for.
 
 196
-00:11:39,844 --> 00:11:41,204
-seventy-eight percent aligned.
+00:11:19,804 --> 00:11:20,864
+The Optimitron noticed.
 
 197
-00:11:41,544 --> 00:11:42,364
-Senator Jones:
+00:11:21,804 --> 00:11:26,224
+It also noticed that defending your actual country, one real threat at a
 
 198
-00:11:42,664 --> 00:11:44,464
-thirty-four percent aligned.
+00:11:26,224 --> 00:11:30,164
+time, costs one hundred and eighty-four billion dollars a year, and you
 
 199
-00:11:44,464 --> 00:11:46,144
-This information is public.
+00:11:30,164 --> 00:11:33,244
+spend eight hundred and eighty-six billion on the murder budget.
 
 200
-00:11:46,164 --> 00:11:47,324
-Any citizen can check.
+00:11:33,944 --> 00:11:37,344
+The other seven hundred and two billion is for being in charge of everywhere
 
 201
-00:11:47,964 --> 00:11:52,124
-On Wishonia, this is called "checking if the person you hired did the thing
+00:11:37,344 --> 00:11:37,844
+else.
 
 202
-00:11:52,124 --> 00:11:53,484
-you hired them to do."
+00:11:38,384 --> 00:11:40,784
+The freed money does not go to whoever lobbies loudest.
 
 203
-00:11:54,084 --> 00:11:57,794
-Your species finds this concept revolutionary, which tells you everything.
+00:11:42,004 --> 00:11:46,004
+Every program has to beat handing people the same dollar in cash, or leaving
 
 204
-00:11:58,644 --> 00:12:02,104
-Politicians who ignore the evidence must do so on the record.
+00:11:46,004 --> 00:11:47,164
+it with whoever earned it.
 
 205
-00:12:02,804 --> 00:12:03,664
-Reward.
+00:11:47,704 --> 00:11:51,544
+The policy generator then does the same thing law by law:
 
 206
-00:12:03,664 --> 00:12:08,564
-The Incentive Alignment Bond, or I.A.B.-funded SuperPAC allocates campaign
+00:11:51,964 --> 00:11:54,664
+enact this, repeal that, adjust the other thing.
 
 207
-00:12:08,604 --> 00:12:11,004
-support proportional to alignment scores.
+00:11:55,384 --> 00:11:59,464
+Every recommendation traceable to what actually happened when another jurisdiction
 
 208
-00:12:11,624 --> 00:12:13,344
-Follow evidence, get funded.
+00:11:59,464 --> 00:12:00,084
+tried it.
 
 209
-00:12:13,344 --> 00:12:15,464
-Ignore it, watch your opponent get funded.
+00:12:00,704 --> 00:12:01,784
+No opinions.
 
 210
-00:12:16,004 --> 00:12:17,504
-Same mechanism the N.R.A.
+00:12:01,904 --> 00:12:03,244
+Just receipts.
 
 211
-00:12:17,684 --> 00:12:20,884
-perfected, but pointed at "not dying" instead of "more guns."
+00:12:03,404 --> 00:12:04,184
+Track.
 
 212
-00:12:21,964 --> 00:12:23,784
-This doesn't require government permission.
+00:12:04,184 --> 00:12:07,924
+When politicians vote, record whether they aligned with the evidence-based
 
 213
-00:12:24,384 --> 00:12:28,864
-The Evidence Machine operates as a permanent advisory layer outside government.
+00:12:07,924 --> 00:12:08,824
+recommendation.
 
 214
-00:12:29,544 --> 00:12:31,564
-Politicians still vote however they want.
+00:12:09,444 --> 00:12:09,944
+Senator Smith:
 
 215
-00:12:31,964 --> 00:12:33,744
-They can still ignore the evidence;
+00:12:10,544 --> 00:12:11,464
+seventy-eight percent aligned.
 
 216
-00:12:33,744 --> 00:12:38,524
-it just costs them money now, which on Earth is apparently the only consequence
+00:12:11,984 --> 00:12:12,624
+Senator Jones:
 
 217
-00:12:38,524 --> 00:12:39,324
-that matters.
+00:12:13,104 --> 00:12:14,264
+thirty-four percent aligned.
 
 218
-00:12:39,904 --> 00:12:43,044
-The question isn't "will politicians give up power?"
+00:12:14,644 --> 00:12:16,044
+This information is public.
 
 219
-00:12:43,324 --> 00:12:47,344
-(they won't) but "can we make ignoring good advice unprofitable?"
+00:12:16,424 --> 00:12:17,304
+Any citizen can check.
 
 220
-00:12:48,044 --> 00:12:48,544
-(yes;
+00:12:18,004 --> 00:12:18,984
+There is a word for this.
 
 221
-00:12:48,544 --> 00:12:50,844
-it's a fundraising challenge, not a revolution).
+00:12:19,984 --> 00:12:25,304
+The word is "checking if the person you hired did the thing you hired them
 
 222
-00:12:51,844 --> 00:12:53,724
-Corruption, But Make It Difficult.
+00:12:25,304 --> 00:12:25,804
+to do."
 
 223
-00:12:54,444 --> 00:12:56,784
-"But won't someone corrupt the measurement system?"
+00:12:26,584 --> 00:12:28,064
+Your species finds this concept revolutionary,
 
 224
-00:12:57,204 --> 00:12:57,724
-Yes.
+00:12:29,444 --> 00:12:30,584
+which tells you everything.
 
 225
-00:12:57,844 --> 00:12:58,964
-This is the right question.
+00:12:31,364 --> 00:12:34,674
+Politicians who ignore the evidence must do so on the record.
 
 226
-00:12:59,404 --> 00:13:00,864
-It's the only question that matters.
+00:12:35,064 --> 00:12:35,564
+Reward.
 
 227
-00:13:01,604 --> 00:13:04,904
-Currently, your lobbying industry has thousands of capture points.
+00:12:36,284 --> 00:12:37,984
+Something has to make the score matter.
 
 228
-00:13:05,764 --> 00:13:10,524
-Committee earmarks, agency decisions, regulatory rulings, budget amendments,
+00:12:38,644 --> 00:12:42,124
+The cheapest version is a company whose lobbyists already have the senator's
 
 229
-00:13:10,644 --> 00:13:12,674
-riders on unrelated bills.
+00:12:42,144 --> 00:12:45,784
+phone number and are now selling the evidence-based budget instead (the
 
 230
-00:13:12,784 --> 00:13:14,604
-Each one is cheap to influence.
+00:12:45,784 --> 00:12:46,284
+takeover).
 
 231
-00:13:15,124 --> 00:13:20,264
-Your federal lobbyists spend four point four billion dollars per year with
+00:12:46,864 --> 00:12:50,764
+The fastest version is a SuperPAC allocating campaign support proportional
 
 232
-00:13:20,264 --> 00:13:22,544
-estimated one hundred to one returns.
+00:12:50,764 --> 00:12:51,504
+to alignment:
 
 233
-00:13:23,184 --> 00:13:26,524
-Your democracy is a vending machine, and the buttons are labeled.
+00:12:52,164 --> 00:12:53,764
+follow evidence, get funded;
 
 234
-00:13:27,424 --> 00:13:31,904
-The Evidence Machine collapses all those capture points to a single target:
+00:12:53,764 --> 00:12:55,584
+ignore it, watch your opponent get funded.
 
 235
-00:13:32,504 --> 00:13:33,884
-the measurement methodology.
+00:12:56,264 --> 00:12:57,344
+Same trick the N.R.A.
 
 236
-00:13:34,624 --> 00:13:35,244
-Here's the heist:
+00:12:57,504 --> 00:13:00,444
+perfected, but pointed at "not dying" instead of "more guns."
 
 237
-00:13:35,944 --> 00:13:39,964
-simultaneously bribe the Census Bureau, the Federal Reserve, the Bureau
+00:13:01,104 --> 00:13:03,284
+The scoreboard does not care which one shows up.
 
 238
-00:13:39,964 --> 00:13:41,184
-of Labor Statistics,
+00:13:04,104 --> 00:13:05,944
+This doesn't require government permission.
 
 239
-00:13:41,844 --> 00:13:45,564
-academic institutions, AND decentralized citizen surveys.
+00:13:06,464 --> 00:13:10,664
+The Evidence Machine operates as a permanent advisory layer outside government.
 
 240
-00:13:46,224 --> 00:13:47,244
-All without detection.
+00:13:11,504 --> 00:13:16,384
+The policy data is public, the votes are public, and publishing the comparison
 
 241
-00:13:47,724 --> 00:13:49,124
-All at the same time.
+00:13:16,384 --> 00:13:18,344
+between them is just talking.
 
 242
-00:13:49,724 --> 00:13:52,924
-All institutions with different governance structures, different funding
+00:13:18,884 --> 00:13:20,964
+Politicians still vote however they want.
 
 243
-00:13:52,924 --> 00:13:56,904
-sources, different methodologies, and different reasons to hate each other.
+00:13:21,684 --> 00:13:23,184
+They can still ignore the evidence;
 
 244
-00:13:57,384 --> 00:13:59,024
-This is not a corruption strategy.
+00:13:23,284 --> 00:13:25,084
+it just costs them something now,
 
 245
-00:13:59,484 --> 00:14:01,814
-This is the plot of a movie where the criminals lose.
+00:13:25,684 --> 00:13:28,224
+which on Earth is apparently the only consequence that matters.
 
 246
-00:14:02,984 --> 00:14:04,104
-Here's how it works in practice.
+00:13:29,444 --> 00:13:32,244
+The question isn't "will politicians give up power?"
 
 247
-00:14:05,044 --> 00:14:08,184
-Five independent sources measure median income growth:
+00:13:32,564 --> 00:13:33,064
+(they won't)
 
 248
-00:14:08,824 --> 00:14:13,104
-The Census Bureau American Community Survey reports plus two point one percent.
+00:13:33,584 --> 00:13:36,544
+but "will anyone act on an accurate scoreboard?"
 
 249
-00:14:13,704 --> 00:14:18,024
-The Federal Reserve Survey of Consumer Finances reports plus two point three
+00:13:37,444 --> 00:13:40,804
+(several parties would, for several different reasons, which is the whole
 
 250
-00:14:18,024 --> 00:14:18,524
-percent.
+00:13:40,804 --> 00:13:42,964
+point of building it before deciding who).
 
 251
-00:14:18,984 --> 00:14:23,244
-The Bureau of Labor Statistics Current Population Survey reports plus one
+00:13:44,554 --> 00:13:45,704
+Corruption, But Make It Difficult.
 
 252
-00:14:23,244 --> 00:14:24,064
-point nine percent.
+00:13:47,484 --> 00:13:51,044
+"But won't someone corrupt the measurement system?" Yes.
 
 253
-00:14:24,664 --> 00:14:29,204
-The University of Michigan Panel Study of Income Dynamics reports plus two
+00:13:51,044 --> 00:13:52,034
+This is the right question.
 
 254
-00:14:29,204 --> 00:14:29,964
-point two percent.
+00:13:52,424 --> 00:13:54,304
+It's the only question that matters.
 
 255
-00:14:30,644 --> 00:14:32,644
-The Tax Foundation I.R.S.
+00:13:55,264 --> 00:13:58,444
+Currently, your lobbying industry has thousands of capture points.
 
 256
-00:14:32,644 --> 00:14:35,584
-data analysis reports plus two point zero percent.
+00:13:59,224 --> 00:14:03,964
+Committee earmarks, agency decisions, regulatory rulings, budget amendments,
 
 257
-00:14:36,124 --> 00:14:36,864
-Take the median:
+00:14:04,164 --> 00:14:05,344
+riders on unrelated bills.
 
 258
-00:14:37,224 --> 00:14:38,424
-PLUS TWO POINT ONE PERCENT.
+00:14:05,904 --> 00:14:07,044
+Each one is cheap to influence.
 
 259
-00:14:39,004 --> 00:14:43,004
-If one source reports plus five point zero percent (because someone bribed
+00:14:07,744 --> 00:14:11,924
+Your federal lobbyists spend four point four billion dollars per year.
 
 260
-00:14:43,004 --> 00:14:46,124
-them), the median throws it out automatically.
+00:14:13,024 --> 00:14:16,644
+Companies that lobbied for one two thousand and four tax break got back
 
 261
-00:14:46,444 --> 00:14:47,924
-No investigation needed.
+00:14:16,644 --> 00:14:18,664
+two hundred and twenty dollars for every dollar.
 
 262
-00:14:47,964 --> 00:14:49,444
-No whistleblower needed.
+00:14:19,804 --> 00:14:23,324
+Your democracy is a vending machine, and the buttons are labeled.
 
 263
-00:14:49,504 --> 00:14:50,904
-No committee hearing.
+00:14:24,024 --> 00:14:28,704
+The Evidence Machine collapses all those capture points to a single target:
 
 264
-00:14:51,004 --> 00:14:52,244
-Math does the work.
+00:14:29,244 --> 00:14:30,764
+the measurement methodology.
 
 265
-00:14:53,164 --> 00:14:54,164
-(An honest caveat:
+00:14:31,504 --> 00:14:32,004
+Here's the heist:
 
 266
-00:14:54,424 --> 00:14:58,204
-these five sources share some underlying data, so they're not perfectly
+00:14:33,084 --> 00:14:37,304
+simultaneously bribe the Census Bureau, the Federal Reserve, the Bureau
 
 267
-00:14:58,204 --> 00:14:58,704
-independent.
+00:14:37,304 --> 00:14:38,504
+of Labor Statistics,
 
 268
-00:14:59,484 --> 00:15:01,544
-That's why there's a sixth source:
+00:14:39,184 --> 00:14:42,724
+academic institutions, AND decentralized citizen surveys.
 
 269
-00:15:01,704 --> 00:15:05,844
-decentralized citizen surveys, collected directly from millions of humans,
+00:14:43,244 --> 00:14:44,344
+All without detection.
 
 270
-00:15:06,324 --> 00:15:08,224
-sharing no methodology with the others.
+00:14:45,024 --> 00:14:46,464
+All at the same time.
 
 271
-00:15:08,784 --> 00:15:12,824
-One person lying has approximately zero effect on the median.
+00:14:47,224 --> 00:14:50,444
+All institutions with different governance structures, different funding
 
 272
-00:15:12,924 --> 00:15:13,594
-This is statistics,
+00:14:50,444 --> 00:14:50,944
+sources,
 
 273
-00:15:14,444 --> 00:15:15,544
-not voting.).
+00:14:51,404 --> 00:14:54,524
+different methodologies, and different reasons to hate each other.
 
 274
-00:15:15,644 --> 00:15:19,224
-Your species has spent centuries making corruption illegal.
+00:14:55,424 --> 00:14:57,064
+This is not a corruption strategy.
 
 275
-00:15:19,704 --> 00:15:23,924
-It hasn't worked, because laws are enforced by the same humans who are being
+00:14:57,484 --> 00:14:59,824
+This is the plot of a movie where the criminals lose.
 
 276
-00:15:23,924 --> 00:15:24,424
-bribed.
+00:15:01,284 --> 00:15:02,444
+Here's how it works in practice.
 
 277
-00:15:24,984 --> 00:15:26,804
-On Wishonia, we tried something different:
+00:15:03,604 --> 00:15:06,344
+Five independent sources measure median income growth:
 
 278
-00:15:27,424 --> 00:15:28,984
-we made corruption impractical.
+00:15:07,124 --> 00:15:10,864
+The Census Bureau (American Community Survey) reports plus two point one
 
 279
-00:15:29,964 --> 00:15:33,584
-There's a difference between "you shouldn't steal" and "the vault has five
+00:15:10,864 --> 00:15:11,364
+percent.
 
 280
-00:15:33,584 --> 00:15:36,034
-locks held by five people who hate each other."
+00:15:12,344 --> 00:15:16,004
+The Federal Reserve (Survey of Consumer Finances) reports plus two point
 
 281
-00:15:36,464 --> 00:15:39,984
-Your species tried door number one for three thousand years.
+00:15:16,004 --> 00:15:16,744
+three percent.
 
 282
-00:15:40,544 --> 00:15:41,984
-We recommend door number two.
+00:15:17,704 --> 00:15:21,204
+The Bureau of Labor Statistics (Current Population Survey) reports plus
 
 283
-00:15:42,824 --> 00:15:46,124
-This is also why it's different from every previous attempt at technocratic
+00:15:21,204 --> 00:15:22,584
+one point nine percent.
 
 284
-00:15:46,124 --> 00:15:46,624
-governance.
+00:15:23,384 --> 00:15:27,084
+The University of Michigan (Panel Study of Income Dynamics) reports plus
 
 285
-00:15:47,464 --> 00:15:50,924
-Soviet central planning had one source of truth (the Politburo).
+00:15:27,084 --> 00:15:28,284
+two point two percent.
 
 286
-00:15:51,724 --> 00:15:56,124
-Credit rating agencies had one source of truth (the agency paid by the people
+00:15:29,024 --> 00:15:30,644
+The Tax Foundation (I.R.S.
 
 287
-00:15:56,124 --> 00:15:59,784
-being rated, which is like letting students grade their own exams and then
+00:15:30,644 --> 00:15:33,284
+data analysis) reports plus two point zero percent.
 
 288
-00:15:59,784 --> 00:16:01,684
-being surprised when everyone gets an A).
+00:15:34,164 --> 00:15:34,754
+Take the median:
 
 289
-00:16:02,364 --> 00:16:03,654
-Both were captured immediately,
+00:15:35,624 --> 00:15:36,804
+plus two point one percent.
 
 290
-00:16:04,584 --> 00:16:07,854
-because corrupting one institution is a Tuesday.
+00:15:37,804 --> 00:15:41,564
+If one source reports plus five point zero percent (because someone bribed
 
 291
-00:16:08,004 --> 00:16:12,004
-Corrupting five independent institutions simultaneously, without any of
+00:15:41,564 --> 00:15:44,084
+them), the median throws it out automatically.
 
 292
-00:16:12,004 --> 00:16:15,444
-them noticing or telling anyone, is a conspiracy theory.
+00:15:44,764 --> 00:15:46,364
+No investigation needed.
 
 293
-00:16:15,804 --> 00:16:17,524
-The expensive kind that doesn't work.
+00:15:46,424 --> 00:15:47,524
+No whistleblower needed.
 
 294
-00:16:18,364 --> 00:16:19,984
-Why not fifty metrics?
+00:15:47,984 --> 00:15:48,844
+No committee hearing.
 
 295
-00:16:20,564 --> 00:16:24,824
-Because each additional target creates a new way to cheat, and your species
+00:15:49,484 --> 00:15:50,364
+Math does the work.
 
 296
-00:16:24,824 --> 00:16:27,784
-needs no encouragement in that department.
+00:15:52,084 --> 00:15:54,404
+These five sources overlap in some inputs.
 
 297
-00:16:28,124 --> 00:16:28,904
-Markets figured this out:
+00:15:54,984 --> 00:15:58,944
+The sixth source, decentralized citizen surveys, breaks that dependence
 
 298
-00:16:29,864 --> 00:16:33,764
-firms optimize profit, not two hundred sub-metrics.
+00:15:58,944 --> 00:16:00,354
+by adding a methodology-independent
 
 299
-00:16:33,864 --> 00:16:38,884
-Two broad, hard-to-fake numbers are easier to audit than fifty narrow ones.
+00:16:00,984 --> 00:16:03,564
+stream collected directly from millions of humans.
 
 300
-00:16:39,504 --> 00:16:42,444
-And these particular numbers are very hard to fake.
+00:16:04,584 --> 00:16:07,664
+One person lying has approximately zero effect on the median.
 
 301
-00:16:43,024 --> 00:16:47,444
-You can't fabricate purchasing power at scale without actually improving
+00:16:08,104 --> 00:16:09,624
+This is statistics, not voting.
 
 302
-00:16:47,444 --> 00:16:48,524
-household economics.
+00:16:11,124 --> 00:16:14,384
+Your species has spent centuries making corruption illegal.
 
 303
-00:16:49,244 --> 00:16:53,184
-Mortality is binary (the most binary thing there is).
+00:16:14,964 --> 00:16:18,424
+It hasn't worked, because laws are enforced by the same humans who are being
 
 304
-00:16:53,724 --> 00:16:56,894
-You can't fake everyone being "less dead.".
+00:16:18,424 --> 00:16:18,924
+bribed.
 
 305
-00:16:57,164 --> 00:16:58,244
-"But correlation isn't causation!"
+00:16:19,524 --> 00:16:21,364
+The alternative is obvious:
 
 306
-00:16:59,344 --> 00:16:59,904
-Yes.
+00:16:21,424 --> 00:16:22,944
+make corruption impractical.
 
 307
-00:17:00,284 --> 00:17:01,144
-Thank you.
+00:16:24,144 --> 00:16:28,624
+There's a difference between "you shouldn't steal" and "the vault has five
 
 308
-00:17:01,244 --> 00:17:04,024
-Your species discovered this in the eighteen hundreds and has been using
+00:16:28,624 --> 00:16:32,024
+locks held by five people who hate each other."
 
 309
-00:17:04,024 --> 00:17:06,484
-it as an excuse to ignore data ever since.
+00:16:32,424 --> 00:16:36,744
+Your species tried door number one for three thousand years.
 
 310
-00:17:07,204 --> 00:17:10,904
-The Optimitron doesn't just check whether policies and outcomes happened
+00:16:36,884 --> 00:16:38,724
+We recommend door number two.
 
 311
-00:17:10,904 --> 00:17:11,994
-in the same room.
+00:16:39,664 --> 00:16:44,044
+This is also why it's different from every previous attempt at technocratic
 
 312
-00:17:12,404 --> 00:17:16,524
-It uses the fact that ten thousand jurisdictions adopted different policies
+00:16:44,044 --> 00:16:44,544
+governance.
 
 313
-00:17:16,524 --> 00:17:20,664
-at different times to isolate what actually caused what.
+00:16:45,544 --> 00:16:49,104
+Soviet central planning had one source of truth (the Politburo).
 
 314
-00:17:21,244 --> 00:17:22,184
-(The boring details:
+00:16:49,724 --> 00:16:54,324
+Credit rating agencies had one source of truth (the agency paid by the people
 
 315
-00:17:22,644 --> 00:17:27,444
-the technical specification scores every causal claim against nine criteria,
+00:16:54,324 --> 00:16:58,264
+being rated, which is like letting students grade their own exams and then
 
 316
-00:17:27,844 --> 00:17:31,944
-and if the timing is wrong, the score is automatically zero, no matter how
+00:16:58,264 --> 00:17:00,484
+being surprised when everyone gets an A).
 
 317
-00:17:31,944 --> 00:17:33,544
-pretty the correlation looks.).
+00:17:01,484 --> 00:17:03,044
+Both were captured immediately,
 
 318
-00:17:34,404 --> 00:17:34,924
-Putting It Together.
+00:17:03,664 --> 00:17:06,784
+because corrupting one institution is a Tuesday.
 
 319
-00:17:35,444 --> 00:17:36,044
-The full loop:
+00:17:07,184 --> 00:17:10,294
+Corrupting five independent institutions simultaneously,
 
 320
-00:17:36,764 --> 00:17:41,284
-one percent Treaty funds it, I.A.B.s align incentives, the Evidence Machine
+00:17:10,984 --> 00:17:15,324
+without any of them noticing or telling anyone, is a conspiracy theory.
 
 321
-00:17:41,284 --> 00:17:44,984
-identifies what works, and Wishocracy allocates the research funds.
+00:17:15,844 --> 00:17:17,404
+The expensive kind that doesn't work.
 
 322
-00:17:45,824 --> 00:17:48,304
-The Evidence Machine tells governments which policies work.
+00:17:18,104 --> 00:17:19,644
+Why not fifty metrics?
 
 323
-00:17:48,864 --> 00:17:51,264
-Wishocracy tells the research fund where to aim.
+00:17:20,104 --> 00:17:24,644
+Because each additional target creates a new way to cheat, and your species
 
 324
-00:17:51,764 --> 00:17:54,224
-On Wishonia, this is called "an obvious system."
+00:17:24,684 --> 00:17:26,724
+needs no encouragement in that department.
 
 325
-00:17:54,804 --> 00:17:57,904
-On Earth, it required four chapters and a bibliography.
+00:17:28,184 --> 00:17:29,204
+Markets figured this out:
 
 326
-00:17:58,464 --> 00:18:00,904
-And here's why the whole thing ratchets.
+00:17:30,084 --> 00:17:33,304
+firms optimize profit, not two hundred sub-metrics.
 
 327
-00:18:01,984 --> 00:18:04,804
-Each treaty expansion creates more I.A.B.
+00:17:34,104 --> 00:17:38,124
+Two broad, hard-to-fake numbers are easier to audit than fifty narrow ones.
 
 328
-00:18:05,004 --> 00:18:08,824
-funding, which funds more evidence collection, which strengthens the case
+00:17:38,944 --> 00:17:41,744
+And these particular numbers are very hard to fake.
 
 329
-00:18:08,824 --> 00:18:10,254
-for further expansion.
+00:17:42,484 --> 00:17:46,304
+You can't fabricate purchasing power at scale without actually improving
 
 330
-00:18:11,024 --> 00:18:13,644
-Evidence begets funding begets evidence.
+00:17:46,604 --> 00:17:47,364
+household economics.
 
 331
-00:18:14,444 --> 00:18:18,704
-It's the same self-reinforcing loop as the Military Industrial Complex,
+00:17:47,984 --> 00:17:50,924
+Mortality is binary (the most binary thing there is).
 
 332
-00:18:19,424 --> 00:18:23,724
-except instead of manufacturing orphans, it manufactures data about how
+00:17:51,264 --> 00:17:54,224
+You can't fake everyone being "less dead."
 
 333
-00:18:23,724 --> 00:18:25,994
-to stop manufacturing orphans.
+00:17:55,184 --> 00:17:57,204
+"But correlation isn't causation!"
 
 334
-00:18:26,724 --> 00:18:28,924
-Now that you know how the Optimitron works (congratulations,
+00:17:57,764 --> 00:17:58,264
+Yes.
 
 335
-00:18:30,024 --> 00:18:31,984
-on Wishonia this is taught to children),
+00:17:58,444 --> 00:17:58,994
+Thank you.
 
 336
-00:18:32,584 --> 00:18:36,264
-the next chapter shows you how eight billion people allocate the research
+00:17:59,284 --> 00:18:02,644
+Your species discovered this in the eighteen hundreds and has been using
 
 337
-00:18:36,264 --> 00:18:36,764
-funds.
+00:18:02,644 --> 00:18:04,804
+it as an excuse to ignore data ever since.
 
 338
-00:18:37,324 --> 00:18:39,004
-For the full technical specification,
+00:18:05,644 --> 00:18:08,984
+The Optimitron doesn't just check whether policies and outcomes happened
 
 339
-00:18:39,844 --> 00:18:44,124
-formal models, and threat analysis, see the Optimocracy academic paper.
+00:18:08,984 --> 00:18:09,844
+in the same room.
 
 340
-00:18:45,024 --> 00:18:48,724
-For the gory details on how the recommendation engine decides you're spending
+00:18:10,264 --> 00:18:13,984
+It uses the fact that ten thousand jurisdictions adopted different policies
 
 341
-00:18:48,724 --> 00:18:52,343
-too much on corn and too little on not dying:
+00:18:13,984 --> 00:18:17,964
+at different times to isolate what actually caused what.
 
 342
-00:18:52,404 --> 00:18:55,603
-the Optimal Budget Generator at O.B.G.
+00:18:19,124 --> 00:18:19,944
+(The boring details:
 
 343
-00:18:55,704 --> 00:19:01,323
-dot war on disease dot org and the Optimal Policy Generator at O.P.G.
+00:18:20,424 --> 00:18:24,444
+the technical specification scores every causal claim against nine criteria,
 
 344
-00:19:01,364 --> 00:19:02,964
-dot war on disease dot org.
+00:18:24,764 --> 00:18:28,224
+and if the timing is wrong, the score is automatically zero, no matter how
 
 345
-00:19:15,420 --> 00:19:20,960
-Thank you so much for taking the time to end war and disease, but if at
+00:18:28,224 --> 00:18:29,444
+pretty the correlation looks.).
 
 346
-00:19:20,960 --> 00:19:25,180
-any point you decide you're too busy, please press the share button on your
+00:18:30,784 --> 00:18:31,494
+Putting It Together.
 
 347
-00:19:25,180 --> 00:19:28,880
-glowing rectangle in case one of your friends have a free afternoon to end
+00:18:32,484 --> 00:18:33,244
+The full loop:
 
 348
-00:19:28,880 --> 00:19:29,920
-war and disease instead.
+00:18:34,024 --> 00:18:36,084
+the Evidence Machine identifies what works,
 
 349
-00:19:30,540 --> 00:19:34,880
-And if you're too busy to even do that, please leave a really, really, really
+00:18:36,724 --> 00:18:40,104
+somebody with a financial reason to care makes the politicians act on it,
 
 350
-00:19:34,880 --> 00:19:39,040
-good rating and review so we overcome the pro -war algorithmic suppression
+00:18:40,624 --> 00:18:44,563
+the one percent Treaty funds it, and Wishocracy allocates the research funds.
 
 351
-00:19:39,040 --> 00:19:42,600
-and find someone with more spare time for ending wars and diseases.
+00:18:45,664 --> 00:18:48,454
+The Evidence Machine tells governments which policies work.
 
 352
-00:19:43,160 --> 00:19:45,360
-The good review doesn't have to be true, they don't check.
+00:18:48,664 --> 00:18:50,724
+Wishocracy tells the research fund where to aim.
 
 353
-00:19:45,900 --> 00:19:49,960
-But if you're too busy to even do that, the absolute least you could do
+00:18:51,444 --> 00:18:53,583
+Your species calls this "a bold new paradigm."
 
 354
-00:19:49,960 --> 00:19:55,580
-is take 15 seconds to go to WarOnDisease.org and make your wishocratic allocation,
+00:18:54,323 --> 00:18:56,803
+Everyone else calls it "an obvious system."
 
 355
-00:19:56,000 --> 00:19:59,560
-telling us what fraction of humanity's resources should go to explosions
+00:18:57,384 --> 00:19:00,884
+It required four chapters and a bibliography because you're you.
 
 356
-00:19:59,560 --> 00:20:01,020
-versus clinical trials.
+00:19:02,424 --> 00:19:04,323
+And here's why the whole thing ratchets.
 
 357
-00:20:01,300 --> 00:20:01,800
-And vote!
+00:19:05,904 --> 00:19:09,464
+Every expansion pays whoever pushed for it, whether that is a shareholder
 
 358
-00:20:02,220 --> 00:20:06,480
-If the 1% treaty passes, your vote will be personally to blame for saving
+00:19:09,464 --> 00:19:13,464
+holding a repriced company or a bondholder collecting a share of the redirected
 
 359
-00:20:06,480 --> 00:20:11,100
-2.6 lives and preventing 468,000 hours of suffering.
+00:19:13,464 --> 00:19:17,284
+money, and their winnings fund more evidence collection, which strengthens
 
 360
-00:20:11,100 --> 00:20:13,800
-Go to WarOnDisease.org right now.
+00:19:17,284 --> 00:19:18,544
+the case for the next expansion.
 
 361
-00:20:14,200 --> 00:20:14,760
+00:19:19,604 --> 00:19:21,164
+Evidence begets funding begets evidence.
+
+362
+00:19:22,264 --> 00:19:26,764
+It's the same self-reinforcing loop as the Military Industrial Complex,
+
+363
+00:19:27,644 --> 00:19:31,804
+except instead of manufacturing orphans, it manufactures data about how
+
+364
+00:19:31,804 --> 00:19:33,784
+to stop manufacturing orphans.
+
+365
+00:19:34,924 --> 00:19:37,234
+Now that you know how the Optimitron works (congratulations,
+
+366
+00:19:38,224 --> 00:19:42,004
+on Wishonia this is taught to children), the next chapter shows you how
+
+367
+00:19:42,004 --> 00:19:45,104
+eight billion people allocate the research funds.
+
+368
+00:19:45,964 --> 00:19:46,784
+The Referee:
+
+369
+00:19:47,144 --> 00:19:48,484
+Who Measures Whether It Worked.
+
+370
+00:19:49,604 --> 00:19:52,284
+Everything above describes how the Evidence Machine works.
+
+371
+00:19:52,824 --> 00:19:56,864
+This section describes who runs it, because "an algorithm that nobody can
+
+372
+00:19:56,864 --> 00:19:59,344
+corrupt" still requires someone to plug it in.
+
+373
+00:19:59,904 --> 00:20:05,004
+The Measurement Authority (the Referee) is whoever locks the ruler before
+
+374
+00:20:05,004 --> 00:20:10,104
+the game starts, reads the scoreboard at regular intervals, announces whether
+
+375
+00:20:10,104 --> 00:20:14,024
+you've hit the thresholds for releasing prize money, and settles arguments
+
+376
+00:20:14,024 --> 00:20:16,514
+when someone says the numbers are wrong.
+
+377
+00:20:16,744 --> 00:20:20,974
+On Wishonia this job is given to the most boring person available.
+
+378
+00:20:21,424 --> 00:20:23,064
+Boring is a feature.
+
+379
+00:20:23,544 --> 00:20:24,624
+What the Referee does
+
+380
+00:20:25,424 --> 00:20:29,684
+Locks the baseline methodology at game start (prevents retroactive methodology
+
+381
+00:20:29,684 --> 00:20:31,744
+changes from triggering false release).
+
+382
+00:20:32,744 --> 00:20:34,404
+Reads W.H.O.
+
+383
+00:20:34,404 --> 00:20:38,844
+Health-Adjusted Life Expectancy and World Bank median income data annually.
+
+384
+00:20:39,164 --> 00:20:43,084
+Cross-checks institutional data against the five independent sources described
+
+385
+00:20:43,084 --> 00:20:46,064
+above (Census Bureau, Federal Reserve,
+
+386
+00:20:46,724 --> 00:20:50,484
+Bureau of Labor Statistics, or B.L.S., academic institutions,
+
+387
+00:20:51,144 --> 00:20:52,484
+decentralized citizen surveys).
+
+388
+00:20:53,444 --> 00:20:57,224
+Publishes cryptographically signed determinations of whether graduated release
+
+389
+00:20:57,224 --> 00:21:01,544
+thresholds have been met (ten percent at plus zero point five health-adjusted
+
+390
+00:21:01,544 --> 00:21:03,324
+life years, or H.A.L.Y.s,
+
+391
+00:21:03,944 --> 00:21:06,364
+twenty-five percent at plus one point zero H.A.L.Y.s,
+
+392
+00:21:07,104 --> 00:21:11,044
+fifty percent at plus two point zero H.A.L.Y.s, one hundred percent at plus
+
+393
+00:21:11,044 --> 00:21:13,984
+five point zero H.A.L.Y.s, with equivalent income thresholds).
+
+394
+00:21:15,104 --> 00:21:19,624
+Accepts bonded challenges (anyone who catches gaming can post a bond, present
+
+395
+00:21:19,624 --> 00:21:21,784
+evidence, and trigger independent review).
+
+396
+00:21:22,624 --> 00:21:25,644
+Routes disputes to an academic panel for adjudication.
+
+397
+00:21:26,724 --> 00:21:28,464
+What the Referee does not do
+
+398
+00:21:29,204 --> 00:21:29,924
+Hold the money.
+
+399
+00:21:30,484 --> 00:21:32,054
+That is the Vault's job.
+
+400
+00:21:32,464 --> 00:21:33,404
+Lobby for the treaty.
+
+401
+00:21:34,044 --> 00:21:35,064
+That is the Sword's job.
+
+402
+00:21:36,044 --> 00:21:37,304
+Verify voter identity.
+
+403
+00:21:37,924 --> 00:21:39,184
+That is the Bouncer's job.
+
+404
+00:21:40,504 --> 00:21:41,984
+Why it cannot be the Vault:
+
+405
+00:21:42,784 --> 00:21:46,384
+The entity that decides whether to release the money cannot be the entity
+
+406
+00:21:46,384 --> 00:21:47,464
+holding the money.
+
+407
+00:21:48,004 --> 00:21:51,544
+Your species learned this lesson approximately four thousand years ago and
+
+408
+00:21:51,544 --> 00:21:53,704
+has been re-learning it every century since.
+
+409
+00:21:54,704 --> 00:21:56,084
+Why it cannot be the Sword:
+
+410
+00:21:56,804 --> 00:22:00,924
+The entity lobbying for the outcome cannot measure whether the outcome occurred.
+
+411
+00:22:01,524 --> 00:22:04,584
+Your current system lets governments measure their own performance and announce
+
+412
+00:22:04,584 --> 00:22:06,404
+that they are doing an excellent job.
+
+413
+00:22:07,224 --> 00:22:09,654
+Your species calls this "self-assessment."
+
+414
+00:22:10,284 --> 00:22:12,964
+I call it "letting the student grade the exam."
+
+415
+00:22:13,784 --> 00:22:15,564
+What kind of organization fits:
+
+416
+00:22:16,364 --> 00:22:21,944
+The ideal Referee is boring, methodologically rigid, and has no financial
+
+417
+00:22:21,944 --> 00:22:24,424
+interest in either branch of the prize payout.
+
+418
+00:22:25,784 --> 00:22:27,244
+University health economics departments,
+
+419
+00:22:27,864 --> 00:22:32,704
+W.H.O.-affiliated statistical groups, or a consortium of institutions that
+
+420
+00:22:32,704 --> 00:22:37,144
+already measure these numbers (and have reputations staked on measuring
+
+421
+00:22:37,144 --> 00:22:40,124
+them correctly) are the natural candidates.
+
+422
+00:22:40,644 --> 00:22:44,564
+You want the person who is genuinely excited about error margins.
+
+423
+00:22:45,104 --> 00:22:46,904
+Your species produces these people.
+
+424
+00:22:47,304 --> 00:22:48,964
+You just usually underpay them.
+
+425
+00:22:49,724 --> 00:22:50,504
+Redundancy:
+
+426
+00:22:51,364 --> 00:22:53,064
+Five independent data sources
+
+427
+00:22:53,684 --> 00:22:59,984
+(Census Bureau, Federal Reserve, B.L.S., University of Michigan, Tax Foundation)
+
+428
+00:23:00,744 --> 00:23:05,224
+plus decentralized citizen surveys all feed the same numbers.
+
+429
+00:23:05,944 --> 00:23:09,984
+Any two honest analysts reading the same sources get the same answer.
+
+430
+00:23:10,564 --> 00:23:13,124
+The Referee just signs the determination.
+
+431
+00:23:14,224 --> 00:23:17,324
+Everyone else can check the homework from the same public data.
+
+432
+00:23:17,864 --> 00:23:21,424
+If the Referee's number disagrees with what the raw sources say,
+
+433
+00:23:22,044 --> 00:23:26,444
+anyone can post a bond, present evidence, and trigger independent review.
+
+434
+00:23:27,724 --> 00:23:32,104
+Someone must sign the determination (otherwise nobody is responsible).
+
+435
+00:23:32,724 --> 00:23:36,624
+Everyone can catch a lie (otherwise nobody is safe).
+
+436
+00:23:37,984 --> 00:23:38,484
+Succession:
+
+437
+00:23:39,044 --> 00:23:41,264
+The methodology is published and locked.
+
+438
+00:23:41,924 --> 00:23:46,124
+If the Referee disappears, a replacement panel can pick up the locked methodology
+
+439
+00:23:46,124 --> 00:23:47,644
+and continue measuring.
+
+440
+00:23:48,184 --> 00:23:50,664
+The data sources (W.H.O., World Bank,
+
+441
+00:23:51,364 --> 00:23:55,504
+national statistical agencies) exist independently of whoever reads them.
+
+442
+00:23:56,584 --> 00:23:58,044
+For the full technical specification,
+
+443
+00:23:58,904 --> 00:24:00,804
+formal models, and threat analysis,
+
+444
+00:24:01,424 --> 00:24:03,344
+see the Optimocracy academic paper.
+
+445
+00:24:03,924 --> 00:24:07,664
+For the gory details on how the recommendation engine decides you're spending
+
+446
+00:24:07,664 --> 00:24:10,884
+too much on corn and too little on not dying:
+
+447
+00:24:11,244 --> 00:24:13,924
+the Optimal Budget Generator at O.B.G.
+
+448
+00:24:14,004 --> 00:24:19,024
+dot war on disease dot org and the Optimal Policy Generator at O.P.G.
+
+449
+00:24:19,024 --> 00:24:20,584
+dot war on disease dot org.
+
+450
+00:24:20,772 --> 00:24:26,312
+Thank you so much for taking the time to end war and disease, but if at
+
+451
+00:24:26,312 --> 00:24:30,532
+any point you decide you're too busy, please press the share button on your
+
+452
+00:24:30,532 --> 00:24:34,232
+glowing rectangle in case one of your friends have a free afternoon to end
+
+453
+00:24:34,232 --> 00:24:35,272
+war and disease instead.
+
+454
+00:24:35,892 --> 00:24:40,232
+And if you're too busy to even do that, please leave a really, really, really
+
+455
+00:24:40,232 --> 00:24:44,392
+good rating and review so we overcome the pro -war algorithmic suppression
+
+456
+00:24:44,392 --> 00:24:47,952
+and find someone with more spare time for ending wars and diseases.
+
+457
+00:24:48,512 --> 00:24:50,712
+The good review doesn't have to be true, they don't check.
+
+458
+00:24:51,252 --> 00:24:55,312
+But if you're too busy to even do that, the absolute least you could do
+
+459
+00:24:55,312 --> 00:25:00,932
+is take 15 seconds to go to WarOnDisease.org and make your wishocratic allocation,
+
+460
+00:25:01,352 --> 00:25:04,912
+telling us what fraction of humanity's resources should go to explosions
+
+461
+00:25:04,912 --> 00:25:06,372
+versus clinical trials.
+
+462
+00:25:06,652 --> 00:25:07,152
+And vote!
+
+463
+00:25:07,572 --> 00:25:11,832
+If the 1% treaty passes, your vote will be personally to blame for saving
+
+464
+00:25:11,832 --> 00:25:16,452
+2.6 lives and preventing 468,000 hours of suffering.
+
+465
+00:25:16,452 --> 00:25:19,152
+Go to WarOnDisease.org right now.
+
+466
+00:25:19,552 --> 00:25:20,112
 Love you, bye!

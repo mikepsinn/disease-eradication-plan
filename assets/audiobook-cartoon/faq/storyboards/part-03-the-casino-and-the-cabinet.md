@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:01.3
+duration: 2:57.3
 message: "Pharma gambles $2.6 billion a drug at 10% odds, so a fund that pays for trials turns its casino into a paycheck it will stampede for; countries stay free to say no; and the FDA locks safe drugs away for 8.2 years, so 3,070 die waiting for every one it protects."
 arc: YOU's placard says PROFIT → the pharma building pulls a slot machine at $2.6 billion a pull and wins once in ten, prays at it, then the treaty fund feeds it and the casino folds into an office that pays a paycheck → pharma buildings trample each other to the signing table; horns that fall off, and a minus sign rubbed out → Wishonia's dictionary agrees with her → on the beach, the FDA locks the safe drug in the cabinet, the germ approves itself in one second, and the lifeguard's paper wins a rosette the family gets a copy of → the Calculator gives 3,070 twice and faints → the waiting chairs on the sand, counted by the Reaper and not by the FDA
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 3, "The Casino and the Cabinet"
-audio: faq.c4d81e11.mp3, 05:55.2 to 08:56.5
+audio: faq.c12b2c60.mp3, 06:03.4 to 09:00.7
 version: v2
 ---
 
@@ -37,8 +37,8 @@ version: v2
 - act: Big Pharma
 - transition_in: cut
 - cue: "Big Pharma Will Block This"
-- time: 05:55.2 to 06:03.3 (8.1 s)
-- voiceover: "Big Pharma Will Block This Objection: "Pharmaceutical companies will kill this. They profit from disease."."
+- time: 06:03.4 to 06:11.0 (7.6 s)
+- voiceover: ""Big Pharma Will Block This" Objection: "Pharmaceutical companies will kill this. They profit from disease.""
 - layer: B, plate step-four
 - status: planned
 
@@ -55,8 +55,8 @@ Sound: a clank as the card drops.
 - act: Big Pharma
 - transition_in: cut
 - cue: "Pharma currently pays"
-- time: 06:03.3 to 06:43.2 (39.9 s)
-- voiceover: "Pharma currently pays two point six billion dollars per drug. Ninety percent fail. This is called "drug development." On Wishonia, we have a different word for spending billions with a ten percent success rate. We call it "gambling.". Under the current system, pharma pays for trials (spend billions, pray). Under the new system, a treaty fund pays pharma to pray. In the current system, trial outcomes are a ninety percent expensive failure. In the new system, it is a ninety percent failure, but with someone else's money. The current business model is a casino, but with lab coats. The new business model is a paycheck, but with lab coats."
+- time: 06:11.0 to 06:47.7 (36.7 s)
+- voiceover: "Pharma currently pays two point six billion dollars per drug. Ninety percent fail. This is called "drug development." There is a word for spending billions with a ten percent success rate. The word is "gambling." Currently, pharma pays for trials (spending billions and praying), while under the new system, the treaty fund pays pharma to pray. Trial outcomes are currently a ninety percent expensive failure, but under the new system, they are a ninety percent failure with someone else's money. The business model shifts from a casino with lab coats to a paycheck with lab coats."
 - layer: B, plate casino
 - bit: **Pharma, the building, at a slot machine: $2.6 billion a pull, a skull nine times in ten.** It prays at it; then the treaty fund feeds it the coins, the odds stay the same and it stops caring; and the casino folds into an office where the machine pays out a paycheck.
 - status: planned
@@ -77,7 +77,7 @@ Sound: a coin clunk and a lever crank per pull; nine buzzes; a jackpot bell on t
 - act: Big Pharma
 - transition_in: same plate (no seam)
 - cue: "Under this system, trials become revenue"
-- time: 06:43.2 to 07:12.3 (29.1 s)
+- time: 06:47.7 to 07:17.5 (29.7 s)
 - voiceover: "Under this system, trials become revenue instead of cost. You're offering the casino a guaranteed salary. Casinos love guaranteed salaries. They'd trample each other getting to the signing ceremony. The only reason pharma "profits from disease" is because you built a system where curing disease is a financial risk. Remove the risk and they'll cure things faster than you can name them. They're not evil. They're just doing math. Change the math."
 - layer: B, plate casino (the office)
 - bit: **Offer the casino a salary and a dozen pharma buildings trample each other to sign;** rub the minus off its sum and it cures things out of the lab next door faster than germs can fall over.
@@ -99,8 +99,8 @@ Sound: a ding for the dollar eyes; a thunder of feet; a splat for the trampled o
 - act: Sovereignty
 - transition_in: cut
 - cue: "What About National Sovereignty?"
-- time: 07:12.3 to 07:21.0 (8.7 s)
-- voiceover: "What About National Sovereignty? Objection: "This forces countries to spend money a certain way. That violates sovereignty."."
+- time: 07:17.5 to 07:26.3 (8.8 s)
+- voiceover: ""What About National Sovereignty?" Objection: "This forces countries to spend money a certain way. That violates sovereignty.""
 - layer: B, plate step-four
 - status: planned
 
@@ -117,8 +117,8 @@ Sound: a clank.
 - act: Sovereignty
 - transition_in: cut
 - cue: "Sovereignty means"
-- time: 07:21.0 to 07:39.8 (18.7 s)
-- voiceover: "Sovereignty means "we decide what happens to us." The treaty asks countries to decide. Countries that don't want to may decide not to. Countries that do want to may decide to. Sovereignty remains intact throughout. That is how deciding works. I checked with your dictionaries. They agree with me."
+- time: 07:26.3 to 07:45.7 (19.4 s)
+- voiceover: "Sovereignty means "we decide what happens to us." The treaty leaves each country to decide. Countries that don't want to may decide not to. Countries that do want to may decide to. Sovereignty remains intact throughout. That is how deciding works. I checked with your dictionaries. They agree with me."
 - layer: A, host
 - wishonia: smirk-smile + body-presenting; skeptical-smile + body-counting on "don't"; happy-smile + body-counting on "do"; eyeroll-smile + body-shrug on "That is how"; smirk-closed + body-point-right on "dictionaries."
 - bit: She explains deciding with two buttons, and a dictionary on the console nods along.
@@ -139,8 +139,8 @@ Sound: a click for NO; a click and a ding for YES; pages riffling; a soft thump 
 - act: The FDA
 - transition_in: cut
 - cue: "The F.D.A. Exists for a Reason"
-- time: 07:39.8 to 07:48.1 (8.3 s)
-- voiceover: "The F.D.A. Exists for a Reason Objection: "We need F.D.A. approval to ensure safety. You're being reckless."."
+- time: 07:45.7 to 07:54.6 (8.9 s)
+- voiceover: ""The F.D.A. Exists for a Reason" Objection: "We need F.D.A. approval to ensure safety. You're being reckless.""
 - layer: B, plate step-four
 - status: planned
 
@@ -157,7 +157,7 @@ Sound: a clank.
 - act: The FDA
 - transition_in: cut
 - cue: "The F.D.A. confirms a drug is safe."
-- time: 07:48.1 to 08:29.5 (41.4 s)
+- time: 07:54.6 to 08:34.5 (39.9 s)
 - voiceover: "The F.D.A. confirms a drug is safe. Then it locks the safe drug in a cabinet for eight point two years to study whether it works *well enough*. The drug won't kill you. Everyone agrees. But you can't have it because a committee needs eight point two years to measure how much it helps. Meanwhile, the disease it treats is not waiting. The disease does not have a committee. It's a lifeguard who confirms the life preserver floats, then locks it in a cabinet to study its buoyancy profile while people drown. The lifeguard then publishes a paper about buoyancy. The paper wins an award. The family of the drowned person receives a copy."
 - layer: B, plate beach
 - bit: **On one beach, everything that would save someone is locked in one glass cabinet.** The FDA locks the safe drug in it for 8.2 years while the germ approves itself in a second; the lifeguard locks the life preserver in beside it, and his paper on buoyancy wins a prize that the drowned man's family gets a copy of.
@@ -180,8 +180,8 @@ Sound: a stamp thunk; a padlock click and an hourglass clank; a whistle of growi
 - act: The FDA
 - transition_in: cut
 - cue: "I calculated the ratio:"
-- time: 08:29.5 to 08:45.9 (16.5 s)
-- voiceover: "I calculated the ratio: for every one person protected from a dangerous drug, three thousand and seventy die waiting for a safe one that's locked in the approval cabinet. I checked it twice because it seemed wrong. It wasn't wrong."
+- time: 08:34.5 to 08:50.3 (15.8 s)
+- voiceover: "I calculated the ratio: for every one person protected from a dangerous drug, three thousand, three hundred and eighty-nine die waiting for a safe one that's locked in the approval cabinet. I checked it twice because it seemed wrong. It wasn't wrong."
 - layer: A, host (the people chart on the console's screen)
 - wishonia: skeptical-smile + body-counting; sad-closed + body-idle on "three thousand"; skeptical-smile + body-point-right on "twice"; sad-closed + body-palms-down on "It wasn't wrong."
 - bit: The Calculator on the console gives her 3,070 twice and faints.
@@ -201,7 +201,7 @@ Sound: a squeak of bubble wrap; a whoosh up the column and a stamp; two key-punc
 - act: The FDA
 - transition_in: cut
 - cue: "The people it kills die quietly"
-- time: 08:45.9 to 08:56.5 (10.5 s)
+- time: 08:50.3 to 09:00.7 (10.4 s)
 - voiceover: "The people it kills die quietly, in waiting rooms. The system does not count them, which is convenient for the system and less convenient for the dead."
 - layer: B, plate beach
 - bit: The dead wait in a row facing the cabinet; the Reaper counts them and the FDA does not.

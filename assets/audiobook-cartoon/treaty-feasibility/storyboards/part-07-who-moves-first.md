@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:10.5
+duration: 3:08.3
 message: "Pleas for the public good fail because nobody pays for the bridge; this treaty pays whoever moves first (272% projected to bondholders, $2.72 billion a year in campaign funding, $27.2 billion a year to governments for research)."
 arc: Wishonia's 14 and a half tiny fat cats, and the coin slot on the Earth → the town that won't pay for its bridge drowns politely → the same fat cat in all four squares of the payoff grid, and only one square is good → the hill of novelty phone cases, the patient paying for not dying, then three pay windows for funders, politicians and governments, and a queue starts
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 7, "The Decision-Theoretic Case"
-audio: treaty-feasibility.858ed1cd.mp3, 19:28.7 to 22:39.2
+audio: treaty-feasibility.82039d3b.mp3, 18:38.2 to 21:46.5
 version: v2
 ---
 
@@ -46,8 +46,8 @@ version: v2
 - act: Why they move
 - transition_in: cut
 - cue: "The Decision-Theoretic Case"
-- time: 19:28.7 to 19:57.8 (29.1 s)
-- voiceover: "The Decision-Theoretic Case: Why Rational Actors Eventually Move. The chain reaction model says approximately fourteen point five implementers will probably engage with this idea. The next question is what they do once they understand it. On Wishonia, they would act immediately, because on Wishonia we are not insane. On Earth, you need to prove that acting is profitable, because your species will not save itself for free."
+- time: 18:38.2 to 19:04.7 (26.5 s)
+- voiceover: "The Decision-Theoretic Case: Why Rational Actors Eventually Move. The chain reaction model says approximately three point four eight implementers will probably engage with this idea. The next question is what they do once they understand it. Any rational actor would move immediately. Your species requires proof that acting is profitable, because it will not save itself for free."
 - layer: A, host
 - wishonia: neutral-smile + body-counting; happy-smile + body-hand-chest on "immediately"; smirk-smile + body-point-right on "profitable"; sideeye-closed + body-idle on "free."
 - bit: Fourteen and a half tiny fat cats on her ledge, and a coin slot on the Earth.
@@ -67,7 +67,7 @@ Sound: fourteen and a half little ticks as she counts; a coin-slot clunk as it a
 - act: The incentive structure
 - transition_in: cut
 - cue: "The Incentive Structure"
-- time: 19:57.8 to 20:21.7 (23.9 s)
+- time: 19:04.7 to 19:28.0 (23.3 s)
 - voiceover: "The Incentive Structure. Most "save the world" pitches are public-good pleas. Public goods have a free-rider problem: everyone wants the bridge, nobody wants to pay for the bridge, and so the bridge doesn't get built and everyone drowns in the river while complimenting each other's fiscal prudence. This design is different. It routes part of the upside back to whoever moves first."
 - layer: B, plate river-town
 - bit: **A town that wants a bridge, won't pay for it, and drowns politely, tipping hats. Then a bridge with a toll booth piped to the pocket of the first man who paid.**
@@ -88,8 +88,8 @@ Sound: a dreamy sigh; footsteps that stop; water sloshes; a "splendid" murmur, g
 - act: The incentive structure
 - transition_in: cut
 - cue: "If you act and others also act"
-- time: 20:21.7 to 21:13.0 (51.2 s)
-- voiceover: "If you act and others also act: the treaty passes, you capture two hundred and seventy-two percent annual returns as an early backer, plus humanity gets healthier (side benefit). If you act and no one else acts: you still bought a cheap option on the largest health intervention in history. The yacht money was going to depreciate anyway. If you wait and others also act: someone else gets the returns, the credit, and the Wikipedia entry. You get to explain that you were "still doing due diligence." If you wait and no one else acts: nothing changes. One hundred and fifty thousand deaths a day continue. You remain rich, mortal, and forgettable. This does not make action a mathematical certainty. It makes action the obviously attractive move for anyone who can read a spreadsheet and prefers not dying."
+- time: 19:28.0 to 20:20.0 (52.0 s)
+- voiceover: "If you act and others also act, the treaty passes, you capture two hundred and seventy-two percent annual returns as an early backer, plus humanity gets healthier (side benefit). If you act and no one else acts, you still bought a cheap option on the largest health intervention in history. The yacht money was going to depreciate anyway. If you wait and others also act, someone else gets the returns, the credit, and the Wikipedia entry. You get to explain that you were "still doing due diligence." If you wait and no one else acts, nothing changes. One hundred and fifty thousand deaths per day continue. You remain rich, mortal, and forgettable. This does not make action a mathematical certainty. It makes action the obviously attractive move for anyone who can read a spreadsheet and prefers not dying."
 - layer: B, plate payoff-grid
 - bit: **The same fat cat in all four squares of a grid, and the camera visits them in turn:** rich in the first, shrugging in the second, outdone in the third, and a skeleton in the fourth. A spreadsheet circles the first.
 - status: planned
@@ -110,8 +110,8 @@ Sound: a bill flutter; a gurgle in square 2; a page turn in square 3; a slow win
 - act: Why it has to pay
 - transition_in: cut
 - cue: "Why the expected value"
-- time: 21:13.0 to 22:39.2 (86.3 s)
-- voiceover: "Why the expected value, or E.V. Is Not Just Moral. "Good for humanity" has never been enough to make humans act. If it were, you would have cured malaria with the money you spend on novelty phone cases. The mechanism has to pay people, because your species requires payment for everything including not dying. For funders: VICTORY bondholders are modeled at two hundred and seventy-two percent annual returns if the treaty passes. That is the price of being early to the largest health intervention in history. For politicians: two point seven two billion dollars a year in campaign support for legislators who voted yes. Reelection fuel. The only substance politicians metabolize. For governments: they trade a small fraction of murder budget for lower disease burden, visible domestic wins, and twenty-seven point two billion dollars a year in new health-research funding. This is the kind of deal where saying no requires active effort. The claim is not "humanity benefits, therefore billionaires act." Your species is not built that way, and pretending otherwise is how you got fifty years of unmet zero point seven percent official development assistance, or O.D.A. targets. The claim is: this architecture pays funders, politicians, and states enough that someone with resources has a reason to move first."
+- time: 20:20.0 to 21:46.5 (86.5 s)
+- voiceover: "Why the Expected Value, or E.V., Is Not Just Moral. "Good for humanity" has never been enough to make humans act. If it were, you would have cured malaria with the money you spend on novelty phone cases. The mechanism has to pay people, because your species requires payment for everything including not dying. For funders: VICTORY bondholders are modeled at two hundred and seventy-two percent annual returns if the treaty passes. That is the price of being early to the largest health intervention in history. For politicians: two point seven two billion dollars per year in campaign support for legislators who voted yes. Reelection fuel. The only substance politicians metabolize. For governments: they trade a small fraction of murder budget for lower disease burden, visible domestic wins, and twenty-seven point two billion dollars per year in new health-research funding. This is the kind of deal where saying no requires active effort. The claim is not "humanity benefits, therefore billionaires act." Your species is not built that way, and pretending otherwise is how you got fifty years of unmet zero point seven percent Official Development Assistance, or O.D.A., targets. The claim is: this architecture pays funders, politicians, and states enough that someone with resources has a reason to move first."
 - layer: B, plate pay-windows
 - bit: **Good intentions buy a hill of phone cases and nothing else, so the camera travels on to three pay windows, and each customer gets paid in the only thing it wants.** The bondholder gets a certificate, the Politician fuels himself from his campaign chest like a car, the government swaps a slice of missile for a lab, and a queue forms.
 - status: planned

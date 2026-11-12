@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:19.3
+duration: 2:24.2
 message: "Seventeen minutes of voting and sharing could return 50,000 hours of life, a 176,000-fold return; fifty years of reform failed because the system works perfectly for the military contractors who spend $127 million lobbying to get nearly $1 trillion, and the only thing they surrender to is a higher bid."
 arc: YOU shrinks to the size of a thumb → in his living room, a sliver of 17 minutes and a bar of 50,000 hours that goes through the ceiling, the Fat Cat fainting on TV, a phone tree over the globe on the side table, and the Netflix scroll that picks MURDER while the germ behind the armchair gets him → the reform scoreboard: TRIED, TRIED, TRIED, TRIED → $127 million in, an avalanche of contracts out, the factory polishes its plaque; YOU asks nicely, loudly and with his placard, then raises his auction paddle and wins → the press cannot print a physicist, so a brain walks from the missile bench to the X-ray machine after the money, and a lobbyist follows the same paper
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 5, "Outbid Them"
-audio: faq.c4d81e11.mp3, 11:54.9 to 14:14.2
+audio: faq.c12b2c60.mp3, 13:38.1 to 16:02.3
 version: v2
 ---
 
@@ -38,8 +38,8 @@ version: v2
 - act: One person
 - transition_in: cut
 - cue: "I'm Just One Person."
-- time: 11:54.9 to 12:01.2 (6.4 s)
-- voiceover: "I'm Just One Person. Objection: "My vote/investment/share won't matter. I'm too small."."
+- time: 13:38.1 to 13:45.7 (7.5 s)
+- voiceover: "I'm Just One Person Objection: "My vote/investment/share won't matter. I'm too small.""
 - layer: B, plate step-four
 - status: planned
 
@@ -56,8 +56,8 @@ Sound: a clank; a deflating squeak.
 - act: One person
 - transition_in: cut
 - cue: "Your contribution:"
-- time: 12:01.2 to 12:45.2 (43.9 s)
-- voiceover: "Your contribution: vote (two minutes), share (fifteen minutes). Total: seventeen minutes. Potential return: fifty thousand extra hours of life if diseases get cured. That's a one hundred and seventy-six thousand times return on seventeen minutes. Your best stock pick has never done this. Your best stock pick has never done one-thousandth of this. This needs two hundred and eighty million people. You tell ten, they each tell ten. Six degrees of sharing reaches millions. You spent longer than seventeen minutes choosing what to watch on Netflix last night. You chose a show about murder. You could have chosen not to be murdered by disease, but the interface was less intuitive."
+- time: 13:45.7 to 14:30.2 (44.5 s)
+- voiceover: "Your contribution: vote (two minutes), share (fifteen minutes). Total: seventeen minutes. Potential return: fifty thousand extra hours of life if diseases get cured. That's a one hundred and seventy-six thousand times return on seventeen minutes. Your best stock pick has never done this. Your best stock pick has never done one-thousandth of this. This needs two hundred and eighty million people. You tell ten, they each tell ten. Six degrees of sharing reaches millions. Humans regularly spend longer than seventeen minutes choosing what to watch on Netflix, then pick a show about murder. Choosing not to be murdered by disease is also available, but the interface is less intuitive."
 - layer: B, plate living-room
 - bit: **YOU's seventeen minutes, in his own living room.** They are a sliver by his slipper; what they could buy goes through the ceiling and the Fat Cat faints on the TV; the phone tree covers the globe on the side table; and then he spends the seventeen minutes scrolling Netflix, skips not being murdered, picks murder, and the murder comes from behind the armchair.
 - status: planned
@@ -79,8 +79,8 @@ Sound: two watch clicks; a long rising whistle and a crash through the ceiling; 
 - act: Reform
 - transition_in: cut
 - cue: "Why Not Just Reform the System?"
-- time: 12:45.2 to 12:54.5 (9.3 s)
-- voiceover: "Why Not Just Reform the System? Objection: "Why not just reform the F.D.A. and N.I.H.? Or increase health funding without cutting military spending?"."
+- time: 14:30.2 to 14:39.3 (9.1 s)
+- voiceover: "Why Not Just Reform the System? Objection: "Why not just reform the F.D.A. and N.I.H.? Or increase health funding without cutting military spending?""
 - layer: B, plate step-four
 - status: planned
 
@@ -97,7 +97,7 @@ Sound: a clank.
 - act: Reform
 - transition_in: cut
 - cue: "People have been trying"
-- time: 12:54.5 to 13:15.4 (20.9 s)
+- time: 14:39.3 to 15:01.6 (22.3 s)
 - voiceover: "People have been trying for fifty years. Here's the scorecard: More funding? Tried. They hired more administrators. Different leadership? Tried. Same results, fancier titles. New regulations? Tried. Now takes twenty years instead of seventeen. Progress. Reform bills? Tried. Lobbyists killed them in committee. Efficiently."
 - layer: B, plate the-deal
 - bit: **A ballpark scoreboard of fifty years of reform, each row TRIED, each try making the FDA building bigger and slower.**
@@ -118,8 +118,8 @@ Sound: a scoreboard clack per row; a pop per clerk; a clunk for the hat; a stret
 - act: Reform
 - transition_in: same plate (no seam)
 - cue: "The system is not broken."
-- time: 13:15.4 to 13:47.3 (31.8 s)
-- voiceover: "The system is not broken. I need you to understand this. Defense contractors spend one hundred and twenty-seven million dollars yearly on lobbying and get nearly one trillion dollars in contracts. That is the most efficient return on investment in American capitalism. The system works perfectly. It works perfectly for the people who built it. They will not surrender it because you asked nicely, or because you asked loudly, or because you made a sign. They will surrender it when you outbid them. That's the chapter you already read."
+- time: 15:01.6 to 15:34.4 (32.8 s)
+- voiceover: "The system is not broken. I need you to understand this. Military contractors spend one hundred and ninety-eight million dollars yearly on lobbying and get nearly one trillion dollars in contracts. That is the most efficient return on investment in American capitalism. The system works perfectly. It works perfectly for the people who built it. They will not surrender it because you asked nicely, or because you asked loudly, or because you made a sign. They will surrender it when you outbid them. That's the chapter you already read."
 - layer: B, plate the-deal
 - bit: **$127 million goes up the Capitol's steps and a trillion comes down them; the factory polishes the plaque that says it built the place, ignores YOU's please, his megaphone and his placard, and only looks up when YOU's paddle wins the auction.**
 - status: planned
@@ -141,8 +141,8 @@ Sound: a tiptoe; a door creak and an avalanche of paper; a whistle and a polish 
 - act: Reform
 - transition_in: cut
 - cue: "Follow-up: "Fine, but why cut"
-- time: 13:47.3 to 14:14.2 (26.9 s)
-- voiceover: "Follow-up: "Fine, but why cut military spending? Just allocate more to health.". Money isn't the only constraint. You can't print more physicists. (You've tried. It takes twenty-five years and a Ph.D. program.) Cutting one percent from military budgets frees actual human brains from building guidance systems to building diagnostic systems. The brains don't care. They just go where the funding is. They are, in this sense, very similar to lobbyists."
+- time: 15:34.4 to 16:02.3 (27.9 s)
+- voiceover: "Follow-up: "Fine, but why cut military spending? Just allocate more to health." Money isn't the only constraint. You can't print more physicists. (You've tried. It takes twenty-five years and a P.H.D. program.) Cutting one percent from military budgets frees actual human brains from building guidance systems to building diagnostic systems. The brains don't care. They just go where the funding is. They are, in this sense, very similar to lobbyists."
 - layer: B, plate step-four, then plate the-deal
 - bit: **The press cannot print a physicist, so the brains have to move; they follow the money on a fishing line from the factory to the hospital, and so does the Lobbyist.**
 - status: planned

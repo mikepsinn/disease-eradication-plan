@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:59.6
+duration: 4:01.0
 message: "Every civilization objects to not dying in the same five stages; Earth is at stage four, and its first objection (we need the military budget) fails on its own arithmetic: everyone cuts 1%, the balance stays, and the military that watched COVID kill more Americans than six wars combined could not shoot it."
 arc: Title card (one paper hops from the missile pile to the cross pile and a skeptic faints) → Wishonia has heard it 147 times and hides the typewriter that writes the objections → the Earth climbs five steps of excuses and claims the top one was its idea → YOU on step four, rosette, hugging his missile → two stacks of 100 missiles lose one each, the scale does not move, the Pentagon at their feet has lost $2.5 trillion and the missiles sleep through it → the germ walks past the fully armed factory, takes the globe and bites YOU
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 1, "Frequently Asked Objections"
-audio: faq.c4d81e11.mp3, 00:00.0 to 03:59.6
+audio: faq.c12b2c60.mp3, 00:00.0 to 04:01.0
 version: v2
 ---
 
@@ -39,7 +39,7 @@ version: v2
 - act: Title
 - transition_in: up from black (the head of a reel)
 - cue: "Frequently Asked Objections"
-- time: 00:00.0 to 01:48.9 (108.9 s)
+- time: 00:00.0 to 01:51.6 (111.6 s)
 - voiceover: "You're here. Your organs are failing. And your death is drawing near. But if you bribe the right politicians in the right order at the right time, you can trade the nuclear warheads for medicine. And it's not even a crime. Frequently Asked Objections Fun facts for those reasonably skeptical of spending one percent more on helping sick people than killing them."
 - layer: A, title card
 - bit: The period card, and the smallest possible change makes a grown man faint.
@@ -59,7 +59,7 @@ Sound: a projector whirr; a pop as the paper hops; a soft thud as the skeptic la
 - act: The pattern
 - transition_in: iris in on her face
 - cue: "I have now presented"
-- time: 01:48.9 to 02:05.9 (17.0 s)
+- time: 01:51.6 to 02:08.6 (16.9 s)
 - voiceover: "I have now presented this plan to humans one hundred and forty-seven times. The objections follow a pattern so predictable I wrote a script to generate this chapter. (I didn't. But I could have. You are very consistent in what you find alarming about not dying.)."
 - layer: A, host
 - wishonia: smirk-smile + body-presenting; eyeroll-smile + body-counting on "one hundred and forty-seven"; happy-smile + body-point-right on "script"; sideeye-closed + body-shrug on "(I didn't."; skeptical-smile + body-open-palms on "alarming"
@@ -80,8 +80,8 @@ Sound: a chalk scratch per bundle; a stamp on "seven"; typewriter clatter, muffl
 - act: The pattern
 - transition_in: cut
 - cue: "Every civilization I've observed"
-- time: 02:05.9 to 02:33.2 (27.4 s)
-- voiceover: "Every civilization I've observed goes through the same five stages when presented with a plan to stop killing itself: One. "That's impossible" (it isn't). Two. "That's dangerous" (less dangerous than the current thing). Three. "That's naive" (you named your war building after how many sides it has). Four. "Okay but what about..." (this chapter). Five. "We were always going to do that" (you weren't, but I'll take it)."
+- time: 02:08.6 to 02:34.4 (25.9 s)
+- voiceover: "Every civilization I've observed goes through the same five stages when presented with a plan to stop killing itself: "That's impossible" (it isn't). "That's dangerous" (less dangerous than the current thing). "That's naive" (you named your war building after how many sides it has). "Okay but what about..." (this chapter). "We were always going to do that" (you weren't, but I'll take it)."
 - layer: B, plate step-four (the whole staircase)
 - bit: **The Earth climbs five steps of excuses and arrives at the top pretending it walked there on purpose.** It sulks on step one, ducks on step two while the current thing goes off behind it, counts the Pentagon's sides on step three, unrolls a scroll of objections on step four and, on step five, plants a flag reading OUR IDEA.
 - status: planned
@@ -102,8 +102,8 @@ Sound: a stone grind as the step slides out; a boom on "current"; five small din
 - act: The pattern
 - transition_in: same plate (no seam)
 - cue: "You are currently at stage four."
-- time: 02:33.2 to 02:47.5 (14.3 s)
-- voiceover: "You are currently at stage four. Congratulations. Here are your objections, in the order you always raise them. We Need the Military Budget. Objection: "We can't reduce military spending. That would make us vulnerable.""
+- time: 02:34.4 to 02:50.1 (15.7 s)
+- voiceover: "You are currently at stage four. Congratulations. Here are your objections, in the order you always raise them. We Need the Military Budget. Objection: "We can't reduce military spending. That would make us vulnerable."."
 - layer: B, plate step-four
 - bit: YOU, on the step he will not leave all chapter, is given a prize for being there and hugs a missile for comfort.
 - status: planned
@@ -123,8 +123,8 @@ Sound: a whoosh for the push-in; a pin's click; two notes of fanfare; a clank as
 - act: We need the military budget
 - transition_in: cut
 - cue: "The treaty takes one percent."
-- time: 02:47.5 to 03:22.7 (35.2 s)
-- voiceover: "The treaty takes one percent. You keep ninety-nine percent. Every nation reduces by the same amount, so relative military balance stays exactly the same. You each have one percent fewer missiles pointed at each other. On Wishonia, we call this "safer." On Earth, you call it "an unacceptable risk to national security." Same math, different feelings. The Pentagon cannot account for two point five trillion dollars in spending. You're not redirecting the missile budget. You're redirecting the "we lost it somewhere" budget. The missiles won't even notice."
+- time: 02:50.1 to 03:25.5 (35.4 s)
+- voiceover: "The treaty takes one percent. You keep ninety-nine percent. Every nation reduces by the same amount, so relative military balance stays exactly the same. You each have one percent fewer missiles pointed at each other. Every sane observer calls this "safer." Your species calls it "an unacceptable risk to national security." Same math, different feelings. The Pentagon cannot account for two point five trillion dollars in spending. You're not redirecting the missile budget. You're redirecting the "we lost it somewhere" budget. The missiles won't even notice."
 - layer: B, plate arsenals
 - bit: **Two stacks of 100 missiles on a balance scale each lose one, and the scale does not move.** The humans panic anyway; then the camera drops to the Pentagon at the foot of the stack, patting its sides for $2.5 trillion it has lost, while the missiles above it sleep through the whole thing.
 - status: planned
@@ -146,8 +146,8 @@ Sound: a soft lift-off whoosh per missile; a stamp on "safer."; the bell clangin
 - act: We need the military budget
 - transition_in: cut
 - cue: "COVID nineteen killed"
-- time: 03:22.7 to 03:59.6 (36.9 s)
-- voiceover: "COVID nineteen killed more Americans than World War One, World War Two, Korea, Vietnam, Iraq, and Afghanistan combined. Your nearly nine hundred billion dollars murder budget watched it happen, fully armed and completely confused. The virus did not check your passport. It did not consult your defense posture. It did not read your threat assessment. Disease is the only enemy that attacks every nation simultaneously, charges no import tariffs, and has never once considered your feelings about geopolitics. You are the only species that needs to be talked into fighting it."
+- time: 03:25.5 to 04:01.0 (35.5 s)
+- voiceover: "COVID nineteen killed more Americans than World War One, World War Two, Korea, Vietnam, Iraq, and Afghanistan combined. Your nearly nine hundred billion dollars murder budget watched it happen, fully armed and completely confused. The virus did not check your passport. It did not consult your military posture. It did not read your threat assessment. Disease is the only enemy that attacks every nation simultaneously, charges no import tariffs, and has never once considered your feelings about geopolitics. You are the only species that needs to be talked into fighting it."
 - layer: B, plate covid-chart, then plate step-four
 - bit: **The biggest killer of Americans strolls straight past the most expensive army on Earth.** Six wars stack into one bar of headstones and COVID's bar towers over it; the weapons factory, fully armed, swings its missile chimneys about looking for the enemy and blows itself up, while a small germ walks between its feet, onto the globe and over every country. Payoff: the germ bites YOU, who is still holding up his placard.
 - status: planned

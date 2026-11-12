@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:19.8
+duration: 3:07.4
 message: "Politically impossible means the bribes flow toward missiles; raise $1 billion in bonds, spend $650 million lobbying against the military's $127 million, and with 280 million voters behind it refusal is career suicide; humans call everything unrealistic until they do it, while the truly unrealistic thing is 13,000 warheads and 55 million deaths a year."
 arc: YOU's placard says FANTASY → a river of papers runs downhill to the missile factory past the K Street doors, the factory feeds every letter slot and the saint at the door with no number gets a slammed door → YOU offers the bonds, $650 million lands at the top of the hill, the hill tips like a seesaw and the river runs uphill to the lab; the Lobbyist walks over without stopping, and a politician tiptoes round the career-suicide trapdoor → the world learns one dance and it squashes germs → Wishonia's eighty years at the telescope → six unrealistic things lose their UNREALISTIC stickers → 130 Earths on 13,000 warheads, the robot, and the sticker that stays on 55 million deaths a year
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 6, "Politically Impossible"
-audio: faq.c4d81e11.mp3, 14:14.2 to 17:34.0
+audio: faq.c12b2c60.mp3, 16:02.3 to 19:09.8
 version: v2
 ---
 
@@ -44,8 +44,8 @@ version: v2
 - act: Politically impossible
 - transition_in: cut
 - cue: "This Is Politically Impossible."
-- time: 14:14.2 to 14:21.9 (7.7 s)
-- voiceover: "This Is Politically Impossible. Objection: "No government will agree to this. It will never happen. Pure fantasy."."
+- time: 16:02.3 to 16:11.4 (9.1 s)
+- voiceover: "This Is Politically Impossible. Objection: "No government will agree to this. It will never happen. Pure fantasy.""
 - layer: B, plate step-four
 - status: planned
 
@@ -62,8 +62,8 @@ Sound: a clank.
 - act: Politically impossible
 - transition_in: cut
 - cue: "Politically impossible is a phrase"
-- time: 14:21.9 to 14:59.6 (37.7 s)
-- voiceover: ""Politically impossible" is a phrase that means "the bribes currently flow in a direction I'm comfortable with." The small pieces of paper with presidents on them go to people who build missiles instead of people who cure diseases. You need the papers to go the other way. This is called "lobbying," which is bribery but with a business card and a five hundred and one c four. The military-industrial complex spends one hundred and twenty-seven million dollars yearly on lobbyists. You can't beat them with moral arguments (they're immune; moral arguments have a zero dollar budget and no K Street address). Beat them at their own game."
+- time: 16:11.4 to 16:44.8 (33.4 s)
+- voiceover: ""Politically impossible" is a phrase that means "the bribes currently flow in a direction I'm comfortable with." The small pieces of paper with presidents on them go to people who build missiles instead of people who cure diseases. You need the papers to go the other way. This is called "lobbying," which is bribery but with a business card and a five hundred and one c four. The military-industrial complex spends one hundred and ninety-eight million dollars yearly on lobbyists. You can't beat them with moral arguments (they're immune; moral arguments have a zero dollar budget and no K Street address). Beat them at their own game."
 - layer: B, plate money-river
 - bit: **The money is a river, and it runs downhill to the missiles.** YOU cannot sweep it back; the factory keeps it flowing by feeding every K Street letter slot on the bank; and the saint with the moral argument, who has no money and no number on his door, gets the door slammed on him.
 - status: planned
@@ -85,8 +85,8 @@ Sound: a rushing river; broom swishes; a card snap; a mail-slot clack per bundle
 - act: Politically impossible
 - transition_in: same plate (no seam)
 - cue: "Raise one billion dollars"
-- time: 14:59.6 to 15:43.1 (43.5 s)
-- voiceover: "Raise one billion dollars through VICTORY Incentive Alignment Bonds. Allocate six hundred and fifty million dollars for lobbying. That overwhelms the defense industry's one hundred and twenty-seven million dollar spend. Go to the same K Street firms. Outbid them. Lobbyists work for the highest bidder. They always have. This is the one area where your species' mercenary instincts are genuinely helpful. Once two hundred and eighty million voters demand it and the money is behind it, refusal becomes career suicide. Politicians are extremely good at not committing career suicide. It's their primary skill. Several have no other skills."
+- time: 16:44.8 to 17:24.5 (39.6 s)
+- voiceover: "Raise one billion dollars through VICTORY Incentive Alignment Bonds. Allocate six hundred and fifty million dollars for lobbying. That overwhelms the military industry's one hundred and ninety-eight million dollars spend. Go to the same K Street firms. Outbid them. Lobbyists work for the highest bidder. They always have. This is the one area where your species' mercenary instincts are genuinely helpful. Once two hundred and eighty million voters demand it and the money is behind it, refusal becomes career suicide. Politicians are extremely good at not committing career suicide. It's their primary skill. Several have no other skills."
 - layer: B, plate money-river
 - bit: **YOU puts five times the factory's money at the top of the hill, and the hill tips like a seesaw: the river runs uphill to the lab.** The Lobbyist changes sides without breaking his stride, and the politician on the bank tiptoes round the trapdoor to press YES.
 - status: planned
@@ -107,7 +107,7 @@ Sound: a rustle of certificates; a rumble for the bundle and a pop as it splits;
 - act: Politically impossible
 - transition_in: cut
 - cue: "Follow-up: "But it can't scale globally.""
-- time: 15:43.1 to 16:00.4 (17.3 s)
+- time: 17:24.5 to 17:41.6 (17.2 s)
 - voiceover: "Follow-up: "But it can't scale globally." The internet scaled globally. So did TikTok, which teaches strangers choreography. If your species can coordinate dance moves across one hundred and fifty countries, it can coordinate not dying."
 - layer: B, plate step-four, then plate the-wall (the globe at its far end)
 - bit: **The whole world learns one dance, and the last move of the dance squashes a germ.**
@@ -128,7 +128,7 @@ Sound: a whoosh of wires; a dance beat; a stamp; one huge synchronized stomp and
 - act: Naive
 - transition_in: cut
 - cue: "Follow-up: You're naive about human nature."
-- time: 16:00.4 to 16:21.6 (21.2 s)
+- time: 17:41.6 to 17:59.2 (17.6 s)
 - voiceover: "Follow-up: "You're naive about human nature." I've been observing human nature for eighty years. It has been remarkably consistent. Here is what I've observed: you call things unrealistic, then you do them, then you pretend you always knew they were possible. Every time."
 - layer: A, host
 - wishonia: skeptical-smile + body-arms-crossed; smirk-smile + body-hand-chest on "eighty"; happy-smile + body-counting on "unrealistic"; sideeye-closed + body-shrug on "Every time."
@@ -148,7 +148,7 @@ Sound: a page riffle; three dings on her fingers; a whistle.
 - act: Naive
 - transition_in: cut
 - cue: "Things that were unrealistic:"
-- time: 16:21.6 to 16:56.2 (34.5 s)
+- time: 17:59.2 to 18:34.6 (35.4 s)
 - voiceover: "Things that were "unrealistic": Human flight (impossible for millennia, then two bicycle mechanics in Ohio). Moon landing (J.F.K. did it in eight years with computers weaker than your toaster). Democracy (kings ruled for five thousand years, then didn't). Ending slavery (entire economies depended on it; they found other economies). Women voting (half the population was excluded; the other half thought this was fine). The internet (who needs computers talking to each other?)."
 - layer: B, plate the-wall
 - bit: **Six exhibits along a wall, each with an UNREALISTIC sticker; each one happens, and the sticker peels off and falls.**
@@ -171,8 +171,8 @@ Sound: a peel and a flutter per sticker; a propeller; a launch roar and a toaste
 - act: Naive
 - transition_in: same plate (no seam)
 - cue: "Things that are actually unrealistic:"
-- time: 16:56.2 to 17:34.0 (37.8 s)
-- voiceover: "Things that are actually unrealistic: Spending two point seven two trillion dollars on weapons while sitting on thirteen thousand nuclear warheads. That's enough for one hundred and thirty extinction events. You only need one. The other one hundred and twenty-nine are for what, exactly? Expecting different results from the same broken system. Thinking you'll survive the A.I. revolution without fixing incentives. Fifty-five million people die each year from treatable causes. That's the unrealistic thing. You just got used to it."
+- time: 18:34.6 to 19:09.8 (35.1 s)
+- voiceover: "Things that are actually unrealistic: Spending two point seven two trillion dollars on weapons while sitting on twelve thousand two hundred and forty-one nuclear warheads. That's enough for one hundred and twenty-two extinction events. You only need one. The other one hundred and twenty-one are for what, exactly? Expecting different results from the same broken system. Thinking you'll survive the A.I. revolution without fixing incentives. Fifty-five million people die each year from treatable causes. That's the unrealistic thing. You just got used to it."
 - layer: B, plate the-wall (its far end)
 - bit: **At the end of the wall the globe sits on a mountain of warhead crates and 130 Earths queue to die; the last sticker goes on 55 million deaths a year, and it stays.**
 - status: planned

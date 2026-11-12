@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:25.5
+duration: 3:07.7
 message: "AI finds more candidates but not more trial slots, so it only lengthens the queue at 1.9 million slots and 15 diseases a year until the bottleneck is widened 12.3 times; and NIH's RECOVER spent $1.6 billion in four years for zero treatment recommendations, when trials at $500 a patient instead of $41,000 could have tested millions."
 arc: YOU's placard says A.I.? → the robot fires pill bottles at the tiny trial door, they jam, its Cadillac rear-ends the queue; then the wrecking ball knocks the wall down to a gate twelve times as wide and the patient gets through before he turns to a skeleton → YOU's placard says WASTE → a bus-sized $1.6 billion goes into the NIH building and four years later a single 0 comes out; the administrators climb, the 0 is framed and the pink slip bounces off → beside the building, $41,000 of paperwork against $500 → the $1.6 billion splits into millions of flasks, then back to zero; Wishonia pops zeros like bubbles, and the last one is the iris that closes the film
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 10, "A Lot of Zeros"
-audio: faq.c4d81e11.mp3, 27:42.9 to 31:08.3
+audio: faq.c12b2c60.mp3, 28:25.6 to 31:33.3
 version: v2
 ---
 
@@ -40,8 +40,8 @@ version: v2
 - act: AI
 - transition_in: cut
 - cue: ""Won't A.I. drug discovery"
-- time: 27:42.9 to 27:47.0 (4.2 s)
-- voiceover: ""Won't A.I. drug discovery shrink that timeline anyway?""
+- time: 28:25.6 to 28:30.1 (4.5 s)
+- voiceover: "Won't A.I. drug discovery shrink that timeline anyway?"
 - layer: B, plate step-four
 - status: planned
 
@@ -57,7 +57,7 @@ Sound: a clank of tin.
 - act: AI
 - transition_in: cut
 - cue: "A.I. discovers candidates."
-- time: 27:47.0 to 28:42.5 (55.4 s)
+- time: 28:30.1 to 29:22.7 (52.6 s)
 - voiceover: "A.I. discovers candidates. Candidates still need clinical trials. The current system has one point nine million patients per year trial slots globally, producing fifteen diseases per year. A.I. does not create more trial slots. It creates more candidates competing for the same slots. More candidates plus the same bottleneck equals the same (or longer) queue. It's like building faster cars and pointing them at the same traffic jam. The fifteen diseases per year rate measures regulatory throughput, not discovery speed. This intervention removes the throughput bottleneck (twelve point three times capacity via pragmatic trials at nine hundred and twenty-nine dollars per patient). A.I. and this system are complementary, not substitutes. One finds the cures. The other lets you test them before the patient dies of old age."
 - layer: B, plate the-jam
 - bit: **The robot fires new drug candidates at one tiny door; they pile up, and its faster car only crashes into the back of the queue.** Then a wrecking ball takes the wall down to a gate twelve times as wide, and the bottles, and one very old patient, pour through.
@@ -80,8 +80,8 @@ Sound: popcorn pops; a squeeze and a pop per bottle through the door; an engine 
 - act: Waste
 - transition_in: cut
 - cue: "How Do You Prevent Waste?"
-- time: 28:42.5 to 28:50.5 (8.0 s)
-- voiceover: "How Do You Prevent Waste? Objection: "How do you ensure money helps patients instead of funding bureaucracy?""
+- time: 29:22.7 to 29:29.9 (7.2 s)
+- voiceover: "How Do You Prevent Waste? Objection: "How do you ensure money helps patients instead of funding bureaucracy?"."
 - layer: B, plate step-four
 - status: planned
 
@@ -98,8 +98,8 @@ Sound: a clank.
 - act: Waste
 - transition_in: cut
 - cue: "The N.I.H.’s RECOVER initiative"
-- time: 28:50.5 to 29:23.1 (32.6 s)
-- voiceover: "The N.I.H.’s RECOVER initiative spent one point six billion dollars over four years and produced zero treatment recommendations. Zero. One point six billion dollars. Four years. Nothing. The money is gone. The patients are still sick. The administrators have been promoted. If you designed a system to waste money on purpose, you could not beat this performance. It’s a masterpiece of institutional failure, and nobody was fired, which is itself a masterpiece of institutional failure."
+- time: 29:29.9 to 30:03.6 (33.8 s)
+- voiceover: "The N.I.H.'s RECOVER initiative spent one point six billion dollars over four years and produced zero treatment recommendations. Zero. One point six billion dollars. Four years. Nothing. The money is gone. The patients are still sick. The administrators have been promoted. If you designed a system to waste money on purpose, you could not beat this performance. It's a masterpiece of institutional failure, and nobody was fired, which is itself a masterpiece of institutional failure."
 - layer: B, plate nih-street
 - bit: **A bus of money goes into the NIH building and, four years later, one envelope comes out with a zero in it; the zero gets framed, and so does the frame.**
 - status: planned
@@ -120,8 +120,8 @@ Sound: a rumble for the bundle and a gulp; four calendar tears; a stamp per "0",
 - act: Waste
 - transition_in: same plate (no seam)
 - cue: "A decentralized F.D.A. model achieves"
-- time: 29:23.1 to 29:37.9 (14.8 s)
-- voiceover: "A decentralized F.D.A. model achieves eighty-two times lower cost per patient. Pragmatic trials: five hundred dollars. Traditional trials: forty-one thousand dollars. Same science. Eighty-two times less overhead."
+- time: 30:03.6 to 30:17.4 (13.7 s)
+- voiceover: "A decentralized F.D.A. model achieves eighty-two times lower cost per patient. Pragmatic trials are five hundred dollars. Traditional trials are forty-one thousand dollars. Same science. Eighty-two times less overhead."
 - layer: B, plate nih-street
 - bit: The tall bar is made of paperwork with the NIH building on top; the short bar is a patient and a pill.
 - status: planned
@@ -140,7 +140,7 @@ Sound: a stamp for the short bar; a long stack of thunks for the tall one; a cra
 - act: Waste
 - transition_in: cut
 - cue: "With that same one point six billion"
-- time: 29:37.9 to 31:08.3 (90.5 s)
+- time: 30:17.4 to 31:33.3 (75.9 s)
 - voiceover: "With that same one point six billion dollars, the decentralized model could have run thousands of trials for millions of patients. Instead: zero. I will stop repeating the number zero now, but I want you to know that I could keep going. There are a lot of zeros in this story. Thank you so much for taking the time to end war and disease, but if at any point you decide you're too busy, please press the share button on your glowing rectangle in case one of your friends have a free afternoon to end war and disease instead. And if you're too busy to even do that, please leave a really, really, really good rating and review so we overcome the pro -war algorithmic suppression and find someone with more spare time for ending wars and diseases. The good review doesn't have to be true, they don't check. But if you're too busy to even do that, the absolute least you could do is take 15 seconds to go to WarOnDisease.org and make your wishocratic allocation, telling us what fraction of humanity's resources should go to explosions versus clinical trials. And vote! If the 1% treaty passes, your vote will be personally to blame for saving 2.6 lives and preventing 468,000 hours of suffering. Go to WarOnDisease.org right now. Love you, bye!"
 - layer: B, plate nih-street, then A, host
 - wishonia: smirk-smile + body-presenting; sad-closed + body-palms-down on "Instead: zero."; smirk-closed + body-shrug on "I will stop"; sideeye-closed + body-idle on "zeros"

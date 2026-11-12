@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:08.4
+duration: 2:07.1
 message: "A selfish billionaire should fund it anyway: his family is made of biology that no jet or bodyguard protects, and his fortune sits on an economy that the $13.2 trillion destructive economy is eating."
 arc: The fat cat poses with a giant charity cheque on top of his money hill, then curls round it like a dragon with an economics textbook → his family behind every wall money buys, and the diseases walk past the bodyguard → $27.2 billion a year into trials, and the Scientist marches up the beach at the germs → the money hill sits on the productive economy while the destructive one gnaws its legs, and the chart crosses 25% in 2033 → the GDP bars after 20 years: 1, 16.5 and 56.7, and the hill moves onto the city of tomorrow
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 8, "Why This Should Matter Even to a Self-Interested Billionaire"
-audio: treaty-feasibility.858ed1cd.mp3, 22:39.2 to 24:47.6
+audio: treaty-feasibility.82039d3b.mp3, 21:46.5 to 23:53.5
 version: v2
 ---
 
@@ -41,7 +41,7 @@ version: v2
 - act: The selfish case
 - transition_in: cut
 - cue: "Why This Should Matter"
-- time: 22:39.2 to 23:02.3 (23.1 s)
+- time: 21:46.5 to 22:09.9 (23.4 s)
 - voiceover: "Why This Should Matter Even to a Self-Interested Billionaire. If you are extremely rich, the relevant question is not "Is this charitable?" Charity is what you do to feel better at galas. The relevant question is: "Does this improve the expected future for me, my family, and the pile of assets I'm sitting on like a dragon who read an economics textbook?"."
 - layer: B, plate the-stack
 - bit: The fat cat poses with a giant charity cheque on top of his money hill, then curls round the hill like a dragon, reading economics.
@@ -60,7 +60,7 @@ Sound: a flash pop; a page turn; a dragon's rumbling purr.
 - act: The selfish case
 - transition_in: cut
 - cue: "Your family is made of biology"
-- time: 23:02.3 to 23:29.1 (26.8 s)
+- time: 22:09.9 to 22:38.3 (28.4 s)
 - voiceover: "Your family is made of biology. Private jets, private islands, and private security do not protect your children from cancer, neurodegeneration, autoimmune disease, antibiotic resistance, or aging. Redirecting twenty-seven point two billion dollars per year into treatment discovery is not altruism in the abstract. It is a direct attack on the probability that everyone you love dies the normal human way."
 - layer: B, plate private-island
 - bit: **The fat cat's family behind everything money can buy, and five diseases walk straight past the bodyguard.** Then the money goes into trials, and the Scientist marches up the beach at them.
@@ -81,8 +81,8 @@ Sound: waves; an airship's drone; five pat-downs and "go ahead"; a slow wind for
 - act: The selfish case
 - transition_in: cut
 - cue: "Your fortune sits on top"
-- time: 23:29.1 to 23:55.1 (26.0 s)
-- voiceover: "Your fortune sits on top of the productive economy. When the destructive/parasitic economy reaches equilibrium with the productive one, wealth preservation gets harder for everyone. The current destructive economy is already thirteen point two trillion dollars per year, or eleven point five percent of G.D.P., and the model projects it reaching the failed-state danger zone in eight years if the loop is not broken."
+- time: 22:38.3 to 23:04.1 (25.8 s)
+- voiceover: "Your fortune sits on top of the productive economy. When the destructive or parasitic economy reaches equilibrium with the productive one, wealth preservation gets harder for everyone. The current destructive economy is already thirteen point two trillion dollars per year, or eleven point five percent of G.D.P., and the model projects it reaching the failed-state danger zone by twenty thirty-three if the loop is not broken."
 - layer: B, plate the-stack
 - bit: **The camera pulls back from the dragon: the money hill sits on a tall stack of farms, houses and labs, and the destructive economy is gnawing through its legs.** The chart beside it shows how fast.
 - status: planned
@@ -102,8 +102,8 @@ Sound: busy machine hum from the stack; gnawing; a creak; a rising whine as the 
 - act: The selfish case
 - transition_in: cut
 - cue: "The upside is macro-scale"
-- time: 23:55.1 to 24:47.6 (52.5 s)
-- voiceover: "The upside is macro-scale, not boutique-scale. The twenty-year model projects the Treaty Path producing sixteen point five times the G.D.P. of doing nothing. The fuller Wishonia path, where the political dysfunction tax is also removed, projects fifty-six point seven times. The broader system is currently bleeding one hundred and one trillion dollars in opportunity cost, or eighty-seven point eight percent of global G.D.P. If you are rich because you own claims on future productive output, this matters to you personally. In other words: this is not "give up one percent of military spending so strangers can feel better." It is "buy a claim on the healthier, richer, less collapse-prone future in which your family survives longer and your assets sit on top of a civilization that still functions."."
+- time: 23:04.1 to 23:53.5 (49.4 s)
+- voiceover: "The upside is macro-scale, not boutique-scale. The twenty-year model projects the Minimum Sustainable Trajectory (one percent Treaty) producing one point seven one times the G.D.P. of doing nothing. The Optimal Governance Trajectory, where the Political Dysfunction Tax is also removed, projects fifty-six point seven times. The broader system is currently bleeding one hundred and one trillion dollars in opportunity cost, or eighty-seven point eight percent of global G.D.P. If you are rich because you own claims on future productive output, this matters to you personally. In other words: this is not "give up one percent of military spending so strangers can feel better." It is "buy a claim on the healthier, richer, less collapse-prone future in which your family survives longer and your assets sit on"
 - layer: B, plate gdp-chart
 - bit: **Three bars of GDP after 20 years; the last one runs off the top. Today's world leaks $101 trillion out of a tap. The fat cat moves his hill onto the treaty's bar, which is a city of tomorrow, and his family waves from a flying car.**
 - status: planned

@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:21.7
+duration: 2:21.2
 message: "Politicians sign when they see voters demanding it and a safe excuse: 280 million verified supporters and a model showing every nation gains, and the US already cut its military 87.6% in two years once."
 arc: A politician-statue that moves only for voters and cover; 1 human in 28 says yes, and a knitting circle becomes a voting bloc parked on his plinth → he smokes in the sun like a vampire until the report shades him, then takes credit and blames the portrait → the Treaty-Ready checklist ticks, he ignores it, and a hook takes him home to his family → US military spending falls off a cliff in 1946 and the factory slides down it; the arm that keeps putting the pen back in his hand
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 3, "How to Make Governments Sign Things"
-audio: treaty-feasibility.858ed1cd.mp3, 06:44.7 to 09:06.4
+audio: treaty-feasibility.82039d3b.mp3, 06:35.5 to 08:56.7
 version: v2
 ---
 
@@ -43,7 +43,7 @@ version: v2
 - act: Make them sign
 - transition_in: cut
 - cue: "How to Make Governments Sign Things"
-- time: 06:44.7 to 07:19.7 (35.0 s)
+- time: 06:35.5 to 07:13.7 (38.2 s)
 - voiceover: "How to Make Governments Sign Things. Politicians move when they see voters demanding it and political cover to do it. Give them both. First, prove public demand. Get three point five percent of the population (two hundred and eighty million people) to say "yes" with verified identity. The three point five percent finding is not a magic law of treaty ratification. It is a coordination heuristic: the point where a cause stops looking like a niche moral hobby and starts looking like a voting bloc large enough to create career risk. That's not activism. That's a mandate."
 - layer: B, plate town-square
 - bit: **The Politician is a statue with a pigeon on his head, and only voters plus cover bring him to life.** Then one human in 28 says yes, the knitting circle he patted on the head becomes a solid cube of voters, and it parks on his plinth.
@@ -65,7 +65,7 @@ Sound: a bronze grind per eyebrow; a sparkle as he comes alive; a soft ping per 
 - act: Make them sign
 - transition_in: cut
 - cue: "Second, prove it's safe"
-- time: 07:19.7 to 07:43.0 (23.3 s)
+- time: 07:13.7 to 07:36.4 (22.7 s)
 - voiceover: "Second, prove it's safe. Peer-reviewed modeling showing every nation gains more in health savings than it loses in military spending. Politicians need cover the way vampires need darkness. Give them the numbers and they'll pretend it was their idea (the second most reliable pattern in your political history, after blaming the previous administration)."
 - layer: B, plate the-house
 - bit: **The Politician is a vampire in a sunbeam, smoking, and the report is the only shade in the room. Then he signs it as his own and steps back into the sun to blame the portrait.**
@@ -86,7 +86,7 @@ Sound: a binder thud; a blind's snap; a sizzle; a pen scratch; a flash pop; a wh
 - act: The timeline
 - transition_in: same plate (no seam)
 - cue: "Timeline to"
-- time: 07:43.0 to 08:26.9 (43.9 s)
+- time: 07:36.4 to 08:19.9 (43.4 s)
 - voiceover: "Timeline to "Governments Can't Ignore This". With the first phase of a one billion dollar campaign, you can reach "Treaty-Ready" status in two to three years: a platform with two hundred and eighty million verified supporters (the three point five percent threshold), country-by-country impact modeling, and a coalition of one hundred and twenty plus supportive N.G.O.s and five to ten champion governments. Once these assets exist, formal negotiations become very hard to avoid. Not because politicians want them. Because ignoring two hundred and eighty million people is the kind of career decision that leads to "spending more time with family."."
 - layer: B, plate the-house
 - bit: **A checklist on his office wall, and each tick drops its thing into the room, until the room is too full to ignore; he ignores it anyway, and a vaudeville hook takes him home to dinner.**
@@ -108,8 +108,8 @@ Sound: calendar flips; a check-mark scratch per box; a heavy roll and a splinter
 - act: The timeline
 - transition_in: cut
 - cue: "The slow part is not"
-- time: 08:26.9 to 09:06.4 (39.5 s)
-- voiceover: "The slow part is not physical implementation. It is coalition activation. Once a political threshold is crossed, budget priorities can move much faster than peacetime common sense suggests. The United States cut military spending by eighty-seven point six percent in the two years after World War Two. The bottleneck is not whether states can reallocate fast. It is whether enough pressure, cover, and institutional machinery exist to make them do it. You aren't buying a treaty. You're buying the machinery that makes the treaty very hard to refuse."
+- time: 08:19.9 to 08:56.7 (36.8 s)
+- voiceover: "The slow part is not physical implementation. It is coalition activation. Once a political threshold is crossed, budget priorities can move much faster than peacetime common sense suggests. The United States cut military spending by eighty-seven percent point six percent in the two years after World War Two. The bottleneck is not whether states can reallocate fast. It is whether enough pressure, cover, and institutional machinery exist to make them do it. You aren't buying a treaty. You're buying the machinery that makes the treaty very hard to refuse."
 - layer: B, plate cliff-chart
 - bit: **US military spending after the war is a cliff, and the weapons factory slides down it on its backside. Then the campaign's machinery puts the pen in the Politician's hand, and every time he puts it down, it puts it back.**
 - status: planned

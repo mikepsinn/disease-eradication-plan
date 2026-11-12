@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:15.7
+duration: 4:07.3
 message: "The Optimitron recommends a budget (trials up 100 times, $391 billion off the military, farm subsidies to zero) and laws with receipts, tracks how often each politician votes with it, and a Super PAC funds the ones who do: no permission needed, just money."
 arc: The Optimitron's dial (BUDGET or POLICY) prints the US budget as a receipt → the receipt stands up as four pairs of bars: the trials sliver grows a hundredfold, the missile tower is cut by $391 billion and topples onto the weapons factory, the farmer sits on his corn bar and nobody comes, and the cut military still beats the next country → laws pop out on strings tied to pins on the globe, and receipts bury an opinion → the Scoreboard shows Senator Smith 78% and Senator Jones 34%, YOU checks it and the crowd faints, and the Super PAC flies jet packs to Smith's poster and Jones's challenger; the NRA's eagle card flips to a cross → the Optimitron's booth on the pavement outside the Capitol: Jones walks past and his campaign bag deflates, and the guillotine is wheeled away for a fundraising thermometer
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 4, "Recommend, Track, Reward"
-audio: optimocracy.27caf050.mp3, 09:35.9 to 12:51.6
+audio: optimocracy.f31c7536.mp3, 09:37.0 to 13:44.3
 version: v2
 ---
 
@@ -42,8 +42,8 @@ version: v2
 - act: Recommend
 - transition_in: cut
 - cue: "Recommend. The Optimitron has two settings"
-- time: 09:35.9 to 11:16.6 (100.8 s)
-- voiceover: "Recommend. The Optimitron has two settings. The Optimal Budget Generator answers "how much should you spend on what?" The Optimal Policy Generator answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States: For pragmatic clinical trials, the current budget is zero point five billion dollars, the optimal budget is fifty billion dollars, for a gap of plus forty-nine point five billion dollars, based on evidence grade A from randomized controlled trials, or R.C.T.s. For vaccinations, the current budget is eight billion dollars, the optimal budget is thirty-five billion dollars, for a gap of plus twenty-seven billion dollars, based on evidence grade A from R.C.T.s. For military discretionary spending, the current budget is eight hundred and fifty billion dollars, the optimal budget is four hundred and fifty-nine billion dollars, for a gap of minus three hundred and ninety-one billion dollars, based on evidence grade C from benchmarks. For agricultural subsidies, the current budget is twenty-five billion dollars, the optimal budget is zero dollars, for a gap of minus twenty-five billion dollars, based on evidence grade A from welfare analysis. You are spending one hundred times less than optimal on figuring out which medicines work, and paying farmers twenty-five billion dollars a year to grow food nobody asked for. The Optimitron noticed. It also noticed you could cut three hundred and ninety-one billion dollars from the murder budget and still have the largest military on the planet."
+- time: 09:37.0 to 11:47.7 (130.7 s)
+- voiceover: "Recommend. The Optimitron has two settings. The Optimal Budget Generator answers "how much should you spend on what?" The Optimal Policy Generator answers "which laws should you enact, replace, or repeal?" Here's a sample of what the budget output looks like, applied to the United States (illustrative numbers; the trial and vaccine targets are worked out in the paper, and the military target is what it costs to defend the actual country, priced one real threat at a time): For pragmatic clinical trials, current spending is zero point five billion dollars, while the optimal spending is fifty billion dollars, an increase of forty-nine point five billion dollars. Evidence grade: A (randomized controlled trials, or R.C.T.s). For vaccinations, current spending is eight billion dollars, while the optimal spending is sixteen billion dollars, an increase of eight billion dollars. Evidence grade: A (R.C.T.s). For the military, current spending is eight hundred and eighty-six billion dollars, while the optimal spending is one hundred and eighty-four billion dollars, a cut of seven hundred and two billion dollars. Evidence grade: C (threat-by-threat costs). For agricultural subsidies, current spending is twenty-five billion dollars, while the optimal spending is zero dollars, a decrease of twenty-five billion dollars. Evidence grade: C (assumed to fail the cash test). You are spending one hundred times less than optimal on figuring out which medicines work, and paying farmers twenty-five billion dollars a year to grow food nobody asked for. The Optimitron noticed. It also noticed that defending your actual country, one real threat at a time, costs one hundred and eighty-four billion dollars a year, and you spend eight hundred and eighty-six billion on the murder budget. The other seven hundred and two billion is for being in charge of everywhere else. The freed money does not go to whoever lobbies loudest. Every program has to beat handing people the same dollar in cash, or leaving it with whoever earned it."
 - layer: B, plate budget-receipt
 - bit: **The Optimitron prints America's bill, the receipt stands up as four pairs of bars, and the machine fixes each one with its own hands.** The trials sliver shoots up a hundredfold, the missile tower is sawn off and topples onto the weapons factory, and the corn bar has a farmer on top whom nobody visits. Payoff: the cut military stump is still taller than the next country's, and the charred factory, seeing its 1ST ribbon, stops sobbing.
 - status: planned
@@ -65,7 +65,7 @@ Sound: two dial clicks; two toaster pops; a receipt printer's chatter; a whoosh 
 - act: Recommend
 - transition_in: cut
 - cue: "The policy generator then does"
-- time: 11:16.6 to 11:32.4 (15.8 s)
+- time: 11:47.7 to 12:03.4 (15.7 s)
 - voiceover: "The policy generator then does the same thing law by law: enact this, repeal that, adjust the other thing. Every recommendation traceable to what actually happened when another jurisdiction tried it. No opinions. Just receipts."
 - layer: B, plate budget-receipt
 - bit: **Every law the machine pops out is on a string tied back to a pin on the globe where it was tried; an opinion with no string gets buried in receipts.**
@@ -85,8 +85,8 @@ Sound: a dial click; three pops; a string twang; a megaphone blare; the printer'
 - act: Track and reward
 - transition_in: cut
 - cue: "Track. When politicians vote"
-- time: 11:32.4 to 12:22.0 (49.6 s)
-- voiceover: "Track. When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: seventy-eight percent aligned. Senator Jones: thirty-four percent aligned. This information is public. Any citizen can check. On Wishonia, this is called "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record. Reward. The Incentive Alignment Bond, or I.A.B.-funded SuperPAC allocates campaign support proportional to alignment scores. Follow evidence, get funded. Ignore it, watch your opponent get funded. Same mechanism the N.R.A. perfected, but pointed at "not dying" instead of "more guns.""
+- time: 12:03.4 to 13:04.1 (60.7 s)
+- voiceover: "Track. When politicians vote, record whether they aligned with the evidence-based recommendation. Senator Smith: seventy-eight percent aligned. Senator Jones: thirty-four percent aligned. This information is public. Any citizen can check. There is a word for this. The word is "checking if the person you hired did the thing you hired them to do." Your species finds this concept revolutionary, which tells you everything. Politicians who ignore the evidence must do so on the record. Reward. Something has to make the score matter. The cheapest version is a company whose lobbyists already have the senator's phone number and are now selling the evidence-based budget instead (the takeover). The fastest version is a SuperPAC allocating campaign support proportional to alignment: follow evidence, get funded; ignore it, watch your opponent get funded. Same trick the N.R.A. perfected, but pointed at "not dying" instead of "more guns." The scoreboard does not care which one shows up."
 - layer: B, plate scoreboard-senate
 - bit: **Every vote lights up on a ballpark scoreboard, a citizen checking it is the most shocking thing that has ever happened in Washington, and then the Super PAC reads the board and flies the money to the right campaign posters.** Payoff: Jones's challenger blasts off on a jet pack that chars him, and the NRA's eagle card turns into a cross.
 - status: planned
@@ -108,8 +108,8 @@ Sound: button clicks with a ding or a buzz; a counter rattle; a gasp and a soft 
 - act: Reward
 - transition_in: cut
 - cue: "This doesn't require government permission"
-- time: 12:22.0 to 12:51.6 (29.6 s)
-- voiceover: "This doesn't require government permission. The Evidence Machine operates as a permanent advisory layer outside government. Politicians still vote however they want. They can still ignore the evidence; it just costs them money now, which on Earth is apparently the only consequence that matters. The question isn't "will politicians give up power?" (they won't) but "can we make ignoring good advice unprofitable?" (yes; it's a fundraising challenge, not a revolution)."
+- time: 13:04.1 to 13:44.3 (40.2 s)
+- voiceover: "This doesn't require government permission. The Evidence Machine operates as a permanent advisory layer outside government. The policy data is public, the votes are public, and publishing the comparison between them is just talking. Politicians still vote however they want. They can still ignore the evidence; it just costs them something now, which on Earth is apparently the only consequence that matters. The question isn't "will politicians give up power?" (they won't) but "will anyone act on an accurate scoreboard?" (several parties would, for several different reasons, which is the whole point of building it before deciding who)."
 - layer: B, plate capitol-pavement
 - bit: **The Evidence Machine is a booth on the pavement outside the Capitol: nobody inside has to open the door, and walking past it costs money.** Jones walks by and his campaign bag deflates. Payoff: the guillotine is wheeled off and a fundraising thermometer goes up.
 - status: planned

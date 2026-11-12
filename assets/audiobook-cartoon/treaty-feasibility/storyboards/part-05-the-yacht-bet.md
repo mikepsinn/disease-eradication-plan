@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 3:48.9
+duration: 3:33.7
 message: "The treaty is harder than most (military budgets, forever payments, quiet deaths, nobody signs first), it has real advantages, and at a 1% chance the bet is one yacht against the end of most disease."
 arc: Wishonia admits it is a sales pitch, and a price tag drops onto the Earth → at the signing table, the Politician shows his browser history rather than his military budget, and the treaty takes a coin a month → 150,000 polite deaths a day, and everybody runs to the one loud bang → back at the table, the Politician won't touch the treaty, then bungee-jumps; the leaders bow after-you into a conga line → what helps breaks up the conga: the funnel that pays, voters in through the window, until the leaders queue for the first chair in the same saddle shoes → Part 4's prize wheel on the wall: an asteroid at 0.1%, bed nets at 1%, the window at 25% → the fat cat stakes his yacht at roulette for the end of most disease, and the yacht sinks anyway
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 5, "Why a 1% Treaty Is Harder Than Most Precedents"
-audio: treaty-feasibility.858ed1cd.mp3, 12:33.4 to 16:22.3
+audio: treaty-feasibility.82039d3b.mp3, 12:05.5 to 15:39.2
 version: v2
 ---
 
@@ -45,8 +45,8 @@ version: v2
 - act: The hard parts
 - transition_in: cut
 - cue: "Why a one percent Treaty is Harder"
-- time: 12:33.4 to 12:48.0 (14.6 s)
-- voiceover: "Why a one percent Treaty is Harder Than Most Precedents. Let's be honest about the obstacles. This is not a chapter written by someone trying to sell you something. (It is. But at least it's honest about the hard parts.)"
+- time: 12:05.5 to 12:19.3 (13.8 s)
+- voiceover: "Why a one percent treaty is harder than most precedents. Let's be honest about the obstacles. This is not a chapter written by someone trying to sell you something. (It is. But at least it's honest about the hard parts.)."
 - layer: A, host
 - wishonia: neutral-smile + body-hand-chest; smirk-smile + body-open-palms on "not"; sideeye-closed + body-shrug on "(It is."; happy-smile + body-presenting on "honest"
 - bit: Wishonia swears she isn't selling, and a price tag drops onto the planet.
@@ -66,8 +66,8 @@ Sound: a soft harp; a ding as the tag swings in.
 - act: The hard parts
 - transition_in: cut
 - cue: "It touches military budgets"
-- time: 12:48.0 to 13:05.5 (17.5 s)
-- voiceover: "It touches military budgets, and politicians would rather discuss their browser history than their defense budget. It requires ongoing annual allocation, not a one-time signature, which makes it a gym membership for peace (monthly, forever, no quitting)."
+- time: 12:19.3 to 12:38.0 (18.7 s)
+- voiceover: "It touches military budgets, and politicians would rather discuss their browser history than their military budget. It requires ongoing annual allocation, not a one-time signature, which makes it a gym membership for peace (monthly, forever, no quitting)."
 - layer: B, plate the-table
 - bit: Two hurdles at the signing table: the Politician would rather show his browser history, and the treaty takes a coin a month, forever.
 - status: planned
@@ -86,7 +86,7 @@ Sound: a gulp; a laptop chime; a coin clink per month; a strained rip that doesn
 - act: The hard parts
 - transition_in: cut
 - cue: "There's no immediate security threat"
-- time: 13:05.5 to 13:23.7 (18.3 s)
+- time: 12:38.0 to 12:55.5 (17.6 s)
 - voiceover: "There's no immediate security threat driving it; one hundred and fifty thousand deaths per day apparently doesn't qualify as a catastrophe because the deaths are distributed, quiet, and polite, and your species only responds to deaths that are concentrated, loud, and rude."
 - layer: B, plate two-crowds
 - bit: **150,000 people a day die politely in their beds on the left; one bomb goes off on the right, and every camera on Earth runs to it.**
@@ -106,8 +106,8 @@ Sound: near silence, then a soft "excuse me" per bed; one enormous boom; a stamp
 - act: The hard parts
 - transition_in: cut
 - cue: "The mechanism is novel"
-- time: 13:23.7 to 13:43.3 (19.5 s)
-- voiceover: "The mechanism is novel, and humans are suspicious of things they haven't tried before (odd, for a species that invented bungee jumping). And nobody wants to sign first. Everybody wants to sign second. This is a fine strategy for a conga line."
+- time: 12:55.5 to 13:08.9 (13.4 s)
+- voiceover: "The mechanism is novel, and humans are suspicious of things they haven't tried before (odd, for a species that invented bungee jumping). And nobody wants to sign first. Everybody wants to sign second."
 - layer: B, plate the-table
 - bit: The Politician won't touch the treaty but will jump off things for fun, and every leader at the table bows "after you" until they are a conga line round an empty chair.
 - status: planned
@@ -127,7 +127,7 @@ Sound: a sniff; a whoop and a long bungee boing; murmured "after you"s; conga dr
 - act: What helps
 - transition_in: same plate (no seam)
 - cue: "Why a one percent Treaty Might Beat the Odds"
-- time: 13:43.3 to 14:30.2 (46.9 s)
+- time: 13:08.9 to 13:54.5 (45.6 s)
 - voiceover: "Why a one percent Treaty Might Beat the Odds. It's self-funding: the health dividends exceed the "cost," so you make money by doing the right thing, which is the only way your species does the right thing. "Should we cure more diseases?" polls well across every political spectrum, alongside "Is water wet?" and "Should we pay Congress less?" It has a referendum pathway that bypasses government resistance (politicians hate this, which is how you know it works). It has visible beneficiaries: one hundred and fifty thousand deaths per day. And each signing country makes the next more likely, because peer pressure is humanity's most reliable technology and the reason your teenagers wear the same shoes."
 - layer: B, plate the-table
 - bit: **The conga line is still circling the empty first chair, and each advantage breaks it up a little more,** until one leader sits down and signs and the conga turns into a queue for the chair, all in the same saddle shoes.
@@ -148,8 +148,8 @@ Sound: conga drums that slow and stop; a funnel's gurgle and a click as the seal
 - act: The odds
 - transition_in: same plate (the camera rises to the wheel on the wall)
 - cue: "Probability Estimates"
-- time: 14:30.2 to 15:20.6 (50.5 s)
-- voiceover: "Probability Estimates. Economists would find the following defensible (and economists find very little defensible, which is their brand): The pessimistic floor scenario has a probability of zero point one percent. Translation: Everything goes wrong. Global crises. Political gridlock. Asteroid, possibly. The conservative central scenario has a probability of one percent. Translation: Failure remains the base case. Still five hundred and three times better than bed nets. The optimistic ceiling scenario has a probability of twenty-five percent. Translation: A major crisis opens a political window. Or humans just... decide to be smart for once. The model uses: Central estimate one percent"
+- time: 13:54.5 to 14:40.3 (45.8 s)
+- voiceover: "Probability Estimates. Economists would find the following defensible (and economists find very little defensible, which is their brand): The pessimistic floor has a probability of zero point one percent, representing a scenario where everything goes wrong, including global crises, political gridlock, and an asteroid, possibly. The conservative central case has a probability of one percent. Failure remains the base case, but this is still ninety-two point one times better than bed nets. The optimistic ceiling has a probability of twenty-five percent, assuming a major crisis opens a political window or humans just decide to be smart for once. The model uses a central estimate of one percent."
 - layer: B, plate the-table
 - bit: **Part 4's prize wheel on the wall, CHANCE IT WORKS, and its WIN slice is resized for each scenario.** At 0.1% an asteroid flattens it; at 1% the bed-net cup; at 25% it is a fat quarter and the window beside it flies open, and a human's light bulb sputters. It snaps back to 1%.
 - status: planned
@@ -170,8 +170,8 @@ Sound: a monocle's creak; a whoosh and a crash; a ding for the cup; a window ban
 - act: The odds
 - transition_in: cut
 - cue: "Expected Value (Even When You Assume Failure)"
-- time: 15:20.6 to 16:22.3 (61.7 s)
-- voiceover: "Expected Value (Even When You Assume Failure). At one percent probability of success, expected R.O.I. is eight hundred and forty-eight thousand to one (still positive, even assuming near-certain failure) and expected cost per disability-adjusted life year, or D.A.L.Y., is zero point one seven seven dollars, which is five hundred and three times better than bed nets at eighty-nine dollars per D.A.L.Y. Downside: capped at about one billion dollars. You lose the cost of a nice yacht. Upside: unbounded. You cure most diseases. Even assuming failure is the base case, this beats the gold standard of global health interventions. The downside is a yacht. The upside is the end of most disease. Your species makes worse bets every day in Las Vegas, except there the upside is a slightly larger pile of papers. The yacht will be fine. It was going to depreciate anyway."
+- time: 14:40.3 to 15:39.2 (58.9 s)
+- voiceover: "Expected Value (Even When You Assume Failure). At one percent probability of success, the expected R.O.I. is seventy-five thousand three hundred to one (still positive, even assuming near-certain failure) and the expected cost per disability-adjusted life year, or D.A.L.Y., is one dollar and ninety-nine cents, which is ninety-two point one times better than bed nets at one hundred and eighty-four dollars per D.A.L.Y. Downside: capped at approximately one billion dollars. You lose the cost of a nice yacht. Upside: unbounded. You cure most diseases. Even assuming failure is the base case, this beats the gold standard of global health interventions. The downside is a yacht. The upside is the end of most disease. Your species makes worse bets every day in Las Vegas, except there the upside is a slightly larger pile of papers."
 - layer: B, plate casino
 - bit: **The fat cat stakes his yacht on a roulette table at 848,000 to 1, and the jackpot is the germs falling off the globe. At the next table a man bets everything for one more bill. The yacht sinks in the harbour on its own.**
 - status: planned

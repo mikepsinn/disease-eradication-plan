@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 4:05.0
+duration: 4:03.0
 message: "Getting countries to sign a treaty is cheap: a handful of people with a phone got 122 countries to ban landmines for less than one Super Bowl's beer ads."
 arc: Title card (a pen signs it, and its price tag is the gag) → the old treaties fill up at the GUILT pump and die; this one fills at GREED and is gone → the Economist's objection grows a beard in front of a chart where doing costs a tower and signing costs one pen → one annoyed woman on a phone builds the first bar of signatures and yanks the factory's landmines away → tiny teams under tall bars, and an accounting department to the horizon → back at the cost chart, the beer-ad bar beats the treaty and YOU gets stupider
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 1, "Treaty Feasibility and Cost Analysis"
-audio: treaty-feasibility.858ed1cd.mp3, 00:00.0 to 04:05.0
+audio: treaty-feasibility.82039d3b.mp3, 00:00.0 to 04:03.0
 version: v2
 ---
 
@@ -46,7 +46,7 @@ version: v2
 - act: Title
 - transition_in: up from black
 - cue: "Treaty Feasibility and Cost Analysis"
-- time: 00:00.0 to 01:42.3 (102.3 s)
+- time: 00:00.0 to 01:42.8 (102.8 s)
 - voiceover: "You're here. Your organs are failing. And your death is drawing near. But if you bribe the right politicians in the right order at the right time, you can trade the nuclear warheads for medicine. And it's not even a crime. Treaty Feasibility and Cost Analysis"
 - layer: A, title card
 - bit: The period card is itself a treaty, and signing it costs less than the pen.
@@ -64,7 +64,7 @@ Sound: a whirr; a pen's long scratch; a tiny ding for the tag.
 - act: Guilt and greed
 - transition_in: cut
 - cue: "Previous treaties failed"
-- time: 01:42.3 to 01:55.3 (13.0 s)
+- time: 01:42.8 to 01:57.3 (14.5 s)
 - voiceover: "Previous treaties failed because they ran on guilt. Guilt has terrible fuel efficiency. This one runs on greed, which is (regrettably) humanity's only reliable fuel source."
 - layer: B, plate gas-station
 - bit: **Two pumps, GUILT and GREED. The old treaties fill up on guilt and die in the forecourt; this one fills up on greed and is gone before the hose drops.**
@@ -84,8 +84,8 @@ Sound: two engine coughs and clanks; a moth's flutter; a fast counter whirr; a r
 - act: Signing is cheap
 - transition_in: cut
 - cue: "Getting one hundred and ninety-five countries"
-- time: 01:55.3 to 02:29.4 (34.1 s)
-- voiceover: ""Getting one hundred and ninety-five countries to agree costs billions and takes forever." No. Getting countries to implement things costs billions. Getting them to sign papers is surprisingly cheap. Your entire diplomatic system runs on the principle that writing your name on a document feels like accomplishing something (it doesn't, but it's affordable). What Treaties Actually Cost. N.G.O. campaign budgets are rarely disclosed publicly, but treaty campaigns run on pocket change compared to the thing they create."
+- time: 01:57.3 to 02:34.0 (36.7 s)
+- voiceover: ""Getting one hundred and ninety-five countries to agree costs billions and takes forever.". No. Getting countries to implement things costs billions. Getting them to sign papers is surprisingly cheap. Your entire diplomatic system runs on the principle that writing your name on a document feels like accomplishing something (it doesn't, but it's affordable). What Treaties Actually Cost. Non-governmental organization, or N.G.O. campaign budgets are rarely disclosed publicly, but treaty campaigns run on pocket change compared to the thing they create."
 - layer: B, plate cost-chart
 - bit: **The Economist says signing costs billions and takes forever, and grows a beard saying it. The chart behind him says otherwise: doing the thing is a tower of coins off the top of the frame; signing is one pen. A politician signs, bows, and nothing changes; the whole campaign fits in his pocket.**
 - status: planned
@@ -106,7 +106,7 @@ Sound: chalk-pointer taps; a flutter of pages and a rising whistle for the beard
 - act: What treaties cost
 - transition_in: cut
 - cue: "The Ottawa Treaty banning landmines"
-- time: 02:29.4 to 03:00.7 (31.3 s)
+- time: 02:34.0 to 03:02.3 (28.2 s)
 - voiceover: "The Ottawa Treaty banning landmines took fourteen months. One staff member, Jody Williams, grew a coalition to over a thousand organizations across sixty countries. One hundred and twenty-two states signed. She won the Nobel Peace Prize. One woman with a phone convinced one hundred and twenty-two countries to stop burying explosives in the ground where children walk. Your species is capable of remarkable things when one person gets sufficiently annoyed."
 - layer: B, plate signers-chart
 - bit: **One annoyed woman on a telephone at the foot of an empty bar, and the bar fills up over her head.** Her cord strings up a thousand flags, the flags become 122 signatures, a Nobel medal lands round her neck and she never stops dialing; then the cord whips down and yanks the weapons factory's landmines out of its gloves.
@@ -128,8 +128,8 @@ Sound: rotary dial clicks, faster and faster; a pop per flag; a clink for the me
 - act: What treaties cost
 - transition_in: same plate (no seam)
 - cue: "The Cluster Munitions Convention took"
-- time: 03:00.7 to 03:43.1 (42.4 s)
-- voiceover: "The Cluster Munitions Convention took about two years. Seven governments and a coalition of N.G.O.s got ninety-four states to sign. The Arms Trade Treaty took a decade but started with three supporting governments. The Control Arms coalition published more than fifty reports until one hundred and thirty countries signed. The Nuclear Ban Treaty also took a decade. ICAN ran the entire operation with five staff in a Geneva office. One hundred and twenty-two states voted yes. Another Nobel Prize. Five people in a Geneva office won a Nobel Prize. You have more people in your accounting department."
+- time: 03:02.3 to 03:42.1 (39.8 s)
+- voiceover: "The Cluster Munitions Convention took about two years. Seven governments and a coalition of N.G.O.s got ninety-four states to sign. The Arms Trade Treaty took a decade but started with three supporting governments. The Control Arms coalition published fifty plus reports until one hundred and thirty countries signed. The Nuclear Ban Treaty also took a decade. The International Campaign to Abolish Nuclear Weapons, or ICAN, ran the entire operation with five staff in a Geneva office. One hundred and twenty-two states voted yes. Another Nobel Prize. Five people in a Geneva office won a Nobel Prize. You have more people in your accounting department."
 - layer: B, plate signers-chart
 - bit: **The camera travels along the tall bars, and at the foot of each the tiny team that did it.** The Arms Trade team buries the holdouts in reports; the Geneva office can't get its medal through the door; then the camera pulls back to an accounting department that goes to the horizon.
 - status: planned
@@ -149,7 +149,7 @@ Sound: a pop per flag; a slap per report and a paper avalanche; a medal's clunk 
 - act: What treaties cost
 - transition_in: cut
 - cue: "Pattern: Total to get a treaty signed"
-- time: 03:43.1 to 04:05.0 (21.8 s)
+- time: 03:42.1 to 04:03.0 (20.8 s)
 - voiceover: "Pattern: Total to get a treaty signed: fifteen to fifty million dollars. Your species spends more than that on Super Bowl ads for beer (the thing that makes you temporarily stupider). You will pay more to sell stupidity beverages during one sporting event than it costs to get one hundred and twenty-two countries to agree on anything."
 - layer: B, plate cost-chart
 - bit: **Back at the cost chart, the treaty's bar is knee-high and the beer-ad bar beside it is taller, and YOU, in front of the TV, gets stupider with every sip.**

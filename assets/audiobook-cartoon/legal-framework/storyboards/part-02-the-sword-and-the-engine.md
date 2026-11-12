@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:43.8
+duration: 2:56.6
 message: "The Sword turns 280 million survey answers into political pressure, and the Engine sells bonds that target 272% a year and spends $1 billion on lobbying and campaigns, with every piece kept in its own box so the law calls it design and not bribery."
 arc: Title card sliced by the Sword → two turnstiles, OPINIONS (pay) and NO OPINIONS (free), and the planet takes the free one → the survey cards ride the Sword's blade up the Capitol steps, 280 million climb the hill, and the Politician sweats through his suit into a puddle → the Brain and the Sword talk over a wall by billboard → the Engine speaks money, Wall Street's ears prick up, and the nice words go in one ear and out the other while nobody cares → the Engine runs: bonds out one end, $1 billion out the other, payouts from its side → three filing cabinets whose sign reads DESIGN apart and BRIBERY touching → the pulley that lifts a patient out of bed and a Fat Cat up his money pile → Delaware's maternity ward, where briefcases are born
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 2, "The Sword and the Engine"
-audio: legal-framework.d5cdcfa7.mp3, 05:03.4 to 07:47.3
+audio: legal-framework.3d9d89ef.mp3, 06:10.1 to 09:06.6
 version: v2
 ---
 
@@ -44,8 +44,8 @@ version: v2
 - act: The Sword
 - transition_in: up from black (a cut from Part 1's last frame)
 - cue: "Entity Number Two"
-- time: 05:03.4 to 05:10.0 (6.6 s)
-- voiceover: "Entity Number Two: Your five hundred and one c four Social Welfare Org ("The Sword")."
+- time: 06:10.1 to 06:16.4 (6.4 s)
+- voiceover: "Entity number two: Your five zero one c four Social Welfare Organization ("The Sword")."
 - layer: A, title card
 - bit: The second entity arrives sword first.
 - status: planned
@@ -62,7 +62,7 @@ Sound: a whirr; clanking footsteps; a swish and a snip.
 - act: The Sword
 - transition_in: cut
 - cue: "This is your political advocacy arm."
-- time: 05:10.0 to 05:27.4 (17.3 s)
+- time: 06:16.4 to 06:32.7 (16.3 s)
 - voiceover: "This is your political advocacy arm. Donations are NOT tax-deductible, which is the price of being allowed to have opinions. On your planet, having opinions about where money goes costs money. Not having opinions is free. This explains a great deal about your civilization."
 - layer: B, plate sword-street
 - bit: **Two turnstiles, OPINIONS (pay) and NO OPINIONS (free), and the whole planet takes the free one.** One man pays a coin and gets a thought; everyone else walks through blank. Payoff: the free line runs to the horizon, and the one customer who pays for opinions by the bundle is the weapons factory.
@@ -82,7 +82,7 @@ Sound: a coin clink and a turnstile clack; a rip; a pop for the bubble; a clack 
 - act: The Sword
 - transition_in: cut
 - cue: "The Sword takes the referendum results"
-- time: 05:27.4 to 05:43.9 (16.5 s)
+- time: 06:32.7 to 06:47.3 (14.6 s)
 - voiceover: "The Sword takes the referendum results from your Brain and weaponizes them: unlimited lobbying, voter mobilization of two hundred and eighty million plus referendum participants, and the kind of political pressure that makes politicians sweat through their suits."
 - layer: B, plate sword-street (the Capitol steps)
 - bit: **The survey answers go onto the Sword's blade, and the Politician melts in front of it.** The Sword climbs the Capitol steps, 280 million people crest the hill behind it, and the Politician sweats until he stands in a puddle up to his chin.
@@ -102,7 +102,7 @@ Sound: a riffle and a shing as the cards go on; clanking steps; a rising crowd r
 - act: The Sword
 - transition_in: cut
 - cue: "Your species invented an organizational form"
-- time: 05:43.9 to 06:01.5 (17.7 s)
+- time: 06:47.3 to 07:05.2 (17.9 s)
 - voiceover: "Your species invented an organizational form specifically for telling politicians what to do. Then you made a different form for everything else. Then you made it illegal for the two forms to talk to each other, except through carefully worded press releases, which is how they talk to each other."
 - layer: B, plate sword-street (the wall)
 - bit: **The Brain and the Sword stand either side of a wall with a cop between them, and talk by billboard.**
@@ -122,8 +122,8 @@ Sound: a whisper and a whistle; two hammer thumps per billboard; a thumbs-up squ
 - act: The Engine
 - transition_in: cut
 - cue: "Entity number three"
-- time: 06:01.5 to 06:32.2 (30.6 s)
-- voiceover: "Entity number three: The Victory Corporation ("The Engine"). This is a standard for-profit corporation. Designed to speak the only language Wall Street understands, which is money. Other languages Wall Street claims to understand include "sustainability," "stakeholder value," and "corporate responsibility," but it's been faking comprehension of these for decades and nobody has noticed, or rather everyone has noticed and nobody has cared, which on your planet is the same thing."
+- time: 07:05.2 to 07:36.2 (31.0 s)
+- voiceover: "Entity number three: The Campaign-Bond Corporation ("The Engine"). This is a standard for-profit corporation. Designed to speak the only language Wall Street understands, which is money. Other languages Wall Street claims to understand include "sustainability," "stakeholder value," and "corporate responsibility," but it's been faking comprehension of these for decades and nobody has noticed, or rather everyone has noticed and nobody has cared, which on your planet is the same thing."
 - layer: B, plate engine-yard (Wall Street)
 - bit: **The Engine opens its mouth and money comes out, and Wall Street understands; the nice words go in one of its ears and straight out the other, and everyone watching shrugs.**
 - status: planned
@@ -144,8 +144,8 @@ Sound: a steam whistle and a hiss; a stamp; a pop for the bill bubble; a boing f
 - act: The Engine
 - transition_in: cut
 - cue: "The Engine issues VICTORY"
-- time: 06:32.2 to 06:51.9 (19.8 s)
-- voiceover: "The Engine issues VICTORY Incentive Alignment Bonds (two hundred and seventy-two percent target returns), uses one billion dollars to fund lobbying and campaigns, and administers the treaty treasury infrastructure: investor payouts, reporting, compliance, and the operating machinery it is legally allowed to run."
+- time: 07:36.2 to 08:11.2 (35.1 s)
+- voiceover: "The Engine issues VICTORY Incentive Alignment Bonds (two hundred and seventy-two percent target returns), uses one billion dollars to fund lobbying and campaigns, and administers the treaty treasury infrastructure: investor payouts, reporting, compliance, and the operating machinery it is legally allowed to run. The Engine is not E.O.S. equity. E.O.S. equity is the holding-company instrument that buys company shares and redirects lobbying; the Engine issues the campaign bonds. Different product, different job, different box."
 - layer: B, plate engine-yard (the Engine)
 - bit: **The Engine is a printing locomotive: bonds out of its tender, the campaign money out of its firebox, payouts out of a window in its side.** Scenes 6 to 8 travel the rest of the plate.
 - status: planned
@@ -165,8 +165,8 @@ Sound: a chuff per certificate; a thump of the stamp; a pop for the monocle; a r
 - act: The Engine
 - transition_in: same plate (no seam)
 - cue: "It is not the entire"
-- time: 06:51.9 to 07:10.3 (18.3 s)
-- voiceover: "It is not the entire I.A.B. stack. The scoring, electoral, and post-office incentive layers stay firewalled in separate entities, because on your planet the difference between "systematic incentive design" and "obvious bribery" is mostly whether the lawyers separated the entities correctly."
+- time: 08:11.2 to 08:31.0 (19.7 s)
+- voiceover: "It is not the entire I.A.B. architecture. The scoring, electoral, and post-office incentive layers stay firewalled in separate entities, because on your planet the difference between "systematic incentive design" and "obvious bribery" is mostly whether the lawyers separated the entities correctly."
 - layer: B, plate engine-yard
 - bit: Same plate: **a sign that reads DESIGN while three filing cabinets stay apart and BRIBERY the moment two touch.**
 - status: planned
@@ -185,8 +185,8 @@ Sound: three thumps; a bump; a flip-clack and a whistle; a scrape; a flip-clack.
 - act: The Engine
 - transition_in: same plate (no seam)
 - cue: "It is, in short"
-- time: 07:10.3 to 07:22.2 (12.0 s)
-- voiceover: "It is, in short, the part that makes rich people richer for making sick people better. On Wishonia, this arrangement would be considered bizarre. On Earth, it's the only arrangement that produces results."
+- time: 08:31.0 to 08:42.0 (11.1 s)
+- voiceover: "It is, in short, the part that makes rich people richer for making sick people better. This arrangement is bizarre. It is also the only arrangement that produces results."
 - layer: B, plate engine-yard (the pulley)
 - bit: Same plate: **one rope over a pulley: as the patient climbs out of bed, Fat Cat rises up his money pile.**
 - status: planned
@@ -205,7 +205,7 @@ Sound: a pulley creak; a bed spring; a rising chime with each step up; jogging f
 - act: Delaware
 - transition_in: cut
 - cue: "Why Delaware?"
-- time: 07:22.2 to 07:47.3 (25.1 s)
+- time: 08:42.0 to 09:06.6 (24.6 s)
 - voiceover: "Why Delaware? More corporations than humans live there. Your Supreme Court decided that companies are people who can talk, and talking is spending money. This sounds like satire but is actually constitutional law. Delaware has made itself the place where imaginary people go to be born, which is a sentence that sounds like it was written by a mentally unwell person but is in fact a precise description of American corporate law."
 - layer: B, plate delaware
 - bit: **Delaware's maternity ward, where briefcases are born.** The chart shows two corporations for every human; the Supreme Court knights a briefcase PERSON and money comes out when it talks; the camera finds where they come from, a nursery full of them.

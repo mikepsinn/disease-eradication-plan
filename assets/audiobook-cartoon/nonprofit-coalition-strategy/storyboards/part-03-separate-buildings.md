@@ -1,12 +1,12 @@
 ---
 format: 1920x1080
-duration: 2:53.6
+duration: 2:43.6
 message: "Climate, poverty, peace and disease groups each fight one corner of the same problem, war spending, from separate buildings; the 1% treaty gives every one of them its win, and the law lets them back it."
 arc: Wishonia observes instead of instructing, and the Earth blushes → the street of doghouses: the CLIMATE dog switches off a bulb beside a smoking factory, and the CLIMATE and PEACE doghouses stand back to back and soak each other → the POVERTY dog begs the Fat Cat for 60 years, then chases its own tail → the PEACE dog pushes the winning money off the scale and its halo slides off → the CANCER dog fights a cancer patient over a bill, and the trial door widens 12.3 times → the 501(c)(3) dog's muzzle loosens, the 501(c)(4) bulldog lifts the weight, and the lawyer gets his colour back
 audience: busy humans on YouTube who have not read the book
 mode: collaborative
 part: 3, "Separate Buildings"
-audio: nonprofit-coalition-strategy.bc12e99d.mp3, 06:55.9 to 09:49.5
+audio: nonprofit-coalition-strategy.42921084.mp3, 06:18.4 to 09:02.0
 version: v2
 ---
 
@@ -40,7 +40,7 @@ version: v2
 - act: Every kind of charity
 - transition_in: iris in on her face
 - cue: "I want to explain why"
-- time: 06:55.9 to 07:11.5 (15.6 s)
+- time: 06:18.4 to 06:33.4 (15.0 s)
 - voiceover: "I want to explain why this applies to every type of organization, but I'm going to do it by describing what I observe rather than what you should do, because your species responds poorly to instructions and reasonably well to feeling embarrassed."
 - layer: A, host
 - wishonia: neutral-smile + body-open-palms; skeptical-closed + body-shrug on "instructions"; smirk-smile + body-point-right on "embarrassed."
@@ -60,7 +60,7 @@ Sound: a clack for the pointer; a boing; a soft rising shimmer for the blush.
 - act: Every kind of charity
 - transition_in: cut
 - cue: "Environmental groups spend"
-- time: 07:11.5 to 07:55.5 (44.0 s)
+- time: 06:33.4 to 07:12.2 (38.8 s)
 - voiceover: "Environmental groups spend their time trying to reduce carbon emissions while the largest polluters on Earth (militaries) operate completely outside every climate agreement. Defunding them one percent would be the most effective climate policy ever proposed, and it doesn't require anyone to give up hamburgers or install a solar panel. Nobody has suggested this because the environmental movement and the peace movement operate in separate buildings and do not talk to each other. They attend different conferences. They have different donors. They fight the same problem from different angles and never coordinate, which is exactly the behavior they're trying to fix in the systems they criticize."
 - layer: B, plate kennel-row
 - bit: **One street of doghouses, one cause each, and the weapons factory at the end of the street is behind every one of their problems.** The camera walks the street, a scene per doghouse. Here, the CLIMATE dog saves a light bulb beside a factory pouring out smoke; next door, back to back, the PEACE dog never looks round, and when both finally go for the factory they soak each other.
@@ -83,8 +83,8 @@ Sound: a tiny click for the bulb; a chuff of smoke; a tank rumble; a cough; a sn
 - act: Every kind of charity
 - transition_in: same plate (no seam)
 - cue: "Anti-poverty groups have been"
-- time: 07:55.5 to 08:23.6 (28.0 s)
-- voiceover: "Anti-poverty groups have been running the strategy of "ask rich people to feel bad" for sixty years. How's that going? War and disease are the root causes of most modern poverty. A one percent treaty tackles both. But poverty organizations don't work on military spending because that's "not their issue." Their issue is poverty. Which is caused by military spending. Which is not their issue."
+- time: 07:12.2 to 07:36.5 (24.3 s)
+- voiceover: "Anti-poverty groups have been running the strategy of "ask rich people to feel bad" for sixty years. How's that going? War and disease are the root causes of most modern poverty. A one percent Treaty tackles both. But poverty organizations don't work on military spending because that's "not their issue." Their issue is poverty. Which is caused by military spending. Which is not their issue."
 - layer: B, plate kennel-row
 - bit: Same plate, the POVERTY doghouse: sixty years of begging the Fat Cat for one coin, then the dog chases its own tail, whose tag is MILITARY SPENDING.
 - status: planned
@@ -104,8 +104,8 @@ Sound: a whine; a coin's tink; a calendar riffle; a scroll's roll; a sniff; a wh
 - act: Every kind of charity
 - transition_in: same plate (no seam)
 - cue: "Peace organizations have been"
-- time: 08:23.6 to 08:53.9 (30.4 s)
-- voiceover: "Peace organizations have been making moral appeals for seventy years. Moral appeals do not work on a species that runs on money. A one percent treaty makes peace more profitable than war. This is the only argument that has ever worked on humans, and the peace movement refuses to make it because it feels unseemly to talk about profit when people are dying. So people keep dying, but at least the peace movement's messaging is ethically pure."
+- time: 07:36.5 to 08:02.7 (26.1 s)
+- voiceover: "Peace organizations have been making moral appeals for seventy years. Moral appeals do not work on a species that runs on money. A one percent Treaty makes peace more profitable than war. This is the only argument that has ever worked on humans, and the peace movement refuses to make it because it feels unseemly to talk about profit when people are dying. So people keep dying, but at least the peace movement's messaging is ethically pure."
 - layer: B, plate kennel-row
 - bit: Same plate, the PEACE doghouse: the dog's STOP sign bounces off the factory, the money tips the scale for peace, and the dog noses the money off the scale; the dead pile up and its halo will not stay on.
 - status: planned
@@ -125,8 +125,8 @@ Sound: a pat; a clank per missile; a calendar riffle; a heavy clunk as the scale
 - act: Every kind of charity
 - transition_in: cut
 - cue: "Disease advocacy groups"
-- time: 08:53.9 to 09:21.0 (27.1 s)
-- voiceover: "Disease advocacy groups are fighting other disease groups for crumbs of the N.I.H. budget. You are literally competing with cancer patients for the money that should be curing cancer patients. A one percent treaty creates twenty-seven point two billion dollars in new funding with twelve point three times more trial capacity. The bottleneck isn't ideas or molecules. It's running enough trials to find out what works. This solves that."
+- time: 08:02.7 to 08:32.9 (30.3 s)
+- voiceover: "Disease advocacy groups are fighting other disease groups for crumbs of the N.I.H. budget. You are literally competing with cancer patients for the money that should be curing cancer patients. A one percent Treaty creates twenty-seven point two billion dollars in new funding with twelve point three times more trial capacity. The bottleneck isn't ideas or molecules. It's running enough trials to find out what works. This solves that."
 - layer: B, plate kennel-row, then plate trial-door
 - bit: The CANCER dog plays tug-of-war with a cancer patient over one bill; then the tiny trial door, where a queue of untested compounds waits, widens 12.3 times and they pour through to be tested.
 - status: planned
@@ -146,8 +146,8 @@ Sound: snarls; a long rip; a stamp; a creak and a boing as the door widens; a ru
 - act: Every kind of charity
 - transition_in: cut back to kennel-row
 - cue: "If your organization is"
-- time: 09:21.0 to 09:49.5 (28.5 s)
-- voiceover: "If your organization is a five zero one (c) (three), you're already thinking "we can't lobby." You can, actually, within limits (the "no substantial part" test, or the five zero one (h) election caps). But more importantly, supporting a referendum is educational activity, not lobbying. And for the heavy political lifting, the legal architecture uses a five zero one (c) (four) that faces no lobbying limits at all. Your lawyers will feel better after reading that chapter."
+- time: 08:32.9 to 09:02.0 (29.1 s)
+- voiceover: "If your organization is a five zero one c three, you're already thinking "we can't lobby." You can, actually, within limits (the "no substantial part" test, or the five zero one h election caps). But more importantly, supporting a referendum is educational activity, not lobbying. And for the heavy political lifting, the legal architecture uses a five zero one c four that faces no lobbying limits at all. Your lawyers will feel better after reading that chapter."
 - layer: B, plate kennel-row
 - bit: The last doghouse on the street: the 501(c)(3) dog in a muzzle finds it can speak, teach, and leave the heavy lifting to a bulldog; payoff: the lawyer on its step gets his colour back.
 - status: planned
