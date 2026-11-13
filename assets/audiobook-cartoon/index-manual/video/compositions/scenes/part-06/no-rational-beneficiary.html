@@ -1,0 +1,53 @@
+<template id="no-rational-beneficiary-template">
+  <!-- no-rational-beneficiary · collage host shot (Part 6, scene 9). Wishonia at the console; the readout lists the
+       loop's members as they are named: WEAPONS MAKERS, POLITICIANS, VOTERS. "beneficiary": WORSE OFF is stamped
+       beside each one. "Everyone": WINNER: comes up with nothing after it but a blinking cursor. "haven't done the
+       arithmetic": an adding-machine tape chatters up out of the console: -1%, ×1.43, +$27.2B, NOT DEAD. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="no-rational-beneficiary" data-width="1920" data-height="1080" data-start="0" data-duration="15.28">
+    <div id="no-rational-beneficiary-weave"></div>
+    <div id="no-rational-beneficiary-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "no-rational-beneficiary", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The list: name cards on the left of the free wall, WORSE OFF stamps on the right (16:9); above her head (9:16).
+    var NX = V ? 300 : 1310, SX = V ? 800 : 1640, RY = V ? [110, 205, 300] : [250, 350, 450], WY = V ? 1790 : 580;
+    var NS = V ? 54 : 50, NW = V ? 440 : 380;
+    var names = [["WEAPONS MAKERS", "industry"], ["POLITICIANS", "profits"], ["VOTERS", "public's"]];
+    var beats = [];
+    names.forEach(function (n, i) {
+      beats.push({ on: n[1], do: "banner", id: "n" + i, text: n[0], x: NX, y: RY[i], size: NS, width: NW, pad: 40, color: "ink", tilt: 0 });
+      beats.push({ on: "beneficiary", offset: 0.3 + i * 0.28, do: "stamp", id: "s" + i, text: "WORSE OFF", x: SX, y: RY[i], size: V ? 44 : 38, width: V ? 360 : 200, tilt: -5 + i * 3 });
+    });
+    // WINNER: and a blinking cursor after it
+    var WX = V ? 470 : 1400;
+    beats.push({ on: "Everyone", do: "banner", id: "win", text: "WINNER:", x: WX, y: WY, size: V ? 70 : 64, width: V ? 360 : 330, pad: 46, color: "red", tilt: 0 });
+    var CX = WX + (V ? 270 : 250);
+    beats.push({ on: "loop", offset: 0.1, do: "banner", id: "cur", text: "_", x: CX, y: WY, size: V ? 70 : 64, width: 40, pad: 24, color: "ink", tilt: 0 });
+    for (var t = cue("loop") + 0.5, on = false; t < 15.2; t += 0.4, on = !on) beats.push({ at: t, do: on ? "show" : "hide", who: "cur" });
+    // the adding-machine tape, rising out of the console's ledge beside her
+    var TH = V ? 700 : 740, TK = TH / SZ["till-receipt"][1], TX = V ? 920 : 330;
+    var cast = {
+      tape: { art: "till-receipt", x: TX, y: S.top + 4, anchor: "bottom", pivot: "bottom", scale: TK, hidden: true,
+        label: [["-1%", 70], ["×1.43", 170], ["+$27.2B", 270], ["NOT DEAD", 370]].map(function (l) { return { text: l[0], at: [40, l[1]], width: 56, size: 30, tilt: -2 }; }) },
+    };
+    beats = beats.concat([
+      { on: "haven't", do: "pop", who: "tape" },
+      { on: "haven't", offset: 0.3, do: "shiver", who: "tape", dur: 1.2, amp: 3, rot: 1.5 },
+      { on: "arithmetic.", offset: 0.4, do: "hop", who: "tape", height: 20 },
+    ]);
+    KIT.collage({ id: ID, seed: 609, host: true, cast: cast, beats: beats });
+  </script>
+</template>

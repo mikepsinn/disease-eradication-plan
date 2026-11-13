@@ -1,0 +1,135 @@
+<template id="debug-37-trillion-cells-template">
+  <!-- debug-37-trillion-cells · collage (Part 4, scene 5). The bit: the camera dives into the hungry man's chest, and
+       everything in there is broken at once while he keeps walking. "thirty-seven": a field of cells, and 37,000,000,000,000. "breaking": a strip, WAYS TO BREAK, unrolls off the frame, its counter racing to
+       7,000, and the cells grey out one after another. "chemistry": by the brain at its desk, a molecule wriggles, ties
+       itself in a knot and spins. "organs": Babbage's difference engine by the liver, stuck at 3%; "simulate,": it catches
+       fire, and burns for the rest of
+       the scene. "pathogens": a germ marches at a pill bottle, sprouts spikes on "evolve", eats the bottle on
+       "treatments." and swells into a grinning giant, and burps. "debug": a scientist lowers himself in on a rope.
+       "At once.": everything goes red and shakes. "While": a footstep slams through the whole inside and the scientist
+       falls off his rope. "walking": the camera pulls all the way out: it was all in the chest of an anatomical cutaway man
+       strolling along, chewing. (Not drawn yet: the cells' lights, the to-do list and the single pill; the organs at their
+       desks and a till roll stand in, the to-do list is left out, and the germ eats the whole bottle.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="debug-37-trillion-cells" data-width="1920" data-height="1080" data-start="0" data-duration="23">
+    <div id="debug-37-trillion-cells-weave"></div>
+    <div id="debug-37-trillion-cells-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "debug-37-trillion-cells", SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The inside is laid out in plate px around (1200, 700): A, the cells (around 0, 0); B, the organs at their desks
+    // (around 2350, 0); C, a blood vessel's germ and pill bottle (around 1150, 1250). The man himself, the anatomical
+    // cutaway, is drawn huge (YK) with that point at art [156.7, 203.8], so it all sits in his belly and the last pull-out
+    // finds it inside him.
+    var YK = 45, AN = [156.7, 203.8], CH = [1200, 700], youPt = function (ax, ay) { return [CH[0] + (ax - AN[0]) * YK, CH[1] + (ay - AN[1]) * YK]; };
+    var MID = youPt(150, 250);
+    var views = V ? {
+      man: [MID[0], MID[1] - 60 / 0.0588, 0.0588], A: [-20, 120, 0.62], B: [2350, 100, 0.55], C: [1250, 1200, 1], all: [1200, 520, 0.24],
+    } : {
+      man: [MID[0], MID[1], 0.0402], A: [0, 0, 1], B: [2350, 0, 1], C: [1150, 1250, 1], all: [1200, 550, 0.4],
+    };
+    var cast = {}, beats = [], add = function () { for (var i = 0; i < arguments.length; i++) beats.push(arguments[i]); };
+
+    // ── The man, walking and chewing (behind everything) ──
+    cast.you = { art: "anatomy-man", x: CH[0], y: CH[1], anchor: AN, pivot: AN, scale: YK };
+    add({ at: 0, do: "bob", who: "you", y: 5 * YK, r: 1.5, speed: 5, until: 0.6, fade: 0 },
+      { at: 0.05, do: "camera", view: "A", dur: 0.5, ease: "smooth" },
+      { at: 0.5, do: "hide", who: "you" });
+
+    // ── A: the cells, 37 trillion; the ways to break ──
+    var CELLS = [-880, -420, 560, 330];
+    add({ on: "thirty-seven", do: "pictogram", id: "cells", art: "cell", count: 40, cols: 10, box: CELLS, dur: 0.6, fill: 0.92 },
+      { on: "trillion", do: "stamp", id: "big", text: "37,000,000,000,000", x: -160, y: -40, width: 1300, size: 140, tilt: -4 },
+      { on: "breaking", do: "pop", who: "big", out: true });
+    cast.strip = { art: "till-receipt", x: 760, y: -440, anchor: "top", scale: 2.6, hidden: true,
+      label: { text: "WAYS TO BREAK", at: [51, 28], width: 86, size: 22 } };
+    add({ on: "breaking", do: "slideIn", who: "strip", from: "top", over: 10 },
+      { on: "seven", do: "counter", id: "ways", from: 1, to: 7000, until: "ways,", x: 760, y: 250, size: 90, prefix: "", suffix: "", ease: "smooth" },
+      { on: "seven", do: "pictogram", id: "cells", random: 26, stagger: 0.05, grey: true, dur: 0.15 });
+
+    // ── B: the organs at their desks; the molecule nobody understands; the engine that can't simulate them ──
+    var OK = 4.5, OX = 2300, OY = 100, orgPt = function (ax, ay) { return [OX + (ax - 181) * OK, OY + (ay - 80) * OK]; };
+    cast.organs = { art: "organs", x: OX, y: OY, scale: OK, pivot: "bottom" };
+    var BR = orgPt(42, 30);
+    cast.mol = { art: "molecule", x: BR[0] + 170, y: BR[1] - 190, scale: 0.8, hidden: true };
+    var CX = 3120, CY = OY + 80 * OK - 454 * 0.9 / 2;
+    cast.calc = { art: "difference-engine", x: CX, y: CY, scale: 0.9, pivot: "bottom", eyes: [], smoke: [[150, 60], [260, 80]] };
+    ["fl0", "fl1", "fl2"].forEach(function (n, i) {
+      cast[n] = { art: "flames", x: CX - 100 + i * 100, y: CY - 120 + (i % 2) * 60, scale: 0.55 + (i % 2) * 0.15, pivot: "bottom", hidden: true };
+    });
+    var tS = KIT.after(ID, "simulate,");
+    add({ on: "involving", do: "camera", view: "B", dur: 0.45, ease: "smooth" },
+      { on: "chemistry", do: "pop", who: "mol", squash: true },
+      { on: "chemistry", offset: 0.2, do: "shiver", who: "mol", dur: 0.6, amp: 4, rot: 14 },
+      { on: "understand,", do: "move", who: "mol", turn: 360, dur: 0.4, ease: "smooth" },
+      { on: "organs", do: "pop", who: "mol", out: true },
+      { on: "organs", do: "counter", id: "sim", who: "calc", spot: [198, 300], from: 0, to: 3, dur: 0.5, size: 40, prefix: "", suffix: "%", pad: 30 },
+      { on: "can't", do: "shiver", who: "calc", dur: tS - cue("can't"), amp: 5, rot: 3 },
+      { at: tS, do: "char", who: "calc" },
+      { at: tS, do: "pop", who: ["fl0", "fl1", "fl2"], squash: true },
+      { at: tS + 0.1, do: "bob", who: ["fl0", "fl1", "fl2"], y: 10, r: 6, speed: 7, fade: 0 });
+
+    // ── C: the germ and the pill bottle ──
+    var GY = 1300;
+    cast.germ = { art: "germ", x: 950, y: GY, scale: 1.3, pivot: "bottom", hidden: true };
+    cast.germ2 = { art: "germ-grin", x: 950, y: GY + 20, scale: 1.75, pivot: "bottom", hidden: true };
+    cast.germ3 = { art: "germ-giant", x: V ? 1250 : 1000, y: GY - 90, scale: 0.8, pivot: "bottom", hidden: true };
+    cast.bottle = { art: "pill-bottle", x: 1650, y: GY, scale: 1.2, pivot: "bottom", hidden: true };
+    add({ on: "fighting", do: "camera", view: "C", dur: 0.45, ease: "smooth" },
+      { on: "fighting", do: "slideIn", who: "germ", from: "left", dist: 900 },
+      { on: "fighting", offset: 0.1, do: "pop", who: "bottle" },
+      { on: "pathogens", do: "bob", who: "germ", y: 10, r: 6, speed: 6, until: "evolve", fade: 0 },
+      { on: "evolve", do: "nudge", who: "bottle", by: [-60, 0] },
+      { on: "evolve", offset: 0.25, do: "swap", who: "germ", to: "germ2" },
+      { on: "evolve", offset: 0.3, do: "hop", who: "germ2", height: 40 },
+      { on: "faster", do: "bob", who: "germ2", y: 8, r: 5, speed: 6, until: "treatments.", fade: 0 },
+      { on: "treatments.", offset: -0.15, do: "move", who: "bottle", to: [1050, GY - 260], turn: -70, arc: 80, dur: 0.15 },
+      { on: "treatments.", do: "hide", who: "bottle" },
+      { on: "treatments.", do: "swap", who: "germ2", to: "germ3" },
+      { at: KIT.after(ID, "treatments."), do: "hop", who: "germ3", height: 30 },
+      { at: KIT.after(ID, "treatments."), do: "nudge", who: "germ3", by: [30, -10] },
+      { on: "trying", do: "bob", who: "germ3", y: 8, r: 3, speed: 3, fade: 0.2 });
+
+    // ── The scientist on his rope ──
+    var RX = 1180, ROPE = "#6B4A26";
+    cast.sci = { art: "scientist-wave", x: RX, y: -1700, anchor: "top", scale: 1.2, pivot: "top", hidden: true };
+    add({ on: "You're", do: "camera", view: "all", dur: 0.55, ease: "smooth" },
+      { on: "trying", do: "line", id: "rope", points: [[RX, -2200], [RX, -320]], until: "debug", color: ROPE, width: 9, ease: "linear", rider: "sci", tilt: 0 },
+      { on: "all", do: "line", id: "rope2", points: [[RX, -320], [RX, -60]], dur: 0.35, color: ROPE, width: 9, ease: "linear" },
+      { on: "all", do: "move", who: "sci", by: [0, 260], dur: 0.35 },
+      { on: "debug", do: "shiver", who: "sci", dur: 0.3, amp: 4, rot: 3 });
+
+    // ── At once: all of it, red ──
+    var busy = ["organs", "calc", "germ3", "strip", "fl0", "fl1", "fl2"];
+    add({ on: "once.", do: "wash", id: "red", color: "#C0301C", blend: "normal", opacity: 0.32, dur: 0.08, above: "germ3" },
+      { on: "once.", do: "pictogram", id: "cells", random: 16, seed: 7, grey: true, dur: 0.08 },
+      { on: "once.", do: "shiver", who: busy, dur: 0.7, amp: 10, rot: 3 },
+      { on: "once.", do: "shiver", who: "sci", dur: 0.8, amp: 6, rot: 25 });
+
+    // ── While your meat is walking around: the footstep; the pull-out ──
+    var tW = cue("While");
+    add({ at: tW, do: "boom", shake: 34, flash: 0 },
+      { at: tW, do: "hop", who: busy.concat(["sci"]), height: 90 },
+      { at: tW + 0.08, do: "hide", who: ["rope", "rope2"] },
+      { at: tW + 0.08, do: "move", who: "sci", by: [140, 900], turn: -90, arc: 60, dur: 0.3 },
+      { on: "walking", do: "wash", id: "red", opacity: 0, dur: 0.3 },
+      { on: "walking", do: "show", who: "you" },
+      { on: "walking", do: "camera", view: "man", dur: 0.85, ease: "smooth" },
+      { on: "walking", do: "bob", who: "you", y: 5 * YK, r: 1.5, speed: 5, fade: 0.1 },
+      { at: KIT.after(ID, "itself."), do: "shiver", who: "you", dur: 0.25, amp: 2 * YK, rot: 1 });
+
+    KIT.collage({ id: ID, seed: 415, plate: [-25000, -15000, 26000, 19000], views: views, view: "man", cast: cast, beats: beats });
+  </script>
+</template>

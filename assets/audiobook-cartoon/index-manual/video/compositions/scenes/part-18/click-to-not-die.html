@@ -1,0 +1,94 @@
+<template id="click-to-not-die-template">
+  <!-- click-to-not-die · collage host shot. The iris opens on Wishonia at her console. Earth hangs big beside her; on
+       its top a little human stands by a little YES button, and the Reaper rises behind the planet with his scythe
+       raised. "Click": the human presses it. "Not": the scythe swings; "Die": it stops dead at the human's neck. He
+       checks his clipboard and one tally mark goes. "five": she points, and a 3.5% wedge of Earth lights up, as thin as
+       a sliver of cake. "percent": the Reaper sees how thin it is, hops for joy, and leans on his scythe, waiting. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="click-to-not-die" data-width="1920" data-height="1080" data-start="0" data-duration="7.36">
+    <div id="click-to-not-die-weave"></div>
+    <div id="click-to-not-die-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "click-to-not-die", V = KIT.V, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // Earth, drawn bigger than the deck's own (and over it) for the gags on it: [cx, cy, r]. The same in
+      // why-three-point-five, you-can-get and pyramid-ends.
+      var E = V ? [860, 560, 200] : [1450, 520, 260];
+      var EK = 2.04 * E[2] / SZ["earth-big"][0], R = E[2] * 0.97;
+      // A point on Earth's rim, th degrees round from its top (negative: towards her).
+      var rim = function (th, out) { var a = th * Math.PI / 180, r = R + (out || 0); return [E[0] + r * Math.sin(a), E[1] - r * Math.cos(a)]; };
+      var TH = V ? -10 : 6, MAN = rim(TH), BTN = rim(TH - 9), MK = (V ? 100 : 130) / SZ["citizen-5"][1];
+      // The Reaper rises behind Earth, his blade over the little human; his raised hand at art (40, 215).
+      var RH = V ? 600 : 760, RK = RH / SZ["reaper-stop"][1], RX = V ? 960 : 1696, RY = V ? 862 : 890;
+      var HAND = [RX - 191 * RK + 40 * RK, RY - RH + 215 * RK];
+      var clip = function (last) {
+        return { art: "plan-clipboard", x: HAND[0], y: HAND[1], pivot: "bottom", scale: V ? 0.5 : 0.62, hidden: true,
+          label: [{ text: "IIII IIII", at: [171, 230], width: 250, size: 90 }, { text: last, at: [171, 340], width: 250, size: 90 }] };
+      };
+      var cast = {
+        reaper: { art: "reaper-stop", x: RX, y: RY, anchor: "bottom", pivot: "bottom", scale: RK },
+        earth: { art: "earth-big", x: E[0], y: E[1], scale: EK },
+        btn: { art: "yes-button", x: BTN[0], y: BTN[1], anchor: "bottom", pivot: "bottom", scale: (V ? 50 : 62) / SZ["yes-button"][1] },
+        man: { art: "citizen-5", x: MAN[0], y: MAN[1], anchor: "bottom", pivot: "bottom", scale: MK },
+        // his tally: one mark gone after the click
+        tally: clip("IIII III"), tally2: clip("IIII II"),
+      };
+      var beats = [
+        { at: -1, do: "move", who: ["btn", "man"], by: [0, 0], turn: TH, dur: 0.01 },
+        // the scythe raised back, ready
+        { at: -1, do: "move", who: "reaper", by: [0, 0], turn: 10, dur: 0.01 },
+        // "Click": he presses it
+        { on: "Click", offset: -0.1, do: "nudge", who: "man", by: [-14, 0] },
+        { on: "Click", do: "flatten", who: "btn" },
+        { on: "Click", offset: 0.25, do: "pop", who: "btn", squash: true },
+        // "Not": the scythe comes round; "Die": it stops dead at his neck
+        { on: "Not", do: "move", who: "reaper", by: [0, 0], turn: -3, dur: 0.22 },
+        { on: "Die", do: "shiver", who: "reaper", dur: 0.4, amp: 3, rot: 2 },
+        { on: "Die", do: "shiver", who: "man", dur: 0.9, amp: 2, rot: 3 },
+        // he checks his clipboard; one tally mark goes
+        { on: "Die", offset: 0.55, do: "pop", who: "tally", squash: true },
+        { on: "Die", offset: 1.2, do: "swap", who: "tally", to: "tally2" },
+        { on: "You", offset: -0.1, do: "pop", who: "tally2", out: true },
+        { on: "You", do: "move", who: "reaper", by: [0, 0], turn: 0, dur: 0.4, ease: "smooth" },
+        // "percent": the Reaper sees how thin the wedge is, hops for joy, leans on his scythe and waits
+        { on: "percent", offset: 0.1, do: "hop", who: "reaper", height: 40 },
+        { on: "humanity", do: "move", who: "reaper", by: [0, 0], turn: 6, dur: 0.3, ease: "smooth" },
+        { on: "humanity", offset: 0.3, do: "bob", who: "reaper", y: 3, r: 1.5, speed: 2.5 },
+      ];
+      var tl = KIT.collage({ id: ID, seed: 1801, host: { iris: ["in", 0.04, 0.7] }, cast: cast, beats: beats });
+      // this Earth replaces the deck's own
+      document.querySelector("#" + ID + "-hwall .earth").style.visibility = "hidden";
+
+      // The 3.5% wedge of Earth (12.6 degrees), pointing up towards her, lit on "five" and pulsing after.
+      var WA = -42, HALF = 3.5 * 3.6 / 2, LIT = cue("five");
+      var p0 = rim(WA - HALF), p1 = rim(WA + HALF);
+      var wedge = document.createElement("div");
+      wedge.style.cssText = "position:absolute;left:0;top:0;width:0;height:0;visibility:hidden";
+      wedge.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible"><path d="M' + E[0] + "," + E[1] + " L" + p0[0].toFixed(1) + "," + p0[1].toFixed(1) +
+        " A" + R + "," + R + " 0 0 1 " + p1[0].toFixed(1) + "," + p1[1].toFixed(1) + ' Z" fill="#FFE27A" stroke="#2B2033" stroke-width="3" stroke-linejoin="round"/></svg>';
+      var earthEl = document.getElementById(ID + "-earth");
+      earthEl.parentNode.insertBefore(wedge, earthEl.nextSibling);
+      var path = wedge.querySelector("path");
+      KIT.onTime(tl, D, function (t0) {
+        var t = Math.floor(t0 * 12) / 12;
+        wedge.style.visibility = t >= LIT ? "inherit" : "hidden";
+        if (t < LIT) return;
+        var u = t - LIT;
+        path.setAttribute("fill-opacity", (u < 0.25 ? 1 : 0.78 + 0.12 * Math.sin(u * 6)).toFixed(2));
+      });
+    })();
+  </script>
+</template>

@@ -1,0 +1,91 @@
+<template id="fire-on-fire-template">
+  <!-- fire-on-fire · collage (Part 1, scene 10, plate cave). The bit: two cavemen discover fire and use it on each
+       other first. "fire": the campfire lights between them; they grin. "immediately": each pulls a burning branch
+       out of it. "set yourself": they jab each other and both go up in flames, running round the fire. "fire.": the
+       flames go out in a puff: two charred cavemen, blinking. Then each reaches back towards the fire for another. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="fire-on-fire" data-width="1920" data-height="1080" data-start="0" data-duration="5.18">
+    <div id="fire-on-fire-weave"></div>
+    <div id="fire-on-fire-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, SZ = KIT.collage.SIZES, CW = SZ["caveman-scientist"][0];
+    // The fire in the middle on the ground G; a caveman either side. The right one is the same cut-out, mirrored, so
+    // his points are mirrored too (CW - x).
+    var G = V ? 1380 : 960, FX = V ? 540 : 960, MH = V ? 620 : 640, MK = MH / SZ["caveman-scientist"][1];
+    var LX = V ? 250 : 520, RX = V ? 830 : 1400;
+    var HAND = [38, 30], HEAD = [130, 60], BELLY = [120, 225], LEGS = [112, 315];
+    var CF = (V ? 300 : 340) / SZ.campfire[0];
+    var mir = function (p) { return [CW - p[0], p[1]]; };
+    var eyesL = [[128, 52], [146, 50]].map(function (e) { return [e[0] * 30 / 14, e[1] * 30 / 14]; });
+    var eyesR = [[128, 52], [146, 50]].map(mir).map(function (e) { return [e[0] * 30 / 14, e[1] * 30 / 14]; });
+    var man = function (x, flip) {
+      return { art: "caveman-scientist", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: MK, faces: flip ? "left" : "right",
+        points: flip ? { hand: mir(HAND), head: mir(HEAD), belly: mir(BELLY), legs: mir(LEGS) } : { hand: HAND, head: HEAD, belly: BELLY, legs: LEGS },
+        eyes: flip ? eyesR : eyesL, eyeSize: 14, smoke: flip ? [mir([125, 10])] : [[125, 10]] };
+    };
+    var flame = function (x, y, h) { return { art: "flames", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: h / SZ.flames[1], hidden: true }; };
+    var cast = {
+      cold: { art: "campfire-unlit", x: FX, y: G + 20, anchor: "bottom", pivot: "bottom", scale: CF * SZ.campfire[0] / SZ["campfire-unlit"][0] },
+      fire: { art: "campfire", x: FX, y: G + 20, anchor: "bottom", pivot: "bottom", scale: CF, hidden: true },
+      cmL: man(LX, false),
+      cmR: man(RX, true),
+      // the burning branches, and the flames that catch on each of them
+      brL: flame(FX - 20, G - 60, 120), brR: flame(FX + 20, G - 60, 120),
+    };
+    var body = [];
+    ["cmL", "cmR"].forEach(function (m) {
+      ["head", "belly", "legs"].forEach(function (p, i) {
+        var nm = m + "-" + p;
+        cast[nm] = flame(FX, G, (V ? [210, 230, 170] : [240, 260, 190])[i]);
+        body.push([nm, m + "." + p]);
+      });
+    });
+    var beats = [
+      // "discovering fire": it lights; they grin and warm their hands
+      { on: "fire", do: "swap", who: "cold", to: "fire" },
+      { on: "fire", offset: 0.1, do: "bob", who: "fire", y: 4, r: 2, speed: 7, phase: 1 },
+      { on: "and", n: 1, do: "hop", who: ["cmL", "cmR"], height: 24 },
+      // "immediately using it": each pulls a burning branch out
+      { on: "immediately", do: "show", who: ["brL", "brR"] },
+      { on: "immediately", do: "move", who: "brL", to: "cmL.hand", dur: 0.35, arc: 120 },
+      { on: "immediately", offset: 0.08, do: "move", who: "brR", to: "cmR.hand", dur: 0.35, arc: 120 },
+      { on: "immediately", offset: 0.4, do: "bob", who: ["brL", "brR"], y: 0, r: 9, speed: 8, until: ["fire", 2], fade: 0.05 },
+      // "set yourself on fire": they jab, both catch, and they run round the fire
+      { on: "set", do: "nudge", who: ["cmL", "cmR"], by: [V ? 70 : 110, 0] },
+      { on: "yourself", offset: 0.08, do: "shake", x: 8, frames: 3 },
+      { on: "yourself", offset: 0.16, do: "lap", who: "cmL", loop: [FX, G, FX - LX, V ? 80 : 110], from: 0.25, dur: 0.95, laps: 1, depth: 0.25 },
+      { on: "yourself", offset: 0.16, do: "lap", who: "cmR", loop: [FX, G, RX - FX, V ? 80 : 110], from: 0.75, dur: 0.95, laps: 1, depth: 0.25 },
+      // "fire.": out, in a puff of smoke: charred, blinking
+      { on: "fire", n: 2, do: "hide", who: ["brL", "brR"] },
+      { on: "fire", n: 2, do: "char", who: ["cmL", "cmR"] },
+      { on: "fire", n: 2, offset: 0.45, do: "blink", who: ["cmL", "cmR"] },
+      { on: "fire", n: 2, offset: 1.0, do: "blink", who: "cmL" },
+      { on: "fire", n: 2, offset: 1.05, do: "blink", who: "cmR" },
+      // they look at each other, then each reaches for another branch
+      { on: "fire", n: 2, offset: 0.75, do: "nudge", who: ["cmL", "cmR"], by: [V ? 50 : 70, 0] },
+      { on: "fire", n: 2, offset: 0.95, do: "move", who: "cmL", by: [V ? 60 : 110, 0], dur: 0.5, ease: "smooth" },
+      { on: "fire", n: 2, offset: 0.95, do: "move", who: "cmR", by: [V ? -60 : -110, 0], dur: 0.5, ease: "smooth" },
+    ];
+    body.forEach(function (f, i) {
+      beats.push({ on: "yourself", offset: 0.08 + (i % 3) * 0.05, do: "move", who: f[0], to: f[1], dur: 0.01 });
+      beats.push({ on: "yourself", offset: 0.08 + (i % 3) * 0.05, do: "pop", who: f[0], squash: true });
+      beats.push({ on: "yourself", offset: 0.2, do: "bob", who: f[0], y: 0, r: 9, speed: 8, phase: i, until: ["fire", 2], fade: 0.05 });
+      beats.push({ on: "fire", n: 2, do: "pop", who: f[0], out: true });
+    });
+    KIT.collage({ id: "fire-on-fire", seed: 110, cast: cast, beats: beats });
+    // the right-hand caveman is the same cut-out, mirrored inside its box
+    document.getElementById("fire-on-fire-cmR").querySelector(".cg-art").style.transform = "scaleX(-1)";
+  </script>
+</template>

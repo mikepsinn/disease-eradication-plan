@@ -1,0 +1,50 @@
+<template id="better-loop-teal-tail-template">
+  <!-- better-loop-teal-tail · collage host shot (Part 6, scene 13; adapted from the democracy-dog short). The payoff: in
+       the window the same dog runs round Earth like a moon, still with its tail of war bills and skeletons. "cured": the
+       tail turns to pills and knocked-out germs. "reelected": a rosette lands on its collar and REELECTED is stamped
+       under Earth. "chasing": it runs faster. She side-eyes the camera; iris out on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="better-loop-teal-tail" data-width="1920" data-height="1080" data-start="0" data-duration="7.764">
+    <div id="better-loop-teal-tail-weave"></div>
+    <div id="better-loop-teal-tail-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "better-loop-teal-tail", V = KIT.V, E = KIT.STUDIO.earth;
+    var D = KIT.scene(ID).duration, cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // the orbit, clockwise (the dog faces right, so it runs forward over the top), feet toward Earth
+    var OR = E[2] * (V ? 1.4 : 1.45), DW = V ? 300 : 420, DK = DW / 1422, D0 = -150;
+    var orb = function (d) { var a = d * Math.PI / 180; return [E[0] + OR * Math.cos(a), E[1] + OR * Math.sin(a)]; };
+    var P0 = orb(D0);
+    var cast = {
+      dog: { art: "dog-big-war", x: P0[0], y: P0[1], scale: DK, points: { collar: [1090, 690] } },
+      dogP: { art: "dog-big-pills", x: P0[0], y: P0[1], scale: DK, hidden: true, points: { collar: [1090, 690] } },
+      ros: { art: "rosette", x: 0, y: 0, scale: (V ? 90 : 120) / 375, hidden: true },
+    };
+    var beats = [{ at: -1, do: "move", who: "ros", to: "dogP.collar", dur: 0.01 }];
+    // a lap is 1.5 s, 0.8 s once it is reelected for chasing
+    var t = 0, d = D0, fast = cue("chasing");
+    while (t < D) {
+      var step = 30, dt = (t < fast ? 1.5 : 0.8) * step / 360, p = orb(d + step);
+      beats.push({ at: t, do: "move", who: ["dog", "dogP"], to: p, turn: d + step + 90, dur: dt });
+      beats.push({ at: t, do: "move", who: "ros", to: "dogP.collar", turn: d + step + 90, dur: dt });
+      t += dt; d += step;
+    }
+    beats = beats.concat([
+      { on: "cured", do: "swap", who: "dog", to: "dogP" },
+      { on: "reelected", do: "pop", who: "ros", squash: true },
+      { on: "reelected", offset: 0.15, do: "banner", id: "won", text: "REELECTED", x: V ? 805 : E[0] - 60, y: V ? 480 : 770, size: V ? 70 : 92, width: V ? 440 : 640, pad: 50, tilt: -5 },
+    ]);
+    KIT.collage({ id: ID, seed: 613, host: { iris: ["out", D - 0.6, D - 0.05] }, cast: cast, beats: beats });
+  </script>
+</template>

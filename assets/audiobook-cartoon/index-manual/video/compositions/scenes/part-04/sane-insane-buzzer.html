@@ -1,0 +1,112 @@
+<template id="sane-insane-buzzer-template">
+  <!-- sane-insane-buzzer · collage (Part 4, scene 6). A 1950s game-show stage under its marquee, SANE OR INSANE?, the
+       Politician hosting at his buzzer, the audience's heads in front. "That:": flip card 1 flips up: the anatomical
+       cutaway man with a scientist dangling inside him; "sane.": the SANE lamp lights, SANE, the audience bounces.
+       "Give": card 2 flips up: the column of war money, one bill tiptoeing off the top; the man in the straitjacket beams
+       at the contestant's spot; in the front row the weapons factory kisses its missile and sweats. "insane.": the host
+       slaps the buzzer, the INSANE lamp lights, INSANE, the trapdoor under the contestant drops open; he hangs a beat and
+       drops through. The host keeps grinning. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="sane-insane-buzzer" data-width="1920" data-height="1080" data-start="0" data-duration="7.98">
+    <div id="sane-insane-buzzer-weave"></div>
+    <div id="sane-insane-buzzer-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "sane-insane-buzzer", SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // game-show-stage (551 x 458): the SANE lamp at art [125, 50], the INSANE lamp at [442, 50], flip card 1 at
+    // [143..272, 183..302], card 2 at [296..425, 183..302], the stage floor at y 328, the audience's heads below y 338
+    var ST = V ? { x: 540, top: 300, k: 2.4 } : { x: 960, top: -60, k: 2.6 };
+    var stPt = function (ax, ay) { return [ST.x + (ax - 275.5) * ST.k, ST.top + ay * ST.k]; };
+    var G = stPt(0, 328)[1], C1 = stPt(207, 302), C2 = stPt(360, 302);
+    var L = V ? { host: [150, 0.62], buzz: [330, 0.5], who: [935, 0.7], fac: [560, G + 180, 0.6] }
+      : { host: [300, 0.95], buzz: [565, 0.85], who: [1560, 0.92], fac: [1380, G + 230, 0.85] };
+    var put = function (art, x, k, o) { var c = { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: k }; for (var key in o || {}) c[key] = o[key]; return c; };
+    var onStage = function (clip, o) { var c = { art: "game-show-stage", x: ST.x, y: ST.top, anchor: [275.5, 0], scale: ST.k, clip: clip }; for (var key in o || {}) c[key] = o[key]; return c; };
+    var ring = function (cx, cy, r) { var p = []; for (var i = 0; i < 12; i++) p.push([cx + r * Math.cos(i * Math.PI / 6), cy + r * Math.sin(i * Math.PI / 6)]); return p; };
+    var MAN = (C1[1] - stPt(0, 185)[1]) * 0.82, MK = MAN / 498, BILL = V ? 62 : 78;
+    var tI = cue("insane."), tG = cue("Give"), F1 = 1 / 12;
+    var cast = {
+      set: onStage([[0, 0], [551, 0], [551, 338], [0, 338]], { label: { text: "SANE OR INSANE?", at: [283.5, 100], width: 210, size: 60, plaque: true } }),
+      // the lamps, cut out of the stage, and a speck on each that carries its glow over it
+      lampS: onStage(ring(125, 50, 44), { pivot: [125, 50] }),
+      lampI: onStage(ring(442, 50, 44), { pivot: [442, 50] }),
+      litS: { art: "light-bulb", x: stPt(125, 50)[0], y: stPt(125, 50)[1], scale: 0.01, hidden: true },
+      litI: { art: "light-bulb", x: stPt(442, 50)[0], y: stPt(442, 50)[1], scale: 0.01, hidden: true },
+      // card 1: the cutaway man, with a scientist dangling in his chest (anatomy-man's heart, art [160, 150])
+      man: { art: "anatomy-man", x: C1[0], y: C1[1] - 14 * ST.k, anchor: "bottom", scale: MK, hidden: true },
+      sci: { art: "scientist-wave", x: C1[0] + (160 - 147) * MK, y: C1[1] - 14 * ST.k - (498 - 165) * MK, anchor: "top", pivot: "top", scale: MAN * 0.22 / 688, hidden: true },
+      // the flip cards' blank top pages, which flip up to show them
+      page1: onStage([[143, 183], [272, 183], [272, 302], [143, 302]], { pivot: [207, 188] }),
+      page2: onStage([[296, 183], [425, 183], [425, 302], [296, 302]], { pivot: [360, 188] }),
+      host: put("politician", L.host[0], L.host[1]),
+      buzz: put("yes-button", L.buzz[0], L.buzz[1]),
+      // the contestant on his spot, and the hole that opens under him
+      hole: { art: "trapdoor", x: L.who[0], y: G + 20, scale: L.who[1] * 0.6, hidden: true },
+      holeO: { art: "trapdoor-open", x: L.who[0], y: G + 20 - 21 * L.who[1] * 0.6, scale: L.who[1] * 0.6, hidden: true },
+      who: put("inmate-pin", L.who[0], L.who[1], { hidden: true }),
+      sneak: { art: "bill-wink", x: C2[0], y: C2[1], scale: BILL / 229, pivot: "bottom", hidden: true },
+      fac: { art: "factory-kiss", x: L.fac[0], y: L.fac[1], anchor: "bottom", pivot: "bottom", scale: L.fac[2] },
+      // the audience's heads, in front of everything
+      aud: onStage([[0, 338], [551, 338], [551, 458], [0, 458]], { pivot: [275.5, 458] }),
+    };
+    // the column of 100 war bills, drawn as 4, on card 2, and the one on top that sneaks off
+    var N = 4, PB = C2[1] - 14 * ST.k, topY = PB - N * BILL * 0.85;
+    var beats = [
+      { on: "That:", do: "flatten", who: "page1" },
+      { on: "That:", offset: 2 * F1, do: "hide", who: "page1" },
+      { on: "That:", offset: 0.1, do: "pop", who: ["man", "sci"], squash: true },
+      { on: "That:", offset: 0.3, do: "bob", who: ["man", "sci"], y: 3, r: 1.5, speed: 5, until: tG, fade: 0 },
+      { on: "That:", offset: 0.4, do: "shiver", who: "sci", dur: 0.9, amp: 2, rot: 14 },
+      { on: "sane.", do: "show", who: "litS" },
+      { on: "sane.", do: "glow", who: "litS", size: V ? 170 : 230, dur: 0.25 },
+      { on: "sane.", do: "hop", who: "lampS", height: 10 },
+      { on: "sane.", do: "stamp", id: "sane", text: "SANE", x: C1[0] + 10, y: C1[1] - 70 * ST.k, width: V ? 230 : 300, size: V ? 80 : 110, tilt: -6 },
+      { on: "sane.", do: "hop", who: "aud", height: 24 },
+      { on: "sane.", offset: 0.25, do: "hop", who: "aud", height: 24 },
+      { on: "sane.", offset: 0.5, do: "hop", who: "aud", height: 18 },
+      { on: "That:", do: "bob", who: "host", y: 3, r: 1, speed: 3, fade: 0 },
+      // card 2
+      { at: tG, do: "flatten", who: "page2" },
+      { at: tG + 2 * F1, do: "hide", who: "page2" },
+      { at: tG + 0.05, do: "pile", id: "bills", art: "bill-war", x: C2[0], y: PB, count: N, height: BILL, dur: 0.55, fall: 0.2, jitter: 4, tilt: 4 },
+      { on: "one", offset: 0.3, do: "pop", who: "sneak" },
+      { at: -1, do: "move", who: "sneak", to: [C2[0], topY - BILL * 0.4], dur: 0.001 },
+      { on: "fewer", do: "move", who: "sneak", by: [V ? 240 : 380, -30], dur: cue("machines\":") - cue("fewer"), ease: "linear" },
+      { on: "fewer", do: "bob", who: "sneak", y: 6, r: 8, speed: 7, until: "machines\":", fade: 0 },
+      { on: "machines\":", do: "hide", who: "sneak" },
+      { on: "percent", do: "slideIn", who: "who", from: "right" },
+      { on: "percent", do: "slideIn", who: "hole", from: "right" },
+      { on: "papers", do: "bob", who: "who", y: 5, r: 2, speed: 4, until: tI + 0.3, fade: 0 },
+      { on: "murder", do: "shiver", who: "fac", dur: tI - cue("murder"), amp: 4, rot: 2 },
+      // insane.
+      { at: tI - 0.08, do: "nudge", who: "host", by: [40, 0] },
+      { at: tI, do: "move", who: "buzz", by: [0, 22], dur: 0.06 },
+      { at: tI + 0.25, do: "move", who: "buzz", by: [0, -22], dur: 0.1 },
+      { at: tI, do: "hide", who: "litS" },
+      { at: tI, do: "show", who: "litI" },
+      { at: tI, do: "glow", who: "litI", size: V ? 170 : 230, dur: 0.25 },
+      { at: tI, do: "hop", who: "lampI", height: 10 },
+      { at: tI, do: "stamp", id: "insane", text: "INSANE", x: L.who[0] - (V ? 120 : 0), y: G - 380 * L.who[1], width: V ? 420 : 560, size: V ? 110 : 140, tilt: 5 },
+      { at: tI + 0.3, do: "swap", who: "hole", to: "holeO" },
+      { at: tI + 0.3, do: "shake", y: 6, frames: 2 },
+      { at: tI + 0.7, do: "drop", who: "who", dur: 0.5, dist: 1200, spin: 0 },
+      // gone behind the audience's heads
+      { at: tI + 0.95, do: "hide", who: "who" },
+      { at: tI + 0.75, do: "hop", who: "aud", height: 24 },
+      { at: tI + 1.0, do: "hop", who: "aud", height: 24 },
+    ];
+    KIT.collage({ id: ID, seed: 416, cast: cast, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,292 @@
+<template id="game-pool-rules-template">
+  <!-- game-pool-rules · collage (Part 24, scenes 3 and 4 as one plate, game-board). The bit: the rules of the game,
+       played out on a Victorian race-game board with a pool of medicine money in the middle. "Scoreboard:": its bulbs
+       light; "live," 63.3 YRS, "earn." $2,138/YR. "twenty forty": the tear-off calendar's pages fly to 2040. "went
+       up": both lines climb on the chart card. "split the pool.": dashed lines cut the pool in three and the three point
+       holders cannonball in, waist-deep in bills. "didn't,": the film rewinds (scratches), they fly back out, and the
+       lines redraw flat. "pro rata": the pool tips and pours, a fire hose into the Fat Cat's piggy bank, a trickle into Grandma's;
+       "retirement account": nothing, and YOU's skinny retirement piggy keels over, legs up. "You earn": YOU steps onto START and hauls
+       two friends up over the edge; two chips land on his hat. "Nobody loses.": a bill hops to every player and the
+       retirement account sits up. "not playing.": off the board, a smug man on his crate; a germ rises behind him and
+       pounces, and he x-rays to a skeleton on his crate. The germ grins. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="game-pool-rules" data-width="1920" data-height="1080" data-start="0" data-duration="22.04">
+    <div id="game-pool-rules-weave"></div>
+    <div id="game-pool-rules-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "game-pool-rules", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    var INK = "#2A1E14";
+
+    // ── The board (plate px): a ring of numbered squares, START bottom left, WAR top left, DISEASES top right, the
+    // pool of money in the field. Drawn in code under the cast (the same drawing as greed-handles-it).
+    var B = { x0: 0, y0: 500, x1: 2600, y1: 1500, T: 240 };
+    function boardSvg() {
+      var T = B.T, s = "", tint = ["#EBDDB4", "#B9C9A4", "#E0B76E", "#A9BCCB"], n = 0;
+      var sq = function (x, y, w, h, fill, label, size) {
+        s += '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" fill="' + fill + '" stroke="' + INK + '" stroke-width="6"/>';
+        if (label) s += '<text x="' + (x + w / 2) + '" y="' + (y + h / 2 + size * 0.36) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + size + '" fill="' + INK + '">' + label + "</text>";
+      };
+      var num = function (x, y, w, h) { n++; sq(x, y, w, h, tint[n % 4], String(n), 54); };
+      var W = B.x1 - B.x0, H = B.y1 - B.y0, top = 16, side = 4, cw = (W - 2 * T) / top, ch = (H - 2 * T) / side, i;
+      // the board itself: a dark rim and the field
+      s += '<rect x="' + (B.x0 - 34) + '" y="' + (B.y0 - 34) + '" width="' + (W + 68) + '" height="' + (H + 68) + '" rx="18" fill="#7B5A36" stroke="' + INK + '" stroke-width="7"/>';
+      s += '<rect x="' + B.x0 + '" y="' + B.y0 + '" width="' + W + '" height="' + H + '" fill="#E9D9AC" stroke="' + INK + '" stroke-width="6"/>';
+      s += '<rect x="' + (B.x0 + T + 22) + '" y="' + (B.y0 + T + 22) + '" width="' + (W - 2 * T - 44) + '" height="' + (H - 2 * T - 44) + '" fill="none" stroke="' + INK + '" stroke-width="3"/>';
+      // START, then the bottom row left to right, the right side up, DISEASES, the top row right to left, WAR, the left side down
+      sq(B.x0, B.y1 - T, T, T, "#E3B94F", "", 0);
+      var zs = KIT.fitText("START", 70, T - 40, "Fraunces", 900);
+      s += '<text x="' + (B.x0 + T / 2) + '" y="' + (B.y1 - T + 22 + zs) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + zs + '" fill="' + INK + '">START</text>';
+      for (i = 0; i < top; i++) num(B.x0 + T + i * cw, B.y1 - T, cw, T);
+      num(B.x1 - T, B.y1 - T, T, T);
+      for (i = side - 1; i >= 0; i--) num(B.x1 - T, B.y0 + T + i * ch, T, ch);
+      sq(B.x1 - T, B.y0, T, T, "#B9C06A", "", 0);
+      for (i = top - 1; i >= 0; i--) num(B.x0 + T + i * cw, B.y0, cw, T);
+      sq(B.x0, B.y0, T, T, "#B8663F", "", 0);
+      for (i = 0; i < side; i++) num(B.x0, B.y0 + T + i * ch, T, ch);
+      // the corner words sit along the square's bottom edge, under what stands on it
+      var word = function (x, t) { var z = KIT.fitText(t, 52, T - 34, "Fraunces", 900); s += '<text x="' + (x + T / 2) + '" y="' + (B.y0 + T - 22) + '" text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + z + '" fill="' + INK + '">' + t + "</text>"; };
+      word(B.x0, "WAR");
+      word(B.x1 - T, "DISEASES");
+      return s;
+    }
+    // ── The chart card on the easel behind the board: both numbers from 2026 to 2040.
+    var EK = hs("chalkboard-legs", 760), EX = 2150, EG = 480, EL = EX - SZ["chalkboard-legs"][0] * EK / 2, ET = EG - 760;
+    var CARD = [EL + 25 * EK, ET + 32 * EK, EL + 336 * EK, ET + 328 * EK];
+    var chart = KIT.collage.axes({ box: [CARD[0] + 70, CARD[1] + 120, CARD[2] - 40, CARD[3] - 70], x: [2026, 2040, 2], y: [0, 100, 25] });
+    function chartSvg() {
+      var b = chart.box, s = '<rect x="' + CARD[0] + '" y="' + CARD[1] + '" width="' + (CARD[2] - CARD[0]) + '" height="' + (CARD[3] - CARD[1]) + '" fill="#F1E4C0" stroke="' + INK + '" stroke-width="5"/>';
+      var tx = function (x, y, anchor, t, size, fam) { s += '<text x="' + x + '" y="' + y + '" text-anchor="' + anchor + '" font-family="' + fam + '" font-weight="' + (fam === "Fraunces" ? 900 : 600) + '" font-size="' + size + '" fill="' + INK + '">' + t + "</text>"; };
+      var tw = CARD[2] - CARD[0] - 80, z1 = KIT.fitText("HOW LONG PEOPLE LIVE,", 34, tw, "Fraunces", 900);
+      tx(CARD[0] + 20, CARD[1] + 46, "start", "HOW LONG PEOPLE LIVE,", z1, "Fraunces");
+      tx(CARD[0] + 20, CARD[1] + 46 + z1 * 1.2, "start", "HOW MUCH THEY EARN", z1, "Fraunces");
+      [2026, 2033, 2040].forEach(function (yr) { var p = chart.pt(yr, 0); s += '<line x1="' + p[0] + '" y1="' + b[3] + '" x2="' + p[0] + '" y2="' + (b[3] + 12) + '" stroke="' + INK + '" stroke-width="4"/>'; tx(p[0], b[3] + 44, "middle", yr, 30, "Oswald"); });
+      s += '<path d="M' + b[0] + "," + (b[1] - 16) + " L" + b[0] + "," + b[3] + " L" + (b[2] + 16) + "," + b[3] + '" fill="none" stroke="' + INK + '" stroke-width="6"/>';
+      return s;
+    }
+
+    // ── Where things stand (plate px).
+    var SB = { x: 700, g: 480, h: 800 }, SBK = hs("scoreboard", SB.h), SBL = SB.x - SZ.scoreboard[0] * SBK / 2, SBT = SB.g - SB.h;
+    var CAL = { x: 1310, g: 480, h: 420 }, CALK = hs("calendar", CAL.h);
+    // the pool of medicine money in the middle of the field, its diving board at the back right
+    var PK = hs("pool", 640), PB = [1290, 1255], WATER = [PB[0] + (190 - 196) * PK, PB[1] - 640 + 185 * PK], HEAP = [WATER[0], WATER[1] + 130];
+    // The three point holders are one cut-out (point-holder) cut into three strips; each strip is the whole art clipped,
+    // so it moves by the art's middle: OFF is each strip's middle from it (art px), RIM where the group stands.
+    var HOLD = 440, HK = hs("point-holder", HOLD), RIM = [2110, 1160 - HOLD / 2], OFF = [-125, 19, 143];
+    // SURF: where each holder's waist (art y 300) breaks the surface of the bills; SLICE: the art's middle then
+    var SURF = [[1165, 985], [1300, 935], [1440, 975]];
+    var SLICE = SURF.map(function (p, j) { return [p[0] - OFF[j] * HK, p[1] + 20 * HK]; });
+    var STRIP = [[[0, 0], [183, 0], [183, 640], [0, 640]], [[183, 0], [290, 0], [285, 120], [275, 330], [290, 640], [183, 640]],
+      [[290, 0], [434, 0], [434, 640], [290, 640], [275, 330], [285, 120]]], HEAD = [[148, -40], [232, 12], [312, -46]];
+    // the same strips cut at the waist: the holders waist-deep in the pool
+    var WAIST = [[[0, 0], [183, 0], [183, 300], [0, 300]], [[183, 0], [290, 0], [285, 120], [276, 300], [183, 300]],
+      [[290, 0], [434, 0], [434, 300], [276, 300], [285, 120]]];
+    var DEP = 1900;                                                   // the depositors' ground, in front of the board
+    var FAT = [1150, DEP], GRAN = [1700, DEP], RET = [2250, DEP];
+    // the three piggy banks: the Fat Cat's, Grandma's and YOUR RETIREMENT; HAT and HAND are the first two's coin slots
+    var FH = 540, GH = 330, RH = 440, FK = hs("fat-cat-piggy", FH), GK = hs("grandma-piggy", GH), RK = hs("you-piggy", RH);
+    var HAT = [FAT[0] - SZ["fat-cat-piggy"][0] * FK / 2 + 178 * FK, DEP - FH + 96 * FK];
+    var HAND = [GRAN[0] - SZ["grandma-piggy"][0] * GK / 2 + 120 * GK, DEP - GH + 92 * GK];
+    var START = [B.x0 + B.T / 2, B.y1 - 30], PH = 480;
+    var CRATE = [3560, 1300], CMK = hs("crate-man", 720), IDLE = CRATE[1] - (708 - 582) * CMK, CMX = CRATE[0] + (130 - 140) * CMK;
+
+    var S = function (x, y, s) { return [x, y, s]; };
+    var views = V ? {
+      top: S(1300, 900, 0.38), sb: S(SB.x, 120, 1.3), cal: S(CAL.x, 240, 1.7), chart: S(EX + 10, 40, 1.5),
+      pool: S(1700, 700, 0.58), front: S(1500, 1520, 0.82), retire: S(2080, 1560, 1.0), start: S(190, 1150, 1.05),
+      wide: S(1380, 1050, 0.36), crate: S(3600, 820, 1.0),
+    } : {
+      top: S(1300, 860, 0.56), sb: S(SB.x, 100, 1.0), cal: S(CAL.x, 230, 1.35), chart: S(EX, 0, 1.25),
+      pool: S(1600, 760, 0.85), front: S(1650, 1400, 0.62), retire: S(2120, 1640, 1.15), start: S(220, 1215, 1.2),
+      wide: S(1600, 1180, 0.42), crate: S(3560, 880, 1.05),
+    };
+
+    var cast = {}, beats = [], add = function (b) { beats.push(b); };
+    var at = function (w, n) { return cue(w, n); };
+    // behind the board's back edge: the Scoreboard, the calendar, the easel
+    cast.sb = { art: "scoreboard", x: SB.x, y: SB.g, anchor: "bottom", pivot: "bottom", scale: SBK,
+      label: [{ text: "LIVE", at: [137, 300], width: 110, size: 40, plaque: true }, { text: "EARN", at: [340, 300], width: 110, size: 40, plaque: true }] };
+    cast.cal = { art: "calendar", x: CAL.x, y: CAL.g, anchor: "bottom", pivot: "bottom", scale: CALK };
+    cast.easel = { art: "chalkboard-legs", x: EX, y: EG, anchor: "bottom", pivot: "bottom", scale: EK };
+    // the chart's riders: a heart rides how long people live, a coin how much they earn
+    cast.heart = { art: "heart", x: 0, y: 0, anchor: "center", scale: hs("heart", 70), hidden: true };
+    cast.coinR = { art: "coin", x: 0, y: 0, anchor: "center", scale: hs("coin", 64), hidden: true };
+    cast.heart2 = { art: "heart", x: 0, y: 0, anchor: "center", scale: hs("heart", 70), hidden: true };
+    cast.coinR2 = { art: "coin", x: 0, y: 0, anchor: "center", scale: hs("coin", 64), hidden: true };
+    // the calendar's pages, torn off one after another
+    var PAGES = 7;
+    for (var i = 0; i < PAGES; i++) cast["pg" + i] = { art: "calendar-page", x: CAL.x, y: CAL.g - 6, anchor: "bottom", pivot: "top", scale: hs("calendar-page", CAL.h * 0.94), hidden: true };
+    // on the board: the missile on WAR, three smug germs on DISEASES
+    cast.warM = { art: "missile", x: B.x0 + B.T / 2, y: B.y0 + B.T - 70, anchor: "bottom", scale: hs("missile", 170) };
+    [-62, 0, 62].forEach(function (dx, j) { cast["germ" + j] = { art: "germ", x: B.x1 - B.T / 2 + dx, y: B.y0 + B.T - 66 - (j === 1 ? 26 : 0), anchor: "bottom", pivot: "bottom", scale: hs("germ", 112) }; });
+    // the three point holders on the pool's rim, a gold chip each
+    for (i = 0; i < 3; i++) cast["h" + i] = { art: "point-holder", x: RIM[0], y: RIM[1], scale: HK, clip: STRIP[i], points: { chip: HEAD[i] } };
+    // the depositors and YOUR RETIREMENT, in front of the board
+    cast.fat = { art: "fat-cat-piggy", x: FAT[0], y: FAT[1], anchor: "bottom", pivot: "bottom", scale: FK };
+    cast.gran = { art: "grandma-piggy", x: GRAN[0], y: GRAN[1], anchor: "bottom", pivot: "bottom", scale: GK };
+    cast.ret = { art: "you-piggy", x: RET[0], y: RET[1], anchor: "bottom", pivot: "center", scale: RK,
+      label: { text: "RETIREMENT", at: [104, 300], width: 150, size: 30, plaque: true } };
+    // YOU and his two friends (they start below the board's front edge)
+    cast.you = { art: "you", x: START[0], y: START[1], anchor: "bottom", pivot: "bottom", scale: hs("you", PH), hidden: true, points: { hat: [112, 8] } };
+    cast.fm = { art: "friend-man", x: START[0] - 170, y: 2500, anchor: "bottom", pivot: "bottom", scale: hs("friend-man", PH * 0.97), hidden: true };
+    cast.fw = { art: "friend-woman", x: START[0] + 175, y: 2500, anchor: "bottom", pivot: "bottom", scale: hs("friend-woman", PH * 0.95), hidden: true };
+    // off the board: the man who won't play, on his crate, and the germ that rises behind him
+    cast.germX = { art: "germ", x: CRATE[0] + 230, y: IDLE - 40, anchor: "bottom", pivot: "bottom", scale: hs("germ", 330), hidden: true };
+    cast.grin = { art: "germ-grin", x: CRATE[0] + 290, y: CRATE[1], anchor: "bottom", pivot: "bottom", scale: hs("germ-grin", 300), hidden: true };
+    cast.idler = { art: "crate-man", x: CRATE[0], y: CRATE[1], anchor: "bottom", pivot: "bottom", scale: CMK };
+    // his skeleton stands on the same crate (the crate, clipped off the cut-out, stays in front of it)
+    cast.bones = { art: "skeleton", x: CMX, y: IDLE, anchor: "bottom", pivot: "bottom", scale: hs("skeleton", 572 * CMK), hidden: true };
+    cast.crate = { art: "crate-man", x: CRATE[0], y: CRATE[1], anchor: "bottom", scale: CMK, clip: [[18, 584], [234, 584], [234, 708], [18, 708]] };
+    // chips: one over each holder's head; two that land on YOU's hat
+    cast.tub = { art: "pool", x: PB[0], y: PB[1], anchor: "bottom", pivot: [60, 380], scale: PK };
+    for (i = 0; i < 3; i++) cast["w" + i] = { art: "point-holder", x: SLICE[i][0], y: SLICE[i][1], scale: HK, clip: WAIST[i], hidden: true };
+    for (i = 0; i < 3; i++) cast["chip" + i] = { art: "point-chip", x: RIM[0] + (HEAD[i][0] - 217) * HK, y: RIM[1] - HOLD / 2 - 40, scale: hs("point-chip", 74), hidden: true };
+    cast.yc0 = { art: "point-chip", x: START[0], y: 300, scale: hs("point-chip", 70), hidden: true };
+    cast.yc1 = { art: "point-chip", x: START[0], y: 200, scale: hs("point-chip", 70), hidden: true };
+    // the splash: three bills up out of each slice
+    for (i = 0; i < 9; i++) cast["sp" + i] = { art: "bill-med-flat", x: SURF[Math.floor(i / 3)][0], y: SURF[Math.floor(i / 3)][1] - 20, scale: hs("bill-med-flat", 80), hidden: true };
+    // "Nobody loses.": a bill for every player
+    var GIVE = [[START[0] + 90, START[1] - 250], [START[0] - 100, START[1] - 250], [START[0] + 250, START[1] - 260],
+      [RIM[0] - 150, RIM[1] - 40], [RIM[0] + 40, RIM[1] - 70], [RIM[0] + 170, RIM[1] - 40], [HAT[0], HAT[1] - 40], [HAND[0], HAND[1] - 30], [RET[0] + 10, DEP - RH - 20]];
+    GIVE.forEach(function (p, j) { cast["gv" + j] = { art: "bill-med-flat", x: p[0], y: p[1], scale: hs("bill-med-flat", 92), hidden: true }; });
+
+    // ── Beats.
+    // "Two numbers on a Scoreboard:": from the whole board up to the Scoreboard, whose bulbs light
+    add({ on: "Two", do: "camera", view: "sb", dur: 0.85 });
+    add({ on: "Scoreboard:", do: "glow", who: "sb", size: V ? 620 : 700, dur: 0.7 });
+    add({ on: "Scoreboard:", do: "shiver", who: "sb", dur: 0.25, amp: 3, rot: 1 });
+    add({ on: "live,", offset: -0.25, do: "counter", id: "life", who: "sb", spot: [137, 178], from: 0, to: 63.3, decimals: 1, suffix: " YRS", prefix: "", dur: 0.4, size: 58, font: "oswald", card: false, color: "#F6E3A1" });
+    add({ on: "earn.", offset: -0.2, do: "counter", id: "pay", who: "sb", spot: [340, 178], from: 0, to: 2138, prefix: "$", suffix: "/YR", dur: 0.4, size: 52, font: "oswald", card: false, color: "#F6E3A1" });
+    // "By twenty forty,": the calendar's pages fly off and it stops on 2040
+    add({ on: "By", do: "camera", view: "cal", dur: 0.4 });
+    add({ on: "twenty", offset: -0.05, do: "counter", id: "year", who: "cal", spot: [80, 150], from: 2026, to: 2040, style: "tick", commas: false, prefix: "", suffix: "", dur: at("forty,") - at("twenty") + 0.05, size: 70, card: false });
+    for (i = 0; i < PAGES; i++) {
+      var tp = at("twenty") + i * (at("forty,") - at("twenty") + 0.05) / PAGES;
+      add({ at: tp, do: "show", who: "pg" + i });
+      add({ at: tp + 0.02, do: "move", who: "pg" + i, by: [(i % 2 ? 1 : -1) * (260 + 40 * i), -260 - 30 * i], turn: (i % 2 ? 1 : -1) * 70, arc: 80, dur: 0.33 });
+      add({ at: tp + 0.36, do: "hide", who: "pg" + i });
+    }
+    add({ on: "forty,", offset: 0.1, do: "hop", who: "cal", height: 22 });
+    // "if the numbers went up,": both lines climb on the chart card
+    add({ on: "if", do: "camera", view: "chart", dur: 0.4 });
+    var LIVE = function (x) { return 18 + 4.2 * (x - 2026); }, EARN = function (x) { var u = (x - 2026) / 14; return 10 + 82 * u * u * 0.7 + 25 * u; };
+    add({ on: "numbers", n: 2, do: "line", id: "liveL", chart: chart, f: LIVE, x: [2026, 2040], until: ["up,", 1, 0.25], color: "#B4472F", width: 9, rider: "heart", tilt: 0, front: true });
+    add({ on: "numbers", n: 2, offset: 0.08, do: "line", id: "earnL", chart: chart, f: EARN, x: [2026, 2040], until: ["up,", 1, 0.3], color: "#2F6B3B", width: 9, rider: "coinR", tilt: 0, front: true });
+    // "Earth Optimization Points holders split the pool.": the holders hold up their chips; the pool is cut in three;
+    // they cannonball in
+    add({ on: "Earth", n: 1, offset: -0.1, do: "camera", view: "pool", dur: 0.6 });
+    [0, 1, 2].forEach(function (j) {
+      add({ on: "Points", n: 1, offset: j * 0.08, do: "pop", who: "chip" + j });
+      add({ on: "Points", n: 1, offset: j * 0.08 + 0.05, do: "move", who: "chip" + j, to: "h" + j + ".chip", dur: 0.05 });
+      add({ on: "Points", n: 1, offset: 0.25 + j * 0.08, do: "bob", who: "chip" + j, y: 8, r: 6, speed: 3, until: "pool." });
+    });
+    add({ on: "split", do: "line", id: "cut1", points: [[WATER[0] - 80, WATER[1] - 110], [WATER[0] - 140, WATER[1] + 110]], dur: 0.2, dash: [24, 16], width: 7, front: true });
+    add({ on: "split", offset: 0.1, do: "line", id: "cut2", points: [[WATER[0] + 80, WATER[1] - 110], [WATER[0] + 140, WATER[1] + 110]], dur: 0.2, dash: [24, 16], width: 7, front: true });
+    var JUMP = at("pool.") - 0.34;
+    [0, 1, 2].forEach(function (j) {
+      add({ at: JUMP + j * 0.06, do: "move", who: "h" + j, to: SLICE[j], arc: 340, dur: 0.3 - j * 0.03, turn: -8 });
+      // in, under the bills; and up again, waist-deep, chip held high
+      var IN = JUMP + j * 0.06 + 0.3 - j * 0.03;
+      add({ at: IN, do: "hide", who: "h" + j });
+      add({ at: IN + 0.17, do: "pop", who: "w" + j, squash: true });
+      add({ at: IN + 0.45, do: "bob", who: "w" + j, y: 7, r: 2, speed: 2.2, phase: j * 2, until: "If", fade: 0.2 });
+      for (var k = 0; k < 3; k++) {
+        var nm = "sp" + (j * 3 + k), tt = JUMP + j * 0.06 + 0.3 - j * 0.03;
+        add({ at: tt, do: "pop", who: nm });
+        add({ at: tt, do: "move", who: nm, by: [(k - 1) * 130, -190 + (k === 1 ? -60 : 0)], turn: (k - 1) * 40, arc: 40, dur: 0.25 });
+        add({ at: tt + 0.28, do: "drop", who: nm, dist: 260, dur: 0.35, spin: 60 });
+      }
+    });
+    add({ on: "pool.", do: "shake", y: 8, frames: 3 });
+    // "If they didn't,": the film rewinds; scratches run down the frame, the holders fly back out, the lines undraw
+    // and redraw flat
+    var RW = at("didn't,");
+    [1150, 1720, 2300].forEach(function (x, j) {
+      add({ at: RW - 0.05 + j * 0.04, do: "line", id: "scr" + j, points: [[x, -1200], [x + 30, 2600]], dur: 0.08, width: 4, front: true });
+      add({ at: RW + 0.5 + j * 0.03, do: "hide", who: "scr" + j });
+    });
+    add({ at: RW, do: "shake", x: 10, frames: 5 });
+    add({ at: RW, do: "hide", who: ["w0", "w1", "w2"] });
+    add({ at: RW, do: "show", who: ["h0", "h1", "h2"] });
+    [0, 1, 2].forEach(function (j) { add({ at: RW + 0.02 + (2 - j) * 0.05, do: "move", who: "h" + j, to: RIM, arc: 340, dur: 0.3, turn: 0 }); });
+    add({ at: RW + 0.05, do: "hide", who: ["cut1", "cut2", "liveL", "earnL", "heart", "coinR"] });
+    add({ at: RW + 0.35, do: "line", id: "liveF", chart: chart, f: function () { return 18; }, x: [2026, 2040], dur: 0.4, color: "#B4472F", width: 9, rider: "heart2", tilt: 0, front: true });
+    add({ at: RW + 0.4, do: "line", id: "earnF", chart: chart, f: function () { return 10; }, x: [2026, 2040], dur: 0.4, color: "#2F6B3B", width: 9, rider: "coinR2", tilt: 0, front: true });
+    // "depositors divide it pro rata": down to the front of the board; the pool pours out, a fire hose into the Fat
+    // Cat's hat and a trickle to Grandma. Both swell and burp.
+    add({ on: "depositors", offset: -0.1, do: "camera", view: "front", dur: 0.6 });
+    var PO = at("pro");
+    add({ at: PO, do: "march", id: "hose", art: "bill-med-flat", height: 78, count: 30, speed: 1800, gap: 44, end: "hide", bob: 0, rock: 8,
+      path: [[WATER[0] - 160, WATER[1]], [(WATER[0] + HAT[0]) / 2 - 120, WATER[1] + 260], [HAT[0], HAT[1] - 20]] });
+    add({ at: PO + 0.1, do: "march", id: "trickle", art: "bill-med-flat", height: 70, count: 3, speed: 900, gap: 330, end: "hide", bob: 0, rock: 4,
+      path: [[WATER[0] + 140, WATER[1] + 40], [(WATER[0] + HAND[0]) / 2 + 100, WATER[1] + 300], [HAND[0], HAND[1]]] });
+    // the pool tips like a bathtub to pour, and rights itself
+    add({ at: PO - 0.15, do: "move", who: "tub", by: [0, 0], turn: -9, dur: 0.2, ease: "smooth" });
+    add({ at: PO + 1.6, do: "move", who: "tub", by: [0, 0], turn: 0, dur: 0.25, ease: "smooth" });
+    add({ at: PO + 0.6, do: "move", who: "fat", by: [0, 0], scale: 1.16, dur: 0.3, ease: "smooth" });
+    add({ on: "rata", offset: 0.35, do: "hop", who: "fat", height: 26 });
+    add({ at: PO + 1.4, do: "move", who: "gran", by: [0, 0], scale: 1.05, dur: 0.2, ease: "smooth" });
+    add({ at: PO + 1.6, do: "hop", who: "gran", height: 12 });
+    // "(still beats your retirement account).": nothing comes; it keels over, legs up
+    add({ on: "beats", do: "camera", view: "retire", dur: 0.5 });
+    add({ on: "retirement", offset: 0.2, do: "shiver", who: "ret", dur: 0.5, amp: 2, rot: 2 });
+    add({ at: KIT.after(ID, "account)."), do: "move", who: "ret", by: [0, 40], turn: 178, arc: 70, dur: 0.3 });
+    add({ at: KIT.after(ID, "account).") + 0.3, do: "shake", y: 6, frames: 3 });
+
+    // ── "You earn Earth Optimization Points by getting friends to play."
+    add({ on: "You", do: "camera", view: "start", dur: 0.7 });
+    add({ on: "You", offset: 0.15, do: "slideIn", who: "you", from: "left", dist: 900, over: 18 });
+    add({ on: "getting", do: "nudge", who: "you", by: [0, 30] });
+    add({ on: "getting", do: "show", who: ["fm", "fw"] });
+    add({ on: "getting", do: "move", who: "fm", to: [START[0] - 115, START[1] + 18 - PH * 0.97 / 2], arc: 220, dur: at("friends") - at("getting") });
+    add({ on: "getting", offset: 0.1, do: "move", who: "fw", to: [START[0] + 125, START[1] + 18 - PH * 0.95 / 2], arc: 220, dur: at("friends") - at("getting") + 0.1 });
+    add({ on: "friends", do: "hop", who: "fm", height: 30 });
+    add({ on: "friends", offset: 0.2, do: "hop", who: "fw", height: 30 });
+    add({ on: "play.", offset: -0.18, do: "show", who: "yc0" });
+    add({ on: "play.", offset: -0.18, do: "move", who: "yc0", to: "you.hat", by: [0, -22], dur: 0.18 });
+    add({ on: "play.", offset: -0.03, do: "show", who: "yc1" });
+    add({ on: "play.", offset: -0.03, do: "move", who: "yc1", to: "you.hat", by: [4, -60], dur: 0.18 });
+    // "Nobody loses.": the whole board; a bill hops into every hand, and the retirement account sits up
+    add({ on: "Nobody", offset: -0.35, do: "camera", view: "wide", dur: 0.6 });
+    add({ on: "Nobody", offset: -0.3, do: "hide", who: ["chip0", "chip1", "chip2"] });
+    GIVE.forEach(function (p, j) { add({ on: "Nobody", offset: 0.03 * j, do: "pop", who: "gv" + j, squash: true }); });
+    add({ on: "loses.", do: "move", who: "ret", by: [0, -40], turn: 0, arc: 60, dur: 0.25 });
+    add({ on: "loses.", offset: 0.3, do: "bob", who: ["you", "fm", "fw", "h0", "h1", "h2", "fat", "gran", "ret"], y: 6, r: 2, speed: 2.4, until: "only" });
+    // "The only losing move is not playing.": off the board, a man holding forth on his crate; a germ rises behind him and pounces
+    add({ on: "only", offset: -0.2, do: "camera", view: "crate", dur: 0.55 });
+    add({ on: "move", do: "hop", who: "idler", height: 10 });
+    add({ on: "is", do: "slideIn", who: "germX", from: "bottom", dist: 900, over: 20 });
+    add({ on: "not", do: "shiver", who: "idler", dur: 0.25, amp: 3, rot: 3 });
+    add({ on: "playing.", offset: -0.1, do: "move", who: "germX", to: [CMX + 20, IDLE - 300], arc: 120, dur: 0.12 });
+    add({ on: "playing.", offset: 0.02, do: "xray", who: "idler", to: "bones" });
+    add({ on: "playing.", offset: 0.28, do: "swap", who: "germX", to: "grin" });
+    add({ on: "playing.", offset: 0.4, do: "bob", who: "grin", y: 8, r: 5, speed: 3 });
+
+    KIT.collage({ id: ID, seed: 2403, plate: V ? [-2600, -2200, 5400, 4200] : [-1600, -1200, 4800, 3000], views: views, view: "top", cast: cast, beats: beats });
+
+    // The board and the chart card are drawn in code: the board on the paper under the cast, the card on the easel.
+    var stage = document.getElementById(ID + "-stage");
+    var layer = function (svg) {
+      var d = document.createElement("div");
+      d.style.cssText = "position:absolute;left:0;top:0;width:0;height:0;overflow:visible";
+      d.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible">' + svg + "</svg>";
+      return d;
+    };
+    stage.insertBefore(layer(boardSvg()), stage.children[1]);
+    var easelEl = document.getElementById(ID + "-easel");
+    easelEl.parentNode.insertBefore(layer(chartSvg()), easelEl.nextSibling);
+  </script>
+</template>

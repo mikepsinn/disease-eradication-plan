@@ -1,0 +1,144 @@
+{
+  "id": "short-soviet-plan",
+  "title": "Short: the Soviet plan",
+  "storyboard": "storyboards/part-11-civilization-countdown.md",
+  "audio": {
+    "start": 1251.799,
+    "end": 1283.287
+  },
+  "scenes": [
+    {
+      "id": "25-percent-by-2033",
+      "file": "compositions/scenes/short-soviet-plan/25-percent-by-2033.html",
+      "cue": "At",
+      "approx": 1251.924,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "reaches",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "percent",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "G.D.P.",
+      "n": 1,
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "by",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "thirty-three.",
+      "offset": 0.15,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "Soviet",
+      "n": 1,
+      "offset": -0.2,
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "Union",
+      "n": 1,
+      "offset": 0.35,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "fifteen",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "worse",
+      "offset": 0.2,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "technology,",
+      "n": 1,
+      "offset": 0.4,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "plan.",
+      "n": 1,
+      "sfx": "thunk",
+      "volume": 0.55
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "terrible",
+      "n": 1,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "one.",
+      "sfx": "boing",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "You",
+      "offset": -0.1,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "faster-growing",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "no",
+      "n": 1,
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "The",
+      "n": 2,
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "lost.",
+      "sfx": "slam",
+      "volume": 0.6
+    }
+  ]
+}

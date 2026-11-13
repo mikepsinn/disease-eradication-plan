@@ -1,0 +1,102 @@
+<template id="every-leader-at-once-template">
+  <!-- every-leader-at-once · collage (Part 13, scene 3). Every leader on Earth, big, in one row behind the curve of a huge
+       globe, each clutching a missile. The camera rides a pack of winking bills along the curve; each stops at its leader,
+       who hops, persuaded, and takes nothing. "simultaneously": wide, and every leader raises one war bill in the same frame (Kim is late; Xi
+       leans over and glares). "redirect": a giant medicine bottle slams onto the North Pole. "percent": 1% on its label, and
+       the papers fly in. "trials.": it glows and medicine bills spring out and land all over the Earth. "it.": they hop.
+       That is the whole sacrifice. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="every-leader-at-once" data-width="1920" data-height="1080" data-start="0" data-duration="9.9">
+    <div id="every-leader-at-once-weave"></div>
+    <div id="every-leader-at-once-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, SZ = window.KIT_ART_SIZES, C = [0, 1900], R = V ? 1050 : 1450, LS = V ? 0.95 : 1.05, SINK = V ? 120 : 140;
+    // The leaders stand upright behind the globe's curve, feet hidden, at these angles from the North Pole.
+    var ROW = V ? [["kim-jong-un", -80], ["xi-jinping", -56], ["macron", -35], ["trump", -15], ["putin", 15], ["modi", 35], ["burnham", 56], ["sharif", 80]]
+                : [["kim-jong-un", -72], ["xi-jinping", -50], ["macron", -31], ["trump", -13], ["putin", 13], ["modi", 31], ["burnham", 50], ["sharif", 72]];
+    var rim = function (deg, up) { var a = deg * Math.PI / 180; return [C[0] + (R + up) * Math.sin(a), C[1] - (R + up) * Math.cos(a)]; };
+    var lead = ROW.map(function (r) {
+      var p = rim(r[1], 0), foot = p[1] + SINK, h = SZ[r[0]][1] * LS;
+      return { art: r[0], deg: r[1], x: p[0], foot: foot, hand: [p[0], foot - h * 0.62], head: foot - h };
+    });
+    var POLE = rim(0, 0), BS = V ? 2.2 : 2.8, BH = SZ["medicine-bottle"][1] * BS, NECK = [POLE[0], POLE[1] - BH * 0.88];
+    var WS = V ? 0.46 : 0.45;
+    var views = V ? { left: [-760, 1150, 1], mid: [0, 620, 1], right: [760, 1150, 1], wide: [0, 2013, WS] }
+                  : { left: [-1100, 780, 1], mid: [0, 300, 1], right: [1100, 780, 1], wide: [0, 601, WS] };
+    var cast = {}, beats = [];
+
+    cast.bottle = { art: "medicine-bottle", x: POLE[0], y: POLE[1] + 40, anchor: "bottom", pivot: "bottom", scale: BS, hidden: true };
+    lead.forEach(function (L, j) { cast["L" + j] = { art: L.art, x: L.x, y: L.foot, anchor: "bottom", pivot: "bottom", scale: LS }; });
+    cast.earth = { art: "earth-big", x: C[0], y: C[1], scale: 2 * R / SZ["earth-big"][0] };
+    lead.forEach(function (L, j) {
+      cast["B" + j] = { art: "missile", x: L.hand[0], y: L.hand[1], scale: 0.5 };
+      cast["W" + j] = { art: "bill-war-flat", x: L.hand[0], y: L.hand[1], scale: 1.15, hidden: true };
+    });
+
+    // The pack walks the curve, the bill for the farthest leader in front, and each stops at its own.
+    var UP = 105, GAP = V ? 8 : 7, T0 = 0.25, T1 = 3.85, START = -105, END = ROW[7][1];
+    var when = function (deg) { return T0 + (deg - START) / (END - START) * (T1 - T0); };
+    lead.forEach(function (L, j) {
+      var behind = (7 - j) * GAP, d0 = START - behind, name = "P" + j, p0 = rim(d0, UP), at = T0, deg = d0;
+      cast[name] = { art: "bill-wink", x: p0[0], y: p0[1], scale: 0.95 };
+      beats.push({ at: 0, do: "move", who: name, by: [0, 0], turn: d0, dur: 0.01 });
+      beats.push({ at: 0.05, do: "bob", who: name, y: 6, r: 5, speed: 7, fade: 0.05, phase: j });
+      while (deg < L.deg) {
+        var next = Math.min(deg + 18, L.deg), dt = (next - deg) / (END - START) * (T1 - T0);
+        beats.push({ at: at, do: "move", who: name, to: rim(next, UP), turn: next, dur: dt });
+        at += dt; deg = next;
+      }
+      // it stops at his feet, and he hops
+      beats.push({ at: at, do: "hop", who: ["L" + j, "B" + j], height: 30 });
+    });
+    beats.push({ at: 1.5, do: "camera", view: "mid", dur: 1.2 });
+    beats.push({ at: 2.7, do: "camera", view: "right", dur: 1.2 });
+    beats.push({ on: "to", n: 3, offset: -0.05, do: "camera", view: "wide", dur: 0.7 });
+
+    // "simultaneously": one paper up from every brick, in the same frame. Kim is late; Xi leans over and glares.
+    lead.forEach(function (L, j) {
+      var late = j === 0 ? 0.45 : 0;
+      beats.push({ on: "simultaneously", offset: 0.05 + late, do: "show", who: "W" + j });
+      beats.push({ on: "simultaneously", offset: 0.05 + late, do: "move", who: "W" + j, to: [L.x, L.head - 110], dur: 0.2, scale: 1.3 });
+      beats.push({ on: "simultaneously", offset: 0.05 + late, do: "hop", who: "L" + j, height: 16 });
+    });
+    beats.push({ on: "simultaneously", offset: 0.22, do: "move", who: ["L1", "B1"], by: [V ? -50 : -80, 0], dur: 2 / 12 });
+    beats.push({ on: "simultaneously", offset: 0.8, do: "move", who: ["L1", "B1"], by: [V ? 50 : 80, 0], dur: 2 / 12 });
+
+    // "redirect": the bottle slams down. "percent": the label. Then in they go, all together.
+    beats.push({ on: "redirect", do: "stamp", who: "bottle", from: 2.6, shake: 20 });
+    beats.push({ on: "percent", do: "stamp", id: "pct", who: "bottle", text: "1%", spot: [71, 240], size: V ? 110 : 150, tilt: -6 });
+    lead.forEach(function (L, j) {
+      var o = j === 0 ? 0.28 : 0.04 * (j % 3);
+      beats.push({ on: "military", offset: o, do: "move", who: "W" + j, to: NECK, turn: 0, scale: 0.8, arc: V ? 160 : 260, dur: 0.5 });
+      beats.push({ on: "military", offset: o + 0.5, do: "hide", who: "W" + j });
+    });
+    beats.push({ on: "budget", offset: 0.1, do: "shiver", who: "bottle", dur: 0.6, amp: 7, rot: 2 });
+
+    // "trials.": it becomes medicine. Bills with cross seals spring out and land all over the Earth.
+    beats.push({ on: "clinical", do: "glow", who: "bottle", size: V ? 620 : 860, dur: 0.5 });
+    lead.forEach(function (L, j) {
+      var name = "M" + j, down = rim(L.deg * 0.75, V ? -430 : -620);
+      cast[name] = { art: "bill-med", x: NECK[0], y: NECK[1], scale: V ? 1.25 : 1.5, hidden: true };
+      beats.push({ on: "trials.", offset: 0.03 * j, do: "pop", who: name });
+      beats.push({ on: "trials.", offset: 0.03 * j, do: "move", who: name, to: down, turn: L.deg * 0.8, arc: V ? 240 : 420, dur: 0.55 });
+      beats.push({ on: "That's", do: "bob", who: name, y: 8, r: 6, speed: 7, fade: 0.05, phase: j });
+    });
+    // "it.": every leader hops, one paper lighter out of a hundred
+    beats.push({ on: "it.", do: "hop", who: lead.map(function (L, j) { return "L" + j; }).concat(lead.map(function (L, j) { return "B" + j; })), height: 26 });
+
+    KIT.collage({ id: "every-leader-at-once", seed: 611, plate: V ? [-2200, -1000, 2200, 4500] : [-2800, -1000, 2800, 3800], views: views, view: "left", cast: cast, beats: beats });
+  </script>
+</template>

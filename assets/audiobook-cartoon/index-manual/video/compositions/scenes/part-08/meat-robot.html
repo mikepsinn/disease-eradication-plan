@@ -1,0 +1,107 @@
+<template id="meat-robot-template">
+  <!-- meat-robot · collage host shot (Part 8, scenes 7 and 8 as one shot). The bit: Wishonia's x-ray screen shows YOU as a
+       parts diagram, and Earth's thought bubble shows what it really wants. "meat robot": YOU comes apart into numbered
+       parts. "worn-out": his legs drop out of the diagram and bounce off the bottom of the screen; WORN OUT on the heart
+       and the knees. "solvable engineering problem": SOLVABLE, SOLVABLE, SOLVABLE, and the knees hop back into place.
+       "You'd think": the screen rolls away and a thought bubble rises from Earth: PRIORITY 1 and a wrench. "incorrect.":
+       she points, the bubble pops, and behind it was Earth's real thought all along: a missile with little hearts round it.
+       Iris out on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="meat-robot" data-width="1920" data-height="1080" data-start="0" data-duration="13.067">
+    <div id="meat-robot-weave"></div>
+    <div id="meat-robot-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, Z = KIT.collage.SIZES, ID = "meat-robot", D = KIT.scene(ID).duration;
+    var C = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+    // The x-ray screen on the free wall right of the console; YOU in its glass (art 90..290 x 20..400).
+    var XK = V ? 1.2 : 1.45, XB = V ? [860, 1440] : [1500, 1060];
+    var xpt = function (x, y) { return [XB[0] + (x - Z.xray[0] / 2) * XK, XB[1] - (Z.xray[1] - y) * XK]; };
+    var GLASS = [xpt(90, 20), xpt(290, 400)], GC = [(GLASS[0][0] + GLASS[1][0]) / 2, (GLASS[0][1] + GLASS[1][1]) / 2];
+    var YK = (GLASS[1][1] - GLASS[0][1] - 80 * XK) / Z.you[1], GAP = 34 * XK;
+    C.xray = { art: "xray", x: XB[0], y: XB[1], anchor: "bottom", scale: XK };
+    // YOU in three pieces: head, body, legs, each cut from the same cut-out, each with its part number
+    var piece = function (y0, y1) {
+      return { art: "you", x: GC[0], y: GC[1], scale: YK, clip: [[0, y0], [217, y0], [217, y1], [0, y1]] };
+    };
+    C.head = piece(0, 112); C.body = piece(112, 300); C.legs = piece(300, 574);
+    var ypt = function (x, y) { return [GC[0] + (x - 108.5) * YK, GC[1] + (y - 287) * YK]; };
+    C.heart = { art: "heart", x: ypt(85, 185)[0], y: ypt(85, 185)[1], scale: 0.4 * YK / 0.8 };
+    var KNEE = ypt(108, 430), HEARTP = ypt(85, 185);
+    // Earth's two thoughts, to the left of Earth in the window
+    var E = KIT.STUDIO.earth, BKK = V ? 0.75 : 0.95, TAIL = V ? [690, 330] : [E[0] - E[2] - 30, E[1] + 80];
+    var bubble = function () { return { art: "thought-bubble-blank", x: TAIL[0], y: TAIL[1], anchor: [110, 292], scale: BKK, hidden: true }; };
+    C.bub = bubble(); C.bub.label = { text: "PRIORITY 1", at: [122, 52], width: 190, size: 46 };
+    C.bub.points = { lab: [122, 140] };
+    C.lab = { art: "wrench", x: TAIL[0], y: TAIL[1] - 160, scale: 0.26 * BKK, hidden: true };
+    C.bub2 = bubble();
+    var bpt = function (x, y) { return [TAIL[0] + (x - 110) * BKK, TAIL[1] + (y - 292) * BKK]; };
+    var M = bpt(122, 108);
+    C.missile = { art: "missile", x: M[0], y: M[1], scale: 0.27 * BKK, hidden: true };
+    [[60, 70], [190, 80], [70, 160], [180, 165]].forEach(function (p, i) {
+      var q = bpt(p[0], p[1]);
+      C["h" + i] = { art: "heart", x: q[0], y: q[1], scale: 0.24 * BKK, hidden: true };
+    });
+
+    // "meat robot": he comes apart into numbered parts
+    add({ on: "meat", do: "move", who: "head", by: [0, -GAP], dur: 0.25, ease: "smooth" });
+    add({ on: "meat", do: "move", who: "legs", by: [0, GAP], dur: 0.25, ease: "smooth" });
+    add({ on: "robot", do: "shiver", who: ["head", "body", "legs", "heart"], dur: 0.4, amp: 2, rot: 1 });
+    // "worn-out parts": the legs drop out and bounce off the bottom of the screen
+    var FLOORY = GLASS[1][1] + 6, LEGS_DROP = FLOORY - (GC[1] + GAP + (574 - 287) * YK);
+    add({ on: "worn-out", do: "move", who: "legs", by: [0, LEGS_DROP], dur: 0.18, turn: 8 });
+    add({ on: "worn-out", offset: 0.2, do: "hop", who: "legs", height: 60 });
+    add({ on: "worn-out", offset: 0.45, do: "hop", who: "legs", height: 22 });
+    add({ on: "parts.", do: "stamp", id: "worn1", text: "WORN OUT", x: HEARTP[0], y: HEARTP[1], size: 34, width: 170, tilt: -8, shake: 4 });
+    add({ on: "parts.", offset: 0.15, do: "stamp", id: "worn2", text: "WORN OUT", x: KNEE[0], y: KNEE[1] + GAP + LEGS_DROP, size: 34, width: 170, tilt: 6, shake: 4 });
+    add({ on: "Every", do: "glow", who: "heart", dur: 0.5, size: V ? 90 : 130 });
+    // "a solvable engineering problem": SOLVABLE on every part; the legs hop back
+    add({ on: "solvable", do: "hide", who: ["worn1", "worn2"] });
+    add({ on: "solvable", do: "stamp", id: "s1", text: "SOLVABLE", x: HEARTP[0], y: HEARTP[1], size: 36, width: 180, tilt: -6, shake: 3 });
+    add({ on: "engineering", do: "stamp", id: "s2", text: "SOLVABLE", x: KNEE[0], y: KNEE[1] + GAP + LEGS_DROP, size: 36, width: 180, tilt: 5, shake: 3 });
+    add({ on: "problem.", do: "stamp", id: "s3", text: "SOLVABLE", x: ypt(108, 50)[0], y: ypt(108, 50)[1] - GAP, size: 36, width: 180, tilt: -3, shake: 3 });
+    add({ on: "problem.", offset: 0.3, do: "move", who: "legs", by: [0, -LEGS_DROP], turn: 0, dur: 0.25, arc: 80 });
+    add({ on: "problem.", offset: 0.3, do: "move", who: "s2", by: [0, -LEGS_DROP], turn: 0, dur: 0.25, arc: 80 });
+
+    // a wrench for each part
+    var WX = GLASS[0][0] + 30 * XK / 1.45, WR = [[WX, HEARTP[1]], [WX, KNEE[1] + GAP + LEGS_DROP], [WX, ypt(108, 50)[1] - GAP]];
+    WR.forEach(function (p, i) { C["wr" + i] = { art: "wrench", x: p[0], y: p[1], scale: 0.14 * XK / 1.45, hidden: true }; });
+    add({ on: "solvable", do: "pop", who: "wr0", squash: true });
+    add({ on: "engineering", do: "pop", who: "wr1", squash: true });
+    add({ on: "problem.", do: "pop", who: "wr2", squash: true });
+    add({ on: "problem.", offset: 0.3, do: "move", who: "wr1", by: [0, -LEGS_DROP], dur: 0.25, arc: 80 });
+    ["wr0", "wr1", "wr2"].forEach(function (w, i) { add({ on: "problem.", offset: 0.1 + i * 0.1, do: "shiver", who: w, dur: 0.4, amp: 3, rot: 25 }); });
+    // "You'd think humans would prioritize solving these problems": the screen rolls off; Earth thinks of a lab
+    var off = ["xray", "head", "body", "legs", "heart", "s1", "s2", "s3", "wr0", "wr1", "wr2"];
+    add({ on: "You'd", do: "slideOut", who: off, to: "right", dist: V ? 700 : 1100, dur: 0.45 });
+    add({ on: "think", do: "pop", who: "bub", squash: true });
+    add({ on: "think", do: "move", who: "bub", by: [0, -40], dur: 0.6, ease: "smooth" });
+    add({ on: "think", do: "move", who: "lab", to: "bub.lab", by: [0, 0], dur: 0.1 });
+    add({ on: "prioritize", do: "pop", who: "lab", squash: true });
+    add({ on: "problems.", do: "glow", who: "lab", dur: 0.5, size: V ? 160 : 220 });
+    add({ on: "That", do: "shiver", who: ["bub", "lab"], dur: 0.6, amp: 3, rot: 2 });
+    // "incorrect.": it pops; the real thought was behind it all along
+    add({ on: "incorrect.", do: "pop", who: ["bub", "lab"], out: true });
+    add({ on: "incorrect.", do: "show", who: ["bub2", "missile"] });
+    add({ on: "incorrect.", offset: 0.35, do: "nudge", who: "missile", by: [0, -14] });
+    ["h0", "h1", "h2", "h3"].forEach(function (h, i) {
+      add({ on: "incorrect.", offset: 0.5 + i * 0.12, do: "pop", who: h, squash: true });
+      add({ on: "incorrect.", offset: 0.9 + i * 0.12, do: "bob", who: h, y: 5, r: 8, speed: 2.5, phase: i });
+    });
+    add({ on: "incorrect.", offset: 1.0, do: "bob", who: "missile", y: 4, r: 4, speed: 2 });
+
+    KIT.collage({ id: ID, seed: 807, host: { iris: ["out", D - 0.6, D - 0.05] }, cast: C, beats: beats });
+  </script>
+</template>

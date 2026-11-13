@@ -1,0 +1,89 @@
+<template id="death-wish-title-template">
+  <!-- death-wish-title · the period title card (KIT.titleScene, look "atomic"), the heading already on it as it comes up
+       from black. A mustard star twinkles high on the left. On "Death" it comes loose; on "Wish." it falls toward the
+       words and turns into a plain missile (the collage cut-out) on the way, noses down behind WISH, and a mushroom
+       cloud puffs up behind the word as the card shakes. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="death-wish-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.616">
+    <div id="death-wish-title-cam">
+      <div id="death-wish-title-bg"></div>
+      <div id="death-wish-title-back"></div>
+      <div id="death-wish-title-words"></div>
+      <div id="death-wish-title-art"></div>
+    </div>
+    <div id="death-wish-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "death-wish-title",
+      lines: [["HUMANITY'S"], ["DEATH", "WISH"]],
+      linesTall: [["HUMANITY'S"], ["DEATH"], ["WISH"]],
+      gag: function (c) {
+        var SZ = window.KIT_ART_SIZES, V = c.V, D = c.D, b = c.word("WISH").box;
+        var f = function (n) { return n.toFixed(1) + "px"; };
+        var clamp = function (u) { return u < 0 ? 0 : u > 1 ? 1 : u; };
+        var ease = function (u) { u = clamp(u); return u * u; };
+        var twos = function (t) { return Math.floor(t * 12 + 1e-6) / 12; };
+        var cut = function (art, h) {
+          var w = h * SZ[art][0] / SZ[art][1], e = document.createElement("div");
+          e.style.cssText = "position:absolute;left:0;top:0;width:" + f(w) + ";height:" + f(h) + ";margin:" + f(-h / 2) + " 0 0 " + f(-w / 2) + ";visibility:hidden;filter:drop-shadow(5px 7px 3px rgba(0,0,0,0.45))";
+          e.innerHTML = '<img src="assets/art/collage/' + art + '.webp" style="position:absolute;left:0;top:0;width:100%;height:100%">';
+          return e;
+        };
+        var place = function (e, x, y, r, s) { e.style.transform = "translate(" + f(x) + "," + f(y) + ") rotate(" + r.toFixed(1) + "deg) scale(" + s.toFixed(3) + ")"; };
+        var vis = function (e, on) { e.style.visibility = on ? "inherit" : "hidden"; };
+
+        // the star: a gold star cut-out, high on the left
+        var R = V ? 70 : 62, star = cut("gold-star", 2 * R);
+        c.art.appendChild(star);
+        // the missile (behind the words, so it noses down behind WISH) and the mushroom cloud behind the word
+        var MH = V ? 150 : 140, missile = cut("missile-fly", MH), CH = b.h * (V ? 5.2 : 4.2), cloud = cut("mushroom", CH);
+        c.back.appendChild(cloud);
+        c.back.appendChild(missile);
+        var flash = document.createElement("div");
+        flash.style.cssText = "position:absolute;inset:0;background:#FFF8E4;visibility:hidden";
+        c.art.appendChild(flash);
+
+        var S0 = V ? [190, 230] : [250, 150], END = [b.x + b.w * 0.55, b.y + b.h * 0.45];
+        var LOOSE = c.cue("Death"), FALL = c.cue("Wish."), HIT = FALL + 0.62;
+        var ang = Math.atan2(END[1] - S0[1], END[0] - S0[0]) * 180 / Math.PI;
+        var shaken = [c.bg, c.back, c.wordsEl, c.art];
+        KIT.onTime(c.tl, D, function (t0) {
+          var t = twos(t0);
+          // twinkle, then wobble loose
+          var pos = S0, u = 0;
+          if (t >= FALL) { u = clamp((t - FALL) / (HIT - FALL)); var e = ease(u); pos = [S0[0] + (END[0] - S0[0]) * e, S0[1] + (END[1] - S0[1]) * e - Math.sin(Math.PI * e) * 60]; }
+          var wob = t >= LOOSE && t < FALL ? 14 * Math.sin((t - LOOSE) * 40) : 0;
+          var tw = 1 + 0.12 * Math.sin(t * 9);
+          var sk = clamp(1 - u * 2.5);                                     // the star shrinks into the missile
+          vis(star, t < HIT && sk > 0.02);
+          place(star, pos[0], pos[1] + (t >= LOOSE && t < FALL ? 6 : 0), wob + t * 30, tw * sk);
+          var mk = clamp(u * 2.5 - 0.3);
+          vis(missile, t >= FALL && t < HIT && mk > 0.02);
+          place(missile, pos[0], pos[1], ang, mk);
+          // the hit: a flash, the cloud puffs up behind WISH, the card shakes
+          var fl = t >= HIT ? 1 - (t - HIT) / 0.2 : 0;
+          vis(flash, fl > 0); flash.style.opacity = Math.max(0, fl).toFixed(2);
+          var ck = t >= HIT ? Math.min(1, 0.35 + (t - HIT) * 2.6) + 0.04 * (t - HIT) : 0;
+          vis(cloud, t >= HIT);
+          place(cloud, END[0], b.y + b.h - CH * 0.5 * ck + b.h * 0.25, 0, ck);
+          var fr = Math.round(t * 12), amp = t >= HIT && t < HIT + 0.42 ? 14 * (1 - (t - HIT) / 0.42) : 0;
+          var dx = amp * (fr % 2 ? 1 : -1), dy = amp * 0.6 * (fr % 3 - 1);
+          shaken.forEach(function (el) { el.style.transform = amp ? "translate(" + f(dx) + "," + f(dy) + ")" : ""; });
+        });
+      },
+    });
+  </script>
+</template>

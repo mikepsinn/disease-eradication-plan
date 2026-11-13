@@ -1,0 +1,93 @@
+<template id="your-job-template">
+  <!-- your-job · collage host shot. Back at the console, the games box still open on the ledge. Beside it YOU stands on
+       top of the Earth, staggering under five fat binders numbered 1 to 5 (the five steps). "never": they twitch;
+       "understand": they hop down out of his arms one after another and into the games box; "steps.": the lid slams
+       shut and YOU tips his hat. "vote": a YES button springs up out of the Earth and he lunges at it. "two": his two
+       friends pop up beside him. "play.": a gold star slaps onto his forehead. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="your-job" data-width="1920" data-height="1080" data-start="0" data-duration="6.68">
+    <div id="your-job-weave"></div>
+    <div id="your-job-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "your-job", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    // The games box exactly where game-box left it, lid up.
+    var BW = V ? 300 : 360, BK = BW / SZ["game-box"][0], BH = SZ["game-box"][1] * BK, TOP = S.top + 8;
+    var BL = V ? 520 : 905, BT = TOP - BH, MOUTH = [BL + BW * 0.5, BT + BH * 0.42];
+    // The Earth stands on the deck beside the console; YOU on top of it.
+    var ER = V ? 340 : 420, EC = V ? [815, 1780] : [1570, 1230], EK = 2 * ER / SZ["earth-big"][0], ETOP = EC[1] - SZ["earth-big"][1] * EK / 2 + 6;
+    var YH = V ? 330 : 410, YX = EC[0] - (V ? 35 : 20);
+    var BINW = V ? 112 : 136, BINK = BINW / SZ.binder[0], BINH = SZ.binder[1] * BINK;
+    var cast = {
+      box: { art: "game-box", x: BL, y: BT, anchor: "topleft", pivot: "bottom", scale: BK },
+      lid: { art: "game-box-lid", x: BL - 8 * BK, y: BT - 14 * BK, anchor: "topleft", pivot: [135, 15], scale: BK,
+        label: [{ text: "THE EARTH", at: [214, 76], width: 130, size: 34, tilt: 9 }, { text: "OPTIMIZATION", at: [205, 118], width: 200, size: 46, tilt: 9 },
+          { text: "GAME", at: [197, 162], width: 120, size: 50, tilt: 9 }] },
+      yes: { art: "yes-button", x: YX + (V ? 165 : 215), y: ETOP + 22, anchor: "bottom", pivot: "bottom", scale: hs("yes-button", V ? 200 : 240), hidden: true,
+        label: { text: "YES", at: [82, 28], width: 120, size: 44 } },
+      earth: { art: "earth-big", x: EC[0], y: EC[1], scale: EK },
+      fm: { art: "friend-man", x: YX - (V ? 150 : 205), y: ETOP + 26, anchor: "bottom", pivot: "bottom", scale: hs("friend-man", YH * 0.95), hidden: true },
+      fw: { art: "friend-woman", x: YX + (V ? 132 : 190), y: ETOP + 26, anchor: "bottom", pivot: "bottom", scale: hs("friend-woman", YH * 0.93), hidden: true },
+      you: { art: "you", x: YX, y: ETOP, anchor: "bottom", pivot: "bottom", scale: hs("you", YH) },
+      youTip: { art: "you-tip", x: YX + YH * 0.07, y: ETOP, anchor: "bottom", pivot: "bottom", scale: hs("you-tip", YH * 1.08), hidden: true },
+      youPush: { art: "you-push", x: YX + YH * 0.12, y: ETOP, anchor: "bottom", pivot: "bottom", scale: hs("you-push", YH * 0.86), hidden: true },
+      you2: { art: "you", x: YX, y: ETOP, anchor: "bottom", pivot: "bottom", scale: hs("you", YH), hidden: true, points: { brow: [112, 62] } },
+      star: { art: "gold-star", x: V ? 1250 : 2100, y: V ? 700 : -200, scale: hs("gold-star", V ? 64 : 72), hidden: true },
+    };
+    // the five binders, a wobbly stack in his arms
+    var STACK = [];
+    for (var i = 0; i < 5; i++) {
+      STACK.push([YX + (i % 2 ? 12 : -10), ETOP - YH * 0.32 - i * BINH * 0.36]);
+      cast["bn" + i] = { art: "binder", x: STACK[i][0], y: STACK[i][1], anchor: "bottom", pivot: "bottom", scale: BINK, label: { text: String(i + 1), at: [222, 108], width: 120, size: 92 } };
+    }
+    var beats = [], add = function (b) { beats.push(b); };
+    // the lid is up, as game-box left it
+    add({ at: 0, do: "move", who: "lid", by: [16, -BH * 0.42], turn: -10, dur: 0.01 });
+    // staggering under the stack
+    add({ at: 0.05, do: "bob", who: ["you"].concat([0, 1, 2, 3, 4].map(function (j) { return "bn" + j; })), y: 0, r: 3, speed: 1.6, until: "never" });
+    // "never": each binder twitches, as if it had sprouted legs
+    for (i = 0; i < 5; i++) add({ on: "never", offset: i * 0.06, do: "hop", who: "bn" + (4 - i), height: 16 });
+    // "understand": they hop down one after another, top one first, across the Earth and into the box
+    var GO = cue("understand"), STEP = (cue("steps.") - 0.12 - GO - 0.5) / 4, LAND = [YX - (V ? 200 : 260), ETOP + (V ? 40 : 30)];
+    for (i = 0; i < 5; i++) {
+      var b = "bn" + (4 - i), t = GO + i * STEP;
+      add({ at: t, do: "move", who: b, to: [LAND[0] + i * 6, LAND[1]], arc: 80, dur: 0.22, turn: -6 });
+      add({ at: t + 0.24, do: "move", who: b, to: [MOUTH[0] + (i - 2) * 22, MOUTH[1] + 30], arc: V ? 220 : 160, dur: 0.26, turn: -14 });
+      add({ at: t + 0.5, do: "hide", who: b });
+    }
+    // "steps.": the lid slams shut; YOU looks at his empty arms and tips his hat
+    add({ on: "steps.", do: "move", who: "lid", by: [-16, BH * 0.42], turn: 0, dur: 0.08 });
+    add({ on: "steps.", offset: 0.08, do: "shake", y: 6, frames: 3 });
+    add({ on: "steps.", offset: 0.1, do: "hop", who: "box", height: 14 });
+    add({ on: "steps.", offset: 0.25, do: "swap", who: "you", to: "youTip" });
+    // "vote": a YES button springs up out of the Earth; he lunges and presses it
+    add({ on: "vote", offset: -0.12, do: "pop", who: "yes", squash: true });
+    add({ on: "vote", offset: 0.12, do: "swap", who: "youTip", to: "youPush" });
+    add({ on: "vote", offset: 0.3, do: "move", who: "yes", by: [0, 0], scale: 0.9, dur: 0.06 });
+    add({ on: "vote", offset: 0.42, do: "move", who: "yes", by: [0, 0], scale: 1.0, dur: 0.1 });
+    add({ on: "vote", offset: 0.32, do: "glow", who: "yes", size: V ? 220 : 260, dur: 0.6 });
+    // "two friends": they pop up beside him
+    add({ on: "two", do: "swap", who: "youPush", to: "you2" });
+    add({ on: "two", offset: 0.1, do: "pop", who: "fm", squash: true });
+    add({ on: "friends", do: "pop", who: "fw", squash: true });
+    // "play.": a gold star flies in and slaps onto his forehead
+    add({ on: "play.", offset: -0.2, do: "show", who: "star" });
+    add({ on: "play.", offset: -0.2, do: "move", who: "star", to: "you2.brow", dur: 0.24, arc: 60, turn: 380 });
+    add({ at: KIT.after(ID, "play."), do: "glow", who: "star", size: V ? 150 : 170, dur: 0.6 });
+    add({ at: KIT.after(ID, "play."), do: "hop", who: "you2", height: 14 });
+    KIT.collage({ id: ID, seed: 2405, host: true, cast: cast, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,103 @@
+<template id="bread-mold-template">
+  <!-- bread-mold · collage (Part 13 storyboard, scene 11). The bit: 200,000 years of humans holding the cure in their
+       hands, drawn to scale. Close on a caveman with his loaf; "reflex": the mold on it glows; "antibiotics": he flicks
+       it off and bites. "two": pull back along a timeline 200,000 YEARS long, cavemen with loaves all the way, the sick
+       behind them; "thousand": the sick x-ray into skeletons down the line like dominoes. All of history is a clump in
+       the last 2% of the line: ALL OF HISTORY. "while": rush to the end, an Egyptian, a Roman, a monk and a
+       Victorian elbow to elbow, each with a slice of bread. "right": 1928, Alexander Fleming holds up his moldy dish;
+       "bread.": it glows, and he jumps. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="bread-mold" data-width="1920" data-height="1080" data-start="0" data-duration="9.34">
+    <div id="bread-mold-weave"></div>
+    <div id="bread-mold-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "bread-mold", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    // The timeline on the ground line G: 200,000 years from x 0 to END. Everything since the pyramids (4,500 years)
+    // is its last 2.25%.
+    var G = 1000, END = 30000, PH = 660, STEP = 1300, HIST = END * (1 - 4500 / 200000);
+    var cy = function (s) { return V ? G - 430 / s : 620; };
+    var WS = V ? 0.034 : 0.061;
+    var views = V ? {
+      first: [260, cy(0.85), 0.85], wide: [END / 2 + 900, -1600, WS], hist: [HIST + 320, cy(0.62), 0.62], fleming: [END - 60, cy(0.9), 0.9],
+    } : {
+      first: [420, 620, 1], wide: [END / 2, G - 5300, WS], hist: [HIST + 330, 560, 0.72], fleming: [END - 40, 560, 0.95],
+    };
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+    var person = function (art, x, h, hidden) { return { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: hs(art, h), hidden: hidden }; };
+    // A slice of moldy bread in a person's hand (art px of the hand on that cut-out).
+    var loafAt = function (name, x, art, hand, h) {
+      var k = hs(art, h), sz = SZ[art];
+      cast[name] = { art: "moldy-bread", x: x + (hand[0] - sz[0] / 2) * k, y: G - (sz[1] - hand[1]) * k, scale: hs("moldy-bread", 150 * h / PH) };
+    };
+
+    // The sick behind the line, and the skeletons they become.
+    var SICK = ["sick-1", "sick-2", "sick-3", "sick-4", "sick-5", "sick-6"];
+    var BONES = ["skeleton", "grandma-skeleton", "hungry-man-skeleton", "scientist-skeleton", "family-skeleton", "you-skeleton"];
+    var sick = [], bones = [];
+    for (var i = 0, x = 650; x < HIST - 600; x += STEP * 1.6, i++) {
+      cast["sk" + i] = person(SICK[i % 6], x, PH * 0.95);
+      cast["bn" + i] = person(BONES[i % 6], x, PH * 0.95, true);
+      sick.push("sk" + i); bones.push("bn" + i);
+    }
+    // The line itself, and its two ends.
+    add({ at: 0, do: "line", id: "time", points: [[-300, G + 30], [END + 200, G + 30]], color: "ink", width: 14, dur: 0.01 });
+    // Cavemen with loaves, all the way along.
+    var cave = [], loaves = [];
+    for (i = 0, x = 0; x < HIST - 300; x += STEP, i++) {
+      cast["cv" + i] = person("caveman-scientist", x, PH);
+      loafAt("lf" + i, x, "caveman-scientist", [182, 215], PH);
+      cave.push("cv" + i); loaves.push("lf" + i);
+    }
+    // All of history, elbow to elbow in the last sliver, each with his own slice of bread; and 1928.
+    var HUM = ["history-humans-egyptian", "history-humans-roman", "history-humans-monk", "history-humans-victorian"];
+    HUM.forEach(function (art, j) { cast["h" + j] = person(art, HIST + 90 + j * 150, PH); });
+    // Fleming holds his dish up at art (213, 90); the dish's glow sits on a speck of a cut-out there, behind him.
+    var FLK = hs("alexander-fleming", PH * 1.05), FLX = END - 20;
+    cast.dish = { art: "moldy-bread", x: FLX + (213 - SZ["alexander-fleming"][0] / 2) * FLK, y: G - (SZ["alexander-fleming"][1] - 90) * FLK, scale: 0.001 };
+    cast.fleming = person("alexander-fleming", FLX, PH * 1.05);
+
+    // "reflex": the mold on the first loaf glows; "antibiotics": flicked off, and a bite.
+    add({ on: "reflex", do: "glow", who: "lf0", size: 260, dur: 0.6 });
+    add({ on: "antibiotics", do: "nudge", who: "lf0", by: [30, -24] });
+    add({ on: "antibiotics", offset: 0.25, do: "hop", who: ["cv0", "lf0"], height: 14 });
+    // Everyone along the line fusses with his loaf, out of step.
+    cave.forEach(function (c, j) { add({ at: 0.05, do: "bob", who: [c, loaves[j]], y: 5, r: 2, speed: 3 + (j % 3), phase: j }); });
+    // "two": the whole 200,000 years.
+    add({ on: "for", n: 1, do: "camera", view: "wide", dur: 1.2 });
+    add({ on: "two", do: "stamp", id: "ago", text: "200,000 YEARS AGO", x: V ? 4600 : 7000, y: G - (V ? 9000 : 3200), size: V ? 2200 : 1700, width: V ? 9000 : 11000, tilt: -3 });
+    add({ on: "thousand", do: "xray", who: sick, to: bones, stagger: 0.55 / sick.length, frames: 4, flash: 0 });
+    // ALL OF HISTORY, with an inked arrow to the clump at the end of the line
+    var HX = V ? 21000 : 24300, HY = G - (V ? 4500 : 2600);
+    add({ on: "years", do: "stamp", id: "hist", text: "ALL OF HISTORY", x: HX, y: HY, size: V ? 1500 : 1200, width: V ? 9000 : 7000, tilt: 4 });
+    add({ on: "years", offset: 0.1, do: "line", id: "arrow", points: [[HX + (V ? 1500 : 2400), HY + (V ? 900 : 500)], [HIST + 200, G - PH - 300]], color: "red", width: V ? 170 : 110, dur: 0.25 });
+    add({ on: "years", offset: 0.35, do: "line", id: "head1", points: [[HIST + 200, G - PH - 300], [HIST + 200 + (V ? 900 : 600), G - PH - 300 - (V ? 1000 : 200)]], color: "red", width: V ? 170 : 110, dur: 0.05 });
+    add({ on: "years", offset: 0.35, do: "line", id: "head2", points: [[HIST + 200, G - PH - 300], [HIST + 200 + (V ? 200 : 300), G - PH - 300 - (V ? 1300 : 600)]], color: "red", width: V ? 170 : 110, dur: 0.05 });
+    // "while": to the end of the line.
+    add({ on: "while", do: "camera", view: "hist", dur: 0.6 });
+    add({ on: "while", do: "hide", who: ["ago", "hist", "arrow", "head1", "head2"] });
+    HUM.forEach(function (art, j) { add({ on: "bread", n: 1, offset: 0.08 * j, do: "hop", who: "h" + j, height: 18 }); });
+    // "right": 1928. "bread.": his dish glows, and he jumps.
+    add({ on: "right", do: "camera", view: "fleming", dur: 0.5 });
+    add({ on: "right", offset: 0.3, do: "stamp", id: "y1928", text: "1928", x: END - 20 + (V ? 0 : 420), y: G - PH * (V ? 1.25 : 0.8), size: 170, width: 420, tilt: -4 });
+    add({ on: "bread.", n: 2, do: "glow", who: "dish", size: 300, dur: 0.6 });
+    add({ on: "bread.", n: 2, do: "hop", who: "dish", height: 60 });
+    add({ on: "bread.", n: 2, do: "hop", who: "fleming", height: 60 });
+
+    KIT.collage({ id: ID, seed: 1311, plate: V ? [-2000, -32000, 32000, 30000] : [-2000, -14000, 32000, 12000], views: views, view: "first", cast: cast, beats: beats });
+  </script>
+</template>

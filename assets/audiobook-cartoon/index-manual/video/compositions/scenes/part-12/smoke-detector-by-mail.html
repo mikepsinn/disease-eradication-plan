@@ -1,0 +1,90 @@
+<template id="smoke-detector-by-mail-template">
+  <!-- smoke-detector-by-mail · collage host shot (Part 12, scene 2). The iris opens on her face. Four medicine papers
+       (the ones Part 11 sent to the lab) march along the console's ledge; on "mostly" they walk off its end one after
+       another, and the last one stops at the edge, looks down and gulps. "smoke": smoke curls in round the round alarm
+       on the wall beside the window. "works": it writes a letter, RE: SMOKE, and holds it up. After "mail." the
+       flames roll up the wall and swallow it; it hangs there charred, white eyes blinking, the letter still up. The
+       charred alarm stays on the wall in every host shot after this one. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="smoke-detector-by-mail" data-width="1920" data-height="1080" data-start="0" data-duration="8.18">
+    <div id="smoke-detector-by-mail-weave"></div>
+    <div id="smoke-detector-by-mail-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "smoke-detector-by-mail", V = KIT.V, ST = KIT.STUDIO;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The alarm on the wall beside the window, and the ledge's right end (the papers' cliff). Shared by Part 12's host shots.
+    var DET = V ? { x: 810, y: 650, k: 0.62 } : { x: 1165, y: 345, k: 0.72 };
+    var LEDGE = ST.top, EDGE = V ? 640 : 1040, PK = V ? 0.62 : 0.68;
+    var alarm = { art: "smoke-detector", x: DET.x, y: DET.y, scale: DET.k, eyes: [[100, 175], [165, 175]], eyeSize: 40, smoke: [[130, 40], [400, 60]] };
+    var letter = { art: "letter", x: DET.x + 330 * DET.k, y: DET.y - 300 * DET.k, scale: 0.55 * DET.k, pivot: "bottom", hidden: true,
+      label: { text: "RE: SMOKE", at: [208, 110], width: 330, size: 70 } };
+    // the wire wastebasket on the floor past the ledge's end
+    var BK = { x: V ? 800 : 1180, y: V ? 1440 : 1075, k: V ? 0.7 : 0.75 }, BTOP = BK.y - 348 * BK.k;
+    var cast = { alarm: alarm, letter: letter };
+    var beats = [];
+    var add = function (b) { beats.push(b); };
+
+    // The papers, in single file on the ledge; p0 leads.
+    var gapX = V ? 120 : 140;
+    for (var i = 0; i < 4; i++) {
+      var home = EDGE - 70 - i * gapX;
+      cast["p" + i] = { art: "bill-med", x: home, y: LEDGE + 6, anchor: "bottom", pivot: "bottom", scale: PK };
+      add({ at: 0.15 + 0.22 * i, do: "slideIn", who: "p" + i, from: "left", dist: home + 300, over: 14 });
+      add({ at: 0.9 + 0.22 * i, do: "bob", who: "p" + i, y: 7, r: 3, speed: 3, phase: i, until: "mostly" });
+    }
+    cast.basket = { art: "wastebasket", x: BK.x, y: BK.y, anchor: "bottom", pivot: "bottom", scale: BK.k };
+    // "mostly wasted": off the end, one after another, into the wastebasket.
+    var off = [cue("mostly"), cue("mostly") + 0.32, cue("wasted,") + 0.12];
+    off.forEach(function (t, j) {
+      add({ at: t - 0.05 * j, do: "move", who: "p" + j, to: [EDGE + 60, LEDGE + 6 - 120 * PK], by: [0, 0], dur: 0.18 + 0.05 * j });
+      add({ at: t + 0.15, do: "move", who: "p" + j, to: [BK.x, BTOP + 30], turn: 40, dur: 0.35, arc: 60 });
+      add({ at: t + 0.5, do: "hide", who: "p" + j });
+      add({ at: t + 0.5, do: "shiver", who: "basket", dur: 0.25, amp: 3, rot: 3 });
+    });
+    // The last one walks up to the edge, stops, looks down and gulps.
+    add({ on: "wasted,", offset: 0.35, do: "move", who: "p3", by: [3 * gapX - 20, 0], dur: 0.5 });
+    add({ on: "because", offset: 0.1, do: "move", who: "p3", by: [0, 0], turn: 18, dur: 0.15 });
+    add({ on: "system", do: "shiver", who: "p3", dur: 0.5, amp: 3, rot: 3 });
+    add({ on: "approves", offset: 0.1, do: "move", who: "p3", by: [-14, 0], turn: 0, dur: 0.2 });
+
+    // "smoke": smoke curls in round the alarm; it sniffs.
+    var puffs = V ? [[90, 170], [-60, -170], [100, -40]] : [[200, 150], [-40, -190], [260, -60]];
+    puffs.forEach(function (p, j) {
+      cast["sm" + j] = { art: "cloud-puff", x: DET.x + p[0], y: DET.y + p[1], scale: (V ? 0.36 : 0.45) * (1 - 0.15 * j), hidden: true };
+      add({ on: "smoke", offset: 0.12 * j, do: "pop", who: "sm" + j, swell: 0.5 });
+      add({ on: "smoke", offset: 0.12 * j + 0.2, do: "bob", who: "sm" + j, y: 10, r: 4, speed: 0.8, phase: j });
+    });
+    add({ on: "detector", do: "shiver", who: "alarm", dur: 0.4, amp: 3, rot: 5 });
+    // "works by mail": it writes a letter and holds it up.
+    add({ on: "works", do: "pop", who: "letter", squash: true });
+    add({ on: "by", do: "hop", who: "letter", height: 24 });
+    add({ on: "mail.", do: "nudge", who: "letter", by: [0, -30] });
+    // After "mail.": the flames roll up the wall and swallow it.
+    var FIRE = cue("mail.") + 0.12;
+    var fl = V ? [[-120, 0.42], [0, 0.55], [120, 0.42], [240, 0.36]] : [[-150, 0.5], [0, 0.66], [150, 0.5], [290, 0.42]];
+    fl.forEach(function (f, j) {
+      cast["fl" + j] = { art: "flames", x: DET.x + f[0], y: DET.y + 200 * DET.k + 60, anchor: "bottom", pivot: "bottom", scale: f[1], hidden: true };
+      add({ at: FIRE + 0.05 * j, do: "pop", who: "fl" + j, squash: true });
+      add({ at: FIRE + 0.1 + 0.05 * j, do: "shiver", who: "fl" + j, dur: 0.55, amp: 6, rot: 6 });
+      add({ at: FIRE + 0.55 + 0.04 * j, do: "pop", who: "fl" + j, out: true });
+    });
+    add({ at: FIRE + 0.25, do: "char", who: "alarm" });
+    add({ at: FIRE + 0.55, do: "pop", who: ["sm0", "sm1", "sm2"], out: true });
+    add({ at: FIRE + 0.4, do: "shake", frames: 3, x: 6 });
+    add({ at: FIRE + 0.8, do: "blink", who: "alarm" });
+
+    KIT.collage({ id: ID, seed: 1202, host: { iris: ["in", 0.04, 0.7] }, cast: cast, beats: beats });
+  </script>
+</template>

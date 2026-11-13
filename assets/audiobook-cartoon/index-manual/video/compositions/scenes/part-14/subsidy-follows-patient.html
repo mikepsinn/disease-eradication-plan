@@ -1,0 +1,138 @@
+<template id="subsidy-follows-patient-template">
+  <!-- subsidy-follows-patient · collage (Part 14, scene 5). The bit: the medicine money gets legs and goes straight to
+       the patients. A tall bar of medicine bills, $27.2 BILLION A YEAR; Wishonia's plain bill flutters onto its top. A
+       dashed line rings the bottom four fifths: 80%. "directly": the 80% stands up on stick legs and stampedes right,
+       straight over the grants officer, who is trampled flat. The herd piles into the $929 bar on a chart of cost per
+       patient; beside it the usual $41,000 bar grows 44 times taller, then gives way to 44 patients for the price of
+       one. "Patients will choose": a hallway of trial doors; the patient walks along and picks one, and a $929 bill
+       trots at her heel. "paid": it jumps into the scientist's hand and the door's tally ticks up; down the hall every
+       door's tally ticks. "No grant committees": three gentlemen at a long table under DISEASES · SPRING COLLECTION
+       while a germ in a sash struts down it like a runway; the Gilliam foot comes down on the lot, and the germ pops
+       out from under it, grinning. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="subsidy-follows-patient" data-width="1920" data-height="1080" data-start="0" data-duration="26.64">
+    <div id="subsidy-follows-patient-weave"></div>
+    <div id="subsidy-follows-patient-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "subsidy-follows-patient", V = KIT.V, G = 980, Z = KIT.collage.SIZES, cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / Z[art][1]; };
+    // Left to right on the ground G: the bar of money, the grants officer, the chart, the hallway of doors, the table.
+    var BX = 420, BH = 92, GAP = 70, NB = 10, BTOP = G - (NB - 1) * GAP - BH;
+    var OFF = 960, DOORS = [2700, 3060, 3420, 3780], TABLE = 4760;
+    var ch = KIT.collage.axes({ box: [1520, 410, 2320, 940], x: [0, 3, 1], y: [0, 45, 5], xLabels: 3, yLabels: 10, unit: "K", title: "TRIAL COST PER PATIENT", size: 34 });
+    var b1 = ch.pt(1, 0), b2 = ch.pt(2, 0);
+    var cy = function (s) { return V ? G - 420 / s : 540; };
+    var views = V ? {
+      bar: [640, cy(0.85), 0.85], chart: [1940, cy(0.8), 0.8], hall: [3060, cy(0.7), 0.7], door: [3330, cy(0.9), 0.9], com: [4760, cy(0.75), 0.75],
+    } : {
+      bar: [860, 540, 1], chart: [1880, 560, 1], hall: [3240, 540, 1], door: [3500, 520, 1.15], com: [4760, 520, 1],
+    };
+    var cast = {}, beats = [], add = function (b) { beats.push(b); };
+
+    // the grants officer, in the herd's way
+    cast.officer = { art: "grants-officer", x: OFF, y: G, anchor: "bottom", pivot: "bottom", scale: hs("grants-officer", 470) };
+    // Wishonia's bill, still falling from the last scene
+    cast.wbill = { art: "bill-plain", x: BX + 30, y: -300, scale: 0.6, pivot: "bottom" };
+    // patients beside the two bars
+    cast.pa = { art: "sick-1", x: b1[0] - 150, y: G - 40, anchor: "bottom", pivot: "bottom", scale: hs("sick-1", 300), hidden: true };
+    cast.pb = { art: "sick-4", x: b2[0] + 150, y: G - 40, anchor: "bottom", pivot: "bottom", scale: hs("sick-4", 300), hidden: true };
+    // the hallway: doors with a disease on each sign and a tally under it
+    var DIS = ["CANCER", "ALS", "LUPUS", "ALZHEIMER'S"];
+    DOORS.forEach(function (x, i) {
+      cast["door" + i] = { art: "deleted-door", x: x, y: G, anchor: "bottom", scale: 1.3, label: { text: DIS[i], at: [121, 112], width: 130, size: 50 } };
+    });
+    cast.sci = { art: "scientist-reach", x: DOORS[2] + 60, y: G, anchor: "bottom", pivot: "bottom", scale: hs("scientist-reach", 520), faces: "left" };
+    cast.pat = { art: "sick-6", x: 2300, y: G, anchor: "bottom", pivot: "bottom", scale: hs("sick-6", 560), hidden: true, points: { heel: [40, 690] } };
+    cast.pup = { art: "bill-med", x: 2200, y: G - 60, scale: 0.55, hidden: true };
+    // the committee at its long table, and the germ on its runway
+    ["carnegie", "burnham", "newspaper-man"].forEach(function (a, i) {
+      cast["gent" + i] = { art: a, x: TABLE - 330 + i * 330, y: G - 140, anchor: "bottom", pivot: "bottom", scale: hs(a, 520) };
+    });
+    cast.deskL = { art: "desk", x: TABLE - 190, y: G, anchor: "bottom", pivot: "bottom", scale: 1.25 };
+    cast.deskR = { art: "desk", x: TABLE + 190, y: G, anchor: "bottom", pivot: "bottom", scale: 1.25 };
+    var TT = G - 350 * 1.25 + 40;                                       // the table top
+    cast.germ = { art: "germ", x: TABLE - 300, y: TT, anchor: "bottom", pivot: "bottom", scale: 0.75, label: { text: "SPRING '26", at: [150, 150], width: 140, size: 40, tilt: 18 } };
+    cast.germ2 = { art: "germ-grin", x: TABLE + 470, y: G, anchor: "bottom", pivot: "bottom", scale: 0.8, hidden: true };
+    cast.boot = { art: "boot", x: TABLE, y: G, anchor: "bottom", pivot: "bottom", scale: 2.1, hidden: true };
+
+    // ── $27.2 billion, and the 80% ──
+    add({ at: 0, do: "pile", id: "bar", art: "bill-med-flat", height: BH, x: BX, y: G, count: NB, gap: GAP, dur: 1.1, accel: 0.7, jitter: 4, tilt: 2 });
+    add({ at: 0.3, do: "move", who: "wbill", to: [BX + 10, BTOP + 10], turn: 380, dur: 1.6, ease: "smooth" });
+    add({ on: "billion", do: "banner", id: "total", text: "$27.2 BILLION A YEAR", x: BX, y: BTOP - 110, size: 70, width: 620, pad: 50, color: "ink", tilt: -2 });
+    var Y80 = G - 7 * GAP - BH - 10;
+    add({ on: "Eighty", offset: 0.2, do: "line", id: "ring", points: [[BX - 95, G + 14], [BX - 95, Y80], [BX + 95, Y80], [BX + 95, G + 14]], color: "red", width: 7, dash: [20, 12], dur: 0.6 });
+    add({ on: "percent", offset: 0.3, do: "stamp", id: "pct", text: "80%", x: BX + 250, y: Y80 + 120, size: 110, width: 260, tilt: -6 });
+    // "directly": the 80% gets legs and stampedes right, straight over the grants officer
+    var low = []; for (var i = 0; i < 8; i++) low.push("bar." + i);
+    add({ on: "directly", offset: -0.1, do: "hide", who: low.concat(["ring", "pct"]) });
+    add({ on: "directly", offset: -0.1, do: "move", who: ["bar.8", "bar.9"], by: [0, 8 * GAP], dur: 0.3 });
+    add({ on: "directly", offset: -0.1, do: "move", who: "wbill", by: [0, 8 * GAP], dur: 0.3 });
+    add({ on: "directly", offset: -0.1, do: "march", id: "herd", art: "bill-med", count: 8, height: 120, path: [[BX, G], [b1[0], G]], speed: 950, gap: 110, end: "hide" });
+    add({ on: "directly", offset: 0.05, do: "nudge", who: "officer", by: [0, -30] });
+    add({ on: "directly", offset: 0.4, do: "flatten", who: "officer" });
+    add({ on: "subsidizing", do: "camera", view: "chart", dur: 1.4 });
+    // the chart: $929 a patient, against the usual $41,000
+    // (the axes are drawn as lines and a banner: a chart's own svg is clipped to the frame, and this one is off it)
+    var bx = ch.box;
+    add({ on: "subsidizing", offset: 0.3, do: "line", id: "axes", points: [[bx[0], bx[1] - 40], [bx[0], bx[3]], [bx[2] + 40, bx[3]]], color: "ink", width: 7, dur: 0.4 });
+    add({ on: "patient", n: 1, do: "banner", id: "title", text: "TRIAL COST PER PATIENT", x: (bx[0] + bx[2]) / 2, y: bx[1] - 110, size: 60, width: 760, pad: 50, color: "ink", tilt: -1 });
+    add({ on: "twenty-nine", offset: -0.3, do: "bar", id: "cheap", chart: ch, x: 1, to: 0.929, width: 160, text: "$929", size: 44, dur: 0.3 });
+    add({ on: "twenty-nine", do: "pop", who: "pa", squash: true });
+    add({ on: "forty-one", offset: -0.1, do: "bar", id: "dear", chart: ch, x: 2, to: 41, width: 160, text: "$41,000", size: 44, dur: 0.9 });
+    add({ on: "thousand", do: "pop", who: "pb", squash: true });
+    // it falls, and the same money is 44 patients
+    add({ on: "dollars.", n: 3, offset: 0.15, do: "bar", id: "dear", chart: ch, x: 2, to: 0.929, width: 160, text: "$929", size: 44, dur: 0.25 });
+    add({ on: "dollars.", n: 3, offset: 0.15, do: "shake", y: 10, frames: 4 });
+    add({ on: "dollars.", n: 3, offset: 0.3, do: "pictogram", id: "many", art: "sick-1", count: 44, cols: 11, box: [b2[0] - 250, 400, b2[0] + 430, 930], dur: 0.9, fill: 0.95 });
+    add({ on: "dollars.", n: 3, offset: 1.1, do: "stamp", id: "x44", text: "44 FOR THE PRICE OF 1", x: b2[0] + 90, y: 250, size: 54, width: 560, tilt: -4 });
+
+    // ── The hallway: she picks her trial; her subsidy follows her ──
+    add({ on: "Patients", offset: -0.2, do: "camera", view: "hall", dur: 0.9 });
+    add({ on: "Patients", do: "show", who: "pat" });
+    add({ on: "Patients", do: "move", who: "pat", to: [DOORS[1], G], dur: 1.3 });
+    add({ on: "Patients", do: "bob", who: "pat", y: 6, r: 2, speed: 2.5, until: "join;" });
+    add({ on: "join;", do: "hop", who: "pat", height: 30 });
+    add({ on: "subsidy", do: "pop", who: "pup", squash: true });
+    add({ on: "subsidy", offset: 0.1, do: "move", who: "pup", to: "pat.heel", by: [-80, -190], dur: 0.35, arc: 60 });
+    add({ on: "follow", do: "move", who: "pat", to: [DOORS[2] - 230, G], dur: 1.0 });
+    add({ on: "follow", do: "bob", who: ["pat", "pup"], y: 8, r: 3, speed: 3, until: "Treatment" });
+    // "paid": the bill jumps into the scientist's hand and her door's tally ticks up; then every door's
+    add({ on: "Treatment", offset: -0.2, do: "camera", view: "door", dur: 0.8 });
+    add({ on: "paid", offset: -0.2, do: "move", who: "pup", to: [DOORS[2] + 220, G - 300], turn: -20, dur: 0.3, arc: 120 });
+    add({ on: "paid", offset: 0.12, do: "hide", who: "pup" });
+    add({ on: "paid", offset: 0.1, do: "nudge", who: "sci", by: [-20, 0] });
+    add({ on: "paid", offset: 0.15, do: "counter", id: "t2", who: "door2", spot: [121, 210], from: 0, to: 1, dur: 0.05, size: 46, style: "tick", width: 120, pad: 30 });
+    add({ on: "participant.", offset: -0.4, do: "camera", view: "hall", dur: 0.8 });
+    [0, 1, 3].forEach(function (d, j) {
+      add({ on: "each", offset: j * 0.15, do: "counter", id: "t" + d, who: "door" + d, spot: [121, 210], from: 0, to: [7, 4, 9][j], rate: 6, size: 46, style: "tick", width: 120, pad: 30 });
+    });
+    add({ on: "participant.", do: "counter", id: "t2", to: 6, rate: 6 });
+
+    // ── No grant committees: the spring collection, and the foot ──
+    add({ on: "No", offset: -0.25, do: "camera", view: "com", dur: 0.8 });
+    add({ on: "grant", do: "banner", id: "spring", text: "DISEASES · SPRING COLLECTION", x: TABLE, y: V ? 160 : 150, size: 64, width: 900, pad: 50, color: "ink", tilt: -2 });
+    add({ on: "deciding", do: "bob", who: ["gent0", "gent1", "gent2"], y: 4, r: 2, speed: 1.6, until: "fashionable" });
+    add({ on: "diseases", do: "move", who: "germ", to: [TABLE + 300, TT], dur: 1.0 });
+    add({ on: "diseases", do: "bob", who: "germ", y: 10, r: 6, speed: 3, until: "fashionable" });
+    add({ on: "fashionable", offset: -0.05, do: "show", who: "boot" });
+    add({ on: "fashionable", offset: -0.05, do: "move", who: "boot", by: [0, 0], dur: 0.01 });
+    add({ on: "fashionable", offset: -0.25, do: "stamp", who: "boot", from: 2.2, shake: 18 });
+    add({ on: "fashionable", offset: -0.05, do: "hide", who: ["germ", "gent0", "gent1", "gent2", "deskL", "deskR", "spring"] });
+    add({ on: "year.", offset: 0.1, do: "pop", who: "germ2", squash: true });
+    add({ on: "year.", offset: 0.45, do: "hop", who: "germ2", height: 30 });
+
+    KIT.collage({ id: ID, seed: 1405, plate: V ? [-1200, -1800, 6400, 2800] : [-400, -400, 5900, 1500], views: views, view: "bar", cast: cast, beats: beats });
+  </script>
+</template>

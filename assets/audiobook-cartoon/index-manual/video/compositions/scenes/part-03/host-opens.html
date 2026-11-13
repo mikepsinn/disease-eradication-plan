@@ -1,0 +1,78 @@
+<template id="host-opens-template">
+  <!-- host-opens · collage host shot (Part 3, scene 2). The bit: Wishonia's own copy of the manual, which ended her
+       planet's wars 4,297 years ago, is so old it has a cobweb, and her planet's twelve thousand years of war fall out of
+       it. Iris in on her at the console; the old red manual on the ledge, a cobweb on its corner. "exact": a puff of dust
+       (the converter's bell dings offstage on "four"). "ago.": a moth flutters out of it. "twelve": skeletons pop out of
+       the book one after another, faster and faster, one per thousand years, and pile up beside the console while the
+       years roll to 12,000. "long": a living family stands waving on top of the heap, the peace years. "enjoyed.": the
+       whole heap zips back into the book and it slams. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="host-opens" data-width="1920" data-height="1080" data-start="0" data-duration="15.52">
+    <div id="host-opens-weave"></div>
+    <div id="host-opens-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "host-opens", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES, F = KIT.collage.F;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    var TOP = S.top + 6;
+    // the old manual on the right end of the ledge
+    var BH = V ? 250 : 300, BK = hs("manual", BH), BX = V ? 590 : 1110;
+    var BOOK = [BX, TOP - BH * 0.55];
+    // the heap: 12 skeletons, one per thousand years. 16:9: a pyramid on the floor right of the console, with the first
+    // one standing on the ledge; 9:16: a tower on each other's shoulders beside her, from the ledge up.
+    var SKH = V ? 200 : 230, pts = [];
+    if (V) { pts.push([BX + 105, TOP]); for (var i = 1; i < 12; i++) pts.push([i % 2 ? 860 : 930, 1450 - (i - 1) * 84]); }
+    else {
+      pts.push([BX + 140, TOP]);
+      [[1290, 1430, 1570, 1710], [1360, 1500, 1640, 1780], [1500, 1640], [1570]].forEach(function (row, r) {
+        row.forEach(function (x) { pts.push([x + (r === 0 ? 0 : 0), 1075 - r * 172]); });
+      });
+    }
+    var TOPPT = V ? [860, 1450 - 10 * 84 - SKH + 10] : [1570, 1075 - 3 * 172 - SKH + 12];
+    var cast = {
+      book: { art: "manual", x: BX, y: TOP, anchor: "bottom", pivot: "bottom", scale: BK },
+      web: { art: "cobweb", x: BX + SZ.manual[0] * BK / 2 - 4, y: TOP - BH + 4, anchor: [280, 0], scale: hs("cobweb", BH * 0.55) },
+      dust: { art: "cloud-puff", x: BX, y: TOP - BH - 20, scale: hs("cloud-puff", BH * 0.5), hidden: true },
+      moth: { art: "moth", x: BX, y: TOP - BH * 0.6, scale: hs("moth", V ? 80 : 100), hidden: true },
+      fam: { art: "family-wave", x: TOPPT[0], y: TOPPT[1], anchor: "bottom", pivot: "bottom", scale: hs("family-wave", V ? 150 : 190), hidden: true },
+    };
+    var beats = [
+      // dust off it, and a moth out of it
+      { on: "exact", do: "pop", who: "dust", squash: true },
+      { on: "exact", offset: 0.55, do: "pop", who: "dust", out: true },
+      { on: "ago.", do: "shiver", who: "book", dur: 0.3, amp: 3, rot: 2 },
+      { on: "ago.", offset: 0.1, do: "pop", who: "moth" },
+      { on: "ago.", offset: 0.2, do: "move", who: "moth", to: V ? [1200, 200] : [2100, 120], dur: 1.6, arc: 160, turn: -20 },
+      { on: "ago.", offset: 0.2, do: "bob", who: "moth", y: 22, r: 14, speed: 4, until: "Before" },
+      // "twelve": twelve thousand years of war fall out of it
+      { on: "twelve", do: "shiver", who: "book", dur: 1.6, amp: 3, rot: 3 },
+      { on: "twelve", do: "chain", id: "dead", art: "skeleton", height: SKH, points: pts, until: cue("long") - 0.2, accel: 0.75, line: false, jiggle: 2 },
+      { on: "twelve", do: "counter", id: "years", from: 0, to: 12000, until: cue("long") - 0.2, suffix: " YEARS", x: V ? 540 : 1560, y: V ? 220 : 120, size: V ? 80 : 74, border: "red" },
+      // the peace years: a family with skin on top of the heap, waving
+      { on: "long", do: "pop", who: "fam", squash: true },
+      { on: "long", offset: 0.2, do: "bob", who: "fam", y: 5, r: 2, speed: 2.4, until: "nobody" },
+      // "enjoyed.": the heap zips back into the book, and it slams
+      { on: "enjoyed.", do: "move", who: "dead", to: BOOK, dur: 0.3, ease: "smooth", scale: 0.2 },
+      { on: "enjoyed.", offset: -0.05, do: "move", who: "fam", to: BOOK, dur: 0.3, ease: "smooth", scale: 0.2 },
+      { on: "enjoyed.", offset: 0.3, do: "hide", who: ["dead", "fam"] },
+      { on: "enjoyed.", offset: 0.0, do: "pop", who: "years", out: true },
+      { on: "enjoyed.", offset: 0.35, do: "hop", who: "book", height: 18 },
+      { on: "enjoyed.", offset: 0.35, do: "shake", frames: 3, y: 6 },
+      { on: "enjoyed.", offset: 0.4, do: "pop", who: "dust", squash: true },
+      { on: "enjoyed.", offset: 0.95, do: "pop", who: "dust", out: true },
+    ];
+    KIT.collage({ id: ID, seed: 302, host: { iris: ["in", 0.04, 0.7] }, cast: cast, beats: beats });
+  </script>
+</template>

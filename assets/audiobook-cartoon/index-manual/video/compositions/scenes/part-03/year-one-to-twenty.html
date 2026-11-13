@@ -1,0 +1,126 @@
+<template id="year-one-to-twenty-template">
+  <!-- year-one-to-twenty · collage (Part 3, scene 7, the-funnel). The bit: one column of 100 war bills, and every year
+       more of them go through the funnel and come out the bottom as medicine bills, until the war column is a stub.
+       "medicine": one bill hops off the top, dives into the funnel and lands on the medicine column with a cross seal;
+       the other 99 sweat; 1%; a baby crawls in and takes one wobbly step. "two": one more, 2%; the baby is a toddler,
+       patting himself, amazed. "Remember": two rows go through; the toddler is a kid, holding a toy missile at arm's
+       length like a dead fish, and he drops it on "weird.". "ten": a stream; he is a schoolboy, shrugging at a history
+       book. "twenty": almost all of it; on "WHAT?!" he is a grown man whose eyes shoot out on springs. The calendar
+       ticks to each year. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="year-one-to-twenty" data-width="1920" data-height="1080" data-start="0" data-duration="21.68">
+    <div id="year-one-to-twenty-weave"></div>
+    <div id="year-one-to-twenty-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "year-one-to-twenty", V = KIT.V, SZ = KIT.collage.SIZES, F = KIT.collage.F;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var after = function (w, n) { return KIT.after(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    // Two columns of 5 x 20 slots (canvas px), the funnel between them, the calendar, the human.
+    var L = V ? { war: [70, 380, 390, 1320], med: [690, 380, 1010, 1320], funnel: [540, 400], fk: 0.72, cal: [540, 190], ck: 0.85,
+                  title: 300, tsize: 46, tw: 300, kid: [540, 1450], kh: 400, man: 440 }
+              : { war: [230, 170, 590, 860], med: [1110, 170, 1470, 860], funnel: [850, 200], fk: 0.85, cal: [1730, 250], ck: 1.25,
+                  title: 105, tsize: 56, tw: 380, kid: [1730, 880], kh: 470, man: 520 };
+    var COLS = 5, ROWS = 20;
+    var slot = function (box, i, fromBottom) {
+      var r = Math.floor(i / COLS), c = i % COLS, cw = (box[2] - box[0]) / COLS, rh = (box[3] - box[1]) / ROWS;
+      if (fromBottom) r = ROWS - 1 - r;
+      return [box[0] + cw * (c + 0.5), box[1] + rh * (r + 0.5)];
+    };
+    var BK = ((L.war[2] - L.war[0]) / COLS) * 0.92 / SZ["bill-war-flat"][0];
+    var FH = SZ.funnel[1] * L.fk, MOUTH = [L.funnel[0], L.funnel[1] + FH * 0.12], SPOUT = [L.funnel[0], L.funnel[1] + FH * 0.95];
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+    var i, p;
+    for (i = 0; i < 100; i++) {
+      p = slot(L.war, i, false);
+      cast["w" + i] = { art: "bill-war-flat", x: p[0], y: p[1], scale: BK, tilt: 0 };
+      cast["m" + i] = { art: "bill-med-flat", x: SPOUT[0], y: SPOUT[1], scale: BK, hidden: true };
+    }
+    cast.funnel = { art: "funnel", x: L.funnel[0], y: L.funnel[1], anchor: "top", scale: L.fk };
+    cast.cal = { art: "calendar", x: L.cal[0], y: L.cal[1], scale: L.ck };
+    // one human at five ages
+    var AGE = { baby: ["human-ages-baby", 0.42], tod: ["human-ages-toddler", 0.62], kid: ["human-ages-kid", 0.84], boy: ["human-ages-schoolboy", 0.95], man: ["human-ages-man", 1.06] };
+    Object.keys(AGE).forEach(function (k) {
+      cast[k] = { art: AGE[k][0], x: L.kid[0], y: L.kid[1], anchor: "bottom", pivot: "bottom", scale: hs(AGE[k][0], L.kh * AGE[k][1]), hidden: true };
+    });
+    cast.hbook = { art: "history-book", x: L.kid[0] + (V ? -120 : -150), y: L.kid[1] - L.kh * 0.45, scale: hs("history-book", V ? 120 : 140), hidden: true, label: { text: "HISTORY", at: [190, 120], width: 190, size: 50, tilt: -8 } };
+    var KK = hs("orphan", L.kh);
+    cast.toy = { art: "toy-missile", x: L.kid[0] + (V ? -150 : -180), y: L.kid[1] - L.kh * 0.5, scale: hs("toy-missile", V ? 80 : 95), hidden: true };
+
+    // The column titles and the calendar's year.
+    add({ at: 0, do: "banner", id: "tw", text: "MURDER MONEY", x: (L.war[0] + L.war[2]) / 2, y: L.title, size: L.tsize, width: L.tw, pad: 50, color: "ink", tilt: -2 });
+    add({ at: 0.15, do: "banner", id: "tm", text: "MEDICINE MONEY", x: (L.med[0] + L.med[2]) / 2, y: L.title, size: L.tsize, width: L.tw, pad: 50, color: "ink", tilt: 2 });
+    var year = function (t, from, to) {
+      add({ at: t, do: "counter", id: "year", who: "cal", spot: [80, 150], from: from, to: to, dur: from === to ? 0.01 : 0.35, style: "tick", size: V ? 70 : 64, card: false, width: 120, enter: "none" });
+      add({ at: t, do: "shiver", who: "cal", dur: 0.25, amp: 4, rot: 4 });
+    };
+    year(0, 1, 1);
+    // Bills k0..k1-1 go through the funnel, starting at t, `gap` s apart.
+    var through = function (k0, k1, t, gap) {
+      for (var k = k0; k < k1; k++) {
+        var tk = t + (k - k0) * gap, dst = slot(L.med, k, true);
+        add({ at: tk, do: "move", who: "w" + k, to: [MOUTH[0], MOUTH[1] - 10], dur: 0.3, arc: V ? 120 : 160, turn: 20, scale: 0.8 });
+        add({ at: tk + 0.3, do: "hide", who: "w" + k });
+        add({ at: tk + 0.42, do: "show", who: "m" + k });
+        add({ at: tk + 0.42, do: "move", who: "m" + k, to: dst, dur: 0.3, arc: 40 });
+      }
+    };
+    // Year one: one bill; the other 99 sweat
+    through(0, 1, cue("medicine") - 0.3, 0);
+    var rest = []; for (i = 1; i < 100; i++) rest.push("w" + i);
+    add({ on: "medicine", offset: 0.1, do: "shiver", who: rest, dur: 1.2, amp: 2, rot: 2 });
+    add({ on: "money", n: 2, offset: 0.2, do: "stamp", id: "p1", text: "1%", x: (L.med[0] + L.med[2]) / 2, y: L.med[3] - (V ? 170 : 150), size: V ? 110 : 130, width: 260, tilt: -6 });
+    add({ on: "one:", do: "slideIn", who: "baby", from: "right", over: 20 });
+    add({ on: "(baby", do: "hop", who: "baby", height: 40 });
+    add({ on: "steps).", offset: 0.1, do: "shake", frames: 2, y: 5 });
+    // Year two
+    add({ on: "two:", do: "swap", who: "baby", to: "tod" });
+    add({ on: "die!", do: "hop", who: "tod", height: 16 });
+    add({ on: "die!", offset: 0.25, do: "hop", who: "tod", height: 16 });
+    year(cue("Year", 2), 1, 2);
+    add({ on: "Year", n: 2, do: "hide", who: "p1" });
+    through(1, 2, cue("two", 2) - 0.3, 0);
+    add({ on: "percent", n: 2, do: "stamp", id: "p2", text: "2%", x: (L.med[0] + L.med[2]) / 2, y: L.med[3] - (V ? 170 : 150), size: V ? 110 : 130, width: 260, tilt: 5 });
+    // Year five: two rows; the kid and the toy missile, at arm's length like a dead fish
+    year(cue("Year", 3), 2, 5);
+    add({ on: "Year", n: 3, do: "hide", who: "p2" });
+    through(2, 10, cue("Year", 3) + 0.4, 0.12);
+    add({ on: "five:", do: "swap", who: "tod", to: "kid" });
+    add({ on: "Remember", do: "pop", who: "toy" });
+    add({ on: "Remember", offset: 0.2, do: "move", who: "toy", by: [0, 0], turn: -70, dur: 0.15 });
+    add({ on: "Remember", offset: 0.4, do: "shiver", who: "toy", dur: 1.2, amp: 2, rot: 3 });
+    add({ on: "bombs?", do: "nudge", who: "kid", by: [10, 0] });
+    add({ on: "weird.", do: "drop", who: "toy", dur: 1.3, dist: 900, drift: V ? -40 : -80, spin: 540 });
+    // Year ten: a stream; the kid shrugs at war
+    year(cue("Year", 4), 5, 10);
+    through(10, 40, cue("Year", 4) + 0.3, 0.045);
+    add({ on: "ten:", do: "swap", who: "kid", to: "boy" });
+    add({ on: "What's", do: "pop", who: "hbook" });
+    add({ on: "war?\".", do: "hop", who: ["boy", "hbook"], height: 14 });
+    add({ on: "war?\".", offset: 0.4, do: "hop", who: ["boy", "hbook"], height: 14 });
+    // Year twenty: nearly all of it; the kid is a grown man, who jumps out of his skin
+    year(cue("Year", 5), 10, 20);
+    through(40, 95, cue("Year", 5) + 0.2, 0.024);
+    add({ on: "twenty:", do: "pop", who: "hbook", out: true });
+    add({ on: "WHAT?!\".", do: "swap", who: "boy", to: "man" });
+    add({ on: "WHAT?!\".", do: "hop", who: "man", height: V ? 160 : 200 });
+    add({ on: "WHAT?!\".", do: "shake", frames: 4, y: 8 });
+    add({ on: "WHAT?!\".", offset: 0.3, do: "shiver", who: "man", dur: 0.9, amp: 8, rot: 5 });
+    add({ at: after("WHAT?!\"."), do: "hop", who: "man", height: 30 });
+
+    KIT.collage({ id: ID, seed: 307, cast: cast, beats: beats });
+  </script>
+</template>

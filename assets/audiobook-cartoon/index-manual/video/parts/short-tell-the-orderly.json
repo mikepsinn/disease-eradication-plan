@@ -1,0 +1,478 @@
+{
+  "id": "short-tell-the-orderly",
+  "title": "Short: tell the orderly",
+  "storyboard": "storyboards/part-04-institutionalize.md",
+  "audio": {
+    "start": 439.24,
+    "end": 522.599
+  },
+  "scenes": [
+    {
+      "id": "orderly-door-slot",
+      "file": "compositions/scenes/short-tell-the-orderly/orderly-door-slot.html",
+      "cue": "Anyway,",
+      "approx": 439.244,
+      "layer": "B"
+    },
+    {
+      "id": "centrifuge-vs-rocks",
+      "file": "compositions/scenes/short-tell-the-orderly/centrifuge-vs-rocks.html",
+      "cue": "Building",
+      "approx": 490.324,
+      "layer": "B"
+    },
+    {
+      "id": "billionaire-pdf",
+      "file": "compositions/scenes/short-tell-the-orderly/billionaire-pdf.html",
+      "cue": "But",
+      "approx": 510.464,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "But",
+          "expr": "skeptical",
+          "rest": "closed",
+          "body": "hands-hips",
+          "mode": "big"
+        },
+        {
+          "cue": "physically",
+          "expr": "neutral",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "Getting",
+          "expr": "smirk",
+          "rest": "closed",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "is.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "arms-crossed",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "orderly-door-slot",
+      "cue": "Anyway,",
+      "offset": 0.75,
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "Anyway,",
+      "offset": 1.05,
+      "sfx": "boing",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "orderly",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "slides",
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "medication",
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "medication",
+      "at": "after",
+      "sfx": "whistle",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "Nobody",
+      "sfx": "boing",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "accidentally",
+      "sfx": "marker",
+      "volume": 0.4
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "accidentally",
+      "offset": 0.6,
+      "sfx": "clank",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "builds",
+      "sfx": "hammer",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "carrier",
+      "sfx": "marker",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "bomb.",
+      "sfx": "marker",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "bomb.",
+      "at": "after",
+      "sfx": "scratch",
+      "volume": 0.45
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "millions",
+      "sfx": "marker",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "together",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "mine",
+      "offset": 0.3,
+      "sfx": "clank",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "alloys,",
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "weapons,",
+      "sfx": "toaster",
+      "volume": 0.4
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "planes",
+      "sfx": "airplane",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "are,",
+      "offset": 0.1,
+      "sfx": "boom",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "pay",
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "annually,",
+      "sfx": "scratch",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "forever.",
+      "sfx": "whirr",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "largest",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "largest",
+      "at": "after",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "mine",
+      "sfx": "tick",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "refine",
+      "sfx": "tick",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "factories",
+      "sfx": "tick",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "train",
+      "sfx": "tick",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "operate",
+      "sfx": "stamp",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "weapons",
+      "n": 2,
+      "sfx": "stamp",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "feed",
+      "sfx": "tick",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "clothe",
+      "sfx": "splat",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "build",
+      "n": 2,
+      "sfx": "tick",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "convince",
+      "sfx": "tick",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "population",
+      "offset": 0.1,
+      "sfx": "yelp",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "then",
+      "sfx": "tick",
+      "volume": 0.25
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "Ending",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "Ending",
+      "offset": 0.6,
+      "sfx": "marker",
+      "volume": 0.3
+    },
+    {
+      "scene": "orderly-door-slot",
+      "cue": "NOT",
+      "sfx": "switch",
+      "volume": 0.7
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "cascades,",
+      "sfx": "slide-up",
+      "volume": 0.3
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "attempted.",
+      "sfx": "click",
+      "volume": 0.45
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "attempted.",
+      "offset": 0.12,
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "nothing.",
+      "sfx": "pop",
+      "volume": 0.5
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "nothing.",
+      "offset": 0.6,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "nothing.",
+      "at": "after",
+      "sfx": "crickets",
+      "volume": 0.22
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "Rocks",
+      "offset": 0.4,
+      "sfx": "thunk",
+      "volume": 0.3
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "day.",
+      "sfx": "tick",
+      "volume": 0.4
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "colored",
+      "sfx": "thunk",
+      "volume": 0.3
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "thousands",
+      "sfx": "tick",
+      "volume": 0.3
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "thousands",
+      "offset": 0.14,
+      "sfx": "tick",
+      "volume": 0.3
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "thousands",
+      "offset": 0.26,
+      "sfx": "tick",
+      "volume": 0.3
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "years.",
+      "offset": 0.25,
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "spectrometers,",
+      "sfx": "hum",
+      "volume": 0.3
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "But",
+      "offset": 0.35,
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "unrealistic",
+      "sfx": "splat",
+      "volume": 0.4
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "physically",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "isn't",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "Getting",
+      "offset": 0.3,
+      "sfx": "thunk",
+      "volume": 0.3
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "read",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "P.D.F.",
+      "sfx": "fire",
+      "volume": 0.35
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "is.",
+      "n": 3,
+      "sfx": "splat",
+      "volume": 0.4
+    },
+    {
+      "scene": "billionaire-pdf",
+      "cue": "is.",
+      "n": 3,
+      "at": "after",
+      "sfx": "huff",
+      "volume": 0.35
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "Building",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "centrifuge-vs-rocks",
+      "cue": "centrifuge",
+      "sfx": "thunk",
+      "volume": 0.4
+    }
+  ]
+}

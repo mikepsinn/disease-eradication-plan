@@ -1,0 +1,66 @@
+<template id="financial-instrument-template">
+  <!-- financial-instrument · collage host shot. The iris opens on Wishonia at her console. "Earth,": on Earth's shoulder
+       a tiny human sleeps in a hammock between two palms. "need": a banknote comes down on a fishing line and dangles over his nose.
+       "instrument.": he springs out of the hammock reaching for it as it is reeled up, and humans pop up all over Earth, arms
+       out, rising for it like fish. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="financial-instrument" data-width="1920" data-height="1080" data-start="0" data-duration="6.24">
+    <div id="financial-instrument-weave"></div>
+    <div id="financial-instrument-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "financial-instrument", V = KIT.V, S = KIT.STUDIO, E = S.earth, SZ = KIT.collage.SIZES;
+      // A point on Earth's rim, th degrees round from its top (negative: towards her), and the turn that stands a
+      // cut-out up on it.
+      var R = E[2] * 0.97;
+      var rim = function (th, out) { var a = th * Math.PI / 180, r = R + (out || 0); return [E[0] + r * Math.sin(a), E[1] - r * Math.cos(a)]; };
+      var TH = -52, BED = rim(TH), BK = (V ? 190 : 250) / SZ["hammock-palms"][0];
+      var NOSE = [BED[0] - (V ? 30 : 40), BED[1] - (V ? 100 : 130)];
+      var cast = {
+        bill: { art: "bill-war", anchor: [113, 6], pivot: [113, 6], scale: V ? 0.42 : 0.55, hidden: true },
+        bed: { art: "hammock-palms", x: BED[0], y: BED[1], anchor: "bottom", pivot: "bottom", scale: BK, hidden: true },
+        up: { art: "you-slap", x: BED[0], y: BED[1], anchor: "bottom", pivot: "bottom", scale: (V ? 130 : 170) / SZ["you-slap"][1], hidden: true },
+      };
+      // the humans who rise for it, all over Earth
+      var FISH = [-95, -20, 14, 44, 74, 104];
+      FISH.forEach(function (th, i) {
+        var p = rim(th);
+        cast["f" + i] = { art: i % 2 ? "crowd" : "you-slap", x: p[0], y: p[1], anchor: "bottom", pivot: "bottom", scale: (V ? 90 : 120) / SZ[i % 2 ? "crowd" : "you-slap"][1], hidden: true };
+      });
+      var beats = [
+        { at: -1, do: "move", who: ["bed", "up"], by: [0, 0], turn: TH, dur: 0.01 },
+        { on: "Earth,", offset: 0.1, do: "pop", who: "bed", squash: true },
+        { on: "Earth,", offset: 0.5, do: "bob", who: "bed", y: 2, r: 1.5, speed: 1.5 },
+        // the line comes down from above the frame, the bill riding its end
+        { on: "you", do: "line", id: "fishline", points: [[NOSE[0] - (V ? 200 : 280), -40], NOSE], dur: 0.55, rider: "bill", tilt: 0, width: 3, color: "#E8DDBF", front: true },
+        { on: "financial", do: "shiver", who: "bill", dur: 0.5, amp: 4, rot: 10 },
+        // "instrument.": he springs up reaching, and it is reeled in
+        { on: "instrument.", do: "show", who: "up" },
+        { on: "instrument.", do: "shiver", who: "bed", dur: 0.4, amp: 4, rot: 5 },
+        { on: "instrument.", do: "hop", who: "up", height: 40 },
+        { on: "instrument.", offset: 0.2, do: "hide", who: "fishline" },
+        { on: "instrument.", offset: 0.2, do: "move", who: "bill", by: [0, V ? -360 : -420], dur: 0.6, ease: "smooth" },
+        { on: "instrument.", offset: 0.35, do: "move", who: "up", by: [V ? 30 : 40, V ? -120 : -150], turn: TH * 0.4, dur: 0.4, arc: 20 },
+        { on: "instrument.", offset: 0.75, do: "move", who: "up", by: [0, V ? 80 : 100], turn: TH, dur: 0.25 },
+      ];
+      FISH.forEach(function (th, i) {
+        beats.push({ at: -1, do: "move", who: "f" + i, by: [0, 0], turn: th, dur: 0.01 });
+        beats.push({ on: "instrument.", offset: 0.3 + 0.11 * i, do: "pop", who: "f" + i, squash: true });
+        beats.push({ on: "instrument.", offset: 0.55 + 0.11 * i, do: "bob", who: "f" + i, y: 7, r: 4, speed: 4, phase: i });
+      });
+      KIT.collage({ id: ID, seed: 1702, host: { iris: ["in", 0.04, 0.7] }, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -1,0 +1,75 @@
+<template id="daily-deletion-event-title-template">
+  <!-- daily-deletion-event-title · collage title card (Part 8, scene 1). THE PROBLEM slams in; THE DAILY DELETION EVENT
+       slams in under it, and a young mother strolls along its top with her pram. "Deletion": a giant pencil comes down eraser
+       first and rubs her out, head, body, skirt, in three strokes. "Event.": the pram, left on the letters, tips over. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="daily-deletion-event-title" data-width="1920" data-height="1080" data-start="0" data-duration="4.283">
+    <div id="daily-deletion-event-title-weave"></div>
+    <div id="daily-deletion-event-title-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, Z = KIT.collage.SIZES, F = KIT.collage.F, ID = "daily-deletion-event-title";
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var C = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+    // The heading cards; she walks on the top edge of the one that says DELETION.
+    var B1 = V ? { y: 420, size: 150, width: 900 } : { y: 170, size: 170, width: 1150 };
+    var CARDS = V ? [{ id: "daily", text: "THE DAILY", y: 740, size: 120, width: 760 }, { id: "deletion", text: "DELETION EVENT", y: 1360, size: 120, width: 960 }]
+      : [{ id: "deletion", text: "THE DAILY DELETION EVENT", y: 815, size: 110, width: 1560 }];
+    var last = CARDS[CARDS.length - 1], LH = 1.25;
+    var lsize = KIT.fitText(last.text, last.size, last.width, "Fraunces", 900), EDGE = last.y - lsize * LH / 2 - 4;
+    var WK = V ? 0.75 : 0.85, X0 = V ? 200 : 480, X1 = V ? 560 : 880;
+    var part = function (clip, extra) {
+      var o = { art: "pram-woman", x: X0, y: EDGE, anchor: "bottom", scale: WK, clip: clip, hidden: true };
+      for (var k in extra || {}) o[k] = extra[k];
+      return o;
+    };
+    C.w_head = part([[90, 0], [245, 0], [245, 102], [90, 102]]);
+    C.w_body = part([[0, 102], [245, 102], [312, 188], [312, 240], [0, 240]]);
+    C.w_skirt = part([[0, 240], [236, 240], [236, 438], [0, 438]]);
+    C.w_pram = part([[236, 140], [373, 140], [373, 438], [236, 438], [236, 240], [312, 240], [312, 188]], { pivot: [360, 436] });
+    var WOMAN = ["w_head", "w_body", "w_skirt", "w_pram"];
+    var HK = V ? 1.0 : 1.2;
+    C.hand = { art: "pencil", x: X1, y: -400, scale: HK, hidden: true };
+    // the pencil hangs eraser down (turned 90 degrees); its middle goes this far above the eraser (art 495, 42)
+    var tip = function (x, y) { return [x, y - (495 - 255.5) * HK]; };
+    var wy = function (artY) { return EDGE - (438 - artY) * WK; }, wx = function (artX) { return X1 + (artX - 186.5) * WK; };
+
+    add({ on: "Problem.", do: "banner", id: "problem", text: "THE PROBLEM", x: V ? 540 : 960, y: B1.y, size: B1.size, width: B1.width, pad: 110, tilt: -2 });
+    CARDS.forEach(function (c, i) {
+      add({ on: "Daily", offset: i * 0.12, do: "banner", id: c.id, text: c.text, x: V ? 540 : 960, y: c.y, size: c.size, width: c.width, pad: 90, color: "ink", tilt: 0, shake: 4 });
+    });
+    // she strolls along the top of DELETION
+    var IN = cue("Daily") + 0.15, ARRIVE = cue("Deletion") + 0.1;
+    add({ at: IN, do: "show", who: WOMAN });
+    add({ at: IN, do: "move", who: WOMAN, by: [X1 - X0, 0], dur: ARRIVE - IN });
+    add({ at: IN, do: "bob", who: WOMAN, y: 5, r: 1.5, speed: 3.5, until: ARRIVE + 0.1, fade: 0.05 });
+    // "Deletion": the pencil's eraser rubs her out, head to feet
+    var R0 = cue("Deletion") + 0.12;
+    add({ at: 0, do: "move", who: "hand", by: [0, 0], turn: 90, dur: 0.01 });
+    add({ at: R0 - 0.12, do: "show", who: "hand" });
+    add({ at: R0 - 0.12, do: "move", who: "hand", to: tip(wx(160), wy(40)), turn: 90, dur: 0.12 });
+    var strokes = [[wx(110), wy(50)], [wx(220), wy(70)], [wx(60), wy(170)], [wx(260), wy(190)], [wx(30), wy(320)], [wx(220), wy(380)]];
+    strokes.forEach(function (p, i) { add({ at: R0 + i * 0.1, do: "move", who: "hand", to: tip(p[0], p[1]), turn: i % 2 ? 80 : 100, dur: 0.1 }); });
+    add({ at: R0 + 0.15, do: "hide", who: "w_head" });
+    add({ at: R0 + 0.35, do: "hide", who: "w_body" });
+    add({ at: R0 + 0.55, do: "hide", who: "w_skirt" });
+    add({ at: R0 + 0.62, do: "slideOut", who: "hand", to: "top", dist: 1400, dur: 0.3 });
+    // "Event.": the pram, left behind, tips over
+    add({ on: "Event.", offset: 0.1, do: "move", who: "w_pram", by: [0, 0], turn: 78, dur: 0.18 });
+    add({ on: "Event.", offset: 0.28, do: "shake", y: 4, frames: 2 });
+
+    KIT.collage({ id: ID, seed: 800, cast: C, beats: beats });
+  </script>
+</template>

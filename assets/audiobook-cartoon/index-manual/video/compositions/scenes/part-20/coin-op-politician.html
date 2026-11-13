@@ -1,0 +1,53 @@
+<template id="coin-op-politician-template">
+  <!-- coin-op-politician · collage host shot (Part 20, scene 2). The iris opens on Wishonia at her console presenting her
+       guest, the Politician (red war tie), grinning every tooth. "papers": a tag pops onto his belly, PAPERS: EMPTY;
+       "votes": a second, VOTES: EMPTY. "jobs.": he runs down like a wind-up toy, folding forward at the waist, and stops.
+       She side-eyes him (her states are in parts/part-20.json). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="coin-op-politician" data-width="1920" data-height="1080" data-start="0" data-duration="2.92">
+    <div id="coin-op-politician-weave"></div>
+    <div id="coin-op-politician-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "coin-op-politician", V = KIT.V, SZ = KIT.collage.SIZES;
+      // Beside the console on the free wall: feet just below the frame in 16:9, above the captions in 9:16.
+      var PX = V ? 800 : 1640, FEET = V ? 1430 : 1075, PK = V ? 1.05 : 1.6;
+      var PW = SZ["politician-red"][0], PH = SZ["politician-red"][1];
+      // His waist (art y 238): the top half folds forward on it.
+      var WAIST = 238;
+      var cast = {
+        pol: { art: "politician-red", x: PX, y: FEET, anchor: "bottom", pivot: "bottom", scale: PK,
+          pieces: {
+            legs: { clip: [[0, WAIST - 4], [PW, WAIST - 4], [PW, PH], [0, PH]] },
+            top: { clip: [[0, 0], [PW, 0], [PW, WAIST + 2], [0, WAIST + 2]], pivot: [132, WAIST] },
+          } },
+      };
+      var BELLY = [128, 222];
+      var t1 = V ? { x: PX - 220, y: FEET - 260, w: 380, h: 120 } : { x: PX - 520, y: FEET - 430, w: 470, h: 150 };
+      var t2 = V ? { x: PX - 220, y: FEET - 120, w: 380, h: 120 } : { x: PX - 520, y: FEET - 250, w: 470, h: 150 };
+      var beats = [
+        { at: 0, do: "bob", who: "pol", y: 4, r: 1, speed: 1.6, until: "jobs." },
+        { on: "papers", do: "tag", id: "t1", who: "pol", text: "PAPERS: EMPTY", knot: BELLY, x: t1.x, y: t1.y, w: t1.w, h: t1.h, swing: 4 },
+        { on: "votes", do: "tag", id: "t2", who: "pol", text: "VOTES: EMPTY", knot: [BELLY[0] + 10, BELLY[1] + 12], x: t2.x, y: t2.y, w: t2.w, h: t2.h, swing: 4 },
+        // "jobs.": he runs down: a last jerk, then the top half folds forward and stays there
+        { on: "jobs.", do: "hinge", who: "pol.top", angle: 6, frames: 1, hold: 0.12 },
+        { on: "jobs.", offset: 0.2, do: "hinge", who: "pol.top", angle: -24, frames: 3 },
+        { on: "jobs.", offset: 0.45, do: "hinge", who: "pol.top", angle: -10, frames: 2 },
+        { on: "jobs.", offset: 0.2, do: "move", who: "pol", by: [0, 14], dur: 0.4 },
+      ];
+      KIT.collage({ id: ID, seed: 2002, host: { iris: ["in", 0.02, 0.5] }, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -1,0 +1,149 @@
+<template id="cybercrime-10-trillion-template">
+  <!-- cybercrime-10-trillion · collage (Part 11, scenes 3 to 5 on one plate, off-the-books). The bit: the war that is
+       off the books pays better than the one on them, and the camera follows its money right across the field.
+       A bar chart, $ TRILLION A YEAR: a short bar of stacked warheads, MILITARY 2.72, and beside it a bar of clockwork
+       robots at laptops that stacks up past it to 10.5, CYBERCRIME. The years click 2026, 2027, 2028, more robots
+       pile on and the bar pokes out of the top of the chart: +15% A YEAR. "separate": the weapons factory hops onto
+       the warhead bar, its hands full of papers; "problem.": a chain snaps the two bars together.
+       "North Korea": Kim Jong Un's toy aircraft carrier rolls over and sinks in a pot. His missile stands UNPAID. A
+       robot plugs its laptop into the BYBIT till, war papers pile up beside the missile, $1.5 BILLION; the hands of
+       the clock on its post spin from 12 to 5 and it dings, PAID, and the missile swells into a fat nuke. "Russia": Putin cheers by his tank while a
+       robot locks a hospital, RANSOM; war papers walk out of its door into the tank, and the patient waiting outside
+       x-rays into a grinning skeleton. "through WiFi": arcs ripple out of the robot's laptop and the tank rocks;
+       "pays better": a small pile of papers lands by the tank, then a tower of them lands on it and flattens it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+    /* the bars are named on cards, so the chart's x axis has no numbers */
+    #cybercrime-10-trillion-chart text[text-anchor="middle"] { display: none; }
+  </style>
+  <div id="root" data-composition-id="cybercrime-10-trillion" data-width="1920" data-height="1080" data-start="0" data-duration="25.16">
+    <div id="cybercrime-10-trillion-weave"></div>
+    <div id="cybercrime-10-trillion-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "cybercrime-10-trillion", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // ── The chart, at the left end of the field ──
+      var C = KIT.collage.axes({ box: [330, 170, 1230, 930], x: [0, 3, 1], y: [0, 12, 2], yLabels: 2, title: "$ TRILLION A YEAR", size: 40 });
+      var MIL = C.pt(1, 0), CYB = C.pt(2, 0), TOPC = C.pt(2, 10.5);
+      // ── Kim, the BYBIT till; Putin, the tank and the hospital ──
+      var X = { kim: 2150, pot: 2470, missile: 2790, pile: 2980, robot: 3180, till: 3400, clock: 3700, putin: 4120, tank: 4480, robot2: 4900, hosp: 5230, patient: 5560 };
+      var cy = function (s) { return V ? G - 420 / s : 620; };
+      var views = V ? {
+        chart: [760, 600, 1.0], climb: [760, 330, 0.9], kim: [2330, cy(1.2), 1.2], bybit: [3270, cy(1.0), 1.0],
+        putin: [4300, cy(1.1), 1.1], hosp: [5250, cy(1.05), 1.05], wifi: [4680, cy(0.9), 0.9],
+      } : {
+        chart: [760, 540, 1], climb: [760, 380, 0.9], kim: [2700, 620, 1], bybit: [2880, 620, 1], putin: [4840, 620, 1], hosp: [4840, 620, 1], wifi: [4700, 620, 1],
+      };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+
+      // Kim's things
+      cast.carrier = { art: "toy-carrier", x: X.pot - 20, y: G - 270, anchor: "bottom", pivot: "bottom", scale: 0.55 };
+      cast.pot = { art: "wash-tub", x: X.pot, y: G, anchor: "bottom", scale: hs("wash-tub", 340) };
+      cast.kim = { art: "kim-jong-un", x: X.kim, y: G, anchor: "bottom", pivot: "bottom", scale: hs("kim-jong-un", 620) };
+      cast.missile = { art: "missile", x: X.missile, y: G, anchor: "bottom", pivot: "bottom", scale: hs("missile", 560) };
+      cast.nuke = { art: "nuclear-bomb", x: X.missile - 40, y: G, anchor: "bottom", pivot: "bottom", scale: hs("nuclear-bomb", 290), hidden: true };
+      cast.robot = { art: "robot", x: X.robot, y: G, anchor: "bottom", pivot: "bottom", scale: hs("robot", 400) };
+      cast.till = { art: "bank", x: X.till + 40, y: G, anchor: "bottom", pivot: "bottom", scale: hs("bank", 420),
+        label: { text: "BYBIT", at: [196, 84], width: 150, size: 40, plaque: true } };
+      // the clock on its post, its hands on the face's middle (art [93, 151])
+      var CK = hs("post-clock", 440), FACE = [X.clock + (93 - 94.5) * CK, G - (482 - 151) * CK];
+      cast.clock = { art: "post-clock", x: X.clock, y: G, anchor: "bottom", pivot: "bottom", scale: CK };
+      cast.hourH = { art: "post-clock-hour", x: FACE[0], y: FACE[1], anchor: [32, 214], pivot: [32, 214], scale: 34 / 214 };
+      cast.minH = { art: "post-clock-minute", x: FACE[0], y: FACE[1], anchor: [32, 338], pivot: [32, 338], scale: 52 / 338 };
+      // Putin's things
+      cast.putin = { art: "putin", x: X.putin, y: G, anchor: "bottom", pivot: "bottom", scale: hs("putin", 640) };
+      cast.putinUp = { art: "putin-cheer", x: X.putin, y: G, anchor: "bottom", pivot: "bottom", scale: hs("putin-cheer", 675), hidden: true };
+      cast.tank = { art: "tank", x: X.tank, y: G, anchor: "bottom", pivot: "bottom", scale: hs("tank", 400) };
+      cast.hosp = { art: "hospital", x: X.hosp, y: G, anchor: "bottom", pivot: "bottom", scale: hs("hospital", 640) };
+      cast.lock = { art: "padlock", x: X.hosp, y: G - 130, scale: 0.42, hidden: true };
+      cast.pole = { art: "wifi-pole", x: X.robot2 + 150, y: G, anchor: "bottom", scale: hs("wifi-pole", 560) };
+      cast.robot2 = { art: "robot", x: X.robot2, y: G, anchor: "bottom", pivot: "bottom", scale: hs("robot", 400) };
+      cast.patient = { art: "patient", x: X.patient, y: G, anchor: "bottom", pivot: "bottom", scale: hs("patient", 430) };
+      cast.chainLink = { art: "shackle", x: (MIL[0] + CYB[0]) / 2, y: C.pt(1, 1.6)[1], scale: 0.9, pivot: "center", hidden: true };
+      cast.facPay = { art: "factory-pay", x: MIL[0], y: C.pt(1, 2.72)[1] + 6, anchor: "bottom", pivot: "bottom", scale: hs("factory-pay", 300), hidden: true };
+
+      // ── Cybercrime costs $10.5 trillion: the bars ──
+      add({ at: 0, do: "chart", chart: C });
+      add({ at: 0.1, do: "pile", id: "mil", chart: C, x: 1, to: 2.72, art: "warhead", height: 50, gap: 44, dur: 0.5, tilt: 2, jitter: 4 });
+      add({ at: 0.3, do: "banner", id: "milName", text: "MILITARY", x: MIL[0], y: MIL[1] + 60, size: 40, width: 260, pad: 40, color: "ink", tilt: 0, shake: 0 });
+      add({ on: "Cybercrime", do: "pile", id: "cyb", chart: C, x: 2, to: 10.5, art: "robot", height: 150, gap: 122, until: "year", tilt: 2, jitter: 6 });
+      add({ on: "costs", do: "banner", id: "cybName", text: "CYBERCRIME", x: CYB[0], y: CYB[1] + 60, size: 40, width: 300, pad: 40, color: "ink", tilt: 0, shake: 0 });
+      add({ on: "trillion", do: "stamp", id: "ten", text: "$10.5 TRILLION", x: CYB[0] + (V ? -330 : 300), y: V ? C.pt(2, 7.5)[1] : TOPC[1] - 40, size: 70, width: 460, tilt: -5 });
+      // +15% a year: the years click and more robots pile on, out of the top of the chart
+      add({ on: "growing", do: "camera", view: "climb", dur: 1.0 });
+      add({ on: "growing", do: "counter", id: "yr", from: 2025, to: 2028, style: "tick", dur: cue("annually.") + 0.3 - cue("growing"), prefix: "", suffix: "", commas: false, x: V ? 760 : 1520, y: V ? 1130 : 820, size: 80 });
+      add({ on: "growing", offset: 0.2, do: "pile", id: "more", art: "robot", x: CYB[0], y: TOPC[1] + 8, height: 150, gap: 122, count: 4, until: "annually.", tilt: 3, jitter: 6 });
+      add({ on: "fifteen", do: "stamp", id: "pct", text: "+15% A YEAR", x: V ? 760 : 1520, y: V ? -140 : 380, size: 90, width: 520, tilt: -6, shake: 10 });
+      // This is not a separate problem: the weapons factory lands on the warhead bar with its papers, and a chain locks the bars
+      add({ on: "This", do: "camera", view: "chart", dur: 0.5 });
+      add({ on: "This", do: "pop", who: "facPay", squash: true });
+      add({ on: "separate", do: "hop", who: "facPay", height: 40 });
+      add({ on: "problem.", do: "stamp", who: "chainLink", from: 1.6, shake: 10 });
+
+      // ── North Korea ──
+      add({ on: "North", do: "camera", view: "kim", dur: 0.8 });
+      add({ on: "build", do: "hop", who: "kim", height: 16 });
+      add({ on: "aircraft", do: "move", who: "carrier", turn: -25, dur: 0.3 });
+      add({ on: "carrier,", do: "move", who: "carrier", by: [0, 150], turn: -160, dur: 0.6, ease: "smooth" });
+      add({ on: "carrier,", offset: 0.6, do: "hide", who: "carrier" });
+      add({ on: "carrier,", offset: 0.5, do: "move", who: "kim", turn: -6, dur: 0.2 });
+      // but it funds its nuclear program: the missile, UNPAID
+      add({ on: "but", do: "tag", id: "unpaid", who: "missile", text: "UNPAID", knot: [96, 60], x: X.missile + 200, y: G - 740, w: 280, h: 130, swing: 5 });
+      // by stealing $1.5 billion: the robot plugs into BYBIT and the papers pile up by the missile
+      add({ on: "by", do: "camera", view: "bybit", dur: 0.6 });
+      add({ on: "stealing", do: "nudge", who: "robot", by: [40, 0] });
+      add({ on: "stealing", offset: 0.1, do: "shiver", who: "till", dur: 0.4, amp: 5, rot: 3 });
+      add({ on: "one", do: "pile", id: "loot", art: "bill-war-flat", x: X.pile, y: G, height: 52, gap: 34, count: 9, until: "cryptocurrency", tilt: 4, jitter: 8 });
+      add({ on: "cryptocurrency", do: "stamp", id: "loot15", text: "$1.5 BILLION", x: X.pile + 60, y: G - (V ? 480 : 520), size: 70, width: 380, tilt: -6 });
+      // in a single afternoon: the minute hand spins five times while the hour hand goes from 12 to 5, and it dings;
+      // PAID, and the missile swells into a nuke
+      var SPIN = (cue("afternoon.") + 0.4 - cue("in", 2) + 0.3) * 12;
+      add({ on: "in", n: 2, offset: -0.3, do: "hinge", who: "minH", angle: 1800, frames: SPIN });
+      add({ on: "in", n: 2, offset: -0.3, do: "hinge", who: "hourH", angle: 150, frames: SPIN });
+      add({ on: "afternoon.", offset: 0.5, do: "hop", who: ["clock", "hourH", "minH"], height: 30 });
+      add({ on: "afternoon.", offset: 0.75, do: "stamp", who: "unpaid", text: "PAID", size: 70, tilt: -8 });
+      add({ on: "afternoon.", offset: 1.0, do: "swap", who: "missile", to: "nuke" });
+      add({ on: "afternoon.", offset: 1.4, do: "nudge", who: "kim", by: [30, 0] });
+
+      // ── Russia ──
+      add({ on: "Russia", offset: -0.4, do: "camera", view: "putin", dur: 0.8 });
+      add({ on: "finances", do: "swap", who: "putin", to: "putinUp" });
+      add({ on: "finances", offset: 0.3, do: "bob", who: "putinUp", y: 10, r: 2, speed: 4 });
+      add({ on: "operations", do: "camera", view: "hosp", dur: 0.6 });
+      add({ on: "with", n: 1, do: "stamp", who: "lock", from: 1.6, shake: 6 });
+      add({ on: "ransomware.", do: "stamp", who: "hosp", text: "RANSOM", spot: [138, 130], size: 80, tilt: -6, shake: 8 });
+      add({ on: "ransomware.", offset: 0.2, do: "march", id: "ransom", art: "bill-war", count: 6, height: 110, path: [[X.hosp + 20, G], [X.tank + 140, G], [X.tank + 60, G - 330]], speed: 650, end: "hide" });
+      add({ on: "ransomware.", offset: 0.6, do: "xray", who: "patient" });
+
+      // ── Cybercrime is war conducted through WiFi, and it pays better ──
+      add({ on: "Cybercrime", n: 2, do: "camera", view: "wifi", dur: 0.6 });
+      add({ on: "Cybercrime", n: 2, do: "bob", who: "robot2", y: 4, r: 2, speed: 6 });
+      var LAP = [X.robot2 + 40, G - 230];
+      [110, 210, 310].forEach(function (r, i) {
+        var pts = [];
+        for (var a = 145; a <= 215; a += 7) pts.push([LAP[0] + r * Math.cos(a * Math.PI / 180), LAP[1] + r * Math.sin(a * Math.PI / 180)]);
+        add({ on: "through", offset: i * 0.14, do: "line", id: "wifi" + i, points: pts, dur: 0.12, width: 9, color: "ink", front: true });
+      });
+      add({ on: "WiFi,", do: "shiver", who: "tank", dur: 0.8, amp: 9, rot: 4 });
+      add({ on: "pays", do: "pile", id: "pay", art: "bill-war-flat", x: X.tank + 300, y: G, height: 48, gap: 32, count: 3, dur: 0.25 });
+      add({ on: "better.", offset: 0.15, do: "pile", id: "tower", art: "bill-war-flat", x: X.tank, y: G - 380, height: 70, gap: 46, count: 16, dur: 0.35, accel: 1, tilt: 3 });
+      add({ on: "better.", offset: 0.55, do: "flatten", who: "tank" });
+      add({ on: "better.", offset: 0.55, do: "move", who: "tower", by: [0, 330], dur: 0.17 });
+      add({ on: "better.", offset: 0.6, do: "shake", y: 12, frames: 4 });
+
+      KIT.collage({ id: ID, seed: 1103, plate: V ? [-1200, -2400, 7200, 3400] : [-600, -900, 6800, 2200], views: views, view: "chart", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -1,0 +1,97 @@
+<template id="considered-tuesday-template">
+  <!-- considered-tuesday · collage host shot (Part 11). Wishonia at her console; a desk calendar on the ledge tears off page after page, and every page says TUESDAY (the day number goes up, the name never changes). Her mug goes down with a thunk. Outside, the Earth-bomb's fuse is about 60% of its length. Nobody looks at it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="considered-tuesday" data-width="1920" data-height="1080" data-start="0" data-duration="2.88">
+    <div id="considered-tuesday-weave"></div>
+    <div id="considered-tuesday-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "considered-tuesday", V = KIT.V, D = KIT.scene(ID).duration;
+      // ── The Earth-bomb (the same drawing in every Part 11 host shot; the fuse is shorter each time) ──
+      // The collar is the bomb cut-out's screw collar (art 68..112 x 114..143); the fuse rises off it, curls once and
+      // runs off the top of the frame; the spark is the bomb's own (art 136, 55). fuse(t) is the length left (px).
+      var E = KIT.STUDIO.earth, CK = V ? 1.4 : 1.8, COL = [E[0], E[1] - E[2] + (V ? 14 : 18)];
+      var FUSE = (function () {
+        var x0 = E[0] + 1, y0 = COL[1] - 29 * CK + 4, a = V ? 12 : 14, rc = V ? 20 : 27, ex = V ? [1050, 22] : [1880, 30], p = [[x0, y0], [x0, y0 - a]];
+        for (var i = 1; i <= 40; i++) { var th = Math.PI + (2 * Math.PI * i) / 40; p.push([x0 + rc + rc * Math.cos(th), y0 - a + rc * Math.sin(th)]); }
+        p.push(ex);
+        var len = [0];
+        for (i = 1; i < p.length; i++) len.push(len[i - 1] + Math.hypot(p[i][0] - p[i - 1][0], p[i][1] - p[i - 1][1]));
+        return { p: p, len: len, L: len[len.length - 1], curl: a + 2 * Math.PI * rc, stem: a };
+      })();
+      function earthBomb(tl, fuse, o) {
+        o = o || {};
+        var stage = document.getElementById(ID + "-stage"), NS = "http://www.w3.org/2000/svg";
+        if (o.front) {   // a copy of the Earth in front of whatever hides behind it
+          var r = E[2], im = document.createElement("img");
+          im.src = "assets/art/deck/earth.webp";
+          im.style.cssText = "position:absolute;left:" + (E[0] - r) + "px;top:" + (E[1] - r * 651 / 667) + "px;width:" + 2 * r + "px;height:" + 2 * r * 651 / 667 + "px";
+          stage.insertBefore(im, document.getElementById(ID + "-" + o.front));
+        }
+        var svg = document.createElementNS(NS, "svg");
+        svg.setAttribute("width", KIT.W); svg.setAttribute("height", KIT.H);
+        svg.style.cssText = "position:absolute;left:0;top:0;overflow:visible";
+        svg.innerHTML = '<path d="" fill="none" stroke="#24180C" stroke-width="' + (V ? 11 : 14) + '" stroke-linecap="round" stroke-linejoin="round"/>' +
+          '<path d="" fill="none" stroke="#C9A055" stroke-width="' + (V ? 6 : 8) + '" stroke-dasharray="7 4" stroke-linecap="butt" stroke-linejoin="round"/>';
+        stage.appendChild(svg);
+        var paths = svg.querySelectorAll("path"), SK = V ? 1 : 1.25;
+        var spark = document.createElement("div");
+        spark.style.cssText = "position:absolute;left:0;top:0;width:0;height:0";
+        spark.innerHTML = '<img src="assets/art/collage/bomb.webp" style="position:absolute;left:' + (-136 * SK) + "px;top:" + (-55 * SK) + "px;width:" + 179 * SK + "px;height:" + 306 * SK +
+          'px;clip-path:polygon(38.5% 4%, 96% 4%, 96% 30%, 64% 30%, 64% 22%, 38.5% 22%)">';
+        stage.appendChild(spark);
+        var rng = KIT.rng(7);
+        var jit = []; for (var j = 0; j < 400; j++) jit.push([rng() * 40 - 20, 0.8 + rng() * 0.4]);
+        KIT.onTime(tl, D, function (t0) {
+          var t = Math.floor(t0 * 12) / 12, f = Math.max(0, fuse(t)), d = "M" + FUSE.p[0][0] + "," + FUSE.p[0][1], tip = FUSE.p[0];
+          for (var i = 1; i < FUSE.p.length; i++) {
+            if (FUSE.len[i] <= f) { d += " L" + FUSE.p[i][0].toFixed(1) + "," + FUSE.p[i][1].toFixed(1); tip = FUSE.p[i]; continue; }
+            var u = (f - FUSE.len[i - 1]) / (FUSE.len[i] - FUSE.len[i - 1]), a = FUSE.p[i - 1], b = FUSE.p[i];
+            tip = [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u];
+            d += " L" + tip[0].toFixed(1) + "," + tip[1].toFixed(1);
+            break;
+          }
+          paths[0].setAttribute("d", d); paths[1].setAttribute("d", d);
+          var lit = o.out === undefined || t < o.out, jj = jit[Math.round(t * 12) % jit.length];
+          spark.style.visibility = lit ? "inherit" : "hidden";
+          spark.style.transform = "translate(" + tip[0].toFixed(1) + "px," + tip[1].toFixed(1) + "px) rotate(" + jj[0].toFixed(1) + "deg) scale(" + jj[1].toFixed(2) + ")";
+        });
+      }
+      var collar = { art: "bomb", x: COL[0], y: COL[1], anchor: [90, 143], scale: CK, clip: [[68, 114], [112, 114], [112, 143], [68, 143]] };
+
+
+      // ── The shot ──
+      var ST = KIT.STUDIO, MK = (V ? 120 : 110) / 224, MUGAT = V ? [620, ST.top] : [960, ST.top];
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var CAL = V ? [250, ST.top] : [300, ST.top], KK = (V ? 300 : 280) / 290, cast = {}, beats = [], add = function (b) { beats.push(b); };
+      var day = function (n) { return [{ text: "TUESDAY", at: [140, 92], width: 120, size: 40 }, { text: String(n), at: [150, 178], width: 120, size: 96 }]; };
+      // the pad: one desk calendar per day, the top one drawn last; a torn sheet flies off each time
+      var TT = cue("Tuesday"), DAYS = [19, 18, 17, 16, 15, 14], FLIP = [0.45, 0.85, TT, TT + 0.2, TT + 0.4];
+      DAYS.forEach(function (n, i) { cast["p" + i] = { art: "desk-calendar", x: CAL[0], y: CAL[1], anchor: "bottom", scale: KK, label: day(n) }; });
+      FLIP.forEach(function (t, j) {
+        var top = DAYS.length - 1 - j;
+        cast["sheet" + j] = { art: "calendar-page", x: CAL[0] + 8 * KK, y: CAL[1] - 160 * KK, scale: KK * 1.05, hidden: true, label: [{ text: "TUESDAY", at: [72, 80], width: 96, size: 30 }, { text: String(DAYS[top]), at: [72, 150], width: 90, size: 72 }] };
+        add({ at: t, do: "hide", who: "p" + top });
+        add({ at: t, do: "show", who: "sheet" + j });
+        add({ at: t, do: "drop", who: "sheet" + j, dur: 0.5, dist: 900, drift: j % 2 ? -260 : 260, spin: j % 2 ? -50 : 60 });
+      });
+      cast.mug = { art: "desk-mug", x: MUGAT[0], y: MUGAT[1], anchor: "bottom", pivot: "bottom", scale: MK };
+      add({ at: KIT.after(ID, "Tuesday") - 0.1, do: "hop", who: "mug", height: 30 });
+      cast.collar = collar;
+      var tl = KIT.collage({ id: ID, seed: 1107, host: true, cast: cast, beats: beats });
+      earthBomb(tl, function (t) { return FUSE.L * 0.6 - 9 * t; }, {});
+    })();
+  </script>
+</template>

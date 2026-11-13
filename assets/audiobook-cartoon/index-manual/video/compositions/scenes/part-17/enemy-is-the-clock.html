@@ -1,0 +1,98 @@
+<template id="enemy-is-the-clock-template">
+  <!-- enemy-is-the-clock · collage (plate the-machine: the bribery machine, a Victorian engine with a hopper, three
+       hatches and a cuckoo clock on its front). The fat cat tips his top hat of bills into the hopper and the counter on its side runs to
+       $1,000,000,000; the gears shake and the stack puffs. "Nobody in the machine is your enemy.": the Politician, the
+       Lobbyist and the weapons factory pop up round it and wave, and NOT THE ENEMY signs pop up over each, a small
+       (PROBABLY) over the factory's missiles. "The enemy is the clock.": the machine bangs and the Grim Reaper springs out
+       of the cuckoo door instead of a bird, adds one to its count and snaps back, again 0.58 s later; the three look up at him. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="enemy-is-the-clock" data-width="1920" data-height="1080" data-start="0" data-duration="9.3">
+    <div id="enemy-is-the-clock-weave"></div>
+    <div id="enemy-is-the-clock-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "enemy-is-the-clock", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The bribery machine on the ground G (plate px): hopper on top, the cuckoo house and clock on its front, three
+      // hatches. A(x, y) turns a point on the art into plate px.
+      var MX = 900, MK = 1.4, MTOP = G - SZ["bribery-machine"][1] * MK;
+      var A = function (x, y) { return [MX + (x - SZ["bribery-machine"][0] / 2) * MK, MTOP + y * MK]; };
+      var DOOR = A(278, 222), REAPH = 330;
+      var hK = function (art, h) { return h / SZ[art][1]; };
+      var CATK = 1.2, HAT = [400 - SZ["fat-cat-catch"][0] * CATK / 2 + 145 * CATK, G - SZ["fat-cat-catch"][1] * CATK + 225 * CATK];
+      var HOP = A(280, 5), PIPE = A(388, 70);
+      var PH = 560, TH = V ? [440, 1330, 1580] : [330, 1430, 1720];
+      var views = V ? { wide: [990, G - 440 / 0.7, 0.7], clock: [1050, G - 440 / 0.72, 0.72] } : { wide: [990, 520, 0.95], clock: [1050, 470, 1.0] };
+      var cast = {
+        mach: { art: "bribery-machine", x: MX, y: G, anchor: "bottom", pivot: "bottom", scale: MK },
+        reaper: { art: "reaper-stop", x: DOOR[0], y: DOOR[1], anchor: "bottom", pivot: "bottom", scale: hK("reaper-stop", REAPH), hidden: true },
+        puff: { art: "cloud-puff", x: PIPE[0], y: PIPE[1], scale: 0.45, hidden: true },
+        cat: { art: "fat-cat-catch", x: 400, y: G, anchor: "bottom", pivot: [145, 225], scale: CATK },
+        pol: { art: "politician", x: TH[0], y: G, anchor: "bottom", pivot: "bottom", scale: hK("politician", PH), hidden: true },
+        lob: { art: "lobbyist", x: TH[1], y: G, anchor: "bottom", pivot: "bottom", scale: hK("lobbyist", PH), hidden: true },
+        fac: { art: "factory-proud", x: TH[2], y: G, anchor: "bottom", pivot: "bottom", scale: hK("factory-proud", PH), hidden: true },
+      };
+      var beats = [
+        // "This raises the one billion dollars": the hat of bills into the hopper, and the counter
+        { at: 0.05, do: "move", who: "cat", by: [0, 0], turn: 18, dur: 0.3 },
+        { on: "one", do: "counter", id: "raised", who: "mach", spot: [280, 52], from: 0, to: 1000000000, until: ["dollars", 1, 0.2], prefix: "$", suffix: "", size: 34, pad: 30 },
+        { on: "dollars", offset: 0.4, do: "move", who: "cat", by: [0, 0], turn: 0, dur: 0.3 },
+      ];
+      for (var i = 0; i < 6; i++) {
+        cast["b" + i] = { art: "bill-war-flat", x: HAT[0], y: HAT[1], scale: 0.5, hidden: true };
+        beats.push({ at: 0.15 + 0.17 * i, do: "pop", who: "b" + i });
+        beats.push({ at: 0.18 + 0.17 * i, do: "move", who: "b" + i, to: HOP, turn: 40 + 30 * i, dur: 0.35, arc: 160 });
+        beats.push({ at: 0.55 + 0.17 * i, do: "hide", who: "b" + i });
+      }
+      beats = beats.concat([
+        // "needed to fuel the rest of the bribery machine.": it runs
+        { on: "fuel", do: "shiver", who: "mach", dur: 2.4, amp: 3, rot: 1 },
+        { on: "bribery", do: "pop", who: "puff", squash: true },
+        { on: "machine.", n: 1, offset: 0.4, do: "move", who: "puff", by: [160, -260], scale: 1.6, dur: 0.9 },
+        { on: "machine.", n: 1, offset: 1.3, do: "pop", who: "puff", out: true },
+        // "Nobody in the machine is your enemy.": the three pop up and wave; their signs
+        { on: "Nobody", offset: -0.1, do: "slideOut", who: "cat", to: "left", dist: 1300 },
+        { on: "Nobody", do: "pop", who: "pol", squash: true },
+        { on: "machine", n: 2, do: "pop", who: "lob", squash: true },
+        { on: "is", n: 1, do: "pop", who: "fac", squash: true },
+        { on: "is", n: 1, offset: 0.1, do: "bob", who: ["pol", "lob", "fac"], y: 6, r: 3, speed: 4, until: ["clock.", 1, 0.3], fade: 0.05 },
+        { on: "enemy.", do: "banner", id: "ne0", text: "NOT THE ENEMY", x: TH[0] + 60, y: G - PH - 110, size: 46, width: 330, pad: 30, color: "ink", tilt: -3 },
+        { on: "enemy.", offset: 0.15, do: "banner", id: "ne1", text: "NOT THE ENEMY", x: TH[1] - (V ? 60 : 20), y: G - PH - 110, size: 46, width: 330, pad: 30, color: "ink", tilt: 3 },
+        { on: "enemy.", offset: 0.3, do: "banner", id: "ne2", text: "NOT THE ENEMY", x: TH[2] - (V ? 0 : 20), y: G - PH - (V ? 250 : 200), size: 46, width: 330, pad: 30, color: "ink", tilt: -2 },
+        { on: "enemy.", offset: 0.6, do: "banner", id: "ne3", text: "(PROBABLY)", x: TH[2] + (V ? 60 : 110), y: G - PH - (V ? 150 : 70), size: 28, width: 170, pad: 20, color: "ink", tilt: 5 },
+        // "The enemy is the clock.": the Reaper springs out of the clock, twice, 0.58 s apart, and counts
+        { on: "enemy", n: 2, offset: -0.1, do: "camera", view: "clock", dur: 0.8 },
+        { on: "clock.", offset: 0.3, do: "move", who: ["pol", "lob", "fac"], by: [0, 0], turn: -6, dur: 0.25 },
+      ]);
+      // The Reaper springs out of the cuckoo door at t: up from his feet with an overshoot, gone `stay` s later.
+      // (Moves, not pops: a pop's squash holds its from-size before it, which would shrink the earlier springs.)
+      var spring = function (t, stay) {
+        beats.push({ at: t - 0.02, do: "move", who: "reaper", by: [0, 0], scale: 0.15, dur: 0.01 });
+        beats.push({ at: t, do: "show", who: "reaper" });
+        beats.push({ at: t, do: "move", who: "reaper", by: [0, 0], scale: 1.12, dur: 0.16 });
+        beats.push({ at: t + 0.17, do: "move", who: "reaper", by: [0, 0], scale: 1, dur: 0.08 });
+        beats.push({ at: t + stay, do: "hide", who: "reaper" });
+      };
+      // twice, 0.58 s apart, counting on the clock face
+      [0.25, 0.83].forEach(function (o, k) {
+        beats.push({ on: "clock.", offset: o - 0.04, do: "shiver", who: "mach", dur: 0.2, amp: 3, rot: 1 });
+        spring(cue("clock.") + o, 0.34);
+        beats.push(k ? { on: "clock.", offset: o + 0.12, do: "counter", id: "tally", to: k + 1, dur: 0.01 }
+          : { on: "clock.", offset: o + 0.12, do: "counter", id: "tally", who: "mach", spot: [281, 268], from: 0, to: 1, dur: 0.01, style: "tick", size: 56, card: false, color: "#2A1C10" });
+      });
+      KIT.collage({ id: ID, seed: 1710, plate: V ? [-1200, -1800, 3300, 2400] : [-500, -500, 2500, 1600], views: views, view: "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

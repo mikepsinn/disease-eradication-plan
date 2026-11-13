@@ -1,0 +1,439 @@
+{
+  "id": "part-09",
+  "title": "The Unexplored Therapeutic Frontier",
+  "storyboard": "storyboards/part-09-unexplored-therapeutic-frontier.md",
+  "audio": {
+    "start": 945.151,
+    "end": 1011.784
+  },
+  "noCaptions": [
+    "title-card"
+  ],
+  "scenes": [
+    {
+      "id": "title-card",
+      "file": "compositions/scenes/part-09/title-card.html",
+      "cue": "Unexplored",
+      "approx": 945.344,
+      "layer": "A"
+    },
+    {
+      "id": "zero-treatments",
+      "file": "compositions/scenes/part-09/zero-treatments.html",
+      "cue": "Ninety-five",
+      "approx": 948.744,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Ninety-five",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "zero",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "treatments.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "back-soon",
+      "file": "compositions/scenes/part-09/back-soon.html",
+      "cue": "This",
+      "approx": 953.664,
+      "layer": "B"
+    },
+    {
+      "id": "no-roads",
+      "file": "compositions/scenes/part-09/no-roads.html",
+      "cue": "It's",
+      "approx": 962.144,
+      "layer": "B"
+    },
+    {
+      "id": "queue-to-not-die",
+      "file": "compositions/scenes/part-09/queue-to-not-die.html",
+      "cue": "Only",
+      "approx": 966.764,
+      "layer": "B"
+    },
+    {
+      "id": "weirdly-calm",
+      "file": "compositions/scenes/part-09/weirdly-calm.html",
+      "cue": "You",
+      "approx": 1002.784,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "You",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "rude",
+          "expr": "neutral",
+          "rest": "closed",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "weirdly",
+          "expr": "skeptical",
+          "rest": "closed",
+          "body": "palms-down",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "title-card",
+      "cue": "Unexplored",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "title-card",
+      "cue": "Frontier.",
+      "at": "after",
+      "sfx": "yelp",
+      "volume": 0.3
+    },
+    {
+      "scene": "zero-treatments",
+      "cue": "Ninety-five",
+      "sfx": "typewriter",
+      "volume": 0.25
+    },
+    {
+      "scene": "zero-treatments",
+      "cue": "diseases",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "zero-treatments",
+      "cue": "F.D.A.-approved",
+      "offset": 0.1,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "zero-treatments",
+      "cue": "treatments.",
+      "offset": 0.35,
+      "sfx": "huff",
+      "volume": 0.35
+    },
+    {
+      "scene": "back-soon",
+      "cue": "not",
+      "sfx": "slam",
+      "volume": 0.45
+    },
+    {
+      "scene": "back-soon",
+      "cue": "drugs",
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "back-soon",
+      "cue": "drugs",
+      "offset": 0.22,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "back-soon",
+      "cue": "drugs",
+      "offset": 0.44,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "back-soon",
+      "cue": "ninety-five",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "back-soon",
+      "cue": "food-and-drug-related",
+      "sfx": "slam",
+      "volume": 0.45
+    },
+    {
+      "scene": "back-soon",
+      "cue": "problems.",
+      "offset": -0.5,
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "back-soon",
+      "cue": "problems.",
+      "offset": -0.25,
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "back-soon",
+      "cue": "problems.",
+      "offset": 0.5,
+      "sfx": "pat",
+      "volume": 0.35
+    },
+    {
+      "scene": "no-roads",
+      "cue": "Transportation",
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "no-roads",
+      "cue": "that",
+      "sfx": "boing",
+      "volume": 0.3
+    },
+    {
+      "scene": "no-roads",
+      "cue": "yet.",
+      "at": "after",
+      "offset": -0.1,
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "no-roads",
+      "cue": "yet.",
+      "at": "after",
+      "offset": 0.37,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "fifteen",
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "treatment",
+      "sfx": "ding",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "year.",
+      "sfx": "slam",
+      "volume": 0.4
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "year.",
+      "offset": 0.08,
+      "sfx": "splat",
+      "volume": 0.35
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "Six",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "sfx": "zap",
+      "volume": 0.25
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 0.58,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 1.16,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 1.74,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 2.32,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 2.9,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 3.48,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "queue",
+      "offset": 4.06,
+      "sfx": "zap",
+      "volume": 0.2
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "longer",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "Disneyland.",
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "Disneyland.",
+      "offset": 0.95,
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "There",
+      "n": 2,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "ninety-nine",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "never",
+      "sfx": "huff",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "offset": 0.42,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "offset": 0.84,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "offset": 1.26,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "current",
+      "offset": 1.88,
+      "sfx": "huff",
+      "volume": 0.3
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "approximately",
+      "sfx": "zap",
+      "volume": 0.25
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "approximately",
+      "offset": 0.4,
+      "sfx": "zap",
+      "volume": 0.25
+    },
+    {
+      "scene": "queue-to-not-die",
+      "cue": "years.",
+      "sfx": "clank",
+      "volume": 0.5
+    },
+    {
+      "scene": "weirdly-calm",
+      "cue": "You",
+      "sfx": "marker",
+      "volume": 0.3
+    },
+    {
+      "scene": "weirdly-calm",
+      "cue": "dead",
+      "sfx": "marker",
+      "volume": 0.3
+    },
+    {
+      "scene": "weirdly-calm",
+      "cue": "years,",
+      "offset": 0.2,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "weirdly-calm",
+      "cue": "weirdly",
+      "sfx": "scratch",
+      "volume": 0.25
+    },
+    {
+      "scene": "weirdly-calm",
+      "cue": "this.",
+      "at": "after",
+      "sfx": "scratch",
+      "volume": 0.25
+    }
+  ]
+}

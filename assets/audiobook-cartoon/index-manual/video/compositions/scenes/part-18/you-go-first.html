@@ -1,0 +1,96 @@
+<template id="you-go-first-template">
+  <!-- you-go-first · collage, night sky. A VOTE door on top of Earth, and two gentlemen either side of it (Alphonse and
+       Gaston) bowing each other through: after you, no, after you. They bow and bow, and a
+       beard grows down one of them. "Most": the camera pulls back; Earth hangs among five other planets, each with its
+       own little door and its own pair bowing. "start": one by one the five go dark, their pairs turn to skeletons
+       still bowing, and a headstone pops up on each. Only Earth is lit; its pair bows on. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #141A33; }
+  </style>
+  <div id="root" data-composition-id="you-go-first" data-width="1920" data-height="1080" data-start="0" data-duration="8.36">
+    <div id="you-go-first-weave"></div>
+    <div id="you-go-first-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "you-go-first", V = KIT.V, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hgt = function (art, h) { return h / SZ[art][1]; };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      // Earth, and on its top the VOTE door with the pair either side (plate px)
+      var E = [960, 1500, 700], TOP = E[1] - E[2] * 0.99, DH = 300, PH = 300;
+      // the other five planets [x, y, r], their doors on top
+      var PL = V ? [[960, -1250, 380], [-430, 250, 300], [2350, 350, 300], [-380, 2000, 300], [2330, 2050, 300]]
+        : [[-1300, -650, 430], [3200, -750, 460], [-2700, 1050, 520], [4300, 1150, 500], [-600, 2350, 340]];
+      var planet = function (n, p, art) { cast[n] = { art: art, x: p[0], y: p[1], scale: 2.04 * p[2] / SZ[art][0] }; };
+      // the pair round a door at the top of a planet: d the door's bottom middle, h the people's height
+      var pair = function (pre, d, h, dh) {
+        cast[pre + "door"] = { art: "door", x: d[0], y: d[1], anchor: "bottom", scale: hgt("door", dh),
+          label: { text: "VOTE", at: [134, 30], width: 150, size: 200 } };
+        cast[pre + "a"] = { art: "alphonse-gaston-a", x: d[0] - dh * 0.6, y: d[1], anchor: "bottom", pivot: "bottom", scale: hgt("alphonse-gaston-a", h) };
+        cast[pre + "g"] = { art: "alphonse-gaston-b", x: d[0] + dh * 0.6, y: d[1], anchor: "bottom", pivot: "bottom", scale: hgt("alphonse-gaston-b", h) };
+      };
+      PL.forEach(function (p, i) { planet("pl" + i, p, "earth-big"); });
+      planet("earth", E, "earth-big");
+      PL.forEach(function (p, i) {
+        var d = [p[0], p[1] - p[2] * 0.99, 0], h = p[2] * 0.42;
+        pair("q" + i, d, h, h);
+        cast["q" + i + "as"] = { art: "skeleton", x: d[0] - h * 0.62, y: d[1], anchor: "bottom", pivot: "bottom", scale: hgt("skeleton", h * 0.95), hidden: true };
+        cast["q" + i + "gs"] = { art: "skeleton", x: d[0] + h * 0.62, y: d[1], anchor: "bottom", pivot: "bottom", scale: hgt("skeleton", h * 0.95), hidden: true };
+        cast["q" + i + "stone"] = { art: "headstone", x: d[0], y: d[1] + 6, anchor: "bottom", pivot: "bottom", scale: hgt("headstone", h * 0.9), hidden: true };
+      });
+      pair("", [E[0], TOP], PH, DH);
+      // Gaston's beard: its top at his chin (alphonse-gaston-b's chin at art (72, 100))
+      var GK = hgt("alphonse-gaston-b", PH), GL = E[0] + DH * 0.6 - SZ["alphonse-gaston-b"][0] * GK / 2;
+      cast.beard = { art: "beard", x: GL + 72 * GK, y: TOP - SZ["alphonse-gaston-b"][1] * GK + 100 * GK, anchor: "top", pivot: "top", scale: 70 / SZ["beard"][1], hidden: true };
+
+      var views = V ? { door: [960, 700, 1.0], wide: [960, 900, 0.3] } : { door: [960, 640, 1.0], wide: [960, 900, 0.2] };
+      // the sky: night over the paper
+      add({ at: -1, do: "wash", id: "night", color: "#141A33", blend: "normal", opacity: 1, dur: 0.01 });
+      // after you, no, after you: they bow in turn, the whole scene
+      var bows = [], who = ["a", "g"];
+      for (var t = 0.25, k = 0; t < D - 0.3; t += 0.62, k++) bows.push([t, who[k % 2]]);
+      bows.forEach(function (b) {
+        var list = [b[1]];
+        PL.forEach(function (p, i) { list.push("q" + i + b[1], "q" + i + b[1] + "s"); });
+        add({ at: b[0], do: "bow", who: list, angle: b[1] === "a" ? 24 : -24, hold: 0.4 });
+      });
+      add({ on: "game", do: "pop", who: "beard", swell: 2.6 });
+      // "Most": back to the sky full of planets
+      add({ on: "Most", do: "camera", view: "wide", dur: 1.0 });
+      // "start": one by one the other five go dark; their pairs die bowing; a headstone on each
+      var DARK = [cue("start"), cue("playing"), cue("don't"), cue("finish"), cue("playing", 2)];
+      PL.forEach(function (p, i) {
+        var q = "q" + i, t0 = DARK[i];
+        add({ at: t0, do: "char", who: "pl" + i });
+        add({ at: t0, do: "char", who: q + "door" });
+        add({ at: t0, do: "xray", who: [q + "a", q + "g"], to: [q + "as", q + "gs"], flash: 0, follow: false });
+        add({ at: t0 + 0.3, do: "pop", who: q + "stone", squash: true });
+      });
+      var tl = KIT.collage({ id: ID, seed: 1806, plate: [-6000, -4500, 8000, 6000], views: views, view: "door", cast: cast, beats: beats });
+
+      // the other planets in other colours (on the image, so going dark still blackens them)
+      [140, 260, 40, 200, 300].forEach(function (h, i) {
+        var im = document.querySelector("#" + ID + "-pl" + i + " img");
+        im.style.filter = "hue-rotate(" + h + "deg) saturate(0.8)";
+      });
+      // stars, drawn on the night
+      var rs = KIT.rng(606), dots = "";
+      for (var i = 0; i < 700; i++) dots += '<circle cx="' + (-6000 + rs() * 14000).toFixed(0) + '" cy="' + (-4500 + rs() * 10500).toFixed(0) + '" r="' + (4 + rs() * 10).toFixed(1) + '" fill="#F6EDC8" opacity="' + (0.4 + 0.6 * rs()).toFixed(2) + '"/>';
+      var stage = document.getElementById(ID + "-stage"), sky = document.createElement("div");
+      sky.style.cssText = "position:absolute;left:0;top:0;width:0;height:0";
+      sky.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible">' + dots + "</svg>";
+      var night = document.getElementById(ID + "-night");
+      night.parentNode.insertBefore(sky, night.nextSibling);
+    })();
+  </script>
+</template>

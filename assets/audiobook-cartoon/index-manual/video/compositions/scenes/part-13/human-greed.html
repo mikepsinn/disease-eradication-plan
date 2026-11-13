@@ -1,0 +1,90 @@
+<template id="human-greed-template">
+  <!-- human-greed · collage host shot (Part 13 storyboard, scene 12). "two": she holds up two fingers (her state).
+       "internet": a laptop thunks onto the ledge and buzzes. "financial": a bond certificate pops up beside her,
+       INCENTIVE ALIGNMENT BOND, $1,000, and glints. "harnessing": she points right, and in slides the fat cat in his
+       harness in a giant hamster wheel, a plain paper dangling from the rod strapped to his back, just out of reach; a
+       cable runs from the wheel to a knife switch on the ledge. "powerful": he runs; the paper stays exactly as far away.
+       "greed.": the knife switch slams shut, sparks run to the wheel, the deck flares, and the fat cat catches fire all over and keeps running. Iris
+       out on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="human-greed" data-width="1920" data-height="1080" data-start="0" data-duration="10.7">
+    <div id="human-greed-weave"></div>
+    <div id="human-greed-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "human-greed", V = KIT.V, S = KIT.STUDIO, SZ = window.KIT_ART_SIZES, D = KIT.scene(ID).duration;
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      var eyesAt = function (pts, size) { return pts.map(function (e) { return [e[0] * 30 / size, e[1] * 30 / size]; }); };
+      // The hamster wheel on the free wall right of the console; the fat cat inside it, his feet on the drum's floor
+      // (wheel art 255, 402), sized to its front opening (about 330 art px high).
+      var FH = V ? 360 : 520, WK = FH / 330, CX = V ? 812 : 1500, CB = V ? 1440 : 1000, CW = SZ["hamster-wheel"][0] * WK;
+      var FK = hs("fat-cat-harness", FH), FX = CX + (255 - SZ["hamster-wheel"][0] / 2) * WK, BELT = CB - (SZ["hamster-wheel"][1] - 402) * WK, FTOP = BELT - FH;
+      var LINE = [FX + (402 - SZ["fat-cat-harness"][0] / 2) * FK, FTOP + 105 * FK];   // the end of his rod's line
+      // The knife switch on the ledge, as three cut-outs of one art: the plate (below the handle), a patch of clean plate
+      // over where the blade lay, and the blade, which swings down on its hinge pin (art 74, 258) across the right jaw.
+      var SWX = V ? 610 : 1030, SWK = hs("knife-switch", V ? 145 : 170), SW = SZ["knife-switch"], SWL = SWX - SW[0] / 2 * SWK, SWT = S.top + 6 - SW[1] * SWK;
+      var sw = function (o) { var c = { art: "knife-switch", x: SWX, y: S.top + 6, anchor: "bottom", scale: SWK }; for (var k in o) c[k] = o[k]; return c; };
+      var PK = 3;
+      var flame = function (dx, h) { return { art: "flames", x: FX + dx, y: BELT - 20, anchor: "bottom", pivot: "bottom", scale: hs("flames", h), hidden: true }; };
+      var cast = {
+        laptop: { art: "laptop", x: V ? 165 : 330, y: S.top + 6, anchor: "bottom", pivot: "bottom", scale: hs("laptop", V ? 140 : 170), hidden: true },
+        bond: { art: "bond-cert", x: V ? 840 : 1040, y: V ? 960 : 560, scale: (V ? 270 : 330) / SZ["bond-cert"][0], hidden: true,
+          label: [{ text: "INCENTIVE ALIGNMENT", at: [159, 92], width: 190, size: 30 }, { text: "BOND", at: [159, 125], width: 120, size: 30 }, { text: "$1,000", at: [159, 168], width: 150, size: 44 }] },
+        conv: { art: "hamster-wheel", x: CX, y: CB, anchor: "bottom", pivot: "bottom", scale: WK, hidden: true },
+        cat: { art: "fat-cat-harness", x: FX, y: BELT + 4, anchor: "bottom", pivot: "bottom", scale: FK, hidden: true,
+          eyes: eyesAt([[262, 176]], 16), eyeSize: 16, smoke: [[230, 105], [160, 300]] },
+        paper: { art: "bill-plain", x: LINE[0], y: LINE[1] - 4, anchor: "top", pivot: "top", scale: (V ? 80 : 110) / SZ["bill-plain"][0], hidden: true },
+        f0: flame(-FH * 0.28, FH * 0.75), f1: flame(FH * 0.05, FH * 1.0), f2: flame(FH * 0.3, FH * 0.7),
+        swPlate: sw({ clip: [[0, 117], [SW[0], 117], [SW[0], SW[1]], [0, SW[1]]] }),
+        // the patch: clean plate between the jaws (art 100, 345 on), scaled up and cut to the blade's shape over the plate
+        swPatch: { art: "knife-switch", x: SWL + 55 * SWK, y: SWT + 117 * SWK, anchor: [100, 345], scale: SWK * PK,
+          clip: [[98, 117], [168, 117], [160, 170], [130, 235], [95, 262], [62, 255], [80, 196], [90, 170]].map(function (p) { return [100 + (p[0] - 55) / PK, 345 + (p[1] - 117) / PK]; }) },
+        swBlade: sw({ pivot: [74, 258], clip: [[135, 0], [196, 0], [193, 86], [173, 101], [161, 170], [129, 233], [92, 273], [60, 273], [57, 250], [80, 196], [90, 170], [119, 101], [130, 86]] }),
+      };
+      var runner = ["cat", "paper", "f0", "f1", "f2"];
+      // The cable runs from the wheel's base to the switch's right jaw (art 200, 340).
+      var JAW = [SWL + 200 * SWK, SWT + 340 * SWK];
+      var cable = [[CX - CW / 2 + 30 * WK, CB - 30 * WK], [CX - CW / 2 - (V ? 50 : 70), CB - 20], [JAW[0] + 40, JAW[1] + 10], JAW];
+      KIT.collage({
+        id: ID, seed: 1312, host: { iris: ["out", D - 0.55, D - 0.05] },
+        cast: cast,
+        beats: [
+          // "internet": the laptop thunks down and buzzes
+          { on: "internet", do: "stamp", who: "laptop", from: 1.8, shake: 6 },
+          { on: "internet", offset: 0.2, do: "shiver", who: "laptop", dur: 0.9, amp: 3, rot: 2 },
+          // "financial": the bond, and its glint
+          { on: "financial", do: "pop", who: "bond", squash: true },
+          { on: "instrument", do: "glow", who: "bond", size: V ? 360 : 440, dur: 0.6 },
+          { on: "harnessing", do: "pop", who: "bond", out: true },
+          // "harnessing": the fat cat on his treadmill, the paper on his rod, the cable to the switch
+          { on: "harnessing", do: "slideIn", who: ["conv", "cat", "paper"], from: "right", dist: V ? 700 : 1000, over: 18 },
+          { on: "most", do: "line", id: "cable", points: cable, color: "#C9A15A", width: V ? 8 : 10, dur: 0.4, front: true },
+          // "powerful": he runs, and the paper stays exactly as far away
+          { on: "powerful", do: "bob", who: runner, y: 10, r: 3, speed: 8, fade: 0.05 },
+          { on: "powerful", do: "shiver", who: "conv", dur: KIT.cue(ID, "greed.") - KIT.cue(ID, "powerful"), amp: 2, rot: 0.3 },
+          { on: "greed.", offset: 0.12, do: "shiver", who: "conv", dur: D - KIT.cue(ID, "greed.") - 0.12, amp: 5, rot: 0.8 },
+          // "greed.": the switch, the flare, and he catches fire all over and keeps running
+          { on: "greed.", do: "hinge", who: "swBlade", angle: 72 },
+          { on: "greed.", offset: 0.1, do: "sparks", who: ["swPlate", "conv"], until: D },
+          { on: "greed.", do: "wash", id: "flare", color: "#FFE7A0", blend: "screen", opacity: 0.2, dur: 0.12 },
+          { on: "greed.", offset: 0.12, do: "boom", shake: 10, flash: 0.08 },
+          { on: "greed.", offset: 0.12, do: "pop", who: ["f0", "f1", "f2"], squash: true },
+          { on: "greed.", offset: 0.15, do: "char", who: "cat" },
+          { on: "greed.", offset: 0.55, do: "blink", who: "cat" },
+        ],
+      });
+    })();
+  </script>
+</template>

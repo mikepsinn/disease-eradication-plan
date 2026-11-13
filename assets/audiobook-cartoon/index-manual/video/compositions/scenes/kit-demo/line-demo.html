@@ -1,0 +1,37 @@
+<template id="line-demo-template">
+  <!-- line-demo · kit demo (scratch): a chart line that draws itself and runs off the top, a missile riding its tip; a dashed free line -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="line-demo" data-width="1920" data-height="1080" data-start="0" data-duration="5.48">
+    <div id="line-demo-weave"></div>
+    <div id="line-demo-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+
+      var ch = KIT.collage.axes(V ? { box: [170, 560, 960, 1300], x: [0, 10, 1], y: [0, 100, 20], xLabels: 2, title: "LINE" }
+        : { box: [260, 240, 1500, 820], x: [0, 10, 1], y: [0, 100, 20], xLabels: 2, title: "LINE" });
+      KIT.collage({
+        id: "line-demo", seed: 401,
+        cast: { rider: { art: "missile-fly", scale: 0.45, anchor: [300, 55], pivot: [300, 55], hidden: true } },
+        beats: [
+          { at: 0, do: "chart", chart: ch },
+          { at: 0.3, do: "line", chart: ch, f: function (x) { return 2 + 1.4 * x * x; }, x: [0, 10], dur: 4, rider: "rider", color: "red", width: 8 },
+          { at: 0.6, do: "line", id: "flat", chart: ch, points: [[0, 10], [3, 25], [6, 30], [10, 32]], dur: 3, dash: [18, 12] },
+          { at: 1, do: "line", id: "free", points: V ? [[100, 1500], [500, 1420], [980, 1520]] : [[1560, 900], [1700, 700], [1880, 760]], dur: 2, color: "#2E6B3A", width: 5 },
+        ],
+      });
+    })();
+  </script>
+</template>

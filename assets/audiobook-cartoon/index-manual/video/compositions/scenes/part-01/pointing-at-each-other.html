@@ -1,0 +1,66 @@
+<template id="pointing-at-each-other-template">
+  <!-- pointing-at-each-other · collage (KIT.collage, video/README.md "Writing a collage scene"). Starts on
+       split-the-atom's end (the halves in the sunburst). "when": the sunburst shuts, Uncle Sam and the General slide
+       in pointing, the globe slides up; "realized": the halves hop onto their fingers; "pointing", "it": both jab;
+       "each": sparks; "other!": BOOM, the mushroom cloud pops out of the globe, both men are charred; "That's": they
+       blink; "kind": they fold into two heaps of ash and blink again. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="pointing-at-each-other" data-width="1920" data-height="1080" data-start="0" data-duration="3.34">
+    <div id="pointing-at-each-other-weave"></div>
+    <div id="pointing-at-each-other-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // 9:16: the two men at the edges of the tall frame, the globe between them, the ground at G.
+    var V = KIT.V, G = V ? 1400 : 1000, HALF = V ? 700 : 430;
+    // split-the-atom's two strings of bulbs, lit; they go out on "when"
+    var BK = V ? 1.0 : 1.1, BW = 487 * BK, BY = V ? 110 : 120, MID = 540 * (V ? 1 : 16 / 9);
+    var bulbs = function (art, side, hidden) { return { art: art, x: MID + side * (BW / 2 - 6), y: BY, scale: BK, hidden: hidden }; };
+    KIT.collage({
+      id: "pointing-at-each-other", seed: 312,
+      cast: {
+        litL: bulbs("light-bulbs", -1, false), litR: bulbs("light-bulbs", 1, false),
+        offL: bulbs("light-bulbs-unlit", -1, true), offR: bulbs("light-bulbs-unlit", 1, true),
+        globe: { art: "globe", x: V ? 540 : 960, y: G, anchor: "bottom", scale: V ? 0.62 : 0.85 },
+        cloud: { art: "mushroom", x: V ? 540 : 960, y: G - (V ? 120 : 170), anchor: "bottom", pivot: "bottom", scale: V ? 0.95 : 1.2 },
+        sam: { art: "uncle-sam", x: V ? 0 : 150, y: G, anchor: [0, 697], pivot: [116, 697], scale: V ? 0.78 : 1.1, points: { tip: [341, 208] }, eyes: [[141, 124]], smoke: [160, 12] },
+        gen: { art: "general", x: V ? 793 : 1340, y: G, anchor: [0, 679], pivot: [242, 679], scale: V ? 0.8 : 1.15, faces: "left", points: { tip: [6, 188] }, eyes: [[219, 104]], smoke: [200, 14] },
+        halfL: { art: "atom", clip: "left", x: V ? 445 : 865, y: HALF, scale: V ? 0.9 : 0.8 },
+        halfR: { art: "atom", clip: "right", x: V ? 635 : 1055, y: HALF, scale: V ? 0.9 : 0.8 },
+      },
+      beats: [
+        { at: 0, do: "sunburst", x: V ? 540 : 960, y: HALF, enter: "none", angle: 342.4 },
+        { at: 0, do: "bob", who: ["halfL", "halfR"], y: 6, r: 0, until: "realized" },
+        { on: "when", do: "pop", who: "sunburst", out: true },
+        { on: "when", do: "hide", who: ["litL", "litR"] },
+        { on: "when", do: "show", who: ["offL", "offR"] },
+        { on: "other!", offset: 0.12, do: "char", who: ["offL", "offR"] },
+        { on: "when", do: "slideIn", who: "sam", from: "left" },
+        { on: "when", do: "slideIn", who: "gen", from: "right" },
+        { on: "when", offset: 0.08, do: "slideIn", who: "globe", from: "bottom", over: 14 },
+        { on: "realized", do: "move", who: "halfL", to: "sam.tip", by: [22, 0], arc: 150, scale: 0.6 },
+        { on: "realized", do: "move", who: "halfR", to: "gen.tip", by: [-22, 0], arc: 150, scale: 0.6 },
+        { on: "pointing", do: "nudge", who: ["sam", "gen"], by: [42, 0] },
+        { on: "pointing", do: "glow", who: ["halfL", "halfR"] },
+        { on: "it", do: "nudge", who: ["sam", "gen"], by: [42, 0] },
+        { on: "each", do: "sparks", who: ["halfL", "halfR"] },
+        { on: "other!", offset: 0.04, do: "boom" },
+        { on: "other!", offset: 0.04, do: "hide", who: ["halfL", "halfR"] },
+        { on: "other!", offset: 0.12, do: "pop", who: "cloud", squash: true, swell: 0.06 },
+        { on: "other!", offset: 0.12, do: "char", who: ["sam", "gen", "globe"] },
+        { on: "That's", offset: 0.08, do: "blink", who: ["sam", "gen"] },
+        { on: "kind", offset: -0.15, do: "ash", who: ["sam", "gen"] },
+        { on: "kind", offset: 0.23, do: "blink", who: ["sam", "gen"] },
+      ],
+    });
+  </script>
+</template>

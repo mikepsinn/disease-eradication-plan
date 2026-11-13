@@ -1,0 +1,70 @@
+<template id="net-falls-short-template">
+  <!-- net-falls-short · collage host shot (Part 4, scene 2). The iris opens on Wishonia at her console. "humans": a
+       butterfly net pokes up out of the Earth in the window and points at her; "will", "you": its pole grows a section
+       each, click, click. "committed.": one last lunge, a few feet short; it wobbles, droops, and slides slowly back
+       into the Earth. She does not look. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="net-falls-short" data-width="1920" data-height="1080" data-start="0" data-duration="7.46">
+    <div id="net-falls-short-weave"></div>
+    <div id="net-falls-short-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "net-falls-short", S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var E = S.earth, F = S.face, R = Math.PI / 180;
+    // the net points from the Earth at her face; its pole comes out from behind the Earth's rim on her side
+    var ANG = Math.atan2(F[1] - E[1], F[0] - E[0]) / R, NK = V ? 0.4 : 0.6;
+    var RIM = [E[0] + 0.8 * E[2] * Math.cos(ANG * R), E[1] + 0.8 * E[2] * Math.sin(ANG * R)];
+    // butterfly-net: its pole runs from art [24.5, 365] (the foot of the shaft) up at -79.7 degrees; a section is the
+    // shaft from art y 285 to 365, and each one the pole grows sits under the net's foot
+    var FOOT = [24.5, 365], AX = 79.7, SEC = 81.3 * NK * 0.95;
+    var SECTION = [[24.5, 285], [53.5, 285], [39, 365], [10, 365]];
+    var cast = { net: { art: "butterfly-net", x: RIM[0], y: RIM[1], anchor: FOOT, pivot: FOOT, scale: NK, hidden: true } };
+    var ROD = ["s0", "s1"];
+    ROD.forEach(function (n) { cast[n] = { art: "butterfly-net", clip: SECTION, x: RIM[0], y: RIM[1], anchor: FOOT, pivot: FOOT, scale: NK, hidden: true }; });
+    // the net and its sections are one rigid pole: d is each piece's foot, px along the pole from the rim, at angle th
+    var d = { net: 0, s0: 0, s1: 0 }, th = ANG, beats = [];
+    var at = function (dist, a) { return [RIM[0] + dist * Math.cos(a * R), RIM[1] + dist * Math.sin(a * R)]; };
+    function pose(t, dur, th2, d2, ease, scale) {
+      Object.keys(d).forEach(function (n) {
+        var nd = d2 && d2[n] !== undefined ? d2[n] : d[n], p0 = at(d[n], th), p1 = at(nd, th2);
+        var bt = { at: t, do: "move", who: n, by: [p1[0] - p0[0], p1[1] - p0[1]], turn: th2 + AX, dur: dur, ease: ease || "linear" };
+        if (scale && scale[n] !== undefined) bt.scale = scale[n];
+        beats.push(bt); d[n] = nd;
+      });
+      th = th2;
+    }
+    var F1 = 1 / 12, tH = cue("humans"), tC = cue("committed.");
+    pose(-1, 0.001, ANG, { s1: SEC }, "linear", { net: 0.04 });
+    beats.push({ at: tH, do: "show", who: "net" });
+    pose(tH, 0.35, ANG, {}, "smooth", { net: 1 });
+    // the pole grows a section a word
+    [cue("will"), cue("you", 2)].forEach(function (t, i) {
+      pose(t, 2 * F1, ANG, { net: (i + 1) * SEC });
+      beats.push({ at: t + F1, do: "show", who: ROD[i] });
+    });
+    // one last lunge, out of pole: it wobbles and droops
+    pose(tC, 2 * F1, ANG, { net: 2 * SEC + 26, s0: 26, s1: SEC + 26 });
+    pose(tC + 2 * F1, 3 * F1, ANG, { net: 2 * SEC, s0: 0, s1: SEC });
+    pose(tC + 0.3, 2 * F1, ANG + 5);
+    pose(tC + 0.3 + 2 * F1, 2 * F1, ANG - 4);
+    pose(tC + 0.3 + 4 * F1, 2 * F1, ANG);
+    pose(tC + 0.75, 4 * F1, ANG - 28, {}, "smooth");
+    // and slides slowly back down into the Earth
+    var tR = tC + 0.95, RD = 0.5;
+    pose(tR, RD, ANG - 28, { net: -40, s0: -2 * SEC - 40, s1: -SEC - 40 }, "smooth", { net: 0.3 });
+    beats.push({ at: tR + 0.12, do: "hide", who: "s0" }, { at: tR + 0.28, do: "hide", who: "s1" }, { at: tR + RD, do: "hide", who: "net" });
+    KIT.collage({ id: ID, seed: 412, host: { iris: ["in", 0.04, 0.7] }, cast: cast, beats: beats });
+  </script>
+</template>

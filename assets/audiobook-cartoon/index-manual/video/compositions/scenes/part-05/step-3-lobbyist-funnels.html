@@ -1,0 +1,122 @@
+<template id="step-3-lobbyist-funnels-template">
+  <!-- step-3-lobbyist-funnels · collage (Part 5, scene 6; plate the-laundry). The bit: the long way round to the same
+       pocket. A file of plain bills walks in; the Lobbyist waits on the left, the Politician grins on the right.
+       "directly": the lead bill offers itself and he jumps back; "illegal": an ILLEGAL sign drops on it. "Instead": the Lobbyist
+       steps out from behind his bush, and on "lobbyists." it hops into his briefcase; "campaigns.": he tips it into the
+       CAMPAIGN wash-tub;
+       "politicians.": its mangle spits it into the Politician's breast pocket and he whistles. "laundering": the next bill
+       goes in crisp and on "backwards" comes out filthy; "legal.": LEGAL stamps across it and across his forehead,
+       where it stays for the rest of the part. (The campaign bunting and boater and the muddy bill are not drawn yet: the
+       filthy bill is a charred one. MISSING-ART.md.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="step-3-lobbyist-funnels" data-width="1920" data-height="1080" data-start="0" data-duration="20.28">
+    <div id="step-3-lobbyist-funnels-weave"></div>
+    <div id="step-3-lobbyist-funnels-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "step-3-lobbyist-funnels", V = KIT.V;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var G = 1000, LX = 420, BX = 1110, PX = 1660, LK = 1.75, BK = 1.15, PK = 1.15, UP = 360, OUT = 260;
+      var pol = function (p) { return [PX - 192 * PK + p[0] * PK, G - 735 * PK + p[1] * PK]; };   // politician art px -> plate
+      var box = function (p) { return [BX - 238 * BK + p[0] * BK, G - 451 * BK + p[1] * BK]; };    // wash-tub art px -> plate
+      var SLOT = box([205, 70]), POCKET = pol([138, 212]), CASE = [LX + OUT + 190, G - 80];
+      var views = V ? {
+        wide: [1015, 276, 0.58], pol: [PX - 190, 580, 1.0], box: [BX + 80, 677, 1.3],
+      } : {
+        wide: [1100, 609, 0.92], pol: [PX - 190, 600, 1.0], box: [BX + 100, 760, 1.5],
+      };
+      var bill = function (x, y, hidden) { return { art: "bill-plain", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: 0.5, hidden: hidden }; };
+
+      var cast = {
+        lob: { art: "lobbyist", x: LX, y: G, anchor: "bottom", pivot: "bottom", scale: LK, hidden: true },
+        // peeking over the bush: only his hat, mask and nose
+        peek: { art: "lobbyist", x: LX, y: G + 20 - 340 * 1.35 - 150, anchor: "top", pivot: "bottom", scale: LK, clip: [[0, 0], [177, 0], [177, 200], [0, 200]] },
+        pol: { art: "politician", x: PX, y: G, anchor: "bottom", pivot: "bottom", scale: PK },
+        ballot: { art: "wash-tub", x: BX, y: G, anchor: "bottom", pivot: "bottom", scale: BK, label: { text: "CAMPAIGN", at: [195, 232], width: 230, size: 44, plaque: true } },
+        bush: { art: "bush", x: LX - 20, y: G + 20, anchor: "bottom", scale: 1.35 },
+        brief: { art: "briefcase", x: CASE[0], y: CASE[1] + 80, anchor: "bottom", pivot: "bottom", scale: 0.55, hidden: true },
+        // the lead bill, flattened by the sign; the same bill peeled up again; the next bill, crisp and then filthy
+        lead: bill(330, G, true),
+        again: bill(1400, G, true),
+        crisp: bill(SLOT[0] - 330, G, true),
+        dirty: { art: "bill-plain", x: SLOT[0], y: SLOT[1], scale: 0.62, hidden: true, eyes: [], smoke: [[60, 30], [170, 40]] },
+        sign: { art: "illegal-sign", x: 1400, y: G + 25, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true, label: { text: "ILLEGAL", at: [206, 258], width: 300, size: 84 } },
+      };
+
+      var beats = [
+        // "Step three": a file of plain bills walks in from the left
+        { at: 0.1, do: "march", id: "file", art: "bill-plain", count: 3, scale: 0.5, path: [[-500, G], [330, G]], speed: 380 },
+        // the Lobbyist peeks over his bush
+        { at: 0.2, do: "bob", who: "peek", y: 10, r: 1, speed: 0.9, until: "Instead," },
+        // "directly": the lead bill offers itself to the Politician, who jumps back, palms up
+        { on: "Politicians", n: 2, do: "camera", view: "pol", dur: 0.7 },
+        { on: "Politicians", n: 2, do: "hide", who: "file.0" },
+        { on: "Politicians", n: 2, do: "show", who: "lead" },
+        { on: "Politicians", n: 2, do: "move", who: "lead", to: [1400, G], dur: 0.9 },
+        { on: "directly", do: "hop", who: "lead", height: 30 },
+        { on: "directly", offset: 0.1, do: "hop", who: "pol", height: 70 },
+        { on: "directly", offset: 0.1, do: "move", who: "pol", by: [70, 0], dur: 0.25 },
+        // "illegal": a sign drops on it
+        { on: "\"illegal\").", offset: -0.25, do: "slideIn", who: "sign", from: "top", dist: 1400, over: 10 },
+        { on: "\"illegal\").", do: "flatten", who: "lead" },
+        { on: "\"illegal\").", do: "shake", y: 6, frames: 3 },
+        // "Instead": it peels itself up and walks to the Lobbyist, who opens his briefcase
+        { on: "Instead,", do: "camera", view: "wide", dur: 0.8 },
+        { on: "Instead,", do: "slideOut", who: "sign", to: "top", dist: 1400, dur: 0.4 },
+        { on: "Instead,", offset: 0.1, do: "hide", who: "peek" },
+        { on: "Instead,", offset: 0.1, do: "show", who: "lob" },
+        { on: "Instead,", offset: 0.1, do: "move", who: "lob", by: [OUT, 0], dur: 0.45, arc: 80 },
+        { on: "Instead,", offset: 0.2, do: "hide", who: "lead" },
+        { on: "Instead,", offset: 0.2, do: "pop", who: "again", squash: true },
+        { on: "give", n: 3, do: "move", who: "again", to: [CASE[0] + 140, G], dur: cue("called") - cue("give", 3) },
+        { on: "people", do: "pop", who: "brief", squash: true },
+        { on: "\"lobbyists.\"", offset: -0.2, do: "move", who: "again", to: [CASE[0], CASE[1] - 10], dur: 0.25, arc: 110 },
+        { on: "\"lobbyists.\"", offset: 0.05, do: "hide", who: "again" },
+        { on: "\"lobbyists.\"", offset: 0.05, do: "shiver", who: "brief", dur: 0.2, amp: 3, rot: 2 },
+        // "campaigns.": he tiptoes to the CAMPAIGN box and tips it in
+        { on: "lobbyists", n: 2, do: "move", who: ["lob", "brief"], by: [110, 0], dur: cue("\"campaigns.\"") - cue("lobbyists", 2) - 0.2 },
+        { on: "lobbyists", n: 2, do: "bob", who: "lob", y: 12, r: 3, speed: 2.4, until: "\"campaigns.\"" },
+        { on: "\"campaigns.\"", offset: -0.3, do: "show", who: "again" },
+        { on: "\"campaigns.\"", offset: -0.3, do: "move", who: "again", to: SLOT, dur: 0.3, arc: 150 },
+        { on: "\"campaigns.\"", do: "hide", who: "again" },
+        { on: "\"campaigns.\"", do: "shiver", who: "ballot", dur: 0.3, amp: 4, rot: 2 },
+        // "politicians.": the box spits it straight into the Politician's breast pocket; he looks away, whistling
+        { on: "campaigns", n: 2, do: "shiver", who: "ballot", dur: 0.5, amp: 5, rot: 3 },
+        { on: "papers", n: 6, offset: -0.1, do: "show", who: "again" },
+        { on: "papers", n: 6, offset: -0.1, do: "move", who: "again", to: POCKET, dur: 0.45, arc: 260, turn: 20, scale: 0.3 },
+        { on: "politicians.", n: 3, do: "hide", who: "again" },
+        { on: "politicians.", n: 3, do: "shiver", who: "pol", dur: 0.3, amp: 3, rot: 1 },
+        { at: KIT.after(ID, "politicians.", 3), do: "hinge", who: "pol", angle: -4, frames: 2, hold: 0.9 },
+        // "laundering": close on the box; the next bill goes in crisp, and "backwards" spits it out filthy
+        { on: "It's", do: "camera", view: "box", dur: 0.6 },
+        { on: "It's", do: "show", who: "crisp" },
+        { on: "It's", do: "bob", who: "crisp", y: 6, r: 2, speed: 2, until: "laundering" },
+        { on: "laundering", do: "move", who: "crisp", to: SLOT, dur: 0.3, arc: 120 },
+        { on: "laundering", offset: 0.3, do: "hide", who: "crisp" },
+        { on: "laundering", offset: 0.3, do: "shiver", who: "ballot", dur: cue("backwards") - cue("laundering") - 0.3, amp: 6, rot: 4 },
+        { on: "backwards", do: "char", who: "dirty" },
+        { on: "backwards", do: "pop", who: "dirty" },
+        { on: "backwards", do: "move", who: "dirty", by: [200, -40], dur: 0.3, arc: 60, turn: -8 },
+        // "legal.": one thump stamps it LEGAL, and the Politician's forehead with it
+        { on: "and", offset: -0.1, do: "camera", view: "wide", dur: 0.45 },
+        { on: "legal.", do: "stamp", id: "legalBill", who: "dirty", spot: [113, 95], text: "LEGAL", size: 70, width: 190, tilt: -8, from: 2 },
+        { on: "legal.", do: "stamp", id: "legalPol", who: "pol", spot: [168, 30], text: "LEGAL", size: 22, width: 80, tilt: -6, from: 2 },
+        { on: "legal.", do: "shake", y: 8, frames: 3 },
+      ];
+
+      KIT.collage({ id: ID, seed: 354, plate: [-1600, -1000, 3800, 2400], views: views, view: "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

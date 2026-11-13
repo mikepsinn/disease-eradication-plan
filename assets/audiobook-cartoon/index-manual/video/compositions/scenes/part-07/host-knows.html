@@ -1,0 +1,65 @@
+<template id="host-knows-template">
+  <!-- host-knows · collage host shot (Part 7, scene 2). Iris in on Wishonia at the console, hand on her chest. "KNOWS":
+       she points at Earth in the window, which grows a face and taps its own temple with a pointing hand, knowingly,
+       twice. "illogical:": the Gilliam boot comes down on its north pole; Earth goes dazed and three stars circle it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="host-knows" data-width="1920" data-height="1080" data-start="0" data-duration="5.34">
+    <div id="host-knows-weave"></div>
+    <div id="host-knows-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "host-knows", SZ = KIT.collage.SIZES, F = KIT.collage.F;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // Earth in the window: [cx, cy, r]. The faced globe covers the painted one.
+    var E = KIT.V ? [830, 300, 210] : KIT.STUDIO.earth, GK = 2.12 * E[2] / SZ["globe-happy"][0];
+    var POLE = E[1] - E[2] * 0.98;                                 // the top of the globe
+    var TEMPLE = [E[0] - E[2] * 0.55, E[1] - E[2] * 0.55];        // its upper left, where the finger taps
+    var HK = E[2] * 1.15 / SZ["pointing-hand"][1];
+    var BK = E[2] * 1.5 / SZ["boot"][1];
+    var BONK = cue("illogical:") + 0.3;
+    var beats = [
+      // "KNOWS": Earth grins and taps its temple, knowingly, twice
+      { on: "KNOWS", do: "pop", who: "earth", squash: true },
+      { on: "KNOWS", offset: 0.12, do: "pop", who: "hand" },
+      { on: "KNOWS", offset: 0.25, do: "nudge", who: "hand", by: [26, 30] },
+      { on: "KNOWS", offset: 0.5, do: "nudge", who: "hand", by: [26, 30] },
+      { on: "KNOWS", offset: 0.25, do: "hop", who: "earth", height: 8 },
+      { on: "KNOWS", offset: 0.5, do: "hop", who: "earth", height: 8 },
+      { on: "being", do: "pop", who: "hand", out: true },
+      // "illogical:": the boot stamps on the north pole
+      { at: BONK - 0.12, do: "move", who: "boot", by: [0, 0], dur: 0.01 },
+      { at: BONK - 0.1, do: "show", who: "boot" },
+      { at: BONK - 0.1, do: "move", who: "boot", to: [E[0], POLE - SZ.boot[1] * BK / 2 + 30], dur: 0.1 },
+      { at: BONK, do: "swap", who: "earth", to: "dazed" },
+      { at: BONK, do: "shake", y: 10, frames: 4 },
+      { at: BONK + 0.25, do: "move", who: "boot", by: [0, -900], dur: 0.25 },
+      { at: BONK + 0.5, do: "hide", who: "boot" },
+      { at: BONK + 0.2, do: "shiver", who: "dazed", dur: 0.6, amp: 5, rot: 6 },
+      { at: BONK + 0.2, do: "pop", who: ["s0", "s1", "s2"] },
+    ];
+    [0, 1, 2].forEach(function (i) {
+      beats.push({ at: BONK + 0.25, do: "lap", who: "s" + i, loop: [E[0], POLE + 10, E[2] * 0.55, E[2] * 0.16], laps: 4, dur: 0.55, from: i / 3, depth: 0.25 });
+    });
+    var cast = {
+      earth: { art: "globe-happy", x: E[0], y: E[1], scale: GK, hidden: true },
+      dazed: { art: "globe-worried", x: E[0], y: E[1], scale: GK * SZ["globe-happy"][0] / SZ["globe-worried"][0], hidden: true },
+      hand: { art: "pointing-hand", x: TEMPLE[0], y: TEMPLE[1], anchor: "bottom", scale: HK, hidden: true },
+      boot: { art: "boot", x: E[0], y: -700, scale: BK, hidden: true },
+      s0: { art: "miracle-sticker", x: E[0], y: POLE, scale: E[2] * 0.42 / SZ["miracle-sticker"][0], hidden: true },
+      s1: { art: "miracle-sticker", x: E[0], y: POLE, scale: E[2] * 0.42 / SZ["miracle-sticker"][0], hidden: true },
+      s2: { art: "miracle-sticker", x: E[0], y: POLE, scale: E[2] * 0.42 / SZ["miracle-sticker"][0], hidden: true },
+    };
+    KIT.collage({ id: ID, seed: 702, host: { iris: ["in", 0.04, 0.7] }, cast: cast, beats: beats });
+  </script>
+</template>

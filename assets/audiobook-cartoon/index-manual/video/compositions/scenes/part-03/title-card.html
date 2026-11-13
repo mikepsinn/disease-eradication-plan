@@ -1,0 +1,102 @@
+<template id="title-card-template">
+  <!-- title-card · the period title card (KIT.titleScene, look "atomic"), the slowest one in the film: each word of
+       "THE GRADUAL IRRATIONALITY REDUCTION PROGRAM" drifts down into place instead of slamming; IRRATIONALITY comes in
+       crooked and spends the card straightening itself; PROGRAM settles with a thunk and the heading shudders. Under the
+       heading a snail strains at the left end of a long empty progress bar; a beat after "Program." the readout ticks
+       from 0% to 1% (a sliver of fill), and the snail (the cut-out, wiping its brow) sits down for a rest. Up from black, down to black (storyboards/part-03-gradual-irrationality-reduction.md). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="title-card" data-width="1920" data-height="1080" data-start="0" data-duration="4.148">
+    <div id="title-card-cam">
+      <div id="title-card-bg"></div>
+      <div id="title-card-back"></div>
+      <div id="title-card-words"></div>
+      <div id="title-card-art"></div>
+    </div>
+    <div id="title-card-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    (function () {
+      var ID = "title-card";
+      var C = KIT.C, ink = C.line;
+
+      KIT.titleScene({
+        id: ID,
+        lines: [{ words: ["THE", "GRADUAL"], style: "small" }, ["IRRATIONALITY"], ["REDUCTION", "PROGRAM"]],
+        linesTall: [{ words: ["THE", "GRADUAL"], style: "small" }, ["IRRATIONALITY"], ["REDUCTION"], ["PROGRAM"]],
+        how: "fade",
+        // "The" is spoken before the cut, so THE and GRADUAL both come in on "Gradual"
+        spoken: [{ cue: "Gradual", dur: 0.8 }, { cue: "Gradual", offset: 0.18, dur: 0.8 }, { cue: "Irrationality", dur: 0.8 }, { cue: "Reduction", dur: 0.6 }, { cue: "Program.", dur: 0.6 }],
+        // a little smaller and higher than Part 2's heading, so the progress bar fits under it above the keep-out lines
+        size: KIT.V ? 120 : 112,
+        cy: KIT.V ? 1050 : 626,
+        minTop: KIT.V ? 860 : 470,
+        gag: function (c) {
+          var tl = c.tl, W = c.W, H = c.H, V = c.V, D = c.D;
+          // The drift: each word floats down into place over its own duration, instead of slamming.
+          var drifts = [0.8, 0.8, 0.85, 0.6, 0.6];
+          c.words.forEach(function (wd, i) {
+            wd.el.setAttribute("data-layout-allow-overlap", ""); // IRRATIONALITY arrives crooked, over its neighbours, on purpose
+            tl.fromTo(wd.el, { y: -0.32 * wd.size }, { y: 0, duration: drifts[i], ease: "sine.out" }, wd.t);
+          });
+          // IRRATIONALITY arrives crooked and takes its time straightening itself.
+          var irr = c.word("IRRATIONALITY");
+          tl.fromTo(irr.el, { rotation: -11 }, { rotation: 0, duration: 1.75, ease: "sine.inOut" }, irr.t);
+          // PROGRAM settles with a thunk (the thunk sound at "Program." + 0.6 s): a squash on landing, the heading shudders.
+          var prog = c.word("PROGRAM"), land = prog.t + 0.6;
+          tl.fromTo(prog.el, { scaleY: 1, scaleX: 1, transformOrigin: "50% 100%" }, { scaleY: 0.86, scaleX: 1.06, transformOrigin: "50% 100%", duration: 0.05, repeat: 1, yoyo: true, ease: "power2.out", immediateRender: false }, land);
+          tl.fromTo(c.wordsEl, { y: 0 }, { y: 5, duration: 0.04, repeat: 3, yoyo: true, ease: "none", immediateRender: false }, land);
+
+          // ── The progress bar under the heading, and the snail pushing its fill ──
+          var B = V ? { x0: 250, x1: 830, h: 54, s: 2.2, lab: 58 } : { x0: 600, x1: 1320, h: 50, s: 1.8, lab: 56 };
+          var by = V ? c.layout.bottom + 72 : Math.min(c.layout.bottom + 64, 872 - B.h), inner = B.x1 - B.x0 - 12, fillW = Math.max(6, inner * 0.01);
+          var ch = function (x0, y0, x1, y1, k) { return "M" + (x0 + k) + "," + y0 + " H" + (x1 - k) + " L" + x1 + "," + (y0 + k) + " V" + (y1 - k) + " L" + (x1 - k) + "," + y1 + " H" + (x0 + k) + " L" + x0 + "," + (y1 - k) + " V" + (y0 + k) + " Z"; };
+          var rx = B.x1 + 22, ry = by + B.h / 2 + B.lab * 0.36;
+          var readout = function (id, text) {
+            return '<text id="' + id + '" x="' + rx + '" y="' + ry.toFixed(1) + '" font-family="Oswald" font-weight="600" font-size="' + B.lab + '" fill="' + C.cream + '" stroke="' + C.ink + '" stroke-width="7" stroke-linejoin="miter" paint-order="stroke">' + text + "</text>";
+          };
+          var bar = '<path d="' + ch(B.x0, by, B.x1, by + B.h, 8) + '" fill="' + C.deep + '" stroke="' + C.ink + '" stroke-width="10" stroke-linejoin="miter"/>' +
+            '<path d="' + ch(B.x0, by, B.x1, by + B.h, 8) + '" fill="none" stroke="' + C.cream + '" stroke-width="4" stroke-linejoin="miter"/>' +
+            // nine faint segment ticks, so the length of 1% reads against the whole bar
+            [1, 2, 3, 4, 5, 6, 7, 8, 9].map(function (k) { var x = B.x0 + 6 + (inner * k) / 10; return '<path d="M' + x.toFixed(1) + "," + (by + 10) + " V" + (by + B.h - 10) + '" stroke="' + C.slate + '" stroke-width="3"/>'; }).join("") +
+            '<rect id="' + ID + '-fill" x="' + (B.x0 + 6) + '" y="' + (by + 6) + '" width="0" height="' + (B.h - 12) + '" fill="' + C.cyan + '"/>' +
+            '<g id="' + ID + '-r0">' + readout(ID + "-r0t", "0%") + "</g>" +
+            '<g id="' + ID + '-r1" opacity="0">' + readout(ID + "-r1t", "1%") + "</g>";
+          // (16:9: the bar's bottom stays above y 872, under 900 after the card's push; the snail standing at its left end needs about 50 px clear of the heading)
+          // the snail (the generated cut-out, wiping its brow) stands on the bar's baseline at its left end, its head
+          // against the bar's end, pushing the fill in
+          var SW = V ? 190 : 130, SH = SW * 322 / 513, sx = B.x0 - 4 - SW, sy = by + B.h - SH + 4;
+          var snailG = '<g transform="translate(' + sx.toFixed(1) + "," + sy.toFixed(1) + ')"><g id="' + ID + '-snail">' +
+            '<image href="assets/art/collage/snail.webp" width="' + SW.toFixed(1) + '" height="' + SH.toFixed(1) + '"/></g></g>';
+          c.art.innerHTML = KIT.svg(W, H, bar + snailG);
+
+          var g = function (s) { return document.getElementById(ID + "-" + s); };
+          var t1 = c.after("Program.");
+          // The push: the whole card long, for 1% (the fill creeps in a few pixels; the snail gains a few).
+          tl.fromTo(g("fill"), { attr: { width: 0 } }, { attr: { width: fillW }, duration: t1, ease: "none" }, 0);
+          tl.fromTo(g("snail"), { x: 0 }, { x: 3 / B.s, duration: t1, ease: "none" }, 0);
+          // straining: it squashes and stretches against the bar, over and over
+          gsap.set(g("snail"), { svgOrigin: SW + " " + SH });
+          var pulse = 0.42, n = Math.floor(t1 / pulse);
+          tl.fromTo(g("snail"), { scaleX: 1, scaleY: 1 }, { scaleX: 1.05, scaleY: 0.93, duration: pulse / 2, repeat: n * 2 - 1, yoyo: true, ease: "sine.inOut" }, 0);
+
+          // a beat after "Program.": the readout ticks to 1% (the tick)
+          tl.set(g("r0"), { opacity: 0 }, t1);
+          tl.fromTo(g("r1"), { opacity: 0, scale: 1.6, svgOrigin: (rx + 30) + " " + (by + B.h / 2) }, { opacity: 1, scale: 1, svgOrigin: (rx + 30) + " " + (by + B.h / 2), duration: 0.18, ease: "back.out(2.5)" }, t1);
+          // the snail stops and sits down for a rest (squashes flat), before the card goes down to black at D - 0.26
+          var sit = Math.min(D - 0.4, t1 + 0.12);
+          tl.to(g("snail"), { scaleX: 1.1, scaleY: 0.78, duration: 0.14, ease: "power2.out" }, sit);
+        },
+      });
+    })();
+  </script>

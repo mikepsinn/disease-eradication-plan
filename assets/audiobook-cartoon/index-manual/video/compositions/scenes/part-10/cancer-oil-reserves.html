@@ -1,0 +1,133 @@
+<template id="cancer-oil-reserves-template">
+  <!-- cancer-oil-reserves · collage (Part 10, scenes 12 and 13 as one plate, desert). The bit: war goes where the oil is.
+       A germ in a CANCER sash sits on the ground; Part 8's leashed missile strolls past it. "oil": a derrick pops up on its head, and the
+       missile freezes and points at it like a bird dog. "cured": a tank rolls in and fires: flash, mushroom cloud, a
+       charred germ blinking, the derrick still pumping, MISSION ACCOMPLISHED: CURED 2003. "Instead": a line of medicine
+       bills walks across the desert and their crosses flip back to missiles; they roll up into one missile whose price
+       tag runs longer than a little island country's, and it blows the island into a crater. "submarines": a periscope
+       rises out of a puddle (a strip of the island's sea) and ducks; YOU walks past, trips over the submarine's tail
+       sticking out of the puddle, and falls flat. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="cancer-oil-reserves" data-width="1080" data-height="1920" data-start="0" data-duration="12.059">
+    <div id="cancer-oil-reserves-weave"></div>
+    <div id="cancer-oil-reserves-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "cancer-oil-reserves", V = KIT.V, SZ = KIT.collage.SIZES;
+    var T = function (w, n) { return KIT.cue(ID, w, n); };
+    // Left to right on the ground line G: the germ and the tank; the bills' walk; the missile and the country; the puddle.
+    var G = 860, GX = 900, MX = V ? 1160 : 1320, BX = 2700, PX = 2950, CX = V ? 3700 : 3950, SX = 5400;
+    var GK = 1.1, GH = SZ.germ[1] * GK;
+    var views = V ? {
+      germ: [800, 620, 1.05], bills: [2870, 620, 1.0], war: [3330, 560, 0.6], ship: [SX - 110, 700, 1.4],
+    } : {
+      germ: [900, 500, 1], bills: [2700, 500, 1], war: [3420, 470, 0.88], ship: [SX - 40, 670, 1.3],
+    };
+    var MK = 330 / SZ.missile[1], BK = 1.15, NB = 5;
+    var PK = 1.6, PW = G + 10 - (343 - 268) * PK, SUBK = 1.6, SCK = 1.25;
+    var cast = {
+      germ: { art: "germ", x: GX, y: G, anchor: "bottom", pivot: "bottom", scale: GK,
+        label: { text: "CANCER", at: [150, 163], width: 150, size: 40, tilt: 33 },
+        eyes: [[170, 108], [214, 100]], eyeSize: 20, smoke: [[150, 40], [230, 60]] },
+      derrick: { art: "oil-derrick", x: GX + 10, y: G - GH + 46, anchor: "bottom", pivot: "bottom", scale: 0.36, hidden: true },
+      // Part 8's leashed missile: the clasp on its side, the pivot shared with the missile's (art px of the leash)
+      leash: { art: "leash", x: MX - 40, y: G - 170, anchor: [250, 317], pivot: [250 + 40 / 0.5, 317 + 170 / 0.5], scale: 0.5 },
+      missile: { art: "missile", x: MX, y: G, anchor: "bottom", pivot: "bottom", scale: MK },
+      tank: { art: "tank", x: V ? 470 : 330, y: G, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true },
+      boom1: { art: "mushroom", x: GX, y: G, anchor: "bottom", scale: 1.7, hidden: true },
+      island: { art: "island", x: CX, y: G, anchor: "bottom", pivot: "bottom", scale: 1.3,
+        label: { text: "A COUNTRY", at: [188, 304], width: 210, size: 44, plaque: true } },
+      crater: { art: "crater", x: CX, y: G, anchor: "bottom", scale: 1.25, hidden: true },
+      tube: { art: "missile-fly", x: PX, y: G - 230, scale: 2.1, hidden: true },
+      boom2: { art: "mushroom", x: CX, y: G, anchor: "bottom", scale: 1.9, hidden: true },
+      // The submarine under a puddle: only its periscope and the top of its tail fin show above the water line PW.
+      scope: { art: "submarine", clip: [[160, 0], [213, 0], [213, 80], [160, 80]], x: SX + 60, y: G - 8, anchor: [187, 80], pivot: [187, 80], scale: SCK },
+      tail: { art: "submarine", clip: [[338, 118], [396, 118], [396, 205], [338, 205]], x: SX - 215, y: PW, anchor: [366, 172], pivot: [366, 230], scale: SUBK },
+      puddle: { art: "island", clip: [[8, 268], [368, 268], [368, 343], [8, 343]], x: SX - 20, y: G + 10, anchor: "bottom", scale: PK },
+      you: { art: "you-walk", x: SX - 330, y: G, anchor: "bottom", pivot: "bottom", scale: 320 / SZ["you-walk"][1], hidden: true },
+    };
+    var beats = [];
+    var add = function (b) { beats.push(b); };
+
+    // A missile strolls past the germ.
+    ["missile", "leash"].forEach(function (n) {
+      add({ at: 0, do: "move", who: n, by: [-1150, 0], dur: 0.01 });
+      add({ at: 0.02, do: "move", who: n, by: [1150, 0], dur: T("oil") - 0.05, ease: "smooth" });
+      add({ at: 0.05, do: "bob", who: n, y: 14, r: 6, speed: 5, until: "oil", fade: 0.05 });
+    });
+    // "oil": a derrick on cancer's head. The missile freezes and points.
+    add({ on: "oil", do: "pop", who: "derrick", squash: true });
+    add({ on: "oil", offset: 0.4, do: "bob", who: "derrick", y: 5, r: 0, speed: 9 });
+    add({ on: "reserves,", offset: 0.25, do: "hinge", who: ["missile", "leash"], angle: -34, frames: 2 });
+    add({ on: "reserves,", offset: 0.3, do: "shiver", who: "missile", dur: 0.4, amp: 3, rot: 1 });
+    // "cured": the tank rolls in and fires.
+    add({ on: "you", n: 1, offset: -0.15, do: "slideIn", who: "tank", from: "left", dist: 900, over: 24 });
+    add({ on: "cured", offset: 0.1, do: "nudge", who: "tank", by: [-40, 0] });
+    add({ on: "cured", offset: 0.1, do: "boom", shake: 24, flash: 0.22 });
+    add({ on: "cured", offset: 0.1, do: "pop", who: "boom1" });
+    add({ on: "cured", offset: 0.1, do: "char", who: "germ" });
+    add({ on: "thousand", offset: 0.1, do: "pop", who: "boom1", out: true });
+    add({ on: "three.", do: "blink", who: "germ" });
+    add({ on: "three.", do: "banner", id: "mission", text: "MISSION ACCOMPLISHED: CURED 2003", x: V ? 820 : 900, y: V ? 60 : 130, size: 90, width: V ? 880 : 1500, pad: 70, tilt: -2 });
+    add({ on: "three.", offset: 0.5, do: "blink", who: "germ" });
+
+    // "Instead": a line of medicine bills walks the desert; their crosses flip back to missiles.
+    add({ on: "instead,", offset: -0.1, do: "camera", view: "bills", dur: 0.8 });
+    add({ on: "instead,", do: "hide", who: "mission" });
+    for (var i = 0; i < NB; i++) {
+      var x0 = BX - 250 - i * 240, m = "m" + i, w = "w" + i;
+      cast[m] = { art: "bill-med", x: x0, y: G, anchor: "bottom", pivot: "bottom", scale: BK, hidden: true };
+      cast[w] = { art: "bill-war", x: x0, y: G, anchor: "bottom", pivot: "bottom", scale: BK, hidden: true };
+      [m, w].forEach(function (n) {
+        add({ on: "instead,", offset: 0.1, do: "move", who: n, by: [900, 0], dur: T("murder") - T("instead,") - 0.2 });
+        add({ on: "instead,", offset: 0.1, do: "bob", who: n, y: 10, r: 4, speed: 5, phase: i * 1.3, until: "murder" });
+      });
+      add({ on: "instead,", offset: 0.1 + i * 0.08, do: "pop", who: m });
+      add({ on: "money", offset: 0.15 + i * 0.12, do: "swap", who: m, to: w });
+      // they roll themselves up into one missile
+      add({ on: "murder", offset: i * 0.05, do: "move", who: w, to: [PX, G - 230], dur: 0.25, arc: 80, turn: 90, scale: 0.4 });
+      add({ on: "tubes", offset: -0.05, do: "hide", who: w });
+    }
+    add({ on: "murder", do: "camera", view: "war", dur: 0.6 });
+    add({ on: "tubes", do: "pop", who: "tube", squash: true });
+    add({ on: "tubes", offset: 0.2, do: "bob", who: "tube", y: 8, r: 2, speed: 4, until: "countries" });
+    // The price tags: the country's, then the missile's, longer.
+    add({ on: "that", n: 1, do: "tag", who: "island", id: "ctag", text: "$", knot: [296, 150], x: CX + 420, y: G - 150, w: 200, h: 140 });
+    add({ on: "cost", do: "tag", who: "tube", id: "mtag", text: "$$$$$$$$$$$", knot: [90, 60], x: PX + 80, y: G - 30, w: 980, h: 160, swing: 2 });
+    // It launches; the country is a crater.
+    add({ on: "countries", offset: 0.05, do: "hide", who: "mtag" });
+    add({ on: "countries", offset: 0.05, do: "move", who: "tube", to: [CX - 120, G - 200], dur: 0.32, arc: 140, turn: 8 });
+    add({ on: "countries", offset: 0.38, do: "hide", who: "tube" });
+    add({ on: "countries", offset: 0.38, do: "boom", shake: 22, flash: 0.22 });
+    add({ on: "countries", offset: 0.38, do: "pop", who: "boom2" });
+    add({ on: "countries", offset: 0.38, do: "swap", who: "island", to: "crater" });
+    add({ on: "countries", offset: 0.4, do: "drop", who: "ctag", dist: 900, spin: 70, dur: 0.8 });
+
+    // "submarines": a periscope rises out of the puddle, looks round and ducks. YOU trips over the tail.
+    var UP = 80 * SCK - 16;
+    add({ on: "submarines", offset: -0.3, do: "camera", view: "ship", dur: 0.5 });
+    add({ on: "submarines", offset: 0.2, do: "move", who: "scope", by: [0, -UP], dur: 0.25, ease: "smooth" });
+    add({ on: "submarines", offset: 0.5, do: "hinge", who: "scope", angle: -12, frames: 1, hold: 0.25 });
+    add({ on: "hide", do: "move", who: "scope", by: [0, UP], dur: 0.17 });
+    add({ on: "underwater,", offset: -0.6, do: "bob", who: "tail", y: 3, r: 3, speed: 2, until: ["underwater,", 1, 0.45], fade: 0.1 });
+    add({ on: "underwater,", offset: -0.45, do: "show", who: "you" });
+    add({ on: "underwater,", offset: -0.45, do: "move", who: "you", by: [-500, 0], dur: 0.01 });
+    add({ on: "underwater,", offset: -0.43, do: "move", who: "you", by: [500, 0], dur: 0.9 });
+    add({ on: "underwater,", offset: -0.43, do: "bob", who: "you", y: 6, r: 2, speed: 4, until: ["underwater,", 1, 0.47], fade: 0.05 });
+    add({ on: "underwater,", offset: 0.5, do: "hinge", who: "you", angle: 88, frames: 3 });
+    add({ on: "underwater,", offset: 0.5, do: "shake", y: 8, frames: 3 });
+
+    KIT.collage({ id: ID, seed: 1120, plate: V ? [-1800, -2000, 7400, 3000] : [-1000, -800, 6600, 2000], views: views, view: "germ", cast: cast, beats: beats });
+  </script>
+</template>

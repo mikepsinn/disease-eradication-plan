@@ -1,0 +1,84 @@
+[
+  {
+    "words": [
+      "The",
+      "Earth",
+      "Optimization",
+      "Game."
+    ],
+    "near": 3013.93,
+    "start": 3013.77,
+    "end": 3015.47,
+    "why": "The heading's first word gets zero length; this chunk's audio has not changed, so these are the times measured with ffmpeg silencedetect, moved with the chunk."
+  },
+  {
+    "words": [
+      "Build",
+      "bombs"
+    ],
+    "near": 218.78,
+    "start": 218.7,
+    "end": 219.45,
+    "why": "The alignment ends \"bombs\" early and starts \"(you\" inside the pause; silencedetect puts the words between the pauses at 3:38.7 to 3:39.5."
+  },
+  {
+    "words": [
+      "(you",
+      "love",
+      "giving",
+      "papers",
+      "for",
+      "this)."
+    ],
+    "near": 219.24,
+    "start": 219.7,
+    "end": 221.01,
+    "why": "The alignment started \"(you\" inside the pause; Whisper and silencedetect put the aside at 3:39.7 to 3:41.0."
+  },
+  {
+    "words": [
+      "Start",
+      "wars"
+    ],
+    "near": 221.82,
+    "start": 221.55,
+    "end": 222.38,
+    "why": "The alignment gave \"Start\" almost no length at 3:41.8; silencedetect puts the words at 3:41.6 to 3:42.4."
+  },
+  {
+    "words": [
+      "(somehow",
+      "this",
+      "makes",
+      "more",
+      "papers)."
+    ],
+    "near": 222.12,
+    "start": 222.77,
+    "end": 224.14,
+    "why": "The alignment started \"(somehow\" inside the pause; Whisper and silencedetect put the aside at 3:42.8 to 3:44.1."
+  },
+  {
+    "words": [
+      "Destroy",
+      "the",
+      "planet"
+    ],
+    "near": 225.24,
+    "start": 224.62,
+    "end": 225.83,
+    "why": "The alignment gave \"Destroy\" zero length at 3:45.2; silencedetect puts the words at 3:44.6 to 3:45.8."
+  },
+  {
+    "words": [
+      "(surprisingly",
+      "profitable",
+      "in",
+      "papers)."
+    ],
+    "near": 226.36,
+    "start": 226.29,
+    "end": 227.84,
+    "why": "The alignment started \"(surprisingly\" late in the pause; silencedetect puts the aside at 3:46.3 to 3:47.8."
+  }
+]

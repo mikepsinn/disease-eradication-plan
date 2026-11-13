@@ -1,0 +1,81 @@
+<template id="diagnostic-criteria-template">
+  <!-- diagnostic-criteria · collage host shot (Part 4, scene 7). "This": the man in the straitjacket plummets past the
+       window behind her, still falling from the game show's trapdoor; she does not look. "criteria.": the case file on
+       her ledge, DIRT: CASE #847. "universal love and peace.": an old woodcut of Jesus, arms open, rises out of it, the
+       last human who said so. "nailed": the woodcut sinks slowly back into the file. HOLD: nothing moves until "So". "So":
+       her coffee mug rises for a long sip; "light-years": down it comes. After "away.": the view slams back out into
+       space: a giant brass telescope, the Earth a speck light-years off, and from the speck a butterfly net pokes up at
+       it, stops short and droops. (Not drawn yet: the case file opening to its page; the woodcut rises out of the closed
+       file instead.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="diagnostic-criteria" data-width="1920" data-height="1080" data-start="0" data-duration="15.62">
+    <div id="diagnostic-criteria-weave"></div>
+    <div id="diagnostic-criteria-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "diagnostic-criteria", S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var E = S.earth, FC = S.face, TOP = S.top;
+    var L = V ? { fall: 930, fk: 0.9, file: [880, 0.5], mug: [600, 0.42], sip: [FC[0] + 170, FC[1] + 120] }
+      : { fall: 1760, fk: 1.0, file: [1330, 0.58], mug: [1020, 0.45], sip: [FC[0] + 205, FC[1] + 110] };
+    var FILE_H = 515 * L.file[1], ABOVE = [L.file[0], TOP - FILE_H - (V ? 110 : 120)];
+    // the pull-back: the giant telescope (its objective lens at art [412, 44]) and the real Earth, a speck far off;
+    // from the speck a butterfly net (its foot art [24.5, 365], its pole at -79.7 degrees in the art) pokes at it
+    var TS = V ? { x: 540, y: 1000, k: 1.6 } : { x: 800, y: 600, k: 1.5 }, SPECK = V ? [960, 210] : [1750, 140];
+    var LENS = [TS.x + (412 - 210.5) * TS.k, TS.y + (44 - 263.5) * TS.k];
+    var ANG = Math.atan2(LENS[1] - SPECK[1], LENS[0] - SPECK[0]) * 180 / Math.PI, NK = V ? 0.75 : 0.8;
+    var tN = cue("nailed"), tSo = cue("So"), tL = cue("light-years"), tA = cue("away.") + 0.3;
+    KIT.collage({
+      id: ID, seed: 417, host: true,
+      cast: {
+        faller: { art: "inmate-jacket", x: L.fall, y: -300, scale: L.fk, hidden: true },
+        // the woodcut sits behind the file, so it sinks back into it
+        jesus: { art: "jesus-woodcut", x: ABOVE[0], y: ABOVE[1], scale: V ? 0.45 : 0.55, hidden: true },
+        file: { art: "case-file", x: L.file[0], y: TOP + 6, anchor: "bottom", pivot: "bottom", scale: L.file[1], hidden: true,
+          label: [{ text: "DIRT", at: [186, 72], width: 190, size: 40 }, { text: "CASE #847", at: [186, 112], width: 190, size: 32 }] },
+        mug: { art: "desk-mug", x: L.mug[0], y: TOP + 4, anchor: "bottom", pivot: "bottom", scale: L.mug[1] },
+        scope: { art: "telescope", x: TS.x, y: TS.y, scale: TS.k, hidden: true },
+        speck: { art: "earth-big", x: SPECK[0], y: SPECK[1], scale: 0.05, hidden: true },
+        net: { art: "butterfly-net", x: SPECK[0], y: SPECK[1], anchor: [24.5, 365], pivot: [24.5, 365], scale: NK, hidden: true },
+      },
+      beats: [
+        // the contestant, still falling
+        { on: "This", offset: 0.02, do: "show", who: "faller" },
+        { on: "This", offset: 0.02, do: "drop", who: "faller", dur: 1.1, dist: V ? 2600 : 1800, spin: 300 },
+        // the case file; the last one who suggested love and peace
+        { on: "criteria.", do: "pop", who: "file", squash: true },
+        { on: "universal", do: "pop", who: "jesus", squash: true },
+        { on: "universal", do: "glow", who: "jesus", size: V ? 300 : 380, dur: 0.6 },
+        { on: "love", do: "bob", who: "jesus", y: 5, r: 1.5, speed: 2, until: tN, fade: 0.1 },
+        // nailed: it sinks slowly back into the file, and then nothing moves until "So"
+        { at: tN + 0.05, do: "move", who: "jesus", by: [0, 430 * (V ? 0.45 : 0.55) + 30], dur: 0.7, ease: "smooth" },
+        { at: tN + 0.75, do: "hide", who: "jesus" },
+        // the long sip
+        { at: tSo, do: "move", who: "mug", to: L.sip, turn: -28, dur: 0.4, ease: "smooth" },
+        { at: tSo + 0.5, do: "bob", who: "mug", y: 2, r: 1, speed: 1.5, until: tL, fade: 0.2 },
+        { at: tL, do: "move", who: "mug", to: [L.mug[0], TOP + 4 - 224 * L.mug[1] / 2], turn: 0, dur: 0.2 },
+        { at: tL + 0.2, do: "hop", who: "mug", height: 8 },
+        // after "away.": out through the glass into space; the telescope, the speck, and the net, light-years short
+        { at: tA, do: "wash", id: "space", color: "#0B0D1C", blend: "normal", opacity: 1, dur: 0.08, above: "mug" },
+        { at: tA, do: "stamp", who: "scope", from: 2.6, shake: 5 },
+        { at: tA + 0.12, do: "pop", who: "speck" },
+        { at: -1, do: "move", who: "net", turn: ANG + 79.7, scale: 0.04, dur: 0.001 },
+        { at: tA + 0.2, do: "show", who: "net" },
+        { at: tA + 0.2, do: "move", who: "net", turn: ANG + 79.7, scale: 1, dur: 0.3, ease: "smooth" },
+        { at: tA + 0.5, do: "move", who: "net", turn: ANG + 79.7 + (V ? -5 : 5), dur: 2 / 12 },
+        { at: tA + 0.5 + 2 / 12, do: "move", who: "net", turn: ANG + 79.7 + (V ? 30 : -30), dur: 3 / 12, ease: "smooth" },
+      ],
+    });
+  </script>
+</template>

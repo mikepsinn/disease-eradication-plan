@@ -1,0 +1,73 @@
+<template id="billionaire-pdf-template">
+  <!-- billionaire-pdf · collage host shot (Part 4, scene 12). A STOP sign on a post beside the console. "But": the rust rock from the field flies in and clangs off it,
+       leaving a dent; "unrealistic": an UNREALISTIC sticker slaps onto the sign. "physically": the dent pops back out.
+       "isn't": the sticker peels off and flutters up, looking for somewhere better to land. "Getting": the fat cat rolls in
+       on his chair, phone in hand, and knocks the sign flat; "billionaire": a one-page PDF slides along the ledge to him;
+       "read": he lifts it; "P.D.F.": it goes up in flames off his cigar. "is.": the sticker lands on his forehead,
+       UNREALISTIC; he puffs the burning PDF like a second cigar; Wishonia side-eyes, and the iris closes on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="billionaire-pdf" data-width="1920" data-height="1080" data-start="0" data-duration="12.115">
+    <div id="billionaire-pdf-weave"></div>
+    <div id="billionaire-pdf-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "billionaire-pdf", S = KIT.STUDIO, t = function (w, n) { return KIT.cue(ID, w, n); };
+    var D = KIT.scene(ID).duration, IS = t("is", 3);
+    var L = V ? { sign: [880, 1450, 1.2], cat: [800, 1450, 1.5], hover: [920, 620], from: [-300, 900], ledge: [380, 660] }
+      : { sign: [1680, 1090, 1.5], cat: [1480, 1075, 1.9], hover: [1180, 150], from: [-300, 260], ledge: [640, 1040] };
+    var catPt = function (x, y) { return [L.cat[0] + (x - 146) * L.cat[2], L.cat[1] - (387 - y) * L.cat[2]]; };
+    var signPt = function (x, y) { return [L.sign[0] + (x - 120) * L.sign[2], L.sign[1] - (573 - y) * L.sign[2]]; };
+    var FACE = signPt(120, 118), HAND = catPt(232, 112), CIGAR = catPt(196, 98), BROW = catPt(130, 78);
+    var PDF_K = V ? 0.5 : 0.6, PDF_H = 329 * PDF_K, TOP = S.top;
+    var stop = function (art, o) { var c = { art: art, x: L.sign[0], y: L.sign[1], anchor: "bottom", pivot: "bottom", scale: L.sign[2], label: { text: "STOP", at: [120, 120], width: 150, size: 70 } }; for (var k in o || {}) c[k] = o[k]; return c; };
+    KIT.collage({
+      id: ID, seed: 405, host: { push: [1, 1.05], iris: ["out", IS + 0.55, D - 0.05] },
+      cast: {
+        sign: stop("stop-sign"),
+        signD: stop("stop-sign-dented", { hidden: true }),
+        rock: { art: "rock-rust", x: L.from[0], y: L.from[1], scale: (V ? 0.6 : 0.75), hidden: true },
+        cat: { art: "fat-cat-chair", x: L.cat[0], y: L.cat[1], anchor: "bottom", pivot: "bottom", scale: L.cat[2], hidden: true },
+        pdf: { art: "pdf", x: L.ledge[0], y: TOP - PDF_H / 2 + 6, scale: PDF_K, hidden: true, label: { text: "PDF", at: [92, 40], width: 120, size: 44 } },
+        fire: { art: "pdf-burning", x: CIGAR[0] + (V ? 60 : 80), y: CIGAR[1] - (V ? 60 : 80), scale: V ? 0.5 : 0.62, hidden: true },
+        sticker: { art: "sticker", x: FACE[0], y: FACE[1], scale: V ? 0.8 : 1.0, hidden: true, label: { text: "UNREALISTIC", at: [130, 92], width: 220, size: 44 } },
+      },
+      beats: [
+        // the rock dents it; the sticker
+        { on: "But", do: "show", who: "rock" },
+        { on: "But", do: "move", who: "rock", to: FACE, arc: V ? 120 : 160, turn: 540, dur: 0.35 },
+        { on: "But", offset: 0.35, do: "swap", who: "sign", to: "signD" },
+        { on: "But", offset: 0.35, do: "shake", x: 8, frames: 3 },
+        { on: "But", offset: 0.38, do: "drop", who: "rock", dur: 0.7, dist: 900, drift: -120, spin: -200 },
+        { on: "unrealistic", do: "stamp", who: "sticker", from: 1.8, shake: 3 },
+        // the dent pops out; the sticker leaves
+        { on: "physically", do: "swap", who: "signD", to: "sign" },
+        { on: "isnt", do: "move", who: "sticker", to: L.hover, arc: 80, turn: 18, dur: 0.8, ease: "smooth" },
+        { on: "isnt", offset: 0.8, do: "bob", who: "sticker", y: 14, r: 8, speed: 1.6, until: IS - 0.05 },
+        // one billionaire and a PDF
+        { on: "Getting", do: "slideIn", who: "cat", from: "right", over: 26, tilt: 3 },
+        { on: "Getting", offset: 0.3, do: "drop", who: "sign", dur: 0.55, dist: 900, drift: V ? -120 : -220, spin: -80 },
+        { on: "billionaire", do: "show", who: "pdf" },
+        { on: "billionaire", do: "move", who: "pdf", to: [L.ledge[1], TOP - PDF_H / 2 + 6], dur: 0.55, ease: "smooth" },
+        { on: "read", do: "move", who: "pdf", to: HAND, turn: -10, dur: 0.17 },
+        { on: "read", offset: 0.1, do: "hop", who: "cat", height: 10 },
+        { on: "pdf", do: "swap", who: "pdf", to: "fire" },
+        { on: "pdf", offset: 0.1, do: "shiver", who: "fire", dur: 0.6, amp: 3, rot: 4 },
+        { on: "is", n: 3, do: "move", who: "sticker", to: BROW, turn: -6, dur: 0.22, scale: 0.72 },
+        { on: "is", n: 3, offset: 0.25, do: "move", who: "fire", to: CIGAR, turn: -35, dur: 0.3, ease: "smooth" },
+        { on: "is", n: 3, offset: 0.6, do: "nudge", who: "cat", by: [-8, -4] },
+      ],
+    });
+
+  </script>
+</template>

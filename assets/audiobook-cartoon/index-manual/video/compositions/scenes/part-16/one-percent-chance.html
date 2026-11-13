@@ -1,0 +1,213 @@
+<template id="one-percent-chance-template">
+  <!-- one-percent-chance · collage (Part 16, scene 6; plate hall-of-hits, no seam). It starts on greatest-hits-trophies'
+       last frame: its hall() is copied below and drawn in its end state (hall(ID, true)); change both together. Back to
+       the penny chart. "percent": a meter drops in beside the two pennies. The Pessimist (raincoat, his own little
+       raincloud) trudges in, jumps, grabs its knob and hangs his whole weight on it until it reads 1%; his feet
+       dangle. "(because you're you)": his raincloud strikes him with lightning; charred, still hanging on at 1%, he
+       blinks. "ninety-two": the two pennies grow a hundredfold into a column of 200, and the bed-net tower still runs
+       off the top beside it: 92.1×. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="one-percent-chance" data-width="1920" data-height="1080" data-start="0" data-duration="9.9">
+    <div id="one-percent-chance-weave"></div>
+    <div id="one-percent-chance-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // ── hall(E): the hall-of-hits plate. E false: built up on this scene's words. E true: its end state at time 0, for
+    //    one-percent-chance (copy any change there). Returns { cast, beats, views, X, G, ... }. ──
+    function hall(ID, E) {
+      var V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var T = function (w, n, off) { return E ? -2 : KIT.cue(ID, w, n) + (off || 0); };
+      var X = { meter: 230, pennies: 520, sci: 780, bed: 1200, tower: 1560, chart: [2300, 3500] };
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+      // the tower: 18,400 pennies at 200 to a column is 92 columns
+      var CK = 1, COL = SZ["coin-column"][1] * CK, GAP = COL - 8, NCOL = 92, TOPY = G - (NCOL - 1) * GAP - COL;
+      var cy = function (s) { return V ? G - 480 / s : 560; };
+      var views = V ? {
+        glass: [X.pennies, G - 60, 2.6], pennies: [700, cy(0.85), 0.85], bed: [1300, cy(0.8), 0.8], top: [X.tower, TOPY + 700, 0.8],
+        chart: [2850, cy(0.82), 0.82], meter: [560, cy(0.85), 0.85],
+      } : {
+        glass: [X.pennies, G - 60, 3.6], pennies: [800, 560, 1], bed: [1200, 560, 1], top: [X.tower, TOPY + 380, 1],
+        chart: [2900, 560, 1], meter: [760, 560, 1],
+      };
+      // the floor: a baseline across the wall
+      add({ at: 0, do: "line", id: "floor", points: [[-1200, G], [4600, G]], width: 7, dur: 0.01 });
+
+      // ── the penny chart: the treaty's two pennies, bed nets' tower ──
+      add({ at: E ? -2 : 0, do: "banner", id: "pTitle", text: "COST OF ONE HEALTHY YEAR", x: V ? 760 : 900, y: V ? -420 : 150, size: 70, width: V ? 900 : 1300, pad: 80, color: "ink", tilt: -1, from: 1, shake: 0 });
+      // two pennies, one on the other, too small to see; they sit in front of the magnifier, so they swell while it is
+      // over them (a move's scale multiplies the cast scale)
+      var PS0 = 0.07, PS1 = 0.2, PNH = SZ.penny[1], PUP = function (s) { return 0.8 * PNH * s; };
+      cast.col200 = { art: "coin-column", x: X.pennies, y: G, anchor: "bottom", pivot: "bottom", scale: CK, hidden: true };
+      cast.sci = { art: "scientist-flask", x: X.sci, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85 };
+      cast.glass = { art: "magnifier", x: X.pennies, y: G - (PUP(PS1) + PNH * PS1) / 2, anchor: [130, 130], pivot: [130, 130], scale: 0.5, hidden: true };
+      cast.two = { art: "penny", x: X.pennies, y: G, anchor: "bottom", pivot: "bottom", scale: PS0 };
+      cast.two2 = { art: "penny", x: X.pennies + 2, y: G - PUP(PS0), anchor: "bottom", pivot: "bottom", scale: PS0 };
+      if (!E) {
+        add({ at: 0, do: "move", who: "glass", by: [0, 0], turn: -25, dur: 0.01 });
+        add({ on: "cents", do: "slideIn", who: "glass", from: "right", dist: 900, over: 16 });
+        add({ on: "cents", offset: 0.3, do: "camera", view: "glass", dur: 1.4 });
+        add({ on: "cents", offset: 0.45, do: "move", who: "two", by: [0, 0], scale: PS1 / PS0, dur: 0.25 });
+        add({ on: "cents", offset: 0.45, do: "move", who: "two2", by: [0, PUP(PS0) - PUP(PS1)], scale: PS1 / PS0, dur: 0.25 });
+        add({ on: "life.", do: "stamp", id: "twoC", text: "2¢", x: X.pennies, y: G - 135, size: 58, tilt: -4, shake: 3 });
+        add({ on: "Anti-malaria", do: "camera", view: V ? "bed" : "pennies", dur: 0.6 });
+        add({ on: "Anti-malaria", offset: 0.1, do: "slideOut", who: "glass", to: "right", dist: 1200, dur: 0.35 });
+        add({ on: "Anti-malaria", offset: 0.1, do: "move", who: "two", by: [0, 0], scale: 1, dur: 0.17 });
+        add({ on: "Anti-malaria", offset: 0.1, do: "move", who: "two2", by: [0, PUP(PS1) - PUP(PS0)], scale: 1, dur: 0.17 });
+      } else add({ at: -2, do: "stamp", id: "twoC", text: "2¢", x: X.pennies, y: G - 135, size: 58, tilt: -4, shake: 0 });
+      // bed nets: the gold cup under its net, a tiny human asleep in it; the gold star; the mosquito
+      var BK = 0.95, BH = SZ["bed-net-cup"][1] * BK;
+      cast.bed = { art: "bed-net-cup", x: X.bed, y: G, anchor: "bottom", pivot: "bottom", scale: BK, hidden: true };
+      cast.star = { art: "gold-star", x: X.bed + 205, y: G - 360, scale: 0.8, hidden: true,
+        label: [{ text: "GOLD", at: [200, 196], width: 150, size: 70 }, { text: "STANDARD", at: [200, 254], width: 190, size: 44 }] };
+      cast.mosq = { art: "mosquito", x: X.bed - 95, y: G - 330, scale: 0.42, hidden: true };
+      add({ at: T("bed"), do: "pop", who: "bed", squash: true });
+      add({ at: T("bed", 1, 0.2), do: "tag", who: "bed", id: "bedTag", text: "BED NETS", w: 280, h: 120, knot: [28, 178], x: X.bed - 230, y: G - 250 });
+      add({ at: T("gold"), do: "stamp", who: "star", from: 2.2, shake: 6 });
+      if (!E) {
+        // it dive-bombs the net head first and bounces off, spinning and dizzy; the sleeper sleeps on
+        add({ on: "keeping", do: "show", who: "mosq" });
+        add({ on: "keeping", do: "move", who: "mosq", by: [-900, -700], turn: 128, dur: 0.01 });
+        add({ on: "keeping", offset: 0.02, do: "move", who: "mosq", to: [X.bed - 95, G - 330], dur: 0.55, turn: 128 });
+        add({ on: "alive,", do: "move", who: "mosq", by: [-260, -260], dur: 0.3, arc: 60, turn: -200 });
+        add({ on: "alive,", offset: 0.3, do: "shiver", who: "mosq", dur: 0.8, amp: 10, rot: 20 });
+        add({ on: "cost", do: "slideOut", who: "mosq", to: "left", dist: 1400, dur: 0.8 });
+      }
+      // the tower: 92 columns of pennies, faster and faster, off the top of the wall
+      add({ at: T("cost"), do: "pile", id: "tower", art: "coin-column", x: X.tower, y: G, count: NCOL, scale: CK, gap: GAP, jitter: 3, tilt: 0.6,
+        until: E ? -1.9 : KIT.cue(ID, "dollars.") , accel: 0.45 });
+      add({ at: T("eighty-four"), do: "tag", who: "tower.0", id: "towerTag", text: "$184", w: 300, h: 150, knot: [40, 120], x: X.tower - 270, y: G - 620 });
+      // up the tower to its flag, where a finger steadies it
+      cast.finger = { art: "pointing-hand", x: X.tower + 6, y: TOPY + 30, anchor: "bottom", pivot: "bottom", scale: 1.2, hidden: true };
+      add({ at: T("cheaper."), do: "banner", id: "flag", text: "9,200×", x: X.tower + (V ? 0 : 420), y: TOPY + (V ? -280 : 250), size: 150, width: 560, pad: 90, color: "red", tilt: -4 });
+      if (!E) {
+        add({ on: "This", do: "camera", view: "top", dur: KIT.cue(ID, "times") - KIT.cue(ID, "This") });
+        add({ on: "times", do: "shiver", who: "tower", dur: KIT.cue(ID, "cheaper.") + 0.35 - KIT.cue(ID, "times"), amp: 7, rot: 0.8 });
+        add({ on: "cheaper.", offset: -0.15, do: "slideIn", who: "finger", from: "top", dist: 900, over: 10 });
+      } else add({ at: -2, do: "show", who: "finger" });
+
+      // ── the column chart: return per dollar ──
+      var chart = KIT.collage.axes({ box: [X.chart[0], 420, X.chart[1], G], x: [0, 3, 1], y: [0, 200, 50], xLabels: 99, yLabels: 50, title: "RETURN PER DOLLAR", size: 36 });
+      // (no axes: they draw only inside the canvas frame; the floor is the baseline and the banner the title)
+      add({ at: E ? -2 : 0, do: "banner", id: "rTitle", text: "RETURN PER DOLLAR", x: V ? 2900 : 3480, y: V ? 180 : 330, size: V ? 64 : 54, width: V ? 1000 : 680, pad: 70, color: "ink", tilt: 1, from: 1, shake: 0 });
+      var PS = chart.pt(0.5, 159), PV = chart.pt(2.5, 10.9), PT = chart.pt(1.5, 0), CK2 = 0.55;
+      var RHS = SZ["smallpox-cup"][1] * CK2, RHV = SZ["vaccine-cup"][1] * CK2;
+      // the treaty's column: tall enough to run off the top of the frame
+      var TK = V ? 3.75 : 2.3;
+      // the cups on their columns, and where the treaty knocks them to: on the floor at its base, clinking together
+      var ROS = { s: [PS[0], PS[1]], v: [PV[0], PV[1]] }, FLOOR = { s: [PT[0] - 108, G], v: [PT[0] + 112, G] };
+      var at = E ? FLOOR : ROS;
+      cast.treaty = { art: "treaty-column", x: PT[0], y: G, anchor: "bottom", pivot: "bottom", scale: TK, hidden: true };
+      cast.germS = { art: "germ", x: PS[0], y: PS[1], anchor: "bottom", pivot: "bottom", scale: 0.33, hidden: true };
+      cast.germV = { art: "germ-grin", x: PV[0] + 150, y: G, anchor: "bottom", pivot: "bottom", scale: 0.4, hidden: true };
+      cast.rubble = { art: "rubble", x: PT[0], y: G + 60, anchor: "bottom", pivot: "bottom", scale: V ? 0.75 : 0.6, hidden: true };
+      cast.cupS = { art: "smallpox-cup", x: at.s[0], y: at.s[1] - (E ? 0 : 12), anchor: "bottom", pivot: "bottom", scale: CK2, hidden: true };
+      cast.cupV = { art: "vaccine-cup", x: at.v[0], y: at.v[1], anchor: "bottom", pivot: "bottom", scale: CK2, hidden: true };
+      add({ at: T("smallpox"), do: "bar", chart: chart, id: "barS", x: 0.5, to: 159, width: 230, dur: E ? 0.01 : 0.5 });
+      add({ at: T("smallpox", 1, 0.3), do: "pop", who: "germS", squash: true });
+      if (!E) {
+        add({ on: "smallpox", offset: 0.5, do: "bob", who: "germS", y: 4, r: 6, speed: 3, until: "eradication" });
+        add({ on: "eradication", do: "stamp", who: "cupS", from: 2.6, shake: 10 });
+        add({ on: "eradication", offset: 0.02, do: "flatten", who: "germS" });
+      } else { add({ at: -2, do: "show", who: "cupS" }); add({ at: -2, do: "flatten", who: "germS" }); }
+      add({ at: T("hundred", 3, 0.2), do: "stamp", id: "tagS", text: "159 : 1", x: PS[0], y: PS[1] + 180, size: 60, tilt: -5, shake: E ? 0 : 5 });
+      add({ at: T("childhood"), do: "bar", chart: chart, id: "barV", x: 2.5, to: 10.9, width: 230, dur: E ? 0.01 : 0.3 });
+      add({ at: T("childhood", 1, 0.1), do: "stamp", who: "cupV", from: 1.8, shake: 4 });
+      if (!E) {
+        // a germ climbs the column; the syringe handle (on the cup's right) jabs it and it pops
+        add({ on: "childhood", offset: 0.2, do: "slideIn", who: "germV", from: "right", dist: 700, over: 10 });
+        add({ on: "vaccinations", offset: -0.15, do: "move", who: "germV", by: [-40, -60], dur: 0.15 });
+        add({ on: "vaccinations", do: "nudge", who: "cupV", by: [40, 0] });
+        add({ on: "vaccinations", do: "pop", who: "germV", out: true });
+      }
+      add({ at: T("one", 5, 0.15), do: "stamp", id: "tagV", text: "10.9 : 1", x: PV[0], y: PV[1] - RHV - 80, size: 60, tilt: 4, shake: E ? 0 : 5 });
+      // the marquee lights up, GREATEST HITS IN NOT DYING; the treaty's column bursts up through the floor and off the
+      // top, knocking both cups off their columns; PREVIOUS slaps across the marquee; one of its bulbs pops and goes out
+      var MK = V ? 1.6 : 1.1, MQ = V ? [2850, -250] : [2470, 220];
+      var mq = function (ax, ay) { return [MQ[0] + (ax - 260) * MK, MQ[1] + (ay - 180.5) * MK]; };
+      var BULB = [382, 124], bulbClip = [];
+      for (var bk = 0; bk < 8; bk++) bulbClip.push([BULB[0] + 10 * Math.cos(bk * Math.PI / 4), BULB[1] + 10 * Math.sin(bk * Math.PI / 4)]);
+      cast.marquee = { art: "marquee", x: MQ[0], y: MQ[1], scale: MK, hidden: true,
+        label: [{ text: "GREATEST HITS", at: [260, 214], width: 330, size: 40 }, { text: "IN NOT DYING", at: [260, 260], width: 330, size: 40 }] };
+      cast.bulb = { art: "marquee", x: MQ[0], y: MQ[1], scale: MK, clip: bulbClip, pivot: BULB, smoke: [[BULB[0] - 4, BULB[1] - 10]], hidden: true };
+      if (!E) {
+        add({ on: "which", do: "pop", who: ["marquee", "bulb"], squash: true });
+        add({ on: "which", do: "glow", who: "marquee", dur: 1.1, size: V ? 640 : 460 });
+      } else add({ at: -2, do: "show", who: ["marquee", "bulb"] });
+      if (!E) {
+        add({ on: "humanity's", do: "slideIn", who: "treaty", from: "bottom", dist: V ? 2400 : 1300, over: 40 });
+        add({ on: "humanity's", do: "boom", shake: 22, flash: 0.15 });
+        add({ on: "humanity's", offset: 0.28, do: "move", who: "cupS", to: [FLOOR.s[0], G - RHS / 2], dur: 0.32, arc: 220, turn: 360 });
+        add({ on: "humanity's", offset: 0.42, do: "move", who: "cupV", to: [FLOOR.v[0], G - RHV / 2], dur: 0.3, arc: 260, turn: -360 });
+        add({ on: "humanity's", offset: 0.75, do: "hop", who: ["cupS", "cupV"], height: 14 });
+      } else add({ at: -2, do: "show", who: "treaty" });
+      add({ at: T("humanity's"), do: "pop", who: "rubble", squash: true });
+      var PV0 = mq(260, 164);
+      add({ at: T("previous"), do: "stamp", id: "previous", text: "PREVIOUS", x: PV0[0], y: PV0[1], size: V ? 62 : 44, tilt: -4, shake: E ? 0 : 8 });
+      add({ at: T("\"not"), do: "stamp", id: "tagT", text: "7,530,000 : 1", x: PT[0], y: V ? 470 : 600, size: 80, tilt: -3, shake: E ? 0 : 12 });
+      if (!E) add({ on: "genre.", do: "shiver", who: "bulb", dur: 0.2, amp: 2, rot: 0 });
+      add({ at: T("genre.", 1, 0.2), do: "char", who: "bulb" });
+      return { cast: cast, beats: beats, views: views, X: X, G: G, TOPY: TOPY, chart: chart, plate: V ? [-1600, TOPY - 2200, 4800, 2800] : [-1600, TOPY - 1400, 4800, 2400] };
+    }
+
+    var ID = "one-percent-chance", V = KIT.V, H = hall(ID, true), G = H.G, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var cast = H.cast, beats = H.beats, views = H.views;
+    var add = function (b) { beats.push(b); };
+    views.meter = V ? [950, G - 480 / 0.78, 0.78] : [760, 560, 1];
+    // The meter: a slider rail stood on end, its knob at 100% at the top and 1% near the bottom.
+    var MX = V ? 400 : 230, RK = V ? 1.6 : 1.4, RC = V ? 160 : 400, K100 = V ? -170 : 120, K1 = 530;
+    cast.rail = { art: "slider-rail", x: MX, y: RC, scale: RK, hidden: true };
+    cast.knob = { art: "slider-knob", x: MX, y: K100, scale: 0.62, hidden: true };
+    // The Pessimist and his raincloud. His cut-out has a cloud painted over his hat; it is clipped off (art y < 128)
+    // so his own raincloud can follow him and strike him. PHh: the art's full height; HAT: art centre to hat top. Eyes
+    // are drawn at point * eyeSize / 30, so the points are scaled back up.
+    var PK = 0.6, PHh = SZ.pessimist[1] * PK, HAT = (SZ.pessimist[1] / 2 - 150) * PK, HOLD = cue("passing") + 0.3 - cue("of", 1);
+    cast.pess = { art: "pessimist", x: MX, y: G, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true,
+      clip: [[0, 128], [193, 128], [193, 761], [0, 761]], eyes: [[104, 192], [131, 192]].map(function (e) { return [e[0] * 3, e[1] * 3]; }), eyeSize: 10, smoke: [[112, 150], [150, 168]] };
+    cast.rain = { art: "raincloud", x: MX, y: G - PHh, scale: 0.5, hidden: true };
+
+    add({ on: "Even", do: "camera", view: "meter", dur: 0.9 });
+    // he trudges in under his cloud
+    add({ on: "Even", do: "show", who: ["pess", "rain"] });
+    add({ on: "Even", do: "move", who: "pess", by: [-900, 0], dur: 0.01 });
+    add({ on: "Even", offset: 0.02, do: "move", who: "pess", to: [MX, G - PHh / 2], dur: 1.6 });
+    add({ on: "Even", offset: 0.02, do: "bob", who: "pess", y: 6, r: 2, speed: 2, until: "percent" });
+    add({ on: "Even", do: "move", who: "rain", to: "pess", by: [0, -HAT - 95], dur: 0.01 });
+    add({ on: "Even", offset: 0.5, do: "bob", who: "rain", y: 8, r: 3, speed: 1.5 });
+    // the meter drops in: 100%
+    add({ on: "percent", do: "move", who: "rail", by: [0, 0], turn: -90, dur: 0.01 });
+    add({ on: "percent", do: "slideIn", who: ["rail", "knob"], from: "top", dist: 1100, over: 18 });
+    add({ on: "percent", do: "counter", id: "pct", from: 100, to: 100, dur: 0.01, suffix: "%", prefix: "", x: MX + (V ? 230 : 250), y: V ? -100 : 330, size: 80, font: "oswald" });
+    // he jumps, grabs the knob, and hangs on it until it reads 1%
+    add({ on: "probability", do: "move", who: "pess", to: "knob", by: [0, HAT + 40], dur: 0.25, arc: 120 });
+    add({ on: "of", n: 1, do: "move", who: "knob", to: [MX, K1], dur: HOLD, ease: "smooth" });
+    add({ on: "of", n: 1, do: "counter", id: "pct", to: 1, dur: HOLD, ease: "smooth" });
+    add({ on: "treaty", do: "shiver", who: "pess", dur: 0.9, amp: 3, rot: 4 });
+    add({ on: "passing", offset: 0.35, do: "bob", who: "pess", y: 0, r: 5, speed: 2 });
+    // his own cloud strikes him: charred, still hanging on, he blinks
+    add({ on: "you),", n: 2, do: "sparks", who: ["rain", "pess"], until: cue("you),", 2) + 0.45 });
+    add({ on: "you),", n: 2, offset: 0.1, do: "char", who: "pess" });
+    add({ on: "you),", n: 2, offset: 0.1, do: "boom", shake: 10, flash: 0.12 });
+    add({ on: "expected", do: "blink", who: "pess" });
+    add({ on: "still", do: "blink", who: "pess" });
+    add({ on: "better", do: "blink", who: "pess" });
+    // the two pennies grow a hundredfold; the tower still runs off the top beside them: 92.1×
+    add({ on: "ninety-two", do: "hide", who: ["two", "two2", "twoC"] });
+    add({ on: "ninety-two", do: "pop", who: "col200", squash: true });
+    add({ on: "times", do: "banner", id: "flag92", text: "92.1×", x: 940, y: 265, size: 110, width: 420, pad: 90, color: "red", tilt: 3 });
+
+    KIT.collage({ id: ID, seed: 1606, plate: H.plate, views: views, view: "chart", cast: cast, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,36 @@
+<template id="counter-demo-template">
+  <!-- counter-demo · kit demo (scratch): an odometer to 12,400,000 then on to 102,000,000; $2.7T ticking; a countdown on a sign to 0 -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="counter-demo" data-width="1920" data-height="1080" data-start="0" data-duration="5.46">
+    <div id="counter-demo-weave"></div>
+    <div id="counter-demo-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+
+      var cx = V ? 540 : 960;
+      KIT.collage({
+        id: "counter-demo", seed: 403,
+        cast: { board: { art: "sign-board", x: V ? 540 : 1600, y: V ? 1350 : 640, scale: 1.4 } },
+        beats: [
+          { at: 0.1, do: "counter", id: "dead", from: 0, to: 12400000, dur: 2, x: cx, y: V ? 420 : 220, size: V ? 96 : 120 },
+          { at: 2.8, do: "counter", id: "dead", to: 102000000, dur: 2, ease: "smooth" },
+          { at: 0.4, do: "counter", id: "debt", from: 0, to: 2.7, decimals: 1, prefix: "$", suffix: "T", style: "tick", dur: 2.5, x: V ? 540 : 700, y: V ? 800 : 600, size: 100, border: "ink" },
+          { at: 0.6, do: "counter", id: "count", who: "board", spot: [107, 110], from: 15, to: 0, rate: 4, size: 64, card: false, color: "red" },
+        ],
+      });
+    })();
+  </script>
+</template>

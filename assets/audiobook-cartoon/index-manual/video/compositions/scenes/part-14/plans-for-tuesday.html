@@ -1,0 +1,76 @@
+<template id="plans-for-tuesday-template">
+  <!-- plans-for-tuesday · collage (Part 14, scene 11). The bit: a field of the dead turns back into people with plans.
+       A desk calendar on a bare field: 139,000 A DAY; "That's": its pages riffle to 51,000,000 A YEAR. "Two hundred and
+       twelve": the calendar goes and the field fills with 107 headstones, one for every 100 million, and
+       10,700,000,000 stamps into the sky. Then nothing moves until "individual": row by row every headstone turns into
+       a living human. "plans for next Tuesday": the camera pushes in on the front row, each of them holding up a
+       calendar page, TUE: KID'S RECITAL, BINGO, FISHING, DENTIST. The dentist one shudders; everyone else beams. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="plans-for-tuesday" data-width="1920" data-height="1080" data-start="0" data-duration="21.96">
+    <div id="plans-for-tuesday-weave"></div>
+    <div id="plans-for-tuesday-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "plans-for-tuesday", V = KIT.V, Z = KIT.collage.SIZES;
+    // the field: 107 in a grid, one for every 100 million
+    var N = 107, COLS = V ? 10 : 18, BOX = V ? [60, 520, 1020, 1380] : [80, 360, 1840, 880];
+    var ROWS = Math.ceil(N / COLS), CW = (BOX[2] - BOX[0]) / COLS, CH = (BOX[3] - BOX[1]) / ROWS;
+    var cell = function (i) { return [BOX[0] + (i % COLS + 0.5) * CW, BOX[1] + (Math.floor(i / COLS) + 0.5) * CH]; };
+    var FRONT = (ROWS - 1) * COLS, PICK = V ? [FRONT + 1, FRONT + 2, FRONT + 4, FRONT + 5] : [FRONT + 3, FRONT + 5, FRONT + 7, FRONT + 9];
+    var CAL = V ? [540, 1330, 2.2] : [960, 880, 2.05];
+    var fp = cell(PICK[1]);
+    var views = V ? { field: [540, 960, 1], front: [cell(PICK[0])[0] / 2 + cell(PICK[3])[0] / 2, BOX[3] + CH * 0.2, 2.0] }
+      : { field: [960, 540, 1], front: [(cell(PICK[0])[0] + cell(PICK[3])[0]) / 2, BOX[3] + CH * 0.25, 1.9] };
+    var cal = function (num, per, hidden) {
+      return { art: "desk-calendar", x: CAL[0], y: CAL[1], anchor: "bottom", pivot: "bottom", scale: CAL[2], hidden: hidden,
+        label: [{ text: num, at: [122, 125], width: 150, size: 120 }, { text: per, at: [122, 190], width: 120, size: 70 }] };
+    };
+    var cast = { cal: cal("139,000", "A DAY", false), cal2: cal("51,000,000", "A YEAR", true) };
+    var NOTES = ["KID'S RECITAL", "BINGO", "FISHING", "DENTIST"];
+    PICK.forEach(function (i, k) {
+      var c = cell(i);
+      // held up in front of the front row (the copies of a pictogram sit in front of the cast, so below it)
+      cast["note" + k] = { art: "calendar-page", x: c[0], y: BOX[3] + CH * 1.55, anchor: "bottom", scale: CH * 1.45 / Z["calendar-page"][1], pivot: "bottom", hidden: true,
+        label: [{ text: "TUE", at: [72, 80], width: 90, size: 60 }, { text: NOTES[k], at: [72, 150], width: 112, size: 40 }] };
+    });
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var beats = [
+      { at: 0.05, do: "pop", who: "cal", squash: true },
+      { on: "die", do: "shiver", who: "cal", dur: 0.4, amp: 3, rot: 1.5 },
+      // the pages riffle to a year
+      { on: "That's", offset: -0.1, do: "shiver", who: "cal", dur: 0.5, amp: 6, rot: 3 },
+      { on: "fifty-one", offset: -0.05, do: "swap", who: "cal", to: "cal2" },
+      { on: "year.", do: "hop", who: "cal2", height: 24 },
+      // 212 fewer years: the field of headstones, and the number in the sky
+      { on: "Two", offset: -0.1, do: "slideOut", who: "cal2", to: "bottom", dist: 1400, dur: 0.35 },
+      { on: "Two", offset: 0.2, do: "pictogram", id: "field", art: "headstone", count: N, cols: COLS, box: BOX, dur: cue("ten") - cue("Two") - 0.2, fill: 0.85 },
+      { on: "billion", do: "stamp", id: "toll", text: "10,700,000,000", x: V ? 540 : 960, y: V ? 330 : 200, size: V ? 120 : 150, width: V ? 960 : 1500, tilt: -3 },
+      // nothing moves until "individual": then row by row, a living human in every place
+      { on: "individual", do: "pictogram", id: "field", to: "you", every: 4, start: 0, stagger: 0.016 },
+      { on: "individual", offset: 0.1, do: "pictogram", id: "field", to: "pram-woman", every: 4, start: 1, stagger: 0.016 },
+      { on: "individual", offset: 0.2, do: "pictogram", id: "field", to: "farmer", every: 4, start: 2, stagger: 0.016 },
+      { on: "individual", offset: 0.3, do: "pictogram", id: "field", to: "grandma", every: 4, start: 3, stagger: 0.016 },
+      // plans for next Tuesday: in on the front row, calendars up
+      { on: "who", offset: -0.1, do: "hide", who: "toll" },
+      { on: "who", offset: -0.1, do: "camera", view: "front", dur: 1.1 },
+      { on: "plans", offset: -0.15, do: "pop", who: "note0", squash: true },
+      { on: "plans", do: "pop", who: "note1", squash: true },
+      { on: "plans", offset: 0.15, do: "pop", who: "note2", squash: true },
+      { on: "plans", offset: 0.3, do: "pop", who: "note3", squash: true },
+      { on: "Tuesday.", do: "hop", who: ["note0", "note1", "note2"], height: 18 },
+      { on: "Tuesday.", offset: 0.6, do: "shiver", who: "note3", dur: 1.0, amp: 4, rot: 4 },
+    ];
+    KIT.collage({ id: ID, seed: 1409, plate: V ? [-300, -300, 1380, 2300] : [-300, -300, 2220, 1500], views: views, view: "field", cast: cast, beats: beats });
+  </script>
+</template>

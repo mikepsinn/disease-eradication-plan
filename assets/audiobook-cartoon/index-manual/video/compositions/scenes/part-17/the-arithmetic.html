@@ -1,0 +1,94 @@
+<template id="the-arithmetic-template">
+  <!-- the-arithmetic · collage (plate main-street: two charts on one sheet). The bit: nobody is against cures, and
+       people die while the sum spreads. The poll: CURING DISEASES, FOR to the top, AGAINST at zero, and the only one
+       standing at AGAINST is a germ with a placard; it looks round and signs its own petition. "but": the camera slides
+       to the DEAD chart, a line of headstones climbing steeply, a counter running beside it; HOLD. "while the
+       arithmetic propagates": a dashed red line shows where the dead are heading, and the second line, HUMANS WHO HAVE
+       DONE THE SUM, crawls along the bottom, its pen pushed by the snail. "money": a banknote drops in front of it, it
+       rockets off, and the line shoots to the top. "compress": a Gilliam hand shoves in from the right, the dead line goes flat
+       far below where it was heading, and the snail overshoots off the edge of the paper. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="the-arithmetic" data-width="1920" data-height="1080" data-start="0" data-duration="16.06">
+    <div id="the-arithmetic-weave"></div>
+    <div id="the-arithmetic-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "the-arithmetic", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // Left, the poll; right, the dead by day. Plate px.
+      // (a chart's axes are drawn inside the canvas, so both charts sit in it and the camera moves between them)
+      var poll = KIT.collage.axes({ box: V ? [190, 330, 760, 860] : [150, 300, 640, 830], x: [0, 3, 3], xLabels: 1000, y: [0, 100, 25], unit: "%", title: "CURING DISEASES" });
+      var days = KIT.collage.axes({ box: V ? [150, 1130, 960, 1560] : [880, 250, 1760, 760], x: [0, 300, 100], y: [0, 40, 10], unit: "M", title: "DEAD" });
+      var dead = function (x) { return 0.15 * x; };                           // 150,000 a day, in millions
+      var KNEE = 140, FLAT = dead(KNEE);                                      // where the money stops it
+      var sum = function (x) { return x <= 100 ? 0.012 * x : 1.2 + 38.8 * (1 - Math.cos(Math.PI * Math.min(1, (x - 100) / (KNEE - 100)))) / 2; };
+      var views = V ? { poll: [480, 640, 1.3], days: [600, 1300, 1.08] } : { poll: [420, 540, 1.45], days: [1340, 510, 1.5] };
+      var AG = poll.pt(2, 0), FOOT = days.pt(100, sum(100));
+      var cast = {
+        germ: { art: "germ-grin", x: AG[0] + 100, y: AG[1], anchor: "bottom", pivot: "bottom", scale: 150 / SZ["germ-grin"][1], hidden: true },
+        sign: { art: "sign-board", x: AG[0] + 195, y: AG[1], anchor: "bottom", pivot: "bottom", scale: 0.5, hidden: true,
+          label: { text: "NO CURES", at: [107, 55], width: 170, size: 46 } },
+        walker: { art: "snail-pen", anchor: [498, 236], pivot: [498, 236], scale: 210 / SZ["snail-pen"][0], hidden: true },
+        runner: { art: "snail-rocket", anchor: [470, 236], pivot: [470, 236], scale: 210 / SZ["snail-rocket"][0], hidden: true },
+        lure: { art: "bill-war", anchor: [113, 6], pivot: [113, 6], scale: 0.3, hidden: true },
+        puff: { art: "cloud-puff", x: days.pt(KNEE, 40)[0] + 90, y: days.pt(KNEE, 40)[1] - 30, scale: 0.4, hidden: true },
+        hand: { art: "pointing-hand", x: days.box[2] + 150, y: days.box[3] - 160, scale: 0.8, hidden: true },
+      };
+      var beats = [
+        // the poll: everybody is for it
+        { at: 0, do: "chart", chart: poll },
+        { at: 0, do: "chart", id: "days", chart: days },
+        { at: 0, do: "banner", id: "dayslab", text: "DAYS", x: days.box[2] + (V ? 0 : 110), y: days.box[3] - (V ? -110 : 40), size: 30, width: 100, pad: 22, color: "ink", tilt: 0 },
+        { at: 0.25, do: "bar", id: "for", chart: poll, x: 1, to: 100, dur: 1.4, width: 120, text: "FOR", size: 40, fill: "#C9DDB0" },
+        { at: 0.25, do: "bar", id: "against", chart: poll, x: 2, to: 0, dur: 0.1, width: 120, text: "AGAINST", size: 36 },
+        { on: "opposes", do: "pop", who: "germ", squash: true },
+        { on: "curing", do: "pop", who: "sign" },
+        { on: "curing", offset: 0.2, do: "bob", who: ["germ", "sign"], y: 5, r: 2, speed: 3, until: "(they", fade: 0.1 },
+        // "(they don't; see above),": it looks round, finds itself alone, and signs its own petition
+        { on: "(they", do: "shiver", who: "germ", dur: 0.5, amp: 10, rot: 12 },
+        { on: "see", do: "move", who: "germ", by: [0, 0], turn: -12, dur: 0.2 },
+        { on: "above),", do: "move", who: "germ", by: [0, 0], turn: 0, dur: 0.15 },
+        { on: "above),", do: "stamp", id: "petition", text: "PETITION: 1 SIGNATURE", x: AG[0] + 20, y: poll.pt(0, 62)[1], size: 40, width: 360, tilt: -6 },
+        // "but because one hundred and fifty thousand people die per day": the dead, by day
+        { on: "but", do: "camera", view: "days", dur: 0.7 },
+        { on: "one", n: 1, do: "chain", id: "dead", chart: days, f: dead, x: [0, 100], step: 10, art: "headstone", height: 40, until: "day", accel: 1, lineColor: "#2A1C10" },
+        { on: "one", n: 1, do: "counter", id: "count", from: 0, to: 15000000, until: "day", x: days.pt(70, 34)[0], y: days.pt(70, 34)[1], size: 48, prefix: "", suffix: "" },
+        // "while the arithmetic propagates,": where the dead are heading, and the sum crawling behind one walking human
+        { on: "while", do: "line", id: "heading", chart: days, points: [[100, dead(100)], [266, 40]], dur: 1.2, color: "red", dash: [18, 12], width: 6 },
+        { on: "while", do: "counter", id: "count", to: 18000000, until: "money" },
+        { on: "while", offset: 0.1, do: "line", id: "sum1", chart: days, f: sum, x: [0, 100], until: ["and", 2], ease: "linear", rider: "walker", tilt: 0, color: "#2E6B3A", width: 7 },
+        { on: "while", offset: 0.4, do: "banner", id: "sumlab", text: "HUMANS WHO HAVE DONE THE SUM", x: days.pt(185, 6)[0], y: days.pt(185, 6)[1], size: 26, width: 400, pad: 26, color: "ink", tilt: 0 },
+        { on: "propagates,", do: "shiver", who: "walker", dur: 0.9, amp: 2, rot: 4 },
+        // "money": a banknote on the line drops in front of him, and he runs
+        { on: "and", n: 2, do: "line", id: "fishline", points: [[FOOT[0] + 45, FOOT[1] - 700], [FOOT[0] + 45, FOOT[1] - 95]], dur: 0.35, rider: "lure", tilt: 0, width: 3, color: "#6B5A3A", front: true },
+        { on: "money", do: "swap", who: "walker", to: "runner" },
+        { on: "money", do: "hide", who: ["fishline", "sumlab"] },
+        { on: "money", do: "move", who: "lure", by: [700, -620], turn: 30, dur: 0.6, ease: "smooth" },
+        { on: "money", do: "line", id: "sum2", chart: days, f: sum, x: [100, KNEE], until: "compress", ease: "linear", rider: "runner", tilt: 0.6, color: "#2E6B3A", width: 7 },
+        { on: "money", do: "counter", id: "count", to: 21000000, until: "compress" },
+        // "compress": the hand shoves in, the dead line goes flat far below where it was heading
+        { on: "how", do: "slideIn", who: "hand", from: "right", dist: 700 },
+        { on: "compress", do: "move", who: "hand", by: [-180, 0], dur: 0.25 },
+        { on: "compress", offset: 0.1, do: "shake", x: 12, frames: 4 },
+        { on: "compress", do: "chain", id: "dead2", join: "dead", chart: days, f: function (x) { return Math.min(dead(x), FLAT); }, x: [110, 300], step: 10, art: "headstone", height: 40,
+          until: ["timeline.", 1, 0.6], accel: 1, lineColor: "#2A1C10" },
+        { on: "compress", offset: 0.1, do: "move", who: "runner", by: [V ? 500 : 700, -260], dur: 0.8 },
+        { on: "compress", offset: 0.15, do: "pop", who: "puff", squash: true },
+        { on: "timeline.", do: "slideOut", who: "hand", to: "right", dist: 800 },
+      ];
+      KIT.collage({ id: ID, seed: 1703, plate: V ? [-900, -600, 2000, 2700] : [-500, -500, 2500, 1600], views: views, view: "poll", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

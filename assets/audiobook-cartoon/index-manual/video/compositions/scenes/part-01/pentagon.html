@@ -1,0 +1,93 @@
+<template id="pentagon-template">
+  <!-- pentagon · collage (Part 1, scene 12, plate four-buildings). The bit: buildings named for their shape. On the
+       first lot an honest sign springs up, WAR BUILDING, and the Pentagon, seen from above, drops in behind it; a plain
+       missile peeks up out of the courtyard. "The Pentagon": a paint roller rolls THE PENTAGON over the honest words.
+       "five sides": its five walls flash red one after another; the missile looks round and ducks. The camera travels
+       right: a hospital drops onto the next lot, RECTANGLE on its cornice, and a red rectangle draws round it; a
+       schoolhouse drops in, SQUARE, and a square. After "Square" the camera pulls back on the row, and a fourth
+       building nobody mentioned drops in: a doghouse, TRIANGLE, with the Democracy Dog in its door. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="pentagon" data-width="1920" data-height="1080" data-start="0" data-duration="8.86">
+    <div id="pentagon-weave"></div>
+    <div id="pentagon-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, SZ = KIT.collage.SIZES;
+    // Four lots on the ground line G: the Pentagon with its sign in front, the hospital, the school, the doghouse.
+    var G = 900, HX = 2050, SX = 2900, TX = 3750;
+    var PK = 1.35, PS = SZ.pentagon, P = [880, G - 120 - PS[1] * PK / 2];
+    var pp = function (p) { return [P[0] + (p[0] - PS[0] / 2) * PK, P[1] + (p[1] - PS[1] / 2) * PK]; };
+    // its five outer corners (art px), clockwise from the top
+    var WALL = [[233, 4], [464, 168], [389, 438], [82, 438], [6, 168], [233, 4]].map(pp), YARD = pp([232, 236]);
+    var GK = 0.85, GS = SZ["pentagon-sign"], SIGN = [P[0], G + 90];
+    var BOARD = [SIGN[0] + (220 - GS[0] / 2) * GK, SIGN[1] - (GS[1] - 122) * GK];
+    var box = function (x, w, h) { return [[x - w / 2, G], [x - w / 2, G - h], [x + w / 2, G - h], [x + w / 2, G], [x - w / 2, G]]; };
+    var HK = 1.5, SK = 620 / SZ.schoolhouse[1], HW = SZ.hospital[0] * HK, HH = SZ.hospital[1] * HK, SW = SZ.schoolhouse[0] * SK;
+    var DK = 420 / SZ.doghouse[1], HOLE = [TX + (176 - SZ.doghouse[0] / 2) * DK, G - (SZ.doghouse[1] - 190) * DK];
+    var RK = 330 / SZ["paint-roller"][1], ROLLER = [BOARD[0] - 210 * GK, BOARD[1] + 20];
+    var views = V ? {
+      p: [P[0], 700, 1.05], h: [HX, 640, 1.2], s: [SX, 640, 1.2], wide: [3480, 640, 0.7],
+    } : {
+      p: [P[0], 560, 1], h: [HX, 560, 1], s: [SX, 560, 1], wide: [2280, 560, 0.48],
+    };
+    var beats = [
+      // "your war building": the honest sign springs up, the building drops in behind it, a missile peeks out
+      { on: "war", do: "pop", who: "sign", squash: true },
+      { on: "building", do: "stamp", who: "pent", from: 1.5, shake: 5 },
+      { on: "building", offset: 0.3, do: "slideIn", who: "missile", from: "bottom", dist: 160, over: 10 },
+      // ""The Pentagon"": rolled over the honest words
+      { on: "The", n: 1, offset: 0.1, do: "show", who: "roller" },
+      { on: "The", n: 1, offset: 0.1, do: "move", who: "roller", by: [420 * GK, 0], dur: 0.6 },
+      { on: "Pentagon", do: "swap", who: "sign", to: "sign2" },
+      { on: "Pentagon", offset: 0.35, do: "slideOut", who: "roller", to: "right", dur: 0.3 },
+      // "five sides": the walls flash, one after another; the missile looks round and ducks
+      { on: "has", do: "shiver", who: "missile", dur: 0.5, amp: 4, rot: 9 },
+      { on: "sides", offset: 0.25, do: "move", who: "missile", by: [0, 170], dur: 0.15 },
+      { on: "sides", offset: 0.4, do: "hide", who: "missile" },
+      // "a hospital "Rectangle"": the camera travels right
+      { on: "hospital", offset: -0.35, do: "camera", view: "h", dur: 0.45 },
+      { on: "hospital", do: "stamp", who: "hosp", from: 1.8, shake: 6 },
+      { on: "Rectangle", do: "line", id: "rect", points: box(HX, HW + 40, HH + 30), dur: 0.35, width: 10, color: "red", front: true },
+      // "a school "Square"": and on
+      { on: "school", offset: -0.3, do: "camera", view: "s", dur: 0.4 },
+      { on: "school", do: "stamp", who: "school", from: 1.8, shake: 6 },
+      { on: "Square", offset: 0.05, do: "line", id: "sq", points: box(SX, SW + 40, SW + 40), dur: 0.3, width: 10, color: "red", front: true },
+      // after "Square": pull back on the row; a fourth one nobody mentioned
+      { on: "Square", offset: 0.45, do: "camera", view: "wide", dur: 0.35 },
+      { on: "Square", offset: 0.55, do: "stamp", who: "dogh", from: 1.8, shake: 6 },
+      { on: "Square", offset: 0.6, do: "banner", id: "triName", text: "TRIANGLE", x: TX, y: G - 560, size: 120, width: 600, pad: 50, color: "ink", tilt: -3 },
+      { on: "Square", offset: 0.72, do: "pop", who: "dog", squash: true },
+    ];
+    // the five walls, one after another
+    for (var i = 0; i < 5; i++) beats.push({ on: "five", offset: i * 0.14, do: "line", id: "wall" + i, points: [WALL[i], WALL[i + 1]], dur: 0.1, width: 22, color: "red", front: true });
+    var signLabel = function (text) { return { text: text, at: [220, 122], width: 330, size: 66 }; };
+    KIT.collage({
+      id: "pentagon", seed: 112, plate: V ? [-1200, -1200, 5200, 2600] : [-1200, -1200, 5200, 2400], views: views, view: "p",
+      cast: {
+        pent: { art: "pentagon", x: P[0], y: P[1], pivot: "center", scale: PK, hidden: true },
+        missile: { art: "missile", x: YARD[0], y: YARD[1] + 40, anchor: "bottom", pivot: "bottom", scale: 220 / SZ.missile[1], hidden: true },
+        sign: { art: "pentagon-sign", x: SIGN[0], y: SIGN[1], anchor: "bottom", pivot: "bottom", scale: GK, hidden: true, label: signLabel("WAR BUILDING") },
+        sign2: { art: "pentagon-sign", x: SIGN[0], y: SIGN[1], anchor: "bottom", pivot: "bottom", scale: GK, hidden: true, label: signLabel("THE PENTAGON") },
+        roller: { art: "paint-roller", x: ROLLER[0], y: ROLLER[1], anchor: [101, 30], scale: RK, hidden: true },
+        hosp: { art: "hospital", x: HX, y: G, anchor: "bottom", pivot: "bottom", scale: HK, hidden: true,
+          label: { text: "RECTANGLE", at: [139, 203], width: 150, size: 30, plaque: true } },
+        school: { art: "schoolhouse", x: SX, y: G, anchor: "bottom", pivot: "bottom", scale: SK, hidden: true,
+          label: { text: "SQUARE", at: [186, 232], width: 110, size: 30, plaque: true } },
+        dogh: { art: "doghouse", x: TX, y: G, anchor: "bottom", pivot: "bottom", scale: DK, hidden: true },
+        dog: { art: "democracy-dog", x: HOLE[0], y: HOLE[1] + 60, scale: 210 / SZ["democracy-dog"][1], hidden: true },
+      },
+      beats: beats,
+    });
+  </script>
+</template>

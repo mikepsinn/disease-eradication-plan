@@ -1,0 +1,169 @@
+<template id="recovery-trial-template">
+  <!-- recovery-trial · collage (Part 15, scene 3: plate pandemic-ward). The bit: the RECOVERY trial did the science in a
+       ward on fire, and still beat the calm system next door. A blackboard on the ward wall. "six": six pill bottles hop
+       onto its top and grin. "forty-eight": the ward door bursts open and a conga line of patients streams past; the
+       board's counter rolls to 48,000 PATIENTS. "five hundred": one bill stub, $500, a patient beside it; "instead":
+       a column of 82 bills piles up off the top of the frame, $41,000, a patient beside it too. "eighty-two": 82x
+       stamps between them; "reduction.": the column topples on its own patient and flattens him; he peels off the
+       floor and joins the $500 side. "theory.": a tidy THEORY sign; "reality.": it splits to splinters under a
+       REALITY stamp. "pandemic.": germs everywhere, more of them. "panicking.": the alarm light flashes, the nurse and
+       the orderly run in circles and the Scientist's hair catches fire; he keeps running laps, and each lap a result
+       goes on the board: bottles 1 and 5 hop and glow, the other four get crossed out and slump. "disorganized,": the
+       cabinet tips over and spills its papers, the extinguisher hits him and he stands charred. "normal": the camera
+       travels to the calm room next door, a clock, the FDA (its building) behind a tidy desk and a bench of patients
+       waiting with folded hands; on "worse" they x-ray to skeletons one by one; PENDING stamps after "panic.". -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="recovery-trial" data-width="1920" data-height="1080" data-start="0" data-duration="28.28">
+    <div id="recovery-trial-weave"></div>
+    <div id="recovery-trial-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "recovery-trial", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The ward on the ground line G, left to right: the door, the blackboard (BK: its scale; BX its middle; its top
+      // plank at y 80), the THEORY sign, the cabinet; the calm room next door from x 2250.
+      var G = 960, BK = 0.72, BX = 1000, BTOP = 80, BL = BX - 450 * BK;
+      var bx = function (ax) { return BL + ax * BK; }, by = function (ay) { return BTOP + (ay - 55) * BK; };
+      var PLANK = by(62), FLOOR = by(905);                              // the top of the frame (bottles), the chart's floor
+      var STUB = [bx(170), FLOOR], COL = [bx(700), FLOOR], BILL = 0.55, STEP = 24, NB = 82;
+      var BOTTLES = [0, 1, 2, 3, 4, 5].map(function (i) { return bx(105 + i * 138); });
+      var SIGN = 1680, CAB = 1850, SCI = [1500, G];
+      var CALM = { bench: 2260, desk: 3260 };
+      var cy = function (s) { return V ? G - 470 / s : 540; };
+      var views = V ? {
+        ward: [1000, cy(0.95), 0.95], board: [BX, 200, 1.5], chart: [1000, cy(0.95), 0.95], sign: [1600, cy(1), 1],
+        calm: [2830, cy(0.82), 0.82],
+      } : {
+        ward: [960, 540, 1], board: [BX, 300, 1.25], chart: [1020, 470, 0.92], sign: [1420, 560, 1.15], calm: [2960, 520, 1],
+      };
+
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+      cast.door = { art: "deleted-door", x: 170, y: G, anchor: "bottom", pivot: [12, 250], scale: 1.25 };
+      cast.board = { art: "rank-board", x: BX, y: BTOP, anchor: [450, 55], clip: [[0, 55], [900, 55], [900, 963], [0, 963]], scale: BK };
+      cast.bell = { art: "alarm-light", x: 560, y: 300, scale: 0.5, pivot: [132, 250] };   // the alarm light on the wall
+      cast.cab = { art: "filing-cabinet", x: CAB, y: G, anchor: "bottom", pivot: [10, 496], scale: 0.8 };
+      BOTTLES.forEach(function (x, i) {
+        cast["pb" + i] = { art: "pill-bottle", x: x, y: PLANK, anchor: "bottom", pivot: "bottom", scale: 0.27, hidden: true };
+        cast["x" + i] = { art: "crayon-x", x: x, y: PLANK - 55, scale: 0.32, hidden: true };
+      });
+      // the two patients the chart is about, and the one flattened who comes back
+      cast.pa = { art: "sick-2", x: bx(170) - 170, y: G, anchor: "bottom", pivot: "bottom", scale: 330 / SZ["sick-2"][1], hidden: true };
+      cast.pc = { art: "sick-3", x: bx(700) + 190, y: G, anchor: "bottom", pivot: "bottom", scale: 330 / SZ["sick-3"][1], hidden: true };
+      cast.pc2 = { art: "sick-3", x: bx(700) + 190, y: G, anchor: "bottom", pivot: "bottom", scale: 330 / SZ["sick-3"][1], hidden: true };
+      cast.stub = { art: "bill-med-flat", x: STUB[0], y: STUB[1], anchor: "bottom", scale: BILL, hidden: true };
+      cast.sign = { art: "sign-board", x: SIGN, y: G, anchor: "bottom", pivot: "bottom", scale: 1.35, cut: "lr", hidden: true,
+        label: { text: "THEORY", at: [107, 62], width: 150, size: 34 } };
+      cast.nurse = { art: "nurse", x: 700, y: G, anchor: "bottom", scale: 360 / SZ.nurse[1], hidden: true };
+      cast.ord = { art: "orderly", x: 1300, y: G, anchor: "bottom", scale: 400 / SZ.orderly[1], hidden: true };
+      cast.sci = { art: "scientist-flask", x: SCI[0], y: SCI[1], anchor: "bottom", pivot: "bottom", scale: 430 / SZ["scientist-flask"][1],
+        hidden: true, points: { head: [232, 62] }, eyes: [[222, 120], [262, 120]], eyeSize: 18, smoke: [[230, 50]] };
+      cast.fire = { art: "flames", x: SCI[0], y: SCI[1] - 400, anchor: "bottom", scale: 0.3, hidden: true };
+      // the lap ends where it started (from 0.25: the loop's left end); a bucket of water tips over him there
+      cast.bucket = { art: "bucket", x: 600, y: G - 540, scale: 0.45, pivot: [40, 60], hidden: true };
+      // the calm room
+      cast.clock = { art: "egg-timer", x: 2620, y: 300, scale: 0.6 };
+      cast.fda = { art: "fda-sip", x: CALM.desk + 40, y: G - 60, anchor: "bottom", scale: 1.05,
+        label: { text: "F.D.A.", at: [174, 189], width: 170, size: 46, plaque: true } };
+      cast.desk = { art: "desk", x: CALM.desk, y: G, anchor: "bottom", scale: 1.25 };
+      for (var i = 0; i < 5; i++) {
+        cast["w" + i] = { art: "patient", x: CALM.bench + i * 165, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85 };
+        cast["k" + i] = { art: "patient-skeleton", x: CALM.bench + i * 165, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85 * 418 / 528, hidden: true };
+      }
+
+      // "six treatments": six bottles hop onto the board, grinning
+      add({ on: "six", do: "camera", view: "board", dur: 0.4 });
+      BOTTLES.forEach(function (x, i) { add({ on: "six", offset: 0.1 + i * 0.12, do: "pop", who: "pb" + i, squash: true }); });
+      // "forty-eight thousand patients": the door bursts open and they conga past; the counter rolls
+      add({ on: "on", n: 1, do: "camera", view: "ward", dur: 0.35 });
+      add({ on: "forty-eight", do: "hinge", who: "door", angle: -70, frames: 1, hold: 1.6 });
+      add({ on: "forty-eight", do: "shake", x: 6, frames: 3 });
+      add({ on: "forty-eight", do: "march", id: "conga", art: ["sick-1", "sick-4", "sick-5", "sick-6", "sick-2", "sick-3"], count: 9, height: 300,
+        path: [[170, G], [800, G - 10], [1400, G], [2200, G - 10]], speed: 1000, end: "hide", bob: 14, rock: 6, steps: 4 });
+      add({ on: "forty-eight", do: "counter", id: "n", from: 0, to: 48000, until: ["patients", 1, 0.5], prefix: "", suffix: " PATIENTS", x: BX, y: by(125), size: 52,
+        card: false, enter: "none" });
+      // "$500 instead of $41,000": one bill and one patient; then a column of 82 bills off the top of the frame
+      add({ on: "five", do: "camera", view: "chart", dur: 0.6 });
+      add({ on: "five", do: "pop", who: "stub", squash: true });
+      add({ on: "hundred", do: "pop", who: "pa", squash: true });
+      add({ on: "dollars", n: 1, do: "stamp", id: "s500", text: "$500", x: STUB[0], y: FLOOR - 150, size: 64, width: 220, tilt: -4 });
+      add({ on: "instead", do: "pile", id: "col", art: "bill-med-flat", x: COL[0], y: COL[1], count: NB, scale: BILL, gap: STEP, until: ["patient.", 2, -0.1], accel: 0.55, fall: 0.2, jitter: 4, tilt: 2 });
+      add({ on: "usual", do: "pop", who: "pc", squash: true });
+      add({ on: "thousand", n: 2, do: "stamp", id: "s41", text: "$41,000", x: COL[0] + (V ? 270 : 300), y: V ? FLOOR - 640 : FLOOR - 520, size: 64, width: 320, tilt: 4 });
+      add({ on: "eighty-two", do: "stamp", id: "s82", text: "82×", x: (STUB[0] + COL[0]) / 2, y: FLOOR - 330, size: 170, width: 360, tilt: -5, shake: 9 });
+      // "reduction.": the column topples onto its own patient like a felled tree and flattens him
+      var tFall = cue("reduction.") - 0.05;
+      for (i = 0; i < NB; i++) {
+        var h = i * STEP;
+        add({ at: tFall + 0.18 * Math.sqrt(i / NB), do: "move", who: "col." + i, to: [COL[0] + 90 + h, G - 25], turn: 90, dur: 0.12 + 0.2 * Math.sqrt(i / NB), arc: 20 });
+      }
+      add({ at: tFall + 0.2, do: "flatten", who: "pc" });
+      add({ at: tFall + 0.22, do: "shake", y: 9, frames: 3 });
+      add({ on: "reduction.", offset: 0.55, do: "hide", who: "pc" });
+      add({ on: "reduction.", offset: 0.55, do: "pop", who: "pc2", squash: true });
+      add({ on: "reduction.", offset: 0.75, do: "move", who: "pc2", to: [bx(170) - 330, G], dur: 0.4, arc: 30 });
+      // "Not in theory. In reality.": a tidy sign, smashed to splinters under a stamp
+      add({ on: "Not", do: "hide", who: ["col", "s41", "s82"] });
+      add({ on: "Not", do: "camera", view: "sign", dur: 0.4 });
+      add({ on: "theory.", do: "pop", who: "sign", squash: true });
+      add({ on: "reality.", do: "stamp", id: "real", text: "REALITY", x: SIGN, y: G - 90, size: 120, width: 520, tilt: -6, shake: 12 });
+      add({ on: "reality.", offset: 0.08, do: "split", who: "sign", gap: 420, spin: 40, shake: 10 });
+      add({ on: "reality.", offset: 0.5, do: "drop", who: ["sign.L", "sign.R"], dist: 900, spin: 70, dur: 0.6 });
+      // "During a pandemic.": germs everywhere, splitting into more; the patients sneeze
+      add({ on: "During", do: "camera", view: "ward", dur: 0.5 });
+      add({ on: "During", do: "hide", who: ["real", "s500", "stub"] });
+      add({ on: "During", offset: 0.1, do: "pictogram", id: "g1", art: "germ-grin", count: 3, cols: 3, box: V ? [520, -260, 1480, 160] : [260, 120, 1660, 420], dur: 0.25 });
+      add({ on: "pandemic.", do: "pictogram", id: "g2", art: "germ", count: 8, cols: 4, box: V ? [480, 40, 1520, 820] : [180, 300, 1760, 760], dur: 0.45, order: "cells" });
+      add({ on: "pandemic.", offset: 0.3, do: "shiver", who: ["pa", "pc2"], dur: 0.5, amp: 9, rot: 6 });
+      // "While panicking.": the alarm, the helpers run in circles, the Scientist's hair catches fire
+      add({ on: "While", do: "hide", who: ["g1", "g2"] });
+      add({ on: "While", do: "hide", who: ["pa", "pc2"] });
+      add({ on: "While", do: "glow", who: "bell", size: 420, dur: 0.3 });
+      add({ on: "While", do: "shiver", who: "bell", dur: 6, amp: 3, rot: 6 });
+      add({ on: "While", do: "pop", who: ["nurse", "ord", "sci"] });
+      add({ on: "While", offset: 0.1, do: "lap", who: "nurse", loop: [800, G - 30, 520, 50], laps: 4, dur: 1.4, faster: 0.85 });
+      add({ on: "While", offset: 0.2, do: "lap", who: "ord", loop: [1200, G - 10, 460, 40], laps: 4, dur: 1.2, faster: 0.85, dir: -1 });
+      add({ on: "panicking.", offset: 0.4, do: "pop", who: "fire", squash: true });
+      add({ on: "panicking.", offset: 0.4, do: "move", who: "fire", to: "sci.head", dur: 0.01 });
+      add({ on: "panicking.", offset: 0.6, do: "lap", who: "sci", loop: [1050, G - 20, 470, 45], laps: 3, dur: 1.5, faster: 0.85, from: 0.25 });
+      // "Your species does its best medical research": each lap past the board, a result. 1 and 5 work.
+      var marks = [["best", 0, true], ["medical", 1, false], ["research", 2, false], ["when", 4, true], ["terrified", 3, false], ["and", 5, false]];
+      marks.forEach(function (m) {
+        var b = "pb" + m[1];
+        if (m[2]) { add({ on: m[0], do: "hop", who: b, height: 40 }); add({ on: m[0], do: "glow", who: b, size: 140, dur: 0.6 }); add({ on: m[0], offset: 0.25, do: "hop", who: b, height: 30 }); }
+        else { add({ on: m[0], do: "pop", who: "x" + m[1] }); add({ on: m[0], offset: 0.1, do: "move", who: b, by: [0, 6], turn: m[1] % 2 ? 14 : -14, dur: 0.25 }); }
+      });
+      // "disorganized,": the cabinet tips and spills; the extinguisher; charred and steaming
+      add({ on: "disorganized,", do: "move", who: "cab", by: [-20, 0], turn: -84, dur: 0.25 });
+      add({ on: "disorganized,", offset: 0.2, do: "pile", id: "spill", art: ["pdf", "insert"], x: CAB - 420, y: G, scale: 0.35, heap: 5, spread: 70, count: 9, dur: 0.5, fall: 0.15, dist: 300 });
+      add({ on: "disorganized,", offset: 0.1, do: "pop", who: "bucket", squash: true });
+      add({ on: "disorganized,", offset: 0.3, do: "move", who: "bucket", by: [30, 0], turn: -130, dur: 0.15 });
+      add({ on: "disorganized,", offset: 1.0, do: "pop", who: "bucket", out: true });
+      add({ on: "disorganized,", offset: 0.45, do: "hide", who: "fire" });
+      add({ on: "disorganized,", offset: 0.45, do: "char", who: "sci" });
+      add({ on: "disorganized,", offset: 0.45, do: "hide", who: ["nurse", "ord"] });
+      add({ on: "disorganized,", offset: 1.05, do: "blink", who: "sci" });
+      add({ on: "which", offset: 0.1, do: "blink", who: "sci" });
+      // "your normal system is somehow worse than panic.": the calm room next door
+      add({ on: "normal", do: "camera", view: "calm", dur: 0.7 });
+      add({ on: "system", do: "shiver", who: "clock", dur: 0.15, amp: 3, rot: 4 });
+      add({ on: "system", offset: 0.5, do: "shiver", who: "clock", dur: 0.15, amp: 3, rot: -4 });
+      add({ on: "worse", do: "xray", who: ["w0", "w1", "w2", "w3", "w4"], to: ["k0", "k1", "k2", "k3", "k4"], stagger: 0.22 });
+      add({ at: KIT.after(ID, "panic.") - 0.1, do: "stamp", id: "pend", text: "PENDING", x: CALM.desk, y: G - 360, size: 96, width: 420, tilt: -5 });
+
+      KIT.collage({ id: ID, seed: 1503, plate: V ? [-1400, -1800, 4800, 3600] : [-600, -1400, 4200, 1900], views: views, view: "board", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

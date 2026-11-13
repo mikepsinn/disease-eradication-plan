@@ -1,0 +1,189 @@
+<template id="nations-foam-bats-template">
+  <!-- nations-foam-bats · collage (Part 3, scenes 3 and 4 as one plate, the-strait). The bit: two nations on two islands
+       have been clubbing each other across the strait for ten thousand years, and they never stop. "hitting": the charred
+       cavemen from Part 1 bonk each other with clubs long enough to reach across; the bonks speed up and the pair swaps
+       for the next age's on each one (Caesar and Vercingetorix, a crusader and Saladin, Napoleon and Wellington, the
+       Kaiser and George V, two men in suits) while the calendar in the water rolls to 10,000.
+       "years": the men in suits x-ray into skeletons and keep swinging. "because": both freeze and point a bony arm at
+       the other; after "last." they bonk at the same moment and get back to it. "This": the
+       camera travels across the water to two four-year-olds on the near shore bonking each other with toy clubs in the
+       same rhythm; "tired" they yawn, "nap." they flop asleep. "Your species": pull back to hold both; "naps": a pillow
+       sprouts wings and flies to the islands; "refused": a skeleton bats it back without looking; on "geopolitics."
+       a mushroom cloud goes off over the islands, the skeletons char and keep bonking, the toddlers sleep through it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="nations-foam-bats" data-width="1920" data-height="1080" data-start="0" data-duration="21.14">
+    <div id="nations-foam-bats-weave"></div>
+    <div id="nations-foam-bats-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "nations-foam-bats", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var after = function (w, n) { return KIT.after(ID, w, n); };
+    // The islands (plate px): the rulers stand on the sand at FEET, heads at HEAD; the children on the near shore.
+    var L = V ? { lx: 300, rx: 780, feet: 760, h: 420, ki: 1.0, cal: [540, 1000], kids: [400, 680], kfeet: 2200, kh: 460 }
+              : { lx: 640, rx: 1280, feet: 600, h: 480, ki: 1.3, cal: [960, 790], kids: [810, 1110], kfeet: 1560, kh: 540 };
+    var HEAD = L.feet - L.h + 40;
+    var views = V ? { strait: [540, 760, 1], nursery: [540, 1720, 1], wide: [540, 1400, 0.6] }
+                  : { strait: [960, 540, 1], nursery: [960, 1240, 1], wide: [960, 880, 0.5] };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    var ruler = function (art, x, hidden) {
+      return { art: art, x: x, y: L.feet, anchor: "bottom", pivot: "bottom", scale: hs(art, L.h), hidden: hidden };
+    };
+    // The six ages, left and right. The right one of each pair is mirrored (below), so the two bats point at each other.
+    var PAIRS = [["caveman-scientist", "caveman-scientist"], ["rulers-caesar", "rulers-vercingetorix"], ["rulers-crusader", "rulers-saladin"],
+                 ["rulers-napoleon", "rulers-wellington"], ["rulers-kaiser", "rulers-george-v"], ["rulers-suit-grey", "rulers-suit-navy"]];
+    // The islands: the rulers stand on the inner end of the sand (art [80, 240]); the left island is mirrored, so the
+    // palms are on the strait and the houses on the outside, each with its capitol in front of the house.
+    var IW = SZ.island[0], SAND = [80, 240], HOUSE = [237, 215], KI = L.ki;
+    var CAPK = hs("capitol", 231 * KI);
+    var cast = {
+      islL: { art: "island", x: L.lx, y: L.feet, anchor: [IW - SAND[0], SAND[1]], scale: KI },
+      islR: { art: "island", x: L.rx, y: L.feet, anchor: SAND, scale: KI },
+      capL: { art: "capitol", x: L.lx - (HOUSE[0] - SAND[0]) * KI, y: L.feet - (SAND[1] - HOUSE[1]) * KI, anchor: "bottom", scale: CAPK },
+      capR: { art: "capitol", x: L.rx + (HOUSE[0] - SAND[0]) * KI, y: L.feet - (SAND[1] - HOUSE[1]) * KI, anchor: "bottom", scale: CAPK },
+      cal: { art: "calendar", x: L.cal[0], y: L.cal[1], scale: V ? 0.9 : 1.0 },
+    };
+    PAIRS.forEach(function (p, i) {
+      cast["L" + i] = ruler(p[0], L.lx, i > 0);
+      cast["R" + i] = ruler(p[1], L.rx, i > 0);
+    });
+    cast.skL = ruler("rulers-skeleton-grey", L.lx, true);
+    cast.skR = ruler("rulers-skeleton-navy", L.rx, true);
+    // The clubs: the long caveman club, gripped where each ruler holds his bat (art [40, 158] of a 237 x 490 ruler) and
+    // lying along it at 43 degrees, so it hides the bat and carries on up out of the frame. Stretched along its length
+    // (below) until its knob reaches the other one's crown; one swing of SW degrees brings it down across the strait.
+    var KR = L.h / 490, GX = (40 - 237 / 2) * KR, GY = L.feet - L.h + 158 * KR;
+    var CP = [45, 315], CKNOB = [258, 72], CA = Math.atan2(345 - 30, 290 - 20) * 180 / Math.PI, KC = V ? 0.5 : 0.6;
+    var CROWN = L.feet - L.h + 60 * KR, cdx = (L.rx - L.lx) - GX, cdy = CROWN - GY;
+    var u = [Math.cos(CA * Math.PI / 180), -Math.sin(CA * Math.PI / 180)];
+    var STRETCH = Math.hypot(cdx, cdy) / (((CKNOB[0] - CP[0]) * u[0] + (CKNOB[1] - CP[1]) * u[1]) * KC);
+    var REST = CA - 43, SW = Math.atan2(cdy, cdx) * 180 / Math.PI + 43;
+    var CW = SZ.club[0];
+    cast.clubL = { art: "club", x: L.lx + GX, y: GY, anchor: CP, pivot: CP, scale: KC };
+    cast.clubR = { art: "club", x: L.rx - GX, y: GY, anchor: [CW - CP[0], CP[1]], pivot: [CW - CP[0], CP[1]], scale: KC };
+    // The skeletons hold their bats another way: the grey one level under his jaw (grip [55, 185], 19.4 degrees up),
+    // the navy one (not mirrored) up past his ear (grip [100, 265], 65.6 degrees up, leaning over the strait). On "years"
+    // the clubs move to their hands and lie along those bats; their swings come down on the other skull's crown.
+    var KS = L.h / 729, SKW = [SZ["rulers-skeleton-grey"][0], SZ["rulers-skeleton-navy"][0]];
+    var gL = [L.lx + (55 - SKW[0] / 2) * KS, L.feet - L.h + 185 * KS], gR = [L.rx + (100 - SKW[1] / 2) * KS, L.feet - L.h + 265 * KS];
+    var SKL = [gL[0] - (L.lx + GX), gL[1] - GY], SKR = [gR[0] - (L.rx - GX), gR[1] - GY];
+    var deg = function (dx, dy) { return Math.atan2(dy, dx) * 180 / Math.PI; };
+    var norm = function (a) { return ((a + 540) % 360) - 180; };
+    var SW2L = norm(deg(L.rx + (150 - SKW[1] / 2) * KS - gL[0], L.feet - L.h + 30 * KS - gL[1]) + 19.4);
+    var SW2R = norm(deg(L.lx + (165 - SKW[0] / 2) * KS - gR[0], L.feet - L.h + 5 * KS - gR[1]) + 114.4);
+    // The bony arms, pointing across on "because".
+    var SH = GY;
+    var AK = (V ? 230 : 260) / SZ["skeleton-arm"][1];
+    cast.armL = { art: "skeleton-arm", x: L.lx + 30, y: SH + 20, anchor: "bottom", pivot: "bottom", scale: AK, hidden: true };
+    cast.armR = { art: "skeleton-arm", x: L.rx - 30, y: SH + 20, anchor: "bottom", pivot: "bottom", scale: AK, hidden: true };
+    // The near shore: two four-year-olds with toy clubs; yawning (one each); asleep; the winged pillow.
+    var KY = L.kfeet, MID = (L.kids[0] + L.kids[1]) / 2, TK = hs("toddlers", L.kh);
+    cast.tods = { art: "toddlers", x: MID, y: KY, anchor: "bottom", pivot: "bottom", scale: TK };
+    cast.yawnB = { art: "toddlers-yawn-boy", x: MID - 140 * TK, y: KY, anchor: "bottom", pivot: "bottom", scale: hs("toddlers-yawn-boy", L.kh * 1.0), hidden: true };
+    cast.yawnG = { art: "toddlers-yawn-girl", x: MID + 140 * TK, y: KY, anchor: "bottom", pivot: "bottom", scale: hs("toddlers-yawn-girl", L.kh * 0.95), hidden: true };
+    cast.asleep = { art: "toddlers-asleep", x: MID, y: KY, anchor: "bottom", pivot: "bottom", scale: hs("toddlers-asleep", L.kh * 0.62), hidden: true };
+    var PIL = [MID + (V ? 150 : 260), KY - L.kh * 0.75];
+    cast.pillow = { art: "winged-pillow", x: PIL[0], y: PIL[1], scale: hs("winged-pillow", V ? 110 : 120), hidden: true };
+    cast.boom = { art: "mushroom", x: (L.lx + L.rx) / 2, y: L.feet + 40, anchor: "bottom", pivot: "bottom", scale: V ? 1.5 : 1.31, hidden: true };
+
+    var beats = [];
+    var add = function (b) { beats.push(b); };
+    // the clubs' resting angle, and the arms turned to point across
+    add({ at: 0, do: "move", who: "clubL", by: [0, 0], turn: REST, dur: 0.01 });
+    add({ at: 0, do: "move", who: "clubR", by: [0, 0], turn: -REST, dur: 0.01 });
+    // (written before the swings, so the swings add on top of it) on "years" the clubs shift to the skeletons' hands
+    add({ on: "years", do: "move", who: "clubL", by: SKL, turn: CA - 19.4, dur: 0.01 });
+    add({ on: "years", do: "move", who: "clubR", by: SKR, turn: 65.6 - CA, dur: 0.01 });
+    add({ at: 0, do: "move", who: "armL", by: [0, 0], turn: 84, dur: 0.01 });
+    add({ at: 0, do: "move", who: "armR", by: [0, 0], turn: -84, dur: 0.01 });
+    add({ at: 0, do: "char", who: ["L0", "R0"] });
+    // A bonk lands at `hit`: the club comes down off the shoulder onto the other one's head, rests, and goes back up.
+    var bonk = function (side, hit, hold) {
+      hold = Math.max(1.3 * F, Math.min(0.26, hold || 0.26));
+      var sk = hit - F >= cue("years"), a = side === "L" ? (sk ? SW2L : SW) : (sk ? SW2R : -SW);
+      add({ at: hit - F, do: "hinge", who: side === "L" ? "clubL" : "clubR", angle: a, frames: 1, hold: F + hold });
+      add({ at: hit, do: "shake", frames: 2, x: side === "L" ? 5 : -5 });
+    };
+    // a toddler's bonk: the pair rocks toward the one being hit, and the frame jolts a little
+    var kidBonk = function (side, hit) {
+      add({ at: hit, do: "nudge", who: "tods", by: [side === "L" ? 18 : -18, 0] });
+      add({ at: hit, do: "shake", frames: 1, x: side === "L" ? 3 : -3 });
+    };
+    // ten thousand years of it: two bonks, then faster and faster to "because"
+    var hits = [cue("hitting"), cue("each")], t = cue("other", 1), dt = 0.34;
+    while (t < cue("because") - 0.05) { hits.push(t); t += dt; dt = Math.max(0.15, dt * 0.86); }
+    hits.forEach(function (h, i) { bonk(i % 2 ? "R" : "L", h, (i < 2 ? 0.3 : 0.45) * (hits[i + 1] ? hits[i + 1] - h : 0.3)); });
+    // the ages swap on each bonk from "each" on: five swaps, the men in suits arriving a few swings before "years"
+    var swaps = hits.filter(function (h) { return h > cue("each") - 0.02; }).slice(0, 5);
+    swaps.forEach(function (s, i) {
+      add({ at: s, do: "hide", who: ["L" + i, "R" + i] });
+      add({ at: s, do: "show", who: ["L" + (i + 1), "R" + (i + 1)] });
+    });
+    add({ on: "for", n: 1, do: "counter", id: "years", who: "cal", spot: [80, 150], from: 0, to: 10000, until: cue("years") + 0.1, style: "tick", size: V ? 40 : 44, card: false, font: "oswald", width: 130 });
+    // "years": the men in suits x-ray into skeletons, and keep swinging
+    add({ on: "years", do: "xray", who: ["L5", "R5"], to: ["skL", "skR"], frames: 4, flash: 0.2 });
+    // "because": they freeze and point at each other
+    add({ on: "because", offset: 0.1, do: "pop", who: ["armL", "armR"] });
+    add({ on: "the", n: 1, do: "nudge", who: "armL", by: [24, 0] });
+    add({ on: "other", n: 2, do: "nudge", who: "armR", by: [-24, 0] });
+    add({ on: "last.", offset: 0.35, do: "hide", who: ["armL", "armR"] });
+    // after "last.": both at the same moment, and right back to it
+    var both = after("last.");
+    bonk("L", both, 0.3); bonk("R", both, 0.3);
+    add({ at: both, do: "shake", frames: 4, y: 8 });
+    var END = D - 0.1, beat = 0.5;
+    for (t = both + beat, i = 0; t < END; t += beat, i++) bonk(i % 2 ? "L" : "R", t, 0.22);
+
+    // "This": across the water to the near shore; the toddlers bonk in the same rhythm, slowing on "tired"
+    add({ on: "This", do: "camera", view: "nursery", dur: 1.0 });
+    var kt = cue("This") + 0.7, kd = beat, TIRED = cue("tired"), k = 0;
+    while (kt < TIRED - 0.1) { kidBonk(k % 2 ? "R" : "L", kt); k++; kt += kd; if (kt > cue("except")) kd *= 1.18; }
+    // "tired": both yawn, mouths wider than their heads
+    add({ on: "tired", do: "hide", who: "tods" });
+    add({ on: "tired", do: "pop", who: ["yawnB", "yawnG"], squash: true });
+    add({ on: "tired", offset: 0.2, do: "bob", who: ["yawnB", "yawnG"], y: 6, r: 3, speed: 0.6, until: "nap." });
+    // "nap.": they flop down asleep, and the Zs rise
+    add({ on: "nap.", do: "hide", who: ["yawnB", "yawnG"] });
+    add({ on: "nap.", do: "pop", who: "asleep", squash: true });
+    add({ on: "nap.", do: "shake", frames: 2, y: 4 });
+    add({ on: "nap.", offset: 0.6, do: "banner", id: "zzz1", text: "z z Z", x: MID - (V ? 170 : 210), y: KY - L.kh * 0.75, size: 70, width: 190, pad: 40, color: "ink", tilt: -8 });
+    add({ on: "nap.", offset: 1.0, do: "banner", id: "zzz2", text: "z Z Z", x: MID + (V ? 30 : 40), y: KY - L.kh * 0.9, size: 70, width: 190, pad: 40, color: "ink", tilt: 7 });
+    // "Your species": pull back to hold both; "naps": a pillow sprouts wings and flies off to the islands
+    add({ on: "Your", n: 2, do: "camera", view: "wide", dur: 1.1 });
+    add({ on: "naps", do: "pop", who: "pillow", squash: true });
+    add({ on: "naps", offset: 0.15, do: "move", who: "pillow", to: [L.lx + 60, HEAD - 40], dur: cue("refused") - cue("naps") - 0.15, arc: V ? 300 : 260, ease: "smooth" });
+    add({ on: "naps", offset: 0.15, do: "bob", who: "pillow", y: 14, r: 6, speed: 5, until: "refused" });
+    // "refused": batted away without a look; it sails back down by the toddlers
+    add({ on: "refused", do: "nudge", who: "skL", by: [30, 0] });
+    add({ on: "refused", do: "move", who: "pillow", to: [MID + (V ? 200 : 300), KY - L.kh * 0.45], dur: 0.7, arc: V ? 240 : 200, turn: 360 });
+    // "geopolitics.": the next bonk sets off a mushroom cloud over the islands; the children sleep through it
+    var GEO = cue("geopolitics.") + 0.1;
+    add({ at: GEO, do: "pop", who: "boom", squash: true });
+    add({ at: GEO, do: "boom", shake: 24, flash: 0.22 });
+    add({ at: GEO, do: "char", who: ["skL", "skR"] });
+    add({ at: GEO + 1.4, do: "pop", who: "boom", out: true });
+
+    KIT.collage({ id: ID, seed: 303, plate: V ? [-1200, -1500, 2300, 4400] : [-1800, -1000, 3700, 3500], views: views, view: "strait", cast: cast, beats: beats });
+    // the mirrored cut-outs (mirrored inside their boxes), and the clubs stretched along their length from the grip
+    var el = function (n) { return document.getElementById(ID + "-" + n); };
+    ["islL", "clubR"].concat(PAIRS.map(function (p, i) { return "R" + i; })).forEach(function (n) {
+      el(n).querySelector(".cg-art").style.transform = "scaleX(-1)";
+    });
+    ["clubL", "clubR"].forEach(function (n) {
+      var img = el(n).querySelector("img");
+      img.style.transformOrigin = (CP[0] * KC).toFixed(1) + "px " + (CP[1] * KC).toFixed(1) + "px";
+      img.style.transform = "rotate(" + (-CA).toFixed(2) + "deg) scale(" + STRETCH.toFixed(3) + ",1) rotate(" + CA.toFixed(2) + "deg)";
+    });
+  </script>
+</template>

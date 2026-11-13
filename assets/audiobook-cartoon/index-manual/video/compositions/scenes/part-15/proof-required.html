@@ -1,0 +1,62 @@
+<template id="proof-required-template">
+  <!-- proof-required · collage host shot (Part 15, scene 2). The bit: the paperwork humans want before they stop a war,
+       against the paperwork it took to start one. Iris in on her face. "proof": a bundle of forms thumps onto the ledge
+       beside her; "something": two more; "stupid,": the stack shoots up out of the top of the frame and the console
+       shudders under it. "required": a mushroom cloud blooms on Earth in the window; one blank sticky note drifts up
+       out of it, all the paperwork that took, and taps onto the glass on "starting:". She folds her arms (part file). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="proof-required" data-width="1920" data-height="1080" data-start="0" data-duration="8.2">
+    <div id="proof-required-weave"></div>
+    <div id="proof-required-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "proof-required", V = KIT.V, S = KIT.STUDIO, E = S.earth, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The tower of forms stands on a side table just past the console's end, beside her (TABLE: its x, the floor
+      // it stands on, its scale; its top is LEDGE). Each bundle is FH px tall and adds GAP.
+      var TABLE = V ? [960, 1580, 1.4] : [1235, 1095, 1.57], LEDGE = TABLE[1] - 186 * TABLE[2], TX = TABLE[0] - 10, FH = 150, GAP = 132;
+      var forms = ["binder", "case-file"];
+      // The mushroom stands on Earth's top edge (in 9:16, the half the tower leaves clear); the note rises out of it
+      // and sticks on the glass over Earth.
+      var MUSH = V ? [E[0] - E[2] * 0.5, E[1] - E[2] * 0.45] : [E[0] - E[2] * 0.15, E[1] - E[2] * 0.55];
+      var GLASS = V ? [E[0] - E[2] * 0.35, E[1] + E[2] * 0.45] : [E[0] + E[2] * 0.35, E[1] + E[2] * 0.15];
+      var tNote = cue("required") + 0.35, tTap = cue("starting:");
+      KIT.collage({
+        id: ID, seed: 1502, host: { iris: ["in", 0, 0.55] },
+        cast: {
+          table: { art: "side-table", x: TABLE[0], y: TABLE[1], anchor: "bottom", scale: TABLE[2] },
+          mush: { art: "mushroom", x: MUSH[0], y: MUSH[1], anchor: "bottom", pivot: "bottom", scale: (E[2] * 1.2) / SZ.mushroom[1], hidden: true },
+          note: { art: "sticker", x: MUSH[0], y: MUSH[1] - E[2] * 1.1, scale: V ? 0.42 : 0.5, hidden: true },
+        },
+        beats: [
+          { on: "proof", n: 1, do: "pile", id: "b1", art: forms, x: TX, y: LEDGE, count: 1, height: FH, gap: GAP, fall: 0.25, dur: 0.01, tilt: 2 },
+          { on: "something", do: "pile", id: "b2", art: ["case-file", "binder"], x: TX, y: LEDGE - GAP, count: 2, height: FH, gap: GAP, fall: 0.22, dur: 0.3, tilt: 2 },
+          { on: "something", offset: 0.25, do: "shake", y: 4, frames: 2 },
+          { on: "stupid,", do: "pile", id: "tower", art: forms, x: TX, y: LEDGE - 3 * GAP, count: 9, height: FH, gap: GAP, fall: 0.17, dur: 0.6, accel: 0.5, tilt: 3 },
+          { on: "stupid,", offset: 0.6, do: "shake", y: 7, frames: 4 },
+          // war: no forms at all
+          { on: "required", do: "pop", who: "mush", squash: true },
+          { on: "required", offset: 0.1, do: "shake", x: 3, frames: 2 },
+          // move's scale is relative to the cast scale: it starts small, far away on Earth, and grows as it nears the glass
+          { at: 0, do: "move", who: "note", by: [0, 0], scale: 0.12, dur: 0.01 },
+          { at: tNote, do: "pop", who: "note" },
+          { at: tNote + 0.05, do: "move", who: "note", to: GLASS, scale: 1, turn: -7, dur: tTap - tNote - 0.05, ease: "smooth", arc: E[2] * 0.4 },
+          { at: tTap, do: "shiver", who: "note", dur: 0.25, amp: 3, rot: 3 },
+          { at: tTap + 0.8, do: "pop", who: "mush", out: true },
+        ],
+      });
+    })();
+  </script>
+</template>

@@ -1,0 +1,339 @@
+<template id="politician-drinks-tea-template">
+  <!-- politician-drinks-tea · collage (Part 6, scenes 3 to 5 as one plate, "the-loop"). The bit: what looks like a
+       monster's choice is a ring road with four stations on it (the weapons factory at the top, the Politician's desk on
+       the left, the ballot box at the bottom, the Capitol on the right), and the ring itself is the psychopath.
+       "psychopath": close on the desk, the Politician in a devil's mask, horns and tail signs the budget, and the tail
+       flicks. "six hundred and four": beside the desk the WEAPONS bar piles up out of war bills past the top of the
+       frame and the camera climbs after it (a pigeon lands on it); "helping them": back on the floor, HELPING THEM is
+       one medicine bill and a magnifying glass slides in over it. "monsters": the mask, the horns and the tail come off,
+       one, two, three, and the horns float away; he has a cup of tea. "system": pull back, a dashed ring road joins
+       the four stations. "rewards": a CAMPAIGN FUND brick lands on his desk and a rosette on his lapel.
+       Scene 4, "Your civilization's incentive structure": wide; giant horns slide down round the factory, so the ring
+       reads as a horned head. Each step inks its arrow and the papers ride it: the factory (LOCKHEED MARTIN) pays a
+       CAMPAIGN FUND brick to the desk; it rides on to the ballot box, where the voters vote; the next arrow reaches the
+       Capitol, its dome opens and a contract of war bills shoots back to the factory; a brick twice the size lands on
+       the Politician, who hugs it. "circular": bills march round the ring. "dog": the Democracy Dog runs onto it,
+       stops on "democracy", the camera pushes in on its tail of bills and skeletons, it bites it, yelps and runs faster.
+       Scene 5, "No individual human": everyone hops; "The loop is evil": the ring grows an angry face. "Every
+       politician": at the Capitol, the Politician takes the brick, hands it back and falls through the floor; another
+       one pops up and takes it; the first climbs back and the second falls. "good intentions": the voters drop hearts
+       in the box; "missiles": missiles pop out of the factory and roll off the left of the sheet. "runs
+       automatically": every human walks off, the ring keeps turning, a flash and a mushroom cloud off the left edge,
+       and nobody looks round. weapons-maker-gets-sick continues on the same plate. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="politician-drinks-tea" data-width="1920" data-height="1080" data-start="0" data-duration="61.84">
+    <div id="politician-drinks-tea-weave"></div>
+    <div id="politician-drinks-tea-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "politician-drinks-tea", V = KIT.V, SZ = KIT.collage.SIZES;
+    var T = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+
+    // ── The-loop plate (the same in weapons-maker-gets-sick) ─────────────────────────────────────────────
+    // The ring is an ellipse round C; the stations stand on it: factory at the top, desk on the left, ballot box at the
+    // bottom, Capitol on the right. Papers go round it anticlockwise on screen (the angle decreases).
+    var C = V ? [1300, 2100] : [2000, 1400], RX = V ? 700 : 1250, RY = V ? 1050 : 760, SH = V ? 680 : 760, SK = SH / 600;
+    var GF = C[1] - RY + 80, GD = C[1] + 80, GB = C[1] + RY + 40;          // ground lines: factory, desk and Capitol, ballot box
+    var ring = function (deg) { var a = deg * Math.PI / 180; return [C[0] + RX * Math.cos(a), C[1] + RY * Math.sin(a)]; };
+    var arc = function (d0, d1, step) { var p = [], n = Math.max(2, Math.ceil(Math.abs(d1 - d0) / (step || 4))); for (var i = 0; i <= n; i++) p.push(ring(d0 + (d1 - d0) * i / n)); return p; };
+    var heading = function (deg) { var a = deg * Math.PI / 180; return Math.atan2(-RY * Math.cos(a), RX * Math.sin(a)) * 180 / Math.PI; };
+    var POLX = C[0] - RX - (V ? 80 : 50), DESKX = POLX + (V ? 80 : 90), CAPX = C[0] + RX;
+    var WX = V ? POLX - 600 : POLX - 760, HX = WX + (V ? 260 : 320), BILLK = V ? 1.0 : 1.2;
+    // the lane, from the ring at 2 o'clock up to the street, where the factory's house and the lab stand
+    var LANE0 = V ? -40 : -35, GS = V ? 300 : 520, HOUSEX = V ? 2700 : 4250, LABX = V ? 1650 : 3000, HK = V ? 1.5 : 1.6;
+    var LANE = [ring(LANE0), V ? [2000, GS] : [3550, GS], [LABX + 600, GS]];
+    // the arrows between the stations (the last in three pieces, so a snip can open a gap in it)
+    var ARROWS = [[252, 194], [166, 104], [76, 14], [-14, -40], [-40, -50], [-50, -72]];
+    var DOG = V ? 380 : 420, DOGSTOP = 135, MUSHX = V ? -60 : -820;
+
+    var cast = {}, beats = [], add = function (b) { beats.push(b); };
+    var person = function (art, x, y, h, o) { var c = { art: art, x: x, y: y, anchor: "bottom", pivot: "bottom", scale: hs(art, h) }; for (var k in o || {}) c[k] = o[k]; return c; };
+    var PK = SH / SZ.politician[1];
+    // the giant horns that come down round the factory (behind everything)
+    var HW = V ? 1100 : 1450;
+    cast.bigHorns = { art: "devil-horns", x: C[0], y: GF + 60, anchor: "bottom", scale: HW / SZ["devil-horns"][0], hidden: true };
+    cast.house = person("house", HOUSEX, GS, 433 * HK);
+    cast.lab = person("lab", LABX, GS, V ? 640 : 700);
+    // stations
+    cast.factory = person("factory-proud", C[0], GF, SH, { label: { text: "LOCKHEED MARTIN", at: [158, 112], width: 210, size: 30, plaque: true } });
+    cast.factoryPay = person("factory-pay", C[0], GF, SH, { hidden: true, label: { text: "LOCKHEED MARTIN", at: [242, 112], width: 210, size: 30, plaque: true } });
+    cast.crowd = person("crowd", C[0], GB - 60, V ? 360 : 400);
+    cast.voterA = person("you-cert", C[0] - (V ? 330 : 420), GB, V ? 560 : 620, { label: { text: "X", at: [117, 55], width: 110, size: 110 } });
+    cast.voterB = person("citizen-2", C[0] + (V ? 330 : 420), GB, V ? 540 : 600);
+    // the campaign posters the CAMPAIGN FUND brick turns into
+    cast.poster1 = person("campaign-poster", C[0] - (V ? 560 : 720), GB - (V ? 260 : 300), V ? 330 : 380, { hidden: true });
+    cast.poster2 = person("campaign-poster", C[0] + (V ? 560 : 720), GB - (V ? 260 : 300), V ? 330 : 380, { hidden: true });
+    cast.ballot = person("ballot-box", C[0], GB, V ? 380 : 420);
+    cast.capitol = { art: "capitol", x: CAPX, y: GD, anchor: "bottom", scale: hs("capitol", SH + 80),
+      pieces: { dome: { clip: [[0, 0], [346, 0], [346, 255], [0, 255]], pivot: [330, 255] }, base: { clip: [[0, 255], [346, 255], [346, 533], [0, 533]] } } };
+    cast.trap = person("trapdoor", CAPX, GD + 60, SH * 0.3);
+    cast.trapOpen = person("trapdoor-open", CAPX, GD + 60, SH * 0.3 * 418 / 376, { hidden: true });
+    cast.polC = person("politician", CAPX, GD + 20, SH * 0.8);
+    cast.polCs = person("politician-red", CAPX, GD + 20, SH * 0.8, { hidden: true });
+    cast.polC2 = person("politician", CAPX, GD + 20, SH * 0.8, { hidden: true });
+    cast.polC3 = person("politician", CAPX, GD + 20, SH * 0.8, { hidden: true });
+    // the devil costume: a tail behind him (its base, art [25, 388], behind the desk), a mask on his face, the horns
+    cast.tail = { art: "devil-costume-tail", x: POLX + 30 * PK, y: GD - 340 * PK, anchor: [25, 388], pivot: [25, 388], scale: 0.7 * PK };
+    cast.polD = person("politician", POLX, GD, SH);
+    cast.mask = { art: "devil-costume-mask", x: POLX - 7 * PK, y: GD - SH + 52 * PK, anchor: [146, 125], pivot: [146, 125], scale: 0.32 * PK };
+    cast.horns = { art: "devil-horns", x: POLX - 4 * PK, y: GD - SH + 34 * PK, anchor: "bottom", pivot: "bottom", scale: 0.22 * SH / 180 };
+    var DH = V ? 360 : 400;
+    cast.desk = person("desk", DESKX, GD, DH);
+    cast.mug = person("teacup", DESKX + 0.25 * DH, GD - DH * 0.77, 0.2 * DH, { hidden: true });
+    // the bar chart beside the desk: one pile of war bills, one medicine bill
+    // a magnifying glass behind the one medicine bill, so the bill sits in its lens (art [129, 131]); handle up and right
+    cast.mag = { art: "magnifier", x: HX, y: GD - (V ? 100 : 110), anchor: [129, 131], pivot: [129, 131], scale: V ? 0.95 : 1.1, hidden: true };
+    add({ at: -1, do: "move", who: "mag", by: [0, 0], turn: -85, dur: 0.01 });
+    cast.help = person("bill-med-flat", HX, GD, 131 * BILLK, { hidden: true });
+    cast.pigeon = person("city-pigeon", WX + 30, GD - (V ? 2300 : 2500), V ? 170 : 190, { hidden: true });
+    // the papers
+    var brick = function (k, art) { return { art: art || "bundle-war-tag", x: C[0], y: GF - SH / 2, scale: k, hidden: true, label: art ? undefined : { text: "CAMPAIGN FUND", at: [102, 130], width: 175, size: 34 } }; };
+    cast.b0 = brick(0.95 * SK); cast.b1 = brick(1.25 * SK); cast.b2 = brick(2.6 * SK); cast.b3 = brick(1.3 * SK);
+    cast.contract = brick(1.3 * SK, "bundle-war");
+    cast.ros = { art: "gold-star", x: POLX + 6 * PK, y: GD - SH + 38 * PK, scale: 0.075 * SH / 381, hidden: true };
+    cast.heart1 = person("heart", C[0] - (V ? 300 : 360), GB - (V ? 620 : 680), 100, { hidden: true });
+    cast.heart2 = person("heart", C[0] + (V ? 300 : 350), GB - (V ? 600 : 660), 100, { hidden: true });
+    cast.face = { art: "loop-face-angry", x: C[0], y: C[1] - (V ? 0 : 60), scale: (V ? 820 : 780) / 233, hidden: true };
+    cast.mush = person("mushroom", MUSHX, GD + 40, V ? 900 : 1100, { hidden: true });
+    cast.dog = { art: "democracy-dog", x: ring(120)[0], y: ring(120)[1], scale: DOG / SZ["democracy-dog"][1], hidden: true, points: { tail: [190, 90] },
+      label: { text: "DEMOCRACY", at: [238, 318], width: 150, size: 30, plaque: true } };
+    // arrowheads at the end of each arrow
+    var HEADS = [0, 1, 2, 5].map(function (a, i) {
+      var d = ARROWS[a][1], p = ring(d), nm = "head" + i;
+      cast[nm] = { art: "ink-arrow", x: p[0], y: p[1], anchor: [130, 16], pivot: [130, 16], scale: V ? 1.0 : 1.2, clip: [[96, 0], [144, 0], [144, 33], [96, 33]], hidden: true };
+      add({ at: -1, do: "move", who: nm, by: [0, 0], turn: heading(d), dur: 0.01 });
+      return nm;
+    });
+
+    // Ride a list of points from t0 to t1 at an even pace.
+    var ride = function (who, pts, t0, t1) {
+      var L = [0];
+      for (var i = 1; i < pts.length; i++) L.push(L[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+      for (i = 1; i < pts.length; i++) add({ at: t0 + (t1 - t0) * L[i - 1] / L[L.length - 1], do: "move", who: who, to: pts[i], dur: (t1 - t0) * (L[i] - L[i - 1]) / L[L.length - 1] });
+    };
+    var ink = function (i, t0, t1, head) {
+      add({ at: t0, do: "line", id: "arrow" + i, points: arc(ARROWS[i][0], ARROWS[i][1]), until: t1, ease: "linear", width: V ? 12 : 14 });
+      if (head !== undefined) add({ at: t1, do: "pop", who: HEADS[head] });
+    };
+    // The dog runs the ring with its feet outward, turning with it: from angle d0 to d1 over [t0, t1].
+    var run = function (d0, d1, t0, t1) {
+      var n = Math.max(1, Math.round(Math.abs(d1 - d0) / 15));
+      for (var i = 0; i < n; i++) {
+        var a = d0 + (d1 - d0) * (i + 1) / n;
+        add({ at: t0 + (t1 - t0) * i / n, do: "move", who: "dog", to: ring(a), turn: heading(a), dur: (t1 - t0) / n });
+      }
+    };
+
+    // ── Views ──
+    var cy = function (g, s) { return V ? g - 560 / s : g - 340 / s; };
+    var CS = V ? 1.3 : 0.95;
+    var mid = function (a, b) { return [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2]; };
+    var QS = V ? 0.55 : 0.42;
+    var q = function (a, b) { var m = mid(a, b); return [m[0], V ? m[1] : m[1] - 260, QS]; };
+    var PF = [C[0], GF - SH / 2], PD = [POLX, GD - SH / 2], PB = [C[0], GB - 200], PC = [CAPX, GD - SH / 2];
+    var DS = ring(DOGSTOP);
+    var views = {
+      desk: [V ? POLX + 30 : POLX + 120, cy(GD, CS), CS], chart: [V ? WX + 160 : WX + 260, cy(GD, CS), CS],
+      barTop: [V ? WX + 160 : WX + 260, GD - (V ? 3300 : 3700), CS],
+      wide: V ? [1150, 2185, 0.42] : [2000, 1100, 0.33],
+      factory: [C[0], cy(GF, CS), CS], capitol: [CAPX, cy(GD, CS), CS], ballot: [C[0], cy(GB, CS), CS],
+      q1: q(PF, PD), q2: q(PD, PB), q3: q(PB, PC), q4: q(PC, PF),
+      dog: [DS[0], DS[1] - (V ? 60 : 40), V ? 1.3 : 1.15], tail: [DS[0] - 40, DS[1] - DOG * 0.32, V ? 2.4 : 2.2],
+    };
+    var cam = function (t, v, d) { add({ at: t, do: "camera", view: v, dur: d === undefined ? 0.6 : d }); };
+
+    // ── Scene 3: the monster at the desk, the 604 bar, the tea ──
+    var DEVIL = ["polD", "mask", "horns", "tail"];
+    add({ at: -1, do: "move", who: "tail", by: [0, 0], turn: 25, dur: 0.01 });
+    add({ at: 0.3, do: "nudge", who: DEVIL, by: [16, 0] });
+    add({ at: 0.9, do: "nudge", who: DEVIL, by: [16, 0] });
+    add({ at: T("conscious"), do: "move", who: "tail", by: [0, 0], turn: 50, dur: 0.12 });
+    add({ at: T("conscious") + 0.2, do: "move", who: "tail", by: [0, 0], turn: 25, dur: 0.15 });
+    add({ at: T("decision"), do: "nudge", who: DEVIL, by: [22, 0] });
+    add({ at: T("decision"), do: "shiver", who: "horns", dur: 0.4, amp: 3, rot: 6 });
+    // "six hundred and four times more on weapons": the bar piles up and the camera climbs after it
+    var T6 = T("six"), TW = T("than");
+    cam(T6 - 0.3, "chart", 0.4);
+    add({ at: T6 - 0.2, do: "line", id: "axis", points: [[WX - 260, GD + 6], [HX + 260, GD + 6]], dur: 0.3, width: 8 });
+    add({ at: T6, do: "pile", id: "bar", art: "bill-war-flat", x: WX, y: GD, count: V ? 34 : 40, scale: BILLK, until: TW + 0.2, accel: 0.55, jitter: 4, tilt: 2 });
+    cam(T6 + 0.35, "barTop", TW - T6 - 0.25);
+    add({ at: T("four") + 0.2, do: "stamp", id: "x604", text: "604×", x: WX + (V ? 330 : 470), y: GD - (V ? 1300 : 1400), size: V ? 110 : 120, width: 360, tilt: -6 });
+    add({ at: T("more") + 0.25, do: "pop", who: "pigeon", squash: true });
+    add({ at: T("weapons") + 0.1, do: "hop", who: "pigeon", height: 24 });
+    // "helping them": back down to the floor, one medicine bill
+    cam(TW, "chart", 0.55);
+    add({ at: T("helping") - 0.1, do: "pop", who: "help", squash: true });
+    add({ at: T("helping"), do: "banner", id: "wl", text: "WEAPONS", x: WX + (V ? 0 : -10), y: GD - (V ? 640 : 700), size: 54, width: 260, pad: 40, color: "ink", tilt: -2 });
+    add({ at: T("them."), do: "banner", id: "hl", text: "HELPING THEM", x: HX + (V ? 40 : 90), y: GD - (V ? 420 : 430), size: 48, width: V ? 300 : 360, pad: 36, color: "ink", tilt: 2 });
+    add({ at: T("helping") + 0.15, do: "slideIn", who: "mag", from: "right", dist: 1100, over: 18 });
+    add({ at: T("them.") + 0.6, do: "nudge", who: "mag", by: [0, -14] });
+    // "But your leaders aren't monsters": back at the desk, the mask, horns and tail come off, one, two, three; the
+    // horns float a beat and drift off up the sheet
+    cam(T("But") - 0.2, "desk", 0.45);
+    add({ at: T("But") + 0.4, do: "hide", who: ["wl", "hl"] });
+    var TM = T("monsters.");
+    add({ at: TM, do: "move", who: "mask", by: [-60, -40], turn: -35, dur: 0.08 });
+    add({ at: TM + 0.1, do: "drop", who: "mask", spin: -60, drift: -80, dur: 0.7 });
+    add({ at: TM + 0.18, do: "move", who: "horns", by: [0, -70], turn: -6, dur: 0.08 });
+    add({ at: TM + 0.36, do: "move", who: "tail", by: [40, -30], turn: 60, dur: 0.08 });
+    add({ at: TM + 0.46, do: "drop", who: "tail", spin: 90, drift: 60, dur: 0.7 });
+    add({ at: TM + 0.75, do: "move", who: "horns", by: [140, -700], turn: 25, dur: 1.4, ease: "smooth" });
+    add({ at: TM + 0.45, do: "pop", who: "mug", squash: true });
+    add({ at: TM + 0.9, do: "hop", who: "polD", height: 14 });
+    // "They're just operating in a system": pull back; a dashed ring road joins the four stations
+    cam(T("They're"), "wide", 0.9);
+    add({ at: T("They're") + 0.5, do: "hide", who: ["bar", "axis", "help", "mag", "pigeon", "x604", "horns"] });
+    add({ at: T("system") - 0.2, do: "line", id: "road", points: arc(270, -90, 3), dur: 1.0, dash: [26, 20], width: V ? 8 : 10 });
+    // "that rewards the wrong things": back in; a CAMPAIGN FUND brick lands on his desk, a rosette on his lapel
+    cam(T("that") - 0.1, "desk", 0.45);
+    add({ at: -1, do: "move", who: "b0", to: [DESKX + 0.28 * DH, GD - DH * 0.77 - 40 * SK], dur: 0.01 });
+    add({ at: T("rewards") - 0.05, do: "stamp", who: "b0", from: 2.2, shake: 6 });
+    add({ at: T("rewards") + 0.25, do: "stamp", who: "ros", from: 2.6, shake: 0 });
+    add({ at: T("things.") + 0.2, do: "hop", who: ["polD", "ros"], height: 12 });
+
+    // ── Scene 4: the loop, step by step ──
+    cam(T("Your", 2) - 0.1, "wide", 0.8);
+    add({ at: T("Your", 2) + 0.4, do: "hide", who: ["mug"] });
+    add({ at: T("psychopath:", 2) - 0.2, do: "slideIn", who: "bigHorns", from: "top", dist: V ? 1600 : 1900, over: 30 });
+    add({ at: T("psychopath:", 2) + 0.3, do: "shake", y: 8, frames: 3 });
+    // Step 1: the factory pays the desk.
+    cam(T("Weapons", 2) - 0.2, "factory", 0.55);
+    add({ at: T("manufacturers"), do: "swap", who: "factory", to: "factoryPay" });
+    var T1 = T("give"), T1e = T("papers.");
+    cam(T1 - 0.1, "q1", 0.6);
+    add({ at: T1, do: "show", who: "b1" });
+    add({ at: T1, do: "move", who: "b1", to: ring(ARROWS[0][0]), dur: 0.01 });
+    ink(0, T1, T1e, 0);
+    ride("b1", arc(ARROWS[0][0], ARROWS[0][1]), T1, T1e);
+    add({ at: T1e, do: "move", who: "b1", to: [DESKX - 60, GD - 120], dur: 0.2, arc: 60 });
+    add({ at: T1e + 0.2, do: "shake", y: 5, frames: 2 });
+    add({ at: T1e + 0.3, do: "swap", who: "factoryPay", to: "factory" });
+    // Step 2: on to the ballot box, where the voters vote.
+    var T2 = T("use"), T2e = T("people") + 0.2;
+    cam(T("Politicians", 2) - 0.1, "q2", 0.7);
+    ink(1, T2, T2e, 1);
+    add({ at: T2 - 0.05, do: "move", who: "b1", to: ring(ARROWS[1][0]), dur: 0.05 });
+    ride("b1", arc(ARROWS[1][0], ARROWS[1][1]), T2, T2e);
+    add({ at: T2e, do: "move", who: "b1", to: [C[0] + (V ? 140 : 170), GB - 70], dur: 0.2, arc: 50 });
+    // the brick turns into campaign posters of his grin; the voters read them and vote
+    add({ at: T2e + 0.2, do: "hide", who: "b1" });
+    add({ at: T2e + 0.2, do: "pop", who: "poster1", squash: true });
+    add({ at: T2e + 0.32, do: "pop", who: "poster2", squash: true });
+    add({ at: T("vote"), do: "nudge", who: "voterA", by: [40, 30] });
+    add({ at: T("vote") + 0.2, do: "nudge", who: "voterB", by: [40, 30] });
+    add({ at: T("vote") + 0.1, do: "hop", who: "crowd", height: 20 });
+    add({ at: T("them.", 2), do: "shiver", who: "ballot", dur: 0.4, amp: 4, rot: 3 });
+    // Step 3: on to the Capitol: power.
+    var T3 = T("Voting"), T3e = T("power");
+    cam(T3 - 0.1, "q3", 0.7);
+
+    ink(2, T3 + 0.1, T3e, 2);
+    add({ at: T3e, do: "stamp", who: "capitol", from: 1.4, shake: 8 });
+    // Step 4: the dome opens and a contract shoots back to the factory.
+    var T4 = T("give", 2), T4e = T("manufacturers.", 2) + 0.2;
+    cam(T4 - 0.3, "q4", 0.7);
+    add({ at: T4, do: "hinge", who: "capitol.dome", angle: 38, frames: 2, hold: 1.0 });
+    add({ at: T4 + 0.05, do: "move", who: "contract", to: [CAPX, GD - SH * 0.85], dur: 0.01 });
+    add({ at: T4 + 0.05, do: "pop", who: "contract" });
+    add({ at: T4 + 0.2, do: "move", who: "contract", to: ring(ARROWS[3][0]), dur: 0.2, arc: 80 });
+    ink(3, T4 + 0.2, T4 + 0.2 + (T4e - T4 - 0.2) * 0.38);
+    ink(4, T4 + 0.2 + (T4e - T4 - 0.2) * 0.38, T4 + 0.2 + (T4e - T4 - 0.2) * 0.55);
+    ink(5, T4 + 0.2 + (T4e - T4 - 0.2) * 0.55, T4e, 3);
+    ride("contract", arc(ARROWS[3][0], ARROWS[5][1]), T4 + 0.4, T4e);
+    add({ at: T4e, do: "move", who: "contract", to: [C[0], GF - SH * 0.45], dur: 0.15 });
+    add({ at: T4e + 0.15, do: "pop", who: "contract", out: true });
+    add({ at: T4e + 0.15, do: "hop", who: "factory", height: 30 });
+    // "Weapons manufacturers give them more papers": a brick twice the size lands on him; his face pops out; he hugs it.
+    var TB = T("papers.", 4);
+    cam(T("Weapons", 4) - 0.1, "q1", 0.7);
+    add({ at: T("Weapons", 4) + 0.3, do: "swap", who: "factory", to: "factoryPay" });
+    add({ at: TB - 0.75, do: "move", who: "b2", to: [C[0] + 60, GF - SH * 0.55], dur: 0.01 });
+    add({ at: TB - 0.75, do: "pop", who: "b2" });
+    add({ at: TB - 0.55, do: "move", who: "b2", to: [POLX + 10, GD - SH * 0.34], dur: 0.55, arc: V ? 500 : 420, turn: -6 });
+    add({ at: TB - 0.45, do: "swap", who: "factoryPay", to: "factory" });
+    add({ at: TB, do: "shake", y: 14, frames: 4 });
+    add({ at: TB + 0.45, do: "hop", who: ["polD", "ros"], height: 30 });
+    add({ at: TB + 0.9, do: "shiver", who: ["polD", "b2", "ros"], dur: 0.5, amp: 3, rot: 2 });
+    // "It's circular": bills march round the ring by themselves
+    var TC = T("circular,");
+    cam(T("It's") - 0.1, "wide", 0.7);
+    var loopPath = arc(260, -100, 6);
+    add({ at: TC, do: "march", id: "bills", art: "bill-war", count: 12, height: V ? 140 : 130, path: loopPath, closed: true, end: "loop", speed: V ? 900 : 1000, gap: (V ? 5600 : 6500) / 12 });
+    // "dog": it runs onto the ring; "democracy": it stops; its tail is bills and skeletons; it bites it and runs faster
+    var TD = T("dog");
+    add({ at: TD - 0.05, do: "pop", who: "dog", squash: true });
+    add({ at: TD - 0.05, do: "move", who: "dog", to: ring(120), turn: heading(120), dur: 0.01 });
+    run(120, DOGSTOP - 360, TD, T("democracy") - 0.15);
+    cam(T("democracy") - 0.5, "dog", 0.5);
+    add({ at: T("democracy"), do: "shiver", who: "dog", dur: 0.35, amp: 5, rot: 4 });
+    cam(T("tail", 2) - 0.2, "tail", 0.6);
+    var TK = T("corpses.");
+    add({ at: TK, do: "hop", who: "dog", height: 40 });
+    add({ at: TK + 0.2, do: "shiver", who: "dog", dur: 0.6, amp: 8, rot: 10 });
+    cam(TK + 0.7, "wide", 0.8);
+    run(DOGSTOP - 360, DOGSTOP - 360 * 8, TK + 0.8, 62);
+
+    // ── Scene 5: nobody is evil, the loop is ──
+    add({ at: T("human") - 0.05, do: "hop", who: ["factory", "voterA", "voterB", "crowd"], height: 30 });
+    add({ at: T("human"), do: "hop", who: ["polD", "b2", "ros"], height: 26 });
+    add({ at: T("evil.") - 0.05, do: "hide", who: "polC" }); add({ at: T("evil.") - 0.05, do: "show", who: "polCs" });
+    add({ at: T("evil.") + 0.9, do: "hide", who: "polCs" }); add({ at: T("evil.") + 0.9, do: "show", who: "polC" });
+    add({ at: T("evil.", 2), do: "stamp", who: "face", from: 1.8, shake: 14 });
+    // "Every politician in it is making the locally rational choice": at the Capitol, a brick is held out to him
+    cam(T("Every") - 0.1, "capitol", 0.7);
+    var BX = CAPX + (V ? 260 : 300), BY = GD - SH * 0.38;
+    add({ at: -1, do: "move", who: "b3", to: [BX + (V ? 260 : 400), BY], dur: 0.01 });
+    add({ at: T("locally"), do: "show", who: "b3" });
+    add({ at: T("locally"), do: "move", who: "b3", to: [BX, BY], dur: 0.35, ease: "smooth" });
+    add({ at: T("take") - 0.05, do: "move", who: "b3", to: [CAPX + (V ? 90 : 110), GD - 60], dur: 0.25, arc: 30 });
+    add({ at: T("or"), do: "move", who: "b3", to: [BX, BY], dur: 0.3, arc: 30 });
+    add({ at: T("lose") - 0.05, do: "hide", who: "trap" }); add({ at: T("lose") - 0.05, do: "show", who: "trapOpen" });
+    add({ at: T("lose"), do: "drop", who: "polC", dist: 1300, spin: 0, dur: 0.45 });
+    add({ at: T("job"), do: "pop", who: "polC2", squash: true });
+    add({ at: T("someone"), do: "move", who: "b3", to: [CAPX + (V ? 90 : 110), GD - 60], dur: 0.25, arc: 30 });
+    add({ at: T("will.") + 0.3, do: "slideIn", who: "polC3", from: "bottom", dist: 1300, over: 20 });
+    add({ at: T("will.") + 0.35, do: "drop", who: "polC2", dist: 1300, spin: 0, dur: 0.45 });
+    add({ at: T("will.") + 0.75, do: "hide", who: "trapOpen" }); add({ at: T("will.") + 0.75, do: "show", who: "trap" });
+    add({ at: T("will.") + 0.75, do: "shake", y: 6, frames: 2 });
+    add({ at: T("will.") + 0.6, do: "hop", who: "b3", height: 20 });
+    // "a machine that converts good intentions into missiles": hearts in at the ballot box, missiles out at the top
+    cam(T("It's", 3) - 0.1, "q2", 0.7);
+    add({ at: T("good") - 0.2, do: "pop", who: "heart1", squash: true });
+    add({ at: T("good"), do: "move", who: "heart1", to: [C[0] - 20, GB - (V ? 300 : 320)], dur: 0.35, arc: 80 });
+    add({ at: T("good") + 0.35, do: "hide", who: "heart1" });
+    add({ at: T("intentions") - 0.2, do: "pop", who: "heart2", squash: true });
+    add({ at: T("intentions"), do: "move", who: "heart2", to: [C[0] + 20, GB - (V ? 300 : 320)], dur: 0.35, arc: 80 });
+    add({ at: T("intentions") + 0.35, do: "hide", who: "heart2" });
+    add({ at: T("intentions") + 0.3, do: "shiver", who: "ballot", dur: 0.4, amp: 4, rot: 3 });
+    cam(T("into") - 0.1, "wide", 0.6);
+    var TMI = T("missiles,");
+    add({ at: TMI - 0.2, do: "hop", who: "factory", height: 40 });
+    var missPath = [[C[0], GF - SH - 40]].concat(arc(262, 184, 6)).concat([[MUSHX - 600, GD - 40]]);
+    add({ at: TMI, do: "march", id: "miss", art: "missile-fly", count: 6, height: V ? 90 : 100, path: missPath, speed: V ? 1300 : 1600, gap: 420, end: "hide", bob: 2, rock: 1 });
+    // "and it runs automatically": every human walks off; the ring keeps turning; a flash off the left edge
+    var TR = T("runs");
+    add({ at: TR - 0.1, do: "slideOut", who: ["polD", "b2", "ros"], to: "left", dist: V ? 1500 : 1700, dur: 0.6 });
+    add({ at: TR, do: "slideOut", who: ["polC3", "b3"], to: "right", dist: V ? 1500 : 1700, dur: 0.6 });
+    add({ at: TR + 0.1, do: "slideOut", who: ["voterA", "voterB", "crowd"], to: "bottom", dist: 1400, dur: 0.6 });
+    var TBOOM = T("automatically.") + 0.85;
+    add({ at: TBOOM, do: "boom", shake: 10, flash: 0.15 });
+    add({ at: TBOOM, do: "pop", who: "mush", squash: true, swell: 0.15 });
+
+    KIT.collage({
+      id: ID, seed: 603, views: views, view: "desk", cast: cast, beats: beats,
+      plate: V ? [-1600, -4600, 4800, 6000] : [-2600, -4800, 7400, 3400],
+    });
+  </script>
+</template>

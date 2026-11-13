@@ -1,0 +1,82 @@
+<template id="title-card-template">
+  <!-- title-card · the period title card (KIT.titleScene, look "atomic"): the book's title on the plain navy card
+       under the film's emblem, the heading words coming in on the spoken words. "(for": "(for Busy People)" slides in
+       under them. "Busy": YOU, the busy man in the fedora (the generated cut-out), sprints left to right along the
+       bottom of the card, stepping between his walk and his eyes-on-the-pocket-watch pose. "A": the subtitle pill.
+       "Step-by-Step": his skeleton, in the same fedora, strolls slowly back the other way until the card goes to
+       black. He was too busy to read it, and now he has all the time in the world. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="title-card" data-width="1920" data-height="1080" data-start="0" data-duration="8.52">
+    <div id="title-card-cam">
+      <div id="title-card-bg"></div>
+      <div id="title-card-back"></div>
+      <div id="title-card-words"></div>
+      <div id="title-card-art"></div>
+    </div>
+    <div id="title-card-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "title-card",
+      seed: 101,
+      lines: [["HOW", "TO", "END"], ["WAR", "AND", "DISEASE"], { words: ["(for", "Busy", "People)"], style: "label", cue: "(for" }],
+      linesTall: [["HOW", "TO", "END"], ["WAR", "AND"], ["DISEASE"], { words: ["(for", "Busy", "People)"], style: "label", cue: "(for" }],
+      spoken: ["How", "to", "End", "War", "and", "Disease"],
+      sub: { text: "A Step-by-Step Guide to Optimizing Your Terrible Civilization", cue: "A" },
+      // Three heading lines and a pill: the emblem shrinks up out of their way (the sketch's layout), so the
+      // heading and the pill sit high and the busy man has the bottom of the card to himself.
+      size: KIT.V ? 170 : 124,
+      cy: KIT.V ? 880 : 470,
+      minTop: KIT.V ? 700 : 300,
+      maxH: KIT.V ? 520 : 330,
+      // The busy man, then his skeleton (YOU, from Part 10 on): the generated cut-outs, stepping on twos (walking pose,
+      // then the pose with his eyes on the pocket watch). The skeleton is the same pair mirrored, strolling back.
+      gag: function (c) {
+        var W = c.W, V = c.V, D = c.D, Z = window.KIT_ART_SIZES, f = function (n) { return n.toFixed(1); };
+        // the emblem, smaller and higher (the navy card behind it is the camera's own background)
+        var E = c.emblem, ES = V ? 0.8 : 0.58, EY = V ? 400 : 150;
+        c.cam.style.background = c.C.navy;
+        c.bg.style.transformOrigin = E.at[0] + "px " + E.at[1] + "px";
+        c.bg.style.transform = "translateY(" + (EY - E.at[1]) + "px) scale(" + ES + ")";
+        // where he runs: under the pill (the title card has no burned-in captions, so 9:16 can use y 1470 to 1700)
+        var MH = V ? 250 : 230, FEET = V ? 1690 : 1000;
+        var img = function (cls, art, flip) {
+          var w = MH * Z[art][0] / Z[art][1];
+          return '<img class="' + cls + '" src="assets/art/collage/' + art + '.webp" style="position:absolute;left:' + f(-w / 2) + "px;top:" + f(-MH) +
+            "px;width:" + f(w) + "px;height:" + MH + "px;visibility:hidden" + (flip ? ";transform:scaleX(-1)" : "") + '">';
+        };
+        c.art.innerHTML = '<div id="title-card-run" style="position:absolute;left:0;top:0">' + img("a", "you-walk") + img("b", "you-watch") + "</div>" +
+          '<div id="title-card-bones" style="position:absolute;left:0;top:0">' + img("a", "you-skeleton-walk", true) + img("b", "you-skeleton", true) + "</div>";
+        var run = document.getElementById("title-card-run"), bones = document.getElementById("title-card-bones");
+        var pair = function (g) { return [g.querySelector(".a"), g.querySelector(".b")]; };
+        var R = pair(run), B = pair(bones);
+        var show = function (els, on, step) { els[0].style.visibility = on && step ? "inherit" : "hidden"; els[1].style.visibility = on && !step ? "inherit" : "hidden"; };
+        var tRun = c.cue("Busy"), RUN_T = 1.3, x0 = -160, x1 = W + 160;
+        var tWalk = c.cue("Step-by-Step"), bx0 = W + 140, bx1 = W * (V ? 0.42 : 0.5);
+        KIT.onTime(c.tl, D, function (t0) {
+          var t = Math.floor(t0 * 12) / 12, fr = Math.floor(t0 * 6);
+          // the sprint: a step every two drawings, a hop on each, leaning in
+          var u = (t - tRun) / RUN_T;
+          show(R, u > 0 && u < 1, fr % 2 === 0);
+          if (u > 0 && u < 1) run.style.transform = "translate(" + f(x0 + (x1 - x0) * u) + "px," + f(FEET - (fr % 2 ? 0 : 14)) + "px) rotate(6deg)";
+          // the stroll back, slow and steady
+          var w = (t - tWalk) / (D - tWalk), sf = Math.floor(t0 * 3);
+          show(B, w > 0, sf % 2 === 0);
+          if (w > 0) bones.style.transform = "translate(" + f(bx0 + (bx1 - bx0) * w) + "px," + f(FEET - (sf % 2 ? 0 : 5)) + "px)";
+        });
+      },
+    });
+  </script>
+</template>

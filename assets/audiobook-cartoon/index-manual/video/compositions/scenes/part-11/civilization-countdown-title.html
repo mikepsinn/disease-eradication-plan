@@ -1,0 +1,75 @@
+<template id="civilization-countdown-title-template">
+  <!-- civilization-countdown-title · the period title card (KIT.titleScene, look "atomic"). The emblem's nucleus is a
+       small Earth with a bomb's screw collar, and its fuse runs over and down the card to the bottom edge. The heading
+       fades in word by word. "Countdown.": the weapons factory pops up at the bottom edge beside the fuse's end, jabs
+       it, and it catches; the factory ducks back down, and the spark starts up the fuse toward the Earth as the card
+       goes to black. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="civilization-countdown-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.001">
+    <div id="civilization-countdown-title-cam"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "civilization-countdown-title",
+      lines: [["YOUR", "CIVILIZATION"], ["HAS", "A", "COUNTDOWN"]],
+      linesTall: [["YOUR"], ["CIVILIZATION"], ["HAS", "A"], ["COUNTDOWN"]],
+      spoken: ["Your", "Civilization", "Has", "a", "Countdown."],
+      gag: function (c) {
+        var V = c.V, W = c.W, H = c.H, tl = c.tl, E = c.emblem.at, R = V ? 70 : 58, CK = R / 32;   // the collar: bomb art 68..112 x 114..143
+        var ART = "assets/art/collage/";
+        var img = function (src, css) { var i = document.createElement("img"); i.src = ART + src + ".webp"; i.style.cssText = "position:absolute;" + css; return i; };
+        // the Earth in the nucleus, its collar on top
+        c.back.appendChild(img("earth-big", "left:" + (E[0] - R) + "px;top:" + (E[1] - R) + "px;width:" + 2 * R + "px;height:" + 2 * R * 961 / 956 + "px"));
+        var cTop = E[1] - R + 6 - 29 * CK;
+        c.back.appendChild(img("bomb", "left:" + (E[0] - 90 * CK) + "px;top:" + (cTop - 114 * CK) + "px;width:" + 179 * CK + "px;height:" + 306 * CK + "px;clip-path:polygon(38% 37.3%, 62.6% 37.3%, 62.6% 46.7%, 38% 46.7%)"));
+        // the fuse: up off the collar, over to the left and down the card's edge, off the bottom
+        var x0 = E[0], y0 = cTop + 4, end = V ? [150, H + 40] : [210, H + 40];
+        var d = V ? "M" + x0 + "," + y0 + " C" + x0 + "," + (y0 - 90) + " 170,370 150,620 S120,1500 " + end[0] + "," + end[1]
+                  : "M" + x0 + "," + y0 + " C" + x0 + "," + (y0 - 90) + " 330,90 240,330 S190,900 " + end[0] + "," + end[1];
+        var NS = "http://www.w3.org/2000/svg", svg = document.createElementNS(NS, "svg");
+        svg.setAttribute("width", W); svg.setAttribute("height", H);
+        svg.style.cssText = "position:absolute;left:0;top:0;overflow:visible";
+        svg.innerHTML = '<path d="' + d + '" fill="none" stroke="#1C140A" stroke-width="13" stroke-linecap="round"/><path d="' + d + '" fill="none" stroke="#C9A055" stroke-width="7" stroke-linecap="round"/>';
+        c.back.insertBefore(svg, c.back.firstChild);
+        var paths = svg.querySelectorAll("path"), L = paths[0].getTotalLength();
+        // the factory at the bottom edge, beside the fuse's end (factory-proud: 317 x 478)
+        var FW = V ? 300 : 280, FH = FW * 478 / 317, fx = end[0] + (V ? 30 : 40);
+        var fac = img("factory-proud", "left:" + fx + "px;top:" + H + "px;width:" + FW + "px;height:" + FH + "px");
+        c.art.appendChild(fac);
+        var SK = V ? 1.3 : 1.15, spark = document.createElement("div");
+        spark.style.cssText = "position:absolute;left:0;top:0;width:0;height:0;visibility:hidden";
+        spark.innerHTML = '<img src="' + ART + 'bomb.webp" style="position:absolute;left:' + (-136 * SK) + "px;top:" + (-55 * SK) + "px;width:" + 179 * SK + "px;height:" + 306 * SK +
+          'px;clip-path:polygon(38.5% 4%, 96% 4%, 96% 30%, 64% 30%, 64% 22%, 38.5% 22%)">';
+        c.art.appendChild(spark);
+        var T = c.cue("Countdown."), LIT = T + 0.35, UP = FH * 0.8;
+        tl.fromTo(fac, { y: 0 }, { y: -UP, duration: 0.17, ease: "back.out(2)" }, T);
+        tl.to(fac, { x: -30, rotation: -6, duration: 0.08, ease: "power2.in" }, LIT - 0.08);
+        tl.to(fac, { x: 0, rotation: 0, duration: 0.15 }, LIT + 0.02);
+        tl.to(fac, { y: 0, duration: 0.18, ease: "power2.in" }, LIT + 0.3);
+        // where the fuse's end is in frame: the spark lights there and climbs
+        var inFrame = L, k;
+        for (k = 0; k < 60; k++) { var p = paths[0].getPointAtLength(L - k * 10); if (p.y < H - 20) { inFrame = L - k * 10; break; } }
+        var rng = KIT.rng(13), jit = [];
+        for (k = 0; k < 60; k++) jit.push([rng() * 40 - 20, 0.8 + rng() * 0.4]);
+        KIT.onTime(tl, c.D, function (t0) {
+          var t = Math.floor(t0 * 12) / 12, lit = t >= LIT, f = lit ? inFrame - 260 * (t - LIT) : L;
+          paths.forEach(function (pp) { pp.setAttribute("stroke-dasharray", f.toFixed(1) + " " + (L + 10).toFixed(1)); });
+          spark.style.visibility = lit ? "inherit" : "hidden";
+          var q = paths[0].getPointAtLength(f), j = jit[Math.round(t * 12) % jit.length];
+          spark.style.transform = "translate(" + q.x.toFixed(1) + "px," + q.y.toFixed(1) + "px) rotate(" + j[0].toFixed(1) + "deg) scale(" + j[1].toFixed(2) + ")";
+        });
+      },
+    });
+  </script>
+</template>

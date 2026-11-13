@@ -1,0 +1,115 @@
+<template id="fax-machine-lifetime-template">
+  <!-- fax-machine-lifetime · collage (Part 25, scene 20, plate one-lifetime). The engraved globe on aged paper and,
+       beside it, a timeline bar from 1917 to 1991. "invented,": Marx pops up by the globe and holds up the page a quill
+       scribbles on; "took": Lenin and Mao pop up on it. "half": a red tint spreads over half the globe. "lifetime": a baby at 1917 grows up as he walks the bar, kid,
+       man, old man on a cane; "collapsed": Gorbachev pops up at 1991 and the red shrinks away; "lifetime.": the old
+       man reaches 1991 and flashes into a skeleton, still on his cane: 74 YEARS. "fax machines.": a carrier pigeon
+       lands on top of the globe with a rolled message. "mass murder": everything stops; a heap of bones at the globe's
+       foot. "TERRIBLE": a red rubber stamp, SUBOPTIMAL. "idea.": the pigeon flaps off. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="fax-machine-lifetime" data-width="1920" data-height="1080" data-start="0" data-duration="12.3">
+    <div id="fax-machine-lifetime-weave"></div>
+    <div id="fax-machine-lifetime-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "fax-machine-lifetime", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // the globe (art 381 x 643: the ball is about x 20-360, y 15-370) and the bar
+      var GH = V ? 760 : 860, GK = GH / SZ.globe[1], GX = V ? 540 : 560, GB = V ? 860 : 1000;
+      var ball = function (x, y) { return [GX + (x - 190) * GK, GB - (643 - y) * GK]; };
+      var BAR = V ? { x0: 170, x1: 800, y: 1330 } : { x0: 1060, x1: 1640, y: 760 };
+      var HH = V ? 300 : 380;                                          // the grown man's height
+      var person = function (art, h) { return { art: art, x: BAR.x0, y: BAR.y, anchor: "bottom", pivot: "bottom", scale: h / SZ[art][1], hidden: true }; };
+      var cast = {
+        bones: { art: "bone-hill", x: GX, y: GB + (V ? 10 : -50), anchor: "bottom", scale: (V ? 900 : 1000) / SZ["bone-hill"][0], hidden: true },
+        globe: { art: "globe", x: GX, y: GB, anchor: "bottom", scale: GK },
+        // the red over half the ball: the globe's own left half, tinted (below)
+        red: { art: "globe", x: GX, y: GB, anchor: "bottom", scale: GK, clip: [[0, 0], [192, 0], [192, 380], [0, 380]], pivot: [192, 190], hidden: true },
+        // Marx beside the globe, writing; Lenin and Mao on its red half
+        marx: { art: "marx", x: V ? 860 : 1300, y: V ? 1330 : BAR.y, anchor: "bottom", pivot: "bottom", scale: (V ? 560 : 600) / SZ.marx[1], hidden: true },
+        letter: { art: "letter", x: V ? 700 : 1120, y: V ? 900 : 330, scale: V ? 0.42 : 0.45, pivot: "bottom", hidden: true },
+        quill: { art: "quill", x: V ? 750 : 1180, y: V ? 850 : 270, scale: V ? 0.36 : 0.4, pivot: [40, 400], hidden: true },
+        lenin: { art: "lenin", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: (V ? 190 : 220) / SZ.lenin[1], hidden: true },
+        mao: { art: "mao", x: 0, y: 0, anchor: "bottom", pivot: "bottom", scale: (V ? 190 : 220) / SZ.mao[1], hidden: true },
+        baby: person("human-ages-baby", HH * 0.42),
+        kid: person("human-ages-kid", HH * 0.72),
+        man: person("human-ages-man", HH),
+        old: person("human-ages-old", HH * 0.92),
+        bonesman: person("skeleton", HH * 0.92),
+        gorb: { art: "gorbachev", x: BAR.x1 + (V ? 120 : 170), y: BAR.y, anchor: "bottom", pivot: "bottom", scale: HH * 1.15 / SZ.gorbachev[1], hidden: true },
+        skulls: { art: "skulls", x: GX + (V ? 230 : 280), y: GB - (V ? 0 : 60), anchor: "bottom", scale: (V ? 260 : 300) / SZ.skulls[1], hidden: true },
+        pigeon: { art: "city-pigeon", x: V ? 1250 : 2150, y: V ? -100 : -150, scale: V ? 0.75 : 0.9, pivot: "bottom", faces: "left", hidden: true },
+        msg: { art: "scroll-rolled", x: V ? 1250 : 2150, y: V ? -100 : -150, scale: 0.22, hidden: true },
+      };
+      var LP = ball(85, 215), MP = ball(155, 250);
+      cast.lenin.x = LP[0]; cast.lenin.y = LP[1]; cast.mao.x = MP[0]; cast.mao.y = MP[1];
+      var TOP = ball(205, 18), WALK0 = cue("SINGLE") - 0.2, WALK1 = cue("lifetime.");
+      var span = BAR.x1 - BAR.x0, ages = ["baby", "kid", "man", "old"];
+      var beats = [
+        // the bar: a line with its two years
+        { at: 0, do: "line", id: "bar", points: [[BAR.x0 - 30, BAR.y + 8], [BAR.x1 + 30, BAR.y + 8]], dur: 0.01, width: 10 },
+        { at: 0, do: "banner", id: "y17", text: "1917", x: BAR.x0, y: BAR.y + 62, size: 46, width: 130, pad: 26, color: "ink", tilt: 0 },
+        { at: 0, do: "banner", id: "y91", text: "1991", x: BAR.x1, y: BAR.y + 62, size: 46, width: 130, pad: 26, color: "ink", tilt: 0 },
+        // "invented,": a letter, and a quill scribbling on it
+        { on: "Communism", do: "pop", who: "marx", squash: true },
+        { on: "Communism", offset: 0.2, do: "pop", who: "letter", squash: true },
+        { on: "Communism", offset: 0.3, do: "pop", who: "quill" },
+        { on: "Communism", offset: 0.4, do: "shiver", who: "quill", dur: 1.0, amp: 10, rot: 8 },
+        { on: "invented,", offset: 0.2, do: "move", who: "letter", by: [0, -60], turn: -8, dur: 0.2 },
+        { on: "took", do: "pop", who: ["letter", "quill", "marx"], out: true },
+        { on: "took", do: "pop", who: "lenin", squash: true },
+        { on: "took", offset: 0.15, do: "pop", who: "mao", squash: true },
+        // "half your planet,": the red spreads over half of it
+        { on: "half", do: "pop", who: "red", squash: true },
+        { on: "half", offset: 0.1, do: "shiver", who: "globe", dur: 0.4, amp: 2, rot: 1 },
+        // the baby is born at 1917 as the walk begins
+        { at: WALK0 - 0.6, do: "pop", who: "baby", squash: true },
+      ];
+      // he walks the bar, growing up, kid, man, old man
+      ages.forEach(function (a, i) {
+        var t0 = WALK0 + (WALK1 - WALK0) * i / 4, t1 = WALK0 + (WALK1 - WALK0) * (i + 1) / 4;
+        if (i) beats.push({ at: t0, do: "swap", who: ages[i - 1], to: a });
+        beats.push({ at: WALK0, do: "move", who: a, by: [span * i / 4, 0], dur: 0.01 });
+        beats.push({ at: t0, do: "move", who: a, by: [span / 4, 0], dur: t1 - t0 });
+        beats.push({ at: t0, do: "bob", who: a, y: 5, r: 2, speed: 2.2, until: t1 });
+      });
+      beats = beats.concat([
+        // "collapsed": Gorbachev at 1991, and the red dries up
+        { on: "collapsed", do: "pop", who: "gorb", squash: true },
+        { on: "in", n: 1, do: "pop", who: "red", out: true },
+        { on: "in", n: 1, do: "pop", who: ["lenin", "mao"], out: true },
+        // "lifetime.": he reaches 1991 and flashes into a skeleton, still on his cane
+        { on: "lifetime.", offset: 0.12, do: "xray", who: "old", to: "bonesman", frames: 4 },
+        { on: "lifetime.", offset: 0.5, do: "banner", id: "y74", text: "74 YEARS", x: (BAR.x0 + BAR.x1) / 2, y: BAR.y - HH - (V ? 40 : 80), size: V ? 70 : 76, width: V ? 360 : 420, pad: 50, tilt: -3 },
+        // "fax machines.": a pigeon flaps in with a rolled message and lands on top of the globe
+        { on: "world", do: "show", who: ["pigeon", "msg"] },
+        { on: "world", do: "move", who: "pigeon", by: [TOP[0] - (V ? 1250 : 2150), TOP[1] - (V ? -100 : -150) - 70], dur: 1.0, arc: 120 },
+        { on: "world", do: "move", who: "msg", by: [TOP[0] - 70 - (V ? 1250 : 2150), TOP[1] - (V ? -100 : -150) - 70], dur: 1.0, arc: 120 },
+        { on: "world", do: "shiver", who: "pigeon", dur: 1.0, amp: 6, rot: 10 },
+        { on: "machines.", do: "hop", who: "pigeon", height: 14 },
+        // "mass murder": nothing moves; the bones at its foot
+        { on: "mass", do: "pop", who: "bones" },
+        { on: "mass", do: "pop", who: "skulls" },
+        // "TERRIBLE": SUBOPTIMAL
+        { on: "TERRIBLE", do: "stamp", id: "sub", text: "SUBOPTIMAL", x: ball(190, 200)[0], y: ball(190, 200)[1], size: V ? 120 : 130, width: V ? 760 : 820, tilt: -8 },
+        // "idea.": the pigeon flaps off
+        { on: "idea.", do: "move", who: ["pigeon", "msg"], by: [V ? -900 : -1200, -800], dur: 0.9, arc: 60 },
+        { on: "idea.", do: "shiver", who: "pigeon", dur: 0.9, amp: 6, rot: 10 },
+      ]);
+      KIT.collage({ id: ID, seed: 2520, cast: cast, beats: beats });
+      document.getElementById(ID + "-red").querySelector(".cg-art").style.cssText += ";filter:sepia(1) saturate(8) hue-rotate(-38deg) brightness(0.8);opacity:0.72";
+    })();
+  </script>
+</template>

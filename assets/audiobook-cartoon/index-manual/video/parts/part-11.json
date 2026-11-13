@@ -1,0 +1,1037 @@
+{
+  "id": "part-11",
+  "title": "Your Civilization Has a Countdown",
+  "storyboard": "storyboards/part-11-civilization-countdown.md",
+  "audio": {
+    "start": 1135.342,
+    "end": 1330.855
+  },
+  "noCaptions": [
+    "civilization-countdown-title"
+  ],
+  "scenes": [
+    {
+      "id": "civilization-countdown-title",
+      "file": "compositions/scenes/part-11/civilization-countdown-title.html",
+      "cue": "Your",
+      "approx": 1135.364,
+      "layer": "A"
+    },
+    {
+      "id": "official-murder-budget",
+      "file": "compositions/scenes/part-11/official-murder-budget.html",
+      "cue": "And",
+      "approx": 1138.323,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "And",
+          "expr": "smirk",
+          "rest": "closed",
+          "body": "point-right",
+          "mode": "big"
+        },
+        {
+          "cue": "budget.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "cybercrime-10-trillion",
+      "file": "compositions/scenes/part-11/cybercrime-10-trillion.html",
+      "cue": "Cybercrime",
+      "approx": 1141.604,
+      "layer": "B"
+    },
+    {
+      "id": "destroy-beats-make",
+      "file": "compositions/scenes/part-11/destroy-beats-make.html",
+      "cue": "Combined,",
+      "approx": 1166.764,
+      "layer": "B"
+    },
+    {
+      "id": "considered-tuesday",
+      "file": "compositions/scenes/part-11/considered-tuesday.html",
+      "cue": "On",
+      "approx": 1184.144,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "On",
+          "expr": "smirk",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "Tuesday",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "palms-down",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "build-or-steal",
+      "file": "compositions/scenes/part-11/build-or-steal.html",
+      "cue": "When",
+      "approx": 1187.024,
+      "layer": "B"
+    },
+    {
+      "id": "neighbors-house",
+      "file": "compositions/scenes/part-11/neighbors-house.html",
+      "cue": "You've",
+      "approx": 1236.444,
+      "layer": "B"
+    },
+    {
+      "id": "once-it-starts",
+      "file": "compositions/scenes/part-11/once-it-starts.html",
+      "cue": "Once",
+      "approx": 1244.484,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Once",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "try-all-three",
+      "file": "compositions/scenes/part-11/try-all-three.html",
+      "cue": "you",
+      "approx": 1245.504,
+      "layer": "B"
+    },
+    {
+      "id": "25-percent-by-2033",
+      "file": "compositions/scenes/part-11/25-percent-by-2033.html",
+      "cue": "At",
+      "approx": 1251.924,
+      "layer": "B"
+    },
+    {
+      "id": "this-is-a-loop",
+      "file": "compositions/scenes/part-11/this-is-a-loop.html",
+      "cue": "This",
+      "approx": 1283.564,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "This",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "arms-crossed",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "loop-not-line-item",
+      "file": "compositions/scenes/part-11/loop-not-line-item.html",
+      "cue": "not",
+      "approx": 1284.584,
+      "layer": "B"
+    },
+    {
+      "id": "you-defund-it",
+      "file": "compositions/scenes/part-11/you-defund-it.html",
+      "cue": "You",
+      "approx": 1329.524,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "You",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "it.",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "civilization-countdown-title",
+      "cue": "Your",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "civilization-countdown-title",
+      "cue": "Countdown.",
+      "sfx": "fire",
+      "volume": 0.4,
+      "offset": 0.35
+    },
+    {
+      "scene": "official-murder-budget",
+      "cue": "official",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "official-murder-budget",
+      "cue": "official",
+      "sfx": "stamp",
+      "volume": 0.45,
+      "offset": 0.28
+    },
+    {
+      "scene": "official-murder-budget",
+      "cue": "murder",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "official-murder-budget",
+      "cue": "budget.",
+      "sfx": "whoosh",
+      "volume": 0.3,
+      "offset": 0.35
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "Cybercrime",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "trillion",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "growing",
+      "sfx": "tick",
+      "volume": 0.5,
+      "offset": 0.2
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "at",
+      "sfx": "tick",
+      "volume": 0.5,
+      "n": 1
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "percent",
+      "sfx": "tick",
+      "volume": 0.5,
+      "n": 1
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "fifteen",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "This",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "problem.",
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "aircraft",
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "carrier,",
+      "sfx": "pop",
+      "volume": 0.35,
+      "at": "after"
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "stealing",
+      "sfx": "clank",
+      "volume": 0.4,
+      "offset": 0.1
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "one",
+      "sfx": "pop",
+      "volume": 0.3,
+      "n": 1
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "billion",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "cryptocurrency",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "single",
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "afternoon.",
+      "sfx": "ding",
+      "volume": 0.35,
+      "offset": 0.5
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "afternoon.",
+      "sfx": "stamp",
+      "volume": 0.45,
+      "offset": 0.75
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "afternoon.",
+      "sfx": "boing",
+      "volume": 0.35,
+      "offset": 1
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "finances",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "ransomware.",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "ransomware.",
+      "sfx": "zap",
+      "volume": 0.3,
+      "offset": 0.6
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "through",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "pays",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "cybercrime-10-trillion",
+      "cue": "better.",
+      "sfx": "splat",
+      "volume": 0.5,
+      "offset": 0.55
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "Combined,",
+      "sfx": "clank",
+      "volume": 0.4,
+      "offset": 0.4
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "trillion",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "percent",
+      "sfx": "snip",
+      "volume": 0.45,
+      "offset": 0.2
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "global",
+      "sfx": "stamp",
+      "volume": 0.4
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "growing",
+      "sfx": "hammer",
+      "volume": 0.3
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "faster",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "winning.",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "I'm",
+      "sfx": "splat",
+      "volume": 0.5,
+      "offset": 0.5
+    },
+    {
+      "scene": "destroy-beats-make",
+      "cue": "emergency.",
+      "sfx": "crickets",
+      "volume": 0.3,
+      "at": "after"
+    },
+    {
+      "scene": "considered-tuesday",
+      "cue": "your",
+      "sfx": "click",
+      "volume": 0.4,
+      "offset": 0.37
+    },
+    {
+      "scene": "considered-tuesday",
+      "cue": "planet",
+      "sfx": "click",
+      "volume": 0.4,
+      "offset": 0.63
+    },
+    {
+      "scene": "considered-tuesday",
+      "cue": "Tuesday",
+      "sfx": "click",
+      "volume": 0.4
+    },
+    {
+      "scene": "considered-tuesday",
+      "cue": "Tuesday",
+      "sfx": "click",
+      "volume": 0.4,
+      "offset": 0.2
+    },
+    {
+      "scene": "considered-tuesday",
+      "cue": "Tuesday",
+      "sfx": "click",
+      "volume": 0.4,
+      "offset": 0.4
+    },
+    {
+      "scene": "considered-tuesday",
+      "cue": "Tuesday",
+      "sfx": "thunk",
+      "volume": 0.3,
+      "at": "after",
+      "offset": 0.05
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "parasitic",
+      "sfx": "slide-up",
+      "volume": 0.3
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "individual,",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "company,",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "nation",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "flips",
+      "sfx": "ding",
+      "volume": 0.4,
+      "offset": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "\"steal",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "years",
+      "sfx": "hammer",
+      "volume": 0.3
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "ransom",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "in",
+      "sfx": "whirr",
+      "volume": 0.3,
+      "n": 1
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "afternoon?",
+      "sfx": "ding",
+      "volume": 0.35,
+      "offset": 0.2
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "manufacture",
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "hacking",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "banks",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "enough",
+      "sfx": "clank",
+      "volume": 0.3,
+      "n": 2
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "target",
+      "sfx": "switch",
+      "volume": 0.45
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "rather",
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "success.",
+      "sfx": "boom",
+      "volume": 0.6,
+      "offset": 0.1
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "irrational.",
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "only",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "\"failed",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "Somalia,",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "Libya,",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "parts",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "Syria.",
+      "sfx": "snip",
+      "volume": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "collapsed,",
+      "sfx": "slam",
+      "volume": 0.45,
+      "offset": -0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "collapsed,",
+      "sfx": "slam",
+      "volume": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "collapsed,",
+      "sfx": "slam",
+      "volume": 0.35,
+      "offset": 0.4
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "replaced",
+      "sfx": "clank",
+      "volume": 0.4,
+      "offset": -0.48
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "builds",
+      "sfx": "hammer",
+      "volume": 0.35
+    },
+    {
+      "scene": "build-or-steal",
+      "cue": "taken.",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "neighbors-house",
+      "cue": "neighbor's",
+      "sfx": "fire",
+      "volume": 0.4,
+      "offset": -0.3
+    },
+    {
+      "scene": "neighbors-house",
+      "cue": "gasoline",
+      "sfx": "clank",
+      "volume": 0.4,
+      "offset": 0.5
+    },
+    {
+      "scene": "neighbors-house",
+      "cue": "basement.",
+      "sfx": "boom",
+      "volume": 0.6,
+      "at": "after",
+      "offset": -0.35
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "you",
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "out,",
+      "sfx": "click",
+      "volume": 0.4
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "out,",
+      "sfx": "switch",
+      "volume": 0.4,
+      "n": 2
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "it.",
+      "sfx": "switch",
+      "volume": 0.4
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "will",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "all",
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "all",
+      "sfx": "tick",
+      "volume": 0.5,
+      "offset": 0.95
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "all",
+      "sfx": "tick",
+      "volume": 0.5,
+      "offset": 1.2
+    },
+    {
+      "scene": "try-all-three",
+      "cue": "all",
+      "sfx": "tick",
+      "volume": 0.5,
+      "offset": 1.45
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "reaches",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "percent",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "G.D.P.",
+      "n": 1,
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "by",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "thirty-three.",
+      "offset": 0.15,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "Soviet",
+      "n": 1,
+      "offset": -0.2,
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "Union",
+      "n": 1,
+      "offset": 0.35,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "fifteen",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "worse",
+      "offset": 0.2,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "technology,",
+      "n": 1,
+      "offset": 0.4,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "plan.",
+      "n": 1,
+      "sfx": "thunk",
+      "volume": 0.55
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "terrible",
+      "n": 1,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "one.",
+      "sfx": "boing",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "You",
+      "offset": -0.1,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "faster-growing",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "no",
+      "n": 1,
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "The",
+      "n": 2,
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "25-percent-by-2033",
+      "cue": "lost.",
+      "sfx": "slam",
+      "volume": 0.6
+    },
+    {
+      "scene": "this-is-a-loop",
+      "cue": "a",
+      "sfx": "fire",
+      "volume": 0.3
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "line",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "item.",
+      "sfx": "stamp",
+      "volume": 0.45,
+      "offset": 0.15
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "print",
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "wages",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "less,",
+      "sfx": "squeak",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "cybercrime,",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "grows",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "justifies",
+      "sfx": "stamp",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "spending.",
+      "sfx": "clank",
+      "volume": 0.4,
+      "n": 2
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "spending.",
+      "sfx": "whoosh",
+      "volume": 0.35,
+      "n": 2,
+      "offset": 0.4
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "bombed",
+      "sfx": "slide-down",
+      "volume": 0.35,
+      "offset": -0.3
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "bombed",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "bombed",
+      "sfx": "pop",
+      "volume": 0.4,
+      "offset": 0.15
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "bombed",
+      "sfx": "pop",
+      "volume": 0.4,
+      "offset": 0.3
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "sanctioned",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "sanctioned",
+      "sfx": "slam",
+      "volume": 0.4,
+      "offset": 0.35
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "conventionally.",
+      "sfx": "splat",
+      "volume": 0.45
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "homework.",
+      "sfx": "scratch",
+      "volume": 0.3
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "math.",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "treaty",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "breaks",
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "medical",
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "rewarding",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "irrational,",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "machine",
+      "sfx": "sizzle",
+      "volume": 0.3
+    },
+    {
+      "scene": "loop-not-line-item",
+      "cue": "outlaw",
+      "sfx": "hammer",
+      "volume": 0.4
+    },
+    {
+      "scene": "you-defund-it",
+      "cue": "it.",
+      "sfx": "sizzle",
+      "volume": 0.3,
+      "at": "after",
+      "offset": -0.05
+    }
+  ]
+}

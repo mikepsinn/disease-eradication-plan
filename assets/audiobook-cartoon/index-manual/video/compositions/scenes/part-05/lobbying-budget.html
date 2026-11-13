@@ -1,0 +1,56 @@
+<template id="lobbying-budget-template">
+  <!-- lobbying-budget · collage host shot (Part 5, scene 8). Wishonia leans into the aside. "part": the Lobbyist
+       tiptoes in beside the console with his briefcase held open, hopeful. "six hundred and fifty million": the budget
+       drops on him, a pallet of bundled bills with $650,000,000 on its tag; only his fedora and one gloved arm stick
+       out, and on "budget.)." the arm, down to the bone, waves. "Step five:" she raises one finger without looking. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="lobbying-budget" data-width="1920" data-height="1080" data-start="0" data-duration="6.6">
+    <div id="lobbying-budget-weave"></div>
+    <div id="lobbying-budget-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "lobbying-budget", V = KIT.V;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // Beside the console, on the free wall (KIT.STUDIO.right): feet just below the frame in 16:9, above the captions in 9:16.
+      var LX = V ? 800 : 1500, FEET = V ? 1430 : 1075, LK = V ? 0.95 : 1.45, MK = V ? 0.4 : 0.5, HK = MK / 0.5;
+      var cast = {
+        lob: { art: "lobbyist", x: LX, y: FEET, anchor: "bottom", pivot: "bottom", scale: LK, hidden: true },
+        brief: { art: "briefcase", x: LX + 120 * LK, y: FEET - 210 * LK, scale: 0.42 * LK, hidden: true },
+        hat: { art: "fedora", x: LX - 250 * HK, y: FEET - 40 * HK, scale: 1.3 * HK, hidden: true },
+        arm: { art: "skeleton-arm", x: LX + 250 * HK, y: FEET - 20 * HK, anchor: "bottom", pivot: "bottom", scale: 1.1 * HK, hidden: true },
+        pallet: { art: "pallet", x: LX, y: FEET + 10, anchor: "bottom", pivot: "bottom", scale: 1.15 * HK, hidden: true },
+      };
+      var beats = [
+        // "part": he tiptoes in, briefcase open
+        { on: "part", do: "slideIn", who: ["lob", "brief"], from: "right", dist: 700, over: 18 },
+        { on: "part", offset: 0.35, do: "bob", who: ["lob", "brief"], y: 6, r: 1.5, speed: 1.8, until: "six" },
+        // "six hundred and fifty million": the budget lands on him
+        { at: -1, do: "move", who: "pallet", by: [0, -1500], dur: 0.01 },
+        { on: "six", do: "show", who: "pallet" },
+        { on: "six", do: "move", who: "pallet", by: [0, 1500], dur: cue("million") - cue("six"), ease: "smooth" },
+        { on: "six", offset: 0.3, do: "shiver", who: "lob", dur: cue("million") - cue("six") - 0.3, amp: 3, rot: 2 },
+        { on: "million", do: "flatten", who: ["lob", "brief"] },
+        { on: "million", do: "shake", y: 10, frames: 4 },
+        { on: "million", offset: 0.05, do: "pop", who: "hat", squash: true },
+        { on: "million", offset: 0.12, do: "pop", who: "arm" },
+        { on: "million", offset: 0.25, do: "tag", who: "pallet", knot: [300, 150], text: "$650,000,000", x: LX - (V ? 70 : 40), y: FEET - (V ? 560 : 600) * HK, w: V ? 360 : 470, h: V ? 130 : 160, swing: 4 },
+        // "budget.).": the arm waves
+        { on: "budget.).", do: "hinge", who: "arm", angle: -22, frames: 2, hold: 0.25 },
+        { on: "budget.).", offset: 0.5, do: "hinge", who: "arm", angle: -22, frames: 2, hold: 0.25 },
+      ];
+      KIT.collage({ id: ID, seed: 357, host: true, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

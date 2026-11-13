@@ -1,0 +1,107 @@
+<template id="doubling-starts-template">
+  <!-- doubling-starts · collage (Part 26). The laptop fills the frame and warondisease.org types on it, then shrinks into the
+       hands of YOU at his desk. "cast": a YES button springs up; "vote": slap. "referendum": the camera pulls all the way
+       back: the largest referendum in human history, VOTERS: 1, a speck on the empty paper. "Get": back in; two friends
+       arrive, alarmed. "That's", "how", "doubling", "starts.": each brings two, 4, 8, 16, 32, rows behind rows until the frame
+       is packed. The same pull back: the whole plate is people. VOTERS: 4,130,000,000. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="doubling-starts" data-width="1920" data-height="1080" data-start="0" data-duration="9.62">
+    <div id="doubling-starts-weave"></div>
+    <div id="doubling-starts-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, Z = KIT.collage.SIZES, ID = "doubling-starts", W = V ? 1080 : 1920, H = V ? 1920 : 1080;
+    var hs = function (art, h) { return h / Z[art][1]; };
+    var FEET = V ? 1410 : 890, MID = W / 2;
+    var PEOPLE = ["sweeper", "matron", "lamplighter", "nurse", "idler", "grandma", "newspaper-man", "painter", "farmer", "sick-2", "lawyer", "sick-4", "scientist", "patient-well", "hungry-man", "sick-5"];
+    // the rounds: each voter brings two. Each row: how many, feet y, height. Back rows last in the list, drawn first.
+    var R = V ? [
+      { on: ["That's"], rows: [[4, 1250, 660]] },
+      { on: ["how"], rows: [[8, 1060, 500]] },
+      { on: ["doubling"], rows: [[8, 880, 400], [8, 740, 340]] },
+      { on: ["starts"], rows: [[8, 620, 350], [8, 470, 330], [8, 320, 310], [8, 170, 280]] },
+    ] : [
+      { on: ["That's"], rows: [[4, 740, 640]] },
+      { on: ["how"], rows: [[8, 590, 470]] },
+      { on: ["doubling"], rows: [[16, 440, 340]] },
+      { on: ["starts"], rows: [[16, 310, 260], [16, 190, 190]] },
+    ];
+    var cast = {}, beats = [];
+    // the plate beyond the frame, already full, for the last pull back: everything outside the frame is a crowd
+    var CK = 3.6, CW = Z.crowd[0] * CK * 0.86, CH = Z.crowd[1] * CK * 0.68, TILES = [];
+    var S2 = V ? [540, 960, 0.2] : [960, 540, 0.2], HW = (V ? 1080 : 1920) / 2 / S2[2], HH = (V ? 1920 : 1080) / 2 / S2[2];
+    for (var ty = S2[1] - HH - CH; ty < S2[1] + HH + CH; ty += CH) for (var tx = S2[0] - HW - CW; tx < S2[0] + HW + CW; tx += CW) {
+      if (tx > 150 && tx < W - 150 && ty > 150 && ty < FEET - 260) continue;
+      var tn = "t" + TILES.length; TILES.push(tn);
+      cast[tn] = { art: "crowd", x: tx + (TILES.length % 2) * 90, y: ty, scale: CK, hidden: true };
+    }
+    // the rows, back to front
+    var pi = 0;
+    R.slice().reverse().forEach(function (rd, ri) {
+      var bi = R.length - 1 - ri;
+      rd.rows.slice().reverse().forEach(function (row, j) {
+        for (var i = 0; i < row[0]; i++) {
+          var art = PEOPLE[pi % PEOPLE.length], nm = "p" + pi;
+          var x = row[0] === 1 ? MID : (W + 60) * (i + 0.5) / row[0] - 30 + (j % 2 ? 22 : -22);
+          cast[nm] = { art: art, x: x, y: row[1], anchor: "bottom", pivot: "bottom", scale: hs(art, row[2]), hidden: true };
+          beats.push({ on: rd.on[0], offset: 0.012 * i + 0.03 * j, do: "pop", who: nm, squash: true });
+          pi++;
+        }
+      });
+    });
+    // the two friends, then YOU in front of them
+    var FH = V ? 720 : 800, FX = V ? [125, 955] : [370, 1550];
+    cast.man = { art: "friend-man", x: FX[0], y: FEET, anchor: "bottom", pivot: "bottom", scale: hs("friend-man", FH), hidden: true };
+    cast.woman = { art: "friend-woman", x: FX[1], y: FEET, anchor: "bottom", pivot: "bottom", scale: hs("friend-woman", FH), hidden: true };
+    var YK = hs("you-desk", V ? 850 : 790), HANDS = [MID + (205 - Z["you-desk"][0] / 2) * YK, FEET - (Z["you-desk"][1] - 190) * YK];
+    cast.you = { art: "you-desk", x: MID, y: FEET, anchor: "bottom", pivot: "bottom", scale: YK, hidden: true };
+    var BX = V ? 940 : 1490, BK = V ? 1 : 1.3;
+    cast.yes = { art: "yes-button", x: BX, y: FEET, anchor: "bottom", pivot: "bottom", scale: BK, hidden: true, label: { text: "YES", at: [82, 42], width: 100, size: V ? 70 : 90 } };
+    // the laptop fills the frame first
+    var LK = V ? 2.55 : 3.3, LC = V ? [540, 760] : [960, 560];
+    cast.laptop = { art: "laptop", x: LC[0], y: LC[1], scale: LK };
+    var SCR = [LC[0], LC[1] + (125 - Z.laptop[1] / 2) * LK];
+    ["war", "waron", "warondisease", "warondisease.org"].forEach(function (t, i, all) {
+      beats.push({ on: "war", offset: i * 0.3, do: "banner", id: "url" + i, text: t, x: SCR[0], y: SCR[1], size: V ? 120 : 150, width: V ? 800 : 1040, pad: 40, color: "ink", tilt: 0, from: 1.03, shake: 0 });
+      if (i) beats.push({ on: "war", offset: i * 0.3, do: "hide", who: "url" + (i - 1) });
+    });
+    beats.push(
+      // "and": it shrinks into his hands
+      { on: "and", n: 1, do: "hide", who: "url3" },
+      { on: "and", n: 1, do: "show", who: "you" },
+      { on: "and", n: 1, do: "move", who: "laptop", to: HANDS, scale: 0.12, dur: 0.25, ease: "smooth" },
+      { on: "and", n: 1, offset: 0.25, do: "hide", who: "laptop" },
+      // "cast": the button springs up; "vote": slap
+      { on: "cast", do: "pop", who: "yes", squash: true },
+      { on: "vote", do: "nudge", who: "you", by: [34, 10] },
+      { on: "vote", offset: 0.04, do: "nudge", who: "yes", by: [0, 90] },
+      // "referendum": all the way back. VOTERS: 1
+      { on: "referendum", offset: -0.1, do: "camera", view: "speck", dur: 0.8 },
+      { on: "human", do: "banner", id: "one", text: "VOTERS: 1", x: MID, y: V ? -120 : -500, size: 900, width: V ? 4000 : 4400, pad: 300, color: "ink", tilt: -2, shake: 8 },
+      // "Get": back in; two friends arrive
+      { on: "Get", offset: -0.25, do: "camera", view: "close", dur: 0.3 },
+      { on: "Get", do: "hide", who: ["one", "yes"] },
+      { on: "two", do: "slideIn", who: "man", from: "left" },
+      { on: "friends", do: "slideIn", who: "woman", from: "right" },
+      // each round shakes the frame a little harder
+      { on: "That's", do: "shake", y: 8 }, { on: "how", do: "shake", y: 10 }, { on: "doubling", do: "shake", y: 14 }, { on: "starts", do: "shake", y: 20 },
+      // the same pull back, and now the whole plate is people
+      { on: "starts", offset: 0.35, do: "camera", view: "speck", dur: 0.35 },
+      { on: "starts", offset: 0.3, do: "show", who: TILES },
+      { on: "starts", offset: 0.62, do: "banner", id: "all", text: "VOTERS: 4,130,000,000", x: MID, y: V ? -120 : -500, size: 900, width: V ? 4800 : 6400, pad: 300, color: "ink", tilt: -2, shake: 10 }
+    );
+    var views = { close: [MID, H / 2, 1], speck: S2 };
+    KIT.collage({ id: ID, seed: 2606, plate: [S2[0] - HW - 200, S2[1] - HH - 200, S2[0] + HW + 200, S2[1] + HH + 200], views: views, view: "close", cast: cast, beats: beats });
+  </script>
+</template>

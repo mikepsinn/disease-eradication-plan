@@ -1,0 +1,230 @@
+<template id="queue-to-not-die-template">
+  <!-- queue-to-not-die · collage (Part 9, scenes 5 and 6 as one plate, the-queue; continues back-soon, no seam). The bit:
+       one queue to not die, from the FDA's door to the year 2468, every patient walking his germ, and behind the door a
+       warehouse of tested-for-nothing bottles. "fifteen": 15 PER YEAR drops over the door. "treatment": the door opens,
+       the knocker gets one bottle, his germ keels over and he skips off dragging it; "year.": the door slams on the next
+       man's nose. "Six": the camera travels down the line along the ruler (2030, 2050, 2105, ...), the germs at heel and
+       fatter the further back. "queue to not die": past 2105 the patients x-ray into skeletons like dominoes, still in
+       line. The end, 2468: the last germ holds up 6,650. "Disneyland.": next door, the castle and its short queue under
+       WAIT: 45 MIN, and the fat cat at its tail steams until his hat blows off. "There are nine thousand": whip back to
+       the warehouse: shelves of 160 bottles for the 9,500. "ninety-nine point seven": every bottle greys out but one;
+       cobwebs, dust, 99.7% NEVER TESTED. "At the current rate": a rolling ladder rolls up to the shelves, the scientist
+       climbs it rung by rung for one bottle, blows the dust off, walks it to the door and is a
+       skeleton when she gets there; so is the man she hands it to. "four hundred and forty-three": the ruler lights red
+       from the door to the end of the line: 443 YEARS. The set (G, X0, the FDA, P0) is shared with back-soon. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="queue-to-not-die" data-width="1920" data-height="1080" data-start="0" data-duration="36.02">
+    <div id="queue-to-not-die-weave"></div>
+    <div id="queue-to-not-die-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "queue-to-not-die", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // ── The shared set (same in back-soon) ──
+    var G = 860, FX = 1400, FK = 1.45, FFK = 1.41;
+    var DOOR = [FX - 96, G - 162 * FK, FX + 93, G - 12 * FK];
+    var HP = 470, X0 = 1200;
+    var pk = function (art) { return HP / SZ[art][1]; };
+    var NAME = { text: "FOOD AND DRUG ADMINISTRATION", x: FX - (V ? 70 : 50), y: V ? G - 800 : G - 770, size: 70, width: V ? 860 : 1000, pad: 50, color: "ink", tilt: -2 };
+
+    // ── The queue: the knocker (P0, from back-soon), then N - 1 people walking their germs on leashes (leash-human),
+    // from the door back to 2468: young at the front, old and bearded further back ──
+    var N = 30, SP = 430, LAST = 2468, DEAD = 2105, LK = 470 / SZ["leash-human"][1], LX1 = 790;
+    var px = function (i) { return i ? LX1 - (i - 1) * SP : X0; };
+    var idx = function (y) { return (y - 2026) * (N - 1) / (LAST - 2026); };
+    var yearX = function (y) { return LX1 - (idx(y) - 1) * SP; };
+    var firstDead = Math.ceil(idx(DEAD));
+    var GERM_DX = 150 * LK, GERM_H = 230 * LK;                         // a leash-human's germ: its middle and height
+    var leashArt = function (i) { return i < 3 ? "leash-human" : "leash-human-old"; };
+    // ── The warehouse behind the door: shelves of bottles, right of the building ──
+    var SH = [1780, 150, 3020, 840], COLS = 20, ROWS = 8, CELL = [(SH[2] - SH[0]) / COLS, (SH[3] - SH[1]) / ROWS];
+    var TESTED = 26, PICKED = 29;                                      // the one tested bottle; the one she fetches (row 1)
+    var PICKED_AT = [SH[0] + CELL[0] * (PICKED % COLS + 0.5), SH[1] + CELL[1] * (Math.floor(PICKED / COLS) + 0.5)];
+    var SK = HP / SZ["scientist-wave"][1], HAND = [235, 150];          // her open hand (art px)
+    var REACH = [PICKED_AT[0] - (HAND[0] - SZ["scientist-wave"][0] / 2) * SK, PICKED_AT[1] + (SZ["scientist-wave"][1] - HAND[1]) * SK];
+    var SCI0 = [1700, G];
+    var BEARD_K = 0.5, P1_STEP = DOOR[0] - 10 - (px(1) + 229 * LK);   // the beard; how far P1 steps up to the door
+    var LDK = (G - SH[1] - CELL[1]) / (SZ["ladder"][1] - 15), LROLL = 700;      // the ladder hooks on the first shelf board
+    var XD = px(N - 1) - 1300, DK = 2.0, CX = XD - 240;                             // Disneyland (its middle XD + 200); the fat cat at its tail
+
+    var cy = function (s) { return V ? G - 440 / s : G - 260 / s; };
+    var views = V ? {
+      fda: [1330, cy(1.1), 1.1], q1: [300, cy(0.9), 0.9], q2: [yearX(DEAD) - 100, cy(0.9), 0.9], q3: [yearX(2210), cy(0.9), 0.9],
+      q4: [px(N - 1) - 120, cy(0.9), 0.9], disney: [XD - 60, cy(0.72), 0.72], wh: [2400, cy(0.85), 0.85], shelf: [2330, 360, 1.6],
+      climb: [2000, cy(0.9), 0.9], door2: [1300, cy(1.1), 1.1], wide: [-4900, cy(0.075), 0.075],
+    } : {
+      fda: [1250, cy(0.95), 0.95], q1: [0, cy(0.8), 0.8], q2: [yearX(DEAD), cy(0.8), 0.8], q3: [yearX(2210), cy(0.8), 0.8],
+      q4: [px(N - 1) - 300, cy(0.8), 0.8], disney: [XD + 100, cy(0.75), 0.75], wh: [2320, cy(0.85), 0.85], shelf: [2140, 360, 2.0],
+      climb: [2000, cy(1), 1], door2: [1300, cy(1), 1], wide: [-4900, G - 220 / 0.118, 0.118],
+    };
+
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+    var at = function (w, n, off) { return cue(w, n) + (off || 0); };
+
+    // Year posts along the line, behind the people (their cards ride above the heads).
+    [2050, 2105, 2200, 2300, 2400, LAST].forEach(function (y) {
+      cast["y" + y] = { art: "counter-sign", x: y === LAST ? px(N - 1) - 330 : yearX(y), y: G, anchor: "bottom", scale: 2, label: { text: String(y), at: [82, 134], width: 118, size: 64 } };
+    });
+    // The building: open (fda), shut with arms folded (fdaF, fdaF2).
+    cast.fda = { art: "fda-building", x: FX, y: G, anchor: "bottom", pivot: "bottom", scale: FK, hidden: true, label: [] };
+    cast.fdaF = { art: "fda-folded", x: FX + 70, y: G, anchor: "bottom", pivot: "bottom", scale: FFK, label: [] };
+    cast.fdaF2 = { art: "fda-folded", x: FX + 70, y: G, anchor: "bottom", pivot: "bottom", scale: FFK, hidden: true, label: [] };
+    // The scientist, her rolling ladder (parked off to the right until she needs it) and her bottle.
+    cast.ladder = { art: "ladder", x: REACH[0] + LROLL, y: G, anchor: "bottom", pivot: "bottom", scale: LDK, hidden: true };
+    cast.sci = { art: "scientist-wave", x: SCI0[0], y: SCI0[1], anchor: "bottom", pivot: "bottom", scale: SK, hidden: true, points: { hand: HAND } };
+    cast.sb = { art: "medicine-bottle", x: PICKED_AT[0], y: PICKED_AT[1], scale: 0.34, hidden: true };
+    // The queue, back to front (the knocker and his germ last, in front).
+    for (var i = N - 1; i >= 1; i--) {
+      var la = leashArt(i), lk = LK * (la === "leash-human" ? 1 : 0.97 * SZ["leash-human"][1] / SZ[la][1]);
+      cast["p" + i] = { art: la, x: px(i), y: G, anchor: "bottom", pivot: "bottom", scale: lk };
+    }
+    cast.g0 = { art: "germ-grin", x: X0 - 120, y: G, anchor: "bottom", pivot: "bottom", scale: 150 / SZ["germ-grin"][1] };
+    cast.p0 = { art: "sick-1", x: X0, y: G, anchor: "bottom", pivot: "bottom", scale: pk("sick-1"), points: { hand: [200, 430], heel: [20, 717] } };
+    cast.beard = { art: "beard", x: X0 + 3, y: G - (717 - 128) * pk("sick-1"), anchor: "top", scale: BEARD_K };
+    cast.web = { art: "cobweb", x: X0 + 60, y: G - 330, anchor: "topleft", scale: 0.8 };
+    cast.spider = { art: "spider", x: X0 + 120, y: G - 420, anchor: "top", scale: 0.45 };
+    cast.pill = { art: "pill-bottle", x: FX, y: G - 110, scale: 0.3, hidden: true };
+    // The end of the line: the last germ's placard.
+    cast.plac = { art: "sign-board", x: px(N - 1) + GERM_DX, y: G - GERM_H + 40, anchor: "bottom", scale: 1.5, hidden: true, label: { text: "6,650", at: [105, 72], width: 170, size: 64 } };
+    // Disneyland next door: the castle, its coaster and its short queue, under WAIT: 45 MIN, the fat cat at its tail.
+    cast.castle = { art: "disneyland", x: XD + 200, y: G + 10, anchor: "bottom", scale: DK };
+    cast.dsign = { art: "sign-board", x: V ? XD - 560 : XD - 600, y: G, anchor: "bottom", scale: V ? 1.6 : 2, label: { text: "WAIT: 45 MIN", at: [105, 72], width: 180, size: 56 } };
+    var CK = 520 / SZ["fat-cat"][1];
+    cast.cat = { art: "fat-cat", x: CX, y: G, anchor: "bottom", pivot: "bottom", scale: CK, clip: [[0, 90], [261, 90], [261, 443], [0, 443]] };
+    cast.hat = { art: "fat-cat", x: CX, y: G, anchor: "bottom", pivot: "center", scale: CK, clip: [[100, 0], [250, 0], [250, 91], [100, 91]] };
+    cast.steam1 = { art: "cloud-puff", x: CX - 20, y: G - 560, scale: 0.42, hidden: true };
+    cast.steam2 = { art: "cloud-puff", x: CX + 40, y: G - 640, scale: 0.55, hidden: true };
+    // Dust and cobwebs on the shelves.
+    cast.dust = { art: "cloud-puff", x: PICKED_AT[0] + 60, y: PICKED_AT[1] - 30, scale: 0.4, hidden: true };
+    [[SH[0] - 10, SH[1] - 10], [SH[0] + CELL[0] * 12, SH[1] + CELL[1] * 2], [SH[0] + CELL[0] * 15, SH[1] + CELL[1] * 5]].forEach(function (p, k) {
+      cast["cw" + k] = { art: "cobweb", x: p[0], y: p[1], anchor: "topleft", scale: 0.55, hidden: true };
+    });
+    cast.puff1 = { art: "cloud-puff", x: SH[0] + 300, y: SH[1] + 200, scale: 0.6, hidden: true };
+    cast.puff2 = { art: "cloud-puff", x: SH[0] + 900, y: SH[1] + 420, scale: 0.5, hidden: true };
+
+    // ── From back-soon's last frame ──
+    add({ at: -1, do: "banner", id: "name", text: NAME.text, x: NAME.x, y: NAME.y, size: NAME.size, width: NAME.width, pad: NAME.pad, color: "ink", tilt: NAME.tilt });
+    add({ at: -1, do: "tag", id: "soon", who: "fdaF", text: "BACK SOON", knot: [175, 345], x: FX + 50, y: G - 250, w: 230, h: 95, swing: 6 });
+    add({ at: 0, do: "line", id: "ruler", points: [[X0 + 120, G + 18], [yearX(LAST) - 300, G + 18]], dur: 0.05, width: 8 });
+    add({ at: 0.2, do: "bob", who: "spider", y: 20, r: 0, speed: 1.4, until: "first" });
+    // the line fidgets, each on its own beat; the knocker's germ at heel
+    add({ at: 0.1, do: "bob", who: "g0", y: 5, r: 3, speed: 2, until: "treatment" });
+    for (i = 1; i < N; i++) add({ at: 0.1 + (i % 5) * 0.07, do: "bob", who: "p" + i, y: 3 + (i % 3), r: 1.2, speed: 0.9 + (i % 4) * 0.25, phase: i * 0.9 });
+
+    // ── 15 PER YEAR; one bottle; the door slams on the next nose ──
+    add({ on: "fifteen", do: "hide", who: "soon" });
+    add({ on: "fifteen", do: "banner", id: "rate", text: "15 PER YEAR", x: FX + 40, y: V ? G - 560 : G - 560, size: 80, width: 420, pad: 50, color: "red", tilt: 3 });
+    add({ on: "first", do: "hide", who: "fdaF" }); add({ on: "first", do: "show", who: "fda" });
+    add({ on: "first", do: "drop", who: ["web", "spider"], dist: 700, spin: 40, dur: 0.5 });
+    add({ on: "treatment", do: "pop", who: "pill" });
+    add({ on: "treatment", offset: 0.12, do: "move", who: "pill", to: "p0.hand", by: [0, -30], dur: 0.22, arc: 40 });
+    add({ on: "treatment", offset: 0.15, do: "move", who: "g0", turn: -95, by: [0, -20], dur: 0.15 });
+    add({ on: "treatment", offset: 0.3, do: "hop", who: ["p0", "beard"], height: 40 });
+    add({ on: "each", do: "move", who: ["p0", "beard"], by: [2600, 0], dur: 1.3 });
+    add({ on: "each", do: "move", who: "g0", to: "p0.heel", by: [-60, -50], turn: -95, dur: 0.15 });
+    add({ on: "Six", offset: 0.4, do: "hide", who: ["p0", "g0", "pill", "beard"] });
+    ["each", "year.", "Six"].forEach(function (w) { add({ on: w, do: "hop", who: ["p0", "beard"], height: 50 }); });
+    add({ on: "each", do: "move", who: "p1", by: [P1_STEP, 0], dur: 0.3 });
+    add({ on: "year.", do: "hide", who: "fda" }); add({ on: "year.", do: "show", who: "fdaF2" });
+    add({ on: "year.", do: "shake", x: 10, frames: 3 });
+    add({ on: "year.", offset: 0.05, do: "move", who: "p1", by: [-35, 0], dur: 0.08 });
+    add({ on: "year.", offset: 0.1, do: "shiver", who: "p1", dur: 0.5, amp: 4, rot: 5 });
+
+    // ── 6,650 waiting: down the line ──
+    add({ on: "Six", do: "camera", view: "q1", dur: 1.4 });
+    add({ on: "diseases", n: 2, do: "camera", view: "q2", dur: 1.3 });
+    add({ on: "There", n: 1, do: "camera", view: "q3", dur: 2.2 });
+    add({ on: "longer", do: "camera", view: "q4", dur: 2.6 });
+    // the germs tug at their leashes like dogs at the vet's
+    [2, 3, 5].forEach(function (k, j) { add({ on: "still", offset: j * 0.4, do: "nudge", who: "p" + k, by: [24, 0] }); });
+    [4, 6].forEach(function (k, j) { add({ on: "waiting.", offset: j * 0.3, do: "shiver", who: "p" + k, dur: 0.5, amp: 4, rot: 3 }); });
+    // a queue to not die: past 2105 they go to bones one after another, still in line
+    var dead = [];
+    for (i = firstDead; i < N; i++) dead.push("p" + i);
+    add({ on: "queue", do: "xray", who: dead, art: "leash-human-skeleton", stagger: 0.17, flash: 0.06, frames: 3 });
+    // the end of the line: the last one waves; its germ holds up the count
+    add({ on: "stood", offset: 0.3, do: "pop", who: "plac", squash: true });
+    add({ on: "stood", offset: 0.45, do: "hop", who: "p" + (N - 1), height: 40 });
+    add({ on: "stood", offset: 0.75, do: "hop", who: "p" + (N - 1), height: 40 });
+    // Disneyland: 45 minutes, and the fat cat can't take it
+    add({ on: "something", do: "camera", view: "disney", dur: 0.7 });
+    add({ on: "something", offset: 0.4, do: "banner", id: "disney", text: "DISNEYLAND", x: V ? XD + 200 : XD - 640, y: V ? G - 1190 : G - 820, size: 110, width: 700, pad: 70, color: "ink", tilt: -3 });
+    add({ on: "invented", do: "nudge", who: ["cat", "hat"], by: [-14, 0] });
+    add({ on: "invented", offset: 0.2, do: "nudge", who: ["cat", "hat"], by: [-14, 0] });
+    add({ on: "Disneyland.", do: "shiver", who: ["cat", "hat"], dur: 1.0, amp: 5, rot: 3 });
+    add({ on: "Disneyland.", do: "pop", who: "steam1", squash: true, swell: 0.6 });
+    add({ on: "Disneyland.", offset: 0.3, do: "pop", who: "steam2", squash: true, swell: 0.8 });
+    add({ on: "Disneyland.", offset: 0.95, do: "move", who: "hat", by: [160, -1100], turn: 380, dur: 0.6 });
+    add({ on: "Disneyland.", offset: 0.95, do: "move", who: ["steam1", "steam2"], by: [0, -260], dur: 0.6 });
+
+    // ── 9,500 known safe compounds ──
+    add({ on: "There", n: 2, do: "camera", view: "wh", dur: 1.4 });
+    add({ on: "nine", do: "pictogram", id: "shelf", art: "medicine-bottle", count: COLS * ROWS, cols: COLS, box: SH, dur: 1.4, fill: 0.86 });
+    for (var r = 0; r < ROWS; r++) {
+      var sy = SH[1] + CELL[1] * (r + 1) - 3;
+      add({ on: "nine", offset: r * 0.17, do: "line", id: "board" + r, points: [[SH[0] - 25, sy], [SH[2] + 25, sy]], dur: 0.2, width: 12, color: "#6B4A2B" });
+    }
+    add({ at: cue("nine"), do: "line", id: "postL", points: [[SH[0] - 25, G], [SH[0] - 25, SH[1] - 30]], dur: 0.3, width: 14, color: "#6B4A2B" });
+    add({ at: cue("nine"), do: "line", id: "postR", points: [[SH[2] + 25, G], [SH[2] + 25, SH[1] - 30]], dur: 0.3, width: 14, color: "#6B4A2B" });
+    add({ on: "hundred", n: 2, do: "banner", id: "count", text: "9,500", x: (SH[0] + SH[2]) / 2, y: SH[1] - 60, size: 150, width: 520, pad: 70, color: "ink", tilt: -2 });
+    // 99.7% never tested: every bottle greys out but one
+    var rest = [];
+    for (i = 0; i < COLS * ROWS; i++) if (i !== TESTED) rest.push(i);
+    add({ on: "ninety-nine", do: "camera", view: "shelf", dur: 0.6 });
+    add({ on: "ninety-nine", offset: 0.3, do: "pictogram", id: "shelf", grey: true, pick: rest, stagger: 0.017, dur: 0.15 });
+    add({ on: "never", do: "pop", who: ["cw0", "cw1", "cw2"] });
+    add({ on: "never", offset: 0.15, do: "pop", who: "puff1", out: false, squash: true, swell: 0.4 });
+    add({ on: "never", offset: 0.35, do: "pop", who: "puff2", squash: true, swell: 0.4 });
+    add({ on: "tested.", offset: -0.2, do: "hide", who: ["puff1", "puff2"] });
+    add({ on: "tested.", do: "stamp", id: "never", text: "99.7% NEVER TESTED", x: V ? 2330 : 2140, y: V ? 600 : 520, size: 64, width: V ? 560 : 620, tilt: -5 });
+
+    // ── At the current rate: one bottle at a time ──
+    add({ on: "At", do: "hide", who: "never" });
+    add({ on: "At", do: "camera", view: "climb", dur: 0.6 });
+    add({ on: "At", do: "pop", who: "sci", squash: true });
+    // the rolling ladder rolls up under her bottle; she steps to it and climbs, one rung a hop
+    add({ on: "At", do: "show", who: "ladder" });
+    add({ on: "At", do: "move", who: "ladder", by: [-LROLL, 0], dur: 0.4, ease: "smooth" });
+    add({ on: "At", offset: 0.4, do: "shiver", who: "ladder", dur: 0.25, amp: 3, rot: 1.5 });
+    add({ at: at("current"), do: "move", who: "sci", by: [REACH[0] - SCI0[0], 0], dur: 0.25, arc: 20 });
+    for (var k = 1; k < 4; k++) {
+      add({ at: at("current") + k * 0.42, do: "move", who: "sci", by: [0, (REACH[1] - SCI0[1]) / 3], dur: 0.2, arc: 12 });
+    }
+    var GRAB = at("current") + 4 * 0.42 + 0.05;
+    add({ at: GRAB, do: "hide", who: "shelf." + PICKED });
+    add({ at: GRAB, do: "show", who: "sb" });
+    add({ at: GRAB + 0.15, do: "pop", who: "dust", squash: true, swell: 0.5 });
+    add({ at: GRAB + 0.65, do: "pop", who: "dust", out: true });
+    // down, and the long walk to the door (the bottle moves with her hand)
+    var DOWN = Math.max(GRAB + 0.6, at("finding")), FOOT = [1960, G], DOOR_STOP = 1560;
+    var WALK0 = DOWN + 0.4, WALK1 = at("will") - 0.05;
+    var down = [FOOT[0] - REACH[0], FOOT[1] - REACH[1]];
+    add({ at: DOWN, do: "move", who: ["sci", "sb"], by: down, dur: 0.35, arc: 70 });
+    add({ at: WALK0, do: "hide", who: "sci" });
+    add({ at: WALK0, do: "camera", view: "door2", dur: 1.0 });
+    add({ at: WALK0, do: "march", id: "walk", art: "scientist-wave", count: 1, height: HP, path: [FOOT, [DOOR_STOP, G]], speed: (FOOT[0] - DOOR_STOP) / (WALK1 - WALK0), bob: 6 });
+    add({ at: WALK0, do: "move", who: "sb", by: [DOOR_STOP - FOOT[0], 0], dur: WALK1 - WALK0 });
+    // she is bones by the time she gets there; so is he
+    add({ on: "will", do: "move", who: "sb", to: [px(1) + P1_STEP + (235 - 249) * LK, G - (510 - 280) * LK], dur: 0.3, arc: 40 });
+    add({ on: "approximately", do: "xray", who: "walk", art: "scientist-skeleton", flash: 0.1 });
+    add({ on: "approximately", offset: 0.4, do: "xray", who: "p1", art: "leash-human-skeleton", flash: 0.1 });
+    // 443 years: the ruler lights from the door to the end of the line
+    add({ on: "four", do: "camera", view: "wide", dur: 1.3 });
+    add({ on: "four", offset: 0.25, do: "line", id: "lit", points: [[X0 + 120, G + 18], [yearX(LAST) - 300, G + 18]], dur: 1.5, width: V ? 70 : 50, color: "red", ease: "linear" });
+    add({ on: "years.", do: "stamp", id: "wait", text: "443 YEARS", x: -4900, y: V ? -2600 : -1700, size: V ? 2200 : 1400, width: V ? 12500 : 9000, tilt: -4 });
+
+    KIT.collage({ id: ID, seed: 905, plate: V ? [-14500, -18500, 4500, 8500] : [-14500, -6000, 4500, 4200], views: views, view: "fda", cast: cast, beats: beats });
+  </script>
+</template>

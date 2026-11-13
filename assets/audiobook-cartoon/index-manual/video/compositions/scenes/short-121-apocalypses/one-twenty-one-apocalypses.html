@@ -1,0 +1,106 @@
+<template id="one-twenty-one-apocalypses-template">
+  <!-- one-twenty-one-apocalypses · collage (Part 13, scene 6). The payoff: the world's most terrifying sacrifice. Close: the
+       weapons factory hugs its missile and pats the bottom crate of a tower of grinning warheads. "keep": the camera climbs
+       the tower, past the cloud and the goose, and pulls back until the Earth is a dot: 122. "one": it whips the bottom
+       crate out like a tablecloth; the tower drops a step and doesn't notice. It runs after the crate and bawls beside it
+       and a tiny Earth. "civilization": that one crate goes off; Earth, man, crate and mourner char and blink. "twelve":
+       up the untouched tower: 12,241. "settling": all the way back: 121, over a black dot. "instead": down to it,
+       charred, still bawling for the one it lost. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="one-twenty-one-apocalypses" data-width="1920" data-height="1080" data-start="0" data-duration="19.764">
+    <div id="one-twenty-one-apocalypses-weave"></div>
+    <div id="one-twenty-one-apocalypses-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, G = 1000, N = 122, CS = 1.25, STEP = 274 * CS;   // a crate's box is its bottom 194 art px; 80 more show the warheads' grins
+    var TOPC = G - (N - 2) * STEP;                                  // the top crate's foot, once the tower has dropped a step
+    var LX = 2000, EX = V ? 2350 : 2620, CB = 1.6;                // where the whipped crate lands; the tiny Earth
+    var WK = 1.25 * 601 / 478, SOB = [LX - 390, 1.25 * 601 / 516];  // the factory as tall as the man it replaced; it sobs just left of the crate
+    var cy = function (s, screen) { return G - (screen - (V ? 960 : 540)) / s; };   // the view's y that puts the ground at this screen y
+    var WS = V ? 0.0333 : 0.0205;                                   // the wide shot: the whole tower
+    var views = V ? {
+      base: [230, cy(1, 1430), 1], top: [120, TOPC - 200, 1], wide: [0, cy(WS, 1430), WS],
+      earth: [1873, cy(0.82, 1430), 0.82], top2: [100, TOPC - 260, 1],
+    } : {
+      base: [250, cy(1.1, 960), 1.1], top: [120, TOPC - 200, 1], wide: [0, cy(WS, 880), WS],
+      earth: [2025, cy(1.1, 950), 1.1], top2: [640, TOPC - 200, 1.1],
+    };
+    // A cut-out's `eyes` points are drawn at point * (eyeSize / 30), so pass them scaled back up.
+    var eyesAt = function (pts, size) { return pts.map(function (e) { return [e[0] * 30 / size, e[1] * 30 / size]; }); };
+    var label100 = { text: "100", at: [129, 322], width: 170, size: 80 };
+
+    var cast = {
+      earth: { art: "tiny-earth", x: EX, y: G, anchor: "bottom", pivot: "bottom", scale: V ? 1.3 : 1.6, eyes: eyesAt([[116, 39], [130, 39]], 10), eyeSize: 10, smoke: [[110, 8]] },
+      cloud: { art: "cloud-puff", x: 620, y: G - 26 * STEP, scale: 1.6 },
+      goose: { art: "goose", x: -620, y: G - 52 * STEP, scale: 1.8 },
+      airship: { art: "airship", x: 700, y: G - 84 * STEP, scale: 1.6 },
+    };
+    for (var i = 0; i < N; i++) cast["c" + i] = { art: "crate", x: 0, y: G - i * STEP, anchor: "bottom", pivot: "bottom", scale: CS, label: label100 };
+    cast.hero = { art: "crate", x: LX, y: G, anchor: "bottom", pivot: "bottom", scale: CB, label: label100, hidden: true };
+    cast.wm = { art: "factory-kiss", x: 460, y: G, anchor: "bottom", pivot: "bottom", scale: WK };
+    cast.sob = { art: "factory-sob", x: SOB[0], y: G, anchor: "bottom", pivot: "bottom", scale: SOB[1], hidden: true, eyes: eyesAt([[110, 212], [212, 212]], 30), eyeSize: 30, smoke: [[115, 20], [237, 25]] };
+    cast.boomA = { art: "mushroom", x: LX + 150, y: G + 30, anchor: "bottom", pivot: "bottom", scale: V ? 1.75 : 1.5, hidden: true };
+
+    var tower = [];
+    for (i = 1; i < N; i++) tower.push("c" + i);
+    var stampSize = V ? 9000 : 10000, stampW = 40000, stampX = V ? 8500 : 22000, stampY = V ? -18000 : -21000;   // 10,000 px is the browser's largest font
+
+    var beats = [
+      // "war,": it rocks its missile and pats the crate
+      { at: 0, do: "bob", who: "wm", y: 4, r: 2.5, speed: 3, until: "keep" },
+      { on: "war,", do: "nudge", who: "wm", by: [-30, 0] },
+      { on: "war,", offset: 0.35, do: "nudge", who: "wm", by: [-30, 0] },
+      // "keep": up the tower, then back until the Earth is a dot
+      { on: "keep", do: "camera", view: "top", dur: 1.2 },
+      { on: "keep", do: "move", who: "goose", by: [900, -60], dur: 1.6 },
+      { on: "hundred", n: 1, do: "camera", view: "wide", dur: 0.6 },
+      { on: "twenty-two", n: 1, do: "stamp", id: "count122", text: "122", x: stampX, y: stampY, size: stampSize, width: stampW, tilt: -5, shake: 4 },
+      { on: "minus", offset: 0.15, do: "camera", view: "base", dur: 0.3 },
+      { on: "minus", offset: 0.15, do: "hide", who: "count122" },
+      // "one": the tablecloth trick. It snatches the crate and is gone with it; the tower drops a step and doesn't notice.
+      { on: "one", n: 2, offset: 0.05, do: "move", who: "c0", to: [LX, G - 416 * CS / 2], dur: 3 / 12 },
+      { on: "one", n: 2, offset: 0.3, do: "hide", who: "c0" },
+      { on: "one", n: 2, offset: 0.3, do: "show", who: "hero" },
+      { on: "one", n: 2, offset: 0.05, do: "move", who: "wm", to: [SOB[0], G - 478 * WK / 2], dur: 3 / 12 },
+      { on: "one", n: 2, offset: 0.13, do: "move", who: tower, by: [0, STEP], dur: 1 / 12 },
+      { on: "one", n: 2, offset: 0.22, do: "shake", y: 18, frames: 3 },
+      // and it howls beside it
+      { on: "one", n: 2, offset: 0.35, do: "swap", who: "wm", to: "sob" },
+      { on: "apocalypses.", do: "camera", view: "earth", dur: 0.5 },
+      // "civilization": that one crate is plenty
+      { on: "threshold", do: "shiver", who: "hero", dur: 1.0, amp: 3, rot: 1.5 },
+      { on: "civilization", do: "boom", shake: 26, flash: 0.22 },
+      { on: "civilization", do: "pop", who: "boomA", squash: true },
+      { on: "civilization", offset: 0.05, do: "char", who: ["earth", "hero", "sob"] },
+      { on: "civilization", offset: 0.05, do: "shiver", who: "sob", dur: 0.6, amp: 10, rot: 3 },
+      { on: "you", n: 2, do: "bob", who: "sob", y: 7, r: 2, speed: 5, fade: 0.1 },
+      { on: "you", n: 3, offset: -0.15, do: "pop", who: "boomA", out: true },
+      { on: "you", n: 3, offset: 0.15, do: "blink", who: ["earth", "sob"] },
+      // "twelve": up the tower, which hasn't noticed this either
+      { on: "twelve", offset: -0.1, do: "camera", view: "top2", dur: 0.7 },
+      { on: "forty-one,", offset: 0.05, do: "stamp", id: "count12241", text: "12,241", x: V ? 100 : 900, y: V ? TOPC - 900 : TOPC + 40, size: V ? 200 : 280, width: V ? 860 : 1200, tilt: -4 },
+      // "settling": all the way back. 121, over a black dot.
+      { on: "settling", do: "camera", view: "wide", dur: 1.0 },
+      { on: "settling", offset: 0.2, do: "hide", who: "count12241" },
+      { on: "twenty-one", do: "stamp", id: "count121", text: "121", x: stampX, y: stampY, size: stampSize, width: stampW, tilt: -5, shake: 4 },
+      // "instead": down to it, charred, still bawling for the one it lost
+      { on: "instead", do: "camera", view: "earth", dur: 0.8 },
+      { on: "instead", do: "hide", who: "count121" },
+      { on: "one", n: 5, do: "blink", who: "earth" },
+      { on: "twenty-two", n: 2, do: "blink", who: "sob" },
+    ];
+
+    KIT.collage({ id: "one-twenty-one-apocalypses", seed: 613, plate: V ? [-20000, -45000, 20000, 18000] : [-50000, -45000, 50000, 12000], views: views, view: "base", cast: cast, beats: beats });
+  </script>
+</template>

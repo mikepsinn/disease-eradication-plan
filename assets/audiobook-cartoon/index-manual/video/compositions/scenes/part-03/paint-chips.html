@@ -1,0 +1,93 @@
+<template id="paint-chips-template">
+  <!-- paint-chips · collage (Part 3, scene 8, the-kitchen). The bit: a laughing baby in a high chair is eating the red
+       lead wall, and the cure is peas, one at a time. A nursery kitchen papered in red, bitten bare in patches, a tin of
+       RED LEAD on the wall; the baby crunches a heap of paint chips on its tray and the bites spread; its mother beams;
+       the charred dog from dog-calculus sits by the chair. "all": she lifts the whole heap out of reach. "cry.": the
+       baby screams; the picture cracks and the frame shakes; after "cry." she slams the heap back down and it stops at
+       once. "gradually": the chips shrink and the peas grow, step by step, until on "food" the tray is all peas and the
+       baby goes on eating without noticing. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="paint-chips" data-width="1920" data-height="1080" data-start="0" data-duration="9.82">
+    <div id="paint-chips-weave"></div>
+    <div id="paint-chips-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "paint-chips", V = KIT.V, SZ = KIT.collage.SIZES, F = KIT.collage.F;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var after = function (w, n) { return KIT.after(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    // The kitchen (canvas px): a red wall, the high chair, the mother on the right, the dog on the left.
+    var L = V ? { wall: [-20, 430], strips: 4, wk: 1.35, chair: [560, 1450], ch: 600, mom: [900, 1450], mh: 640, dog: [190, 1450], dgh: 280, tin: [250, 640], th: 190, up: [900, 640] }
+              : { wall: [520, 60], strips: 6, wk: 1.08, chair: [1130, 905], ch: 650, mom: [1560, 905], mh: 760, dog: [820, 905], dgh: 320, tin: [690, 300], th: 230, up: [1580, 110] };
+    var cast = {}, beats = [], i;
+    var add = function (b) { beats.push(b); };
+    var SW = SZ["wallpaper-red"][0] * L.wk;
+    for (i = 0; i < L.strips; i++) cast["wall" + i] = { art: "wallpaper-red", x: L.wall[0] + i * (SW - 2), y: L.wall[1], anchor: "topleft", scale: L.wk };
+    // the chair and its tray (art px of the high chair: the tray's top at about (205, 168))
+    var CK = hs("high-chair", L.ch), cp = function (x, y) { return [L.chair[0] + (x - 132) * CK, L.chair[1] - (420 - y) * CK]; };
+    var TRAY = cp(205, 172), SEAT = cp(110, 250);
+    // the bites in the wall, around the chair, at the baby's height
+    var HOLES = [[-210, -300], [210, -420], [-150, -500], [330, -250], [-300, -150], [120, -600]];
+    var RK = V ? 0.36 : 0.42;
+    HOLES.forEach(function (h, k) {
+      cast["hole" + k] = { art: "paper-rip", x: L.chair[0] + h[0] * (V ? 0.8 : 1), y: L.chair[1] + h[1] * (V ? 0.85 : 1), scale: RK * (1 - 0.12 * (k % 3)), hidden: k > 1 };
+    });
+    cast.tin = { art: "paint-tin", x: L.tin[0], y: L.tin[1], scale: hs("paint-tin", L.th), label: { text: "RED LEAD", at: [110, 172], width: 140, size: 40, tilt: -2 } };
+    cast.dog = { art: "calculus-dog-charred", x: L.dog[0], y: L.dog[1], anchor: "bottom", pivot: "bottom", scale: hs("calculus-dog-charred", L.dgh) };
+    cast.chair = { art: "high-chair", x: L.chair[0], y: L.chair[1], anchor: "bottom", pivot: "bottom", scale: CK };
+    cast.baby = { art: "baby", x: SEAT[0] - 10 * CK, y: SEAT[1] + 20 * CK, anchor: "bottom", pivot: "bottom", scale: hs("baby", L.ch * 0.52) };
+    var CHK = hs("paint-chips", L.ch * 0.2), PEK = hs("peas", L.ch * 0.19);
+    cast.chips = { art: "paint-chips", x: TRAY[0], y: TRAY[1], anchor: "bottom", pivot: "bottom", scale: CHK };
+    cast.peas = { art: "peas", x: TRAY[0], y: TRAY[1], anchor: "bottom", pivot: "bottom", scale: PEK, hidden: true };
+    cast.mom = { art: "mother", x: L.mom[0], y: L.mom[1], anchor: "bottom", pivot: "bottom", scale: hs("mother", L.mh) };
+    cast.crack = { art: "glass-crack", x: V ? 320 : 380, y: V ? 330 : 300, scale: V ? 1.1 : 1.1, hidden: true };
+    cast.crack2 = { art: "glass-crack", x: V ? 860 : 1800, y: V ? 280 : 250, scale: 0.8, hidden: true };
+
+    // crunching: the baby bounces, the chips go down, the bites spread; the mother beams
+    add({ at: 0, do: "bob", who: ["baby", "chips"], y: 4, r: 2, speed: 4, until: "all" });
+    add({ on: "baby", do: "pop", who: "hole2", squash: true });
+    add({ on: "eating", do: "pop", who: "hole3", squash: true });
+    add({ on: "chips.", do: "pop", who: "hole4", squash: true });
+    add({ on: "chips.", do: "shake", frames: 2, x: 4 });
+    add({ on: "You", n: 1, do: "pop", who: "hole5", squash: true });
+    add({ on: "chips.", do: "hop", who: "mom", height: 10 });
+    // "all": she lifts the whole heap out of reach
+    add({ on: "all", do: "move", who: "chips", to: L.up, dur: 0.3, ease: "smooth", arc: 60 });
+    add({ on: "all", offset: 0.05, do: "nudge", who: "mom", by: [-20, -10] });
+    // "cry.": the baby screams; the picture cracks
+    add({ on: "cry.", do: "shiver", who: "baby", dur: after("cry.") - cue("cry.") - 0.05, amp: 14, rot: 7 });
+    add({ on: "cry.", do: "shiver", who: "chair", dur: after("cry.") - cue("cry.") - 0.05, amp: 6, rot: 3 });
+    add({ on: "cry.", do: "stamp", who: "crack", from: 1.4, shake: 14 });
+    add({ on: "cry.", offset: 0.25, do: "stamp", who: "crack2", from: 1.4, shake: 10 });
+    add({ on: "cry.", offset: 0.1, do: "shiver", who: "dog", dur: 0.5, amp: 5, rot: 3 });
+    // a beat after: the heap slammed straight back, and quiet
+    add({ at: after("cry."), do: "move", who: "chips", to: TRAY, dur: 0.12 });
+    add({ at: after("cry.") + 0.12, do: "shake", frames: 3, y: 8 });
+    add({ at: after("cry.") + 0.3, do: "hide", who: ["crack", "crack2"] });
+    add({ at: after("cry.") + 0.25, do: "bob", who: ["baby", "chips"], y: 4, r: 2, speed: 4, until: "gradually" });
+    // "gradually": the chips shrink and the peas grow, step by step, until it is all peas
+    var T0 = cue("gradually"), T1 = cue("food"), STEPS = 6;
+    add({ at: T0 - 0.05, do: "move", who: "peas", to: TRAY, dur: 0.01, scale: 0.15 });
+    add({ at: T0, do: "show", who: "peas" });
+    for (i = 1; i <= STEPS; i++) {
+      var t = T0 + (T1 - T0) * (i - 1) / (STEPS - 1), u = i / STEPS;
+      add({ at: t, do: "move", who: "chips", to: TRAY, dur: F, scale: Math.max(0.05, 1 - u) });
+      add({ at: t, do: "move", who: "peas", to: TRAY, dur: F, scale: 0.2 + 0.8 * u });
+    }
+    add({ at: T1 + 0.05, do: "hide", who: "chips" });
+    add({ at: T0, do: "bob", who: ["baby", "peas"], y: 4, r: 2, speed: 4 });
+
+    KIT.collage({ id: ID, seed: 308, cast: cast, beats: beats });
+  </script>
+</template>

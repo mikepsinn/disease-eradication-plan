@@ -1,0 +1,158 @@
+<template id="bond-splits-three-ways-template">
+  <!-- bond-splits-three-ways · collage (plate the-fork). The bit: one banknote as wide as the frame, $27.2 BILLION A
+       YEAR, ruled into ten strips, cut up and handed out. The bond lands and its bills walk into the bill-poster's paste bucket;
+       he slaps up 1% TREATY: YES. "savings": the banknote, ruled in ten. "eighty": the scissors cut and eight strips
+       slide left to the Scientist's bench (her flask boils over); "ten": one strip into the fat cat's upturned top hat;
+       "Super PAC": the last strip into the Super PAC, which lands beside the Politician. His campaign poster goes up and an
+       armchair waits for his post-office career; RE-ELECTED stamps on him three times; the fat cat's hat overflows. The
+       eight strips go into the flask and the germ on the bench keels over. "capped": a bell jar slams down over the fat
+       cat and the Super PAC, CAPPED AT 20%; the Lobbyist, tiptoeing in for it, gets his fingers caught under the rim and
+       presses his masked face to the glass. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="bond-splits-three-ways" data-width="1920" data-height="1080" data-start="0" data-duration="34.5">
+    <div id="bond-splits-three-ways-weave"></div>
+    <div id="bond-splits-three-ways-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "bond-splits-three-ways", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // Left to right on the ground G (plate px): the Scientist and her bench, the banknote, the fat cat, the Super PAC
+      // and the Politician.
+      var X = { sci: -860, bench: -300, note: 960, bucket: 1500, cat: 2250, pac: 2580, pol: 2930, chair: 3250, jar: 2400 };
+      var NK = 3.6, NW = SZ.banknote[0], NH = SZ.banknote[1], NOTE = [X.note, 560], STW = NW / 10;
+      var TOPN = NOTE[1] - NH * NK / 2, BOTN = NOTE[1] + NH * NK / 2;
+      var ruleX = function (i) { return NOTE[0] + (i * STW - NW / 2) * NK; };
+      var offs = function (i) { return ((i + 0.5) * STW - NW / 2) * NK; };      // a strip's middle, from the note's
+      var SK = 1.0, FLASK = [X.sci - SZ["scientist-flask"][0] * SK / 2 + 245 * SK, G - SZ["scientist-flask"][1] * SK + 80 * SK];
+      var BK = 1.3, BENCH = G - (SZ["lab-bench"][1] - 18) * BK;
+      var CK = 1.45, HAT = [X.cat - SZ["fat-cat-catch"][0] * CK / 2 + 145 * CK, G - SZ["fat-cat-catch"][1] * CK + 225 * CK];
+      var PK = 0.95, JK = 2.35;
+      var cy = function (s) { return V ? G - 440 / s : 540; };
+      var views = V ? {
+        note: [X.note, cy(0.66), 0.66], bench: [-500, cy(1.0), 1.0], cat: [X.cat, cy(1.1), 1.1], pol: [2790, cy(0.95), 0.95],
+        jar: [2300, cy(0.74), 0.74], wide: [1200, cy(0.26), 0.26],
+      } : {
+        note: [X.note, 540, 1], bench: [-480, 540, 1], cat: [X.cat + 60, 540, 1], pol: [2830, 540, 1], jar: [2380, 520, 0.92], wide: [1200, 470, 0.45],
+      };
+      var cast = {
+        bench: { art: "lab-bench", x: X.bench, y: G, anchor: "bottom", scale: BK },
+        sci: { art: "scientist-flask", x: X.sci, y: G, anchor: "bottom", pivot: "bottom", scale: SK },
+        germ: { art: "germ", x: X.bench + 140, y: BENCH, anchor: "bottom", pivot: "bottom", scale: 0.42, hidden: true },
+        bucket: { art: "bill-poster", x: X.bucket, y: G, anchor: "bottom", pivot: "bottom", scale: 1.05, hidden: true },
+        bond: { art: "bond", x: NOTE[0] - 200, y: 600, scale: 2.4, hidden: true,
+          label: [{ text: "INCENTIVE", at: [143, 74], width: 200, size: 34 }, { text: "ALIGNMENT BOND", at: [143, 112], width: 210, size: 30 }] },
+        note: { art: "banknote", x: NOTE[0], y: NOTE[1], scale: NK, hidden: true, label: { text: "$27.2 BILLION A YEAR", at: [208, 115], width: 230, size: 40 } },
+        scis: { art: "scissors", x: ruleX(8), y: TOPN - 200, scale: 1.25, hidden: true },
+        poster: { art: "campaign-poster", x: X.pol + 260, y: G - 330, scale: 1.25, hidden: true },
+        chair: { art: "armchair", x: X.chair + 120, y: G, anchor: "bottom", pivot: "bottom", scale: 1.05, hidden: true },
+        cat: { art: "fat-cat-catch", x: X.cat, y: G, anchor: "bottom", pivot: "bottom", scale: CK },
+        pol: { art: "politician", x: X.pol, y: G, anchor: "bottom", pivot: "bottom", scale: PK },
+        pac: { art: "super-pac", x: X.pac, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85, hidden: true,
+          label: { text: "SUPER PAC", at: [214, 102], width: 150, size: 34 } },
+        coin: { art: "coin", x: HAT[0], y: HAT[1] - 420, scale: 0.4, hidden: true },
+        jar: { art: "bell-jar", x: X.jar, y: G + 10, anchor: "bottom", pivot: "bottom", scale: JK, hidden: true },
+        lob: { art: "lobbyist-shake", x: X.jar - 400 - 150, y: G, anchor: "bottom", pivot: "bottom", scale: 1.3, hidden: true },
+      };
+      for (var i = 0; i < 10; i++) {
+        var x0 = i * STW, x1 = (i + 1) * STW;
+        cast["s" + i] = { art: "banknote", x: NOTE[0], y: NOTE[1], scale: NK, hidden: true, clip: [[x0, 0], [x1, 0], [x1, NH], [x0, NH]] };
+      }
+      // A strip's move, so that its middle lands on T at relative scale k.
+      var to = function (i, T, k) { k = k || 1; return [T[0] - NOTE[0] - offs(i) * k, T[1] - NOTE[1]]; };
+      var beats = [
+        // "An Incentive Alignment Bond funds a policy campaign,": the bond lands; its bills walk into the paste bucket
+        { on: "Bond", offset: -0.1, do: "stamp", who: "bond", from: 1.7, shake: 12 },
+        { on: "Bond", do: "slideIn", who: "bucket", from: "right", dist: 1200 },
+        { on: "funds", n: 1, do: "march", id: "walk", art: "bill-plain", count: 5, height: 160, path: [[NOTE[0] - 150, 620], [1150, 760], [X.bucket + 70, G - 450]], speed: 900, end: "hide" },
+        { on: "policy", do: "move", who: "bucket", by: [-200, 0], turn: -8, dur: 0.25 },
+        { on: "campaign,", n: 1, do: "banner", id: "yes", text: "1% TREATY: YES", x: NOTE[0] - 60, y: 470, size: 170, width: 1250, pad: 90, color: "ink", tilt: -2 },
+        { on: "campaign,", n: 1, do: "move", who: "bucket", by: [200, 0], turn: 0, dur: 0.3 },
+        { on: "campaign,", n: 1, do: "hide", who: "bond" },
+        // "then splits the resulting government savings three ways:": the poster comes away; the banknote, ruled in ten
+        { on: "then", do: "hide", who: "yes" },
+        { on: "resulting", do: "slideOut", who: "bucket", to: "right", dist: 1300 },
+        { on: "savings", do: "pop", who: "note", squash: true },
+        { on: "three", do: "slideIn", who: "scis", from: "top", dist: 900 },
+      ];
+      for (i = 1; i < 10; i++) beats.push({ on: "savings", offset: 0.25 + 0.04 * i, do: "line", id: "rule" + i, points: [[ruleX(i), TOPN + 10], [ruleX(i), BOTN - 10]], dur: 0.25, dash: [16, 11], width: 5, front: true });
+      var rules = []; for (i = 1; i < 10; i++) rules.push("rule" + i);
+      beats.push({ at: -1, do: "move", who: "scis", by: [0, 0], turn: 180, dur: 0.01 });
+      beats = beats.concat([
+        // "eighty percent to clinical trials,": the cut, and eight strips slide left to the Scientist's bench
+        { on: "eighty", n: 1, offset: -0.3, do: "move", who: "scis", by: [0, BOTN - TOPN + 260], turn: 180, dur: 0.4 },
+        { on: "eighty", n: 1, offset: 0.05, do: "hide", who: ["note"].concat(rules) },
+        { on: "eighty", n: 1, offset: 0.05, do: "show", who: ["s0", "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8", "s9"] },
+        { on: "eighty", n: 1, offset: 0.05, do: "move", who: ["s8", "s9"], by: [40, 0], dur: 0.15 },
+        { on: "clinical", n: 1, offset: -0.4, do: "camera", view: "bench", dur: 0.8 },
+        { on: "clinical", n: 1, do: "pop", who: "germ", squash: true },
+        { on: "trials,", n: 1, offset: 0.2, do: "glow", who: "sci", size: 500, dur: 0.6 },
+        { on: "trials,", n: 1, offset: 0.2, do: "shiver", who: "sci", dur: 0.8, amp: 4, rot: 3 },
+      ]);
+      for (i = 0; i < 8; i++) beats.push({ on: "eighty", n: 1, offset: 0.25 + 0.06 * i, do: "move", who: "s" + i, by: to(i, [X.bench - 260 + i * 70, BENCH - NH * NK * 0.5 * 0.5], 0.5), scale: 0.5, turn: -4 + i, dur: 0.45, arc: 60 });
+      beats = beats.concat([
+        // "ten percent to investors": the next cut, and one strip into the fat cat's upturned hat
+        { on: "ten", n: 1, do: "camera", view: "note", dur: 0.5 },
+        { on: "ten", n: 1, offset: -0.2, do: "move", who: "scis", by: [ruleX(9) - ruleX(8), -(BOTN - TOPN + 260)], turn: 180, dur: 0.25 },
+        { on: "ten", n: 1, offset: 0.1, do: "move", who: "scis", by: [0, BOTN - TOPN + 260], turn: 180, dur: 0.35 },
+        { on: "to", n: 2, do: "slideOut", who: "scis", to: "top", dist: 1400 },
+        { on: "to", n: 2, do: "camera", view: "cat", dur: 0.7 },
+        { on: "investors", n: 1, offset: -0.25, do: "move", who: "s8", by: to(8, [HAT[0], HAT[1] - 70], 0.3), scale: 0.3, turn: 80, dur: 0.35, arc: 200 },
+        { on: "investors", n: 1, offset: 0.12, do: "hide", who: "s8" },
+        { on: "investors", n: 1, offset: 0.12, do: "hop", who: "cat", height: 24 },
+        // "and ten percent to a Super PAC that rewards politicians who voted yes": the last strip into the Super PAC
+        { on: "ten", n: 2, do: "camera", view: "pol", dur: 0.8 },
+        { on: "Super", do: "slideIn", who: "pac", from: "top", dist: 1300, over: 30 },
+        { on: "PAC", offset: 0.1, do: "move", who: "s9", by: to(9, [X.pac, G - 240], 0.3), scale: 0.3, turn: 90, dur: 0.4, arc: 160 },
+        { on: "PAC", offset: 0.5, do: "hide", who: "s9" },
+        { on: "PAC", offset: 0.5, do: "shiver", who: "pac", dur: 0.4, amp: 6, rot: 4 },
+        { on: "voted", n: 1, do: "hop", who: "pac", height: 60 },
+        { on: "voted", n: 1, offset: 0.1, do: "glow", who: "pol", size: 420, dur: 0.5 },
+        // "(campaign support while they're running, cushy post-office careers when they're done).":
+        { on: "(campaign", n: 2, do: "pop", who: "poster", squash: true },
+        { on: "post-office", do: "pop", who: "chair", squash: true },
+        { on: "done).", do: "bob", who: "pol", y: 6, r: 2, speed: 2, until: "Investors" },
+        // "Investors give money, get more money back.": one coin in, and the hat overflows
+        { on: "Investors", n: 2, offset: -0.3, do: "camera", view: "cat", dur: 0.6 },
+        { on: "give", do: "pop", who: "coin" },
+        { on: "money,", n: 1, do: "move", who: "coin", to: HAT, dur: 0.3 },
+        { on: "money,", n: 1, offset: 0.3, do: "hide", who: "coin" },
+        { on: "back.", do: "pile", id: "spill", art: ["coin", "bill-med-flat"], height: 70, count: 14, heap: 5, spread: 52, x: HAT[0], y: HAT[1] - 10, dist: 500, dur: 0.6, accel: 1, tilt: 30 },
+        { on: "back.", offset: 0.3, do: "shiver", who: "cat", dur: 0.6, amp: 4, rot: 3 },
+        // "Politicians get reelected.": RE-ELECTED, three times
+        { on: "Politicians", n: 2, offset: -0.2, do: "camera", view: "pol", dur: 0.6 },
+        { on: "reelected.", do: "stamp", id: "re1", text: "RE-ELECTED", who: "pol", spot: [190, 330], size: 52, tilt: -8 },
+        { on: "reelected.", offset: 0.25, do: "stamp", id: "re2", text: "RE-ELECTED", who: "pol", spot: [190, 430], size: 52, tilt: 6 },
+        { on: "reelected.", offset: 0.5, do: "stamp", id: "re3", text: "RE-ELECTED", who: "pol", spot: [190, 530], size: 52, tilt: -4 },
+        // "Eighty percent goes to curing diseases.": the strips into the flask, and the germ keels over
+        { on: "Eighty", n: 2, offset: -0.3, do: "camera", view: "bench", dur: 0.7 },
+        { on: "diseases.", n: 1, do: "flatten", who: "germ" },
+        { on: "diseases.", n: 1, do: "glow", who: "sci", size: 520, dur: 0.6 },
+        // "The corruption is capped at twenty percent and fully transparent.": the bell jar over the greed
+        { on: "The", n: 2, offset: -0.1, do: "camera", view: "jar", dur: 0.8 },
+        { on: "The", n: 2, do: "hide", who: ["spill", "re1", "re2", "re3", "poster", "chair"] },
+        { on: "corruption", do: "slideIn", who: "lob", from: "left", dist: 1400, over: 10 },
+        { on: "capped", do: "stamp", who: "jar", from: 1.5, shake: 16 },
+        { on: "at", n: 1, offset: 0.05, do: "stamp", id: "cap", text: "CAPPED AT 20%", x: X.jar, y: G - 95, size: V ? 90 : 80, width: 620, tilt: -3 },
+        { on: "capped", offset: 0.15, do: "shiver", who: "lob", dur: 0.8, amp: 7, rot: 6 },
+        { on: "fully", do: "glow", who: "jar", size: 900, dur: 0.8 },
+        { on: "transparent.", do: "move", who: "lob", by: [70, -10], turn: 6, dur: 0.3 },
+        { on: "transparent.", offset: 0.4, do: "shiver", who: "lob", dur: 0.5, amp: 3, rot: 2 },
+      ]);
+      for (i = 0; i < 8; i++) beats.push({ on: "goes", n: 1, offset: 0.08 * i, do: "move", who: "s" + i, by: to(i, FLASK, 0.15), scale: 0.15, turn: 0, dur: 0.35, arc: 120 });
+      for (i = 0; i < 8; i++) beats.push({ on: "goes", n: 1, offset: 0.08 * i + 0.35, do: "hide", who: "s" + i });
+      KIT.collage({ id: ID, seed: 1705, plate: V ? [-2600, -3600, 4900, 4600] : [-1700, -900, 4000, 2100], views: views, view: "note", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

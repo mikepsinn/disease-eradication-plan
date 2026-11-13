@@ -1,0 +1,202 @@
+<template id="build-or-steal-template">
+  <!-- build-or-steal · collage (Part 11, scenes 8 to 10 on one plate, main-street). The bit: once stealing pays more
+       than building, everyone on the street stops building, and the camera walks down the street watching it happen.
+       An empty lot: a bar chart, WHAT IT PAYS, a tall BUILD bar and a short STEAL bar; a slider, PARASITIC SHARE,
+       creeps right and the STEAL bar grows with it. The Builder, a farm stand and the Capitol pop onto the BUILD bar,
+       one per word; "flips": STEAL passes BUILD with a ding and all three turn to look. Down the street the Builder
+       hammers, one slow blow per year on the calendar; next door a robot locks a hospital, RANSOM, the papers walk out
+       into its laptop and the hands of the clock on its post spin from 12 to 5. The Builder's foundry under a SUCCESS sign sends its cereal out
+       along a conveyor; next door a robot cracks the BANK and the papers pile up past the foundry. More robots arrive
+       and ring it; "target": the sign flips to TARGET and a missile whistles down: boom, rubble, the Builder charred
+       and blinking with his crate. "Parasitism": he sits down among the robots and is one of them. The edge of town:
+       WELCOME, stamped FAILED STATE; signposts SOMALIA, LIBYA and SYRIA, and on each word its map slams onto its post
+       (Syria arrives in pieces; one piece stays nailed up and the rest drops). Back up the street everything falls
+       flat; a warlord in a helmet three sizes too big stands at his toll gate, TOLL, and lifts the bar as everyone's
+       papers march in; a farmer builds a stand, and the warlord lifts it out of his reach. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+    #build-or-steal-pays text[text-anchor="middle"] { display: none; }
+    #build-or-steal-pays text[text-anchor="end"] { display: none; }
+  </style>
+  <div id="root" data-composition-id="build-or-steal" data-width="1920" data-height="1080" data-start="0" data-duration="49.42">
+    <div id="build-or-steal-weave"></div>
+    <div id="build-or-steal-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "build-or-steal", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // ── The lot: WHAT IT PAYS ──
+      var C = KIT.collage.axes({ box: [250, 150, 1150, 740], x: [0, 3, 1], y: [0, 10, 2], title: "WHAT IT PAYS", size: 44 });
+      var BX = C.pt(1, 0)[0], SX = C.pt(2, 0)[0], BTOP = C.pt(1, 6)[1];
+      // ── The street, left to right ──
+      var X = { builder: 1900, cal: 2180, robot: 2470, hosp: 2770, clock: 3040, found: 3720, belt: 4040, robot3: 4400, bank: 4720,
+        welcome: 5450, posts: 5800, warlord: 6350, farmer: 6950, stand: 7250 };
+      var cy = function (s) { return V ? G - 420 / s : 620; };
+      var views = V ? {
+        lot: [700, 560, 0.95], bench: [2040, cy(1.1), 1.1], hosp: [2770, cy(1.05), 1.05], found: [3840, cy(0.95), 0.95], bank: [4470, cy(1.0), 1.0],
+        ring: [4020, cy(0.8), 0.8], rubble: [3800, cy(1.05), 1.05], edge: [5980, cy(0.75), 0.75], street: [3800, 500, 0.3], warlord: [6650, cy(0.9), 0.9], stand: [6700, cy(0.85), 0.85],
+      } : {
+        lot: [700, 540, 1], bench: [2470, 620, 1], hosp: [2470, 620, 1], found: [4120, 620, 1], bank: [4120, 620, 1], ring: [4120, 580, 0.9],
+        rubble: [3920, 620, 1], edge: [5850, 620, 1], street: [4100, 470, 0.32], warlord: [6800, 620, 1], stand: [6800, 620, 1],
+      };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+
+      // the lot
+      cast.rail = { art: "slider-rail", x: (BX + SX) / 2, y: 815, scale: 1.0 };
+      cast.knob = { art: "slider-knob", x: (BX + SX) / 2 - 190, y: 812, scale: 0.36 };
+      cast.rider0 = { art: "builder", x: BX - 110, y: BTOP, anchor: "bottom", pivot: "bottom", scale: hs("builder", 230), hidden: true };
+      cast.rider1 = { art: "farm-stand", x: BX + 15, y: BTOP, anchor: "bottom", pivot: "bottom", scale: hs("farm-stand", 200), hidden: true };
+      cast.rider2 = { art: "capitol", x: BX + 150, y: BTOP, anchor: "bottom", pivot: "bottom", scale: hs("capitol", 260), hidden: true };
+      // the bench and the hospital
+      cast.bench = { art: "workbench", x: X.builder + 60, y: G, anchor: "bottom", scale: hs("workbench", 330) };
+      cast.builder = { art: "builder", x: X.builder - 100, y: G, anchor: "bottom", pivot: "bottom", scale: hs("builder", 520) };
+      cast.cal = { art: "calendar", x: X.cal, y: G, anchor: "bottom", pivot: "bottom", scale: hs("calendar", 360) };
+      cast.robot = { art: "robot", x: X.robot, y: G, anchor: "bottom", pivot: "bottom", scale: hs("robot", 380) };
+      cast.hosp = { art: "hospital", x: X.hosp, y: G, anchor: "bottom", pivot: "bottom", scale: hs("hospital", 600) };
+      // the clock on its post, its hands on the face's middle (art [93, 151])
+      var CK = hs("post-clock", 400), FACE = [X.clock + (93 - 94.5) * CK, G - (482 - 151) * CK];
+      cast.clock = { art: "post-clock", x: X.clock, y: G, anchor: "bottom", pivot: "bottom", scale: CK };
+      cast.hourH = { art: "post-clock-hour", x: FACE[0], y: FACE[1], anchor: [32, 214], pivot: [32, 214], scale: 31 / 214 };
+      cast.minH = { art: "post-clock-minute", x: FACE[0], y: FACE[1], anchor: [32, 338], pivot: [32, 338], scale: 47 / 338 };
+      // the foundry and the bank
+      cast.found = { art: "success-factory", x: X.found, y: G, anchor: "bottom", pivot: "bottom", scale: hs("success-factory", 600), label: { text: "SUCCESS", at: [165, 160], width: 180, size: 48 } };
+      cast.target = { art: "success-factory", x: X.found, y: G, anchor: "bottom", pivot: "bottom", scale: hs("success-factory", 600), hidden: true, label: { text: "TARGET", at: [165, 160], width: 180, size: 48 } };
+      cast.lock = { art: "padlock", x: X.hosp, y: G - 120, scale: 0.42, hidden: true };
+      cast.pole = { art: "wifi-pole", x: X.robot3 + 130, y: G, anchor: "bottom", scale: hs("wifi-pole", 520) };
+      cast.belt = { art: "conveyor", x: X.belt, y: G, anchor: "bottom", scale: 1.6 };
+      cast.robot3 = { art: "robot", x: X.robot3, y: G, anchor: "bottom", pivot: "bottom", scale: hs("robot", 380) };
+      cast.bank = { art: "bank", x: X.bank, y: G, anchor: "bottom", pivot: "bottom", scale: hs("bank", 560) };
+      cast.missile = { art: "missile-fly", x: X.found + 300, y: -900, scale: 1.4, pivot: "center", hidden: true };
+      cast.boom = { art: "mushroom", x: X.found, y: G, anchor: "bottom", scale: hs("mushroom", 900), hidden: true };
+      cast.rubble = { art: "crater", x: X.found, y: G + 40, anchor: "bottom", scale: hs("crater", 200), hidden: true };
+      cast.charB = { art: "builder-charred", x: X.found + 60, y: G, anchor: "bottom", pivot: "bottom", scale: hs("builder-charred", 520), hidden: true, smoke: [[150, 20], [190, 30]] };
+      cast.crate = { art: "cereal-box", x: X.found + 150, y: G - 120, anchor: "bottom", scale: 0.55, hidden: true };
+      cast.newbot = { art: "robot", x: X.found + 240, y: G, anchor: "bottom", pivot: "bottom", scale: hs("robot", 380), hidden: true };
+      // the edge of town
+      cast.welcome = { art: "sign-board", x: X.welcome, y: G, anchor: "bottom", pivot: "bottom", scale: 2.2, label: { text: "WELCOME", at: [107, 72], width: 170, size: 46 } };
+      // a signpost per name, and its map nailed on the post under the board (the post is art x 24 of 115)
+      ["SOMALIA", "LIBYA", "SYRIA"].forEach(function (n, i) {
+        cast["post" + i] = { art: "signpost", x: X.posts + i * 300, y: G - i * 30, anchor: "bottom", pivot: "bottom", scale: 3.6, label: { text: n, at: [58, 43], width: 78, size: 26 } };
+      });
+      var MAPX = function (i) { return X.posts + i * 300 + (24 - 57.5) * 3.6; }, MAPY = function (i) { return G - i * 30 - 260; };
+      cast.map0 = { art: "country-maps-somalia", x: MAPX(0), y: MAPY(0), scale: hs("country-maps-somalia", 270), hidden: true };
+      cast.map1 = { art: "country-maps-libya", x: MAPX(1), y: MAPY(1), scale: hs("country-maps-libya", 240), hidden: true };
+      cast.map2 = { art: "country-maps-syria-broken-a", x: MAPX(2), y: MAPY(2), scale: hs("country-maps-syria-broken-a", 260), hidden: true };
+      // the piece of Syria that stays nailed up: the middle one of the four (art [179, 147] of broken-a)
+      var SK = hs("country-maps-syria-broken-a", 260);
+      cast.syriaPiece = { art: "country-maps-syria-broken-b", x: MAPX(2) + (179 - 155) * SK, y: MAPY(2) + (147 - 156) * SK, scale: SK * 0.8, hidden: true };
+      // the warlord and his own toll gate; the bar is a piece that lifts on its bolt (art [213, 270])
+      cast.warlord = { art: "warlord", x: X.warlord, y: G, anchor: "bottom", pivot: "bottom", scale: hs("warlord", 640), hidden: true, pieces: {
+        body: { clip: [[0, 0], [378, 0], [378, 200], [226, 230], [226, 304], [378, 276], [378, 565], [0, 565]] },
+        arm: { clip: [[226, 230], [378, 200], [378, 276], [226, 304]], pivot: [213, 270] } } };
+      cast.farmer = { art: "hut-builder", x: X.farmer, y: G, anchor: "bottom", pivot: "bottom", scale: hs("hut-builder", 440), hidden: true };
+      cast.stand = { art: "hut-builder-hut", x: X.stand, y: G, anchor: "bottom", pivot: "bottom", scale: hs("hut-builder-hut", 400), hidden: true };
+
+      // ── When the parasitic economy grows: the slider creeps, STEAL grows ──
+      add({ at: 0, do: "chart", id: "pays", chart: C });
+      add({ at: 0, do: "bar", id: "build", chart: C, x: 1, to: 6, dur: 0.01, width: 200, text: "BUILD", size: 44 });
+      add({ at: 0, do: "bar", id: "steal", chart: C, x: 2, to: 1, dur: 0.01, width: 200, text: "STEAL", size: 44, fill: "#B5462F" });
+      add({ at: 0, do: "banner", id: "share", text: "PARASITIC SHARE", x: (BX + SX) / 2, y: 885, size: 36, width: 400, pad: 40, color: "ink", tilt: 0, shake: 0, from: 1 });
+      add({ on: "parasitic", do: "move", who: "knob", by: [230, 0], dur: cue("flips") + 0.2 - cue("parasitic"), ease: "linear" });
+      add({ on: "parasitic", do: "bar", id: "steal", chart: C, x: 2, to: 4.5, dur: cue("individual,") - cue("parasitic") });
+      // one rider per word on BUILD
+      add({ on: "individual,", do: "pop", who: "rider0", squash: true });
+      add({ on: "company,", do: "pop", who: "rider1", squash: true });
+      add({ on: "nation", do: "pop", who: "rider2", squash: true });
+      // flips: STEAL passes BUILD
+      add({ on: "flips", do: "bar", id: "steal", chart: C, x: 2, to: 8.5, dur: 0.5 });
+      add({ on: "flips", offset: 0.5, do: "move", who: ["rider0", "rider1", "rider2"], turn: 12, dur: 0.15 });
+      add({ on: "\"steal", do: "shiver", who: ["rider0", "rider1", "rider2"], dur: 0.5, amp: 4, rot: 3 });
+      add({ on: "\"steal", do: "stamp", id: "more", text: "STEAL PAYS MORE", x: V ? (BX + SX) / 2 : SX + 330, y: V ? 970 : C.pt(2, 6)[1], size: 56, width: 460, tilt: -6 });
+
+      // ── Why spend years building a product: one blow a year ──
+      add({ on: "Why", do: "camera", view: "bench", dur: 0.8 });
+      add({ on: "Why", offset: 0.6, do: "counter", id: "yr", who: "cal", spot: [80, 150], from: 2026, to: 2031, style: "tick", dur: cue("hospital") - cue("Why") - 0.6, prefix: "", suffix: "", commas: false, size: 52, card: false });
+      ["years", "building", "product", "when", "ransom", "hospital"].forEach(function (w, i) {
+        add({ at: cue(w, w === "when" ? 2 : undefined), do: "nudge", who: "builder", by: [0, 22] });
+      });
+      // ...when you can ransom a hospital in an afternoon?
+      add({ on: "ransom", offset: -0.3, do: "camera", view: "hosp", dur: 0.6 });
+      add({ on: "ransom", do: "stamp", who: "lock", from: 1.6, shake: 6 });
+      add({ on: "ransom", offset: 0.2, do: "stamp", who: "hosp", text: "RANSOM", spot: [138, 130], size: 80, tilt: -6, shake: 8 });
+      add({ on: "hospital", do: "march", id: "loot", art: "bill-war", count: 5, height: 100, path: [[X.hosp, G], [X.robot + 70, G - 120]], speed: 600, end: "hide" });
+      // the clock jumps from 12 to 5: the minute hand spins five times, the hour hand goes round to 5; ding
+      var SPIN = (cue("afternoon?") + 0.3 - cue("ransom")) * 12;
+      add({ on: "ransom", do: "hinge", who: "minH", angle: 1800, frames: SPIN });
+      add({ on: "ransom", do: "hinge", who: "hourH", angle: 150, frames: SPIN });
+      add({ on: "afternoon?", offset: 0.35, do: "hop", who: ["clock", "hourH", "minH"], height: 26 });
+      add({ on: "afternoon?", offset: 0.5, do: "hop", who: "robot", height: 30 });
+
+      // ── Why manufacture exports when hacking banks pays better? ──
+      add({ on: "Why", n: 2, do: "camera", view: "found", dur: 0.8 });
+      add({ on: "manufacture", do: "march", id: "exports", art: "cereal-box", count: 14, height: 120, path: [[X.found + 200, G - 180], [X.belt + 340, G - 180], [X.belt + 700, G - 180]], speed: 260, until: "irrational.", end: "hide" });
+      add({ on: "hacking", do: "camera", view: "bank", dur: 0.6 });
+      add({ on: "hacking", do: "bob", who: "robot3", y: 4, r: 2, speed: 6 });
+      add({ on: "banks", do: "pile", id: "vault", art: "bill-war-flat", x: X.robot3 - 160, y: G, height: 56, gap: 36, count: 18, until: "better?", tilt: 4, jitter: 8 });
+      // Once enough of your economy is extraction: more robots, round the foundry
+      add({ on: "Once", do: "camera", view: "ring", dur: 0.8 });
+      add({ on: "enough", n: 2, do: "march", id: "ring", art: "robot-elbow", count: 3, height: 360, path: [[X.bank + 700, G], [X.belt - 120, G]], speed: 900, end: "stop", gap: 210 });
+      // producing anything makes you a target rather than a success
+      add({ on: "target", do: "swap", who: "found", to: "target" });
+      add({ on: "rather", do: "show", who: "missile" });
+      add({ on: "rather", do: "move", who: "missile", to: [X.found + 120, G - 200], turn: 70, dur: cue("success.") + 0.1 - cue("rather") });
+      add({ on: "success.", offset: 0.1, do: "hide", who: ["missile", "target", "belt"] });
+      add({ on: "success.", offset: 0.1, do: "boom", shake: 24, flash: 0.25 });
+      add({ on: "success.", offset: 0.1, do: "pop", who: "boom" });
+      add({ on: "success.", offset: 0.1, do: "show", who: ["rubble", "charB", "crate"] });
+      add({ on: "Production", do: "pop", who: "boom", out: true });
+      add({ on: "Production", do: "camera", view: "rubble", dur: 0.6 });
+      add({ on: "irrational.", do: "shiver", who: "charB", dur: 0.4, amp: 3, rot: 2 });
+      // Parasitism becomes the only means of survival: he drops the crate and becomes one of them
+      add({ on: "Parasitism", do: "drop", who: "crate", dur: 0.5, spin: 40 });
+      add({ on: "becomes", n: 2, do: "move", who: "charB", by: [-140, 0], dur: 0.4 });
+      add({ on: "only", do: "swap", who: "charB", to: "newbot" });
+      add({ on: "survival.", do: "bob", who: "newbot", y: 4, r: 2, speed: 6 });
+
+      // ── You have a name for places where this already happened ──
+      add({ on: "name", do: "camera", view: "edge", dur: 1.0 });
+      add({ on: "\"failed", do: "stamp", id: "failed", text: "FAILED STATE", x: X.welcome, y: G - 640, size: 80, width: 440, tilt: -8, shake: 8 });
+      add({ on: "Somalia,", do: "stamp", who: "map0", from: 1.6, shake: 6 });
+      add({ on: "Libya,", do: "stamp", who: "map1", from: 1.6, shake: 6 });
+      add({ on: "parts", do: "stamp", who: "map2", from: 1.6, shake: 6 });
+      add({ on: "Syria.", offset: 0.2, do: "show", who: "syriaPiece" });
+      add({ on: "Syria.", offset: 0.2, do: "drop", who: "map2", dur: 0.6, spin: 40 });
+      // The productive economy collapsed: back up the street, everything falls flat
+      add({ on: "productive", n: 2, do: "camera", view: "street", dur: 0.8 });
+      add({ on: "collapsed,", offset: -0.4, do: "flatten", who: ["cal", "builder"] });
+      add({ on: "collapsed,", offset: -0.2, do: "flatten", who: ["hosp", "clock", "robot"] });
+      add({ on: "collapsed,", offset: -0.2, do: "hide", who: ["hourH", "minH"] });
+      add({ on: "collapsed,", do: "flatten", who: ["rubble", "ring", "newbot", "robot3"] });
+      add({ on: "collapsed,", offset: 0.2, do: "flatten", who: ["bank", "vault"] });
+      add({ on: "collapsed,", offset: 0.4, do: "flatten", who: ["welcome", "post0", "post1", "post2"] });
+      add({ on: "collapsed,", offset: 0.4, do: "drop", who: ["map0", "map1", "syriaPiece"], dur: 0.5, spin: 20 });
+      // the warlord economy replaced it: the toll gate, and everyone's papers
+      add({ on: "warlord", do: "camera", view: "warlord", dur: 0.7 });
+      add({ on: "warlord", do: "slideIn", who: "warlord", from: "left", over: 18 });
+      add({ on: "economy", n: 4, do: "tag", id: "tollTag", who: "warlord", text: "TOLL", knot: [225, 340], x: X.warlord + 190, y: G - 170, w: 220, h: 100, swing: 4 });
+      add({ on: "replaced", do: "hinge", who: "warlord.arm", angle: -60, frames: 2, hold: 1.9 });
+      add({ on: "replaced", do: "march", id: "toll", art: "bill-war", count: 5, height: 100, path: [[X.stand + 700, G], [X.warlord + 10, G - 260]], speed: 800, end: "hide" });
+      // anyone who builds something gets it taken
+      add({ on: "nobody", do: "camera", view: "stand", dur: 0.7 });
+      add({ on: "nobody", do: "slideIn", who: "farmer", from: "right", over: 14 });
+      add({ on: "builds", do: "pop", who: "stand", squash: true });
+      add({ on: "gets", do: "nudge", who: "warlord", by: [60, 0] });
+      add({ on: "taken.", do: "move", who: "stand", to: [X.warlord + 40, G - 560], dur: 0.5, arc: 100, turn: -10 });
+      add({ on: "taken.", offset: 0.3, do: "hop", who: "farmer", height: 70 });
+      add({ on: "taken.", offset: 0.75, do: "hop", who: "farmer", height: 70 });
+
+      KIT.collage({ id: ID, seed: 1108, plate: V ? [-2000, -4000, 10400, 5600] : [-800, -1400, 9200, 2800], views: views, view: "lot", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

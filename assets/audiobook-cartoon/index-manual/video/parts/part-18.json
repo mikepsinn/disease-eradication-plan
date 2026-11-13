@@ -1,0 +1,817 @@
+{
+  "id": "part-18",
+  "title": "Step 2: The Great Clicking",
+  "storyboard": "storyboards/part-18-step-2-great-clicking.md",
+  "audio": {
+    "start": 2430.556,
+    "end": 2568.734
+  },
+  "noCaptions": [
+    "step-2-great-clicking-title"
+  ],
+  "scenes": [
+    {
+      "id": "step-2-great-clicking-title",
+      "file": "compositions/scenes/part-18/step-2-great-clicking-title.html",
+      "cue": "Step",
+      "approx": 2430.904,
+      "layer": "A"
+    },
+    {
+      "id": "click-to-not-die",
+      "file": "compositions/scenes/part-18/click-to-not-die.html",
+      "cue": "Make",
+      "approx": 2433.924,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Make",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "Die",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "five",
+          "expr": "lookright",
+          "rest": "smile",
+          "body": "point-right",
+          "mode": "big"
+        },
+        {
+          "cue": "yes",
+          "expr": "skeptical",
+          "rest": "smile",
+          "body": "hands-hips",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "the-question",
+      "file": "compositions/scenes/part-18/the-question.html",
+      "cue": "Should",
+      "approx": 2441.284,
+      "layer": "B"
+    },
+    {
+      "id": "proving-it",
+      "file": "compositions/scenes/part-18/proving-it.html",
+      "cue": "You",
+      "approx": 2446.484,
+      "layer": "B"
+    },
+    {
+      "id": "pluralistic-ignorance",
+      "file": "compositions/scenes/part-18/pluralistic-ignorance.html",
+      "cue": "Everyone",
+      "approx": 2460.284,
+      "layer": "B"
+    },
+    {
+      "id": "you-go-first",
+      "file": "compositions/scenes/part-18/you-go-first.html",
+      "cue": "It",
+      "approx": 2473.604,
+      "layer": "B"
+    },
+    {
+      "id": "everyone-realizes",
+      "file": "compositions/scenes/part-18/everyone-realizes.html",
+      "cue": "If",
+      "approx": 2481.964,
+      "layer": "B"
+    },
+    {
+      "id": "you-are-everyone",
+      "file": "compositions/scenes/part-18/you-are-everyone.html",
+      "cue": "Right",
+      "approx": 2497.904,
+      "layer": "B"
+    },
+    {
+      "id": "why-three-point-five",
+      "file": "compositions/scenes/part-18/why-three-point-five.html",
+      "cue": "Why",
+      "approx": 2508.524,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Why",
+          "expr": "thinking",
+          "rest": "closed",
+          "body": "thinking",
+          "mode": "big"
+        },
+        {
+          "cue": "five",
+          "expr": "lookright",
+          "rest": "smile",
+          "body": "point-right",
+          "mode": "big"
+        },
+        {
+          "cue": "percent?",
+          "expr": "skeptical",
+          "rest": "smile",
+          "body": "hands-hips",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "chenoweth-shelf",
+      "file": "compositions/scenes/part-18/chenoweth-shelf.html",
+      "cue": "A",
+      "approx": 2510.924,
+      "layer": "B"
+    },
+    {
+      "id": "280-million",
+      "file": "compositions/scenes/part-18/280-million.html",
+      "cue": "That's",
+      "approx": 2538.804,
+      "layer": "B"
+    },
+    {
+      "id": "you-can-get",
+      "file": "compositions/scenes/part-18/you-can-get.html",
+      "cue": "You",
+      "approx": 2549.824,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "You",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "vote",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "treaty.",
+          "expr": "smirk",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "referral-pyramid",
+      "file": "compositions/scenes/part-18/referral-pyramid.html",
+      "cue": "Two",
+      "approx": 2554.444,
+      "layer": "B"
+    },
+    {
+      "id": "pyramid-ends",
+      "file": "compositions/scenes/part-18/pyramid-ends.html",
+      "cue": "preventable",
+      "approx": 2566.664,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "preventable",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "diseases.",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "step-2-great-clicking-title",
+      "cue": "Step",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "step-2-great-clicking-title",
+      "cue": "Clicking.",
+      "sfx": "click",
+      "volume": 0.7
+    },
+    {
+      "scene": "step-2-great-clicking-title",
+      "cue": "Clicking.",
+      "offset": 0.55,
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "click-to-not-die",
+      "cue": "Click",
+      "sfx": "click",
+      "volume": 0.7
+    },
+    {
+      "scene": "click-to-not-die",
+      "cue": "Not",
+      "sfx": "whoosh",
+      "volume": 0.45
+    },
+    {
+      "scene": "click-to-not-die",
+      "cue": "Die",
+      "sfx": "scratch",
+      "volume": 0.5
+    },
+    {
+      "scene": "click-to-not-die",
+      "cue": "Die",
+      "offset": 0.55,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "click-to-not-die",
+      "cue": "five",
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "click-to-not-die",
+      "cue": "percent",
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "click-to-not-die",
+      "cue": "yes",
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "the-question",
+      "cue": "one",
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "the-question",
+      "cue": "fund",
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "the-question",
+      "cue": "clinical",
+      "offset": 0.2,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "the-question",
+      "cue": "trials?",
+      "offset": 0.15,
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "the-question",
+      "cue": "trials?",
+      "offset": 0.9,
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "proving-it",
+      "cue": "creating",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "proving-it",
+      "cue": "support",
+      "offset": 0.25,
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "proving-it",
+      "cue": "supports",
+      "sfx": "thunk",
+      "volume": 0.55
+    },
+    {
+      "scene": "proving-it",
+      "cue": "supports",
+      "offset": 0.3,
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "proving-it",
+      "cue": "murdering",
+      "n": 2,
+      "sfx": "squeak",
+      "volume": 0.4
+    },
+    {
+      "scene": "proving-it",
+      "cue": "proving",
+      "sfx": "typewriter",
+      "volume": 0.35
+    },
+    {
+      "scene": "proving-it",
+      "cue": "it.",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "crazy",
+      "n": 1,
+      "sfx": "squeak",
+      "volume": 0.35
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "else",
+      "offset": 0.1,
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "crazy",
+      "n": 2,
+      "sfx": "pop",
+      "volume": 0.45
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "call",
+      "sfx": "slide-up",
+      "volume": 0.3
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "term",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "eight",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "billion",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "waiting",
+      "sfx": "crickets",
+      "volume": 0.3
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "already",
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "pluralistic-ignorance",
+      "cue": "want.",
+      "n": 2,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "you-go-first.",
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "Most",
+      "sfx": "whoosh",
+      "volume": 0.4
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "start",
+      "sfx": "switch",
+      "volume": 0.5
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "playing",
+      "n": 1,
+      "sfx": "switch",
+      "volume": 0.5
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "don't",
+      "sfx": "switch",
+      "volume": 0.5
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "finish",
+      "sfx": "switch",
+      "volume": 0.5
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "playing",
+      "n": 2,
+      "sfx": "switch",
+      "volume": 0.5
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "finish",
+      "offset": 0.3,
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "you-go-first",
+      "cue": "playing",
+      "n": 2,
+      "offset": 0.3,
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "realized",
+      "sfx": "pop",
+      "volume": 0.5
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "human",
+      "n": 2,
+      "sfx": "boing",
+      "volume": 0.35
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "five",
+      "sfx": "marker",
+      "volume": 0.35
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "seventy-nine",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "dollars",
+      "offset": 0.25,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "income,",
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "tomorrow",
+      "sfx": "snip",
+      "volume": 0.4
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "tomorrow",
+      "offset": 0.2,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "unrecognizable.",
+      "offset": 0.1,
+      "sfx": "airplane",
+      "volume": 0.4
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "unrecognizable.",
+      "offset": 1.0,
+      "sfx": "pop",
+      "volume": 0.45
+    },
+    {
+      "scene": "everyone-realizes",
+      "cue": "unrecognizable.",
+      "offset": 1.15,
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "Right",
+      "sfx": "switch",
+      "volume": 0.5
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "Right",
+      "offset": 0.1,
+      "sfx": "hum",
+      "volume": 0.25
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "assumes",
+      "sfx": "crickets",
+      "volume": 0.3
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "weird",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "referendum",
+      "sfx": "slide-up",
+      "volume": 0.4
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "find",
+      "sfx": "click",
+      "volume": 0.6
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "everyone.",
+      "sfx": "slam",
+      "volume": 0.5
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "everyone.",
+      "offset": 0.15,
+      "sfx": "boom",
+      "volume": 0.45
+    },
+    {
+      "scene": "you-are-everyone",
+      "cue": "everyone.",
+      "at": "after",
+      "sfx": "whistle",
+      "volume": 0.35
+    },
+    {
+      "scene": "why-three-point-five",
+      "cue": "percent?",
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "Chenoweth",
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "studied",
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "failed",
+      "sfx": "marker",
+      "volume": 0.4
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "Not",
+      "sfx": "tick",
+      "volume": 0.5
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "one.",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "civil",
+      "offset": 0.2,
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "revolution,",
+      "sfx": "pop",
+      "volume": 0.45
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "regime",
+      "offset": -0.2,
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "change.",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "change.",
+      "offset": 0.25,
+      "sfx": "splat",
+      "volume": 0.45
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "win.",
+      "sfx": "bell",
+      "volume": 0.45
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "code",
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "never",
+      "sfx": "slam",
+      "volume": 0.45
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "used",
+      "sfx": "stamp",
+      "volume": 0.4
+    },
+    {
+      "scene": "chenoweth-shelf",
+      "cue": "purpose.",
+      "sfx": "crickets",
+      "volume": 0.3
+    },
+    {
+      "scene": "280-million",
+      "cue": "two",
+      "sfx": "pop",
+      "volume": 0.4
+    },
+    {
+      "scene": "280-million",
+      "cue": "humans.",
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "280-million",
+      "cue": "ten",
+      "sfx": "slide-up",
+      "volume": 0.4
+    },
+    {
+      "scene": "280-million",
+      "cue": "TikTok",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "280-million",
+      "cue": "twerk.",
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "280-million",
+      "cue": "twerk.",
+      "offset": 0.1,
+      "sfx": "boom",
+      "volume": 0.45
+    },
+    {
+      "scene": "you-can-get",
+      "cue": "million",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "you-can-get",
+      "cue": "yes",
+      "sfx": "click",
+      "volume": 0.6
+    },
+    {
+      "scene": "you-can-get",
+      "cue": "treaty.",
+      "sfx": "boing",
+      "volume": 0.4
+    },
+    {
+      "scene": "referral-pyramid",
+      "cue": "Two",
+      "sfx": "thunk",
+      "volume": 0.55
+    },
+    {
+      "scene": "referral-pyramid",
+      "cue": "dollars",
+      "offset": 0.1,
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "referral-pyramid",
+      "cue": "sharing",
+      "offset": 0.45,
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "referral-pyramid",
+      "cue": "link",
+      "offset": 0.45,
+      "sfx": "cash-register",
+      "volume": 0.4
+    },
+    {
+      "scene": "referral-pyramid",
+      "cue": "pyramid",
+      "n": 1,
+      "sfx": "typewriter",
+      "volume": 0.3
+    },
+    {
+      "scene": "referral-pyramid",
+      "cue": "not",
+      "sfx": "boom",
+      "volume": 0.45
+    },
+    {
+      "scene": "referral-pyramid",
+      "cue": "dying",
+      "sfx": "yelp",
+      "volume": 0.45
+    },
+    {
+      "scene": "referral-pyramid",
+      "cue": "dying",
+      "offset": 0.3,
+      "sfx": "slide-down",
+      "volume": 0.4
+    },
+    {
+      "scene": "pyramid-ends",
+      "cue": "preventable",
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "pyramid-ends",
+      "cue": "diseases.",
+      "sfx": "thunk",
+      "volume": 0.45
+    }
+  ]
+}

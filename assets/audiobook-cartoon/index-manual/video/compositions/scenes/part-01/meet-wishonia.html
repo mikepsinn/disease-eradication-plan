@@ -1,0 +1,69 @@
+<template id="meet-wishonia-template">
+  <!-- meet-wishonia · collage host shot (Part 1, scene 6), continuing eligible's shot (no seam). Her nameplate builds
+       on the wall beside her a line at a time: WISHONIA LOVE, C.E.O. AND PRESIDENT, and UNIVERSE OPTIMIZATION SERVICES,
+       which is too long and sags off the edge of the frame. "I've": the lines drop away; "four thousand": 4,297 YEARS.
+       "which in your Earth time": the brass adding machine rises, eats the card, panics and shakes; 1.1 s after
+       "Earth" it blows up (a little mushroom cloud) and blinks out of the soot. After the second "years." it spits out
+       a singed tag: 4,297 YEARS. It died converting a number into itself. She looks at the camera. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="meet-wishonia" data-width="1920" data-height="1080" data-start="0" data-duration="14.72">
+    <div id="meet-wishonia-weave"></div>
+    <div id="meet-wishonia-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, SZ = KIT.collage.SIZES;
+    // The nameplate's three lines (x, y of each middle), the card, and the adding machine on the free wall.
+    var NX = V ? 540 : 1470, NY = V ? [1200, 1290, 1380] : [590, 690, 790];
+    var CALC = V ? { x: 870, y: 1100, h: 380 } : { x: 1300, y: 880, h: 330 }, CK = CALC.h / SZ["calculator-calm"][1];
+    var CARD = V ? [540, 1260] : [1540, 640];
+    var calcTop = [CALC.x, CALC.y - CALC.h * 0.95];
+    var eyes = [[85, 98], [130, 96]];
+    var calc = function (art, hidden) { return { art: art, x: CALC.x, y: CALC.y, anchor: "bottom", pivot: "bottom", scale: CALC.h / SZ[art][1], hidden: hidden, eyes: eyes, smoke: [[110, 20]] }; };
+    KIT.collage({
+      id: "meet-wishonia", seed: 106, host: true,
+      cast: {
+        calm: calc("calculator-calm", true),
+        calc: calc("calculator", true),
+        cloud: { art: "mushroom", x: CALC.x, y: calcTop[1] + 40, anchor: "bottom", pivot: "bottom", scale: (V ? 300 : 360) / SZ.mushroom[1], hidden: true },
+      },
+      beats: [
+        // the nameplate, a line at a time
+        { on: "Wishonia", do: "banner", id: "n1", text: "WISHONIA LOVE", x: NX, y: NY[0], size: V ? 70 : 66, width: V ? 760 : 640, pad: 50, color: "ink", tilt: -1 },
+        { on: "C.E.O.", do: "banner", id: "n2", text: "C.E.O. AND PRESIDENT", x: NX, y: NY[1], size: V ? 46 : 44, width: V ? 640 : 560, pad: 40, color: "ink", tilt: 1, shake: 3 },
+        { on: "Universe", do: "banner", id: "n3", text: "UNIVERSE OPTIMIZATION SERVICES", x: NX + (V ? 260 : 300), y: NY[2], size: V ? 52 : 50, width: V ? 1300 : 1200, pad: 40, color: "ink", tilt: 4, shake: 3 },
+        { on: "I've", offset: -0.2, do: "drop", who: ["n1", "n2", "n3"], dist: 1400, spin: 14, dur: 0.6 },
+        // "four thousand, two hundred and ninety-seven years"
+        { on: "four", n: 1, do: "banner", id: "years", text: "4,297 YEARS", x: CARD[0], y: CARD[1], size: V ? 110 : 100, width: V ? 760 : 620, pad: 60, color: "ink", tilt: -3 },
+        // "which in your Earth time": the adding machine rises and eats the card
+        { on: "which", do: "slideIn", who: "calm", from: "bottom", dist: V ? 900 : 700, over: 16 },
+        { on: "Earth", do: "move", who: "years", to: calcTop, dur: 0.35, arc: 120, scale: 0.12 },
+        { on: "Earth", offset: 0.35, do: "hide", who: "years" },
+        { on: "Earth", offset: 0.36, do: "swap", who: "calm", to: "calc" },
+        { on: "Earth", offset: 0.4, do: "shiver", who: "calc", dur: 0.7, amp: 7, rot: 5 },
+        { on: "Earth", offset: 0.4, do: "glow", who: "calc", dur: 0.7, size: 300 },
+        // 1.1 s after "Earth": it blows up
+        { on: "Earth", offset: 1.1, do: "boom", shake: 12, flash: 0.18 },
+        { on: "Earth", offset: 1.1, do: "pop", who: "cloud", squash: true },
+        { on: "Earth", offset: 1.1, do: "char", who: "calc" },
+        { on: "Earth", offset: 2.0, do: "pop", who: "cloud", out: true },
+        { on: "four", n: 2, offset: 0.1, do: "blink", who: "calc" },
+        { on: "ninety-seven", n: 2, do: "blink", who: "calc" },
+        // after "years.": the bell, and a singed card
+        { on: "years.", n: 2, offset: 0.32, do: "hop", who: "calc", height: 20 },
+        { on: "years.", n: 2, offset: 0.32, do: "tag", id: "out", who: "calc", text: "4,297 YEARS", knot: [113, 40],
+          x: CALC.x + (V ? -150 : 300), y: CALC.y + (V ? 170 : -CALC.h * 0.7), w: V ? 360 : 380, h: V ? 110 : 130, swing: 5 },
+      ],
+    });
+  </script>
+</template>

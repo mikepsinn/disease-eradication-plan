@@ -1,0 +1,174 @@
+<template id="future-b-2040-template">
+  <!-- future-b-2040 · collage (Part 25, Future B, scenes 18 and 19 as one road). Back on road B, the sky blue and the
+       sun out. 2040: beside the road the loop of six stations (workbench, pay window, shop, lab, germ, bed); YOU
+       jogs round it, each lap faster, the loop jolting on each word. He stops and scratches his head; on "variable." the ring lifts off by itself like a flying saucer. 2048: the camera
+       pulls back and the road is a chart, HOW RICH YOU ARE: the path you're on runs along the floor, YOU's road climbs
+       off the top of the chart past the clouds and an airship: 56.7×. On "path" it drops back to the floor, where a
+       tiny skull in a fedora looks up. "children": YOU's house of tomorrow; his child points at the missile lamp in
+       the corner; YOU points out of the window, and throws a cloth over it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="future-b-2040" data-width="1920" data-height="1080" data-start="0" data-duration="28.16">
+    <div id="future-b-2040-weave"></div>
+    <div id="future-b-2040-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "future-b-2040", V = KIT.V, DUR = KIT.scene(ID).duration, G = 1000, SZ = KIT.collage.SIZES;
+      var CUE = function (word, n) { return KIT.cue(ID, word, n); };
+      // The walk from future-b-2028: YOU at X0, the world scrolls past while he walks, and stops for good at 2048.
+      var X0 = V ? 300 : 560, KX = V ? 0.6 : 1, KP = V ? 0.8 : 1;
+      var T1 = 1.4, W2 = CUE("variable.") + 0.75, T2 = CUE("forty-eight:") - 0.2;
+      var SEGS = [[0, T1, 900 * KX / T1], [W2, T2, 1500 * KX / (T2 - W2)]];
+      var S = function (t) { var d = 0; SEGS.forEach(function (g) { d += Math.max(0, Math.min(t, g[1]) - g[0]) * g[2]; }); return d; };
+      var w = function (t, dx) { return X0 + dx * KX + S(t); };
+      var YH = V ? 640 : 760, K_SUIT = YH / 562, WORLD = [], FAR = [], beats = [], cast = {}, i;
+      var add = function (b) { beats.push(b); };
+      var put = function (n, o, far) { cast[n] = o; (far ? FAR : WORLD).push(n); return n; };
+      var stand = function (n, art, x, k, o) { var c = { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: k }; for (var f in o || {}) c[f] = o[f]; return put(n, c); };
+      var hgt = function (art, h) { return h / SZ[art][1]; };
+
+      // ── The sky, blue now, the sun out ──
+      for (i = 0; i < 8; i++) put("cl" + i, { art: "cloud-puff", x: i * (V ? 620 : 1050) + 200, y: (V ? -260 : 40) + (i % 3) * (V ? 170 : 90), scale: 1.1 + (i % 3) * 0.35 }, true);
+      put("sun", { art: "sun", x: V ? 160 : 300, y: V ? -420 : -80, scale: V ? 1.6 : 1.8 }, true);
+      var ROADS = Math.ceil((S(DUR) + 6000) / 990);
+      for (i = 0; i < ROADS; i++) put("rd" + i, { art: "road", x: -1800 + i * 990, y: G - 70, anchor: "topleft", scale: 3 });
+      var yearSign = function (n, year, t) { stand(n, "sign-board", w(t, 620), V ? 1.6 : 1.9, { hidden: true, label: { text: String(year), at: [107, 70], width: 170, size: 200 } }); add({ at: t, do: "pop", who: n, squash: true }); };
+      yearSign("y40", 2040, CUE("forty:"));
+
+      // ── 2040: the ring of six stations, beside the road ──
+      var RC = [X0 + 1150 * KX, G - (V ? 330 : 420)], RX = V ? 300 : 420, RY = V ? 300 : 380;
+      var RINGW = w(T1, 1150) - (X0 + 1150 * KX);                     // the ring's world offset
+      stand("ring", "loop-stations", RC[0] + RINGW, (2 * RX + 170) / 491, { y: RC[1] + RY + 70, hidden: true });
+      var ringPt = function (u, out) { var th = Math.PI / 2 - u * 2 * Math.PI; return [RC[0] + (RX + out) * Math.cos(th), RC[1] + (RY + out) * Math.sin(th)]; };
+      var RINGALL = ["ring"];
+      RINGALL.forEach(function (n, j) { add({ on: "compounding", offset: 0.1 + j * 0.08, do: "pop", who: n, squash: true }); });
+      // YOU jogs round it, each lap faster; one station a word on the first
+      cast.jog = { art: "you-walk", x: X0, y: G, anchor: "bottom", pivot: "bottom", scale: hgt("you-walk", V ? 260 : 330), hidden: true };
+      var TL = CUE("work"), LAP1 = 3.3;
+      add({ on: "kicks", do: "hide", who: ["yT", "yA", "yB", "pill"] });
+      add({ on: "kicks", do: "show", who: "jog" });
+      add({ on: "kicks", do: "move", who: "jog", by: [RC[0] - X0, RY + RC[1] - G], dur: TL - CUE("kicks"), ease: "smooth" });
+      add({ at: TL, do: "lap", who: "jog", loop: [RC[0], RC[1], RX, RY], laps: 3, dur: LAP1, faster: 0.62, dir: -1 });
+      // one jolt of the ring a word, and "cures" slams
+      ["work", "earn", "spend", "research,", "healthier."].forEach(function (wd) { add({ on: wd, do: "shiver", who: "ring", dur: 0.2, amp: 3, rot: 1 }); });
+      add({ on: "cures", do: "shake", y: 8, frames: 3 });
+      // the ring spins faster and faster with no one on it
+      add({ at: TL + LAP1 * (1 + 0.62 + 0.62 * 0.62), do: "shiver", who: RINGALL, dur: CUE("variable.") - TL - LAP1 * 2.0, amp: 3, rot: 2 });
+      // "Humans begin to suspect": he stops and scratches his head
+      cast.think = { art: "you-think", x: RC[0], y: RC[1] + RY, anchor: "bottom", pivot: "bottom", scale: hgt("you-think", V ? 300 : 380), hidden: true };
+      add({ on: "Humans", do: "swap", who: "jog", to: "think" });
+      add({ on: "killing", do: "shiver", who: "think", dur: 0.6, amp: 2, rot: 3 });
+      // "variable.": the ring lifts off by itself like a flying saucer
+      add({ on: "variable.", do: "move", who: RINGALL, by: [V ? 200 : 300, -(V ? 1600 : 1500)], dur: 1.0, ease: "smooth" });
+      add({ on: "variable.", offset: 1.0, do: "hide", who: RINGALL });
+      add({ on: "variable.", offset: 0.3, do: "move", who: "think", by: [X0 - RC[0], G - RC[1] - RY], dur: 0.4 });
+      add({ on: "variable.", offset: 0.7, do: "hide", who: "think" });
+      add({ on: "variable.", offset: 0.7, do: "show", who: ["yT", "yA", "pill"] });
+
+      // ── 2048: the road is a chart ──
+      yearSign("y48", 2048, CUE("forty-eight:"));
+      // the axes are drawn on the frame-sized paper layer, so the chart box stays inside the canvas
+      var CB = V ? [110, 300, 990, 880] : [170, 190, 1780, 800];
+      var ch = KIT.collage.axes({ box: CB, x: [2026, 2048, 11], y: [0, 12, 4], xLabels: 22, yLabels: 100, title: "HOW RICH YOU ARE", size: V ? 40 : 42 });
+      var lineA = function (x) { return 1 + 0.01 * (x - 2026); };
+      var lineB = function (x) { return 1.2 * Math.exp(Math.log(56.7) * (x - 2026) / 22); };
+      var TIP = ch.pt(2048, lineB(2048)), FLOOR = ch.pt(2048, lineA(2048));
+      add({ on: "model", do: "chart", chart: ch });
+      add({ on: "model", offset: -0.3, do: "pop", who: FAR, out: true });
+      add({ on: "projects", do: "line", id: "A", chart: ch, f: lineA, x: [2026, 2048], dur: 0.6, width: V ? 6 : 8, dash: [18, 12] });
+      add({ on: "projects", offset: 0.4, do: "banner", id: "tagA", text: "THE PATH YOU'RE ON", x: ch.pt(V ? 2040 : 2044.5, 0)[0], y: ch.pt(0, 1)[1] - (V ? 50 : 55), size: V ? 36 : 40, width: V ? 400 : 480, pad: 30, color: "ink", tilt: 0 });
+      add({ on: "everyone", do: "line", id: "B", chart: ch, f: lineB, x: [2026, 2048], until: "richer", width: V ? 10 : 14, color: "#2E6B3A", ease: "linear", samples: 160, by: "length", front: true });
+      add({ on: "point", offset: -0.3, do: "show", who: "airship" });
+      add({ on: "point", offset: -0.3, do: "move", who: "airship", by: [V ? -700 : -1100, 0], dur: 2.0 });
+      add({ on: "richer", do: "banner", id: "x567", text: "56.7×", x: TIP[0] - (V ? 220 : 420), y: TIP[1] + (V ? 160 : 140), size: V ? 220 : 260, width: V ? 560 : 700, pad: 70, tilt: -4 });
+      cast.airship = { art: "airship", x: TIP[0] + (V ? 300 : 500), y: ch.pt(0, 40)[1], scale: V ? 1.5 : 2, hidden: true };
+      // the tiny skull at the end of the path you're on
+      cast.skull = { art: "you-skeleton", x: FLOOR[0] + (V ? 40 : 60), y: FLOOR[1], anchor: "bottom", pivot: "bottom", scale: (V ? 90 : 80) / SZ["you-skeleton"][1], hidden: true };
+      add({ on: "path", do: "pop", who: "skull" });
+      add({ on: "on.", n: 1, do: "move", who: "skull", by: [0, 0], turn: -20, dur: 0.2 });
+
+      // ── The house of tomorrow at the end of the road: the retired missile in the corner ──
+      var HX = X0 + (V ? 1700 : 3600), HK = V ? 2.0 : 2.6;
+      cast.house = { art: "house-of-tomorrow", x: HX, y: G, anchor: "bottom", scale: HK };
+      var PH = V ? 400 : 480;
+      cast.dad = { art: "you", x: HX - (V ? 260 : 380), y: G, anchor: "bottom", pivot: "bottom", scale: hgt("you", PH) };
+      cast.kid = { art: "human-ages-kid", x: HX - (V ? 60 : 110), y: G, anchor: "bottom", pivot: "bottom", scale: hgt("human-ages-kid", PH * 0.62) };
+      cast.table = { art: "side-table", x: HX + (V ? 110 : 140), y: G, anchor: "bottom", scale: hgt("side-table", PH * 0.32) };
+      cast.lamp = { art: "missile-lamp", x: HX + (V ? 280 : 380), y: G, anchor: "bottom", pivot: "bottom", scale: hgt("missile-lamp", PH * 0.95) };
+      cast.hand = { art: "pointing-hand", x: HX - (V ? 420 : 560), y: G - PH * 0.6, scale: V ? 0.4 : 0.5, faces: "left", hidden: true };
+      cast.cloth = { art: "tablecloth", x: HX + (V ? 280 : 380), y: G - PH * 2.2, anchor: "top", scale: hgt("tablecloth", PH * 0.72), hidden: true };
+      add({ on: "ask", do: "nudge", who: "kid", by: [30, 0] });
+      add({ on: "\"war\"", do: "move", who: "kid", by: [0, 0], turn: 10, dur: 0.2 });
+      add({ on: "means.", do: "shiver", who: "lamp", dur: 0.3, amp: 2, rot: 2 });
+      add({ on: "change", do: "pop", who: "hand" });
+      add({ on: "change", do: "move", who: "kid", by: [0, 0], turn: -12, dur: 0.2 });
+      add({ on: "subject.", do: "show", who: "cloth" });
+      add({ on: "subject.", do: "move", who: "cloth", by: [0, PH * 2.2 - PH * 1.0], dur: 0.25, arc: 40 });
+      add({ on: "subject.", offset: 0.25, do: "shake", y: 4, frames: 2 });
+
+      // ── YOU: the walk rig, as in future-b-2028, with his pill bottle ──
+      cast.yA = { art: "you-watch", clip: [[0, 340], [215, 340], [215, 562], [0, 562]], anchor: [110, 562], pivot: [110, 562], x: X0, y: G, scale: K_SUIT };
+      cast.yB = { art: "you-walk", clip: [[70, 348], [205, 348], [292, 470], [292, 563], [0, 563], [0, 510], [45, 440]], anchor: [125, 562], pivot: [125, 562], x: X0, y: G, scale: K_SUIT, hidden: true };
+      cast.yT = { art: "you-watch", clip: [[0, 0], [215, 0], [215, 352], [0, 352]], anchor: [110, 562], pivot: [110, 562], x: X0, y: G, scale: K_SUIT };
+      cast.pill = { art: "pill-bottle", x: X0 + 45 * K_SUIT, y: G - YH * 0.6, scale: V ? 0.42 : 0.5 };
+      SEGS.forEach(function (g, gi) {
+        for (var ts = g[0], leg = 1; ts < g[1]; ts += 0.26, leg++) {
+          add({ at: ts, do: "show", who: leg % 2 ? "yB" : "yA" });
+          add({ at: ts, do: "hide", who: leg % 2 ? "yA" : "yB" });
+        }
+        if (gi) { add({ at: g[1], do: "show", who: "yA" }); add({ at: g[1], do: "hide", who: "yB" }); }
+        ["yT", "yA", "yB", "pill"].forEach(function (n) { add({ at: g[0], do: "bob", who: n, y: 7, r: 1.3, speed: 3.16, until: g[1] }); });
+      });
+
+      // ── The sky: blue, and at its brightest in 2048 ──
+      add({ at: 0, do: "wash", id: "blue", color: "#9CC8DE", blend: "normal", above: "cl7", opacity: 0.5, dur: 0.01 });
+      add({ on: "forty-eight:", do: "wash", id: "blue", opacity: 0.62, dur: 1 });
+      // the chart reads on plain paper
+      add({ on: "model", do: "wash", id: "blue", opacity: 0.12, dur: 0.6 });
+
+      // ── The camera ──
+      var views = V ? {
+        walk: [540, G - 480, 0.9], ring: [X0 + 500, G - 520, 0.72], chart: [560, 640, 0.95],
+        up: [TIP[0] - 120, TIP[1] + 300, 0.6], floor: [FLOOR[0] - 120, FLOOR[1] - 200, 1.0], home: [HX, G - 420, 0.85],
+      } : {
+        walk: [960, 560, 0.85], ring: [X0 + 900, G - 500, 0.72], chart: [960, 560, 0.95],
+        up: [TIP[0] - 300, TIP[1] + 380, 0.6], floor: [FLOOR[0] - 260, FLOOR[1] - 160, 1.25], home: [HX, G - 480, 0.9],
+      };
+      add({ on: "compounding", offset: -0.2, do: "camera", view: "ring", dur: 0.9 });
+      add({ at: W2, do: "camera", view: "walk", dur: 0.7 });
+      add({ on: "model", offset: -0.3, do: "camera", view: "chart", dur: 0.7 });
+      add({ on: "everyone", offset: 0.5, do: "camera", view: "chart", dur: 0.05 });
+      add({ on: "everyone", offset: 0.6, do: "camera", view: "up", dur: CUE("richer") - CUE("everyone") - 0.6 });
+      add({ on: "path", offset: -0.15, do: "camera", view: "floor", dur: 0.4 });
+      add({ on: "Your", do: "camera", view: "home", dur: 0.6 });
+
+      // A move always straightens to its turn, so the treadmill would undo every rotation: rotations go after it.
+      var early = [], late = [];
+      beats.forEach(function (b) {
+        if (b.do === "bob" || b.do === "shiver" || b.do === "hinge") { late.push(b); return; }
+        early.push(b);
+        if (b.do === "move" && b.turn !== undefined) {
+          var c = {}; for (var k in b) c[k] = b[k];
+          delete c.to; delete c.arc; delete c.scale; c.by = [0, 0]; late.push(c); delete b.turn;
+        }
+      });
+      beats = early;
+      SEGS.forEach(function (g) { add({ at: g[0], do: "move", who: WORLD, by: [-(g[1] - g[0]) * g[2], 0], dur: g[1] - g[0] }); });
+      SEGS.forEach(function (g) { add({ at: g[0], do: "move", who: FAR, by: [-(g[1] - g[0]) * g[2] * 0.3, 0], dur: g[1] - g[0] }); });
+      beats = beats.concat(late);
+
+      KIT.collage({ id: ID, seed: 2518, plate: V ? [-2600, TIP[1] - 1600, HX + 1600, 3600] : [-2400, TIP[1] - 1200, HX + 2000, 2600], views: views, view: "walk", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

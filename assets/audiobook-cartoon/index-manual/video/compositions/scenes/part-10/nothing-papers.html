@@ -1,0 +1,509 @@
+<template id="nothing-papers-template">
+  <!-- nothing-papers · Layer B (storyboards/part-10-cost-of-war.md, scene 5). "nineteen" → the 1913 press thumps to life
+       (clank) and the Politician cranks it, grinning. "printed" → war papers pop out of it onto a heap (hammer).
+       "trillion" → "$170 TRILLION" lands (cash register). "nothing" → the camera pushes in on the paper tray: empty,
+       a cricket chirping in it (crickets); the Politician leans over to look, shrugs and cranks on; the heap turns to
+       dotted outlines: the papers were nothing all along. "nothing-papers" → they hop off the heap, line up and run
+       right (squeaks); the camera follows them to a crowd in front of a town. "murdering" → they jump up and fold into
+       one big dotted bomb, which falls (slide whistle); the crowd looks up. "three" → flash, mushroom cloud, shake
+       (boom); the papers rain out of the cloud onto the street. "humans" → the smoke clears on a crowd of grinning
+       skeletons, "310,000,000". HOLD until "valuable": nothing moves. "valuable" → the papers march along the street
+       and the houses, the bridge and the workshop fold flat behind them like cardboard (two slams). "entire lives" →
+       the camera finds the worker beside his flat house; on "building." he bends down and taps in one nail (pat). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #F3ECD0; }
+    #nothing-papers-cam, #nothing-papers-bg, #nothing-papers-type, #nothing-papers-pip, #nothing-papers-grain { position: absolute; inset: 0; }
+    #nothing-papers-flash { position: absolute; inset: -40px; background: #FFFFFF; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="nothing-papers" data-width="1920" data-height="1080" data-start="0" data-duration="16.22">
+    <div id="nothing-papers-cam">
+      <div id="nothing-papers-bg"></div>
+      <div id="nothing-papers-view"><div id="nothing-papers-camw"><div id="nothing-papers-world"></div></div></div>
+      <div id="nothing-papers-type"></div>
+      <!-- the blast's white flash: over the Earth art, under Wishonia's corner -->
+      <div id="nothing-papers-flash"></div>
+      <div id="nothing-papers-pip"></div>
+    </div>
+    <div id="nothing-papers-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/props/places.js"></script>
+  <script src="assets/js/props/objects-a.js"></script>
+  <script>
+    (function () {
+      var ID = "nothing-papers";
+      var sc = KIT.scene(ID);
+      var D = sc.duration;
+      var q = function (s) { return document.getElementById(ID + "-" + s); };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var C = KIT.C, W = KIT.W, H = KIT.H, V = KIT.V, ink = C.line;
+      var P = function (s) { return ID + "-" + s; };
+      var f = function (n) { return (+n).toFixed(1); };
+      function g(id, inner, attrs) { return '<g id="' + P(id) + '"' + (attrs ? " " + attrs : "") + ">" + inner + "</g>"; }
+      function at(x, y, s, inner, flip) { return '<g transform="translate(' + f(x) + "," + f(y) + ") scale(" + (flip ? -s : s) + "," + s + ')">' + inner + "</g>"; }
+      // a person (feet at y 100 in its units) standing with its feet at (x, y)
+      function stand(x, y, s, inner) { return at(x, y - 100 * s, s, inner); }
+      function mix(a, b) { var o = {}, k; for (k in a) o[k] = a[k]; for (k in b || {}) o[k] = b[k]; return o; }
+      function lerp(a, b, u) { return a + (b - a) * u; }
+      function clamp01(u) { return Math.max(0, Math.min(1, u)); }
+      function inOut(u) { return u < 0.5 ? 2 * u * u : 1 - Math.pow(-2 * u + 2, 2) / 2; }
+
+      // ── Layout, per shape. The world is two frames wide, in frame units: frame 1 (x 0 to W) the press, frame 2 (x W
+      // to 2W) the crowd in front of a town. G: the ground both frames stand on. sp, px: the Politician's scale and the
+      // press's center (the press is sized so its crank axle sits at his shoulder). heap [x, scale, spacing]; ws1: the
+      // papers' scale on the ground. Frame 2 (x in frame-2 units): GS, ts: the town's street and scale; land: where
+      // the papers come down on the street [first x, spacing]; houses (centers), worker, bridge [x, width], shop: the
+      // workshop; crowd [first x, spacing, scale, count]; line2: where the leading paper waits before the bomb; bomb
+      // [x, ball center y where it forms, ball center y where it hits]; nuke [x, scale]. A, B: the counters [x, y,
+      // font size] (fixed to the frame). zt: the push-in on the tray; zw [scale, screen x, screen y]: the worker's close-up.
+      var L = V
+        ? { G: 1340, sp: 1.6, px: 470, heap: [880, 0.78, 68], ws1: 0.72,
+            GS: 1000, ts: 0.3, land: [55, 13], houses: [270, 520, 680], worker: 395, wks: 0.42, bridge: [820, 100], shop: 952,
+            crowd: [480, 120, 1.1, 5], line2: 400, bomb: [720, 760, 1170], nuke: [720, 0.7],
+            A: [540, 610, 84], B: [540, 722, 84], zt: 1.6, zw: [2.5, 470, 1010] }
+        : { G: 840, sp: 2.0, px: 640, heap: [1290, 0.95, 86], ws1: 0.9,
+            GS: 600, ts: 0.55, land: [70, 23], houses: [470, 830, 1100], worker: 650, wks: 0.7, bridge: [1320, 180], shop: 1560,
+            crowd: [760, 120, 1.55, 7], line2: 640, bomb: [1120, 335, 600], nuke: [1120, 0.85],
+            A: [1360, 178, 92], B: [1360, 292, 92], zt: 1.6, zw: [2.1, 820, 560] };
+      var G = L.G, F2 = W;
+
+      // ── Times ──
+      var T = {
+        nineteen: cue("nineteen"), printed: cue("printed"), trillion: cue("trillion"), nothing: cue("nothing"), np: cue("nothing-papers"),
+        murdering: cue("murdering"), three: cue("three"), humans: cue("humans", 1), valuable: cue("valuable"), entire: cue("entire"), building: cue("building."),
+      };
+      T.peek = [T.nothing + 0.05, T.nothing + 1.05];   // the crank stops while the Politician looks into the tray
+      T.dot = T.nothing + 0.85;                        // the heap turns dotted as the camera pulls back
+      T.march = T.np + 0.3;                            // the second squeak: the column runs right
+      T.arrive = T.murdering - 0.14;                   // the column stands in frame 2
+      T.pan = [T.np + 0.26, T.murdering - 0.1];        // the camera follows it
+      T.form = T.murdering + 0.16;                     // the bomb is formed
+      T.tap = T.building + 0.2;                        // the pat
+
+      q("bg").innerHTML = KIT.paper(ID);
+      q("grain").innerHTML = KIT.svg(W, H, KIT.grain(ID));
+      // The camera window is the paper's inner frame; inside it, the camera (camw: x, y, scale about its top left)
+      // holds the world, two frames wide, in frame units.
+      q("view").style.cssText = "position:absolute;overflow:hidden;left:46px;top:46px;width:" + (W - 92) + "px;height:" + (H - 92) + "px;";
+      q("camw").style.cssText = "position:absolute;left:-46px;top:-46px;width:" + 2 * W + "px;height:" + H + "px;";
+      q("world").style.cssText = "position:absolute;left:0;top:0;width:" + 2 * W + "px;height:" + H + "px;";
+
+      // ── Helpers ──
+      // Cut one <g class="cls"> (with everything nested in it) out of a person's markup: [before, group, after].
+      function cutGroup(svg, cls) {
+        var start = svg.indexOf('<g class="' + cls + '"'), i = start, depth = 0;
+        if (start < 0) throw new Error("cutGroup: no " + cls);
+        var re = /<g[\s>]|<\/g>/g, m;
+        re.lastIndex = start;
+        while ((m = re.exec(svg))) {
+          depth += m[0] === "</g>" ? -1 : 1;
+          if (depth === 0) { i = m.index + 4; break; }
+        }
+        return [svg.slice(0, start), svg.slice(start, i), svg.slice(i)];
+      }
+      // An arm reaching from the shoulder S to the point H (person units), elbow down: [upper, fore] angles.
+      function reach(S, Hd, len) {
+        var dx = Hd[0] - S[0], dy = Hd[1] - S[1], d = Math.min(Math.hypot(dx, dy), 2 * len * 0.995);
+        var base = (Math.atan2(dx, dy) * 180) / Math.PI, al = (Math.acos(d / (2 * len)) * 180) / Math.PI;
+        var elbowY = function (a1) { return Math.cos((a1 * Math.PI) / 180); };
+        return elbowY(base - al) >= elbowY(base + al) ? [base - al, base + al] : [base + al, base - al];
+      }
+      // Move a person's pupils up (dy < 0) or down, in the face's units.
+      function eyes(svg, dy) {
+        return svg.replace(/<circle class="pupil" cx="([-\d.]+)" cy="([-\d.]+)"/g, function (m, cx, cy) { return '<circle class="pupil" cx="' + cx + '" cy="' + (+cy + dy * 0.5) + '"'; });
+      }
+      // The nothing-papers: a drawing redrawn as a dotted outline with no fill (money printed out of nothing); the war
+      // seal stays a red dotted ring. w: the dot size, in the drawing's units.
+      function dotted(markup, w) {
+        return markup.replace(/fill="#C8452E" stroke="#112845"/g, 'fill="none" stroke="#C8452E"')
+          .replace(/fill="(?!none)[^"]*"/g, 'fill="none"').replace(/stroke="#FFFFFF"/g, 'stroke="none"')
+          .replace(/stroke-width="[\d.]+"/g, 'stroke-width="' + w + '" stroke-dasharray="0.1 ' + (w * 1.9).toFixed(1) + '" stroke-linecap="round"');
+      }
+      // A dust puff of three circles around (0, 0), radius r.
+      function puff(r, col) {
+        var cs = [[0, 0, r], [-r * 0.8, r * 0.25, r * 0.66], [r * 0.85, r * 0.3, r * 0.6]];
+        return cs.map(function (c) { return '<circle cx="' + f(c[0]) + '" cy="' + f(c[1]) + '" r="' + f(c[2]) + '" fill="' + (col || "#E4D9BC") + '" stroke="' + ink + '" stroke-width="3"/>'; }).join("");
+      }
+      // ══ Fold a building flat like cardboard (nothing-papers and paycheck-shrinks: the same function, change both). ══
+      // It squashes onto its base line with a slight skew, lands at t + 0.12 (the slam) and bounces once. el: an
+      // untransformed group whose base center is (ox, oy) in its parent's units.
+      function foldFlat(tl, el, t, ox, oy) {
+        gsap.set(el, { svgOrigin: ox + " " + oy });
+        tl.fromTo(el, { scaleY: 1, skewX: 0 }, { scaleY: 0.05, skewX: -24, duration: 0.12, ease: "power3.in", immediateRender: false }, t);
+        tl.to(el, { scaleY: 0.11, duration: 0.07, yoyo: true, repeat: 1, ease: "power1.out" }, t + 0.12);
+      }
+      // A hammer (person units) held in a hand at (x, y), its head up along the angle rot.
+      function hammer(x, y, rot) {
+        return '<g transform="translate(' + f(x) + "," + f(y) + ") rotate(" + f(rot) + ')">' +
+          '<path d="M0,6 V-22" stroke="' + ink + '" stroke-width="5.4" stroke-linecap="round"/><path d="M0,5 V-21" stroke="' + C.tan + '" stroke-width="2.6" stroke-linecap="round"/>' +
+          '<path d="M-10,-28 H9 L11,-21 H-10 Z" fill="' + C.slate + '" stroke="' + ink + '" stroke-width="2.2" stroke-linejoin="miter"/><path d="M-10,-28 L-15,-32 M-10,-21 L-15,-17" stroke="' + ink + '" stroke-width="2.2"/></g>';
+      }
+      // Put a hammer in a person's hand (side 0: the left arm, 1: the right); it then swings with the arm.
+      function withHammer(svg, o, side) {
+        var r = KIT.rig(o), h = r.handLocal[side], s = r.shoulder[side];
+        var e = (Math.atan2(h[0] - s[0], -(h[1] - s[1])) * 180) / Math.PI;
+        var cls = side ? "arm-r" : "arm-l";
+        return svg.replace('<g class="' + cls + '">', '<g class="' + cls + '">' + hammer(h[0], h[1] + 4, e * 0.5 + (side ? 0 : -30)));
+      }
+      function tufts(y, xs) {
+        return xs.map(function (gx) {
+          return '<path d="M' + f(gx) + "," + y + " l-6,-14 M" + f(gx + 6) + "," + y + " l2,-18 M" + f(gx + 12) + "," + y + ' l8,-12" stroke="' + ink + '" stroke-width="3" stroke-linecap="round"/>';
+        }).join("");
+      }
+
+      // ── Frame 1: the 1913 press (mirrored, its crank on the left) and the Politician at the crank ──
+      var polO = KIT.castOpts("politician", { arms: [[-36, 30], [60, 120]] }), polR = KIT.rig(polO), sp = L.sp, SH = polR.shoulder[1];
+      // the press is sized so its crank axle is level with his right shoulder, just in front of it
+      var ps = (sp * (94 - SH[1])) / 150, AX = [L.px - 136 * ps, G - 150 * ps];
+      var polX = AX[0] - sp * (SH[0] + 6), polY = G - 100 * sp;
+      function knob(phi) {
+        var a = (phi * Math.PI) / 180, c = Math.cos(a), s = Math.sin(a);
+        return [L.px - ps * (136 + 42 * c + 33 * s), G + ps * (-150 + 42 * s - 33 * c)];
+      }
+      function polArms(phi) {
+        var k = knob(phi);
+        return [[-36, 30], reach(SH, [(k[0] - polX) / sp, (k[1] - polY) / sp], polR.armLength)];
+      }
+      // His body (behind the press's wheel) and eight drawings of his crank arm (in front of it), one per 45 degrees.
+      var polBase = cutGroup(KIT.person(polO), "arm-r"), polArmsSvg = "";
+      for (var ai = 0; ai < 8; ai++) polArmsSvg += '<g class="pol-arm" data-i="' + ai + '" opacity="0">' + cutGroup(KIT.person(mix(polO, { arms: polArms(ai * 45) })), "arm-r")[1] + "</g>";
+      var pol = at(polX, polY, sp, g("pol-a", polBase[0] + polBase[2])), polArm = at(polX, polY, sp, g("pol-b", polArmsSvg));
+      var press = KIT.props.printingPress({ seal: "war", tray: 0 });
+      // the 1913 plaque on the crosshead (drawn unmirrored, so it reads)
+      var plaque = '<rect x="-60" y="-320" width="120" height="38" fill="' + C.yellow + '" stroke="' + ink + '" stroke-width="3.4"/>' +
+        '<rect x="-54" y="-314" width="108" height="26" fill="none" stroke="' + C.rust + '" stroke-width="1.4"/>' +
+        '<text x="0" y="-291" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="28" letter-spacing="3" fill="' + ink + '">1913</text>';
+      var pressArt = g("press", at(L.px, G, ps, press, true) + at(L.px, G, ps, plaque));
+      // the cricket in the empty tray (Part 1's cricket, now living in the money supply)
+      var TRAY = [L.px + 148 * ps, G - 205 * ps];
+      var cricket = at(TRAY[0] - 4 * ps, TRAY[1] + 9 * ps, ps * 1.6, g("cricket",
+        '<path d="M-4,-4 l-7,-9 l-4,12 M2,-4 l3,4" fill="none" stroke="' + C.cream + '" stroke-width="2" stroke-linecap="round"/>' +
+        '<ellipse cx="0" cy="-7" rx="10" ry="5" fill="#3A2E22" stroke="' + C.cream + '" stroke-width="1.4"/><circle cx="10" cy="-9" r="4" fill="#3A2E22" stroke="' + C.cream + '" stroke-width="1.4"/>' +
+        '<path d="M12,-12 q6,-12 15,-9" fill="none" stroke="' + C.cream + '" stroke-width="1.6"/>' +
+        g("chirp", '<path d="M24,-22 q5,4 0,9 M31,-26 q8,7 0,17" fill="none" stroke="' + ink + '" stroke-width="2.6" stroke-linecap="round"/>'), 'opacity="0"'));
+
+      // ── The heap: 12 slots in 4 rows (5, 4, 2, 1); each has a solid bill and its dotted twin ──
+      var HX = L.heap[0], HS = L.heap[1], HD = L.heap[2], slots = [], rnd = KIT.rng(1913);
+      [5, 4, 2, 1].forEach(function (n, r) {
+        for (var i = 0; i < n; i++) slots.push({ x: HX + (i - (n - 1) / 2) * HD + (r % 2 ? 5 : -3) * HS, y: G - 24 * HS - r * 31 * HS, rot: Math.round((rnd() - 0.5) * 26), r: r });
+      });
+      var NS = slots.length;
+      var heapSvg = "";
+      for (var hk = NS - 1; hk >= 0; hk--) {
+        var s0 = slots[hk], bill = '<g transform="rotate(' + s0.rot + ')">' + KIT.money("war", 0.4).replace(/<path class="legs"[^>]*\/>/, "") + "</g>";
+        heapSvg += at(s0.x, s0.y, HS, g("hs-" + hk, bill, 'opacity="0"') + g("hd-" + hk, dotted(bill, 5.6), 'opacity="0"'));
+      }
+      // the 12 printed papers in flight (solid) and the 12 walkers (dotted, two leg drawings each)
+      var pops = "", walkers = "";
+      for (var k = 0; k < NS; k++) {
+        pops += g("pop-" + k, KIT.money("war", 0.5), 'opacity="0"');
+        walkers += g("w-" + k, '<g class="np-a">' + dotted(KIT.money("war", 0), 5.6) + '</g><g class="np-b" opacity="0">' + dotted(KIT.money("war", 1), 5.6) + "</g>", 'opacity="0"');
+      }
+      var BED = [L.px, G - 97 * ps];
+      var ground = '<path d="M60,' + G + " H" + (2 * W - 60) + '" stroke="' + ink + '" stroke-width="5"/>' +
+        tufts(G, [0.06, 0.2, 0.52, 0.71, 0.9, 1.04, 1.2, 1.4].map(function (k) { return k * W; }));
+
+      // ── Frame 2: the town on its street (three houses, the worker, a bridge over a creek, the workshop) ──
+      var TS = L.ts, GS = L.GS;
+      function bridge(w) {
+        var u = w / 240, a = function (x, y) { return f(x * u) + "," + f(y * u); };
+        var body = '<path d="M' + a(-120, 0) + " L" + a(-120, -34) + " L" + a(120, -34) + " L" + a(120, 0) + " L" + a(84, 0) + " Q" + a(0, -74) + " " + a(-84, 0) + ' Z" fill="' + C.cream + '" stroke="' + ink + '" stroke-width="4" stroke-linejoin="miter"/>';
+        var stones = "";
+        for (var sx = -110; sx < 120; sx += 26) stones += "M" + a(sx, -34) + " L" + a(sx, -26) + " ";
+        stones += "M" + a(-120, -26) + " L" + a(120, -26);
+        [[-98, -8], [-70, -16], [70, -16], [98, -8]].forEach(function (p) { stones += " M" + a(p[0] - 10, p[1]) + " L" + a(p[0] + 10, p[1]); });
+        var rail = '<path d="M' + a(-118, -34) + " L" + a(-118, -58) + " M" + a(118, -34) + " L" + a(118, -58) + " M" + a(-118, -56) + " L" + a(118, -56) +
+          [-80, -40, 0, 40, 80].map(function (x) { return " M" + a(x, -34) + " L" + a(x, -56); }).join("") + '" stroke="' + ink + '" stroke-width="' + f(Math.max(2.4, 4 * u)) + '" fill="none"/>';
+        return '<g class="prop-bridge">' + rail + body + '<path d="' + stones + '" stroke="' + ink + '" stroke-width="1.6" opacity="0.45" fill="none"/></g>';
+      }
+      function creek(x, w) {
+        var u = w / 240;
+        return '<path d="M' + f(x - 86 * u) + "," + GS + " L" + f(x - 64 * u) + "," + f(GS + 26 * u) + " H" + f(x + 64 * u) + " L" + f(x + 86 * u) + "," + GS + ' Z" fill="' + C.cyan + '" stroke="' + ink + '" stroke-width="3"/>' +
+          '<path d="M' + f(x - 50 * u) + "," + f(GS + 12 * u) + " q8,-5 16,0 t16,0 M" + f(x + 10 * u) + "," + f(GS + 17 * u) + ' q8,-5 16,0 t16,0" fill="none" stroke="' + C.cream + '" stroke-width="2"/>';
+      }
+      // the workshop: the factory prop without its missile chimneys or smoke
+      var shopSvg = KIT.props.factory({ label: "WORKSHOP", smoke: false }).replace(/<g class="factory-chimney"[^>]*>[\s\S]*?<\/g>/g, "");
+      // each building: an outer group places it, an inner group (#town-i) folds (its base center is its origin)
+      var town = [], townSvg = "";
+      L.houses.forEach(function (x, i) { town.push({ id: "town-" + i, x: x, w: 450 * TS, svg: KIT.props.house({ variant: [0, 2, 1][i] }) }); });
+      town.push({ id: "town-3", x: L.bridge[0], w: L.bridge[1], svg: bridge(L.bridge[1] / TS) });
+      town.push({ id: "town-4", x: L.shop, w: 432 * TS, svg: shopSvg });
+      town.forEach(function (b) { townSvg += at(F2 + b.x, GS, TS, g(b.id, b.svg)); });
+      var bx0 = F2 + L.bridge[0] - (88 * L.bridge[1]) / 240, bx1 = F2 + L.bridge[0] + (88 * L.bridge[1]) / 240;
+      var street = '<path d="M' + (F2 + 50) + "," + GS + " H" + f(bx0) + " M" + f(bx1) + "," + GS + " H" + (2 * W - 50) + '" stroke="' + ink + '" stroke-width="4"/>' + creek(F2 + L.bridge[0], L.bridge[1]);
+      // dust puffs at both ends of each building's base (they burst as it folds)
+      var dust = town.map(function (b, i) {
+        return [-1, 1].map(function (sd) { return at(F2 + b.x + sd * b.w * 0.45, GS - 8, TS * 1.6, g("dust-" + i + "-" + (sd < 0 ? "l" : "r"), puff(16), 'opacity="0"')); }).join("");
+      }).join("");
+
+      // The worker, in his yard beside his house (house 0, on his left, so he faces left), holding his hammer: calm,
+      // startled when it folds, then bent over the flat house to tap in one nail.
+      var wkO = { tone: 1, outfit: "overalls", color: 1, plain: true, mood: "smile", look: "left", arms: [[-10, -4], [16, 6]] };
+      var wkW = mix(wkO, { mood: "worried", arms: [[-150, -170], [150, 170]] });
+      var wkS = mix(wkO, { mood: "sad" });
+      var wkBent = mix(wkO, { mood: "sad", build: { hunch: 44 }, arms: [[-24, -60], [10, 4]] });
+      var WS = L.wks, WX = F2 + L.worker;
+      var wk = stand(WX, GS, WS, g("wk-a", withHammer(KIT.person(wkO), wkO, 0)) + g("wk-w", eyes(withHammer(KIT.person(wkW), wkW, 0), -3), 'opacity="0"') +
+        g("wk-s", withHammer(KIT.person(wkS), wkS, 0), 'opacity="0"') + g("wk-b", withHammer(KIT.person(wkBent), wkBent, 0), 'opacity="0"'));
+      var WKR = KIT.rig(wkBent), WH = WKR.hand[0];
+      // the nail he taps in, on the flat house just in front of his hammer
+      var NX = WX + (WH[0] - 26) * WS, NY = GS - 2;
+      var nail = at(NX, NY, WS, g("nail", '<path d="M-4,-12 H4 M0,-12 V0" stroke="' + ink + '" stroke-width="2.6"/><circle cx="0" cy="-12" r="3.4" fill="' + C.peri + '" stroke="' + ink + '" stroke-width="1.6"/>', 'opacity="0"'));
+      var tink = at(NX, NY - 16 * WS, WS, g("tink", KIT.star(0, 0, 26, C.yellow) + KIT.star(0, 0, 12, C.cream), 'opacity="0"'));
+
+      // ── Frame 2: the crowd (alive, looking up at the bomb, then bones with their hands still up) ──
+      var CROWD = [
+        { tone: 0, outfit: "shirt", color: 0 }, { tone: 3, outfit: "dress", hair: 1, color: 1 }, { tone: 1, outfit: "suit", hair: 2 },
+        { tone: 2, outfit: "dress", hair: 1, color: 3 }, { tone: 0, outfit: "labcoat" }, { tone: 3, outfit: "shirt", color: 2 }, { tone: 1, outfit: "dress", hair: 1, color: 0 },
+      ].slice(0, L.crowd[3]);
+      var CS = L.crowd[2], crowdSvg = "";
+      // the last of the smoke: three still wisps over a skull (person units)
+      function wisps(top) {
+        return '<g opacity="0.8">' + [-9, 1, 11].map(function (dx, i) {
+          var x = top[0] + dx, y = top[1] - 8 - (i % 2) * 5;
+          return '<path d="M' + f(x) + "," + f(y) + " q-5,-6 0,-11 q5,-6 0,-11 q-5,-6 0,-11" + '" fill="none" stroke="#8C8782" stroke-width="2.6" stroke-linecap="round"/>';
+        }).join("") + "</g>";
+      }
+      CROWD.forEach(function (o, i) {
+        var x = F2 + L.crowd[0] + i * L.crowd[1], look = i % 2 ? "left" : null;
+        var arms = i % 3 === 0 ? [[14, 4], [-14, -4]] : i % 3 === 1 ? [[6, 2], [40, 80]] : [[10, 4], [-10, -4]];
+        var oa = mix(o, { mood: "smile", arms: arms, look: look }), ow = mix(o, { mood: "worried", look: look, arms: [[160 - (i % 2) * 12, 176], [-160 + (i % 3) * 8, -176]] });
+        crowdSvg += stand(x, G, CS, g("c-" + i + "-a", KIT.person(oa)) + g("c-" + i + "-w", eyes(KIT.person(ow), -3.5), 'opacity="0"') +
+          g("c-" + i + "-x", KIT.person(mix(ow, { skeleton: true })) + wisps(KIT.rig(ow).top), 'opacity="0"'));
+      });
+      // the scorched ground under them after the blast
+      var cx0 = F2 + L.crowd[0] - 70, cx1 = F2 + L.crowd[0] + (CROWD.length - 1) * L.crowd[1] + 70;
+      var scorch = g("scorch", '<ellipse cx="' + f((cx0 + cx1) / 2) + '" cy="' + G + '" rx="' + f((cx1 - cx0) / 2) + '" ry="' + f(16 * CS) + '" fill="#2B2420" opacity="0.55"/>' +
+        '<ellipse cx="' + f((cx0 + cx1) / 2) + '" cy="' + G + '" rx="' + f((cx1 - cx0) / 2 + 30) + '" ry="' + f(22 * CS) + '" fill="url(#' + P("cross") + ')" opacity="0.45"/>', 'opacity="0"');
+      // the mushroom cloud and the dotted bomb (a real fuse)
+      var nukeSvg = at(F2 + L.nuke[0], G, L.nuke[1], g("nuke", KIT.nuke(), 'opacity="0"'));
+      var bombP = cutGroup(KIT.props.bomb({}), "bomb-ball");
+      var BS = V ? 2.4 : 3;
+      var bombSvg = at(F2 + L.bomb[0], L.bomb[1] + 42 * BS, BS, g("bomb", g("bomb-in", bombP[0] + dotted(bombP[1], 4.4) + bombP[2]), 'opacity="0"'));
+
+      q("world").innerHTML = KIT.svg(2 * W, H, KIT.paperDefs(ID) +
+        ground + street + townSvg + dust + wk + nail + tink +
+        pol + pressArt + polArm + cricket + heapSvg + pops + scorch + crowdSvg + nukeSvg + walkers + bombSvg);
+
+      // ── The counters (fixed to the frame) ──
+      function big(x, y, size, t) {
+        var a = 'text-anchor="middle" font-family="Fraunces" font-weight="900" font-size="' + size + '"';
+        return '<text x="' + f(x + size * 0.05) + '" y="' + f(y + size * 0.07) + '" ' + a + ' fill="' + C.ink + '">' + t + "</text>" +
+          '<text x="' + x + '" y="' + y + '" ' + a + ' fill="' + C.ink + '" stroke="' + C.cream + '" stroke-width="' + f(size * 0.09) + '" stroke-linejoin="round" style="paint-order:stroke">' + t + "</text>";
+      }
+      q("type").innerHTML = KIT.svg(W, H, g("ca", g("ca-in", big(L.A[0], L.A[1], L.A[2], "$170 TRILLION")), 'opacity="0"') + g("cb", g("cb-in", big(L.B[0], L.B[1], L.B[2], "310,000,000")), 'opacity="0"'));
+
+      // ══ The timeline ══
+      var tl = gsap.timeline({ paused: true });
+      KIT.mountWishonia(tl, q("pip"), KIT.cornerOpts(ID));
+      KIT.enter(tl, q("cam"), "slide left");
+      var set = function (el, o, t) { tl.set(el, { opacity: o }, t); };
+
+      // ── Everything that moves every frame: the crank, the press plate, the crank arm, the printed papers, the heap
+      // and the walkers. A pure function of time, so any seek lands on the same frame. ──
+      var CP = 0.5;                                     // one turn of the crank; the plate stamps every half turn
+      var crankEl = q("press").querySelector(".press-crank"), plateEl = q("press").querySelector(".press-plate");
+      var armEls = q("pol-b").querySelectorAll(".pol-arm");
+      var popEls = [], hsEls = [], hdEls = [], wEls = [];
+      for (var e = 0; e < NS; e++) {
+        popEls.push(q("pop-" + e)); hsEls.push(q("hs-" + e)); hdEls.push(q("hd-" + e));
+        var we = q("w-" + e);
+        wEls.push({ el: we, a: we.querySelector(".np-a"), b: we.querySelector(".np-b") });
+      }
+      // the crank turns from "nineteen" until the column has left the frame, and pauses while he peeks
+      function crankTime(t) {
+        var t1 = Math.min(t, T.pan[1]);
+        if (t1 < T.nineteen) return 0;
+        var a = Math.min(t1, T.peek[0]) - T.nineteen;
+        return t1 > T.peek[1] ? a + (t1 - T.peek[1]) : a;
+      }
+      var POPDT = CP / 2, FLY = 0.36;
+      function popAt(k) { return T.printed + k * POPDT; }
+      // the column: walker j is the paper from slot order[j] (the rightmost first); its places in the line in frame 1
+      // and in frame 2
+      var order = slots.map(function (s, i) { return i; }).sort(function (a, b) { return slots[b].x - slots[a].x || slots[a].y - slots[b].y; });
+      var GAP = 96 * L.ws1, X1 = HX + 230 * HS, X2 = F2 + L.line2;
+      var WS2 = TS * 1.05;                              // the papers' scale on the street
+      var BOMB = [F2 + L.bomb[0], L.bomb[1]], HIT = [F2 + L.bomb[0], L.bomb[2]];
+      var LAND = function (j) { return F2 + L.land[0] + (NS - 1 - j) * L.land[1]; };
+      var RAIN0 = T.three + 0.25, RUN3 = V ? 900 : 1600;
+      function place(el, x, y, s, rot) { el.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") scale(" + s.toFixed(3) + ") translate(0,-46)" + (rot ? " rotate(" + f(rot) + " 0 46)" : "")); }
+      function pose(t) {
+        var ct = crankTime(t), phi = (360 * ct) / CP;
+        crankEl.setAttribute("transform", "rotate(" + (phi % 360).toFixed(2) + " 136 -150)");
+        var fr = ((ct / POPDT) % 1 + 1) % 1, d = Math.min(fr, 1 - fr) * POPDT, down = t < T.nineteen ? 0 : Math.max(0, 1 - d / 0.07);
+        plateEl.setAttribute("transform", "translate(0," + (46 * down).toFixed(2) + ")");
+        var ai = ((Math.round(phi / 45) % 8) + 8) % 8;
+        Array.prototype.forEach.call(armEls, function (a, i) { a.setAttribute("opacity", i === ai ? "1" : "0"); });
+        // the printed papers fly from the bed to their heap slots, turning over once
+        for (var k = 0; k < NS; k++) {
+          var tp = popAt(k), u = (t - tp) / FLY, s = slots[k], pe = popEls[k];
+          if (u >= 0 && u < 1) {
+            var x = lerp(BED[0], s.x, u), y = lerp(BED[1], s.y, u) - (V ? 150 : 210) * 4 * u * (1 - u);
+            pe.setAttribute("opacity", "1");
+            pe.setAttribute("transform", "translate(" + f(x) + "," + f(y) + ") scale(" + lerp(0.35, HS, Math.min(1, u * 1.6)).toFixed(3) + ") rotate(" + f(s.rot * u - 360 * u) + ")");
+          } else pe.setAttribute("opacity", "0");
+          // the heap: solid once landed, dotted from the reveal (a wave from the front), empty once its walker hops off
+          var w = order.indexOf(k), gone = t >= T.np + w * 0.03, dot = t >= T.dot + (3 - s.r) * 0.07;
+          hsEls[k].setAttribute("opacity", u >= 1 && !dot && !gone ? "1" : "0");
+          hdEls[k].setAttribute("opacity", dot && !gone ? "1" : "0");
+        }
+        // the walkers
+        for (var j = 0; j < NS; j++) {
+          var W0 = wEls[j], sl = slots[order[j]], vis = false, x2 = 0, y2 = 0, s2 = L.ws1, rot = 0, legs = 0, hop = 0;
+          var t0 = T.np + j * 0.03, lx1 = X1 - j * GAP, lx2 = X2 - j * GAP, tj = T.murdering + j * 0.006;
+          if (t >= t0 && t < tj) {
+            vis = true;
+            var uh = clamp01((t - t0) / 0.28);
+            if (uh < 1) { // hop off the heap to its place in the line
+              x2 = lerp(sl.x, lx1, uh); y2 = lerp(sl.y + 46 * HS, G, uh) - 90 * 4 * uh * (1 - uh); s2 = lerp(HS, L.ws1, uh); rot = sl.rot * (1 - uh);
+            } else { // run to frame 2 and stand there
+              var ur = clamp01((t - T.march) / (T.arrive - T.march));
+              x2 = lerp(lx1, lx2, inOut(ur)); y2 = G;
+              var running = t > T.march && ur < 1;
+              legs = running ? Math.floor(t * 12) % 2 : 0; hop = running ? Math.abs(Math.sin(t * 12 * Math.PI)) * 7 : 0; rot = running ? 8 : 0;
+            }
+          } else if (t >= tj && t < tj + 0.16) {
+            // jump up and fold into the bomb
+            var ub = (t - tj) / 0.16, sx = lx2;
+            vis = true; x2 = lerp(sx, BOMB[0] + ((j % 4) - 1.5) * 26, ub); y2 = lerp(G, BOMB[1] + 90, ub) - 140 * 4 * ub * (1 - ub); s2 = lerp(L.ws1, L.ws1 * 0.4, ub); rot = 360 * ub;
+          } else if (t >= RAIN0 + j * 0.05 && t < T.valuable) {
+            // they rain out of the cloud and come down on the street, in a line, and stand there
+            var ua = clamp01((t - RAIN0 - j * 0.05) / 0.62), lxs = LAND(j);
+            vis = true; x2 = lerp(HIT[0], lxs, ua); y2 = lerp(HIT[1] - 260, GS, ua) - (V ? 320 : 380) * 4 * ua * (1 - ua); s2 = lerp(WS2 * 0.5, WS2, ua); rot = (1 - ua) * 540;
+          } else if (t >= T.valuable) {
+            // "valuable": the column marches right along the street, over and past the town
+            vis = true; x2 = LAND(j) + RUN3 * (t - T.valuable); y2 = GS; s2 = WS2; legs = Math.floor(t * 12) % 2; hop = Math.abs(Math.sin(t * 12 * Math.PI)) * 4; rot = 7;
+            if (x2 > 2 * W + 100) vis = false;
+          }
+          W0.el.setAttribute("opacity", vis ? "1" : "0");
+          if (vis) {
+            place(W0.el, x2, y2 - hop, s2, rot);
+            W0.a.setAttribute("opacity", legs ? "0" : "1");
+            W0.b.setAttribute("opacity", legs ? "1" : "0");
+          }
+        }
+      }
+      KIT.onTime(tl, D, pose);
+
+      // ── The camera: camw maps world (wx, wy) to frame (wx * s + x, wy * s + y). ──
+      var camw = q("camw");
+      gsap.set(camw, { transformOrigin: "0 0" });
+      function look(wx, wy, sx, sy, s) { return { x: sx - wx * s, y: sy - wy * s, scale: s }; }
+      // "nothing": push in on the tray (it stays where it is on screen); then back out; then the pan to frame 2.
+      tl.fromTo(camw, { x: 0, y: 0, scale: 1 }, mix(look(TRAY[0], TRAY[1], TRAY[0], TRAY[1], L.zt), { duration: 0.4, ease: "power2.out" }), T.nothing);
+      tl.to(camw, { x: 0, y: 0, scale: 1, duration: 0.4, ease: "power2.inOut" }, T.peek[1] - 0.25);
+      tl.to(camw, { x: -F2, y: 0, scale: 1, duration: T.pan[1] - T.pan[0], ease: "power2.inOut" }, T.pan[0]);
+      // "entire lives": the camera finds the worker beside his flat house
+      var zw = L.zw, wkTop = GS - 60 * WS;
+      tl.to(camw, mix(look(WX, wkTop, zw[1], zw[2], zw[0]), { duration: 0.8, ease: "power2.inOut" }), T.entire - 0.2);
+
+      // "nineteen": the press thumps to life (clank): it hops and lands squashed, the Politician starting to crank.
+      var pr = q("press");
+      gsap.set(pr, { svgOrigin: L.px + " " + G });
+      tl.fromTo(pr, { y: 0 }, { y: -26, duration: 0.08, ease: "power2.out", immediateRender: false }, Math.max(0.02, T.nineteen - 0.08));
+      tl.to(pr, { y: 0, duration: 0.08, ease: "power2.in" }, T.nineteen);
+      tl.fromTo(pr, { scaleY: 1, scaleX: 1 }, { scaleY: 0.92, scaleX: 1.04, duration: 0.06, yoyo: true, repeat: 1, ease: "power1.out", immediateRender: false }, T.nineteen + 0.08);
+      // "trillion": the counter lands (cash register)
+      var ca = q("ca"), cain = q("ca-in");
+      gsap.set(cain, { svgOrigin: L.A[0] + " " + (L.A[1] - L.A[2] * 0.35) });
+      tl.fromTo(ca, { opacity: 0 }, { opacity: 1, duration: 0.01 }, T.trillion);
+      tl.fromTo(cain, { scale: 2.2 }, { scale: 1, duration: 0.24, ease: "back.out(2)" }, T.trillion);
+
+      // "nothing": a cricket pops up in the empty tray and chirps (crickets)
+      var cr = q("cricket"), chirp = q("chirp");
+      set(cr, 1, T.nothing + 0.12);
+      gsap.set(cr, { svgOrigin: "0 0" });
+      tl.fromTo(cr, { y: 14 }, { y: 0, duration: 0.15, ease: "back.out(2)" }, T.nothing + 0.12);
+      tl.fromTo(chirp, { opacity: 0 }, { opacity: 1, duration: 0.05, repeat: 7, yoyo: true, ease: "none" }, T.nothing + 0.25);
+      tl.to(cr, { y: 14, opacity: 0, duration: 0.15, ease: "power2.in" }, T.peek[1] + 0.1);
+      // the Politician stops cranking, leans over to look into the tray, shrugs, and cranks on
+      var leanEls = [q("pol-a"), q("pol-b")], armL = q("pol-a").querySelector(".arm-l"), head = q("pol-a").querySelector(".head");
+      gsap.set(leanEls, { svgOrigin: "0 100" });
+      gsap.set(armL, { svgOrigin: polR.shoulder[0].join(" ") });
+      gsap.set(head, { svgOrigin: polR.neck.join(" ") });
+      tl.fromTo(leanEls, { rotation: 0 }, { rotation: 8, duration: 0.3, ease: "power2.out" }, T.nothing + 0.1);
+      tl.to(leanEls, { rotation: 0, duration: 0.25, ease: "power2.inOut" }, T.peek[1] - 0.3);
+      tl.fromTo(armL, { rotation: 0 }, { rotation: 100, duration: 0.14, ease: "back.out(2)" }, T.peek[1] - 0.55);
+      tl.to(armL, { rotation: 0, duration: 0.2, ease: "power2.in" }, T.peek[1] - 0.1);
+      tl.fromTo(head, { rotation: 0, y: 0 }, { rotation: -12, y: 3, duration: 0.14, ease: "back.out(2)" }, T.peek[1] - 0.55);
+      tl.to(head, { rotation: 0, y: 0, duration: 0.2, ease: "power2.in" }, T.peek[1] - 0.1);
+
+      // "murdering": the papers fold into a dotted bomb over the crowd, which falls (slide whistle); the crowd looks up.
+      var bomb = q("bomb"), bin = q("bomb-in");
+      gsap.set(bin, { svgOrigin: "0 -42" });
+      set(bomb, 1, T.form - 0.06);
+      tl.fromTo(bin, { scale: 0.3, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.14, ease: "back.out(2)" }, T.form - 0.06);
+      tl.fromTo(bomb, { y: 0 }, { y: L.bomb[2] - L.bomb[1], duration: T.three - T.form - 0.04, ease: "power2.in", immediateRender: false }, T.form + 0.04);
+      set(bomb, 0, T.three);
+      var spark = bomb.querySelector(".bomb-spark");
+      gsap.set(spark, { svgOrigin: "0 0" });
+      tl.fromTo(spark, { scale: 0.8 }, { scale: 1.25, duration: 0.06, repeat: 5, yoyo: true, ease: "none" }, T.form - 0.06);
+      CROWD.forEach(function (o, i) {
+        var lt = T.form + (i % 4) * 0.03;
+        set(q("c-" + i + "-a"), 0, lt); set(q("c-" + i + "-w"), 1, lt);
+      });
+
+      // "three": flash, mushroom cloud, shake (boom). Under the flash the crowd turns to bones on scorched ground.
+      KIT.boom(tl, q("nuke"), T.three, { flash: q("flash"), shake: q("cam") });
+      set(q("nuke"), 1, T.three);
+      var tf = T.three + 0.05;
+      CROWD.forEach(function (o, i) { set(q("c-" + i + "-w"), 0, tf); set(q("c-" + i + "-x"), 1, tf); });
+      set(q("scorch"), 1, tf);
+      // "humans": the cloud thins away on the skeletons, still standing, still grinning; "310,000,000". Then the HOLD.
+      tl.to(q("nuke"), { opacity: 0, duration: 0.6, ease: "power1.in" }, T.humans - 0.62);
+      var cb = q("cb"), cbin = q("cb-in");
+      gsap.set(cbin, { svgOrigin: L.B[0] + " " + (L.B[1] - L.B[2] * 0.35) });
+      tl.fromTo(cb, { opacity: 0 }, { opacity: 1, duration: 0.01 }, T.humans);
+      tl.fromTo(cbin, { scale: 1.8 }, { scale: 1, duration: 0.16, ease: "power3.out" }, T.humans);
+      // HOLD from "humans" to "valuable": nothing moves.
+
+      // "valuable": the column marches along the street and the town folds flat behind it, house after house (slam),
+      // then the bridge and the workshop (slam). The fold lands as the leader passes each building's middle.
+      var lead = LAND(0);
+      town.forEach(function (b, i) {
+        var tf2 = Math.max(T.valuable, T.valuable + (F2 + b.x + b.w * 0.15 - lead) / RUN3 - 0.1);
+        foldFlat(tl, q(b.id), tf2, 0, 0);
+        ["l", "r"].forEach(function (sd, n) {
+          var du = q("dust-" + i + "-" + sd);
+          gsap.set(du, { svgOrigin: "0 0" });
+          set(du, 1, tf2 + 0.1);
+          tl.fromTo(du, { scale: 0.3, x: 0 }, { scale: 1, x: (n ? 1 : -1) * 18, duration: 0.2, ease: "power2.out", immediateRender: false }, tf2 + 0.1);
+          tl.to(du, { opacity: 0, x: (n ? 1 : -1) * 30, duration: 0.3, ease: "power1.in" }, tf2 + 0.3);
+        });
+        // the worker jumps when his own house goes
+        if (i === 0) {
+          set(q("wk-a"), 0, tf2 + 0.12); set(q("wk-w"), 1, tf2 + 0.12);
+          var wj = [q("wk-a"), q("wk-w"), q("wk-s"), q("wk-b")];
+          gsap.set(wj, { svgOrigin: "0 100" });
+          tl.fromTo(wj, { y: 0 }, { y: -22, duration: 0.12, ease: "power2.out", immediateRender: false }, tf2 + 0.12);
+          tl.to(wj, { y: 0, duration: 0.14, ease: "power2.in" }, tf2 + 0.24);
+          set(q("wk-w"), 0, tf2 + 0.9); set(q("wk-s"), 1, tf2 + 0.9);
+        }
+      });
+
+      // "building.": he bends over his flat house and taps in one nail (pat).
+      set(q("wk-s"), 0, T.building - 0.3); set(q("wk-b"), 1, T.building - 0.3);
+      var arm = q("wk-b").querySelector(".arm-l");
+      gsap.set(arm, { svgOrigin: WKR.shoulder[0].join(" ") });
+      tl.fromTo(arm, { rotation: 0 }, { rotation: 70, duration: 0.18, ease: "power2.out", immediateRender: false }, T.tap - 0.26);
+      tl.to(arm, { rotation: -4, duration: 0.07, ease: "power3.in" }, T.tap - 0.07);
+      tl.to(arm, { rotation: 10, duration: 0.12, ease: "power1.out" }, T.tap);
+      tl.to(arm, { rotation: 0, duration: 0.2, ease: "power1.inOut" }, T.tap + 0.12);
+      set(q("nail"), 1, T.tap);
+      var tk = q("tink");
+      gsap.set(tk, { svgOrigin: "0 0" });
+      tl.fromTo(tk, { opacity: 1, scale: 0.2 }, { opacity: 1, scale: 1, duration: 0.08, ease: "power2.out", immediateRender: false }, T.tap);
+      tl.to(tk, { opacity: 0, scale: 0.6, duration: 0.18, ease: "power1.in" }, T.tap + 0.1);
+
+      tl.set({}, {}, D);
+      window.__timelines[ID] = tl;
+    })();
+  </script>
+</template>

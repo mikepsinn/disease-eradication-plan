@@ -1,0 +1,95 @@
+<template id="earn-1-57-times-template">
+  <!-- earn-1-57-times · collage (Part 25, scene 4, plate two-lanes). Two lanes on one paper: the weapons factory on
+       the left, the hospital on the right, a funnel between them. "murder": a line of war bills walks into the
+       factory. "start spending them on medicine": the line turns round, walks out, through the funnel (the seals flip
+       to crosses) and into the hospital; the factory sobs. "meat": YOU in each lane, his pay stacked beside him; the
+       left one coughs. "compounds": the right stack doubles, then doubles again. "one point five seven times": both
+       stacks rise to a lifetime, the right one 1.57 times the left. "kills you.": the factory's missile launches and
+       comes down on the left YOU: flash, mushroom cloud, charred beside his singed short stack, blinking. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="earn-1-57-times" data-width="1920" data-height="1080" data-start="0" data-duration="17">
+    <div id="earn-1-57-times-weave"></div>
+    <div id="earn-1-57-times-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "earn-1-57-times", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // One plate, two lanes, on the ground line G. 9:16 is the same plate, seen through a narrower window that slides.
+      var G = 1000, FX = 330, HX = 1620, MID = 975;
+      var FK = 1.35, HK = 1.55, BK = 0.6, STEP = 34, YH = 470, YK = YH / SZ.you[1];
+      var LY = 700, RY = 1250, LP = 540, RP = 1420;                   // the two YOUs and their stacks
+      var DOOR = [FX + (190 - 158) * FK, G];
+      var cast = {
+        lane: { art: "road", x: MID, y: G + 30, anchor: "top", scale: 7, clip: [[0, 0], [334, 0], [334, 30], [0, 30]] },
+        // the mushroom cloud stands behind the cast, so the charred YOU blinks in front of it
+        boomC: { art: "mushroom", x: LY + 60, y: G, anchor: "bottom", scale: 1.25, hidden: true },
+        factory: { art: "factory-proud", x: FX, y: G, anchor: "bottom", pivot: "bottom", scale: FK },
+        sob: { art: "factory-sob", x: FX, y: G, anchor: "bottom", pivot: "bottom", scale: FK * 478 / 516, hidden: true },
+        hosp: { art: "hospital", x: HX, y: G, anchor: "bottom", pivot: "bottom", scale: HK },
+        funnel: { art: "funnel", x: MID, y: G, anchor: "bottom", pivot: "bottom", scale: 1.05 },
+        youL: { art: "you", x: LY, y: G, anchor: "bottom", pivot: "bottom", scale: YK, hidden: true, eyes: [[86, 52], [119, 52]], eyeSize: 22, smoke: [[100, 14], [150, 160]] },
+        sickL: { art: "you-sick", x: LY - 20, y: G, anchor: "bottom", pivot: "bottom", scale: YH / SZ["you-sick"][1] * 0.97, hidden: true, eyes: [[178, 64], [205, 64]], eyeSize: 22, smoke: [[190, 20], [130, 200]] },
+        youR: { art: "you", x: RY, y: G, anchor: "bottom", pivot: "bottom", scale: YK, hidden: true },
+        missile: { art: "missile-fly", x: FX, y: G - 470 * FK, scale: 1.1, hidden: true },
+      };
+      // the lane line: a dashed rule down the middle, drawn as a free line
+      var beats = [
+        { at: 0, do: "line", id: "divider", points: [[MID, -200], [MID, G - 430]], dur: 0.01, dash: [22, 16], width: 5 },
+        // "murder": a line of war bills walks into the factory
+        { at: 0.15, do: "march", id: "war", art: "bill-war", count: 5, scale: 0.85, path: [[-250, G], [DOOR[0], G]], speed: 330, end: "hide" },
+        { on: "murder", do: "hop", who: "factory", height: 14 },
+        // "start": the line turns round, walks back out, through the funnel, and into the hospital as medicine bills
+        { on: "start", do: "march", id: "warOut", art: "bill-war", count: 5, scale: 0.85, path: [[DOOR[0], G], [MID - 230, G], [MID - 40, G - 400]], speed: 520, end: "hide" },
+        { on: "start", offset: 0.15, do: "swap", who: "factory", to: "sob" },
+        { on: "start", offset: 0.25, do: "shiver", who: "sob", dur: 1.6, amp: 3, rot: 2 },
+        { on: "medicine,", offset: -0.35, do: "march", id: "medIn", art: "bill-med", count: 5, scale: 0.85, path: [[MID + 20, G], [HX - 40, G]], speed: 520, end: "hide" },
+        { on: "medicine,", offset: -0.3, do: "shiver", who: "funnel", dur: 1.2, amp: 3, rot: 3 },
+        // "meat": a YOU in each lane, with his pay stacked beside him; the left one coughs
+        { on: "meat", offset: -0.1, do: "pop", who: ["youL", "youR"], squash: true },
+        { on: "meat", offset: 0.1, do: "pile", id: "payL", art: "bundle-war", x: LP, y: G, count: 3, scale: BK, gap: STEP, dur: 0.4 },
+        { on: "meat", offset: 0.1, do: "pile", id: "payR", art: "bundle-med", x: RP, y: G, count: 3, scale: BK, gap: STEP, dur: 0.4 },
+        { on: "lasts", do: "swap", who: "youL", to: "sickL" },
+        { on: "lasts", offset: 0.1, do: "shiver", who: "sickL", dur: 0.5, amp: 4, rot: 3 },
+        { on: "longer,", do: "hop", who: "youR", height: 30 },
+        // "compounds": the right stack doubles, then doubles again
+        { on: "productivity", do: "pile", id: "payR2", art: "bundle-med", x: RP, y: G - 3 * STEP, count: 3, scale: BK, gap: STEP, dur: 0.3 },
+        { on: "compounds,", do: "pile", id: "payR3", art: "bundle-med", x: RP, y: G - 6 * STEP, count: 6, scale: BK, gap: STEP, dur: 0.45 },
+        // "one point five seven times": a lifetime of pay; the right stack ends 1.57 times the left (22 to 14)
+        { on: "lifespan", do: "pile", id: "payL2", art: "bundle-war", x: LP, y: G - 3 * STEP, count: 11, scale: BK, gap: STEP, until: ["one", 1, 0.3] },
+        { on: "lifespan", do: "pile", id: "payR4", art: "bundle-med", x: RP, y: G - 12 * STEP, count: 10, scale: BK, gap: STEP, until: ["seven"] },
+        { on: "times", do: "stamp", id: "x157", text: "1.57×", x: RP + (V ? -10 : 0), y: G - 22 * STEP - (V ? 120 : 110), size: V ? 170 : 160, width: 460, tilt: -6 },
+        // "kills you.": the factory's middle missile launches and comes down on the left YOU
+        { on: "kills", offset: -0.2, do: "swap", who: "sob", to: "factory" },
+        { on: "kills", do: "show", who: "missile" },
+        { on: "kills", do: "move", who: "missile", by: [LY - FX, 470 * FK - 260], dur: 0.32, arc: 380, turn: 50 },
+        { on: "you.", n: 4, do: "hide", who: "missile" },
+        { on: "you.", n: 4, do: "boom", shake: 22, flash: 0.22 },
+        { on: "you.", n: 4, do: "pop", who: "boomC" },
+        { on: "you.", n: 4, do: "char", who: ["sickL", "payL", "payL2"] },
+        { on: "you.", n: 4, offset: 0.55, do: "blink", who: "sickL" },
+      ];
+      // 16:9 sees the whole plate; 9:16 slides from lane to lane
+      var views = V ? { left: [520, 740, 1.05], mid: [820, 740, 0.85], both: [MID, 720, 0.62] }
+        : { wide: [960, 540, 1] };
+      if (V) beats = beats.concat([
+        { at: 0, do: "camera", view: "left", dur: 0.01 },
+        { on: "start", offset: 0.2, do: "camera", view: "mid", dur: 0.8 },
+        { on: "meat", offset: -0.3, do: "camera", view: "both", dur: 0.6 },
+        { on: "kills", offset: -0.3, do: "camera", view: "left", dur: 0.4 },
+      ]);
+      KIT.collage({ id: ID, seed: 2504, plate: V ? [-1200, -1400, 3200, 2600] : [0, 0, 1920, 1080], views: views, view: V ? "left" : "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -1,0 +1,148 @@
+<template id="falling-apart-template">
+  <!-- falling-apart · collage (Part 8, scenes 5 and 6 as one plate: YOU's room and the doctor's room through the wall).
+       The bit: you sit reading this sentence while your insides quietly break, and the deli's board is already coming for
+       you. YOU at his desk, his chest a cutaway, the ribs and a heart ticking along. "falling apart": a button pops off;
+       he doesn't look up. "breaking": a crack runs across the heart. "which part": a ? hops from organ to organ. "a doctor":
+       through the wall, the doctor at his desk waits for you, and slides a folded card across, face down; his calendar shuffles itself.
+       "Somewhere in you": back into the chest, a microscope ring: a grinning cell copies itself wrong, again and again; a
+       protein knots; the tissue greys dot by dot. "dissolving on a schedule": pull back, and the NOW SERVING board from the
+       deli comes down on its chains behind his chair, ticking. He reads on. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="falling-apart" data-width="1920" data-height="1080" data-start="0" data-duration="25.02">
+    <div id="falling-apart-weave"></div>
+    <div id="falling-apart-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, Z = KIT.collage.SIZES, F = KIT.collage.F, ID = "falling-apart";
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var D = KIT.scene(ID).duration;
+    // YOU's room on the left, the wall, the doctor's room on the right; the floor at G (plate px).
+    var G = 1000, YK = 1.7, YX = 600;
+    var ypt = function (x, y) { return [YX + (x - Z["you-desk"][0] / 2) * YK, G - (Z["you-desk"][1] - y) * YK]; };
+    var CHEST = ypt(128, 200), HEART = [CHEST[0] + 4, CHEST[1] - 10];
+    var C = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+
+    // the board, high above the room until it comes down
+    var BK = 0.36, BX = 270, BY = 300, BUP = -700;
+    C.board = { art: "rank-board", x: BX, y: BUP, scale: BK, label: { text: "NOW SERVING", at: [450, 80], width: 760, size: 74 } };
+    C.wall = { art: "wallpaper-red", x: 1180, y: G + 10, anchor: "bottom", scale: 1.5 };
+    C.you = { art: "you-desk", x: YX, y: G, anchor: "bottom", pivot: "bottom", scale: YK };
+    // the cutaway: his ribs (cut from his skeleton) and his heart
+    C.ribs = { art: "you-skeleton", x: CHEST[0], y: CHEST[1], anchor: [108, 205], scale: 1.45, clip: [[52, 138], [164, 138], [164, 278], [52, 278]] };
+    C.heart = { art: "heart", x: HEART[0], y: HEART[1], scale: 0.55 };
+    C.button = { art: "coin", x: CHEST[0] + 70, y: CHEST[1] + 120, scale: 0.09 };
+    // the cell under the microscope: whole, then dividing (and its copies come out wrong)
+    var CELL0 = [HEART[0] - 40, HEART[1] + 10];
+    C.cellA = { art: "cell", x: CELL0[0], y: CELL0[1], scale: 0.16, hidden: true };
+    C.cellB = { art: "cell-split", x: CELL0[0] + 12, y: CELL0[1], scale: 0.16, hidden: true };
+    // the protein ribbon, its two ends hinged on the knot so it can tie itself tighter
+    C.protein = { art: "protein", x: HEART[0] - 34, y: HEART[1] + 72, scale: 0.18, hidden: true,
+      pieces: { L: { clip: "left", pivot: [333, 105] }, R: { clip: "right", pivot: [333, 105] } } };
+    // the doctor's room
+    var DX = 1660;
+    C.cal = { art: "calendar", x: 1990, y: 380, scale: 0.9 };
+    ["p0", "p1", "p2", "p3"].forEach(function (n) { C[n] = { art: "calendar-page", x: 1990, y: 400, scale: 0.75, hidden: true }; });
+    C.doctor = { art: "doctor", x: DX + 90, y: G - 40, anchor: "bottom", pivot: "bottom", scale: 1.35 };
+    C.desk = { art: "desk", x: DX, y: G, anchor: "bottom", scale: 1.4 };
+    var DESKTOP = G - (350 - 130) * 1.4;
+    C.folder = { art: "folded-card", x: DX + 60, y: DESKTOP + 6, anchor: "bottom", pivot: "bottom", scale: 0.26, hidden: true };
+
+    // ── "Your body is quietly falling apart": a slow push in; a button pops off ──
+    add({ at: 0, do: "camera", view: "you2", dur: cue("apart.") + 0.4 });
+    var beat = function (t) { add({ at: t, do: "shiver", who: "heart", dur: 0.17, amp: 3, rot: 5 }); };
+    for (var t = 0.3; t < D; t += 0.82) beat(t);
+    add({ on: "apart.", offset: 0.3, do: "move", who: "button", by: [60, -90], dur: 0.2, arc: 30 });
+    add({ on: "apart.", offset: 0.5, do: "drop", who: "button", dist: 240, drift: 50, spin: 200, dur: 0.4 });
+    // "as you read this sentence, something inside you is breaking"
+    add({ on: "read", do: "nudge", who: "you", by: [8, 0] });
+    add({ on: "breaking.", do: "line", id: "crack", points: [[HEART[0] - 26, HEART[1] - 24], [HEART[0] - 8, HEART[1] - 6], [HEART[0] - 16, HEART[1] + 4], [HEART[0] + 4, HEART[1] + 18], [HEART[0] - 2, HEART[1] + 26]], dur: 0.35, width: 3, front: true });
+    add({ on: "breaking.", do: "camera", view: "chest1", dur: 0.6 });
+    // "You don't know which part yet": a ? hops heart, belly, kidney
+    var Q = [[HEART[0] + 20, HEART[1] - 60], [CHEST[0] + 40, CHEST[1] + 100], [CHEST[0] - 50, CHEST[1] + 150]];
+    add({ on: "You", n: 3, do: "banner", id: "q", text: "?", x: Q[0][0], y: Q[0][1], size: 60, width: 60, pad: 30, color: "ink", tilt: 6, from: 1.6, shake: 0 });
+    add({ on: "which", do: "move", who: "q", to: Q[1], dur: 0.25, arc: 60 });
+    add({ on: "yet.", do: "move", who: "q", to: Q[2], dur: 0.25, arc: 60 });
+    add({ on: "yet.", offset: 0.3, do: "nudge", who: "you", by: [-6, 0] });
+    // "until a doctor sits you down and says a word that rearranges the rest of your life"
+    add({ on: "You", n: 4, offset: -0.1, do: "pop", who: "q", out: true });
+    add({ on: "You", n: 4, do: "camera", view: "doctor", dur: 0.8 });
+    add({ on: "sits", do: "nudge", who: "doctor", by: [-30, 0] });
+    add({ on: "down", do: "nudge", who: "doctor", by: [-30, 10] });
+    add({ on: "word", offset: -0.3, do: "pop", who: "folder" });
+    add({ on: "word", do: "move", who: "folder", by: [-250, 0], dur: 0.5, ease: "smooth" });
+    add({ on: "rearranges", do: "shiver", who: "cal", dur: 0.6, amp: 5, rot: 5 });
+    [[-170, -120], [140, -160], [-120, 160], [160, 120]].forEach(function (d, i) {
+      add({ on: "rearranges", offset: i * 0.08, do: "pop", who: "p" + i });
+      add({ on: "rearranges", offset: i * 0.08, do: "move", who: "p" + i, by: d, dur: 0.3, turn: 40 * (i % 2 ? 1 : -1), ease: "smooth" });
+      add({ on: "rest", offset: i * 0.08, do: "move", who: "p" + i, by: [-d[0], -d[1]], dur: 0.3, turn: 0, ease: "smooth" });
+      add({ on: "rest", offset: 0.32 + i * 0.08, do: "hide", who: "p" + i });
+    });
+    add({ on: "life.", do: "hop", who: "cal", height: 14 });
+
+    // ── "Somewhere in you, right now": back through the wall and into the chest, under a microscope ──
+    add({ on: "Somewhere", do: "camera", view: "chest2", dur: 1.0 });
+    var R = 120, ring = [];
+    for (var a = 0; a <= 48; a++) ring.push([HEART[0] + 10 + R * Math.cos(a / 48 * 2 * Math.PI - 1.4), HEART[1] + 30 + R * Math.sin(a / 48 * 2 * Math.PI - 1.4)]);
+    add({ on: "now,", n: 2, do: "line", id: "ring", points: ring, dur: 0.4, width: 6, front: true });
+    // cells copying themselves wrong: each copy pops out of the last, grinning
+    var CX = HEART[0] + 10, CY = HEART[1] + 30;
+    add({ on: "cells", do: "pop", who: "cellA", squash: true });
+    add({ on: "copying", do: "swap", who: "cellA", to: "cellB" });
+    add({ on: "themselves", do: "chain", id: "cells", art: "germ-grin", scale: 0.12, anchor: "center", line: false,
+      points: [[CX - 10, CY - 52], [CX + 30, CY - 62], [CX + 66, CY - 30], [CX + 78, CY + 16], [CX + 60, CY + 58]], until: ["wrong,", 1, 0.45], accel: 0.8 });
+    // proteins misfolding: a ribbon folds itself into a knot
+    add({ on: "proteins", do: "pop", who: "protein", squash: true });
+    [0.25, 0.55].forEach(function (o, i) {
+      add({ on: "proteins", offset: o, do: "hinge", who: "protein.L", angle: 28 + i * 8, frames: 1, hold: 0.17 });
+      add({ on: "proteins", offset: o, do: "hinge", who: "protein.R", angle: -(28 + i * 8), frames: 1, hold: 0.17 });
+    });
+    add({ on: "misfolding,", offset: -0.05, do: "shiver", who: "protein", dur: 0.4, amp: 2, rot: 6 });
+    // tissue scarring: a patch of healthy cells, and scar patches spread over it one by one
+    var SCARBOX = [CX + 10, CY + 10, CX + 90, CY + 70];
+    add({ on: "tissue", do: "pictogram", id: "tissue", art: "cell", count: 12, cols: 4, box: SCARBOX, dur: 0.3 });
+    add({ on: "quietly", n: 2, do: "pictogram", id: "scarring", art: "scar", count: 12, cols: 4, box: SCARBOX, fill: 1.15, order: "cells", dur: 1.1, accel: 0.9 });
+
+    // ── "You are dissolving on a schedule you can't see": the board comes down behind his chair ──
+    add({ on: "You", n: 7, do: "camera", view: "wide", dur: 0.8 });
+    add({ on: "You", n: 7, do: "hide", who: ["ring", "cells", "cellB", "protein", "tissue", "scarring"] });
+    var DROP = cue("schedule") - 0.35, LAND = cue("schedule");
+    add({ at: DROP, do: "move", who: "board", by: [0, BY - BUP], dur: LAND - DROP });
+    add({ at: LAND, do: "shake", y: 6, frames: 3 });
+    add({ at: LAND, do: "hop", who: "you", height: 6 });
+    var bw = 900 * BK, bh = 963 * BK;
+    [-0.38, 0.38].forEach(function (f, i) {
+      var x = BX + f * bw;
+      add({ at: DROP, do: "line", id: "chain" + i, points: [[x, BUP - 1500], [x, BY - bh / 2 + 4]], dur: LAND - DROP, ease: "linear", width: 5, dash: [14, 8], by: "length" });
+    });
+    // its count carries on from the deli: one every 0.576 s, on the ticks
+    var T1 = KIT.scene("deletion-board").start + KIT.cue("deletion-board", "software.") + 0.3, here = KIT.scene(ID).start;
+    var at0 = LAND + 0.4, n0 = 150001 + Math.floor((here + at0 - T1) / 0.576) - 1;
+    var NS = { id: "ns", who: "board", spot: [450, 560], size: V ? 92 : 78, card: false, color: "#F2E6C6", font: "oswald" };
+    var ns = function (b) { var o = {}; for (var k in NS) o[k] = NS[k]; for (k in b) o[k] = b[k]; return o; };
+    add(ns({ at: 0, do: "counter", from: n0, to: n0, dur: 0.01 }));
+    for (var k = 0; at0 + k * 0.576 < D; k++) add(ns({ at: at0 + k * 0.576, do: "counter", to: n0 + 1 + k, dur: 0.08 }));
+    add({ on: "can't", do: "nudge", who: "you", by: [8, 0] });
+    add({ on: "see.", offset: 0.4, do: "nudge", who: "you", by: [8, 0] });
+
+    var views = V ? {
+      you: [600, 680, 1.4], you2: [570, 660, 1.6], chest1: [CHEST[0], CHEST[1] + 30, 2.4], doctor: [1720, 680, 1.4],
+      chest2: [CX, CY, 3.2], wide: [880, 420, 0.55],
+    } : {
+      you: [640, 600, 1.2], you2: [600, 580, 1.35], chest1: [CHEST[0], CHEST[1] + 40, 2.2], doctor: [1700, 600, 1.2],
+      chest2: [CX, CY, 3.4], wide: [1000, 460, 0.72],
+    };
+    KIT.collage({ id: ID, seed: 805, plate: V ? [-1200, -2400, 3200, 4000] : [-600, -1200, 2700, 2000], views: views, view: "you", cast: C, beats: beats });
+  </script>
+</template>

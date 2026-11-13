@@ -1,0 +1,69 @@
+<template id="home-planet-template">
+  <!-- home-planet · collage host shot (Part 14, scene 2). Iris in on Wishonia at her console. A brass plate on the
+       ledge under a grey puff of dust: "ago.": the dust blows off, INSTALLED 3,000 YEARS AGO, and the readout beside it
+       is still running. "tracked": ticker tape spills onto the ledge; "published.": faster; "participate.": a
+       ticker-tape parade over the whole deck. "We don't have a word": the Wishonian dictionary, open at U: UNAPPETIZING,
+       a gap (crickets), UNARMED. "bureaucracy": it flips to B, BUREAUCRACY: see EARTH, and turns toward Earth in the
+       window, which rolls away from it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="home-planet" data-width="1920" data-height="1080" data-start="0" data-duration="17">
+    <div id="home-planet-weave"></div>
+    <div id="home-planet-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, S = KIT.STUDIO, Z = KIT.collage.SIZES, E = S.earth, TOP = S.top;
+    // Earth in the window, as a cut-out over the deck's own, so it can roll
+    // Earth in the window as a cut-out of the deck's own Earth (assets/art/deck/earth.webp), so it can roll; the
+    // deck's copy is hidden once the set is drawn
+    var EARTH = "../deck/earth"; Z[EARTH] = [667, 651];
+    var EK = 2 * E[2] / 667;
+    // the brass plate on the ledge, the readout's tape beside it, and the dictionary in front of the window
+    var PLATE = V ? [560, TOP - 34] : [930, TOP - 40], TAPE = V ? 720 : 1010;
+    var DICT = V ? [560, 1270, 0.5] : [1280, 560, 0.5];
+    var page = function (labels, hidden) { return { art: "ledger", x: DICT[0], y: DICT[1], scale: DICT[2], hidden: hidden, label: labels }; };
+    KIT.collage({
+      id: "home-planet", seed: 1420, host: { iris: ["in", 0.05, 0.75] },
+      cast: {
+        earth: { art: EARTH, x: E[0], y: E[1], scale: EK },
+        dust: { art: "cloud-puff", x: PLATE[0], y: PLATE[1] - 10, scale: V ? 0.85 : 1.05 },
+        dict: page([{ text: "UNAPPETIZING", at: [277, 210], width: 420, size: 70 }, { text: "UNARMED", at: [277, 560], width: 420, size: 70 },
+          { text: "U", at: [831, 150], width: 120, size: 110 }], true),
+        dict2: page([{ text: "BUNION", at: [277, 210], width: 420, size: 70 }, { text: "BUREAUCRACY:", at: [831, 300], width: 440, size: 80 },
+          { text: "see EARTH", at: [831, 430], width: 380, size: 80 }], true),
+      },
+      beats: [
+        // the plate, under three thousand years of dust; "ago.": she blows it off
+        { at: 0.05, do: "banner", id: "plate", text: "INSTALLED 3,000 YEARS AGO", x: PLATE[0], y: PLATE[1], size: 40, width: V ? 360 : 420, pad: 34, color: "ink", tilt: 0 },
+        { on: "ago.", offset: -0.1, do: "shiver", who: "dust", dur: 0.25, amp: 6, rot: 4 },
+        { on: "ago.", offset: 0.12, do: "move", who: "dust", by: [V ? 260 : 380, -260], scale: 1.8, turn: 20, dur: 0.5, ease: "smooth" },
+        { on: "ago.", offset: 0.55, do: "pop", who: "dust", out: true },
+        // the readout prints ticker tape, then faster, then a parade over the whole deck
+        { on: "tracked", do: "pile", id: "tape1", art: "punched-tape", height: V ? 100 : 120, count: 10, heap: 5, spread: V ? 50 : 70, x: TAPE, y: TOP + 6, dist: 160, until: "time.", tilt: 28 },
+        { on: "published.", offset: -0.3, do: "pile", id: "tape2", art: "punched-tape", height: V ? 100 : 120, count: 22, heap: 9, spread: V ? 55 : 80, x: TAPE - (V ? 230 : 320), y: TOP + 6, dist: 200, dur: 1.2, accel: 0.8, tilt: 28 },
+        { on: "participate.", offset: -0.2, do: "pile", id: "parade", art: ["receipt", "punched-tape"], height: V ? 46 : 54, count: 60, heap: 20, spread: V ? 56 : 100, x: V ? 540 : 960, y: V ? 1420 : TOP + 60, dist: 1500, dur: 1.4, accel: 1, tilt: 40, jitter: 30 },
+        { on: "participate.", offset: -0.2, do: "shake", y: 5, frames: 3 },
+        // the dictionary, open at U, and the camera leans in on the gap
+        { on: "We", n: 2, do: "hide", who: ["parade", "tape1", "tape2"] },
+        { on: "We", n: 2, offset: 0.1, do: "pop", who: "dict", squash: true },
+        { on: "\"unapproved", do: "move", who: "dict", scale: 1.18, dur: 0.6, ease: "smooth" },
+        // B: BUREAUCRACY: see EARTH. It turns toward Earth, which rolls away from it.
+        { on: "bureaucracy", offset: -0.05, do: "move", who: "dict2", scale: 1.18, dur: 0.01 },
+        { on: "bureaucracy", offset: -0.05, do: "swap", who: "dict", to: "dict2" },
+        { on: "that", offset: -0.15, do: "move", who: "dict2", by: [V ? 20 : 80, -40], turn: V ? -8 : -10, dur: 0.3, ease: "smooth" },
+        { on: "that", offset: 0.05, do: "move", who: "earth", by: [V ? 30 : 40, -10], turn: 75, dur: 0.4, ease: "smooth" },
+      ],
+    });
+    document.getElementById("home-planet-hwall").querySelector(".earth").style.visibility = "hidden";
+  </script>
+</template>

@@ -1,0 +1,60 @@
+<template id="less-crazy-goal-template">
+  <!-- less-crazy-goal · collage host shot (Part 4, scene 4). A human pops up beside the console with a club sandwich,
+       chewing. "curing": he doubles over coughing, a thermometer in his mouth (a dashboard ding). "disease": he thumps
+       his own chest like a dashboard, and stands there patting it, fixed. "goal.": he takes another bite. Curing that is
+       the "less crazy" job. (YOU stands in for the beat sheet's hungry man: his poses have the cough and the thump.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="less-crazy-goal" data-width="1920" data-height="1080" data-start="0" data-duration="6.96">
+    <div id="less-crazy-goal-weave"></div>
+    <div id="less-crazy-goal-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "less-crazy-goal";
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var X = V ? 875 : 1460, G = V ? 1460 : 1075, K = V ? 1.3 : 1.45, SK = V ? 0.5 : 0.62;
+    var man = function (art, pts, hidden) { return { art: art, x: X, y: G, anchor: "bottom", pivot: "bottom", scale: K, points: pts, hidden: hidden }; };
+    var tC = cue("curing"), tD = cue("disease"), tG = cue("goal.");
+    KIT.collage({
+      id: ID, seed: 414, host: true,
+      cast: {
+        walk: man("you-walk", { hand: [234, 296], mouth: [168, 104] }),
+        sick: man("you-sick", { hand: [192, 342] }, true),
+        pat: man("you-pat", { hand: [140, 262], mouth: [118, 96] }, true),
+        sand: { art: "sandwich", x: X, y: G - 300, scale: SK, pivot: "bottom" },
+        bite: { art: "sandwich-bite", x: X, y: G - 300, scale: SK, pivot: "bottom", hidden: true },
+      },
+      beats: [
+        { at: 0.05, do: "slideIn", who: ["walk", "sand"], from: "bottom", over: 18 },
+        { at: -1, do: "move", who: "sand", to: "walk.hand", by: [0, -40], turn: -12, dur: 0.001 },
+        { at: 0.6, do: "bob", who: "walk", y: 4, r: 1.5, speed: 5, until: tC, fade: 0.1 },
+        // the cough
+        { at: tC, do: "swap", who: "walk", to: "sick" },
+        { at: tC, do: "move", who: "sand", to: "sick.hand", by: [0, -40], turn: -30, dur: 0.001 },
+        { at: tC + 0.1, do: "shiver", who: ["sick", "sand"], dur: tD - tC - 0.05, amp: 7, rot: 4 },
+        // the thump
+        { at: tD + 0.15, do: "swap", who: "sick", to: "pat" },
+        { at: tD + 0.15, do: "move", who: "sand", to: "pat.hand", by: [40, -30], turn: 0, dur: 0.001 },
+        { at: tD + 0.15, do: "shake", x: 9, frames: 3 },
+        { at: tD + 0.15, do: "nudge", who: ["pat", "sand"], by: [-18, 6] },
+        { at: tD + 0.5, do: "bob", who: "pat", y: 3, r: 1, speed: 3, until: tG, fade: 0.1 },
+        // another bite
+        { at: tG, do: "move", who: "sand", to: "pat.mouth", by: [70, 20], turn: -20, dur: 0.17 },
+        { at: tG + 0.25, do: "swap", who: "sand", to: "bite" },
+        { at: -1, do: "move", who: "bite", to: "pat.mouth", by: [70, 20], turn: -20, dur: 0.001 },
+        { at: tG + 0.45, do: "move", who: "bite", to: "pat.hand", by: [40, -30], turn: 0, dur: 0.25 },
+        { at: tG + 0.5, do: "bob", who: "pat", y: 4, r: 1.5, speed: 6, fade: 0.1 },
+      ],
+    });
+  </script>
+</template>

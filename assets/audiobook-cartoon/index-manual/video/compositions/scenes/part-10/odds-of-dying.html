@@ -1,0 +1,78 @@
+<template id="odds-of-dying-template">
+  <!-- odds-of-dying · collage (Part 10, scene 11, plate midway). The bit: two carnival prize wheels. TERRORISM is guarded
+       by the General, sandbags and a ring of missiles; it spins and stops on blank: 1 IN 30,000,000, and the General adds
+       another ring of sandbags. The camera travels right: DISEASE has no guard, a germ spins it, and every slot says YOU. YOU stands in
+       front of it checking his watch. It stops on YOU, like every slot: 100%. Hold on both wheels. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="odds-of-dying" data-width="1080" data-height="1920" data-start="0" data-duration="8.24">
+    <div id="odds-of-dying-weave"></div>
+    <div id="odds-of-dying-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "odds-of-dying", V = KIT.V, SZ = KIT.collage.SIZES;
+    var T = function (w, n) { return KIT.cue(ID, w, n); };
+    // Two wheels on stands on the ground line G: terrorism on the left, disease on the right.
+    var G = 880, WY = 430, A = 520, B = 1400, WK = 1.1, R = SZ["prize-wheel"][0] * WK / 2;
+    var views = V ? {
+      left: [A, 520, 1], right: [B, 520, 1], wide: [960, 560, 0.6],
+    } : {
+      left: [A - 40, 520, 1.35], right: [B + 40, 520, 1.35], wide: [990, 500, 0.88],
+    };
+    var wheel = function (x, labels) {
+      return { art: "prize-wheel", x: x, y: WY, scale: WK, pivot: [212, 215], hidden: false,
+        label: labels ? [[212, 92, 0], [335, 215, 90], [212, 338, 180], [89, 215, 270]].map(function (p) {
+          return { text: labels, at: [p[0], p[1]], width: 120, size: 64, tilt: p[2] };
+        }) : undefined };
+    };
+    var stand = function (x) { return { art: "wheel-stand", x: x, y: G, anchor: "bottom", scale: (G - WY + 30) / SZ["wheel-stand"][1] }; };
+    var hand = function (x) { return { art: "pointing-hand", x: x, y: WY - R + 18, anchor: [118, 282], scale: 0.48 }; };
+    var MK = 300 / SZ.missile[1];
+    var missile = function (x) { return { art: "missile", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: MK }; };
+    // a ring of sandbags round the terrorism wheel's foot, and a second ring that goes on top of it
+    var SBK = 0.8, SBH = SZ.sandbags[1] * SBK;
+    var sandbags = function (x, tier) { return { art: "sandbags", x: x, y: G + 6 - tier * (SBH - 22), anchor: "bottom", pivot: "bottom", scale: SBK, hidden: tier > 0 }; };
+    var cast = {
+      standA: stand(A), standB: stand(B),
+      mA1: missile(A - 300), mA2: missile(A + 300),
+      wA: wheel(A, null), wB: wheel(B, "YOU"),
+      sbA2: sandbags(A - 130, 1), sbB2: sandbags(A + 130, 1), sbA1: sandbags(A - 130, 0), sbB1: sandbags(A + 130, 0),
+      handA: hand(A), handB: hand(B),
+      general: { art: "general", x: A - 470, y: G, anchor: "bottom", pivot: "bottom", scale: 400 / SZ.general[1] },
+      germ: { art: "germ-grin", x: B + R + 90, y: WY + 40, scale: 0.95, faces: "left" },
+      you: { art: "you-watch", x: B - R - 40, y: G + 20, anchor: "bottom", pivot: "bottom", scale: 360 / SZ["you-watch"][1] },
+    };
+    // the names, in the narrator's words
+    var wheelName = function (on, id, text, x, side) {
+      return { on: on, do: "banner", id: id, text: text, x: V ? x : x + side * (R + 190), y: V ? WY - R - 200 : 210, size: V ? 70 : 60, width: V ? 460 : 340, pad: 50, color: "ink", tilt: side * -2, shake: 0 };
+    };
+    var beats = [
+      wheelName("terrorism:", "nameA", "TERRORISM", A, -1),
+      wheelName("disease:", "nameB", "DISEASE", B, 1),
+      // TERRORISM: spins, stops on blank
+      { on: "terrorism:", do: "move", who: "wA", by: [0, 0], turn: 1440, dur: T("million.") - T("terrorism:") - 0.05, ease: "smooth" },
+      { on: "million.", do: "stamp", id: "oneIn", text: "1 IN 30,000,000", x: A, y: WY + 210, size: 90, width: 640, tilt: -6 },
+      { on: "million.", offset: 0.55, do: "nudge", who: "general", by: [30, 0] },
+      { on: "million.", offset: 0.6, do: "pop", who: "sbA2", squash: true },
+      { on: "million.", offset: 0.7, do: "pop", who: "sbB2", squash: true },
+      // DISEASE: no guard; a germ spins it; every slot says YOU
+      { on: "your", n: 2, do: "camera", view: "right", dur: 0.7 },
+      { on: "disease:", do: "nudge", who: "germ", by: [50, -10] },
+      { on: "disease:", offset: 0.05, do: "move", who: "wB", by: [0, 0], turn: 1800, dur: T("percent.") - T("disease:") - 0.1, ease: "smooth" },
+      { on: "dying", n: 2, do: "nudge", who: "you", by: [0, -8] },
+      { on: "percent.", do: "stamp", id: "all", text: "100%", x: B, y: WY + 210, size: 200, width: 420, tilt: 5 },
+      { on: "percent.", offset: 0.6, do: "camera", view: "wide", dur: 0.7 },
+    ];
+    KIT.collage({ id: ID, seed: 1110, plate: [-1000, -1400, 2900, 2600], views: views, view: "left", cast: cast, beats: beats });
+  </script>
+</template>

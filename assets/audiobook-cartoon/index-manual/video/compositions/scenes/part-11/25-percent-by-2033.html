@@ -1,0 +1,183 @@
+<template id="25-percent-by-2033-template">
+  <!-- 25-percent-by-2033 · collage (Part 11, scenes 14 and 15 as one plate; copied from the soviet-plan short). The bit: the destructive economy is a
+       chain of missiles, hackers, tanks and robots climbing a chart, and we ride its tip. Close on one missile and one
+       hacker, $13.2 TRILLION. "reaches": each new piece pops out of the last and the camera climbs with them, to 25% BY
+       2033. Back down the chart: Gorbachev, big, on his dashed 15% ledge, with his mainframe (a moth flies out and settles
+       on his head) and his fat binder, TERRIBLE. Along the ledge to us: the Politician, big and thrilled, holding a
+       clipboard that says PLAN: and nothing else, while the chain swarms past behind him. "The Soviet": pull back to the
+       whole chart; "lost": the boot stomps Gorbachev flat, and the chain climbs on off the top. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+    /* the plate runs far past the canvas, and the wide shot is 1/7 scale: the chart's lines overflow and are drawn fat */
+    [id="25-percent-by-2033-stage"] svg { overflow: visible; }
+    [id="25-percent-by-2033-chart"] path { stroke-width: 44; }
+    [id="25-percent-by-2033-chart"] line { stroke-width: 16; }
+    [id="25-percent-by-2033-rule"] > .cg-full { border-top-width: 34px !important; }
+    /* red on a blue binder needs a paper slip under it */
+    [id="25-percent-by-2033-binder.stamp"] { background: #EFE2C0; }
+  </style>
+  <div id="root" data-composition-id="25-percent-by-2033" data-width="1920" data-height="1080" data-start="0" data-duration="31.64">
+    <div id="25-percent-by-2033-weave"></div>
+    <div id="25-percent-by-2033-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "25-percent-by-2033", V = KIT.V;
+    var cueAt = function (w, n) { return KIT.cue(ID, w, n); };
+    // The chart in plate px: 9:16 is steeper, so the same curve fits the tall frame.
+    var YR = V ? 420 : 700, PCT = V ? 240 : 170, BASE = 5000, WIDE = YR * 15;
+    var C = KIT.collage.axes({ box: [0, BASE - 50 * PCT, WIDE, BASE], x: [2025, 2040, 5], y: [0, 50, 10], yLabels: 10, unit: "%", size: 230 });
+    // 12.6% growth against GDP's 2.5%: 11.5% of GDP in 2025, x 1.101 a year.
+    var share = function (y) { return 11.5 * Math.pow(1.101, y - 2025); };
+    var at = function (y) { return C.pt(y, share(y)); };
+    var LEDGE = C.pt(2025, 15)[1], CROSS = C.pt(2025 + Math.log(15 / 11.5) / Math.log(1.101), 15)[0];
+    var START = at(2025), TOP = at(2033);
+    // What the chain is made of: military ($2.72T, +3.4% a year) and cybercrime ($10.5T, +15%), each in its share.
+    var KIND = {}, acc = 0, nm = 0, nc = 0, CYBER = ["robot", "hacker", "robot", "robot-up", "hacker", "robot", "hacker-up", "robot"];
+    for (var y = 2026; y <= 2040; y += 0.5) {
+      var mil = 2.72 * Math.pow(1.034, y - 2025), cyb = 10.5 * Math.pow(1.15, y - 2025);
+      acc += mil / (mil + cyb);
+      if (acc >= 1) { acc -= 1; KIND[y] = nm++ % 2 ? "tank" : "missile"; } else KIND[y] = CYBER[nc++ % CYBER.length];
+    }
+    var HT = V ? 560 : 620, SIZES = { "robot-up": 1.3, "hacker-up": 1.4, "robot-elbow": 1.1, tank: 0.62, missile: 1.15 };
+    var scaleOf = function (art) { return HT * (SIZES[art] || 1) / KIT.collage.SIZES[art][1]; };
+    // Gorbachev's end of the ledge, the Politician at the crossing
+    var GX = V ? 5350 : 8850, FX = GX - (V ? 360 : 600), BX = GX + (V ? 380 : 600), BK = V ? 1.3 : 1.7;
+    var PK = 1.25, CLIP = [CROSS + (250 - 192) * PK, LEDGE - (735 - 170) * PK];
+
+    var views = V ? {
+      start: [140, START[1] - 340, 1.3], top: [TOP[0] - 150, TOP[1] + 229, 0.7],
+      gorb: [GX + 30, LEDGE - 550, 0.8], gorbIn: [GX + 30, LEDGE - 520, 0.85],
+      pol: [CROSS + 60, LEDGE - 383, 1.15], clip: [CROSS + 40, CLIP[1] + 60, 1.6], wide: [3040, 2365, 0.148],
+    } : {
+      start: [500, START[1] - 283, 1.2], top: [TOP[0] - 300, TOP[1] - 100, 0.75],
+      gorb: [GX + 60, LEDGE - 358, 0.95], gorbIn: [GX + 60, LEDGE - 372, 1],
+      pol: [CROSS + 40, LEDGE - 420, 1], clip: [CLIP[0], CLIP[1], 2.0], wide: [5429, 2786, 0.14],
+    };
+
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+
+    // The chain: cut-outs in the cast (so the Politician can stand in front of it), each popping out of the last.
+    var count = 2, lastPt = null, lines = [];
+    function climb(from, to, t0, t1, arts, timing) {
+      var pts = [], n = Math.round((to - from) * 2) + 1;
+      for (var i = 0; i < n; i++) {
+        var yr = from + i / 2, p = at(yr), art = arts(yr, i, n), who = "c" + count++, ti = t0 + (t1 - t0) * timing(i / (n - 1));
+        cast[who] = { art: art, x: lastPt[0], y: lastPt[1], anchor: "bottom", pivot: "bottom", scale: scaleOf(art), hidden: true };
+        add({ at: ti, do: "pop", who: who });
+        add({ at: ti, do: "move", who: who, by: [p[0] - lastPt[0], p[1] - lastPt[1]], dur: 0.17, arc: 50 });
+        add({ at: ti + 0.2, do: "bob", who: who, y: 7, r: 1.5, speed: 3, phase: i });
+        // the drawn line runs under the feet: an invisible copy per piece
+        lines.push({ at: ti, do: "chain", id: "l" + lines.length, join: "l" + (lines.length - 1), points: [p], art: "coin", height: 1, jiggle: 0, hop: false, lineWidth: 34 });
+        lastPt = p;
+        pts.push(p);
+      }
+      return pts;
+    }
+    var T0 = cueAt("reaches"), T1 = cueAt("thirty-three."), T2 = cueAt("The", 2), T3 = cueAt("lost.") + 1.6;
+    var P1 = at(2025.5);
+    cast.c0 = { art: "missile", x: START[0], y: START[1], anchor: "bottom", pivot: "bottom", scale: scaleOf("missile") };
+    cast.c1 = { art: "hacker", x: P1[0], y: P1[1], anchor: "bottom", pivot: "bottom", scale: scaleOf("hacker") };
+    lastPt = P1;
+    add({ at: 0, do: "bob", who: "c1", y: 7, r: 2, speed: 3 });
+    add({ at: 0, do: "bob", who: "c0", y: 3, r: 0.8, speed: 1.5 });
+    // The camera eases (smoothstep) from the start to the top; the tip keeps pace by easing the same way, so we ride it.
+    var RIDE = function (u) { return 0.5 - Math.sin(Math.asin(1 - 2 * u) / 3); }, EVEN = function (u) { return u; };
+    lines.push({ at: -1, do: "chain", id: "l0", points: [START, P1], art: "coin", height: 1, dur: 0.05, jiggle: 0, hop: false, lineWidth: 34 });
+    var pts1 = climb(2026, 2033, T0, T1, function (yr, i, n) { var k = KIND[yr]; return i >= n - 3 && !/missile|tank/.test(k) ? "robot-elbow" : k; }, RIDE);
+    var END1 = count;
+    var pts2 = climb(2033.5, 2038, T2, T3, function (yr) { return KIND[yr]; }, EVEN);
+
+    // Those who run past behind the Politician, faster and faster.
+    var RUN = ["robot-elbow", "hacker-up", "robot-elbow", "tank", "robot-up", "robot-elbow", "hacker", "missile"];
+    var RT0 = cueAt("better"), RT1 = T2 + 0.2, FAST = cueAt("faster-growing");
+    var ya = 2025 + (CROSS - (V ? 1000 : 1500)) / YR, yb = 2025 + (CROSS + (V ? 1000 : 1500)) / YR, pa = at(ya), pb = at(yb);
+    for (var ri = 0, rt = RT0; rt < RT1; ri++) {
+      var lane = [0, -170, 110, -80][ri % 4], rart = RUN[ri % RUN.length], rn = "r" + ri, rdur = rt < FAST ? 1.1 : 0.8;
+      cast[rn] = { art: rart, x: pa[0], y: pa[1] + lane, anchor: "bottom", pivot: "bottom", scale: scaleOf(rart), hidden: true };
+      add({ at: rt, do: "show", who: rn });
+      add({ at: rt, do: "bob", who: rn, y: 26, r: 5, speed: 7, phase: ri, fade: 0.01 });
+      add({ at: rt, do: "move", who: rn, by: [pb[0] - pa[0], pb[1] - pa[1]], dur: rdur });
+      add({ at: rt + rdur, do: "hide", who: rn });
+      rt += rt < FAST ? 0.62 : 0.26;
+    }
+
+    // In the wide shot the chain never stops: more of them hop up the line and off the top.
+    for (var wi = 0; wi < 16; wi++) {
+      var wt = 28.1 + wi * 0.26, wart = RUN[(wi + 3) % RUN.length], wn = "w" + wi, wp = [2031, 2033, 2035, 2039].map(at);
+      cast[wn] = { art: wart, x: wp[0][0], y: wp[0][1], anchor: "bottom", pivot: "bottom", scale: scaleOf(wart), hidden: true };
+      add({ at: wt, do: "show", who: wn });
+      add({ at: wt, do: "bob", who: wn, y: 60, r: 6, speed: 7, phase: wi, fade: 0.01 });
+      for (var wj = 1; wj < 4; wj++) add({ at: wt + (wj - 1) * 0.55, do: "move", who: wn, by: [wp[wj][0] - wp[wj - 1][0], wp[wj][1] - wp[wj - 1][1]], dur: 0.55 });
+      add({ at: wt + 1.65, do: "hide", who: wn });
+    }
+
+    cast.frame = { art: "mainframe", x: FX, y: LEDGE, anchor: "bottom", pivot: "bottom", scale: 1, hidden: true };
+    cast.gorb = { art: "gorbachev", x: GX, y: LEDGE, anchor: "bottom", pivot: "bottom", scale: 1, hidden: true };
+    cast.binder = { art: "binder", x: BX, y: LEDGE, anchor: "bottom", pivot: "bottom", scale: BK, hidden: true,
+      label: { text: "PLAN", at: [212, 168], width: 170, size: 90 } };
+    cast.pol = { art: "politician", x: CROSS, y: LEDGE, anchor: "bottom", pivot: "bottom", scale: PK,
+      hidden: true, label: { text: "PLAN:", at: [260, 235], width: 66, size: 40, tilt: 4 } };
+    cast.moth = { art: "moth", x: FX, y: LEDGE - 800, scale: 0.42, hidden: true };
+    var BOOTK = V ? 4.2 : 7.5, BOOTH = 551 * BOOTK, ABOVE = V ? 4121 : 1071;
+    cast.boot = { art: "boot", x: GX + (V ? 30 : 100), y: LEDGE + 10, anchor: "bottom", pivot: "bottom", scale: BOOTK, hidden: true };
+
+    [
+      // Close: one missile, one hacker, the bill
+      { on: "destructive", do: "tag", id: "cost", who: "c1", text: "$13.2 TRILLION", x: V ? 200 : 850, y: V ? START[1] - 790 : START[1] - 450, w: V ? 500 : 590, h: V ? 170 : 200, knot: [170, 300], swing: 3 },
+      { on: "reaches", do: "drop", who: "cost", dist: 1400, drift: -120, spin: -40, dur: 0.6 },
+      // The climb
+      { on: "reaches", do: "camera", view: "top", dur: T1 - T0 },
+      { on: "thirty-three.", offset: 0.15, do: "stamp", id: "pct", text: "25% BY 2033", x: V ? TOP[0] - 150 : TOP[0] - 780, y: V ? TOP[1] - 850 : TOP[1] - 370, size: V ? 300 : 280, width: V ? 1250 : 1300, tilt: -5, shake: 12 },
+      { on: "thirty-three.", offset: 0.3, do: "shiver", who: ["c" + (END1 - 3), "c" + (END1 - 2), "c" + (END1 - 1)], dur: 1.0, amp: 22, rot: 5 },
+      { on: "thirty-three.", offset: 0.45, do: "nudge", who: "c" + (END1 - 2), by: [70, -20] },
+      { on: "thirty-three.", offset: 0.8, do: "nudge", who: "c" + (END1 - 1), by: [-60, 0] },
+      // Back down: Gorbachev on his ledge
+      { at: 6.75, do: "rule", chart: C, y: 15, text: "15%", size: V ? 230 : 210, labelAt: V ? "left" : "right", dur: 0 },
+      { at: 6.8, do: "camera", view: "gorb", dur: 0.6 },
+      { on: "Union", n: 1, offset: 0.05, do: "slideIn", who: "gorb", from: "top", over: 26, tilt: 3 },
+      { on: "Union", n: 1, offset: 0.4, do: "shake", y: 12, frames: 3 },
+      { on: "Union", n: 1, offset: 0.5, do: "bob", who: "gorb", y: 4, r: 0.8, speed: 0.8 },
+      { on: "Union", n: 1, offset: 0.7, do: "camera", view: "gorbIn", dur: 10.5 },
+      { on: "fifteen", do: "stamp", id: "fifteen", text: "15%", x: V ? GX : FX, y: LEDGE - (V ? 1150 : 480), size: 300, width: 800, tilt: -6 },
+      { on: "They", do: "hide", who: "fifteen" },
+      { on: "worse", offset: 0.2, do: "stamp", who: "frame", from: 1.6, shake: 12 },
+      { on: "technology,", n: 1, offset: 0.4, do: "pop", who: "moth" },
+      { on: "technology,", n: 1, offset: 0.4, do: "bob", who: "moth", y: 18, r: 14, speed: 6, until: "one.", fade: 0.05 },
+      { on: "technology,", n: 1, offset: 0.45, do: "move", who: "moth", to: [GX + (V ? 300 : 520), LEDGE - 620], dur: 1.0, arc: 60, turn: -20 },
+      { on: "parasitic", n: 1, offset: 0.1, do: "move", who: "moth", to: [GX + (V ? 120 : 230), LEDGE - 430], dur: 0.9, arc: 60, turn: 15 },
+      { on: "plan", n: 1, offset: 0.2, do: "move", who: "moth", to: [GX + (V ? 300 : 520), LEDGE - 780], dur: 1.1, arc: 50, turn: -15 },
+      { on: "but", do: "move", who: "moth", to: [GX - 2, LEDGE - 858], dur: 0.7, arc: 20, turn: 0 },
+      { on: "plan", n: 1, do: "stamp", who: "binder", from: 1.5, shake: 16 },
+      { on: "terrible", n: 1, do: "stamp", who: "binder", text: "TERRIBLE", spot: [205, 310], size: V ? 92 : 110, width: V ? 480 : 620, tilt: -8, shake: 8 },
+      { on: "one.", do: "hop", who: "binder", height: 90 },
+      // Along the ledge: the Politician, and his plan
+      { at: 8, do: "show", who: "pol" },
+      { at: 18.95, do: "camera", view: "pol", dur: 0.8 },
+      { at: 19.7, do: "bob", who: "pol", y: 5, r: 1, speed: 1.2 },
+      { on: "no", n: 1, do: "camera", view: "clip", dur: 0.5 },
+      { on: "plan", n: 3, do: "hop", who: "pol", height: 40 },
+      // The whole chart, and the boot
+      { on: "The", n: 2, do: "chart", chart: C },
+      { on: "The", n: 2, do: "camera", view: "wide", dur: 2.2 },
+      { on: "no", n: 2, do: "hop", who: "pol", height: 220 },
+      { on: "lost.", offset: -0.3, do: "slideIn", who: "boot", from: "top", dist: LEDGE + ABOVE + BOOTH + 200, over: 0 },
+      { on: "lost.", offset: 0.03, do: "flatten", who: ["frame", "gorb", "binder"] },
+      { on: "lost.", offset: 0.03, do: "hide", who: "moth" },
+      { on: "lost.", offset: 0.03, do: "boom", shake: 22, flash: 0 },
+      { on: "lost.", offset: 0.5, do: "slideOut", who: "boot", to: "top", dist: LEDGE + ABOVE + BOOTH + 200, dur: 0.4 },
+    ].forEach(add);
+    lines.forEach(add);
+
+    KIT.collage({ id: ID, seed: 321, plate: V ? [-2000, -5000, 8500, 9500] : [-2000, -2500, 13500, 7500], views: views, view: "start", cast: cast, beats: beats });
+  </script>
+</template>

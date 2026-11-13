@@ -1,0 +1,78 @@
+<template id="evolved-on-purpose-template">
+  <!-- evolved-on-purpose · collage host shot. "The Military": a rolled blueprint pops up in front of the deck window and unrolls into a blank sheet, not one line on it. "It evolved": over the top of Earth a march of weapons walks, each stepping out of the last (club, sword, musket, cannon, tank, missile) and Darwin leans in with his notebook and shudders, and orphans stand along the rim. "An Incentive Alignment Bond": she draws the money loop on the sheet in one stroke; "purpose,": it lifts off the paper and settles round Earth. "require orphans.": their parents pop up beside them. The iris closes on her. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="evolved-on-purpose" data-width="1920" data-height="1080" data-start="0" data-duration="14.372">
+    <div id="evolved-on-purpose-weave"></div>
+    <div id="evolved-on-purpose-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "evolved-on-purpose", V = KIT.V, S = KIT.STUDIO, E = S.earth, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      var R = E[2] * 0.97;
+      var rim = function (th, out) { var a = th * Math.PI / 180, r = R + (out || 0); return [E[0] + r * Math.sin(a), E[1] - r * Math.cos(a)]; };
+      // the sheet, in front of the deck window under Earth
+      var SH = V ? [800, 600, 1.35] : [1430, 690, 1.75], SW = SZ.sticker[0] * SH[2], SHH = SZ.sticker[1] * SH[2];
+      var RK = 0.4 * SHH / SZ["loop-ring"][1];
+      // the rolled blueprint, lying across the top of the sheet; it unrolls down to the sheet's bottom edge
+      var BPK = SW * 1.04 / SZ.blueprint[1], SHT = SH[1] - SHH / 2;
+      var cast = {
+        sheet: { art: "sticker", x: SH[0], y: SHT, anchor: [SZ.sticker[0] / 2, 0], pivot: "top", scale: SH[2], hidden: true },
+        roll: { art: "blueprint", x: SH[0], y: SHT, scale: BPK, hidden: true },
+        ring: { art: "loop-ring", x: SH[0], y: SH[1], scale: RK, hidden: true },
+      };
+      // the orphans on the rim, and the parents who come back to them
+      var ORPH = V ? [-112, -78, 70, 104] : [-118, -84, 66, 100], OH = V ? 70 : 92;
+      ORPH.forEach(function (th, i) {
+        var p = rim(th), q = rim(th + (i < 2 ? -13 : 13));
+        cast["o" + i] = { art: "orphan", x: p[0], y: p[1], anchor: "bottom", pivot: "bottom", scale: OH / SZ.orphan[1], hidden: true };
+        var pa = "parent";
+        cast["p" + i] = { art: pa, x: q[0], y: q[1], anchor: "bottom", pivot: "bottom", scale: OH * 1.5 / SZ[pa][1], hidden: true };
+      });
+      cast.darwin = { art: "darwin", x: V ? 1010 : 1830, y: V ? 980 : 1080, anchor: "bottom", pivot: "bottom", scale: (V ? 420 : 520) / SZ.darwin[1], hidden: true };
+      var beats = [
+        { at: -1, do: "move", who: "roll", by: [0, 0], turn: 90, dur: 0.01 },
+        { on: "The", offset: 0.1, do: "pop", who: "roll", squash: true },
+        { on: "Military", do: "pop", who: "sheet", squash: true },
+        { on: "Military", do: "move", who: "roll", by: [0, SHH - SZ.blueprint[0] * BPK * 0.2], turn: 90, dur: 0.25 },
+        { on: "incentives", do: "slideIn", who: "darwin", from: "right", dist: V ? 400 : 500, over: 10 },
+        { on: "aligned.", offset: 0.2, do: "shiver", who: "darwin", dur: 0.6, amp: 4, rot: 3 },
+        { on: "orphans.", offset: 0.3, do: "nudge", who: "darwin", by: [-16, 0] },
+        { on: "designed.", do: "shiver", who: "sheet", dur: 0.4, amp: 3, rot: 2 },
+      ];
+      // "It evolved": the march of weapons over the top of Earth, each stepping out of the last
+      var path = [];
+      for (var th = -60; th <= 61; th += 24) path.push(rim(th, 2));
+      beats.push({ on: "evolved,", do: "chain", id: "arms", points: path, art: ["club", "sword", "musket", "cannon", "tank", "missile"], height: V ? 70 : 92,
+        sizes: { sword: 1.1, musket: 0.8, cannon: 0.85, tank: 0.8, missile: 1.4 }, until: ["aligned.", 1, -0.1], accel: 0.8, line: false });
+      ORPH.forEach(function (th, i) {
+        beats.push({ at: -1, do: "move", who: "o" + i, by: [0, 0], turn: th, dur: 0.01 });
+        beats.push({ at: -1, do: "move", who: "p" + i, by: [0, 0], turn: th + (i < 2 ? -13 : 13), dur: 0.01 });
+        beats.push({ on: "because", offset: 0.15 * i, do: "pop", who: "o" + i, squash: true });
+        beats.push({ on: "doesn't", offset: -0.2 + 0.15 * i, do: "pop", who: "p" + i, squash: true });
+        beats.push({ on: "orphans.", offset: 0.1 * i, do: "hop", who: ["o" + i, "p" + i], height: 14 });
+      });
+      // "An Incentive Alignment Bond": the loop, drawn on the sheet; "purpose,": it lifts off and settles round Earth
+      var pts = [], rx = SW * 0.3, ry = SHH * 0.28;
+      for (var k = 0; k <= 40; k++) { var a = -Math.PI / 2 + 2 * Math.PI * k / 40; pts.push([SH[0] + rx * Math.cos(a), SH[1] + ry * Math.sin(a)]); }
+      beats = beats.concat([
+        { on: "An", do: "line", id: "drawn", points: pts, dur: 1.0, color: "#1F4E8A", width: V ? 8 : 10, front: true },
+        { on: "aligns", do: "hide", who: "drawn" },
+        { on: "aligns", do: "pop", who: "ring" },
+        { on: "purpose,", do: "move", who: "ring", to: [E[0], E[1]], scale: 2.25 * E[2] / SZ["loop-ring"][1] / RK, dur: 0.7, arc: 80, ease: "smooth" },
+        { on: "purpose,", offset: 0.75, do: "glow", who: "ring", size: E[2] * 2.6, dur: 0.6 },
+      ]);
+      KIT.collage({ id: ID, seed: 1721, host: { iris: ["out", D - 0.55, D - 0.05] }, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

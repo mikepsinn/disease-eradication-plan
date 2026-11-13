@@ -1,0 +1,185 @@
+<template id="empty-podium-template">
+  <!-- empty-podium · collage (Part 15, scene 5: plate town-square). The bit: Eisenhower tells the town what the weapons
+       factory costs, the factory eats the town while he says it, everyone claps, and nothing changes for 65 years.
+       Left to right: the bandstand podium, the audience (the Politician, the fat cat in his chair, the Lobbyist, a
+       hungry man with his soup, the cold man, coat buttoned, in a bowler), the house, the weapons factory (its door is a mouth full of
+       teeth), the hospital. "war": a spotlight on the empty podium; "Eisenhower,": he steps up. "eating": the factory
+       chomps the house, the family waving from its teeth, then the hospital, and burps a smoke ring. "gun ... warship ...
+       rocket": out of its mouth a tank onto a conveyor with a price tag, a warship into a bucket, a missile off the roof.
+       "theft": the Lobbyist takes the hungry man's soup and tips it into the mouth; "cold": then the cold man's hat, and
+       a snowflake lands on him; a new missile pops out of the door wearing the hat, snug. HOLD. "standing ovation":
+       everyone jumps up clapping, the fat cat out of his chair; Ike bobs. "immediately ignored": they all sit down at
+       once and get back to work, the fat cat feeding bills into the mouth. "for": cobwebs over the podium, the counter
+       rolls 1961 to 2026, Ike x-rays to a skeleton and slumps out of sight, the audience goes to skeletons still at
+       work; the podium stands empty. sixty-five-years cuts in on "years." -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="empty-podium" data-width="1920" data-height="1080" data-start="0" data-duration="27.72">
+    <div id="empty-podium-weave"></div>
+    <div id="empty-podium-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "empty-podium", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var G = 960;
+      var X = { ike: 380, pol: 700, cat: 900, lob: 1070, hun: 1215, cold: 1370, house: 1570, fac: 1900, hosp: 2320, belt: 2260, bucket: 2600 };
+      var FK = 1.4, FL = X.fac - SZ["factory-proud"][0] * FK / 2;
+      var MOUTH = [FL + 210 * FK, G - (478 - 330) * FK];                   // the factory's door, its mouth (art 210, 330)
+      var ROOF = [X.fac, G - 478 * FK + 60];
+      // Ike's podium (in his art, its middle at art x 170, its top 276 px up) and the bare podium cut to match it
+      var PK = 0.71, IKEA = [170, 496];
+      var hk = function (art, h) { return h / SZ[art][1]; };
+      var cy = function (s) { return G - (V ? 470 : 380) / s; };
+      var views = V ? {
+        pod: [560, cy(1.4), 1.4], wide: [1350, cy(0.55), 0.55], fac: [2150, cy(1), 1], aud: [1030, cy(1), 1],
+        theft: [1580, cy(0.85), 0.85], end: [820, cy(0.85), 0.85],
+      } : {
+        pod: [560, 560, 1.15], wide: [1250, cy(0.8), 0.8], fac: [2120, cy(0.9), 0.9], aud: [1100, cy(1), 1], theft: [1550, cy(0.85), 0.85],
+        end: [1000, cy(0.9), 0.9],
+      };
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+      var person = function (art, x, h, o) {
+        var c = { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: hk(art, h) };
+        for (var k in o || {}) c[k] = o[k];
+        return c;
+      };
+
+      // the bandstand
+      cast.spot = { art: "spotlight", x: X.ike - 250, y: G, anchor: "bottom", scale: 0.75, hidden: true };
+      cast.pod0 = { art: "podium", x: X.ike, y: G, anchor: "bottom", pivot: "bottom", scale: PK };
+      cast.ikeS = person("skeleton", X.ike + 5, 496 * 0.99, { hidden: true });
+      cast.ike = { art: "eisenhower", x: X.ike, y: G, anchor: IKEA, pivot: "bottom", scale: 1, hidden: true };
+      cast.pod2 = { art: "podium", x: X.ike, y: G, anchor: "bottom", pivot: [168, 110], scale: PK, hidden: true };
+      cast.web1 = { art: "cobweb", x: X.ike + 150, y: G - 470, anchor: [280, 0], scale: 0.75, hidden: true };
+      cast.web2 = { art: "cobweb", x: X.ike - 40, y: G - 300, anchor: [280, 0], scale: 0.5, hidden: true };
+      // the town
+      cast.house = { art: "house", x: X.house, y: G, anchor: "bottom", scale: 0.95 };
+      cast.hosp = { art: "hospital", x: X.hosp, y: G, anchor: "bottom", scale: 1.05 };
+      cast.belt = { art: "conveyor", x: X.belt, y: G, anchor: "bottom", scale: 1.1 };
+      cast.bucket = { art: "bucket", x: X.bucket, y: G, anchor: "bottom", pivot: "bottom", scale: 0.6 };
+      cast.fac = { art: "factory-proud", x: X.fac, y: G, anchor: "bottom", pivot: "bottom", scale: FK };
+      cast.fam = { art: "family-wave", x: MOUTH[0], y: MOUTH[1], scale: 0.3, hidden: true };
+      cast.burp = { art: "cloud-puff", x: X.fac + 60, y: ROOF[1] - 160, scale: 0.8, hidden: true };
+      cast.tank = { art: "tank", x: MOUTH[0], y: MOUTH[1], scale: 0.55, hidden: true };
+      cast.ship = { art: "warship", x: MOUTH[0], y: MOUTH[1], scale: 0.6, hidden: true };
+      cast.rocket = { art: "missile-fly", x: ROOF[0], y: ROOF[1], scale: 0.8, hidden: true };
+      cast.coated = { art: "missile", x: MOUTH[0], y: G, anchor: "bottom", pivot: "bottom", scale: 0.55, hidden: true };
+      cast.hat2 = { art: "bowler", x: MOUTH[0] + 2, y: G - 563 * 0.55 + 30, scale: 0.62, hidden: true };
+      // the audience
+      cast.pol = person("politician", X.pol, 400);
+      cast.polS = person("skeleton", X.pol, 400, { hidden: true });
+      cast.cat = person("fat-cat-chair", X.cat, 300);
+      cast.catUp = person("fat-cat", X.cat, 360, { hidden: true });
+      cast.cat2 = person("fat-cat-chair", X.cat, 300, { hidden: true });
+      cast.catS = person("skeleton", X.cat, 330, { hidden: true });
+      cast.lob = person("lobbyist", X.lob, 370);
+      cast.lobS = person("lobbyist-skeleton", X.lob, 370 * 642 / 479 * 0.78, { hidden: true });
+      cast.hun = person("hungry-man", X.hun, 400);
+      cast.reach = person("hungry-reach", X.hun + 40, 330, { hidden: true });
+      cast.reachS = person("hungry-skeleton-reach", X.hun + 40, 330, { hidden: true });
+      cast.pot = { art: "soup-pot", x: X.hun + 15, y: G - 250, scale: 0.42 };
+      cast.cold = person("cold-man", X.cold, 380);
+      cast.coldS = person("skeleton", X.cold, 380, { hidden: true });
+      cast.hat = { art: "bowler", x: X.cold + 2, y: G - 380 + 14, scale: 0.5 };
+      cast.flake = { art: "snowflake", x: X.cold + 20, y: G - 470, scale: 0.25, hidden: true };
+      ["b0", "b1", "b2"].forEach(function (b) { cast[b] = { art: "bill-war-flat", x: X.cat + 60, y: G - 220, scale: 0.4, hidden: true }; });
+
+      // "Even your own war heroes figured this out.": a spotlight clicks on over the empty podium
+      add({ on: "war", n: 1, do: "pop", who: "spot", squash: true });
+      add({ on: "war", n: 1, do: "glow", who: "pod0", size: 420, dur: 1.2 });
+      // "Eisenhower, the human who won World War Two,": he steps up
+      add({ on: "Eisenhower,", do: "swap", who: "pod0", to: "ike" });
+      add({ on: "Eisenhower,", do: "glow", who: "ike", size: 520, dur: 1.2 });
+      add({ on: "won", do: "hop", who: "ike", height: 18 });
+      // "warned you that the weapons industry was eating your civilization alive:"
+      add({ on: "warned", do: "camera", view: "wide", dur: 0.7 });
+      add({ on: "weapons", n: 1, do: "nudge", who: "ike", by: [40, 0] });
+      var chomp = function (t, who, scale) {
+        add({ at: t - 0.25, do: "move", who: who, to: MOUTH, scale: scale, dur: 0.25, arc: 60 });
+        add({ at: t, do: "hide", who: who });
+        add({ at: t, do: "shiver", who: "fac", dur: 0.35, amp: 8, rot: 4 });
+      };
+      chomp(cue("eating"), "house", 0.25);
+      add({ on: "eating", do: "pop", who: "fam" });
+      add({ on: "eating", offset: 0.4, do: "pop", who: "fam", out: true });
+      chomp(cue("civilization"), "hosp", 0.2);
+      add({ on: "alive:", offset: 0.6, do: "pop", who: "burp", squash: true });
+      add({ on: "alive:", offset: 1.2, do: "move", who: "burp", by: [60, -220], dur: 0.8, ease: "smooth" });
+      add({ on: "Every", do: "hide", who: "burp" });
+      // "Every gun that is made, every warship launched, every rocket fired"
+      add({ on: "Every", do: "camera", view: "fac", dur: 0.5 });
+      add({ on: "gun", do: "pop", who: "tank", squash: true });
+      add({ on: "gun", offset: 0.1, do: "move", who: "tank", to: [X.belt - 60, G - 175], dur: 0.3, arc: 50 });
+      add({ on: "made,", do: "tag", id: "price", who: "tank", text: "$$$", w: 200, h: 110, knot: [380, 60], x: X.belt + 150, y: G - 330 });
+      add({ on: "made,", offset: 0.2, do: "move", who: "tank", by: [170, 0], dur: 0.8 });
+      add({ on: "warship", do: "pop", who: "ship", squash: true });
+      add({ on: "warship", offset: 0.1, do: "move", who: "ship", to: [X.bucket, G - 300], scale: 0.7, dur: 0.5, arc: 160, turn: 20 });
+      add({ on: "launched,", do: "hide", who: "ship" });
+      add({ on: "launched,", do: "shiver", who: "bucket", dur: 0.4, amp: 6, rot: 6 });
+      add({ on: "rocket", do: "pop", who: "rocket" });
+      add({ on: "fired", do: "move", who: "rocket", to: [3400, -1200], turn: -38, dur: 0.5, ease: "smooth" });
+      add({ on: "fired", offset: 0.5, do: "hide", who: "rocket" });
+      // "a theft from those who hunger and are not fed,": the Lobbyist takes the soup and tips it in the mouth
+      add({ on: "signifies,", do: "camera", view: "theft", dur: 0.7 });
+      add({ on: "theft", do: "move", who: "lob", to: [X.hun - 70, G - 185], dur: 0.4, arc: 25 });
+      add({ on: "hunger", do: "move", who: "pot", to: [X.hun - 10, G - 330], dur: 0.2 });
+      add({ on: "and", n: 1, do: "move", who: "lob", to: [MOUTH[0] - 190, G - 185], dur: 0.45, arc: 25 });
+      add({ on: "and", n: 1, do: "move", who: "pot", to: [MOUTH[0] - 130, G - 330], dur: 0.45, arc: 25 });
+      add({ on: "not", n: 1, do: "move", who: "pot", to: MOUTH, turn: 120, scale: 0.6, dur: 0.25, arc: 40 });
+      add({ on: "fed,", do: "hide", who: "pot" });
+      add({ on: "fed,", do: "swap", who: "hun", to: "reach" });
+      add({ on: "fed,", do: "shiver", who: "fac", dur: 0.25, amp: 5, rot: 3 });
+      // "those who are cold and are not clothed.": then the cold man's hat; a new missile wears it out of the door
+      add({ on: "those", n: 2, do: "move", who: "lob", to: [X.cold + 120, G - 185], dur: 0.35, arc: 25 });
+      add({ on: "cold", do: "move", who: "hat", to: [X.cold + 120, G - 400], dur: 0.15 });
+      add({ on: "cold", offset: 0.15, do: "move", who: "hat", to: MOUTH, scale: 0.6, turn: 200, dur: 0.4, arc: 120 });
+      add({ on: "cold", offset: 0.55, do: "hide", who: "hat" });
+      add({ on: "and", n: 2, do: "pop", who: "flake" });
+      add({ on: "and", n: 2, do: "shiver", who: "cold", dur: 1.8, amp: 5, rot: 3 });
+      add({ on: "clothed.", offset: 0.1, do: "move", who: "lob", to: [X.lob, G - 185], dur: 0.45, arc: 25 });
+      var tCoat = KIT.after(ID, "clothed.");
+      add({ at: tCoat, do: "pop", who: ["coated", "hat2"], squash: true });
+      add({ at: tCoat + 0.35, do: "bob", who: ["coated", "hat2"], y: 3, r: 2, speed: 2, until: "standing" });
+      // HOLD. "You gave him a standing ovation": up they leap, clapping; Ike bobs his thanks
+      add({ on: "gave", do: "camera", view: "aud", dur: 0.6 });
+      add({ on: "standing", do: "swap", who: "cat", to: "catUp" });
+      add({ on: "standing", do: "hop", who: ["pol", "lob", "reach", "cold"], height: 40 });
+      add({ on: "ovation", do: "shiver", who: ["pol", "catUp", "lob", "reach", "cold"], dur: 0.9, amp: 5, rot: 5 });
+      add({ on: "ovation", do: "hop", who: "ike", height: 14 });
+      add({ on: "ovation", offset: 0.3, do: "hop", who: "ike", height: 14 });
+      // "and then immediately ignored him": all sit at once and get back to work
+      add({ on: "immediately", do: "swap", who: "catUp", to: "cat2" });
+      add({ on: "immediately", do: "move", who: ["pol", "lob", "reach", "cold"], by: [0, 18], dur: 0.08 });
+      add({ on: "immediately", do: "shake", y: 6, frames: 2 });
+      add({ on: "ignored", do: "shiver", who: "pol", dur: 0.8, amp: 3, rot: 2 });
+      ["b0", "b1", "b2"].forEach(function (b, j) {
+        add({ on: "ignored", offset: j * 0.2, do: "pop", who: b });
+        add({ on: "ignored", offset: j * 0.2 + 0.05, do: "move", who: b, to: MOUTH, dur: 0.35, arc: 120 });
+        add({ on: "ignored", offset: j * 0.2 + 0.4, do: "hide", who: b });
+      });
+      // "for sixty-five": cobwebs, the years roll to 2026, and everybody goes to bones; the podium stands empty
+      add({ on: "him", n: 2, do: "camera", view: "end", dur: 0.4 });
+      add({ on: "for", do: "pop", who: ["web1", "web2"] });
+      add({ on: "for", do: "counter", id: "yr", from: 1961, to: 2026, dur: 0.55, commas: false, prefix: "", suffix: "", x: X.ike, y: G - 640, size: 90 });
+      add({ on: "for", offset: 0.05, do: "xray", who: "ike", to: "ikeS", frames: 3, flash: 0.15 });
+      add({ on: "for", offset: 0.3, do: "show", who: "pod2" });
+      add({ on: "for", offset: 0.35, do: "move", who: "ikeS", by: [0, 150], turn: 8, dur: 0.25 });
+      add({ on: "for", offset: 0.62, do: "hide", who: "ikeS" });
+      add({ on: "for", offset: 0.12, do: "xray", who: ["pol", "cat2", "lob", "reach", "cold"], to: ["polS", "catS", "lobS", "reachS", "coldS"], frames: 2, stagger: 0.07, flash: 0 });
+
+      KIT.collage({ id: ID, seed: 1505, plate: V ? [-2500, -3000, 5200, 4300] : [-900, -1300, 4000, 2200], views: views, view: "pod", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

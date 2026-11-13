@@ -1,0 +1,86 @@
+<template id="nuclear-winters-template">
+  <!-- nuclear-winters · collage (Part 1, scene 4, plate tiny-earth). The bit: a bar chart, NUCLEAR WINTERS against
+       CIVILIZATIONS, with one small Earth beside it, its little man watering his flowers. "waste money": a crate of 100
+       warheads (about one nuclear winter's worth) drops onto the first column and frosts into a snowflake; the
+       snowflakes stack on it faster and faster, run off the top of the frame, and the camera tilts up after them to
+       122. "despite": back down. "the one civilization": the Earth hops onto the second column: height 1.
+       "apocalypse?": one is enough. A snowflake drops on him and he freezes solid in a block of ice, watering can in
+       hand; the other 121 stay stacked, with nothing left to freeze, and the next one taps on his ice, waiting. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="nuclear-winters" data-width="1920" data-height="1080" data-start="0" data-duration="8.86">
+    <div id="nuclear-winters-weave"></div>
+    <div id="nuclear-winters-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, SZ = KIT.collage.SIZES;
+    // U: canvas px per nuclear winter (one snowflake, one crate of 100 warheads). The chart's floor is FLOOR (plate px).
+    var U = V ? 160 : 190, FLOOR = V ? 1300 : 760, N = 122;
+    var BOX = V ? [80, FLOOR - 130 * U, 860, FLOOR] : [420, FLOOR - 130 * U, 1340, FLOOR];
+    var ch = KIT.collage.axes({ box: BOX, x: [0, 3, 3], y: [0, 130, 10], yLabels: 20, size: V ? 38 : 40 });
+    var C1 = ch.pt(1, 0), C2 = ch.pt(2, 0), TOP = FLOOR - N * U;
+    var E = SZ["small-earth"], EK = (V ? 330 : 440) / E[1], EK1 = U / E[1], EX = V ? 940 : 1540;
+    // the little man's feet on the small Earth (art px), where his block of ice stands once the Earth is on its column
+    var FEET = [258, 180], ICE = [C2[0] + (FEET[0] - E[0] / 2) * EK1, FLOOR - (E[1] - FEET[1]) * EK1], IK = 200 * EK1 / SZ["frozen-man"][1];
+    var FK = U / SZ.snowflake[1], LW = V ? 240 : 280, LS = V ? 30 : 34;
+    var views = V ? {
+      base: [540, 960, 1], top: [C1[0] + 180, TOP + 300, 1], end: [C2[0] - 40, FLOOR - U * 0.6, 2.3],
+    } : {
+      base: [980, 590, 1.25], top: [C1[0] + 250, TOP + 220, 1], end: [C2[0] - 60, FLOOR - U * 0.55, 2.3],
+    };
+    KIT.collage({
+      id: "nuclear-winters", seed: 104, plate: [-1200, TOP - 1800, 2600, FLOOR + 1400], views: views, view: "base",
+      cast: {
+        earth: { art: "small-earth", x: EX, y: FLOOR, anchor: "bottom", pivot: "bottom", scale: EK },
+        crate: { art: "crate", x: C1[0], y: FLOOR, anchor: "bottom", pivot: "bottom", scale: U * 1.3 / SZ.crate[1], hidden: true,
+          label: { text: "100", at: [129, 330], width: 120, size: 60 } },
+        flake0: { art: "snowflake", x: C1[0], y: FLOOR, anchor: "bottom", pivot: "bottom", scale: FK, hidden: true },
+        doom: { art: "snowflake", x: C2[0], y: FLOOR - U - 900, anchor: "bottom", scale: FK * 0.8, hidden: true },
+        ice: { art: "frozen-man", x: ICE[0], y: ICE[1], anchor: "bottom", pivot: "bottom", scale: IK, hidden: true },
+        tap: { art: "snowflake", x: ICE[0] + 70 * EK1 * 3, y: ICE[1] - 210 * EK1, scale: FK * 0.35, hidden: true },
+      },
+      beats: [
+        { at: 0, do: "chart", chart: ch },
+        { at: 0, do: "banner", id: "lab1", text: "NUCLEAR WINTERS", x: C1[0], y: FLOOR + (V ? 62 : 70), size: LS, width: LW, pad: 30, color: "ink", tilt: 0 },
+        { at: 0, do: "banner", id: "lab2", text: "CIVILIZATIONS", x: C2[0], y: FLOOR + (V ? 62 : 70), size: LS, width: LW, pad: 30, color: "ink", tilt: 0 },
+        // the little man waters his flowers
+        { at: 0, do: "bob", who: "earth", y: 3, r: 2, speed: 2, until: ["one", 2] },
+        // "waste money on enough nuclear bombs": a crate of 100 warheads lands, and frosts into the first winter
+        { on: "waste", offset: 0.1, do: "stamp", who: "crate", from: 1.6, shake: 5 },
+        { on: "nuclear", n: 1, do: "shiver", who: "crate", dur: 0.4, amp: 4, rot: 3 },
+        { on: "bombs", do: "swap", who: "crate", to: "flake0" },
+        // "to cause one hundred and twenty-two nuclear winters": they stack, faster and faster, off the top
+        { on: "bombs", offset: 0.25, do: "pile", id: "flakes", art: "snowflake", x: C1[0], y: FLOOR - U, count: N - 1, height: U, gap: U, until: ["twenty-two", 1, 0.3], accel: 0.6, jitter: 5, tilt: 8 },
+        { on: "bombs", offset: 0.2, do: "camera", view: "top", dur: 1.9 },
+        { on: "twenty-two", offset: 0.44, do: "stamp", id: "s122", text: "122", x: C1[0] + (V ? 330 : 430), y: TOP + (V ? 120 : 90), size: V ? 200 : 230, width: 600, tilt: -6 },
+        // "despite only having the one civilization": back down; the Earth hops onto its column, height 1
+        { on: "despite", do: "camera", view: "base", dur: 0.8 },
+        { on: "one", n: 2, do: "move", who: "earth", to: [C2[0], FLOOR - EK * E[1] / 2], dur: 0.4, arc: V ? 240 : 300, scale: EK1 / EK },
+        { on: "civilization", do: "stamp", id: "s1", text: "1", x: C2[0] + (V ? 150 : 180), y: FLOOR - U * 0.7, size: V ? 140 : 150, width: 200, tilt: -4 },
+        // "to apocalypse?": close in; one is enough
+        { on: "to", n: 2, do: "camera", view: "end", dur: 0.4 },
+        { on: "to", n: 2, do: "hide", who: "s1" },
+        { on: "apocalypse?", offset: -0.15, do: "show", who: "doom" },
+        { on: "apocalypse?", offset: -0.15, do: "move", who: "doom", to: [ICE[0], ICE[1] - 60 * EK1], dur: 0.35, turn: 90 },
+        { on: "apocalypse?", offset: 0.2, do: "hide", who: "doom" },
+        { on: "apocalypse?", offset: 0.2, do: "pop", who: "ice", squash: true },
+        { on: "apocalypse?", offset: 0.2, do: "shake", y: 5, frames: 3 },
+        { on: "apocalypse?", offset: 0.3, do: "wash", id: "winter", color: "#D6E4EC", blend: "normal", opacity: 0.4, dur: 0.6 },
+        // the next one taps on his ice, waiting its turn
+        { on: "apocalypse?", offset: 0.65, do: "pop", who: "tap" },
+        { on: "apocalypse?", offset: 0.85, do: "nudge", who: "tap", by: [-14, 0] },
+        { on: "apocalypse?", offset: 1.05, do: "nudge", who: "tap", by: [-14, 0] },
+      ],
+    });
+  </script>
+</template>

@@ -1,0 +1,76 @@
+<template id="juggling-five-steps-template">
+  <!-- juggling-five-steps · collage host shot (Part 23, scene 2). Iris in on her, counting on her fingers. In the
+       window YOU stands on top of Earth and juggles the five steps, one more on each word: the bond on "bonds", the
+       Lobbyist on "lobbyists", the Super PAC on "PACs", the laptop (the decentralized FDA) on "F.D.A." and the
+       Optimitron on "appliance" (his knees buckle under it). "objection:": they wheel faster and faster. "Correct.":
+       everything comes down; the Optimitron flattens him into the top of Earth, the rest land on top, and the
+       Lobbyist lands last, neatly on his toes, and hops. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="juggling-five-steps" data-width="1920" data-height="1080" data-start="0" data-duration="16.16">
+    <div id="juggling-five-steps-weave"></div>
+    <div id="juggling-five-steps-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "juggling-five-steps", V = KIT.V, Z = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // Earth as a cut-out of the deck's own (the deck's copy is hidden below), lower and bigger, so YOU fits on top.
+      var EARTH = "../deck/earth"; Z[EARTH] = [667, 651];
+      var E = V ? [850, 760, 200] : [1490, 860, 300], EK = 2 * E[2] / 667, TOPE = E[1] - E[2] * 0.93;
+      var YH = V ? 240 : 300, IH = V ? 120 : 165;
+      var hk = function (art, h) { return h / Z[art][1]; };
+      // the juggling loop: its bottom at his hands, its top well over his hat
+      var HANDS = TOPE - YH * 0.5, RY = V ? 120 : 150, LOOP = [E[0] - (V ? 20 : 0), HANDS - RY, V ? 160 : 250, RY];
+      var item = function (art, h) { return { art: art, x: E[0], y: HANDS, scale: hk(art, h), hidden: true }; };
+      var cast = {
+        earth: { art: EARTH, x: E[0], y: E[1], scale: EK },
+        you: { art: "you", x: E[0], y: TOPE + 4, anchor: "bottom", pivot: "bottom", scale: hk("you", YH) },
+        bond: item("bond", IH * 0.62), lob: item("lobbyist", IH * 1.3), pac: item("super-pac", IH * 0.9),
+        laptop: item("laptop", IH * 0.75), opt: item("optimitron", IH * 0.85),
+      };
+      // Each throw goes round the loop until "Correct.", faster each lap; the laps are fitted so the last one ends on it.
+      var DOWN = cue("Correct.") - 0.02, FAST = 0.93;
+      var throwIn = function (who, word, from) {
+        var t0 = cue(word) + 0.1, L = DOWN - t0, n = Math.max(2, Math.round(L / 1.25)), d = L * (1 - FAST) / (1 - Math.pow(FAST, n));
+        return [
+          { at: t0 - 0.1, do: "pop", who: who },
+          { at: t0, do: "lap", who: who, loop: LOOP, laps: n, dur: d, faster: FAST, from: from, dir: -1 },
+        ];
+      };
+      // where everything lands when it comes down
+      var land = function (who, x, y, t, turn) { return { at: DOWN + t, do: "move", who: who, to: [E[0] + x, TOPE + y], dur: 0.17, turn: turn || 0 }; };
+      var u = V ? 0.74 : 1;
+      var beats = [].concat(
+        throwIn("bond", "bonds,", 0), throwIn("lob", "lobbyists,", 0.2), throwIn("pac", "PACs,", 0.4),
+        throwIn("laptop", "F.D.A.,", 0.6), throwIn("opt", "appliance", 0.8),
+        [
+          // his knees buckle under the Optimitron
+          { on: "appliance", offset: 0.15, do: "shiver", who: "you", dur: 0.4, amp: 3, rot: 3 },
+          { on: "that", n: 1, offset: 0.4, do: "shiver", who: "you", dur: 0.3, amp: 3, rot: 3 },
+          // "objection:": worried, sweating, shaking
+          { on: "objection:", do: "shiver", who: "you", dur: cue("Correct.") - cue("objection:") - 0.1, amp: 3, rot: 2 },
+          // "Correct.": it all comes down; the Optimitron first, and he goes flat
+          land("opt", 0, -30 * u, 0, 8),
+          { at: DOWN + 0.17, do: "flatten", who: "you" },
+          { at: DOWN + 0.17, do: "shake", y: 8, frames: 4 },
+          land("pac", -70 * u, -70 * u, 0.12, -14), land("bond", 80 * u, -60 * u, 0.2, 18), land("laptop", 10 * u, -110 * u, 0.28, -6),
+          land("lob", 0, -175 * u, 0.42, 0),
+          { at: DOWN + 0.72, do: "hop", who: "lob", height: 14 },
+        ]
+      );
+      KIT.collage({ id: ID, seed: 2302, host: { iris: ["in", 0.02, 0.6] }, cast: cast, beats: beats });
+      document.getElementById(ID + "-hwall").querySelector(".earth").style.visibility = "hidden";
+    })();
+  </script>
+</template>

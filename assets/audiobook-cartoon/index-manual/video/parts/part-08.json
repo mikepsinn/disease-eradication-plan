@@ -1,0 +1,457 @@
+{
+  "id": "part-08",
+  "title": "The Problem: The Daily Deletion Event",
+  "storyboard": "storyboards/part-08-daily-deletion-event.md",
+  "audio": {
+    "start": 873.661,
+    "end": 945.151
+  },
+  "noCaptions": [
+    "daily-deletion-event-title"
+  ],
+  "scenes": [
+    {
+      "id": "daily-deletion-event-title",
+      "file": "compositions/scenes/part-08/daily-deletion-event-title.html",
+      "cue": "The",
+      "approx": 873.724,
+      "layer": "A"
+    },
+    {
+      "id": "deletion-board",
+      "file": "compositions/scenes/part-08/deletion-board.html",
+      "cue": "One",
+      "approx": 877.924,
+      "layer": "B"
+    },
+    {
+      "id": "falling-apart",
+      "file": "compositions/scenes/part-08/falling-apart.html",
+      "cue": "Your",
+      "approx": 907.044,
+      "layer": "B"
+    },
+    {
+      "id": "meat-robot",
+      "file": "compositions/scenes/part-08/meat-robot.html",
+      "cue": "You're",
+      "approx": 932.064,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "You're",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "solvable",
+          "expr": "excited",
+          "rest": "ee",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "problem.",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "hands-hips",
+          "mode": "big"
+        },
+        {
+          "cue": "You'd",
+          "expr": "lookright",
+          "rest": "smile",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "That",
+          "expr": "skeptical",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        },
+        {
+          "cue": "incorrect.",
+          "expr": "smirk",
+          "rest": "closed",
+          "body": "point-right",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "daily-deletion-event-title",
+      "cue": "The",
+      "sfx": "whirr",
+      "volume": 0.25
+    },
+    {
+      "scene": "daily-deletion-event-title",
+      "cue": "Deletion",
+      "offset": 0.12,
+      "sfx": "scratch",
+      "volume": 0.45
+    },
+    {
+      "scene": "daily-deletion-event-title",
+      "cue": "Event.",
+      "offset": 0.1,
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "One",
+      "sfx": "typewriter",
+      "volume": 0.35
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "thousand",
+      "offset": 0.4,
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "permanently",
+      "offset": 0.3,
+      "sfx": "cash-register",
+      "volume": 0.45
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "stop",
+      "sfx": "bell",
+      "volume": 0.5
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "stop",
+      "offset": 0.2,
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "hours",
+      "sfx": "click",
+      "volume": 0.5
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "bugs",
+      "sfx": "pop",
+      "volume": 0.45
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "meat",
+      "sfx": "snip",
+      "volume": 0.4
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "software.",
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "software.",
+      "offset": 0.3,
+      "sfx": "bell",
+      "volume": 0.45
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "Holocaust",
+      "sfx": "whoosh",
+      "volume": 0.25
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "days,",
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "paperwork",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "(though",
+      "sfx": "scratch",
+      "volume": 0.35
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "argue",
+      "sfx": "thunk",
+      "volume": 0.35
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "paperwork",
+      "n": 2,
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "worse;",
+      "sfx": "zap",
+      "volume": 0.3
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "straightforward",
+      "sfx": "stamp",
+      "volume": 0.7
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "straightforward",
+      "offset": 0.25,
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "part).",
+      "at": "after",
+      "sfx": "splat",
+      "volume": 0.55
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "part).",
+      "at": "after",
+      "offset": 0.15,
+      "sfx": "scratch",
+      "volume": 0.3
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "fifty",
+      "sfx": "stamp",
+      "volume": 0.55,
+      "n": 2
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "every",
+      "sfx": "scratch",
+      "volume": 0.35,
+      "n": 3
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "single",
+      "sfx": "scratch",
+      "volume": 0.35
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "day,",
+      "sfx": "scratch",
+      "volume": 0.35
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "invades",
+      "offset": 0.3,
+      "sfx": "woof",
+      "volume": 0.45
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "diseases",
+      "sfx": "huff",
+      "volume": 0.3,
+      "n": 2
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "don't",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "have",
+      "sfx": "whistle",
+      "volume": 0.4
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "oil.",
+      "offset": 0.1,
+      "sfx": "boom",
+      "volume": 0.55
+    },
+    {
+      "scene": "deletion-board",
+      "cue": "oil.",
+      "offset": 0.75,
+      "sfx": "splat",
+      "volume": 0.4
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "apart.",
+      "offset": 0.3,
+      "sfx": "tick",
+      "volume": 0.3
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "read",
+      "sfx": "whoosh",
+      "volume": 0.15
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "which",
+      "sfx": "scratch",
+      "volume": 0.2
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "rearranges",
+      "sfx": "whoosh",
+      "volume": 0.15
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "cells",
+      "sfx": "pop",
+      "volume": 0.2
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "proteins",
+      "sfx": "squeak",
+      "volume": 0.15
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "scarring.",
+      "sfx": "scratch",
+      "volume": 0.15
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "schedule",
+      "sfx": "clank",
+      "volume": 0.3
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "schedule",
+      "offset": 0.4,
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "schedule",
+      "offset": 0.976,
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "schedule",
+      "offset": 1.552,
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "falling-apart",
+      "cue": "schedule",
+      "offset": 2.128,
+      "sfx": "tick",
+      "volume": 0.35
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "worn-out",
+      "sfx": "boing",
+      "volume": 0.45
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "parts.",
+      "sfx": "huff",
+      "volume": 0.45
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "solvable",
+      "offset": 0,
+      "sfx": "slide-down",
+      "volume": 0.3
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "engineering",
+      "sfx": "clank",
+      "volume": 0.4
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "problem.",
+      "at": "after",
+      "sfx": "splat",
+      "volume": 0.5
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "think",
+      "sfx": "slide-up",
+      "volume": 0.3
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "prioritize",
+      "sfx": "marker",
+      "volume": 0.45
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "problems.",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "incorrect.",
+      "sfx": "pop",
+      "volume": 0.7
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "incorrect.",
+      "offset": 0.35,
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "meat-robot",
+      "cue": "incorrect.",
+      "at": "after",
+      "offset": 0.1,
+      "sfx": "boing",
+      "volume": 0.4
+    }
+  ]
+}

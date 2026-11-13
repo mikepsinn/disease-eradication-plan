@@ -1,0 +1,122 @@
+<template id="really-good-review-template">
+  <!-- really-good-review · collage (Part 27, scene 3; busy-field plate, continues glowing-rectangle-share with no seam by
+       replaying its beats before t 0). The bit: six gold stars beat the pro-war algorithm. Back to YOU, buried: "busy"
+       his rectangle shrinks to a phone; "that," he bursts out of the pages and runs on the spot. A fat gold star hops out
+       of the rectangle on each "really", two on "good", a sixth on "rating". "overcome": a tin robot in an army helmet,
+       a missile painted on its chest, stomps in and sits on the row like a park bench. "suppression": the stars flare,
+       stand up and carry it off on its back like a rug, past the lawn, and tip it off the edge: flash and mushroom cloud.
+       The camera travels on to Grandma's skeleton on her 1987 headstone, cobweb and all; she flips BUY BONDS to TRIALS
+       and marches off. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="really-good-review" data-width="1920" data-height="1080" data-start="0" data-duration="12.62">
+    <div id="really-good-review-weave"></div>
+    <div id="really-good-review-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script src="compositions/scenes/part-27/busy-field.js"></script>
+  <script>
+    (function () {
+      var ID = "really-good-review", P = window.P27, G = P.G, X = P.X, hk = P.hk;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var D = KIT.scene(ID).duration;
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      // The last scene's frame: YOU buried with his SHARE rectangle, the friend sipping on her lawn.
+      P.share(cast, add, P.shift("glowing-rectangle-share", -KIT.scene("glowing-rectangle-share").duration));
+      cast.phone2 = { art: "glowing-rectangle", x: X.you, y: G - 330, scale: 150 / KIT.collage.SIZES["glowing-rectangle"][0], hidden: true,
+        label: { text: "REVIEW", at: [124, 116], width: 180, size: 28 } };
+      // The six stars, each hopping out of the rectangle to its place in a row on the ground.
+      var SK = hk("gold-star-legs", 160), STEP = 172, ROW = [];
+      for (var i = 0; i < 6; i++) {
+        ROW.push(X.star + i * STEP);
+        cast["st" + i] = { art: "gold-star-legs", x: X.you, y: G - 300, anchor: "bottom", pivot: "bottom", scale: SK, hidden: true };
+      }
+      var MID = (ROW[0] + ROW[5]) / 2, STARS = ["st0", "st1", "st2", "st3", "st4", "st5"];
+      // The pro-war algorithm: a tin robot in an army helmet with a missile painted on its chest; walking, then seated.
+      cast.roboW = { art: "robot-elbow", x: ROW[5] + 320, y: G, anchor: "bottom", pivot: "bottom", scale: hk("robot-elbow", 470), hidden: true,
+        points: { head: [268, 92], chest: [214, 190] } };
+      cast.roboS = { art: "robot", x: MID, y: G + 5, anchor: "bottom", pivot: [184, 330], scale: hk("robot", 430), hidden: true,
+        points: { head: [211, 92], chest: [168, 196] } };
+      cast.helmet = { art: "soldier-helmet", x: 0, y: 0, anchor: [229, 300], scale: hk("soldier-helmet", 112), hidden: true };
+      cast.paint = { art: "missile", x: 0, y: 0, anchor: "center", scale: hk("missile", 62), hidden: true };
+      cast.mush = { art: "mushroom", x: X.edge + 480, y: G + 40, anchor: "bottom", scale: hk("mushroom", 700), hidden: true };
+      // Grandma (Part 17, died 1987) on her headstone, a cobweb from her elbow to the stone, her poster up.
+      var STONE_TOP = G - 330 + 34;
+      cast.stone = { art: "headstone", x: X.stone, y: G, anchor: "bottom", scale: hk("headstone", 330), label: { text: "1987", at: [179, 170], width: 200, size: 70 } };
+      cast.gran = { art: "grandma-skeleton", x: X.stone - 10, y: STONE_TOP, anchor: "bottom", pivot: "bottom", scale: hk("grandma-skeleton", 470) };
+      cast.web = { art: "cobweb", x: X.stone - 90, y: STONE_TOP - 180, anchor: [280, 0], scale: hk("cobweb", 190) };
+      // Her own war-bond poster (herself, pointing), held up at her side; the words are on its blank panel.
+      var POST = { x: X.stone + 215, y: STONE_TOP - 30 }, PSK = hk("war-bond-poster", 400);
+      cast.poster = { art: "war-bond-poster", x: POST.x, y: POST.y, anchor: "bottom", pivot: "bottom", scale: PSK,
+        label: { text: "BUY BONDS", at: [183, 562], width: 310, size: 58 } };
+      cast.poster2 = { art: "war-bond-poster", x: POST.x, y: POST.y, anchor: "bottom", pivot: "bottom", scale: PSK, hidden: true,
+        label: { text: "TRIALS", at: [183, 562], width: 300, size: 80 } };
+
+      // Back to YOU, buried. "busy": the rectangle shrinks a size, to a phone.
+      add({ at: 0, do: "camera", view: "you", dur: 0.75 });
+      add({ at: -30, do: "move", who: "phone2", to: "yT.hold", dur: 0.01 });
+      add({ on: "busy", do: "swap", who: "phone1", to: "phone2" });
+      // "that,": he bursts out of the pages and runs on the spot, bone legs a blur.
+      P.PAGES.forEach(function (n, i) { add({ on: "that,", offset: i * 0.02, do: "drop", who: n, dist: 1300, spin: i % 2 ? 90 : -90, drift: (i % 2 ? 1 : -1) * 260, dur: 0.6 }); });
+      add({ on: "that,", do: "hop", who: ["yT", "yB"], height: 60 });
+      add({ on: "that,", offset: 0.25, do: "bob", who: "yT", y: 12, r: 3, speed: 7, fade: 0 });
+      add({ on: "that,", offset: 0.25, do: "bob", who: "yB", y: 12, r: 3, speed: 7, fade: 0 });
+      add({ on: "please", do: "camera", view: "stars", dur: 0.7 });
+      // A star hops out on each "really", two on "good", and a sixth elbows in on "rating".
+      var T = [cue("really,", 1), cue("really,", 2), cue("really", 3), cue("good"), cue("good") + 0.16, cue("rating")];
+      T.forEach(function (t, j) {
+        add({ at: t, do: "pop", who: "st" + j, squash: true });
+        add({ at: t + 0.02, do: "move", who: "st" + j, to: [ROW[j], G], dur: 0.3, arc: 150 });
+        add({ at: t + 0.35, do: "bob", who: "st" + j, y: 5, r: 4, speed: 2, phase: j, until: cue("overcome") + 0.6 });
+      });
+      add({ at: T[5] + 0.03, do: "nudge", who: "st4", by: [-30, 0] });
+      // "overcome": the robot stomps in; "pro-war": it plonks down on the row like a park bench, the stars squirming.
+      add({ on: "overcome", do: "slideIn", who: "roboW", from: "right", dist: 1100, over: 10 });
+      add({ on: "overcome", do: "move", who: "helmet", to: "roboW.head", dur: 0.01 });
+      add({ on: "overcome", do: "move", who: "paint", to: "roboW.chest", dur: 0.01 });
+      add({ on: "overcome", do: "show", who: ["helmet", "paint"] });
+      add({ on: "overcome", offset: 0.5, do: "shake", frames: 2, y: 6 });
+      add({ on: "pro-war", do: "swap", who: "roboW", to: "roboS" });
+      add({ on: "pro-war", do: "move", who: "helmet", to: "roboS.head", dur: 0.01 });
+      add({ on: "pro-war", do: "move", who: "paint", to: "roboS.chest", dur: 0.01 });
+      add({ on: "pro-war", do: "shake", frames: 3, y: 12 });
+      add({ on: "pro-war", do: "shiver", who: STARS, dur: cue("suppression") - cue("pro-war"), amp: 3, rot: 10 });
+      // "suppression": the stars flare, stand up under it, and carry it off on its back like a rug.
+      var S0 = cue("suppression") + 0.4, S1 = cue("someone") - 0.05, DX = X.edge - MID;
+      STARS.forEach(function (n, j) { add({ at: cue("suppression") + j * 0.03, do: "glow", who: n, size: 220, dur: 0.5 }); });
+      add({ on: "suppression", offset: 0.2, do: "hop", who: STARS, height: 40 });
+      add({ on: "suppression", offset: 0.2, do: "move", who: "roboS", by: [0, -40], turn: -80, dur: 0.17 });
+      add({ at: S0, do: "move", who: STARS.concat("roboS"), by: [DX, 0], dur: S1 - S0 });
+      add({ at: S0, do: "bob", who: STARS, y: 14, r: 8, speed: 9, until: S1, fade: 0 });
+      add({ at: S0, do: "shiver", who: "roboS", dur: S1 - S0, amp: 4, rot: 7 });
+      add({ at: S0 - 0.1, do: "camera", view: "edge", dur: S1 - S0 + 0.1 });
+      // "someone": they tip it off the edge of the paper. A white flash and a little mushroom cloud.
+      add({ on: "someone", do: "drop", who: "roboS", dist: 1500, drift: 480, spin: 70, dur: 0.5 });
+      add({ on: "someone", do: "hop", who: STARS, height: 50 });
+      add({ on: "someone", offset: 0.5, do: "hide", who: ["helmet", "paint"] });
+      add({ on: "someone", offset: 0.45, do: "boom", shake: 18, flash: 0.22 });
+      add({ on: "someone", offset: 0.45, do: "slideIn", who: "mush", from: "bottom", dist: 700, over: 20 });
+      add({ on: "someone", offset: 0.7, do: "bob", who: STARS, y: 10, r: 6, speed: 5 });
+      // The camera travels on to Grandma; "ending wars" she flips her poster; "diseases." she hops down and marches off.
+      add({ on: "spare", do: "camera", view: "grandma", dur: 0.75 });
+      add({ on: "ending", do: "swap", who: "poster", to: "poster2" });
+      add({ on: "ending", do: "hop", who: "gran", height: 14 });
+      add({ on: "diseases.", do: "hide", who: "web" });
+      add({ on: "diseases.", do: "move", who: ["gran", "poster2"], by: [280, 300], dur: 0.33, arc: 140 });
+      add({ on: "diseases.", offset: 0.35, do: "move", who: ["gran", "poster2"], by: [700, 0], dur: D - cue("diseases.") - 0.35 });
+      add({ on: "diseases.", offset: 0.35, do: "bob", who: "gran", y: 10, r: 4, speed: 6 });
+      add({ on: "diseases.", offset: 0.35, do: "bob", who: "poster2", y: 10, r: 4, speed: 6 });
+
+      KIT.collage({ id: ID, seed: 2703, plate: [-2200, -2500, 7400, 3200], views: P.views, view: "you", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -1,0 +1,103 @@
+<template id="life-jackets-handed-out-template">
+  <!-- life-jackets-handed-out · collage (Part 14, scene 7). The bit: Part 12's beach, where a billion swimmers wait
+       for two life jackets, gets a tower of them. The lifeguard on his tall chair with his rule binder, two life
+       jackets hung on the chair. "protocol,": a giant rubber stamp comes down on him: he is flattened onto the seat,
+       printed DECENTRALIZED FDA PROTOCOL. "reducing trial costs": the tag on a jacket, $41,000, deflates to $929: 44.1×.
+       "funding": a tower of life jackets climbs out of the sand to 23.4 MILLION beside the chair's two, 1.9 MILLION,
+       twelve times shorter. "Remember that billion patients drowning": the camera travels along the line of swimmers
+       to the horizon, grinning skulls bobbing politely among them. "hand out": the tower topples along the line and a
+       jacket lands on every head; the swimmers pop up like corks, the skulls get theirs a little late, and one jacket
+       sails on over the horizon. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="life-jackets-handed-out" data-width="1920" data-height="1080" data-start="0" data-duration="22">
+    <div id="life-jackets-handed-out-weave"></div>
+    <div id="life-jackets-handed-out-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "life-jackets-handed-out", V = KIT.V, G = 980, Z = KIT.collage.SIZES, cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / Z[art][1]; };
+    // Left to right on the sand G: the lifeguard's chair with its two jackets, the tower's chart, then the swimmers.
+    var CX = 420, CK = 1.55, SEAT = G - 300 * CK;                    // the chair's seat (art y 164 from the top)
+    var JK = hs("life-jacket", 120);
+    var ch = KIT.collage.axes({ box: [1100, 300, 1760, 940], x: [0, 3, 1], y: [0, 25, 5] }), bx = ch.box;
+    var cy = function (s) { return V ? G - 420 / s : 540; };
+    var views = V ? {
+      chair: [560, cy(0.78), 0.78], chart: [1300, cy(0.8), 0.8], line: [3000, cy(0.62), 0.62], wide: [2750, cy(0.36), 0.36],
+    } : {
+      chair: [800, 540, 1], chart: [1250, 540, 1], line: [3000, 470, 0.8], wide: [2950, 470, 0.62],
+    };
+    var cast = {}, beats = [], add = function (b) { beats.push(b); };
+    cast.chair = { art: "lifeguard-chair", x: CX, y: G, anchor: "bottom", pivot: "bottom", scale: CK };
+    cast.guard = { art: "lifeguard", x: CX - 20, y: SEAT, anchor: "bottom", pivot: "bottom", scale: hs("lifeguard", 430) };
+    cast.flat = { art: "lifeguard-flat", x: CX - 20, y: SEAT + 6, anchor: "bottom", pivot: "bottom", scale: 330 / Z["lifeguard-flat"][0], hidden: true };
+    // the two life jackets, hung on the chair's side: today's 1.9 million
+    cast.j1 = { art: "life-jacket", x: CX + 230, y: G - 70, scale: JK * 1.4 };
+    cast.j2 = { art: "life-jacket", x: CX + 230, y: G - 230, scale: JK * 1.4 };
+
+    // the swimmers in line to the horizon, smaller and higher; every fourth one already a skull
+    var N = 26, LINE = [], px = 2000;
+    for (var i = 0; i < N; i++) {
+      var k = Math.pow(0.94, i), skull = i % 4 === 3, art = skull ? "swimmer-skull" : "swimmer", h = 300 * k, y = G - (1 - k) * 330;
+      cast["s" + i] = { art: art, x: px, y: y, anchor: "bottom", pivot: "bottom", scale: hs(art, h) };
+      LINE.push({ name: "s" + i, x: px, y: y, h: h, late: skull });
+      px += 230 * k;
+    }
+
+    // ── one protocol: the stamp comes down on the lifeguard ──
+    add({ at: 0.2, do: "bob", who: "guard", y: 3, r: 2, speed: 1.2, until: "protocol," });
+    add({ on: "protocol,", offset: -0.05, do: "swap", who: "guard", to: "flat" });
+    add({ on: "protocol,", offset: -0.05, do: "stamp", id: "proto", text: "DECENTRALIZED FDA PROTOCOL", x: CX, y: SEAT - 170, size: 56, width: 520, tilt: -6, from: 2.6 });
+    add({ on: "protocol,", do: "shake", y: 18, frames: 4 });
+    add({ on: "reducing", offset: -0.3, do: "blink", who: "flat" });
+    // ── the tag on a jacket deflates: 44.1 times cheaper ──
+    add({ on: "reducing", do: "tag", id: "dear", who: "j2", text: "$41,000", x: CX + 520, y: G - 470, w: 380, h: 170, knot: [380, 120], swing: 4 });
+    add({ on: "forty-four", do: "hide", who: "dear" });
+    add({ on: "forty-four", do: "tag", id: "cheap", who: "j2", text: "$929", x: CX + 420, y: G - 420, w: 170, h: 80, knot: [380, 120], swing: 8 });
+    add({ on: "times", do: "stamp", id: "x441", text: "44.1×", x: CX + 560, y: G - 650, size: 110, width: 320, tilt: -6 });
+    // ── 23.4 million against 1.9 million: a tower of jackets climbs out of the sand ──
+    add({ on: "and", n: 1, offset: -0.1, do: "camera", view: "chart", dur: 0.8 });
+    add({ on: "and", n: 1, do: "line", id: "axes", points: [[bx[0], bx[1] - 40], [bx[0], bx[3]], [bx[2] + 40, bx[3]]], color: "ink", width: 7, dur: 0.35 });
+    add({ on: "funding", do: "banner", id: "title", text: "PATIENTS IN TRIALS A YEAR", x: (bx[0] + bx[2]) / 2, y: bx[1] - 120, size: 58, width: 680, pad: 50, color: "ink", tilt: -1 });
+    var JH = 70, JGAP = 27, top23 = ch.pt(2, 23.4)[1], NT = Math.max(1, Math.round((bx[3] - top23 - JH) / JGAP) + 1);
+    add({ on: "twenty-three", do: "pile", id: "tower", chart: ch, x: 2, to: 23.4, art: "life-jacket", height: JH, gap: JGAP, until: "patients", accel: 0.6, jitter: 5, tilt: 4 });
+    add({ on: "million", n: 1, offset: 0.1, do: "stamp", id: "big", text: "23.4 MILLION", x: ch.pt(2, 0)[0], y: top23 - 70, size: 64, width: 400, tilt: -4 });
+    add({ on: "one", n: 2, do: "pile", id: "today", chart: ch, x: 1, to: 1.9, art: "life-jacket", height: JH, gap: JGAP, dur: 0.3 });
+    add({ on: "million", n: 2, offset: 0.1, do: "stamp", id: "small", text: "1.9 MILLION", x: ch.pt(1, 0)[0], y: ch.pt(1, 1.9)[1] - 150, size: 54, width: 330, tilt: 3 });
+    // ── the billion in line, drowning politely ──
+    add({ on: "Remember", offset: -0.1, do: "camera", view: "line", dur: 1.4 });
+    LINE.forEach(function (p, j) {
+      add({ on: "Remember", offset: (j % 5) * 0.13, do: "bob", who: p.name, y: 22 * p.h / 300, r: 4, speed: 0.9 + (j % 3) * 0.25, until: "hand", phase: j });
+    });
+    [1, 4, 6, 9, 13].forEach(function (j, q) {
+      add({ on: "drowning", offset: q * 0.25, do: "move", who: LINE[j].name, by: [0, LINE[j].h * 0.6], dur: 0.2 });
+      add({ on: "drowning", offset: q * 0.25 + 0.55, do: "move", who: LINE[j].name, by: [0, -LINE[j].h * 0.6], dur: 0.2 });
+    });
+    // ── "hand out": the tower topples along the line; a jacket on every head ──
+    add({ on: "Your", n: 2, do: "camera", view: "wide", dur: 1.0 });
+    var HT = cue("hand") - 0.15;
+    add({ at: HT - 0.3, do: "hide", who: ["big", "small", "title"] });
+    for (var j = 0; j < NT; j++) {
+      var tgt = LINE[Math.min(N - 1, Math.round(j * (N - 1) / Math.max(1, NT - 1)))], late = tgt.late ? 0.4 : 0;
+      var t = HT + (NT - 1 - j) * 0.06 + late;
+      if (j === NT - 1) add({ at: HT, do: "move", who: "tower." + j, by: [6800, -1300], turn: 900, dur: 1.4 });
+      else {
+        add({ at: t, do: "move", who: "tower." + j, to: [tgt.x, tgt.y - tgt.h * 0.25], scale: Math.max(0.55, tgt.h / 300) * 1.6, turn: 360, dur: 0.45, arc: 260 });
+        add({ at: t + 0.45, do: "hop", who: [tgt.name, "tower." + j], height: 60 * tgt.h / 300 });
+      }
+    }
+    add({ at: HT + 0.7, do: "move", who: "j1", to: [LINE[0].x - 40, LINE[0].y - 100], turn: 380, dur: 0.5, arc: 200 });
+
+    KIT.collage({ id: ID, seed: 1407, plate: V ? [-2600, -3600, 9000, 4200] : [-1200, -1100, 7400, 2000], views: views, view: "chair", cast: cast, beats: beats });
+  </script>
+</template>

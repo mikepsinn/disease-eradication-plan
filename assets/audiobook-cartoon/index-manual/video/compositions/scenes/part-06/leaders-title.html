@@ -1,0 +1,67 @@
+<template id="leaders-title-template">
+  <!-- leaders-title · collage title card (Part 6, scene 1). The heading comes in on aged paper one word card per spoken
+       word; on "Leaders" a small Politician pops up in the empty slot at the end, grinning and waving. On "Problem."
+       the PROBLEM card drops out of the sky and lands on him (splat): he flattens, and a beat later a little hand pokes
+       out from under the card and waves weakly. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="leaders-title" data-width="1920" data-height="1080" data-start="0" data-duration="3.488">
+    <div id="leaders-title-weave"></div>
+    <div id="leaders-title-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "leaders-title", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // Rows of word cards, centred; the last word is PROBLEM, whose slot the Politician stands in.
+    var SIZE = V ? 120 : 132, PAD = 46, GAP = V ? 26 : 34;
+    var rows = V ? [["WHY", "YOUR"], ["LEADERS"], ["AREN'T", "THE"], ["PROBLEM"]] : [["WHY", "YOUR", "LEADERS"], ["AREN'T", "THE", "PROBLEM"]];
+    var rowY = V ? [430, 640, 850, 1180] : [330, 640];
+    var spoken = ["Why", "Your", "Leaders", "Aren't", "the"];
+    var cardW = function (w) { return KIT.textWidth(w, SIZE, "Fraunces", 900) + PAD; };
+    var CW = V ? 1080 : 1920, beats = [], slot = null, k = 0;
+    rows.forEach(function (row, r) {
+      var total = row.reduce(function (s, w) { return s + cardW(w); }, 0) + GAP * (row.length - 1), x = (CW - total) / 2;
+      row.forEach(function (w) {
+        var cx = x + cardW(w) / 2;
+        if (w === "PROBLEM") slot = [cx, rowY[r]];
+        else {
+          beats.push({ on: spoken[k], offset: -0.04, do: "banner", id: "w" + k, text: w, x: cx, y: rowY[r], size: SIZE, width: cardW(w) - PAD + 4, pad: PAD, color: "ink", tilt: [-2, 1.5, -1, 2, -1.5][k] });
+          k++;
+        }
+        x += cardW(w) + GAP;
+      });
+    });
+    // The Politician stands in PROBLEM's slot, his feet on the card's bottom edge.
+    var FEET = slot[1] + SIZE * 1.25 / 2, PH = V ? 400 : 380;
+    var cast = {
+      pol: { art: "politician", x: slot[0], y: FEET, anchor: "bottom", pivot: "bottom", scale: PH / SZ.politician[1], hidden: true },
+      hand: { art: "pointing-hand", x: slot[0] + cardW("PROBLEM") * 0.18, y: FEET + (V ? 70 : 60), pivot: [87, 30], scale: (V ? 190 : 210) / 288, hidden: true },
+    };
+    var T = cue("Problem."), DROP = 0.22;
+    beats = beats.concat([
+      { on: "Leaders", offset: 0.2, do: "pop", who: "pol", squash: true },
+      { on: "Leaders", offset: 0.55, do: "bob", who: "pol", y: 0, r: 6, speed: 4, until: T },
+      // PROBLEM falls from above the frame onto him.
+      { at: T - DROP, do: "banner", id: "prob", text: "PROBLEM", x: slot[0], y: -300, size: SIZE, width: cardW("PROBLEM") - PAD + 4, pad: PAD, color: "red", tilt: 0 },
+      { at: T - DROP, do: "move", who: "prob", to: [slot[0], slot[1] + 20], dur: DROP, ease: "linear" },
+      { at: T, do: "flatten", who: "pol" },
+      { at: T, do: "shake", y: 14, frames: 4 },
+      { at: T + 0.1, do: "move", who: "prob", by: [0, -20], turn: -3, dur: 0.17 },
+      // a little hand pokes out from under it and waves weakly
+      { at: T + 0.65, do: "pop", who: "hand" },
+      { at: T + 0.65, do: "move", who: "hand", by: [0, 0], turn: -25, dur: 0.01 },
+      { at: T + 0.8, do: "shiver", who: "hand", dur: 0.7, amp: 2, rot: 12 },
+    ]);
+    KIT.collage({ id: ID, seed: 601, cast: cast, beats: beats });
+  </script>
+</template>

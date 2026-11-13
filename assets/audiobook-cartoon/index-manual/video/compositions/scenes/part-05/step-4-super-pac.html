@@ -1,0 +1,92 @@
+<template id="step-4-super-pac-template">
+  <!-- step-4-super-pac · collage (Part 5, scene 7; plate the-rally). The bit: the same friend, without the limit. The
+       Politician (LEGAL still on his forehead) waves from his podium; a little tan PAC backpack gulps five bills and is
+       full. "Super": the Super PAC, a backpack in a red cape, swoops down from the sky and lands in a hero pose.
+       "super.": it gleams. "unlimited": a river of bills pours into it and the little PAC bursts. "win.": it buys a
+       tower of campaign posters of his grin that lifts the podium until his head bonks the top of the frame.
+       "bribery": back down at the Super PAC, its patch peels up: BRIBERY is painted underneath; "else.": a gloved hand
+       reaches in and pats it down. (The rally bunting is not drawn yet: MISSING-ART.md.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="step-4-super-pac" data-width="1920" data-height="1080" data-start="0" data-duration="17.98">
+    <div id="step-4-super-pac-weave"></div>
+    <div id="step-4-super-pac-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "step-4-super-pac", V = KIT.V;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var G = 1000, PACX = 640, CX = 1080, PX = 1660, PACK = 0.62, CK = 1.2, PK = 1.12, PLK = 1.0, RISE = 600;
+      var cart = function (p) { return [CX - 237 * CK + p[0] * CK, G - 400 * CK + p[1] * CK]; };   // super-pac art px -> plate
+      var pac = function (p) { return [PACX - 166 * PACK + p[0] * PACK, G - 395 * PACK + p[1] * PACK]; };
+      var SLOT = pac([150, 40]), PATCH = cart([295, 138]), MOUTH = cart([300, 50]);
+      var views = V ? {
+        wide: [1160, 440, 0.75], high: [1300, 250, 0.75], close: [CX + 60, 760, 1.5],
+      } : {
+        wide: [1180, 620, 0.9], high: [1320, 0, 0.9], close: [CX + 80, 700, 1.7],
+      };
+
+      var cast = {
+        pol: { art: "politician", x: PX, y: G, anchor: "bottom", pivot: "bottom", scale: PK },
+        podium: { art: "podium", x: PX + 10, y: G + 10, anchor: "bottom", pivot: "bottom", scale: PLK },
+        pac: { art: "pac", x: PACX, y: G, anchor: "bottom", pivot: "bottom", scale: PACK, label: { text: "PAC", at: [128, 110], width: 90, size: 56 } },
+        cart: { art: "super-pac", x: CX, y: G, anchor: "bottom", pivot: "bottom", scale: CK, hidden: true, label: { text: "BRIBERY", at: [295, 140], width: 128, size: 40 } },
+        // the SUPER PAC patch over the word, which peels up from its top left corner
+        patch: { art: "sticker", x: PATCH[0], y: PATCH[1], scale: 0.72, pivot: [12, 14], hidden: true, label: { text: "SUPER PAC", at: [128, 92], width: 210, size: 50 } },
+        hand: { art: "gloved-hand", x: PATCH[0] - 300, y: PATCH[1] + 20, scale: 0.75, hidden: true },
+      };
+
+      var beats = [
+        // LEGAL is still on his forehead from step 3; he waves from the podium
+        { at: -1, do: "stamp", id: "legalPol", who: "pol", spot: [168, 30], text: "LEGAL", size: 22, width: 80, tilt: -6, from: 1 },
+        { at: 0, do: "bob", who: "pol", y: 4, r: 1.5, speed: 1.2, until: "Politicians" },
+        // "Give": a file of bills walks to the little PAC; it gulps five, and its flap won't shut
+        { at: 0, do: "march", id: "five", art: "bill-plain", count: 5, scale: 0.4, path: [[-300, G], [PACX - 200, G]], speed: 520 },
+      ];
+      for (var i = 0; i < 5; i++) {
+        var t = cue("Give") + 0.38 * i;
+        beats.push({ at: t, do: "move", who: "five." + i, to: SLOT, dur: 0.25, arc: 120 });
+        beats.push({ at: t + 0.25, do: "hide", who: "five." + i });
+        beats.push({ at: t + 0.25, do: "shiver", who: "pac", dur: 0.18, amp: 3 + i, rot: 1 + i });
+      }
+      beats = beats.concat([
+        { on: "Friends", do: "shiver", who: "pac", dur: 0.9, amp: 4, rot: 3 },
+        // "Super PACs": the Super PAC swoops down from the sky and lands beside it, hero pose
+        { on: "\"Super", offset: -0.3, do: "slideIn", who: ["cart", "patch"], from: "top", dist: 1600, over: 40, tilt: 8 },
+        { on: "\"Super", offset: 0.25, do: "shake", y: 9, frames: 3 },
+        { on: "normal", do: "shiver", who: "pac", dur: 0.4, amp: 3, rot: 4 },
+        { on: "super.", n: 2, do: "glow", who: "cart", size: 640, dur: 0.6 },
+        // "unlimited papers": a river of bills pours into it, which never fills; the little PAC bursts
+        { on: "These", do: "march", id: "river", art: "bill-plain", count: 30, scale: 0.33, path: [[-700, G], [PACX - 220, G], [CX - 200, MOUTH[1] - 160], MOUTH], speed: 1500, gap: 58, end: "hide" },
+        { on: "papers", n: 2, do: "flatten", who: "pac" },
+        { on: "papers", n: 2, do: "shake", y: 5, frames: 2 },
+        // "win.": it buys a tower of campaign posters that lifts his podium up and up, until his head bonks the top
+        { on: "spend", do: "shiver", who: "cart", dur: cue("win.") - cue("spend"), amp: 5, rot: 2 },
+        { on: "spend", do: "pile", id: "posters", art: "campaign-poster", scale: 0.5, x: PX, y: G + 10, count: 3, gap: (RISE - 224) / 2, until: cue("win.") - 0.1, accel: 1, jitter: 8, tilt: 5 },
+        { on: "spend", offset: 0.25, do: "move", who: ["podium", "pol"], by: [0, -RISE], dur: cue("win.") - cue("spend") - 0.25 },
+        { on: "spend", do: "camera", view: "high", dur: cue("win.") - cue("spend") },
+        { on: "win.", offset: 0.05, do: "shake", y: -10, frames: 3 },
+        { on: "win.", offset: 0.05, do: "shiver", who: "pol", dur: 0.6, amp: 4, rot: 5 },
+        // "bribery": back down at the Super PAC; its patch peels up and BRIBERY is painted under it
+        { on: "This", do: "camera", view: "close", dur: 0.7 },
+        { on: "bribery", do: "hinge", who: "patch", angle: -62, frames: 3, hold: cue("else.") - cue("bribery") + 0.05 },
+        // "else.": a gloved hand reaches in and pats it back down
+        { on: "something", offset: -0.25, do: "slideIn", who: "hand", from: "left", dist: 900, over: 16 },
+        { on: "else.", do: "nudge", who: "hand", by: [40, 12] },
+        { on: "else.", offset: 0.25, do: "nudge", who: "hand", by: [30, 10] },
+      ]);
+
+      KIT.collage({ id: ID, seed: 355, plate: [-1800, -1800, 3800, 2600], views: views, view: "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

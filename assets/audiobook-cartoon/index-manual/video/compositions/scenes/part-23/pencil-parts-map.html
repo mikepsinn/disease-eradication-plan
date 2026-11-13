@@ -1,0 +1,239 @@
+<template id="pencil-parts-map-template">
+  <!-- pencil-parts-map · collage (Part 23, scenes 4 to 7 as one plate: the pencil). The bit: the world, a big engraved
+       world map hung on the back wall of an empty office, and a pencil that nobody makes. The camera lives on the map.
+       "wood": the pencil comes apart over the middle of the Atlantic; the wood flies to Washington and a tree pops up
+       where it lands (the lumberjack scratches his head); the lead dives down a mine shaft in South America and a miner
+       pops out black with graphite, blinking; the eraser bounces east to Malaya and lands in a rubber tapper's cup; the
+       brass band floats about, gives up on "from." and plops into the sea, where the map's sea serpent surfaces and
+       sniffs it. "Literally thousands": pull back; strangers pop up shoulder to shoulder along
+       dashed routes, and the parts pass back to the middle and snap together. Speech balloons in different languages;
+       on "religions," everyone hops. "met.": two strangers over the eraser vanish into a cartoon brawl, and the eraser
+       shoots out of it onto the end of the pencil. "No one sitting": the camera pulls out of the map into the empty
+       office: a door lettered CENTRAL OFFICE, an MP helmet and nightstick on a hook, a swivel chair, a desk with a telephone that
+       rings itself; a tumbleweed rolls through. The nightstick slips off and bonks the empty chair; a spider lowers itself into the chair. "A pencil
+       costs": back to the pencil, 25¢. More strangers on more routes. "planned": THE PLAN, blank, on the desk.
+       "runs": the spider rolls past in the chair. "money,": a coin over the pencil shatters into coins, one to every
+       stranger. "pencils.": the cash register, nobody at it, rings itself and spills pencils over the spider. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="pencil-parts-map" data-width="1920" data-height="1080" data-start="0" data-duration="47.8">
+    <div id="pencil-parts-map-weave"></div>
+    <div id="pencil-parts-map-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "pencil-parts-map", V = KIT.V, Z = KIT.collage.SIZES;
+      var T = function (w, n) { return KIT.cue(ID, w, n); };
+      var hk = function (art, h) { return h / Z[art][1]; };
+      // ── The plate (shared with cure-chain-lagos-to-new-york: keep the two in step) ──
+      // The world map on the wall: world-map at 10x, its top-left at (0, 0), so an art point (x, y) is plate (10x, 10y).
+      var GK = 10, on = function (x, y) { return [x * GK, y * GK]; };
+      var SEA = on(180, 150), WASH = on(66, 98), MINE = on(126, 192), MALAYA = on(366, 174);
+      var NYC = on(112, 108), BRUX = on(231, 92), LAGOS = on(222, 162), MANILA = on(388, 158);
+      // The office under it, on the floor line G: the door, the hook and helmet, the swivel chair, the desk.
+      var G = 5000, DOOR = [-1300, G], HOOK = [-480, 3300], CHAIR = [500, G], CK = hk("swivel-chair", 1250);
+      var DESK = [1700, G], DK = hk("desk", 1200), DTOP = G - 1200 + 120 * DK, SEAT = [CHAIR[0] + 10, G - 1250 * 0.52];
+      var views = {
+        sea: [SEA[0], SEA[1], 0.85], seaWide: [SEA[0], SEA[1], 0.55], wash: [WASH[0] + 200, WASH[1] - 160, 0.8], mine: [MINE[0] + 40, MINE[1] - 200, 0.8],
+        malaya: [MALAYA[0] - 160, MALAYA[1] - 120, 0.8], globe: V ? [2340, 1700, 0.23] : [2340, 1700, 0.32],
+        office: V ? [700, 3100, 0.27] : [1300, 3000, 0.27], door: V ? [-200, 3950, 0.55] : [-700, 4150, 0.62], desk: V ? [1800, 4150, 0.72] : [1500, 4250, 0.62],
+      };
+      var cast = {
+        globe: { art: "world-map", x: 0, y: 0, anchor: "topleft", scale: GK },
+        door: { art: "deleted-door", x: DOOR[0], y: G, anchor: "bottom", scale: hk("deleted-door", 2000), label: { text: "CENTRAL OFFICE", at: [120, 112], width: 118, size: 22 } },
+        hook: { art: "push-pin", x: HOOK[0], y: HOOK[1], scale: hk("push-pin", 150) },
+        stick: { art: "nightstick", x: HOOK[0] + 260, y: HOOK[1] + 260, scale: hk("nightstick", 520) },
+        helmet: { art: "mp-helmet", x: HOOK[0], y: HOOK[1] + 200, scale: hk("mp-helmet", 380), label: { text: "MP", at: [180, 170], width: 130, size: 90 } },
+        desk: { art: "desk", x: DESK[0], y: G, anchor: "bottom", scale: DK },
+        bell: { art: "telephone", x: DESK[0] - 400, y: DTOP, anchor: "bottom", pivot: "bottom", scale: hk("telephone", 260) },
+        plan: { art: "plan-clipboard", x: DESK[0] - 160, y: DTOP, anchor: "bottom", pivot: "bottom", scale: hk("plan-clipboard", 520), hidden: true, label: { text: "THE PLAN", at: [171, 130], width: 230, size: 46 } },
+        till: { art: "cash-register", x: DESK[0] + 400, y: DTOP, anchor: "bottom", pivot: "bottom", scale: hk("cash-register", 640) },
+        drawer: { art: "cash-drawer", x: DESK[0] + 400, y: DTOP - 90, scale: hk("cash-drawer", 260), hidden: true },
+        chair: { art: "swivel-chair", x: CHAIR[0], y: G, anchor: "bottom", pivot: "bottom", scale: CK },
+        spider: { art: "spider", x: SEAT[0], y: SEAT[1], anchor: "bottom", pivot: "bottom", scale: hk("spider", 900), hidden: true },
+        // the places on the globe
+        tree: { art: "apple-tree", x: WASH[0] + 80, y: WASH[1] + 40, anchor: "bottom", pivot: "bottom", scale: hk("apple-tree", 560), hidden: true },
+        jack: { art: "lumberjack", x: WASH[0] + 420, y: WASH[1] + 40, anchor: "bottom", pivot: "bottom", scale: hk("lumberjack", 560) },
+        shaft: { art: "trapdoor-open", x: MINE[0], y: MINE[1], scale: hk("trapdoor-open", 300) },
+        miner: { art: "miner", x: MINE[0], y: MINE[1] - 60, anchor: "bottom", pivot: "bottom", scale: hk("miner", 420), hidden: true, eyes: [[112, 70], [132, 70]], eyeSize: 26 },
+        tapper: { art: "rubber-tapper", x: MALAYA[0], y: MALAYA[1] + 300, anchor: "bottom", pivot: "bottom", scale: hk("rubber-tapper", 600) },
+        tumble: { art: "tumbleweed", x: -3600, y: G - 280, scale: hk("tumbleweed", 560) },
+        splash: { art: "cloud-puff", x: 0, y: 0, scale: 1.2, hidden: true },
+        monster: { art: "world-map-serpent", x: 0, y: 0, anchor: "bottom", scale: hk("world-map-serpent", 520), hidden: true },
+      };
+      // The pencil, as its parts: clips of the one cut-out, all drawn at the same spot, so each part's anchor is the
+      // whole pencil's middle; a part goes to its place in the pencil with `to: SEA`. OFF is where each part's own middle
+      // sits from that anchor, so `to: [P - OFF]` puts the part itself on P.
+      var PK = 2.2, PART = { lead: [0, 48, 0, 83], woodT: [48, 395, 0, 41], woodB: [48, 395, 41, 83], brass: [395, 460, 0, 83], rub: [460, 511, 0, 83] }, OFF = {};
+      Object.keys(PART).forEach(function (n) {
+        var c = PART[n];
+        cast[n] = { art: "pencil", x: SEA[0], y: SEA[1], scale: PK, clip: [[c[0], c[2]], [c[1], c[2]], [c[1], c[3]], [c[0], c[3]]] };
+        OFF[n] = [((c[0] + c[1]) / 2 - 255.5) * PK, ((c[2] + c[3]) / 2 - 41.5) * PK];
+      });
+      var CUP = [MALAYA[0] + (165 - 97.5) * hk("rubber-tapper", 600), MALAYA[1] + 300 - 600 + 180 * hk("rubber-tapper", 600)];
+      var at = function (n, p, dx, dy) { return [p[0] + (dx || 0) - OFF[n][0], p[1] + (dy || 0) - OFF[n][1]]; };
+      // The brawl, two-thirds of the way along the Malaya route.
+      var BRAWL = [MALAYA[0] + (SEA[0] - MALAYA[0]) * 0.45, MALAYA[1] + (SEA[1] - MALAYA[1]) * 0.45 - 60];
+      views.brawl = [BRAWL[0], BRAWL[1] - 180, 0.9];
+      cast.b1 = { art: "citizen-8", x: BRAWL[0] - 230, y: BRAWL[1] + 230, anchor: "bottom", pivot: "bottom", scale: hk("citizen-8", 520), hidden: true };
+      cast.b2 = { art: "citizen-11", x: BRAWL[0] + 230, y: BRAWL[1] + 230, anchor: "bottom", pivot: "bottom", scale: hk("citizen-11", 520), hidden: true };
+      cast.dust = { art: "cloud-puff", x: BRAWL[0], y: BRAWL[1] - 20, scale: 2.4, hidden: true };
+      cast.star1 = { art: "gold-star", x: BRAWL[0] - 150, y: BRAWL[1] - 240, scale: 0.45, hidden: true };
+      cast.star2 = { art: "gold-star", x: BRAWL[0] + 200, y: BRAWL[1] - 120, scale: 0.35, hidden: true };
+      cast.fist = { art: "gloved-hand", x: BRAWL[0] + 60, y: BRAWL[1] - 260, scale: 0.7, hidden: true };
+      // speech balloons over the handovers, each in another language
+      var balloon = function (p, art, text) { return { art: art, x: p[0], y: p[1] - 820, scale: hk(art, 800), hidden: true, label: { text: text, at: [237, 165], width: 340, size: 78 } }; };
+      var mid = function (a, b, u) { return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; };
+      cast.sb0 = balloon(mid(WASH, SEA, 0.45), "speech-bubbles-neat", "HOWDY!");
+      cast.sb1 = balloon(mid(MINE, SEA, 0.5), "speech-bubbles-scribble", "¡HOLA!");
+      cast.sb2 = balloon(mid(MALAYA, SEA, 0.75), "speech-bubbles-neat", "SALAM!");
+      cast.sb3 = balloon(mid(LAGOS, SEA, 0.6), "speech-bubbles-scribble", "BONJOUR!");
+      // the coin over the pencil and the coins it breaks into
+      cast.coin = { art: "coin", x: SEA[0], y: SEA[1] - 420, scale: hk("coin", 420), hidden: true };
+
+      var beats = [{ at: 0, do: "line", id: "floor", points: [[-7000, G], [9000, G]], color: "ink", width: 16, dur: 0.01 }];
+      var add = function (b) { beats.push(b); };
+      var ALL = Object.keys(PART);
+      // ── Scene 4: the parts fly home ──
+      add({ at: 0, do: "bob", who: ALL, y: 8, r: 0, speed: 0.7, until: "wood" });
+      add({ on: "wood", do: "camera", view: "wash", dur: 0.45 });
+      add({ on: "wood", do: "move", who: "woodT", to: at("woodT", WASH, 80, -260), dur: 0.55, arc: 160 });
+      add({ on: "wood", offset: 0.05, do: "move", who: "woodB", to: at("woodB", WASH, 80, -190), dur: 0.55, arc: 120 });
+      add({ on: "tree", do: "shiver", who: ["woodT", "woodB"], dur: 0.4, amp: 6, rot: 0 });
+      add({ on: "Washington.", do: "hide", who: ["woodT", "woodB"] });
+      add({ on: "Washington.", do: "pop", who: "tree", squash: true });
+      add({ on: "Washington.", offset: 0.35, do: "shiver", who: "jack", dur: 0.6, amp: 3, rot: 4 });
+      add({ on: "graphite", do: "camera", view: "mine", dur: 0.4 });
+      add({ on: "graphite", do: "move", who: "lead", to: at("lead", MINE, 0, -240), dur: 0.4, arc: 100 });
+      add({ on: "from", n: 2, do: "move", who: "lead", to: at("lead", MINE, 0, 0), dur: 0.15 });
+      add({ on: "from", n: 2, offset: 0.15, do: "hide", who: "lead" });
+      add({ on: "mines", do: "pop", who: "miner", squash: true });
+      add({ on: "mines", do: "char", who: "miner" });
+      add({ on: "America.", do: "blink", who: "miner" });
+      add({ on: "rubber", do: "camera", view: "malaya", dur: 0.5 });
+      add({ on: "rubber", do: "move", who: "rub", to: at("rub", mid(SEA, MALAYA, 0.55), 0, -100), dur: 0.38, arc: 260 });
+      add({ on: "rubber", offset: 0.4, do: "move", who: "rub", to: at("rub", CUP), dur: 0.38, arc: 200 });
+      add({ on: "Malaya.", do: "hide", who: "rub" });
+      add({ on: "Malaya.", do: "hop", who: "tapper", height: 40 });
+      add({ on: "brass", do: "camera", view: "seaWide", dur: 0.5 });
+      add({ on: "ferrule,", do: "move", who: "brass", by: [-520, -360], dur: 0.8, ease: "smooth" });
+      add({ on: "slightest", do: "move", who: "brass", by: [700, -120], dur: 0.8, ease: "smooth" });
+      add({ on: "where", do: "move", who: "brass", by: [-660, 520], dur: 0.5, ease: "smooth" });
+      var PLOP = [SEA[0] - 520 + 700 - 660 + OFF.brass[0], SEA[1] - 360 - 120 + 520 + 150];
+      add({ on: "from", n: 4, do: "move", who: "brass", by: [0, 150], dur: 0.15 });
+      add({ on: "from", n: 4, offset: 0.15, do: "hide", who: "brass" });
+      add({ on: "from", n: 4, offset: 0.15, do: "move", who: "splash", to: PLOP, dur: 0.01 });
+      add({ on: "from", n: 4, offset: 0.15, do: "pop", who: "splash" });
+      add({ on: "from", n: 4, offset: 0.5, do: "pop", who: "splash", out: true });
+      add({ on: "from", n: 4, offset: 0.4, do: "move", who: "monster", to: [PLOP[0], PLOP[1] + 120], dur: 0.01 });
+      add({ on: "from", n: 4, offset: 0.45, do: "pop", who: "monster" });
+      add({ on: "from", n: 4, offset: 0.75, do: "shiver", who: "monster", dur: 0.35, amp: 4, rot: 8 });
+      add({ on: "from", n: 4, offset: 1.1, do: "move", who: "monster", by: [0, 200], dur: 0.25 });
+      add({ on: "from", n: 4, offset: 1.3, do: "hide", who: "monster" });
+
+      // ── Scene 5: thousands of strangers pass them back ──
+      var route = function (a, b, n, u0, u1) { var p = []; for (var i = 0; i < n; i++) p.push(mid(a, b, u0 + (u1 - u0) * i / (n - 1))); return p; };
+      var CIT = ["citizen-1", "citizen-2", "citizen-4", "citizen-5", "citizen-7", "citizen-9", "citizen-10", "citizen-12"];
+      var stranger = function (id, pts, w, until, off) { return { on: w, offset: off || 0, do: "chain", id: id, points: pts, art: CIT, height: 420, line: false, until: until, accel: 0.8 }; };
+      var dashed = function (id, a, b, w, off) { return { on: w, offset: off || 0, do: "line", id: id, points: [a, b], color: "ink", width: 12, dash: [40, 30], dur: 0.5 }; };
+      add({ on: "Literally", do: "camera", view: "globe", dur: 1.0 });
+      add(dashed("rW", WASH, SEA, "Literally", 0.2)); add(dashed("rM", MINE, SEA, "Literally", 0.25)); add(dashed("rL", MALAYA, SEA, "Literally", 0.3));
+      var PW = route(WASH, SEA, 6, 0.1, 0.8), PM = route(MINE, SEA, 6, 0.1, 0.8), PL = route(MALAYA, SEA, 7, 0.1, 0.85);
+      add(stranger("sW", PW, "thousands", "cooperated")); add(stranger("sM", PM, "thousands", "cooperated", 0.1)); add(stranger("sL", PL, "thousands", "cooperated", 0.2));
+      // the parts come back hand to hand and snap together; the eraser is slower
+      add({ on: "cooperated", do: "show", who: ["woodT", "woodB", "lead", "brass", "rub"] });
+      add({ on: "cooperated", do: "move", who: "woodT", to: at("woodT", WASH, 0, -200), dur: 0.01 });
+      add({ on: "cooperated", do: "move", who: "woodB", to: at("woodB", WASH, 0, -150), dur: 0.01 });
+      add({ on: "cooperated", do: "move", who: "lead", to: at("lead", MINE, 0, -200), dur: 0.01 });
+      add({ on: "cooperated", do: "move", who: "rub", to: at("rub", MALAYA, 0, -200), dur: 0.01 });
+      add({ on: "cooperated", offset: 0.05, do: "move", who: ["woodT", "woodB", "lead", "brass"], to: SEA, dur: 1.2 });
+      add({ on: "pencil.", do: "hop", who: ["woodT", "woodB", "lead", "brass"], height: 40 });
+      add({ on: "pencil.", do: "shake", y: 4, frames: 2 });
+      add({ on: "cooperated", offset: 0.05, do: "move", who: "rub", to: at("rub", BRAWL, 0, -120), dur: T("who", 3) - T("cooperated") - 0.2 });
+      // different languages; different hats (everyone hops)
+      add({ on: "language,", do: "pop", who: "sb0" }); add({ on: "language,", offset: 0.12, do: "pop", who: "sb1" });
+      add({ on: "language,", offset: 0.24, do: "pop", who: "sb2" }); add({ on: "language,", offset: 0.36, do: "pop", who: "sb3" });
+      add({ on: "religions,", do: "pop", who: ["sb0", "sb1", "sb2", "sb3"], out: true });
+      add({ on: "religions,", do: "hop", who: ["sW", "sM", "sL"], height: 70 });
+      // "might hate one another": push in on two strangers over the eraser; "met.": the brawl
+      add({ on: "who", n: 3, do: "camera", view: "brawl", dur: 0.5 });
+      add({ on: "who", n: 3, do: "pop", who: ["b1", "b2"] });
+      add({ on: "hate", do: "nudge", who: "b1", by: [40, 0] });
+      add({ on: "another", do: "nudge", who: "b2", by: [-40, 0] });
+      add({ on: "met.", do: "hide", who: ["b1", "b2"] });
+      add({ on: "met.", do: "pop", who: "dust", squash: true });
+      add({ on: "met.", do: "shiver", who: "dust", dur: 0.8, amp: 18, rot: 6 });
+      add({ on: "met.", do: "shake", x: 10, frames: 4 });
+      add({ on: "met.", offset: 0.1, do: "pop", who: "star1" }); add({ on: "met.", offset: 0.25, do: "pop", who: "fist" }); add({ on: "met.", offset: 0.4, do: "pop", who: "star2" });
+      add({ on: "met.", offset: 0.15, do: "move", who: "star1", by: [-300, -200], turn: 90, dur: 0.6 });
+      add({ on: "met.", offset: 0.3, do: "move", who: "fist", by: [200, -260], turn: -40, dur: 0.5 });
+      add({ on: "met.", offset: 0.45, do: "move", who: "star2", by: [320, -80], turn: -90, dur: 0.5 });
+      var SHOOT = T("met.") + 0.75;
+      add({ at: SHOOT, do: "camera", view: "seaWide", dur: 0.25 });
+      add({ at: SHOOT, do: "move", who: "rub", to: SEA, dur: 0.22, arc: 260 });
+      add({ at: SHOOT + 0.25, do: "hop", who: ALL, height: 30 });
+      add({ at: SHOOT, do: "hide", who: ["star1", "star2", "fist", "dust"] });
+      add({ at: SHOOT, do: "show", who: ["b1", "b2"] });
+
+      // ── Scene 6: the camera pulls out of the globe; nobody in the office ──
+      add({ on: "No", n: 1, do: "camera", view: "office", dur: 1.2 });
+      add({ on: "sitting", do: "shiver", who: "chair", dur: 0.8, amp: 14, rot: 2 });
+      add({ on: "gave", do: "shiver", who: "bell", dur: 0.25, amp: 4, rot: 10 });
+      add({ on: "orders", n: 1, do: "shiver", who: "bell", dur: 0.25, amp: 4, rot: 10 });
+      add({ on: "thousands", n: 2, do: "move", who: "tumble", by: [6800, 0], turn: 900, dur: 1.6 });
+      add({ on: "military", do: "camera", view: "door", dur: 0.6 });
+      add({ on: "police", do: "shiver", who: "helmet", dur: 0.3, amp: 2, rot: 6 });
+      add({ on: "enforced", do: "move", who: "stick", to: [CHAIR[0], G - 1250 + 140], arc: 300, turn: 200, dur: 0.35 });
+      add({ on: "enforced", offset: 0.35, do: "shiver", who: "chair", dur: 0.6, amp: 16, rot: 3 });
+      add({ on: "enforced", offset: 0.35, do: "drop", who: "stick", dist: 1600, spin: 120, drift: -300, dur: 0.6 });
+      add({ on: "not", n: 1, do: "slideIn", who: "spider", from: "top", dist: 2000, over: 30 });
+      add({ on: "given.\"", do: "bob", who: "spider", y: 10, r: 4, speed: 1.2, until: ["A", 1, -0.1] });
+
+      // ── Scene 7: the price system ──
+      add({ on: "A", n: 3, do: "camera", view: "seaWide", dur: 0.9 });
+      add({ on: "cents.", do: "tag", id: "price", who: "woodT", text: "25¢", x: SEA[0] + 420, y: SEA[1] - 400, w: 420, h: 220, knot: [300, 6], swing: 5 });
+      add({ on: "Making", do: "camera", view: "globe", dur: 0.8 });
+      add(dashed("rN", NYC, SEA, "dozens", -0.3)); add(dashed("rB", BRUX, SEA, "dozens", -0.25)); add(dashed("rG", LAGOS, SEA, "dozens", -0.2)); add(dashed("rP", MANILA, SEA, "dozens", -0.15));
+      var PN = route(NYC, SEA, 4, 0.1, 0.75), PB = route(BRUX, SEA, 5, 0.1, 0.8), PG = route(LAGOS, SEA, 5, 0.1, 0.8), PP = route(MANILA, SEA, 7, 0.1, 0.85);
+      add(stranger("sN", PN, "dozens", "countries.")); add(stranger("sB", PB, "dozens", "countries.", 0.1));
+      add(stranger("sG", PG, "dozens", "countries.", 0.2)); add(stranger("sP", PP, "dozens", "countries.", 0.3));
+      // "Nobody planned it": THE PLAN on the desk, blank
+      add({ on: "Nobody", n: 1, do: "camera", view: "desk", dur: 0.5 });
+      add({ on: "planned", do: "pop", who: "plan", squash: true });
+      // "Nobody runs it": the spider rolls past in the chair, feet up
+      add({ on: "runs", offset: -0.2, do: "move", who: ["chair", "spider"], by: [1700, 0], dur: 1.1 });
+      add({ on: "runs", offset: -0.2, do: "shiver", who: ["chair", "spider"], dur: 1.1, amp: 3, rot: 2 });
+      // "money,": a coin over the pencil breaks into coins, one to every stranger
+      add({ on: "Everyone", do: "camera", view: "globe", dur: 0.6 });
+      add({ on: "wanted", do: "pop", who: "coin" });
+      add({ on: "money,", do: "shiver", who: "coin", dur: 0.25, amp: 6, rot: 10 });
+      add({ on: "money,", offset: 0.25, do: "hide", who: "coin" });
+      var GETS = [PW[1], PW[4], PM[2], PM[5], PL[1], PL[4], PN[1], PN[3], PB[2], PB[4], PG[1], PG[3], PP[2], PP[5]];
+      GETS.forEach(function (p, i) {
+        cast["c" + i] = { art: "coin", x: SEA[0], y: SEA[1] - 420, scale: hk("coin", 120), hidden: true };
+        add({ on: "money,", offset: 0.25, do: "show", who: "c" + i });
+        add({ on: "money,", offset: 0.25 + i * 0.03, do: "move", who: "c" + i, to: [p[0], p[1] - 360], arc: 200, dur: 0.45 });
+        add({ on: "and", n: 1, offset: 0.1, do: "hop", who: "c" + i, height: 30 });
+      });
+      // "pencils.": the till rings itself and spills pencils over the spider
+      add({ on: "price", do: "camera", view: "desk", dur: 0.5 });
+      add({ on: "selfishness", do: "shiver", who: "till", dur: T("pencils.") - T("selfishness"), amp: 6, rot: 3 });
+      add({ on: "pencils.", do: "pop", who: "drawer" });
+      add({ on: "pencils.", do: "move", who: "drawer", by: [0, 160], dur: 0.12 });
+      add({ on: "pencils.", offset: 0.05, do: "pile", id: "spill", art: "pencil", height: 120, count: 36, heap: 8, spread: 300, x: CHAIR[0] + 1700, y: G, dist: 1600, dur: 1.0, accel: 0.8, tilt: 40, jitter: 90 });
+      add({ on: "pencils.", offset: 0.6, do: "hide", who: "spider" });
+
+      KIT.collage({ id: ID, seed: 2304, plate: [-9000, -6000, 11000, 9000], views: views, view: "sea", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

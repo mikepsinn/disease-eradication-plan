@@ -1,0 +1,78 @@
+<template id="thank-you-template">
+  <!-- thank-you · collage host shot (Part 27, scene 1). The bit: she thanks YOU for ending war and disease while he falls
+       asleep on the job, on top of Earth. Earth in the window keeps Part 26's gift bow; YOU stands on top of it on his
+       bone legs, chin in hand. "much": he sits back on nothing; "taking": a wingback armchair slides in under him just
+       in time, and the manual flops open over his face. "disease,": a snore lifts the manual and it flops back. "decide":
+       he jolts awake, the manual flies off, he checks his pocket watch. "busy,": he sprints off the edge of Earth; his
+       fedora hangs in the air for a beat, and his bony hand reaches back in and grabs it. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="thank-you" data-width="1920" data-height="1080" data-start="0" data-duration="7.808">
+    <div id="thank-you-weave"></div>
+    <div id="thank-you-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "thank-you", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+      var hk = function (art, h) { return h / SZ[art][1]; };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // Earth in the window keeps Part 26's gift bow; YOU stands under it on the deck, on his bone legs (u: his size).
+      var E = S.earth, H0 = V ? 420 : 430, u = H0 / 215, TOP = V ? 1460 : 868, YX = V ? 870 : 1500;
+      var CK = hk("armchair", 165 * u), SEAT = TOP - (477 - 272) * CK;
+      var TK = 125 * u / 368;                                             // YOU above the waist, seated
+      var cast = {
+        bow: { art: "gift-bow", x: E[0] - 0.66 * E[2], y: E[1] - 0.72 * E[2], scale: hk("gift-bow", 0.6 * E[2]) },
+        chair: { art: "armchair", x: YX, y: TOP + 4 * u, anchor: "bottom", pivot: "bottom", scale: CK, hidden: true },
+        yStand: { art: "you-bone-think", x: YX, y: TOP, anchor: "bottom", pivot: "bottom", scale: hk("you-bone-think", 215 * u) },
+        ySit: { art: "you-bone-legs", x: YX, y: SEAT + 12 * u, anchor: [121, 368], pivot: [121, 368], scale: TK, hidden: true,
+          clip: [[0, 0], [242, 0], [242, 368], [0, 368]] },
+        yWatch: { art: "you-watch", x: YX, y: SEAT + 12 * u, anchor: [107, 268], pivot: [107, 268], scale: 125 * u / 268, hidden: true,
+          clip: [[0, 0], [215, 0], [215, 268], [0, 268]] },
+        book: { art: "manual", x: YX - 2 * u, y: SEAT + 12 * u - (368 - 92) * TK, scale: hk("manual", 62 * u), pivot: "bottom", hidden: true },
+        yRun: { art: "you-bone-legs", x: YX, y: TOP, anchor: "bottom", pivot: "bottom", scale: hk("you-bone-legs", 215 * u), hidden: true },
+        hat: { art: "fedora", x: YX + 2 * u, y: TOP - 196 * u, scale: hk("fedora", 40 * u), hidden: true },
+        hand: { art: "skeleton-arm", x: YX + 700 * u, y: TOP - 196 * u, anchor: [52, 20], pivot: [52, 20], scale: hk("skeleton-arm", 150 * u), hidden: true },
+      };
+      var beats = [
+        // "much": he sits back on nothing; "taking": a wingback armchair slides in under him just in time.
+        { on: "much", do: "move", who: "yStand", by: [0, 18 * u], turn: -10, dur: 0.3, ease: "smooth" },
+        { on: "taking", do: "slideIn", who: "chair", from: "right", dist: 700 * u, over: 16 * u, tilt: 4 },
+        { on: "time", offset: -0.05, do: "swap", who: "yStand", to: "ySit" },
+        { on: "time", do: "shake", frames: 2, y: 4 },
+        // the manual flops open over his face: asleep
+        { on: "time", offset: 0.2, do: "pop", who: "book", squash: true },
+        { on: "time", offset: 0.2, do: "move", who: "book", by: [0, 0], turn: -14, dur: 0.01 },
+        // "disease,": a snore lifts the manual off his face and it flops back (and again)
+        { on: "disease,", do: "hop", who: "book", height: 34 * u },
+        { on: "if", do: "hop", who: "book", height: 30 * u },
+        // "decide": he jolts awake, the manual flies up, and he checks his pocket watch
+        { on: "decide", do: "swap", who: "ySit", to: "yWatch" },
+        { on: "decide", do: "hop", who: "yWatch", height: 40 * u },
+        { on: "decide", do: "move", who: "book", by: [-90 * u, -300 * u], turn: 220, dur: 0.4, ease: "smooth" },
+        { on: "decide", offset: 0.4, do: "hide", who: "book" },
+        // "busy,": he sprints off the edge of Earth, bone legs clattering; his fedora hangs in the air for a beat,
+        // and a hand reaches back into the frame and grabs it
+        { on: "busy,", do: "hide", who: "yWatch" },
+        { on: "busy,", do: "show", who: ["yRun", "hat"] },
+        { on: "busy,", do: "move", who: "yRun", by: [700 * u, 0], turn: 12, dur: 0.17 },
+        { on: "busy,", offset: 0.17, do: "hide", who: "yRun" },
+        { on: "busy,", offset: 0.3, do: "move", who: "hand", by: [0, 0], turn: -90, dur: 0.01 },
+        { on: "busy,", offset: 0.3, do: "show", who: "hand" },
+        { on: "busy,", offset: 0.3, do: "move", who: "hand", to: [YX + 26 * u, TOP - 192 * u], turn: -90, dur: 0.17 },
+        { on: "busy,", offset: 0.55, do: "move", who: "hand", by: [760 * u, 0], turn: -90, dur: 0.17 },
+        { on: "busy,", offset: 0.55, do: "move", who: "hat", by: [760 * u, 0], dur: 0.17 },
+      ];
+      KIT.collage({ id: ID, seed: 2701, host: true, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

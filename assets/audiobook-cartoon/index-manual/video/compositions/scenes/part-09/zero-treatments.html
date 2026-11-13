@@ -1,0 +1,54 @@
+<template id="zero-treatments-template">
+  <!-- zero-treatments · collage host shot (Part 9, scene 2). Iris in on Wishonia at her console. "Ninety-five": a
+       cream readout of 100 squares fills with grinning germs; "diseases": five of them turn into bottles. "zero": the germs
+       bounce with their feet up. "F.D.A.-approved": one climbs out of the readout, hops down to the console and
+       drinks her coffee. She side-eyes it (her states are in parts/part-09.json). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="zero-treatments" data-width="1920" data-height="1080" data-start="0" data-duration="4.92">
+    <div id="zero-treatments-weave"></div>
+    <div id="zero-treatments-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "zero-treatments", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The readout: a 10 x 10 grid on the free wall (16:9), or a 20 x 5 strip above her (9:16).
+    var BOX = V ? [40, 60, 1040, 420] : [1110, 90, 1880, 700], COLS = V ? 20 : 10, ROWS = 100 / COLS;
+    var cell = function (i) { return [BOX[0] + (BOX[2] - BOX[0]) / COLS * (i % COLS + 0.5), BOX[1] + (BOX[3] - BOX[1]) / ROWS * (Math.floor(i / COLS) + 0.5)]; };
+    var CLIMB = V ? 59 : 44, FROM = cell(CLIMB);
+    var MUG = V ? [540, S.top] : [920, S.top], MK = V ? 0.5 : 0.45, MH = SZ["desk-mug"][1] * MK;
+    var GK = (V ? 160 : 190) / SZ["germ-grin"][1];
+    var GERM_AT = [MUG[0] + (V ? 115 : 130), S.top - SZ["germ-grin"][1] * GK / 2];
+    KIT.collage({
+      id: ID, seed: 902, plate: [BOX[0] - 20, BOX[1] - 20, BOX[2] + 20, BOX[3] + 20], host: { push: [1, 1.05], iris: ["in", 0.04, 0.6] },
+      cast: {
+        mug: { art: "desk-mug", x: MUG[0], y: MUG[1], anchor: "bottom", pivot: "bottom", scale: MK },
+        germ: { art: "germ-grin", x: FROM[0], y: FROM[1], scale: GK, hidden: true },
+      },
+      beats: [
+        { at: 0, do: "wash", id: "panel", color: "#EFE3C4", blend: "normal", opacity: 1, dur: 0.2 },
+        { at: 0.05, do: "pictogram", id: "grid", art: "germ-grin", count: 100, cols: COLS, box: BOX, dur: 1.0, fill: 0.9 },
+        { on: "diseases", do: "pictogram", id: "grid", to: "pill-bottle", pick: [95, 96, 97, 98, 99], stagger: 0.07 },
+        { on: "zero", do: "bob", who: "grid", y: 7, r: 6, speed: 2.4 },
+        // one germ climbs out and helps itself to her coffee
+        { on: "F.D.A.-approved", do: "hide", who: "grid." + CLIMB },
+        { on: "F.D.A.-approved", do: "show", who: "germ" },
+        { on: "F.D.A.-approved", offset: 0.05, do: "move", who: "germ", to: GERM_AT, dur: 0.5, arc: 120, ease: "smooth" },
+        { on: "F.D.A.-approved", offset: 0.6, do: "hop", who: "germ", height: 20 },
+        { on: "treatments.", do: "move", who: "mug", to: [GERM_AT[0] - (V ? 40 : 55), GERM_AT[1] - 10], turn: -35, dur: 0.25, arc: 40 },
+        { on: "treatments.", offset: 0.35, do: "shiver", who: ["mug", "germ"], dur: 0.5, amp: 2, rot: 3 },
+        { on: "treatments.", offset: 0.95, do: "move", who: "mug", to: [MUG[0], MUG[1] - MH / 2], turn: 0, dur: 0.25, arc: 30 },
+      ],
+    });
+  </script>
+</template>

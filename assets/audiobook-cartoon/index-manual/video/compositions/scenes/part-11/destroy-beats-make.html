@@ -1,0 +1,109 @@
+<template id="destroy-beats-make-template">
+  <!-- destroy-beats-make · collage (Part 11, scene 6, plate the-stacks). The bit: the part of the economy that destroys
+       things is outgrowing the part that makes them, and it lands on the man making them. The chained bars from the
+       last scene: "Combined": the warhead bar lifts onto the robot bar, $13.2 TRILLION. "eleven point five percent":
+       the camera travels to the globe, ruled into a pie, and a pair of scissors snips out an 11.5% wedge (41 degrees).
+       "Both are growing": a line chart, GROWTH SINCE 2025. The Builder hammers along a nearly flat line, MAKING THINGS,
+       to 1.45; a chain of robots, hackers and missiles climbs a steep one, DESTROYING THINGS, to 5.9. "winning.": the
+       weapons factory pops up on its tip with its missile. "emergency.": the whole steep chain falls on the Builder;
+       his hand reaches up out of the heap for a dusty EMERGENCY: PULL bell and falls short. Crickets. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+    #destroy-beats-make-bars text[text-anchor="middle"] { display: none; }
+    #destroy-beats-make-stage svg { overflow: visible; }
+  </style>
+  <div id="root" data-composition-id="destroy-beats-make" data-width="1920" data-height="1080" data-start="0" data-duration="17.38">
+    <div id="destroy-beats-make-weave"></div>
+    <div id="destroy-beats-make-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "destroy-beats-make", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // ── The bars (as cybercrime-10-trillion left them), y up to 14 so the stack fits ──
+      var B = KIT.collage.axes({ box: [330, 170, 1230, 930], x: [0, 3, 1], y: [0, 14, 2], yLabels: 2, title: "$ TRILLION A YEAR", size: 40 });
+      var MIL = B.pt(1, 0), CYB = B.pt(2, 0);
+      // ── The globe as a pie ──
+      var GL = { x: 2150, k: 1.45 }, GC = [GL.x + (198 - 190.5) * GL.k, G - (643 - 225) * GL.k], GR = 150 * GL.k;
+      // ── The growth chart ──
+      var C = KIT.collage.axes(V ? { box: [3020, -150, 3920, 880], x: [2025, 2040, 5], y: [0, 6, 1], title: "GROWTH SINCE 2025", size: 40 }
+        : { box: [2950, 160, 4250, 880], x: [2025, 2040, 5], y: [0, 6, 1], title: "GROWTH SINCE 2025", size: 40 });
+      var make = function (x) { return Math.pow(1.025, x - 2025); }, destroy = function (x) { return Math.pow(1.126, x - 2025); };
+      var END = C.pt(2040, make(2040)), TIP = C.pt(2040, destroy(2040)), BELL = V ? [4270, G] : [4620, G];
+      var cy = function (s) { return V ? G - 420 / s : 620; };
+      var views = V ? {
+        bars: [760, 560, 1.0], globe: [GC[0], cy(1.0), 1.0], growth: [3420, 420, 0.95], top: [TIP[0] - 200, TIP[1] + 330, 1.1], heap: [END[0] + 150, cy(1.1), 1.1],
+      } : {
+        bars: [760, 540, 1], globe: [GC[0] + 200, 560, 1], growth: [3560, 520, 1], top: [3600, 420, 1], heap: [4200, 560, 1.15],
+      };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      cast.chainLink = { art: "shackle", x: (MIL[0] + CYB[0]) / 2, y: B.pt(1, 1.6)[1], scale: 0.9 };
+      cast.globe = { art: "globe", x: GL.x, y: G, anchor: "bottom", scale: GL.k };
+      cast.scissors = { art: "scissors", x: GC[0] + 40, y: GC[1] - GR - 60, scale: 0.6, pivot: [119, 300], hidden: true };
+      cast.bell = { art: "fire-alarm", x: BELL[0], y: BELL[1], anchor: "bottom", pivot: "bottom", scale: hs("fire-alarm", 440), label: { text: "EMERGENCY: PULL", at: [100, 95], width: 120, size: 22 } };
+      cast.web = { art: "cobweb", x: BELL[0] + 40, y: BELL[1] - 440, anchor: "topleft", scale: 0.5 };
+      cast.web2 = { art: "cobweb", x: BELL[0] - 40, y: BELL[1] - 300, anchor: "topleft", scale: 0.35 };
+      cast.builder = { art: "builder", x: C.pt(2025, 1)[0], y: C.pt(2025, 1)[1], anchor: [154, 780], pivot: "bottom", scale: hs("builder", 240) };
+      cast.hand = { art: "pointing-hand", x: END[0] + 90, y: END[1] + 150, anchor: [90, 288], pivot: [90, 288], scale: 0.55, hidden: true };
+      cast.trophy = { art: "factory-kiss", x: TIP[0], y: TIP[1], anchor: "bottom", pivot: "bottom", scale: hs("factory-kiss", 260), hidden: true };
+
+      add({ at: 0, do: "move", who: "hand", turn: 180, dur: 0.01 });
+      // Combined: the warhead bar lands on the robot bar
+      add({ at: 0, do: "chart", id: "bars", chart: B });
+      add({ at: 0, do: "pile", id: "cyb", chart: B, x: 2, to: 10.5, art: "robot", height: 150, gap: 122, dur: 0.05, jitter: 6, tilt: 2 });
+      add({ at: 0, do: "pile", id: "mil", chart: B, x: 1, to: 2.72, art: "warhead", height: 50, gap: 44, dur: 0.05, jitter: 4, tilt: 2 });
+      add({ at: 0, do: "banner", id: "milName", text: "MILITARY", x: MIL[0], y: MIL[1] + 60, size: 40, width: 260, pad: 40, color: "ink", tilt: 0, shake: 0, from: 1 });
+      add({ at: 0, do: "banner", id: "cybName", text: "CYBERCRIME", x: CYB[0], y: CYB[1] + 60, size: 40, width: 300, pad: 40, color: "ink", tilt: 0, shake: 0, from: 1 });
+      add({ on: "Combined,", do: "pop", who: "chainLink", out: true });
+      add({ on: "Combined,", do: "move", who: "mil", by: [CYB[0] - MIL[0], B.pt(2, 9.7)[1] - MIL[1]], dur: 0.5, arc: 160 });
+      add({ on: "Combined,", offset: 0.1, do: "hide", who: "milName" });
+      add({ on: "trillion", do: "stamp", id: "total", text: "$13.2 TRILLION", x: CYB[0] - (V ? 330 : 340), y: B.pt(2, 9)[1], size: 76, width: 480, tilt: -5, shake: 10 });
+      // 11.5% of GDP: the globe's wedge
+      add({ on: "eleven", offset: -0.5, do: "camera", view: "globe", dur: 0.9 });
+      var a0 = -90, a1 = -90 + 41.4, rad = function (a, r) { return [GC[0] + r * Math.cos(a * Math.PI / 180), GC[1] + r * Math.sin(a * Math.PI / 180)]; };
+      add({ on: "percent", do: "pop", who: "scissors" });
+      add({ on: "percent", do: "line", id: "cut0", points: [GC, rad(a0, GR)], dur: 0.15, width: 8, color: "red", front: true });
+      add({ on: "percent", offset: 0.15, do: "move", who: "scissors", to: rad(a1 + 10, GR + 70), dur: 0.2, turn: 30 });
+      add({ on: "percent", offset: 0.2, do: "line", id: "cut1", points: [GC, rad(a1, GR)], dur: 0.15, width: 8, color: "red", front: true });
+      add({ on: "percent", offset: 0.3, do: "shiver", who: "scissors", dur: 0.4, amp: 4, rot: 10 });
+      add({ on: "global", do: "stamp", id: "share", text: "11.5%", x: rad(a0 + 20, GR * 0.55)[0], y: rad(a0 + 20, GR * 0.55)[1], size: 64, width: 200, tilt: -4 });
+      add({ on: "G.D.P.", do: "pop", who: "scissors", out: true });
+      // Both are growing faster: the flat line and the steep chain
+      add({ on: "Both", offset: -0.3, do: "camera", view: "growth", dur: 0.8 });
+      add({ on: "Both", offset: -0.3, do: "chart", chart: C });
+      add({ on: "growing", do: "line", id: "making", chart: C, f: make, x: [2025, 2040], until: "things.", rider: "builder", tilt: 0, color: "ink", width: 8 });
+      add({ on: "growing", offset: 0.2, do: "bob", who: "builder", y: 5, r: 3, speed: 5, until: "things." });
+      add({ on: "faster", do: "chain", id: "destroy", chart: C, f: destroy, x: [2025, 2040], step: 1, art: ["robot", "missile", "hacker", "robot-up", "tank", "robot"],
+        height: V ? 120 : 110, sizes: { tank: 0.6, missile: 1.2, "robot-up": 1.3 }, until: "things.", lineColor: "red", lineWidth: 6 });
+      add({ on: "things.", offset: 0.1, do: "banner", id: "mk", text: "MAKING THINGS", x: V ? END[0] - 260 : END[0] - 120, y: END[1] + 110, size: 40, width: 380, pad: 40, color: "ink", tilt: -2, shake: 0 });
+      add({ on: "things.", offset: 0.3, do: "banner", id: "dt", text: "DESTROYING THINGS", x: V ? C.pt(2034, 0)[0] - 60 : C.pt(2032, 0)[0], y: C.pt(2034, 4.5)[1], size: 40, width: 460, pad: 40, color: "red", tilt: -3, shake: 0 });
+      // So the part that destroys things is winning: the weapons factory on the tip
+      add({ on: "So", do: "camera", view: "top", dur: 0.7 });
+      add({ on: "destroys", do: "pop", who: "trophy", squash: true });
+      add({ on: "winning.", do: "hop", who: "trophy", height: 60 });
+      add({ on: "winning.", offset: 0.3, do: "shiver", who: ["destroy", "trophy"], dur: 0.7, amp: 8, rot: 5 });
+      // I'm told this is not an emergency: the chain falls on the Builder; his hand reaches for the bell
+      add({ on: "I'm", offset: -0.2, do: "camera", view: "heap", dur: 0.6 });
+      add({ on: "I'm", do: "hide", who: ["dt", "mk"] });
+      add({ on: "I'm", offset: 0.1, do: "move", who: "destroy", to: [END[0] + 30, END[1] + 10], dur: 0.45, arc: 120 });
+      add({ on: "I'm", offset: 0.2, do: "move", who: "trophy", to: [END[0] + 60, END[1] - 20], dur: 0.45, arc: 120, turn: 70 });
+      add({ on: "I'm", offset: 0.6, do: "shake", y: 14, frames: 4 });
+      add({ on: "told", offset: 0.1, do: "hide", who: "builder" });
+      add({ on: "not", do: "slideIn", who: "hand", from: "bottom", dist: 260, over: 8 });
+      add({ on: "considered", do: "move", who: "hand", by: [V ? 110 : 150, -70], turn: 215, dur: 0.6, ease: "smooth" });
+      add({ on: "emergency.", offset: 0.3, do: "move", who: "hand", by: [0, 140], turn: 180, dur: 0.5 });
+
+      KIT.collage({ id: ID, seed: 1106, plate: V ? [-1400, -2600, 6400, 3400] : [-600, -900, 5600, 2200], views: views, view: "bars", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

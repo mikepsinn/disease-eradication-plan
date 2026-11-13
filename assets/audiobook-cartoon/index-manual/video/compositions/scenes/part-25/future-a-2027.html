@@ -1,0 +1,263 @@
+<template id="future-a-2027-template">
+  <!-- future-a-2027 · collage (Part 25, Future A, 2027 to 2040 as one road). The bit: YOU walk along one road, big,
+       looking at your watch, and every year it gets worse. The world slides past on a treadmill so the walk never eases;
+       the camera only pulls back for the one reveal. The tar stands at YOU's height times the share of GDP: ankles,
+       knees at 25%, waist at 50%. 2027: the manual is thrown away, 604 bills shoot past the frame, the one medicine bill
+       gets stepped on. 2033: Gorbachev's stone, his binder off YOU's fedora. 2035: the engineer in a mask, the nurse's
+       countdown, BOOM: YOU charred, still walking. 2040: the burnt suit falls off and the skeleton strolls on, past robots
+       filing fakes until the case files bury him. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="future-a-2027" data-width="1920" data-height="1080" data-start="0" data-duration="50.76">
+    <div id="future-a-2027-weave"></div>
+    <div id="future-a-2027-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "future-a-2027", V = KIT.V, DUR = KIT.scene(ID).duration, G = 1000, CUE = function (word, n) { return KIT.cue(ID, word, n); };
+    // YOU never moves: the world scrolls left past X0 at SPEED. w(t, dx) is the world x that sits dx right of YOU at time t.
+    var X0 = V ? 300 : 560, SPEED = V ? 170 : 260;
+    var w = function (t, a, b) { return X0 + (V && b !== undefined ? b : a) + t * SPEED; };
+    var YH = 850, K_SUIT = YH / 562, K_BONE = YH / 640, rng = KIT.rng(2527);
+    var WORLD = [], FAR = [], beats = [], cast = {};
+    var add = function (b) { beats.push(b); };
+    var put = function (n, o, far) { cast[n] = o; (far ? FAR : WORLD).push(n); return n; };
+    var stand = function (n, art, x, k, o) { var c = { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: k }; for (var f in o || {}) c[f] = o[f]; return put(n, c); };
+
+    // Tar level above the road, as a share of YOU's height: 11.5% in 2027 is ankles, 25% knees, 50% the waist.
+    var TIDE = [[0, -480], [5, -230], [11, 40], [14, 98], [CUE("twenty-five"), 150], [CUE("percent", 1) + 0.3, 212], [25.8, 255], [40, 340], [CUE("fifty"), 380], [CUE("percent", 3), 425], [DUR, 450]];
+    var level = function (t) { for (var i = 1; i < TIDE.length; i++) if (t <= TIDE[i][0]) return TIDE[i - 1][1] + (TIDE[i][1] - TIDE[i - 1][1]) * (t - TIDE[i - 1][0]) / (TIDE[i][0] - TIDE[i - 1][0]); return TIDE[TIDE.length - 1][1]; };
+    var i;
+
+    // ── The sky: clouds drift by far off and sink with the wash ──
+    for (i = 0; i < 9; i++) put("cl" + i, { art: "cloud-puff", x: i * (V ? 620 : 1050) + 200, y: (V ? -160 : 120) + (i % 3) * (V ? 170 : 90), scale: 1.1 + (i % 3) * 0.35 }, true);
+
+    // ── The road ──
+    var ROADS = Math.ceil((SPEED * DUR + 4000) / 990);
+    for (i = 0; i < ROADS; i++) put("rd" + i, { art: "road", x: -1400 + i * 990, y: G - 70, anchor: "topleft", scale: 3 });
+
+    // ── 2027: a sign, the tower of 604, the one medicine bill ──
+    var yearSign = function (n, year, t) {
+      stand(n, "sign-board", w(t, 600, 420), V ? 1.7 : 2.0, { label: { text: String(year), at: [107, 70], width: 170, size: 200 } });
+    };
+    yearSign("y27", 2027, CUE("twenty-seven:"));
+    var TX = w(8.5, 620, 330), TK = V ? 2.6 : 3, TN = 34;
+    for (i = 0; i < TN; i++) {
+      put("t" + i, { art: "bill-war-flat", x: TX + (rng() - 0.5) * 46, y: G - 60 - i * 58, scale: TK * (0.97 + rng() * 0.05), hidden: true });
+      add({ on: "six", offset: i * 0.032, do: "pop", who: "t" + i });
+    }
+    put("t604", { art: "bill-war-flat", x: TX, y: G - 60 - 9 * 58, scale: TK * 1.02, hidden: true });
+    add({ on: "four", do: "show", who: "t604" });
+    add({ on: "four", do: "stamp", who: "t604", text: "604", spot: [92, 65], size: 230, tilt: -7 });
+    stand("medbill", "bill-med", w(CUE("weird."), 30), V ? 1.5 : 1.7, { hidden: true });
+    add({ on: "testing", do: "pop", who: "medbill", squash: true });
+    add({ on: "work.", do: "hop", who: "medbill", height: 70 });
+    add({ on: "work.", offset: 0.35, do: "hop", who: "medbill", height: 70 });
+    add({ on: "weird.", do: "flatten", who: "medbill" });
+
+    // ── 2033: Gorbachev's stone ──
+    yearSign("y33", 2033, CUE("thirty-three:"));
+    var GX = w(22.5, 620, 440);
+    stand("stone", "headstone", GX - (V ? 330 : 470), V ? 1.45 : 1.8, { label: { text: "USSR", at: [180, 95], width: 240, size: 120 } });
+    stand("gorb", "gorbachev", GX, 0.98);
+    add({ on: "fifteen", do: "stamp", who: "stone", text: "15%", spot: [180, 180], size: 150, tilt: -6 });
+    // ── 2035: the engineer pulls on the mask, the hospital pays, the nurse's chart counts down ──
+    yearSign("y35", 2035, CUE("thirty-five:"));
+    var EX = w(29.8, 620, 360);
+    stand("eng", "engineer-desk", EX, 1.95);
+    stand("crook", "hacker", EX, 1.7, { hidden: true });
+    add({ on: "ransomware", do: "swap", who: "eng", to: "crook" });
+    for (i = 0; i < 6; i++) {
+      put("pb" + i, { art: "bill-plain", x: EX - 240 + i * 90, y: -160, scale: 1.1, hidden: true });
+      add({ on: "pays", offset: i * 0.1, do: "show", who: "pb" + i });
+      add({ on: "pays", offset: i * 0.1, do: "move", who: "pb" + i, to: [EX - 60 + i * 20, G - 340], dur: 0.5, turn: (i % 2 ? 25 : -25) });
+      add({ on: "pays", offset: i * 0.1 + 0.5, do: "pop", who: "pb" + i, out: true });
+    }
+    stand("hosp", "hospital", w(34.6, 620, 340), 2.1);
+    var NX = w(CUE("dose."), 330, 280), NK = 1.95;
+    stand("nurse", "nurse", NX, NK, { eyes: [[92, 44], [108, 44]], eyeSize: 18, smoke: [[100, 20], [80, 150]] });
+    var MK = V ? 2.7 : 3.3, MX = NX + (V ? 230 : 290);
+    ["00:03", "00:02", "00:01", "00:00"].forEach(function (s, j) {
+      stand("mon" + j, "monitor", MX, MK, { hidden: j > 0, label: { text: s, at: [55, 92], width: 84, size: 90 } });
+    });
+    add({ on: "countdown", do: "swap", who: "mon0", to: "mon1" });
+    add({ on: "instead", do: "swap", who: "mon1", to: "mon2" });
+    add({ on: "medication", do: "swap", who: "mon2", to: "mon3" });
+    var CUPX = NX - 196, CUPY = G - 740;
+    put("cup", { art: "bomb-cup", x: CUPX, y: CUPY, scale: 2.6 });
+    add({ on: "clicks", do: "hop", who: "cup", height: 20 });
+    add({ on: "medication", do: "glow", who: "cup", dur: 0.5, size: 300 });
+    add({ on: "dose.", do: "hide", who: "cup" });
+    stand("cloudA", "mushroom", NX - 40, V ? 1.5 : 1.75, { hidden: true });
+    add({ on: "dose.", do: "boom", shake: 24, flash: 0.22 });
+    add({ on: "dose.", do: "pop", who: "cloudA" });
+    add({ on: "dose.", offset: 1.5, do: "pop", who: "cloudA", out: true });
+    add({ on: "dose.", do: "char", who: ["nurse", "mon3", "yT", "yA", "yB"] });
+    add({ on: "dose.", offset: 1.3, do: "blink", who: ["nurse", "yT"] });
+    add({ on: "dose.", offset: 3.1, do: "blink", who: "yT" });
+    add({ on: "dose.", offset: 3.4, do: "blink", who: ["yT", "nurse"] });
+
+    // The heap the hospital's money floats to, with the masked engineer on it; he runs on ahead when the bills start.
+    var HX = w(CUE("profiting"), 560, 300);
+    stand("runner", "hacker-up", HX, V ? 0.8 : 0.95, { y: G - (V ? 330 : 210), hidden: true });
+    stand("crookUp", "hacker-up", EX, 1.15, { hidden: true });
+    add({ on: "engineering.", do: "swap", who: "crook", to: "crookUp" });
+    add({ on: "engineering.", offset: 0.1, do: "move", who: "crookUp", to: [w(CUE("engineering.") + 1.7, V ? 1100 : 1700), G], dur: 1.6 });
+    add({ on: "engineering.", offset: 1.7, do: "hide", who: "crookUp" });
+    add({ on: "people", do: "show", who: "runner" });
+    add({ on: "profiting", do: "hop", who: "runner", height: 40 });
+    add({ on: "profiting", offset: 0.45, do: "hop", who: "runner", height: 40 });
+    add({ on: "it.", do: "hop", who: "runner", height: 40 });
+
+    // "extortion": the hospital's medicine bills paddle out across the tar to the heap, one after another, half under
+    var DOOR = w(34.6, 620, 340), FL = 5;
+    for (i = 0; i < FL; i++) {
+      var t0 = CUE("extortion") + i * 0.95, t1 = t0 + 7, n0 = "fb" + i;
+      put(n0, { art: "bill-med", x: DOOR, y: G - level(t0) - 70, scale: 1.05, hidden: true });
+      add({ at: t0, do: "pop", who: n0 });
+      add({ at: t0, do: "move", who: n0, to: [HX - 80, G - level(t1) - 70], dur: 7 });
+      add({ at: t0, do: "bob", who: n0, y: 9, r: 4, speed: 1.3, phase: i });
+      add({ at: t1, do: "pop", who: n0, out: true });
+    }
+    // the heap, up out of the tar, with him standing behind it
+    [[-340, 620], [-120, 640], [110, 630], [340, 620], [-230, 500], [0, 490], [230, 500]].forEach(function (p, j) {
+      put("hp" + j, { art: j % 3 ? "bundle-med" : "bundle-war", x: HX + p[0] * (V ? 0.75 : 1), y: G - p[1], scale: V ? 1.3 : 1.65 });
+    });
+
+    // ── 2040: the robots file past, the court buries itself, the stack falls on him ──
+    yearSign("y40", 2040, CUE("forty:"));
+    var CX = w(52.0, 680, 400), FN = 11, FK = V ? 0.62 : 0.72;
+    stand("court", "court-window", CX, V ? 1.55 : 1.85, { y: G - 120 });
+    for (i = 0; i < FN; i++) {
+      put("f" + i, { art: "case-file", x: CX + (V ? 150 : 230) + (i % 2 ? 26 : -26), y: G - 560 - i * 80, scale: FK, hidden: true });
+      add({ on: "file", offset: 0.2 + i * 0.17, do: "pop", who: "f" + i });
+      add({ on: "ones.", offset: i * 0.02, do: "move", who: "f" + i, to: [CX - 170 + (i % 4) * 110, G - 760 + (i % 3) * 120], dur: 0.3, turn: (i % 2 ? 1 : -1) * (20 + i * 7) });
+    }
+    add({ on: "ones.", offset: 0.25, do: "shake", y: 12, frames: 4 });
+    // "A.I. agents": robots holding up FAKE cases march past him to the court, wading
+    var RN = 6, RY = G - 310;
+    for (i = 0; i < RN; i++) {
+      var rt = CUE("A.I.", 1) - 0.8 + i * 0.5, rname = "rb" + i;
+      put(rname, { art: "robot-clipboard", x: w(rt, -1000 - i * 40, -700), y: RY, anchor: "bottom", pivot: "bottom", scale: V ? 1.25 : 1.45, hidden: true,
+        label: { text: "FAKE", at: [122, 255], width: 96, size: 110, tilt: -4 } });
+      add({ at: rt, do: "show", who: rname });
+      add({ at: rt, do: "move", who: rname, to: [CX + 40, RY], dur: 3.1 });
+      add({ at: rt, do: "bob", who: rname, y: 12, r: 2.5, speed: 2.6, phase: i });
+      add({ at: rt + 3.1, do: "pop", who: rname, out: true });
+    }
+
+    // ── 2027: nobody looks. Two strollers overtake him, reading and pushing ──
+    cast.man = { art: "newspaper-man", x: X0 - 900, y: G + 6, anchor: "bottom", pivot: "bottom", scale: V ? 1.45 : 1.65, hidden: true };
+    cast.pram = { art: "pram-woman", x: X0 - 1000, y: G + 6, anchor: "bottom", pivot: "bottom", scale: V ? 1.45 : 1.7, hidden: true };
+    add({ on: "Nobody", do: "show", who: "man" });
+    add({ on: "Nobody", do: "move", who: "man", to: [X0 + (V ? 1000 : 1650), G + 6], dur: 3.6 });
+    add({ on: "Nobody", do: "bob", who: "man", y: 7, r: 1.5, speed: 2.4, until: ["Nobody", 1, 3.6] });
+    add({ on: "Nobody", offset: 3.7, do: "hide", who: "man" });
+    add({ on: "Nobody", offset: 0.6, do: "show", who: "pram" });
+    add({ on: "Nobody", offset: 0.6, do: "move", who: "pram", to: [X0 + (V ? 1100 : 1800), G + 6], dur: 3.7 });
+    add({ on: "Nobody", offset: 0.6, do: "bob", who: "pram", y: 5, r: 1, speed: 2.1, until: ["Nobody", 1, 4.3] });
+    add({ on: "Nobody", offset: 4.4, do: "hide", who: "pram" });
+
+    // ── YOU: a two-drawing walk, the same head and hands on two pairs of legs ──
+    var suitOff = CUE("forty:");
+    cast.yA = { art: "you-watch", clip: [[0, 340], [215, 340], [215, 562], [0, 562]], anchor: [110, 562], pivot: [110, 562], x: X0, y: G, scale: K_SUIT, hidden: true };
+    cast.yB = { art: "you-walk", clip: [[70, 348], [205, 348], [292, 470], [292, 563], [0, 563], [0, 510], [45, 440]], anchor: [125, 562], pivot: [125, 562], x: X0, y: G, scale: K_SUIT, hidden: true };
+    cast.yT = { art: "you-watch", clip: [[0, 0], [215, 0], [215, 352], [0, 352]], anchor: [110, 562], pivot: [110, 562], x: X0, y: G, scale: K_SUIT, eyes: [[109, 81], [136, 81]], eyeSize: 24, smoke: [[110, 12], [40, 180]] };
+    cast.sA = { art: "you-skeleton-walk", clip: [[70, 350], [170, 350], [297, 500], [297, 640], [0, 640], [0, 550], [70, 430]], anchor: [125, 640], pivot: [125, 640], x: X0, y: G, scale: K_BONE, hidden: true };
+    cast.sB = { art: "you-skeleton", clip: [[55, 366], [165, 366], [165, 654], [55, 654]], anchor: [100, 654], pivot: [100, 654], x: X0, y: G, scale: K_BONE, hidden: true };
+    cast.sT = { art: "you-skeleton-walk", clip: [[0, 0], [297, 0], [297, 430], [215, 430], [170, 356], [80, 356], [62, 445], [0, 445]], anchor: [125, 640], pivot: [125, 640], x: X0, y: G, scale: K_BONE, hidden: true };
+    var stride = 0.32, leg = 0;
+    for (var ts = 0; ts < DUR; ts += stride, leg++) {
+      var suit = ts < suitOff, la = suit ? "yA" : "sA", lb = suit ? "yB" : "sB", lon = leg % 2 ? lb : la, loff = leg % 2 ? la : lb;
+      add({ at: ts, do: "show", who: lon });
+      add({ at: ts, do: "hide", who: loff });
+    }
+    ["yT", "yA", "yB", "sT", "sA", "sB"].forEach(function (n) {
+      add({ at: 0, do: "bob", who: n, y: 7, r: 0, speed: 3.16 });
+      add({ at: 0, do: "bob", who: n, y: 0, r: 1.3, speed: 1.3 });
+    });
+    // "forty:" the burnt suit falls off him; the skeleton keeps the stride
+    cast.yFall = { art: "you-watch", clip: [[0, 340], [215, 340], [215, 562], [0, 562]], anchor: [110, 562], pivot: [110, 562], x: X0, y: G, scale: K_SUIT, hidden: true };
+    add({ at: suitOff, do: "hide", who: ["yA", "yB"] });
+    add({ at: suitOff, do: "show", who: ["sT", "yFall"] });
+    add({ at: suitOff, do: "char", who: "yFall" });
+    add({ at: suitOff + 0.05, do: "move", who: "yFall", by: [-SPEED * 1.6, 700], dur: 1.6 });
+    add({ at: suitOff + 0.1, do: "move", who: "yT", by: [-SPEED * 1.6, 800], turn: -80, dur: 1.6 });
+    add({ at: suitOff + 1.7, do: "hide", who: ["yT", "yFall"] });
+
+    put("binder", { art: "binder", x: GX - 170, y: G - 520, scale: 0.8, hidden: true, label: { text: "5-YEAR PLAN", at: [225, 150], width: 200, size: 70 } });
+    add({ on: "You", n: 2, do: "pop", who: "binder", squash: true });
+    add({ on: "planning.", do: "move", who: "binder", to: [w(CUE("planning.") + 0.4, 60, 40), G - YH + 50], dur: 0.4, arc: 110, turn: -30 });
+    add({ on: "planning.", offset: 0.4, do: "shake", y: 6, frames: 3 });
+    add({ on: "planning.", offset: 0.42, do: "move", who: "binder", by: [-300, 700], dur: 0.8, turn: -160 });
+
+    // ── The manual comes down on its parachute, and goes over his shoulder ──
+    var HAND = [X0 + (V ? 260 : 300), G - 420];
+    cast.chute = { art: "manual-chute", x: HAND[0], y: -560, anchor: "bottom", pivot: "bottom", scale: 1.25 };
+    add({ at: 0.15, do: "move", who: "chute", to: HAND, dur: 1.05 });
+    add({ on: "Ignore", offset: 0.15, do: "move", who: "chute", to: [X0 - (V ? 420 : 760), G + 40], dur: 0.55, arc: 420, turn: -400 });
+    add({ on: "Manual.", do: "shake", y: 7, frames: 3 });
+    add({ on: "Manual.", do: "move", who: "chute", by: [-SPEED * 4, 0], dur: 4 });
+    add({ on: "Manual.", offset: 4, do: "hide", who: "chute" });
+
+    // ── The tar: two rows of torn black paper, in front of everyone's legs ──
+    var TAR_K = V ? 4.2 : 3, TAR_W = 1453 * TAR_K, TARS = [], TAR_H = 240 * TAR_K - 90;
+    var TN2 = Math.ceil((SPEED * DUR + 3500) / (TAR_W - 60));
+    for (i = 0; i < TN2; i++) for (var row = 1; row >= 0; row--) {
+      var nm = "tar" + i + (row ? "b" : "a");
+      put(nm, { art: i % 2 ? "tar-b" : "tar-a", x: -1500 + i * (TAR_W - 60), y: G + 380 + row * TAR_H, anchor: "topleft", scale: TAR_K });
+      TARS.push(nm);
+    }
+    for (i = 1; i < TIDE.length; i++) add({ at: TIDE[i - 1][0], do: "move", who: TARS, by: [0, -(TIDE[i][1] - TIDE[i - 1][1])], dur: TIDE[i][0] - TIDE[i - 1][0] });
+    TARS.forEach(function (n) { add({ at: 0, do: "bob", who: n, y: 7, r: 0, speed: 0.7 }); });
+
+    // ── The sky goes: dust, tan, orange, rust ──
+    add({ at: 0, do: "wash", id: "sky", color: "#B79468", blend: "multiply", above: "cl8", opacity: 0.12, dur: 0.1 });
+    add({ on: "twenty-seven:", do: "wash", id: "sky", opacity: 0.45, dur: 1.2 });
+    add({ on: "thirty-three:", do: "wash", id: "sky", opacity: 0.85, dur: 1.2 });
+    add({ on: "thirty-five:", do: "wash", id: "burn", color: "#D5692C", blend: "multiply", above: "cl8", opacity: 0.55, dur: 1.2 });
+    add({ on: "forty:", do: "wash", id: "burn", opacity: 0.8, dur: 1.2 });
+    add({ on: "forty:", do: "wash", id: "dark", color: "#6A6470", blend: "multiply", above: "cl8", opacity: 0.6, dur: 1.2 });
+
+    // The two numbers that are the joke, slammed beside the tar line
+    add({ on: "twenty-five", offset: 0.75, do: "stamp", id: "s25", text: "25%", x: X0 + (V ? 450 : 560), y: V ? 560 : 400, size: V ? 240 : 300, width: 900, tilt: -6 });
+    add({ on: "Soviet", offset: -0.1, do: "pop", who: "s25", out: true });
+    add({ on: "percent", n: 3, do: "banner", id: "s50", text: "50%", x: V ? 900 : 1500, y: V ? -1100 : -180, size: V ? 520 : 560, width: V ? 1400 : 1500, pad: 110, tilt: -5 });
+    add({ on: "A.I.", n: 1, offset: -0.2, do: "pop", who: "s50", out: true });
+
+    // The one pull-back: how far under the road has gone, and what YOU has already walked past
+    var views = V ? { walk: [540, G - 430, 1], walk2: [540, G - 520, 1], walk3: [540, G - 620, 1], wide: [240, -500, 0.42] } : { walk: [960, 620, 1], walk2: [960, 510, 1], walk3: [960, 400, 1], wide: [400, 140, 0.5] };
+    add({ on: "thirty-five:", do: "camera", view: "walk2", dur: 1.6 });
+    add({ on: "Parasitic", offset: -0.2, do: "camera", view: "wide", dur: 1.1 });
+    add({ on: "A.I.", n: 1, offset: -0.4, do: "camera", view: "walk3", dur: 0.8 });
+
+    // A move always straightens to its turn, so the treadmill would undo every rotation: rotations go after it.
+    var early = [], late = [];
+    beats.forEach(function (b) {
+      if (b.do === "bob" || b.do === "shiver" || b.do === "hinge") { late.push(b); return; }
+      early.push(b);
+      if (b.do === "move" && b.turn !== undefined) {
+        var c = {}; for (var k in b) c[k] = b[k];
+        delete c.to; delete c.arc; delete c.scale; c.by = [0, 0]; late.push(c); delete b.turn;
+      }
+    });
+    beats = early;
+
+    // The treadmill, after every move, so it adds to them
+    add({ at: 0, do: "move", who: WORLD, by: [-SPEED * DUR, 0], dur: DUR });
+    add({ at: 0, do: "move", who: FAR, by: [-SPEED * 0.3 * DUR, 0], dur: DUR });
+    beats = beats.concat(late);
+
+    KIT.collage({ id: ID, seed: 2527, plate: V ? [-2500, -3800, 3400, 4600] : [-1800, -1600, 3400, 2600], views: views, view: "walk", cast: cast, beats: beats });
+    document.getElementById(ID + "-nurse").querySelector(".cg-art").style.transform = "scaleX(-1)";
+  </script>
+</template>

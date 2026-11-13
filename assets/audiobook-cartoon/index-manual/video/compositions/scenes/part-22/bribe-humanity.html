@@ -1,0 +1,73 @@
+<template id="bribe-humanity-template">
+  <!-- bribe-humanity · collage host shot (Part 22, scene 6). Back at the console, a tin bin beside it already heaped with
+       copies of the same book. "I'm": BE A BETTER HUMAN pops onto the ledge. "better": she tips it off into the bin; puff
+       of dust. "bribe": she holds one medicine bill up to Earth in the window like a treat. "humanity": Earth notices,
+       smiles and leans toward it. "not": she moves the bill, and Earth follows it out of the window. "dying.": she
+       side-eyes the camera, still holding it out; iris out. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="bribe-humanity" data-width="1920" data-height="1080" data-start="0" data-duration="7.44">
+    <div id="bribe-humanity-weave"></div>
+    <div id="bribe-humanity-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "bribe-humanity", V = KIT.V, S = KIT.STUDIO, E = S.earth, SZ = KIT.collage.SIZES, F = KIT.collage.F, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      var TOP = S.top + 6;
+      // the book on the ledge's right end; the bin stands just past it, its rim a little under the ledge
+      var BOOK = V ? { x: 560, h: 190 } : { x: 960, h: 230 };
+      var BIN = V ? { x: 880, rim: 1150, h: 360 } : { x: 1250, rim: 800, h: 400 };
+      var BILL = V ? [880, 560] : [1290, 500];
+      var GK = (2.04 * E[2]) / SZ["earth-big"][0];
+      var title = [{ text: "BE A BETTER", at: [200, 125], width: 240, size: 44, tilt: -7 }, { text: "HUMAN", at: [205, 185], width: 220, size: 62, tilt: -7 }];
+      var copy = function (dx, dy) { return { art: "self-help-book", x: BIN.x + dx, y: BIN.rim + dy, scale: hs("self-help-book", BOOK.h * 0.8), label: title }; };
+      var cast = {
+        // the Earth in her window, as a cut-out over the painted one (hidden below), so it can follow the bill
+        earth: { art: "earth-big", x: E[0], y: E[1], scale: GK },
+        happy: { art: "globe-happy", x: E[0], y: E[1], scale: (2.04 * E[2]) / SZ["globe-happy"][0], hidden: true },
+        c0: copy(-60, -40), c1: copy(70, -60), c2: copy(0, -120),
+        bin: { art: "wastebasket", x: BIN.x, y: BIN.rim, anchor: [137, 32], scale: hs("wastebasket", BIN.h) },
+        book: { art: "self-help-book", x: BOOK.x, y: TOP, anchor: "bottom", pivot: "bottom", scale: hs("self-help-book", BOOK.h), hidden: true, label: title },
+        dust: { art: "cloud-puff", x: BIN.x, y: BIN.rim - 150, scale: V ? 0.7 : 0.85, hidden: true },
+        bill: { art: "bill-med", x: BILL[0], y: BILL[1], scale: hs("bill-med", V ? 170 : 210), hidden: true },
+      };
+      var LAND = cue("better") + 0.5;
+      var beats = [
+        // the heap in the bin is crooked
+        { at: -0.2, do: "move", who: "c0", turn: -24, dur: F }, { at: -0.2, do: "move", who: "c1", turn: 18, dur: F }, { at: -0.2, do: "move", who: "c2", turn: -6, dur: F },
+        // "I'm": the book pops onto the ledge; "better": she tips it off into the bin
+        { on: "I'm", offset: 0.1, do: "pop", who: "book", squash: true },
+        { on: "better", do: "hop", who: "book", height: 30 },
+        { on: "better", offset: 0.1, do: "move", who: "book", to: [BIN.x + 10, BIN.rim - 170], turn: 95, arc: V ? 120 : 160, scale: hs("self-help-book", BOOK.h * 0.8), dur: 0.4 },
+        { at: LAND, do: "pop", who: "dust", swell: 0.6 },
+        { at: LAND, do: "shiver", who: ["bin", "c0", "c1", "c2", "book"], dur: 0.3, amp: 4, rot: 3 },
+        { at: LAND + 0.7, do: "pop", who: "dust", out: true },
+        // "bribe": one medicine bill held up to Earth like a treat
+        { on: "bribe", do: "pop", who: "bill", squash: true },
+        { on: "bribe", offset: 0.4, do: "glow", who: "bill", size: V ? 200 : 250, dur: 0.6 },
+        { on: "bribe", offset: 0.5, do: "bob", who: "bill", y: 5, r: 6, speed: 3 },
+        // "humanity": Earth notices, smiles and leans toward it
+        { on: "humanity", do: "swap", who: "earth", to: "happy" },
+        { on: "humanity", offset: 0.15, do: "move", who: "happy", by: V ? [0, 90] : [-90, 60], turn: -14, dur: 0.35 },
+        // "not": she moves the bill and Earth follows it
+        { on: "not", n: 2, do: "move", who: "bill", by: V ? [20, 170] : [200, 90], dur: 0.35, ease: "smooth" },
+        { on: "not", n: 2, offset: 0.2, do: "move", who: "happy", by: V ? [0, 160] : [190, 90], turn: 12, dur: 0.45, ease: "smooth" },
+        { on: "dying.", offset: 0.3, do: "hop", who: "happy", height: 10 },
+      ];
+      KIT.collage({ id: ID, seed: 2206, host: { iris: ["out", D - 0.6, D - 0.05] }, cast: cast, beats: beats });
+      document.querySelector("#" + ID + "-hwall .earth").style.visibility = "hidden";
+    })();
+  </script>
+</template>

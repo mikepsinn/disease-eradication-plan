@@ -1,0 +1,81 @@
+<template id="fork-in-the-road-template">
+  <!-- fork-in-the-road · collage host shot (Part 25, scene 2). The iris opens on Wishonia at her console. On the free
+       wall beside her, in front of Earth, a fingerpost springs up on "select": FUTURE A points left, FUTURE B right.
+       YOU walks in under it reading his watch, looks up at one board, then the other. "modeled": he splits in two like
+       a double exposure; the two YOUs tip their fedoras to each other and walk off, one under each board. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="fork-in-the-road" data-width="1920" data-height="1080" data-start="0" data-duration="7.96">
+    <div id="fork-in-the-road-weave"></div>
+    <div id="fork-in-the-road-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "fork-in-the-road", V = KIT.V, SZ = KIT.collage.SIZES;
+      // The post stands on the free wall right of the console; YOU stands beside it.
+      var FEET = V ? 1450 : 1060, PX = V ? 860 : 1400, SK = V ? 0.62 : 0.82;
+      var YH = V ? 420 : 540, YK = YH / SZ["you-watch"][1], TK = YH / 790;
+      var BOARD = [190, 135], POST = [[165, 214], [222, 214], [222, 332], [165, 332]];
+      // the boards: B lower and pointing right, A above it pointing left (the art is mirrored below; its words are not)
+      var BY = FEET - YH - (V ? 70 : 90), AY = BY - (V ? 150 : 190);
+      var cast = {}, beats = [];
+      // the pole: copies of the arrow-sign's own post, stacked from the ground up to board B
+      var segH = (332 - 214) * SK, nSeg = Math.ceil((FEET - BY) / segH) + 1;
+      for (var i = 0; i < nSeg; i++) cast["pole" + i] = { art: "arrow-sign", clip: POST, x: PX, y: FEET - i * (segH - 2), anchor: [193, 332], pivot: [193, 332], scale: SK, hidden: true };
+      cast.signA = { art: "arrow-sign", x: PX, y: AY, anchor: [233, 135], pivot: [233, 332], scale: SK, hidden: true,
+        label: { text: "FUTURE A", at: [426 - BOARD[0] + 10, BOARD[1]], width: 280, size: 80 } };
+      cast.signB = { art: "arrow-sign", x: PX, y: BY, anchor: [193, 135], pivot: [193, 332], scale: SK, hidden: true,
+        label: { text: "FUTURE B", at: [BOARD[0] - 10, BOARD[1]], width: 280, size: 80 } };
+      var YX = PX + (V ? 30 : 60), Y0 = V ? 1300 : 2150;
+      cast.you = { art: "you-watch", x: Y0, y: FEET, anchor: "bottom", pivot: "bottom", scale: YK };
+      cast.ghost = { art: "you-watch", x: YX, y: FEET, anchor: "bottom", pivot: "bottom", scale: YK, hidden: true };
+      // the two copies after the split, tipping their hats to each other
+      cast.youL = { art: "you-tip", x: YX - (V ? 80 : 120), y: FEET, anchor: [190, 807], pivot: [190, 807], scale: TK, hidden: true };
+      cast.youR = { art: "you-tip", x: YX + (V ? 80 : 120), y: FEET, anchor: [190, 807], pivot: [190, 807], scale: TK, hidden: true };
+
+      var poles = Object.keys(cast).filter(function (n) { return n.indexOf("pole") === 0; });
+      // "select": the post springs up
+      poles.forEach(function (n, j) { beats.push({ on: "select", offset: j * 0.03, do: "pop", who: n }); });
+      beats.push({ on: "select", offset: 0.1, do: "pop", who: "signB", squash: true });
+      beats.push({ on: "select", offset: 0.2, do: "pop", who: "signA", squash: true });
+      beats.push({ on: "select", offset: 0.3, do: "shiver", who: ["signA", "signB"], dur: 0.5, amp: 2, rot: 4 });
+      beats = beats.concat([
+        // YOU walks in under it, reading his watch
+        { at: 0.3, do: "move", who: "you", by: [YX - Y0, 0], dur: 1.5, ease: "smooth" },
+        { at: 0.3, do: "bob", who: "you", y: 6, r: 1.5, speed: 3, until: 1.8 },
+        // he looks up at one board, then the other
+        { on: "remainder", do: "move", who: "you", by: [0, 0], turn: -6, dur: 0.25 },
+        { on: "your", n: 1, do: "move", who: "you", by: [0, 0], turn: 6, dur: 0.25 },
+        { on: "existence.", offset: 0.4, do: "move", who: "you", by: [0, 0], turn: 0, dur: 0.2 },
+        // "modeled": a double exposure, and there are two of him
+        { on: "modeled", do: "show", who: "ghost" },
+        { on: "modeled", do: "move", who: "ghost", by: [V ? 80 : 120, 0], dur: 0.3 },
+        { on: "modeled", do: "move", who: "you", by: [V ? -80 : -120, 0], dur: 0.3 },
+        { on: "both", offset: 0.2, do: "hide", who: ["you", "ghost"] },
+        { on: "both", offset: 0.2, do: "show", who: ["youL", "youR"] },
+        // they tip their fedoras to each other, then walk off, one under each board
+        { on: "paths", n: 2, do: "bow", who: ["youL", "youR"], angle: 8, hold: 0.35 },
+        { on: "twenty", do: "move", who: "youL", by: [V ? -260 : -330, 0], dur: 0.7 },
+        { on: "twenty", do: "bob", who: "youL", y: 6, r: 2, speed: 3, until: ["twenty", 1, 0.8] },
+        { on: "twenty", do: "move", who: "youR", by: [V ? 300 : 600, 0], dur: 0.7 },
+        { on: "twenty", do: "bob", who: "youR", y: 6, r: 2, speed: 3, until: ["twenty", 1, 0.8] },
+        { on: "years.", do: "pop", who: "youL", out: true },
+      ]);
+      KIT.collage({ id: ID, seed: 2502, host: { iris: ["in", 0.02, 0.7] }, cast: cast, beats: beats });
+      // the ghost is see-through, like a double exposure; A and the left copy are mirrored
+      document.getElementById(ID + "-ghost").style.opacity = "0.55";
+      document.getElementById(ID + "-signA").querySelector(".cg-art").style.transform = "scaleX(-1)";
+      document.getElementById(ID + "-youR").querySelector(".cg-art").style.transform = "scaleX(-1)";
+    })();
+  </script>
+</template>

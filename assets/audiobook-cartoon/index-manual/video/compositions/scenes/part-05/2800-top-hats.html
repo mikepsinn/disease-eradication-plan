@@ -1,0 +1,84 @@
+<template id="2800-top-hats-template">
+  <!-- 2800-top-hats · collage (Part 5, scene 4; plate the-hill, no seam from step-1-dice-in-a-suit, which it starts
+       on). The bit: our fat cat is one in 2,800. "two": the camera pulls back and back, and the hill shrinks into one
+       square of a pictogram of 2,800 fat cats in top hats, 56 across and 50 down; "planet.": 2,800. "Statistically,":
+       the lights go down; "least": a spotlight finds one who is already a skeleton. "of them": the camera dives back
+       into ours, the lights come up, and "living." lights his hat; an I PREFER LIVING button pops onto his lapel. (The
+       sleeping fat cat and the fat cat's own skeleton are not drawn yet: MISSING-ART.md.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="2800-top-hats" data-width="1920" data-height="1080" data-start="0" data-duration="7.66">
+    <div id="2800-top-hats-weave"></div>
+    <div id="2800-top-hats-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "2800-top-hats", V = KIT.V;
+      // The hill as step-1-dice-in-a-suit leaves it (the same plate px): keep the two in step.
+      var G = 1000, HX = 900, CK = 1.35, CHAIR_Y = G - 460;
+      var at = function (p) { return [HX - 146 * CK + p[0] * CK, CHAIR_Y - 387 * CK + p[1] * CK]; }; // fat-cat-chair art px -> plate
+      var LAPEL = at([96, 182]);
+      var BW = 600, BH = BW * 442 / 470, BUNDLE = [HX - BW / 2, G + 40 - BH / 2 - BW / 2, HX + BW / 2, G + 40 - BH / 2 + BW / 2];
+      // The pictogram: 56 x 50 cells of C plate px; the hill is the cell in row 25, column 28, near its middle, so the
+      // camera can pull straight back from it. Four blocks of copies leave that one cell empty: 2,799 and the hill.
+      var C = 1900, COLS = 56, ROWS = 50, HR = 25, HCOL = 28, HY = 520, X0 = HX - (HCOL + 0.5) * C, Y0 = HY - (HR + 0.5) * C;
+      var GCX = X0 + COLS * C / 2, GCY = Y0 + ROWS * C / 2;
+      var gs = V ? 1000 / (COLS * C) : 720 / (ROWS * C);
+      var cell = function (r, c) { return [X0 + c * C, Y0 + r * C, X0 + (c + 1) * C, Y0 + (r + 1) * C]; };
+      var SKEL = cell(14, 41), SKC = [(SKEL[0] + SKEL[2]) / 2, (SKEL[1] + SKEL[3]) / 2];
+      var views = V ? {
+        home: [HX + 60, 520, 0.72], grid: [HX + 60, HY, gs], skel: [SKC[0], SKC[1], 0.11],
+      } : {
+        home: [HX + 250, 460, 0.84], grid: [HX, HY, gs], skel: [SKC[0], SKC[1], 0.1],
+      };
+
+      var cast = {
+        cat: { art: "fat-cat-chair", x: HX, y: CHAIR_Y, anchor: "bottom", pivot: "bottom", scale: CK },
+        button: { art: "living-button", x: LAPEL[0] + 10, y: LAPEL[1] + 60, scale: 0.62, hidden: true,
+          label: [{ text: "I PREFER", at: [150, 132], width: 170, size: 48 }, { text: "LIVING", at: [150, 192], width: 160, size: 56 }] },
+      };
+
+      var beats = [
+        // the hill and its price, as step 1 left them
+        { at: -3, until: -0.4, do: "pile", id: "hill", art: "banknote", scale: 0.42, x: HX, y: G, heap: 8, count: 36, jitter: 10, tilt: 6 },
+        { at: -1, do: "stamp", id: "unreal", who: "cat", spot: [114, 64], text: "UNREALISTIC", size: 16, width: 104, tilt: -6, from: 1 },
+        { at: -1, do: "pictogram", id: "bundle", art: "money-bundle", count: 1, box: BUNDLE, fill: 1, dur: 0 },
+        { at: 0, do: "counter", id: "price", who: "bundle.0", spot: [235, 165], from: 1000000001, to: 1000000001, dur: 0.01, prefix: "$", size: V ? 70 : 62, border: "ink", enter: "none" },
+        // "two": pull back and back; the hill is one square of 2,800
+        { on: "two", do: "pictogram", id: "gridA", art: "fat-cat", count: COLS * HR, cols: COLS, box: [X0, Y0, X0 + COLS * C, Y0 + HR * C], fill: 0.62, dur: 0 },
+        { on: "two", do: "pictogram", id: "gridB", art: "fat-cat", count: HCOL, cols: HCOL, box: [X0, Y0 + HR * C, X0 + HCOL * C, Y0 + (HR + 1) * C], fill: 0.62, dur: 0 },
+        { on: "two", do: "pictogram", id: "gridC", art: "fat-cat", count: COLS - HCOL - 1, cols: COLS - HCOL - 1, box: [X0 + (HCOL + 1) * C, Y0 + HR * C, X0 + COLS * C, Y0 + (HR + 1) * C], fill: 0.62, dur: 0 },
+        { on: "two", do: "pictogram", id: "gridD", art: "fat-cat", count: COLS * (ROWS - HR - 1), cols: COLS, box: [X0, Y0 + (HR + 1) * C, X0 + COLS * C, Y0 + ROWS * C], fill: 0.62, dur: 0 },
+        { on: "two", do: "camera", view: "grid", dur: KIT.cue(ID, "planet.") - KIT.cue(ID, "two") - 0.1 },
+        { on: "planet.", do: "stamp", id: "count", text: "2,800", x: HX, y: HY - 7 * C, size: (V ? 330 : 340) / gs, width: (V ? 800 : 900) / gs, tilt: -5, shake: 9 },
+        // "Statistically,": the lights go down (everything written before the wash darkens)
+        { on: "Statistically,", do: "wash", id: "dark", color: "#120C08", blend: "normal", opacity: 0.74, dur: 0.12, above: "gridD." + (COLS * (ROWS - HR - 1) - 1) },
+        { on: "Statistically,", do: "pop", who: "count", out: true },
+        // "least": a spotlight finds one who is already a skeleton, top hat and all
+        { on: "least", do: "pictogram", id: "skel", art: "skeleton", count: 1, box: SKEL, fill: 0.62, dur: 0 },
+        { on: "least", do: "pictogram", id: "skelHat", art: "fat-cat-hat", count: 1, box: [SKEL[0] + 0.38 * C, SKEL[1] + 0.12 * C, SKEL[2] - 0.38 * C, SKEL[1] + 0.36 * C], fill: 0.9, dur: 0 },
+        { on: "at", offset: -0.15, do: "camera", view: "skel", dur: 0.4 },
+        { on: "least", do: "glow", who: "skel.0", size: 1.5 * C, dur: 0.5 },
+        // "of them": back into ours; the lights come up; "living." lights his hat and the button pops on
+        { on: "of", n: 2, do: "pop", who: ["skel.0", "skelHat.0"], out: true },
+        { on: "of", n: 2, offset: -0.05, do: "camera", view: "home", dur: KIT.cue(ID, "living.") - KIT.cue(ID, "of", 2) + 0.05 },
+        { on: "of", n: 2, offset: 0.25, do: "wash", id: "dark", opacity: 0, dur: 0.35 },
+        { on: "living.", do: "glow", who: "cat", size: 520, dur: 0.6 },
+        { on: "living.", do: "hop", who: "cat", height: 26 },
+        { at: KIT.after(ID, "living."), do: "pop", who: "button", squash: true },
+      ];
+
+      KIT.collage({ id: ID, seed: 352, plate: [HX - 140000, HY - 120000, HX + 140000, HY + 120000], views: views, view: "home", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

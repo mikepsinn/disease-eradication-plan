@@ -1,0 +1,54 @@
+<template id="host-manual-template">
+  <!-- host-manual · collage host shot (Part 3, scene 6). The bit: this manual is a bribe on a spring. Her old dusty copy
+       at the left end of the ledge, the new orange one at the right. "manual": the new one glows. "bribe": a medicine bill
+       boings up out of it on a spring, like a jack-in-the-box, and keeps bouncing. "irrational": the snail from the title
+       card climbs onto the left end of the ledge and sets off toward the books; by the end it has gone a finger's width. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="host-manual" data-width="1920" data-height="1080" data-start="0" data-duration="7.02">
+    <div id="host-manual-weave"></div>
+    <div id="host-manual-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "host-manual", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES;
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    var TOP = S.top + 6;
+    var OH = V ? 200 : 240, NH = V ? 270 : 320, OX = V ? 240 : 540, NX = V ? 640 : 1120;
+    var NK = hs("manual-closed", NH), OK = hs("manual", OH);
+    var SPH = V ? 210 : 200, SPK = hs("jack-spring", SPH), BILL = hs("bill-med", V ? 190 : 230);
+    var cast = {
+      old: { art: "manual", x: OX, y: TOP, anchor: "bottom", pivot: "bottom", scale: OK },
+      web: { art: "cobweb", x: OX + SZ.manual[0] * OK / 2 - 4, y: TOP - OH + 4, anchor: [280, 0], scale: hs("cobweb", OH * 0.55) },
+      spring: { art: "jack-spring", x: NX, y: TOP - NH + 30, anchor: "bottom", pivot: "bottom", scale: SPK, hidden: true },
+      bill: { art: "bill-med", x: NX, y: TOP - NH + 30 - SPH + 20, anchor: "bottom", pivot: "bottom", scale: BILL, hidden: true },
+      book: { art: "manual-closed", x: NX, y: TOP, anchor: "bottom", pivot: "bottom", scale: NK,
+        label: [{ text: "HOW TO END", at: [102, 105], width: 112, size: 34 }, { text: "WAR AND DISEASE", at: [102, 138], width: 112, size: 34 }] },
+    };
+    var SNH = V ? 62 : 74, SNX = V ? 70 : 385;
+    cast.snail = { art: "snail", x: SNX, y: TOP + 4, anchor: "bottom", pivot: "bottom", scale: hs("snail", SNH), hidden: true };
+    var beats = [
+      // "gradually:": the snail from the title card climbs onto the left end of the ledge, and sets off; it gets a finger's width
+      { on: "irrational", do: "slideIn", who: "snail", from: "left", dist: V ? 260 : 300, over: 4 },
+      { on: "gradually:", do: "move", who: "snail", by: [V ? 10 : 12, 0], dur: KIT.scene(ID).duration - KIT.cue(ID, "gradually:") - 0.1 },
+      { on: "gradually:", do: "bob", who: "snail", y: 1, r: 2, speed: 2 },
+      { on: "manual", do: "glow", who: "book", size: V ? 300 : 360, dur: 0.8 },
+      { on: "manual", do: "hop", who: "book", height: 10 },
+      // "bribe": a medicine bill on a spring, out of the top of the book
+      { on: "bribe", do: "hop", who: "book", height: 16 },
+      { on: "bribe", do: "pop", who: "spring", squash: true },
+      { on: "bribe", offset: 0.04, do: "pop", who: "bill", squash: true },
+      { on: "bribe", offset: 0.3, do: "bob", who: ["spring", "bill"], y: 16, r: 4, speed: 3.2 },
+    ];
+    KIT.collage({ id: ID, seed: 306, host: true, cast: cast, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,93 @@
+<template id="dysfunction-engine-template">
+  <!-- dysfunction-engine · collage (Part 22, scene 5; plate dysfunction-engine). The bit: the plan runs on greed as it
+       is. The fat cat sprints on a treadmill after a medicine bill dangling from a rod in front of his monocle. "WITH":
+       the belt turns the gears and the gears work a pill press; "dysfunction": a pill bottle drops out of its chute for
+       each patient. "not": a sign springs up
+       out of the belt in his path, PLEASE BE GOOD; he snatches it without breaking stride, it bursts into flame, he lights
+       his cigar off it and tosses it over his shoulder. In 9:16 the patients stand on a lower floor and the bottles drop
+       to them. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="dysfunction-engine" data-width="1920" data-height="1080" data-start="0" data-duration="4.64">
+    <div id="dysfunction-engine-weave"></div>
+    <div id="dysfunction-engine-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "dysfunction-engine", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // The machine, in canvas px. 16:9: patients, pill press, gears, treadmill, left to right on one floor. 9:16: the
+      // treadmill and gears up top, the press and the patients on a floor below.
+      var L = V ? { G: 930, tread: 640, tk: 1.45, catH: 430, gear: [250, 760], gk: 0.82, floor: 1440, pats: [470, 700, 930], patH: 400, press: [190, 360] }
+        : { G: 820, tread: 1390, tk: 2, catH: 520, gear: [880, 650], gk: 0.62, floor: 820, pats: [110, 260, 410], patH: 440, press: [650, 400] };
+      var PRK = hs("pill-press", L.press[1]), CHUTE = [L.press[0] + (80 - 180) * PRK, L.floor - (461 - 392) * PRK];
+      var BELT = L.G - (138 - 22) * L.tk;                               // the belt's top
+      var CK = hs("fat-cat-waddle", L.catH), CATX = L.tread - 40;
+      var FACE = [CATX - 257 * CK / 2 + 228 * CK, BELT - L.catH + 112 * CK]; // his monocle and cigar (art 228, 112)
+      // the rod is clamped to the top of his own hat, so the bait runs ahead of him (and bobs with him)
+      var RODK = V ? 0.95 : 1.15, ROD = [CATX - 128 * CK + 112 * CK, BELT + 12 - L.catH + 8 * CK], HOOK = [ROD[0] + 362 * RODK, ROD[1] + 50 * RODK];
+      var circle = function (c, r) { var p = []; for (var i = 0; i < 40; i++) { var a = i / 40 * 2 * Math.PI; p.push([c[0] + r * Math.cos(a), c[1] + r * Math.sin(a)]); } return p; };
+      var GL = [160, 165], GR = [393, 172];
+      var cast = {
+        gearL: { art: "gears", clip: circle(GL, 160), x: L.gear[0], y: L.gear[1], anchor: GL, pivot: GL, scale: L.gk },
+        gearR: { art: "gears", clip: circle(GR, 133), x: L.gear[0] + (GR[0] - GL[0]) * L.gk, y: L.gear[1] + (GR[1] - GL[1]) * L.gk, anchor: GR, pivot: GR, scale: L.gk },
+        press: { art: "pill-press", x: L.press[0], y: L.floor, anchor: "bottom", pivot: "bottom", scale: PRK },
+        tread: { art: "conveyor", x: L.tread, y: L.G, anchor: "bottom", scale: L.tk },
+        cat: { art: "fat-cat-waddle", x: CATX, y: BELT + 12, anchor: "bottom", pivot: "bottom", scale: CK },
+        rod: { art: "cane-hook", x: ROD[0], y: ROD[1], anchor: [0, 0], scale: RODK },
+        bait: { art: "bill-med", x: HOOK[0], y: HOOK[1] - 6, anchor: "top", pivot: "top", scale: hs("bill-med", V ? 140 : 170) },
+        sign: { art: "sign-board", x: CATX + 300 * CK, y: BELT + 10, anchor: "bottom", pivot: "bottom", scale: hs("sign-board", V ? 230 : 290), hidden: true,
+          label: [{ text: "PLEASE", at: [107, 60], width: 170, size: 46 }, { text: "BE GOOD", at: [107, 108], width: 180, size: 46 }] },
+        fire: { art: "flames", x: 0, y: 0, anchor: "bottom", scale: hs("flames", V ? 240 : 300), hidden: true },
+        puff: { art: "cloud-puff", x: FACE[0] + 40, y: FACE[1] - 30, scale: 0.35, hidden: true },
+      };
+      var SICK = ["sick-1", "sick-3", "sick-4"];
+      SICK.forEach(function (art, i) {
+        cast["pat" + i] = { art: art, x: L.pats[i], y: L.floor, anchor: "bottom", pivot: "bottom", scale: hs(art, L.patH) };
+        cast["pill" + i] = { art: "pill-bottle", x: CHUTE[0], y: CHUTE[1] - 40, scale: hs("pill-bottle", V ? 110 : 130), hidden: true };
+      });
+      var beats = [
+        // he runs flat out the whole time; the bait swings in front of him
+        { at: 0, do: "bob", who: "cat", y: 14, r: 3, speed: 7, fade: 0 },
+        { at: 0, do: "bob", who: ["rod", "bait"], y: 14, r: 0, speed: 7, fade: 0 },
+        { at: 0, do: "bob", who: "bait", y: 2, r: 10, speed: 4, fade: 0 },
+        { at: 0, do: "shiver", who: "tread", dur: D, amp: 2, rot: 0.3 },
+        // "WITH": the belt turns the gears
+        { on: "WITH", do: "move", who: "gearL", turn: 720, dur: D - cue("WITH"), ease: "linear" },
+        { on: "WITH", do: "move", who: "gearR", turn: -880, dur: D - cue("WITH"), ease: "linear" },
+      ];
+      // "dysfunction": the gears work the press, and a bottle drops out of its chute for each patient, nearest first
+      [0, 0.25, 0.5].forEach(function (o, j) {
+        var i = SICK.length - 1 - j, hand = [L.pats[i] + 40, L.floor - L.patH * 0.48];
+        beats.push({ on: "dysfunction,", offset: o - 0.06, do: "shiver", who: "press", dur: 0.12, amp: 4, rot: 1 });
+        beats.push({ on: "dysfunction,", offset: o, do: "pop", who: "pill" + i, squash: true });
+        beats.push({ on: "dysfunction,", offset: o + 0.04, do: "move", who: "pill" + i, to: hand, turn: 360, arc: V ? 160 : 180, dur: 0.3 });
+        beats.push({ on: "dysfunction,", offset: o + 0.36, do: "hop", who: ["pat" + i, "pill" + i], height: 30 });
+      });
+      var GRAB = cue("not") + 0.2, LIT = KIT.after(ID, "it.") - 0.2;
+      beats = beats.concat([
+        // "not": PLEASE BE GOOD springs up in his path; he snatches it without breaking stride
+        { on: "not", do: "pop", who: "sign", squash: true },
+        { at: GRAB, do: "move", who: "sign", to: [FACE[0] + 30, FACE[1] + 90], turn: -18, scale: 0.75, dur: 0.12 },
+        { at: GRAB + 0.12, do: "move", who: "sign", to: "cat", by: [FACE[0] + 30 - CATX, FACE[1] + 90 - (BELT + 12 - L.catH / 2)], turn: -18, dur: F },
+        // it bursts into flame, he lights his cigar off it and tosses it over his shoulder, still running
+        { at: LIT, do: "move", who: "fire", to: "sign", by: [0, -40], dur: F },
+        { at: LIT, do: "pop", who: "fire", squash: true },
+        { at: LIT + 0.2, do: "pop", who: "puff", swell: 0.5 },
+        { at: LIT + 0.35, do: "move", who: "sign", by: [-900, -120], turn: -160, arc: 200, dur: 0.4 },
+      ]);
+      KIT.collage({ id: ID, seed: 2205, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

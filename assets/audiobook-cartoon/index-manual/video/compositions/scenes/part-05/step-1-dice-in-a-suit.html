@@ -1,0 +1,135 @@
+<template id="step-1-dice-in-a-suit-template">
+  <!-- step-1-dice-in-a-suit · collage (Part 5, scene 3; plate the-hill, continued by 2800-top-hats). The bit: one fat
+       cat on a hill of plain bills is the whole of Step 1. "Rich": the empty swivel chair on top swings round and he
+       is in it, the UNREALISTIC stamp from Part 4 still on his forehead. "papers": he holds one bill out. "billion": a
+       bundle as big as a bus stands at the front of the hill, $1,000,000,000; "exact)": the bill hops on and it ticks
+       to $1,000,000,001. "later.": a thought of a bigger stack floats just out of reach while he bounces for it.
+       "investment": at the foot of the hill a businessman strolls by whose head and body are dice in a suit; on
+       "gambling" the dice fall out of the empty suit, "but" they settle, and on "suit." he is back together and strolls
+       on. "not dying": the Grim Reaper rises with his clipboard, a heart and a headstone, and holds his pencil at the
+       headstone; on the last "diseases." the fat cat snatches it and marks the heart, and the Reaper sinks. (The
+       dotted stack and the dollar-sign eyes are not drawn yet: MISSING-ART.md.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="step-1-dice-in-a-suit" data-width="1920" data-height="1080" data-start="0" data-duration="21.46">
+    <div id="step-1-dice-in-a-suit-weave"></div>
+    <div id="step-1-dice-in-a-suit-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "step-1-dice-in-a-suit", V = KIT.V;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The hill (plate px, the same in 2800-top-hats): a heap of plain bills on the ground line G, the chair on top.
+      var G = 1000, HX = 900, CK = 1.35, CHAIR_Y = G - 460;
+      var at = function (p) { return [HX - 146 * CK + p[0] * CK, CHAIR_Y - 387 * CK + p[1] * CK]; }; // fat-cat-chair art px -> plate
+      var HAND = at([240, 112]), SPEED = 950 / (cue("gambling") - cue("This"));
+      // the bundle as big as a bus at the front of the hill (a square box: the pictogram fits the art's width to it)
+      var BW = 600, BH = BW * 442 / 470, BUNDLE = [HX - BW / 2, G + 40 - BH / 2 - BW / 2, HX + BW / 2, G + 40 - BH / 2 + BW / 2];
+      // the dice businessman stops at the foot of the hill (DX), 1.25 times his art
+      var DK = 1.25, DX = HX - 300, sq = function (cx, cy, c) { return [cx - c / 2, cy - c / 2, cx + c / 2, cy + c / 2]; };
+      var views = V ? {
+        cat: [HX, 330, 1.55], home: [HX + 60, 520, 0.72], foot: [HX - 300, 700, 0.95],
+      } : {
+        cat: [HX + 40, 330, 1.2], home: [HX + 250, 460, 0.84], foot: [HX - 300, 620, 1.05],
+      };
+
+      var cast = {
+        // the fat cat in his chair, on top of the hill, with Part 4's stamp still on his forehead
+        swivel: { art: "swivel-chair", x: HX, y: CHAIR_Y, anchor: "bottom", pivot: "bottom", scale: 387 * CK / 480 },
+        cat: { art: "fat-cat-chair", x: HX, y: CHAIR_Y, anchor: "bottom", pivot: "bottom", scale: CK, hidden: true },
+        held: { art: "bill-plain", x: HAND[0] + 10, y: HAND[1] + 20, scale: 0.5, hidden: true },
+        // the bigger stack he is promised: a thought, just out of reach
+        bubble: { art: "thought-bubble-blank", x: HX + 480, y: 170, scale: 1.65, hidden: true },
+        t0: { art: "banknote", x: HX + 480, y: 190, scale: 0.36, hidden: true },
+        t1: { art: "banknote", x: HX + 472, y: 155, scale: 0.36, hidden: true },
+        t2: { art: "banknote", x: HX + 486, y: 120, scale: 0.36, hidden: true },
+        t3: { art: "banknote", x: HX + 476, y: 85, scale: 0.36, hidden: true },
+        // the businessman at the foot of the hill, and the prize wheel he is inside his suit
+        // the Grim Reaper and his clipboard: a heart box, a headstone box; his pencil
+        reaper: { art: "reaper-stop", x: HX + 660, y: G - 40, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true },
+        ballot: { art: "plan-clipboard", x: HX + 470, y: 330, scale: 0.72, hidden: true },
+        heart: { art: "heart", x: HX + 470, y: 250, scale: 0.8, hidden: true },
+        stone: { art: "headstone", x: HX + 470, y: 410, scale: 0.24, hidden: true },
+        mark: { art: "crayon-x", x: HX + 470, y: 250, scale: 0.36, hidden: true },
+        pencil: { art: "pencil", x: HX + 470 + 200, y: 430, scale: 0.36, hidden: true },
+      };
+
+      var beats = [
+        // the hill is already there: a heap of plain bills
+        { at: -3, until: -0.4, do: "pile", id: "hill", art: "banknote", scale: 0.42, x: HX, y: G, heap: 8, count: 36, jitter: 10, tilt: 6 },
+        // "Rich": up he pops, Part 4's stamp still on his forehead
+        { on: "Rich", offset: -0.15, do: "shiver", who: "swivel", dur: 0.2, amp: 3, rot: 4 },
+        { on: "Rich", offset: 0.05, do: "swap", who: "swivel", to: "cat" },
+        { at: -1, do: "stamp", id: "unreal", who: "cat", spot: [114, 64], text: "UNREALISTIC", size: 16, width: 104, tilt: -6, from: 1 },
+        { on: "Rich", offset: 0.4, do: "bob", who: "cat", y: 3, r: 0.8, speed: 0.7, until: "papers", fade: 0.3 },
+        // "give you papers": one bill, held out at arm's length
+        { on: "give", do: "pop", who: "held" },
+        { on: "give", offset: 0.15, do: "move", who: "held", by: [110, -30], dur: 0.33 },
+        // "billion": the camera pulls back and the hill rolls up its price; "exact)": the bill hops on and it ticks
+        { on: "billion", n: 1, offset: -0.15, do: "camera", view: "home", dur: 0.5 },
+        // (a one-cell pictogram, so it stands in front of the hill)
+        { on: "billion", n: 1, offset: -0.1, do: "pictogram", id: "bundle", art: "money-bundle", count: 1, box: BUNDLE, fill: 1, dur: 0 },
+        { on: "billion", n: 1, offset: -0.1, do: "shake", y: 6, frames: 3 },
+        { on: "billion", n: 1, do: "counter", id: "price", who: "bundle.0", spot: [235, 165], from: 0, to: 1000000000, dur: 0.6, ease: "smooth", prefix: "$", size: V ? 70 : 62, border: "ink" },
+        { on: "exact)", offset: -0.2, do: "move", who: "held", to: [HX + 60, BUNDLE[1] + 70], dur: 0.33, arc: 140, turn: 0 },
+        { on: "exact)", offset: 0.13, do: "hide", who: "held" },
+        { on: "exact)", offset: 0.13, do: "counter", id: "price", to: 1000000001, dur: 0.08 },
+        { on: "exact)", offset: 0.13, do: "shake", y: 4, frames: 2 },
+        // "promising them even more papers later": a bigger stack, in a thought, just out of reach
+        { on: "promising", do: "pop", who: "bubble", squash: true },
+        { on: "promising", offset: 0.2, do: "pop", who: "t0" }, { on: "even", do: "pop", who: "t1" }, { on: "more", do: "pop", who: "t2" }, { on: "papers", n: 3, do: "pop", who: "t3" },
+        { on: "more", do: "bob", who: ["bubble", "t0", "t1", "t2", "t3"], y: 10, r: 1.5, speed: 1.4, until: 14.2 },
+        { on: "later.", offset: 0.5, do: "hop", who: "cat", height: 70 },
+        { on: "later.", offset: 0.5, do: "move", who: ["bubble", "t0", "t1", "t2", "t3"], by: [40, -70], dur: 0.25 },
+        { on: "later.", offset: 1.05, do: "hop", who: "cat", height: 110 },
+        { on: "later.", offset: 1.05, do: "move", who: ["bubble", "t0", "t1", "t2", "t3"], by: [40, -90], dur: 0.25 },
+        // "investment": down at the foot of the hill, a businessman strolls by
+        { on: "This", n: 1, offset: -0.1, do: "camera", view: "foot", dur: 0.7 },
+        { on: "This", n: 1, do: "hide", who: ["bubble", "t0", "t1", "t2", "t3", "price", "bundle.0"] },
+        // (a march and one-cell pictograms, so they walk in front of the hill)
+        { on: "This", n: 1, do: "march", id: "biz", art: "dice-suit", count: 1, scale: DK, path: [[HX - 1250, G + 50], [DX, G + 50]], speed: SPEED, until: "gambling", turn: false, bob: 9, rock: 2.5 },
+        // "gambling": the dice tumble out and the empty suit stands there; "but": they settle; "suit.": back in, and he strolls on
+        { on: "gambling", do: "hide", who: "biz.0" },
+        { on: "gambling", do: "pictogram", id: "empty", art: "dice-suit-empty", count: 1, box: sq(DX + 70, G + 50 - 389 * DK / 2, 389 * DK), fill: 1, dur: 0 },
+        { on: "gambling", do: "shake", y: 5, frames: 3 },
+        { on: "but", do: "shiver", who: "empty.0", dur: 0.25, amp: 3, rot: 1 },
+        { on: "suit.", do: "hide", who: "empty.0" },
+        { on: "suit.", do: "pictogram", id: "biz2", art: "dice-suit", count: 1, box: sq(DX, G + 50 - 482 * DK / 2, 482 * DK), fill: 1, dur: 0 },
+        { on: "suit.", offset: 0.3, do: "move", who: "biz2.0", by: [2700, 0], dur: 2.2 },
+        { on: "suit.", offset: 0.3, do: "bob", who: "biz2.0", y: 9, r: 2.5, speed: 2.2, until: 16, fade: 0.1 },
+        // "You really only need one human": back on the fat cat
+        { on: "You", n: 3, do: "camera", view: "home", dur: 0.8 },
+        { on: "You", n: 3, offset: 0.4, do: "show", who: ["price", "bundle.0"] },
+        // "not dying": the Reaper rises with his ballot, a heart and a headstone
+        { on: "not", offset: -0.2, do: "slideIn", who: "reaper", from: "bottom", dist: 900, over: 30 },
+        { on: "not", offset: 0.35, do: "pop", who: "ballot", squash: true },
+        { on: "not", offset: 0.55, do: "pop", who: "heart" },
+        { on: "not", offset: 0.65, do: "pop", who: "stone" },
+        // the second "dying": he holds the ballot out to the fat cat
+        { on: "dying", n: 2, do: "move", who: ["ballot", "heart", "stone"], by: [-80, 20], dur: 0.3 },
+        { on: "dying", n: 2, offset: 0.2, do: "pop", who: "pencil" },
+        { on: "dying", n: 2, offset: 0.2, do: "move", who: "pencil", by: [-150, 0], dur: 0.25 },
+        { on: "dying", n: 2, offset: 0.3, do: "nudge", who: "reaper", by: [-30, 0] },
+        // the last "diseases.": the fat cat marks the heart, and the Reaper sinks back behind the hill
+        { on: "diseases", n: 2, offset: -0.12, do: "nudge", who: "cat", by: [40, -10] },
+        { on: "diseases", n: 2, offset: -0.12, do: "move", who: "pencil", by: [-40, -160], dur: 0.12, turn: -30 },
+        { on: "diseases", n: 2, do: "move", who: "mark", by: [-80, 20], dur: 0.01 },
+        { on: "diseases", n: 2, do: "stamp", who: "mark", from: 1.8, shake: 4 },
+        { on: "diseases", n: 2, offset: 0.3, do: "shiver", who: "reaper", dur: 0.3, amp: 3, rot: 2 },
+        { on: "diseases", n: 2, offset: 0.6, do: "slideOut", who: ["reaper", "ballot", "heart", "stone", "mark", "pencil"], to: "bottom", dist: 1100, dur: 0.45 },
+      ];
+
+      KIT.collage({ id: ID, seed: 351, plate: V ? [-2600, -2400, 4200, 3600] : [-2000, -1200, 3600, 2400], views: views, view: "cat", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

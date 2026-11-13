@@ -1,0 +1,52 @@
+<template id="sixty-five-years-template">
+  <!-- sixty-five-years · collage host shot (Part 15, scene 6). The console 65 years on: the tower of forms beside her
+       gone gray with dust and strung with cobwebs, a cobweb from her antenna, and in the window Earth still puffing
+       little mushroom clouds. Her arms are already folded; she side-eyes the camera (part file). Iris out on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="sixty-five-years" data-width="1920" data-height="1080" data-start="0" data-duration="1.239">
+    <div id="sixty-five-years-weave"></div>
+    <div id="sixty-five-years-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "sixty-five-years", V = KIT.V, S = KIT.STUDIO, E = S.earth, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      // The same tower as proof-required (TX, the ledge, bundle height and spacing), as a one-column grid already
+      // there, grayed out with dust.
+      var TABLE = V ? [960, 1580, 1.4] : [1235, 1095, 1.57], LEDGE = TABLE[1] - 186 * TABLE[2], TX = TABLE[0] - 10, GAP = 132, N = 12;
+      var box = [TX - 90, LEDGE - GAP * N, TX + 90, LEDGE];
+      var M0 = V ? E[0] - E[2] * 0.5 : E[0] - E[2] * 0.4;
+      var mk = (E[2] * 0.42) / SZ.mushroom[1];
+      KIT.collage({
+        id: ID, seed: 1506, host: { push: [1.02, 1.06], iris: ["out", D - 0.42, D - 0.04] },
+        cast: {
+          table: { art: "side-table", x: TABLE[0], y: TABLE[1], anchor: "bottom", scale: TABLE[2] },
+          web1: { art: "cobweb", x: TX + 110, y: LEDGE - 3 * GAP, anchor: [280, 0], scale: 0.7 },
+          web2: { art: "cobweb", x: TX + 110, y: LEDGE - 6 * GAP, anchor: [280, 0], scale: 0.55 },
+          // from her antenna to the tower
+          web3: { art: "cobweb", x: V ? S.face[0] + 260 : TX - 80, y: S.face[1] - (V ? 330 : 300), anchor: [280, 0], scale: 1.1 },
+          m1: { art: "mushroom", x: M0, y: E[1] - E[2] * 0.6, anchor: "bottom", scale: mk, hidden: true },
+          m2: { art: "mushroom", x: V ? M0 + E[2] * 0.3 : E[0] + E[2] * 0.45, y: E[1] - E[2] * 0.4, anchor: "bottom", scale: mk * 0.8, hidden: true },
+          m3: { art: "mushroom", x: V ? M0 + E[2] * 0.15 : E[0] + E[2] * 0.05, y: E[1] - E[2] * 0.75, anchor: "bottom", scale: mk * 0.9, hidden: true },
+        },
+        beats: [
+          { at: 0, do: "pictogram", id: "tower", art: "binder", count: N, cols: 1, box: box, dur: 0.01, fill: 1.05 },
+          { at: 0, do: "pictogram", id: "tower", grey: 0.75, dur: 0.01, first: N },
+          { at: 0.05, do: "pop", who: "m1", squash: true },
+          { at: 0.45, do: "pop", who: "m2", squash: true },
+          { at: 0.8, do: "pop", who: "m3", squash: true },
+        ],
+      });
+    })();
+  </script>
+</template>

@@ -1,0 +1,177 @@
+<template id="not-a-bribe-label-maker-template">
+  <!-- not-a-bribe-label-maker · collage (Part 22, scene 4; plate tackle-box, continues manual-toolbox, no seam). It opens
+       on the last spread: the five numbered envelopes, charred, back in order. Then three more spreads.
+       "Legal": the Lobbyist pops up, bills walking out of his briefcase; red stamps on "bribes", "other" and "things":
+       CAMPAIGN CONTRIBUTION on the briefcase, SPEAKING FEE on a bill, NOT A BRIBE across his mask; he hops, pleased.
+       "An appliance": the Optimitron pops up with HEALTH and WEALTH at 50%; the Politician feeds it a MORE WAR card; on
+       "work" both drop to 0% and it spits the card back out, burnt. "feelings": the Politician shakes and hugs it, and
+       nothing moves. "governing": it pops CURE IT up like toast into his chin, and both go to 100%. "Templates": a
+       letter, Dear Senator ____, turns into a bell jar propped on a pencil, baited with a medicine bill; the Politician
+       tiptoes in and grabs it; "saving": the jar slams down on him; "lives": it lifts and he is wearing a HERO sash and a medal. The
+       spreads (SPREAD, G, view, the envelope row) are shared with manual-toolbox. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="not-a-bribe-label-maker" data-width="1920" data-height="1080" data-start="0" data-duration="15.28">
+    <div id="not-a-bribe-label-maker-weave"></div>
+    <div id="not-a-bribe-label-maker-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "not-a-bribe-label-maker", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // ── The shared plate (same in manual-toolbox): one spread every SPREAD px, the page's floor at G ──
+      var G = 840, SPREAD = 2600, cx = function (k) { return 960 + SPREAD * k; };
+      var view = function (k, s, sv) { return V ? [cx(k), G - 420 / sv, sv] : [cx(k), G - 330 / s, s]; };
+      // the envelope art is the five in a row: each paper is one of them, clipped out, its number and eyes in art px
+      var EK = V ? 1.6 : 1.9, EGAP = V ? 215 : 290;
+      var ENV = [   // each envelope's outline in the art, and its middle
+        { m: 50, clip: [[0, 0], [110, 0], [110, 18], [101, 24], [97, 150], [100, 160], [100, 240], [0, 240]] },
+        { m: 139, clip: [[110, 0], [166, 0], [166, 22], [178, 22], [178, 150], [174, 160], [174, 240], [100, 240], [100, 160], [97, 150], [101, 24], [110, 18]] },
+        { m: 220, clip: [[166, 0], [266, 0], [266, 8], [261, 10], [260.5, 60], [262.5, 100], [263.5, 145], [267, 155], [267, 240], [174, 240], [174, 160], [178, 150], [178, 22], [166, 22]] },
+        { m: 305, clip: [[266, 0], [341, 0], [341, 30], [347, 90], [353, 145], [356, 155], [356, 240], [267, 240], [267, 155], [263.5, 145], [262.5, 100], [260.5, 60], [261, 10], [266, 8]] },
+        { m: 398, clip: [[341, 0], [446, 0], [446, 240], [356, 240], [356, 155], [353, 145], [347, 90], [341, 30]] }];
+      var EEYE = [[[55, 50], [80, 48]], [[125, 50], [157, 48]], [[212, 33], [237, 33]], [[287, 47], [315, 42]], [[367, 50], [393, 45]]];
+      var paper = function (i) {
+        var m = ENV[i].m;
+        return { art: "envelope", clip: ENV[i].clip, x: cx(3) + (i - 2) * EGAP, y: G, anchor: [m, 236], pivot: [m, 236], scale: EK, hidden: true,
+          label: { text: String(i + 1), at: [m, 126], width: 46, size: 56 }, eyes: EEYE[i], smoke: [[m - 18, 18], [m + 16, 12]] };
+      };
+      // ── end of the shared plate ──
+
+      var views = { p3: view(3, 1, 0.95), p4: view(4, 1, 0.95), p5: view(5, 1, 0.95), p6: view(6, 1, 0.95) };
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+      var turn = function (t, v) { add({ at: t, do: "camera", view: v, dur: 0.35 }); };
+
+      // Spread 3, where manual-toolbox left it: the five, charred and back in order.
+      var ROW = ["e0", "e1", "e2", "e3", "e4"];
+      ROW.forEach(function (n, j) { cast[n] = paper(j); cast[n].hidden = false; });
+      add({ at: 0, do: "char", who: ROW });
+      add({ at: 0.12, do: "blink", who: ROW });
+
+      // Spread 4, Legal ways to call bribes other things: the Lobbyist and his briefcase.
+      var LK = hs("lobbyist", 620), LX = cx(4) - (V ? 260 : 320), CASE = cx(4) + (V ? 20 : 40), FEE = cx(4) + (V ? 360 : 430);
+      cast.lob = { art: "lobbyist", x: LX, y: G, anchor: "bottom", pivot: "bottom", scale: LK, hidden: true };
+      cast.leak = { art: "bill-plain", x: CASE + 60, y: G, anchor: "bottom", pivot: "bottom", scale: hs("bill-plain", 170), hidden: true };
+      cast.fee = { art: "bill-plain", x: FEE, y: G, anchor: "bottom", pivot: "bottom", scale: hs("bill-plain", 230), hidden: true };
+      cast.bag = { art: "briefcase-shut", x: CASE, y: G, anchor: "bottom", pivot: "bottom", scale: hs("briefcase-shut", 300), hidden: true };
+      turn(0, "p4");
+      add({ on: "Legal", offset: 0.25, do: "pop", who: "lob", squash: true });
+      add({ on: "Legal", offset: 0.35, do: "pop", who: "bag", squash: true });
+      // bills walk out of the briefcase: one gets away, one stays
+      add({ on: "ways", offset: 0.5, do: "pop", who: "leak", squash: true });
+      add({ on: "ways", offset: 0.6, do: "move", who: "leak", by: [1200, 0], dur: 0.7 });
+      add({ on: "ways", offset: 0.6, do: "bob", who: "leak", y: 10, r: 5, speed: 5, until: 1.4, fade: 0.05 });
+      add({ on: "call", do: "pop", who: "fee", squash: true });
+      add({ on: "bribes", offset: 0.5, do: "stamp", id: "contrib", text: "CAMPAIGN CONTRIBUTION", x: CASE + (V ? 60 : 80), y: G - (V ? 420 : 390), size: 56, width: V ? 460 : 520, tilt: -6 });
+      add({ on: "other", do: "stamp", who: "fee", spot: [113, 110], text: "SPEAKING FEE", size: 54, width: 300, tilt: 5 });
+      add({ on: "things.", do: "stamp", who: "lob", spot: [92, 62], text: "NOT A BRIBE", size: 46, width: 260, tilt: -8, shake: 9 });
+      add({ on: "things.", offset: 0.55, do: "hop", who: "lob", height: 26 });
+      add({ on: "things.", offset: 0.8, do: "bob", who: "lob", y: 4, r: 2, speed: 2.5, until: cue("An") });
+
+      // Spread 5, An appliance that tells your governments which policies work: the Optimitron.
+      var OK = hs("optimitron", 380), OX = cx(5) - 60, OTOP = G - 380, PK = hs("politician", 640), PX = cx(5) + (V ? 360 : 400);
+      var SLOT = [OX + (200 - 237) * OK, OTOP + 20 * OK];             // the middle of its top
+      var CHIN = [PX - 384 * PK / 2 + 150 * PK, G - 640 + 120 * PK];
+      cast.pol = { art: "politician", x: PX, y: G, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true };
+      cast.opt = { art: "optimitron", x: OX, y: G, anchor: "bottom", pivot: "bottom", scale: OK, hidden: true };
+      // a policy card: the front card of the policy-card stack, clipped out; the burnt one is its own art
+      var card = function (text, x, y) { return { art: "policy-card", clip: [[90, 76], [310, 52], [322, 212], [110, 264]], anchor: [206, 160], pivot: [206, 160], x: x, y: y, scale: 1.05, hidden: true,
+        label: { text: text, at: [206, 160], width: 170, size: 64, tilt: -5 } }; };
+      cast.war = card("MORE WAR", CHIN[0] - 140, CHIN[1] + 150);
+      cast.burnt = { art: "policy-card-burnt", x: SLOT[0], y: SLOT[1], scale: 0.9, hidden: true, label: { text: "MORE WAR", at: [158, 122], width: 220, size: 64 } };
+      cast.cure = card("CURE IT", SLOT[0], SLOT[1] + 40);
+      var GAUGE = V ? { y: G - 800, hx: cx(5) - 230, wx: cx(5) + 230, size: 64 } : { y: G - 690, hx: OX - 170, wx: OX + 250, size: 64 };
+      var gauge = function (id, prefix, x, t, from, to, dur) { add({ at: t, do: "counter", id: id, prefix: prefix, suffix: "%", from: from, to: to, dur: dur, x: x, y: GAUGE.y, size: GAUGE.size, font: "oswald", border: "ink", pad: 60, enter: from === 100 ? undefined : "none" }); };
+      turn(cue("An") - 0.2, "p5");
+      add({ on: "appliance", do: "pop", who: "opt", squash: true });
+      gauge("health", "HEALTH ", GAUGE.hx, cue("appliance") + 0.2, 100, 50, 0.4);
+      gauge("wealth", "WEALTH ", GAUGE.wx, cue("appliance") + 0.3, 100, 50, 0.4);
+      add({ on: "tells", do: "pop", who: "pol", squash: true });
+      add({ on: "policies", offset: -0.2, do: "pop", who: "war", squash: true });
+      add({ on: "policies", offset: 0.15, do: "move", who: "war", to: SLOT, turn: 80, scale: 0.6, arc: 120, dur: 0.35 });
+      add({ on: "policies", offset: 0.5, do: "hide", who: "war" });
+      add({ on: "policies", offset: 0.5, do: "shiver", who: "opt", dur: 0.3, amp: 4, rot: 2 });
+      // "work": both drop to zero and it spits the card back out, burnt
+      gauge("health", "", 0, cue("work"), 50, 0, 0.45);
+      gauge("wealth", "", 0, cue("work") + 0.05, 50, 0, 0.45);
+      var SPIT = KIT.after(ID, "work");
+      add({ at: SPIT, do: "show", who: "burnt" });
+      add({ at: SPIT, do: "move", who: "burnt", to: [OX - (V ? 330 : 560), G - 130], turn: -200, arc: 260, dur: 0.45 });
+      add({ at: SPIT, do: "hop", who: "opt", height: 20 });
+      // "feelings": the Politician shakes and hugs it; it does not move
+      add({ on: "feelings,", do: "shiver", who: "pol", dur: 0.6, amp: 7, rot: 5 });
+      var HUG = -(PX - OX) + 210 * OK;
+      add({ on: "feelings,", offset: 0.5, do: "move", who: "pol", by: [HUG, 0], turn: -10, dur: 0.3 });
+      add({ on: "feelings,", offset: 0.8, do: "shiver", who: "pol", dur: cue("governing).") - cue("feelings,") - 0.8, amp: 3, rot: 3 });
+      // "governing": CURE IT pops up like toast, into his chin, and both go to the top
+      var TOAST = KIT.after(ID, "governing).");
+      add({ at: TOAST, do: "show", who: "cure" });
+      add({ at: TOAST, do: "move", who: "cure", to: [PX + HUG - 40, G - 520], turn: 14, dur: 0.15 });
+      add({ at: TOAST + 0.15, do: "move", who: "pol", by: [150, -40], turn: 16, dur: 0.15 });
+      add({ at: TOAST + 0.15, do: "shake", frames: 2, y: 6 });
+      gauge("health", "", 0, TOAST + 0.15, 0, 100, 0.3);
+      gauge("wealth", "", 0, TOAST + 0.2, 0, 100, 0.3);
+      add({ at: TOAST + 0.2, do: "glow", who: "opt", size: 640, dur: 0.6 });
+      add({ at: TOAST + 0.45, do: "move", who: "pol", turn: 0, dur: 0.2 });
+
+      // Spread 6, Templates for tricking politicians into saving lives: the letter that is a trap. It turns into a glass
+      // bell jar (its dome, clipped off its base) propped on a pencil over a medicine bill. (box-trap exists but has no shut pose, and
+      // the jar lets you see him trapped.)
+      var BX = cx(6) - 40, P2 = cx(6) + 900, GRAB = cx(6) - 10;
+      var DK = (V ? 720 : 760) / 412, DW = 308 * DK, TIP = 10, RIM = [BX - DW / 2, G];
+      var PIN = [RIM[0] + DW * Math.cos(TIP * Math.PI / 180), G - DW * Math.sin(TIP * Math.PI / 180)];
+      cast.letter = { art: "letter", x: BX, y: G, anchor: "bottom", pivot: "bottom", scale: hs("letter", 400), hidden: true,
+        label: { text: "Dear Senator ____,", at: [208, 72], width: 330, size: 40 } };
+      cast.bait = { art: "bill-med", x: BX + 30, y: G, anchor: "bottom", scale: hs("bill-med", 150), hidden: true };
+      cast.pencil = { art: "pencil", x: PIN[0] - 4, y: (G + PIN[1]) / 2, scale: (G - PIN[1] + 6) / SZ.pencil[0], hidden: true };
+      cast.pol2 = { art: "politician", x: P2, y: G, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true };
+      var HAND = [GRAB - 384 * PK / 2 + 120 * PK, G - 640 + 175 * PK];
+      cast.sash = { art: "hero-sash", x: GRAB - 384 * PK / 2 + 190 * PK, y: G - 640 + 150 * PK, anchor: [150, 30], scale: hs("hero-sash", 300), hidden: true };
+      cast.medal = { art: "rosette", x: GRAB - 384 * PK / 2 + 205 * PK, y: G - 640 + 330 * PK, scale: hs("rosette", 170), hidden: true,
+        label: { text: "HERO", at: [107, 114], width: 92, size: 40 } };
+      cast.jar = { art: "bell-jar", clip: [[20, 0], [328, 0], [328, 412], [20, 412]], x: RIM[0], y: RIM[1], anchor: [20, 412], pivot: [20, 412], scale: DK, hidden: true };
+      turn(cue("Templates") - 0.2, "p6");
+      add({ at: 0, do: "move", who: "pencil", turn: 90, dur: F });
+      add({ at: 0, do: "move", who: "jar", turn: -TIP, dur: F });
+      add({ on: "Templates", offset: 0.15, do: "pop", who: "letter", squash: true });
+      // it turns into the trap: a bell jar propped on a pencil, a medicine bill under it
+      add({ on: "for", do: "swap", who: "letter", to: "jar" });
+      add({ on: "for", offset: 0.05, do: "pop", who: ["pencil", "bait"], squash: true });
+      // the Politician tiptoes in and grabs the bill
+      add({ on: "tricking", do: "show", who: "pol2" });
+      add({ on: "tricking", do: "move", who: "pol2", by: [-(P2 - GRAB), 0], dur: cue("into") - cue("tricking") });
+      add({ on: "tricking", do: "bob", who: "pol2", y: 14, r: 4, speed: 4, until: cue("into"), fade: 0.05 });
+      add({ on: "into", offset: 0.1, do: "move", who: "bait", to: HAND, arc: 60, dur: 0.2 });
+      add({ on: "into", offset: 0.3, do: "hop", who: ["pol2", "bait"], height: 16 });
+      // "saving": the jar slams down on him; he is a specimen
+      var SLAM = cue("saving") - 0.08;
+      add({ at: SLAM, do: "move", who: "jar", by: [GRAB - BX, 0], turn: 0, dur: 2 * F });
+      add({ at: SLAM + 2 * F, do: "drop", who: "pencil", dist: 600, drift: 120, spin: 70, dur: 0.4 });
+      add({ at: SLAM + 2 * F, do: "shake", frames: 4, y: 12 });
+      add({ at: SLAM + 2 * F, do: "shiver", who: ["pol2", "bait"], dur: cue("lives.") - SLAM - 0.2, amp: 6, rot: 4 });
+      // "lives": it lifts: a hero, medal on
+      add({ on: "lives.", do: "move", who: "jar", by: [0, -1500], dur: 0.35 });
+      add({ on: "lives.", offset: 0.1, do: "pop", who: "bait", out: true });
+      add({ on: "lives.", offset: 0.2, do: "pop", who: "sash", squash: true });
+      add({ on: "lives.", offset: 0.3, do: "pop", who: "medal", squash: true });
+      add({ on: "lives.", offset: 0.35, do: "glow", who: "pol2", size: 520, dur: 0.6 });
+      add({ on: "lives.", offset: 0.9, do: "shiver", who: ["pol2", "sash", "medal"], dur: 0.25, amp: 3, rot: 2 });
+      add({ on: "lives.", offset: 1.2, do: "hop", who: ["pol2", "sash", "medal"], height: 22 });
+      add({ on: "lives.", offset: 1.4, do: "bob", who: ["pol2", "sash", "medal"], y: 5, r: 2, speed: 2 });
+
+      KIT.collage({ id: ID, seed: 2204, plate: [-800, -2000, cx(6) + 1600, 2400], views: views, view: "p3", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

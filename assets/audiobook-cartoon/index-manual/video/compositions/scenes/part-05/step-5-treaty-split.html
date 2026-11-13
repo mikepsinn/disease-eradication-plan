@@ -1,0 +1,167 @@
+<template id="step-5-treaty-split-template">
+  <!-- step-5-treaty-split · collage (Part 5, scene 9; plate the-payout). The bit: one long field where the war money
+       turns into everybody's payout. The fat cat on his hill (I PREFER LIVING on his lapel) holds his top hat out
+       upside down; "(Forever)": a neon infinity lights up over him. "passes,": the Politician signs the treaty with a
+       giant quill, PASSED; "redirecting": it folds into a paper plane, flies to the weapons factory and slaps onto it;
+       its war bills march into the funnel and come out medicine money, into a chart of $27.2 BILLION A YEAR.
+       "Eighty": the 80% bar; its bills march to the lab, and "point)." a patient hops out of the hospital, well. "Ten"
+       and "yes.": 10% walks into the YES FUND bank, and the Politician slaps its button and gets a ribbon. "Ten" again:
+       10% walks up the hill into the hat, PROJECTED. "forever": the calendar sheds its pages and "long" his beard
+       grows. "die": the Grim Reaper taps his shoulder and he x-rays into a skeleton still catching returns, button and
+       beard and all; "fixing,": the Scientist dashes in with her flask and he is flesh again. (The chart is bars, not
+       the beat sheet's pie, because the pie-chart drawing's slices are not 80/10/10; the fat cat's own skeleton is not
+       drawn yet: MISSING-ART.md.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="step-5-treaty-split" data-width="1920" data-height="1080" data-start="0" data-duration="31.48">
+    <div id="step-5-treaty-split-weave"></div>
+    <div id="step-5-treaty-split-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "step-5-treaty-split", V = KIT.V;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var G = 1000;
+      // The chart is drawn in canvas px, so the field is laid out around it: XC is the chart's middle.
+      var CH = V ? [140, 380, 960, 960] : [1120, 330, 1820, 860], XC = (CH[0] + CH[2]) / 2;
+      var X = { factory: XC - 2600, funnel: XC - 1550, capitol: XC + 1450, pol: XC + 1000, lab: XC + 2750, hosp: XC + 3250,
+        bank: XC + 4200, button: XC + 3880, pol2: XC + 3740, hill: XC + 5400 };
+      var chart = KIT.collage.axes({ box: CH, x: [0, 3, 10], y: [0, 100, 20], unit: "%", title: "$27.2 BILLION A YEAR", size: V ? 40 : 38 });
+      var FK = 1.5, FUK = 1.4, CK = 1.45;
+      var funnelTop = [X.funnel, G - 381 * FUK + 30 * FUK], spout = [X.funnel, G - 20];
+      // the hill and the fat cat on it (fat-cat-catch art px -> plate)
+      var HILL_TOP = G - 340, cat = function (p) { return [X.hill - 145 * CK + p[0] * CK, HILL_TOP - 479 * CK + p[1] * CK]; };
+      var HAT = cat([145, 172]), LAPEL = cat([88, 205]), CHIN = cat([128, 78]);
+      var bar = function (i) { return chart.pt(0.5 + i, 0); };
+      var cy = function (s) { return G - (V ? 420 : 350) / s; };          // the ground just above the keep-out line
+      var views = V ? {
+        hill: [X.hill + 60, cy(0.72) - 120, 0.72], capitol: [X.capitol - 200, cy(0.8), 0.8], factory: [(X.factory + X.funnel) / 2, cy(0.55), 0.55],
+        chart: [XC, 820, 1.0], lab: [(X.lab + X.hosp) / 2 - 150, cy(0.72), 0.72], bank: [X.bank - 280, cy(0.72), 0.72],
+      } : {
+        hill: [X.hill + 120, cy(0.82), 0.82], capitol: [X.capitol - 220, cy(0.95), 0.95], factory: [(X.factory + X.funnel) / 2, cy(0.85), 0.85],
+        chart: [XC - 120, 560, 1.0], lab: [(X.lab + X.hosp) / 2 - 150, cy(0.9), 0.9], bank: [X.bank - 260, cy(0.9), 0.9],
+      };
+
+      var cast = {
+        // the weapons factory, its funnel
+        factory: { art: "factory-proud", x: X.factory, y: G, anchor: "bottom", pivot: "bottom", scale: FK },
+        sob: { art: "factory-sob", x: X.factory, y: G, anchor: "bottom", pivot: "bottom", scale: FK, hidden: true },
+        funnel: { art: "funnel", x: X.funnel, y: G, anchor: "bottom", pivot: "bottom", scale: FUK },
+        // the capitol, the Politician and the treaty
+        capitol: { art: "capitol", x: X.capitol, y: G, anchor: "bottom", scale: 1.5 },
+        pol: { art: "politician", x: X.pol, y: G, anchor: "bottom", pivot: "bottom", scale: 0.95 },
+        treaty: { art: "treaty-scroll", x: X.pol + 260, y: G - 330, scale: 0.55, hidden: true, label: { text: "TREATY", at: [191, 160], width: 260, size: 64 } },
+        quill: { art: "quill", x: X.pol + 330, y: G - 420, scale: 0.5, pivot: [30, 410], hidden: true },
+        plane: { art: "paper-plane", x: X.pol + 260, y: G - 330, scale: 0.6, hidden: true },
+        // the lab, the hospital, the scientist and the patient
+        lab: { art: "lab", x: X.lab, y: G, anchor: "bottom", scale: 1.6 },
+        hosp: { art: "hospital", x: X.hosp, y: G, anchor: "bottom", scale: 1.6 },
+        sci: { art: "scientist-flask", x: X.lab - 330, y: G, anchor: "bottom", pivot: "bottom", scale: 0.95 },
+        patient: { art: "patient-well", x: X.hosp + 20, y: G + 10, anchor: "bottom", pivot: "bottom", scale: 1.2, hidden: true },
+        // the YES FUND, its button, and the Politician who voted yes
+        bank: { art: "bank", x: X.bank, y: G, anchor: "bottom", scale: 1.5, label: { text: "YES FUND", at: [195, 116], width: 230, size: 34 } },
+        button: { art: "yes-button", x: X.button, y: G, anchor: "bottom", pivot: "bottom", scale: 0.75, label: { text: "YES", at: [82, 34], width: 80, size: 36 } },
+        pol2: { art: "politician", x: X.pol2, y: G, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true },
+        ribbon: { art: "rosette", x: X.pol2 + 230 * 0.95 - 100 * 0.95, y: G - 735 * 0.95 + 270 * 0.95, scale: 0.42, hidden: true },
+        // the hill: the fat cat (top hat on), then holding it out; his calendar; the Reaper; the Scientist's dash
+        neon: { art: "neon-infinity", x: V ? X.hill : X.hill + 640, y: V ? -330 : 280, scale: V ? 1.2 : 1.0, hidden: true },
+        cal: { art: "desk-calendar", x: X.hill - 620, y: G + 10, anchor: "bottom", scale: 0.95 },
+        reaper: { art: "reaper-stop", x: X.hill + 470, y: G + 10, anchor: "bottom", pivot: "bottom", scale: 1.05, hidden: true },
+        fc0: { art: "fat-cat", x: X.hill, y: HILL_TOP, anchor: "bottom", pivot: "bottom", scale: 479 * CK / 443 },
+        cat: { art: "fat-cat-catch", x: X.hill, y: HILL_TOP, anchor: "bottom", pivot: "bottom", scale: CK, hidden: true },
+        button2: { art: "living-button", x: LAPEL[0], y: LAPEL[1] + 30, scale: 0.42, label: [{ text: "I PREFER", at: [150, 132], width: 170, size: 48 }, { text: "LIVING", at: [150, 192], width: 160, size: 56 }] },
+        beard: { art: "beard", x: CHIN[0], y: CHIN[1], anchor: "top", pivot: "top", scale: 0.3, hidden: true },
+        dash: { art: "scientist-reach", x: X.hill - 520, y: G + 10, anchor: "bottom", pivot: "bottom", scale: 1.5, hidden: true },
+      };
+      for (var i = 0; i < 6; i++) cast["pg" + i] = { art: "calendar-page", x: X.hill - 620, y: G - 200, scale: 0.6, hidden: true };
+
+      var D = KIT.scene(ID).duration, beats = [
+        // the hill is already there
+        { at: -3, until: -0.4, do: "pile", id: "hill", art: "banknote", scale: 0.42, x: X.hill, y: G + 10, heap: 7, count: 28, jitter: 10, tilt: 6 },
+        { at: -1, do: "stamp", id: "legalPol", who: "pol", spot: [168, 30], text: "LEGAL", size: 22, width: 80, tilt: -6, from: 1 },
+        { at: -1, do: "stamp", id: "legalPol2", who: "pol2", spot: [168, 30], text: "LEGAL", size: 22, width: 80, tilt: -6, from: 1 },
+        // "Back to the Rich Humans": he takes off his top hat and holds it out upside down; "(Forever)": FOREVER
+        { on: "Back", n: 1, do: "swap", who: "fc0", to: "cat" },
+        { on: "(Forever)", do: "pop", who: "neon" },
+        { on: "(Forever)", offset: 0.05, do: "glow", who: "neon", size: 420, dur: 0.5 },
+        // "Your treaty passes,": the Politician's treaty, PASSED
+        { on: "Your", offset: -0.15, do: "camera", view: "capitol", dur: 0.6 },
+        { on: "treaty", do: "pop", who: "treaty", squash: true },
+        { on: "treaty", offset: 0.1, do: "pop", who: "quill" },
+        { on: "treaty", offset: 0.25, do: "shiver", who: "quill", dur: cue("passes,") - cue("treaty") - 0.3, amp: 18, rot: 12 },
+        { on: "passes,", do: "pop", who: "quill", out: true },
+        { on: "passes,", do: "stamp", id: "passed", who: "treaty", spot: [191, 430], text: "PASSED", size: 96, width: 300, tilt: -8 },
+        { on: "passes,", offset: 0.4, do: "hop", who: "pol", height: 40 },
+        // "redirecting": it flies to the weapons factory and slaps onto it; war money in, medicine money out
+        { on: "redirecting", do: "camera", view: "factory", dur: 0.9 },
+        { on: "redirecting", do: "swap", who: "treaty", to: "plane" },
+        { on: "redirecting", offset: 0.12, do: "move", who: "plane", to: [X.factory + 20, G - 300], dur: 0.83, arc: 420, turn: -20, scale: 0.45 },
+        { on: "redirecting", offset: 0.95, do: "swap", who: "factory", to: "sob" },
+        { on: "redirecting", offset: 0.95, do: "shake", y: 8, frames: 3 },
+        { on: "twenty-seven", offset: 0.1, do: "march", id: "war", art: "bill-war", count: 12, scale: 0.36, path: [[X.factory + 30, G - 10], [X.factory + 420, G - 10], [X.funnel - 260, funnelTop[1] - 160], funnelTop], speed: 1100, gap: 95, end: "hide" },
+        { on: "twenty-seven", offset: 0.6, do: "glow", who: "funnel", size: 420, dur: 0.6 },
+        { on: "twenty-seven", offset: 1.0, do: "march", id: "med", art: "bill-med", count: 26, scale: 0.36, path: [spout, [CH[0] - 600, G - 10], [bar(0)[0], G - 10], [bar(0)[0], CH[3] - 10]], speed: 1100, gap: 95, end: "hide" },
+        { on: "dollars", do: "camera", view: "chart", dur: 0.9 },
+        { on: "dollars", offset: 0.2, do: "chart", chart: chart, enter: "top" },
+        // "Eighty percent funds clinical trials": the 80% bar; its bills march to the lab; "point).": a patient, well
+        { on: "Eighty", do: "bar", id: "b80", chart: chart, x: 0.5, to: 80, width: V ? 160 : 150, text: "80%", size: 46, dur: 0.7 },
+        { on: "Eighty", offset: 0.3, do: "march", id: "trials", art: "bill-med", count: 12, scale: 0.36, path: [[bar(0)[0], G - 10], [X.lab - 60, G - 10]], speed: 2000, gap: 110, end: "hide" },
+        { on: "clinical", do: "camera", view: "lab", dur: 0.8 },
+        { on: "trials", do: "shiver", who: "sci", dur: 0.9, amp: 3, rot: 2 },
+        { on: "trials", offset: 0.2, do: "glow", who: "lab", size: 520, dur: 0.8 },
+        { on: "point).", n: 2, offset: -0.1, do: "pop", who: "patient", squash: true },
+        { on: "point).", n: 2, offset: 0.3, do: "hop", who: "patient", height: 70 },
+        // "Ten percent ... voted yes.": 10% walks into the YES FUND; the Politician slaps its button and gets a ribbon
+        { on: "Ten", n: 1, offset: -0.2, do: "camera", view: "chart", dur: 0.5 },
+        { on: "Ten", n: 1, offset: 0.2, do: "bar", id: "b10", chart: chart, x: 1.5, to: 10, width: V ? 160 : 150, text: "10%", size: 46, dur: 0.4 },
+        { on: "Ten", n: 1, offset: 0.4, do: "march", id: "fund", art: "bill-med", count: 6, scale: 0.36, path: [[bar(1)[0], G - 10], [X.bank, G - 10]], speed: 2600, gap: 120, end: "hide" },
+        { on: "rewards", do: "camera", view: "bank", dur: 0.7 },
+        { on: "politicians", do: "slideIn", who: "pol2", from: "left", dist: 1100, over: 30 },
+        { on: "politicians", offset: 0.5, do: "bob", who: "pol2", y: 10, r: 3, speed: 3, until: "yes." },
+        { on: "yes.", do: "nudge", who: "pol2", by: [40, 0] },
+        { on: "yes.", do: "flatten", who: "button" },
+        { on: "yes.", offset: 0.25, do: "stamp", who: "ribbon", from: 1.8, shake: 3 },
+        { on: "yes.", offset: 0.4, do: "hop", who: "pol2", height: 50 },
+        // "Ten percent goes back to the rich humans": up the hill into the hat, PROJECTED
+        { on: "Ten", n: 2, offset: -0.2, do: "camera", view: "chart", dur: 0.5 },
+        { on: "Ten", n: 2, offset: 0.2, do: "bar", id: "b10b", chart: chart, x: 2.5, to: 10, width: V ? 160 : 150, text: "10%", size: 46, dur: 0.4 },
+        { on: "Ten", n: 2, offset: 0.4, do: "march", id: "returns", art: "bill-med", count: 70, scale: 0.3, path: [[bar(2)[0], G - 10], [X.hill - 520, G - 10], [X.hill - 200, HILL_TOP - 40], [HAT[0] - 120, HAT[1] - 140], HAT], speed: 1900, gap: 135, end: "hide" },
+        { on: "rich", n: 2, do: "camera", view: "hill", dur: 0.8 },
+        { on: "returns,", do: "stamp", id: "projected", text: "PROJECTED", x: HAT[0] - 420, y: HAT[1] - 90, size: 54, width: 340, tilt: -6 },
+        { on: "forever.", n: 2, do: "glow", who: "neon", size: 520, dur: 0.6 },
+        { on: "forever.", n: 2, do: "glow", who: "cat", size: 360, dur: 0.5 },
+        // "forever is a long time": the calendar sheds its pages, and they heap up
+        { on: "long", do: "pile", id: "pages", art: "calendar-page", scale: 0.42, x: X.hill - 760, y: G + 10, heap: 5, count: 14, until: cue("time.") + 0.5, accel: 0.6, dist: 900 },
+        { on: "long", do: "shiver", who: "cal", dur: 1.2, amp: 3, rot: 2 },
+        { on: "long", do: "pop", who: "beard", squash: true },
+        { on: "long", offset: 0.1, do: "move", who: "beard", by: [0, 0], scale: 1.05, dur: 1.1, ease: "smooth" },
+        // "Unless you die": the Reaper taps his shoulder; he is a skeleton, still catching his returns
+        { on: "Unless", offset: -0.4, do: "slideIn", who: "reaper", from: "bottom", dist: 1100, over: 30 },
+        { on: "you", n: 2, do: "nudge", who: "reaper", by: [-40, 0] },
+        { on: "die", do: "xray", who: "cat", art: "skeleton" },
+        { on: "preventable", do: "shiver", who: "reaper", dur: 0.5, amp: 3, rot: 2 },
+        // "Which you're fixing,": the Scientist dashes in with her flask, and he is flesh again
+        { on: "Which", offset: -0.1, do: "slideIn", who: "dash", from: "left", dist: 1400, over: 30 },
+        { on: "fixing,", do: "xray", who: "cat", back: true, frames: 3 },
+        { on: "fixing,", do: "nudge", who: "dash", by: [40, -10] },
+      ];
+      // the calendar's pages fly off, one after another, on "forever"
+      for (i = 0; i < 6; i++) {
+        beats.push({ at: cue("forever", 3) + 0.12 * i, do: "show", who: "pg" + i });
+        beats.push({ at: cue("forever", 3) + 0.12 * i, do: "move", who: "pg" + i, by: [-500 + 160 * i, -700 - 60 * (i % 3)], dur: 0.7, turn: 120 + 70 * i });
+      }
+
+      KIT.collage({ id: ID, seed: 359, plate: [X.factory - 2400, -2200, X.hill + 2600, 3000], views: views, view: "hill", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

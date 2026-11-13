@@ -1,0 +1,67 @@
+<template id="sacred-scroll-template">
+  <!-- sacred-scroll · collage host shot (Part 5, scene 2). Iris in on Wishonia at her console. "decoded": a pull-down
+       chart clatters down beside her: the five who handle the papers in a ring (the fat cat, a Loud Human, the
+       Lobbyist, the Super PAC, the Politician), and little bills walking round it from each to the next and back to the fat cat,
+       faster every lap. On "order:" the sheet snaps up into its roller, the portraits sucked up with it, and the
+       roller is left hanging, still ticking. "Step one:" she raises one finger. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="sacred-scroll" data-width="1920" data-height="1080" data-start="0" data-duration="8.78">
+    <div id="sacred-scroll-weave"></div>
+    <div id="sacred-scroll-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "sacred-scroll", V = KIT.V;
+      // The pull-down chart beside the console: its sheet's middle (art 216, 310), the roller's (216, 28), the ring's radii, canvas px.
+      var K = V ? 0.75 : 1.05, BX = V ? 830 : 1500, BY = V ? 40 : 30;
+      var C = [BX, BY + 310 * K], R = [125 * K, 175 * K], ROLL = [BX, BY + 28 * K];
+      // round the ring clockwise from the top: [art, angle (degrees), scale at the 16:9 chart's size]
+      var who = [["fat-cat", -90, 0.38], ["loud-human", -18, 0.23], ["lobbyist", 54, 0.33], ["super-pac", 126, 0.32], ["politician", 198, 0.23]];
+      // the chart cut in two: the sheet (with the bottom rail and pull ring) that rolls up, and the top roller it rolls into
+      var cast = {
+        sheet: { art: "pull-down-chart", x: BX, y: BY, anchor: "top", scale: K, clip: [[0, 46], [432, 46], [432, 656], [0, 656]], pivot: [216, 40], hidden: true },
+        roller: { art: "pull-down-chart", x: BX, y: BY, anchor: "top", scale: K, clip: [[0, 0], [432, 0], [432, 46], [0, 46]], pivot: [216, 28], hidden: true },
+      };
+      var all = ["sheet", "roller"], ring = [];
+      who.forEach(function (w, i) {
+        var a = w[1] * Math.PI / 180;
+        cast["p" + i] = { art: w[0], x: C[0] + Math.cos(a) * R[0], y: C[1] + Math.sin(a) * R[1], scale: w[2] * K / 1.05, hidden: true };
+        all.push("p" + i); ring.push("p" + i);
+      });
+      var bills = [];
+      for (var i = 0; i < 4; i++) { cast["b" + i] = { art: "bill-plain", x: C[0], y: C[1] + R[1], scale: 0.3 * K / 1.05, hidden: true }; bills.push("b" + i); }
+
+      var beats = [
+        // "decoded": the chart clatters down beside the console
+        { on: "decoded", offset: -0.1, do: "slideIn", who: all, from: "top", dist: 1100, over: 26 },
+        { on: "decoded", offset: 0.35, do: "shake", y: 4, frames: 2 },
+      ];
+      bills.forEach(function (b, i) {
+        beats.push({ on: "decoded", offset: 0.45, do: "show", who: b });
+        // round the ring from the fat cat, faster every lap
+        beats.push({ on: "decoded", offset: 0.45, do: "lap", who: b, loop: [C[0], C[1], R[0], R[1]], from: 0.5 + i / 4, laps: 6, dur: 1.5, faster: 0.72, depth: 0 });
+        beats.push({ on: "order:", offset: -0.05, do: "hide", who: b });
+      });
+      // "order:": the sheet snaps up into its roller and the portraits go up with it; the roller hangs there, ticking
+      beats.push({ on: "order:", do: "flatten", who: "sheet" });
+      beats.push({ on: "order:", offset: 0.17, do: "hide", who: "sheet" });
+      beats.push({ on: "order:", do: "move", who: ring, to: ROLL, scale: 0.03, dur: 0.17, ease: "smooth" });
+      beats.push({ on: "order:", offset: 0.17, do: "hide", who: ring });
+      beats.push({ on: "order:", offset: 0.17, do: "shake", y: -4, frames: 2 });
+      beats.push({ on: "order:", offset: 0.25, do: "shiver", who: "roller", dur: 1.6, amp: 2, rot: 1.2 });
+
+      KIT.collage({ id: ID, seed: 356, host: { iris: ["in", 0.02, 0.6] }, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -1,0 +1,119 @@
+<template id="stopped-in-1900-template">
+  <!-- stopped-in-1900 · collage (Part 10, scene 9, plate two-roads). The bit: income per person is a road YOU walk. It
+       forks at the 1900 signpost and YOU splits in two. The upper road is the world that stopped paying for murder in 1900:
+       it curves up the chart to $333,636 and YOU climbs it into the fat cat (x23.2). The lower road is the one taken: it
+       barely leaves the floor. A germ bites 10.1 years off the lower YOU's life and he x-rays into a skeleton. The fat cat
+       lights his cigar with his $333,636 paycheck; the skeleton gets $14,375 and his jaw drops. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="stopped-in-1900" data-width="1080" data-height="1920" data-start="0" data-duration="22.42">
+    <div id="stopped-in-1900-weave"></div>
+    <div id="stopped-in-1900-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "stopped-in-1900", V = KIT.V, SZ = KIT.collage.SIZES;
+    var T = function (w, n) { return KIT.cue(ID, w, n); };
+    // The chart: income per person, in thousands of dollars a year, 1800 to 2025. One road to 1900, then two.
+    var BOX = V ? [160, 400, 760, 1380] : [270, 260, 1640, 820];
+    var chart = KIT.collage.axes({ box: BOX, x: [1800, 2025, 25], xLabels: 50, y: [0, 400, 50], yLabels: 100, unit: "K",
+      title: "INCOME PER PERSON, A YEAR", size: V ? 30 : 34 });
+    var pre = function (x) { return 1.1 * Math.pow(3 / 1.1, (x - 1800) / 100); };
+    var up = function (x) { return 3 * Math.pow(333.636 / 3, (x - 1900) / 125); };     // no murder since 1900
+    var lo = function (x) { return 3 * Math.pow(14.375 / 3, (x - 1900) / 125); };      // what happened
+    var FORK = chart.pt(1900, 3), U = chart.pt(2025, 333.636), L = chart.pt(2025, 14.375);
+    var PH = V ? 230 : 240;                                                            // a person's height
+    var k = function (art, h) { return (h || PH) / SZ[art][1]; };
+    var CAT = PH * 1.2, CK = k("fat-cat", CAT), CIGAR = [U[0] + (198 - SZ["fat-cat"][0] / 2) * CK, U[1] - (SZ["fat-cat"][1] - 112) * CK];
+    // the bar runs right from his head
+    var BARY = L[1] - PH - 30, BK = (V ? 300 : 360) / SZ["rank-bar-green"][0], BAR0 = L[0] + (V ? 30 : -40), CUT = 748;
+    var BITE = [BAR0 + (CUT + 61) * BK, BARY], BITE_BY = [-(CUT + 61 - 435) * BK, 0];
+
+    var views = V ? {
+      start: [400, 1100, 1.45], wide: [520, 900, 1], low: [790, 1170, 1.5], high: [560, 760, 1.2],
+    } : {
+      start: [560, 640, 1.6], wide: [960, 540, 1], low: [1500, 620, 1.45], high: [1500, 340, 1.4],
+    };
+
+    var cast = {
+      sign: { art: "signpost", x: FORK[0] + (V ? 10 : 20), y: FORK[1] - 6, anchor: "bottom", scale: (V ? 150 : 175) / SZ.signpost[1], hidden: true,
+        label: { text: "1900", at: [55, 43], width: 84, size: 34 } },
+      you0: { art: "you-walk", x: chart.pt(1800, 1.1)[0], y: chart.pt(1800, 1.1)[1], anchor: "bottom", pivot: "bottom", scale: k("you-walk"), hidden: true },
+      youL: { art: "you-walk", x: FORK[0], y: FORK[1], anchor: "bottom", pivot: "bottom", scale: k("you-walk"), hidden: true },
+      youU: { art: "you-walk", x: FORK[0], y: FORK[1], anchor: "bottom", pivot: "bottom", scale: k("you-walk"), hidden: true },
+      top: { art: "you-tophat", x: U[0], y: U[1], anchor: "bottom", pivot: "bottom", scale: k("you-tophat", PH * 1.1), hidden: true },
+      cat: { art: "fat-cat", x: U[0], y: U[1], anchor: "bottom", pivot: "bottom", scale: CK, hidden: true },
+      germ: { art: "germ", x: V ? BITE[0] - 40 : BITE[0] + 70, y: V ? BARY - 170 : BARY + 30, scale: (V ? 150 : 170) / SZ.germ[1], faces: "left", hidden: true, points: { mouth: [182, 127] } },
+      // the lower YOU's healthy years: the bar, and the 10.1 years at its end
+      barA: { art: "rank-bar-green", x: BAR0, y: BARY, anchor: "left", scale: BK, clip: [[0, 0], [CUT, 0], [CUT, 36], [0, 36]], hidden: true,
+        label: { text: "YOUR LIFE", at: [374, -60], width: 420, size: V ? 120 : 110 } },
+      barB: { art: "rank-bar-green", x: BAR0, y: BARY, anchor: "left", scale: BK, clip: [[CUT, 0], [870, 0], [870, 36], [CUT, 36]], hidden: true },
+      skL: { art: "you-skeleton-walk", x: FORK[0], y: FORK[1], anchor: "bottom", pivot: "bottom", scale: k("you-skeleton-walk"), hidden: true,
+        pieces: {
+          body: { clip: [[0, 0], [297, 0], [297, 110], [168, 110], [168, 136], [297, 136], [297, 640], [0, 640]] },
+          jaw: { clip: [[168, 110], [228, 110], [228, 136], [168, 136]], pivot: [172, 112] },
+        } },
+      payU: { art: "paycheck", x: U[0] - (V ? 400 : 420), y: U[1] - (V ? 140 : 170), scale: V ? 0.95 : 1.15, hidden: true,
+        label: { text: "$333,636 / YEAR", at: [146, 54], width: 230, size: 40 } },
+      payL: { art: "paycheck", x: L[0] - (V ? 190 : 380), y: L[1] - (V ? 210 : 110), scale: V ? 0.95 : 1.15, hidden: true,
+        label: { text: "$14,375 / YEAR", at: [146, 54], width: 230, size: 40 } },
+      light: { art: "flames", x: CIGAR[0] + 6, y: CIGAR[1] + 4, anchor: "bottom", pivot: "bottom", scale: 0.12, hidden: true },
+    };
+
+    var beats = [
+      { at: 0, do: "chart", chart: chart },
+      // One road; YOU walks it to 1900.
+      { at: 0, do: "line", id: "road0", chart: chart, f: pre, x: [1800, 1900], until: ["hundred", 1, 0.05], rider: "you0", tilt: 0, width: 9, ease: "linear" },
+      { at: 0.05, do: "bob", who: "you0", y: 5, r: 1.5, speed: 3, until: ["hundred", 1, 0.1], fade: 0.1 },
+      { on: "stopped", do: "pop", who: "sign", squash: true },
+      { on: "stopped", do: "camera", view: "wide", dur: 1.6 },
+      // The fork: he splits in two.
+      { on: "hundred", offset: 0.12, do: "hide", who: "you0" },
+      { on: "hundred", offset: 0.12, do: "line", id: "roadU", chart: chart, f: up, x: [1900, 2025], until: "richer", rider: "youU", tilt: 0, width: 9, ease: "linear" },
+      { on: "hundred", offset: 0.12, do: "line", id: "roadL", chart: chart, f: lo, x: [1900, 2025], until: "richer", rider: "youL", tilt: 0, width: 9, ease: "linear" },
+      { on: "hundred", offset: 0.12, do: "pop", who: ["youU", "youL"], squash: true },
+      { on: "you", n: 1, do: "bob", who: ["youU", "youL"], y: 5, r: 1.5, speed: 3, until: "richer", fade: 0.1 },
+      // x23.2: the upper YOU's fedora becomes a top hat, and he swells into the fat cat.
+      { on: "richer", do: "stamp", id: "x23", text: "×23.2", x: V ? 470 : 1180, y: V ? 860 : 440, size: V ? 150 : 170, width: V ? 360 : 460, tilt: -5 },
+      { on: "richer", offset: 0.15, do: "swap", who: "youU", to: "top" },
+      { on: "today,", offset: 0.15, do: "swap", who: "top", to: "cat" },
+      { on: "today,", offset: 0.3, do: "hop", who: "cat", height: 30 },
+      // Disease: a germ bites 10.1 years off the lower YOU's life, and he is a skeleton.
+      { on: "and", n: 1, do: "camera", view: "low", dur: 0.7 },
+      { on: "and", n: 1, do: "hide", who: "x23" },
+      { on: "and", n: 1, offset: 0.2, do: "pop", who: ["barA", "barB"] },
+      { on: "stealing", offset: -0.25, do: "slideIn", who: "germ", from: V ? "top" : "right", dist: 900, over: 14 },
+      { on: "ten", do: "move", who: "barB", to: "germ.mouth", by: BITE_BY, dur: 0.12 },
+      { on: "ten", do: "nudge", who: "germ", by: [30, 0] },
+      { on: "ten", do: "shake", y: 6, frames: 2 },
+      { on: "one", n: 1, do: "stamp", id: "years", text: "10.1 YEARS", x: V ? BITE[0] - 140 : BITE[0] - 40, y: V ? BARY - 120 : BARY + 80, size: V ? 70 : 80, width: V ? 330 : 380, tilt: 4 },
+      { on: "years", offset: 0.1, do: "move", who: "germ", by: [V ? 800 : 900, -60], dur: 0.9, ease: "smooth" },
+      { on: "life.", do: "xray", who: "youL", to: "skL" },
+      // The average person would earn: the fat cat's paycheck; he lights his cigar with it.
+      { on: "average", do: "camera", view: "high", dur: 0.8 },
+      { on: "average", do: "hide", who: ["years"] },
+      { on: "thirty-three", do: "pop", who: "payU", squash: true },
+      { on: "six", n: 1, do: "hop", who: "payU", height: 24 },
+      { on: "dollars", n: 1, offset: -0.1, do: "move", who: "payU", to: CIGAR, by: [-60, -10], dur: 0.35, arc: 60, turn: -20, scale: 0.6 },
+      { on: "dollars", n: 1, offset: 0.3, do: "pop", who: "light", squash: true },
+      { on: "dollars", n: 1, offset: 0.35, do: "pop", who: "payU", out: true },
+      { on: "per", n: 1, offset: 0.2, do: "shiver", who: "light", dur: 3, amp: 2, rot: 6 },
+      // Instead of: the skeleton's paycheck, and his jaw drops.
+      { on: "instead", do: "camera", view: "low", dur: 0.8 },
+      { on: "fourteen", do: "pop", who: "payL", squash: true },
+      { on: "dollars.", n: 2, offset: -0.05, do: "hinge", who: "skL.jaw", angle: 38, frames: 2 },
+      { on: "dollars.", n: 2, offset: -0.05, do: "shake", y: 4, frames: 2 },
+    ];
+
+    KIT.collage({ id: ID, seed: 1090, plate: [-700, -700, KIT.W + 700, KIT.H + 700], views: views, view: "start", cast: cast, beats: beats });
+  </script>
+</template>

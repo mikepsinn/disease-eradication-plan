@@ -1,0 +1,36 @@
+<template id="lap-demo-template">
+  <!-- lap-demo · kit demo (scratch): a war bill laps an oval, faster each lap, growing, swapping to a medicine bill then a coin; a globe spirals up -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="lap-demo" data-width="1920" data-height="1080" data-start="0" data-duration="12.81">
+    <div id="lap-demo-weave"></div>
+    <div id="lap-demo-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+
+      KIT.collage({
+        id: "lap-demo", seed: 407,
+        cast: {
+          bill: { art: "bill-war", x: 960, y: 700, scale: 0.5 },
+          globe: { art: "globe-happy", x: 960, y: 700, scale: 0.4 },
+        },
+        beats: [
+          { at: 0.2, do: "lap", who: "bill", loop: V ? [540, 900, 380, 160] : [700, 560, 480, 200], laps: 4, dur: 2, faster: 0.7, grow: 1.2, depth: 0.3, swap: ["bill-med", "coin"] },
+          { at: 0.5, do: "lap", who: "globe", loop: V ? [540, 1450, 300, 90] : [1500, 800, 260, 90], laps: 3, dur: 2.4, rise: V ? 120 : 140, dir: -1, tilt: 0.3 },
+        ],
+      });
+    })();
+  </script>
+</template>

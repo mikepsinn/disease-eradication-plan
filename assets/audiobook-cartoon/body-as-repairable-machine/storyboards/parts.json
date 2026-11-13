@@ -1,0 +1,45 @@
+{
+ "audio": "body-as-repairable-machine.c122e04e.mp3",
+ "parts": [
+  {
+   "n": 1,
+   "slug": "you-are-a-meat-robot",
+   "title": "You Are a Meat Robot",
+   "start": 0,
+   "end": 243.214,
+   "file": "part-01-you-are-a-meat-robot.md"
+  },
+  {
+   "n": 2,
+   "slug": "self-repairing-meat-robot",
+   "title": "You Are a Self-Repairing Meat Robot",
+   "start": 243.214,
+   "end": 354.494,
+   "file": "part-02-self-repairing-meat-robot.md"
+  },
+  {
+   "n": 3,
+   "slug": "grow-and-reprogram",
+   "title": "You've Already Started Fixing the Machine: Exhibits A and B",
+   "start": 354.494,
+   "end": 463.954,
+   "file": "part-03-grow-and-reprogram.md"
+  },
+  {
+   "n": 4,
+   "slug": "debugging-and-the-car",
+   "title": "Exhibit C and the Car Restoration Analogy",
+   "start": 463.954,
+   "end": 649.114,
+   "file": "part-04-debugging-and-the-car.md"
+  },
+  {
+   "n": 5,
+   "slug": "aging-is-reversible",
+   "title": "The Proof That Aging is Reversible",
+   "start": 649.114,
+   "end": 874.296,
+   "file": "part-05-aging-is-reversible.md"
+  }
+ ]
+}

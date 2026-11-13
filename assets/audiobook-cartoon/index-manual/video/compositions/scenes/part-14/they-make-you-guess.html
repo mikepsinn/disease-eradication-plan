@@ -1,0 +1,50 @@
+<template id="they-make-you-guess-template">
+  <!-- they-make-you-guess · collage host shot (Part 14, scene 13). At the console she holds up a bottle labelled FDA
+       and taps its side-effects panel: blank. "They": she flips a coin over it; on "guess." it lands on the ledge on its
+       edge and stays standing, wobbling. She side-eyes the camera. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="they-make-you-guess" data-width="1920" data-height="1080" data-start="0" data-duration="5.74">
+    <div id="they-make-you-guess-weave"></div>
+    <div id="they-make-you-guess-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, S = KIT.STUDIO, TOP = S.top;
+    // the bottle held up beside her; the coin goes up off its cap and comes down on the ledge
+    var BOT = V ? [820, 980, 1.15] : [1300, 600, 1.5];
+    var COIN = V ? [640, TOP + 4] : [990, TOP + 4], CK = V ? 0.9 : 1.05;
+    var EDGE = [[70, 0], [88, 0], [88, 162], [70, 162]];
+    KIT.collage({
+      id: "they-make-you-guess", seed: 1423, host: true,
+      cast: {
+        bottle: { art: "medicine-bottle", x: BOT[0], y: BOT[1], scale: BOT[2], hidden: true,
+          label: [{ text: "FDA", at: [72, 178], width: 90, size: 70 }, { text: "SIDE EFFECTS:", at: [72, 222], width: 96, size: 40 }] },
+        coin: { art: "coin", x: BOT[0], y: BOT[1] - 200 * BOT[2], scale: CK, hidden: true },
+        edge: { art: "coin", x: COIN[0], y: COIN[1], anchor: "bottom", pivot: "bottom", scale: CK, clip: EDGE, hidden: true },
+      },
+      beats: [
+        { at: 0.05, do: "pop", who: "bottle", squash: true },
+        // taps the panel: blank
+        { on: "publish", do: "nudge", who: "bottle", by: [12, 0] },
+        { on: "numbers", do: "nudge", who: "bottle", by: [12, 0] },
+        { on: "all.", do: "shiver", who: "bottle", dur: 0.35, amp: 3, rot: 2 },
+        // the flip: up off the bottle, spinning, and down onto the ledge on its edge
+        { on: "They", do: "pop", who: "coin" },
+        { on: "They", do: "move", who: "coin", by: [0, V ? -380 : -300], turn: 720, dur: 0.4, ease: "smooth" },
+        { on: "They", offset: 0.4, do: "move", who: "coin", to: [COIN[0], COIN[1] - 162 * CK / 2], turn: 1440, dur: 0.45 },
+        { at: KIT.cue("they-make-you-guess", "They") + 0.85, do: "swap", who: "coin", to: "edge" },
+        { on: "guess.", do: "shiver", who: "edge", dur: 0.9, amp: 3, rot: 7 },
+      ],
+    });
+  </script>
+</template>

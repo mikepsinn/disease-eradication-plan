@@ -1,0 +1,93 @@
+<template id="clinical-terrarium-template">
+  <!-- clinical-terrarium · collage (Part 14, scene 6). The bit: today's trials happen in a glass case of hand-picked
+       tidy humans, and the treaty lets the case off. A glass case full of identical tidy humans, a pet-shop sticker
+       on it: 200. The tank stands on a lab bench with a heat lamp on its lid. "selected by pharmaceutical companies": the Fat Cat takes the real patients one by one from the queue
+       and flicks six of every seven away out of the frame; the seventh, the tidiest, goes into the case. "clinical
+       terrariums": the heat lamp comes on and the tidy humans bask. "you'll test": the glass case lifts off like a lid
+       and the patients he flicked walk back past him into a row of three hospitals; he shivers. "Where the diseases
+       are.": a smug germ looks out of every hospital window, and one of them runs. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="clinical-terrarium" data-width="1920" data-height="1080" data-start="0" data-duration="11.14">
+    <div id="clinical-terrarium-weave"></div>
+    <div id="clinical-terrarium-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "clinical-terrarium", V = KIT.V, G = 980, Z = KIT.collage.SIZES, cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / Z[art][1]; };
+    // Left to right on the ground: the queue of real patients, the Fat Cat, the terrarium on its lab bench, then three hospitals.
+    var CAT = [640, 1.45], LAB = [1260, 1.5], BK = 1.2, HOSP = [2250, 2700, 3150];
+    var BTOP = G - (Z["lab-bench"][1] - 140) * BK;                          // the bench's top, where the tank stands
+    var LK = LAB[1], LL = LAB[0] - 197 * LK, LT = BTOP - 318 * LK;          // the tank's art (197, 318) is the middle of its feet
+    var GLASS = [LL + 30 * LK, LT + 85 * LK, LL + 315 * LK, LT + 250 * LK];  // the front glass, in canvas px
+    var tank = function (ax, ay) { return [LL + ax * LK, LT + ay * LK]; };   // a point on the tank's art, in canvas px
+    var HAND = [CAT[0] + 90, G - 380];
+    var cy = function (s) { return V ? G - 420 / s : 540; };
+    var views = V ? { case: [940, cy(0.78), 0.78], hosp: [2700, cy(0.68), 0.68] } : { case: [900, 540, 1], hosp: [2560, 520, 1] };
+    var cast = {}, beats = [], add = function (b) { beats.push(b); };
+
+    // the queue: seven real patients, the seventh the tidiest
+    var Q = ["sick-2", "sick-5", "sick-3", "sick-1", "sick-4", "sick-6", "tidy-human"];
+    Q.forEach(function (a, i) { cast["q" + i] = { art: a, x: 330 - i * 110, y: G, anchor: "bottom", pivot: "bottom", scale: hs(a, 400) }; });
+    cast.cat = { art: "fat-cat", x: CAT[0], y: G, anchor: "bottom", pivot: "bottom", scale: CAT[1] };
+    cast.bench = { art: "lab-bench", x: LAB[0], y: G, anchor: "bottom", pivot: "bottom", scale: BK };
+    // the tidy humans, twenty, all the same: a back row of ten behind the glass, standing on the far side of the
+    // sand, and a front row of ten on the near sand (the last of them is the seventh patient, once he lands)
+    var TIDY = [], FRONT = function (j) { return tank(50 + j * 26, 272); }, TH = 200;
+    var tidy = function (n, p, h, hidden) { cast[n] = { art: "tidy-human", x: p[0], y: p[1], anchor: "bottom", pivot: "bottom", scale: hs("tidy-human", h), hidden: hidden }; TIDY.push(n); };
+    for (var tb = 0; tb < 10; tb++) tidy("t" + tb, tank(95 + tb * 29, 255), 190);
+    cast.lab = { art: "terrarium", x: LAB[0], y: BTOP, anchor: [197, 318], pivot: "bottom", scale: LK };
+    for (var tf = 0; tf < 10; tf++) tidy("t" + (10 + tf), FRONT(tf), TH, tf === 9);
+    var LAMP = tank(300, 62);
+    cast.lamp = { art: "light-bulb", x: LAMP[0], y: LAMP[1], anchor: "bottom", pivot: "bottom", scale: 0.45 };
+    cast.tag = { art: "sticker", x: GLASS[0] + 50, y: GLASS[1] - 20, scale: 0.55, label: { text: "200", at: [130, 92], width: 150, size: 110, tilt: -6 } };
+    HOSP.forEach(function (x, i) {
+      cast["h" + i] = { art: "hospital", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: 1.5 };
+      cast["g" + i] = { art: "germ-grin", x: x + (i - 1) * 40, y: G - 330, scale: 0.62, hidden: true };
+    });
+
+    // the queue shuffles forward; he takes them one at a time and flicks six of every seven away
+    var T0 = cue("selected") - 0.05, STEP = (cue("clinical") - T0) / 7;
+    Q.forEach(function (a, i) {
+      var t = T0 + i * STEP;
+      add({ at: t, do: "move", who: "q" + i, to: HAND, scale: 0.8, turn: -10, dur: STEP * 0.4, arc: 80 });
+      add({ at: t + STEP * 0.45, do: "nudge", who: "cat", by: [20, 0] });
+      if (i < 6) add({ at: t + STEP * 0.5, do: "move", who: "q" + i, by: [-1700 + i * 90, -900 + i * 60], turn: (i % 2 ? 900 : -900), dur: 0.5 });
+      else {
+        // he lands in the front row's last place, and is one of them
+        add({ at: t + STEP * 0.5, do: "move", who: "q" + i, to: FRONT(9), by: [0, -200], scale: TH / 400, turn: 0, dur: 0.3, arc: 120 });
+        add({ at: t + STEP * 0.5 + 0.3, do: "hide", who: "q" + i });
+        add({ at: t + STEP * 0.5 + 0.3, do: "show", who: "t19" });
+      }
+    });
+    // the heat lamp clicks on; they bask
+    add({ on: "terrariums,", offset: -0.3, do: "glow", who: "lamp", size: 520, dur: 0.3 });
+    add({ on: "terrariums,", do: "bob", who: TIDY, y: 3, r: 2, speed: 0.8, until: "you'll" });
+    // the tank lifts off like a lid, lamp and all, and the tidy humans drop onto the bench;
+    // the real patients walk past him into the hospitals
+    add({ on: "you'll", offset: -0.1, do: "move", who: ["lab", "lamp", "tag"], by: [0, -1800], dur: 0.45, ease: "smooth" });
+    add({ on: "you'll", offset: 0.05, do: "move", who: TIDY.slice(0, 10), by: [0, 82], dur: 0.15 });
+    add({ on: "you'll", offset: 0.05, do: "move", who: TIDY.slice(10), by: [0, 71], dur: 0.15 });
+    add({ on: "test", do: "march", id: "real", art: ["sick-2", "sick-5", "sick-3", "sick-1", "sick-4", "sick-6"], count: 6, height: 400, path: [[-300, G], [1900, G], [HOSP[2] + 80, G]], speed: 1100, gap: 170, end: "hide" });
+    add({ on: "real", n: 1, do: "shiver", who: "cat", dur: 0.9, amp: 5, rot: 2 });
+    add({ on: "patients", offset: 0.4, do: "camera", view: "hosp", dur: 1.0 });
+    // where the diseases are: one in every window, and they see who is coming
+    add({ on: "Where", offset: -0.3, do: "pop", who: "g0", squash: true });
+    add({ on: "Where", offset: -0.15, do: "pop", who: "g1", squash: true });
+    add({ on: "Where", do: "pop", who: "g2", squash: true });
+    add({ on: "diseases", do: "shiver", who: ["g0", "g1", "g2"], dur: 0.7, amp: 6, rot: 8 });
+    add({ on: "are.", offset: 0.2, do: "move", who: "g2", by: [1400, 300], turn: 40, dur: 0.6, arc: 150 });
+
+    KIT.collage({ id: ID, seed: 1406, plate: V ? [-1400, -1700, 4600, 2800] : [-600, -500, 4000, 1500], views: views, view: "case", cast: cast, beats: beats });
+  </script>
+</template>

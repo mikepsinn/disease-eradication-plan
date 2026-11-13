@@ -1,0 +1,69 @@
+<template id="cheese-genius-template">
+  <!-- cheese-genius · collage host shot (Part 26). The milk bottle big on the ledge, the prize stand big beside her. "cheese,":
+       a huge wedge rises onto the stand and shows itself off. "bad": the milk goes green and blows its cap off; the cap rings
+       off Earth. "good": the cheese glows. "genius.": the GENIUS rosette slams onto it. "not": the cheese falls off and the
+       manual rises in its place; "dying.": the rosette hops onto the manual. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="cheese-genius" data-width="1920" data-height="1080" data-start="0" data-duration="10">
+    <div id="cheese-genius-weave"></div>
+    <div id="cheese-genius-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, S = KIT.STUDIO, Z = KIT.collage.SIZES, E = S.earth;
+    var hs = function (art, h) { return h / Z[art][1]; };
+    var TOP = S.top + 6;
+    var MILK = V ? [130, TOP] : [215, TOP], MH = V ? 430 : 520;
+    // the stand: on the floor beside her in 16:9, on the ledge in 9:16; ON is where a thing stands on its cushion
+    var STAND = V ? [835, TOP] : [1290, 880], SH = V ? 190 : 290;
+    var ON = [STAND[0], STAND[1] - SH + (V ? 32 : 48)];
+    var CHK = hs("cheese", V ? 330 : 500), MAK = hs("manual", V ? 390 : 540);
+    var mk = hs("milk-bottle", MH), CAP = [[24, 0], [122, 0], [122, 44], [24, 44]];
+    var cast = {
+      cheese: { art: "cheese", x: ON[0], y: ON[1], anchor: "bottom", pivot: "bottom", scale: CHK, hidden: true },
+      manual: { art: "manual", x: ON[0], y: ON[1], anchor: "bottom", pivot: "bottom", scale: MAK, hidden: true,
+        label: [{ text: "HOW TO END", at: [124, 105], width: 130, size: 60 }, { text: "WAR AND DISEASE", at: [124, 132], width: 130, size: 60 }] },
+      stand: { art: "prize-stand", x: STAND[0], y: STAND[1], anchor: "bottom", pivot: "bottom", scale: hs("prize-stand", SH) },
+      milk: { art: "milk-bottle", x: MILK[0], y: MILK[1], anchor: "bottom", pivot: "bottom", scale: mk },
+      bad: { art: "milk-bottle-bad", x: MILK[0], y: MILK[1], anchor: "bottom", pivot: "bottom", scale: hs("milk-bottle-bad", MH * 1.05), hidden: true },
+      cap: { art: "milk-bottle", x: MILK[0], y: MILK[1], anchor: "bottom", pivot: "center", scale: mk, clip: CAP, hidden: true },
+      rosette: { art: "rosette", x: ON[0] + (V ? 40 : 90), y: ON[1] - (V ? 150 : 230), scale: hs("rosette", V ? 300 : 460), hidden: true,
+        label: { text: "GENIUS", at: [126, 128], width: 135, size: 110 } },
+    };
+    var CAPC = [MILK[0], MILK[1] - MH + 22 * mk], HIT = [E[0] + E[2] * 0.25, E[1] - E[2] * 0.2];
+    var beats = [
+      // "cheese,": the wedge rises and turns to show itself off, and goes on preening
+      { on: "cheese", do: "slideIn", who: "cheese", from: "bottom", over: 18 },
+      { on: "cheese", offset: 0.4, do: "move", who: "cheese", by: [0, 0], turn: -9, dur: 0.15 },
+      { on: "cheese", offset: 0.6, do: "move", who: "cheese", by: [0, 0], turn: 7, dur: 0.15 },
+      { on: "cheese", offset: 0.8, do: "move", who: "cheese", by: [0, 0], turn: 0, dur: 0.15 },
+      // left out: the milk starts to turn; "bad": green, swollen, and its cap rings off Earth
+      { on: "left", do: "bob", who: "milk", y: 2, r: 2.5, speed: 7, until: "bad", fade: 0.4 },
+      { on: "bad", do: "show", who: "cap" },
+      { on: "bad", do: "swap", who: "milk", to: "bad" },
+      { on: "bad", do: "move", who: "cap", by: [HIT[0] - CAPC[0], HIT[1] - CAPC[1]], arc: V ? 260 : 300, dur: 0.45, turn: 900 },
+      { on: "bad", offset: 0.47, do: "drop", who: "cap", dur: 0.7, drift: V ? 90 : 240, spin: 300 },
+      { on: "bad", offset: 0.1, do: "bob", who: "bad", y: 3, r: 3, speed: 5, fade: 0.1 },
+      // "good way.": it glows
+      { on: "good", do: "glow", who: "cheese", dur: 0.6, size: V ? 220 : 340 },
+      // "genius.": the rosette slams onto it
+      { on: "genius", do: "stamp", who: "rosette", from: 2.2, shake: 9 },
+      { on: "genius", do: "hop", who: "cheese", height: 26 },
+      // "not": the cheese falls off the stand and the manual rises; "dying.": the rosette hops onto it
+      { on: "not", do: "drop", who: "cheese", dur: 0.5, dist: 900, drift: V ? -60 : 160, spin: V ? -40 : 40 },
+      { on: "not", offset: 0.05, do: "slideIn", who: "manual", from: "bottom", over: 22 },
+      { on: "dying", do: "move", who: "rosette", to: [ON[0] + (V ? 70 : 150), ON[1] - (V ? 110 : 150)], arc: 120, dur: 0.3, turn: -8 },
+    ];
+    KIT.collage({ id: "cheese-genius", seed: 2605, host: true, cast: cast, beats: beats });
+  </script>
+</template>

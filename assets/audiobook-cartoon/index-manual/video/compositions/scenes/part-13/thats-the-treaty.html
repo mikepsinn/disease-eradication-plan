@@ -1,0 +1,61 @@
+<template id="thats-the-treaty-template">
+  <!-- thats-the-treaty · collage host shot (KIT.collage with host; Part 13 storyboard, scene 4). Wishonia at her console.
+       "That's": a rolled scroll pops up beside her; "treaty.": it drops and unrolls down out of the bottom of the
+       frame: THE 1% TREATY and one line, "Redirect 1% of military spending to clinical trials.", then empty paper, and
+       a thunk somewhere below. "craziness": the cuckoo springs out of the console; on "objection," she presses it
+       back down with both palms (her palms-down pose). "second": she holds up two fingers (counting). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="thats-the-treaty" data-width="1920" data-height="1080" data-start="0" data-duration="5.32">
+    <div id="thats-the-treaty-weave"></div>
+    <div id="thats-the-treaty-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "thats-the-treaty", V = KIT.V, S = KIT.STUDIO, SZ = window.KIT_ART_SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // The scroll hangs on the free wall right of the console and unrolls to the floor and out of the frame.
+      var SX = V ? 760 : 1430, STOP = V ? 1020 : 120, SW = V ? 620 : 720, SA = SZ["treaty-scroll"];
+      var SK = SW / SA[0], SH = SA[1] * SK, NSEG = 6;
+      var cast = {}, beats = [];
+      var w = SA[0], line = function (text, y, size) { return { text: text, at: [w / 2, y], width: w * (size > 40 ? 0.46 : 0.5), size: size }; };
+      for (var i = 0; i < NSEG; i++) {
+        var cut = function (j) { return j === 0 ? 0 : SA[1] * (0.25 + 0.75 * (j - 1) / (NSEG - 1)); };   // the words fit on the first piece
+        var y0 = cut(i), y1 = i === NSEG - 1 ? SA[1] : cut(i + 1) + 2;
+        cast["seg" + i] = { art: "treaty-scroll", x: SX, y: STOP, anchor: "top", scale: SK, hidden: true,
+          clip: [[0, y0], [w, y0], [w, y1], [0, y1]],
+          label: i === 0 ? [line("THE 1% TREATY", SA[1] * 0.085, 60), line("Redirect 1% of", SA[1] * 0.135, 34),
+                            line("military spending", SA[1] * 0.175, 34), line("to clinical trials.", SA[1] * 0.215, 34)] : undefined };
+      }
+      cast.roll = { art: "scroll-rolled", x: SX, y: STOP, scale: (SW * 1.08) / SZ["scroll-rolled"][0], hidden: true };
+      cast.cuckoo = { art: "cuckoo", x: V ? 250 : 1000, y: S.top + 6, anchor: "bottom", pivot: "bottom", scale: hs("cuckoo", V ? 230 : 210), hidden: true };
+
+      // "That's": the rolled scroll pops up; "treaty.": it drops and unrolls, the paper running out past the frame.
+      beats.push({ on: "That's", offset: 0.05, do: "pop", who: "roll", squash: true });
+      var T = cue("treaty."), DT = 0.07;
+      for (i = 0; i < NSEG; i++) beats.push({ at: T + i * DT, do: "show", who: "seg" + i });
+      beats.push({ at: T, do: "move", who: "roll", by: [0, SH], dur: NSEG * DT });
+      beats.push({ at: T + NSEG * DT, do: "drop", who: "roll", dur: 0.4, spin: 0 });
+      beats.push({ at: T + 0.75, do: "shake", y: 5, frames: 3 });
+
+      // "craziness": the cuckoo springs out; "objection,": she presses it back down.
+      beats.push({ on: "craziness", do: "pop", who: "cuckoo", squash: true });
+      beats.push({ on: "craziness", offset: 0.2, do: "bob", who: "cuckoo", y: 10, r: 6, speed: 4, until: "objection,", fade: 0.08 });
+      beats.push({ on: "objection,", do: "move", who: "cuckoo", by: [0, V ? 260 : 240], dur: 2 / 12 });
+      beats.push({ on: "objection,", offset: 2 / 12, do: "hide", who: "cuckoo" });
+
+      KIT.collage({ id: ID, seed: 612, host: true, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

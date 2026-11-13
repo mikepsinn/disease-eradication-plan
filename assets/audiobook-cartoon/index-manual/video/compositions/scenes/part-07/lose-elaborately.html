@@ -1,0 +1,114 @@
+<template id="lose-elaborately-template">
+  <!-- lose-elaborately · collage (Part 7, scene 4). The bit: humanity's board game. The Politician, the weapons factory
+       and the tourist's skeleton (from the museum) stand round the war table; their one piece is a tiny Earth. "game": the lid
+       card, SNAKES AND LADDERS, the LADDERS crossed out. "lose,": OBJECTIVE: LOSE is stamped on and all three cheer.
+       "but it is trying": Rube Goldberg slides in and pulls his lever; the Gilliam boot kicks the wrecking ball, the ball knocks the
+       scissors up, the scissors snip the string, and the missile hanging over the board drops on the tiny Earth: flash,
+       mushroom cloud. "But I digress.": everyone is charred and blinking except the skeleton, which is already bones;
+       it sets the Earth back on START, and the factory has a fresh missile ready. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="lose-elaborately" data-width="1920" data-height="1080" data-start="0" data-duration="9.18">
+    <div id="lose-elaborately-weave"></div>
+    <div id="lose-elaborately-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "lose-elaborately", V = KIT.V, SZ = KIT.collage.SIZES, F = KIT.collage.F;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var eyesAt = function (pts, size) { return pts.map(function (e) { return [e[0] * 30 / size, e[1] * 30 / size]; }); };
+    // The set on the ground line G: Rube Goldberg, the Politician, the war table (the board), the tourist's skeleton
+    // behind it, the factory.
+    // Overhead, left to right: the boot, the wrecking ball, the scissors, and the missile on its string over the piece.
+    var L = V ? {
+      G: 1420, pol: [250, 0.62], rube: [70, 0.6], table: [540, 0.95], skel: [690, 0.66], fac: [930, 0.85], earth: [400, 0.55], start: [250, 0.55],
+      boot: [70, 140, 0.55], ball: [300, 400, 0.8], scis: [575, 800, 0.4], miss: [400, 560, 0.55], banner: [540, 190, 960, 96], lose: [540, 330],
+    } : {
+      G: 880, pol: [440, 0.82], rube: [170, 1.0], table: [960, 1.25], skel: [1180, 0.92], fac: [1610, 1.25], earth: [780, 0.62], start: [600, 0.62],
+      boot: [400, -170, 0.7], ball: [630, -40, 0.9], scis: [900, 330, 0.5], miss: [780, 10, 0.42], banner: [1360, 120, 960, 110], lose: [1360, 270],
+    };
+    var G = L.G, TOP = G - SZ["war-table"][1] * L.table[1] + 100 * L.table[1];   // the board's surface
+    var MH = SZ.missile[1] * L.miss[2];                                             // the missile, nose down, tail at L.miss y
+    var HIT = cue("possible.") + 0.1;
+    var SNIP = HIT - 0.5;
+
+    // The lid card: SNAKES AND LADDERS, and a red X over LADDERS.
+    var LID = "SNAKES AND LADDERS", LK = L.banner[2] / SZ.paycheck[0], LS = KIT.fitText(LID, L.banner[3], 250 * LK, "Fraunces", 900);
+    var LW = KIT.textWidth(LID, LS, "Fraunces", 900), XW = KIT.textWidth("LADDERS", LS, "Fraunces", 900);
+    var XC = L.banner[0] + LW / 2 - XW / 2;
+
+    var beats = [
+      // the missile hangs nose down on its string over the piece
+      { at: 0, do: "move", who: "missile", by: [0, 0], turn: 180, dur: 0.01 },
+      { at: 0, do: "line", id: "string", points: [[L.miss[0], -200], [L.miss[0], L.miss[1] + 6]], dur: 0.01, width: 5, color: "ink" },
+      // "game": the lid card
+      { on: "game", do: "stamp", who: "lid", from: 1.6, shake: 6 },
+      { on: "objective", do: "stamp", who: "ladX", from: 1.8, shake: 3 },
+      // "lose,": OBJECTIVE: LOSE, and they cheer
+      { on: "lose,", do: "stamp", id: "obj", text: "OBJECTIVE: LOSE", x: L.lose[0], y: L.lose[1], size: V ? 80 : 90, width: V ? 760 : 820, tilt: -4 },
+      { on: "lose,", offset: 0.05, do: "swap", who: "pol", to: "polCheer" },
+      { on: "lose,", offset: 0.1, do: "hop", who: "fac", height: 40 },
+      { on: "lose,", offset: 0.35, do: "hop", who: "fac", height: 40 },
+      { on: "lose,", offset: 0.05, do: "hop", who: "skel", height: 46 },
+      { on: "lose,", offset: 0.3, do: "hop", who: "skel", height: 46 },
+      // "elaborately": the plunger, the boot, the ball, the scissors, the string
+      { on: "but", do: "slideIn", who: "rube", from: "left", dist: 700, over: 16 },
+      { on: "lose", n: 2, do: "nudge", who: "rube", by: [-30, 10] },
+      { on: "lose", n: 2, offset: 0.1, do: "shiver", who: "rube", dur: 0.4, amp: 4, rot: 2 },
+      { on: "elaborately", offset: -0.1, do: "hinge", who: "boot", angle: -48, frames: 3 },
+      { on: "elaborately", offset: 0.18, do: "hinge", who: "ball", angle: -36, frames: 4 },
+      { on: "elaborately", offset: 0.5, do: "move", who: "scis", to: [L.miss[0] + 30, L.miss[1] - 50], dur: 0.25, arc: 80, turn: -30 },
+      { at: SNIP, do: "shiver", who: "scis", dur: 0.2, amp: 6, rot: 14 },
+      { at: SNIP + 0.08, do: "hide", who: "string" },
+      { at: SNIP + 0.08, do: "move", who: "missile", by: [0, TOP - SZ["tiny-earth"][1] * L.earth[1] * 0.5 - L.miss[1] - MH], turn: 180, dur: 0.42 },
+      { at: SNIP + 0.15, do: "drop", who: "scis", dist: 1400, spin: 80, dur: 0.8 },
+      // the hit
+      { at: HIT, do: "hide", who: "missile" },
+      { at: HIT, do: "boom", shake: 20, flash: 0.22 },
+      { at: HIT, do: "pop", who: "cloud", squash: true, swell: 0.15 },
+      { at: HIT, do: "char", who: ["polCheer", "rube", "fac", "facKiss", "earth", "table", "boot", "ball"] },
+      { on: "But", n: 2, do: "pop", who: "cloud", out: true },
+      { on: "But", n: 2, offset: 0.25, do: "blink", who: ["polCheer", "rube", "fac", "earth"] },
+      // "But I digress.": the skeleton sets the Earth back on START; a fresh missile
+      { on: "I", do: "move", who: "earth", to: [L.start[0], TOP - SZ["tiny-earth"][1] * L.start[1] / 2], dur: 0.5, arc: 160, ease: "smooth" },
+      { on: "I", do: "nudge", who: "skel", by: [-30, 0] },
+      { on: "digress.", offset: 0.1, do: "swap", who: "fac", to: "facKiss" },
+      { on: "digress.", offset: 0.6, do: "blink", who: ["polCheer", "rube", "facKiss", "earth"] },
+    ];
+
+    var person = function (art, p, extra) {
+      var o = { art: art, x: p[0], y: G, anchor: "bottom", pivot: "bottom", scale: p[1] };
+      for (var k in extra || {}) o[k] = extra[k];
+      return o;
+    };
+    var PK = L.pol[1] * SZ.politician[1] / SZ["politician-crank"][1];   // every Politician pose the same height
+    var FK = L.fac[1];
+    var cast = {
+      lid: { art: "paycheck", x: L.banner[0], y: L.banner[1], scale: LK, hidden: true, label: { text: LID, at: [146, 54], width: 250, size: L.banner[3] } },
+      ladX: { art: "crayon-x", x: XC, y: L.banner[1], scale: LS * 1.25 / SZ["crayon-x"][1], hidden: true },
+      skel: person("tourist-skeleton", [L.skel[0], L.skel[1] * SZ["you-skeleton"][1] / SZ["tourist-skeleton"][1]]),
+      table: person("war-table", L.table),
+      pol: person("politician", L.pol),
+      polCheer: person("politician-shout", [L.pol[0], L.pol[1] * SZ.politician[1] / SZ["politician-shout"][1]], { hidden: true, eyes: eyesAt([[78, 36], [96, 36]], 12), eyeSize: 12, smoke: [[85, 4]] }),
+      rube: person("rube-goldberg", L.rube, { hidden: true, eyes: eyesAt([[198, 56], [227, 52]], 16), eyeSize: 16, smoke: [[190, 10]] }),
+      fac: person("factory-proud", L.fac, { eyes: eyesAt([[122, 220], [210, 220]], 34), eyeSize: 34, smoke: [[110, 10], [210, 10]] }),
+      facKiss: person("factory-kiss", [L.fac[0], FK * SZ["factory-proud"][1] / SZ["factory-kiss"][1]], { hidden: true, eyes: eyesAt([[130, 215], [215, 215]], 34), eyeSize: 34 }),
+      earth: { art: "tiny-earth", x: L.earth[0], y: TOP, anchor: "bottom", pivot: "bottom", scale: L.earth[1], eyes: eyesAt([[116, 39], [130, 39]], 10), eyeSize: 10, smoke: [[110, 8]] },
+      missile: { art: "missile", x: L.miss[0], y: L.miss[1] + MH / 2, scale: L.miss[2] },
+      boot: { art: "boot", x: L.boot[0], y: L.boot[1], anchor: "top", pivot: "top", scale: L.boot[2] },
+      ball: { art: "wrecking-ball", x: L.ball[0], y: L.ball[1], anchor: "top", pivot: "top", scale: L.ball[2] },
+      scis: { art: "scissors", x: L.scis[0], y: L.scis[1], scale: L.scis[2] },
+      cloud: { art: "mushroom", x: L.earth[0], y: TOP + 20, anchor: "bottom", pivot: "bottom", scale: (V ? 640 : 560) / SZ.mushroom[1], hidden: true },
+    };
+    KIT.collage({ id: ID, seed: 704, cast: cast, beats: beats });
+  </script>
+</template>

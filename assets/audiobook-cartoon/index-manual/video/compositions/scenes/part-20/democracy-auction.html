@@ -1,0 +1,153 @@
+<template id="democracy-auction-template">
+  <!-- democracy-auction · collage (Part 20, scene 3; plate auction-hall, continued with no seam by bidder-paddles). The
+       bit: democracy is an auction lot, and the weapons factory has been feeding the machine. The Politician slumps on
+       the block with his PAPERS: EMPTY and VOTES: EMPTY tags; the factory (the arms industry) feeds a war bill and a
+       VOTE ballot into his belly and he springs up grinning; a missile drops out of him into the factory's arms like a
+       can from a vending machine. "outbid": YOU raises a hand at the back and every head hops round. "enemy": NOT THE
+       ENEMY goes up over the factory. "(they die of the same diseases you do)": it coughs, the whole hall coughs with
+       it, and with a flash its headstone slams down in front of it: R.I.P., and it is still grinning, still bidding.
+       "not for free": a pointing hand telescopes from YOU over every head and presses the Politician's nose. Nothing
+       comes out; EXACT CHANGE ONLY pops out of his ear. "the clock is running": the clock over the rostrum runs on the
+       spot. hall(ID, true) draws this plate's end state for bidder-paddles: change both files together. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="democracy-auction" data-width="1920" data-height="1080" data-start="0" data-duration="12.44">
+    <div id="democracy-auction-weave"></div>
+    <div id="democracy-auction-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // ── hall(ID, E): the auction-hall plate. E false: this scene's beats. E true: its end state at time 0 (for
+    //    bidder-paddles, which copies this function). Returns { cast, beats, views, P }. ──
+    function hall(ID, E) {
+      var V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      // Left to right on the floor G (plate px): the two money towers (bidder-paddles), the factory, the block and the
+      // Politician, the rostrum and the Lobbyist under the clock, three bidders, YOU, the Reaper.
+      var X = { tyou: -430, tfac: -80, fac: 400, block: 960, pod: 1480, c1: 1820, c2: 2010, c3: 2200, you: 2430, reaper: 2660 };
+      var FK = 1.3, BK = 1.4, PK = 1.5, YH = 660;
+      var FTOP = G - SZ["factory-pay"][1] * FK;
+      var STAND = G - SZ["prize-stand"][1] * BK + 45 * BK;            // the cushion's top
+      var PW = SZ["politician-red"][0], PH = SZ["politician-red"][1], PTOP = STAND - PH * PK;
+      var pp = function (ax, ay) { return [X.block - PW * PK / 2 + ax * PK, PTOP + ay * PK]; };   // a point on the Politician
+      var BELLY = pp(128, 222), NOSE = pp(143, 50), RHAND = [X.fac - 484 * FK / 2 + 420 * FK, FTOP + 210 * FK];
+      var YK = YH / SZ.you[1], UK = YH / SZ["you-slap"][1];
+      var UHAND = [X.you - SZ["you-slap"][0] * UK / 2 + 60 * UK, G - YH + 30 * UK];
+      var cy = function (s) { return V ? G - 420 / s : 560; };
+      var views = V ? {
+        block: [690, cy(0.95), 0.95], wide: [1650, cy(0.58), 0.58], fac: [560, cy(0.9), 0.9], clock: [1480, 520, 1.1], towers: [-150, cy(0.62), 0.62],
+      } : {
+        block: [700, 560, 1], wide: [1200, 330, 0.62], fac: [600, 470, 1.0], clock: [1480, 330, 1.25], towers: [-100, 250, 0.66],
+      };
+      var T = function (w, n, off) { return E ? -2 : KIT.cue(ID, w, n) + (off || 0); };
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+
+      // The set, back to front.
+      cast.sign = { art: "sign-board", x: X.fac, y: FTOP + 90, anchor: "bottom", pivot: "bottom", scale: 1.25, hidden: !E,
+        label: [{ text: "NOT THE", at: [107, 52], width: 170, size: 40 }, { text: "ENEMY", at: [107, 96], width: 170, size: 46 }] };
+      cast.clock = { art: "wall-clock", x: X.pod, y: 230, pivot: "bottom", scale: 0.62 };
+      cast.lob = { art: "lobbyist", x: X.pod - 10, y: G - 10, anchor: "bottom", pivot: "bottom", scale: 1.25 };
+      cast.pod = { art: "podium", x: X.pod, y: G, anchor: "bottom", scale: 1.1 };
+      cast.fac = { art: "factory-pay", x: X.fac, y: G, anchor: "bottom", pivot: "bottom", scale: FK, hidden: E };
+      cast.facK = { art: "factory-kiss", x: X.fac + 40, y: G, anchor: "bottom", pivot: "bottom", scale: FK, hidden: !E };
+      cast.stone = { art: "headstone", x: X.fac + 20, y: G + 12, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: !E,
+        label: { text: "R.I.P.", at: [179, 170], width: 230, size: 64 } };
+      cast.puff = { art: "cloud-puff", x: X.fac + 150, y: FTOP + 300, scale: 0.55, hidden: true };
+      cast.stand = { art: "prize-stand", x: X.block, y: G, anchor: "bottom", scale: BK };
+      cast.pol = { art: "politician-red", x: X.block, y: STAND, anchor: "bottom", pivot: "bottom", scale: PK,
+        pieces: {
+          legs: { clip: [[0, 234], [PW, 234], [PW, PH], [0, PH]] },
+          top: { clip: [[0, 0], [PW, 0], [PW, 240], [0, 240]], pivot: [132, 238] },
+        } };
+      cast.bill = { art: "bill-war", x: RHAND[0], y: RHAND[1], scale: 0.42, hidden: true };
+      cast.vote = { art: "ballot", x: RHAND[0], y: RHAND[1] + 30, scale: 0.28, hidden: true, label: { text: "VOTE", at: [118, 160], width: 170, size: 60 } };
+      cast.missile = { art: "missile", x: BELLY[0], y: BELLY[1] + 40, scale: 0.42, hidden: true };
+      var cit = [["citizen-1", X.c1], ["citizen-4", X.c2], ["citizen-7", X.c3]];
+      cit.forEach(function (c, i) { cast["c" + i] = { art: c[0], x: c[1], y: G, anchor: "bottom", pivot: "bottom", scale: 560 / SZ[c[0]][1] }; });
+      cast.you = { art: "you", x: X.you, y: G, anchor: "bottom", pivot: "bottom", scale: YK, hidden: E };
+      cast.youUp = { art: "you-slap", x: X.you, y: G, anchor: "bottom", pivot: "bottom", scale: UK, hidden: !E };
+      cast.reaper = { art: "reaper-stop", x: X.reaper, y: G, anchor: "bottom", pivot: "bottom", scale: 0.9 };
+      // The pointing hand on its telescoping handle, mirrored to point left (the img is flipped after the build).
+      var HK = 0.8, TIPOFF = [(231 - 12) * HK, (161 - 55) * HK], CUFF = [(442 - 12) * HK, (100 - 55) * HK];
+      cast.hand = { art: "greed-hand", x: UHAND[0] + TIPOFF[0], y: UHAND[1] + TIPOFF[1], scale: HK, faces: "left", hidden: true };
+
+      if (!E) {
+        // He starts slumped on the block, still flying the empty tags from the host shot.
+        add({ at: 0, do: "hinge", who: "pol.top", angle: -30, frames: 1 });
+        var tg = V ? [X.block, -170, -10] : [X.block + 380, 470, 620];
+        add({ at: 0, do: "tag", id: "t1", who: "pol", text: "PAPERS: EMPTY", knot: [128, 222], x: tg[0], y: tg[1], w: 440, h: 130, swing: 4 });
+        add({ at: 0, do: "tag", id: "t2", who: "pol", text: "VOTES: EMPTY", knot: [138, 234], x: tg[0], y: tg[2], w: 440, h: 130, swing: 4 });
+        // "weapons manufacturers": the factory walks up with its hands full
+        add({ on: "weapons", do: "slideIn", who: "fac", from: "left", dist: 1100, over: 18 });
+        // "provide both.": a war bill into his belly, then a VOTE; he springs upright, grin on full
+        add({ on: "provide", offset: -0.2, do: "show", who: "bill" });
+        add({ on: "provide", offset: -0.2, do: "move", who: "bill", to: BELLY, dur: 0.22, arc: 40 });
+        add({ on: "provide", offset: 0.02, do: "hide", who: "bill" });
+        add({ on: "provide", offset: 0.12, do: "show", who: "vote" });
+        add({ on: "provide", offset: 0.12, do: "move", who: "vote", to: BELLY, dur: 0.18, arc: 40 });
+        add({ on: "provide", offset: 0.3, do: "hide", who: "vote" });
+        add({ on: "both.", do: "hide", who: ["t1", "t2"] });
+        add({ on: "both.", do: "hinge", who: "pol.top", angle: 30, frames: 1 });
+        add({ on: "both.", do: "hop", who: "pol", height: 60 });
+        add({ on: "both.", offset: 0.25, do: "bob", who: "pol", y: 4, r: 1, speed: 2, until: "Not" });
+        // the vending thunk: a missile drops out of him into the factory's arms
+        add({ on: "both.", offset: 0.68, do: "pop", who: "missile" });
+        add({ on: "both.", offset: 0.75, do: "move", who: "missile", to: [X.fac + 150, FTOP + 380], scale: 1.6, dur: 0.22, arc: 80, turn: -12 });
+        add({ on: "both.", offset: 0.97, do: "hide", who: ["missile", "fac"] });
+        add({ on: "both.", offset: 0.97, do: "show", who: "facK" });
+        add({ on: "both.", offset: 1.0, do: "hop", who: "facK", height: 20 });
+        // "You're going to outbid them.": YOU's hand goes up at the back, and every head in the hall hops round
+        add({ on: "You're", do: "camera", view: "wide", dur: 0.6 });
+        add({ on: "outbid", do: "hide", who: "you" });
+        add({ on: "outbid", do: "show", who: "youUp" });
+        add({ on: "outbid", do: "hop", who: "youUp", height: 24 });
+        ["c0", "c1", "c2", "reaper", "lob", "pol", "facK"].forEach(function (n, i) { add({ on: "outbid", offset: 0.15 + 0.05 * i, do: "hop", who: n, height: 26 }); });
+        // "Not because they're the enemy": the sign goes up over the factory
+        add({ on: "Not", do: "camera", view: "fac", dur: 0.5 });
+        add({ on: "enemy", do: "pop", who: "sign", squash: true });
+        add({ on: "enemy", offset: 0.15, do: "nudge", who: "facK", by: [0, -14] });
+        // "(they die of the same diseases you do)": a cough, the whole hall coughs, and the headstone slams down
+        add({ on: "die", do: "shiver", who: "facK", dur: 0.5, amp: 9, rot: 4 });
+        add({ on: "die", do: "pop", who: "puff", squash: true });
+        add({ on: "die", offset: 0.5, do: "pop", who: "puff", out: true });
+        add({ on: "same", do: "shiver", who: ["c0", "c1", "c2", "youUp", "lob", "pol"], dur: 0.5, amp: 6, rot: 3 });
+        add({ on: "do),", offset: 0.79, do: "boom", shake: 12, flash: 0.15 });
+        add({ on: "do),", offset: 0.79, do: "stamp", who: "stone", from: 1.8, shake: 10 });
+        // "politicians do not do things for free": the hand telescopes over every head and presses his nose
+        add({ on: "but", do: "camera", view: "wide", dur: 0.5 });
+        var tGo = T("politicians", 1, 0.05), tHit = T("not", 2);
+        add({ at: tGo, do: "show", who: "hand" });
+        add({ at: tGo, do: "move", who: "hand", to: [NOSE[0] + TIPOFF[0], NOSE[1] + TIPOFF[1]], dur: tHit - tGo });
+        add({ at: tGo, do: "line", id: "pole", points: [UHAND, [NOSE[0] + CUFF[0], NOSE[1] + CUFF[1]]], dur: tHit - tGo, ease: "linear", color: "#6E4A28", width: 16 });
+        add({ at: tHit, do: "nudge", who: "hand", by: [30, 8] });
+        add({ at: tHit, do: "nudge", who: "pol", by: [-14, 0] });
+        add({ on: "things", do: "shiver", who: "pol", dur: 0.3, amp: 3, rot: 2 });
+        add({ on: "free,", do: "tag", id: "change", who: "pol", text: "EXACT CHANGE ONLY", knot: [101, 46], x: X.block + (V ? 220 : 60), y: PTOP - (V ? 160 : 110), w: 560, h: 150, swing: 5 });
+        add({ on: "and", do: "hide", who: ["hand", "pole", "change"] });
+        // "and the clock is running.": the clock over the rostrum runs on the spot
+        add({ on: "and", do: "camera", view: "clock", dur: 0.4 });
+        add({ on: "running.", do: "shiver", who: "clock", dur: 0.6, amp: 12, rot: 10 });
+        add({ on: "running.", do: "bob", who: "clock", y: 18, r: 6, speed: 9, fade: 0.05 });
+        add({ on: "running.", do: "bob", who: "lob", y: 4, r: 1, speed: 4, fade: 0.1 });
+      }
+      return { cast: cast, beats: beats, views: views, P: { G: G, X: X, FK: FK, FTOP: FTOP, BELLY: BELLY } };
+    }
+    // ── end hall ──
+
+    (function () {
+      var ID = "democracy-auction", h = hall(ID, false);
+      KIT.collage({ id: ID, seed: 2003, plate: KIT.V ? [-2600, -2600, 4600, 3000] : [-2000, -1200, 4200, 2600], views: h.views, view: "block", cast: h.cast, beats: h.beats });
+      var img = document.getElementById(ID + "-hand").querySelector("img");
+      img.style.transform = "scaleX(-1)";
+    })();
+  </script>
+</template>

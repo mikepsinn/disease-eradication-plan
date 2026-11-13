@@ -1,0 +1,81 @@
+<template id="decision-wheel-template">
+  <!-- decision-wheel · collage (Part 14, scene 14). The bit: your doctor spins a carnival prize wheel. Doctor, wheel and
+       patient fill the frame. Each thing the narrator names is a spin that clicks to a stop under the pointing hand:
+       DONUTS, HALF-REMEMBERED, INSURANCE (the Fat Cat shoves in and stops it dead with his hands, right in front of the
+       patient), VIBES. Then the last spin, and it stops on DONUTS: the doctor flips the patient his prescription. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="decision-wheel" data-width="1920" data-height="1080" data-start="0" data-duration="14.524">
+    <div id="decision-wheel-weave"></div>
+    <div id="decision-wheel-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // Patient, wheel, doctor, left to right on the ground G. The wheel turns on its hub (art 209, 208), on the stand's
+    // axle (art 106, 96); its stops, in degrees: DONUTS 0, HALF-REMEMBERED 270, INSURANCE 180, VIBES 90.
+    // (The same layout opens forty-page-insert.)
+    var V = KIT.V, G = 1000;
+    var PAT = V ? [520, 1.9] : [340, 1.95], DOC = V ? [1410, 1.7] : [1600, 1.7], WH = V ? [960, 100, 2.05] : [960, 585, 1.9];
+    var view = V ? [960, G - 420 / 0.82, 0.82] : [960, 620, 1];
+    var LAP = [PAT[0] + 10 * PAT[1], G - 130 * PAT[1]];
+    var spin = function (when, turn, dur) { return Object.assign({ do: "move", who: "wheel", turn: turn, dur: dur, ease: "smooth" }, when); };
+    var flick = function (when) { return Object.assign({ do: "nudge", who: "doc", by: [36, 0] }, when); };
+    var click = function (when) { return Object.assign({ do: "nudge", who: "hand", by: [0, 22] }, when); };
+
+    KIT.collage({
+      id: "decision-wheel", seed: 1401, views: { room: view }, view: "room", plate: [-400, -900, 2400, 1500],
+      cast: {
+        stand: { art: "wheel-stand", x: WH[0], y: WH[1], anchor: [106, 96], scale: (G - WH[1]) / 373 },
+        wheel: { art: "prize-wheel", x: WH[0], y: WH[1], anchor: [209, 208], pivot: [209, 208], scale: WH[2], label: [
+          { text: "DONUTS", at: [209, 98], width: 170, size: 76 },
+          { text: "HALF-", at: [346, 208], width: 90, size: 50, tilt: 90 },
+          { text: "REMEMBERED", at: [306, 208], width: 150, size: 50, tilt: 90 },
+          { text: "INSURANCE", at: [209, 318], width: 170, size: 76, tilt: 180 },
+          { text: "VIBES", at: [100, 208], width: 150, size: 76, tilt: -90 },
+        ] },
+        hand: { art: "pointing-hand", x: WH[0], y: WH[1] - 209 * WH[2] + 36, anchor: [95, 285], scale: 0.6 },
+        pat: { art: "patient", x: PAT[0], y: G, anchor: "bottom", pivot: "bottom", scale: PAT[1] },
+        doc: { art: "doctor", x: DOC[0], y: G, anchor: "bottom", pivot: "bottom", scale: DOC[1], faces: "left" },
+        // the insurance company shoves in between the patient and his doctor, palms on the rim (art 445, 170)
+        cat: { art: "fat-cat-push", x: WH[0] - 209 * WH[2] + 20, y: G, anchor: [445, 472], pivot: "bottom", scale: 1.7, hidden: true },
+        donut: { art: "donut", x: DOC[0] - 70, y: G - 480, scale: 0.9, hidden: true },
+      },
+      beats: [
+        { at: 0, do: "bob", who: "pat", y: 3, r: 1, speed: 0.7, phase: 1 },
+        // "picks": the first spin takes its time and clicks on DONUTS
+        flick({ on: "picks" }), spin({ on: "picks" }, 1440, 3.0),
+        click({ on: "donuts" }), { on: "donuts", do: "hop", who: "doc", height: 26 },
+        flick({ on: "something" }), spin({ on: "something" }, 2070, 0.9),
+        click({ on: "something", offset: 0.9 }),
+        { on: "medical", do: "move", who: "doc", turn: -5, dur: 0.3, ease: "smooth" },
+        flick({ on: "whatever", offset: -0.25 }), spin({ on: "whatever", offset: -0.25 }, 2700, 0.85),
+        // INSURANCE: he slams in front of the patient and stops it dead with his hands
+        { on: "the", n: 1, do: "slideIn", who: "cat", from: "left", over: 26, tilt: 3 },
+        click({ on: "company", offset: -0.2 }),
+        { on: "company", offset: -0.15, do: "shake", x: 10, frames: 3 },
+        { on: "allows,", do: "nudge", who: "cat", by: [18, 0] },
+        { on: "allows,", offset: 0.35, do: "nudge", who: "cat", by: [18, 0] },
+        // and VIBES: the wheel flings him off; the doctor sways with his eyes shut
+        flick({ on: "vibes.", offset: -0.4 }), spin({ on: "vibes.", offset: -0.4 }, 3330, 0.65),
+        { on: "vibes.", offset: -0.25, do: "slideOut", who: "cat", to: "left", dur: 0.4 },
+        click({ on: "vibes.", offset: 0.25 }),
+        { on: "vibes.", offset: 0.1, do: "bob", who: "doc", y: 6, r: 6, speed: 3, until: 13.4, fade: 0.1 },
+        // the last spin, three and a bit turns, and it stops on DONUTS
+        flick({ on: "vibes.", offset: 0.62 }), spin({ on: "vibes.", offset: 0.62 }, 4680, 0.72),
+        click({ on: "vibes.", offset: 1.34 }), { on: "vibes.", offset: 1.34, do: "hop", who: "doc", height: 30 },
+        { on: "vibes.", offset: 1.36, do: "pop", who: "donut", squash: true },
+        { on: "vibes.", offset: 1.42, do: "move", who: "donut", to: LAP, scale: 0.75, turn: 360, dur: 0.33, arc: 170 },
+        { on: "vibes.", offset: 1.75, do: "shiver", who: "pat", dur: 0.25, amp: 5, rot: 1 },
+      ],
+    });
+  </script>
+</template>

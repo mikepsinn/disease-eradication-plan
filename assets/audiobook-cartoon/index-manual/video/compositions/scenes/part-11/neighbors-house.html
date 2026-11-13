@@ -1,0 +1,83 @@
+<template id="neighbors-house-template">
+  <!-- neighbors-house · collage (Part 11, scene 11, plate two-houses). Two Victorian houses side by side, their signs
+       FAILED STATE (left) and YOU (right). YOU stands in his own yard with a mug and watches the left one catch fire
+       and burn down to rubble. One ember drifts toward his house. "basement.": the camera pushes in on what he keeps
+       beside his own foundation: crates of warheads stacked high; one more slides in, the ember drops onto them, and
+       it all goes up: a white flash, the mushroom where his house was, and the YOU sign spins into the air. The boom
+       rolls on under the next shot. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="neighbors-house" data-width="1920" data-height="1080" data-start="0" data-duration="8.04">
+    <div id="neighbors-house-weave"></div>
+    <div id="neighbors-house-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "neighbors-house", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // the two houses (the same layout as try-all-three)
+      var L = 560, R = 1300, HK = hs("villa", 700), YOU = [1720, G], CR = 1610;
+      var cy = function (s) { return V ? G - 420 / s : 620; };
+      var views = V ? { both: [1150, cy(0.7), 0.7], crates: [CR + 40, G - 200, 1.5], wide: [1100, cy(0.7), 0.7] }
+        : { both: [1150, 600, 1], crates: [CR + 60, G - 210, 1.9], wide: [1150, 560, 0.9] };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      cast.houseL = { art: "villa", x: L, y: G, anchor: "bottom", pivot: "bottom", scale: HK };
+      cast.rubbleL = { art: "villa-burnt", x: L, y: G, anchor: "bottom", scale: hs("villa-burnt", 700), hidden: true };
+      cast.houseR = { art: "villa", x: R, y: G, anchor: "bottom", pivot: "bottom", scale: HK };
+      cast.rubbleR = { art: "crater", x: R, y: G + 40, anchor: "bottom", scale: hs("crater", 220), hidden: true };
+      cast.signL = { art: "counter-sign", x: L - 290, y: G, anchor: "bottom", pivot: "bottom", scale: 1.05, label: { text: "FAILED STATE", at: [82, 75], width: 110, size: 30 } };
+      cast.signR = { art: "counter-sign", x: R - 300, y: G, anchor: "bottom", pivot: "center", scale: 1.05, label: { text: "YOU", at: [82, 75], width: 90, size: 46 } };
+      // the crates beside his own foundation
+      for (var i = 0; i < 4; i++) cast["crate" + i] = { art: "gas-can", x: CR + (i % 2) * 150 - 75, y: G - Math.floor(i / 2) * 180, anchor: "bottom", scale: hs("gas-can", 190) };
+      cast.crate4 = { art: "gas-can", x: CR + 600, y: G, anchor: "bottom", pivot: "bottom", scale: hs("gas-can", 190), hidden: true };
+      cast.you = { art: "watcher", x: YOU[0], y: YOU[1], anchor: "bottom", pivot: "bottom", scale: hs("watcher", 580) };
+      cast.youC = { art: "watcher-charred", x: YOU[0], y: YOU[1], anchor: "bottom", pivot: "bottom", scale: hs("watcher-charred", 600), hidden: true, smoke: [[140, 10], [170, 20]] };
+      for (i = 0; i < 6; i++) cast["fire" + i] = { art: "flames", x: L - 170 + i * 68, y: G - 330 - (i % 3) * 90, anchor: "bottom", pivot: "bottom", scale: 0.45 + (i % 2) * 0.15, hidden: true };
+      cast.ember = { art: "flames", x: L + 60, y: G - 560, scale: 0.09, hidden: true };
+      cast.boom = { art: "mushroom", x: R + 80, y: G, anchor: "bottom", scale: hs("mushroom", 1000), hidden: true };
+
+      add({ at: 0, do: "bob", who: "you", y: 2, r: 1, speed: 1.2, until: "basement." });
+      // the neighbor's house catches and burns down
+      for (i = 0; i < 6; i++) {
+        add({ at: cue("neighbor's") - 0.3 + i * 0.1, do: "pop", who: "fire" + i, squash: true });
+        add({ at: cue("neighbor's") + i * 0.1, do: "bob", who: "fire" + i, y: 14, r: 8, speed: 7, phase: i, until: "while" });
+      }
+      add({ on: "burn", do: "shiver", who: "houseL", dur: 0.5, amp: 6, rot: 2 });
+      add({ on: "down", do: "swap", who: "houseL", to: "rubbleL" });
+      add({ on: "down", do: "move", who: ["fire0", "fire1", "fire2", "fire3", "fire4", "fire5"], by: [0, 300], dur: 0.3 });
+      add({ on: "while", do: "hide", who: ["fire0", "fire1", "fire2", "fire3", "fire4", "fire5"] });
+      // one ember drifts toward his house
+      add({ on: "down", do: "show", who: "ember" });
+      add({ on: "down", do: "bob", who: "ember", y: 12, r: 20, speed: 5 });
+      add({ on: "down", do: "move", who: "ember", to: [R + 120, G - 640], dur: cue("storing") - cue("down"), ease: "smooth" });
+      // ...while storing gasoline in their own basement
+      add({ on: "storing", do: "camera", view: "crates", dur: 0.7 });
+      add({ on: "gasoline", do: "slideIn", who: "crate4", from: "right", dist: 600, over: 0 });
+      add({ on: "gasoline", do: "move", who: "crate4", to: [CR + 210, G], dur: 0.6, ease: "smooth" });
+      add({ on: "own", do: "move", who: "ember", to: [CR + 40, G - 470], dur: 0.35 });
+      // it all goes up
+      var BOOM = KIT.after(ID, "basement.") - 0.35;
+      add({ at: BOOM - 0.3, do: "camera", view: "wide", dur: 0.3 });
+      add({ at: BOOM, do: "boom", shake: 26, flash: 0.3 });
+      add({ at: BOOM, do: "hide", who: ["ember", "houseR", "crate0", "crate1", "crate2", "crate3", "crate4"] });
+      add({ at: BOOM, do: "show", who: "rubbleR" });
+      add({ at: BOOM, do: "pop", who: "boom" });
+      add({ at: BOOM, do: "hide", who: "you" });
+      add({ at: BOOM, do: "show", who: "youC" });
+      add({ at: BOOM, do: "move", who: "signR", by: [260, -900], turn: 720, dur: 0.9, ease: "smooth" });
+
+      KIT.collage({ id: ID, seed: 1111, plate: V ? [-1400, -2200, 3600, 3200] : [-600, -800, 3000, 2000], views: views, view: "both", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

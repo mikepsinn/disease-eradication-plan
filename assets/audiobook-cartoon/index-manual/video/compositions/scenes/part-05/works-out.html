@@ -1,0 +1,50 @@
+<template id="works-out-template">
+  <!-- works-out · collage host shot (Part 5, scene 10): it works for everyone but Death. Wishonia at the console; the
+       Grim Reaper beside it, clipboard up, pencil ready. "works": he looks down at the clipboard; "out.": his pencil
+       snaps in half. She side-eyes the camera as the iris closes on her. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="works-out" data-width="1920" data-height="1080" data-start="0" data-duration="1.612">
+    <div id="works-out-weave"></div>
+    <div id="works-out-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "works-out", V = KIT.V, D = KIT.scene(ID).duration;
+      var RX = V ? 880 : 1520, RY = V ? 1440 : 1075, RK = V ? 0.8 : 1.0;
+      // his raised hand (reaper-stop art 25, 40), where the clipboard and pencil are held up
+      var HAND = [RX - 191.5 * RK + 25 * RK, RY - 763 * RK + 40 * RK];
+      var CB = [HAND[0] + 30 * RK, HAND[1] + 170 * RK], PEN = [HAND[0] + 150 * RK, HAND[1] + 120 * RK];
+      KIT.collage({
+        id: ID, seed: 358, host: { iris: ["out", D - 0.55, D - 0.05] },
+        cast: {
+          reaper: { art: "reaper-stop", x: RX, y: RY, anchor: "bottom", pivot: "bottom", scale: RK },
+          clip: { art: "plan-clipboard", x: CB[0], y: CB[1], scale: 0.55 * RK },
+          pencil: { art: "pencil", x: PEN[0], y: PEN[1], scale: 0.4 * RK },
+          penL: { art: "pencil-snapped-end", x: PEN[0] + 45 * RK, y: PEN[1], scale: 0.4 * RK, hidden: true },
+          penR: { art: "pencil-snapped-tip", x: PEN[0] - 50 * RK, y: PEN[1], scale: 0.4 * RK, hidden: true },
+        },
+        beats: [
+          { on: "works", do: "hinge", who: "reaper", angle: 5, frames: 2 },
+          { on: "works", do: "move", who: ["clip", "pencil", "penL", "penR"], by: [6, 10], dur: 0.17 },
+          { on: "out.", do: "hide", who: "pencil" },
+          { on: "out.", do: "show", who: ["penL", "penR"] },
+          { on: "out.", do: "shake", y: 4, frames: 2 },
+          { on: "out.", offset: 0.1, do: "drop", who: "penL", dist: 900, spin: 70, drift: 60, dur: 0.6 },
+          { on: "out.", offset: 0.1, do: "drop", who: "penR", dist: 900, spin: -60, drift: -40, dur: 0.6 },
+          { on: "out.", offset: 0.15, do: "shiver", who: "reaper", dur: 0.25, amp: 3, rot: 2 },
+        ],
+      });
+    })();
+  </script>
+</template>

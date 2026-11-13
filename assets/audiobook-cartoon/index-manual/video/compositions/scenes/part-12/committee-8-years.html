@@ -1,0 +1,93 @@
+<template id="committee-8-years-template">
+  <!-- committee-8-years · collage (Part 12, scene 7; plate committee-room). A timeline along the floor, SAFE at 0 and
+       YOU MAY HAVE IT at 8.2 years. A smiling bottle on a test bench; YOU shuffles in, sick, and stands by it. "test.":
+       SAFE stamps on its label. "Everyone agrees": the FDA's building nods and nods. "can't have it": its long arm
+       shoots out, snatches the bottle from under YOU's nose and puts it in the padlocked approval cabinet. "committee":
+       binders thump down by the building and it grows a long white beard; the hourglass shudders and a red bar starts creeping along the timeline.
+       "years": YOU goes and stands with his palm on the cabinet's glass; "enough.": he x-rays into a grinning skeleton
+       and slumps against it, a long way short of 8.2. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="committee-8-years" data-width="1920" data-height="1080" data-start="0" data-duration="15.48">
+    <div id="committee-8-years-weave"></div>
+    <div id="committee-8-years-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "committee-8-years", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // Left to right on the floor G: the FDA's building, the approval cabinet, the test bench, YOU. The timeline runs
+    // under them all, 0 to 8.2 years.
+    var G = V ? 1300 : 760;
+    var TL = KIT.collage.axes({ box: [200, G - 20, V ? 1480 : 1760, G], x: [0, 8.2, 8.2], y: [0, 1, 1e9], xLabels: 8.2, size: V ? 56 : 40 });
+    var X = { fda: 330, cab: 680, bench: 1080, you: 1360 };
+    var FH = 640, FK = FH / SZ["fda-sip"][1];
+    var BK = 380 / SZ["test-bench"][1], BTOP = G - (SZ["test-bench"][1] - 300) * BK;
+    var CK = 1.15, CABH = SZ["approval-cabinet-full"][1] * CK;
+    var YH = 560, ARMK = 0.72;
+    var you = function (art, hidden) { return { art: art, x: X.you, y: G, anchor: "bottom", pivot: "bottom", scale: YH / SZ[art][1], hidden: hidden }; };
+    var cy = function (s) { return G - 300 / s; };          // 9:16: the floor at y 1260, its labels above the captions
+    var views = V ? {
+      bench: [1150, cy(0.85), 0.85], wide: [900, cy(0.62), 0.62], cab: [880, cy(0.7), 0.7],
+    } : {
+      wide: [960, 470, 1], cab: [900, 480, 1.08],
+    };
+    var ARMY = G - 0.6 * FH, HAND = [X.bench - 10, BTOP - 120];
+    var cast = {
+      arm: { art: "fda-official-arm", x: HAND[0] + 30, y: ARMY, anchor: "right", scale: ARMK, hidden: true },
+      fda: { art: "fda-sip", x: X.fda, y: G, anchor: "bottom", pivot: "bottom", scale: FK, label: { text: "F.D.A.", at: [174, 189], width: 170, size: 46, plaque: true } },
+      beard: { art: "beard", x: X.fda + 4, y: G - FH + 300 * FK, anchor: "top", pivot: "top", scale: 0.5 * FK, hidden: true },
+      cab: { art: "approval-cabinet-full", x: X.cab, y: G, anchor: "bottom", pivot: "bottom", scale: CK },
+      bench: { art: "test-bench", x: X.bench, y: G, anchor: "bottom", scale: BK },
+      bottle: { art: "pill-bottle", x: X.bench - 70, y: BTOP, anchor: "bottom", pivot: "bottom", scale: 0.8 },
+      iv: { art: "iv-pole", x: X.you + 0.25 * YH, y: G, anchor: "bottom", pivot: "bottom", scale: 1.0 * YH / SZ["iv-pole"][1] },
+      you: you("you-sick"),
+      bones: { art: "you-skeleton", x: X.cab + 150, y: G, anchor: "bottom", pivot: "bottom", scale: YH / SZ["you-skeleton"][1], hidden: true },
+    };
+    var END = 15.48;
+    var beats = [
+      { at: 0, do: "chart", chart: TL },
+      { at: 0.2, do: "banner", id: "safe", text: "SAFE", x: TL.pt(0, 0)[0] + 20, y: G + (V ? 110 : 95), size: V ? 60 : 44, width: 220, pad: 40, color: "ink", tilt: -2 },
+      { at: 0.5, do: "banner", id: "may", text: "YOU MAY HAVE IT", x: TL.pt(8.2, 0)[0] - (V ? 180 : 150), y: G + (V ? 110 : 95), size: V ? 60 : 44, width: V ? 520 : 420, pad: 40, color: "ink", tilt: 2 },
+      // YOU shuffles in and stands by the bottle
+      { on: "dying", do: "slideIn", who: ["you", "iv"], from: "right", dist: V ? 900 : 700, over: 10 },
+      { on: "take", do: "nudge", who: "you", by: [-30, 0] },
+      { on: "test.", do: "stamp", who: "bottle", id: "safeStamp", text: "SAFE", spot: [79, 300], width: 150, size: 60, tilt: -6 },
+      { on: "test.", offset: 0.4, do: "hop", who: "bottle", height: 24 },
+      // everyone agrees: the building nods and nods
+      { on: "Everyone", offset: -0.3, do: "camera", view: "wide", dur: 0.5 },
+      { on: "Everyone", do: "bob", who: "fda", y: 16, r: 3, speed: 4.5, until: "But" },
+      // can't have it: the long arm snatches it into the cabinet
+      { on: "can't", do: "slideIn", who: "arm", from: "left", dist: 560, over: 0 },
+      { on: "have", do: "move", who: "arm", by: [-(X.bench - X.cab), 40], dur: 0.25 },
+      { on: "have", do: "move", who: "bottle", to: [X.cab, G - 0.55 * CABH], dur: 0.25, arc: 30 },
+      { on: "it", n: 2, offset: 0.08, do: "hide", who: "bottle" },
+      { on: "it", n: 2, offset: 0.08, do: "shiver", who: "cab", dur: 0.3, amp: 3, rot: 2 },
+      { on: "because", do: "slideOut", who: "arm", to: "left", dist: 700, dur: 0.3 },
+      { on: "because", do: "shiver", who: "you", dur: 0.5, amp: 3, rot: 3 },
+      // the committee: binders thump down; the hourglass shudders; the wait creeps along the timeline
+      { on: "committee", do: "pile", id: "binders", art: "binder", x: X.fda + 170, y: G, height: 110, heap: 2, spread: 120, count: 6, dur: 0.9, tilt: 5 },
+      { on: "needs", do: "shiver", who: "cab", dur: 0.5, amp: 2, rot: 4 },
+      // eight point two years: the building grows a long white beard
+      { on: "spend", do: "pop", who: "beard", swell: 0.9 },
+      { on: "spend", do: "line", id: "wait", chart: TL, points: [[0, 0], [8.2, 0]], until: END + 6, ease: "linear", color: "red", width: 18, front: true },
+      // years: YOU stands with his palm on the glass; enough.: he dies there, slumped against it
+      { on: "years", do: "camera", view: "cab", dur: 0.6 },
+      { on: "years", do: "move", who: "you", to: [X.cab + 150, G - YH / 2], dur: 0.5 },
+      { on: "years", do: "move", who: "iv", to: [X.cab + 150 + 0.3 * YH, G - YH / 2], dur: 0.5 },
+      { on: "enough.", offset: 0.5, do: "move", who: "iv", by: [0, 0], turn: 8, dur: 0.4, ease: "smooth" },
+      { on: "enough.", do: "xray", who: "you", to: "bones", follow: false },
+      { on: "enough.", offset: 0.45, do: "move", who: "bones", by: [-30, 30], turn: -10, dur: 0.4, ease: "smooth" },
+    ];
+    KIT.collage({ id: ID, seed: 1207, plate: [-1500, -1500, 3500, 3500], views: views, view: V ? "bench" : "wide", cast: cast, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,61 @@
+{
+ "audio": "wishocracy.fda1a0ff.mp3",
+ "parts": [
+  {
+   "n": 1,
+   "slug": "phone-a-friend",
+   "title": "Phone a Friend",
+   "start": 0,
+   "end": 256.674,
+   "file": "part-01-phone-a-friend.md"
+  },
+  {
+   "n": 2,
+   "slug": "pairwise-sliders",
+   "title": "Pairwise Sliders",
+   "start": 256.674,
+   "end": 487.474,
+   "file": "part-02-pairwise-sliders.md"
+  },
+  {
+   "n": 3,
+   "slug": "why-it-works",
+   "title": "Why This Actually Works",
+   "start": 487.474,
+   "end": 748.294,
+   "file": "part-03-why-it-works.md"
+  },
+  {
+   "n": 4,
+   "slug": "direct-democracy",
+   "title": "Direct Democracy Has Been Tried",
+   "start": 748.294,
+   "end": 949.074,
+   "file": "part-04-direct-democracy.md"
+  },
+  {
+   "n": 5,
+   "slug": "friend-is-bribed",
+   "title": "Your Friend Is Being Bribed",
+   "start": 949.074,
+   "end": 1170.994,
+   "file": "part-05-friend-is-bribed.md"
+  },
+  {
+   "n": 6,
+   "slug": "wishes-become-tasks",
+   "title": "Where Wishes Become Tasks",
+   "start": 1170.994,
+   "end": 1384.234,
+   "file": "part-06-wishes-become-tasks.md"
+  },
+  {
+   "n": 7,
+   "slug": "algorithm-is-the-constitution",
+   "title": "The Algorithm Is the Constitution",
+   "start": 1384.234,
+   "end": 1649.064,
+   "file": "part-07-algorithm-is-the-constitution.md"
+  }
+ ]
+}

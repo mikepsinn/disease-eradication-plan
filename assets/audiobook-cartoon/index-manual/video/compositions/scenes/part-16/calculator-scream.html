@@ -1,0 +1,91 @@
+<template id="calculator-scream-template">
+  <!-- calculator-scream · collage host shot (Part 16, scene 4). Back at the console: the Calculator on the right end of
+       the ledge (where host-remembers left it, still reading 212), steam puffing off it and a tape of zeros spooling out
+       under it over the ledge. "error,": the display flashes ERROR. "scream,": its mouth flies open, sweat, shakes.
+       "attempt to leave": three hops to the very edge, and it leans over to look down. "correct.": it steps off, the
+       tape whipping after it; a crash from below, and its "=" key bounces up, spins and lands on the ledge where it
+       stood. She does not look (her states: the sip on "desk.", eyes shut on "correct."). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="calculator-scream" data-width="1920" data-height="1080" data-start="0" data-duration="7.36">
+    <div id="calculator-scream-weave"></div>
+    <div id="calculator-scream-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "calculator-scream", V = KIT.V, TOP = KIT.STUDIO.top, D = KIT.scene(ID).duration;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The same spot as host-remembers: the right end of the ledge.
+    var CALC = V ? [615, TOP + 6, 0.95] : [975, TOP + 6, 1.2], K = CALC[2];
+    var EDGE = V ? 40 : 50;                                    // px it walks to stand on the very edge
+    var calc = function (art, text, at) {
+      return { art: art, x: CALC[0], y: CALC[1], anchor: "bottom", pivot: "bottom", scale: K, hidden: true,
+        label: { text: text, at: at, width: 84, size: 26 } };
+    };
+    var CALM = [111, 23], SCREAM = [116, 23];
+    var cast = {
+      // the tape of zeros, behind it, spooling out of its feet and down over the ledge's front
+      tape: { art: "till-receipt", x: CALC[0] + 40 * K, y: CALC[1] - 200 * K, anchor: "top", scale: K * 0.95,
+        label: { text: "0000000000", at: [51, 234], width: 430, size: 44, tilt: 90 } },
+      c212: calc("calculator-calm", "212", CALM),
+      calmE: calc("calculator-calm", "ERROR", CALM), calmB: calc("calculator-calm", "", CALM),
+      scrE: calc("calculator", "ERROR", SCREAM), scrB: calc("calculator", "", SCREAM),
+    };
+    cast.c212.hidden = false;
+    // the "=" key, a key cap, lands where it stood
+    var KEY = [CALC[0] - (V ? 70 : 100), TOP - 34];
+    var beats = [];
+    var add = function (b) { beats.push(b); };
+    var all = ["c212", "calmE", "calmB", "scrE", "scrB"];
+
+    // tape spools out the whole time
+    add({ at: 0.1, do: "move", who: "tape", by: [0, 330 * K], dur: 4.2 });
+    // steam off its top, a puff every 0.55 s
+    for (var i = 0; i < 9; i++) {
+      var pn = "puff" + i, side = i % 2 ? 1 : -1, t0 = 0.25 + i * 0.6;
+      cast[pn] = { art: "cloud-puff", x: CALC[0] + side * 70 * K, y: CALC[1] - 290 * K, scale: 0.2 * K, hidden: true };
+      add({ at: t0, do: "pop", who: pn });
+      add({ at: t0, do: "move", who: pn, by: [side * 60, -150], dur: 0.7 });
+      add({ at: t0 + 0.6, do: "pop", who: pn, out: true });
+    }
+    // "error,": ERROR flashes on its display (calm face), then on the screaming one
+    var tE = cue("error,"), tS = cue("scream,");
+    add({ at: tE, do: "hide", who: "c212" });
+    for (var t = tE, on = true; t < D; t += 0.17, on = !on) {
+      var face = t < tS ? ["calmE", "calmB"] : ["scrE", "scrB"];
+      all.forEach(function (n) { if (n !== "c212") add({ at: t, do: "hide", who: n }); });
+      add({ at: t, do: "show", who: on ? face[0] : face[1] });
+    }
+    add({ on: "error,", do: "shiver", who: ["calmE", "calmB"], dur: 0.5, amp: 3, rot: 2 });
+    // "scream,": the mouth flies open; shake lines (the frame shakes) and a long shiver
+    add({ on: "scream,", do: "boom", shake: 6, flash: 0 });
+    add({ on: "scream,", do: "shiver", who: ["scrE", "scrB"], dur: 0.8, amp: 7, rot: 4 });
+    // "attempt to leave": three hops right to the edge, then it leans over and looks down
+    ["attempt", "to", "leave"].forEach(function (w, j) {
+      add({ on: w, do: "move", who: ["scrE", "scrB", "tape"], by: [EDGE / 3, 0], dur: 0.17, arc: 26 });
+    });
+    add({ on: "desk.", do: "move", who: ["scrE", "scrB"], by: [0, 0], turn: 14, dur: 0.3 });
+    add({ on: "desk.", offset: 0.4, do: "shiver", who: ["scrE", "scrB"], dur: 0.9, amp: 2, rot: 1.5 });
+    // "correct.": it steps off; the tape whips after it
+    var tOff = cue("correct.") + 0.1;
+    add({ at: tOff, do: "drop", who: ["scrE", "scrB"], dist: 1300, drift: 120, spin: 50, dur: 0.5 });
+    add({ at: tOff + 0.08, do: "drop", who: "tape", dist: 1500, drift: 160, spin: -30, dur: 0.5 });
+    add({ at: tOff + 0.45, do: "shake", frames: 3, y: 8 });
+    // the "=" key flies up from below, spins, and lands on the ledge
+    add({ at: tOff + 0.4, do: "banner", id: "eq", text: "=", x: KEY[0], y: KEY[1], size: 64, width: 60, pad: 40, color: "ink", tilt: 0, from: 1, shake: 0 });
+    add({ at: tOff + 0.35, do: "move", who: "eq", by: [140, 520], dur: 0.01 });
+    add({ at: tOff + 0.42, do: "move", who: "eq", to: KEY, arc: 260, turn: 368, dur: 0.33 });
+    add({ at: tOff + 0.75, do: "hop", who: "eq", height: 12 });
+
+    KIT.collage({ id: ID, seed: 1604, host: true, cast: cast, beats: beats });
+  </script>
+</template>

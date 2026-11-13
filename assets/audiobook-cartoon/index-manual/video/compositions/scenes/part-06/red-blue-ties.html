@@ -1,0 +1,208 @@
+<template id="red-blue-ties-template">
+  <!-- red-blue-ties · collage (Part 6, scenes 10 to 12 as one plate; copied from the short and cut where the host shot takes over on "Same dog"). The bit: a huge dog chases its tail in a circle,
+       forever. "voting": the voter pokes it with his ballot; "this.": it turns, the tail takes him, and he goes round.
+       "red", "blue": a Politician lands on its back, then another, nose to nose, shouting. "inside": wide, the tail is a
+       ring round them and they all go round. "slaves": a shackle on each ankle. "wearing": the ties flip faster and
+       faster to purple while the dog whirls and never notices. "Switching": cut to a burning parlour (the same plate);
+       he papers over the extinguisher and goes on pasting, charred. "politicians": a halo on a string; he doesn't look
+       up; "clearly": it shorts out. "better": a double brick of war bills comes down the same string; "papers": it is
+       the one thing that stops him shouting; "OPPOSITE": the seals flip and dollar signs fill his charred eyes. The tail
+       turns to pills in the host shot that follows. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="red-blue-ties" data-width="1920" data-height="1080" data-start="0" data-duration="36.42">
+    <div id="red-blue-ties-weave"></div>
+    <div id="red-blue-ties-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "red-blue-ties", V = KIT.V, SZ = KIT.collage.SIZES;
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    var cueAt = function (w, n) { return KIT.cue(ID, w, n); };
+
+    // The dog pivots on PV (art px), which sits at DC on the plate. Whatever rides it names an art point on it and is
+    // centred there, so it goes round with the dog. Its art px are plate px (scale 1).
+    var PV = [704, 490], DC = [960, 540];
+    var dogPt = function (x, y) { return [DC[0] + x - PV[0], DC[1] + y - PV[1]]; };
+    var RH = 420, AC = [630, 405], BC = [730, 405], CC = [585, 405];        // rider height; the two riders' and the cash pose's centres
+    var seat = { a: AC, b: BC, c: CC, ballot: [117, 724], shA: [566, 610], shB: [847, 609], b1: [590, 460], b2: [590, 372] };
+    var rider = function (art, c, o) {
+      var p = dogPt(c[0], c[1]), r = { art: art, x: p[0], y: p[1], scale: hs(art, RH), hidden: true };
+      for (var k in o || {}) r[k] = o[k];
+      return r;
+    };
+    var ASH = { eyes: [[128, 58], [162, 58]], eyeSize: 19, smoke: [[100, 10], [125, 0]] };
+    var A = ["aR", "aB", "aP"], B = ["bB", "bR", "bP"];
+    var cast = {};
+
+    // The parlour, far off along the same plate.
+    var WX = 5000, WT = -200, FL = 1070, WK = (FL + 10 - WT) / 757, PW = 250 * WK;
+    var SX = V ? WX + 20 : WX - 60, MK = hs("you-slap", V ? 800 : 860), BRK = 0.6, BL = 566 * BRK;
+    var HANDX = SX + 40 + BL, MX = HANDX + (130.5 - 55) * MK;
+    for (var c = 0; c < 6; c++) {
+      cast["wall" + c] = { art: "wallpaper-red", x: WX - 2.5 * PW + c * PW, y: WT, anchor: "top", scale: WK };
+      cast["low" + c] = { art: "wallpaper-red", x: WX - 2.5 * PW + c * PW, y: FL + 10, anchor: "top", scale: WK };
+    }
+    var CUR = V ? SX - 560 : WX - 980;
+    cast.curtain = { art: "curtain", x: CUR, y: WT, anchor: "topleft", scale: WK };
+    cast.ext = { art: "extinguisher", x: SX, y: 560, scale: hs("extinguisher", 600) };
+    cast.strip = { art: "wallpaper-blue", x: SX, y: WT, anchor: "top", scale: WK, hidden: true };
+    var FLM = [], fl = function (n, x, y, h) { cast[n] = { art: "flames", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: hs("flames", h), hidden: true }; FLM.push(n); };
+    var CF = CUR + (V ? 330 : 110);
+    fl("c0", CF, FL + 30, 860); fl("c1", CF + 170, FL + 10, 700); fl("c2", CF + 340, FL + 30, 780);
+    for (var s = 0; s < 4; s++) fl("s" + s, SX + (s % 2 ? 40 : -40), FL + 30 - s * 300, 520);
+    cast.man = { art: "you-slap", x: MX, y: FL, anchor: "bottom", pivot: "bottom", scale: MK, faces: "left", eyes: [[173, 144], [201, 148]], eyeSize: 26, smoke: [[170, 75]], points: { hand: [85, 30] } };
+    cast.brush = { art: "paste-brush", x: HANDX - BL / 2, y: FL - (586 - 16) * MK, scale: BRK };
+    fl("leg", MX - 60, FL + 40, 620); fl("leg2", MX + 80, FL + 40, 480);
+    fl("f0", SX + 300, FL + 60, 560); fl("f1", MX + 300, FL + 60, 760); fl("f2", SX - 280, FL + 60, 640);
+
+    // The dog and its riders.
+    cast.dog = { art: "dog-big-war", x: DC[0], y: DC[1], anchor: PV, pivot: PV, points: seat };
+    cast.dogP = { art: "dog-big-pills", x: DC[0], y: DC[1], anchor: PV, pivot: PV, hidden: true };
+    cast.voter = { art: "you-cert", x: V ? 170 : 150, y: 1000, anchor: "bottom", scale: hs("you-cert", 560), label: { text: "X", at: [117, 55], width: 110, size: 110 } };
+    cast.aR = rider("politician-shout", AC);
+    cast.aB = rider("politician-shout-blue", AC);
+    cast.aP = rider("politician-shout-purple", AC, ASH);
+    cast.cash = rider("politician-cash", CC, { eyes: [[83, 41], [102, 41]], eyeSize: 14, smoke: [[75, 5], [100, 0]] });
+    cast.bB = rider("politician-shout-left-blue", BC, { faces: "left" });
+    cast.bR = rider("politician-shout-left-red", BC, { faces: "left" });
+    cast.bP = rider("politician-shout-left-purple", BC, { faces: "left" });
+    cast.shA = rider("shackle", seat.shA, { scale: hs("shackle", 140) });
+    cast.shB = rider("shackle", seat.shB, { scale: hs("shackle", 140) });
+
+    // The halo, then the brick, on one string, over the Politician's head (HEAD: plate px).
+    var ap = dogPt(AC[0], AC[1]), HEAD = [ap[0] - 22, ap[1] - RH / 2 + 38], UP = V ? -1500 : -600;
+    var HK = 0.5, STR = [[104, 0], [128, 0], [128, 330], [104, 330]];
+    cast.halo = { art: "halo-string", x: HEAD[0], y: HEAD[1], anchor: [116, 372], scale: HK };
+    cast.str2 = { art: "halo-string", x: HEAD[0], y: HEAD[1] - 165, anchor: [116, 330], scale: HK, clip: STR };
+    cast.str3 = { art: "halo-string", x: HEAD[0], y: HEAD[1] - 330, anchor: [116, 330], scale: HK, clip: STR };
+    cast.ring1 = { art: "halo-string", x: HEAD[0], y: HEAD[1], anchor: [116, 372], pivot: [116, 372], scale: HK, hidden: true, clip: [[0, 336], [232, 336], [232, 407], [0, 407]] };
+    var HALO = ["halo", "str2", "str3"];
+    var B1 = dogPt(seat.b1[0], seat.b1[1]), B2 = dogPt(seat.b2[0], seat.b2[1]), BK = 0.85;
+    var brick = function (art, p, word) { return { art: art, x: p[0], y: p[1], scale: BK, hidden: true, label: { text: word, at: [90, 120], width: 150, size: 26 } }; };
+    cast.b1 = brick("bundle-war-tag", B1, "FUND"); cast.b2 = brick("bundle-war-tag", B2, "CAMPAIGN");
+    cast.m1 = brick("bundle-med-tag", B1, "FUND"); cast.m2 = brick("bundle-med-tag", B2, "CAMPAIGN");
+    cast.bs1 = { art: "halo-string", x: B2[0], y: B2[1] - 60, anchor: [116, 330], scale: HK * 1.2, clip: STR, hidden: true };
+    cast.bs2 = { art: "halo-string", x: B2[0], y: B2[1] - 258, anchor: [116, 330], scale: HK * 1.2, clip: STR, hidden: true };
+    var BRICK = ["b1", "b2", "m1", "m2"], BUP = -820;
+
+    var beats = [], add = function (b) { beats.push(b); };
+    // Riders are tied to the dog from the start; the voter when the tail takes him.
+    var TIES = { aR: "a", aB: "a", aP: "a", bB: "b", bR: "b", bP: "b", shA: "shA", shB: "shB", cash: "c" };
+    Object.keys(TIES).forEach(function (n) { add({ at: -1, do: "move", who: n, to: "dog." + TIES[n], dur: 0.01 }); });
+    // "voting": he pokes it, twice. It does not look round.
+    var poke = function (at) {
+      add({ at: at, do: "move", who: "voter", by: [90, 0], turn: 20, dur: 0.17 });
+      add({ at: at + 0.22, do: "move", who: "voter", by: [-90, 0], turn: 0, dur: 0.2 });
+    };
+    poke(cueAt("voting")); poke(cueAt("way") - 0.05);
+    add({ on: "this", n: 1, do: "move", who: "voter", to: "dog.ballot", dur: 0.2, turn: 0 });
+    // The spin, in absolute turns; every run ends back upright (a whole number of laps).
+    var ROUND = ["dog", "dogP", "voter", "shA", "shB", "cash"].concat(A, B), T_THIS = cueAt("this", 1);
+    [[T_THIS, 6.36, -720], [12.2, 13.95, -1080], [15.7, 17.64, -1440], [17.64, 18.5, -1800], [18.5, 19.1, -2160], [19.1, 19.6, -2520]].forEach(function (g) {
+      add({ at: g[0], do: "move", who: ROUND, by: [0, 0], turn: g[2], dur: g[1] - g[0] });
+    });
+    // It gallops, the whole film (after the spin: a move would flatten it).
+    add({ at: 0, do: "bob", who: "dog", y: 11, r: 1.2, speed: 4 });
+    add({ at: 0, do: "bob", who: "dogP", y: 11, r: 1.2, speed: 4 });
+    // "red", "blue": they land on its back.
+    add({ on: "red", do: "slideIn", who: "aR", from: "top", dist: 900, over: 26 });
+    add({ on: "red", offset: 0.33, do: "shake", y: 6, frames: 3 });
+    add({ on: "blue", do: "slideIn", who: "bB", from: "top", dist: 900, over: 26 });
+    add({ on: "blue", offset: 0.33, do: "shake", y: 6, frames: 3 });
+    // "argue": they jab at each other to the end of the film; only the brick stops him.
+    var T_LAND = cueAt("papers", 1);
+    for (var jab = cueAt("argue"), i = 0; jab < 36.2; jab += 0.3, i++) {
+      if (i % 2) { if (jab < T_LAND) add({ at: jab, do: "nudge", who: A, by: [20, 0] }); }
+      else add({ at: jab, do: "nudge", who: B, by: [20, 0] });
+    }
+    // "slaves": a shackle on each ankle.
+    add({ on: "slaves", do: "stamp", who: "shA", from: 2.1, shake: 10 });
+    add({ on: "to", n: 1, do: "stamp", who: "shB", from: 2.1, shake: 10 });
+    // "wearing": the ties flip faster and faster, and land on purple.
+    var GAPS = [0.27, 0.22, 0.18, 0.15, 0.12, 0.1, 0.083, 0.083, 0.083, 0.083], ct = cueAt("wearing"), ca = "aR", cb = "bB";
+    GAPS.forEach(function (g) {
+      var na = ca === "aR" ? "aB" : "aR", nb = cb === "bB" ? "bR" : "bB";
+      // hide and show, not swap: a swap's squash piles up on a pose that has more swaps still to come
+      add({ at: ct, do: "hide", who: [ca, cb] }); add({ at: ct, do: "show", who: [na, nb] });
+      ca = na; cb = nb; ct += g;
+    });
+    add({ at: ct, do: "swap", who: ca, to: "aP" }); add({ at: ct, do: "swap", who: cb, to: "bP" });
+
+    // "Switching": the parlour. He papers over the extinguisher and pats it down.
+    add({ on: "changing", offset: -0.1, do: "slideIn", who: "strip", from: "top", dist: 1400, over: 10 });
+    add({ at: -1, do: "move", who: "brush", to: "man.hand", by: [-BL / 2, 0], turn: 90, dur: 0.01 });
+    add({ on: "changing", offset: 0.05, do: "nudge", who: "man", by: [34, 0] });
+    add({ on: "wallpaper", offset: 0.05, do: "nudge", who: "man", by: [34, 0] });
+    add({ on: "in", n: 2, do: "hop", who: "man", height: 22 });
+    add({ on: "burning", offset: -0.05, do: "pop", who: ["c0", "c1"], squash: true });
+    add({ on: "burning", offset: 0.1, do: "pop", who: "c2", squash: true });
+    for (var j = 0; j < 4; j++) add({ on: "building", offset: -0.2 + j * 0.1, do: "pop", who: "s" + j, squash: true });
+    add({ on: "building", offset: 0.2, do: "pop", who: ["leg", "f2"], squash: true });
+    add({ on: "building", offset: 0.3, do: "pop", who: ["leg2", "f0"], squash: true });
+    add({ on: "building", offset: 0.4, do: "pop", who: "f1", squash: true });
+    add({ on: "building", offset: 0.4, do: "char", who: ["man", "brush", "strip"] });
+    add({ on: "building", offset: 0.4, do: "shake", y: 8, frames: 3 });
+    [0.8, 1.2].forEach(function (o) { add({ on: "building", offset: o, do: "nudge", who: "man", by: [34, 0] }); });
+    add({ on: "building", offset: 1.05, do: "blink", who: "man" });
+    add({ at: 0, do: "bob", who: FLM, y: 10, r: 4, speed: 5 });
+
+    // "This manual": a halo comes down; he doesn't look up; it slides off and goes back up.
+    add({ at: -1, do: "move", who: HALO, by: [0, UP], dur: 0.01 });
+    add({ on: "manual", do: "move", who: HALO, by: [0, -UP], dur: 0.9, ease: "smooth" });
+    add({ on: "politicians", do: "move", who: HALO, by: [60, 34], turn: 26, dur: 0.25 });
+    add({ on: "become", offset: 0.1, do: "move", who: HALO, by: [-60, UP - 34], turn: 0, dur: 0.5, ease: "smooth" });
+    // "(that's clearly out of the question)": again, and it shorts out.
+    add({ on: "people", offset: -0.1, do: "move", who: HALO, by: [0, -UP], dur: 0.75, ease: "smooth" });
+    add({ on: "clearly", offset: -0.05, do: "sparks", who: ["halo", "aP"], until: ["clearly", 1, 0.5] });
+    add({ on: "clearly", do: "boom", shake: 12, flash: 0.18 });
+    add({ on: "clearly", do: "char", who: ["aP", "cash"] });
+    add({ on: "out", n: 2, do: "swap", who: "halo", to: "ring1" });
+    add({ on: "out", n: 2, do: "hide", who: ["str2", "str3"] });
+    add({ on: "out", n: 2, offset: 0.1, do: "drop", who: "ring1", dist: 900, drift: 220, spin: 200, dur: 0.8 });
+    add({ on: "question", offset: 0.3, do: "blink", who: "aP" });
+    // "It builds a better loop": the same string, with a brick of papers on it, very slowly. He is still shouting.
+    add({ at: -1, do: "move", who: BRICK.concat("bs1", "bs2"), by: [0, BUP], dur: 0.01 });
+    var T_BR = cueAt("builds") - 0.05;
+    add({ at: T_BR, do: "show", who: ["b1", "b2", "bs1", "bs2"] });
+    add({ at: T_BR, do: "move", who: BRICK.concat("bs1", "bs2"), by: [0, -BUP], dur: T_LAND - T_BR });
+    // "papers": it lands. It is the one thing that stops him.
+    add({ on: "papers", do: "swap", who: "aP", to: "cash" });
+    add({ on: "papers", do: "shake", y: 10, frames: 4 });
+    add({ on: "papers", do: "move", who: ["bs1", "bs2"], by: [0, BUP], dur: 0.35 });
+    add({ on: "papers", do: "move", who: ["b1", "m1"], to: "dog.b1", turn: 0, dur: 0.01 });
+    add({ on: "papers", do: "move", who: ["b2", "m2"], to: "dog.b2", turn: 0, dur: 0.01 });
+    add({ on: "papers", offset: 0.5, do: "blink", who: "cash" });
+    // "OPPOSITE": every seal flips; "thing.": dollar signs in his charred eyes.
+    add({ on: "OPPOSITE", do: "swap", who: "b1", to: "m1" });
+    add({ on: "OPPOSITE", offset: 0.14, do: "swap", who: "b2", to: "m2" });
+    var cp = dogPt(CC[0], CC[1]), CK = hs("politician-cash", RH);
+    [[41, -4], [79, 4]].forEach(function (e, n) {
+      add({ on: "thing", offset: n * 0.08, do: "banner", id: "d" + n, text: "$", x: cp[0] + (e[0] - 88) * CK, y: cp[1] + (32 - 218) * CK, size: 32, width: 30, pad: 8, color: "ink", tilt: e[1] });
+    });
+    add({ on: "thing", offset: 0.1, do: "shiver", who: ["cash"].concat(BRICK), dur: 0.7, amp: 3, rot: 2 });
+
+    var views = V ? {
+      voter: [270, 694, 1.6], wide: [960, 843, 0.72], pair: [936, 445, 2], ankles: [945, 560, 2.6], whirl: [960, 800, 0.72],
+      wall: [SX + 270, 700, 1.25], pol: [860, 430, 2.2], polUp: [860, 400, 1.9], tail: [960, 500, 0.76],
+    } : {
+      voter: [420, 720, 1.4], wide: [960, 540, 0.75], pair: [936, 460, 2], ankles: [945, 600, 2.6], whirl: [960, 540, 0.8],
+      wall: [WX, 540, 1], pol: [860, 440, 2.2], polUp: [860, 395, 1.75], tail: [936, 270, 1.45],
+    };
+    [["this", 1, 0.3, "wide", 0.9], ["red", 1, -0.3, "pair", 0.35], ["because", 1, -0.1, "wide", 0.6], ["They", 1, -0.1, "ankles", 0.4], ["same", 1, 0, "whirl", 0.5],
+     ["Switching", 1, 0, "wall", 0.01], ["This", 2, 0, "pol", 0.01], ["builds", 1, -0.1, "polUp", 0.8]].forEach(function (k) {
+      add({ at: cueAt(k[0], k[1]) + k[2], do: "camera", view: k[3], dur: k[4] });
+    });
+
+    KIT.collage({ id: ID, seed: 610, plate: [-1800, -2600, 6800, 3400], views: views, view: "voter", cast: cast, beats: beats });
+  </script>
+</template>

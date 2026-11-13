@@ -121,7 +121,7 @@ Don't use generic words. Invent a phrase that is technically accurate and absurd
 ### The "Money as Papers" Framework
 When highlighting economic absurdity:
 - Refer to money as "small pieces of paper with dead presidents"
-- Point out the circular insanity: "Food grows for free but you need papers to eat it"
+- Point out the circular insanity: "You print papers from nothing (called 'monetary policy'). You give these nothing-papers to weapons makers."
 - Use "papers" in ~30% of money references, not every one
 
 ### Structure IS the Joke

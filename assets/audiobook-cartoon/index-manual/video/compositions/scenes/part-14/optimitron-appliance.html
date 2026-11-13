@@ -1,0 +1,110 @@
+<template id="optimitron-appliance-template">
+  <!-- optimitron-appliance · collage host shot (Part 14, scene 22). The Optimitron (the host prop KIT.props.optimitron,
+       a 1970s toaster-oven with a face and two dials, HEALTH and WEALTH) pops up on the ledge like a toaster; she pats
+       it ("Optimitron"), it hops on "appliance.". "plug": its cord runs out through the window into Earth; "jurisdictions":
+       a fat file, 10,000 JURISDICTIONS, drops into its slot and it rumbles. "richer": the WEALTH dial turns up; "dead.":
+       the HEALTH dial. "Budget": OPTIMAL BUDGET pops up like toast. "Policy": OPTIMAL POLICY pops up, and on "laws." it
+       shoots out through the window, which cracks, down to Earth; with a far clonk the loudest panelist's trophy (the
+       WINNER (LOUDEST) trophy) spins up off Earth and drifts past the window. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="optimitron-appliance" data-width="1920" data-height="1080" data-start="0" data-duration="18.99">
+    <div id="optimitron-appliance-weave"></div>
+    <div id="optimitron-appliance-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/characters.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "optimitron-appliance", V = KIT.V, S = KIT.STUDIO, E = S.earth, TOP = S.top, C = KIT.C;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The Optimitron on the ledge (prop units: about 240 wide and 190 tall, standing on y 0), the mug beside it.
+    var O = V ? [520, TOP + 2, 1.2] : [890, TOP + 2, 1.7], K = O[2];
+    var at = function (x, y) { return [O[0] + x * K, O[1] + y * K]; };
+    var SLOT = at(12, -178), CARD = at(12, -206), BACK = at(128, -100);
+    var MUG = V ? [170, TOP + 6, 0.42] : [560, TOP + 6, 0.46];
+    var HIT = [E[0] - E[2] * 0.55, E[1] + E[2] * 0.25];      // where the card goes into Earth
+    var CRACK = V ? [CARD[0] + (HIT[0] - CARD[0]) * 0.55, CARD[1] + (HIT[1] - CARD[1]) * 0.55] : [E[0] - E[2] * 1.45, E[1] + E[2] * 0.6];
+
+    var tl = KIT.collage({
+      id: ID, seed: 1424, host: true,
+      cast: {
+        mug: { art: "desk-mug", x: MUG[0], y: MUG[1], anchor: "bottom", pivot: "bottom", scale: MUG[2] },
+        file: { art: "case-file", x: SLOT[0], y: SLOT[1] - 520, scale: V ? 0.36 : 0.42, hidden: true,
+          label: { text: "10,000 JURISDICTIONS", at: [175, 82], width: 230, size: 60 } },
+        crack: { art: "glass-crack", x: CRACK[0], y: CRACK[1], scale: V ? 0.55 : 0.7, hidden: true },
+        trophy: { art: "trophy", x: HIT[0] + E[2] * 0.3, y: HIT[1], scale: V ? 0.3 : 0.38, hidden: true,
+          label: [{ text: "WINNER", at: [174, 383], width: 150, size: 60 }, { text: "(LOUDEST)", at: [174, 405], width: 130, size: 40 }] },
+      },
+      beats: [
+        // "plug": the cord, from its back out through the window into Earth
+        { on: "plug", do: "line", id: "cord", points: [BACK, [BACK[0] + 60 * K, BACK[1] + 20 * K], [HIT[0] - 120, HIT[1] + 90], HIT], color: "ink", width: V ? 7 : 9, dur: 0.6 },
+        // "jurisdictions": the fat file drops into its slot
+        { on: "what", n: 1, do: "pop", who: "file" },
+        { on: "jurisdictions", offset: -0.15, do: "move", who: "file", to: SLOT, scale: 0.6, dur: 0.25 },
+        { on: "jurisdictions", offset: 0.12, do: "hide", who: "file" },
+        // "laws.": the card goes out through the glass; a far clonk; the trophy drifts up off Earth past the window
+        { on: "laws.", offset: 0.2, do: "pop", who: "crack", squash: true },
+        { on: "laws.", offset: 0.5, do: "shake", x: 5, frames: 2 },
+        { on: "laws.", offset: 0.55, do: "pop", who: "trophy" },
+        { on: "laws.", offset: 0.6, do: "move", who: "trophy", by: [V ? -260 : -420, V ? -260 : -300], turn: 540, scale: 1.6, dur: 0.75, ease: "smooth" },
+      ],
+    });
+
+    // The Optimitron itself is the host prop in code: two copies (the BUDGET card and the POLICY card), drawn on the
+    // set in front of Wishonia, under the cut-outs, and the POLICY card that flies.
+    var svgNS = "http://www.w3.org/2000/svg";
+    var one = function (n, card) {
+      return '<g transform="translate(' + O[0] + "," + O[1] + ") scale(" + K + ')"><g id="' + ID + "-opt" + n + '"' + (n === 2 ? ' visibility="hidden"' : "") + ">" +
+        KIT.props.optimitron({ card: card, pop: 0, health: -100, wealth: -100 }) + "</g></g>";
+    };
+    var fs = KIT.fitText("OPTIMAL", 15, 62, "Oswald", 600, 1);
+    var fly = '<g transform="translate(' + CARD[0] + "," + CARD[1] + ") scale(" + K + ')"><g id="' + ID + '-fly" visibility="hidden">' +
+      '<rect x="-36" y="-48" width="72" height="96" fill="' + C.cream + '" stroke="' + C.line + '" stroke-width="3.2"/>' +
+      '<text x="0" y="-22" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs + '" fill="' + C.line + '">OPTIMAL</text>' +
+      '<text x="0" y="-2" text-anchor="middle" font-family="Oswald" font-weight="600" font-size="' + fs + '" fill="' + C.line + '">POLICY</text></g></g>';
+    var layer = document.createElement("div");
+    layer.style.cssText = "position:absolute;inset:0";
+    layer.innerHTML = KIT.svg(KIT.W, KIT.H, one(1, "OPTIMAL BUDGET") + one(2, "OPTIMAL POLICY") + fly);
+    document.getElementById(ID + "-hfront").appendChild(layer);
+    var q = function (s) { return document.getElementById(ID + "-" + s); };
+    var o1 = q("opt1"), o2 = q("opt2"), flyEl = q("fly");
+    var part = function (el, cls) { var p = el.querySelector("." + cls); gsap.set(p, { svgOrigin: p.getAttribute("data-pivot") }); return p; };
+    var both = [o1, o2];
+    both.forEach(function (o) { gsap.set(o, { svgOrigin: "0 0" }); });
+    // it pops up on the ledge like a toaster, and she pats it
+    tl.fromTo(both, { scale: 0.2, y: 40 }, { scale: 1, y: 0, duration: 0.25, ease: "back.out(2.2)" }, 0.08);
+    var bump = function (t, dy) { tl.fromTo(both, { y: 0 }, { y: dy, duration: 0.08, repeat: 1, yoyo: true, ease: "power1.out", immediateRender: false }, t); };
+    bump(cue("Optimitron") + 0.1, 6); bump(cue("Optimitron") + 0.4, 6);
+    bump(cue("appliance."), -26);
+    // the rumble while it digests ten thousand jurisdictions
+    tl.fromTo(both, { x: 0 }, { x: 3, duration: 0.05, repeat: 15, yoyo: true, ease: "none", immediateRender: false }, cue("jurisdictions") + 0.15);
+    // the dials: WEALTH on "richer", HEALTH on "dead."
+    both.forEach(function (o) {
+      tl.fromTo(part(o, "opt-dial-wealth"), { rotation: 0 }, { rotation: 220, duration: 0.5, ease: "back.out(1.6)", immediateRender: false }, cue("richer"));
+      tl.fromTo(part(o, "opt-dial-health"), { rotation: 0 }, { rotation: 220, duration: 0.5, ease: "back.out(1.6)", immediateRender: false }, cue("dead."));
+    });
+    // the cards pop up like toast
+    var c1 = part(o1, "opt-card"), c2 = part(o2, "opt-card");
+    tl.fromTo(c1, { y: 0 }, { y: -70, duration: 0.12, ease: "back.out(2.5)", immediateRender: false }, cue("Budget"));
+    tl.to(c1, { y: 0, duration: 0.15, ease: "power2.in" }, cue("its", 2) - 0.25);
+    tl.set(o1, { visibility: "hidden" }, cue("its", 2) - 0.05);
+    tl.set(o2, { visibility: "inherit" }, cue("its", 2) - 0.05);
+    tl.fromTo(c2, { y: 0 }, { y: -70, duration: 0.12, ease: "back.out(2.5)", immediateRender: false }, cue("Policy"));
+    // "laws.": the POLICY card shoots out of the slot, through the window, into Earth
+    var T = cue("laws.");
+    tl.set(c2, { y: 0 }, T);
+    tl.set(flyEl, { visibility: "inherit" }, T);
+    gsap.set(flyEl, { svgOrigin: "0 0" });
+    tl.fromTo(flyEl, { x: 0, y: 0, scale: 1, rotation: 0 }, { x: (HIT[0] - CARD[0]) / K, y: (HIT[1] - CARD[1]) / K, scale: 0.25, rotation: 900, duration: 0.45, ease: "power1.in", immediateRender: false }, T);
+    tl.set(flyEl, { visibility: "hidden" }, T + 0.46);
+  </script>
+</template>

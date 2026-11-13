@@ -1,0 +1,36 @@
+<template id="host-opens-template">
+  <!-- host-opens · collage host shot (Part 2, scene 2). The iris opens on Wishonia at her console. On "magnificent:" she
+       throws her arms wide and a showroom sunburst hits the Earth in the window behind her: ta-da. The magnificent
+       creation, on the cut, is a press cranking out paper from nothing (money-loop). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="host-opens" data-width="1920" data-height="1080" data-start="0" data-duration="3.1">
+    <div id="host-opens-weave"></div>
+    <div id="host-opens-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "host-opens", V = KIT.V, E = KIT.STUDIO.earth, SZ = KIT.collage.SIZES;
+      // The Earth in her window, as a cut-out laid exactly over the painted one, so the sunburst can go behind it.
+      var cast = {
+        globe: { art: "earth-big", x: E[0], y: E[1], scale: (2.04 * E[2]) / SZ["earth-big"][0], hidden: true },
+      };
+      var beats = [
+        { on: "magnificent:", do: "sunburst", x: E[0], y: E[1], r: E[2] * (V ? 2 : 2.6) },
+        { on: "magnificent:", do: "pop", who: "globe", squash: true, swell: 0.08 },
+        { on: "magnificent:", offset: 0.1, do: "glow", who: "globe", size: E[2] * 3.2, dur: 0.5 },
+      ];
+      KIT.collage({ id: ID, seed: 221, host: { iris: ["in", 0.04, 0.74] }, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

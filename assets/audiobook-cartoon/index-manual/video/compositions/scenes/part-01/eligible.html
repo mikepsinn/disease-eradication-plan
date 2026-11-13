@@ -1,0 +1,60 @@
+<template id="eligible-template">
+  <!-- eligible · collage host shot (Part 1, scene 5). The iris opens on Wishonia at her console (the first time the film
+       shows her). Beside her, the case file EARTH: CASE #847, its cover a mail-in form, PLANET ELIGIBILITY CHECK, two
+       YES/NO rows and no questions; the fine print says to allow 4 to 6 weeks. "so,": YES, YES, ticked by themselves.
+       "eligible": MAY BE ELIGIBLE FOR OPTIMIZATION slams across it and the frame jolts. "optimization.": the file
+       whooshes off into the out-tray. meet-wishonia continues this shot (no seam). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="eligible" data-width="1920" data-height="1080" data-start="0" data-duration="4.22">
+    <div id="eligible-weave"></div>
+    <div id="eligible-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, SZ = KIT.collage.SIZES;
+    // The case file stands on the free wall right of the console (the same spot in earth-means-dirt).
+    var FILE = V ? { x: 800, y: 1440, h: 580 } : { x: 1330, y: 880, h: 520 }, FK = FILE.h / SZ["case-file"][1];
+    var ink = function (text, at, width, size) { return { text: text, at: at, width: width, size: size }; };
+    var form = [
+      ink("EARTH: CASE #847", [175, 145], 220, 40),
+      ink("PLANET ELIGIBILITY CHECK", [175, 205], 220, 30),
+      ink("1.", [70, 305], 40, 34), ink("YES", [150, 305], 80, 34), ink("NO", [260, 305], 60, 34),
+      ink("2.", [70, 375], 40, 34), ink("YES", [150, 375], 80, 34), ink("NO", [260, 375], 60, 34),
+      ink("Please allow 4 to 6 weeks for optimization.", [180, 465], 270, 16),
+    ];
+    var fileLeft = FILE.x - SZ["case-file"][0] * FK / 2, fileTop = FILE.y - FILE.h;
+    var onFile = function (p) { return [fileLeft + p[0] * FK, fileTop + p[1] * FK]; };
+    var BOX1 = onFile([150, 305]), BOX2 = onFile([150, 375]), PEN = (V ? 260 : 300) / SZ.pencil[0];
+    KIT.collage({
+      id: "eligible", seed: 105, host: { iris: ["in", 0, 0.55] },
+      cast: {
+        file: { art: "case-file", x: FILE.x, y: FILE.y, anchor: "bottom", pivot: "bottom", scale: FK, label: form },
+        pencil: { art: "pencil", x: BOX1[0] + 20, y: BOX1[1], anchor: [0, 41], scale: PEN },
+      },
+      beats: [
+        // "If so,": the pencil ticks the two YES boxes by itself
+        { on: "so,", do: "nudge", who: "pencil", by: [-24, 0] },
+        { on: "so,", offset: 0.2, do: "move", who: "pencil", to: [BOX2[0] + 20, BOX2[1]], dur: 0.12 },
+        { on: "so,", offset: 0.35, do: "nudge", who: "pencil", by: [-24, 0] },
+        { on: "so,", offset: 0.75, do: "slideOut", who: "pencil", to: "right", dur: 0.3 },
+        { on: "so,", do: "stamp", id: "yes1", who: "file", spot: [150, 305], text: "X", size: V ? 46 : 52, tilt: -6, from: 1.6 },
+        { on: "so,", offset: 0.35, do: "stamp", id: "yes2", who: "file", spot: [150, 375], text: "X", size: V ? 46 : 52, tilt: 5, from: 1.6 },
+        // "eligible": the verdict, across the whole form
+        { on: "eligible", do: "stamp", id: "verdict", text: "MAY BE ELIGIBLE FOR OPTIMIZATION", x: FILE.x - (V ? 90 : 0), y: FILE.y - FILE.h * 0.42, size: 64, width: V ? 560 : 680, tilt: -12, from: 2.2, shake: 12 },
+        { on: "eligible", do: "hop", who: "file", height: 18 },
+        // "optimization.": into the out-tray, off the right
+        { on: "optimization.", offset: 0.38, do: "slideOut", who: ["file", "verdict"], to: "right", dur: 0.32 },
+      ],
+    });
+  </script>
+</template>

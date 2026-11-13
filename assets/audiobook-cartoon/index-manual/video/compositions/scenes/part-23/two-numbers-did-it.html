@@ -1,0 +1,85 @@
+<template id="two-numbers-did-it-template">
+  <!-- two-numbers-did-it · collage (Part 23, scene 13), a stage between curtains. On the left, the Scoreboard. "Two":
+       it lights, and its two windows roll to 63.3 (years of healthy life) and $2,138 (income a year) and keep
+       rolling upward. "pieces": a plain bill walks up beside it; on "them" it winks. "did what no committee": the
+       camera travels along three contestant podiums: a committee man behind a tall stack of reports, a charity
+       collector rattling one coin, and the empty swivel chair with the spider in it. "ever": all three podiums stamp
+       0. "done.": the reports topple onto the committee and flatten him, the coin rolls off the charity's podium, and
+       the spider drops dead out of the chair. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="two-numbers-did-it" data-width="1920" data-height="1080" data-start="0" data-duration="9.08">
+    <div id="two-numbers-did-it-weave"></div>
+    <div id="two-numbers-did-it-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "two-numbers-did-it", V = KIT.V, Z = KIT.collage.SIZES;
+      var hk = function (art, h) { return h / Z[art][1]; };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // The stage on the floor line G (plate px = the 16:9 frame): curtains, the Scoreboard, the bill, three podiums.
+      var G = 1000, SB = [470, G], SBK = hk("scoreboard", 600);
+      var PX = [1080, 1400, 1720], PK = hk("podium", 380), PTOP = G - 380 + 120 * PK;
+      var cast = {
+        curL: { art: "curtain", x: -40, y: -20, anchor: "topleft", scale: hk("curtain", 1140) },
+        curR: { art: "curtain", x: 1960, y: -20, anchor: [365, 0], scale: hk("curtain", 1140) },
+        board: { art: "scoreboard", x: SB[0], y: G, anchor: "bottom", scale: SBK },
+        bill: { art: "bill-plain", x: 860, y: G, anchor: "bottom", pivot: "bottom", scale: hk("bill-plain", 270), hidden: true },
+        wink: { art: "bill-wink", x: 860, y: G, anchor: "bottom", pivot: "bottom", scale: hk("bill-wink", 270 * 262 / 228), hidden: true },
+        // behind the podiums: the committee man, the charity collector, the swivel chair with the spider in it
+        com: { art: "citizen-6", x: PX[0], y: G - 60, anchor: "bottom", pivot: "bottom", scale: hk("citizen-6", 500) },
+        char: { art: "charity-collector", x: PX[1], y: G - 60, anchor: "bottom", pivot: "bottom", scale: hk("charity-collector", 560) },
+        chair: { art: "swivel-chair", x: PX[2], y: G - 60, anchor: "bottom", pivot: "bottom", scale: hk("swivel-chair", 420) },
+        spider: { art: "spider", x: PX[2] + 10, y: G - 260, anchor: "bottom", pivot: "bottom", scale: hk("spider", 300) },
+        p0: { art: "podium", x: PX[0], y: G, anchor: "bottom", pivot: "bottom", scale: PK },
+        p1: { art: "podium", x: PX[1], y: G, anchor: "bottom", pivot: "bottom", scale: PK },
+        p2: { art: "podium", x: PX[2], y: G, anchor: "bottom", pivot: "bottom", scale: PK },
+        coin: { art: "coin", x: PX[1] + 70, y: PTOP - 40, scale: hk("coin", 60) },
+      };
+      var views = V ? { board: [560, 640, 1.33], pods: [1400, 640, 1.0], p0: [1080, 640, 1.4] } : { wide: [960, 540, 1] };
+      var beats = [
+        // "Two": the Scoreboard lights, and its windows roll, and keep rolling
+        { on: "Two", do: "glow", who: "board", size: 700, dur: 0.4 },
+        { on: "numbers", do: "counter", id: "hale", who: "board", spot: [142, 210], from: 0, to: 63.3, decimals: 1, prefix: "", suffix: " YRS", dur: 1.1, size: 42, font: "oswald", card: false, color: "#F5ECD3", width: 165 },
+        { on: "numbers", do: "counter", id: "inc", who: "board", spot: [340, 210], from: 0, to: 2138, prefix: "$", suffix: "/YR", dur: 1.1, size: 37, font: "oswald", card: false, color: "#F5ECD3", width: 165 },
+        { on: "pieces", do: "counter", id: "hale", to: 64.1, decimals: 1, prefix: "", suffix: " YRS", until: ["done.", 1, 0.6] },
+        { on: "pieces", do: "counter", id: "inc", to: 2180, prefix: "$", suffix: "/YR", until: ["done.", 1, 0.6] },
+        // "pieces of paper with presidents": a plain bill walks up; "them": it winks
+        { on: "pieces", do: "slideIn", who: "bill", from: "bottom", dist: 600, over: 14 },
+        { on: "paper", do: "bob", who: "bill", y: 6, r: 3, speed: 3, until: "them" },
+        { on: "them", do: "hide", who: "bill" },
+        { on: "them", do: "show", who: "wink" },
+        { on: "them", do: "hop", who: "wink", height: 18 },
+        // "did what no committee": along the podiums; the committee's reports pile up on its podium
+        { on: "did", do: "camera", view: V ? "p0" : "wide", dur: 0.5 },
+        { on: "did", do: "pile", id: "reports", art: ["binder", "case-file", "binder"], height: 70, count: 7, x: PX[0] - 75, y: PTOP, dist: 700, until: "committee,", accel: 0.8, tilt: 4 },
+        { on: "charity,", offset: -0.2, do: "camera", view: V ? "pods" : "wide", dur: 0.5 },
+        { on: "charity,", do: "shiver", who: "coin", dur: 0.6, amp: 6, rot: 20 },
+        { on: "plan", do: "bob", who: "spider", y: 6, r: 2, speed: 1, until: "done." },
+        // "ever": zeroes on all three
+        { on: "ever", do: "stamp", id: "z0", who: "p0", spot: [168, 300], text: "0", size: 150, tilt: -4 },
+        { on: "ever", offset: 0.08, do: "stamp", id: "z1", who: "p1", spot: [168, 300], text: "0", size: 150, tilt: 3 },
+        { on: "ever", offset: 0.16, do: "stamp", id: "z2", who: "p2", spot: [168, 300], text: "0", size: 150, tilt: -2 },
+        // "done.": the reports flatten the committee, the coin rolls off, the spider drops dead
+        { on: "done.", do: "drop", who: "reports", dist: 900, drift: -260, spin: -60, dur: 0.5 },
+        { on: "done.", do: "flatten", who: "com" },
+        { on: "done.", offset: 0.05, do: "move", who: "coin", by: [160, 0], turn: 360, dur: 0.3 },
+        { on: "done.", offset: 0.35, do: "drop", who: "coin", dist: 800, spin: 90, dur: 0.5 },
+        { on: "done.", offset: 0.1, do: "move", who: "spider", by: [0, 0], turn: 180, dur: 0.1 },
+        { on: "done.", offset: 0.2, do: "drop", who: "spider", dist: 900, spin: 20, dur: 0.6 },
+        { on: "done.", do: "shake", y: 8, frames: 3 },
+      ];
+      KIT.collage({ id: ID, seed: 2313, plate: [-1000, -1500, 3000, 2700], views: views, view: V ? "board" : "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

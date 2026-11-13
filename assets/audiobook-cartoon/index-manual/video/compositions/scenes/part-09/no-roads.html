@@ -1,0 +1,67 @@
+<template id="no-roads-template">
+  <!-- no-roads · collage (Part 9, scene 4, plate no-roads). The bit: a Department of Transportation with no roads. Its
+       building stands on a bare field that ends at a cliff, a ROAD sign pointing at more nothing. A motorist stands up in
+       his motorcar at the bottom step. "Transportation": a honk (the car hops). "that": he rattles off across the grass,
+       past the sign, and keeps going over the edge. "yet.": he hangs in the air, looking at us, and drops; his cap hangs
+       a beat longer, then follows; a puff of dust comes up from below. The car's art faces left, so it is a one-copy
+       march (which turns it to face the way it goes) that parks before the scene starts and is then moved. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="no-roads" data-width="1920" data-height="1080" data-start="0" data-duration="4.62">
+    <div id="no-roads-weave"></div>
+    <div id="no-roads-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "no-roads", V = KIT.V, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The field on the ground line G, left to right: the department, the sign, the cliff's edge at EDGE.
+    var G = V ? 1250 : 720, GF = G + 40;                                // GF: where things stand, on the grass
+    var L = V ? { dept: 200, deptK: 1.0, sign: 640, edge: 790, car: 420, carK: 0.62, mH: 330, air: 935, ban: [540, 520], banW: 980 }
+      : { dept: 330, deptK: 1.2, sign: 950, edge: 1380, car: 640, carK: 0.8, mH: 380, air: 1580, ban: [600, 90], banW: 1060 };
+    var CK = 1.9, CW = SZ["cliff-face"][0];
+    // The motorist stands up in the back of the (turned) car, his boots on its floor, so its body hides his legs.
+    var MK = L.mH / SZ["motorist"][1], MX = L.car + (112 - SZ["motorcar"][0] / 2) * L.carK, MY = GF - (SZ["motorcar"][1] - 205) * L.carK;
+    var RUN = L.air - L.car, CAP = 46;                                  // the run to mid-air; the cap's brim (art px)
+    var STEP0 = cue("that"), OVER = cue("yet."), FALL = cue("yet.") + 0.55;
+    var cast = {
+      // the land, seen from the side: two rock faces whose tops are the field, the right one ending at the edge
+      rockL: { art: "cliff-face", x: L.edge - CW * CK, y: G - 6, anchor: [CW, 0], scale: CK },
+      rockR: { art: "cliff-face", x: L.edge, y: G - 6, anchor: [CW, 0], scale: CK },
+      dept: { art: "dot-building", x: L.dept, y: GF, anchor: "bottom", scale: L.deptK },
+      sign: { art: "signpost", x: L.sign, y: GF, anchor: "bottom", scale: V ? 2.7 : 2.2, label: { text: "ROAD", at: [60, 22], width: 78, size: 26 } },
+      // the motorist, cut at his cap's brim so the cap can hang on for a beat
+      man: { art: "motorist", x: MX, y: MY, anchor: "bottom", pivot: "bottom", scale: MK, clip: [[0, CAP], [232, CAP], [232, 510], [0, 510]] },
+      cap: { art: "motorist", x: MX, y: MY, anchor: "bottom", pivot: "center", scale: MK, clip: [[70, 0], [170, 0], [170, CAP + 4], [70, CAP + 4]] },
+      dust: { art: "cloud-puff", x: V ? 900 : L.air + 120, y: V ? 1440 : 905, scale: V ? 0.9 : 1.0, hidden: true },
+    };
+    var beats = [
+      // the car, parked at the bottom step facing the cliff (in front of the cast, so it hides his legs)
+      { at: -1, do: "march", id: "car", art: "motorcar", faces: "left", count: 1, scale: L.carK, path: [[L.car - 2, GF], [L.car, GF]], speed: 200, bob: 0, rock: 0 },
+      { on: "Department", do: "banner", id: "dot", text: "DEPARTMENT OF TRANSPORTATION", x: L.ban[0], y: L.ban[1], size: 80, width: L.banW, pad: 50, color: "ink", tilt: -2 },
+      { on: "Transportation", do: "hop", who: ["car", "man", "cap"], height: 16 },
+      // he rattles off across the grass, past ROAD, and over the edge
+      { at: STEP0, do: "move", who: ["car", "man", "cap"], by: [RUN, 0], dur: OVER - STEP0 },
+      { at: STEP0, do: "bob", who: "car", y: 5, r: 0, speed: 4.5, until: OVER, fade: 0.1 },
+      { at: STEP0, do: "bob", who: "man", y: 5, r: 0, speed: 4.5, until: OVER, fade: 0.1 },
+      { at: STEP0, do: "bob", who: "cap", y: 5, r: 0, speed: 4.5, until: OVER, fade: 0.1 },
+      { on: "roads", do: "nudge", who: "sign", by: [8, 0] },
+      // he hangs, looks at us, and drops with the car; the cap hangs on, then follows; dust comes up
+      { at: OVER + 0.15, do: "shiver", who: ["car", "man", "cap"], dur: 0.3, amp: 2, rot: 0 },
+      { at: FALL, do: "drop", who: ["car", "man"], dist: V ? 900 : 700, spin: 8, dur: 0.4 },
+      { at: FALL + 0.3, do: "drop", who: "cap", dist: V ? 900 : 700, spin: 30, dur: 0.45 },
+      { at: FALL + 0.62, do: "pop", who: "dust", squash: true, swell: 0.5 },
+      { at: FALL + 0.62, do: "shake", y: 6, frames: 3 },
+    ];
+    KIT.collage({ id: ID, seed: 904, cast: cast, beats: beats });
+  </script>
+</template>

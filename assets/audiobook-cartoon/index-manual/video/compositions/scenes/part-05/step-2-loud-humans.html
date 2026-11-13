@@ -1,0 +1,115 @@
+<template id="step-2-loud-humans-template">
+  <!-- step-2-loud-humans · collage (Part 5, scene 5; plate the-internet). The bit: paid loudness points one way. A
+       file of plain bills walks to four Loud Humans with megaphones for heads, at laptops. "loud": they shout
+       scribbles at each other, which tangle in a knot overhead. "papers,": a bill hops into each megaphone. "thing": one
+       blast; the scribbles blow off the edge and the bubbles snap into a neat row, each holding the same pill bottle;
+       "things.": a passer-by is blown out of his shoes, which stay, smoking. "marketing": a pie chart struts in, and
+       "lying" fills its four slices with 60% each. (One loud-human drawing serves for all four; the sunglasses pie
+       chart is not drawn yet: MISSING-ART.md.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="step-2-loud-humans" data-width="1920" data-height="1080" data-start="0" data-duration="15.76">
+    <div id="step-2-loud-humans-weave"></div>
+    <div id="step-2-loud-humans-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "step-2-loud-humans", V = KIT.V;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var G = 1000;
+      // four Loud Humans in a row (x, scale): a barrel, a beanpole, an hourglass, a box, as far as one drawing goes
+      var LH = [[640, 0.78], [1010, 0.92], [1380, 0.74], [1750, 0.86]];
+      var mouth = function (i) { var h = LH[i]; return [h[0] - 150 * h[1] + 236 * h[1], G - 732 * h[1] + 82 * h[1]]; }; // megaphone mouth (art 236, 82)
+      var views = V ? {
+        walk: [-200, 620, 0.9], group: [1210, 600, 0.66], pie: [1180, 660, 1.0],
+      } : {
+        walk: [0, 600, 1], group: [1200, 600, 1], pie: [1200, 610, 1.15],
+      };
+
+      var cast = {}, beats = [];
+      var add = function (b) { beats.push(b); };
+      LH.forEach(function (h, i) {
+        cast["lh" + i] = { art: "loud-human", x: h[0], y: G, anchor: "bottom", pivot: "bottom", scale: h[1] };
+        cast["tb" + i] = { art: "side-table", x: h[0] + 120 * h[1], y: G + 10, anchor: "bottom", scale: 0.75 };
+        cast["lap" + i] = { art: "laptop", x: h[0] + 120 * h[1], y: G + 10 - 200 * 0.75 + 12, anchor: "bottom", scale: 0.36 };
+      });
+      // the scribbled bubbles they shout at each other, tangled in a knot; the neat ones that replace them
+      var KNOT = [[880, 230, -8], [1110, 170, 6], [1330, 250, -4], [1560, 190, 9], [1210, 330, 2]];
+      // what they shout about: a sandwich, a pigeon, a donut, cheese, and one angry squiggle
+      var ABOUT = [["sandwich", 0.32], ["city-pigeon", 0.5], ["donut", 0.0], ["cheese", 0.36], [null, 0]];
+      KNOT.forEach(function (k, i) {
+        cast["sc" + i] = { art: i === 4 ? "thought-bubble" : "speech-bubbles-scribble", x: k[0], y: k[1], scale: i === 4 ? 0.78 : 0.5, hidden: true };
+        if (ABOUT[i][0] && KIT.collage.SIZES[ABOUT[i][0]]) {
+          var a = ABOUT[i][0], k2 = 120 / Math.max(KIT.collage.SIZES[a][0], KIT.collage.SIZES[a][1]);
+          cast["sct" + i] = { art: a, x: k[0] - 10, y: k[1] - 15, scale: k2, hidden: true };
+        }
+      });
+      LH.forEach(function (h, i) {
+        var m = mouth(i);
+        cast["nb" + i] = { art: "speech-bubbles-neat", x: m[0] + 40, y: 230, scale: 0.44, hidden: true };
+        cast["pill" + i] = { art: "pill-bottle", x: m[0] + 30, y: 215, scale: 0.3, hidden: true };
+      });
+      // the passer-by and the shoes he leaves behind
+      cast.man = { art: "smoking-shoes-man", x: 100, y: G + 60, anchor: "bottom", pivot: "bottom", scale: 1.05, hidden: true };
+      cast.shoeL = { art: "smoking-shoes-left", x: 1690, y: G + 62, anchor: "bottom", scale: 0.42, hidden: true };
+      cast.shoeR = { art: "smoking-shoes-right", x: 1770, y: G + 62, anchor: "bottom", scale: 0.42, hidden: true };
+      // the pie chart on stick legs, in sunglasses
+      cast.pie = { art: "lying-pie", x: 1200, y: G + 70, anchor: "bottom", pivot: "bottom", scale: 1.5, hidden: true };
+
+      // "Step two": a file of plain bills walks in from the left; the camera walks with it to the Loud Humans
+      add({ at: 0.1, do: "march", id: "bills", art: "bill-plain", count: 4, scale: 0.42, path: [[-700, G + 40], [440, G + 40]], speed: 420 });
+      add({ on: "Give", offset: 0.2, do: "camera", view: "group", dur: 1.8 });
+      // "very loud": they shout scribbles at each other, which knot overhead
+      KNOT.forEach(function (k, i) {
+        add({ at: cue("humans", 2) + 0.25 * i, do: "pop", who: "sc" + i, squash: true });
+        if (cast["sct" + i]) add({ at: cue("humans", 2) + 0.25 * i + 0.1, do: "pop", who: "sct" + i });
+      });
+      add({ on: "loud", n: 2, do: "shiver", who: Object.keys(cast).filter(function (n) { return /^sct?\d$/.test(n); }), dur: cue("If") - cue("loud", 2), amp: 7, rot: 5 });
+      add({ on: "loud", n: 2, do: "shiver", who: ["lh0", "lh1", "lh2", "lh3"], dur: 0.8, amp: 4, rot: 3 });
+      // "papers,": a bill hops into each megaphone, which gulps it
+      LH.forEach(function (h, i) {
+        var t = cue("papers,", 2) - 0.3 + 0.1 * i;
+        add({ at: t, do: "move", who: "bills." + (3 - i), to: mouth(i), dur: 0.3, arc: 160, scale: 0.6 });
+        add({ at: t + 0.3, do: "hide", who: "bills." + (3 - i) });
+        add({ at: t + 0.3, do: "nudge", who: "lh" + i, by: [-14, 0] });
+      });
+      // the passer-by strolls in along the front
+      add({ on: "they", do: "show", who: "man" });
+      add({ on: "they", do: "move", who: "man", to: [1735, G + 60], dur: cue("thing") - cue("they") });
+      add({ on: "they", do: "bob", who: "man", y: 6, r: 2, speed: 2, until: "thing" });
+      // "thing": one blast. The scribbles blow away and a neat row of bubbles, each with the same pill bottle, snaps in
+      add({ on: "thing", do: "boom", shake: 16, flash: 0.08 });
+      add({ on: "thing", do: "nudge", who: ["lh0", "lh1", "lh2", "lh3"], by: [26, 0] });
+      KNOT.forEach(function (k, i) { add({ at: cue("thing") + 0.03 * i, do: "move", who: cast["sct" + i] ? ["sc" + i, "sct" + i] : "sc" + i, by: [-2900, -250 + 60 * i], dur: 0.55, turn: -40 - 10 * i }); });
+      LH.forEach(function (h, i) {
+        add({ at: cue("thing") + 0.12 + 0.08 * i, do: "pop", who: "nb" + i });
+        add({ at: cue("thing") + 0.22 + 0.08 * i, do: "pop", who: "pill" + i, squash: true });
+      });
+      // "things.": he is blown clean out of his shoes, which stay, smoking
+      add({ on: "things.", do: "show", who: ["shoeL", "shoeR"] });
+      add({ on: "things.", do: "move", who: "man", by: [-2600, -1300], dur: 0.45, turn: -70 });
+      // "marketing": a pie chart struts in; "lying": every slice is 60%
+      add({ on: "This", do: "camera", view: "pie", dur: 0.6 });
+      add({ on: "This", do: "hide", who: ["nb0", "nb1", "nb2", "nb3", "pill0", "pill1", "pill2", "pill3"] });
+      add({ on: "This", offset: 0.1, do: "slideIn", who: "pie", from: "right", dist: 1500, over: 30, tilt: 6 });
+      add({ on: "called", offset: 0.4, do: "bob", who: "pie", y: 10, r: 4, speed: 2.4, until: "lying" });
+      [[68, 62], [205, 92], [66, 224]].forEach(function (p, i) {
+        add({ at: cue("lying") + 0.15 * i, do: "stamp", id: "pct" + i, who: "pie", spot: p, text: "60%", size: 42, width: 92, tilt: -6 + 5 * i, from: 1.6 });
+      });
+      add({ at: KIT.after(ID, "graphics."), do: "hop", who: "pie", height: 30 });
+      add({ at: KIT.after(ID, "graphics."), do: "glow", who: "pie", size: 380, dur: 0.5 });
+
+      KIT.collage({ id: ID, seed: 353, plate: [-2400, -1200, 3600, 2400], views: views, view: "walk", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

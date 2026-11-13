@@ -1,0 +1,244 @@
+<template id="weapons-maker-gets-sick-template">
+  <!-- weapons-maker-gets-sick · collage (Part 6, scenes 7 and 8 as one plate, "the-loop", back as
+       politician-drinks-tea left it: the horned ring with its angry face, bills marching, the dog running, a mushroom
+       cloud off the left edge). The bit: the loop's own people lose. The weapons factory walks up the lane to its house
+       and its family (wife and two children) comes out to meet it, beside their portrait on the wall. "get diseases": a
+       germ climbs onto the factory and it coughs; two more hop onto the children; "Everyone they love": the Reaper
+       climbs out of the portrait, leaving a Reaper-shaped hole, and waits by the house. "same economy": pull back, the
+       house stands on an inked chart, THE ECONOMY; "shrinking": missiles roll past and the house shrinks, the family
+       squashed and the portrait knocked off the wall. Scene 8, "If the loop breaks": scissors snip a gap in the last arrow; the bills stop, the dog
+       skids to a stop at the gap, and one bill walks through it and comes out with a cross for a seal. "one percent":
+       the factory's stack of 100 bills loses its top one, which walks off; it sobs. "one point four three": a house
+       1.43 times as tall pops up beside the shrunken one (×1.43), the family moves in and shoppers queue at its door.
+       "invest in the biotech sector": across the lane the lab lights up; the factory pays in a bill and gets a share
+       certificate back. "twenty-seven point two billion": the flipped bills march up the lane into the lab ($27.2 BILLION / YEAR).
+       "not being dead": the germs fall off, and the Reaper sulks off the sheet. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="weapons-maker-gets-sick" data-width="1920" data-height="1080" data-start="0" data-duration="35.74">
+    <div id="weapons-maker-gets-sick-weave"></div>
+    <div id="weapons-maker-gets-sick-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "weapons-maker-gets-sick", V = KIT.V, SZ = KIT.collage.SIZES;
+    var T = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+
+    // ── The-loop plate (the same as in politician-drinks-tea) ────────────────────────────────────────────
+    var C = V ? [1300, 2100] : [2000, 1400], RX = V ? 700 : 1250, RY = V ? 1050 : 760, SH = V ? 680 : 760, SK = SH / 600;
+    var GF = C[1] - RY + 80, GD = C[1] + 80, GB = C[1] + RY + 40;
+    var ring = function (deg) { var a = deg * Math.PI / 180; return [C[0] + RX * Math.cos(a), C[1] + RY * Math.sin(a)]; };
+    var arc = function (d0, d1, step) { var p = [], n = Math.max(2, Math.ceil(Math.abs(d1 - d0) / (step || 4))); for (var i = 0; i <= n; i++) p.push(ring(d0 + (d1 - d0) * i / n)); return p; };
+    var heading = function (deg) { var a = deg * Math.PI / 180; return Math.atan2(-RY * Math.cos(a), RX * Math.sin(a)) * 180 / Math.PI; };
+    var POLX = C[0] - RX - (V ? 80 : 50), DESKX = POLX + (V ? 80 : 90), CAPX = C[0] + RX;
+    var LANE0 = V ? -40 : -35, GS = V ? 300 : 520, HOUSEX = V ? 2700 : 4250, LABX = V ? 1650 : 3000, HK = V ? 1.5 : 1.6;
+    var ARROWS = [[252, 194], [166, 104], [76, 14], [-14, -40], [-40, -50], [-50, -72]];
+    var DOG = V ? 380 : 420, MUSHX = V ? -60 : -820;
+    // the street: the factory stops left of its house; the bigger house goes up right of it; the lab is across the lane
+    var FX = V ? 2150 : 3600, HOUSE2X = V ? 3300 : 4900, LANETOP = V ? [1960, GS] : [3330, GS];
+    var LANE = [ring(LANE0), LANETOP, [FX, GS]];
+
+    var cast = {}, beats = [], add = function (b) { beats.push(b); };
+    var person = function (art, x, y, h, o) { var c = { art: art, x: x, y: y, anchor: "bottom", pivot: "bottom", scale: hs(art, h) }; for (var k in o || {}) c[k] = o[k]; return c; };
+    var HW = V ? 1100 : 1450;
+    cast.bigHorns = { art: "devil-horns", x: C[0], y: GF + 60, anchor: "bottom", scale: HW / SZ["devil-horns"][0] };
+    cast.house = person("house", HOUSEX, GS, 433 * HK);
+    cast.house2 = person("house", HOUSE2X, GS, 433 * HK * 1.43, { hidden: true });
+    cast.lab = person("lab", LABX, GS, V ? 640 : 700);
+    cast.ballot = person("ballot-box", C[0], GB, V ? 380 : 420);
+    cast.poster1 = person("campaign-poster", C[0] - (V ? 560 : 720), GB - (V ? 260 : 300), V ? 330 : 380);
+    cast.poster2 = person("campaign-poster", C[0] + (V ? 560 : 720), GB - (V ? 260 : 300), V ? 330 : 380);
+    cast.capitol = person("capitol", CAPX, GD, SH + 80);
+    cast.trap = person("trapdoor", CAPX, GD + 60, SH * 0.3);
+    cast.desk = person("desk", DESKX, GD, V ? 360 : 400);
+    cast.face = { art: "loop-face-angry", x: C[0], y: C[1] - (V ? 0 : 60), scale: (V ? 820 : 780) / 233 };
+    cast.mush = person("mushroom", MUSHX, GD + 40, (V ? 900 : 1100) * 1.15);
+    var FAMH = V ? 520 : 560, FAMX = HOUSEX + (V ? 30 : 40);
+    // the family portrait hangs on a nail left of the family; its picture (art [177, 244], 245 x 377) gets a Reaper-shaped
+    // hole when he climbs out: a small Reaper cut-out, charred black
+    var PH = V ? 250 : 300, PK6 = PH / SZ.portrait[1], PORX = FAMX - FAMH * (V ? 0.5 : 0.56), PORY = GS - (V ? 330 : 360);
+    var NAIL = [PORX, PORY - PH / 2 - (V ? 50 : 60)], HOLEH = 300 * PK6, HOLEB = [PORX, PORY + (425 - 244) * PK6];
+    cast.portrait = { art: "portrait", x: PORX, y: PORY, scale: PK6, hidden: true };
+    cast.hole = person("reaper-stop", HOLEB[0], HOLEB[1], HOLEH, { hidden: true });
+    cast.fam = person("weapons-maker-family", FAMX, GS + 10, FAMH, { hidden: true, points: { boy: [102, 262], girl: [216, 292] } });
+    var RH = SH * 1.02, RX0 = HOUSEX + (V ? 230 : 280);
+    cast.reaper = person("reaper-stop", RX0, GS + 10, RH, { hidden: true });
+    var LABK = 0.95 * SK;
+    cast.factory = person("factory-proud", C[0], GF, SH, { label: { text: "LOCKHEED MARTIN", at: [158, 112], width: 210, size: 30, plaque: true } });
+    cast.factorySob = person("factory-sob", FX, GS, SH, { hidden: true, label: { text: "LOCKHEED MARTIN", at: [162, 112], width: 210, size: 30, plaque: true } });
+    cast.factory2 = person("factory-proud", FX, GS, SH, { hidden: true, label: { text: "LOCKHEED MARTIN", at: [158, 112], width: 210, size: 30, plaque: true } });
+    // germs: one on the factory, two on the family
+    var GK = function (h) { return { art: "germ", x: FX + SH * 0.3, y: GS - 40, scale: h / 338, hidden: true }; };
+    cast.g1 = GK(SH * 0.26); cast.g2 = { art: "germ-grin", x: FX, y: GS - SH * 0.6, scale: SH * 0.17 / 245, hidden: true }; cast.g3 = { art: "germ-grin", x: FX, y: GS - SH * 0.6, scale: SH * 0.17 / 245, hidden: true };
+    cast.cough = { art: "cloud-puff", x: FX + SH * 0.12, y: GS - SH - 50, scale: SH * 0.32 / 378, hidden: true };
+    cast.scissors = { art: "scissors", x: ring(-45)[0], y: ring(-45)[1], pivot: [119, 300], scale: (V ? 460 : 520) / 507, hidden: true };
+    cast.flip = { art: "bill-war", x: ring(-28)[0], y: ring(-28)[1], anchor: "bottom", scale: (V ? 150 : 140) / 229, hidden: true };
+    cast.flipMed = { art: "bill-med", x: ring(-28)[0], y: ring(-28)[1], anchor: "bottom", scale: (V ? 150 : 140) / 229, hidden: true };
+    cast.peel = { art: "bill-war", x: FX + SH * 0.5, y: GS - 20, anchor: "bottom", scale: (V ? 120 : 120) / 229, hidden: true };
+    cast.payBill = { art: "bill-war-flat", x: FX - SH * 0.3, y: GS - SH * 0.45, scale: 0.6 * SK, hidden: true };
+    cast.shares = { art: "share-certificate", x: LABX + 60, y: GS - 260, scale: 0.55 * SK, hidden: true, label: { text: "SHARES", at: [271, 150], width: 300, size: 80 } };
+    cast.dog = { art: "democracy-dog", x: ring(0)[0], y: ring(0)[1], scale: DOG / SZ["democracy-dog"][1],
+      label: { text: "DEMOCRACY", at: [238, 318], width: 150, size: 30, plaque: true } };
+
+    // the plate as the last scene left it: the road, the arrows and their heads, bills marching round
+    add({ at: -1, do: "line", id: "road", points: arc(270, -90, 3), until: -0.99, dash: [26, 20], width: V ? 8 : 10 });
+    ARROWS.forEach(function (a, i) { add({ at: -1, do: "line", id: "arrow" + i, points: arc(a[0], a[1]), until: -0.99, width: V ? 12 : 14 }); });
+    [0, 1, 2, 5].forEach(function (a, i) {
+      var d = ARROWS[a][1], p = ring(d), nm = "head" + i;
+      cast[nm] = { art: "ink-arrow", x: p[0], y: p[1], anchor: [130, 16], pivot: [130, 16], scale: V ? 1.0 : 1.2, clip: [[96, 0], [144, 0], [144, 33], [96, 33]] };
+      add({ at: -1, do: "move", who: nm, by: [0, 0], turn: heading(d), dur: 0.01 });
+    });
+    var TBR = T("breaks");
+    add({ at: -1, do: "march", id: "bills", art: "bill-war", count: 12, height: V ? 140 : 130, path: arc(260, -100, 6), closed: true, end: "loop", speed: V ? 900 : 1000, gap: (V ? 5600 : 6500) / 12, until: TBR });
+
+    var ride = function (who, pts, t0, t1) {
+      var L = [0];
+      for (var i = 1; i < pts.length; i++) L.push(L[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+      for (i = 1; i < pts.length; i++) add({ at: t0 + (t1 - t0) * L[i - 1] / L[L.length - 1], do: "move", who: who, to: pts[i], dur: (t1 - t0) * (L[i] - L[i - 1]) / L[L.length - 1] });
+    };
+    // The dog runs the ring until the snip, and skids to a stop at the gap.
+    var run = function (d0, d1, t0, t1) {
+      var n = Math.max(1, Math.round(Math.abs(d1 - d0) / 15));
+      for (var i = 0; i < n; i++) {
+        var a = d0 + (d1 - d0) * (i + 1) / n;
+        add({ at: t0 + (t1 - t0) * i / n, do: "move", who: "dog", to: ring(a), turn: heading(a), dur: (t1 - t0) / n });
+      }
+    };
+    add({ at: -1, do: "move", who: "dog", to: ring(-28 + 360 * 7), turn: heading(-28), dur: 0.01 });
+    run(-28 + 360 * 7, -28, 0, TBR + 0.1);
+
+    // ── Views ──
+    var cy = function (g, s) { return V ? g - 560 / s : g - 340 / s; };
+    var CS = V ? 1.0 : 0.95, SN = ring(-45);
+    var views = V ? {
+      wide: [1150, 2185, 0.42], street: [2450, cy(GS, CS), CS], streetWide: [2560, GS - 420, 0.6], lab: [1900, cy(GS, CS), CS],
+      snip: [SN[0] - 120, SN[1] + 60, 0.8], laneWide: [1850, 500, 0.6],
+    } : {
+      wide: [2000, 1100, 0.33], street: [3950, cy(GS, CS), CS], streetWide: [4050, GS - 430, 0.55], lab: [3320, cy(GS, CS), CS],
+      snip: [SN[0] - 150, SN[1] - 60, 0.8], laneWide: [3150, 420, 0.6],
+    };
+    var cam = function (t, v, d) { add({ at: t, do: "camera", view: v, dur: d === undefined ? 0.6 : d }); };
+
+    // ── Scene 7: the weapons factory goes home ──
+    var path = arc(-90, LANE0, 5).concat([LANETOP, [FX, GS]]);
+    add({ at: 0.05, do: "line", id: "lane", points: [ring(LANE0), LANETOP, [HOUSE2X + 600, GS]], dur: 0.9, width: V ? 10 : 12 });
+    ride("factory", path, 0.1, 1.45);
+    add({ at: 0.1, do: "bob", who: "factory", y: 10, r: 3, speed: 5, until: 1.45 });
+    cam(0.25, "street", 1.2);
+    add({ at: T("humans") - 0.1, do: "pop", who: "fam", squash: true });
+    add({ at: T("humans"), do: "line", id: "string", points: [[PORX - PH * 0.3, PORY - PH * 0.42], NAIL, [PORX + PH * 0.3, PORY - PH * 0.42]], dur: 0.15, width: 4 });
+    add({ at: T("humans") + 0.1, do: "pop", who: "portrait" });
+    add({ at: T("it."), do: "shake", y: 8, frames: 3 });
+    add({ at: T("it.") + 0.2, do: "hop", who: "fam", height: 16 });
+    // "The weapons manufacturers get diseases": a germ climbs on; it coughs
+    add({ at: T("manufacturers") - 0.2, do: "pop", who: "g1", squash: true });
+    add({ at: T("manufacturers"), do: "move", who: "g1", to: [FX + SH * 0.12, GS - SH * 0.42], dur: 0.9, arc: 20 });
+    add({ at: T("diseases."), do: "shiver", who: "factory", dur: 0.5, amp: 8, rot: 5 });
+    add({ at: T("diseases."), do: "pop", who: "cough", squash: true });
+    add({ at: T("diseases.") + 0.6, do: "pop", who: "cough", out: true });
+    // "Their children get diseases": two more hop onto the family
+    add({ at: T("get", 2) - 0.1, do: "pop", who: ["g2", "g3"] });
+    add({ at: T("get", 2), do: "move", who: "g2", to: "fam.boy", dur: 0.35, arc: 160 });
+    add({ at: T("diseases.", 2), do: "move", who: "g3", to: "fam.girl", dur: 0.35, arc: 160 });
+    add({ at: T("diseases.", 2) + 0.4, do: "shiver", who: "fam", dur: 0.5, amp: 5, rot: 3 });
+    // "Everyone they love gets diseases": the Reaper climbs out of the portrait, leaving a Reaper-shaped hole, and lets
+    // himself out to wait by the house
+    add({ at: -1, do: "char", who: "hole" });
+    add({ at: -1, do: "move", who: "reaper", to: [HOLEB[0], HOLEB[1] - RH / 2], scale: hs("reaper-stop", HOLEH), dur: 0.01 });
+    add({ at: T("love"), do: "pop", who: "reaper", squash: true });
+    add({ at: T("love") + 0.2, do: "show", who: "hole" });
+    add({ at: T("love") + 0.2, do: "move", who: "reaper", to: [RX0, GS + 10 - RH / 2], scale: hs("reaper-stop", RH), dur: 0.5, arc: 120 });
+    add({ at: T("love") + 0.75, do: "shake", y: 5, frames: 2 });
+    add({ at: T("diseases.", 3) + 0.4, do: "bob", who: "reaper", y: 3, r: 1.5, speed: 1 });
+    // "They live in the same economy": pull back; the street is a chart, THE ECONOMY
+    cam(T("They", 2) - 0.1, "streetWide", 0.8);
+    var AXX = LABX + (V ? 235 : 265), AXTOP = GS - (V ? 1100 : 1100);
+    add({ at: T("same") - 0.1, do: "line", id: "axisY", points: [[AXX, GS + 6], [AXX, AXTOP]], dur: 0.4, width: 8 });
+    add({ at: T("economy") - 0.05, do: "banner", id: "econ", text: "THE ECONOMY", x: AXX + (V ? 330 : 390), y: AXTOP + 20, size: V ? 90 : 96, width: V ? 560 : 640, pad: 60, color: "ink", tilt: -2 });
+    // "that the loop is shrinking": missiles roll past and the house shrinks, squashing the family
+    add({ at: T("that"), do: "march", id: "miss", art: "missile-fly", count: 3, height: V ? 90 : 100, path: [[AXX - 900, GS - 50], [HOUSE2X + 1400, GS - 50]], speed: V ? 2200 : 2600, gap: 600, end: "hide", bob: 2, rock: 1 });
+    var TS = T("shrinking.");
+    add({ at: TS, do: "move", who: "house", by: [0, 0], scale: HK * 0.62, dur: 0.35 });
+    add({ at: TS + 0.05, do: "move", who: "fam", by: [0, 0], scale: hs("weapons-maker-family", FAMH * 0.72), dur: 0.35 });
+    add({ at: TS + 0.25, do: "hide", who: "string" });
+    add({ at: TS + 0.25, do: "drop", who: ["portrait", "hole"], spin: 0, dist: 1300, dur: 0.6 });
+    add({ at: TS + 0.45, do: "shiver", who: "fam", dur: 0.5, amp: 4, rot: 3 });
+    add({ at: TS + 0.6, do: "shiver", who: "reaper", dur: 0.4, amp: 2, rot: 4 });
+
+    // ── Scene 8: the redirect ──
+    // "If the loop breaks": snip; the bills stop; the dog skids to a stop at the gap
+    cam(T("If") - 0.1, "snip", 0.5);
+    add({ at: T("If"), do: "pop", who: "scissors", squash: true });
+    add({ at: TBR, do: "hide", who: "arrow4" });
+    add({ at: TBR, do: "shiver", who: "scissors", dur: 0.3, amp: 6, rot: 14 });
+    add({ at: TBR, do: "shake", x: 8, frames: 3 });
+    add({ at: TBR + 0.12, do: "shiver", who: "dog", dur: 0.45, amp: 9, rot: 6 });
+    add({ at: TBR + 0.6, do: "slideOut", who: "scissors", to: "top", dist: 1400, dur: 0.4 });
+    // one war bill walks into the gap and comes out with a cross for a seal
+    add({ at: T("redirect") - 0.5, do: "pop", who: "flip" });
+    add({ at: T("redirect") - 0.4, do: "move", who: "flip", to: ring(-45), dur: 0.5 });
+    add({ at: T("happens,"), do: "swap", who: "flip", to: "flipMed" });
+    add({ at: -1, do: "move", who: "flipMed", to: ring(-45), dur: 0.01 });
+    add({ at: T("happens,") + 0.2, do: "move", who: "flipMed", to: ring(-56), dur: 0.5 });
+    // "they lose one percent": the stack of exactly 100; the top one walks off; it sobs
+    cam(T("they", 3) - 0.2, "street", 0.6);
+    add({ at: T("they", 3) - 0.2, do: "hide", who: "factory" });
+    add({ at: T("they", 3) - 0.2, do: "show", who: "factory2" });
+    var PX = FX + SH * 0.52, PG = 5 * SK, PILEK = 0.5 * SK;
+    add({ at: T("they", 3), do: "pile", id: "hundred", art: "bill-war-flat", x: PX, y: GS, count: 100, scale: PILEK, gap: PG, until: T("percent") - 0.15, accel: 0.5, jitter: 3, tilt: 1.5, fall: 0.17 });
+    var PTOP = GS - 99 * PG - 131 * PILEK;
+    add({ at: -1, do: "move", who: "peel", to: [PX, PTOP + 10], dur: 0.01 });
+    add({ at: T("percent") + 0.2, do: "pop", who: "peel" });
+    add({ at: T("percent") + 0.35, do: "stamp", id: "minus1", text: "-1%", x: PX + (V ? 160 : 230), y: PTOP - 90, size: V ? 80 : 90, width: 220, tilt: -6 });
+    add({ at: T("percent") + 0.5, do: "move", who: "peel", by: [V ? 700 : 1000, -60], dur: 1.6 });
+    add({ at: T("revenue"), do: "hide", who: "factory2" });
+    add({ at: T("revenue"), do: "show", who: "factorySob" });
+    add({ at: T("revenue") + 0.1, do: "shiver", who: "factorySob", dur: 0.7, amp: 3, rot: 2 });
+    // "a one point four three times larger economy": the bigger house; the family moves in; shoppers queue
+    cam(T("gain") - 0.1, "streetWide", 0.6);
+    add({ at: T("gain"), do: "hide", who: "minus1" });
+    add({ at: T("three"), do: "pop", who: "house2", squash: true });
+    add({ at: T("times") + 0.1, do: "stamp", id: "x143", text: "×1.43", x: HOUSE2X, y: GS - 433 * HK * 1.43 - (V ? 90 : 100), size: V ? 110 : 120, width: 360, tilt: -5 });
+    add({ at: T("larger"), do: "move", who: "fam", to: [HOUSE2X - (V ? 40 : 60), GS + 10 - FAMH / 2], scale: hs("weapons-maker-family", FAMH), dur: 0.6, arc: 60 });
+    add({ at: T("economy", 2) + 0.3, do: "hop", who: "fam", height: 18 });
+    add({ at: T("sell") - 0.2, do: "march", id: "shop", art: ["you-walk", "shopping-cart"], count: 6, height: FAMH * 0.95, sizes: { "shopping-cart": 0.6 }, path: [[HOUSE2X + (V ? 1300 : 1700), GS + 10], [HOUSE2X + (V ? 260 : 300), GS + 10]], speed: V ? 900 : 1300, gap: V ? 230 : 260 });
+    // "invest in the biotech sector": the lab lights up; a bill in, SHARES out
+    cam(T("plus") - 0.1, "lab", 0.7);
+    add({ at: T("plus"), do: "hide", who: "factorySob" });
+    add({ at: T("plus"), do: "show", who: "factory2" });
+    add({ at: T("invest"), do: "glow", who: "lab", size: V ? 520 : 600, dur: 0.6 });
+    add({ at: T("invest") + 0.1, do: "pop", who: "payBill" });
+    add({ at: T("invest") + 0.3, do: "move", who: "payBill", to: [LABX + 40, GS - 230], dur: 0.4, arc: 120 });
+    add({ at: T("invest") + 0.7, do: "hide", who: "payBill" });
+    add({ at: T("biotech"), do: "pop", who: "shares" });
+    add({ at: T("biotech") + 0.1, do: "move", who: "shares", to: [FX - SH * 0.42, GS - SH * 0.52], dur: 0.45, arc: 120, turn: -8 });
+    add({ at: T("sector") + 0.2, do: "hop", who: ["factory2", "shares"], height: 22 });
+    // "absorbs the redirected 27.2 billion dollars a year": the flipped bills march up the lane into the lab
+    cam(T("absorbs") - 0.2, "laneWide", 0.7);
+    var upLane = arc(-56, LANE0, 3).concat([LANETOP, [LABX + 120, GS]]);
+    add({ at: T("absorbs"), do: "hide", who: "flipMed" });
+    add({ at: T("absorbs"), do: "march", id: "med", art: "bill-med", count: 12, height: V ? 150 : 140, path: [ring(-56)].concat(upLane), speed: V ? 420 : 520, gap: V ? 200 : 230, end: "hide" });
+    add({ at: T("twenty-seven"), do: "tag", who: "lab", text: "$27.2 BILLION / YEAR", w: V ? 640 : 720, h: V ? 210 : 220, x: LABX + (V ? 150 : 200), y: GS - (V ? 820 : 860), knot: [140, 30] });
+    // "plus not being dead": the germs fall off; the Reaper sulks off the sheet
+    cam(T("plus", 2) - 0.2, "street", 0.6);
+    add({ at: T("not"), do: "drop", who: ["g1", "g2", "g3"], dist: 1200, spin: 200, dur: 0.6 });
+    add({ at: T("being"), do: "hop", who: ["factory2", "shares", "fam"], height: 20 });
+    add({ at: T("dead.") + 0.3, do: "move", who: "reaper", by: [0, 10], turn: -6, dur: 0.2 });
+    add({ at: T("dead.") + 0.55, do: "slideOut", who: "reaper", to: "right", dist: V ? 1400 : 1800, dur: 0.9 });
+
+    KIT.collage({
+      id: ID, seed: 607, views: views, view: "wide", cast: cast, beats: beats,
+      plate: V ? [-1600, -4600, 4800, 6000] : [-2600, -4800, 7400, 3400],
+    });
+  </script>
+</template>

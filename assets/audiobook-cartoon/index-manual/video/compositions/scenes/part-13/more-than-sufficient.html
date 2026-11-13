@@ -1,0 +1,57 @@
+<template id="more-than-sufficient-template">
+  <!-- more-than-sufficient · collage host shot (Part 13 storyboard, scene 7). Her mug stands on the console's ledge.
+       "sufficient.": a little mushroom cloud of steam puffs up out of it and drifts off. "But": she folds her arms and
+       sulks, the viewer's objection as an impression (her state). "already", "have.", "Multiple": a fat rolled treaty
+       thunks onto the ledge on each word, CHEMICAL WEAPONS, BIOLOGICAL WEAPONS, LANDMINES, stacking up; on "times."
+       the pile jumps. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="more-than-sufficient" data-width="1920" data-height="1080" data-start="0" data-duration="8.8">
+    <div id="more-than-sufficient-weave"></div>
+    <div id="more-than-sufficient-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "more-than-sufficient", V = KIT.V, S = KIT.STUDIO, SZ = window.KIT_ART_SIZES;
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // The mug on the ledge right of her; the treaties pile up on the ledge left of her.
+      var MX = V ? 640 : 1010, PX = V ? 178 : 300, RW = V ? 340 : 480, RK = RW / SZ["scroll-rolled"][0], RH = SZ["scroll-rolled"][1] * RK;
+      var MK = hs("desk-mug", V ? 120 : 130), MTOP = S.top + 4 - SZ["desk-mug"][1] * MK;
+      // its name in two words, either side of the wax seal in the middle of the roll
+      var roll = function (i, a, b) {
+        return { art: "scroll-rolled", x: PX + (i % 2 ? 14 : -10), y: S.top + 4 - i * (RH - 12), anchor: "bottom", pivot: "bottom", scale: RK, hidden: true,
+          label: [{ text: a, at: [160, 70], width: 170, size: 64 }, { text: b, at: [408, 70], width: 170, size: 64 }] };
+      };
+      KIT.collage({
+        id: ID, seed: 1307, host: true,
+        cast: {
+          mug: { art: "desk-mug", x: MX, y: S.top + 4, anchor: "bottom", pivot: "bottom", scale: MK },
+          steam: { art: "mushroom", x: MX - 8, y: MTOP + 20, anchor: "bottom", pivot: "bottom", scale: hs("mushroom", V ? 210 : 230), hidden: true },
+          r0: roll(0, "CHEMICAL", "WEAPONS"), r1: roll(1, "BIOLOGICAL", "WEAPONS"), r2: roll(2, "LAND", "MINES"),
+        },
+        beats: [
+          // "sufficient.": the mug puffs a little mushroom cloud, which drifts up and away
+          { on: "sufficient.", offset: 0.45, do: "shiver", who: "mug", dur: 0.3, amp: 3, rot: 3 },
+          { on: "sufficient.", offset: 0.6, do: "pop", who: "steam", squash: true },
+          { on: "sufficient.", offset: 0.9, do: "move", who: "steam", by: [60, -150], dur: 1.0, ease: "smooth" },
+          { on: "humans", do: "pop", who: "steam", out: true },
+          // "already", "have.", "Multiple": three treaties thunk onto the ledge
+          { on: "already", do: "stamp", who: "r0", from: 1.8, shake: 6 },
+          { on: "have.", do: "stamp", who: "r1", from: 1.8, shake: 6 },
+          { on: "Multiple", do: "stamp", who: "r2", from: 1.8, shake: 8 },
+          { on: "times.", do: "hop", who: ["r0", "r1", "r2"], height: 14 },
+        ],
+      });
+    })();
+  </script>
+</template>

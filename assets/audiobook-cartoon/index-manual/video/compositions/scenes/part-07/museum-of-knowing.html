@@ -1,0 +1,248 @@
+<template id="museum-of-knowing-template">
+  <!-- museum-of-knowing · collage (Part 7, scene 3), one long gallery the camera travels right along with one visitor,
+       the tourist with his audio-guide horn, who agrees with every exhibit and is wrecked by each one's opposite.
+       1 "movies": the wars of the century as grey blocks on a timeline; the tourist sits in a cinema seat in the gap
+         after the First World War under ALL QUIET ON THE WESTERN FRONT (1930) and sobs. "between wars": a helmet drops
+         on his head and a tank rolls out of one war block into the next, flattening him; he pops up in the next gap
+         under APOCALYPSE NOW (1979) and sobs again.
+       2 "books about peace": Tolstoy and his WAR AND PEACE on a counter. "tax": the tourist's bill is stamped TAX and its
+         seal flips to a missile; "buy bombs": it walks into a bomb. Boom: both charred, Tolstoy's beard smoking, the
+         book a heap of ash.
+       3 "prizes": the prize winner, dove on her finger, on a little stage; Alfred Nobel hangs a medal on her. "funded":
+         his card, INVENTED DYNAMITE, OWNED BOFORS. The medal turns into dynamite: she is charred, still holding the
+         charred dove; the charred tourist applauds.
+       4 "Department of Defense": the Pentagon and its sign. "attacks": missiles shoot out of all five sides, every one
+         going outward, ripping through the gallery walls, one past the tourist's head. "people": the sign falls; behind
+         it DEPARTMENT OF WAR, UNTIL 1947.
+       5 "Department of Health": a scientist in a glass case shaking a flask; grinning viruses bubble out and bounce round
+         the gallery. "observable health": the tourist peers into the case beside it, OBSERVABLE HEALTH, empty; a virus
+         lands on his head and he x-rays into a skeleton, still peering. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="museum-of-knowing" data-width="1920" data-height="1080" data-start="0" data-duration="26.84">
+    <div id="museum-of-knowing-weave"></div>
+    <div id="museum-of-knowing-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "museum-of-knowing", V = KIT.V, SZ = KIT.collage.SIZES, F = KIT.collage.F;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var eyesAt = function (pts, size) { return pts.map(function (e) { return [e[0] * 30 / size, e[1] * 30 / size]; }); };
+    // The gallery floor G; the exhibits' centres X (plate px); U shrinks the spacing inside an exhibit in 9:16; TH is
+    // the tourist's height. BY is where the cards hang.
+    var G = V ? 1400 : 820, U = V ? 0.72 : 1, TH = V ? 640 : 603, BY = V ? 600 : 130, BW = V ? 960 : 1300;
+    var X = V ? { e1: 540, e2: 1950, e3: 3350, e4: 4750, e5: 6150, e6: 7250 } : { e1: 960, e2: 2950, e3: 4950, e4: 6950, e5: 8950, e6: 10300 };
+    var CY = V ? 960 : 540;
+    var lx = function (e, dx) { return X[e] + dx * U; };
+    var views = {};
+    Object.keys(X).forEach(function (e) { views[e] = [X[e], CY, 1]; });
+
+    // The tourist, as himself, charred (from the book bomb on) and as a skeleton, all the same height.
+    var tourist = function (art, x, extra) {
+      var o = { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: TH / SZ[art][1], hidden: true, points: { head: [105, 40] } };
+      for (var k in extra || {}) o[k] = extra[k];
+      return o;
+    };
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+    var cut = function (t, a, b) { add({ at: t, do: "hide", who: a }); add({ at: t, do: "show", who: b }); };
+    // walks in from the left of the exhibit's frame (no walk pose: he bobs along stiffly)
+    var walkIn = function (who, n, toX) {
+      add({ on: "You", n: n, do: "show", who: who });
+      add({ on: "You", n: n, do: "move", who: who, to: [toX, G - TH / 2], dur: 0.85 });
+      add({ on: "You", n: n, do: "bob", who: who, y: 10, r: 3, speed: 3, until: cue("You", n) + 0.85 });
+    };
+
+    // ── Exhibit 1: the century's wars on a timeline (the chart sits inside the first frame of the plate).
+    var chart = KIT.collage.axes({ box: V ? [70, G - 520, 1040, G] : [90, G - 420, 1860, G], x: [1900, 2000, 5], xLabels: V ? 20 : 10, y: [0, 1, 1], yLabels: 1000, title: "WARS", size: V ? 32 : 34 });
+    var yr = function (y) { return chart.pt(y, 0)[0]; };
+    var PPY = yr(1901) - yr(1900);
+    var WARS = [[1914, 1918], [1939, 1945], [1950, 1953], [1955, 1975], [1990, 1991]];
+    var GAP1 = yr(1928.5), GAP2 = yr(1982.5), Y1H = V ? 380 : 560, SEATH = Y1H * 0.62;   // he and his seat fit the gaps
+    add({ at: 0, do: "chart", chart: chart });
+    WARS.forEach(function (w, i) {
+      add({ at: 0.1 + i * 0.12, do: "bar", id: "war" + i, chart: chart, x: (w[0] + w[1]) / 2, width: Math.max(10, (w[1] - w[0]) * PPY), to: 1, dur: 0.3, fill: "#9C978D" });
+    });
+    var seated = function (x, hidden) { return tourist("tourist", x, { y: G - SEATH * 0.3, scale: Y1H / SZ.tourist[1], hidden: hidden }); };
+    var seat = function (x) { return { art: "cinema-seat", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: SEATH / SZ["cinema-seat"][1] }; };
+    cast.y1 = seated(GAP1, false);
+    cast.seat1 = seat(GAP1);
+    cast.y2 = seated(GAP2, true);
+    cast.seat2 = seat(GAP2);
+    var HK = Y1H * 0.42 / SZ["soldier-helmet"][0];
+    cast.helmet = { art: "soldier-helmet", x: GAP1, y: -300, scale: HK, hidden: true };
+    var TK = (V ? 0.36 : 0.6);
+    cast.tank = { art: "tank", x: yr(1916), y: G, anchor: "bottom", pivot: "bottom", scale: TK, hidden: true };
+    add({ at: 0, do: "show", who: "seat2" });
+    add({ on: "movies", do: "banner", id: "film1", text: "ALL QUIET ON THE WESTERN FRONT (1930)", x: X.e1, y: BY, size: 80, width: BW, color: "ink" });
+    add({ on: "bad", do: "shiver", who: "y1", dur: 1.3, amp: 3, rot: 2 });
+    add({ on: "watch", do: "show", who: "helmet" });
+    add({ on: "watch", do: "move", who: "helmet", to: "y1.head", by: [0, 20], dur: 0.22 });
+    add({ on: "between", offset: -0.15, do: "pop", who: "tank" });
+    add({ on: "between", do: "move", who: "tank", to: [yr(1942), G - SZ.tank[1] * TK / 2], dur: 0.6 });
+    add({ on: "between", offset: 0.28, do: "flatten", who: ["y1", "seat1"] });
+    add({ on: "between", offset: 0.62, do: "pop", who: "tank", out: true });
+    add({ on: "wars).", n: 2, do: "hide", who: ["y1", "film1", "helmet"] });
+    add({ on: "wars).", n: 2, do: "pop", who: "y2", squash: true });
+    add({ on: "wars).", n: 2, do: "banner", id: "film2", text: "APOCALYPSE NOW (1979)", x: X.e1, y: BY, size: 80, width: V ? 900 : 1000, color: "ink" });
+    add({ on: "wars).", n: 2, offset: 0.35, do: "shiver", who: "y2", dur: 1.0, amp: 3, rot: 2 });
+
+    // ── Exhibit 2: Tolstoy and WAR AND PEACE, taxed into a bomb.
+    var PLK = V ? 0.85 : 0.95, PLH = SZ.plinth[1] * PLK, BKK = (V ? 240 : 300) / SZ.book[0], BKH = SZ.book[1] * BKK;
+    cast.tolstoy = { art: "tolstoy", x: lx("e2", 300), y: G, anchor: "bottom", pivot: "bottom", scale: (V ? 620 : 600) / SZ.tolstoy[1],
+      eyes: eyesAt([[90, 41], [113, 40]], 16), eyeSize: 16, smoke: [[100, 150], [80, 200]] };
+    cast.plinth = { art: "plinth", x: lx("e2", 0), y: G, anchor: "bottom", pivot: "bottom", scale: PLK };
+    cast.book = { art: "book", x: lx("e2", 0), y: G - PLH + 8, anchor: "bottom", pivot: "bottom", scale: BKK, hidden: true };
+    var BILLAT = [lx("e2", -110), G - PLH - 60];
+    cast.bill = { art: "bill-plain", x: lx("e2", -330), y: G - TH * 0.5, scale: V ? 0.75 : 0.9, hidden: true };
+    cast.billW = { art: "bill-war", x: BILLAT[0], y: BILLAT[1], scale: V ? 0.75 : 0.9, hidden: true };
+    var BOMBAT = [lx("e2", -270), G];
+    cast.bomb = { art: "bomb", x: BOMBAT[0], y: G, anchor: "bottom", pivot: "bottom", scale: V ? 0.6 : 0.95, hidden: true };
+    cast.boom2 = { art: "mushroom", x: lx("e2", -270), y: G + 20, anchor: "bottom", pivot: "bottom", scale: (V ? 560 : 640) / SZ.mushroom[1], hidden: true };
+    cast.s2 = tourist("tourist", lx("e2", -1200));
+    cast.s2c = tourist("tourist-charred", lx("e2", -520));
+    add({ on: "You", n: 3, do: "camera", view: "e2", dur: 0.9 });
+    walkIn("s2", 3, lx("e2", -520));
+    add({ on: "books", do: "pop", who: "book", squash: true });
+    add({ on: "books", offset: 0.25, do: "tag", id: "wp", who: "book", text: "WAR AND PEACE", w: V ? 380 : 460, h: V ? 150 : 170, x: lx("e2", 0), y: G - PLH - BKH - (V ? 120 : 130), knot: [245, 40] });
+    add({ on: "peace", do: "nudge", who: "tolstoy", by: [-40, 0] });
+    add({ on: "peace", offset: 0.15, do: "hop", who: "tolstoy", height: 14 });
+    add({ on: "(that", n: 1, do: "pop", who: "bill" });
+    add({ on: "you", n: 4, do: "move", who: "bill", to: BILLAT, dur: 0.3, arc: 60 });
+    add({ on: "tax", do: "stamp", who: "bill", text: "TAX", spot: [113, 160], size: 60, tilt: -8 });
+    cut(cue("tax") + 0.4, "bill", "billW");
+    add({ on: "to", n: 1, do: "pop", who: "bomb", squash: true });
+    add({ on: "to", n: 1, offset: 0.1, do: "shiver", who: "bomb", dur: 0.5, amp: 3, rot: 3 });
+    add({ on: "buy", do: "move", who: "billW", to: [BOMBAT[0], G - 150], dur: 0.16, arc: 40 });
+    var BOMB2 = cue("bombs).");
+    add({ at: BOMB2, do: "hide", who: ["billW", "bomb", "wp"] });
+    add({ at: BOMB2, do: "boom", shake: 20, flash: 0.22 });
+    add({ at: BOMB2, do: "pop", who: "boom2", squash: true });
+    add({ at: BOMB2 + 0.9, do: "pop", who: "boom2", out: true });
+    add({ at: BOMB2, do: "ash", who: "book" });
+    add({ at: BOMB2, do: "char", who: ["tolstoy", "plinth", "book"] });
+    cut(BOMB2, "s2", "s2c");
+    add({ at: BOMB2 + 0.7, do: "blink", who: "tolstoy" });
+
+    // ── Exhibit 3: the peace prize, paid for with dynamite.
+    var STK = V ? 1.05 : 1.0, STH = SZ["prize-stand"][1] * STK, WK = (V ? 560 : 450) / SZ["prize-winner"][1];
+    var WTOP = G - STH + 25 - SZ["prize-winner"][1] * WK;
+    cast.stand = { art: "prize-stand", x: lx("e3", 0), y: G, anchor: "bottom", pivot: "bottom", scale: STK };
+    cast.winner = { art: "prize-winner", x: lx("e3", 0), y: G - STH + 25, anchor: "bottom", pivot: "bottom", scale: WK,
+      eyes: eyesAt([[59, 52], [80, 51], [164, 22]], 13), eyeSize: 13, smoke: [[100, 15], [160, 10]] };
+    var CHEST = [lx("e3", 0) + (104 - SZ["prize-winner"][0] / 2) * WK, WTOP + 250 * WK];
+    cast.medal = { art: "medal", x: CHEST[0], y: CHEST[1] + 20 * WK, scale: 0.27 * SZ["prize-winner"][1] * WK / SZ.medal[1], hidden: true };
+    cast.dyn = { art: "dynamite", x: CHEST[0], y: CHEST[1] + 20 * WK, scale: 0.27 * SZ["prize-winner"][1] * WK / SZ.dynamite[1], hidden: true };
+    var NX = lx("e3", V ? 470 : 460), NK = (V ? 620 : 600) / SZ.nobel[1];
+    cast.nobel = { art: "nobel", x: NX, y: G, anchor: "bottom", pivot: "bottom", scale: NK, hidden: true };
+    cast.s3 = tourist("tourist-charred", lx("e3", -1200));
+    add({ on: "You", n: 5, do: "camera", view: "e3", dur: 0.9 });
+    walkIn("s3", 5, lx("e3", V ? -480 : -600));
+    add({ on: "prizes", do: "banner", id: "nobelBan", text: "NOBEL PEACE PRIZE", x: X.e3, y: BY, size: 100, width: V ? 900 : 1100, color: "ink" });
+    add({ on: "people", n: 1, do: "slideIn", who: "nobel", from: "right", dist: 900, over: 14 });
+    add({ on: "peace", n: 2, do: "nudge", who: "nobel", by: [-50, 0] });
+    add({ on: "peace", n: 2, do: "stamp", who: "medal", from: 1.8, shake: 4 });
+    add({ on: "(funded", offset: 0.1, do: "tag", id: "card", who: "nobel", text: "INVENTOR OF DYNAMITE", w: V ? 400 : 600, h: V ? 190 : 230, x: V ? lx("e3", 300) : NX, y: G - (V ? 130 : 130), knot: [100, 290] });
+    add({ on: "weapons", do: "stamp", who: "card", text: "OWNER OF BOFORS", size: V ? 40 : 52, tilt: -4 });
+    var BANG3 = cue("manufacturers).") + 0.45;
+    cut(cue("manufacturers)."), "medal", "dyn");
+    add({ on: "manufacturers).", do: "shiver", who: "dyn", dur: 0.45, amp: 3, rot: 4 });
+    add({ at: BANG3, do: "hide", who: "dyn" });
+    add({ at: BANG3, do: "boom", shake: 14, flash: 0.16 });
+    add({ at: BANG3, do: "char", who: "winner" });
+    add({ at: BANG3 + 0.5, do: "blink", who: "winner" });
+    var CLAP = cue("manufacturers).") + 1.25;
+    [0, 0.2, 0.4].forEach(function (o) { add({ at: CLAP + o, do: "hop", who: "s3", height: 18 }); });
+
+    // ── Exhibit 4: the Department of Defense, the Pentagon, which attacks.
+    var PNK = V ? 0.75 : 1.0, PNH = SZ.pentagon[1] * PNK, SGK = V ? 0.72 : 0.95, SGH = SZ["pentagon-sign"][1] * SGK;
+    var PC = [lx("e4", V ? -30 : 0), G - PNH / 2], SGX = lx("e4", V ? 375 : 600);
+    cast.pentagon = { art: "pentagon", x: PC[0], y: G, anchor: "bottom", pivot: "bottom", scale: PNK, hidden: true };
+    var sign = function (text, hidden) {
+      return { art: "pentagon-sign", x: SGX, y: G, anchor: "bottom", pivot: "bottom", scale: SGK, hidden: hidden,
+        label: [{ text: "DEPARTMENT", at: [220, 90], width: 340, size: 80 }, { text: text, at: [220, 150], width: 340, size: 80 }] };
+    };
+    cast.signWar = sign("OF WAR", true);
+    cast.signDef = sign("OF DEFENSE", true);
+    var MFK = V ? 0.5 : 0.7;
+    // out of all five sides, every one going outward: past the tourist's head, up left, straight up, up right, out right.
+    // [target dx, target y, turn] and where each rips through the gallery wall [dx, y]
+    var FLY = V ? [[-900, 845, -154], [-700, -300, -113], [-22, -500, -90], [700, -300, -65], [900, 900, -22]]
+      : [[-1500, G - TH * 0.88, -168], [-900, -500, -129], [0, -500, -90], [900, -500, -51], [1500, 400, -8]];
+    var RIPS = V ? [[-515, 1022], [-505, 110], [-22, 60], [505, 100], [515, 1047]] : [[-920, 405], [-474, 50], [0, 50], [474, 50], [920, 474]];
+    FLY.forEach(function (f, i) {
+      cast["f" + i] = { art: "missile-fly", x: PC[0], y: PC[1], scale: MFK, hidden: true };
+      cast["rip" + i] = { art: "paper-rip", x: X.e4 + RIPS[i][0], y: RIPS[i][1], scale: V ? 0.55 : 0.7, hidden: true };
+    });
+    cast.s4 = tourist("tourist-charred", lx("e4", -1200));
+    add({ on: "You", n: 6, do: "camera", view: "e4", dur: 0.9 });
+    walkIn("s4", 6, lx("e4", V ? -480 : -660));
+    add({ on: "Department", n: 1, do: "pop", who: "pentagon", squash: true });
+    add({ on: "Defense\"", do: "stamp", who: "signDef", from: 1.6, shake: 8 });
+    add({ on: "Defense\"", offset: 0.2, do: "show", who: "signWar" });
+    var LAUNCH = cue("attacks");
+    FLY.forEach(function (f, i) {
+      var t = LAUNCH + i * 0.06;
+      add({ at: t, do: "move", who: "f" + i, by: [0, 0], turn: f[2], dur: 0.01 });
+      add({ at: t, do: "show", who: "f" + i });
+      add({ at: t + 0.01, do: "move", who: "f" + i, to: [X.e4 + f[0], f[1]], turn: f[2], dur: 0.45 });
+      add({ at: t + 0.28, do: "pop", who: "rip" + i, squash: true });
+      add({ at: t + 0.47, do: "hide", who: "f" + i });
+    });
+    add({ at: LAUNCH, do: "shiver", who: "pentagon", dur: 0.4, amp: 6, rot: 3 });
+    add({ at: LAUNCH + 0.15, do: "shiver", who: "s4", dur: 0.5, amp: 8, rot: 8 });
+    add({ at: LAUNCH + 0.12, do: "shake", x: 8, frames: 4 });
+    add({ on: "people).", n: 2, do: "drop", who: "signDef", dist: 900, spin: 25, dur: 0.5 });
+    add({ on: "people).", n: 2, offset: 0.25, do: "stamp", id: "1947", text: "UNTIL 1947", x: SGX, y: G - SGH + 250 * SGK, size: V ? 46 : 60, width: V ? 250 : 360, tilt: -6 });
+
+    // ── Exhibit 5: the Department of Health in its glass case, making viruses; exhibit 6: observable health, empty.
+    var CK = (V ? 430 : 560) / SZ["display-case"][1], CH = SZ["display-case"][1] * CK, BASE = G - 80 * CK;
+    var SCK = (CH - 120 * CK) / SZ["scientist-flask"][1];
+    cast.sci = { art: "scientist-flask", x: lx("e5", 0), y: BASE, anchor: "bottom", pivot: "bottom", scale: SCK };
+    cast.case5 = { art: "display-case", x: lx("e5", 0), y: G, anchor: "bottom", pivot: "bottom", scale: CK };
+    var FLASK = [lx("e5", 0) - 70 * SCK, BASE - SZ["scientist-flask"][1] * SCK + 175 * SCK];
+    cast.case6 = { art: "display-case", x: lx("e6", 230), y: G, anchor: "bottom", pivot: "bottom", scale: CK };
+    // He peers into the empty case through a magnifying glass, its lens on the case's glass and its handle back in his
+    // hand. The magnifier is turned 90° (lens right, handle down-left) and rides a point on him, so it leans in with him.
+    var TX5 = lx("e6", -200), TK5 = TH / SZ["tourist-charred"][1], MK = V ? 0.5 : 0.6;
+    var LENS = V ? [X.e6 + 50, 1090] : [X.e6 + 60, 400], MC = [LENS[0] - 78 * MK, LENS[1] + 82 * MK];
+    cast.t5 = tourist("tourist-charred", TX5, { hidden: false, points: { head: [105, 40],
+      mag: [SZ["tourist-charred"][0] / 2 + (MC[0] - TX5) / TK5, SZ["tourist-charred"][1] + (MC[1] - G) / TK5] } });
+    cast.mag = { art: "magnifier", x: MC[0], y: MC[1], scale: MK, hidden: true };
+    add({ at: 0, do: "move", who: "mag", to: "t5.mag", turn: 90, dur: 0.01 });
+    add({ on: "produced", offset: 0.5, do: "pop", who: "mag", squash: true });
+    var HEAD = [lx("e6", -200), G - TH * 0.97];
+    // the viruses: out of the flask and the case, round the gallery; the last one lands on the tourist's head
+    var GK = V ? 0.42 : 0.5, GERMS = V ? [[-300, 420], [60, 330], [330, 520], [480, 230], [700, 470], [1000, 380]]
+      : [[-650, 260], [-330, 160], [320, 260], [620, 140], [860, 420], [1240, 300]];
+    GERMS.forEach(function (gp, i) {
+      cast["g" + i] = { art: "germ-grin", x: FLASK[0], y: FLASK[1], scale: GK, hidden: true };
+      var t0 = cue("coronaviruses") + i * 0.1;
+      add({ at: t0, do: "pop", who: "g" + i, squash: true });
+      add({ at: t0 + 0.05, do: "move", who: "g" + i, to: [X.e5 + gp[0], gp[1]], dur: 0.4, arc: 140 });
+      add({ at: t0 + 0.5, do: "bob", who: "g" + i, y: 24, r: 10, speed: 4, phase: i, until: i === 5 ? cue("health).", 2) : 26.84 });
+    });
+    add({ on: "You", n: 7, do: "camera", view: "e5", dur: 0.9 });
+    add({ on: "Department", n: 2, do: "banner", id: "health", text: "DEPARTMENT OF HEALTH", x: X.e5, y: BY, size: 100, width: V ? 960 : 1200, color: "ink" });
+    add({ on: "makes", do: "shiver", who: "sci", dur: 1.4, amp: 6, rot: 5 });
+    add({ on: "produced", do: "camera", view: "e6", dur: 0.7 });
+    add({ on: "produced", offset: 0.3, do: "hide", who: "health" });
+    add({ on: "observable", do: "banner", id: "obs", text: "OBSERVABLE HEALTH", x: X.e6 + (V ? 0 : 120), y: BY, size: 100, width: V ? 900 : 1000, color: "ink" });
+    [0, 0.2, 0.4].forEach(function (o) { add({ on: "observable", offset: o, do: "nudge", who: "t5", by: [22, 0] }); });
+    var ZAP = cue("health).", 2) + 0.25;
+    add({ on: "health).", n: 2, do: "move", who: "g5", to: HEAD, dur: 0.25, arc: 120 });
+    add({ at: ZAP, do: "xray", who: "t5", art: "tourist-skeleton" });
+    add({ at: ZAP, do: "hop", who: "g5", height: 30 });
+
+    KIT.collage({ id: ID, seed: 703, plate: V ? [-800, -600, 8400, 2600] : [-800, -600, 11400, 1700], views: views, view: "e1", cast: cast, beats: beats });
+  </script>
+</template>

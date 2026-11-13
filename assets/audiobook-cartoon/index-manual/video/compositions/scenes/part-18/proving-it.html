@@ -1,0 +1,179 @@
+<template id="proving-it-template">
+  <!-- proving-it · collage, the town square (no seam from the-question). "creating": the camera drops to the
+       crowd, 100 humans in ten rows of ten, every one under a shut thought bubble, and the weapons factory walks down
+       into the back row with its missile. "supports": all 100 nod so hard they hop; in the back row the factory
+       shakes its head, hugging its missile. "proving": the census-taker walks the back of the rows, the YES count
+       rolls to 99, and he crosses the factory off. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="proving-it" data-width="1920" data-height="1080" data-start="0" data-duration="13.8">
+    <div id="proving-it-weave"></div>
+    <div id="proving-it-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "proving-it", V = KIT.V, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration, F = KIT.collage.F;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      // ── The town square (the same plate in the-question, proving-it, pluralistic-ignorance and everyone-realizes;
+      //    change it in all four). Plate px. Top: three missile factories; under them the 10 x 10 grid of war bills,
+      //    MILITARY SPENDING, the Scientist at its bottom left and the weapons factory at its right. Below: the crowd,
+      //    100 humans in ten rows of ten, each under a shut thought bubble; the two-bar chart and the economist on the
+      //    right; the line chart above them; a tear-off calendar. Under it all, hidden, a huge Earth.
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      var hgt = function (art, h) { return h / SZ[art][1]; };
+      var FX = [400, 960, 1520], FB = -1150, FH = 420;
+      // the big Earth the square sits on (pluralistic-ignorance pulls back to it), and the crowds round its rim
+      var EC = [1000, 2850], ER = 1600;
+      cast.earth = { art: "earth-big", x: EC[0], y: EC[1], scale: 2.04 * ER / SZ["earth-big"][0], hidden: true };
+      var RIM = [];
+      for (var th = -78; th <= 78; th += 9) if (Math.abs(th) > 14) RIM.push(th);
+      RIM.forEach(function (th, i) {
+        var a = th * Math.PI / 180, r = ER * 0.985;
+        cast["rc" + i] = { art: "crowd", x: EC[0] + r * Math.sin(a), y: EC[1] - r * Math.cos(a), anchor: "bottom", pivot: "bottom", scale: hgt("crowd", 300), hidden: true };
+      });
+      FX.forEach(function (x, i) {
+        cast["f" + i] = { art: "factory", x: x, y: FB, anchor: "bottom", pivot: "bottom", scale: hgt("factory", FH) };
+        cast["hs" + i] = { art: "hospital", x: x, y: FB, anchor: "bottom", pivot: "bottom", scale: hgt("hospital", FH * 0.82), hidden: true };
+      });
+      // the grid: 100 war bills
+      var GX = 610, GY = -990, CELL = 70, BK = 64 / SZ["bill-war"][0];
+      var gp = function (i) { return [GX + (i % 10 + 0.5) * CELL, GY + (Math.floor(i / 10) + 0.5) * CELL]; };
+      for (var i = 0; i < 100; i++) { var g = gp(i); cast["g" + i] = { art: "bill-war", x: g[0], y: g[1], pivot: "bottom", scale: BK }; }
+      cast.gm = { art: "bill-med", x: gp(99)[0], y: gp(99)[1], pivot: "bottom", scale: BK, hidden: true };
+      // the Scientist at the grid's bottom left, reaching for it (her hand at art (350, 110))
+      var SCI = [430, -170], SCK = hgt("scientist-reach", 380);
+      cast.sci = { art: "scientist-reach", x: SCI[0], y: SCI[1], anchor: "bottom", pivot: "bottom", scale: SCK };
+      var SCIHAND = [SCI[0] - SZ["scientist-reach"][0] * SCK / 2 + 350 * SCK, SCI[1] - SZ["scientist-reach"][1] * SCK + 110 * SCK];
+      // the weapons factory beside the grid, counting
+      var WM = [1520, -260];
+      cast.wm = { art: "factory-proud", x: WM[0], y: WM[1], anchor: "bottom", pivot: "bottom", scale: hgt("factory-proud", 340) };
+      // the crowd: row 0 at the back
+      var ARTS = ["citizen-1", "citizen-2", "citizen-3", "citizen-4", "citizen-5", "citizen-6", "citizen-7", "citizen-8", "citizen-9", "citizen-10", "citizen-11", "citizen-12"];
+      var rr = KIT.rng(1818), PH = 170, BH = 80, BW = BH * SZ["thought-bubble-blank"][0] / SZ["thought-bubble-blank"][1];
+      var GRAN = 93, HUS = 94, WMI = 6;                                   // the old woman, her husband, the factory
+      var feet = [], heads = [], P = [], B = [], O = [];
+      for (i = 0; i < 100; i++) {
+        var r0 = Math.floor(i / 10), c0 = i % 10;
+        var x = 330 + c0 * 150 + (r0 % 2 ? 50 : -25) + (rr() - 0.5) * 36, y = 140 + r0 * 120;
+        var art = i === GRAN ? "grandma" : ARTS[Math.floor(rr() * 12)];
+        var h = i === GRAN ? 150 : PH * (0.9 + 0.2 * rr());
+        if (i === HUS) art = "citizen-9";
+        feet.push([x, y]); heads.push([x, y - h]);
+        P.push("p" + i); B.push("b" + i); O.push("o" + i);
+        if (i === WMI) {
+          cast.p6 = { art: "factory-kiss", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: hgt("factory-kiss", 250), hidden: true };
+          continue;
+        }
+        cast["p" + i] = { art: art, x: x, y: y, anchor: "bottom", pivot: "bottom", scale: hgt(art, h) };
+        if (i === GRAN) cast.granL = { art: "grandma-left", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: hgt("grandma-left", h), hidden: true };
+        if (i === HUS) cast.bones = { art: "old-man-skeleton", x: x, y: y, anchor: "bottom", pivot: "bottom", scale: hgt("old-man-skeleton", h), hidden: true };
+        var bx = x + 30, by = y - h - BH * 0.42;
+        cast["b" + i] = { art: "thought-bubble-blank", x: bx, y: by, pivot: [60, 290], scale: BH / SZ["thought-bubble-blank"][1] };
+        cast["o" + i] = { art: "thought-bubble-blank", x: bx, y: by, pivot: [60, 290], scale: BH / SZ["thought-bubble-blank"][1], hidden: true,
+          label: { text: "YES", at: [126, 118], width: 160, size: 80 } };
+      }
+      P = P.filter(function (n) { return n !== "p6"; }); B = B.filter(function (n) { return n !== "b6"; }); O = O.filter(function (n) { return n !== "o6"; });
+      // the census-taker
+      cast.census = { art: "census-taker", x: 150, y: 70, anchor: "bottom", pivot: "bottom", scale: hgt("census-taker", 280), hidden: true };
+      cast.cross = { art: "crayon-x", x: feet[WMI][0], y: feet[WMI][1] - 125, scale: 1.1, hidden: true };
+      // the two-bar chart (its axes drawn on the paper below) and the economist
+      var CB = [2050, 520, 2470, 1150];
+      var bars = KIT.collage.axes({ box: CB, x: [0, 2, 1], y: [0, 100, 25] });
+      cast.econ = { art: "economist", x: 2650, y: 1170, anchor: "bottom", pivot: "bottom", scale: hgt("economist", 480), hidden: true };
+      var ehead = [2650 - 30, 1170 - 480];
+      cast.eb = { art: "thought-bubble-blank", x: ehead[0] + 60, y: ehead[1] - 60, pivot: [60, 290], scale: 150 / SZ["thought-bubble-blank"][1], hidden: true };
+      cast.eo = { art: "thought-bubble-blank", x: ehead[0] + 60, y: ehead[1] - 60, pivot: [60, 290], scale: 150 / SZ["thought-bubble-blank"][1], hidden: true,
+        label: { text: "YES", at: [126, 118], width: 160, size: 80 } };
+      // the line chart: YOUR LIFETIME INCOME, from birth, the treaty line ending $518,879 above the other
+      var LC = [2080, -230, 2560, 260];
+      // the calendar
+      cast.cal = { art: "desk-calendar", x: -80, y: 760, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true };
+      cast.calp = { art: "calendar-page", x: -80, y: 760 - 30, anchor: "bottom", pivot: [70, 10], scale: 0.95 * 230 / SZ["calendar-page"][0], hidden: true };
+      // cobwebs between the raised heads near the old woman
+      [[GRAN - 11, 0.75], [GRAN - 9, 0.65], [GRAN + 3, 0.7]].forEach(function (w, j) {
+        var hd = heads[w[0]];
+        cast["web" + j] = { art: "cobweb", x: hd[0] + 50, y: hd[1] - 30, scale: w[1], hidden: true };
+      });
+      // the stacks of money, one per bubble, and the factory's
+      O.forEach(function (n, j) { var k = +n.slice(1); cast["m" + k] = { art: "money-bundle", x: feet[k][0] + 34, y: heads[k][1] - BH * 0.5, scale: 46 / SZ["money-bundle"][0], hidden: true }; });
+      cast.m6 = { art: "money-bundle", x: feet[WMI][0] + 70, y: feet[WMI][1] - 200, scale: 80 / SZ["money-bundle"][0], hidden: true };
+      // the missiles on the factories (three each) that blast off, and the one in the factory's arms
+      var MS = [];
+      FX.forEach(function (x, i) {
+        [-0.29, 0, 0.29].forEach(function (dx, j) {
+          var n = "ms" + i + j;
+          cast[n] = { art: "missile", x: x + dx * FH * 0.565, y: FB - FH * 0.62, anchor: "bottom", scale: hgt("missile", FH * 0.4), hidden: true };
+          MS.push(n);
+        });
+      });
+      cast.ms6 = { art: "missile", x: feet[WMI][0] + 40, y: feet[WMI][1] - 40, anchor: "bottom", scale: hgt("missile", 170), hidden: true };
+      // the fireworks the missiles burst into
+      MS.concat(["ms6"]).forEach(function (m, i) { cast["fw" + i] = { art: "fireworks", x: 0, y: 0, scale: 1.1, hidden: true }; });
+
+      var VIEWS = V ? {
+        grid: [960, -600, 0.95], census: [1000, 700, 0.68], corner: [1200, -420, 2.2], crowd: [1000, 700, 0.68], gran: [800, 980, 1.5], chart: [2300, 800, 0.85],
+        wide: [1000, 1700, 0.3], square: [1150, 200, 0.42], facts: [960, -1500, 0.55], line: [2320, 0, 1.0], cal: [250, 650, 1.0],
+      } : {
+        grid: [960, -640, 1.1], census: [1150, 600, 0.68], corner: [1150, -420, 2.2], crowd: [1150, 705, 0.68], gran: [840, 1020, 1.6], chart: [2300, 820, 0.95],
+        wide: [1000, 1800, 0.22], square: [1200, -300, 0.3], facts: [960, -1480, 0.8], line: [2300, 30, 1.0], cal: [500, 700, 0.85],
+      };
+      // Draw on the paper, behind the cast: markup in plate px.
+      var paper = function (tl, markup, from, slide) {
+        var stage = document.getElementById(ID + "-stage"), d = document.createElement("div");
+        d.style.cssText = "position:absolute;left:0;top:0;width:0;height:0" + (from > 0 ? ";visibility:hidden" : "");
+        d.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible">' + markup + "</svg>";
+        stage.insertBefore(d, stage.children[1]);
+        if (from > 0) KIT.onTime(tl, D, function (t0) {
+          var t = Math.floor(t0 * 12) / 12, u = Math.min(1, Math.max(0, (t - from) / 0.5));
+          d.style.visibility = t >= from ? "inherit" : "hidden";
+          d.style.transform = slide ? "translate(0px," + ((1 - KIT.smooth(u)) * slide).toFixed(1) + "px)" : "";
+        });
+        return d;
+      };
+      var txt = function (x, y, s, size, anchor, font) {
+        return '<text x="' + x + '" y="' + y + '" text-anchor="' + (anchor || "middle") + '" font-family="' + (font || "Fraunces") + '" font-weight="' + (font === "Oswald" ? 600 : 900) + '" font-size="' + size + '" fill="#2B2033">' + s + "</text>";
+      };
+      var PLATE_SVG = txt(960, GY - 30, "MILITARY SPENDING", 64);
+      var CHART_SVG = '<path d="M' + CB[0] + "," + (CB[1] - 30) + " V" + CB[3] + " H" + (CB[2] + 30) + '" fill="none" stroke="#2B2033" stroke-width="6"/>';
+      var LINE_SVG = '<rect x="' + (LC[0] - 100) + '" y="' + (LC[1] - 130) + '" width="' + (LC[2] - LC[0] + 200) + '" height="' + (LC[3] - LC[1] + 210) + '" fill="#F3E7C8" stroke="#2B2033" stroke-width="5"/>' +
+        txt((LC[0] + LC[2]) / 2, LC[1] - 60, "YOUR LIFETIME INCOME", 46) +
+        '<path d="M' + LC[0] + "," + (LC[1] - 10) + " V" + LC[3] + " H" + (LC[2] + 20) + '" fill="none" stroke="#2B2033" stroke-width="6"/>' +
+        txt(LC[0], LC[3] + 50, "BIRTH", 34, "start", "Oswald") + txt(LC[2], LC[3] + 50, "DEATH", 34, "end", "Oswald");
+      var drawPlate = function (tl, lineFrom, chartFrom) { paper(tl, LINE_SVG, lineFrom, -900); paper(tl, CHART_SVG, chartFrom); paper(tl, PLATE_SVG, 0); };
+      var PLATE_BOX = [-5000, -3600, 7000, 7000];
+      // pop a cut-out the first time it appears, show it after (a second pop would hide it until its own time)
+      var popped = {}, appear = function (t, n) { add({ at: t, do: popped[n] ? "show" : "pop", who: n }); popped[n] = true; };
+      var LINE_AT = 1e9, CHART_AT = 1e9;
+      // as the-question ends: the medicine bill in the Scientist's hand
+      add({ at: 0, do: "hide", who: "g99" });
+      add({ at: 0, do: "show", who: "gm" });
+      add({ at: 0, do: "move", who: "gm", to: SCIHAND, dur: 0.01 });
+      // "creating": down to the crowd; the factory walks into the back row and picks up its missile
+      add({ on: "creating", do: "camera", view: "crowd", dur: 1.3 });
+      add({ on: "creating", do: "move", who: "wm", to: [feet[WMI][0], feet[WMI][1] - 126], dur: 1.2, ease: "smooth", scale: 0.74 });
+      add({ on: "support", offset: 0.25, do: "swap", who: "wm", to: "p6" });
+      // "supports": everyone nods so hard they hop; the factory shakes its head
+      P.forEach(function (n, j) { add({ on: "supports", offset: (j % 7) * 0.012, do: "hop", who: [n, B[j]], height: 22 }); });
+      add({ on: "murdering", n: 2, do: "shiver", who: "p6", dur: 0.9, amp: 8, rot: 6 });
+      // "proving": the census-taker walks the back of the rows; the YES count rolls to 99; he crosses the factory off
+      add({ on: "proving", offset: -0.6, do: "camera", view: "census", dur: 0.5 });
+      add({ on: "proving", offset: -0.3, do: "show", who: "census" });
+      add({ on: "proving", offset: -0.3, do: "move", who: "census", to: [feet[WMI][0] - 140, 70], dur: 0.6 });
+      add({ on: "proving", do: "counter", id: "yes", from: 0, to: 99, dur: 0.6, x: V ? 1000 : 1750, y: V ? -300 : 150, size: 80, prefix: "YES: ", border: "ink" });
+      add({ on: "it.", do: "stamp", who: "cross", from: 1.6, shake: 4 });
+      add({ on: "it.", offset: 0.4, do: "move", who: "census", to: [1700, 70], dur: 0.7 });
+      var tl = KIT.collage({ id: ID, seed: 1804, plate: PLATE_BOX, views: VIEWS, view: "grid", cast: cast, beats: beats });
+      drawPlate(tl, LINE_AT, CHART_AT);
+    })();
+  </script>
+</template>

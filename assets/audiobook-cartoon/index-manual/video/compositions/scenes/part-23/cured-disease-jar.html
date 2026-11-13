@@ -1,0 +1,80 @@
+<template id="cured-disease-jar-template">
+  <!-- cured-disease-jar · collage (Part 23, scene 9), the parlor again. The television has tape in an X over its
+       crack. "Now": it clicks on, and Friedman, scrubbed clean, holds up a glass jar instead of a pencil; inside,
+       the disease floats belly up, eyes crossed out. "disease.": a tag swings on the jar: CURED. "world": the weapons
+       factory grins, lifts a fresh missile and steps toward the pencil sharpener. "cure": the Scientist tackles it from the
+       side and flattens it, and stands on top, waving. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="cured-disease-jar" data-width="1920" data-height="1080" data-start="0" data-duration="6.38">
+    <div id="cured-disease-jar-weave"></div>
+    <div id="cured-disease-jar-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "cured-disease-jar", V = KIT.V, Z = KIT.collage.SIZES;
+      var hk = function (art, h) { return h / Z[art][1]; };
+      // The same parlor as pencil-on-tv (keep the two in step): side table, television, crank box, weapons factory.
+      var G = 1010;
+      var TVX = 900, TVK = hk("tv-big", 800), SCREEN = [TVX + (272 - 433.5) * TVK, G - 975 * TVK + 470 * TVK];
+      var EK = 360 / 330, EA = [SCREEN[0] + 10, SCREEN[1] + 197];
+      var TABLE = [300, G], TK = 1.5;
+      var FX = 1620, FK = hk("factory-proud", 560), FHAND = [FX + (30 - 189) * FK, G - 560 + 380 * FK];
+      var BOX = [1270, G], BK = 1.1;
+      // the jar, held up in front of him on the screen, with the dead disease inside
+      var JAR = [EA[0] + (185 - 146) * EK, EA[1] + (232 - 330) * EK], JK = hk("specimen-jar", 190), GK = hk("disease-dead", 100);   // over the jar in his hands
+      var views = V ? { tv: [860, 650, 1.4], wm: [1440, 650, 1.4] } : { wide: [960, 650, 1] };
+      var cast = {
+        table: { art: "side-table", x: TABLE[0], y: G, anchor: "bottom", scale: TK },
+        tv: { art: "tv-big", x: TVX, y: G, anchor: "bottom", scale: TVK },
+        econ: { art: "friedman", x: EA[0], y: EA[1], anchor: [146, 330], pivot: [146, 330], scale: EK, clip: [[0, 0], [291, 0], [291, 330], [0, 330]], hidden: true },
+        germ: { art: "disease-dead", x: JAR[0], y: JAR[1] + 20, scale: GK, hidden: true },
+        jar: { art: "specimen-jar", x: JAR[0], y: JAR[1], pivot: "bottom", scale: JK, hidden: true },
+        crack: { art: "glass-crack", x: SCREEN[0] + 185, y: SCREEN[1] + 5, scale: 0.7 },
+        tapeX: { art: "tape", x: SCREEN[0] + 185, y: SCREEN[1] + 5, scale: 0.7 },
+        box: { art: "sharpener", x: BOX[0], y: G, anchor: "bottom", pivot: "bottom", scale: hk("sharpener", 300) },
+        missile: { art: "missile", x: FHAND[0] - 40, y: FHAND[1] - 180, scale: hk("missile", 360), hidden: true },
+        fac: { art: "factory-proud", x: FX, y: G, anchor: "bottom", pivot: "bottom", scale: FK },
+        sci: { art: "scientist-wave", x: 2300, y: G, anchor: "bottom", pivot: "bottom", scale: hk("scientist-wave", 600), hidden: true },
+        glove: { art: "gloved-hand", x: FX + 130, y: G - 40, pivot: [40, 200], scale: hk("gloved-hand", 110), hidden: true },
+      };
+      var beats = [
+        // "Now": the TV clicks on: the economist, clean, holds up the jar
+        { on: "Now", offset: 0.05, do: "show", who: ["econ", "jar", "germ"] },
+        { on: "Now", offset: 0.05, do: "glow", who: "econ", size: 420, dur: 0.25 },
+        { on: "look", do: "hop", who: ["jar", "germ"], height: 30 },
+        { on: "cured", do: "bob", who: "germ", y: 4, r: 4, speed: 0.6, until: "it." },
+        // "disease.": the tag on the jar
+        { on: "disease.", do: "tag", id: "cured", who: "jar", text: "CURED", x: JAR[0] + 230, y: JAR[1] - 110, w: 300, h: 150, knot: [120, 30], swing: 6 },
+        // "world": the factory grins, lifts a fresh missile and heads for the crank box
+        { on: "world", do: "camera", view: V ? "wm" : "wide", dur: 0.4 },
+        { on: "world", do: "pop", who: "missile" },
+        { on: "world", offset: 0.1, do: "move", who: "missile", by: [0, -120], dur: 0.2 },
+        { on: "who", n: 1, do: "move", who: ["fac", "missile"], by: [-70, 0], dur: 0.3 },
+        { on: "who", n: 1, do: "bob", who: "fac", y: 8, r: 3, speed: 3, until: "cure" },
+        // "cure": the Scientist tackles it and stands on it, waving
+        { on: "could", n: 1, do: "show", who: "sci" },
+        { on: "could", n: 1, do: "move", who: "sci", to: [FX + 40, G - 300], turn: -30, dur: 0.15 },
+        { on: "cure", do: "flatten", who: "fac" },
+        { on: "cure", do: "drop", who: "missile", dist: 900, spin: 70, dur: 0.6 },
+        { on: "cure", do: "shake", y: 10, frames: 4 },
+        { on: "cure", offset: 0.05, do: "move", who: "sci", to: [FX, G - 300 - 66], turn: 0, dur: 0.15 },
+        { on: "it.", do: "hop", who: "sci", height: 20 },
+        // his glove pokes out from under her: thumbs up
+        { on: "it.", do: "pop", who: "glove", squash: true },
+        { on: "it.", offset: 0.25, do: "hinge", who: "glove", angle: -25, frames: 2 },
+      ];
+      KIT.collage({ id: ID, seed: 2309, plate: [-200, -200, 2400, 1500], views: views, view: V ? "tv" : "wide", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

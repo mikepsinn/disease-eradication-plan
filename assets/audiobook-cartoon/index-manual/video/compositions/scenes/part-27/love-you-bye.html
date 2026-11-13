@@ -1,0 +1,58 @@
+<template id="love-you-bye-template">
+  <!-- love-you-bye · collage host shot (Part 27, scene 7, the end of the film). The bit: the address, a wink, and the iris
+       closes. "Go": a WARONDISEASE.ORG sign drops into the window in front of the gift-wrapped Earth and bounces to a stop.
+       "right now.": charred YOU sprints across the top of Earth, bone legs clattering, smoking, skids to a stop and
+       bows. "Love": she winks and spreads her arms. "bye!": the iris closes on her face, to black. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="love-you-bye" data-width="1920" data-height="1080" data-start="0" data-duration="4.14">
+    <div id="love-you-bye-weave"></div>
+    <div id="love-you-bye-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "love-you-bye", V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      var hk = function (art, h) { return h / SZ[art][1]; };
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var E = S.earth, u = E[2] / 200, TOP = V ? 1460 : 868;
+      // A sign drops into the window in front of Earth on its wires; charred YOU sprints across the deck under it.
+      var SK = hk("back-soon", 360 * u), YK = hk("you-bone-legs", V ? 400 : 310), YX = V ? 880 : 1640, WAIST = 368, RUN = V ? 240 : 520;
+      var part = function (top) {
+        var o = { art: "you-bone-legs", x: YX - RUN, y: TOP, anchor: "bottom", pivot: "bottom", scale: YK, hidden: true,
+          clip: top ? [[0, 0], [242, 0], [242, WAIST], [0, WAIST]] : [[0, WAIST - 2], [242, WAIST - 2], [242, 652], [0, 652]] };
+        if (top) { o.eyes = [[103, 83], [141, 83]]; o.eyeSize = 14; o.smoke = [[95, 20], [150, 24]]; }
+        return o;
+      };
+      var cast = {
+        bow: { art: "gift-bow", x: E[0] - 0.66 * E[2], y: E[1] - 0.72 * E[2], scale: hk("gift-bow", 0.6 * E[2]) },
+        sign: { art: "back-soon", x: E[0], y: E[1] + 40 * u, scale: SK, pivot: "top", hidden: true,
+          label: [{ text: "WARONDISEASE", at: [151, 205], width: 250, size: 60 }, { text: ".ORG", at: [151, 265], width: 250, size: 60 }] },
+        yB: part(false), yT: part(true),
+      };
+      var beats = [
+        { on: "Go", offset: 0.02, do: "slideIn", who: "sign", from: "top", dist: 900 * u, over: 40 * u, tilt: 5 },
+        // "now.": charred YOU sprints across the top of Earth, bone legs clattering, skids to a stop and tips his fedora
+        { on: "right", do: "char", who: "yT" },
+        { on: "right", do: "show", who: ["yT", "yB"] },
+        { on: "right", do: "move", who: ["yT", "yB"], by: [RUN, 0], dur: cue("now.") + 0.15 - cue("right"), turn: 0 },
+        { on: "right", do: "bob", who: "yT", y: 12, r: 4, speed: 8, until: cue("now.") + 0.15, fade: 0 },
+        { on: "right", do: "bob", who: "yB", y: 12, r: 4, speed: 8, until: cue("now.") + 0.15, fade: 0 },
+        { on: "now.", offset: 0.15, do: "move", who: ["yT", "yB"], by: [24, 0], turn: -8, dur: 0.12 },
+        { on: "now.", offset: 0.3, do: "move", who: ["yT", "yB"], by: [0, 0], turn: 0, dur: 0.12 },
+        { on: "Love", offset: -0.2, do: "hop", who: ["yT", "yB"], height: 20 },
+        { on: "Love", do: "blink", who: "yT" },
+      ];
+      KIT.collage({ id: ID, seed: 2707, host: { iris: ["out", cue("bye!"), D - 0.05] }, cast: cast, beats: beats });
+    })();
+  </script>
+</template>

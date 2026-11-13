@@ -1,0 +1,410 @@
+<template id="forty-page-insert-template">
+  <!-- forty-page-insert · collage (Part 14, scenes 16 to 21 as one plate: short-donut-doctor's file, plus scene 21, louder-wins, at its end). The bit goes on: the wheel is still spinning.
+       "what actually happened": the camera slides along everyone who took it, grinning skeletons in bathrobes, each with
+       a donut on his lap. Then the grinning bottle lands and its 40-page insert erupts: over the patient to his chin, and
+       along the floor past everything to the lawyer writing its far end, who is electrocuted. The doctor skates past.
+       The TV slams down in front of the patient: a woman skips through a meadow while the fine print runs; STROKE: nothing;
+       DEATH: she is a skeleton, still skipping, still smiling; her heart falls out. Both versions qualify. The doctor
+       skates by again, Googling. Pull back to the whole mess: a giant sweeper pushes all of it off the plate. Marketing
+       slaps on MIRACLE!, the lawyer tapes on his pages; both get what they gave. One clean label lands: WHAT HAPPENS. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="forty-page-insert" data-width="1920" data-height="1080" data-start="0" data-duration="82.8">
+    <div id="forty-page-insert-weave"></div>
+    <div id="forty-page-insert-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    // Left to right on the ground G: cereal, cigarettes, bottle, patient, TV (over the wheel's first place), wheel, doctor,
+    // the skeletons, the lawyer. The wheel's layout is decision-wheel's.
+    var V = KIT.V, G = 1000, ID = "forty-page-insert", cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var PAT = V ? [520, 1.9] : [340, 1.95], DOC = V ? [1410, 1.7] : [1600, 1.7], WH = V ? [960, 100, 2.05] : [960, 585, 1.9];
+    var X = V ? { cereal: -960, pack: -480, bot: 0, tv: 1290, stop: 1260 } : { cereal: -1240, pack: -760, bot: -280, tv: 1145, stop: 1020 };
+    var SK0 = 2400, SKN = 6, SKGAP = 420, LAW = 5050, BOTK = 0.9, TVK = 0.98;
+    // The TV's screen is a hole in the art (x 70 to 700, y 250 to 710, centre 385, 480); what is behind it plays on the
+    // plate. The band and the fine print stay inside the cabinet: the camera is close whenever they run past the screen.
+    var TVC = [X.tv + (385 - 433.5) * TVK, G - (975 - 480) * TVK], BAND = TVC[1] + 123;
+    var cy = function (s) { return G - 420 / s; };
+    var views = V ? {
+      wheel: [960, cy(0.82), 0.82], row1: [2600, cy(1.05), 1.05], row2: [3800, cy(1.05), 1.05], shelf: [-720, cy(0.8), 0.8], ins: [236, cy(1), 1],
+      law: [4950, cy(0.95), 0.95], tv2: [1014, cy(0.755), 0.755], tv: [TVC[0], TVC[1], 1.75], google: [1100, cy(0.9), 0.9], wide: [1900, cy(0.2), 0.2],
+      bot: [150, cy(0.85), 0.85], label: [180, cy(0.95), 0.95],
+    } : {
+      wheel: [960, 620, 1], row1: [2900, 620, 1], row2: [3700, 620, 1], shelf: [-830, 620, 1], ins: [30, 620, 1],
+      law: [4800, 620, 1], tv2: [860, 640, 1.15], tv: [X.tv, TVC[1] - 10, 2.35], google: [860, 610, 1.2], wide: [1650, -481, 0.243],
+      bot: [30, 610, 1], label: [-130, 565, 1.25],
+    };
+    var beats = [], add = function (b) { beats.push(b); };
+    var cast = {};
+
+    // The giant sweeper goes first, behind everything. His broom's leading edge (art 205, 600) runs at v from x0.
+    var SW = { t0: cue("new") + 0.1, x0: -2600, v: 2300, T: 5 };
+    cast.sweeper = { art: "sweeper", x: SW.x0, y: G + 30, anchor: [205, 606], scale: V ? 8 : 6, hidden: true };
+    // what the broom reaches keeps going in front of it: names, their left edge, how high the heap throws them, a spin
+    var sweep = function (who, left, dy, turn) {
+      var at = SW.t0 + Math.max(0, left - SW.x0) / SW.v, dur = SW.t0 + SW.T - at;
+      add({ at: at, do: "move", who: who, by: [SW.v * dur, dy], dur: dur, turn: turn || 0 });
+    };
+
+    // the wheel and the doctor, as decision-wheel left them
+    cast.stand = { art: "wheel-stand", x: WH[0], y: WH[1], anchor: [106, 96], scale: (G - WH[1]) / 373 };
+    cast.wheel = { art: "prize-wheel", x: WH[0], y: WH[1], anchor: [209, 208], pivot: [209, 208], scale: WH[2], label: [
+      { text: "DONUTS", at: [209, 98], width: 170, size: 76 },
+      { text: "HALF-", at: [346, 208], width: 90, size: 50, tilt: 90 },
+      { text: "REMEMBERED", at: [306, 208], width: 150, size: 50, tilt: 90 },
+      { text: "INSURANCE", at: [209, 318], width: 170, size: 76, tilt: 180 },
+      { text: "VIBES", at: [100, 208], width: 150, size: 76, tilt: -90 },
+    ] };
+    cast.hand = { art: "pointing-hand", x: WH[0], y: WH[1] - 209 * WH[2] + 36, anchor: [95, 285], scale: 0.6 };
+    cast.doc = { art: "doctor", x: DOC[0], y: G, anchor: "bottom", pivot: "bottom", scale: DOC[1], faces: "left" };
+
+    // everyone who took it
+    var SKK = 1.55;
+    for (var i = 0; i < SKN; i++) {
+      var sx = SK0 + i * SKGAP;
+      cast["sk" + i] = { art: "patient-skeleton", x: sx, y: G, anchor: "bottom", pivot: "bottom", scale: SKK };
+      cast["skd" + i] = { art: "donut", x: sx + 12, y: G - 205 * SKK, scale: 0.58 };
+    }
+
+    // The leaderboard lands on the wheel. The book's depression example, then what the wheel was choosing from.
+    var BK = 0.9, BC = V ? [960, -187] : [960, 473], RK = BK * 0.87;
+    var bpt = function (ax, ay) { return [BC[0] + (ax - 450) * BK, BC[1] + (ay - 481.5) * BK]; };
+    cast.board = { art: "rank-board", x: BC[0], y: BC[1], scale: BK, hidden: true, label: { text: "DEPRESSION (EXAMPLE)", at: [450, 147], width: 640, size: 60 } };
+    var RANKS = [["1. BUPROPION", 28.3], ["2. SERTRALINE", 24.7], ["3. VENLAFAXINE", 21.2], ["4,807. VIBES", 0], ["4,808. DONUTS", 0]];
+    var RANKN = [];
+    RANKS.forEach(function (r, n) {
+      var c = bpt(450, 300 + n * 140), left = c[0] - 395 * RK * 0.9;
+      cast["rank" + n] = { art: "rank-row", x: c[0], y: c[1], scale: RK, hidden: true, label: [
+        { text: r[0], at: [255, 50], width: 440, size: 44 }, { text: r[1] + "% LESS", at: [715, 50], width: 240, size: 44 }] };
+      RANKN.push("rank" + n);
+      if (r[1]) {
+        var w = 870 * r[1] / 30;
+        cast["rbar" + n] = { art: "rank-bar-green", x: left, y: c[1] + 26 * RK, anchor: [0, 18], scale: RK * 0.9, hidden: true, clip: [[0, 0], [w, 0], [w, 36], [0, 36]] };
+        RANKN.push("rbar" + n);
+      }
+    });
+    var RD = bpt(150, 860 + 28);
+    cast.rdonut = { art: "donut", x: RD[0], y: RD[1], scale: 0.28, hidden: true };
+    RANKN.push("rdonut", "board");
+
+    // the 40 pages: three arching off the bottle, six stacked on the patient to his chin, thirty along the floor to the
+    // lawyer, and page 1 on his chest. Those on the floor go in here, under the TV; the rest go in front of the patient.
+    var INS = V ? [[X.bot + 130, 120], [X.bot + 250, 200], [X.bot + 300, 460]] : [[X.bot + 170, 120], [X.bot + 340, 190], [X.bot + 450, 390]];
+    [[-180, 820], [0, 820], [180, 820], [-180, 625], [180, 625], [0, 625]].forEach(function (o) { INS.push([PAT[0] + o[0], o[1]]); });
+    var FLOOR0 = PAT[0] + 340, FLOORN = 30, FSTEP = (LAW - 150 - FLOOR0) / (FLOORN - 1);
+    for (var f = 0; f < FLOORN; f++) INS.push([FLOOR0 + f * FSTEP, f % 2 ? 860 : 845]);
+    var page = function (n) { var p = INS[n], fl = n >= 9; return { art: "insert", x: p[0], y: p[1], scale: n < 3 ? 1 : fl ? 1.2 : 1.5, hidden: true }; };
+    for (var fi = 9; fi < INS.length; fi++) cast["ins" + fi] = page(fi);
+
+    // the lawyer at the far end
+    var LAWK = 1.85;
+    cast.law = { art: "lawyer", x: LAW, y: G, anchor: "bottom", pivot: "bottom", scale: LAWK, faces: "left", eyes: [[56, 62], [84, 62]], eyeSize: 34, smoke: [[110, 20]] };
+
+    // the shelf
+    cast.cereal = { art: "cereal-box", x: X.cereal, y: G, anchor: "bottom", pivot: "bottom", scale: 2.6, hidden: true, label: [
+      { text: "NUTRITION", at: [97, 95], width: 130, size: 60 }, { text: "FACTS", at: [97, 145], width: 100, size: 60 }] };
+    cast.pack = { art: "cigarette-pack", x: X.pack, y: G, anchor: "bottom", pivot: "bottom", scale: 2.6, hidden: true, label: { text: "WARNING", at: [66, 160], width: 90, size: 60 } };
+
+    // the TV: what plays behind its hole, then the cabinet in front
+    cast.meadow = { art: "meadow-big", x: TVC[0], y: TVC[1], scale: 0.46, hidden: true };
+    var WK = 0.75, SKIP = { x: TVC[0], y: BAND + 20, anchor: "bottom", pivot: "bottom", scale: WK, hidden: true, points: { chest: [125, 250] } };
+    cast.woman = Object.assign({ art: "meadow-woman" }, SKIP);
+    cast.skel = Object.assign({ art: "meadow-skeleton" }, SKIP);
+    cast.heart = { art: "heart", x: TVC[0], y: BAND - 300, scale: 0.8, hidden: true };
+    cast.ros1 = { art: "rosette", x: TVC[0], y: TVC[1], scale: 0.3, hidden: true };
+    cast.ros2 = { art: "rosette", x: TVC[0], y: TVC[1], scale: 0.3, hidden: true };
+    cast.auct = { art: "auctioneer", x: TVC[0] + 175, y: BAND + 40, anchor: "bottom", pivot: "bottom", scale: 0.85, hidden: true };
+    cast.band = { art: "bottle-big", x: TVC[0], y: BAND, anchor: [265, 518], scale: 1.64, hidden: true, clip: [[70, 500], [460, 500], [460, 536], [70, 536]] };
+    var FINE = "MAY CAUSE NAUSEA · DIZZINESS · DRY MOUTH · HAIR LOSS · BLEEDING · SUDDEN SNEEZING · BLINDNESS · KIDNEY STONES · TREMORS · UNCONTROLLABLE GAMBLING · LOSS OF LIMB · THE URGE TO BUY A BOAT · ";
+    FINE = FINE + FINE;
+    var FSIZE = 30, FW = KIT.textWidth(FINE, FSIZE, "Fraunces", 900), NONE = [[0, 0], [1, 0], [0, 1]];
+    var words = function (text, width, x, size) { return { art: "insert", x: x === undefined ? TVC[0] : x, y: BAND - 4, scale: 1, hidden: true, clip: NONE, label: { text: text, at: [106.5, 138.5], width: width, size: size || 36 } }; };
+    var RUN0 = TVC[0] + 310 + FW / 2;
+    cast.run1 = words(FINE, FW + 20, RUN0, FSIZE);
+    cast.run2 = words(FINE, FW + 20, RUN0, FSIZE);
+    cast.wStroke = words("STROKE", 300);
+    cast.wDeath = words("DEATH", 300);
+    cast.wList = words("CONSTIPATION · DEATH · MILD RASH", 540);
+    cast.wVary = words("INDIVIDUAL RESULTS MAY VARY", 490);
+    cast.wBoth = words("BOTH QUALIFY", 300);
+    cast.wAsk = words("ASK YOUR DOCTOR", 400);
+    cast.tv = { art: "tv-big", x: X.tv, y: G, anchor: "bottom", pivot: "bottom", scale: TVK, hidden: true };
+
+    // the bottle and the patient, who stay when everything else goes
+    var BOTC = [X.bot, G - (985 - 625) * BOTK];
+    cast.bottle = { art: "bottle-big", x: X.bot, y: G, anchor: "bottom", pivot: "bottom", scale: BOTK, hidden: true };
+    cast.pat = { art: "patient", x: PAT[0], y: G, anchor: "bottom", pivot: "bottom", scale: PAT[1] };
+    cast.well = { art: "patient-well", x: PAT[0], y: G, anchor: "bottom", pivot: "bottom", scale: PAT[1] * 418 / 489, hidden: true };
+    cast.donut = { art: "donut", x: PAT[0] + 10 * PAT[1], y: G - 130 * PAT[1], scale: 0.675 };
+    for (var ci = 0; ci < 9; ci++) cast["ins" + ci] = page(ci);
+    cast.page1 = { art: "insert", x: INS[8][0], y: INS[8][1], scale: 1.5, hidden: true, label: { text: "PAGE 1 OF 40", at: [106, 60], width: 170, size: 40, tilt: -3 } };
+
+    // The Outcome Label, on the bottle: the book's example, what it helps and what it harms, and how long it is.
+    var LK = 0.8, LC = [BOTC[0], V ? BOTC[1] + 40 : 533];
+    var lpt = function (ax, ay) { return [LC[0] + (ax - 300) * LK, LC[1] + (ay - 400) * LK]; };
+    cast.lab = { art: "outcome-label", x: LC[0], y: LC[1], scale: LK, hidden: true, label: [
+      { text: "WHAT HAPPENS", at: [300, 92], width: 450, size: 60 }, { text: "OUTCOME LABEL (EXAMPLE)", at: [300, 160], width: 420, size: 30 },
+      { text: "HELPS", at: [110, 262], width: 130, size: 32 },
+      { text: "MEMORY +35%", at: [385, 262], width: 290, size: 32 }, { text: "THINKING +28%", at: [385, 332], width: 290, size: 32 },
+      { text: "HARMS", at: [110, 440], width: 130, size: 32 },
+      { text: "HEADACHES +9%", at: [385, 440], width: 290, size: 32 }, { text: "FATIGUE +7%", at: [385, 510], width: 290, size: 32 },
+      { text: "PAGES: 1", at: [300, 625], width: 300, size: 54 }, { text: "LAWYERS: 0", at: [300, 695], width: 340, size: 54 }] };
+    var LABN = ["lab"];
+    [["green", 35, 298], ["green", 28, 368], ["red", 9, 476], ["red", 7, 546]].forEach(function (o, n) {
+      var p = lpt(235, o[2]), w = 870 * o[1] / 35;
+      cast["lbar" + n] = { art: "rank-bar-" + o[0], x: p[0], y: p[1], anchor: [0, 18], scale: LK * 0.34, hidden: true, clip: [[0, 0], [w, 0], [w, 36], [0, 36]] };
+      LABN.push("lbar" + n);
+    });
+
+    // Marketing (his bell is on his right, art 228, 70) and the lawyer's second try
+    var LOUD = V ? -360 : -640;
+    cast.sticker = { art: "miracle-sticker", x: BOTC[0], y: BOTC[1], scale: 0.62, hidden: true, label: { text: "MIRACLE!", at: [270, 272], width: 280, size: 90, tilt: -6 } };
+    cast.loud = { art: "loud-human", x: LOUD, y: G, anchor: "bottom", pivot: "bottom", scale: 1.2, hidden: true, points: { mouth: [262, 62] } };
+    var LAW2 = V ? 560 : 780;
+    cast.law2 = { art: "lawyer", x: LAW2, y: G, anchor: "bottom", pivot: "bottom", scale: 1.5, faces: "left", hidden: true };
+    var TAPE = [[-90, -120], [85, -20], [-40, 130], [60, 130], [-70, 20]];
+    TAPE.forEach(function (o, n) { cast["tape" + n] = { art: "insert", x: BOTC[0] + o[0], y: BOTC[1] + o[1], scale: 1.05, hidden: true }; });
+
+    // the doctor on skates, phone out
+    var SKATE = 2000;
+    cast.docS = { art: "doctor-skates", x: SKATE, y: G, anchor: "bottom", pivot: "bottom", scale: 1.6, hidden: true, faces: "left", points: { fist: [65, 248] } };
+    cast.phone = { art: "google-phone", x: SKATE, y: G - 450, scale: 1.45, hidden: true, label: [
+      { text: "WHAT IS", at: [81, 130], width: 104, size: 60 }, { text: "A LIVER", at: [81, 190], width: 104, size: 60 }] };
+    // ── The wheel is still spinning, and nobody is looking at the row ──
+    add({ at: 0, do: "bob", who: "pat", y: 3, r: 1, speed: 0.7, phase: 1, until: cue("forty-page") });
+    add({ at: 0.25, do: "nudge", who: "doc", by: [36, 0] });
+    add({ at: 0.25, do: "move", who: "wheel", turn: 1800, dur: 2.9, ease: "smooth" });
+    add({ on: "rank", do: "stamp", who: "board", from: 1.6, shake: 12 });
+    add({ on: "every", do: "stamp", who: "rank0", from: 1.3, shake: 3 });
+    add({ on: "every", do: "show", who: "rbar0" });
+    add({ on: "treatment", do: "stamp", who: "rank1", from: 1.3, shake: 3 });
+    add({ on: "treatment", do: "show", who: "rbar1" });
+    add({ on: "by", do: "stamp", who: "rank2", from: 1.3, shake: 3 });
+    add({ on: "by", do: "show", who: "rbar2" });
+    add({ on: "actually", do: "stamp", who: "rank3", from: 1.3, shake: 3 });
+    add({ on: "happened", do: "stamp", who: "rank4", from: 1.3, shake: 3 });
+    add({ on: "happened", offset: 0.25, do: "stamp", who: "rdonut", from: 2, shake: 3 });
+    add({ on: "who", n: 1, offset: -0.2, do: "camera", view: "row2", dur: 0.45 });
+    // the last man's donut slides off his lap on "it:"
+    add({ on: "it:", do: "drop", who: "skd" + (SKN - 1), dist: 340, drift: 30, spin: 80, dur: 0.45 });
+
+    // ── Food has a label. Cigarettes have a label. ──
+    add({ on: "Food", offset: -0.3, do: "camera", view: "shelf", dur: 0.3 });
+    add({ on: "Food", do: "hide", who: RANKN });
+    add({ on: "Food", do: "stamp", who: "cereal", from: 1.7, shake: 8 });
+    add({ on: "Cigarettes", do: "stamp", who: "pack", from: 1.7, shake: 8 });
+
+    // ── Drugs: the bottle lands, grinning, and erupts ──
+    add({ on: "Drugs", do: "stamp", who: "bottle", from: 1.7, shake: 14 });
+    add({ on: "Drugs", do: "camera", view: "ins", dur: 0.4 });
+    add({ on: "forty-page", do: "shiver", who: "bottle", dur: 1.2, amp: 9, rot: 3 });
+    var T0 = cue("forty-page") + 0.1, T1 = cue("lawyers");
+    INS.forEach(function (p, n) { add({ at: T0 + (T1 - T0) * Math.pow(n / (INS.length - 1), 0.7), do: "pop", who: "ins" + n }); });
+    add({ at: T0 + (T1 - T0) * Math.pow(8 / (INS.length - 1), 0.7) + 0.02, do: "show", who: "page1" });
+    add({ on: "inserts", do: "shiver", who: "pat", dur: 0.5, amp: 5, rot: 1 });
+    // the camera rides the leading edge to the lawyer, who is having a very bad day
+    add({ on: "written", do: "camera", view: "law", dur: 0.6 });
+    add({ on: "written", do: "move", who: ["stand", "wheel", "hand"], by: [1200, 0], turn: 0, dur: 0.01 });
+    add({ on: "written", do: "hide", who: "doc" });
+    add({ on: "lawyers", do: "shiver", who: "law", dur: 0.6, amp: 7, rot: 3 });
+    add({ on: "having", do: "shiver", who: "law", dur: 1.25, amp: 20, rot: 8 });
+    add({ on: "having", do: "sparks", who: ["law", "ins38"], until: "which" });
+    add({ on: "seizures,", do: "char", who: "law" });
+    add({ on: "seizures,", do: "shake", x: 8, frames: 3 });
+    add({ on: "which", offset: 0.1, do: "blink", who: "law" });
+    // back to the patient, buried to the chin; the doctor skates over the paper without a glance
+    add({ on: "nobody", offset: -0.2, do: "camera", view: "ins", dur: 0.6 });
+    add({ on: "including", offset: -0.1, do: "show", who: "docS" });
+    add({ on: "including", offset: -0.1, do: "move", who: "docS", by: [-3600, 0], dur: 0.85 });
+    add({ on: "doctor.", n: 1, offset: 0.4, do: "hide", who: "docS" });
+
+    // ── The TV, right in front of him ──
+    var TVB = cue("television") - 0.1;
+    add({ at: TVB, do: "camera", view: "tv2", dur: 0.35 });
+    add({ at: TVB, do: "stamp", who: "tv", from: 1.5, shake: 16 });
+    add({ at: TVB + 0.1, do: "show", who: "meadow" });
+    add({ on: "smiling", do: "pop", who: "woman", squash: true });
+    // she skips, and she keeps skipping
+    for (var h = cue("smiling") + 0.25; h < 57; h += 0.5) add({ at: h, do: "hop", who: ["woman", "skel"], height: 26 });
+    add({ on: "while", do: "camera", view: "tv", dur: 1.0 });
+    // the fine print: slowly, then at auctioneer speed
+    var R1 = cue("voiceover") + 0.45, R2 = cue("auctioneer"), R3 = cue("meadow", 2) + 1.4;
+    add({ at: R1, do: "show", who: ["band", "run1"] });
+    add({ at: R1, do: "move", who: "run1", by: [-170 * (R2 - R1), 0], dur: R2 - R1 });
+    add({ at: R2, do: "move", who: "run1", by: [-800 * (R3 - R2), 0], dur: R3 - R2 });
+    add({ at: R3, do: "hide", who: "run1" });
+    add({ on: "auctioneer", offset: -0.05, do: "pop", who: "auct", squash: true });
+    add({ on: "auctioneer", offset: 0.1, do: "shiver", who: "auct", dur: 1.4, amp: 7, rot: 7 });
+    add({ on: "meadow", n: 2, offset: -0.1, do: "pop", who: "auct", out: true });
+    // STROKE goes by, the same size as everything else; the smile does not move
+    add({ on: "\"stroke.\"", offset: -0.1, do: "show", who: "wStroke" });
+    add({ on: "Side", offset: -0.2, do: "hide", who: "wStroke" });
+    // DEATH does, a bit
+    add({ on: "\"death,\"", do: "show", who: "wDeath" });
+    add({ on: "\"death,\"", offset: 0.15, do: "hide", who: "woman" });
+    add({ on: "\"death,\"", offset: 0.15, do: "show", who: "skel" });
+    add({ on: "\"death,\"", offset: 0.15, do: "boom", shake: 10, flash: 0.14 });
+    add({ on: "\"constipation\"", offset: -0.1, do: "hide", who: "wDeath" });
+    add({ on: "\"constipation\"", offset: -0.1, do: "show", who: "wList" });
+    add({ on: "as", n: 1, offset: -0.2, do: "hide", who: "wList" });
+    // her heart falls out; she skips on
+    var R4 = cue("as", 1) - 0.2, R5 = cue("individual") - 0.3;
+    add({ at: R4, do: "show", who: "run2" });
+    add({ at: R4, do: "move", who: "run2", by: [-900 * (R5 - R4), 0], dur: R5 - R4 });
+    add({ at: R5, do: "hide", who: "run2" });
+    add({ on: "organs", do: "pop", who: "heart" });
+    add({ on: "failing", do: "move", who: "heart", by: [-20, 235], turn: 25, dur: 0.3 });
+    add({ on: "failing", offset: 0.3, do: "hop", who: "heart", height: 30 });
+    add({ on: "roughly", do: "move", who: ["woman", "skel"], by: [150, 0], dur: 1.0 });
+    // results vary: she flickers, then cured, deceased, and both; each wins a rosette
+    add({ on: "individual", do: "show", who: "wVary" });
+    add({ on: "meaning", offset: 1.0, do: "hide", who: "wVary" });
+    add({ on: "results", do: "move", who: ["woman", "skel"], by: [-150, 0], dur: 0.5 });
+    var ON = cue("results") + 0.1, STEPS = [0, 0.5, 0.9, 1.2, 1.45, 1.65, 1.8, 1.95, 2.05, 2.15, 2.25];
+    STEPS.forEach(function (d, n) {
+      add({ at: ON + d, do: n % 2 ? "hide" : "show", who: "woman" });
+      add({ at: ON + d, do: n % 2 ? "show" : "hide", who: "skel" });
+    });
+    add({ on: "\"cured\"", do: "show", who: "woman" });
+    add({ on: "\"cured\"", do: "hide", who: "skel" });
+    add({ on: "\"deceased\"", do: "hide", who: "woman" });
+    add({ on: "\"deceased\"", do: "show", who: "skel" });
+    add({ on: "\"deceased\"", do: "boom", shake: 8, flash: 0.1 });
+    add({ on: "(both", do: "show", who: ["woman", "skel"] });
+    add({ on: "(both", do: "move", who: "woman", by: [-140, 0], dur: 0.3 });
+    add({ on: "(both", do: "move", who: "skel", by: [140, 0], dur: 0.3 });
+    add({ on: "technically", do: "show", who: "wBoth" });
+    add({ on: "qualifying).", do: "move", who: "ros1", to: "woman.chest", dur: 0.01 });
+    add({ on: "qualifying).", do: "move", who: "ros2", to: "skel.chest", dur: 0.01 });
+    add({ on: "qualifying).", do: "pop", who: "ros1", squash: true });
+    add({ on: "qualifying).", offset: 0.15, do: "pop", who: "ros2", squash: true });
+
+    // ── Ask your doctor: he slows down, Googling, and doesn't stop ──
+    add({ on: "also", offset: -0.2, do: "camera", view: "tv2", dur: 0.9 });
+    add({ on: "also", offset: -0.2, do: "hide", who: "wBoth" });
+    add({ on: "\"ask", do: "show", who: "wAsk" });
+    add({ on: "but", offset: -0.1, do: "move", who: "docS", by: [3600, 0], dur: 0.01 });
+    add({ on: "but", do: "move", who: "phone", to: "docS.fist", by: [-120, -170], dur: 0.01 });
+    add({ on: "but", do: "show", who: ["docS", "phone"] });
+    add({ on: "but", do: "move", who: "docS", by: [X.stop - SKATE, 0], dur: 2.25, ease: "smooth" });
+    add({ on: "but", do: "bob", who: "docS", y: 5, r: 2, speed: 2.5, until: "new" });
+    add({ on: "Googled", offset: -0.25, do: "camera", view: "google", dur: 0.4 });
+    add({ on: "Googled", do: "shiver", who: "phone", dur: 0.9, amp: 3, rot: 1 });
+    add({ on: "hallway.", offset: 0.15, do: "camera", view: "tv2", dur: 0.4 });
+    add({ on: "hallway.", offset: 0.15, do: "move", who: "docS", by: [-1900 - X.stop, 0], dur: SW.t0 - cue("hallway.") - 0.15 });
+
+    // ── All of it: the whole plate, and the broom ──
+    add({ on: "new", offset: -0.15, do: "camera", view: "wide", dur: 1.0 });
+    add({ at: SW.t0 - 0.2, do: "show", who: "sweeper" });
+    add({ at: SW.t0, do: "move", who: "sweeper", by: [SW.v * SW.T, 0], dur: SW.T });
+    for (var b = 0; b < 8; b++) add({ at: SW.t0 + b * 0.5, do: "nudge", who: "sweeper", by: [50, 0] });
+    sweep("docS", -2200, -500, -1080);
+    sweep("cereal", X.cereal - 250, -120, 140);
+    sweep("pack", X.pack - 170, -760, -200);
+    sweep("donut", PAT[0], -300, 720);
+    for (var c9 = 0; c9 < 9; c9++) sweep("ins" + c9, INS[c9][0] - 160, -140 - c9 * 120, 200 + c9 * 70);
+    sweep("page1", INS[8][0] - 160, -1200, 500);
+    for (var fl = 9; fl < INS.length; fl++) sweep("ins" + fl, INS[fl][0] - 130, -60 - (fl % 7) * 230, (fl % 2 ? 1 : -1) * (120 + fl * 9));
+    // the TV goes whole, still playing
+    var tvGroup = ["meadow", "woman", "skel", "heart", "auct", "band", "wAsk", "tv"];
+    sweep(tvGroup, X.tv - 420, -340);
+    sweep(["wheel"], WH[0] + 1200 - 400, -60, 1800 + 2520);
+    sweep(["stand"], WH[0] + 1200 - 300, -1000, -300);
+    sweep(["hand"], WH[0] + 1200 - 100, -1400, 300);
+    for (var s = 0; s < SKN; s++) {
+      sweep("sk" + s, SK0 + s * SKGAP - 200, -220 * (s % 3), (s % 2 ? 1 : -1) * 260);
+      if (s < SKN - 1) sweep("skd" + s, SK0 + s * SKGAP - 60, -900 - 200 * s, 400);
+    }
+    sweep("law", LAW - 270, -600, -300);
+
+    // ── Bare paper, the bottle and the patient ──
+    add({ on: "real", n: 2, offset: -0.2, do: "camera", view: "bot", dur: 1.1 });
+    add({ on: "real", n: 2, offset: 0.6, do: "stamp", who: "lab", from: 1.8, shake: 12 });
+    add({ on: "real", n: 2, offset: 0.6, do: "show", who: LABN.slice(1) });
+    add({ on: "drug.", n: 2, do: "hop", who: "bottle", height: 34 });
+    // Marketing slaps on MIRACLE!; it peels off and slaps over his bell
+    add({ on: "Not", n: 2, offset: -0.05, do: "slideIn", who: "loud", from: "left", dist: 1000, over: 26, tilt: 3 });
+    add({ on: "department", do: "stamp", who: "sticker", from: 2.0, shake: 9 });
+    add({ on: "hopes", offset: 0.15, do: "move", who: "sticker", to: "loud.mouth", scale: 0.75, turn: 25, dur: 0.3, arc: 120, ease: "smooth" });
+    add({ on: "hopes", offset: 0.45, do: "shiver", who: "loud", dur: 0.7, amp: 7, rot: 5 });
+    add({ on: "Not", n: 3, offset: -0.2, do: "slideOut", who: ["loud"], to: "left", dist: 1400, dur: 0.4 });
+    // The lawyer tapes his pages over it; they let go and bury him
+    add({ on: "Not", n: 3, offset: 0.05, do: "slideIn", who: "law2", from: "right", dist: 1000, over: 26, tilt: -3 });
+    add({ on: "comfortable", offset: -0.3, do: "stamp", who: "tape0", from: 1.6, shake: 4 });
+    add({ on: "comfortable", offset: -0.15, do: "stamp", who: "tape1", from: 1.6, shake: 4 });
+    add({ on: "comfortable", do: "stamp", who: "tape2", from: 1.6, shake: 4 });
+    add({ on: "comfortable", offset: 0.12, do: "stamp", who: "tape3", from: 1.6, shake: 4 });
+    add({ on: "comfortable", offset: 0.24, do: "stamp", who: "tape4", from: 1.6, shake: 4 });
+    TAPE.forEach(function (o, n) {
+      add({ on: "admitting", offset: 0.1 + n * 0.09, do: "move", who: "tape" + n, to: [LAW2 + [-80, 90, -30, 70, 0][n], G - [650, 500, 330, 210, 110][n]], scale: 1.35, turn: [-14, 10, 6, -9, 3][n], dur: 0.32, arc: 90, ease: "smooth" });
+    });
+    add({ on: "happens.", n: 3, do: "shiver", who: ["law2", "tape0", "tape1", "tape2", "tape3", "tape4"], dur: 0.4, amp: 5, rot: 3 });
+
+    // ── What happens. ──
+    var WH0 = cue("What", 5) - 0.12;
+    add({ at: WH0, do: "slideOut", who: ["law2", "tape0", "tape1", "tape2", "tape3", "tape4"], to: "right", dist: 1700, dur: 0.3 });
+    add({ at: WH0, do: "shake", y: 14, frames: 3 });
+    add({ at: WH0, do: "camera", view: "label", dur: 0.5 });
+    add({ at: WH0 + 0.75, do: "swap", who: "pat", to: "well" });
+    add({ at: WH0 + 0.75, do: "glow", who: "well", size: 500, dur: 0.6 });
+
+    // -- Part 14 only (scene 21, louder-wins, on the same plate): the bottle smiles back; governments have the same
+    // problem with laws, and on TV the louder one wins. A second TV slides in where the wheel was: a panel show, two
+    // politicians at a desk, a paper hugged and a paper thrown; they shout; the decibels climb; "louder.": the bomb
+    // goes off over the desk, both are charred and still shouting, and the one with the megaphone gets the WINNER (LOUDEST) trophy. --
+    var X2 = 1300, TK2 = 0.98, SC2 = [X2 + (385 - 433.5) * TK2, G - (975 - 480) * TK2];   // the second TV's screen centre
+    views.tvroom = V ? [920, cy(0.55), 0.55] : [900, 600, 0.8];
+    views.panel = V ? [SC2[0], SC2[1] + 30, 1.6] : [SC2[0], SC2[1] + 10, 2.25];
+    var PB = SC2[1] + 200, PK = 330 / KIT.collage.SIZES["politician-shout-blue"][1];
+    cast.studio = { art: "curtain", x: SC2[0], y: SC2[1], scale: 470 / KIT.collage.SIZES.curtain[1], hidden: true };
+    cast.polB = { art: "politician-shout-blue", x: SC2[0] - 170, y: PB, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true, smoke: [[150, 10]] };
+    cast.polR = { art: "politician-shout-left-red", x: SC2[0] + 170, y: PB, anchor: "bottom", pivot: "bottom", scale: PK, hidden: true, smoke: [[150, 10]] };
+    cast.hug = { art: "insert", x: SC2[0] + 190, y: PB - 180, scale: 0.42, hidden: true };
+    cast.toss = { art: "insert", x: SC2[0] - 150, y: PB - 170, scale: 0.42, hidden: true };
+    cast.pdesk = { art: "desk", x: SC2[0], y: SC2[1] + 230, anchor: "bottom", pivot: "bottom", scale: 0.62, hidden: true };
+    cast.boomM = { art: "mushroom", x: SC2[0], y: SC2[1] + 100, anchor: "bottom", pivot: "bottom", scale: 0.55, hidden: true };
+    cast.meg = { art: "megaphone", x: SC2[0] - 170 + 60 * PK + 60, y: PB - 290, scale: 0.3, hidden: true };
+    cast.win = { art: "trophy", x: SC2[0] - 150, y: SC2[1] - 600, scale: 0.45, hidden: true,
+      label: [{ text: "WINNER", at: [174, 383], width: 150, size: 60 }, { text: "(LOUDEST)", at: [174, 405], width: 130, size: 40 }] };
+    cast.tv2 = { art: "tv-big", x: X2, y: G, anchor: "bottom", pivot: "bottom", scale: TK2, hidden: true };
+    var PANEL = ["studio", "polB", "polR", "pdesk"];
+    // "figures out which treatments work.": the patient pats the labelled bottle; it smiles back
+    add({ on: "figures", do: "nudge", who: "well", by: [-30, 0] });
+    add({ on: "figures", offset: 0.2, do: "hop", who: "bottle", height: 24 });
+    // "But your governments": the second TV, and in through its screen to the panel show
+    add({ on: "But", n: 2, offset: -0.1, do: "camera", view: "tvroom", dur: 0.6 });
+    add({ on: "But", n: 2, do: "show", who: PANEL });
+    add({ on: "But", n: 2, do: "stamp", who: "tv2", from: 1.5, shake: 14 });
+    add({ on: "need", do: "camera", view: "panel", dur: 1.0 });
+    add({ on: "keep,", offset: -0.2, do: "pop", who: "hug", squash: true });
+    add({ on: "keep,", do: "nudge", who: "polR", by: [-14, 0] });
+    add({ on: "throw", offset: -0.15, do: "pop", who: "toss" });
+    add({ on: "throw", do: "move", who: "toss", by: [-260, -260], turn: -540, dur: 0.5, arc: 80 });
+    add({ on: "away.", offset: 0.1, do: "hide", who: "toss" });
+    // they argue on television, and the decibels climb until someone wins by being louder
+    add({ on: "argue", offset: -0.15, do: "pop", who: "meg", squash: true });
+    add({ on: "argue", do: "shiver", who: ["polB", "polR", "hug", "meg"], dur: cue("louder.") - cue("argue"), amp: 5, rot: 3 });
+    add({ on: "argue", do: "counter", id: "db", from: 60, to: 140, dur: cue("until") - cue("argue"), suffix: "\u00a0dB", x: SC2[0], y: SC2[1] - 150, size: 60, pad: 30 });
+    add({ on: "until", do: "counter", id: "db", from: 140, to: 194, dur: cue("louder.") - cue("until") });
+    add({ on: "louder.", do: "boom", shake: 24, flash: 0.25 });
+    add({ on: "louder.", do: "hide", who: "db" });
+    add({ on: "louder.", do: "pop", who: "boomM", squash: true });
+    add({ on: "louder.", do: "char", who: ["polB", "polR", "hug", "pdesk", "meg"] });
+    add({ on: "louder.", offset: 0.8, do: "pop", who: "boomM", out: true });
+    add({ on: "louder.", offset: 0.9, do: "blink", who: ["polB", "polR"] });
+    add({ on: "louder.", offset: 1.0, do: "show", who: "win" });
+    add({ on: "louder.", offset: 1.0, do: "move", who: "win", by: [0, 640], turn: 360, dur: 0.35 });
+    add({ on: "louder.", offset: 1.4, do: "shiver", who: ["polB", "polR"], dur: 0.6, amp: 4, rot: 3 });
+
+    KIT.collage({ id: ID, seed: 1404, plate: V ? [-1800, -6500, 8000, 4500] : [-3000, -3300, 7000, 2400], views: views, view: "wheel", cast: cast, beats: beats });
+  </script>
+</template>

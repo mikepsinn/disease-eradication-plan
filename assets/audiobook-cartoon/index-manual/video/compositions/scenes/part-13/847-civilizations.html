@@ -1,0 +1,170 @@
+<template id="847-civilizations-template">
+  <!-- 847-civilizations · collage (Part 13 storyboard, scenes 9 and 10 as one plate). The bit: Earth is one dot in a
+       chart of 847 civilizations, and the chart is already sorted by whether they read past page 1. Navy space. Close
+       on Earth, sweating. "manual": the manual thwacks onto its top like a paperboy's newspaper. "eight": pull back, a
+       grid of 847 little ringed planets pops in beside it: 847. "listened.": the left part of the grid turns into
+       planets with an alien waving on top, column by column. "didn't.": the rest go grey one after another, a few mushroom clouds among them. "data.": three
+       flashbulb pops and an axis under the grid. "redirected": push in on one of them: war papers walk from its alien's
+       hand into a funnel on its top and medicine papers walk out. "didn't" (second): a charred planet, two grinning
+       alien skeletons still pointing glowing atoms at each other; "extincted": the mushroom cloud between them. HOLD, silent.
+       "only": back to the chart, and its axis gets its label, % WHO STOPPED AT PAGE 1. "decided": down onto Earth's
+       top, a row of readers with the manual; "crazy": a cuckoo springs out of the first one's book, he flings it,
+       and the books fly off down the row. YOU, at the end, keeps reading. -->
+  <!-- The scene id starts with a digit: KIT.collage reaches its elements with getElementById. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #112845; }
+  </style>
+  <div id="root" data-composition-id="847-civilizations" data-width="1920" data-height="1080" data-start="0" data-duration="30">
+    <div id="847-civilizations-weave"></div>
+    <div id="847-civilizations-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "847-civilizations", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    // Earth at the origin; the grid of 847 beside it (16:9) or under it (9:16).
+    var EK = V ? 2.4 : 3.2, EH = SZ["globe-worried"][1] * EK, ETOP = -EH / 2;
+    var N = 847, BOX = V ? [-1150, 600, 1150, 2600] : [700, -1000, 5200, 900];
+    // The pictogram's own layout (collage.js), to find a cell's middle.
+    var bw = BOX[2] - BOX[0], bh = BOX[3] - BOX[1], COLS = Math.max(1, Math.round(Math.sqrt(N * bw / bh))), ROWS = Math.ceil(N / COLS);
+    var CELL = Math.min(bw / COLS, bh / ROWS), OX = BOX[0] + (bw - CELL * COLS) / 2, OY = BOX[1] + (bh - CELL * ROWS) / 2;
+    var cellAt = function (r, c) { return [OX + (c + 0.5) * CELL, OY + (r + 0.5) * CELL]; };
+    var SPLIT = Math.round(COLS * 0.46);                  // the columns left of this listened
+    var lived = [], died = [];
+    for (var c = 0; c < COLS; c++) for (var r = 0; r < ROWS; r++) { var i = r * COLS + c; if (i < N) (c < SPLIT ? lived : died).push(i); }
+    var GX = (BOX[0] + BOX[2]) / 2;
+    var TEAL = cellAt(Math.floor(ROWS * 0.45), Math.floor(SPLIT * 0.4)), DEAD = cellAt(Math.floor(ROWS * 0.55), SPLIT + Math.floor((COLS - SPLIT) * 0.55));
+    var PK = 420;                                         // a world seen close, in plate px
+
+    var views = V ? {
+      earth: [0, -30, 1.15], wide: [0, 1686, 0.43], teal: [TEAL[0], TEAL[1] - 160, 1.6], dead: [DEAD[0], DEAD[1] - 170, 1.6], readers: [0, ETOP - 100, 1.8],
+    } : {
+      earth: [0, -60, 0.95], wide: [2375, 273, 0.33], teal: [TEAL[0] + 20, TEAL[1] - 60, 1.9], dead: [DEAD[0], DEAD[1] - 110, 1.9], readers: [0, ETOP - 120, 1.7],
+    };
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+
+    // The close planets: one that listened, its alien waving beside a funnel on its top (the funnel stands in front of
+    // its domes, art 90, 200), and a charred one with two alien skeletons on it.
+    var TK = PK / SZ["planet-alien"][0], TS = SZ["planet-alien"];
+    var tpt = function (x, y) { return [TEAL[0] + (x - TS[0] / 2) * TK, TEAL[1] + (y - TS[1] / 2) * TK]; };
+    cast.teal = { art: "planet-alien", x: TEAL[0], y: TEAL[1], scale: TK, hidden: true };
+    var FUN = tpt(90, 200), HAND = tpt(238, 100);
+    cast.funnel = { art: "funnel", x: FUN[0], y: FUN[1], anchor: "bottom", scale: hs("funnel", 210), hidden: true };
+    var DK = PK / SZ["planet-red"][0], DS = SZ["planet-red"];
+    cast.dead = { art: "planet-red", x: DEAD[0], y: DEAD[1], scale: DK, hidden: true };
+    // The skeletons stand on the sphere's shoulders (art y about 175), in front of the domes; each holds its atom
+    // (alien-skeleton-a at art 150, 215; -b at 60, 235). The atoms' glow and sparks sit on specks there.
+    var SKY = DEAD[1] + (175 - DS[1] / 2) * DK, BH = 250, KA = hs("alien-skeleton-a", BH), KB = hs("alien-skeleton-b", BH);
+    cast.boneA = { art: "alien-skeleton-a", x: DEAD[0] - 115, y: SKY, anchor: "bottom", pivot: "bottom", scale: KA, hidden: true };
+    cast.boneB = { art: "alien-skeleton-b", x: DEAD[0] + 115, y: SKY, anchor: "bottom", pivot: "bottom", scale: KB, hidden: true };
+    cast.atomA = { art: "atom", x: DEAD[0] - 115 + (150 - SZ["alien-skeleton-a"][0] / 2) * KA, y: SKY - (SZ["alien-skeleton-a"][1] - 215) * KA, scale: 0.001, hidden: true };
+    cast.atomB = { art: "atom", x: DEAD[0] + 115 + (60 - SZ["alien-skeleton-b"][0] / 2) * KB, y: SKY - (SZ["alien-skeleton-b"][1] - 235) * KB, scale: 0.001, hidden: true };
+    cast.mushD = { art: "mushroom", x: DEAD[0], y: SKY + 10, anchor: "bottom", pivot: "bottom", scale: hs("mushroom", 300), hidden: true };
+    // A few mushroom clouds among the worlds that go grey.
+    var BOOMS = [0.12, 0.3, 0.47, 0.66, 0.85].map(function (u, j) { var n = died[Math.floor(u * died.length)]; return cellAt(Math.floor(n / COLS), n % COLS); });
+    BOOMS.forEach(function (p, j) { cast["mb" + j] = { art: "mushroom", x: p[0], y: p[1] + CELL * 0.4, anchor: "bottom", pivot: "bottom", scale: hs("mushroom", CELL * 2.4), hidden: true }; });
+
+    // Earth, its manual, and the readers on its top.
+    cast.earth = { art: "globe-worried", x: 0, y: 0, scale: EK };
+    var RD = ["friend-man", "friend-woman", "grandma", "matron", "newspaper-man", "you"], RH = V ? 165 : 185, RSP = V ? 84 : 104;
+    RD.forEach(function (art, j) {
+      var x = (j - (RD.length - 1) / 2) * RSP, a = Math.asin(Math.min(0.95, x / (EH / 2))), y = -Math.cos(a) * EH / 2 + 12;
+      cast["rd" + j] = { art: art, x: x, y: y, anchor: "bottom", pivot: "bottom", scale: hs(art, RH), hidden: true };
+      cast["bk" + j] = { art: "manual-closed", x: x + 6, y: y - RH * 0.5, scale: hs("manual-closed", RH * 0.32), hidden: true };
+    });
+    cast.cuckoo = { art: "cuckoo", x: cast.bk0.x, y: cast.bk0.y - RH * 0.12, anchor: "bottom", pivot: "bottom", scale: hs("cuckoo", RH * 0.45), hidden: true };
+    cast.sat = { art: "satellite", x: BOX[0] - 700, y: BOX[1] - (V ? 260 : 300), scale: (V ? 420 : 560) / SZ.satellite[0], hidden: true };
+    cast.manual = { art: "manual-closed", x: -1500, y: -1000, anchor: "bottom", pivot: "bottom", scale: hs("manual-closed", V ? 200 : 240), hidden: true };
+
+    // The navy of space, over the paper.
+    add({ at: -0.05, do: "wash", color: "#112845", blend: "normal", dur: 0.01 });
+    // "I've done this before.": Earth sweats.
+    add({ at: 0.1, do: "shiver", who: "earth", dur: 1.6, amp: 3, rot: 1.5 });
+    // "manual": it thwacks onto Earth's top.
+    add({ on: "manual", offset: -0.35, do: "pop", who: "manual" });
+    add({ on: "manual", offset: -0.3, do: "move", who: "manual", to: [0, ETOP + 25], dur: 0.35, arc: 300, turn: 720 });
+    add({ on: "manual", offset: 0.05, do: "shake", y: 10, frames: 3 });
+    add({ on: "manual", offset: 0.1, do: "blink", who: "earth" });
+    // "eight": pull back; 847 worlds pop in beside Earth.
+    add({ on: "eight", n: 1, do: "camera", view: "wide", dur: 1.4 });
+    add({ on: "eight", n: 1, do: "pictogram", id: "grid", art: "planet-ringed", count: N, box: BOX, cols: COLS, dur: cue("planets.") - cue("eight", 1) - 0.3, accel: 0.7, fill: 0.85 });
+    add({ on: "planets.", do: "stamp", id: "n847", text: "847", x: GX, y: (BOX[1] + BOX[3]) / 2, size: V ? 700 : 900, width: 2400, tilt: -4, shake: 6 });
+    // "listened.": the left of the chart turns into planets with a waving alien; "didn't.": the rest go grey, one after
+    // another, with a few booms.
+    add({ on: "listened.", do: "hide", who: "n847" });
+    var SWAPB = beats.length;                             // the swap's beat index names its new copies: grid.<i>-<SWAPB>
+    add({ on: "listened.", do: "pictogram", id: "grid", pick: lived, to: "planet-alien", stagger: 0.7 / lived.length });
+    var happy = lived.map(function (i) { return "grid." + i + "-" + SWAPB; }), grey = died.map(function (i) { return "grid." + i; });
+    add({ on: "didn't.", do: "pictogram", id: "grid", pick: died, grey: true, stagger: 0.9 / died.length, dur: 0.15 });
+    BOOMS.forEach(function (p, j) {
+      add({ on: "didn't.", offset: 0.05 + j * 0.17, do: "pop", who: "mb" + j, squash: true });
+      add({ on: "didn't.", offset: 0.05 + j * 0.17, do: "shake", y: 6, frames: 2 });
+      add({ on: "didn't.", offset: 0.75 + j * 0.17, do: "pop", who: "mb" + j, out: true });
+    });
+    // "data.": three flashbulb pops, and the chart's bottom axis draws itself.
+    // A survey satellite zips along the top of the chart, flashbulb popping, then flashes in Earth's face.
+    var SATY = BOX[1] - (V ? 260 : 300);
+    add({ on: "data.", offset: -0.35, do: "pop", who: "sat" });
+    add({ on: "data.", offset: -0.3, do: "move", who: "sat", to: [BOX[2] + 200, SATY], dur: 0.8 });
+    [0, 0.2, 0.4].forEach(function (o) { add({ on: "data.", offset: o, do: "boom", shake: 0, flash: 0.1 }); });
+    add({ on: "data.", offset: 0.55, do: "move", who: "sat", to: [V ? 330 : 460, V ? -120 : -160], dur: 0.35, arc: 200 });
+    add({ on: "data.", offset: 0.95, do: "boom", shake: 0, flash: 0.14 });
+    add({ on: "data.", offset: 1.0, do: "blink", who: "earth" });
+    add({ on: "data.", offset: 1.2, do: "blink", who: "earth" });
+    add({ on: "ones", n: 1, do: "slideOut", who: "sat", to: "top", dist: 2500, dur: 0.3 });
+    add({ on: "data.", offset: 0.3, do: "line", id: "axis", points: [[BOX[0] - 40, BOX[3] + 70], [BOX[2] + 40, BOX[3] + 70]], color: "#F2E6C6", width: V ? 14 : 18, dur: 0.6 });
+    // "redirected": push in on one planet that listened. War papers walk from its alien's hand into the funnel;
+    // medicine papers walk out.
+    add({ on: "ones", n: 1, do: "camera", view: "teal", dur: 0.7 });
+    add({ on: "ones", n: 1, offset: 0.3, do: "pop", who: "teal", squash: true });
+    // close up, the other worlds step aside, so the one we are looking at stands alone
+    add({ on: "ones", n: 1, offset: 0.3, do: "hide", who: happy.concat(grey) });
+    add({ on: "ones", n: 1, offset: 0.45, do: "pop", who: "funnel" });
+    var BW = 70;
+    add({ on: "redirected", do: "march", id: "war", art: "bill-war", count: 4, height: BW, speed: 260,
+      path: [HAND, [HAND[0] - 40, FUN[1] - 280], [FUN[0] + 60, FUN[1] - 255], [FUN[0], FUN[1] - 190]], end: "hide", until: "alive" });
+    add({ on: "resources", do: "march", id: "med", art: "bill-med", count: 4, height: BW, speed: 220,
+      path: [[FUN[0], FUN[1] + 10], [FUN[0] + 160, FUN[1] + 45], [FUN[0] + 330, FUN[1] + 30]], end: "stop" });
+    add({ on: "alive", do: "glow", who: "teal", size: PK * 1.5, dur: 0.8 });
+    add({ on: "stopped", do: "hop", who: "teal", height: 26 });
+    // "didn't": a charred planet. Two alien skeletons, still grinning, still pointing atoms at each other. "extincted": boom.
+    add({ on: "didn't", n: 2, offset: -0.5, do: "camera", view: "dead", dur: 0.6 });
+    add({ on: "didn't", n: 2, offset: -0.3, do: "show", who: ["dead", "boneA", "boneB", "atomA", "atomB"] });
+    add({ on: "didn't", n: 2, offset: -0.3, do: "char", who: "dead" });
+    add({ on: "didn't", n: 2, do: "glow", who: ["atomA", "atomB"], size: 110, dur: 0.5 });
+    add({ on: "didn't", n: 2, do: "sparks", who: ["atomA", "atomB"], until: "extincted" });
+    add({ on: "extincted", do: "boom", shake: 18, flash: 0.2 });
+    add({ on: "extincted", do: "pop", who: "mushD", squash: true });
+    // HOLD, silent. "only": back to the chart; "variable": its axis gets its label.
+    add({ on: "only", do: "camera", view: "wide", dur: 1.0 });
+    add({ on: "only", do: "show", who: happy.concat(grey) });
+    add({ on: "only", do: "hide", who: ["teal", "funnel", "war", "med", "dead", "boneA", "boneB", "atomA", "atomB", "mushD"] });
+    add({ on: "variable", do: "banner", id: "label", text: "% WHO STOPPED AT PAGE 1", x: GX, y: BOX[3] + (V ? 180 : 240), size: V ? 140 : 190, width: V ? 2100 : 3600, pad: 120, color: "ink", tilt: -2 });
+    // "decided": down onto Earth's top, a row of readers with the manual open at page 1.
+    add({ on: "only", do: "hide", who: "manual" });
+    RD.forEach(function (art, j) { add({ on: "decided", offset: -0.1, do: "show", who: ["rd" + j, "bk" + j] }); });
+    add({ on: "decided", offset: -0.2, do: "camera", view: "readers", dur: 0.8 });
+    add({ on: "decided", offset: 0.6, do: "hide", who: "label" });
+    // "crazy": the cuckoo springs out of the first book; he flings it, and the books fly off down the row.
+    add({ on: "crazy", do: "pop", who: "cuckoo", squash: true });
+    add({ on: "crazy", offset: 0.15, do: "bob", who: "cuckoo", y: 6, r: 8, speed: 5, until: "without", fade: 0.05 });
+    add({ on: "without", do: "drop", who: ["bk0", "cuckoo"], dur: 0.6, dist: 900, drift: -260, spin: -200 });
+    for (var j = 1; j < RD.length - 1; j++) add({ on: "without", offset: 0.17 * j, do: "drop", who: "bk" + j, dur: 0.6, dist: 900, drift: (j % 2 ? 1 : -1) * 220, spin: 160 });
+    add({ on: "without", offset: 0.2, do: "shake", y: 4, frames: 2 });
+    // YOU keeps reading: the next page.
+    add({ on: "next", do: "hop", who: ["rd5", "bk5"], height: 14 });
+    add({ on: "page.", do: "glow", who: "bk5", size: RH * 0.7, dur: 0.6 });
+
+    KIT.collage({ id: ID, seed: 1309, plate: V ? [-3400, -5000, 3400, 6500] : [-4000, -3200, 8800, 3600], views: views, view: "earth", cast: cast, beats: beats });
+  </script>
+</template>

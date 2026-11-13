@@ -1,0 +1,57 @@
+<template id="earth-means-dirt-template">
+  <!-- earth-means-dirt · collage host shot (Part 1, scene 11). The case file hops back up beside her and comes forward,
+       its tab EARTH: CASE #847 filling the wall. "dirt.": a red crayon crosses out EARTH. "dirt." again: DIRT is stamped
+       above it, and for a beat the Earth in the window behind her is a clod of dirt. "Okay, if that's what you want...":
+       she shrugs; the file drops back into the tray with a puff of dust. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="earth-means-dirt" data-width="1920" data-height="1080" data-start="0" data-duration="10.14">
+    <div id="earth-means-dirt-weave"></div>
+    <div id="earth-means-dirt-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, S = KIT.STUDIO, SZ = KIT.collage.SIZES, E = S.earth;
+    // The file starts where eligible left it; "named": it comes forward to CLOSE (its middle) at GROW times the size.
+    var FILE = V ? { x: 800, y: 1440, h: 580 } : { x: 1330, y: 880, h: 520 }, FK = FILE.h / SZ["case-file"][1];
+    var GROW = V ? 1.15 : 1.15, CLOSE = V ? [800, 1125] : [1240, 580], K2 = FK * GROW;
+    var at = function (p) { return [CLOSE[0] + (p[0] - SZ["case-file"][0] / 2) * K2, CLOSE[1] + (p[1] - SZ["case-file"][1] / 2) * K2]; };
+    var EARTHW = [105, 165], XK = 150 * K2 / SZ["crayon-x"][0];
+    KIT.collage({
+      id: "earth-means-dirt", seed: 111, host: true,
+      cast: {
+        clod: { art: "rock-rust", x: E[0], y: E[1], scale: 2.05 * E[2] / SZ["rock-rust"][0], hidden: true },
+        file: { art: "case-file", x: FILE.x, y: FILE.y, anchor: "bottom", pivot: "bottom", scale: FK, hidden: true,
+          label: [{ text: "EARTH", at: EARTHW, width: 100, size: 60 }, { text: "CASE #847", at: [235, 165], width: 105, size: 44 }] },
+        cross: { art: "crayon-x", x: at(EARTHW)[0], y: at(EARTHW)[1], scale: XK, hidden: true },
+        dust: { art: "cloud-puff", x: FILE.x, y: FILE.y - 60, scale: V ? 0.9 : 1.1, hidden: true },
+      },
+      beats: [
+        // "The second thing I noticed": the file hops back up
+        { on: "second", do: "slideIn", who: "file", from: "bottom", dist: V ? 900 : 700, over: 18 },
+        // "named "Earth,"": it comes forward, its tab big
+        { on: "named", n: 1, do: "move", who: "file", to: CLOSE, dur: 0.5, ease: "smooth", scale: K2 },
+        // "which means dirt.": crossed out
+        { on: "dirt.", n: 1, do: "pop", who: "cross", squash: true },
+        // "You named your planet.. dirt.": DIRT, and the Earth is a clod for a beat
+        { on: "dirt.", n: 2, do: "stamp", id: "dirt", who: "file", spot: [150, 88], text: "DIRT", size: V ? 70 : 80, tilt: -5 },
+        { on: "dirt.", n: 2, do: "pop", who: "clod", squash: true },
+        { on: "dirt.", n: 2, offset: 0.75, do: "pop", who: "clod", out: true },
+        // "Okay, if that's what you want...": back into the tray, with a puff of dust
+        { on: "want...", offset: 0.2, do: "slideOut", who: ["file", "cross"], to: "bottom", dur: 0.3 },
+        { on: "want...", offset: 0.45, do: "pop", who: "dust", squash: true },
+        { on: "want...", offset: 0.5, do: "move", who: "dust", by: [0, -160], dur: 0.6, ease: "smooth" },
+        { on: "want...", offset: 1.1, do: "pop", who: "dust", out: true },
+      ],
+    });
+  </script>
+</template>

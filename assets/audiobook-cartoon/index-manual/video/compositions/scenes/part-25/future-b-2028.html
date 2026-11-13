@@ -1,0 +1,276 @@
+<template id="future-b-2028-template">
+  <!-- future-b-2028 · collage (Part 25, Future B, scenes 14 to 16 as one road). The bit: the same walk as Future A,
+       the other way: every year the sky gets brighter and YOU gets something. The cockroach in the fedora turns the
+       manual the right way up and flips the page back: the fork, YOU alive, checking his watch; the manual parachutes
+       into his hands and this time he keeps it. 2028: the treaty scroll, PASSED; war bills walk into a funnel and come
+       out as medicine bills; the fat cat can't rub +272% off his statement; the weapons factory sells toasters, and a
+       skeleton's drops through its ribs. 2032: the trial window, a queue walking its diseases on leashes; the pill
+       bottle shoots out to YOU; the wait sign rolls from 443 YEARS to NOW; the skeleton next in line hands his bottle
+       back; the line moves; the Loud Human steps onto a soapbox to shout SLOW DOWN! and loses his place. 2035: the factory's
+       missile climbs off the belt, the belt carries loaves, shoes, toasters and pills, scoops YOU up, and carries off
+       the economist, still typing. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="future-b-2028" data-width="1920" data-height="1080" data-start="0" data-duration="49.14">
+    <div id="future-b-2028-weave"></div>
+    <div id="future-b-2028-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "future-b-2028", V = KIT.V, DUR = KIT.scene(ID).duration, G = 1000, SZ = KIT.collage.SIZES;
+      var CUE = function (word, n) { return KIT.cue(ID, word, n); };
+      // As in Future A: YOU stays at X0 and the world scrolls past, but here he stops at each year's stop to watch.
+      var X0 = V ? 300 : 560, SP = V ? 170 : 260, KX = V ? 0.6 : 1, KP = V ? 0.8 : 1;
+      // Each walk covers a set distance (plate px), so one stop is off the frame before the next arrives; the fat cat
+      // and the toaster stall are one stop that the camera pans across.
+      var T1 = CUE("Treaty") + 0.35, T3 = CUE("reach") - 0.8, T4 = CUE("Turns") - 0.3, T5 = CUE("produced.") + 0.15;
+      var W3 = CUE("ones.") + 0.4, W4 = CUE("Year", 3) - 0.9;
+      var SEGS = [[2.6, T1, 1500 * KX / (T1 - 2.6)], [W3, T3, 3700 * KX / (T3 - W3)], [W4, T4, 2600 * KX / (T4 - W4)], [T5, DUR, SP * 0.8]];
+      var S = function (t) { var d = 0; SEGS.forEach(function (g) { d += Math.max(0, Math.min(t, g[1]) - g[0]) * g[2]; }); return d; };
+      var w = function (t, dx) { return X0 + dx * KX + S(t); };
+      var YH = V ? 640 : 760, K_SUIT = YH / 562, WORLD = [], FAR = [], beats = [], cast = {}, i;
+      var add = function (b) { beats.push(b); };
+      var put = function (n, o, far) { cast[n] = o; (far ? FAR : WORLD).push(n); return n; };
+      var stand = function (n, art, x, k, o) { var c = { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: k }; for (var f in o || {}) c[f] = o[f]; return put(n, c); };
+      var hgt = function (art, h) { return h / SZ[art][1]; };
+
+      // ── The sky: dust at the fork, and it clears to blue year by year ──
+      for (i = 0; i < 10; i++) put("cl" + i, { art: "cloud-puff", x: i * (V ? 620 : 1050) + 200, y: (V ? -260 : 40) + (i % 3) * (V ? 170 : 90), scale: 1.1 + (i % 3) * 0.35 }, true);
+      put("sun", { art: "sun", x: V ? 900 : 1700, y: V ? -380 : -60, scale: V ? 1.6 : 1.8, hidden: true }, true);
+      // ── The road ──
+      var ROADS = Math.ceil((S(DUR) + 5000) / 990);
+      for (i = 0; i < ROADS; i++) put("rd" + i, { art: "road", x: -1800 + i * 990, y: G - 70, anchor: "topleft", scale: 3 });
+
+      // ── 0 s: the fork. The cockroach turns the page back ──
+      stand("fork", "arrow-sign", w(0, 520), V ? 0.9 : 1.1, { anchor: [193, 332], label: { text: "FUTURE B", at: [180, 135], width: 280, size: 80 } });
+      cast.roach = { art: "cockroach-up", x: X0 + (V ? 420 : 760), y: G, anchor: "bottom", pivot: "bottom", scale: V ? 2.1 : 2.45 };
+      cast.roachHat = { art: "fedora", x: X0 + (V ? 420 : 760), y: G - (356 - 66) * (V ? 2.1 : 2.45), scale: V ? 1.3 : 1.55 };
+      cast.roachBook = { art: "manual-closed", x: X0 + (V ? 430 : 770), y: G - 330, scale: V ? 1.05 : 1.25, label: { text: "MANUAL", at: [110, 145], width: 165, size: 90 } };
+      add({ at: 0, do: "move", who: "roachBook", by: [0, 0], turn: 180, dur: 0.01 });
+      add({ on: "Future", offset: 0.05, do: "nudge", who: "roach", by: [20, -20] });
+      add({ on: "Future", offset: 0.15, do: "move", who: "roachBook", by: [0, 0], turn: 0, dur: 0.15 });
+      add({ on: "B:", offset: 0.1, do: "slideOut", who: ["roach", "roachHat", "roachBook"], to: "right", dur: 0.4 });
+      // ── the manual parachutes in again, and this time he keeps it ──
+      var HAND = [X0 + 45 * K_SUIT, G - YH * 0.6];
+      cast.chute = { art: "manual-chute", x: HAND[0], y: -700, anchor: [150, 440], pivot: [150, 440], scale: 1.1, hidden: true };
+      add({ on: "You", n: 1, offset: -0.5, do: "show", who: "chute" });
+      add({ on: "You", n: 1, offset: -0.5, do: "move", who: "chute", by: [0, HAND[1] + 700], dur: 1.0 });
+      add({ on: "Instructions.", offset: 0.3, do: "hide", who: "chute" });
+      cast.book = { art: "manual-closed", x: HAND[0], y: HAND[1], scale: V ? 0.75 : 0.9, hidden: true, label: { text: "MANUAL", at: [110, 145], width: 165, size: 90 } };
+      add({ on: "Instructions.", offset: 0.3, do: "show", who: "book" });
+      add({ on: "Instructions.", offset: 0.6, do: "hop", who: "book", height: 18 });
+
+      // year signs spring up as he passes
+      var yearSign = function (n, year, t) { stand(n, "sign-board", w(t, 620), V ? 1.6 : 1.9, { hidden: true, label: { text: String(year), at: [107, 70], width: 170, size: 200 } }); add({ at: t, do: "pop", who: n, squash: true }); };
+      yearSign("y28", 2028, CUE("twenty-eight:"));
+
+      // ── Stop 1 (2028): the treaty, the funnel, the fat cat ──
+      var TRX = w(T1, 330), FUX = w(T1, 900), CATX = w(T1, 1500), FUP = FUX - S(T1), CATP = CATX - S(T1);
+      stand("treaty", "treaty-scroll", TRX, hgt("treaty-scroll", V ? 560 : 700), { label: { text: "1% TREATY", at: [191, 190], width: 280, size: 70 } });
+      add({ on: "passes.", do: "stamp", who: "treaty", text: "PASSED", spot: [191, 470], size: 90, tilt: -8 });
+      stand("funnel", "funnel", FUX, V ? 0.9 : 1.1);
+      var MOUTH = G - 381 * (V ? 0.9 : 1.1) + 40;
+      add({ on: "Murder", offset: -0.4, do: "march", id: "warIn", art: "bill-war", count: 5, scale: 0.75 * KP, path: [[X0 - 600, G], [FUP - 260 * KP, G], [FUP - 30, MOUTH]], speed: 640, end: "hide" });
+      add({ on: "becomes", offset: 0.1, do: "march", id: "medOut", art: "bill-med", count: 5, scale: 0.75 * KP, path: [[FUP + 20, G], [CATP - 120 * KP, G]], speed: 520, end: "hide" });
+      add({ on: "becomes", do: "shiver", who: "funnel", dur: 1.4, amp: 3, rot: 3 });
+      // the fat cat and his statement
+      stand("cat", "fat-cat", CATX, hgt("fat-cat", V ? 520 : 650));
+      put("stmt", { art: "paycheck", x: CATX - 40 * KP, y: G - (V ? 330 : 410), scale: V ? 0.9 : 1.15, hidden: true,
+        label: [{ text: "+272%", at: [146, 48], width: 190, size: 70 }, { text: "PROJECTED", at: [146, 88], width: 120, size: 24 }] });
+      add({ on: "Investors", do: "pop", who: "stmt", squash: true });
+      add({ on: "confused", do: "shiver", who: "cat", dur: 0.5, amp: 3, rot: 2 });
+      add({ on: "returns", do: "move", who: "stmt", by: [0, -(V ? 160 : 220)], dur: 0.35 });
+      add({ on: "aren't", do: "move", who: "stmt", by: [0, 0], turn: 180, dur: 0.25 });
+      add({ on: "a", n: 1, offset: 0.1, do: "move", who: "stmt", by: [0, 0], turn: 0, dur: 0.2 });
+      add({ on: "typo.", do: "shiver", who: "stmt", dur: 0.7, amp: 8, rot: 2 });
+      add({ on: "typo.", offset: 0.8, do: "hop", who: "stmt", height: 10 });
+
+      // ── Stop 2: the weapons factory sells toasters ──
+      var FAX = w(T1, 2350), FAP = FAX - S(T1);
+      stand("fac", "factory-pay", FAX, hgt("factory-pay", V ? 520 : 640));
+      var TOAST = [[245, 105], [385, 105], [385, 215], [245, 215]], TK = V ? 0.9 : 1.1;
+      for (i = 0; i < 4; i++) put("ts" + i, { art: "goods", clip: TOAST, x: FAX + (i - 1.5) * 150 * KP, y: G - (V ? 30 : 40), anchor: [315, 215], scale: TK, hidden: true });
+      add({ on: "contractors", do: "pop", who: ["ts0", "ts1", "ts2", "ts3"], squash: true });
+      add({ on: "discover", do: "march", id: "buyers", art: ["citizen-1", "citizen-5", "citizen-9", "citizen-3"], count: 4, height: V ? 380 : 460, path: [[FAP - 1000 * KX, G], [FAP - 120 * KP, G]], speed: 900, end: "hide" });
+      add({ on: "alive", do: "pop", who: ["ts0", "ts1"], out: true });
+      add({ on: "buy", do: "pop", who: "ts2", out: true });
+      // "dead": skeletons queue up too; the first is handed a toaster and it drops through his ribs
+      var SKH = V ? 380 : 460;
+      ["sk0", "sk1"].forEach(function (n, j) {
+        stand(n, j ? "grandma-skeleton" : "skeleton", FAX - (240 + j * 200) * KP, hgt(j ? "grandma-skeleton" : "skeleton", SKH * (j ? 0.85 : 1)), { hidden: true });
+        add({ on: "than", offset: j * 0.15, do: "slideIn", who: n, from: "left", dist: 900 });
+      });
+      add({ on: "dead", do: "move", who: "ts3", to: [FAP - 240 * KP, G - SKH * 0.55], dur: 0.25, arc: 60 });
+      add({ on: "ones.", do: "move", who: "ts3", by: [0, SKH * 0.5], dur: 0.2 });
+      add({ on: "ones.", offset: 0.2, do: "hop", who: "ts3", height: 20 });
+
+      // ── Stop 3 (2032): the trial window and the queue ──
+      yearSign("y32", 2032, CUE("thirty-two:"));
+      var WX = w(T3, 520), WK = V ? 1.3 : 1.6;
+      stand("window", "fda-window", WX, WK, { label: { text: "TRIALS", at: [190, 70], width: 200, size: 60, plaque: true } });
+      // 9:16 has no room beside the window (YOU steps up there), so the sign stands on the window's roof
+      var SX = WX + (V ? 0 : 440), SGK = V ? 1.25 : 2.3, SY = V ? { y: G - 425 * WK + 40 } : {};
+      var sOpt = function (o) { for (var f in SY) o[f] = SY[f]; return o; };
+      stand("wait", "counter-sign", SX, SGK, sOpt({ label: { text: "YEARS TO WAIT", at: [64, 52], width: 108, size: 40 } }));
+      stand("waitNow", "counter-sign", SX, SGK, sOpt({ hidden: true, label: [{ text: "YEARS TO WAIT", at: [64, 52], width: 108, size: 40 }, { text: "NOW", at: [64, 128], width: 100, size: 70 }] }));
+      add({ at: 0, do: "counter", id: "years", who: "wait", spot: [64, 128], from: 443, to: 443, dur: 0.01, card: false, size: V ? 70 : 84, enter: "none", color: "#2A1C10" });
+      add({ on: "centuries", do: "counter", id: "years", who: "wait", spot: [64, 128], to: 0, until: "now.", card: false, size: V ? 70 : 84, enter: "none", color: "#2A1C10" });
+      add({ on: "now.", do: "hide", who: "years" });
+      add({ on: "now.", do: "swap", who: "wait", to: "waitNow" });
+      add({ on: "now.", do: "shake", y: 6, frames: 3 });
+      // the queue behind YOU, walking its diseases: the next in line has waited so long he's bones
+      var SLOT = V ? 260 : 380, QH = V ? 420 : 500;
+      var Q = [["q0", "leash-human-skeleton"], ["q1", "leash-human"], ["loud", "loud-human"], ["q3", "leash-human-old"], ["q4", "leash-human-old"], ["q5", "leash-human-skeleton"], ["q6", "leash-human-skeleton"]];
+      var slotX = function (k) { return X0 - SLOT * (k + 1) + S(T3); };
+      Q.forEach(function (q, k) {
+        var art = q[1], h = art === "loud-human" ? QH * 1.15 : QH;
+        stand(q[0], art, slotX(k), hgt(art, h), { hidden: true, anchor: art === "loud-human" ? "bottom" : [200, SZ[art][1]] });
+        // they line up behind him as he reaches the window
+        add({ at: T3 - 0.1 + k * 0.08, do: "slideIn", who: q[0], from: "left", dist: (V ? 900 : 1600) + SLOT * k });
+      });
+      // "reach": the bottle shoots out of the window to YOU
+      add({ on: "Year", n: 2, offset: -0.2, do: "pop", who: "book", out: true });
+      cast.pill = { art: "pill-bottle", x: X0 + 520 * KX, y: G - 260 * WK, scale: V ? 0.42 : 0.5, hidden: true };
+      add({ on: "reach", do: "show", who: "pill" });
+      add({ on: "reach", do: "move", who: "pill", to: HAND, dur: 0.3, arc: 120, turn: -15 });
+      // he steps forward past the window to look at it; the skeleton steps up and is handed one too
+      var STEP = (V ? 1150 : 1250) * KX;
+      add({ on: "patients.", offset: 0.5, do: "move", who: ["yT", "yA", "yB", "pill"], by: [STEP, 0], dur: 0.6 });
+      add({ on: "Nobody", do: "move", who: "q0", by: [SLOT, 0], dur: 0.5 });
+      put("pill2", { art: "pill-bottle", x: WX, y: G - 260 * WK, scale: V ? 0.42 : 0.5, hidden: true });
+      add({ on: "cured", do: "show", who: "pill2" });
+      add({ on: "cured", do: "move", who: "pill2", by: [-(V ? 160 : 200), 120], dur: 0.25, arc: 40 });
+      add({ on: "of", n: 1, do: "shiver", who: "pill2", dur: 0.6, amp: 8, rot: 20 });
+      add({ on: "everything,", do: "hop", who: "q0", height: 24 });
+      add({ on: "but", do: "move", who: "pill2", by: [V ? 160 : 200, -120], dur: 0.25, arc: 40 });
+      add({ on: "but", offset: 0.25, do: "hide", who: "pill2" });
+      add({ on: "queue", do: "slideOut", who: "q0", to: "bottom", dist: 900, dur: 0.4 });
+      // "moving.": the whole line shuffles forward one step
+      ["q1", "loud", "q3", "q4", "q5", "q6"].forEach(function (n, j) { add({ on: "moving.", offset: j * 0.05, do: "move", who: n, by: [SLOT, 0], dur: 0.4 }); });
+      // "progress.": YOU looks at his bottle, puzzled, and smiles
+      add({ on: "sensation", do: "shiver", who: ["yT", "pill"], dur: 0.5, amp: 2, rot: 3 });
+      add({ on: "progress.", do: "hop", who: ["yT", "yA", "yB", "pill"], height: 26 });
+      // "op-eds": the Loud Human steps out onto a crate and shouts; the line closes his gap; he goes to the back
+      var CRX = slotX(1) + SLOT * 0.5, CRK = hgt("soapbox", V ? 150 : 180);
+      stand("crate", "soapbox", CRX, CRK, { hidden: true });
+      add({ on: "Several", do: "pop", who: "crate", squash: true });
+      add({ on: "publish", n: 1, do: "move", who: "loud", by: [SLOT * 0.5, -SZ.soapbox[1] * CRK], dur: 0.3, arc: 60 });
+      add({ on: "op-eds", do: "banner", id: "slow", text: "SLOW DOWN!", x: V ? Math.max(250, CRX - S(T3)) : CRX - S(T3), y: G - SZ.soapbox[1] * CRK - QH * 1.15 - (V ? 70 : 80), size: V ? 70 : 90, width: V ? 420 : 560, pad: 50, tilt: -4 });
+      add({ on: "op-eds", do: "shiver", who: "loud", dur: 1.6, amp: 5, rot: 3 });
+      ["q3", "q4", "q5", "q6"].forEach(function (n, j) { add({ on: "it's", offset: j * 0.05, do: "move", who: n, by: [SLOT, 0], dur: 0.4 }); });
+      add({ on: "fast.", do: "pop", who: "slow", out: true });
+      add({ on: "fast.", do: "move", who: "loud", by: [-SLOT * 0.5, SZ.soapbox[1] * CRK], dur: 0.25 });
+      add({ on: "fast.", offset: 0.35, do: "move", who: "loud", by: [-SLOT * 5, 0], dur: 1.6 });
+      add({ on: "fast.", offset: 0.35, do: "bob", who: "loud", y: 6, r: 2, speed: 2, until: ["fast.", 1, 1.95] });
+
+      // ── Stop 4 (2035): the factory makes things, and the belt carries everyone off ──
+      yearSign("y35", 2035, CUE("thirty-five:"));
+      var F4 = w(T4, 950), F4P = F4 - S(T4), BELT_Y = G - 30, BK = V ? 1.3 : 1.6;
+      var BW = 380 * BK - 4;
+      for (i = 0; i < 12; i++) put("belt" + i, { art: "conveyor", x: F4 - 700 + i * BW, y: G + 20, anchor: "bottom", scale: BK });
+      stand("fac2", "factory-proud", F4 - 300 * KP, hgt("factory-proud", V ? 560 : 680));
+      stand("onbelt", "missile", F4 + 150 * KP, hgt("missile", V ? 280 : 340), { y: G - 138 * BK + 30 });
+      add({ on: "destruction", do: "shiver", who: "onbelt", dur: 0.3, amp: 2, rot: 6 });
+      add({ on: "destruction", offset: 0.3, do: "move", who: "onbelt", by: [V ? 220 : 300, 138 * BK - 30], dur: 0.35, arc: 80 });
+      add({ on: "start", do: "move", who: "onbelt", by: [V ? 900 : 1200, 0], dur: 1.4 });
+      add({ on: "start", do: "bob", who: "onbelt", y: 8, r: 3, speed: 3, until: ["start", 1, 1.4] });
+      // clean smoke rings out of the chimneys; goods come out of the door along the belt
+      for (i = 0; i < 3; i++) {
+        put("puff" + i, { art: "cloud-puff", x: F4 - 300 * KP + (i - 1) * 80 * KP, y: G - (V ? 600 : 720), scale: 0.4, hidden: true });
+        add({ on: "production,", offset: i * 0.25, do: "pop", who: "puff" + i });
+        add({ on: "production,", offset: i * 0.25, do: "move", who: "puff" + i, by: [40, -400], dur: 2.2, scale: 0.9 });
+      }
+      add({ on: "production,", offset: 0.2, do: "march", id: "goods", art: "goods", count: 4, scale: V ? 0.6 : 0.75, path: [[F4P - 250 * KP, BELT_Y - 175], [F4P + 1300 * KP, BELT_Y - 175]], speed: 380, end: "hide", bob: 2, rock: 1 });
+      // the economist from the forecast, plastered, typing, journals piling up beside him
+      var EX = F4 + 1050 * KP, EH = V ? 420 : 520;
+      stand("eDesk", "desk", EX, hgt("desk", EH * 0.6));
+      stand("econ", "economist-plaster", EX - 90 * KP, hgt("economist-plaster", EH));
+      put("type", { art: "typewriter", x: EX + 20, y: G - EH * 0.6 + 10, anchor: "bottom", scale: hgt("typewriter", EH * 0.36) });
+      add({ on: "publish", n: 2, do: "pile", id: "journals", art: ["book", "history-book"], x: EX + 230 * KP, y: G, count: 9, height: V ? 70 : 85, gap: V ? 60 : 72, until: "obvious" });
+      add({ on: "publish", n: 2, do: "shiver", who: "type", dur: 2.2, amp: 2, rot: 1 });
+
+      // ── YOU: the two-drawing walk from Future A, his legs only moving while he walks ──
+      cast.yA = { art: "you-watch", clip: [[0, 340], [215, 340], [215, 562], [0, 562]], anchor: [110, 562], pivot: [110, 562], x: X0, y: G, scale: K_SUIT };
+      cast.yB = { art: "you-walk", clip: [[70, 348], [205, 348], [292, 470], [292, 563], [0, 563], [0, 510], [45, 440]], anchor: [125, 562], pivot: [125, 562], x: X0, y: G, scale: K_SUIT, hidden: true };
+      cast.yT = { art: "you-watch", clip: [[0, 0], [215, 0], [215, 352], [0, 352]], anchor: [110, 562], pivot: [110, 562], x: X0, y: G, scale: K_SUIT };
+      var WALKS = SEGS.slice(0, 3).map(function (g) { return [g[0], g[1]]; }).concat([[CUE("patients.") + 0.5, CUE("patients.") + 1.1]]);
+      WALKS.forEach(function (g) {
+        for (var ts = g[0], leg = 1; ts < g[1]; ts += 0.22, leg++) {
+          add({ at: ts, do: "show", who: leg % 2 ? "yB" : "yA" });
+          add({ at: ts, do: "hide", who: leg % 2 ? "yA" : "yB" });
+        }
+        add({ at: g[1], do: "show", who: "yA" });
+        add({ at: g[1], do: "hide", who: "yB" });
+        ["yT", "yA", "yB"].forEach(function (n) { add({ at: g[0], do: "bob", who: n, y: 7, r: 1.3, speed: 3.16, until: g[1] }); });
+      });
+      // after the queue he walks back to his mark as the road starts again
+      add({ at: SEGS[2][0], do: "move", who: ["yT", "yA", "yB", "pill"], by: [-STEP, 0], dur: SEGS[2][1] - SEGS[2][0] });
+      // "produced.": the goods scoop him up; he rides along on top like a man on a parade float
+      cast.float = { art: "goods", x: X0 - (V ? 700 : 1100), y: BELT_Y + 5, anchor: "bottom", scale: V ? 0.9 : 1.1, hidden: true };
+      var RIDE = 417 * (V ? 0.9 : 1.1) * 0.72;
+      add({ on: "produced.", offset: -0.25, do: "show", who: "float" });
+      add({ on: "produced.", offset: -0.25, do: "move", who: "float", by: [V ? 700 : 1100, 0], dur: 0.25 });
+      add({ on: "produced.", do: "move", who: ["yT", "yA", "pill"], by: [0, -RIDE], dur: 0.2, arc: 40 });
+      add({ on: "produced.", offset: 0.25, do: "move", who: ["yT", "yA", "pill"], by: [0, 0], turn: -8, dur: 0.3 });
+      add({ on: "produced.", offset: 0.4, do: "bob", who: ["yT", "yA", "pill", "float"], y: 4, r: 0.8, speed: 1.5 });
+      // "obvious": the belt scoops up the economist, desk, typewriter and stack, and carries him off behind YOU
+      var CARRY = ["eDesk", "econ", "type", "journals"];
+      add({ on: "obvious", do: "move", who: CARRY, by: [0, -(V ? 60 : 80)], dur: 0.2, arc: 30 });
+
+      // ── The sky ──
+      var LASTCL = "cl9";
+      add({ at: 0, do: "wash", id: "dust", color: "#B79468", blend: "multiply", above: LASTCL, opacity: 0.5, dur: 0.01 });
+      add({ at: 0, do: "wash", id: "blue", color: "#9CC8DE", blend: "normal", above: LASTCL, opacity: 0.01, dur: 0.01 });
+      add({ at: 0, do: "wash", id: "navy", color: "#2C3A5C", blend: "multiply", opacity: 0.9, dur: 0.01 });
+      add({ on: "B:", offset: 0.1, do: "wash", id: "navy", opacity: 0, dur: 0.5 });
+      add({ on: "twenty-eight:", do: "wash", id: "dust", opacity: 0.3, dur: 1 });
+      add({ on: "twenty-eight:", do: "wash", id: "blue", opacity: 0.25, dur: 1 });
+      add({ on: "thirty-two:", do: "wash", id: "dust", opacity: 0.12, dur: 1 });
+      add({ on: "thirty-two:", do: "wash", id: "blue", opacity: 0.38, dur: 1 });
+      add({ on: "thirty-five:", do: "wash", id: "dust", opacity: 0, dur: 1 });
+      add({ on: "thirty-five:", do: "wash", id: "blue", opacity: 0.5, dur: 1 });
+      add({ on: "thirty-five:", do: "pop", who: "sun" });
+
+      // ── The camera: close on the walk, back for each stop ──
+      var views = V ? { walk: [540, G - 480, 0.9], stop: [X0 + 440, G - 420, 0.85], stop2: [X0 + 1050, G - 420, 0.85], queue: [X0 + 180, G - 420, 0.8], ride: [X0 + 300, G - 450, 0.8] }
+        : { walk: [960, 560, 0.85], stop: [X0 + 760, 520, 0.62], stop2: [X0 + 1700, 520, 0.62], queue: [X0 + 400, 520, 0.7], ride: [X0 + 500, 470, 0.62] };
+      add({ at: T1 - 0.5, do: "camera", view: "stop", dur: 0.8 });
+      add({ on: "Military", offset: -0.2, do: "camera", view: "stop2", dur: 0.7 });
+      add({ at: SEGS[1][0], do: "camera", view: "walk", dur: 0.6 });
+      add({ at: T3 - 0.5, do: "camera", view: "queue", dur: 0.8 });
+      add({ at: SEGS[2][0], do: "camera", view: "walk", dur: 0.6 });
+      add({ at: T4 - 0.4, do: "camera", view: "stop", dur: 0.7 });
+      add({ on: "produced.", do: "camera", view: "ride", dur: 0.6 });
+
+      // A move always straightens to its turn, so the treadmill would undo every rotation: rotations go after it.
+      var early = [], late = [];
+      beats.forEach(function (b) {
+        if (b.do === "bob" || b.do === "shiver" || b.do === "hinge") { late.push(b); return; }
+        early.push(b);
+        if (b.do === "move" && b.turn !== undefined) {
+          var c = {}; for (var k in b) c[k] = b[k];
+          delete c.to; delete c.arc; delete c.scale; c.by = [0, 0]; late.push(c); delete b.turn;
+        }
+      });
+      beats = early;
+      // The treadmill, after every move, so it adds to them; what the belt has scooped up stops scrolling with the world
+      SEGS.forEach(function (g) { add({ at: g[0], do: "move", who: WORLD, by: [-(g[1] - g[0]) * g[2], 0], dur: g[1] - g[0] }); });
+      SEGS.forEach(function (g) { add({ at: g[0], do: "move", who: FAR, by: [-(g[1] - g[0]) * g[2] * 0.3, 0], dur: g[1] - g[0] }); });
+      var TO = CUE("obvious") + 0.2;
+      add({ at: TO, do: "move", who: CARRY, by: [(DUR - TO) * SEGS[3][2] * 0.85, 0], dur: DUR - TO });
+      beats = beats.concat(late);
+
+      KIT.collage({ id: ID, seed: 2514, plate: V ? [-3000, -3400, 4200, 3600] : [-2400, -1600, 4400, 2600], views: views, view: "walk", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

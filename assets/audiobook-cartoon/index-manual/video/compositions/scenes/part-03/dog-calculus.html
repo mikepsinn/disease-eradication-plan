@@ -1,0 +1,96 @@
+<template id="dog-calculus-template">
+  <!-- dog-calculus · collage (Part 3, scene 5, the-classroom). The bit: a dog is being taught calculus before it can
+       sit, and its head catches fire. Close on a page filling up with integrals, a new line every half second. "That":
+       the camera pulls back: the one writing is a dog on its hind legs with chalk in its mouth, and Gottfried Leibniz,
+       who invented calculus, taps the page with his pointer. "calculus": steam puffs out of its ears. "before": they
+       catch fire, and the fire jumps to Leibniz's wig. "sit.": a bucket of water comes down over the pair in a cloud of
+       steam; the charred, smoking dog is sitting perfectly, and Leibniz stands bald and dripping. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="dog-calculus" data-width="1920" data-height="1080" data-start="0" data-duration="7.12">
+    <div id="dog-calculus-weave"></div>
+    <div id="dog-calculus-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "dog-calculus", V = KIT.V, SZ = KIT.collage.SIZES, F = KIT.collage.F;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var hs = function (art, h) { return h / SZ[art][1]; };
+    var L = V ? { page: [540, 520], pk: 0.85, dog: [700, 1450], dh: 560, lei: [290, 1460], lh: 640, views: { close: [540, 450, 1.12], wide: [540, 960, 1] } }
+              : { page: [1250, 430], pk: 1.08, dog: [620, 1010], dh: 600, lei: [250, 1020], lh: 700, views: { close: [1250, 300, 1.6], wide: [960, 540, 1] } };
+    // the sums, written onto the page one line at a time (each copy of the page has one line more)
+    var SUMS = ["∫ eˣ dx = eˣ + C", "d/dx (x²) = 2x", "∑ 1/n² = π²/6", "lim (1 + 1/n)ⁿ = e", "∫ e^(−x²) dx = √π", "f′(x) = lim [f(x+h) − f(x)] / h"];
+    var page = function (n) {
+      var lab = [];
+      for (var i = 0; i < n; i++) lab.push({ text: SUMS[i], at: [554, 95 + i * 108], width: 960, size: 72, tilt: (i % 2 ? 1 : -1) * 0.8 });
+      return { art: "ledger", x: L.page[0], y: L.page[1], scale: L.pk, hidden: n > 1, label: lab };
+    };
+    var cast = {};
+    for (var n = 1; n <= SUMS.length; n++) cast["page" + n] = page(n);
+    // Leibniz with his pointer; bald and dripping
+    var LK = hs("leibniz", L.lh);
+    cast.lei = { art: "leibniz", x: L.lei[0], y: L.lei[1], anchor: "bottom", pivot: "bottom", scale: LK, hidden: true };
+    cast.bald = { art: "leibniz-bald", x: L.lei[0], y: L.lei[1], anchor: "bottom", pivot: "bottom", scale: hs("leibniz-bald", L.lh * 0.95), hidden: true };
+    var WIG = [L.lei[0] + (100 - 158) * LK, L.lei[1] - (494 - 60) * LK];
+    // the dog: writing (chalk in its mouth); ears on fire; charred and sitting
+    var DK = hs("calculus-dog", L.dh);
+    cast.dog = { art: "calculus-dog", x: L.dog[0], y: L.dog[1], anchor: "bottom", pivot: "bottom", scale: DK, hidden: true };
+    cast.burn = { art: "calculus-dog-burn", x: L.dog[0], y: L.dog[1], anchor: "bottom", pivot: "bottom", scale: hs("calculus-dog-burn", L.dh * 1.06), hidden: true };
+    cast.sat = { art: "calculus-dog-charred", x: L.dog[0], y: L.dog[1], anchor: "bottom", pivot: "bottom", scale: hs("calculus-dog-charred", L.dh * 0.92), hidden: true };
+    var EAR = [L.dog[0] + (125 - 122) * DK, L.dog[1] - (438 - 40) * DK], EAR2 = [L.dog[0] + (190 - 122) * DK, L.dog[1] - (438 - 45) * DK];
+    cast.steam1 = { art: "cloud-puff", x: EAR[0] - 70, y: EAR[1] - 60, scale: V ? 0.32 : 0.4, hidden: true };
+    cast.steam2 = { art: "cloud-puff", x: EAR2[0] + 60, y: EAR2[1] - 80, scale: V ? 0.28 : 0.34, hidden: true };
+    cast.wigfire = { art: "flames", x: WIG[0], y: WIG[1] + 40, anchor: "bottom", pivot: "bottom", scale: hs("flames", V ? 230 : 260), hidden: true };
+    // the bucket, tipped over the pair, and its steam
+    var MIDX = (L.dog[0] + L.lei[0]) / 2, BTOP = Math.min(EAR[1], WIG[1]);
+    cast.bucket = { art: "bucket", x: MIDX, y: BTOP - 260, scale: hs("bucket", V ? 300 : 340), hidden: true };
+    cast.blast = { art: "cloud-puff", x: MIDX, y: (L.dog[1] + BTOP) / 2 - 60, scale: V ? 1.9 : 2.4, hidden: true };
+
+    var beats = [{ at: 0, do: "camera", view: "close", dur: 0.01 }];
+    // the sums, faster than anyone can read them
+    for (n = 2; n <= SUMS.length; n++) {
+      var t = 0.15 + (n - 2) * 0.55;
+      beats.push({ at: t, do: "show", who: "page" + n });
+      beats.push({ at: t, do: "hide", who: "page" + (n - 1) });
+      beats.push({ at: t, do: "shake", frames: 1, x: 3 });
+    }
+    beats = beats.concat([
+      // "That": pull back; a dog is writing them, and Leibniz is teaching
+      { on: "That", do: "camera", view: "wide", dur: 0.7 },
+      { on: "That", do: "show", who: ["dog", "lei"] },
+      { on: "That", offset: 0.1, do: "bob", who: "dog", y: 8, r: 3, speed: 3, until: "before" },
+      { on: "dog", do: "nudge", who: "lei", by: [26, 0] },
+      { on: "calculus", offset: 0.3, do: "nudge", who: "lei", by: [26, 0] },
+      // "calculus": steam out of its ears
+      { on: "calculus", do: "pop", who: "steam1", squash: true, swell: 0.4 },
+      { on: "calculus", offset: 0.15, do: "pop", who: "steam2", squash: true, swell: 0.4 },
+      { on: "calculus", offset: 0.1, do: "shiver", who: "dog", dur: 0.7, amp: 4, rot: 3 },
+      // "before": the ears catch fire, and the fire jumps to the wig
+      { on: "before", do: "hide", who: ["steam1", "steam2"] },
+      { on: "before", do: "swap", who: "dog", to: "burn" },
+      { on: "before", offset: 0.05, do: "shiver", who: "burn", dur: 1.0, amp: 6, rot: 4 },
+      { on: "learns", do: "pop", who: "wigfire", squash: true },
+      { on: "learns", do: "shiver", who: ["wigfire", "lei"], dur: 0.55, amp: 4, rot: 4 },
+      // "sit.": the bucket, a cloud of steam, and a perfect sit
+      { on: "learns", offset: -0.1, do: "pop", who: "bucket" },
+      { on: "sit.", offset: -0.1, do: "move", who: "bucket", by: [0, 120], turn: 160, dur: 0.15 },
+      { on: "sit.", offset: 0.05, do: "pop", who: "blast", squash: true },
+      { on: "sit.", offset: 0.15, do: "hide", who: ["wigfire", "bucket"] },
+      { on: "sit.", offset: 0.15, do: "hide", who: ["burn", "lei"] },
+      { on: "sit.", offset: 0.15, do: "show", who: ["sat", "bald"] },
+      { on: "sit.", offset: 0.75, do: "pop", who: "blast", out: true },
+      { on: "sit.", offset: 0.95, do: "hop", who: "sat", height: 18 },
+      { on: "sit.", offset: 1.0, do: "shiver", who: "bald", dur: 0.4, amp: 2, rot: 1 },
+    ]);
+    KIT.collage({ id: ID, seed: 305, plate: V ? [-400, -300, 1500, 2300] : [-400, -400, 2400, 1500], views: L.views, view: "close", cast: cast, beats: beats });
+  </script>
+</template>

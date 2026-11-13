@@ -1,0 +1,362 @@
+<template id="money-volcano-template">
+  <!-- money-volcano · collage (Part 21, scene 3). The bit (scenes 3 to 7 are one plate, volcano-road): the treaty's $27.2 billion a year erupts out of a money
+       volcano as medicine money, drifts down the road on little parachutes, and pays every group that profited from war,
+       stop by stop.
+       This stretch: a hand plucks the top bill off the column of 100 war bills ($2.72 TRILLION) and drops it in the
+       crater; $27.2 BILLION A YEAR; BOOM, and it comes out as nine medicine bills on parachutes. Up the column, now 99
+       bills: the weapons factory lands on top kissing its missile (99%). PLUS: its bond, and medicine bills pile up
+       beside it 2.72 times as tall (272% A YEAR); it grins with a fistful. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="money-volcano" data-width="1920" data-height="1080" data-start="0" data-duration="13.18">
+    <div id="money-volcano-weave"></div>
+    <div id="money-volcano-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+    var ID = "money-volcano", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES;
+    // Plate time: every beat is written in part seconds (A(scene, word, n): that word's start), and each scene plays its
+    // own stretch of the one plate, so the five scenes cut with no seam.
+    var T0 = KIT.scene(ID).start, D = KIT.scene(ID).duration;
+    var MV = "money-volcano", PH = "pharma-per-patient", IN = "insurance-zero-claims", IV = "investor-lobby-force", WK = "wiki-voters-hammock";
+    var A = function (sc, w, n) { return KIT.scene(sc).start + KIT.cue(sc, w, n); };
+    var S0 = KIT.scene(MV).start;
+
+    // The road, left to right on the ground line G (plate px): the money volcano and the war column, the drug lab, the
+    // insurer, the investors and the Capitol, the typewriter, the Lobbyist's page, the polling place, YOU's bed.
+    var G = 1000;
+    var X = { hill: 600, col: 1350, bond: 1660, pay: 1880,
+      queue: 2560, door: 2780, sci: 3080, lab: 3480,
+      you: 4330, desk: 4750, reg: 4935,
+      fbond: 6200, fpay: 6420, crowd: 7550, cap: 8000, type: 9000, typist: 9470,
+      lob: 9750, page: 10250, box: 11300, pol: 11650, bed: 12500, reaper: 12960 };
+    // everything past the war column sits O further on, so the column's framing shows only the column
+    var O = 1100, O2 = 700, LATE = ["lob", "page", "box", "pol", "bed", "reaper"];
+    Object.keys(X).forEach(function (k) { if (["hill", "col", "bond", "pay"].indexOf(k) < 0) X[k] += O + (LATE.indexOf(k) >= 0 ? O2 : 0); });
+    // The money charts are inked on ledger cards; in 9:16 they hang above the stop.
+    var INS = V ? [4600 + O, -50] : [5500 + O, 590], INV = V ? [6400 + O, -250] : [7000 + O, 590];
+    var cy = function (s) { return V ? G - 420 / s : G - 390 / s; };
+    var views = V ? {
+      volcano: [800, cy(0.7), 0.7], column: [1640, cy(0.95), 0.95], pharma: [3100, cy(0.8), 0.8], ins: [4500, cy(0.95), 0.95],
+      inv: [6400, cy(0.7), 0.7], cap: [7950, cy(0.85), 0.85], type: [9150, cy(1), 1], wiki: [10050, cy(0.95), 0.95],
+      polls: [11150, cy(0.7), 0.7], bed: [12580, cy(1), 1],
+    } : {
+      volcano: [950, cy(0.95), 0.95], column: [1500, cy(0.8), 0.8], pharma: [2850, cy(0.9), 0.9], ins: [4950, cy(0.9), 0.9],
+      inv: [6750, cy(0.85), 0.85], cap: [7950, cy(0.9), 0.9], type: [9150, cy(1), 1], wiki: [9950, cy(0.9), 0.9],
+      polls: [11000, cy(0.85), 0.85], bed: [12600, cy(0.9), 0.9],
+    };
+    Object.keys(views).forEach(function (k) { if (k !== "volcano" && k !== "column") views[k][0] += O + (["wiki", "polls", "bed"].indexOf(k) >= 0 ? O2 : 0); });
+    // The band the parachuting medicine bills drift in, near the top of every framing.
+    var YB = V ? -430 : -50;
+
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+    var at = function (sc, w, n, off) { return A(sc, w, n) + (off || 0); };
+
+    // ── Stop 0: the money volcano (a hill of money) and the column of 100 war bills ──
+    var HK = 2.0, CRATER = [X.hill + 4 * HK, G - (485 - 238) * HK];
+    cast.hill = { art: "volcano", x: X.hill, y: G, anchor: "bottom", pivot: "bottom", scale: HK };
+    var CK = 0.7, CGAP = 5.5, COLTOP = G - (99 * CGAP + SZ["bill-war-flat"][1] * CK);
+    cast.hand = { art: "pointing-hand", x: X.col, y: COLTOP + 30, anchor: [60, 285], scale: 1.5, hidden: true, points: { tip: [60, 285] } };
+    // The weapons factory lands on top of the column, cradling its missile; paid, it grins with a fistful of money.
+    var FACK = 1.05;
+    cast.fac = { art: "factory-kiss", x: X.col, y: COLTOP + 8, anchor: "bottom", pivot: "bottom", scale: FACK, hidden: true };
+    cast.facPay = { art: "factory-pay", x: X.col, y: COLTOP + 8, anchor: "bottom", pivot: "bottom", scale: FACK, hidden: true };
+    add({ at: S0 + 0.05, do: "pile", id: "warcol", art: "bill-war-flat", x: X.col, y: G, count: 100, scale: CK, gap: CGAP, until: S0 + 0.55, jitter: 3, tilt: 2 });
+    add({ at: S0 + 0.6, do: "tag", id: "tagT", who: "warcol.0", text: "$2.72 TRILLION", x: V ? X.col - 130 : X.col + 380, y: V ? COLTOP - 280 : 560, w: 430, h: 190, knot: [93, 20] });
+    // "billion": a hand comes down, plucks the top bill off and drops it into the crater
+    add({ at: S0 + 0.1, do: "slideIn", who: "hand", from: "top", dist: 1500, over: 14 });
+    add({ at: at(MV, "billion"), do: "move", who: "warcol.99", to: "hand.tip", dur: F });
+    add({ at: at(MV, "billion", 1, 0.1), do: "move", who: "hand", to: [CRATER[0] + 30, CRATER[1] - 320], dur: 0.55, arc: 160 });
+    add({ at: at(MV, "a", 1, -0.1), do: "move", who: "warcol.99", to: [CRATER[0], CRATER[1] + 30], dur: 0.22 });
+    add({ at: at(MV, "a", 1, 0.12), do: "hide", who: "warcol.99" });
+    add({ at: at(MV, "year", 1, 0.05), do: "slideOut", who: "hand", to: "top", dist: 1500, dur: 0.35 });
+    add({ at: at(MV, "year"), do: "stamp", id: "perYear", text: "$27.2 BILLION A YEAR", x: X.hill + 60, y: V ? -330 : 130, size: 84, width: V ? 1100 : 900, tilt: -3 });
+    // "volcano": it rumbles; "erupts:" BOOM, and the war bill comes out as nine medicine bills on parachutes
+    add({ at: at(MV, "volcano"), do: "shiver", who: "hill", dur: 0.55, amp: 5, rot: 1 });
+    add({ at: at(MV, "erupts:"), do: "boom", shake: 18, flash: 0.18 });
+    add({ at: at(MV, "erupts:"), do: "shiver", who: "hill", dur: 0.8, amp: 9, rot: 2 });
+    var ERUPT = at(MV, "erupts:", 1, 0.05), PK = 0.4, BK = 0.42, HARN = [184, 470];
+    for (var i = 0; i < 9; i++) {
+      var px = X.hill + (i - 4) * 175, py = YB + (i % 3) * 55, speed = 130 + 12 * ((i * 4) % 9);
+      cast["pb" + i] = { art: "bill-med", x: CRATER[0], y: CRATER[1] + 20, anchor: "top", scale: BK, hidden: true };
+      cast["pc" + i] = { art: "parachute", x: px, y: py, anchor: "top", scale: PK, hidden: true, points: { harness: HARN } };
+      add({ at: ERUPT + i * 0.04, do: "pop", who: "pb" + i });
+      add({ at: ERUPT + i * 0.04, do: "move", who: "pb" + i, to: [px, py + HARN[1] * PK - 10], dur: 0.42, arc: 320 + 40 * (i % 3) });
+      add({ at: ERUPT + 0.46 + i * 0.04, do: "pop", who: "pc" + i, squash: true });
+      add({ at: ERUPT + 0.5 + i * 0.04, do: "move", who: "pb" + i, to: "pc" + i + ".harness", dur: F });
+      add({ at: ERUPT + 0.7, do: "move", who: "pc" + i, by: [speed * 64, 140], dur: 64 });
+      add({ at: ERUPT + 0.7, do: "bob", who: "pc" + i, y: 14, r: 5, speed: 0.6, phase: i * 0.7 });
+    }
+    // "Military Contractors keep ninety-nine percent": up the column, now 99 bills tall, and the factory lands on it
+    add({ at: at(MV, "Military", 1, -0.2), do: "camera", view: "column", dur: 0.8 });
+    add({ at: at(MV, "Military", 1, -0.2), do: "hide", who: "perYear" });
+    add({ at: at(MV, "Contractors"), do: "slideIn", who: "fac", from: "top", dist: 1700, over: 26 });
+    add({ at: at(MV, "keep", 1, 0.05), do: "shake", y: 6, frames: 3 });
+    add({ at: at(MV, "ninety-nine"), do: "pop", who: "tagT", out: true });
+    add({ at: at(MV, "ninety-nine"), do: "tag", id: "tag99", who: "warcol.0", text: "99%", x: V ? X.col + 200 : X.col - 380, y: V ? -330 : 560, w: 300, h: 170, knot: [93, 20] });
+    add({ at: at(MV, "budget"), do: "hop", who: "fac", height: 40 });
+    // "PLUS two hundred and seventy-two percent": his bond, and medicine bills land beside it in a stack 2.72 times as tall
+    add({ at: at(MV, "PLUS", 1, -0.45), do: "pile", id: "fbond", art: "bond", x: X.bond, y: G, count: 8, scale: 0.45, gap: 22, until: at(MV, "PLUS", 1, -0.05), jitter: 2, tilt: 2 });
+    add({ at: at(MV, "PLUS"), do: "pile", id: "fpay", art: "bill-med-flat", x: X.pay, y: G, count: 24, scale: 0.7, gap: 24, until: at(MV, "seventy-two", 1, 0.4), jitter: 3, tilt: 3 });
+    add({ at: at(MV, "percent", 2), do: "tag", id: "tag272", who: "fpay.0", text: "272% A YEAR", x: V ? X.pay - 40 : X.pay + 360, y: V ? 150 : 330, w: 440, h: 190, knot: [93, 20] });
+    add({ at: at(MV, "returns."), do: "hide", who: "fac" });
+    add({ at: at(MV, "returns."), do: "show", who: "facPay" });
+    add({ at: at(MV, "returns.", 1, 0.02), do: "hop", who: "facPay", height: 70 });
+    add({ at: at(MV, "returns.", 1, 0.5), do: "bob", who: "facPay", y: 5, r: 1.5, speed: 3, until: at(PH, "Instead", 1, 0.4) });
+
+    // ── Stop 1: Pfizer's lab and the trial door ──
+    var DK = 1.3, DOOR_TOP = G - SZ.turnstile[1] * DK;
+    cast.lab = { art: "lab", x: X.lab, y: G, anchor: "bottom", scale: 1.7, label: { text: "PFIZER", at: [140, 205], width: 170, size: 44, plaque: true } };
+    cast.door = { art: "turnstile", x: X.door, y: G, anchor: "bottom", pivot: "bottom", scale: DK, label: { text: "TRIALS", at: [110, 250], width: 150, size: 40, plaque: true } };
+    var SICK = ["sick-1", "sick-2", "sick-3", "sick-4", "sick-5", "sick-6"];
+    for (i = 0; i < 6; i++) cast["q" + i] = { art: SICK[i], x: X.queue - i * 175, y: G, anchor: "bottom", pivot: "bottom", scale: 590 / SZ[SICK[i]][1] };
+    cast.sci = { art: "scientist-flask", x: X.sci, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85 * 753 / 748 };
+    cast.sciW = { art: "scientist-wave", x: X.sci, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85 * 753 / 688 * 0.98, hidden: true };
+    cast.mb = { art: "money-bundle", x: X.sci + 250, y: G, anchor: "bottom", pivot: "bottom", scale: 0.72 };
+    cast.dropC = { art: "parachute", x: X.door, y: YB, anchor: "top", scale: PK, hidden: true, points: { harness: HARN } };
+    cast.dropB = { art: "bill-med", x: X.door, y: YB + HARN[1] * PK - 10, anchor: "top", scale: BK, hidden: true };
+    for (i = 0; i < 5; i++) cast["e" + i] = { art: "bill-med", x: X.door, y: G - 380, scale: 0.42, hidden: true };
+    cast.net = { art: "butterfly-net", x: X.sci + 120, y: G - 330, anchor: [40, 400], pivot: [40, 400], scale: 1.1, hidden: true };
+    cast.pass1 = { art: "citizen-3", x: X.door - 700, y: G, anchor: "bottom", pivot: "bottom", scale: 1.15, hidden: true };
+    // "Instead of paying forty-one thousand dollars": the scientist heaves the stack through the door; one patient goes in
+    add({ at: at(PH, "Instead", 1, -0.15), do: "camera", view: "pharma", dur: 0.9 });
+    add({ at: at(PH, "forty-one"), do: "tag", id: "tag41", who: "mb", text: "$41,000", x: X.sci + 330, y: V ? 330 : 420, w: 340, h: 170, knot: [235, 40] });
+    add({ at: at(PH, "dollars", 1, -0.25), do: "pop", who: "tag41", out: true });
+    add({ at: at(PH, "dollars", 1, -0.25), do: "move", who: "mb", to: [X.door, G - 200], dur: 0.3, arc: 220, turn: -20 });
+    add({ at: at(PH, "dollars", 1, 0.05), do: "hide", who: "mb" });
+    add({ at: at(PH, "dollars", 1, 0.05), do: "shiver", who: "door", dur: 0.3, amp: 4, rot: 2 });
+    add({ at: at(PH, "trials,", 1, -0.3), do: "move", who: "q0", by: [X.door - X.queue + 60, 0], dur: 0.3 });
+    add({ at: at(PH, "trials,"), do: "hide", who: "q0" });
+    add({ at: at(PH, "trials,"), do: "move", who: ["q1", "q2", "q3", "q4", "q5"], by: [175, 0], dur: 0.35 });
+    add({ at: at(PH, "trials,", 1, 0.25), do: "hide", who: "sci" });
+    add({ at: at(PH, "trials,", 1, 0.25), do: "show", who: "sciW" });
+    // "the treaty pays Big Pharma": a medicine bill parachutes onto the door, and the money runs the other way
+    add({ at: at(PH, "treaty", 1, -0.3), do: "show", who: ["dropC", "dropB"] });
+    add({ at: at(PH, "treaty", 1, -0.3), do: "move", who: "dropC", by: [0, DOOR_TOP - YB - HARN[1] * PK + 6], dur: at(PH, "pays") - at(PH, "treaty", 1, -0.3), ease: "smooth" });
+    add({ at: at(PH, "treaty", 1, -0.28), do: "move", who: "dropB", to: "dropC.harness", dur: F });
+    add({ at: at(PH, "pays"), do: "hide", who: ["dropC", "dropB"] });
+    add({ at: at(PH, "pays"), do: "hop", who: "door", height: 60 });
+    add({ at: at(PH, "pays", 1, 0.1), do: "shiver", who: "door", dur: 0.5, amp: 6, rot: 4 });
+    // "for each patient that joins": every patient who goes in sends a medicine bill out to her
+    var ins = [at(PH, "each", 1, -0.25), at(PH, "joins", 1, -0.05), at(PH, "joins", 1, 0.15), at(PH, "joins", 1, 0.35), at(PH, "their", 1, 0.1)];
+    ins.forEach(function (t, j) {
+      var q = "q" + (j + 1);
+      add({ at: t - 0.22 + 0.06 * j, do: "move", who: q, by: [X.door - X.queue + 60 + 175 * j, 0], dur: 0.22 - 0.06 * j + 0.02 });
+      add({ at: t, do: "hide", who: q });
+      add({ at: t, do: "pop", who: "e" + j });
+      add({ at: t + 0.02, do: "move", who: "e" + j, to: [X.sci + 110 + 10 * j, G - 330 - 38 * j], dur: 0.3, arc: 200 });
+      add({ at: t, do: "nudge", who: "door", by: [0, -10] });
+    });
+    add({ at: at(PH, "each", 1, 0.1), do: "hop", who: "sciW", height: 50 });
+    add({ at: at(PH, "joins"), do: "shiver", who: "door", dur: 1.0, amp: 5, rot: 3 });
+    // "trials.": she grabs a butterfly net and runs out into the road after a passer-by
+    add({ at: at(PH, "their"), do: "pop", who: "net" });
+    add({ at: at(PH, "trials.", 2, -0.3), do: "slideIn", who: "pass1", from: "left", dist: 900, over: 10 });
+    add({ at: at(PH, "trials.", 2, 0.1), do: "move", who: ["sciW", "net", "e0", "e1", "e2", "e3", "e4"], by: [-1050, 0], dur: 0.9, ease: "smooth" });
+    add({ at: at(PH, "trials.", 2, 1.05), do: "hinge", who: "net", angle: -70, frames: 2 });
+    add({ at: at(PH, "trials.", 2, 1.2), do: "shiver", who: "pass1", dur: 0.6, amp: 6, rot: 4 });
+
+    // ── Stop 2: the insurer ──
+    var DESKK = 1.25, DESKTOP = G - (350 - 118) * DESKK;
+    cast.desk = { art: "desk", x: X.desk, y: G, anchor: "bottom", scale: DESKK };
+    cast.clerk = { art: "claims-clerk", x: X.desk - 20, y: DESKTOP + 24, anchor: "bottom", pivot: "bottom", scale: 0.85 };
+    cast.reg = { art: "cash-register", x: X.reg, y: DESKTOP + 12, anchor: "bottom", pivot: "bottom", scale: 0.72 };
+    var LK = 0.7, LW = SZ.ledger[0] * LK;
+    var Z = INS[1] + 60, chI = KIT.collage.axes({ box: [INS[0] - 330, Z - 280, INS[0] + 330, Z], x: [0, 6, 1], y: [0, 8, 1] });
+    cast.youW = { art: "you-walk", x: X.you - 900, y: G, anchor: "bottom", pivot: "bottom", scale: 1.0, hidden: true };
+    cast.you = { art: "you", x: X.you, y: G, anchor: "bottom", pivot: "bottom", scale: 1.0, hidden: true };
+    cast.jacket = { art: "bubble-wrap", x: X.you - 280, y: G - 290, scale: 1.12, hidden: true };
+    cast.reaperI = { art: "reaper-stop", x: X.you - 80, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85, hidden: true };
+    cast.truck = { art: "hand-truck", x: X.you + 230, y: G, anchor: "bottom", pivot: "bottom", scale: 0.95, hidden: true };
+    cast.stone = { art: "headstone", x: X.you + 190, y: G, anchor: "bottom", pivot: "bottom", scale: 0.82, hidden: true };
+    cast.rosette = { art: "rosette", x: X.you + 190, y: G - 190, scale: 0.4, hidden: true };
+    add({ at: at(IN, "Insurance", 1, -0.15), do: "camera", view: "ins", dur: 1.0 });
+    // "healthy people file fewer claims": YOU steps up; his premiums bar shoots up, his claims bar is a stub
+    add({ at: at(IN, "Companies"), do: "show", who: "youW" });
+    add({ at: at(IN, "Companies"), do: "move", who: "youW", by: [900, 0], dur: 0.85 });
+    add({ at: at(IN, "Companies"), do: "bob", who: "youW", y: 8, r: 2, speed: 4, until: at(IN, "Companies", 1, 0.85) });
+    add({ at: at(IN, "Companies", 1, 0.85), do: "hide", who: "youW" });
+    add({ at: at(IN, "Companies", 1, 0.85), do: "show", who: "you" });
+    add({ at: at(IN, "find"), do: "banner", id: "insT", text: "PREMIUMS IN, CLAIMS OUT", x: INS[0], y: Z - 360, size: 54, width: 720, pad: 50, color: "ink", tilt: -2 });
+    add({ at: at(IN, "find", 1, 0.1), do: "line", id: "axisI", points: [[INS[0] - 360, Z], [INS[0] + 360, Z]], dur: 0.25, color: "ink", width: 7 });
+    add({ at: at(IN, "healthy"), do: "banner", id: "insYou", text: "YOU", x: chI.pt(1.5, 0)[0], y: Z + 150, size: 46, width: 200, pad: 26, color: "ink", tilt: 0 });
+    add({ at: at(IN, "dead"), do: "banner", id: "insDead", text: "DEAD", x: chI.pt(4.5, 0)[0], y: Z + 150, size: 46, width: 200, pad: 26, color: "ink", tilt: 0 });
+    add({ at: at(IN, "healthy"), do: "bar", id: "youIn", chart: chI, x: 1, to: 7, text: "IN", size: 36, dur: 0.5, fill: "#CFE0B4" });
+    add({ at: at(IN, "fewer"), do: "bar", id: "youOut", chart: chI, x: 2, to: -0.6, text: "OUT", size: 30, dur: 0.3 });
+    add({ at: at(IN, "claims"), do: "hop", who: "clerk", height: 30 });
+    add({ at: at(IN, "claims"), do: "shiver", who: "reg", dur: 0.3, amp: 3, rot: 2 });
+    // "than dead people": the Reaper drags in a headstone, and YOU steps aside
+    add({ at: at(IN, "than", 1, 0.1), do: "move", who: "you", by: [-280, 0], dur: 0.4 });
+    add({ at: at(IN, "dead"), do: "slideIn", who: ["reaperI", "truck", "stone"], from: "left", dist: 1500, over: 16 });
+    add({ at: at(IN, "file", 2), do: "bar", id: "deadOut", chart: chI, x: 5, to: -3.5, text: "", dur: 0.2 });
+    add({ at: at(IN, "zero"), do: "bar", id: "deadOut", chart: chI, x: 5, to: 0, dur: 0.3 });
+    add({ at: at(IN, "ideal"), do: "pop", who: "rosette", squash: true });
+    add({ at: at(IN, "ideal", 1, 0.1), do: "hop", who: "clerk", height: 40 });
+    // "except they also pay zero premiums": NO SALE
+    add({ at: at(IN, "pay"), do: "bar", id: "deadIn", chart: chI, x: 4, to: 0.05, text: "IN", size: 36, dur: 0.2 });
+    add({ at: at(IN, "premiums,"), do: "stamp", id: "nosale", x: X.reg + (V ? -170 : 40), y: DESKTOP - (V ? 460 : 330), text: "NO SALE", size: 70, width: 330, tilt: -6, from: 2.2 });
+    // "creating a revenue problem": the revenue line dives off the card; the headstone goes back; YOU gets a life jacket
+    add({ at: at(IN, "revenue", 1, -0.15), do: "line", id: "revenue", chart: chI, points: [[0.3, 5.5], [2.6, 6], [3.8, 3.5], [5.8, -12]], dur: 0.8, color: "red", width: 9, front: true });
+    add({ at: at(IN, "creating"), do: "slideOut", who: ["reaperI", "truck", "stone", "rosette"], to: "left", dist: 1500, dur: 0.5 });
+    add({ at: at(IN, "problem).", 1, -0.05), do: "move", who: "clerk", by: [X.you - 40 - (X.desk - 20), G - DESKTOP - 24], dur: 0.32, arc: 220 });
+    add({ at: at(IN, "problem).", 1, 0.3), do: "pop", who: "jacket", squash: true });
+    add({ at: at(IN, "problem).", 1, 0.45), do: "shiver", who: ["you", "jacket"], dur: 0.35, amp: 4, rot: 2 });
+    add({ at: at(IN, "problem).", 1, 0.95), do: "move", who: "clerk", by: [X.desk - 20 - (X.you - 40), DESKTOP + 24 - G], dur: 0.4, arc: 220 });
+
+    // ── Stop 3: the investors and the Capitol ──
+    var FCK = 0.75, FBTOP = G - (7 * 22 + SZ.bond[1] * 0.45);
+    cast.cat = { art: "fat-cat", x: X.fbond, y: FBTOP + 4, anchor: "bottom", pivot: "bottom", scale: FCK, hidden: true };
+    var Z2 = INV[1] + 150, chV = KIT.collage.axes({ box: [INV[0] - 330, Z2 - 240, INV[0] + 330, Z2], x: [0, 5, 1], y: [0, 6, 1] });
+    add({ at: at(IV, "Investors", 1, -0.15), do: "camera", view: "inv", dur: 1.0 });
+    add({ at: at(IV, "Investors", 1, -0.1), do: "pile", id: "cbond", art: "bond", x: X.fbond, y: G, count: 8, scale: 0.45, gap: 22, until: at(IV, "receive", 1, 0.1), jitter: 2, tilt: 2 });
+    add({ at: at(IV, "receive", 1, 0.15), do: "slideIn", who: "cat", from: "top", dist: 1500, over: 20 });
+    add({ at: at(IV, "two"), do: "pile", id: "cpay", art: "bill-med-flat", x: X.fpay, y: G, count: 24, scale: 0.7, gap: 24, until: at(IV, "seventy-two", 1, 0.45), jitter: 3, tilt: 3 });
+    add({ at: at(IV, "percent"), do: "tag", id: "ctag", who: "cpay.0", text: "272% A YEAR", x: V ? X.fpay + 20 : X.fpay + 20, y: V ? 160 : 160, w: 440, h: 190, knot: [93, 20] });
+    // "that scale with every treaty expansion": four stacks, 1%, 2%, 5%, 10%; he hops up them like stairs
+    var steps = [[1, 1, "1%", at(IV, "every")], [2, 2, "2%", at(IV, "treaty")], [3, 5, "5%", at(IV, "expansion,")], [4, 10, "10%", at(IV, "expansion,", 1, 0.35)]];
+    add({ at: at(IV, "scale", 1, -0.1), do: "pop", who: "ctag", out: true });
+    var catAt = [X.fbond, FBTOP + 4];
+    add({ at: at(IV, "scale", 1, -0.2), do: "banner", id: "invT", text: "EVERY TREATY EXPANSION", x: INV[0], y: Z2 + 80, size: 54, width: 720, pad: 50, color: "ink", tilt: -2 });
+    add({ at: at(IV, "scale", 1, -0.1), do: "line", id: "axisV", points: [[INV[0] - 360, Z2], [INV[0] + 360, Z2]], dur: 0.25, color: "ink", width: 7 });
+    steps.forEach(function (s, j) {
+      add({ at: s[3], do: "bar", id: "tb" + j, chart: chV, x: s[0], to: s[1], text: s[2], size: 34, dur: 0.25, width: 86, fill: "#CFE0B4" });
+      var top = chV.pt(s[0], s[1]);
+      add({ at: s[3] + 0.18, do: "move", who: "cat", by: [top[0] - catAt[0], top[1] + 4 - catAt[1]], dur: 0.26, arc: 120 });
+      catAt = [top[0], top[1] + 4];
+    });
+    add({ at: at(IV, "expansion,", 1, 0.75), do: "hop", who: "cat", height: 60 });
+    // "turning them into the world's most aggressive pro-health and anti-war lobbying force": they storm the Capitol
+    cast.capitol = { art: "capitol", x: X.cap, y: G, anchor: "bottom", scale: 1.7 };
+    cast.germ = { art: "germ", x: X.cap + 330, y: G, anchor: "bottom", pivot: "bottom", scale: 0.75, hidden: true };
+    cast.missile = { art: "missile", x: X.cap + 470, y: G + 20, anchor: "bottom", pivot: "bottom", scale: 0.8, hidden: true,
+      pieces: { body: { clip: [[0, 280], [191, 280], [191, 563], [0, 563]] }, nose: { clip: [[0, 0], [191, 0], [191, 284], [0, 284]], pivot: [150, 282] } } };
+    cast.crowd = { art: "crowd", x: X.crowd, y: G + 10, anchor: "bottom", pivot: "bottom", scale: 2.3, hidden: true };
+    var sign = function (text, x, y) {
+      return { art: "sign-board", x: x, y: y, anchor: [107, 340], pivot: [107, 340], scale: 1.25, hidden: true, label: { text: text, at: [107, 62], width: 180, size: 40 } };
+    };
+    cast.sign1 = sign("MORE TRIALS", X.crowd - 150, G - 330);
+    cast.sign2 = sign("FEWER WARS", X.crowd + 240, G - 300);
+    cast.catW = { art: "fat-cat-waddle", x: X.crowd + 40, y: G + 6, anchor: "bottom", pivot: "bottom", scale: 1.2, hidden: true };
+    add({ at: at(IV, "turning", 1, -0.1), do: "camera", view: "cap", dur: 0.8 });
+    add({ at: at(IV, "turning", 1, 0.2), do: "slideOut", who: "cat", to: "top", dist: 1500, dur: 0.4 });
+    add({ at: at(IV, "the", 1), do: "slideIn", who: ["crowd", "catW"], from: "left", dist: 1600, over: 24 });
+    add({ at: at(IV, "aggressive"), do: "pop", who: "sign1", squash: true });
+    add({ at: at(IV, "aggressive", 1, 0.15), do: "pop", who: "sign2", squash: true });
+    add({ at: at(IV, "aggressive", 1, 0.3), do: "bob", who: ["crowd", "sign1", "sign2", "catW"], y: 10, r: 2, speed: 3.5 });
+    add({ at: at(IV, "most"), do: "slideIn", who: "germ", from: "right", dist: 900, over: 10 });
+    add({ at: at(IV, "pro-health", 1, 0.25), do: "hinge", who: "sign2", angle: 38, frames: 1, hold: 0.2 });
+    add({ at: at(IV, "pro-health", 1, 0.3), do: "drop", who: "germ", dur: 0.6, drift: 500, spin: 200 });
+    add({ at: at(IV, "and", 2, 0.0), do: "slideIn", who: "missile", from: "bottom", dist: 900, over: 20 });
+    add({ at: at(IV, "anti-war", 1, -0.05), do: "hinge", who: "sign2", angle: 42, frames: 1, hold: 0.2 });
+    add({ at: at(IV, "anti-war"), do: "hinge", who: "missile.nose", angle: 125, frames: 2 });
+    add({ at: at(IV, "anti-war", 1, 0.05), do: "shiver", who: "missile", dur: 0.4, amp: 4, rot: 2 });
+    // "not a sentence anyone expected to write.": a hand types it; the typist reads it and faints
+    cast.typer = { art: "typewriter", x: X.type, y: G, anchor: "bottom", pivot: "bottom", scale: 1.35 };
+    cast.typist = { art: "typist", x: X.typist, y: G, anchor: "bottom", pivot: "bottom", scale: 1.05 };
+    cast.hand2 = { art: "pointing-hand", x: X.type - 60, y: G - 300, anchor: [60, 285], scale: 1.4, hidden: true };
+    add({ at: at(IV, "a", 1, -0.55), do: "camera", view: "type", dur: 0.6 });
+    add({ at: at(IV, "a", 1, -0.2), do: "slideIn", who: "hand2", from: "top", dist: 1400, over: 10 });
+    [0, 0.14, 0.28, 0.42, 0.56].forEach(function (o, j) {
+      add({ at: at(IV, "sentence", 1, o), do: "nudge", who: "hand2", by: [0, 46] });
+      add({ at: at(IV, "sentence", 1, o + 0.04), do: "shake", y: 3, frames: 1 });
+    });
+    add({ at: at(IV, "expected", 1, -0.1), do: "slideOut", who: "hand2", to: "top", dist: 1400, dur: 0.3 });
+    add({ at: at(IV, "expected"), do: "hop", who: "typer", height: 24 });
+    add({ at: at(IV, "anyone"), do: "shiver", who: "typist", dur: 0.9, amp: 3, rot: 2 });
+    add({ at: at(IV, "write.", 1, -0.05), do: "move", who: "typist", by: [-40, 0], turn: -90, dur: 0.25 });
+    add({ at: at(IV, "write.", 1, 0.2), do: "shake", y: 8, frames: 3 });
+
+    // ── Stop 4: the Lobbyist's page, the polling place, and YOU's bed ──
+    // The Wikipedia page (puzzle globe top left): his name on its title lines, the Controversies heading over the body,
+    // and under it a section (a till receipt) so long it runs off the bottom of the page.
+    var PGK = 1.9, PG_TOP = G - 30 - SZ["wiki-page"][1] * PGK, PG_L = X.page - SZ["wiki-page"][0] * PGK / 2;
+    cast.page = { art: "wiki-page", x: X.page, y: G - 30, anchor: "bottom", scale: PGK, hidden: true, label: [
+      { text: "Lobbyist", at: [252, 104], width: 170, size: 40, plaque: true },
+      { text: "Controversies", at: [150, 190], width: 220, size: 36, plaque: true }] };
+    cast.section = { art: "till-receipt", x: PG_L + 191 * PGK, y: PG_TOP + 212 * PGK, anchor: "top", pivot: "top", scale: 3.3, hidden: true };
+    cast.lob = { art: "lobbyist", x: X.lob - 500, y: G, anchor: "bottom", pivot: "bottom", scale: 1.25, hidden: true };
+    var slip = function (hidden) { return { art: "paycheck", x: X.lob + 170, y: G - 400, scale: 0.85, hidden: hidden, label: { text: "$$$$$", at: [146, 54], width: 170, size: 46 } }; };
+    cast.slipA = slip(true); cast.slipB = slip(true); cast.slipC = slip(true);
+    add({ at: at(WK, "Lobbyists", 1, -0.15), do: "camera", view: "wiki", dur: 1.0 });
+    add({ at: at(WK, "Lobbyists"), do: "show", who: "lob" });
+    add({ at: at(WK, "Lobbyists"), do: "move", who: "lob", by: [500, 0], dur: 1.0 });
+    add({ at: at(WK, "Lobbyists"), do: "bob", who: "lob", y: 18, r: 3, speed: 3, until: at(WK, "job") });
+    add({ at: at(WK, "same"), do: "pop", who: "slipA" });
+    add({ at: at(WK, "salary,"), do: "swap", who: "slipA", to: "slipB" });
+    add({ at: at(WK, "salary,", 1, 0.45), do: "swap", who: "slipB", to: "slipC" });
+    add({ at: at(WK, "page", 1, 0.0), do: "slideOut", who: "slipC", to: "bottom", dist: 900, dur: 0.3 });
+    // "Wikipedia page": the page rises behind him; "Controversies": the long section rolls up and vanishes
+    add({ at: at(WK, "Wikipedia", 1, -0.05), do: "slideIn", who: "page", from: "bottom", dist: 1300, over: 20 });
+    add({ at: at(WK, "Wikipedia", 1, -0.05), do: "slideIn", who: "section", from: "bottom", dist: 1300, over: 20 });
+    add({ at: at(WK, "Controversies"), do: "flatten", who: "section" });
+    add({ at: at(WK, "Controversies", 1, 0.2), do: "hide", who: "section" });
+    add({ at: at(WK, "section."), do: "hop", who: "lob", height: 40 });
+    // "Politicians get reelected by living voters": the line votes; Grandma's skeleton is shut out
+    cast.ballot = { art: "ballot-box", x: X.box, y: G, anchor: "bottom", pivot: "bottom", scale: 1.6 };
+    cast.pol = { art: "politician", x: X.pol, y: G, anchor: "bottom", pivot: "bottom", scale: 0.85 };
+    cast.granny = { art: "grandma-skeleton", x: X.box - 900, y: G, anchor: "bottom", pivot: "bottom", scale: 1.15, hidden: true };
+    var SLOT = [X.box, G - SZ["ballot-box"][1] * 1.6 + 30], VOTERS = ["citizen-5", "citizen-3", "citizen-7", "citizen-4"];
+    for (i = 0; i < 5; i++) cast["bal" + i] = { art: "letter", x: X.box - 230 - 175 * i, y: G - 330, scale: 0.2, hidden: true };
+    add({ at: at(WK, "Politicians", 1, -0.15), do: "camera", view: "polls", dur: 0.9 });
+    add({ at: at(WK, "Politicians"), do: "march", id: "voters", art: VOTERS, count: 4, path: [[X.box - 1500, G], [X.box - 230, G]], speed: 900, gap: 175, height: 480, end: "stop" });
+    add({ at: at(WK, "reelected"), do: "slideIn", who: "granny", from: "left", dist: 900, over: 14 });
+    for (i = 0; i < 4; i++) {
+      add({ at: at(WK, "living", 1, i * 0.18 - 0.05), do: "pop", who: "bal" + i });
+      add({ at: at(WK, "living", 1, i * 0.18), do: "move", who: "bal" + i, to: SLOT, dur: 0.2, arc: 160 });
+      add({ at: at(WK, "living", 1, i * 0.18 + 0.2), do: "hide", who: "bal" + i });
+    }
+    add({ at: at(WK, "voters", 1, -0.1), do: "pop", who: "bal4" });
+    add({ at: at(WK, "voters", 1, -0.05), do: "move", who: "bal4", to: [SLOT[0] - 60, SLOT[1] - 20], dur: 0.2, arc: 200 });
+    add({ at: at(WK, "voters", 1, 0.3), do: "shiver", who: "ballot", dur: 0.25, amp: 5, rot: 3 });
+    add({ at: at(WK, "voters", 1, 0.32), do: "drop", who: "bal4", dur: 0.5, drift: -300, spin: 90 });
+    add({ at: at(WK, "voters", 1, 0.35), do: "shiver", who: "granny", dur: 0.5, amp: 5, rot: 4 });
+    add({ at: at(WK, "a", 2, 0.0), do: "nudge", who: "pol", by: [20, 0] });
+    // "(a revolutionary strategy).": the box overflows and the ballots bury him; his head pops up
+    add({ at: at(WK, "revolutionary"), do: "shiver", who: "ballot", dur: 0.6, amp: 7, rot: 3 });
+    add({ at: at(WK, "revolutionary", 1, 0.1), do: "pile", id: "ballots", art: "letter", x: X.pol, y: G, heap: 6, count: 21, scale: 0.3, until: at(WK, "strategy).", 1, 0.05), accel: 0.5, jitter: 10, tilt: 25 });
+    add({ at: at(WK, "strategy).", 1, 0.15), do: "hop", who: "pol", height: 110 });
+    // "Regular humans enjoy not dying from stupid things": YOU in a hammock; the Reaper shins up the palm with a
+    // coconut, and it bounces off YOU and back into his skull
+    var PK2 = 2.2, HAM = [X.bed - 90, G - (458 - 292) * PK2], TRUNK = X.bed + 160 * PK2;
+    cast.palms = { art: "hammock-palms", x: X.bed, y: G, anchor: "bottom", pivot: "bottom", scale: PK2 };
+    cast.youH = { art: "you-bed", x: HAM[0], y: HAM[1] - 10, anchor: [140, 100], pivot: [140, 100], scale: 1.9, clip: [[28, 28], [250, 58], [252, 126], [28, 126]] };
+    cast.reaper = { art: "reaper-stop", x: TRUNK + 150, y: G, anchor: "bottom", pivot: "bottom", scale: 0.8, hidden: true };
+    cast.coco = { art: "coconut", x: TRUNK, y: G - 900, scale: 0.34, hidden: true };
+    cast.bones = { art: "bone-hill", x: TRUNK + 140, y: G + 10, anchor: "bottom", scale: 0.3, hidden: true };
+    cast.skull = { art: "skeleton", x: TRUNK + 140, y: G - 40, anchor: [106, 60], pivot: [106, 60], scale: 0.9, hidden: true, clip: [[60, 0], [150, 0], [150, 120], [60, 120]] };
+    var CLIMB = V ? 430 : 400, HEAD = [TRUNK + 150, G - 0.8 * 763 - CLIMB + 90];
+    add({ at: at(WK, "Regular", 1, -0.15), do: "camera", view: "bed", dur: 1.0 });
+    add({ at: at(WK, "Regular", 1, 0.6), do: "bob", who: "youH", y: 5, r: 1.2, speed: 0.6, until: at(WK, "stupid", 1, -0.1) });
+    add({ at: at(WK, "humans"), do: "slideIn", who: "reaper", from: "right", dist: 800, over: 10 });
+    add({ at: at(WK, "enjoy"), do: "move", who: "reaper", by: [-60, -CLIMB], dur: 1.0 });
+    add({ at: at(WK, "enjoy"), do: "shiver", who: "reaper", dur: 1.0, amp: 4, rot: 3 });
+    add({ at: at(WK, "dying"), do: "pop", who: "coco" });
+    add({ at: at(WK, "stupid"), do: "move", who: "coco", to: [HAM[0] + 40, HAM[1] - 60], dur: 0.3, ease: "linear" });
+    add({ at: at(WK, "things"), do: "shiver", who: ["youH", "palms"], dur: 0.3, amp: 5, rot: 1 });
+    add({ at: at(WK, "things", 1, 0.02), do: "move", who: "coco", to: HEAD, dur: 0.26, arc: 180 });
+    add({ at: at(WK, "things", 1, 0.28), do: "shake", y: 8, frames: 3 });
+    add({ at: at(WK, "things", 1, 0.3), do: "drop", who: ["reaper", "coco"], dur: 0.45, dist: 700, spin: 40 });
+    add({ at: at(WK, "things", 1, 0.45), do: "pop", who: ["bones", "skull"], squash: true });
+    add({ at: at(WK, "(priceless,"), do: "tag", id: "priceless", who: "palms", text: "PRICELESS", x: V ? X.bed - 120 : X.bed - 620, y: V ? 150 : 380, w: 460, h: 200, knot: [200, 100] });
+    add({ at: at(WK, "free)."), do: "pop", who: "priceless", out: true });
+    add({ at: at(WK, "free)."), do: "tag", id: "free", who: "palms", text: "$0", x: V ? X.bed - 120 : X.bed - 620, y: V ? 150 : 380, w: 300, h: 200, knot: [200, 100] });
+    add({ at: at(WK, "also"), do: "hop", who: "skull", height: 30 });
+
+    // This scene's stretch: plate time to scene time; nothing after its end.
+    beats = beats.filter(function (b) { return b.at < T0 + D + 0.5; });
+    beats.forEach(function (b) { b.at -= T0; if (typeof b.until === "number") b.until -= T0; });
+    KIT.collage({ id: ID, seed: 2103, plate: V ? [-2000, -3200, 16500, 3800] : [-2000, -1800, 16500, 2800], views: views, view: "volcano", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

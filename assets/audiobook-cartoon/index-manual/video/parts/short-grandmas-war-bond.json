@@ -1,0 +1,226 @@
+{
+  "id": "short-grandmas-war-bond",
+  "title": "Short: Grandma's war bond",
+  "storyboard": "storyboards/part-17-step-1-incentive-alignment-bonds.md",
+  "audio": {
+    "start": 2206.2,
+    "end": 2257.92
+  },
+  "scenes": [
+    {
+      "id": "grandmas-war-bond",
+      "file": "compositions/scenes/short-grandmas-war-bond/grandmas-war-bond.html",
+      "cue": "Remember",
+      "approx": 2206.364,
+      "layer": "B"
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "bonds?",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "four",
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "percent",
+      "n": 1,
+      "sfx": "pop",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "Nazis",
+      "n": 1,
+      "sfx": "slam",
+      "volume": 0.55
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "(mostly).",
+      "sfx": "scratch",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "You're",
+      "n": 1,
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "good).",
+      "sfx": "ding",
+      "volume": 0.4
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "Four",
+      "n": 2,
+      "sfx": "stamp",
+      "volume": 0.4
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "(barely",
+      "offset": 0.55,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "beat",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "inflation).",
+      "offset": 0.2,
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "nineteen",
+      "sfx": "zap",
+      "volume": 0.45
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "eighty-seven.",
+      "offset": 0.35,
+      "sfx": "thunk",
+      "volume": 0.5
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "What",
+      "n": 2,
+      "offset": 0.05,
+      "sfx": "whoosh",
+      "volume": 0.35
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "Offering.",
+      "offset": 0.2,
+      "sfx": "cash-register",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "Dead",
+      "n": 2,
+      "sfx": "slam",
+      "volume": 0.6
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "better",
+      "sfx": "slam",
+      "volume": 0.4
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "dead",
+      "n": 3,
+      "sfx": "slam",
+      "volume": 0.4
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "kill",
+      "sfx": "slam",
+      "volume": 0.4
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "people).",
+      "sfx": "slam",
+      "volume": 0.45
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "Two",
+      "n": 2,
+      "sfx": "slide-up",
+      "volume": 0.4
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "percent",
+      "n": 3,
+      "sfx": "boom",
+      "volume": 0.45
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "returns",
+      "n": 3,
+      "sfx": "stamp",
+      "volume": 0.5
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "(a",
+      "sfx": "whoosh",
+      "volume": 0.3,
+      "n": 2
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "world's",
+      "sfx": "pat",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "lobbyists",
+      "offset": 0.1,
+      "sfx": "pat",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "expanding",
+      "offset": 0.1,
+      "sfx": "pat",
+      "volume": 0.3
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "Not",
+      "offset": -0.6,
+      "sfx": "slide-down",
+      "volume": 0.45
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "meat",
+      "sfx": "zap",
+      "volume": 0.4
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "big",
+      "offset": -0.1,
+      "sfx": "ding",
+      "volume": 0.35
+    },
+    {
+      "scene": "grandmas-war-bond",
+      "cue": "bonus).",
+      "sfx": "slam",
+      "volume": 0.65
+    }
+  ]
+}

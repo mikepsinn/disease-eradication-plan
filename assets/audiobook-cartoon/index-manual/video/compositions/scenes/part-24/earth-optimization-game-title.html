@@ -1,0 +1,71 @@
+<template id="earth-optimization-game-title-template">
+  <!-- earth-optimization-game-title · the period title card (KIT.titleScene, look "atomic"), up from black on Part 23's
+       switch click with the whole heading on it. On "Game." a board-game spinner arrow drops onto the emblem's nucleus,
+       spins, clicking, and stops pointing at one of the running war papers, which jumps. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    @font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+    #root { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="earth-optimization-game-title" data-width="1920" data-height="1080" data-start="0" data-duration="2.634">
+    <div id="earth-optimization-game-title-cam">
+      <div id="earth-optimization-game-title-bg"></div>
+      <div id="earth-optimization-game-title-back"></div>
+      <div id="earth-optimization-game-title-words"></div>
+      <div id="earth-optimization-game-title-art"></div>
+    </div>
+    <div id="earth-optimization-game-title-grain"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/props/title.js"></script>
+  <script>
+    KIT.titleScene({
+      id: "earth-optimization-game-title",
+      lines: [{ words: ["THE", "EARTH"], style: "small" }, ["OPTIMIZATION", "GAME"]],
+      linesTall: [{ words: ["THE", "EARTH"], style: "small" }, ["OPTIMIZATION"], ["GAME"]],
+      gag: function (c) {
+        var E = c.emblem, D = c.D, ID = c.id, f = function (n) { return n.toFixed(1); };
+        var clamp = function (u) { return u < 0 ? 0 : u > 1 ? 1 : u; };
+        var twos = function (t) { return Math.floor(t * 12 + 1e-6) / 12; };
+        // The emblem's papers, as KIT.titleScene runs them (three orbits tilted 0, 60, -60; phase i * 2.1; 2.4 rad/s).
+        var TILT = [0, 60, -60];
+        var paperAt = function (i, t) {
+          var a = TILT[i] * Math.PI / 180, th = i * 2.1 + t * 2.4, ex = E.rx * Math.cos(th), ey = E.ry * Math.sin(th);
+          return [E.at[0] + ex * Math.cos(a) - ey * Math.sin(a), E.at[1] + ex * Math.sin(a) + ey * Math.cos(a)];
+        };
+        // The spinner arrow: a long cream diamond with an ink rim and a brass hub, drawn pointing +x around its pivot.
+        var L = E.rx * 0.9, Wd = E.rx * 0.11, INK = "#2A1E14";
+        var arrow = document.createElement("div");
+        arrow.style.cssText = "position:absolute;left:0;top:0;width:0;height:0;visibility:hidden";
+        arrow.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible">' +
+          '<path d="M' + f(-L * 0.32) + ',0 L0,' + f(-Wd) + ' L' + f(L) + ',0 L0,' + f(Wd) + ' Z" fill="#F2E3BC" stroke="' + INK + '" stroke-width="6" stroke-linejoin="round"/>' +
+          '<path d="M' + f(L * 0.55) + ',' + f(-Wd * 0.45) + ' L' + f(L) + ',0 L' + f(L * 0.55) + ',' + f(Wd * 0.45) + ' Z" fill="#C8452F"/>' +
+          '<circle r="' + f(Wd * 0.95) + '" fill="#C99A3A" stroke="' + INK + '" stroke-width="5"/><circle r="' + f(Wd * 0.3) + '" fill="' + INK + '"/></svg>';
+        c.art.appendChild(arrow);
+
+        var T = c.cue("Game."), LAND = T + 0.18, STOP = Math.min(D - 0.6, LAND + 0.46), K = 1;
+        var P = paperAt(K, STOP), FINAL = Math.atan2(P[1] - E.at[1], P[0] - E.at[0]) * 180 / Math.PI, SPINS = 3 * 360;
+        var paper = document.getElementById(ID + "-e" + K);
+        KIT.onTime(c.tl, D, function (t0) {
+          var t = twos(t0);
+          arrow.style.visibility = t >= T ? "inherit" : "hidden";
+          // it drops in from above the card and lands on the nucleus with a little bounce
+          var u = clamp((t - T) / (LAND - T)), y = E.at[1] - (1 - u * u) * (E.at[1] + 200) - (t >= LAND && t < LAND + 0.17 ? 10 * Math.sin((t - LAND) / 0.17 * Math.PI) : 0);
+          // then spins, slowing, and stops on the paper
+          var s = clamp((t - LAND) / (STOP - LAND)), e = 1 - Math.pow(1 - s, 2.4), r = FINAL - SPINS * (1 - e);
+          arrow.style.transform = "translate(" + f(E.at[0]) + "px," + f(y) + "px) rotate(" + f(t < LAND ? FINAL - SPINS : r) + "deg)";
+          // the paper it lands on jumps
+          if (t >= STOP && t < STOP + 0.34) {
+            var q = paperAt(K, t), h = 46 * Math.sin(clamp((t - STOP) / 0.34) * Math.PI);
+            paper.setAttribute("transform", "translate(" + f(q[0]) + "," + f(q[1] - 6 - h) + ")");
+          }
+        });
+      },
+    });
+  </script>
+</template>

@@ -1,0 +1,264 @@
+<template id="deletion-board-template">
+  <!-- deletion-board · collage (Part 8, scenes 2 to 4 as one plate: the Grim Reaper's deli). The bit: death is a deli
+       counter that never closes. The NOW SERVING board clatters to 150,000. "permanently stop": the fat cat slides a wad of
+       cash across, the Reaper rings it into the till and dings the bell anyway; the fat cat goes to bone, top hat still on,
+       and strolls out through DELETED. "every twenty-four hours": the clock's hand goes round once while red tally marks fill
+       its face. "bugs in your meat software": the hatch in the next man's chest springs open on a coil of punched tape, a
+       beetle chews it in two and burps, and he goes to bone; the board clicks to 150,001 and ticks on every 0.576 s. Up on the wall: HOLOCAUST,
+       6,000,000, and the Reaper tears forty days off his calendar to match it. Hitler stands on his bar; a claims clerk
+       climbs the page bar with his forms and hands him one; Hitler cannot work it out, his moustache droops and walks off,
+       DENIED, and the forms flatten him. TODAY, 150,000, and fifty little 9/11s of headstones stack up beside it, rubbed out
+       and stacked again. Down to the queue: Uncle Sam walks a missile on a leash, it sniffs the germ in line, a moth flies
+       out of the germ's pockets, and the missile bolts for the oil derrick. Boom, a gusher, and Uncle Sam stands black with
+       oil, grinning. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="deletion-board" data-width="1920" data-height="1080" data-start="0" data-duration="29.12">
+    <div id="deletion-board-weave"></div>
+    <div id="deletion-board-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, Z = KIT.collage.SIZES, F = KIT.collage.F, ID = "deletion-board";
+    var hs = function (art, h) { return h / Z[art][1]; };
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var D = KIT.scene(ID).duration;
+    // The shop, left to right on the floor line (plate px): the DELETED door, the Reaper behind his counter, the wall
+    // clock and calendar over the till, the queue. On the wall above: the Holocaust chart over the counter and the
+    // 9/11 chart over the queue; the NOW SERVING board hangs between them. The oil derrick stands at the paper's edge.
+    // (The charts sit inside the canvas rect: the kit draws their axes in a frame-sized SVG.)
+    var FLOOR = V ? 3300 : 2050, SLOT0 = 1180, STEP = 380, QH = 640;
+    var BOARD = V ? [800, FLOOR - 1150, 0.42] : [1500, FLOOR - 740, 0.36], CAL = V ? [900, 1120] : [790, 1150];
+    var C = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+
+    C.door = { art: "deleted-door", x: 120, y: FLOOR, anchor: "bottom", pivot: "bottom", scale: 1.7, label: { text: "DELETED", at: [121, 118], width: 112, size: 70 } };
+    C.reaper = { art: "reaper-deli", x: 480, y: FLOOR + 100, anchor: "bottom", pivot: "bottom", scale: 1.9 };
+    C.counter = { art: "deli-counter", x: 620, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: 1.25 };
+    C.board = { art: "rank-board", x: BOARD[0], y: BOARD[1], scale: BOARD[2], label: { text: "NOW SERVING", at: [450, 80], width: 760, size: 74 } };
+    C.clock = { art: "egg-timer", x: 1000, y: FLOOR - 750, scale: 0.8 };
+    C.hand = { art: "ink-arrow", x: 1000, y: FLOOR - 718, anchor: [4, 16], pivot: [4, 16], scale: 0.52 };
+    C.cal = { art: "calendar", x: CAL[0], y: CAL[1], scale: 0.9 };
+
+    // The Holocaust chart (data x 1: the page bar; x 2: the Holocaust), in millions.
+    var ch1 = KIT.collage.axes({ box: V ? [170, 450, 950, 1030] : [180, 420, 880, 1000], x: [0, 3, 3], y: [0, 7, 1], unit: "M", xLabels: 99, title: "DEATHS" });
+    // The 9/11 chart (x 1: fifty 9/11s; x 2: today), in thousands.
+    var ch2 = KIT.collage.axes({ box: V ? [170, 1280, 950, 1860] : [1150, 420, 1850, 1000], x: [0, 3, 3], y: [0, 160, 40], unit: "K", xLabels: 99, title: "DEATHS" });
+    var P1 = ch1.pt(1, 0), TOP6 = ch1.pt(2, 6), P2 = ch2.pt(1, 0);
+
+    // The queue: the fat cat, then the barrel man with the hatch in his chest, the sick, and a germ waiting its turn.
+    C.fatcat = { art: "fat-cat", x: SLOT0, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: hs("fat-cat", QH) };
+    C.fcB = { art: "skeleton", x: SLOT0, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: hs("skeleton", 560), hidden: true, points: { skull: [106, 6] } };
+    C.fcHat = { art: "fat-cat-hat", x: SLOT0, y: FLOOR - 580, scale: 1.25, hidden: true };
+    var QUEUE = ["customer", "sick-1", "sick-3", "sick-2", "germ"], Q = [];
+    QUEUE.forEach(function (art, i) {
+      var h = art === "germ" ? 420 : QH;
+      C["q" + i] = { art: art, x: SLOT0 + (i + 1 + (art === "germ" ? 1 : 0)) * STEP, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: hs(art, h) };
+      Q.push("q" + i);
+    });
+    // his chest hatch (art 180-250 x 246-324, hinged on its left edge): a black hole behind a door that springs open
+    var QK = hs("customer", QH), QX = SLOT0 + STEP, HATCH = [[180, 246], [250, 246], [250, 324], [180, 324]];
+    var qpt = function (x, y) { return [QX + (x - 160) * QK, FLOOR + 10 - (776 - y) * QK]; };
+    C.hole = { art: "customer", x: QX, y: FLOOR + 10, anchor: "bottom", scale: QK, clip: HATCH };
+    C.hatch = { art: "customer", x: QX, y: FLOOR + 10, anchor: "bottom", pivot: [180, 285], scale: QK, clip: HATCH };
+    C.qB = { art: "skeleton", x: QX, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: hs("skeleton", QH), hidden: true };
+    // the punched tape that springs out of the hatch (its spine right of the hole, clear of his chin), and the beetle that eats it
+    var HOLE = qpt(215, 300), TH = 140, TK = TH / Z["punched-tape"][1];
+    var TMID = [HOLE[0] + (140 - 60) * TK, HOLE[1] - TH / 2];
+    C.tape = { art: "punched-tape", x: HOLE[0], y: HOLE[1], anchor: [60, 541], pivot: [60, 541], scale: TK, cut: "tb", hidden: true };
+    C.bug = { art: "beetle", x: TMID[0] + 80, y: TMID[1] - 110, scale: 0.2, hidden: true };
+    // the fat cat's wad
+    ["c0", "c1", "c2"].forEach(function (n, i) { C[n] = { art: "banknote", x: SLOT0 - 50 + i * 10, y: FLOOR - 290 - i * 14, scale: 0.28, hidden: true }; });
+
+    // The wall charts' cast: forty calendar pages, Hitler, the clerk, his forms, the claim form, fifty headstones.
+    var PK = 0.8, PH = Z["calendar-page"][0] * PK, NP = 40, PSTEP = ((P1[1] - PH / 2) - (TOP6[1] + PH / 2)) / (NP - 1);
+    for (var i = 0; i < NP; i++) C["pg" + i] = { art: "calendar-page", x: CAL[0], y: CAL[1], scale: PK, hidden: true };
+    var HK = 0.42;
+    C.hitler = { art: "hitler", x: TOP6[0], y: TOP6[1], anchor: [230, 958], pivot: [230, 958], scale: HK, hidden: true, points: { fist: [30, 560] } };
+    var hpt = function (x, y) { return [TOP6[0] + (x - 230) * HK, TOP6[1] - (958 - y) * HK]; };
+    var LIP = hpt(326, 236);
+    C.tache = { art: "moustache", x: LIP[0], y: LIP[1], scale: 0.13, pivot: "left", hidden: true };
+    C.clerk = { art: "claims-clerk", x: P1[0] - 20, y: TOP6[1], anchor: "bottom", pivot: "bottom", scale: 0.8, hidden: true };
+    var FORMS = [P1[0] + 100, TOP6[1]], CLERKHAND = [P1[0] - 20 + (100 - 172) * 0.8, TOP6[1] - (501 - 60) * 0.8];
+    C.claim = { art: "claim-form", x: CLERKHAND[0], y: CLERKHAND[1], scale: 0.19, hidden: true };
+    var NH = 50, HCOLS = 4, HW = 46, HH = (P2[1] - ch2.pt(1, 150)[1]) / Math.ceil(NH / HCOLS);
+    var stones = function (set) {
+      var names = [];
+      for (var j = 0; j < NH; j++) {
+        var r = Math.floor(j / HCOLS), c = j % HCOLS, nm = "hs" + set + "_" + j;
+        C[nm] = { art: "headstone", x: P2[0] + (c - (HCOLS - 1) / 2) * HW, y: P2[1] - r * HH, anchor: "bottom", pivot: "bottom", scale: (HH * 0.95) / Z.headstone[1], hidden: true };
+        names.push(nm);
+      }
+      return names;
+    };
+    var STONES = [stones(0), stones(1), stones(2)];
+
+    // Uncle Sam, his missile on its leash, the derrick, the boom.
+    var SAM0 = 900, SAMK = 0.95;
+    C.sam = { art: "uncle-sam", x: SAM0, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: SAMK, hidden: true, points: { hand: [320, 182] }, eyes: [[284, 118]], eyeSize: 16 };
+    // the leash, handle loop (art 40, 60) in his hand, clip (330, 360) on the missile's tail: turned so it hangs to the tail
+    var LK = 458 / Math.hypot(290, 300), LANG = 87 - Math.atan2(300, 290) * 180 / Math.PI;
+    C.rope = { art: "leash", x: SAM0, y: 400, anchor: [40, 60], pivot: [40, 60], scale: LK, hidden: true };
+    var LBY = [(191 - 40) * LK, (191.5 - 60) * LK];
+    C.missile = { art: "missile", x: SAM0, y: 700, scale: 0.75, hidden: true };
+    var DERRICK = [V ? 3330 : 3550, FLOOR + 10];
+    C.derrick = { art: "oil-derrick", x: DERRICK[0], y: DERRICK[1], anchor: "bottom", pivot: "bottom", scale: 1.1 };
+    C.moth = { art: "moth", x: SLOT0 + 6 * STEP - 2 * STEP, y: FLOOR - 250, scale: 0.4, hidden: true };
+    C.boom = { art: "mushroom", x: DERRICK[0], y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: 1.3, hidden: true };
+    C.tar = { art: "tar-a", x: 0, y: FLOOR + 14, anchor: "bottom", scale: 0.35, hidden: true };
+
+    // ── The board clatters to 150,000 ──
+    var NS = { id: "ns", who: "board", spot: [450, 560], size: V ? 92 : 78, card: false, color: "#F2E6C6", font: "oswald" };
+    var ns = function (b) { var o = {}; for (var k in NS) o[k] = NS[k]; for (k in b) o[k] = b[k]; return o; };
+    add(ns({ at: 0.05, do: "counter", from: 0, to: 150000, until: ["thousand", 1, 0.4], ease: "smooth" }));
+    add({ on: "thousand", offset: 0.4, do: "shiver", who: "board", dur: 0.25, amp: 3, rot: 1.5 });
+    // ── "permanently stop": the bribe, the bell, the fat cat to bone ──
+    add({ on: "humans", do: "camera", view: "counter", dur: 0.5 });
+    add({ on: "permanently", offset: -0.1, do: "pop", who: ["c0", "c1", "c2"] });
+    ["c0", "c1", "c2"].forEach(function (n, i) {
+      add({ on: "permanently", offset: 0.3 + i * 0.05, do: "move", who: n, to: [870, FLOOR - 320], dur: 0.25, arc: 60, turn: -8 });
+      add({ on: "permanently", offset: 0.6 + i * 0.05, do: "hide", who: n });
+    });
+    add({ on: "permanently", offset: 0.6, do: "nudge", who: "counter", by: [0, 10] });
+    add({ on: "stop", do: "nudge", who: "reaper", by: [0, 26] });
+    add({ on: "stop", offset: 0.2, do: "xray", who: "fatcat", to: "fcB" });
+    add({ on: "stop", offset: 0.2 + 4 * F, do: "show", who: "fcHat" });
+    add({ on: "stop", offset: 0.2, do: "move", who: "fcHat", to: "fcB.skull", by: [0, -52], dur: F });
+    // he strolls out through DELETED, tipping the hat
+    var OUT = cue("every") + 0.05;
+    add({ at: OUT, do: "bob", who: "fatcat", y: 10, r: 3, speed: 3, until: OUT + 1.25 });
+    add({ at: OUT, do: "move", who: "fatcat", by: [-1000, 0], dur: 1.2 });
+    add({ at: OUT + 1.25, do: "hop", who: "fcHat", height: 60 });
+    add({ at: OUT + 1.55, do: "hide", who: ["fatcat", "fcB", "fcHat"] });
+    add({ at: OUT + 1.2, do: "shiver", who: "door", dur: 0.3, amp: 3, rot: 1 });
+    // ── "every twenty-four hours": the hand goes once round, red tallies fill the face ──
+    add({ at: 0, do: "move", who: "hand", by: [0, 0], turn: -90, dur: F });
+    add({ on: "every", do: "move", who: "hand", by: [0, 0], turn: 270, dur: cue("hours") + 0.4 - cue("every") });
+    add({ on: "every", offset: 0.1, do: "pictogram", id: "tally", art: "crayon-x", count: 36, cols: 6, box: [948, FLOOR - 770, 1052, FLOOR - 666], dur: cue("hours") + 0.2 - cue("every"), order: "cells", accel: 0.6 });
+    add({ on: "hours", do: "move", who: Q, by: [-STEP, 0], dur: 0.3, ease: "smooth" });
+    add({ on: "hours", do: "move", who: ["hole", "hatch", "tape", "bug"], by: [-STEP, 0], dur: 0.3, ease: "smooth" });
+    // ── "bugs in your meat software": the hatch springs open on the tape; the beetle bites it in two and burps ──
+    add({ on: "diseases", do: "camera", view: "bug", dur: 0.5 });
+    add({ on: "bugs", offset: -0.1, do: "char", who: "hole" });
+    add({ on: "bugs", offset: -0.1, do: "hinge", who: "hatch", angle: 105, frames: 2 });
+    add({ on: "bugs", offset: 0.07, do: "shiver", who: "hatch", dur: 0.3, amp: 0, rot: 8 });
+    add({ on: "bugs", do: "pop", who: "tape", squash: true });
+    add({ on: "bugs", offset: 0.15, do: "pop", who: "bug" });
+    add({ on: "in", do: "move", who: "bug", to: [TMID[0] - STEP + 20, TMID[1]], dur: 0.35, turn: -70 });
+    add({ on: "in", offset: 0.35, do: "shiver", who: "bug", dur: Math.max(0.2, cue("meat") - cue("in") - 0.35), amp: 3, rot: 6 });
+    add({ on: "meat", do: "split", who: "tape", gap: 90, spin: 18, shake: 4 });
+    add({ on: "software.", do: "hop", who: "bug", height: 40 });
+    add({ on: "software.", do: "banner", id: "burp", text: "BURP", x: TMID[0] - STEP + 110, y: TMID[1] - 70, size: 30, width: 80, pad: 20, color: "ink", tilt: 8 });
+    add({ on: "software.", offset: 0.15, do: "drop", who: ["tape.T", "tape.B"], dist: 700, spin: 40 });
+    add({ on: "software.", do: "hide", who: ["hole", "hatch"] });
+    add({ on: "software.", do: "xray", who: "q0", to: "qB" });
+    add({ on: "software.", offset: 0.3, do: "nudge", who: "reaper", by: [0, 26] });
+    var T1 = cue("software.") + 0.3;
+    add(ns({ at: T1, do: "counter", to: 150001, dur: 0.08 }));
+    for (var k = 1; T1 + k * 0.576 < D; k++) add(ns({ at: T1 + k * 0.576, do: "counter", to: 150001 + k, dur: 0.08 }));
+    // the man and his bones go out the door, off camera; the queue moves up
+    var OUT2 = cue("That's") + 0.2;
+    add({ at: OUT2, do: "move", who: "q0", to: [150, FLOOR + 10 - QH / 2], dur: 1.0 });
+    add({ at: OUT2, do: "hide", who: ["bug", "burp"] });
+    add({ at: OUT2 + 1.1, do: "hide", who: ["q0", "qB"] });
+    add({ at: OUT2 + 1.2, do: "move", who: Q.slice(1), by: [-STEP, 0], dur: 0.3, ease: "smooth" });
+
+    // ── "one Holocaust every forty days": the bar, and forty pages to match it ──
+    add({ at: 0, do: "chart", chart: ch1, id: "ch1" });
+    add({ on: "That's", do: "camera", view: "chart1", dur: 0.7 });
+    add({ on: "Holocaust", do: "bar", chart: ch1, id: "holo", x: 2, to: 6, width: 200, dur: 0.4 });
+    add({ on: "Holocaust", offset: 0.35, do: "stamp", id: "holoT", text: "HOLOCAUST", x: TOP6[0], y: TOP6[1] + 150, size: 40, width: 170, tilt: -4 });
+    add({ on: "Holocaust", offset: 0.5, do: "stamp", id: "holoN", text: "6,000,000", x: TOP6[0], y: TOP6[1] + 230, size: 40, width: 170, tilt: 3 });
+    var E2 = cue("every", 2), DAYS = cue("days,");
+    for (i = 0; i < NP; i++) {
+      var ti = E2 + (DAYS - E2) * Math.pow(i / (NP - 1), 0.6), slot = [P1[0], P1[1] - PH / 2 - i * PSTEP];
+      add({ at: ti - 0.22, do: "show", who: "pg" + i });
+      add({ at: ti - 0.22, do: "move", who: "pg" + i, to: slot, dur: 0.22, arc: 120, turn: 90 + ((i * 37) % 7 - 3) });
+      if (i % 6 === 0) add({ at: ti - 0.22, do: "nudge", who: "reaper", by: [-14, -10] });
+    }
+    add({ on: "days,", do: "stamp", id: "days", text: "40 DAYS", x: P1[0], y: TOP6[1] + 250, size: 50, width: 190, tilt: -6, shake: 6 });
+    // fewer Nazis, more paperwork
+    add({ on: "Nazis", do: "pop", who: "hitler", squash: true });
+    add({ on: "Nazis", do: "show", who: "tache" });
+    add({ on: "insurance", do: "pop", who: "clerk", squash: true });
+    add({ on: "paperwork", do: "pile", id: "forms", art: "claim-form", x: FORMS[0], y: FORMS[1], heap: 3, count: 6, scale: 0.17, dur: 0.3, tilt: 8 });
+    add({ on: "(though", do: "show", who: "claim" });
+    add({ on: "(though", do: "move", who: "claim", to: "hitler.fist", by: [0, -20], dur: 0.3, arc: 60 });
+    add({ on: "argue", do: "move", who: "claim", to: "hitler.fist", by: [0, -20], turn: 180, dur: 0.2 });
+    add({ on: "paperwork", n: 2, do: "move", who: "claim", to: "hitler.fist", by: [0, -20], turn: 0, dur: 0.2 });
+    add({ on: "worse;", do: "shiver", who: ["hitler", "tache"], dur: 0.5, amp: 4, rot: 2 });
+    add({ on: "least", do: "move", who: "tache", by: [-4, 10], turn: -28, dur: 0.3 });
+    add({ on: "straightforward", offset: -0.25, do: "move", who: "claim", to: CLERKHAND, dur: 0.25, arc: 40 });
+    add({ on: "straightforward", do: "stamp", id: "denied", text: "DENIED", x: CLERKHAND[0] + 150, y: CLERKHAND[1] + 60, size: 56, width: 220, tilt: -8, shake: 8 });
+    add({ on: "killing", do: "move", who: "tache", by: [-300, 560], dur: 0.5, turn: -10 });
+    add({ on: "killing", offset: 0.5, do: "hide", who: "tache" });
+    var PART = KIT.after(ID, "part).") - 0.3;
+    add({ at: PART, do: "move", who: "forms", to: [TOP6[0] + 40, TOP6[1] - 120], dur: 0.3, arc: 140, turn: 40 });
+    add({ at: PART, do: "move", who: "claim", to: [TOP6[0], TOP6[1] - 60], dur: 0.3, arc: 100, turn: -30 });
+    add({ at: PART + 0.28, do: "flatten", who: "hitler" });
+    add({ at: PART + 0.28, do: "shake", y: 8, frames: 3 });
+
+    // ── "fifty nine-elevens every single day": today against fifty 9/11s, again and again ──
+    add({ at: 0, do: "chart", chart: ch2, id: "ch2" });
+    add({ on: "That's", n: 2, do: "camera", view: "chart2", dur: 0.7 });
+    add({ on: "fifty", n: 2, do: "bar", chart: ch2, id: "today", x: 2, to: 150, width: 200, dur: 0.3, text: "TODAY · 150,000", size: 34 });
+    var stack = function (set, t0, t1) {
+      STONES[set].forEach(function (n, j) { add({ at: t0 + (t1 - t0) * Math.pow(j / (NH - 1), 0.7), do: "pop", who: n }); });
+    };
+    stack(0, cue("nine-elevens"), cue("every", 3) - 0.1);
+    add({ on: "nine-elevens", do: "stamp", id: "each", text: "EACH = ONE 9/11", x: P2[0] - 40, y: ch2.pt(1, 150)[1] - 20, size: 34, width: 260, tilt: -3 });
+    add({ on: "every", n: 3, do: "stamp", id: "x50", text: "×50", x: P2[0], y: ch2.pt(1, 75)[1], size: 96, width: 170, tilt: -8, shake: 8 });
+    add({ on: "single", offset: -0.05, do: "hide", who: STONES[0].concat(["x50"]) });
+    stack(1, cue("single") + 0.02, cue("day,") - 0.08);
+    add({ on: "day,", offset: -0.05, do: "hide", who: STONES[1] });
+    stack(2, cue("day,") + 0.02, cue("day,") + 0.45);
+    add({ on: "day,", offset: 0.5, do: "stamp", id: "x50b", text: "×50", x: P2[0], y: ch2.pt(1, 75)[1], size: 96, width: 170, tilt: 6, shake: 8 });
+
+    // ── "nobody invades anyone about it because diseases don't have oil" ──
+    var EX = cue("except", 2);
+    add({ at: EX, do: "camera", view: "queue", dur: 0.6 });
+    add({ at: EX, do: "show", who: ["sam", "rope", "missile"] });
+    add({ at: EX, do: "move", who: "sam", by: [1400, 0], dur: cue("invades") - EX });
+    add({ at: EX, do: "bob", who: "sam", y: 9, r: 2, speed: 3, until: "invades" });
+    add({ at: EX, do: "move", who: "rope", to: "sam.hand", by: LBY, turn: LANG, dur: F });
+    add({ at: EX, do: "move", who: "missile", to: "sam.hand", by: [230, 420], turn: 100, dur: F });
+    add({ at: EX, do: "bob", who: "missile", y: 6, r: 4, speed: 5, until: "have" });
+    add({ on: "invades", offset: 0.3, do: "nudge", who: "missile", by: [40, 0] });
+    add({ on: "anyone", offset: 0.1, do: "nudge", who: "missile", by: [30, -10] });
+    add({ on: "diseases", n: 2, do: "hop", who: "q4", height: 30 });
+    add({ on: "don't", do: "pop", who: "moth" });
+    add({ on: "don't", offset: 0.05, do: "move", who: "moth", by: [-60, -420], dur: 0.7, ease: "smooth" });
+    add({ on: "don't", do: "bob", who: "moth", y: 14, r: 12, speed: 8, until: "oil." });
+    add({ on: "have", do: "move", who: "missile", to: [DERRICK[0] - 40, FLOOR - 350], turn: 140, dur: 0.3, arc: 260 });
+    add({ on: "have", do: "move", who: "rope", to: "sam.hand", by: LBY, turn: LANG + 12, dur: 0.2 });
+    add({ on: "oil.", offset: 0.1, do: "hide", who: "missile" });
+    add({ on: "oil.", offset: 0.1, do: "boom", shake: 18, flash: 0.18 });
+    add({ on: "oil.", offset: 0.1, do: "pop", who: "boom", squash: true });
+    add({ on: "oil.", offset: 0.1, do: "shiver", who: "derrick", dur: 0.6, amp: 6, rot: 3 });
+    add({ on: "oil.", offset: 0.7, do: "line", id: "gush", points: [[DERRICK[0], FLOOR - 699 * 1.1 + 30], [DERRICK[0] - 20, FLOOR - 2000]], dur: 0.25, color: "#14100C", width: 70, front: true });
+    add({ on: "oil.", offset: 0.75, do: "char", who: "sam" });
+    add({ on: "oil.", offset: 0.75, do: "move", who: "tar", to: "sam", by: [0, 320], dur: F });
+    add({ on: "oil.", offset: 0.75, do: "pop", who: "tar" });
+    add({ on: "oil.", offset: 1.05, do: "blink", who: "sam" });
+    add({ on: "oil.", offset: 0.9, do: "hop", who: "sam", height: 30 });
+
+    // Views: 16:9 keeps the floor above the captions' strip; 9:16 keeps it above y 1470.
+    var views = V ? {
+      board: [BOARD[0], BOARD[1], 2.0], counter: [680, FLOOR - 580, 0.77], bug: [SLOT0, FLOOR - 430, 1.35],
+      chart1: [560, 760, 1.0], chart2: [560, 1380, 1.0], queue: [2830, FLOOR - 600, 0.7],
+    } : {
+      board: [BOARD[0], BOARD[1] + 10, 2.2], counter: [760, FLOOR - 360, 0.95], bug: [SLOT0, FLOOR - 410, 1.45],
+      chart1: [530, 600, 0.95], chart2: [1500, 690, 1.0], queue: [2650, FLOOR - 360, 0.8],
+    };
+    KIT.collage({ id: ID, seed: 801, plate: V ? [-1500, -300, 4600, 4800] : [-1000, -200, 4500, 2900], views: views, view: "board", cast: C, beats: beats });
+  </script>
+</template>

@@ -1,0 +1,76 @@
+<template id="try-all-three-template">
+  <!-- try-all-three · collage (Part 11, scene 13: back on the two-houses plate after the boom). The cloud has thinned
+       over the rubble where his house stood; YOU stands on it charred, smoking, blinking. The camera eases right along
+       the empty lot: a ballot box drops in and its slot snaps shut; a big light bulb drops in, lit, and goes out; a
+       round red stage marked TED drops in and its glow goes out. "try all": he runs to each in turn. The ballot box
+       spits his ballot back in his face; the bulb zaps him (a flash of his skeleton); he hops onto the TED stage and taps
+       for attention, three times, to nobody. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="try-all-three" data-width="1920" data-height="1080" data-start="0" data-duration="6.42">
+    <div id="try-all-three-weave"></div>
+    <div id="try-all-three-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "try-all-three", V = KIT.V, SZ = KIT.collage.SIZES, G = 1000;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // the plate of neighbors-house, after the boom; the empty lot runs on to the right
+      var L = 560, R = 1300, YOU = [1720, G], BOX = 2250, BULB = 2650, TED = 3080;
+      var cy = function (s) { return V ? G - 420 / s : 620; };
+      var views = V ? { you: [1420, cy(0.9), 0.9], lot: [2650, cy(0.85), 0.85] } : { you: [1500, 600, 1], lot: [2500, 600, 1] };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      cast.rubbleL = { art: "villa-burnt", x: L, y: G, anchor: "bottom", scale: hs("villa-burnt", 700) };
+      cast.rubbleR = { art: "crater", x: R, y: G + 40, anchor: "bottom", scale: hs("crater", 220) };
+      cast.cloud = { art: "mushroom", x: R + 80, y: G, anchor: "bottom", scale: hs("mushroom", 1000) };
+      cast.box = { art: "ballot-box", x: BOX, y: G, anchor: "bottom", pivot: "bottom", scale: hs("ballot-box", 300), hidden: true };
+      cast.ballot = { art: "receipt", x: BOX, y: G - 290, scale: 0.8, hidden: true };
+      cast.bulb = { art: "light-bulb", x: BULB, y: G, anchor: "bottom", pivot: "bottom", scale: hs("light-bulb", 440), hidden: true };
+      cast.bulbOff = { art: "light-bulb", x: BULB, y: G, anchor: "bottom", pivot: "bottom", scale: hs("light-bulb", 440), hidden: true };
+      cast.ted = { art: "ted-rug", x: TED, y: G + 20, anchor: "bottom", pivot: "bottom", scale: 1.1, hidden: true, label: { text: "TED", at: [194, 156], width: 150, size: 90 } };
+      cast.tedOff = { art: "ted-rug", x: TED, y: G + 20, anchor: "bottom", pivot: "bottom", scale: 1.1, hidden: true, label: { text: "TED", at: [194, 156], width: 150, size: 90 } };
+      cast.you = { art: "watcher-charred", x: YOU[0], y: YOU[1], anchor: "bottom", pivot: "bottom", scale: hs("watcher-charred", 600), smoke: [[140, 10], [170, 20]] };
+
+      // the cloud thins off him
+      add({ at: 0.05, do: "pop", who: "cloud", out: true });
+      add({ on: "vote", do: "camera", view: "lot", dur: cue("TED") - cue("vote") });
+      // can't vote your way out: the box drops in, the slot snaps shut
+      add({ on: "vote", do: "slideIn", who: "box", from: "top", over: 10 });
+      add({ on: "out,", do: "shiver", who: "box", dur: 0.25, amp: 4, rot: 2 });
+      // innovate your way out: the bulb drops in, lit, and goes out
+      add({ on: "innovate", do: "slideIn", who: "bulb", from: "top", over: 10 });
+      add({ on: "innovate", offset: 0.2, do: "glow", who: "bulb", size: 420, dur: 0.3 });
+      add({ on: "out,", n: 2, do: "hide", who: "bulb" });
+      add({ on: "out,", n: 2, do: "show", who: "bulbOff" });
+      // or give a TED Talk about it: the stage drops in; its spotlight goes out
+      add({ on: "give", do: "slideIn", who: "ted", from: "top", over: 10 });
+      add({ on: "give", offset: 0.2, do: "glow", who: "ted", size: 380, dur: 0.3 });
+      add({ on: "it.", do: "hide", who: "ted" });
+      add({ on: "it.", do: "show", who: "tedOff" });
+      // You will try all three: he runs to each in turn
+      add({ on: "(You", offset: -0.15, do: "move", who: "you", to: [BOX - 160, G], dur: 0.25 });
+      add({ on: "will", do: "show", who: "ballot" });
+      add({ on: "will", do: "move", who: "ballot", to: [BOX - 170, G - 470], dur: 0.15, turn: 200 });
+      add({ on: "will", offset: 0.15, do: "drop", who: "ballot", dur: 0.4, spin: 60 });
+      add({ on: "try", do: "move", who: "you", to: [BULB - 130, G], dur: 0.2 });
+      add({ on: "all", do: "xray", who: "you", frames: 4, art: "skeleton" });
+      add({ on: "all", offset: 0.45, do: "xray", who: "you", back: true, flash: 0, art: "skeleton" });
+      add({ on: "all", offset: 0.6, do: "move", who: "you", to: [TED, G - 40], dur: 0.25, arc: 120 });
+      [0.95, 1.2, 1.45].forEach(function (o) { add({ on: "all", offset: o, do: "nudge", who: "you", by: [0, 10] }); });
+      add({ on: "three.).", offset: 0.2, do: "move", who: "you", turn: 8, dur: 0.3 });
+
+      KIT.collage({ id: ID, seed: 1113, plate: V ? [-1400, -2200, 4600, 3200] : [-600, -800, 4000, 2000], views: views, view: "you", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

@@ -43,7 +43,7 @@ Without these papers, you won't:
 
 - Save lives (requires many papers)
 - Cure diseases (requires very many papers)
-- Feed hungry people (requires papers, even though food grows for free)
+- Feed hungry people (requires papers)
 
 But WITH these papers, you will:
 
@@ -61,12 +61,12 @@ Humanity has created something magnificent:
 - You give these nothing-papers to weapons makers
 - They make things that destroy everything
 - This creates "jobs" which give people papers
-- People use papers to buy food (which grows for free)
+- People use papers to buy food
 - This is called "the economy"
 
 One downside of this system is that it has killed {{< var war_deaths_since_1900_nounit >}} of you in your assorted wars.
 
-On my planet, we skip the mass murder step and just give people food directly, but that's probably too advanced for you.
+On my planet, we skip the mass murder step, but that's probably too advanced for you.
 
 ### The Gradual Irrationality Reduction Program
 
@@ -182,7 +182,7 @@ That thought would be incorrect.
 
 95% of your diseases have zero FDA-approved treatments [@95-pct-diseases-no-treatment]. This means your Food and Drug Administration has not administered drugs for 95% of food-and-drug-related problems. It's like having a Department of Transportation that hasn't gotten around to roads yet. Only 15 diseases get their first effective treatment each year. {{< var diseases_without_effective_treatment >}} are still waiting. There is a queue to not die, and it is longer than any queue humans have ever voluntarily stood in, which is saying something because you invented Disneyland.
 
-There are {{< var safe_compounds_count_nounit >}} known safe compounds, and {{< var unexplored_ratio >}} of their potential uses have never been tested. At the current discovery rate, finding treatments for all of them will take ~{{< var status_quo_queue_clearance_years >}}. You personally will be dead within 80 years, which I mention not to be rude but because you seem weirdly calm about this.
+There are {{< var safe_compounds_count_nounit >}} known safe compounds, and {{< var unexplored_ratio >}} of their potential uses have never been tested. At the current discovery rate, finding treatments for all of those waiting diseases will take ~{{< var status_quo_queue_clearance_years >}}. You personally will be dead within 80 years, which I mention not to be rude but because you seem weirdly calm about this.
 
 ![Everyone currently alive will be dead before we finish (current timeline)](/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
@@ -230,9 +230,11 @@ Vioxx killed an estimated 55,000 people from heart attacks [@vioxx-deaths]. The 
 
 Your National Institutes of Health, the agency nominally responsible for finding cures, spends {{< var nih_clinical_trials_spending_pct >}} of its budget on clinical trials. The other ~97% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
 
-Then there's a {{< var efficacy_lag_years >}} delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would {{< var willing_trial_participants_global_nounit >}} other patients, and the current system has {{< var current_trial_slots_available_nounit >}} slots. That's a participation rate of {{< var current_willing_patient_participation_rate >}}. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
+Then there's an {{< var efficacy_lag_years_nounit >}}-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend {{< var efficacy_lag_years >}} making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would {{< var willing_trial_participants_global_nounit >}} other patients, and the current system has {{< var current_trial_slots_available_nounit >}} slots. That's a participation rate of {{< var current_willing_patient_participation_rate >}}. It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
-Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd): for every 1 person protected from a dangerous drug, {{< var type_ii_error_cost_ratio >}} people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by {{< var type_ii_error_cost_ratio >}} to 1. Your safety system's main product is dead patients.
+Your regulatory system can make two mistakes: approve a bad drug, or block a good one. It is blamed for the first and never for the second, so it makes the second. All of your approved drugs, together, save {{< var pharma_lives_saved_annual_nounit >}} lives a year. Each one waited an average of {{< var efficacy_lag_years >}} in that cabinet first. Between 1962 and 2024, the waiting killed about {{< var existing_drugs_efficacy_lag_deaths_total_nounit >}} of you.
+
+I [calculated the ratio](/knowledge/appendix/invisible-graveyard.qmd), assuming a Thalidomide-scale catastrophe every single year, although Phase I safety testing caught the real one. For every 1 person protected from a dangerous drug, at least {{< var type_ii_error_cost_ratio >}} die waiting for a safe one. Your safety system's main product is dead patients.
 
 Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money was busy turning into a missile. That missile incinerated a child who might have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.
 
@@ -270,7 +272,7 @@ We built ours with the funding from our version of the treaty, 3,000 years ago. 
 Instead of testing drugs on 200 humans selected by pharmaceutical companies in clinical terrariums, you'll test on real patients in real hospitals. Where the diseases are. The whole thing will use your new [decentralized FDA](/knowledge/solution/dfda.qmd) protocol, reducing trial costs by {{< var dfda_trial_cost_reduction_factor >}} and funding {{< var dih_patients_fundable_annually >}} (versus the current {{< var current_trial_slots_available >}}).
 Remember that billion patients drowning in line for two life jackets? Your decentralized FDA will hand out {{< var dih_patients_fundable_annually_nounit >}}.
 
-This will increase the treatment discovery rate {{< var dfda_trial_capacity_multiplier >}}, compressing that ~{{< var status_quo_queue_clearance_years >}} wait to ~{{< var dfda_queue_clearance_years >}}. Two things will save lives. First, finding treatments faster: treatments that would have sat undiscovered for centuries will get found {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner on average. Second, eliminating the {{< var efficacy_lag_years >}} bureaucratic delay between proving a drug is safe and letting dying humans take it. Combined, treatments will reach patients {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner on average. That timeline shift will prevent {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. Those are individual humans who currently have plans for next Tuesday.
+The treaty's money will increase the treatment discovery rate {{< var dfda_trial_capacity_multiplier >}}, shrinking that {{< var status_quo_queue_clearance_years_nounit >}}-year wait to {{< var dfda_queue_clearance_years_nounit >}}. The average disease sits halfway down that queue, so its treatment arrives {{< var dfda_trial_capacity_treatment_acceleration_years >}} sooner. Keep the safety test, drop the {{< var efficacy_lag_years_nounit >}}-year wait, and find out if it works during normal care. Patients get it {{< var dfda_trial_capacity_plus_efficacy_lag_years >}} sooner. About {{< var global_eventually_avoidable_disease_deaths_daily_nounit >}} of you die each day from diseases research could eventually cure. That's 51 million a year. {{< var dfda_trial_capacity_plus_efficacy_lag_years_nounit >}} fewer years of that prevents {{< var dfda_trial_capacity_plus_efficacy_lag_lives_saved >}}. Those are individual humans who currently have plans for next Tuesday.
 
 #### Real-Time Safety Monitoring
 
@@ -425,7 +427,7 @@ They won't even need convincing. Lobbyists don't have beliefs. They have clients
 
 Politicians need papers and votes to keep their jobs. Currently, weapons manufacturers provide both. You're going to outbid them. Not because they're the enemy (they die of the same diseases you do), but because politicians do not do things for free, and the clock is running.
 
-Your explosion manufacturers spend {{< var defense_lobbying_annual >}}/year buying politicians. Your one-time bribery budget is {{< var treaty_campaign_total_cost >}}, which is 8 times their annual spend (and about twice what they spend over a full election cycle). Politicians are surprisingly affordable.
+Your explosion manufacturers spend {{< var defense_lobbying_annual >}}/year buying politicians. Your one-time bribery budget is {{< var treaty_campaign_total_cost >}}, which is 5 times their annual spend. Politicians are surprisingly affordable.
 
 It's not corruption if you corrupt the corruption.
 
@@ -502,7 +504,7 @@ If you stop spending papers on murder and start spending them on medicine, your 
 - Year 2027: Still spending {{< var military_to_government_clinical_trials_spending_ratio >}} times more on weapons than on testing which medicines actually work. Nobody finds this weird.
 - Year 2033: Destructive economy hits 25% of GDP. The Soviet Union collapsed at 15%. You have better technology and worse planning.
 - Year 2035: Your best engineers now work in ransomware because it pays better than engineering. Hospitals budget for extortion the way they used to budget for gauze. A nurse clicks a chart and gets a countdown timer instead of a medication dose. The people who could reverse this trend are the ones profiting from it.
-- Year 2040: Parasitic economy hits 50%. AI agents file more fake court cases than real ones. Tax collection collapses because AI can evade faster than humans can audit. Your governments don't fall; they rot in place, like a body whose organs are still technically present but no longer speaking to one another. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia.
+- Year 2040: Parasitic economy hits 50%. AI agents file more fake court cases than real ones. Your governments don't fall; they rot in place, like a body whose organs are still technically present but no longer speaking to one another. When Venezuela collapsed, Venezuelans fled to Colombia. When the global economy collapses, there is no Colombia.
 - Year 2043: Water wars go nuclear. The survivors argue about whether this counts as a climate death or a military death, because the spreadsheet has separate columns.
 - Year 2045: Cockroaches evolve intelligence.
 - Year 2050: Cockroaches find this manual, very confused

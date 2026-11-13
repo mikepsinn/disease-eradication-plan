@@ -1,0 +1,146 @@
+<template id="treaties-you-signed-template">
+  <!-- treaties-you-signed · collage (Part 13 storyboard, scene 8). The bit: the treaties humans already signed are a bar
+       chart of signatures hanging off a war table. YOU, in his top hat, at the end of the table. "chemical": a gas canister
+       tiptoes along the table and treaty 1 slams down flat on it; a puff of gas, and he coughs. "nineteen": it unrolls off the front edge, its
+       roller counting the countries, to 193. "biological": a grinning germ scuttles along the table and treaty 2 slams
+       flat on it; it unrolls to 187. "landmines": treaty 3 slams down on a landmine and it goes off: mushroom cloud, and YOU charred and
+       blinking; it unrolls to 164. "signed": wide, the three hang side by side, and the weapons factory rises behind
+       the table, sobbing into a hanky. "one": the 1% treaty slides in at the end of the row and doesn't unroll; "fewer": 0. "them.":
+       the factory drops the hanky and hugs its missile tighter; charred YOU blinks. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="treaties-you-signed" data-width="1920" data-height="1080" data-start="0" data-duration="20.56">
+    <div id="treaties-you-signed-weave"></div>
+    <div id="treaties-you-signed-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "treaties-you-signed", V = KIT.V, F = KIT.collage.F, SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // The war table on the ground line G: its top (where the rolled treaties land) and its front edge (where they hang from).
+    var G = 1000, TK = 2.4, TTOP = G - SZ["war-table"][1] * TK, SURF = TTOP + 112 * TK, EDGE = TTOP + 152 * TK;
+    var BX = [-430, -145, 145, 430], N = [193, 187, 164], PER = 3.8;            // the bars' x; countries; px per country
+    var RK = 290 / SZ["scroll-rolled"][0], RH = SZ["scroll-rolled"][1] * RK;    // a treaty's roller
+    var KS = 210 / SZ["treaty-scroll"][0], SEG = 110, SA = SEG / KS, C0 = 250;   // a strip of scroll paper, and where it is cut from
+    var NAMES = [["CHEMICAL", "WEAPONS"], ["BIOLOGICAL", "WEAPONS"], ["LAND", "MINES"], ["1%", "TREATY"]], YEARS = ["1993", "1975", "1997"];
+    var YK = 1.5;                                                                // YOU's scale
+
+    var views = V ? { close: [-470, 475, 0.8], wide: [-190, 560, 0.49], four: [-200, 560, 0.5] }
+                  : { close: [-330, 380, 1], wide: [-150, 720, 0.58], four: [-250, 430, 0.8] };
+    var eyesAt = function (pts, size) { return pts.map(function (e) { return [e[0] * 30 / size, e[1] * 30 / size]; }); };
+    var cast = {}, beats = [];
+    var add = function (b) { beats.push(b); };
+
+    var FKS = 900 / SZ["factory-sob"][1];
+    // It stands behind the table, its feet hidden, so its face shows over the top.
+    var FB = SURF + 300, FH = 900;
+    cast.sob = { art: "factory-sob", x: 0, y: FB, anchor: "bottom", pivot: "bottom", scale: FKS, hidden: true, points: { hand: [262, 268] } };
+    cast.kiss = { art: "factory-kiss", x: 0, y: FB, anchor: "bottom", pivot: "bottom", scale: FH / SZ["factory-kiss"][1], hidden: true };
+    cast.table = { art: "war-table", x: 0, y: G, anchor: "bottom", scale: TK };
+
+    // Each treaty's strips, hanging from the front edge; the roller steps down one strip at a time.
+    var segs = [];
+    N.forEach(function (n, i) {
+      var L = n * PER, k = Math.ceil(L / SEG), list = [];
+      for (var j = 0; j < k; j++) {
+        var h = Math.min(SEG, L - j * SEG) / KS, name = "s" + i + "x" + j;
+        cast[name] = { art: "treaty-scroll", x: BX[i], y: EDGE + j * SEG, anchor: [191, C0], scale: KS, hidden: true,
+          clip: [[0, C0], [382, C0], [382, C0 + h + 2], [0, C0 + h + 2]],
+          label: j === 0 ? { text: YEARS[i], at: [191, C0 + 105], width: 300, size: 120 } : undefined };
+        list.push({ name: name, h: Math.min(SEG, L - j * SEG) });
+      }
+      segs.push(list);
+    });
+    // The gas canister tiptoes along the table to treaty 1's spot; the landmine waits at treaty 3's.
+    cast.gas = { art: "gas-canister", x: BX[0] + 230, y: SURF + 8, anchor: "bottom", pivot: "bottom", scale: 170 / SZ["gas-canister"][1], hidden: true };
+    cast.mine = { art: "landmine", x: BX[2], y: SURF + 10, anchor: "bottom", pivot: "bottom", scale: 190 / SZ.landmine[0], hidden: true };
+    cast.germ = { art: "germ-grin", x: 760, y: SURF + 8, anchor: "bottom", pivot: "bottom", scale: 1.05, hidden: true, faces: "left" };
+    NAMES.forEach(function (nm, i) {
+      cast["r" + i] = { art: "scroll-rolled", x: BX[i], y: SURF, scale: RK, hidden: true,
+        label: [{ text: nm[0], at: [160, 70], width: 170, size: 64 }, { text: nm[1], at: [408, 70], width: 170, size: 64 }] };
+    });
+    cast.puff = { art: "cloud-puff", x: BX[0] + 40, y: SURF - 110, scale: 0.75, hidden: true };
+    cast.mush = { art: "mushroom", x: BX[2], y: SURF + 30, anchor: "bottom", pivot: "bottom", scale: 1.25, hidden: true };
+    cast.hanky = { art: "hanky", x: 0, y: SURF, scale: 190 / SZ.hanky[0], hidden: true };
+    cast.pencil = { art: "pencil", x: BX[3] + 40, y: SURF + 40, scale: 200 / SZ.pencil[0], hidden: true };
+    cast.you = { art: "you-tophat", x: V ? -990 : -1060, y: G, anchor: "bottom", pivot: "bottom", scale: YK,
+      eyes: eyesAt([[139, 189], [163, 187]], 14), eyeSize: 14, smoke: [[150, 105], [175, 112]] };
+
+    // One treaty: it slams down on the table at `slam`, then over [t0, t1] its roller drops to the front edge and steps
+    // down strip by strip while the counter on it runs up to the number of countries.
+    var treaty = function (i, slam, t0, t1) {
+      add({ at: slam, do: "stamp", who: "r" + i, from: 2.2, shake: 10 });
+      add({ at: t0, do: "move", who: "r" + i, to: [BX[i], EDGE + 4], dur: 0.15, arc: 30 });
+      var list = segs[i], dt = (t1 - t0 - 0.15) / list.length;
+      list.forEach(function (s, j) {
+        var t = t0 + 0.15 + j * dt;
+        add({ at: t, do: "show", who: s.name });
+        add({ at: t, do: "move", who: "r" + i, by: [0, s.h], dur: F });
+      });
+      add({ at: t0 + 0.15, do: "counter", id: "n" + i, who: "r" + i, spot: [283, 66], from: 0, to: N[i], dur: t1 - t0 - 0.15,
+        prefix: "", suffix: "", size: 96, pad: 40, style: "tick" });
+      add({ at: t1, do: "shake", y: 4, frames: 2 });
+    };
+
+    // 1: chemical weapons. The canister tiptoes in and is flattened; the gas puffs out and YOU coughs.
+    add({ at: 0, do: "show", who: "gas" });
+    add({ at: 0, do: "move", who: "gas", to: [BX[0] + 10, SURF + 8], dur: cue("chemical") - 0.02 });
+    add({ at: 0, do: "bob", who: "gas", y: 12, r: 7, speed: 6, until: "chemical", fade: 0.02 });
+    treaty(0, cue("chemical"), cue("(nineteen", 1) + 0.12, cue("countries).", 1));
+    add({ on: "chemical", offset: 0.06, do: "flatten", who: "gas" });
+    add({ on: "chemical", offset: 0.3, do: "hide", who: "gas" });
+    add({ on: "weapons", n: 1, offset: 0.05, do: "pop", who: "puff", squash: true, swell: 0.25 });
+    add({ on: "weapons", n: 1, offset: 0.2, do: "shiver", who: "you", dur: 0.8, amp: 6, rot: 3 });
+    add({ on: "(nineteen", n: 1, do: "pop", who: "puff", out: true });
+    add({ on: "(nineteen", n: 1, do: "camera", view: "wide", dur: 0.6 });
+    // 2: biological weapons. The germ scuttles along the table and is flattened under the treaty.
+    add({ on: "You", n: 2, offset: -0.45, do: "camera", view: "close", dur: 0.45 });
+    add({ on: "You", n: 2, offset: -0.5, do: "pop", who: "germ" });
+    add({ on: "You", n: 2, offset: -0.45, do: "move", who: "germ", to: [BX[1] + 30, SURF + 8], dur: cue("biological") - cue("You", 2) + 0.42 });
+    add({ on: "You", n: 2, offset: -0.45, do: "bob", who: "germ", y: 10, r: 8, speed: 7, until: "biological", fade: 0.05 });
+    treaty(1, cue("biological"), cue("(nineteen", 2) + 0.12, cue("countries).", 2));
+    add({ on: "biological", offset: 0.06, do: "flatten", who: "germ" });
+    add({ on: "biological", offset: 0.3, do: "hide", who: "germ" });
+    add({ on: "(nineteen", n: 2, do: "camera", view: "wide", dur: 0.6 });
+    // 3: landmines. It goes off under the treaty, and YOU is charred.
+    add({ on: "You", n: 3, offset: -0.5, do: "camera", view: "close", dur: 0.45 });
+    add({ on: "You", n: 3, offset: -0.4, do: "pop", who: "mine" });
+    add({ on: "landmines", offset: 0.08, do: "hide", who: "mine" });
+    treaty(2, cue("landmines"), cue("(nineteen", 3) + 0.12, cue("countries).", 3));
+    add({ on: "landmines", offset: 0.08, do: "boom", shake: 24, flash: 0.22 });
+    add({ on: "landmines", offset: 0.08, do: "pop", who: "mush", squash: true });
+    add({ on: "landmines", offset: 0.1, do: "char", who: "you" });
+    add({ on: "landmines", offset: 0.9, do: "blink", who: "you" });
+    add({ on: "(nineteen", n: 3, offset: -0.15, do: "pop", who: "mush", out: true });
+    add({ on: "(nineteen", n: 3, do: "camera", view: "wide", dur: 0.6 });
+    add({ on: "(nineteen", n: 3, offset: 0.4, do: "blink", who: "you" });
+    // The bar chart, and the weapons factory rises behind the table, sobbing into a hanky.
+    add({ on: "signed", do: "slideIn", who: "sob", from: "bottom", dist: 1300, over: 30 });
+    // It sniffles into a hanky.
+    add({ on: "signed", do: "move", who: "hanky", to: "sob.hand", dur: F });
+    add({ on: "banning", do: "pop", who: "hanky", squash: true });
+    add({ on: "using.", do: "shiver", who: "sob", dur: 1.0, amp: 5, rot: 2 });
+    // The 1% treaty: it slides in at the end of the row and does not unroll. 0.
+    add({ on: "This", do: "camera", view: "four", dur: 0.6 });
+    add({ on: "one", n: 4, do: "slideIn", who: "r3", from: "right", dist: 1600, over: 26 });
+    add({ on: "fewer", do: "stamp", id: "zero", text: "0", x: BX[3], y: EDGE + 110, size: 120, width: 200, tilt: -4 });
+    // A pencil rolls up to its empty signature line, and stops.
+    add({ on: "fewer", offset: 0.2, do: "slideIn", who: "pencil", from: "right", dist: 900, over: 8 });
+    add({ on: "them.", do: "drop", who: "hanky", dur: 0.7, dist: 700, drift: 60, spin: 40 });
+    add({ on: "them.", do: "swap", who: "sob", to: "kiss" });
+    add({ on: "them.", offset: 0.1, do: "bob", who: "kiss", y: 4, r: 2, speed: 4, fade: 0.1 });
+    add({ on: "them.", offset: 0.15, do: "blink", who: "you" });
+    add({ on: "them.", offset: 0.55, do: "blink", who: "you" });
+
+    KIT.collage({ id: ID, seed: 1308, plate: V ? [-3600, -3600, 3400, 4400] : [-3400, -1300, 3400, 2600], views: views, view: "close", cast: cast, beats: beats });
+  </script>
+</template>

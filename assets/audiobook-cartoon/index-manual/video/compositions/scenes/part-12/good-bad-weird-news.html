@@ -1,0 +1,76 @@
+<template id="good-bad-weird-news-template">
+  <!-- good-bad-weird-news · collage host shot (Part 12, scene 18, the same shot as suboptimal-stamp). "good": the book
+       pops up on the ledge beside the stamped case file, and a wrench pops out of it. "bad": YOU walks onto the deck under the charred
+       alarm; "something.": a TO DO clipboard drops into his hands and he sags. "rich": plain papers (no seal) rain down and
+       pile round his feet, the fedora turns into a top hat, the binder drops. Iris out on her face. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="good-bad-weird-news" data-width="1920" data-height="1080" data-start="0" data-duration="10.091">
+    <div id="good-bad-weird-news-weave"></div>
+    <div id="good-bad-weird-news-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var ID = "good-bad-weird-news", V = KIT.V, ST = KIT.STUDIO, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+    var DET = V ? { x: 810, y: 650, k: 0.62 } : { x: 1165, y: 345, k: 0.72 };
+    var FILE = V ? { x: 150, k: 0.55 } : { x: 290, k: 0.85 };
+    var BOOK = V ? { x: 560, k: 0.62 } : { x: 520, k: 0.78 };
+    // YOU, on the free wall right of the console; every pose the same height on the same feet.
+    var YOU = V ? { x: 880, y: 1450, h: 600 } : { x: 1560, y: 1075, h: 690 };
+    var you = function (art, hidden) { return { art: art, x: YOU.x, y: YOU.y, anchor: "bottom", pivot: "bottom", scale: YOU.h / SZ[art][1], hidden: hidden }; };
+    var HANDS = [YOU.x - 0.05 * YOU.h, YOU.y - 0.5 * YOU.h];
+    // the wire wastebasket on the floor past the ledge's end
+    var BK = { x: V ? 800 : 1180, y: V ? 1440 : 1075, k: V ? 0.7 : 0.75 }, BTOP = BK.y - 348 * BK.k;
+    KIT.collage({
+      id: ID, seed: 1218, host: { push: [1.04, 1.1], iris: ["out", D - 0.55, D - 0.05] },
+      cast: {
+        basket: { art: "wastebasket", x: BK.x, y: BK.y, anchor: "bottom", pivot: "bottom", scale: BK.k },
+        alarm: { art: "smoke-detector", x: DET.x, y: DET.y, scale: DET.k, eyes: [[100, 175], [165, 175]], eyeSize: 40, smoke: [[130, 40], [400, 60]] },
+        letter: { art: "letter", x: DET.x + 330 * DET.k, y: DET.y - 300 * DET.k, scale: 0.55 * DET.k, pivot: "bottom", label: { text: "RE: SMOKE", at: [208, 110], width: 330, size: 70 } },
+        file: { art: "case-file", x: FILE.x, y: ST.top + 10, anchor: "bottom", pivot: "bottom", scale: FILE.k,
+          label: { text: "EARTH", at: [186, 115], width: 200, size: 60 } },
+        book: { art: "manual", x: BOOK.x, y: ST.top + 10, anchor: "bottom", pivot: "bottom", scale: BOOK.k, hidden: true },
+        walk: you("you-walk", true),
+        you: you("you", true),
+        rich: you("you-tophat", true),
+        todo: { art: "plan-clipboard", x: HANDS[0], y: HANDS[1], scale: 0.36 * YOU.h / 492, pivot: "bottom", hidden: true,
+          label: { text: "TO DO", at: [171, 200], width: 220, size: 80 } },
+        wrench: { art: "wrench", x: BOOK.x + 40, y: ST.top - 357 * BOOK.k - 60, scale: 0.5 * BOOK.k, hidden: true },
+      },
+      beats: [
+        { at: 0, do: "char", who: "alarm" },
+        { at: -3, do: "stamp", who: "file", id: "eligible", text: "MAY BE ELIGIBLE FOR OPTIMIZATION", spot: [186, 250], width: V ? 190 : 290, size: 40, tilt: -4 },
+        { at: -3, do: "stamp", who: "file", id: "subopt", text: "SUBOPTIMAL", spot: [186, 390], width: V ? 180 : 270, size: 70, tilt: 5 },
+        { at: 1.2, do: "blink", who: "alarm" },
+        // The good news: the book.
+        { on: "good", do: "pop", who: "book", squash: true },
+        { on: "fix", do: "hop", who: "book", height: 40 },
+        { on: "fix", offset: 0.1, do: "pop", who: "wrench", squash: true },
+        { on: "this.", offset: 0.2, do: "move", who: "wrench", by: [0, -20], turn: 20, dur: 0.3 },
+        { on: "this.", do: "shiver", who: "book", dur: 0.3, amp: 2, rot: 3 },
+        // The bad news: YOU, and something to do.
+        { on: "bad", do: "slideIn", who: "walk", from: "right", dist: V ? 500 : 700, over: 12 },
+        { on: "news:", n: 2, offset: 0.2, do: "swap", who: "walk", to: "you" },
+        { on: "something.", do: "stamp", who: "todo", from: 1.8, shake: 4 },
+        { on: "something.", offset: 0.25, do: "move", who: ["you", "todo"], by: [0, 0.05 * YOU.h], dur: 0.35, ease: "smooth" },
+        { on: "something.", offset: 0.6, do: "shiver", who: "you", dur: 0.4, amp: 2, rot: 2 },
+        { on: "weird", do: "blink", who: "alarm" },
+        // The weird news: plain papers rain down and pile round his feet; the top hat.
+        { on: "You'll", do: "pile", id: "cash", art: "bill-plain", x: YOU.x, y: YOU.y, height: 0.2 * YOU.h, heap: 5, spread: 0.11 * YOU.h, count: 11, until: "doing", fall: 0.3, tilt: 14, jitter: 10 },
+        { on: "rich", do: "drop", who: "todo", dist: 900, spin: 25, dur: 0.5 },
+        { on: "rich", offset: 0.05, do: "swap", who: "you", to: "rich" },
+        { on: "rich", offset: 0.25, do: "glow", who: "rich", size: 0.9 * YOU.h, dur: 0.8 },
+        { on: "doing", do: "hop", who: "rich", height: 24 },
+      ],
+    });
+  </script>
+</template>

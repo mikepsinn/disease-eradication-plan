@@ -1,0 +1,57 @@
+<template id="grape-soda-template">
+  <!-- grape-soda · collage host shot (Part 14, scene 15). Wishonia at her console holds up the doctor's donut, big, with
+       its PRESCRIPTION tag. "which": a big can of GRAPE SODA, one grape on its label. "grape": it swells. After "grape.":
+       the grape is a sticker; it peels off and flutters into her mug, and under it the can reads 0% GRAPE. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="grape-soda" data-width="1920" data-height="1080" data-start="0" data-duration="8.5">
+    <div id="grape-soda-weave"></div>
+    <div id="grape-soda-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+
+    var V = KIT.V, S = KIT.STUDIO, TOP = S.top;
+    // the doctor's donut, big on her palm, with its tag; then the can, big in the window, one grape sticker on its label
+    var PALM = V ? [720, 1000] : [1200, 600], CAN = V ? { x: 790, y: 830, k: 1.75, big: 2.1 } : { x: 1450, y: 510, k: 2.2, big: 2.6 };
+    KIT.collage({
+      id: "grape-soda", seed: 1402,
+      host: true,
+      cast: {
+        mug: { art: "desk-mug", x: V ? 300 : 640, y: TOP + 6, anchor: "bottom", pivot: "bottom", scale: V ? 0.42 : 0.46, points: { rim: [100, 20] } },
+        donut: { art: "donut", x: PALM[0], y: PALM[1], scale: V ? 1.3 : 1.6, hidden: true },
+        can: { art: "grape-soda", x: CAN.x, y: CAN.y, scale: CAN.k, hidden: true, points: { grape: [80, 172] },
+          label: [{ text: "GRAPE SODA", at: [75, 106], width: 80, size: 60 }, { text: "0%", at: [75, 152], width: 46, size: 80 }, { text: "GRAPE", at: [75, 188], width: 50, size: 60 }] },
+        grape: { art: "grape", x: 0, y: 0, pivot: [48, 20], scale: CAN.k * 1.0, hidden: true },
+      },
+      beats: [
+        { at: 0.05, do: "pop", who: "donut", squash: true },
+        { at: 0.2, do: "tag", who: "donut", id: "rx", text: "PRESCRIPTION", x: V ? 730 : 1510, y: V ? 1310 : 840, w: V ? 460 : 620, h: V ? 120 : 160, knot: [150, 150], swing: 4 },
+        { on: "evidence-based", do: "hop", who: "donut", height: 30 },
+        { on: "medicine,", offset: 0.2, do: "hop", who: "donut", height: 20 },
+        // she drops it and holds up the can, one fat grape on its label
+        { on: "which", offset: -0.1, do: "slideOut", who: ["donut", "rx"], to: "bottom", dist: 1300, dur: 0.3 },
+        { on: "which", offset: 0.15, do: "pop", who: ["can", "grape"], squash: true },
+        { on: "which", offset: 0.15, do: "move", who: "grape", to: "can.grape", dur: 0.01 },
+        { on: "\"evidence\"", do: "hop", who: "can", height: 24 },
+        // the push in on the grape
+        { on: "\"grape", do: "move", who: "can", scale: CAN.big / CAN.k, dur: 0.5, ease: "smooth" },
+        { on: "\"grape", do: "move", who: "grape", scale: CAN.big / CAN.k, dur: 0.5, ease: "smooth" },
+        // it is a sticker: it peels off and flutters into her mug, and the can says what it always said
+        { on: "grape", n: 2, offset: 0.2, do: "hinge", who: "grape", angle: -35, frames: 3 },
+        { on: "grape", n: 2, offset: 0.45, do: "move", who: "grape", to: "mug.rim", by: [0, -30], scale: 0.5, turn: 160, dur: 0.6, arc: 140, ease: "smooth" },
+        { on: "grape", n: 2, offset: 1.05, do: "hide", who: "grape" },
+        { on: "grape", n: 2, offset: 1.05, do: "hop", who: "mug", height: 14 },
+      ],
+    });
+  </script>
+</template>

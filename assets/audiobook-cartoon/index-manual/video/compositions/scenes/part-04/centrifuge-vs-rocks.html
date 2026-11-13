@@ -1,0 +1,140 @@
+<template id="centrifuge-vs-rocks-template">
+  <!-- centrifuge-vs-rocks · collage (Part 4, scene 11). The bit: a nuclear bomb's plumbing, huge, against one rock. Close
+       on the magnet ring; the camera climbs a tower of centrifuges past the frame to one sweating engineer on top with his
+       tweezers; "attempted.": the bomb. "Not": whip all the way out; far below, one rock. "nothing.": the whole tower pops
+       away. "Rocks": close on the rock, under DAYS WITHOUT A NUCLEAR BOMB; the sun laps, a rust rock rolls up, a heart,
+       moss, and the number runs past trillions. "years.": a human walks in and throws the rust rock out of the frame (it
+       lands in the next scene). -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="centrifuge-vs-rocks" data-width="1920" data-height="1080" data-start="0" data-duration="20.14">
+    <div id="centrifuge-vs-rocks-weave"></div>
+    <div id="centrifuge-vs-rocks-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "centrifuge-vs-rocks", SZ = KIT.collage.SIZES;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    var G = V ? 1450 : 1000, TX = 800;                       // the ground line; the tower's middle
+    var CALK = V ? 2.2 : 2.0, CENK = V ? 2.2 : 2.0, ENGK = V ? 2.4 : 2.2;
+    var CALH = 449 * CALK, CENH = 420 * CENK * 0.985, CENW = 408 * CENK * 0.98;
+    var RK = V ? 2.0 : 2.4, MID = V ? 2045 : 3350;           // the rocks' scale; the post of the sign
+    var GRAYX = MID + (V ? 255 : 300), RUSTX = MID - (V ? 255 : 300);
+    var ROWS = 3, TOP = G - CALH - ROWS * CENH;
+    var views = V ? {
+      cal: [TX, 960, 1], up1: [TX, G - CALH - 500, 0.82], up2: [TX, TOP + 900, 0.82], eng: [TX, TOP - 330, 1],
+      wide: [1170, -183, 0.3], rocks: [MID, 960, 1],
+    } : {
+      cal: [TX, 560, 1], up1: [TX, G - CALH - 300, 0.72], up2: [TX, TOP + 600, 0.72], eng: [TX + 200, TOP - 400, 1],
+      wide: [1400, -700, 0.235], rocks: [MID, 540, 1],
+    };
+    var put = function (art, x, k, o) { var c = { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: k, hidden: true }; for (var key in o || {}) c[key] = o[key]; return c; };
+    var cast = {}, beats = [], add = function () { for (var i = 0; i < arguments.length; i++) beats.push(arguments[i]); };
+
+    // ── The tower: the magnet ring, then centrifuges slamming on, row by row ──
+    cast.sun = { art: "sun", x: MID - KIT.W / 2 - 200, y: V ? 720 : 300, scale: V ? 1.3 : 1.1, hidden: true };
+    cast.calutron = put("calutron", TX, CALK);
+    var tower = ["calutron"], rows = [["cen0m", 0, 0], ["cen0l", -1, 0], ["cen0r", 1, 0], ["cen1m", 0, 1], ["cen1l", -1, 1], ["cen1r", 1, 1], ["cen2m", 0, 2], ["cen2l", -1, 2], ["cen2r", 1, 2]];
+    // the bottom corners either side of the magnet ring, so the side columns stand on the ground
+    cast.cenBl = put("centrifuges", TX - CENW, CENK); cast.cenBr = put("centrifuges", TX + CENW, CENK); tower.push("cenBl", "cenBr");
+    rows.forEach(function (r) {
+      cast[r[0]] = put("centrifuges", TX + r[1] * CENW, CENK, { y: G - CALH - r[2] * CENH });
+      tower.push(r[0]);
+    });
+    add({ on: "Building", do: "stamp", who: "calutron", from: 1.25, shake: 10 });
+    add({ on: "spectrometers,", do: "shiver", who: "calutron", dur: cue("nothing.") - cue("spectrometers,"), amp: 2, rot: 0.3 });
+    add({ on: "centrifuge", do: "camera", view: "up1", dur: 1.0, ease: "smooth" });
+    // left and right of the ring first, then a row a beat, as the camera climbs
+    var t0 = cue("centrifuge"), slam = function (n, t) {
+      add({ at: t, do: "stamp", who: n, from: 1.25, shake: 7 });
+      add({ at: t + 0.1, do: "shiver", who: n, dur: cue("nothing.") - t - 0.1, amp: 2.5, rot: 0.35 });
+    };
+    slam("cenBl", t0); slam("cenBr", t0 + 0.14); slam("cen0m", t0 + 0.28); slam("cen0l", t0 + 0.42); slam("cen0r", t0 + 0.56);
+    add({ on: "and", do: "camera", view: "up2", dur: 0.9 });
+    var t1 = cue("and");
+    slam("cen1m", t1); slam("cen1l", t1 + 0.14); slam("cen1r", t1 + 0.28); slam("cen2m", t1 + 0.42); slam("cen2l", t1 + 0.56); slam("cen2r", t1 + 0.7);
+    // one man on top, with tweezers
+    cast.engineer = put("engineer", V ? TX - 230 : TX - 60, ENGK, { y: TOP });
+    cast.bomb = { art: "nuclear-bomb", x: V ? TX + 300 : TX + 640, y: V ? TOP - 170 : TOP - 300, scale: V ? 1.85 : 3.0, clip: [[0, 0], [225, 0], [245, 70], [245, 110], [225, 170], [0, 170]], hidden: true };
+    tower.push("engineer", "bomb");
+    add({ on: "precise", do: "camera", view: "eng", dur: 0.6, ease: "smooth" },
+      { on: "precise", do: "pop", who: "engineer", squash: true },
+      { on: "engineering", do: "shiver", who: "engineer", dur: cue("attempted.") - cue("engineering"), amp: 5, rot: 1.8 },
+      { on: "attempted.", do: "stamp", who: "bomb", from: 1.5, shake: 16 },
+      { on: "attempted.", offset: 0.1, do: "hop", who: "engineer", height: 36 },
+      { on: "attempted.", offset: 0.3, do: "shiver", who: ["engineer", "bomb"], dur: cue("nothing.") - cue("attempted.") - 0.3, amp: 5, rot: 1 });
+
+    // ── Far below, one rock ──
+    var rockY = function (art, k) { return G - SZ[art][1] * k / 2; };
+    cast.gray = { art: "rock-gray", x: GRAYX, y: rockY("rock-gray", RK), scale: RK };
+    cast.grayM = { art: "rock-gray-moss", x: GRAYX, y: rockY("rock-gray-moss", RK), scale: RK, hidden: true };
+    add({ on: "Not", do: "camera", view: "wide", dur: 0.55, ease: "smooth" },
+      { on: "nothing.", do: "pop", who: tower, out: true },
+      { on: "Rocks", do: "camera", view: "rocks", dur: 0.55, ease: "smooth" });
+
+    // ── The sign: one copy per number, shown in turn ──
+    var BK = V ? 3.7 : 3.9, BY = V ? 110 : -40;                // top of the sign (canvas y)
+    var nums = ["0", "1", "2", "3", "9", "40", "365", "2,000", "90,000", "1,000,000", "70,000,000", "4,000,000,000", "300,000,000,000", "1,640,000,000,000"];
+    var sign = function (n) {
+      return { art: "tally-board", x: MID, y: BY, anchor: "top", pivot: "top", scale: BK, hidden: true,
+        label: [{ text: "DAYS WITHOUT A NUCLEAR BOMB", at: [132, 47], width: 168, size: 70 }, { text: n, at: [132, 78], width: 176, size: 150 }] };
+    };
+    nums.forEach(function (n, i) { cast["c" + i] = sign(n); });
+    // the number's times: 0 on "Rocks", 1 on "day.", then faster and faster to the end
+    var tR = cue("Rocks"), tDay = cue("day."), tIn = cue("In"), tEnd = cue("years.") + 0.1;
+    var times = [tR + 0.2, tDay];
+    for (var i = 2; i < nums.length; i++) { var u = (i - 1) / (nums.length - 2); times.push(tIn + (tEnd - tIn) * (1 - Math.pow(1 - u, 1.6))); }
+    nums.forEach(function (n, i) {
+      add({ at: times[i], do: i ? "show" : "pop", who: "c" + i });
+      if (i < nums.length - 1) add({ at: times[i + 1], do: "hide", who: "c" + i });
+    });
+    add({ on: "Rocks", offset: 0.2, do: "shake", y: 5, frames: 2 });
+
+    // the sun: once for "every day", then lap after lap, faster and faster
+    var sx0 = MID - KIT.W / 2 - 200, sx1 = MID + KIT.W / 2 + 200, ARC = V ? 300 : 260;
+    var lap = function (t, dur) {
+      add({ at: t, do: "show", who: "sun" }, { at: t, do: "move", who: "sun", to: [sx1, V ? 720 : 300], arc: ARC, dur: dur },
+        { at: t + dur, do: "hide", who: "sun" }, { at: t + dur + 0.005, do: "move", who: "sun", to: [sx0, V ? 720 : 300], dur: 0.001 });
+    };
+    lap(tR + 0.05, tDay - tR);
+    var tL = tIn, dl = 1.1;
+    while (tL + dl < tEnd + 0.5) { lap(tL, dl); tL += dl + 0.02; dl = Math.max(0.16, dl * 0.8); }
+
+    // the second rock; a heart; moss
+    cast.rust = { art: "rock-rust", x: RUSTX, y: rockY("rock-rust", RK), scale: RK, hidden: true };
+    cast.rustM = { art: "rock-rust-moss", x: RUSTX, y: rockY("rock-rust-moss", RK), scale: RK, hidden: true };
+    cast.heart = { art: "heart", x: MID, y: G - (V ? 520 : 500), scale: V ? 1.3 : 1.5, hidden: true };
+    add({ at: -1, do: "move", who: "rust", by: [-1400, 0], turn: -900, dur: 0.001 },
+      { on: "alongside", offset: -0.5, do: "show", who: "rust" },
+      { on: "alongside", offset: -0.5, do: "move", who: "rust", to: [RUSTX, rockY("rock-rust", RK)], turn: 0, dur: 1.1, ease: "smooth" },
+      { on: "colored", do: "pop", who: "heart", squash: true },
+      { on: "colored", offset: 0.1, do: "bob", who: "heart", y: 12, r: 8, speed: 2.5, until: ["years.", 1, 0.3] },
+      { on: "thousands", do: "swap", who: "rust", to: "rustM" },
+      { on: "thousands", offset: 0.15, do: "swap", who: "gray", to: "grayM" });
+
+    // a human walks in and throws one
+    var MK = V ? 1.35 : 1.5, MANX = RUSTX - (V ? 230 : 400);
+    cast.man = put("you-walk", MANX, MK);
+    var MANY = G - 563 * MK / 2;
+    var HAND = [MANX + (240 - 146) * MK, G - (563 - 290) * MK];
+    add({ at: -1, do: "move", who: "man", by: [-900, 0], dur: 0.001 },
+      { on: "thousands", do: "show", who: "man" },
+      { on: "thousands", do: "move", who: "man", to: [MANX, MANY], dur: 0.6 },
+      { on: "thousands", do: "bob", who: "man", y: 8, r: 3, speed: 5, until: ["thousands", 1, 0.6], fade: 0.05 },
+      { on: "years.", do: "move", who: "rustM", to: HAND, turn: -30, dur: 0.17 },
+      { on: "years.", offset: 0.3, do: "move", who: "rustM", to: [MID + KIT.W / 2 + 500, V ? 500 : 120], turn: 900, arc: 160, dur: 0.42 },
+      { on: "years.", offset: 0.3, do: "nudge", who: "man", by: [40, -14] },
+      { on: "years.", offset: 0.35, do: "pop", who: "heart", out: true });
+
+    KIT.collage({ id: ID, seed: 404, plate: V ? [-4000, -4600, 7500, 7000] : [-5000, -4800, 8500, 3700], views: views, view: "cal", cast: cast, beats: beats });
+  </script>
+</template>

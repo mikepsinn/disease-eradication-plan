@@ -1,0 +1,1215 @@
+1
+00:00:03,700 --> 00:00:04,540
+You're here.
+
+2
+00:00:05,760 --> 00:00:07,380
+Your organs are failing.
+
+3
+00:00:07,700 --> 00:00:09,300
+And your death is drawing near.
+
+4
+00:00:09,400 --> 00:00:13,440
+But if you bribe the right politicians in the right order at the right time,
+
+5
+00:00:13,680 --> 00:00:16,600
+you can trade the nuclear warheads for medicine.
+
+6
+00:00:17,300 --> 00:00:20,080
+And it's not even a crime.
+
+7
+00:01:40,444 --> 00:01:43,424
+Global Referendum Strategy Humanity downloaded TikTok over four billion
+
+8
+00:01:43,424 --> 00:01:45,344
+times to watch strangers twerk.
+
+9
+00:01:46,084 --> 00:01:49,984
+Getting two hundred and eighty million people to click 'yes' on not dying
+
+10
+00:01:49,984 --> 00:01:51,284
+should be easier.
+
+11
+00:01:51,924 --> 00:01:52,964
+Here's how, with math.
+
+12
+00:01:53,884 --> 00:01:55,884
+Politicians can ignore protests.
+
+13
+00:01:55,984 --> 00:01:57,284
+They can ignore polls.
+
+14
+00:01:57,624 --> 00:02:00,964
+They can ignore reality for surprisingly long periods (see:
+
+15
+00:02:01,964 --> 00:02:04,164
+climate change, nineteen seventy to present).
+
+16
+00:02:04,944 --> 00:02:09,444
+They cannot ignore two hundred and eighty million cryptographically verified
+
+17
+00:02:09,484 --> 00:02:12,864
+humans saying "do this thing or we vote you out.".
+
+18
+00:02:13,584 --> 00:02:15,644
+Not because they care about those humans.
+
+19
+00:02:16,064 --> 00:02:16,944
+Because they can count.
+
+20
+00:02:17,964 --> 00:02:19,184
+What You're Actually Building.
+
+21
+00:02:19,824 --> 00:02:20,324
+The Goal.
+
+22
+00:02:21,144 --> 00:02:25,504
+A website where people say "please stop letting me die of stupid things"
+
+23
+00:02:25,544 --> 00:02:27,344
+in a way that lawyers find convincing.
+
+24
+00:02:28,264 --> 00:02:31,034
+On Wishonia, we would not need a website for this.
+
+25
+00:02:31,084 --> 00:02:35,224
+We would say "please stop letting me die of stupid things" and then someone
+
+26
+00:02:35,224 --> 00:02:37,464
+would stop letting us die of stupid things.
+
+27
+00:02:38,064 --> 00:02:42,524
+On your planet, this requires cryptographic verification, because your species
+
+28
+00:02:42,524 --> 00:02:46,044
+lies about everything, including whether it wants to be alive.
+
+29
+00:02:46,764 --> 00:02:50,784
+You need mathematical proof that people prefer living.
+
+30
+00:02:51,344 --> 00:02:52,904
+Think about that sentence for a moment.
+
+31
+00:02:53,604 --> 00:02:58,804
+You have built a civilization where "I don't want to die" requires a receipt.
+
+32
+00:02:59,944 --> 00:03:00,444
+Requirements:
+
+33
+00:03:01,164 --> 00:03:02,684
+the votes have to be real (auditable),
+
+34
+00:03:03,644 --> 00:03:05,204
+the votes have to be secret (privacy-preserving),
+
+35
+00:03:06,624 --> 00:03:10,324
+the system has to work for everyone including people without bank accounts
+
+36
+00:03:10,324 --> 00:03:14,504
+or government I.D.s (which is most of Earth, a fact that surprises the people
+
+37
+00:03:14,504 --> 00:03:15,224
+with bank accounts),
+
+38
+00:03:16,024 --> 00:03:20,144
+the code has to be open-source so anyone can audit it, and the whole thing
+
+39
+00:03:20,144 --> 00:03:24,044
+has to grow fast enough to matter before your species gets distracted by
+
+40
+00:03:24,044 --> 00:03:25,064
+a new television show.
+
+41
+00:03:26,244 --> 00:03:26,744
+Target:
+
+42
+00:03:27,184 --> 00:03:29,444
+three point five percent global participation
+
+43
+00:03:30,044 --> 00:03:32,984
+(two hundred and eighty million plus verified votes).
+
+44
+00:03:33,844 --> 00:03:34,864
+That number isn't arbitrary.
+
+45
+00:03:35,604 --> 00:03:38,644
+It's the number at which politicians start losing sleep.
+
+46
+00:03:39,564 --> 00:03:40,204
+More on that later.
+
+47
+00:03:41,224 --> 00:03:41,884
+The Voting System.
+
+48
+00:03:42,704 --> 00:03:45,964
+The system uses end-to-end verifiable cryptography.
+
+49
+00:03:46,524 --> 00:03:50,623
+Each voter gets a receipt that proves they voted, without proving how they
+
+50
+00:03:50,623 --> 00:03:51,123
+voted.
+
+51
+00:03:51,624 --> 00:03:53,244
+This is called a "zero-knowledge proof,"
+
+52
+00:03:53,904 --> 00:03:56,884
+which sounds like something a philosophy student made up during an exam
+
+53
+00:03:56,884 --> 00:04:01,484
+they didn't study for, but it's real mathematics, and it works, and politicians
+
+54
+00:04:01,484 --> 00:04:03,424
+cannot argue with it.
+
+55
+00:04:03,564 --> 00:04:04,084
+Several have tried.
+
+56
+00:04:04,664 --> 00:04:06,324
+The math won every time.
+
+57
+00:04:07,324 --> 00:04:11,804
+Math is undefeated against politicians, which is the only undefeated record
+
+58
+00:04:11,804 --> 00:04:13,224
+in your species' history.
+
+59
+00:04:14,004 --> 00:04:16,024
+Every ballot published anonymized.
+
+60
+00:04:16,544 --> 00:04:18,704
+Biometric data never leaves your device.
+
+61
+00:04:19,104 --> 00:04:20,444
+All code open-source.
+
+62
+00:04:21,044 --> 00:04:24,864
+The system is designed so that even the people running it can't see how
+
+63
+00:04:24,864 --> 00:04:27,994
+you voted, which makes it more private than your actual elections,
+
+64
+00:04:28,604 --> 00:04:31,684
+where the voting booth has a curtain that stops two feet off the ground
+
+65
+00:04:31,684 --> 00:04:34,964
+and the poll worker is definitely looking at your shoes.
+
+66
+00:04:35,864 --> 00:04:37,704
+On Stopping People from Cheating.
+
+67
+00:04:37,744 --> 00:04:40,984
+Your species has been cheating at democracy since you invented it.
+
+68
+00:04:41,304 --> 00:04:43,284
+The Athenians had ballot-stuffing.
+
+69
+00:04:43,324 --> 00:04:44,914
+The Romans had vote-buying.
+
+70
+00:04:45,804 --> 00:04:46,844
+Americans have gerrymandering,
+
+71
+00:04:47,464 --> 00:04:50,644
+which is the practice of drawing voting districts in shapes that look like
+
+72
+00:04:50,644 --> 00:04:54,484
+someone dropped a plate of spaghetti on a map and then legally required
+
+73
+00:04:54,484 --> 00:04:54,984
+it.
+
+74
+00:04:56,104 --> 00:04:57,524
+Three verification layers.
+
+75
+00:04:57,764 --> 00:04:59,904
+Because one has never been enough for you.
+
+76
+00:05:00,964 --> 00:05:02,904
+Layer one is the bouncer at the door.
+
+77
+00:05:03,544 --> 00:05:07,204
+Email and phone verification, device fingerprinting, I.P.
+
+78
+00:05:07,344 --> 00:05:08,184
+geolocation.
+
+79
+00:05:08,764 --> 00:05:11,574
+Stops about ninety percent of fraud, which is the lazy fraud,
+
+80
+00:05:12,284 --> 00:05:15,784
+which is most fraud, because cheating, like everything else your species
+
+81
+00:05:15,784 --> 00:05:20,424
+does, follows a power law where most of the cheating is done by amateurs
+
+82
+00:05:20,424 --> 00:05:23,644
+who give up if you ask them to verify their phone number.
+
+83
+00:05:24,364 --> 00:05:26,884
+This is the "are you a human" layer.
+
+84
+00:05:27,424 --> 00:05:28,224
+The bar is low.
+
+85
+00:05:28,844 --> 00:05:32,164
+The fact that it catches ninety percent of attempts tells you something
+
+86
+00:05:32,164 --> 00:05:34,864
+about the sophistication of your average cheater.
+
+87
+00:05:36,184 --> 00:05:37,644
+Layer two is the V.I.P.
+
+88
+00:05:38,004 --> 00:05:38,504
+section.
+
+89
+00:05:39,124 --> 00:05:40,424
+Government e-I.D.
+
+90
+00:05:40,584 --> 00:05:45,204
+integration (Estonia, India's Aadhaar, E.U.
+
+91
+00:05:45,204 --> 00:05:51,244
+Electronic Identification, Authentication and Trust Services, or e.I.D.A.S.,
+
+92
+00:05:51,264 --> 00:05:51,864
+U.S.
+
+93
+00:05:51,864 --> 00:05:53,024
+via I.D.
+
+94
+00:05:53,024 --> 00:05:57,964
+dot me), biometric liveness detection (blink at the camera to prove you're
+
+95
+00:05:57,964 --> 00:06:02,003
+not a photograph, which is a sentence that would confuse every human who
+
+96
+00:06:02,003 --> 00:06:07,264
+lived before twenty ten), and proof-of-uniqueness partners like Worldcoin,
+
+97
+00:06:07,504 --> 00:06:09,124
+BrightID, and Gitcoin Passport.
+
+98
+00:06:10,404 --> 00:06:12,724
+Higher trust, higher rewards.
+
+99
+00:06:12,784 --> 00:06:18,004
+This is the "are you a specific human who hasn't already voted as a different
+
+100
+00:06:18,004 --> 00:06:19,864
+specific human" layer.
+
+101
+00:06:20,664 --> 00:06:24,984
+Layer three is for the billions of humans who don't exist in any database
+
+102
+00:06:24,984 --> 00:06:28,924
+because their governments can't be bothered to write down that they're alive.
+
+103
+00:06:29,604 --> 00:06:30,564
+Community attestation:
+
+104
+00:06:31,184 --> 00:06:32,824
+your neighbors confirm you're real.
+
+105
+00:06:33,484 --> 00:06:37,344
+This works because lying to a computer is easy but lying to a room full
+
+106
+00:06:37,344 --> 00:06:40,254
+of people who watched you eat breakfast is hard.
+
+107
+00:06:41,504 --> 00:06:43,524
+Even Layer one gets you counted.
+
+108
+00:06:43,584 --> 00:06:48,244
+You don't need a passport to say "I would prefer not to die." A.I.
+
+109
+00:06:48,244 --> 00:06:49,224
+fraud detection:
+
+110
+00:06:49,264 --> 00:06:54,004
+over ninety-nine percent detection, under one percent false positives.
+
+111
+00:06:54,524 --> 00:06:56,264
+Biometric data stays on your device,
+
+112
+00:06:57,244 --> 00:06:58,864
+encrypted with keys you control.
+
+113
+00:06:59,544 --> 00:07:04,104
+Compliant with the General Data Protection Regulation, or G.D.P.R., the
+
+114
+00:07:04,104 --> 00:07:10,164
+California Consumer Privacy Act and California Privacy Rights Act, or C.C.P.A.
+
+115
+00:07:10,184 --> 00:07:16,404
+and C.P.R.A., the Biometric Information Privacy Act, or B.I.P.A.,
+
+116
+00:07:16,864 --> 00:07:21,364
+and the Children's Online Privacy Protection Act, or C.O.P.P.A.
+
+117
+00:07:22,324 --> 00:07:26,684
+Four different laws from four different places that all say "don't be creepy
+
+118
+00:07:26,684 --> 00:07:31,644
+with people's data" using four different definitions of "creepy" and four
+
+119
+00:07:31,644 --> 00:07:35,974
+different penalty structures for being creepy in the wrong jurisdiction.
+
+120
+00:07:36,664 --> 00:07:39,704
+Your species regulates privacy the way it does everything:
+
+121
+00:07:39,724 --> 00:07:43,244
+redundantly, inconsistently, and with great confidence.
+
+122
+00:07:44,424 --> 00:07:46,004
+Growth Strategy.
+
+123
+00:07:46,044 --> 00:07:50,524
+Your species downloaded TikTok over four billion times to watch strangers
+
+124
+00:07:50,524 --> 00:07:51,774
+twerk.
+
+125
+00:07:51,784 --> 00:07:55,904
+Getting two hundred and eighty million to click "yes" on not dying should
+
+126
+00:07:55,904 --> 00:07:56,904
+be easier.
+
+127
+00:07:57,464 --> 00:08:02,164
+It isn't, because not dying is less entertaining than twerking, but it should
+
+128
+00:08:02,164 --> 00:08:07,404
+be, and that gap between "should be" and "isn't" is the entire marketing
+
+129
+00:08:07,404 --> 00:08:08,104
+problem.
+
+130
+00:08:08,564 --> 00:08:12,504
+Each person who signs up gets a small referral bonus for bringing the next,
+
+131
+00:08:13,204 --> 00:08:15,204
+funded by Incentive Alignment Bonds.
+
+132
+00:08:15,924 --> 00:08:16,424
+Target:
+
+133
+00:08:16,724 --> 00:08:19,164
+less than one dollar per verified participant.
+
+134
+00:08:20,084 --> 00:08:25,584
+For comparison, acquiring a coffee customer costs five to fifteen dollars.
+
+135
+00:08:26,564 --> 00:08:30,204
+Nike pays forty dollars to get one person to buy shoes online.
+
+136
+00:08:30,924 --> 00:08:35,144
+You're trying to convince someone to support not dying for less than the
+
+137
+00:08:35,144 --> 00:08:36,344
+cost of a packet of gum.
+
+138
+00:08:37,364 --> 00:08:42,524
+The fact that "not dying" needs a financial incentive to compete with shoes
+
+139
+00:08:42,524 --> 00:08:46,664
+tells you everything about your species that this manual has been trying
+
+140
+00:08:46,664 --> 00:08:47,344
+to tell you.
+
+141
+00:08:48,104 --> 00:08:48,844
+But here we are.
+
+142
+00:08:49,284 --> 00:08:50,264
+Gum money it is.
+
+143
+00:08:51,224 --> 00:08:53,284
+Integrity (Proving You Didn't Cheat).
+
+144
+00:08:54,064 --> 00:08:57,034
+Your species accuses people of cheating at everything,
+
+145
+00:08:57,644 --> 00:08:58,604
+including children's football,
+
+146
+00:08:59,304 --> 00:09:02,144
+baking competitions, and board games at Thanksgiving.
+
+147
+00:09:02,644 --> 00:09:06,304
+The Thanksgiving ones start wars that last longer than the actual wars in
+
+148
+00:09:06,304 --> 00:09:07,264
+your history books.
+
+149
+00:09:07,824 --> 00:09:12,484
+A global referendum with actual stakes will face accusations that make your
+
+150
+00:09:12,484 --> 00:09:15,024
+election audits look like casual suggestions.
+
+151
+00:09:15,944 --> 00:09:16,964
+The defense:
+
+152
+00:09:16,984 --> 00:09:20,564
+make cheating mathematically impossible, then publish the math.
+
+153
+00:09:21,484 --> 00:09:22,104
+N.G.O.
+
+154
+00:09:22,144 --> 00:09:26,664
+and academic observers get read-only dashboards with real-time fraud detection.
+
+155
+00:09:27,244 --> 00:09:29,424
+You can't argue with a zero-knowledge proof.
+
+156
+00:09:29,984 --> 00:09:31,084
+You can argue with a person.
+
+157
+00:09:31,384 --> 00:09:32,534
+You can argue with a committee.
+
+158
+00:09:33,164 --> 00:09:34,544
+You can't argue with math.
+
+159
+00:09:35,144 --> 00:09:36,484
+Math doesn't have feelings.
+
+160
+00:09:36,904 --> 00:09:39,104
+Math doesn't have an election coming up.
+
+161
+00:09:39,364 --> 00:09:43,134
+Math just sits there being correct, which makes it the only trustworthy
+
+162
+00:09:43,204 --> 00:09:45,404
+participant in your democratic process.
+
+163
+00:09:46,424 --> 00:09:49,624
+Participants complete structured learning paths before voting.
+
+164
+00:09:50,344 --> 00:09:52,904
+Higher reward tiers unlock as you learn more.
+
+165
+00:09:53,504 --> 00:09:57,924
+This produces informed participants instead of confused button-clickers,
+
+166
+00:09:58,464 --> 00:10:02,524
+though confused button-clickers who want to not die are also welcome.
+
+167
+00:10:03,084 --> 00:10:07,644
+An uninformed person who clicks "don't let me die" is still more useful
+
+168
+00:10:07,684 --> 00:10:10,404
+than an informed person who clicks nothing,
+
+169
+00:10:11,004 --> 00:10:14,844
+and your planet has a surplus of informed people clicking nothing.
+
+170
+00:10:15,724 --> 00:10:16,834
+You call them "academics.".
+
+171
+00:10:17,944 --> 00:10:19,304
+Legal positioning:
+
+172
+00:10:19,484 --> 00:10:23,824
+non-binding global consultation with country-specific bridges to official
+
+173
+00:10:23,824 --> 00:10:25,764
+mechanisms where feasible.
+
+174
+00:10:26,334 --> 00:10:30,824
+"Non-binding" sounds weak until you remember that every major social change
+
+175
+00:10:30,824 --> 00:10:33,804
+in your history started as non-binding.
+
+176
+00:10:34,164 --> 00:10:36,544
+The suffragettes' petitions were non-binding.
+
+177
+00:10:37,444 --> 00:10:38,844
+So were the civil rights marches.
+
+178
+00:10:39,404 --> 00:10:43,284
+So was the Declaration of Independence, technically, until enough people
+
+179
+00:10:43,284 --> 00:10:44,624
+with guns agreed with it.
+
+180
+00:10:45,264 --> 00:10:49,104
+"Non-binding" is what your politicians call something before they're forced
+
+181
+00:10:49,104 --> 00:10:50,264
+to bind to it.
+
+182
+00:10:51,264 --> 00:10:53,064
+Implementation Roadmap.
+
+183
+00:10:53,104 --> 00:10:57,384
+The realistic target for three point five percent participation (two hundred
+
+184
+00:10:57,384 --> 00:11:01,524
+and eighty million verified humans) is eighteen to thirty-six months,
+
+185
+00:11:02,284 --> 00:11:05,304
+scaling alongside the full campaign roadmap.
+
+186
+00:11:05,464 --> 00:11:06,364
+Phase:
+
+187
+00:11:06,364 --> 00:11:06,864
+Foundation.
+
+188
+00:11:07,044 --> 00:11:07,544
+Timeline:
+
+189
+00:11:07,584 --> 00:11:08,604
+Months one to three.
+
+190
+00:11:09,184 --> 00:11:09,684
+Focus:
+
+191
+00:11:09,944 --> 00:11:10,444
+Build the thing.
+
+192
+00:11:10,964 --> 00:11:13,664
+Verification infrastructure, social media framework.
+
+193
+00:11:14,484 --> 00:11:14,984
+Phase:
+
+194
+00:11:14,984 --> 00:11:15,484
+Scaling.
+
+195
+00:11:15,604 --> 00:11:16,204
+Timeline:
+
+196
+00:11:16,344 --> 00:11:17,404
+Months four to twelve.
+
+197
+00:11:18,064 --> 00:11:18,564
+Focus:
+
+198
+00:11:18,804 --> 00:11:19,304
+Turn it on.
+
+199
+00:11:19,684 --> 00:11:22,244
+Marketing blitz, enhanced verification,
+
+200
+00:11:22,884 --> 00:11:23,944
+millions of participants.
+
+201
+00:11:25,024 --> 00:11:25,524
+Phase:
+
+202
+00:11:25,744 --> 00:11:26,544
+Full Campaign.
+
+203
+00:11:26,904 --> 00:11:27,544
+Timeline:
+
+204
+00:11:27,684 --> 00:11:29,024
+Months thirteen to thirty-six.
+
+205
+00:11:30,024 --> 00:11:30,524
+Focus:
+
+206
+00:11:30,924 --> 00:11:34,004
+Global push to three point five percent participation,
+
+207
+00:11:34,724 --> 00:11:35,644
+bond-funded growth.
+
+208
+00:11:36,124 --> 00:11:36,984
+Phase:
+
+209
+00:11:37,544 --> 00:11:38,504
+Treaty Pressure.
+
+210
+00:11:38,584 --> 00:11:39,244
+Timeline:
+
+211
+00:11:39,504 --> 00:11:40,184
+Months twenty-four plus.
+
+212
+00:11:40,944 --> 00:11:41,444
+Focus:
+
+213
+00:11:41,784 --> 00:11:43,494
+Prepare treaty negotiations,
+
+214
+00:11:44,204 --> 00:11:45,524
+watch politicians sweat.
+
+215
+00:11:46,584 --> 00:11:51,204
+The system works when each person brings more than one person, which is
+
+216
+00:11:51,204 --> 00:11:55,504
+how avalanches work, and also how TikTok works, and also how religions work.
+
+217
+00:11:56,244 --> 00:11:57,944
+The mechanism is identical.
+
+218
+00:11:58,244 --> 00:11:59,544
+The content is different.
+
+219
+00:12:00,144 --> 00:12:05,084
+Instead of dance videos or salvation, you're offering "possibly not dying,"
+
+220
+00:12:05,444 --> 00:12:09,164
+which should be a better sell than either of those but empirically isn't,
+
+221
+00:12:09,524 --> 00:12:12,254
+and nobody on Wishonia can figure out why.
+
+222
+00:12:12,884 --> 00:12:13,884
+Success Metrics.
+
+223
+00:12:14,344 --> 00:12:16,604
+You'll know it's working when four numbers are right:
+
+224
+00:12:17,444 --> 00:12:21,484
+two hundred and eighty million plus verified participants (the three point
+
+225
+00:12:21,484 --> 00:12:22,864
+five percent threshold),
+
+226
+00:12:23,584 --> 00:12:26,544
+cost per verified participant under one dollar,
+
+227
+00:12:27,244 --> 00:12:31,544
+viral coefficient above one point zero (each person brings more than one
+
+228
+00:12:31,544 --> 00:12:32,164
+person),
+
+229
+00:12:32,764 --> 00:12:36,964
+and fraud detection above ninety-nine percent with false positives below
+
+230
+00:12:36,964 --> 00:12:37,784
+one percent.
+
+231
+00:12:38,624 --> 00:12:42,564
+If any of those numbers are wrong, something is broken and you fix it.
+
+232
+00:12:43,164 --> 00:12:46,784
+If all four are right, you've built a machine that converts pocket change
+
+233
+00:12:46,784 --> 00:12:48,644
+into political pressure.
+
+234
+00:12:49,004 --> 00:12:50,284
+Nobody has built this before.
+
+235
+00:12:50,564 --> 00:12:51,944
+This is the most surprising part.
+
+236
+00:12:52,804 --> 00:12:56,684
+On Why Three Point Five Percent Is The Magic Number.
+
+237
+00:12:57,364 --> 00:13:00,764
+The two hundred and eighty million target is based on the "three point five
+
+238
+00:13:00,764 --> 00:13:01,664
+percent Rule":
+
+239
+00:13:02,244 --> 00:13:06,964
+when three point five percent of a population actively participates in sustained,
+
+240
+00:13:07,384 --> 00:13:11,084
+nonviolent action, the movement has historically won.
+
+241
+00:13:11,524 --> 00:13:12,784
+Every time so far.
+
+242
+00:13:13,484 --> 00:13:14,584
+Across all cultures.
+
+243
+00:13:14,924 --> 00:13:15,844
+For centuries.
+
+244
+00:13:16,384 --> 00:13:21,024
+This is the closest thing your species has to a cheat code, and nobody teaches
+
+245
+00:13:21,024 --> 00:13:24,564
+it in school, because teaching it in school would make governments nervous,
+
+246
+00:13:25,024 --> 00:13:26,444
+and governments write the curriculum.
+
+247
+00:13:27,224 --> 00:13:27,784
+The U.S.
+
+248
+00:13:27,884 --> 00:13:32,344
+civil rights movement crossed three point five percent and ended segregation.
+
+249
+00:13:32,884 --> 00:13:36,904
+Indian independence crossed three point five percent and kicked out the
+
+250
+00:13:36,904 --> 00:13:41,084
+British Empire, which at the time was the largest organization on Earth
+
+251
+00:13:41,084 --> 00:13:45,334
+and was defeated by people who refused to move.
+
+252
+00:13:45,444 --> 00:13:49,744
+Women's suffrage crossed three point five percent and won the vote, which
+
+253
+00:13:49,744 --> 00:13:54,484
+took seventy-two years and required marching in rain, getting arrested,
+
+254
+00:13:54,484 --> 00:13:56,124
+and going on hunger strikes.
+
+255
+00:13:56,784 --> 00:14:00,924
+Previous movements required getting tear-gassed, going to prison, or dying.
+
+256
+00:14:01,564 --> 00:14:04,304
+This one requires clicking a button from the toilet.
+
+257
+00:14:05,424 --> 00:14:06,004
+The Bottom Line.
+
+258
+00:14:06,944 --> 00:14:11,144
+Two hundred and fifty million dollars for the campaign, funded by VICTORY
+
+259
+00:14:11,144 --> 00:14:13,024
+Incentive Alignment Bonds.
+
+260
+00:14:13,604 --> 00:14:14,484
+Target cost:
+
+261
+00:14:14,684 --> 00:14:17,144
+less than one dollar per verified participant.
+
+262
+00:14:17,824 --> 00:14:19,484
+You spend more marketing soda.
+
+263
+00:14:20,164 --> 00:14:24,964
+Coca-Cola's annual marketing budget could fund this campaign thirteen times
+
+264
+00:14:24,964 --> 00:14:29,324
+over, and Coca-Cola's product is sugar water that makes you fatter.
+
+265
+00:14:29,904 --> 00:14:32,204
+Your product is not dying.
+
+266
+00:14:32,224 --> 00:14:33,964
+The marketing budgets are inverted.
+
+267
+00:14:34,764 --> 00:14:37,264
+Everything about your species' priorities is inverted.
+
+268
+00:14:37,904 --> 00:14:41,464
+I've been saying this for eighty years and it remains true every time I
+
+269
+00:14:41,464 --> 00:14:41,964
+check.
+
+270
+00:14:42,404 --> 00:14:46,904
+two hundred and eighty million verified humans saying "do this or lose your
+
+271
+00:14:46,904 --> 00:14:49,224
+job" to every politician on Earth.
+
+272
+00:14:50,264 --> 00:14:50,974
+That's not a petition.
+
+273
+00:14:51,744 --> 00:14:53,284
+Petitions are what you ignore.
+
+274
+00:14:53,784 --> 00:14:57,864
+Your species has produced enough petitions to wallpaper the moon, and the
+
+275
+00:14:57,864 --> 00:15:02,124
+total political change achieved by all petitions combined is approximately
+
+276
+00:15:02,124 --> 00:15:02,644
+zero.
+
+277
+00:15:03,684 --> 00:15:04,764
+This isn't a petition.
+
+278
+00:15:05,384 --> 00:15:08,864
+This is a pink slip with two hundred and eighty million signatures.
+
+279
+00:15:09,804 --> 00:15:11,034
+People show up for the healthcare.
+
+280
+00:15:11,664 --> 00:15:15,144
+Politicians see two hundred and eighty million verified supporters.
+
+281
+00:15:15,604 --> 00:15:19,284
+The math suggests the treaty becomes very difficult to ignore.
+
+282
+00:15:19,824 --> 00:15:21,324
+Not impossible to ignore.
+
+283
+00:15:21,384 --> 00:15:25,384
+Your politicians have a remarkable capacity for ignoring things.
+
+284
+00:15:25,624 --> 00:15:27,264
+But very, very difficult.
+
+285
+00:15:28,264 --> 00:15:30,944
+The kind of difficult where ignoring it costs you your career,
+
+286
+00:15:31,884 --> 00:15:35,024
+and your career is the only thing your politicians care about more than
+
+287
+00:15:35,024 --> 00:15:37,024
+money, and this threatens both.
+
+288
+00:15:49,644 --> 00:15:55,184
+Thank you so much for taking the time to end war and disease, but if at
+
+289
+00:15:55,184 --> 00:15:59,404
+any point you decide you're too busy, please press the share button on your
+
+290
+00:15:59,404 --> 00:16:03,104
+glowing rectangle in case one of your friends have a free afternoon to end
+
+291
+00:16:03,104 --> 00:16:04,144
+war and disease instead.
+
+292
+00:16:04,764 --> 00:16:09,104
+And if you're too busy to even do that, please leave a really, really, really
+
+293
+00:16:09,104 --> 00:16:13,264
+good rating and review so we overcome the pro -war algorithmic suppression
+
+294
+00:16:13,264 --> 00:16:16,824
+and find someone with more spare time for ending wars and diseases.
+
+295
+00:16:17,384 --> 00:16:19,584
+The good review doesn't have to be true, they don't check.
+
+296
+00:16:20,124 --> 00:16:24,184
+But if you're too busy to even do that, the absolute least you could do
+
+297
+00:16:24,184 --> 00:16:29,804
+is take 15 seconds to go to WarOnDisease.org and make your wishocratic allocation,
+
+298
+00:16:30,224 --> 00:16:33,784
+telling us what fraction of humanity's resources should go to explosions
+
+299
+00:16:33,784 --> 00:16:35,244
+versus clinical trials.
+
+300
+00:16:35,524 --> 00:16:36,024
+And vote!
+
+301
+00:16:36,444 --> 00:16:40,704
+If the 1% treaty passes, your vote will be personally to blame for saving
+
+302
+00:16:40,704 --> 00:16:45,324
+2.6 lives and preventing 468,000 hours of suffering.
+
+303
+00:16:45,324 --> 00:16:48,024
+Go to WarOnDisease.org right now.
+
+304
+00:16:48,424 --> 00:16:48,984
+Love you, bye!

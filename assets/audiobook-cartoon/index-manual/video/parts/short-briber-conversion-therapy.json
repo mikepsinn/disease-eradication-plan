@@ -1,0 +1,345 @@
+{
+  "id": "short-briber-conversion-therapy",
+  "title": "Short: briber conversion therapy",
+  "storyboard": "storyboards/part-19-step-3-bribe-the-bribers.md",
+  "audio": {
+    "start": 2572.011,
+    "end": 2639.007
+  },
+  "scenes": [
+    {
+      "id": "conversion-therapy",
+      "file": "compositions/scenes/short-briber-conversion-therapy/conversion-therapy.html",
+      "cue": "Professional",
+      "approx": 2572.584,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "Professional",
+          "expr": "happy",
+          "rest": "smile",
+          "body": "presenting",
+          "mode": "big"
+        },
+        {
+          "cue": "Therapy",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "arms-crossed",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "democracy-jackpot",
+      "file": "compositions/scenes/short-briber-conversion-therapy/democracy-jackpot.html",
+      "cue": "Military",
+      "approx": 2575.164,
+      "layer": "B"
+    },
+    {
+      "id": "lobbyists-have-clients",
+      "file": "compositions/scenes/short-briber-conversion-therapy/lobbyists-have-clients.html",
+      "cue": "They",
+      "approx": 2614.484,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "They",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "open-palms",
+          "mode": "big"
+        },
+        {
+          "cue": "beliefs.",
+          "expr": "skeptical",
+          "rest": "closed",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "clients.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    },
+    {
+      "id": "two-clients",
+      "file": "compositions/scenes/short-briber-conversion-therapy/two-clients.html",
+      "cue": "The",
+      "approx": 2620.444,
+      "layer": "B"
+    },
+    {
+      "id": "it-is-arithmetic",
+      "file": "compositions/scenes/short-briber-conversion-therapy/it-is-arithmetic.html",
+      "cue": "This",
+      "approx": 2635.564,
+      "layer": "A",
+      "wishonia": [
+        {
+          "cue": "This",
+          "expr": "smirk",
+          "rest": "smile",
+          "body": "palms-down",
+          "mode": "big"
+        },
+        {
+          "cue": "arithmetic.",
+          "expr": "sideeye",
+          "rest": "closed",
+          "body": "idle",
+          "mode": "big"
+        }
+      ]
+    }
+  ],
+  "sounds": [
+    {
+      "scene": "conversion-therapy",
+      "cue": "Conversion",
+      "sfx": "whoosh",
+      "volume": 0.25
+    },
+    {
+      "scene": "conversion-therapy",
+      "cue": "Therapy",
+      "offset": 0.75,
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "lobbyists",
+      "offset": 0.7,
+      "sfx": "ding",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "thousand,",
+      "sfx": "bell",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "thousand,",
+      "offset": 0.15,
+      "sfx": "cash-register",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "dollars",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "dollar",
+      "sfx": "slide-down",
+      "volume": 0.35
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "spreadsheet:",
+      "sfx": "thunk",
+      "volume": 0.45
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "salary",
+      "sfx": "cash-register",
+      "volume": 0.35
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "\"arms",
+      "sfx": "boom",
+      "volume": 0.5
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "raisins",
+      "offset": 0.15,
+      "sfx": "splat",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "cookies\".",
+      "sfx": "boom",
+      "volume": 0.55
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "legacy",
+      "n": 1,
+      "offset": 0.25,
+      "sfx": "slide-up",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "orphans\".",
+      "sfx": "pop",
+      "volume": 0.35
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "Your",
+      "sfx": "whoosh",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "salary",
+      "n": 2,
+      "sfx": "cash-register",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "clinical",
+      "sfx": "sparkle",
+      "volume": 0.35
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "instead",
+      "sfx": "whistle",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "bombs.",
+      "sfx": "boom",
+      "volume": 0.5
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "\"Philanthropist\"",
+      "sfx": "sparkle",
+      "volume": 0.3
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "keep",
+      "sfx": "pat",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "money).",
+      "sfx": "thunk",
+      "volume": 0.4
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "\"Accidentally",
+      "sfx": "clank",
+      "volume": 0.45
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "humanity",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "democracy-jackpot",
+      "cue": "while",
+      "sfx": "whoosh",
+      "volume": 0.25
+    },
+    {
+      "scene": "lobbyists-have-clients",
+      "cue": "Lobbyists",
+      "offset": 0.08,
+      "sfx": "click",
+      "volume": 0.4
+    },
+    {
+      "scene": "lobbyists-have-clients",
+      "cue": "beliefs.",
+      "offset": 0.2,
+      "sfx": "whirr",
+      "volume": 0.3
+    },
+    {
+      "scene": "lobbyists-have-clients",
+      "cue": "clients.",
+      "sfx": "click",
+      "volume": 0.4
+    },
+    {
+      "scene": "lobbyists-have-clients",
+      "cue": "clients.",
+      "offset": 0.6,
+      "sfx": "click",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-clients",
+      "cue": "pays",
+      "n": 1,
+      "offset": 0.2,
+      "sfx": "cash-register",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-clients",
+      "cue": "die",
+      "n": 1,
+      "sfx": "zap",
+      "volume": 0.4
+    },
+    {
+      "scene": "two-clients",
+      "cue": "smaller",
+      "sfx": "slide-down",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-clients",
+      "cue": "You're",
+      "sfx": "whoosh",
+      "volume": 0.25
+    },
+    {
+      "scene": "two-clients",
+      "cue": "salary",
+      "sfx": "cash-register",
+      "volume": 0.3
+    },
+    {
+      "scene": "two-clients",
+      "cue": "one",
+      "sfx": "slide-up",
+      "volume": 0.35
+    },
+    {
+      "scene": "two-clients",
+      "cue": "larger.",
+      "sfx": "stamp",
+      "volume": 0.45
+    },
+    {
+      "scene": "it-is-arithmetic",
+      "cue": "This",
+      "sfx": "squeak",
+      "volume": 0.3
+    },
+    {
+      "scene": "it-is-arithmetic",
+      "cue": "arithmetic.",
+      "offset": 0.15,
+      "sfx": "ding",
+      "volume": 0.4
+    }
+  ]
+}

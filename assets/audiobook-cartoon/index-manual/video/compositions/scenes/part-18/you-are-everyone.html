@@ -1,0 +1,98 @@
+<template id="you-are-everyone-template">
+  <!-- you-are-everyone · collage, a dark stadium. "Right": a spotlight clunks on over one human alone on a dark stage,
+       holding up a small YES sign. "assumes": he peers into the dark and sweats; "weird": a dunce cap drops out of the dark onto
+       his head. "referendum": the YES button rises out of the stage beside him; "find": he gulps and presses it.
+       "everyone.": the floodlights bang on, bank after bank, and every seat in the stadium holds a crowd with the same
+       YES sign. The crowd roars, the cap blows off, and they carry him off overhead. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #0B0805; }
+  </style>
+  <div id="root" data-composition-id="you-are-everyone" data-width="1920" data-height="1080" data-start="0" data-duration="10.62">
+    <div id="you-are-everyone-weave"></div>
+    <div id="you-are-everyone-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "you-are-everyone", V = KIT.V, SZ = KIT.collage.SIZES, D = KIT.scene(ID).duration;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hgt = function (art, h) { return h / SZ[art][1]; };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      // The stage's front edge at FLOOR; the tiers rise behind it (plate px).
+      var FLOOR = 900, MAN = [930, 880], MH = 360, TIERS = V ? 12 : 6, TH = 180, LIGHTS = 600 - TIERS * TH - 80;
+      var LIT = cue("everyone.");
+      // the crowds in the seats, tier by tier, each with a YES sign
+      var seats = [];
+      for (var k = 0; k < TIERS; k++) {
+        var y = 600 - k * TH, half = 1100 + k * 230, n = Math.round(2 * half / 200);
+        for (var j = 0; j < n; j++) {
+          var nm = "c" + k + "_" + j;
+          cast[nm] = { art: "crowd", x: 960 - half + (j + 0.5) * (2 * half / n), y: y, anchor: "bottom", scale: hgt("crowd", TH * 1.15), hidden: true,
+            label: { text: "YES", at: [138, 34], width: 110, size: 34, plaque: true, tilt: (j % 3 - 1) * 6 } };
+          seats.push([nm, k, j]);
+        }
+      }
+      // the floodlight banks along the rim
+      var BANKS = V ? 6 : 7;
+      for (k = 0; k < BANKS; k++) cast["fl" + k] = { art: "light-bulbs", x: 960 + (k - (BANKS - 1) / 2) * 620, y: LIGHTS, scale: 1.25, hidden: true };
+      cast.btn = { art: "yes-button", x: MAN[0] + 230, y: FLOOR + 10, anchor: "bottom", pivot: "bottom", scale: hgt("yes-button", 250), hidden: true };
+      // the weird human, his little sign up (at art (71, 50)); the dunce cap that drops onto his head (art (119, 92))
+      var WK = hgt("weird-human", MH), HEAD = [MAN[0] - 121 * WK + 119 * WK, MAN[1] - MH + 92 * WK];
+      cast.man = { art: "weird-human", x: MAN[0], y: MAN[1], anchor: "bottom", pivot: "bottom", scale: WK,
+        label: { text: "YES", at: [71, 50], width: 110, size: 60 } };
+      cast.cap = { art: "dunce-cap", x: HEAD[0], y: HEAD[1] + 8, anchor: "bottom", pivot: "bottom", scale: hgt("dunce-cap", 120), hidden: true };
+
+      var views = V ? { close: [960, 650, 1.6], wide: [960, 200, 0.45] } : { close: [960, 700, 1.3], wide: [960, 320, 0.58] };
+      // dark, then the spotlight
+      add({ at: -1, do: "wash", id: "dark", color: "#0B0805", blend: "normal", opacity: 0.93, dur: 0.01 });
+      add({ on: "Right", do: "glow", who: "man", size: 300, dur: 0.2 });
+      add({ on: "assumes", do: "shiver", who: "man", dur: 1.2, amp: 3, rot: 2 });
+      // "weird": a dunce cap drops out of the dark onto his head
+      add({ at: -1, do: "move", who: "cap", by: [0, -900], dur: 0.01 });
+      add({ on: "weird", do: "show", who: "cap" });
+      add({ on: "weird", do: "move", who: "cap", by: [0, 900], dur: 0.25 });
+      add({ on: "one.", do: "hop", who: "man", height: 10 });
+      add({ on: "one.", do: "hop", who: "cap", height: 10 });
+      // the button rises out of the stage; he presses it
+      add({ on: "referendum", do: "slideIn", who: "btn", from: "bottom", dist: 300, over: 10 });
+      add({ on: "they", n: 2, do: "shiver", who: "man", dur: 0.3, amp: 4, rot: 2 });
+      add({ on: "find", offset: -0.08, do: "nudge", who: "man", by: [40, 0] });
+      add({ on: "find", do: "nudge", who: "btn", by: [0, 16] });
+      // "everyone.": the floodlights bang on, bank after bank; every seat holds the same YES
+      add({ on: "are", n: 2, offset: -0.2, do: "camera", view: "wide", dur: 0.5 });
+      for (k = 0; k < BANKS; k++) add({ at: LIT + k * 0.07, do: "pop", who: "fl" + k });
+      add({ at: LIT, do: "wash", id: "dark", opacity: 0.08, dur: 0.5 });
+      add({ at: LIT, do: "boom", shake: 10, flash: 0.12 });
+      seats.forEach(function (s) { add({ at: LIT + 0.05 + s[1] * 0.06 + (s[2] % 4) * 0.01, do: "pop", who: s[0] }); });
+      seats.forEach(function (s, i) { add({ at: LIT + 0.6, do: "bob", who: s[0], y: 8, r: 2, speed: 3, phase: i }); });
+      // the dunce cap blows off; the crowd carries him off overhead, sign up
+      add({ at: LIT + 0.05, do: "move", who: "cap", by: [700, -900], turn: 400, dur: 0.6 });
+      add({ at: LIT + 0.65, do: "hide", who: "cap" });
+      add({ at: LIT + 0.7, do: "move", who: "man", by: [120, -260], turn: -82, dur: 0.35, ease: "smooth" });
+      add({ at: LIT + 1.1, do: "move", who: "man", by: [V ? 1600 : 2200, -200], turn: -82, dur: D - LIT - 1.2 });
+      add({ at: LIT + 1.1, do: "bob", who: "man", y: 14, r: 4, speed: 4 });
+
+      var tl = KIT.collage({ id: ID, seed: 1808, plate: [-2600, -2800, 4600, 2600], views: views, view: "close", cast: cast, beats: beats });
+
+      // the stadium on the paper: the stage and the tiers of seats (under the dark)
+      var tiers = '<rect x="-2600" y="' + FLOOR + '" width="7200" height="1700" fill="#6B4A2E"/>' +
+        '<rect x="-2600" y="' + (FLOOR - 4) + '" width="7200" height="12" fill="#2B2033"/>';
+      for (k = 0; k < TIERS; k++) {
+        var yy = 600 - k * TH, hh = 1100 + k * 230 + 200;
+        tiers += '<path d="M' + (960 - hh) + "," + yy + " H" + (960 + hh) + " V" + (yy + 26) + " H" + (960 - hh) + ' Z" fill="#A9472F" stroke="#2B2033" stroke-width="4"/>';
+      }
+      var stage = document.getElementById(ID + "-stage"), d = document.createElement("div");
+      d.style.cssText = "position:absolute;left:0;top:0;width:0;height:0";
+      d.innerHTML = '<svg width="1" height="1" style="position:absolute;left:0;top:0;overflow:visible">' + tiers + "</svg>";
+      stage.insertBefore(d, stage.children[1]);
+    })();
+  </script>
+</template>

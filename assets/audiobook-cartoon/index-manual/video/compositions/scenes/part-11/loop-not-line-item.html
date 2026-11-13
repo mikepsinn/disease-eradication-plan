@@ -1,0 +1,210 @@
+<template id="loop-not-line-item-template">
+  <!-- loop-not-line-item · collage (Part 11, scenes 17 to 19 on one plate, the-loop). The bit: military spending is a
+       loop of road that feeds itself, with war papers running round it faster and faster, until the treaty switches
+       them off it. A ledger of line items; "line": its MILITARY line lifts off and lands as a ring of road, and the
+       camera pulls back as six stations pop up round it. 1: the Federal Reserve cranks itself and papers run out onto
+       the road. 2: a loaf's price climbs while the inflation rat eats a coin. 3: the Builder's paycheck shrinks in his
+       hand. 4: he turns into a masked crook at a laptop. 5: the robot chain pops up. 6: the Politician signs a bigger
+       budget and the weapons factory catches a new missile; the papers run on round, faster. "Every nation": a little
+       town beside the loop, three bombs and three small mushrooms, SANCTIONED, and it falls flat. The Kid is unhurt:
+       a tank priced $$$$$ squashes flat; a laptop priced $. He works it out, $ < $$$$$, and the Politician sticks a
+       gold star on it. "The treaty breaks this loop": the treaty drops onto the road's bottom bend as a switch; the
+       papers turn off down a branch, through the seal-flip funnel, and come out with the cross seal, filing up to the
+       lab, where the Scientist waves them in. BUILD shoots back up past STEAL and the crook is the Builder again. The
+       press stops; the weapons factory sobs over its missile. "You don't outlaw the loop": an ILLEGAL sign goes up on
+       it, and one robot runs straight past it, round and round. -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+    #loop-not-line-item-stage svg { overflow: visible; }
+    #loop-not-line-item-pays text { display: none; }
+  </style>
+  <div id="root" data-composition-id="loop-not-line-item" data-width="1920" data-height="1080" data-start="0" data-duration="44.94">
+    <div id="loop-not-line-item-weave"></div>
+    <div id="loop-not-line-item-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var ID = "loop-not-line-item", V = KIT.V, SZ = KIT.collage.SIZES;
+      var cue = function (w, n) { return KIT.cue(ID, w, n); };
+      var hs = function (art, h) { return h / SZ[art][1]; };
+      // ── The loop: a ring of road round LC, six stations outside it ──
+      var LC = [1600, 700], RK = 2.2, RR = 440;                         // the ring's scale and its road's radius
+      var st = function (deg, r) { r = r || 790; return [LC[0] + r * Math.cos(deg * Math.PI / 180), LC[1] + r * Math.sin(deg * Math.PI / 180)]; };
+      var S1 = st(180), S2 = st(240), S3 = st(300), S4 = st(0), S5 = st(60), S6 = st(120);
+      var BOT = [LC[0], LC[1] + RR], FUN = [LC[0], LC[1] + 1000], LAB = [LC[0] + 900, LC[1] + 1250];
+      var TOWN = 3650, KID = 4550, GT = 1000;                         // the town's ground line GT
+      var cy = function (s) { return V ? GT - 420 / s : 620; };
+      var close = function (p, s) { return [p[0], V ? p[1] - 60 : p[1], s]; };
+      var views = V ? {
+        ledger: [LC[0], LC[1], 0.85], wide: [LC[0], LC[1] + 120, 0.52], s1: close(S1, 0.95), s2: close(S2, 1.05), s3: close(S3, 1.05), s4: close(S4, 0.95), s5: close(S5, 0.95), s6: close(S6, 0.9),
+        town: [TOWN, cy(0.75), 0.75], kid: [KID + 100, cy(0.95), 0.95], branch: [LC[0] + 450, LC[1] + 800, 0.5], top: [LC[0], LC[1] - 200, 0.7],
+      } : {
+        ledger: [LC[0], LC[1], 1.2], wide: [LC[0], LC[1] + 40, 0.5], s1: close(S1, 1), s2: close(S2, 1), s3: close(S3, 1), s4: close(S4, 1), s5: close(S5, 1), s6: close(S6, 0.95),
+        town: [TOWN + 150, 600, 0.9], kid: [KID + 150, 620, 1], branch: [LC[0] + 400, LC[1] + 650, 0.5], top: [LC[0], LC[1] - 100, 0.65],
+      };
+      var cast = {}, beats = [], add = function (b) { beats.push(b); };
+      var at = function (p, dy) { return [p[0], p[1] + (dy || 0)]; };
+
+      // the ledger, and the ring it turns into
+      cast.ledger = { art: "ledger", x: LC[0], y: LC[1], scale: 1.0, label: [
+        { text: "SCHOOLS", at: [300, 190], width: 300, size: 54 }, { text: "ROADS", at: [300, 330], width: 300, size: 54 },
+        { text: "MILITARY", at: [300, 470], width: 330, size: 54 }, { text: "HOSPITALS", at: [300, 610], width: 330, size: 54 }] };
+      cast.ring = { art: "loop-ring", x: LC[0], y: LC[1], scale: RK, hidden: true };
+      // 1: the Federal Reserve cranks itself
+      cast.fedUp = { art: "fed-crank-up", x: S1[0], y: S1[1] + 210, anchor: "bottom", scale: 1.1, hidden: true };
+      cast.fedDn = { art: "fed-crank-down", x: S1[0] - 2, y: S1[1] + 210, anchor: "bottom", scale: 1.1, hidden: true };
+      // 2: the loaf and the rat
+      cast.loaf = { art: "loaf", x: S2[0] - 80, y: S2[1] + 120, anchor: "bottom", pivot: "bottom", scale: 1.6, hidden: true };
+      cast.rat = { art: "inflation-rat", x: S2[0] + 170, y: S2[1] + 140, anchor: "bottom", pivot: "bottom", scale: 1.0, hidden: true };
+      // 3 and 4: the Builder, his paycheck, and the crook he turns into
+      cast.builder = { art: "builder", x: S3[0], y: S3[1] + 230, anchor: "bottom", pivot: "bottom", scale: hs("builder", 440), hidden: true };
+      cast.check = { art: "paycheck", x: S3[0] + 230, y: S3[1] - 20, scale: 1.3, pivot: "center", hidden: true, label: { text: "PAY", at: [146, 54], width: 120, size: 50 } };
+      cast.crook = { art: "hacker", x: S4[0] + 30, y: S4[1] + 200, anchor: "bottom", pivot: "bottom", scale: hs("hacker", 360), hidden: true };
+      cast.builder2 = { art: "builder", x: S4[0] + 30, y: S4[1] + 230, anchor: "bottom", pivot: "bottom", scale: hs("builder", 440), hidden: true };
+      // 6: the Politician and the weapons factory
+      cast.pol = { art: "politician", x: S6[0] - 190, y: S6[1] + 260, anchor: "bottom", pivot: "bottom", scale: hs("politician", 470), hidden: true, label: { text: "BUDGET", at: [258, 240], width: 60, size: 22, tilt: 4 } };
+      cast.fac = { art: "factory-kiss", x: S6[0] + 150, y: S6[1] + 260, anchor: "bottom", pivot: "bottom", scale: hs("factory-kiss", 380), hidden: true };
+      cast.facSob = { art: "factory-sob", x: S6[0] + 150, y: S6[1] + 260, anchor: "bottom", pivot: "bottom", scale: hs("factory-sob", 380), hidden: true };
+      // the papers on the road
+      var NB = 8;
+      for (var i = 0; i < NB; i++) cast["b" + i] = { art: "bill-war", x: BOT[0], y: BOT[1], scale: 0.95, hidden: true };
+      // the town beside the loop
+      cast.town = { art: "schoolhouse", x: TOWN, y: GT, anchor: "bottom", pivot: "bottom", scale: hs("schoolhouse", 640) };
+      for (i = 0; i < 3; i++) {
+        cast["bomb" + i] = { art: "bomb", x: TOWN - 260 + i * 260, y: -700, scale: 0.6, hidden: true };
+        cast["m" + i] = { art: "mushroom", x: TOWN - 260 + i * 260, y: GT - 380, anchor: "bottom", scale: 0.55, hidden: true };
+      }
+      cast.desk = { art: "school-desk", x: KID + 160, y: GT, anchor: "bottom", scale: hs("school-desk", 300) };
+      cast.laptop = { art: "laptop", x: KID + 90, y: GT - 245, anchor: "bottom", scale: 0.4 };
+      cast.kid = { art: "human-ages-kid", x: KID - 90, y: GT, anchor: "bottom", pivot: "bottom", scale: hs("human-ages-kid", 440) };
+      cast.tank = { art: "tank", x: KID + 650, y: GT, anchor: "bottom", pivot: "bottom", scale: hs("tank", 320) };
+      cast.pol2 = { art: "politician", x: KID - 900, y: GT, anchor: "bottom", pivot: "bottom", scale: hs("politician", 560), hidden: true };
+      cast.star = { art: "gold-star", x: KID + 160, y: GT - 470, scale: 0.25, hidden: true };
+      // the way out: the treaty, the funnel, the lab
+      cast.treaty = { art: "treaty-scroll", x: BOT[0], y: BOT[1] - 30, scale: 0.42, pivot: "center", hidden: true };
+      cast.rail = { art: "rail-switch", x: BOT[0], y: BOT[1] + 20, scale: 0.6, hidden: true };
+      cast.funnel = { art: "funnel", x: FUN[0], y: FUN[1], scale: 1.4, hidden: true };
+      cast.lab = { art: "lab-bench", x: LAB[0], y: LAB[1], anchor: "bottom", scale: hs("lab-bench", 360), hidden: true };
+      cast.sci = { art: "scientist-wave", x: LAB[0] + 330, y: LAB[1], anchor: "bottom", pivot: "bottom", scale: hs("scientist-wave", 460), hidden: true };
+      cast.illegal = { art: "illegal-sign", x: LC[0], y: LC[1] - RR - 40, scale: 0.75, pivot: "center", hidden: true, label: { text: "ILLEGAL", at: [206, 278], width: 300, size: 80 } };
+      cast.pol3 = { art: "politician", x: LC[0] - 250, y: LC[1] - RR + 60, anchor: "bottom", pivot: "bottom", scale: hs("politician", 460), hidden: true };
+      cast.runner = { art: "robot-elbow", x: BOT[0], y: BOT[1], scale: hs("robot-elbow", 260), hidden: true };
+
+      // ── not a line item: the MILITARY line becomes a ring of road ──
+      add({ on: "line", do: "move", who: "ledger", by: [0, -60], turn: -8, dur: 0.15 });
+      add({ on: "item.", do: "slideOut", who: "ledger", to: "bottom", dist: 1800, dur: 0.3 });
+      add({ on: "item.", offset: 0.15, do: "stamp", who: "ring", from: 1.6, shake: 10 });
+      add({ on: "item.", offset: 0.3, do: "camera", view: "wide", dur: 0.8 });
+      add({ on: "item.", offset: 0.6, do: "stamp", id: "mil", text: "MILITARY", x: LC[0], y: LC[1], size: 120, width: 640, tilt: -4 });
+      [["fedUp"], ["loaf", "rat"], ["builder"], [], [], ["pol", "fac"]].forEach(function (g, j) {
+        g.forEach(function (n) { add({ on: "item.", offset: 0.6 + j * 0.12, do: "pop", who: n, squash: true }); });
+      });
+      // 1: Your governments print money to fund military spending
+      add({ on: "Your", do: "camera", view: "s1", dur: 0.6 });
+      for (var t = cue("Your") + 0.3, up = true; t < cue("defund"); t += 0.3, up = !up) { add({ at: t, do: "hide", who: up ? "fedUp" : "fedDn" }); add({ at: t, do: "show", who: up ? "fedDn" : "fedUp" }); }
+      add({ on: "print", do: "march", id: "printed", art: "bill-war", count: 4, height: 110, path: [[S1[0] + 200, S1[1] + 150], [LC[0] - RR, LC[1] + 40]], speed: 500, end: "hide" });
+      // every paper goes round, faster and faster
+      for (i = 0; i < NB; i++) {
+        add({ on: "spending,", offset: i * 0.35, do: "show", who: "b" + i });
+        add({ on: "spending,", offset: i * 0.35, do: "lap", who: "b" + i, loop: [LC[0], LC[1], RR, RR], laps: 12, dur: 3.4, faster: 0.92, depth: 0, from: 0.5 });
+      }
+      // 2: which devalues wages through inflation
+      add({ on: "which", do: "camera", view: "s2", dur: 0.6 });
+      add({ on: "devalues", do: "tag", id: "price", who: "loaf", text: "$1", knot: [90, 20], x: S2[0] - 80, y: S2[1] - 170, w: 220, h: 120 });
+      add({ on: "wages", do: "counter", id: "cost", from: 1, to: 9, style: "tick", dur: 1.0, prefix: "$", suffix: "", x: S2[0] - 70, y: S2[1] - 170, size: 70, width: 170, enter: "none" });
+      add({ on: "inflation,", do: "shiver", who: "rat", dur: 0.6, amp: 4, rot: 5 });
+      // 3: which makes legitimate work pay less
+      add({ on: "makes", do: "camera", view: "s3", dur: 0.6 });
+      add({ on: "work", do: "pop", who: "check" });
+      add({ on: "less,", do: "move", who: "check", scale: 0.3, dur: 0.4 });
+      // 4: which pushes talent toward cybercrime
+      add({ on: "pushes", do: "camera", view: "s4", dur: 0.7 });
+      add({ on: "pushes", do: "move", who: "builder", to: [S4[0] + 30, S4[1] + 230], dur: 0.6 });
+      add({ on: "pushes", offset: 0.2, do: "hide", who: "check" });
+      add({ on: "cybercrime,", do: "swap", who: "builder", to: "crook" });
+      add({ on: "cybercrime,", offset: 0.3, do: "bob", who: "crook", y: 4, r: 2, speed: 6, until: "rewarding" });
+      // 5: which grows the destructive economy
+      add({ on: "grows", do: "camera", view: "s5", dur: 0.6 });
+      add({ on: "grows", do: "chain", id: "robots", points: [-2, -1, 0, 1, 2, 3].map(function (k) { return [S5[0] - 120 + k * 110, S5[1] + 200 - (k + 2) * (k + 2) * 14]; }),
+        art: ["robot", "missile", "hacker", "robot-up", "tank", "robot"], height: 150, sizes: { tank: 0.6, missile: 1.2, "robot-up": 1.3 }, until: "economy,", lineColor: "red", lineWidth: 6 });
+      // 6: which justifies more military spending
+      add({ on: "justifies", do: "camera", view: "s6", dur: 0.6 });
+      add({ on: "justifies", do: "stamp", id: "more", text: "MORE", x: S6[0] - 160, y: S6[1] - 260, size: 80, width: 260, tilt: -6 });
+      add({ on: "military", n: 2, do: "nudge", who: "pol", by: [20, 0] });
+      add({ on: "spending.", n: 2, do: "hop", who: "fac", height: 40 });
+      add({ on: "spending.", n: 2, offset: 0.3, do: "camera", view: "wide", dur: 0.9 });
+
+      // ── Every nation you've bombed or sanctioned ──
+      add({ on: "Every", do: "camera", view: "town", dur: 1.0 });
+      for (i = 0; i < 3; i++) {
+        add({ on: "bombed", offset: -0.3 + i * 0.15, do: "show", who: "bomb" + i });
+        add({ on: "bombed", offset: -0.3 + i * 0.15, do: "move", who: "bomb" + i, to: [TOWN - 260 + i * 260, GT - 300], dur: 0.3 });
+        add({ on: "bombed", offset: i * 0.15, do: "hide", who: "bomb" + i });
+        add({ on: "bombed", offset: i * 0.15, do: "pop", who: "m" + i });
+        add({ on: "or", offset: 0.1 + i * 0.1, do: "pop", who: "m" + i, out: true });
+      }
+      add({ on: "bombed", do: "boom", shake: 10, flash: 0.1 });
+      add({ on: "sanctioned", do: "stamp", id: "sanc", text: "SANCTIONED", x: TOWN, y: GT - 760, size: 110, width: 620, tilt: -6, shake: 10 });
+      add({ on: "sanctioned", offset: 0.35, do: "flatten", who: "town" });
+      // ...has learned that parasitizing your economy is cheaper than fighting you conventionally
+      add({ on: "learned", do: "camera", view: "kid", dur: 0.8 });
+      add({ on: "cheaper", do: "tag", id: "tankTag", who: "tank", text: "$$$$$", knot: [380, 40], x: KID + 760, y: GT - 470, w: 320, h: 130 });
+      add({ on: "cheaper", offset: 0.4, do: "tag", id: "lapTag", who: "laptop", text: "$", knot: [380, 30], x: KID + 280, y: GT - 560, w: 160, h: 110 });
+      add({ on: "conventionally.", do: "flatten", who: "tank" });
+      add({ on: "conventionally.", do: "drop", who: "tankTag", dur: 0.4, spin: 20 });
+      // That's not crime. That's homework.
+      add({ on: "crime.", do: "nudge", who: "kid", by: [30, 0] });
+      add({ on: "homework.", do: "banner", id: "sum", text: "$ < $$$$$", x: KID + 160, y: GT - 700, size: 90, width: 440, pad: 60, color: "ink", tilt: -3 });
+      // You built the incentive structure and they did the math: a gold star from the Politician
+      add({ on: "built", do: "slideIn", who: "pol2", from: "left", over: 16 });
+      add({ on: "built", do: "move", who: "pol2", to: [KID - 320, GT], dur: 1.0 });
+      add({ on: "math.", do: "stamp", who: "star", from: 1.6, shake: 4 });
+      add({ on: "math.", offset: 0.3, do: "hop", who: "kid", height: 50 });
+
+      // ── The treaty breaks this loop ──
+      add({ on: "treaty", offset: -0.2, do: "camera", view: "wide", dur: 0.9 });
+      add({ on: "treaty", do: "pop", who: "treaty", squash: true });
+      add({ on: "breaks", do: "swap", who: "treaty", to: "rail" });
+      add({ on: "loop.", do: "shake", y: 8, frames: 3 });
+      // Redirect the war money to medical research: the papers turn off down the branch
+      var REDIR = cue("Redirect");
+      for (i = 0; i < NB; i++) add({ at: REDIR - 0.4, do: "hide", who: "b" + i });
+      add({ at: REDIR - 0.4, do: "show", who: ["funnel", "lab", "sci"] });
+      add({ on: "Redirect", do: "camera", view: "branch", dur: 0.8 });
+      add({ on: "Redirect", do: "march", id: "warIn", art: "bill-war", count: 6, height: 110, path: [[LC[0] - RR, LC[1]], [LC[0] - 300, LC[1] + 320], [BOT[0], BOT[1] + 40], [FUN[0], FUN[1] - 260]], speed: 900, end: "hide" });
+      add({ on: "medical", do: "march", id: "medOut", art: "bill-med", count: 6, height: 110, path: [[FUN[0], FUN[1] + 200], [LAB[0] - 400, LAB[1] - 40], [LAB[0] - 60, LAB[1] - 40]], speed: 500, end: "stop", gap: 130 });
+      add({ on: "research,", do: "bob", who: "sci", y: 6, r: 3, speed: 3 });
+      // make the productive economy so rewarding that crime becomes irrational
+      add({ on: "make", do: "chart", id: "pays", chart: KIT.collage.axes({ box: [LC[0] + 1350, LC[1] + 650, LC[0] + 2000, LC[1] + 1200], x: [0, 3, 1], y: [0, 10, 2] }) });
+      var PC = KIT.collage.axes({ box: [LC[0] + 1350, LC[1] + 650, LC[0] + 2000, LC[1] + 1200], x: [0, 3, 1], y: [0, 10, 2] });
+      add({ on: "make", do: "bar", id: "build", chart: PC, x: 1, to: 3, dur: 0.01, width: 170, text: "BUILD", size: 60 });
+      add({ on: "make", do: "bar", id: "steal", chart: PC, x: 2, to: 7, dur: 0.01, width: 170, text: "STEAL", size: 60, fill: "#B5462F" });
+      add({ on: "rewarding", do: "bar", id: "build", chart: PC, x: 1, to: 9.5, dur: 0.6 });
+      add({ on: "rewarding", offset: 0.3, do: "bar", id: "steal", chart: PC, x: 2, to: 2, dur: 0.6 });
+      add({ on: "irrational,", do: "swap", who: "crook", to: "builder2" });
+      add({ on: "irrational,", offset: 0.3, do: "move", who: "builder2", to: [S3[0], S3[1] + 230], dur: 0.8 });
+      // and defund the war machine: the press stops, the weapons factory sobs
+      add({ on: "defund", do: "camera", view: "wide", dur: 0.7 });
+      add({ on: "machine", do: "swap", who: "fac", to: "facSob" });
+      add({ on: "machine", offset: 0.2, do: "shiver", who: "facSob", dur: 1.4, amp: 4, rot: 2 });
+      add({ on: "poverty", do: "shiver", who: ["fedUp", "fedDn"], dur: 0.4, amp: 5, rot: 3 });
+      // You don't outlaw the loop: ILLEGAL, and a robot runs straight past it
+      add({ on: "don't", offset: -0.3, do: "camera", view: "top", dur: 0.6 });
+      add({ on: "don't", do: "pop", who: "pol3" });
+      add({ on: "outlaw", do: "stamp", who: "illegal", from: 1.6, shake: 8 });
+      add({ on: "outlaw", offset: 0.2, do: "show", who: "runner" });
+      add({ on: "outlaw", offset: 0.2, do: "lap", who: "runner", loop: [LC[0], LC[1], RR, RR], laps: 2, dur: 1.0, depth: 0, from: 0.5 });
+
+      KIT.collage({ id: ID, seed: 1117, plate: V ? [-3000, -3400, 7600, 5600] : [-2200, -1400, 7000, 3800], views: views, view: "ledger", cast: cast, beats: beats });
+    })();
+  </script>
+</template>

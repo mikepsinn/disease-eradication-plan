@@ -1,0 +1,38 @@
+<template id="xray-demo-template">
+  <!-- xray-demo · kit demo (scratch): four patients x-ray down the row like dominoes; YOU x-rays and comes back -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E7D6AE; }
+  </style>
+  <div id="root" data-composition-id="xray-demo" data-width="1920" data-height="1080" data-start="0" data-duration="4.5">
+    <div id="xray-demo-weave"></div>
+    <div id="xray-demo-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    (function () {
+      var V = KIT.V;
+
+      var G = V ? 1300 : 960, xs = V ? [150, 400, 650, 900] : [300, 560, 820, 1080];
+      var cast = {};
+      xs.forEach(function (x, i) { cast["p" + i] = { art: "patient", x: x, y: G, anchor: "bottom", pivot: "bottom", scale: V ? 0.9 : 1 }; });
+      cast.you = { art: "you", x: V ? 540 : 1500, y: V ? 700 : G, anchor: "bottom", pivot: "bottom", scale: V ? 0.8 : 1 };
+      KIT.collage({
+        id: "xray-demo", seed: 404, cast: cast,
+        beats: [
+          { at: 0, do: "bob", who: "you", y: 5 },
+          { at: 0.5, do: "xray", who: ["p0", "p1", "p2", "p3"], stagger: 0.3 },
+          { at: 2.2, do: "xray", who: "you" },
+          { at: 3.4, do: "xray", who: "you", back: true, flash: 0 },
+        ],
+      });
+    })();
+  </script>
+</template>

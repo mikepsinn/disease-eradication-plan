@@ -1,0 +1,153 @@
+<template id="butterfly-net-template">
+  <!-- butterfly-net · collage (Part 4, scene 3). The bit: the news box programs the viewers into believing war is weather,
+       and the weather arrives. A 1950s console TV and four viewers on their sofa beside it. "programmed": four wires
+       spring out of the set and plug into their heads, click, click, click, click. "news": the set comes on: the weapons
+       factory, kissing its missile. "gravity": Isaac Newton under his apple tree, and a missile drops on his head instead
+       of an apple; charred. "weather.": the weather map, missiles falling with the rain; after it the forecast comes true,
+       a white flash, and the viewers sit charred, still nodding along on their wires. "assume": the camera turns to the
+       street: a man with a 1% sign under a street lamp. The Orderly's head rises behind the hedge like a periscope, his
+       butterfly net with it; "malfunctioning.": he lunges, the net comes down over the man, the man is in a straitjacket,
+       and he is carried off in the net with his sign. (Not drawn yet: the inmate in his mustard shirt with his own sign;
+       a man and a signboard stand in.) -->
+  <style>
+    @font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+    @font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+    #root { position: absolute; inset: 0; overflow: hidden; background: #E2CFA5; }
+  </style>
+  <div id="root" data-composition-id="butterfly-net" data-width="1920" data-height="1080" data-start="0" data-duration="10.4">
+    <div id="butterfly-net-weave"></div>
+    <div id="butterfly-net-film"></div>
+  </div>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="data/part.js"></script>
+  <script src="data/aspect.js"></script>
+  <script src="assets/js/kit.js"></script>
+  <script src="assets/js/film.js"></script>
+  <script src="assets/js/art-sizes.js"></script>
+  <script src="assets/js/collage.js"></script>
+  <script>
+    var V = KIT.V, ID = "butterfly-net", SZ = KIT.collage.SIZES, R = Math.PI / 180;
+    var cue = function (w, n) { return KIT.cue(ID, w, n); };
+    // ── The room: the set on the left (16:9) or on top (9:16), the viewers' sofa beside or under it ──
+    var G = V ? 1460 : 890;
+    var TV = V ? { x: 540, top: 90, k: 0.8 } : { x: 620, top: 130, k: 0.78 };
+    var tvPt = function (ax, ay) { return [TV.x + (ax - 433.5) * TV.k, TV.top + ay * TV.k]; };
+    // the screen is the set's see-through middle (art x 75 to 712, y 255 to 712): what is on it sits behind the set
+    var SCR = tvPt(393, 485), SK = (637 * TV.k) / 497;
+    var scr = function (dx, dy) { return [SCR[0] + dx * SK, SCR[1] + dy * SK]; };
+    // viewers: the sofa's foot middle is art [287.5, 429]; viewers-charred is the same sofa 1.048 times smaller
+    var SOFA = V ? { x: 540, k: 1.3 } : { x: 1440, k: 1.45 };
+    var sofaPt = function (ax, ay) { return [SOFA.x + (ax - 287.5) * SOFA.k, G - (429 - ay) * SOFA.k]; };
+    var heads = [sofaPt(170, 60), sofaPt(265, 85), sofaPt(360, 112), sofaPt(455, 125)];
+    var BACK = V ? tvPt(860, 880) : tvPt(845, 420);
+
+    // ── The street: a man with his sign under a lamp, a hedge, the Orderly and his net behind it ──
+    var ST = V ? { cam: 2950, man: 2620, mk: 1.1, sign: 2840, sk: 1.15, lamp: 2490, lk: 1.4, hedge: 3290, hk: 1.8, ord: 3280, ok: 1.45 }
+      : { cam: 2950, man: 2560, mk: 1.25, sign: 2830, sk: 1.35, lamp: 2250, lk: 1.5, hedge: 3480, hk: 2, ord: 3420, ok: 1.5 };
+    var views = V ? { room: [540, 960, 1], street: [ST.cam, 960, 1] } : { room: [960, 540, 1], street: [ST.cam, 540, 1] };
+
+    var cast = {}, beats = [], add = function () { for (var i = 0; i < arguments.length; i++) beats.push(arguments[i]); };
+    // what is on the screen (behind the set)
+    var onScr = function (art, dx, dy, h, o) { var p = scr(dx, dy), c = { art: art, x: p[0], y: p[1], scale: h * SK / SZ[art][1], hidden: true }; for (var k in o || {}) c[k] = o[k]; return c; };
+    cast.news = onScr("factory-kiss", 0, 20, 330);
+    // Newton (head top art [108, 8]) under his tree, standing on the screen's bottom edge
+    var NH = 300, NB = 185, NX = -95, NKS = NH / 487;
+    cast.tree = onScr("apple-tree", 85, NB - 150, 300, { y: scr(0, NB)[1], anchor: "bottom" });
+    cast.newton = onScr("newton", NX, 0, NH, { y: scr(0, NB)[1], anchor: "bottom", pivot: "bottom" });
+    cast.newtonC = onScr("newton-charred", NX, 0, NH * 489 / 487, { y: scr(0, NB)[1], anchor: "bottom", pivot: "bottom" });
+    var HEAD = NB - (487 - 8) * NKS, HX = NX + (108 - 114) * NKS;
+    cast.drop = onScr("missile", HX, HEAD - 95, 80, { pivot: "center" });
+    // the weather map, its rain cloud at art [342, 167]
+    var MH = 340, MK = MH / 527;
+    cast.map = onScr("weather-map", 0, 5, MH);
+    var CLOUD = [(342 - 249.5) * MK, 5 + (167 - 263.5) * MK];
+    var RAIN = [[-40, 0], [10, 0.22], [55, 0.11], [-15, 0.33], [35, 0.44]];
+    RAIN.forEach(function (r, i) { cast["rain" + i] = onScr("missile", CLOUD[0] + r[0], CLOUD[1] + 30, 55); });
+    cast.tv = { art: "tv-big", x: TV.x, y: TV.top, anchor: "top", scale: TV.k };
+    cast.viewers = { art: "viewers", x: SOFA.x, y: G, anchor: [287.5, 429], pivot: [287.5, 429], scale: SOFA.k };
+    cast.viewersC = { art: "viewers-charred", x: SOFA.x, y: G, anchor: [273.5, 471], pivot: [273.5, 471], scale: SOFA.k * 1.048, hidden: true };
+
+    // programmed: the wires, one a beat, from the back of the set into each head
+    var tP = cue("programmed");
+    heads.forEach(function (h, i) {
+      // each wire arcs over the heads in front of it and goes in behind its head
+      var mid = [(BACK[0] + h[0]) / 2, Math.min(BACK[1], h[1]) - 70 - 35 * i];
+      add({ at: tP + i * 0.16, do: "line", id: "wire" + i, points: [BACK, mid, h], color: "#2A1E14", width: 5, dur: 0.15, ease: "linear" });
+      add({ at: tP + i * 0.16 + 0.15, do: "hop", who: "viewers", height: 6 });
+    });
+    // news: the set comes on
+    add({ on: "news", do: "pop", who: "news" },
+      { on: "news", do: "shake", y: 3, frames: 2 },
+      { on: "news", offset: 0.15, do: "bob", who: "news", y: 6, r: 3, speed: 3, until: "gravity", fade: 0 },
+      { on: "gravity", do: "hide", who: "news" });
+    // gravity: a missile drops on Newton's head instead of an apple
+    var tG = cue("gravity");
+    add({ at: tG, do: "show", who: ["tree", "newton"] },
+      { at: -1, do: "move", who: "drop", turn: 180, dur: 0.001 },
+      { at: tG + 0.08, do: "show", who: "drop" },
+      { at: tG + 0.08, do: "move", who: "drop", by: [0, 55 * SK], turn: 180, dur: 0.12, ease: "linear" },
+      { at: tG + 0.2, do: "hide", who: "drop" },
+      { at: tG + 0.2, do: "swap", who: "newton", to: "newtonC" },
+      { at: tG + 0.2, do: "shake", y: 6, frames: 3 },
+      { on: "or", do: "shiver", who: "newtonC", dur: 0.25, amp: 2, rot: 2 },
+      { on: "weather.", do: "hide", who: ["tree", "newtonC"] });
+    // weather.: the weather map, and missiles falling with the rain; then the forecast comes true
+    var tW = cue("weather."), tB = KIT.after(ID, "weather.");
+    add({ at: tW, do: "pop", who: "map" });
+    RAIN.forEach(function (r, i) {
+      var n = "rain" + i;
+      add({ at: -1, do: "move", who: n, turn: 180, dur: 0.001 });
+      for (var t = tW + 0.1 + r[1]; t < tB; t += 0.42) {
+        add({ at: t, do: "show", who: n }, { at: t, do: "move", who: n, by: [0, 140 * SK], turn: 180, dur: 0.4, ease: "linear" },
+          { at: t + 0.4, do: "hide", who: n }, { at: t + 0.41, do: "move", who: n, by: [0, -140 * SK], turn: 180, dur: 0.001 });
+      }
+    });
+    add({ at: tB, do: "boom", shake: 22, flash: 0.45 },
+      { at: tB, do: "hide", who: "map" },
+      { at: tB, do: "swap", who: "viewers", to: "viewersC" },
+      { at: tB + 0.45, do: "bob", who: "viewersC", y: 6, r: 2.5, speed: 4.5, fade: 0.1 });
+
+    // the street
+    var put = function (art, x, k, o) { var c = { art: art, x: x, y: G, anchor: "bottom", pivot: "bottom", scale: k }; for (var key in o || {}) c[key] = o[key]; return c; };
+    // the Orderly starts sunk behind the hedge; his cup hand (art [42, 312]) holds the net's foot
+    var HT = G - 173 * ST.hk, OH = 695 * ST.ok, HAND = (695 - 312) * ST.ok;
+    var O0 = HT + 30 + OH, O1 = HT + HAND;
+    cast.orderly = put("orderly", ST.ord, ST.ok, { y: O0, points: { hand: [42, 312] } });
+    // two hedges, one under the other, so nothing of him shows below them while he is sunk
+    cast.hedge = put("hedge", ST.hedge, ST.hk);
+    cast.hedge2 = put("hedge", ST.hedge, ST.hk, { y: Math.max(G + 0.6 * 173 * ST.hk, O1 + 20) });
+    cast.lamp = put("hedge-lamp", ST.lamp, ST.lk);
+    cast.man = put("friend-man", ST.man, ST.mk);
+    var IK = ST.mk * 0.95;
+    cast.inmate = put("inmate-jacket", ST.man, IK, { hidden: true });
+    cast.sign = put("sign-board", ST.sign, ST.sk, { label: { text: "1%", at: [107, 62], width: 170, size: 90 } });
+    // the net: its foot (art [24.5, 365]) in his hand, its hoop's middle art [82, 80], 291 art px up the pole at -78.6 degrees
+    var NK = 1.1, FOOT = [24.5, 365], RING = 291 * NK, RA = -78.6;
+    cast.net = { art: "butterfly-net", x: 0, y: 0, anchor: FOOT, pivot: FOOT, scale: NK, hidden: true, points: { ring: [82, 80] } };
+    var netC = [(SZ["butterfly-net"][0] / 2 - FOOT[0]) * NK, (SZ["butterfly-net"][1] / 2 - FOOT[1]) * NK];
+    // up like a periscope (leaning a little left), then swung over until the hoop points back at 200 degrees, its bag above
+    var UP = -100 - RA, OVER = 200 - RA - 360;
+    // where the hoop lands: on the top of the man's head (friend-man, art [122, 10])
+    var top0 = [ST.man + (122 - 137.5) * ST.mk, G - (588 - 10) * ST.mk];
+    var foot1 = [top0[0] - RING * Math.cos(200 * R), top0[1] - RING * Math.sin(200 * R)];
+    var ord1 = [foot1[0] + (85 - 42) * ST.ok, foot1[1] + HAND];
+    var tM = cue("malfunctioning.");
+    add({ at: -1, do: "move", who: "net", to: "orderly.hand", by: netC, turn: UP, dur: 0.001 },
+      { on: "assume", do: "camera", view: "street", dur: 0.45, ease: "smooth" },
+      { on: "assume", offset: 0.4, do: "bob", who: ["man", "sign"], y: 0, r: 1.5, speed: 2.5, until: tM, fade: 0.1 },
+      { on: "brain", do: "move", who: "orderly", by: [0, O1 - O0], dur: 0.35, ease: "smooth" },
+      { on: "brain", offset: 0.3, do: "pop", who: "net" },
+      { on: "brain", offset: 0.35, do: "shiver", who: "orderly", dur: 0.2, amp: 2, rot: 1 },
+      { at: tM, do: "move", who: "orderly", by: [ord1[0] - ST.ord, ord1[1] - O1], arc: 80, dur: 0.33 },
+      { at: tM, do: "move", who: "net", by: [0, 0], turn: OVER, dur: 0.33, ease: "smooth" },
+      { at: tM + 0.33, do: "shake", x: 6, frames: 3 },
+      // the man is in a straitjacket in the net, his head in the hoop (inmate-jacket's head top, art [140, 12])
+      { at: tM + 0.35, do: "swap", who: "man", to: "inmate" },
+      { at: tM + 0.35, do: "move", who: "inmate", to: "net.ring", by: [(157 - 140) * IK, (185.5 - 12) * IK + 30], dur: 0.001 },
+      { at: tM + 0.35, do: "move", who: "sign", to: "net.ring", by: [V ? -60 : -170, V ? 300 : 230], turn: -22, dur: 0.15 },
+      { at: tM + 0.7, do: "move", who: "orderly", by: [0, -120], dur: 0.2, ease: "smooth" },
+      { at: tM + 0.95, do: "move", who: "orderly", by: [1500, 0], dur: 0.85 });
+
+    KIT.collage({ id: ID, seed: 413, plate: V ? [-300, -200, 4000, 2200] : [-300, -300, 4300, 1400], views: views, view: "room", cast: cast, beats: beats });
+  </script>
+</template>
