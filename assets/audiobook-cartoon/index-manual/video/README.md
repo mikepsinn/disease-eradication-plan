@@ -8,12 +8,12 @@ Every part renders twice: 16:9 (1920 × 1080) and the tall phone version, 9:16 (
 
 | File | Purpose |
 | --- | --- |
-| `parts/part-02.json` | The audio cut, and for each scene: cue word, composition file, Wishonia states |
+| `parts/part-NN.json` | One per part: the audio cut, and for each scene: cue word, composition file, Wishonia states |
 | `storyboards/part-NN-*.md` | One storyboard per part, for review before anything is animated |
 | `tools/word-timings.mjs` | Rebuilds `../word-timings.json` and the transcripts from the audiobook pipeline's alignment. With `--chapter <slug>`, another chapter's, in `assets/audiobook-cartoon/<slug>/` |
 | `tools/chapter.mjs` | Where a chapter's files are: episode 1 stays here; any other chapter's word timings and storyboards live in `assets/audiobook-cartoon/<slug>/`, and it shares this kit, art and scenes. `word-timings`, `storyboard-times` and `storyboard-index` take `--chapter <slug>` |
 | `tools/chapter-parts.mjs` | Writes a chapter's `storyboards/parts.json` from its beat sheets (each part starts at its first cue). A part file with `"chapter": "<slug>"` builds from that chapter's MP3 and word timings |
-| `tools/build-part.mjs` | Cuts the MP3, mixes in the sound effects, copies the sprites and media, writes `data/part-NN.js` and `index.html` (`--aspect 9x16` for the tall version; `--data-only` writes just `data/part-NN.js`, for checking scenes while another part builds) |
+| `tools/build-part.mjs` | Cuts the MP3, mixes in the sound effects, copies the sprites and media, writes `data/part-NN.js` and `index.html` (`--aspect 9x16` for the tall version; `--data-only` writes just `data/part-NN.js` and `data/part-NN.srt`, for checking scenes while another part builds) |
 | `tools/scene-check.mjs` | Loads one scene with its part's data in headless Chrome, in either shape, reports page errors and saves frames and a contact sheet to `snapshots/scene-check/` |
 | `tools/props-sheet.mjs` | Draws the shared props library (`assets/js/props/*.js`) on review sheets in `snapshots/props/` |
 | `tools/text-overflow.mjs` | Finds text that runs off its sign; `scene-check` prints what it finds |
@@ -52,6 +52,8 @@ npx hyperframes render --quality high --output ../../../audiobook/cartoon/part-0
 node tools/build-part.mjs parts/part-01.json --aspect 9x16   # then the tall version
 npx hyperframes render --quality high --output ../../../audiobook/cartoon/part-01-opening-9x16.mp4
 ```
+
+`npm run build -- parts/part-NN.json` and `npm run render -- --output <file>` are the same two commands. With no part, the build makes Part 1 (the part the committed `index.html` holds); with no `--output`, the render goes to `renders/`.
 
 Captions: the 9:16 version has them burned in (Shorts, Reels and TikTok scroll with the sound off). The 16:9 version has none on the picture; upload `data/part-NN.srt` (written by every build) to YouTube as its closed captions. `--captions` burns them into 16:9 anyway.
 
