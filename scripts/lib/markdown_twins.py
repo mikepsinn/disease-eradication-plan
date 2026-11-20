@@ -36,6 +36,13 @@ _MAIN_MARKER = 'id="quarto-document-content"'
 # Parts of <main> that are not content. The loader and the Listen/Get bar come
 # from assets/html/page-loader.html and platform-bar.html. The keyword list is
 # the same on every page. The rest is what Quarto's llms-txt also removes.
+#
+# Interactive widgets that require JavaScript also get dropped, because Pandoc
+# converts their fallback or placeholder text into the markdown. Examples:
+# - quarto-video: iframe embeds render as "An error occurred. Unable to execute
+#   JavaScript." when Pandoc tries to interpret the YouTube embed page content.
+# - data-dih-delay-value: live death counters show placeholder text ("counting")
+#   since JavaScript never runs to replace it.
 _DROP_XPATH = " | ".join(
     [
         ".//script",
@@ -50,6 +57,14 @@ _DROP_XPATH = " | ".join(
         ".//*[contains(concat(' ', normalize-space(@class), ' '), ' keywords ')]",
         ".//*[contains(concat(' ', normalize-space(@class), ' '), ' sidebar ')]",
         ".//*[contains(concat(' ', normalize-space(@class), ' '), ' quarto-page-breadcrumbs ')]",
+        # Video embeds: Pandoc cannot execute the iframe, so it captures YouTube's
+        # noscript fallback ("An error occurred. Unable to execute JavaScript.").
+        ".//*[contains(concat(' ', normalize-space(@class), ' '), ' quarto-video ')]",
+        # Scoreboard counters: JavaScript-driven live counters with placeholder text.
+        # Drop the entire delay-cost-callout div (HTML-only interactive section) to
+        # avoid partial sentences when the inline counter is removed.
+        ".//*[contains(concat(' ', normalize-space(@class), ' '), ' delay-cost-callout ')]",
+        ".//*[@data-dih-delay-value]",
     ]
 )
 
