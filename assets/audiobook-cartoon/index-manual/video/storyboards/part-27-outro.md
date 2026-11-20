@@ -94,7 +94,7 @@ Sound: a whoosh of pages on "press"; a pop for the rectangle on "share"; a zap f
 - transition_in: same plate (no seam)
 - cue: "And if you're too busy"
 - time: 56:21.1 to 56:33.7 (12.6 s)
-- voiceover: "And if you're too busy to even do that, please leave a really, really, really good rating and review so we overcome the pro -war algorithmic suppression and find someone with more spare time for ending wars and diseases."
+- voiceover: "And if you're too busy to even do that, please leave a really, really, really good rating and review so we overcome the pro-war algorithmic suppression and find someone with more spare time for ending wars and diseases."
 - layer: B, plate busy-field
 - status: planned
 
@@ -102,7 +102,7 @@ Sound: a whoosh of pages on "press"; a pop for the rectangle on "share"; a zap f
 |---|---|---|---|
 | "And if you're too busy to even do that," | Too busy for that? | The camera travels back to YOU, buried at his desk. On "busy" his rectangle shrinks a size, to a phone; its screen shows five empty stars. On "that," he bursts out of the pages and runs on the spot, bone legs a blur. | He checks his watch every few steps. |
 | "please leave a really, really, really good rating and review" | Leave a good review. | A fat gold star hops out of the rectangle onto the ground in front of him on stick legs on each "really", and two more on "good". On "rating" a sixth elbows into the row. | |
-| "so we overcome the pro -war algorithmic suppression" | Reviews beat the algorithm that buries the episode. | On "overcome" a tin robot in an army helmet stomps in from the right, a missile painted on its chest, and plonks down on the row of stars like a park bench. The stars go dim and flat under it, legs kicking. | On "suppression" the six stars flare, stand up together under it and carry it off on their little legs like a rug, the robot flailing on its back. |
+| "so we overcome the pro-war algorithmic suppression" | Reviews beat the algorithm that buries the episode. | On "overcome" a tin robot in an army helmet stomps in from the right, a missile painted on its chest, and plonks down on the row of stars like a park bench. The stars go dim and flat under it, legs kicking. | On "suppression" the six stars flare, stand up together under it and carry it off on their little legs like a rug, the robot flailing on its back. |
 | "and find someone with more spare time for ending wars and diseases." | And reach someone with time. | The camera pans after them across the field: past the lawn, they tip the robot off the edge of the paper. A white flash and a little mushroom cloud. The camera travels on to Grandma's skeleton sitting on her headstone, "1987", a cobweb from her elbow to the stone. | On "ending wars" she flips her poster from BUY BONDS to TRIALS, and on "diseases." hops down and marches off, poster high. |
 
 Sound: a slide whistle down as the rectangle shrinks on "busy"; a clatter of bone feet on "that,"; a pop per star; a clank as the robot stomps in on "overcome" and a slam as it sits on "war"; a patter of little feet on "suppression"; a boom on "someone"; a whoosh as the poster flips on "ending".

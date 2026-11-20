@@ -21,7 +21,7 @@ with tempfile.TemporaryDirectory() as tmp:
     words: list[dict] = []
     for w in (w for seg in segments for w in (seg.words or [])):
         text = w.word.strip()
-        if words and text[:1] in ".,%":  # Whisper splits "2.6", "468,000" and "1%" into pieces
+        if words and text[:1] in ".,%-":  # Whisper splits "2.6", "468,000", "1%" and "pro-war" into pieces
             words[-1]["word"] += text
             words[-1]["end"] = round(start + w.end, 3)
             continue
