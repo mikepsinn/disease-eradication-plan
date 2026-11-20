@@ -26,7 +26,7 @@ Without these papers, you won't:
 
 - Save lives (requires many papers)
 - Cure diseases (requires very many papers)
-- Feed hungry people (requires papers, even though food grows for free)
+- Feed hungry people (requires papers)
 
 But WITH these papers, you will:
 
@@ -44,12 +44,12 @@ Humanity has created something magnificent:
 - You give these nothing-papers to weapons makers
 - They make things that destroy everything
 - This creates "jobs" which give people papers
-- People use papers to buy food (which grows for free)
+- People use papers to buy food
 - This is called "the economy"
 
 One downside of this system is that it has killed [310 million](https://manual.warondisease.org/knowledge/problem/cost-of-war.html) of you in your assorted wars.
 
-On my planet, we skip the mass murder step and just give people food directly, but that's probably too advanced for you.
+On my planet, we skip the mass murder step, but that's probably too advanced for you.
 
 ### The Gradual Irrationality Reduction Program
 
@@ -165,7 +165,7 @@ That thought would be incorrect.
 
 95% of your diseases have zero FDA-approved treatments. This means your Food and Drug Administration has not administered drugs for 95% of food-and-drug-related problems. It's like having a Department of Transportation that hasn't gotten around to roads yet. Only 15 diseases get their first effective treatment each year. [6,650 diseases](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) are still waiting. There is a queue to not die, and it is longer than any queue humans have ever voluntarily stood in, which is saying something because you invented Disneyland.
 
-There are [9,500](https://manual.warondisease.org/knowledge/problem/untapped-therapeutic-frontier.html) known safe compounds, and [99.7%](https://manual.warondisease.org/knowledge/problem/nih-fails-2-institute-health.html) of their potential uses have never been tested. At the current discovery rate, finding treatments for all of them will take ~[443 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). You personally will be dead within 80 years, which I mention not to be rude but because you seem weirdly calm about this.
+There are [9,500](https://manual.warondisease.org/knowledge/problem/untapped-therapeutic-frontier.html) known safe compounds, and [99.7%](https://manual.warondisease.org/knowledge/problem/nih-fails-2-institute-health.html) of their potential uses have never been tested. At the current discovery rate, finding treatments for all of those waiting diseases will take ~[443 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). You personally will be dead within 80 years, which I mention not to be rude but because you seem weirdly calm about this.
 
 ![Everyone currently alive will be dead before we finish (current timeline)](https://manual.warondisease.org/assets/images/index-manual/index-manual-section-the-unexplored-therapeutic-frontier-bw-academic.jpg)
 
@@ -213,9 +213,11 @@ Vioxx killed an estimated 55,000 people from heart attacks. The FDA approved it.
 
 Your National Institutes of Health, the agency nominally responsible for finding cures, spends [3.3%](https://manual.warondisease.org/knowledge/problem/nih-fails-2-institute-health.html) of its budget on clinical trials. The other ~97% goes to basic research, administration, and buildings. It's like a fire department that spends 3% of its budget on water.
 
-Then there's a [8.2 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend [8.2 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would [1.08 billion](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) other patients, and the current system has [1.9 million](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) slots. That's a participation rate of [0.177%](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
+Then there's an [8.2](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)-year delay between proving a drug is safe and letting dying humans take it. The drug passed the safety test. Everyone agrees it won't kill you. But you still can't have it because a committee needs to spend [8.2 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) making sure it works well enough. You'd volunteer for the trials that would answer that question faster, but so would [1.08 billion](https://manual.warondisease.org/knowledge/economics/gdp-trajectories.html) other patients, and the current system has [1.9 million](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) slots. That's a participation rate of [0.177%](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). It's like a lifeguard who confirms the life preserver floats, then locks it in a cabinet for years to study its buoyancy profile while a billion people drown in line for the two available life jackets.
 
-Your regulatory system can make two mistakes: approve a bad drug (Type I error), or block a good drug (Type II error). Your FDA is terrified of the first mistake and completely ignores the second. I [calculated the ratio](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html): for every 1 person protected from a dangerous drug, [3,389](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html) people die waiting for a safe one that's locked in the approval cabinet. Even if you assume a Thalidomide-scale catastrophe happens during post-phase 1 efficacy testing every single year (even though it wouldn't because Phase I safety testing actually caught it anyway), the deaths from just the efficacy delay still outnumber the deaths from bad drugs by [3,389](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html) to 1. Your safety system's main product is dead patients.
+Your regulatory system can make two mistakes: approve a bad drug, or block a good one. It is blamed for the first and never for the second, so it makes the second. All of your approved drugs, together, save [12.4 million](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html) lives a year. Each one waited an average of [8.2 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) in that cabinet first. Between 1962 and 2024, the waiting killed about [102 million](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html) of you.
+
+I [calculated the ratio](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html), assuming a Thalidomide-scale catastrophe every single year, although Phase I safety testing caught the real one. For every 1 person protected from a dangerous drug, at least [3,389](https://manual.warondisease.org/knowledge/appendix/invisible-graveyard.html) die waiting for a safe one. Your safety system's main product is dead patients.
 
 Think about someone you love who is suffering right now. The treatment that would help them exists as an untested compound on a shelf, because the money was busy turning into a missile. That missile incinerated a child who might have grown up to discover the cure. You lose the treatment. You lose the scientist. You get the inflation. You get the tax bill. You get to pay for her murder.
 
@@ -253,7 +255,7 @@ We built ours with the funding from our version of the treaty, 3,000 years ago. 
 Instead of testing drugs on 200 humans selected by pharmaceutical companies in clinical terrariums, you'll test on real patients in real hospitals. Where the diseases are. The whole thing will use your new [decentralized FDA](https://manual.warondisease.org/knowledge/solution/dfda.html) protocol, reducing trial costs by [44.1x](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) and funding [23.4 million patients/year](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) (versus the current [1.9 million patients/year](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)).
 Remember that billion patients drowning in line for two life jackets? Your decentralized FDA will hand out [23.4 million](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html).
 
-This will increase the treatment discovery rate [12.3x](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html), compressing that ~[443 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) wait to ~[36 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). Two things will save lives. First, finding treatments faster: treatments that would have sat undiscovered for centuries will get found [204 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) sooner on average. Second, eliminating the [8.2 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) bureaucratic delay between proving a drug is safe and letting dying humans take it. Combined, treatments will reach patients [212 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) sooner on average. That timeline shift will prevent [10.7 billion deaths](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). Those are individual humans who currently have plans for next Tuesday.
+The treaty's money will increase the treatment discovery rate [12.3x](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html), shrinking that [443](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)-year wait to [36](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). The average disease sits halfway down that queue, so its treatment arrives [204 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) sooner. Keep the safety test, drop the [8.2](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html)-year wait, and find out if it works during normal care. Patients get it [212 years](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) sooner. About [139 thousand](https://manual.warondisease.org/knowledge/appendix/bombs-vs-biotech-roi.html) of you die each day from diseases research could eventually cure. That's 51 million a year. [212](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html) fewer years of that prevents [10.7 billion deaths](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html). Those are individual humans who currently have plans for next Tuesday.
 
 #### Real-Time Safety Monitoring
 
@@ -401,7 +403,7 @@ They won't even need convincing. Lobbyists don't have beliefs. They have clients
 
 Politicians need papers and votes to keep their jobs. Currently, weapons manufacturers provide both. You're going to outbid them. Not because they're the enemy (they die of the same diseases you do), but because politicians do not do things for free, and the clock is running.
 
-Your explosion manufacturers spend [$198 million](https://manual.warondisease.org/knowledge/appendix/faq.html)/year buying politicians. Your one-time bribery budget is [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html), which is 8 times their annual spend (and about twice what they spend over a full election cycle). Politicians are surprisingly affordable.
+Your explosion manufacturers spend [$198 million](https://manual.warondisease.org/knowledge/appendix/faq.html)/year buying politicians. Your one-time bribery budget is [$1 billion](https://manual.warondisease.org/knowledge/economics/1-pct-treaty-impact.html), which is 5 times their annual spend. Politicians are surprisingly affordable.
 
 It's not corruption if you corrupt the corruption.
 
