@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<script src="assets/vendor/gsap.min.js"></script>
+<style>
+@font-face { font-family: "Oswald"; src: url("assets/fonts/Oswald-SemiBold.woff2") format("woff2"); font-weight: 600; font-display: block; }
+@font-face { font-family: "Inter"; src: url("assets/fonts/Inter-Variable.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+@font-face { font-family: "Fraunces"; src: url("assets/fonts/Fraunces-Black-Soft.woff2") format("woff2"); font-weight: 900; font-display: block; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { width: 1920px; height: 1080px; overflow: hidden; background: #061530; }
+#root { position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  background: radial-gradient(ellipse 90% 80% at 50% 42%, #17345C 0%, #0D2445 50%, #061530 100%);
+  font-family: "Oswald", sans-serif; color: #F3ECD0; }
+#stars { position: absolute; inset: -60px; }
+.star { position: absolute; border-radius: 50%; background: #F3ECD0; }
+.scene { position: absolute; inset: 0; visibility: hidden; opacity: 0; }
+.abs { position: absolute; }
+.center { position: absolute; left: 0; right: 0; text-align: center; }
+.big { font-family: "Oswald"; font-weight: 600; text-transform: uppercase; letter-spacing: 0.01em; line-height: 0.95; }
+.small { font-family: "Inter"; font-weight: 500; font-size: 52px; color: rgba(243,236,208,0.78); letter-spacing: 0.005em; }
+.acc { color: #E5903B; }
+.url { font-family: "Fraunces"; font-weight: 900; letter-spacing: -0.01em; }
+.wish { position: absolute; }
+.wish img { position: absolute; display: block; }
+.pill { position: absolute; display: flex; align-items: center; justify-content: center; gap: 28px; border-radius: 999px;
+  background: #E5903B; color: #0B1F3D; font-family: "Oswald"; font-weight: 600; text-transform: uppercase; }
+.stamp { display: inline-block; border: 10px solid #E5903B; color: #E5903B; border-radius: 18px; padding: 6px 40px 14px; }
+#caps { position: absolute; left: 0; right: 0; top: 960px; height: 70px; }
+.cap { position: absolute; left: 50%; top: 0; transform: translateX(-50%); white-space: nowrap; visibility: hidden;
+  font-family: "Inter"; font-weight: 600; font-size: 38px; padding: 10px 28px; border-radius: 14px;
+  background: rgba(6,21,48,0.62); color: #F3ECD0; }
+.cap span { opacity: 0.45; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="59.52" data-width="1920" data-height="1080">
+  <div id="stars"></div>
+  <div id="scenes"></div>
+  <div id="caps"></div>
+  <audio id="el-voice" src="assets/podcast-outro.wav" data-start="0" data-duration="59.52" data-track-index="10" data-volume="1"></audio>
+</div>
+<script>
+(function () {
+var CAPS = [[{"start": 0.0, "end": 0.54, "word": "Thank"}, {"start": 0.54, "end": 0.76, "word": "you"}, {"start": 0.76, "end": 1.16, "word": "so"}, {"start": 1.16, "end": 1.46, "word": "much"}, {"start": 1.46, "end": 1.74, "word": "for"}, {"start": 1.74, "end": 1.98, "word": "taking"}], [{"start": 1.98, "end": 2.22, "word": "the"}, {"start": 2.22, "end": 2.44, "word": "time"}, {"start": 2.44, "end": 2.7, "word": "to"}, {"start": 2.7, "end": 3.14, "word": "end"}, {"start": 3.14, "end": 3.44, "word": "war"}, {"start": 3.44, "end": 3.62, "word": "and"}, {"start": 3.62, "end": 3.94, "word": "disease,"}], [{"start": 4.28, "end": 4.82, "word": "but"}, {"start": 4.82, "end": 5.16, "word": "if"}, {"start": 5.16, "end": 5.3, "word": "at"}, {"start": 5.3, "end": 5.6, "word": "any"}, {"start": 5.6, "end": 5.82, "word": "point"}, {"start": 5.82, "end": 5.98, "word": "you"}], [{"start": 5.98, "end": 6.3, "word": "decide"}, {"start": 6.3, "end": 6.58, "word": "you're"}, {"start": 6.58, "end": 6.8, "word": "too"}, {"start": 6.8, "end": 7.14, "word": "busy,"}], [{"start": 7.44, "end": 7.82, "word": "please"}, {"start": 7.82, "end": 8.24, "word": "press"}, {"start": 8.24, "end": 8.5, "word": "the"}, {"start": 8.5, "end": 8.76, "word": "share"}, {"start": 8.76, "end": 9.1, "word": "button"}, {"start": 9.1, "end": 9.36, "word": "on"}], [{"start": 9.36, "end": 9.52, "word": "your"}, {"start": 9.52, "end": 9.88, "word": "glowing"}, {"start": 9.88, "end": 10.44, "word": "rectangle"}], [{"start": 10.44, "end": 10.9, "word": "in"}, {"start": 10.9, "end": 11.02, "word": "case"}, {"start": 11.02, "end": 11.22, "word": "one"}, {"start": 11.22, "end": 11.32, "word": "of"}, {"start": 11.32, "end": 11.44, "word": "your"}, {"start": 11.44, "end": 11.74, "word": "friends"}], [{"start": 11.74, "end": 12.02, "word": "have"}, {"start": 12.02, "end": 12.16, "word": "a"}, {"start": 12.16, "end": 12.34, "word": "free"}, {"start": 12.34, "end": 12.76, "word": "afternoon"}, {"start": 12.76, "end": 12.98, "word": "to"}, {"start": 12.98, "end": 13.22, "word": "end"}], [{"start": 13.22, "end": 13.44, "word": "war"}, {"start": 13.44, "end": 13.58, "word": "and"}, {"start": 13.58, "end": 13.82, "word": "disease"}, {"start": 13.82, "end": 14.26, "word": "instead."}], [{"start": 14.88, "end": 15.16, "word": "And"}, {"start": 15.16, "end": 15.34, "word": "if"}, {"start": 15.34, "end": 15.56, "word": "you're"}, {"start": 15.56, "end": 15.72, "word": "too"}, {"start": 15.72, "end": 15.98, "word": "busy"}, {"start": 15.98, "end": 16.26, "word": "to"}], [{"start": 16.26, "end": 16.54, "word": "even"}, {"start": 16.54, "end": 16.76, "word": "do"}, {"start": 16.76, "end": 17.0, "word": "that,"}], [{"start": 17.34, "end": 17.64, "word": "please"}, {"start": 17.64, "end": 17.86, "word": "leave"}, {"start": 17.86, "end": 18.02, "word": "a"}, {"start": 18.02, "end": 18.38, "word": "really,"}], [{"start": 18.38, "end": 18.72, "word": "really,"}], [{"start": 19.02, "end": 19.22, "word": "really"}, {"start": 19.22, "end": 19.56, "word": "good"}, {"start": 19.56, "end": 19.86, "word": "rating"}, {"start": 19.86, "end": 20.06, "word": "and"}, {"start": 20.06, "end": 20.34, "word": "review"}, {"start": 20.34, "end": 20.8, "word": "so"}], [{"start": 20.8, "end": 21.06, "word": "we"}, {"start": 21.06, "end": 21.56, "word": "overcome"}, {"start": 21.56, "end": 21.8, "word": "the"}, {"start": 21.8, "end": 22.34, "word": "pro-war"}, {"start": 22.34, "end": 23.02, "word": "algorithmic"}, {"start": 23.02, "end": 23.38, "word": "suppression"}, {"start": 23.38, "end": 23.9, "word": "and"}], [{"start": 23.9, "end": 24.2, "word": "find"}, {"start": 24.2, "end": 24.54, "word": "someone"}, {"start": 24.54, "end": 24.72, "word": "with"}, {"start": 24.72, "end": 25.04, "word": "more"}, {"start": 25.04, "end": 25.34, "word": "spare"}, {"start": 25.34, "end": 25.68, "word": "time"}], [{"start": 25.68, "end": 25.88, "word": "for"}, {"start": 25.88, "end": 26.18, "word": "ending"}, {"start": 26.18, "end": 26.42, "word": "wars"}, {"start": 26.42, "end": 26.6, "word": "and"}, {"start": 26.6, "end": 26.94, "word": "diseases."}], [{"start": 27.5, "end": 27.76, "word": "The"}, {"start": 27.76, "end": 27.92, "word": "good"}, {"start": 27.92, "end": 28.18, "word": "review"}, {"start": 28.18, "end": 28.4, "word": "doesn't"}, {"start": 28.4, "end": 28.56, "word": "have"}, {"start": 28.56, "end": 28.64, "word": "to"}], [{"start": 28.64, "end": 28.78, "word": "be"}, {"start": 28.78, "end": 29.0, "word": "true,"}], [{"start": 29.14, "end": 29.26, "word": "they"}, {"start": 29.26, "end": 29.46, "word": "don't"}, {"start": 29.46, "end": 29.7, "word": "check."}], [{"start": 30.24, "end": 30.4, "word": "But"}, {"start": 30.4, "end": 30.64, "word": "if"}, {"start": 30.64, "end": 30.9, "word": "you're"}, {"start": 30.9, "end": 31.08, "word": "too"}, {"start": 31.08, "end": 31.38, "word": "busy"}, {"start": 31.38, "end": 31.6, "word": "to"}], [{"start": 31.6, "end": 31.86, "word": "even"}, {"start": 31.86, "end": 32.06, "word": "do"}, {"start": 32.06, "end": 32.3, "word": "that,"}], [{"start": 32.64, "end": 32.76, "word": "the"}, {"start": 32.76, "end": 33.24, "word": "absolute"}, {"start": 33.24, "end": 33.72, "word": "least"}, {"start": 33.72, "end": 33.98, "word": "you"}, {"start": 33.98, "end": 34.12, "word": "could"}, {"start": 34.12, "end": 34.3, "word": "do"}], [{"start": 34.3, "end": 34.5, "word": "is"}, {"start": 34.5, "end": 34.66, "word": "take"}, {"start": 34.66, "end": 35.26, "word": "15"}, {"start": 35.26, "end": 35.64, "word": "seconds"}, {"start": 35.64, "end": 35.88, "word": "to"}], [{"start": 35.88, "end": 36.0, "word": "go"}, {"start": 36.0, "end": 36.14, "word": "to"}, {"start": 36.14, "end": 37.54, "word": "WarOnDisease.org"}, {"start": 37.54, "end": 38.02, "word": "and"}], [{"start": 38.02, "end": 38.28, "word": "make"}, {"start": 38.28, "end": 38.5, "word": "your"}, {"start": 38.5, "end": 39.14, "word": "wishocratic"}, {"start": 39.14, "end": 39.92, "word": "allocation,"}], [{"start": 40.34, "end": 40.54, "word": "telling"}, {"start": 40.54, "end": 40.78, "word": "us"}, {"start": 40.78, "end": 41.04, "word": "what"}, {"start": 41.04, "end": 41.48, "word": "fraction"}, {"start": 41.48, "end": 41.7, "word": "of"}, {"start": 41.7, "end": 42.3, "word": "humanity's"}], [{"start": 42.3, "end": 42.64, "word": "resources"}, {"start": 42.64, "end": 43.02, "word": "should"}, {"start": 43.02, "end": 43.18, "word": "go"}, {"start": 43.18, "end": 43.34, "word": "to"}, {"start": 43.34, "end": 43.9, "word": "explosions"}, {"start": 43.9, "end": 44.44, "word": "versus"}], [{"start": 44.44, "end": 44.86, "word": "clinical"}, {"start": 44.86, "end": 45.34, "word": "trials."}], [{"start": 45.64, "end": 45.82, "word": "And"}, {"start": 45.82, "end": 46.08, "word": "vote!"}], [{"start": 46.56, "end": 46.88, "word": "If"}, {"start": 46.88, "end": 47.02, "word": "the"}, {"start": 47.02, "end": 47.52, "word": "1%"}, {"start": 47.52, "end": 47.74, "word": "treaty"}, {"start": 47.74, "end": 48.16, "word": "passes,"}], [{"start": 48.56, "end": 48.72, "word": "your"}, {"start": 48.72, "end": 48.96, "word": "vote"}, {"start": 48.96, "end": 49.14, "word": "will"}, {"start": 49.14, "end": 49.3, "word": "be"}, {"start": 49.3, "end": 49.82, "word": "personally"}, {"start": 49.82, "end": 50.1, "word": "to"}, {"start": 50.1, "end": 50.32, "word": "blame"}], [{"start": 50.32, "end": 50.56, "word": "for"}, {"start": 50.56, "end": 50.82, "word": "saving"}, {"start": 50.82, "end": 51.5, "word": "2.6"}, {"start": 51.5, "end": 51.8, "word": "lives"}, {"start": 51.8, "end": 52.2, "word": "and"}, {"start": 52.2, "end": 52.62, "word": "preventing"}], [{"start": 52.62, "end": 54.52, "word": "468,000"}, {"start": 54.52, "end": 54.86, "word": "hours"}, {"start": 54.86, "end": 55.1, "word": "of"}, {"start": 55.1, "end": 55.46, "word": "suffering."}], [{"start": 55.46, "end": 56.08, "word": "Go"}, {"start": 56.08, "end": 56.24, "word": "to"}, {"start": 56.24, "end": 57.48, "word": "WarOnDisease.org"}, {"start": 57.48, "end": 57.8, "word": "right"}, {"start": 57.8, "end": 58.14, "word": "now."}], [{"start": 58.54, "end": 58.62, "word": "Love"}, {"start": 58.62, "end": 58.86, "word": "you,"}], [{"start": 58.98, "end": 59.1, "word": "bye!"}]];
+var DUR = 59.52, ACC = "#E5903B", CREAM = "#F3ECD0", NAVY = "#0B1F3D";
+var tl = gsap.timeline({ paused: true });
+tl.to({}, { duration: DUR }, 0);
+var scenesEl = document.getElementById("scenes");
+
+// deterministic rng
+var seed = 7; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+var stars = document.getElementById("stars");
+for (var i = 0; i < 90; i++) {
+  var s = document.createElement("div"); s.className = "star";
+  var r = rnd() < 0.85 ? 2 + rnd() * 2 : 4 + rnd() * 2;
+  s.style.cssText = "left:" + (rnd() * 2040) + "px;top:" + (rnd() * 1200) + "px;width:" + r + "px;height:" + r + "px;opacity:" + (0.12 + rnd() * 0.35);
+  stars.appendChild(s);
+}
+tl.fromTo(stars, { x: 0 }, { x: -60, duration: DUR, ease: "none" }, 0);
+
+function el(parent, tag, cls, html, css) {
+  var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html;
+  if (css) e.style.cssText = css; parent.appendChild(e); return e;
+}
+function scene(t0, t1, css) {
+  var s = el(scenesEl, "div", "scene", null, css || "");
+  tl.set(s, { autoAlpha: 1 }, t0);
+  if (t1 < DUR) tl.set(s, { autoAlpha: 0 }, t1);
+  return s;
+}
+// motion vocabulary
+function pop(t, at, d) { tl.fromTo(t, { autoAlpha: 0, scale: 0.55 }, { autoAlpha: 1, scale: 1, duration: d || 0.38, ease: "back.out(2.2)" }, at); }
+function slam(t, at, sc) {
+  tl.fromTo(t, { autoAlpha: 0, scale: 2.6 }, { autoAlpha: 1, scale: 1, duration: 0.2, ease: "power4.in" }, at);
+  if (sc) tl.fromTo(sc, { x: 0, y: 0 }, { keyframes: [{ x: -14, y: 6, duration: 0.04 }, { x: 12, y: -6, duration: 0.04 }, { x: -6, y: 3, duration: 0.04 }, { x: 0, y: 0, duration: 0.05 }] }, at + 0.2);
+}
+function rise(t, at, d) { tl.fromTo(t, { autoAlpha: 0, y: 46 }, { autoAlpha: 1, y: 0, duration: d || 0.45, ease: "power3.out" }, at); }
+function fadeAway(t, at) { tl.to(t, { autoAlpha: 0, y: -30, duration: 0.3, ease: "power2.in" }, at); }
+function svg(parent, w, h, inner, css) { return el(parent, "div", "abs", '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + " " + h + '">' + inner + "</svg>", css); }
+function starPts(cx, cy, R, r, n) {
+  var p = []; n = n || 5;
+  for (var k = 0; k < n * 2; k++) { var a = -Math.PI / 2 + k * Math.PI / n, rr = k % 2 ? r : R; p.push((cx + rr * Math.cos(a)).toFixed(1) + "," + (cy + rr * Math.sin(a)).toFixed(1)); }
+  return p.join(" ");
+}
+
+// Wishonia sprites (copied to assets/sprites/alien/ during build, or symlink for standalone use)
+var SPRITE_BASE = "assets/sprites/alien/";
+function wish(parent, W, x, y, heads, bodies, flip) {
+  var c = el(parent, "div", "wish", null, "left:" + x + "px;top:" + y + "px;width:" + W + "px;height:" + (W * 1.45) + "px;" + (flip ? "transform:scaleX(-1);" : ""));
+  var inner = el(c, "div", "abs", null, "left:0;top:0;width:" + W + "px;height:" + (W * 1.45) + "px;");
+  var bodyBox = el(inner, "div", "abs", null, "left:0;top:" + (W * 0.86) + "px;width:" + W + "px;");
+  var headBox = el(inner, "div", "abs", null, "left:" + (W * 0.025) + "px;top:0;width:" + (W * 0.95) + "px;height:" + (W * 0.95) + "px;transform-origin:50% 85%;");
+  var o = { el: c, inner: inner, head: headBox, H: {}, B: {} };
+  bodies.forEach(function (b, i) { o.B[b] = el(bodyBox, "img", null, null, "left:0;top:0;width:" + W + "px;opacity:" + (i ? 0 : 1)); o.B[b].src = SPRITE_BASE + "body-" + b + ".png"; });
+  heads.forEach(function (h, i) { o.H[h] = el(headBox, "img", null, null, "left:0;top:0;width:" + (W * 0.95) + "px;opacity:" + (i ? 0 : 1)); o.H[h].src = SPRITE_BASE + h + ".png"; });
+  return o;
+}
+function setHead(o, name, t) { for (var k in o.H) tl.set(o.H[k], { opacity: k === name ? 1 : 0 }, t); }
+function setBody(o, name, t) { for (var k in o.B) tl.set(o.B[k], { opacity: k === name ? 1 : 0 }, t); }
+function idle(o, t0, t1) {
+  var n = Math.max(1, Math.floor((t1 - t0) / 1.6));
+  tl.fromTo(o.head, { rotation: -2 }, { rotation: 2, duration: (t1 - t0) / n, ease: "sine.inOut", repeat: n - 1, yoyo: true }, t0);
+  var m = Math.max(1, Math.floor((t1 - t0) / 1.2));
+  tl.fromTo(o.inner, { y: 0 }, { y: -10, duration: (t1 - t0) / m, ease: "sine.inOut", repeat: m - 1, yoyo: true }, t0);
+}
+var WORDS = []; CAPS.forEach(function (g) { g.forEach(function (w) { WORDS.push(w); }); });
+function lips(o, open, mid, rest, t0, t1) {
+  WORDS.forEach(function (w) {
+    if (w.start < t0 - 0.01 || w.start >= t1) return;
+    setHead(o, open, w.start);
+    var len = w.end - w.start;
+    if (len > 0.32) { setHead(o, mid, w.start + len * 0.45); setHead(o, open, w.start + len * 0.7); }
+    setHead(o, rest, Math.min(w.end, t1 - 0.001));
+  });
+}
+
+// S1 0-4.28 THANK YOU
+(function () {
+  var s = scene(0, 4.28);
+  var w = wish(s, 560, 150, 150, ["happy-smile", "happy-open", "happy-small", "happy-closed"], ["wide-gesture", "presenting"]);
+  tl.fromTo(w.el, { x: -700 }, { x: 0, duration: 0.6, ease: "power3.out" }, 0);
+  idle(w, 0.6, 4.28); lips(w, "happy-open", "happy-small", "happy-smile", 0, 4.28); setBody(w, "presenting", 2.22);
+  var a = el(s, "div", "abs big", "Thank you", "left:860px;top:250px;font-size:210px;");
+  var b = el(s, "div", "abs small", "for taking the time to", "left:866px;top:500px;");
+  var c = el(s, "div", "abs big", '<span id="s1e">End </span><span id="s1w" class="acc">war </span><span id="s1d">&amp; disease</span>', "left:860px;top:580px;font-size:150px;");
+  pop(a, 0.05); rise(b, 1.46);
+  rise(c.children[0], 2.7, 0.3); slam(c.children[1], 3.14); rise(c.children[2], 3.5, 0.35);
+})();
+
+// S2 4.28-7.44 TOO BUSY?
+(function () {
+  var s = scene(4.28, 7.44);
+  var a = el(s, "div", "center small", "but if at any point you decide you're...", "top:250px;");
+  var b = el(s, "div", "center big acc", "Too busy?", "top:390px;font-size:300px;");
+  rise(a, 4.3); slam(b, 6.58, s); tl.to(a, { y: -60, duration: 0.3, ease: "power2.out" }, 6.58);
+})();
+
+// S3 7.44-10.44 SHARE on your glowing rectangle
+(function () {
+  var s = scene(7.44, 10.44);
+  var lab = el(s, "div", "center small", "please press the", "top:120px;");
+  var ph = el(s, "div", "abs", null, "left:735px;top:200px;width:450px;height:640px;border:8px solid #F3ECD0;border-radius:64px;opacity:0;");
+  var share = '<svg width="70" height="70" viewBox="0 0 70 70"><g stroke="#0B1F3D" stroke-width="7" fill="#0B1F3D"><line x1="18" y1="35" x2="52" y2="15"/><line x1="18" y1="35" x2="52" y2="55"/><circle cx="18" cy="35" r="10"/><circle cx="52" cy="15" r="10"/><circle cx="52" cy="55" r="10"/></g></svg>';
+  var btn = el(s, "div", "pill", share + "<span>Share</span>", "left:660px;top:430px;width:600px;height:180px;font-size:110px;");
+  var ring = el(s, "div", "abs", null, "left:660px;top:430px;width:600px;height:180px;border-radius:999px;border:6px solid #E5903B;opacity:0;");
+  var cap = el(s, "div", "center small", "on your <span class='acc'>glowing rectangle</span>", "top:880px;");
+  rise(lab, 7.5); pop(btn, 8.5);
+  tl.to(btn, { scale: 0.9, duration: 0.08, ease: "power2.in" }, 8.76).to(btn, { scale: 1, duration: 0.3, ease: "back.out(3)" }, 8.84);
+  tl.fromTo(ring, { opacity: 0.9, scale: 1 }, { opacity: 0, scale: 1.35, duration: 0.6, ease: "power2.out" }, 8.8);
+  tl.fromTo(ph, { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 9.52);
+  tl.fromTo(ph, { boxShadow: "0 0 0px rgba(229,144,59,0)" }, { boxShadow: "0 0 90px rgba(229,144,59,0.75), inset 0 0 60px rgba(229,144,59,0.35)", duration: 0.5 }, 9.88);
+  tl.to(lab, { autoAlpha: 0, duration: 0.25 }, 9.4); rise(cap, 9.52);
+})();
+
+// S4 10.44-14.88 a friend with a free afternoon
+(function () {
+  var s = scene(10.44, 14.88);
+  function person(x, col) { return svg(s, 220, 260, '<circle cx="110" cy="70" r="58" fill="' + col + '"/><path d="M10 250 Q10 140 110 140 Q210 140 210 250 Z" fill="' + col + '"/>', "left:" + x + "px;top:170px;"); }
+  var p1 = person(380, CREAM), p2 = person(1320, ACC);
+  var dash = svg(s, 640, 80, '<path id="s4p" d="M10 60 Q320 -30 630 60" fill="none" stroke="#F3ECD0" stroke-width="8" stroke-linecap="round" stroke-dasharray="4 26"/>', "left:640px;top:220px;");
+  var lab = el(s, "div", "abs small", "one of your friends", "left:1180px;top:445px;width:500px;text-align:center;font-size:40px;");
+  var a = el(s, "div", "center big", "Free afternoon?", "top:540px;font-size:170px;");
+  var b = el(s, "div", "center big acc", "End war &amp; disease <span style='color:#F3ECD0'>instead.</span>", "top:740px;font-size:110px;");
+  pop(p1, 10.5); tl.fromTo(dash, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", duration: 0.5, ease: "power2.inOut" }, 11.0);
+  pop(p2, 11.44); rise(lab, 11.5); slam(a, 12.16, s); rise(b, 12.98);
+})();
+
+// S5 14.88-17.34 STILL TOO BUSY?
+(function () {
+  var s = scene(14.88, 17.34);
+  var a = el(s, "div", "center big", "Still", "top:230px;font-size:150px;color:rgba(243,236,208,0.8);");
+  var b = el(s, "div", "center big acc", "Too busy?", "top:400px;font-size:300px;transform:rotate(-3deg);");
+  var c = el(s, "div", "center small", "...to even do <i>that?</i>", "top:740px;");
+  rise(a, 14.92); slam(b, 15.56, s); rise(c, 16.26);
+})();
+
+// S6 17.34-20.8 really really really good rating
+(function () {
+  var s = scene(17.34, 20.8);
+  var rr = el(s, "div", "center big", '<span style="font-size:80px">Really, </span><span style="font-size:100px">really, </span><span class="acc" style="font-size:130px">really</span>', "top:150px;");
+  var st = [];
+  for (var k = 0; k < 5; k++) st.push(svg(s, 230, 230, '<polygon points="' + starPts(115, 120, 110, 46) + '" fill="#E5903B" stroke="#E5903B" stroke-width="6" stroke-linejoin="round"/>', "left:" + (390 + k * 236) + "px;top:360px;"));
+  var outl = [];
+  for (k = 0; k < 5; k++) outl.push(svg(s, 230, 230, '<polygon points="' + starPts(115, 120, 110, 46) + '" fill="none" stroke="rgba(243,236,208,0.35)" stroke-width="6" stroke-linejoin="round"/>', "left:" + (390 + k * 236) + "px;top:360px;"));
+  var g = el(s, "div", "center big", "good rating <span class='acc'>&amp;</span> review", "top:660px;font-size:130px;");
+  [0, 1, 2].forEach(function (k) { rise(rr.children[k], [18.02, 18.38, 19.02][k], 0.25); });
+  outl.forEach(function (o) { rise(o, 17.4, 0.3); });
+  [18.02, 18.38, 19.02, 19.22, 19.56].forEach(function (t, k) { pop(st[k], t, 0.3); });
+  rise(g, 19.56);
+})();
+
+// S7 20.8-23.9 overcome the pro-war algorithm
+(function () {
+  var s = scene(20.8, 23.9);
+  var a = el(s, "div", "center small", "so we overcome the", "top:170px;");
+  var b = el(s, "div", "center big", "Pro-war algorithm", "top:260px;font-size:170px;");
+  var arWrap = el(s, "div", "abs", null, "left:860px;top:480px;width:200px;height:320px;");
+  var ar = svg(arWrap, 200, 320, '<path d="M100 10 L100 250" stroke="currentColor" stroke-width="34" stroke-linecap="round"/><path d="M20 190 L100 290 L180 190" fill="none" stroke="currentColor" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>', "left:0;top:0;color:#F3ECD0;");
+  var c = el(s, "div", "abs small", "suppression", "left:1110px;top:610px;");
+  rise(a, 20.85); pop(b, 21.8); rise(arWrap, 22.34); rise(c, 23.02);
+  tl.to(arWrap, { rotation: 180, duration: 0.45, ease: "back.inOut(1.6)" }, 23.2);
+  tl.to(ar, { color: ACC, duration: 0.2 }, 23.3);
+  tl.to(c, { autoAlpha: 0.0, duration: 0.2 }, 23.3);
+})();
+
+// S8 23.9-27.5 someone with more spare time
+(function () {
+  var s = scene(23.9, 27.5);
+  var a = el(s, "div", "center small", "and find someone with", "top:180px;");
+  var hgW = el(s, "div", "abs", null, "left:860px;top:270px;width:200px;height:260px;");
+  svg(hgW, 200, 260, '<path d="M20 10 H180 M20 250 H180" stroke="#F3ECD0" stroke-width="14" stroke-linecap="round"/><path d="M40 20 L160 20 L100 130 L160 240 L40 240 L100 130 Z" fill="none" stroke="#F3ECD0" stroke-width="10" stroke-linejoin="round"/><path d="M62 225 L138 225 L100 160 Z" fill="#E5903B"/>', "left:0;top:0;");
+  var b = el(s, "div", "center big", '<span>More </span><span class="acc">spare </span><span class="acc">time</span>', "top:560px;font-size:180px;");
+  var c = el(s, "div", "center small", "for ending wars and diseases", "top:780px;");
+  rise(a, 23.95); pop(hgW, 24.2);
+  [24.72, 25.04, 25.34].forEach(function (t, k) { rise(b.children[k], t, 0.3); });
+  tl.to(hgW, { rotation: 180, duration: 0.6, ease: "power3.inOut" }, 25.5);
+  rise(c, 25.68);
+})();
+
+// S9 27.5-30.24 they don't check (Wishonia smirk)
+(function () {
+  var s = scene(27.5, 30.24);
+  var w = wish(s, 520, 1250, 190, ["smirk-smile", "smirk-ee", "smirk-closed", "sideeye-closed"], ["palms-down"], true);
+  tl.fromTo(w.el, { x: 700 }, { x: 0, duration: 0.5, ease: "power3.out" }, 27.5);
+  idle(w, 28.0, 30.24); lips(w, "smirk-ee", "smirk-closed", "smirk-smile", 27.5, 29.4);
+  setHead(w, "sideeye-closed", 29.5);
+  var st = el(s, "div", "abs big acc", "\u2605\u2605\u2605\u2605\u2605", "left:180px;top:250px;font-size:150px;letter-spacing:0.05em;font-family:Inter;");
+  var a = el(s, "div", "abs small", "The good review doesn't<br>have to be true.", "left:190px;top:450px;line-height:1.3;");
+  var b = el(s, "div", "abs big", '<span class="stamp">They don\'t check.</span>', "left:170px;top:650px;font-size:110px;transform:rotate(-4deg);transform-origin:30% 50%;");
+  pop(st, 27.76); rise(a, 28.18); slam(b, 29.14, s);
+})();
+
+// S10 30.24-32.64 STILL. TOO. BUSY? (orange)
+(function () {
+  var s = scene(30.24, 32.64, "background:#E5903B;color:#0B1F3D;");
+  var a = el(s, "div", "center big", '<span>Still. </span><span>Too. </span><span>Busy?</span>', "top:330px;font-size:250px;color:#0B1F3D;");
+  var c = el(s, "div", "center", "Even for <i>that?</i>", "top:640px;font-family:Inter;font-weight:600;font-size:58px;color:#0B1F3D;");
+  tl.fromTo(s, { clipPath: "circle(0% at 50% 50%)" }, { clipPath: "circle(80% at 50% 50%)", duration: 0.35, ease: "power3.out" }, 30.24);
+  rise(a.children[0], 30.3, 0.25); slam(a.children[1], 30.9); slam(a.children[2], 31.1, a); rise(c, 31.6);
+})();
+
+// S11 32.64-35.88 the absolute least: 15 seconds
+(function () {
+  var s = scene(32.64, 35.88);
+  var a = el(s, "div", "center small", "the absolute least you could do:", "top:150px;");
+  var C = 2 * Math.PI * 190;
+  var ring = svg(s, 440, 440, '<circle cx="220" cy="220" r="190" fill="none" stroke="rgba(243,236,208,0.18)" stroke-width="22"/><circle id="s11r" cx="220" cy="220" r="190" fill="none" stroke="#E5903B" stroke-width="22" stroke-linecap="round" transform="rotate(-90 220 220)" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="0"/>', "left:740px;top:280px;");
+  var n = el(s, "div", "abs big", "15", "left:740px;top:370px;width:440px;text-align:center;font-size:230px;");
+  var b = el(s, "div", "center big", "seconds", "top:760px;font-size:110px;");
+  rise(a, 32.76); pop(ring, 34.5); pop(n, 34.66); rise(b, 35.26);
+  tl.fromTo(ring.querySelector("#s11r"), { attr: { "stroke-dashoffset": 0 } }, { attr: { "stroke-dashoffset": C }, duration: 1.2, ease: "none" }, 34.66);
+})();
+
+// S12 35.88-38.02 warondisease.org
+(function () {
+  var s = scene(35.88, 38.02);
+  var a = el(s, "div", "center small", "go to", "top:300px;");
+  var txt = "warondisease.org", html = "";
+  for (var k = 0; k < txt.length; k++) html += "<span>" + txt[k] + "</span>";
+  var u = el(s, "div", "center url", html, "top:390px;font-size:200px;");
+  var line = el(s, "div", "abs", null, "left:360px;top:660px;width:1200px;height:14px;border-radius:7px;background:#E5903B;transform-origin:0 50%;");
+  rise(a, 35.9);
+  for (k = 0; k < txt.length; k++) tl.fromTo(u.children[k], { autoAlpha: 0, y: 30 }, { autoAlpha: 1, y: 0, duration: 0.18, ease: "power2.out" }, 36.14 + k * (1.1 / txt.length));
+  tl.fromTo(line, { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power3.out" }, 37.1);
+})();
+
+// S13 38.02-40.34 wishocratic allocation
+(function () {
+  var s = scene(38.02, 40.34);
+  var a = el(s, "div", "center small", "and make your", "top:270px;");
+  var b = el(s, "div", "center big acc", "Wishocratic", "top:360px;font-size:220px;");
+  var c = el(s, "div", "center big", "allocation", "top:580px;font-size:160px;");
+  rise(a, 38.05); pop(b, 38.5); rise(c, 39.14);
+})();
+
+// S14 40.34-45.64 explosions vs clinical trials slider
+(function () {
+  var s = scene(40.34, 45.64);
+  var a = el(s, "div", "center small", "what fraction of humanity's resources should go to...", "top:150px;");
+  var X0 = 260, BW = 1400, BY = 520;
+  var bar = el(s, "div", "abs", null, "left:" + X0 + "px;top:" + BY + "px;width:" + BW + "px;height:70px;border-radius:35px;background:#E5903B;overflow:hidden;");
+  var war = el(bar, "div", "abs", null, "left:0;top:0;height:70px;width:" + BW + "px;background:rgba(243,236,208,0.88);transform-origin:0 50%;");
+  var knob = el(s, "div", "abs", null, "left:" + (X0 - 55) + "px;top:" + (BY - 20) + "px;width:110px;height:110px;border-radius:50%;background:#0B1F3D;border:10px solid #F3ECD0;box-shadow:0 8px 30px rgba(0,0,0,0.4);");
+  var boom = svg(s, 200, 200, '<polygon points="' + starPts(100, 100, 95, 48, 10) + '" fill="#F3ECD0"/><polygon points="' + starPts(100, 100, 52, 26, 8) + '" fill="#0D2445"/>', "left:" + X0 + "px;top:290px;");
+  var lw = el(s, "div", "abs big", "Explosions", "left:" + X0 + "px;top:640px;font-size:96px;");
+  var cross = svg(s, 200, 200, '<rect x="70" y="10" width="60" height="180" rx="10" fill="#E5903B"/><rect x="10" y="70" width="180" height="60" rx="10" fill="#E5903B"/>', "left:" + (X0 + BW - 200) + "px;top:290px;");
+  var lt = el(s, "div", "abs big acc", "Clinical trials", "left:" + (X0 + BW - 700) + "px;top:640px;width:700px;text-align:right;font-size:96px;");
+  var vs = el(s, "div", "center small", "versus", "top:360px;");
+  rise(a, 40.4);
+  rise(bar, 41.04); rise(knob, 41.04);
+  tl.fromTo(war, { scaleX: 0 }, { scaleX: 0.985, duration: 1.4, ease: "power2.inOut" }, 41.7);
+  tl.fromTo(knob, { x: 0 }, { x: BW * 0.985, duration: 1.4, ease: "power2.inOut" }, 41.7);
+  pop(boom, 43.34); rise(lw, 43.34); rise(vs, 43.9); pop(cross, 44.44); rise(lt, 44.44);
+  tl.to(war, { scaleX: 0.3, duration: 0.7, ease: "power3.inOut" }, 44.86);
+  tl.to(knob, { x: BW * 0.3, duration: 0.7, ease: "power3.inOut" }, 44.86);
+})();
+
+// S15 45.64-46.56 VOTE!
+(function () {
+  var s = scene(45.64, 46.56, "background:#E5903B;");
+  var box = svg(s, 260, 260, '<rect x="15" y="15" width="230" height="230" rx="30" fill="none" stroke="#0B1F3D" stroke-width="22"/><path id="s15c" d="M60 135 L115 190 L205 75" fill="none" stroke="#0B1F3D" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="260" stroke-dashoffset="260"/>', "left:420px;top:410px;");
+  var v = el(s, "div", "abs big", "Vote!", "left:740px;top:330px;font-size:380px;color:#0B1F3D;");
+  slam(v, 45.82, s); pop(box, 45.7, 0.25);
+  tl.to(box.querySelector("#s15c"), { attr: { "stroke-dashoffset": 0 }, duration: 0.3, ease: "power2.out" }, 45.95);
+})();
+
+// S16 46.56-50.32 1% treaty passes -> personally to blame
+(function () {
+  var s = scene(46.56, 50.32);
+  var a = el(s, "div", "center small", "If the", "top:150px;");
+  var b = el(s, "div", "center big", '<span class="acc" style="font-size:260px;margin-right:40px">1%</span><span style="font-size:150px">treaty passes,</span>', "top:220px;");
+  var c = el(s, "div", "center small", "your vote will be", "top:560px;");
+  var d = el(s, "div", "center big", '<span class="stamp" style="font-size:120px">Personally to blame</span>', "top:650px;transform:rotate(-3deg);");
+  rise(a, 46.6); slam(b.children[0], 47.02); rise(b.children[1], 47.52, 0.35);
+  rise(c, 48.56); slam(d, 49.3, s);
+})();
+
+// S17 50.32-55.46 2.6 LIVES / 468,000 HOURS
+(function () {
+  var s = scene(50.32, 55.46);
+  var a = el(s, "div", "abs small", "for saving", "left:300px;top:130px;");
+  var b = el(s, "div", "abs big", '<span class="acc">2.6</span> lives', "left:290px;top:190px;font-size:220px;white-space:nowrap;");
+  var c = el(s, "div", "abs small", "and preventing", "left:300px;top:460px;");
+  var d = el(s, "div", "abs big", '<span class="acc" id="cnt">0</span> hours', "left:290px;top:530px;font-size:220px;white-space:nowrap;");
+  var e = el(s, "div", "abs small", "of suffering.", "left:300px;top:780px;");
+  rise(a, 50.4); slam(b, 50.82, s); rise(c, 52.2); slam(d, 52.62, s); rise(e, 54.86);
+  var cnt = d.querySelector("#cnt"), N = 38;
+  for (var k = 0; k <= N; k++) {
+    var p = k / N, v = Math.round(468000 * (1 - Math.pow(1 - p, 3)) / 1000) * 1000;
+    tl.set(cnt, { textContent: v.toLocaleString("en-US") }, 52.62 + p * 1.26);
+  }
+  tl.set(cnt, { textContent: "0" }, 50.33);
+})();
+
+// S18 55.46-59.52 end card
+(function () {
+  var s = scene(55.46, DUR + 1);
+  var w = wish(s, 520, 170, 200, ["happy-smile", "happy-open", "happy-small", "blink-smile"], ["counting", "wide-gesture"]);
+  tl.fromTo(w.el, { y: 700 }, { y: 0, duration: 0.6, ease: "back.out(1.4)" }, 55.46);
+  idle(w, 56.1, DUR); lips(w, "happy-open", "happy-small", "happy-smile", 55.46, 58.5);
+  setHead(w, "blink-smile", 58.54); setBody(w, "wide-gesture", 58.54);
+  tl.fromTo(w.el, { scale: 1 }, { scale: 1.05, duration: 0.25, ease: "back.out(3)" }, 58.54);
+  var a = el(s, "div", "abs small", "Go to", "left:880px;top:250px;");
+  var u = el(s, "div", "abs url", "warondisease.org", "left:870px;top:310px;font-size:132px;");
+  var btn = el(s, "div", "pill", "Vote now", "left:880px;top:560px;width:520px;height:160px;font-size:96px;");
+  var ring = el(s, "div", "abs", null, "left:880px;top:560px;width:520px;height:160px;border-radius:999px;border:6px solid #E5903B;opacity:0;");
+  rise(a, 55.5); pop(u, 56.24); pop(btn, 57.48);
+  for (var k = 0; k < 2; k++) {
+    tl.fromTo(ring, { opacity: 0.9, scale: 1 }, { opacity: 0, scale: 1.3, duration: 0.9, ease: "power2.out", immediateRender: false }, 57.8 + k * 0.9);
+  }
+  tl.fromTo(btn, { scale: 1 }, { scale: 1.06, duration: 0.45, ease: "sine.inOut", repeat: 3, yoyo: true, immediateRender: false }, 57.9);
+})();
+
+// captions
+var capsEl = document.getElementById("caps");
+CAPS.forEach(function (g, i) {
+  var d = el(capsEl, "div", "cap", g.map(function (w) { return "<span>" + w.word + "</span>"; }).join(" "));
+  var t0 = g[0].start, last = g[g.length - 1].end;
+  var next = i + 1 < CAPS.length ? CAPS[i + 1][0].start : DUR;
+  var t1 = Math.min(next, last + 0.7);
+  tl.set(d, { visibility: "visible" }, Math.max(0, t0 - 0.05));
+  tl.set(d, { visibility: "hidden" }, t1);
+  g.forEach(function (w, k) { tl.set(d.children[k], { opacity: 1 }, w.start); });
+});
+
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+})();
+</script>
+</body>
+</html>
